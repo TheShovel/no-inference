@@ -37,12 +37,7 @@ if _SRC_DIR not in sys.path:
 
 from cos.nlg import naturalize, NLGConfig, generate_essay
 from cos.nlg.config import DEFAULT_CONFIG
-import cos.nlg.realize as realize_module
-import cos.nlg.fluency as fluency_module
-import cos.nlg.combine as combine_module
-import cos.nlg.discourse as discourse_module
-import cos.nlg.parser as parser_module
-import cos.nlg.cleaner as cleaner_module
+
 
 
 # ═════════════════════════════════════════════════════════════════════════════
@@ -91,6 +86,7 @@ Return ONLY valid JSON with no markdown:
 # ═════════════════════════════════════════════════════════════════════════════
 
 PREDEFINED_TEST_CASES = [
+    # ── 1. FACTUAL / General Knowledge ──
     ("What is the capital of France?",
      "France",
      "France is a country in Europe. Paris is the capital of France. "
@@ -98,39 +94,23 @@ PREDEFINED_TEST_CASES = [
      "The city is known for the Eiffel Tower, the Louvre Museum, and French cuisine.",
      "factual"),
 
-    ("How does photosynthesis work?",
-     "photosynthesis",
-     "Photosynthesis is the process by which plants convert sunlight into energy. "
-     "It takes place in the chloroplasts of plant cells. "
-     "The process uses chlorophyll to absorb light energy. "
-     "Plants take in carbon dioxide and water and produce glucose and oxygen.",
-     "factual"),
-
     ("Tell me about the Eiffel Tower",
      "Eiffel Tower",
      "The Eiffel Tower is a wrought-iron lattice tower in Paris, France. "
      "It is named after the engineer Gustave Eiffel. "
      "It was built in 1889 for the World's Fair. "
-     "The tower is 330 meters tall and was the tallest structure in the world until 1930. "
-     "It is one of the most famous landmarks in the world.",
+     "The tower is 330 meters tall and was the tallest structure in the world until 1930.",
      "factual"),
 
-    ("What is machine learning?",
-     "machine learning",
-     "Machine learning is a subset of artificial intelligence. "
-     "It involves algorithms that improve through experience. "
-     "There are three main types: supervised learning, unsupervised learning, and reinforcement learning. "
-     "Machine learning is used in recommendation systems, image recognition, and natural language processing.",
+    ("Who was Marie Curie?",
+     "Marie Curie",
+     "Marie Curie was a Polish-born physicist and chemist. "
+     "She conducted pioneering research on radioactivity. "
+     "She was the first woman to win a Nobel Prize. "
+     "She won the Nobel Prize in Physics in 1903 and Chemistry in 1911.",
      "factual"),
 
-    ("Explain quantum computing",
-     "quantum computing",
-     "Quantum computing uses quantum mechanical phenomena like superposition and entanglement. "
-     "Unlike classical computers that use bits, quantum computers use qubits. "
-     "A qubit can exist in multiple states simultaneously. "
-     "Quantum computers have the potential to solve certain problems much faster than classical computers.",
-     "factual"),
-
+    # ── 2. HOW-TO / INSTRUCTION ──
     ("How do I make french fries?",
      "french fries",
      "French fries are cut potato strips that are deep-fried. "
@@ -138,44 +118,167 @@ PREDEFINED_TEST_CASES = [
      "Soak the strips in cold water for 30 minutes to remove excess starch. "
      "Dry them thoroughly and fry at 175°C or 350°F until golden brown. "
      "Season with salt while hot.",
+     "instruction"),
+
+    ("How do I learn programming?",
+     "programming",
+     "Learning programming starts with choosing a language like Python. "
+     "Practice coding daily, work on small projects, and read other people's code. "
+     "Online platforms like freeCodeCamp and Codecademy offer interactive tutorials.",
+     "instruction"),
+
+    # ── 3. TECHNICAL / STEM ──
+    ("How does photosynthesis work?",
+     "photosynthesis",
+     "Photosynthesis is the process by which plants convert sunlight into energy. "
+     "It takes place in the chloroplasts of plant cells. "
+     "Plants take in carbon dioxide and water and produce glucose and oxygen.",
      "factual"),
 
+    ("Explain quantum computing",
+     "quantum computing",
+     "Quantum computing uses quantum mechanical phenomena like superposition and entanglement. "
+     "Unlike classical computers that use bits, quantum computers use qubits. "
+     "A qubit can exist in multiple states simultaneously. "
+     "Quantum computers can solve certain problems much faster than classical ones.",
+     "instruction"),
+
+    ("What is machine learning?",
+     "machine learning",
+     "Machine learning is a subset of artificial intelligence. "
+     "It involves algorithms that improve through experience. "
+     "There are three main types: supervised, unsupervised, and reinforcement learning.",
+     "factual"),
+
+    # ── 4. MATH / ARITHMETIC ──
+    ("What is 25 times 4 plus 10?",
+     "math",
+     "25 * 4 = 100, plus 10 = 110.",
+     "math"),
+
+    ("If a train travels at 60 miles per hour for 2.5 hours, how far does it go?",
+     "train distance",
+     "Distance = speed * time. So 60 miles per hour * 2.5 hours = 150 miles.",
+     "word_problem"),
+
+    # ── 5. CREATIVE / ESSAY ──
+    ("Write a short essay about the importance of protecting the environment",
+     "environmental protection",
+     "Environmental protection is crucial for maintaining the health of our planet. "
+     "Climate change, pollution, and deforestation threaten ecosystems worldwide. "
+     "Individuals can help by reducing waste, conserving energy, and supporting sustainable practices. "
+     "Governments must enact policies that limit carbon emissions and protect natural habitats. "
+     "The future of humanity depends on the actions we take today.",
+     "instruction"),
+
+    ("Write a story about a dragon who learns to bake",
+     "dragon baking",
+     "Dragons are mythical creatures often depicted as breathing fire and hoarding treasure. "
+     "Baking is a cooking method that uses dry heat in an enclosed space. "
+     "Combining these concepts creates a whimsical story about a dragon discovering the joy of baking.",
+     "instruction"),
+
+    # ── 6. COMPARISON ──
+    ("Compare Python and Java programming languages",
+     "Python vs Java",
+     "Python is dynamically typed and emphasizes readability. "
+     "Java is statically typed and requires explicit type declarations. "
+     "Python is often used for data science and scripting. "
+     "Java is commonly used for enterprise applications and Android development. "
+     "Both are widely used and have large ecosystems of libraries.",
+     "factual"),
+
+    ("What is the difference between AI and machine learning?",
+     "AI vs ML",
+     "Artificial intelligence is a broad field of computer science focused on creating systems that can perform tasks requiring human intelligence. "
+     "Machine learning is a subset of AI that involves training algorithms on data to improve their performance over time. "
+     "All ML is AI, but not all AI is ML.",
+     "factual"),
+
+    # ── 7. OPINION / PHILOSOPHICAL ──
     ("What is the meaning of life?",
      "meaning of life",
-     "The meaning of life is a philosophical question that has been debated for centuries. "
+     "The meaning of life is a philosophical question debated for centuries. "
      "Different philosophies and religions offer various answers. "
      "Some believe it is about happiness and fulfillment. "
      "Others find meaning in relationships, creativity, or spiritual growth.",
      "factual"),
 
-    ("Tell me about Mars",
-     "Mars",
-     "Mars is the fourth planet from the Sun. "
-     "It is often called the Red Planet because of its reddish appearance. "
-     "Mars has a diameter of 6,779 kilometers. "
-     "A day on Mars lasts 24.6 hours. "
-     "A year on Mars lasts 687 Earth days. "
-     "The planet has two small moons named Phobos and Deimos. "
-     "Mars has the tallest mountain in the solar system: Olympus Mons at 21.9 km high. "
-     "Evidence suggests that liquid water once flowed on the Martian surface.",
+    ("Is artificial intelligence dangerous?",
+     "AI safety",
+     "AI has both potential benefits and risks. "
+     "Benefits include medical breakthroughs, automation of tedious tasks, and scientific discovery. "
+     "Risks include job displacement, privacy concerns, and the potential for misuse. "
+     "Proper regulation and ethical development are important for safe AI.",
      "factual"),
 
-    ("Who was Albert Einstein?",
-     "Albert Einstein",
-     "Albert Einstein was a German-born theoretical physicist. "
-     "He developed the theory of relativity, one of the two pillars of modern physics. "
-     "He is best known for his mass-energy equivalence formula E = mc². "
-     "He won the Nobel Prize in Physics in 1921 for his work on the photoelectric effect. "
-     "He is widely regarded as one of the most influential scientists of all time.",
+    # ── 8. DEFINITION / EXPLANATION ──
+    ("Define recursion in computer science",
+     "recursion",
+     "Recursion is a programming technique where a function calls itself to solve a problem. "
+     "It breaks a problem down into smaller subproblems of the same type. "
+     "A recursive function needs a base case to stop the recursion. "
+     "Recursion is often used for tree traversal, sorting algorithms, and mathematical calculations.",
      "factual"),
 
     ("Why is the sky blue?",
      "sky blue",
-     "The sky appears blue due to a phenomenon called Rayleigh scattering. "
+     "The sky appears blue due to Rayleigh scattering. "
      "Sunlight is made up of all colors of light. "
-     "As sunlight passes through the atmosphere, shorter blue wavelengths are scattered more than longer red wavelengths. "
-     "This scattered blue light reaches our eyes from all directions, making the sky appear blue.",
+     "Shorter blue wavelengths are scattered more than longer red wavelengths by air molecules. "
+     "This scattered blue light reaches our eyes from all directions.",
      "factual"),
+
+    # ── 9. FOLLOW-UP / CONTEXT-DEPENDENT ──
+    # These are tested as pairs
+    ("Tell me about Mars (first ask about Mars, then ask follow-up)",
+     "Mars",
+     "Mars is the fourth planet from the Sun. "
+     "It is called the Red Planet due to its reddish appearance. "
+     "Mars has a diameter of 6,779 kilometers. "
+     "A day on Mars lasts 24.6 hours. "
+     "A year on Mars lasts 687 Earth days. "
+     "The planet has two small moons named Phobos and Deimos.",
+     "factual"),
+
+    ("How big is it? (referring to Mars from previous question)",
+     "Mars",
+     "Mars has a diameter of 6,779 kilometers. "
+     "Olympus Mons on Mars is the tallest mountain in the solar system at 21.9 km high.",
+     "factual"),
+
+    # ── 10. CODE / PROGRAMMING ──
+    ("Write a Python function to check if a number is prime",
+     "prime number function",
+     "A prime number is divisible only by 1 and itself. "
+     "The function should handle edge cases like numbers less than 2. "
+     "It should check divisibility up to the square root of the number for efficiency.",
+     "code"),
+
+    ("Explain how a hash table works",
+     "hash table",
+     "A hash table maps keys to values using a hash function. "
+     "The hash function computes an index into an array of buckets. "
+     "Collisions occur when two keys hash to the same index. "
+     "Common collision resolution methods include chaining and open addressing.",
+     "instruction"),
+]
+
+
+# ── Conversation pairs for context-dependent testing ──
+_CONVERSATION_PAIRS = [
+    # (query_1, topic_1, info_1, query_2, topic_2, info_2)
+    ("Tell me about the Great Barrier Reef",
+     "Great Barrier Reef",
+     "The Great Barrier Reef is the world's largest coral reef system. "
+     "It is located off the coast of Queensland, Australia. "
+     "It stretches over 2,300 kilometers. "
+     "It is home to a vast diversity of marine life.",
+     "How deep is it?",
+     "Great Barrier Reef",
+     "The Great Barrier Reef has an average depth of 35 meters in its inner shelf areas. "
+     "The outer reef drops to depths of over 2,000 meters. "
+     "The reef's maximum depth is around 2,000 meters."),
 ]
 
 
@@ -386,19 +489,52 @@ def generate_responses(
     style: str = "friendly",
     verbosity: float = 0.5,
 ) -> List[EvalResult]:
-    """Generate COS NLG responses for all test cases."""
+    """Generate COS NLG responses for all test cases.
+
+    Uses process_query for non-factual types (math, code, instruction, word_problem)
+    and naturalize for factual types. Also handles conversation pairs.
+    """
     config = NLGConfig(style=style, verbosity=verbosity, temperature=0.3)
     results = []
 
-    for query, topic, info, intent in test_cases:
+    # Import engine for full query processing
+    from cos.engine import process_query, reset_conversation, get_conversation_history
+    from cos.nlg.essay import generate_essay
+
+    for idx, (query, topic, info, intent) in enumerate(test_cases):
+        response = None
+
         try:
-            response = naturalize(query, topic, info, intent, config)
+            if intent in ("math", "word_problem", "code"):
+                # Use full engine pipeline for math, code
+                response = process_query(query, use_cos=False)
+                if not response or len(response) < 5:
+                    response = naturalize(query, topic, info, "factual", config)
+
+            elif intent == "instruction" and any(w in query.lower() for w in ["essay", "story"]):
+                # Generate essay for essay/story requests
+                try:
+                    response = generate_essay(query, topic, info, config)
+                except Exception:
+                    response = naturalize(query, topic, info, "instruction", config)
+
+            else:
+                # Default: use naturalize
+                response = naturalize(query, topic, info, intent, config)
+
         except Exception as e:
-            response = f"[Error generating: {e}]"
+            response = f"[Error: {e}]"
+
+        # Handle conversation pairs: if this is a follow-up query,
+        # add the previous exchange to conversation history
+        if idx > 0 and test_cases[idx - 1][0].startswith("Tell me about Mars"):
+            # Add the Mars context to conversation history
+            from cos.state import conversation_history
+            conversation_history.append((test_cases[idx - 1][0], response or ""))
 
         results.append(EvalResult(
             query=query, topic=topic, info=info,
-            intent=intent, response=response,
+            intent=intent, response=response or "[No response]",
         ))
 
     return results
@@ -501,12 +637,23 @@ def analyze_feedback(results: List[EvalResult]) -> Dict:
     # Generate improvement suggestions based on top issues
     suggestions = _generate_suggestions(issue_counts, dim_avgs)
 
+    # Collect per-response feedback from the judge
+    per_response = []
+    for r in results:
+        for j in r.judgments:
+            if j.feedback:
+                per_response.append({
+                    "query": r.query[:60],
+                    "feedback": j.feedback[:300],
+                })
+
     return {
         "issue_counts": dict(issue_counts.most_common()),
         "issue_examples": issue_examples,
         "total_feedback_count": len(all_feedback_texts),
         "dimension_averages": dim_avgs,
         "improvement_suggestions": suggestions,
+        "per_response_feedback": per_response,
     }
 
 
@@ -597,243 +744,9 @@ def _generate_suggestions(
 # ═════════════════════════════════════════════════════════════════════════════
 # NLG Improvement Engine
 # ═════════════════════════════════════════════════════════════════════════════
-
-def apply_improvements(analysis: Dict) -> List[str]:
-    """Apply systematic improvements to the NLG modules based on feedback analysis.
-
-    Returns a list of changes applied.
-    """
-    changes = []
-    issues = analysis.get("issue_counts", {})
-    dims = analysis.get("dimension_averages", {})
-
-    # ── 1. Fix opener fatigue (variety in sentence beginnings) ──────────────
-    if issues.get("opener_fatigue", 0) >= 2 or dims.get("naturalness", 5) < 6.5:
-        c = _fix_opener_variety()
-        if c:
-            changes.append(c)
-
-    # ── 2. Fix repetition / "and is" combine artifacts ──────────────────────
-    if issues.get("repetition", 0) >= 1 or issues.get("verb_agreement", 0) >= 1:
-        c = _fix_combine_artifacts()
-        if c:
-            changes.append(c)
-
-    # ── 3. Fix missing transitions / discourse flow ─────────────────────────
-    if issues.get("missing_transitions", 0) >= 2 or dims.get("coherence", 5) < 5.5:
-        c = _fix_discourse_flow()
-        if c:
-            changes.append(c)
-
-    # ── 4. Fix formulaic patterns ──────────────────────────────────────────
-    if issues.get("too_formulaic", 0) >= 1:
-        c = _fix_formulaic_patterns()
-        if c:
-            changes.append(c)
-
-    # ── 5. Fix capitalization issues ───────────────────────────────────────
-    if issues.get("capitalization", 0) >= 1:
-        c = _fix_capitalization()
-        if c:
-            changes.append(c)
-
-    # ── 6. Improve naturalness (fillers, contractions, variety) ────────────
-    if dims.get("naturalness", 5) < 7.0:
-        c = _fix_naturalness()
-        if c:
-            changes.append(c)
-
-    return changes
-
-
-# ── Individual Improvement Functions ─────────────────────────────────────────
-
-def _fix_opener_variety() -> Optional[str]:
-    """Add more variety to sentence openers in fluency.py."""
-    try:
-        fluency_module._OPENER_VARIETY = list(set(fluency_module._OPENER_VARIETY + [
-            "Would you believe,",
-            "The key point is that",
-            "Let me tell you,",
-            "What's fascinating is that",
-            "You might be surprised to learn that",
-            "It turns out that",
-            "The thing you should know is that",
-            "Here is something interesting:",
-            "Let's put it this way:",
-            "To give you some perspective,",
-            "One way to think about it is that",
-            "If you think about it,",
-            "It's worth noting that",
-            "As you might expect,",
-            "What this means is that",
-            "The reality is that",
-            "A key detail is that",
-            "Here is what's interesting:",
-            "Another way to look at it:",
-            "Let me explain:",
-        ]))
-        return "Added 20 new sentence opener variations to fluency.py"
-    except Exception as e:
-        return f"Failed to add openers: {e}"
-
-
-def _fix_combine_artifacts() -> Optional[str]:
-    """Fix common combine artifacts like 'and is', subject repetition."""
-    try:
-        # Add more cleanup patterns to the post-combine phase in pipeline.py
-        # These are applied in naturalize() after combine_all()
-        pipeline_code = """
-    # ── Post-combine cleanup v2 ──
-    for i, sent in enumerate(realized_sentences):
-        sent = re.sub(r', and is ', ', which is ', sent)
-        sent = re.sub(r' and is (a|an|the)', r' and is \1', sent)
-        sent = re.sub(r' and is ([A-Z][a-z]+)', r', which is \1', sent)
-        sent = re.sub(r', and is ([a-z])', r', and \1', sent)
-        sent = re.sub(r', and it is ', r' and it's ', sent)
-        sent = re.sub(r'\\b(It|He|She|They) is the\\b', lambda m: m.group(0), sent)
-        realized_sentences[i] = sent
-"""
-        # We'll apply these improvements directly in the pipeline module
-        # by adding cleanup patterns after the existing ones
-        import cos.nlg.pipeline as pipeline_module
-        pipeline_source = pipeline_module.__file__
-        
-        # Read the pipeline file
-        with open(pipeline_source) as f:
-            source = f.read()
-        
-        if "Post-combine cleanup v2" not in source:
-            # Find the existing post-combine cleanup section
-            marker = "Post-combine cleanup:"
-            if marker in source:
-                # Add our additional cleanup after existing cleanup
-                insert_point = source.rfind("realized_sentences[i] = sent")
-                if insert_point > 0:
-                    next_line = source.find("\n", insert_point)
-                    source = (source[:next_line] + pipeline_code + source[next_line:])
-                    with open(pipeline_source, 'w') as f:
-                        f.write(source)
-                    return "Added v2 post-combine cleanup patterns to pipeline.py"
-        
-        return "Combine cleanup patterns already present (or marker not found)"
-    except Exception as e:
-        return f"Failed to fix combine artifacts: {e}"
-
-
-def _fix_discourse_flow() -> Optional[str]:
-    """Improve discourse flow with more varied rhetorical relations."""
-    try:
-        # Check for the discourse module's markers
-        import cos.nlg.discourse as disc
-        # The discourse markers are probably in the module
-        # If it has a MARKERS dict, try to expand it
-        if hasattr(disc, '_MARKERS'):
-            disc._MARKERS['elaborate'] = list(set(disc._MARKERS.get('elaborate', []) + [
-                "To elaborate,", "Going deeper,", "Let me expand on that:",
-                "Here is more detail:", "In particular,", "More specifically,",
-                "To add to that,", "Furthermore,", "Additionally,",
-                "On top of that,", "What's more,",
-            ]))
-            disc._MARKERS['contrast'] = list(set(disc._MARKERS.get('contrast', []) + [
-                "However,", "On the other hand,", "That said,",
-                "Having said that,", "Still,", "Nevertheless,",
-                "In contrast,", "Meanwhile,", "Interestingly though,",
-            ]))
-            disc._MARKERS['conclude'] = list(set(disc._MARKERS.get('conclude', []) + [
-                "All things considered,", "In short,", "Ultimately,",
-                "To sum up,", "In essence,", "To wrap up,",
-                "So overall,", "The takeaway is that",
-            ]))
-            return "Expanded discourse markers in discourse.py"
-        return "No _MARKERS found in discourse module, trying alternative approach"
-    except Exception as e:
-        return f"Failed to improve discourse: {e}"
-
-
-def _fix_formulaic_patterns() -> Optional[str]:
-    """Reduce reliance on template-like patterns."""
-    try:
-        # Add more fact realization patterns in realize.py
-        # Specifically, vary the "X is Y" pattern
-        if hasattr(realize_module, '_DEFINITION_PATTERNS'):
-            realize_module._DEFINITION_PATTERNS = list(set(
-                realize_module._DEFINITION_PATTERNS + [
-                    "Here's what you need to know about {subject}: {obj}.",
-                    "Let me tell you about {subject}. {subject} {predicate} {obj}.",
-                    "So, {subject} {predicate} {obj}.",
-                    "{subject} {predicate} {obj} — that's the key idea.",
-                    "At its core, {subject} {predicate} {obj}.",
-                    "The basic concept is that {subject} {predicate} {obj}.",
-                ]
-            ))
-            return "Added new definition patterns to realize.py"
-        return "No _DEFINITION_PATTERNS found in realize module"
-    except Exception as e:
-        return f"Failed to fix formulaic patterns: {e}"
-
-
-def _fix_capitalization() -> Optional[str]:
-    """Fix capitalization handling."""
-    try:
-        # Improve fix_caps to handle mid-sentence proper nouns better
-        if hasattr(fluency_module, 'fix_caps'):
-            source_file = fluency_module.__file__
-            with open(source_file) as f:
-                source = f.read()
-            
-            # Add proper noun protection
-            proper_nouns_marker = "# Words that should stay uppercase mid-sentence"
-            proper_nouns_list = """
-# Words that should stay uppercase mid-sentence
-_PROPER_NOUNS = {
-    'I', 'Paris', 'London', 'France', 'Mars', 'Earth', 'Sun', 'Moon',
-    'Einstein', 'Newton', 'Curie', 'Eiffel', 'Olympus', 'Phobos', 'Deimos',
-    'Louvre', 'Rayleigh', 'English', 'French', 'European',
-}
-"""
-            if proper_nouns_marker not in source and "_PROPER_NOUNS" not in source:
-                # Insert after imports
-                import_section_end = source.find("\ndef ")
-                if import_section_end > 0:
-                    source = (source[:import_section_end] + proper_nouns_list +
-                             "\n" + source[import_section_end:])
-                    with open(source_file, 'w') as f:
-                        f.write(source)
-                    return "Added proper noun protection to fluency.py"
-        
-        return "Could not fix capitalization"
-    except Exception as e:
-        return f"Failed to fix capitalization: {e}"
-
-
-def _fix_naturalness() -> Optional[str]:
-    """Improve naturalness with more fillers, better contractions, varied structures."""
-    try:
-        # Ensure contractions are always applied
-        if hasattr(fluency_module, '_CONTRACTIONS'):
-            # Add more contractions
-            more_contracts = [
-                (r"\bshould have\b", "should've"),
-                (r"\bcould have\b", "could've"),
-                (r"\bwould have\b", "would've"),
-                (r"\bmight have\b", "might've"),
-                (r"\bmust have\b", "must've"),
-                (r"\bthere are\b", "there're"),
-                (r"\bthere will\b", "there'll"),
-                (r"\bthat would\b", "that'd"),
-                (r"\bhow will\b", "how'll"),
-                (r"\bwhat will\b", "what'll"),
-            ]
-            existing_patterns = set(p for p, _ in fluency_module._CONTRACTIONS)
-            for pattern, repl in more_contracts:
-                if pattern not in existing_patterns:
-                    fluency_module._CONTRACTIONS.append((pattern, repl))
-            
-            return "Added 10 new contraction patterns to fluency.py"
-        return "No _CONTRACTIONS found"
-    except Exception as e:
-        return f"Failed to improve naturalness: {e}"
+# All auto-apply improvement functions removed.
+# Recommendations are shown during analysis instead of applying patches.
+# ═════════════════════════════════════════════════════════════════════════════
 
 
 # ═════════════════════════════════════════════════════════════════════════════
@@ -927,6 +840,18 @@ def print_analysis(analysis: Dict):
         for s in suggestions:
             print(f"    → {s[:90]}")
 
+    # Per-response feedback from judge
+    per_response = analysis.get("per_response_feedback", [])
+    if per_response:
+        print(f"\n  {'─'*50}")
+        print(f"  Judge Feedback Per Response:")
+        print(f"  {'─'*50}")
+        for item in per_response[:5]:  # Show first 5 to keep output readable
+            fb = item["feedback"][:200]
+            print(f"    [{item['query'][:45]}]")
+            print(f"    {fb}")
+            print()
+
 
 # ═════════════════════════════════════════════════════════════════════════════
 # Main Loop
@@ -941,9 +866,7 @@ def main():
     parser.add_argument('--dry-run', action='store_true',
                        help="Use mock feedback instead of calling LLMs")
     parser.add_argument('--rounds', type=int, default=1,
-                       help="Number of improve→evaluate cycles (default: 1)")
-    parser.add_argument('--skip-improve', action='store_true',
-                       help="Only evaluate, don't apply improvements")
+                       help="Number of evaluate cycles (default: 1)")
     parser.add_argument('--output', type=str, default='data/eval_results.json',
                        help="Output path for results JSON")
     parser.add_argument('--style', default='friendly',
@@ -992,23 +915,39 @@ def main():
             },
         })
 
-        # 4. Analyze feedback
+        # 4. Analyze feedback and recommend improvements
         print(f"\n  Step 3: Analyzing feedback...")
         analysis = analyze_feedback(results)
         print_analysis(analysis)
+        print(f"\n  Recommendations above show what changes would help most.")
+        print(f"  Apply them manually to the relevant NLG source modules.")
 
-        # 5. Apply improvements
-        if not args.skip_improve:
-            print(f"\n  Step 4: Applying improvements...")
-            changes = apply_improvements(analysis)
-            if changes:
-                print(f"    Applied {len(changes)} changes:")
-                for c in changes:
-                    print(f"    ✓ {c}")
-            else:
-                print(f"    No changes applied (all improvements already in place)")
-        else:
-            print(f"\n  Step 4: Skipping improvements (--skip-improve)")
+        # Save per-response results to JSON
+        def _serialize_result(r):
+            return {
+                "query": r.query, "topic": r.topic, "intent": r.intent,
+                "response": r.response, "overall_average": round(r.overall_average, 2),
+                "dimension_averages": {k: round(v, 2) for k, v in r.dimension_averages.items()},
+                "judgments": [
+                    {"model": j.model, "average": round(j.average, 2),
+                     "feedback": j.feedback[:200] if j.feedback else "",
+                     "naturalness": j.naturalness, "informativeness": j.informativeness,
+                     "coherence": j.coherence, "correctness": j.correctness,
+                     "conciseness": j.conciseness}
+                    for j in r.judgments
+                ],
+            }
+        cycle_data = {
+            "cycle": cycle,
+            "score": all_history[-1]["score"],
+            "dimension_averages": all_history[-1]["dimension_averages"],
+            "responses": [_serialize_result(r) for r in results],
+        }
+        os.makedirs(os.path.dirname(args.output) or ".", exist_ok=True)
+        with open(args.output, "w") as f:
+            json.dump(cycle_data, f, indent=2)
+        print(f"  Results saved to {args.output} (with per-response detail)")
+
 
     # Final summary
     print(f"\n{'#'*70}")
@@ -1025,16 +964,6 @@ def main():
             print(f"    Cycle {h['cycle']}: {h['score']:.2f}  ({dims})")
     else:
         print(f"\n  Score: {all_history[0]['score']:.2f}")
-
-    # Save results
-    history_data = {
-        "cycles": all_history,
-        "config": {"style": args.style, "verbosity": args.verbosity},
-    }
-    os.makedirs(os.path.dirname(args.output) or '.', exist_ok=True)
-    with open(args.output, 'w') as f:
-        json.dump(history_data, f, indent=2)
-    print(f"\n  Results saved to: {args.output}")
 
     return 0
 
