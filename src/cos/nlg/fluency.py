@@ -55,18 +55,33 @@ def apply_contractions(text: str, rate: float = 1.0, temperature: float = 1.0) -
 
 # ── Pronoun substitution ───────────────────────────────────────────────────
 
-def apply_pronouns(text: str, topic: str, config: NLGConfig) -> str:
+def apply_pronouns(text: str, topic: str, config: NLGConfig, source_text: str = "") -> str:
     """Replace repeated topic mentions with appropriate pronouns.
 
-    Detects person names, uncountable nouns, and plural nouns to
-    select the correct pronoun (he/she/it/they).
+    Uses the same algorithmic pronoun inference as the rest of the system
+    (from cos.nlg.models._infer_gender_from_text) when source text is available.
+    Falls back to heuristics (uncountable, plural, person-name, default it).
 
     Pure function.
     """
     if not topic or not text:
         return text
 
-    pronoun = _select_pronoun(topic)
+    # Try to infer pronoun from source text (same algorithm everywhere)
+    pronoun = None
+    if source_text:
+        try:
+            from .models import _infer_gender_from_text
+            gender = _infer_gender_from_text(topic, source_text)
+            if gender == "feminine":
+                pronoun = "she"
+            elif gender == "masculine":
+                pronoun = "he"
+        except Exception:
+            pass
+
+    if not pronoun:
+        pronoun = _select_pronoun(topic)
 
     pattern = re.compile(r'\b' + re.escape(topic) + r'\b', re.IGNORECASE)
     matches = list(pattern.finditer(text))
@@ -162,6 +177,7 @@ def enhance_fluency(
     text: str,
     config: NLGConfig,
     topic: str = "",
+    source_text: str = "",
 ) -> str:
     """Apply fluency enhancements: contractions, pronouns, fillers, caps.
 
@@ -179,7 +195,7 @@ def enhance_fluency(
 
     # 1. Apply pronouns (before contractions so "it is" -> "it's")
     if topic:
-        result = apply_pronouns(result, topic, config)
+        result = apply_pronouns(result, topic, config, source_text=source_text)
 
     # 2. Apply contractions (pass temperature for determinism at temp=0)
     result = apply_contractions(result, rate=profile.get("contraction_rate", 0.8), temperature=config.temperature)

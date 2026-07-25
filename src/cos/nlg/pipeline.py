@@ -165,7 +165,7 @@ def naturalize(
             result = opening + " " + lower_first(result)
 
     # ── Pass 5: Fluency ──
-    result = enhance_fluency(result, config, effective_topic)
+    result = enhance_fluency(result, config, effective_topic, source_text=info)
 
     # Add closing
     closing = get_closing(config)

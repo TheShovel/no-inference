@@ -185,12 +185,24 @@ def _infer_gender_from_text(entity_name: str, source_text: str) -> Optional[str]
 
     # Find sentences that mention the entity (or are nearby)
     relevant_sentences = []
+    name_parts = name_lower.split()
+    
+    # Try full name first, then last name (common in text: "Einstein" for "Albert Einstein")
+    name_variants = [name_lower]
+    if len(name_parts) >= 2:
+        name_variants.append(name_parts[-1])  # last name only
+        name_variants.append(" ".join(name_parts[-2:]))  # last two words
+    
+    def sentence_contains_entity(s_lower: str) -> bool:
+        for variant in name_variants:
+            if variant in s_lower:
+                return True
+        return False
+    
     for i, sent in enumerate(sentences):
         s_lower = sent.lower()
-        # Check if entity name appears in this sentence
-        if name_lower in s_lower:
+        if sentence_contains_entity(s_lower):
             relevant_sentences.append(sent)
-            # Also include adjacent sentences (they often continue using the same pronoun)
             if i > 0:
                 relevant_sentences.append(sentences[i - 1])
             if i < len(sentences) - 1:
@@ -200,14 +212,11 @@ def _infer_gender_from_text(entity_name: str, source_text: str) -> Optional[str]
     # E.g., "She conducted..." in a sentence right after "Marie Curie was..."
     for sent in sentences:
         s_lower = sent.lower()
-        # Check if sentence starts with a pronoun (common pattern: "She/He/They did X")
-        # This often follows an introductory sentence about the entity
         if re.match(r'\b(She|He|They|It)\b', sent):
-            # Check if the previous sentence mentions the entity
             idx = sentences.index(sent)
             if idx > 0:
                 prev_lower = sentences[idx - 1].lower()
-                if name_lower in prev_lower:
+                if sentence_contains_entity(prev_lower):
                     relevant_sentences.append(sent)
 
     if not relevant_sentences:

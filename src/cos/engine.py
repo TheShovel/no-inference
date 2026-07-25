@@ -36,6 +36,31 @@ from cos.llm_fallback import extract_search_terms
 from cos.followup import rewrite_previous_response
 from cos.template_engine import match_template, get_context_topic, reload as reload_templates
 
+# ── NLG integration (unified system) ────────────────────────────────────────
+_NLG_NATURALIZE = None
+def _get_nlg():
+    """Lazy-import the NLG system. All factual responses use this."""
+    global _NLG_NATURALIZE
+    if _NLG_NATURALIZE is None:
+        try:
+            from cos.nlg import naturalize
+            _NLG_NATURALIZE = naturalize
+        except Exception:
+            _NLG_NATURALIZE = False
+    return _NLG_NATURALIZE
+
+def _nlg(query, topic, info):
+    """Pass information through the unified NLG system."""
+    nat = _get_nlg()
+    if nat and info and len(info) > 10:
+        try:
+            from cos.nlg.config import NLGConfig
+            return nat(query, topic, info, "factual", NLGConfig(style="friendly", verbosity=0.5, temperature=0.6))
+        except Exception:
+            pass
+    return info
+
+
 # ── Wikipedia search (fallback) ───────────────────────────────────────────────
 
 _WIKI_CACHE = {}  # query_lower -> (summary, source_url)
@@ -237,12 +262,17 @@ def _solve_math(expr):
 
 
 def _solve_word_problem(question):
-    """Solve a word problem. Imported from cos_orchestrator.py (legacy)."""
+    """Solve a word problem using the math solver."""
     try:
-        # Import dynamically to avoid circular imports
-        from cos.cos_orchestrator import solve_word_problem as wp
+        sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'benchmark'))
+        from cos_orchestrator import solve_word_problem as wp
         return wp(question)
-    except ImportError:
+    except Exception:
+        pass
+    try:
+        from cos.math_solver import solve_word_problem as wp
+        return wp(question)
+    except Exception:
         return None
 
 
@@ -567,13 +597,12 @@ def _handle_factual(query, use_cos):
     # First try: common knowledge base (most accurate for facts)
     kb_answer = knowledge_lookup(search_query)
     if kb_answer:
-        return kb_answer
+        return _nlg(q, search_query, kb_answer)
 
     # Second try: Wikipedia search (broad coverage for anything the KB lacks)
     wiki_summary, wiki_url = _search_wikipedia(search_query)
     if wiki_summary:
-        url_suffix = f'\n  Source: {wiki_url}' if wiki_url else ''
-        return wiki_summary + url_suffix
+        return _nlg(q, search_query, wiki_summary)
 
     # Third try: multi-keyword search (symbolic extraction, then KB + Wikipedia lookup)
     try:
@@ -596,7 +625,7 @@ def _handle_factual(query, use_cos):
             if wiki_text:
                 information += '\\n' + wiki_text
             if information.strip():
-                return information.strip()
+                return _nlg(q, search_query, information.strip())
     except Exception:
         pass
 
