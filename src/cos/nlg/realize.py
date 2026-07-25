@@ -17,7 +17,6 @@ _PATTERNS = {
     "definition": {
         "friendly": [
             "{subject} {verb} {obj}.",
-            "{subject} {verb} {obj} — that's the core idea.",
             "{subject} {verb} {obj}.",
         ],
         "neutral": [
@@ -212,6 +211,19 @@ def realize_fact(
     if not sentence.endswith(('.', '!', '?')):
         sentence += "."
 
+    # Fix duplication: "Eiffel Tower is The Eiffel Tower is..." -> "Eiffel Tower is..."
+    # This happens when the parser creates a fact with subject="Eiffel Tower"
+    # and obj="The Eiffel Tower is a..." (full sentence as object)
+    dup_match = re.match(
+        r'(' + re.escape(subject) + r'\s+' + re.escape(fact.predicate) + r'\s+)The\s+' + re.escape(subject) + r'\s+',
+        sentence, re.IGNORECASE
+    )
+    if dup_match:
+        # Remove the duplicated "The Subject" part
+        sentence = sentence[:dup_match.end(1)] + sentence[dup_match.end():]
+        # Recapitalize
+        sentence = upper_first(sentence.strip())
+
     return sentence
 
 
@@ -219,33 +231,33 @@ def realize_fact(
 
 _OPENINGS = {
     "how": {
-        "friendly": ["Here's what you do:", "Here's how it works:"],
-        "neutral": ["Here's how:", "The process is:"],
+        "friendly": ["Here's how:", "You can do it like this:"],
+        "neutral": ["Here's how:"],
         "concise": [""],
     },
     "who": {
-        "friendly": ["Let me tell you:", "Here's what I know:"],
+        "friendly": ["", ""],
         "neutral": [""],
         "concise": [""],
     },
     "explain": {
-        "friendly": ["Happy to explain!", "Here's the thing:"],
-        "neutral": ["Here's the answer:"],
+        "friendly": ["", ""],
+        "neutral": [""],
         "concise": [""],
     },
     "define": {
-        "friendly": ["Great question!", "Alright, here goes:"],
-        "neutral": ["By definition,"],
+        "friendly": ["", ""],
+        "neutral": [""],
         "concise": [""],
     },
     "where": {
-        "friendly": ["You can find it", "It's over in", "It's located"],
-        "neutral": ["It's located", "It's found"],
+        "friendly": ["It's located", "It's found"],
+        "neutral": ["It's located"],
         "concise": [""],
     },
     "factual": {
-        "friendly": ["Here's the thing:", "Here's what I know:"],
-        "neutral": ["Here's the answer:"],
+        "friendly": ["", ""],
+        "neutral": [""],
         "concise": [""],
     },
 }
@@ -279,17 +291,10 @@ def get_opening(query: str, config: NLGConfig) -> str:
 
 _CLOSINGS = {
     "friendly": [
-        "Hope that helps!",
-        "Hope that clears things up!",
-        "Let me know if you want to dive deeper!",
-        "Happy to help! Anything else?",
-        "That's the gist of it!",
         "",
         "",
     ],
     "neutral": [
-        "Hope that answers your question.",
-        "Let me know if you need more details.",
         "",
         "",
     ],

@@ -234,12 +234,20 @@ def reset_conversation():
 
 def _extract_math_expression(text):
     """Extract a math expression from natural language."""
+    # Normalize word operators to symbols
+    t = text.lower()
+    t = re.sub(r'\bplus\b', '+', t)
+    t = re.sub(r'\bminus\b', '-', t)
+    t = re.sub(r'\btimes\b', '*', t)
+    t = re.sub(r'\bmultiplied by\b', '*', t)
+    t = re.sub(r'\bdivided by\b', '/', t)
+    t = re.sub(r'\bover\b', '/', t)
     patterns = [
-        r'(?:what is|what\'s|calculate|compute|solve|find)\s+([\d\s\+\-\*\/\^\(\)\.%]+)',
-        r'([\d\s\+\-\*\/\^\(\)\.%]+)\s*(?:equals\?|=\s*\?)',
+        r'(?:what is|what\'s|calculate|compute|solve|find)\s+([\d\s\+\-\*/\^\(\)\.%]+)',
+        r'([\d\s\+\-\*/\^\(\)\.%]+)\s*(?:equals\?|=\s*\?)',
     ]
     for pat in patterns:
-        m = re.search(pat, text.lower())
+        m = re.search(pat, t)
         if m:
             return m.group(1).strip()
     return None

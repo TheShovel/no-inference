@@ -16,29 +16,28 @@ from .util import pick, maybe, lower_first
 _MARKERS: Dict[str, Dict[str, List[str]]] = {
     "elaborate": {
         "friendly": [
-            "What's interesting is that",
-            "Here's the cool part:",
-            "On top of that,",
-            "Not only that, but",
-            "And get this:",
             "Plus,",
+            "Also,",
+            "Interestingly,",
+            "Notably,",
+            "",
+            "",
+            "",
         ],
         "neutral": [
             "In addition,",
             "Furthermore,",
-            "Moreover,",
             "Additionally,",
-            "What's more,",
+            "",
+            "",
         ],
         "concise": ["", "", ""],
     },
     "contrast": {
         "friendly": [
-            "But here's the thing:",
             "However,",
             "That said,",
             "At the same time,",
-            "On the flip side,",
         ],
         "neutral": [
             "However,",
@@ -91,10 +90,9 @@ _MARKERS: Dict[str, Dict[str, List[str]]] = {
     },
     "conclude": {
         "friendly": [
-            "So basically,",
-            "At the end of the day,",
-            "Long story short,",
-            "So yeah,",
+            "In short,",
+            "So overall,",
+            "",
         ],
         "neutral": [
             "In short,",
@@ -181,8 +179,10 @@ def build_discourse_tree(
 ) -> DiscourseTree:
     """Build a discourse tree from a list of facts.
 
-    Groups facts by type into discourse units, orders them for natural flow,
-    and assigns rhetorical relations between units.
+    Assigns markers based on the relationship between consecutive facts:
+    - Same subject → no marker (combine.py handles these naturally)
+    - Different subject → light connector sometimes, based on fact type transition
+    - Never forces a concluding marker — they only appear when the relation fits
 
     Pure function.
     """
@@ -191,40 +191,31 @@ def build_discourse_tree(
 
     root = DiscourseTree(relation="introduce")
 
-    # Group facts by type
-    groups: Dict[str, List[Fact]] = {}
-    for fact in facts:
-        groups.setdefault(fact.fact_type, []).append(fact)
+    for i, fact in enumerate(facts):
+        marker = ""
+        rel: DiscourseRelation = "introduce" if i == 0 else "elaborate"
 
-    # Order groups by priority
-    ordered_types = sorted(groups.keys(), key=lambda t: _FACT_TYPE_ORDER.index(t) if t in _FACT_TYPE_ORDER else 99)
+        if i > 0:
+            prev = facts[i - 1]
+            same_subj = fact.subject.lower().strip() == prev.subject.lower().strip()
 
-    prev_type = None
-    for i, ftype in enumerate(ordered_types):
-        group_facts = groups[ftype]
-
-        # Determine relation from previous group
-        if i == 0:
-            relation: DiscourseRelation = "introduce"
-        else:
-            relation = _transition_relation(prev_type or "", ftype, i, len(ordered_types))
+            if not same_subj:
+                # Different subject — pick a relation based on type transition
+                rel = _transition_relation(prev.fact_type, fact.fact_type, i, len(facts))
+                # Only use markers ~35% of the time (at temp>0) and not for "introduce"
+                if config.temperature > 0.0 and rel != "introduce" and maybe(0.35):
+                    marker = get_marker(rel, config)
 
         unit = DiscourseUnit(
-            relation=relation,
-            facts=group_facts,
-            marker="" if i == 0 else get_marker(relation, config),
+            relation=rel,
+            facts=[fact],
+            marker=marker,
         )
         child = DiscourseTree(
-            relation=relation,
+            relation=rel,
             unit=unit,
-            paragraph_break=(i > 0 and relation in ("contrast", "compare")),
         )
         root.add_child(child)
-        prev_type = ftype
-
-    # If there's only one type and one fact, the root IS the leaf
-    if len(root.children) == 1 and root.children[0].is_leaf():
-        root = root.children[0]
 
     return root
 

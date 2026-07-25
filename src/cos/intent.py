@@ -43,6 +43,29 @@ def detect_intent(query):
     if any(p in q for p in follow_up_patterns):
         return 'follow_up'
 
+    # ── Math expression (before factual, since "what is X times Y" matches both) ──
+    word_problem_keywords = [
+        'how many', 'how much', 'total', 'altogether', 'per ', 'each',
+        'calculate', 'how far',
+        'how long', 'how old', 'many dollars', 'what percentage', 'what fraction',
+        'miles', 'kilometers', 'gallons', 'liters', 'hours', 'minutes',
+        'per day', 'per hour', 'per week', 'per year', 'per month',
+        'than', 'remaining', 'left over', 'sold', 'bought', 'costs',
+        'profit', 'loss', 'discount', 'interest', 'rate',
+        'dozen', 'dozens', 'score', 'times as many', 'ratio',
+        'startup invests', 'total cost', 'total amount',
+        'vertices', 'area of the triangle', 'probability'
+    ]
+    has_number = bool(re.search(r'\d+', q)) or any(w in q.split() for w in
+        ['one','two','three','four','five','six','seven','eight','nine','ten',
+         'eleven','twelve','dozen','dozens','half','third','quarter'])
+    # Pure arithmetic: "25 times 4 plus 10" or "2 + 3 * 4"
+    if has_number:
+        if re.search(r'\d+\s+(?:times|plus|minus|divided\s+by|multiplied\s+by)\s+\d+', q):
+            return 'math'
+        if re.search(r'\d\s*[+\-*/^]\s*\d', q) and not any(w in q for w in word_problem_keywords):
+            return 'math'
+
     # ── Factual knowledge detection (before word problems) ───────────────
     factual_knowledge_patterns = [
         r'what\s+is\s+the\s+(?:smallest|largest|biggest|tallest|longest|deepest|oldest|newest|fastest|slowest|highest|lowest)',
@@ -60,25 +83,8 @@ def detect_intent(query):
         if re.search(pat, q):
             return 'factual'
 
-    # ── Word problem detection ──────────────────────────────────────────
-    word_problem_keywords = [
-        'how many', 'how much', 'total', 'altogether', 'per ', 'each',
-        'calculate', 'how far',
-        'how long', 'how old', 'many dollars', 'what percentage', 'what fraction',
-        'miles', 'kilometers', 'gallons', 'liters', 'hours', 'minutes',
-        'per day', 'per hour', 'per week', 'per year', 'per month',
-        'than', 'remaining', 'left over', 'sold', 'bought', 'costs',
-        'profit', 'loss', 'discount', 'interest', 'rate',
-        'dozen', 'dozens', 'score', 'times as many', 'ratio',
-        'startup invests', 'total cost', 'total amount',
-        'vertices', 'area of the triangle', 'probability'
-    ]
-
-    has_number = bool(re.search(r'\d+', q)) or any(w in q.split() for w in
-        ['one','two','three','four','five','six','seven','eight','nine','ten',
-         'eleven','twelve','dozen','dozens','half','third','quarter'])
-
-    is_simple_math = bool(re.match(r'^[\d\s+\-*/^()\.]+$', q.replace('?','').strip()))
+    # ── Word problem detection (after factual) ──────────────────────────
+    is_simple_math = bool(re.match(r'^[\d\s+\-*/^().]+$', q.replace('?','').strip()))
 
     if has_number and not is_simple_math:
         is_word_problem = any(w in q for w in word_problem_keywords)
@@ -98,6 +104,9 @@ def detect_intent(query):
 
     # ── Math expression ───────────────────────────────────────────────────
     if re.search(r'\d\s*[+\-*/^]\s*\d', q) and not any(w in q for w in word_problem_keywords):
+        return 'math'
+    # Also catch "what is X times/plus/minus/divided by Y"
+    if re.search(r'\d+\s+(?:times|plus|minus|divided\s+by|multiplied\s+by)\s+\d+', q) and not any(w in q for w in word_problem_keywords):
         return 'math'
 
     # ── Roleplay ─────────────────────────────────────────────────────────

@@ -105,9 +105,14 @@ def apply_pronouns(text: str, topic: str, config: NLGConfig, source_text: str = 
             prev_end = m.end()
             replaced += 1
         else:
-            before = text[max(0, m.start() - 6):m.start()].strip()
+            before = text[max(0, m.start() - 12):m.start()].strip()
             bad_prefixes = ('the', 'a', 'an', 'this', 'that', 'these', 'those')
-            if before.lower().split() and before.lower().split()[-1] in bad_prefixes:
+            # Also never replace the topic after a preposition ("capital of France" not "capital of it")
+            prep_prefixes = ('of ', 'in ', 'at ', 'by ', 'with ', 'for ', 'from ', 'to ', 'about ', 'near ', 'on ')
+            before_words = before.lower().split()
+            last_word = before_words[-1] if before_words else ''
+            is_after_prep = any(last_word.startswith(p.rstrip()) for p in prep_prefixes) if last_word else False
+            if (before.lower().split() and before.lower().split()[-1] in bad_prefixes) or is_after_prep:
                 result_parts.append(text[prev_end:m.end()])
             else:
                 result_parts.append(text[prev_end:m.start()])
@@ -163,14 +168,10 @@ _FILLERS = {
 }
 
 _OPENER_VARIETY = [
-    "What's interesting is that",
-    "Here's the thing:",
-    "The thing about it is",
-    "One thing to note is that",
-    "Fun fact:",
     "Interestingly,",
-    "Notably,",
-    "As it turns out,",
+    "",
+    "",
+    "",
 ]
 
 # Words that indicate a sentence already has a discourse opener
@@ -179,6 +180,18 @@ _ALREADY_OPENED_WORDS = {
     'plus', 'so', 'then', 'also', 'nevertheless', 'nonetheless',
     'consequently', 'therefore', 'thus', 'hence',
 }
+
+# Words that indicate a sentence already has a discourse marker,
+# even when followed by a comma (e.g. "Notably, Paris...")
+_ALREADY_OPENED_PREFIXES = [
+    'Plus,', 'Not only', 'So basically', 'And get',
+    'Also,', 'Notably,', 'Interestingly,', 'In addition,',
+    'Furthermore,', 'Moreover,', 'Additionally,', 'What\'s more,',
+    'However,', 'That said,', 'In short,', 'Overall,',
+    'For example,', 'For instance,', 'Similarly,',
+    'First,', 'Then,', 'Next,', 'After that,', 'Finally,',
+    'Because of that,', 'As a result,', 'Consequently,',
+]
 
 
 def enhance_fluency(
@@ -215,7 +228,7 @@ def enhance_fluency(
         for s in sents[1:]:
             first_word = s.split()[0].lower().rstrip(',:;') if s.split() else ''
             already_opened = first_word in _ALREADY_OPENED_WORDS or any(
-                s.startswith(m) for m in ['And get', 'Plus,', 'Not only', 'So basically']
+                s.startswith(m) for m in _ALREADY_OPENED_PREFIXES
             )
             if len(s) > 25 and not already_opened and maybe(profile.get("opener_variety_rate", 0.2)):
                 opener = pick(_OPENER_VARIETY, config.temperature)

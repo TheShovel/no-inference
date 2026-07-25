@@ -93,7 +93,9 @@ def naturalize(
             # Add discourse marker
             marker = unit.marker if (j == 0 and unit.marker) else ""
             if marker:
-                sentence = marker + " " + lower_first(sentence)
+                # Capitalize the first word after the marker
+                first_word = sentence.split()[0] if sentence.split() else ""
+                sentence = marker + " " + upper_first(sentence)
 
             realized_sentences.append(sentence)
             state.sentence_count += 1

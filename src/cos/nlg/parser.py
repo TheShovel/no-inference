@@ -142,10 +142,22 @@ def parse_facts(information: str, topic: str = "") -> List[Fact]:
             facts.append(fact)
         else:
             # Fallback: create an unknown-type fact with the full sentence as object
+            # If the object starts with "The " + topic, strip it to avoid duplication
+            obj = orig.rstrip('.,;:')
+            topic_title = topic.strip().title() if topic else ""
+            if topic_title and obj.lower().startswith('the ' + topic_title.lower()):
+                # Strip "The Topic" prefix from object to avoid "Eiffel Tower is The Eiffel Tower is..."
+                obj = obj[len('the ' + topic_title):].strip()
+                if obj.startswith(('is ', 'are ', 'was ', 'were ')):
+                    # If what remains starts with a verb, use it directly
+                    pass
+                else:
+                    # Otherwise, keep the full sentence
+                    obj = orig.rstrip('.,;:')
             facts.append(Fact(
                 subject=topic or "",
                 predicate="is",
-                obj=orig.rstrip('.,;:'),
+                obj=obj,
                 fact_type="unknown",
                 original=orig,
                 certainty=0.4,

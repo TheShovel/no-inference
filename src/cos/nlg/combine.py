@@ -99,6 +99,11 @@ def combine_by_coordination(sentences: List[str], config: NLGConfig) -> List[str
                 curr_body = curr_body.lstrip(', ').strip()
 
         if same_subj and curr_body:
+            # Add rate-limiting: only combine occasionally to avoid "which is" overuse
+            # At temp=0, always combine for determinism
+            if config.temperature > 0.0 and not maybe(0.25):
+                result.append(curr)
+                continue
             # Only combine if the current sentence's body starts with a verb
             # (is/are/was/were/has/have)
             if curr_body.startswith(('is ', 'are ', 'was ', 'were ', 'has ', 'have ')):
@@ -133,13 +138,17 @@ def combine_by_relative_clause(sentences: List[str], config: NLGConfig) -> List[
         prev_subj = _get_subject(result[i - 1])
         curr_subj = _get_subject(result[i])
 
-        if prev_subj and curr_subj and prev_subj.lower() == curr_subj.lower() and maybe(0.4):
-            curr_body = result[i][len(curr_subj):].strip().lstrip(',').strip()
-            rel_clause = f", which {_lower_clause(curr_body)}"
+        if prev_subj and curr_subj and prev_subj.lower() == curr_subj.lower():
+            # Only use relative clauses at temp>0 and with low probability
+            if config.temperature > 0.0 and maybe(0.15):
+                curr_body = result[i][len(curr_subj):].strip().lstrip(',').strip()
+                rel_clause = f", which {_lower_clause(curr_body)}"
 
-            if result[i - 1].endswith('.'):
-                result[i - 1] = result[i - 1][:-1] + rel_clause + "."
-                result.pop(i)
+                if result[i - 1].endswith('.'):
+                    result[i - 1] = result[i - 1][:-1] + rel_clause + "."
+                    result.pop(i)
+                else:
+                    i += 1
             else:
                 i += 1
         else:
