@@ -265,12 +265,7 @@ def _solve_word_problem(question):
     """Solve a word problem using the math solver."""
     try:
         sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'benchmark'))
-        from cos_orchestrator import solve_word_problem as wp
-        return wp(question)
-    except Exception:
-        pass
-    try:
-        from cos.math_solver import solve_word_problem as wp
+        from math_solver import solve_word_problem as wp
         return wp(question)
     except Exception:
         return None

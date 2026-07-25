@@ -89,16 +89,9 @@ class COSTUI:
             self.detect_intent = detect_intent
             self.reset_conversation = reset_conversation
         except ImportError:
-            # Fallback: try old monolithic path
-            try:
-                from cos_orchestrator import process_query, detect_intent
-                self.process_query = process_query
-                self.detect_intent = detect_intent
-                self.reset_conversation = lambda: None
-            except ImportError:
-                print(f"{Colors.RED}Error: Could not import orchestrator{Colors.RESET}")
-                print(f"Make sure src/benchmark/orchestrator.py exists")
-                sys.exit(1)
+            print(f"{Colors.RED}Error: Could not import cos.engine{Colors.RESET}")
+            print(f"Make sure src/cos/engine.py exists")
+            sys.exit(1)
 
     def clear_screen(self):
         os.system('clear' if os.name == 'posix' else 'cls')

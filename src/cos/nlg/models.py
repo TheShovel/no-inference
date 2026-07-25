@@ -109,9 +109,10 @@ class Entity:
         """Get the subject pronoun for this entity.
 
         Algorithmic — no hardcoded name lists:
-          1. Use gender inferred from source text if available
+          1. Use gender inferred from source text if available (most reliable)
           2. Check plural/uncountable
-          3. Person-name heuristic (multi-word capitalized -> they)
+          3. Person-name heuristic (multi-word capitalized -> they) — only if
+             the entity doesn't look like a place/thing
           4. Default to it
         """
         if self.gender == "masculine":
@@ -123,8 +124,18 @@ class Entity:
         if self.is_uncountable:
             return "it"
         # Person name heuristic: multi-word, all parts capitalized
+        # Only applies if the name looks like a person (not a place/thing)
         parts = self.canonical_name.split()
         if len(parts) >= 2 and all(p[0].isupper() for p in parts if p):
+            # Check if it looks like a place (contains "Reef", "Island", "River", "Mountain", etc.)
+            place_indicators = {'reef', 'island', 'river', 'mountain', 'lake', 'ocean', 'sea',
+                                'bay', 'gulf', 'forest', 'desert', 'valley', 'plain', 'park',
+                                'city', 'town', 'state', 'country', 'continent', 'planet',
+                                'star', 'galaxy', 'nebula', 'asteroid', 'comet'}
+            last_word = parts[-1].lower().strip('.,;:!?')
+            if last_word in place_indicators:
+                return "it"
+            # Looks like a person name
             return "they"  # gender-neutral singular they
         if self.canonical_name.lower().endswith("s") and not self.canonical_name.lower().endswith("ss"):
             return "they"

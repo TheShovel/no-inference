@@ -30,7 +30,10 @@ _SVO_PATTERN = re.compile(
     r'use[s]?|require[s]?|need[s]?|'
     r'lie[s]?|occur[s]?|live[s]?|'
     r'work(?:ed)?|stud(?:y|ied)|play[s]?|serv(?:e|ed)?|'
-    r'allow[s]?|enable[s]?|help[s]?|make[s]?|made|take[s]?|took|given?|give[s]?)\s+'
+    r'allow[s]?|enable[s]?|help[s]?|make[s]?|made|take[s]?|took|given?|give[s]?|'
+    r'orbit[s]?|rotate[s]?|revolve[s]?|circle[s]?|travel[s]?|move[s]?|'
+    r'remain[s]?|stay[s]?|keep[s]?|last[s]?|continue[s]?|'
+    r'begin[s]?|start[s]?|stop[s]?|end[s]?|finish[s]?)\s+'
     r'(.+)',
     re.IGNORECASE,
 )

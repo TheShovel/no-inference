@@ -270,12 +270,11 @@ def _solve_math(expr):
 
 
 def _solve_word_problem(question):
-    """Solve a word problem. Imported from cos_orchestrator.py (legacy)."""
+    """Solve a word problem using the math solver."""
     try:
-        # Import dynamically to avoid circular imports
-        from cos_orchestrator import solve_word_problem as wp
+        from math_solver import solve_word_problem as wp
         return wp(question)
-    except ImportError:
+    except Exception:
         return None
 
 
