@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcos_debug.a CMakeFiles/cos_debug.dir/debug.c.o
+/usr/bin/ranlib libcos_debug.a

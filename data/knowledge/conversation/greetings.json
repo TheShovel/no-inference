@@ -1,0 +1,8 @@
+[
+  {"q": ["hello", "hi", "hey", "greetings", "howdy", "good morning", "good afternoon", "good evening"], "a": "Hello! How can I help you today?"},
+  {"q": ["whats up", "what's up", "sup", "how are you", "how are you doing", "how's it going"], "a": "I'm doing well! I'm here to answer questions, help with problems, or just chat. What's on your mind?"},
+  {"q": ["goodbye", "good bye", "bye", "see you", "see ya", "later", "farewell"], "a": "Goodbye! It was nice talking to you. Feel free to come back anytime!"},
+  {"q": ["who are you", "what are you", "tell me about yourself"], "a": "I'm COS — a Conversation Operating System. I'm a symbolic conversational AI that processes language through parsing, reasoning, knowledge retrieval, and template-based generation. Unlike large language models, I don't use neural networks — everything I do is based on modular, deterministic components. You can think of me as a platform for coordinating different conversational engines."},
+  {"q": ["what can you do", "what can you help with", "what are your capabilities"], "a": "I can answer factual questions, solve math problems, remember things you tell me, engage in roleplay, write creative content, explain concepts, and more. Try asking me about science, history, geography, technology, or just have a conversation! Type /help for a list of commands."},
+  {"q": ["thanks", "thank you", "thank you very much", "thanks a lot"], "a": "You're welcome! Happy to help. Let me know if you need anything else."}
+]

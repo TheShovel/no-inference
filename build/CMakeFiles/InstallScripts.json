@@ -1,0 +1,26 @@
+{
+	"InstallScripts" : 
+	[
+		"/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/cmake_install.cmake",
+		"/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/src/core/cmake_install.cmake",
+		"/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/src/memory/cmake_install.cmake",
+		"/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/src/string/cmake_install.cmake",
+		"/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/src/graph/cmake_install.cmake",
+		"/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/src/semantic/cmake_install.cmake",
+		"/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/src/parser/cmake_install.cmake",
+		"/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/src/planner/cmake_install.cmake",
+		"/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/src/reasoning/cmake_install.cmake",
+		"/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/src/knowledge/cmake_install.cmake",
+		"/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/src/language/cmake_install.cmake",
+		"/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/src/grammar/cmake_install.cmake",
+		"/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/src/generator/cmake_install.cmake",
+		"/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/src/tools/cmake_install.cmake",
+		"/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/src/plugins/cmake_install.cmake",
+		"/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/src/database/cmake_install.cmake",
+		"/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/src/conversation/cmake_install.cmake",
+		"/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/src/debug/cmake_install.cmake",
+		"/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/src/knowledge_loader/cmake_install.cmake",
+		"/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/src/benchmark/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

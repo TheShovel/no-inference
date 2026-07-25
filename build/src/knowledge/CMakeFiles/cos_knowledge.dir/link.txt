@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcos_knowledge.a CMakeFiles/cos_knowledge.dir/knowledge.c.o
+/usr/bin/ranlib libcos_knowledge.a

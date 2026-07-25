@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcos_parser.a CMakeFiles/cos_parser.dir/parser.c.o CMakeFiles/cos_parser.dir/tokenizer.c.o
+/usr/bin/ranlib libcos_parser.a

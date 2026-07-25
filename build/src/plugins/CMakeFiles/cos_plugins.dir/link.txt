@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcos_plugins.a CMakeFiles/cos_plugins.dir/plugins.c.o
+/usr/bin/ranlib libcos_plugins.a

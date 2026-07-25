@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcos_database.a CMakeFiles/cos_database.dir/database.c.o
+/usr/bin/ranlib libcos_database.a

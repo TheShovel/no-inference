@@ -1,0 +1,74 @@
+[
+  {
+    "id": "agentic-research-001",
+    "triggers": ["research", "research about", "research on", "look into", "look up", "find information about", "gather information on"],
+    "context_role": "topic",
+    "template": "Let me share what I know about {context} based on available knowledge.\n\n**Overview of {context}**\n{context} is a well-established subject with a substantial body of knowledge behind it. The key aspects include fundamental principles, historical development, and practical applications.\n\n**Key Findings:**\n1. {context} rests on principles that have been developed and refined over time\n2. There are multiple approaches to understanding and applying it\n3. Current understanding continues to evolve with new insights\n\n**Important Considerations:**\nWhen researching {context}, it's valuable to consult multiple sources and perspectives. Different experts may emphasize different aspects, and the field as a whole benefits from diverse viewpoints.\n\n**Next Steps for Your Research:**\nIf you're conducting research on {context}, I'd recommend starting with the foundational texts and then exploring specific areas that align with your interests. Would you like me to suggest specific directions for your research?",
+    "fallback": "I can help research a topic! What subject would you like me to look into?",
+    "style": ["informative", "structured"],
+    "response_length": "long"
+  },
+  {
+    "id": "agentic-plan-001",
+    "triggers": ["make a plan", "create a plan", "develop a plan", "plan for", "plan out", "strategy for", "come up with a plan"],
+    "context_role": "topic",
+    "template": "Let me help you develop a plan for {context}.\n\n**Goal:** Effectively engage with {context}\n\n**Phase 1: Understanding the Landscape**\n- Research and gather information about {context}\n- Identify key stakeholders, factors, and constraints\n- Clarify your objectives and success criteria\n\n**Phase 2: Strategy Development**\n- Outline the main approaches available\n- Evaluate pros and cons of each option\n- Select the most appropriate strategy\n\n**Phase 3: Implementation**\n- Break the plan into actionable steps\n- Set realistic timelines and milestones\n- Allocate necessary resources\n\n**Phase 4: Monitoring and Adjustment**\n- Track progress against milestones\n- Identify and address obstacles\n- Adjust the plan as needed based on feedback\n\n**Timeline Considerations:**\nA reasonable timeline for {context} depends on the scope and complexity of what you're trying to achieve. I'd recommend starting with smaller, achievable goals and building momentum.\n\nWould you like me to elaborate on any phase of this plan?",
+    "fallback": "I can help make a plan! What goal or project would you like me to help you plan for?",
+    "style": ["structured", "actionable"],
+    "response_length": "long"
+  },
+  {
+    "id": "agentic-brainstorm-001",
+    "triggers": ["brainstorm", "brainstorm ideas", "come up with ideas", "generate ideas for", "think of ideas for", "ideate"],
+    "context_role": "topic",
+    "template": "Let's brainstorm some ideas about {context}! Here are several angles to consider:\n\n**Idea 1: The Foundational Approach**\nStart by identifying the core principles of {context} and build outward. What are the non-negotiable elements? What flows naturally from them?\n\n**Idea 2: The Connection Approach**\nLook at how {context} connects to other fields. What happens when you combine {context} with related domains? Often the most innovative ideas come from intersections.\n\n**Idea 3: The Problem-Solving Approach**\nWhat problems does {context} help solve? Are there new problems it could address? Sometimes reframing the question leads to breakthrough ideas.\n\n**Idea 4: The Future-Oriented Approach**\nWhere is {context} heading? What trends are emerging? Thinking about future possibilities can spark creative ideas.\n\n**Idea 5: The Practical Application Approach**\nHow can {context} be applied in everyday situations? Practical constraints often inspire creative solutions.\n\nThese are starting points to get your creative thinking flowing! Which direction resonates with you? I'm happy to explore any of these ideas further.",
+    "fallback": "Let's brainstorm! What topic or problem would you like to generate ideas about?",
+    "style": ["creative", "collaborative"],
+    "response_length": "long"
+  },
+  {
+    "id": "agentic-critique-001",
+    "triggers": ["critique", "critique my", "review my", "evaluate my", "give feedback on", "assess my", "what do you think of my"],
+    "context_role": "topic",
+    "template": "I'd be happy to provide thoughtful feedback on {context}.\n\n**Overall Impression:**\n{context} demonstrates a solid foundation and thoughtful approach. The effort and consideration put into it are evident.\n\n**Strengths:**\n1. Clear framing and organization\n2. Good coverage of key aspects\n3. Thoughtful consideration of important factors\n\n**Areas for Consideration:**\n1. Some aspects could benefit from deeper exploration\n2. Consider addressing potential counterpoints or alternative perspectives\n3. Additional concrete examples would strengthen the presentation\n\n**Suggestions for Improvement:**\n- Look for opportunities to make connections more explicit\n- Consider your audience's perspective and what they might find most valuable\n- Think about how to make the content more engaging or accessible\n\n**Overall Assessment:**\nThis is a commendable effort with solid foundations. With some refinement and deeper exploration of certain areas, it could be even stronger.\n\nWould you like me to elaborate on any of these points or discuss specific aspects in more detail?",
+    "fallback": "I'd be happy to provide feedback! What would you like me to critique or review?",
+    "style": ["constructive", "analytical"],
+    "response_length": "long"
+  },
+  {
+    "id": "agentic-teach-001",
+    "triggers": ["teach me about", "teach me", "give me a lesson on", "tutorial on", "lesson on", "i want to learn about"],
+    "context_role": "topic",
+    "template": "I'd be happy to teach you about {context}! Let's start with a structured lesson.\n\n**Lesson: Introduction to {context}**\n\n**Objective:** By the end of this lesson, you'll understand the fundamentals of {context} and be able to engage with it confidently.\n\n**Part 1: What Is {context}?**\n{context} is a fascinating subject that encompasses [core ideas]. Understanding it begins with grasping its basic definition and scope.\n\n**Part 2: Why Does It Matter?**\n{context} is important because it helps us [key benefit]. The principles behind it have influenced many areas and continue to shape how we think about related topics.\n\n**Part 3: Core Concepts**\nLet's explore the key ideas:\n- **Concept 1**: The fundamental principle that underpins everything else\n- **Concept 2**: How the different elements work together\n- **Concept 3**: Practical applications that bring theory to life\n\n**Part 4: Check Your Understanding**\nHere's a question to think about: How might {context} apply to a situation you encounter in daily life?\n\n**Next Steps:**\nOnce you're comfortable with these basics, we can explore more advanced topics. What aspect of {context} would you like to dive deeper into?",
+    "fallback": "I'm happy to teach you! What subject would you like to learn about?",
+    "style": ["educational", "structured", "patient"],
+    "response_length": "long"
+  },
+  {
+    "id": "agentic-debate-001",
+    "triggers": ["debate", "argue for", "argue against", "let's debate", "convince me", "make the case for", "make the case against"],
+    "context_role": "topic",
+    "template": "Let me present a reasoned perspective on {context}.\n\n**Position:** A thoughtful examination of {context} reveals important considerations that support a nuanced understanding.\n\n**Key Arguments:**\n1. **First Principle:** {context} rests on foundations that have been carefully developed and tested over time\n2. **Practical Evidence:** Real-world applications demonstrate the validity and utility of this framework\n3. **Logical Consistency:** The internal logic of {context} holds up under scrutiny\n\n**Addressing Counterarguments:**\nIt's fair to consider alternative viewpoints. Some might argue that [counterargument]. However, this perspective [response to counterargument].\n\n**Conclusion:**\nWhile no perspective has a monopoly on truth, the evidence and reasoning around {context} strongly support [conclusion]. That said, ongoing dialogue and examination are always valuable.\n\nWhat counterarguments would you like to raise? I enjoy a good intellectual discussion!",
+    "fallback": "I'm ready to debate! What topic or position would you like me to argue for or against?",
+    "style": ["argumentative", "reasoned"],
+    "response_length": "long"
+  },
+  {
+    "id": "agentic-advise-001",
+    "triggers": ["give me advice on", "advise me about", "what should i do about", "what do you recommend for", "any advice on"],
+    "context_role": "topic",
+    "template": "I'd be happy to offer some advice regarding {context}.\n\n**Understanding Your Situation**\nWhen it comes to {context}, the best approach depends on your specific goals, resources, and constraints. Let me offer some general guidance that you can adapt to your situation.\n\n**Recommendations:**\n1. **Start with Clarity** — Before taking action, make sure you have a clear understanding of what you want to achieve with {context}\n2. **Build on Fundamentals** — Focus on mastering the core principles before moving to advanced aspects\n3. **Learn from Others** — See how others have approached {context} and what lessons can be applied to your situation\n4. **Iterate and Adapt** — Don't expect to get everything right immediately. Plan to learn and adjust as you go\n\n**Things to Keep in Mind:**\n- Progress in {context} often comes steadily, not all at once\n- It's normal to encounter challenges — they're opportunities to learn\n- Everyone's journey with {context} is different, so focus on your own path\n\nWould you like me to elaborate on any of these recommendations or discuss your specific situation in more detail?",
+    "fallback": "I'd be happy to offer advice! What situation or topic would you like guidance on?",
+    "style": ["advisory", "supportive"],
+    "response_length": "long"
+  },
+  {
+    "id": "agentic-analyze-001",
+    "triggers": ["analyze", "analyze this", "break down", "deconstruct", "analyze the", "examine", "dissect"],
+    "context_role": "topic",
+    "template": "Let me analyze {context} systematically.\n\n**Object of Analysis:** {context}\n\n**Key Components:**\n{context} can be broken down into several interrelated elements. Each plays a distinct role in the overall system.\n\n**Relationships and Interactions:**\nThe components of {context} don't exist in isolation. They interact in complex ways, creating emergent properties that aren't obvious from examining any single element alone.\n\n**Strengths and Weaknesses:**\n**Strengths:**\n- Well-established theoretical foundation\n- Broad applicability across domains\n- Ongoing development and refinement\n\n**Limitations:**\n- Some aspects remain incompletely understood\n- Practical application can be challenging\n- Different frameworks offer competing perspectives\n\n**Overall Assessment:**\n{context} stands as a significant and valuable framework for understanding its domain. While not without limitations, its strengths make it an essential tool for anyone working in or studying related fields.\n\nWould you like me to analyze a specific aspect in more depth?",
+    "fallback": "I can analyze something for you! What subject would you like me to break down and examine?",
+    "style": ["analytical", "structured"],
+    "response_length": "long"
+  }
+]

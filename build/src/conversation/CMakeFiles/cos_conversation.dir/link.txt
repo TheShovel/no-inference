@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcos_conversation.a CMakeFiles/cos_conversation.dir/conversation.c.o
+/usr/bin/ranlib libcos_conversation.a

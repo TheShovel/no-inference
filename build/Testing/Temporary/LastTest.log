@@ -1,0 +1,188 @@
+Start testing: Jul 25 11:49 EEST
+----------------------------------------------------------
+1/6 Testing: test_core
+1/6 Test: test_core
+Command: "/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/tests/cos_test_core"
+Directory: /run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/tests
+"test_core" start time: Jul 25 11:49 EEST
+Output:
+----------------------------------------------------------
+═══ Core Tests ═══
+
+[String View]
+  PASS: sv from cstr
+  PASS: empty sv
+  PASS: sv eq
+  PASS: sv neq
+  PASS: sv cmp eq
+  PASS: sv cmp lt
+  PASS: sv cmp gt
+  PASS: substr
+  PASS: trim
+  PASS: split found
+  PASS: split before
+  PASS: split after
+  PASS: hash consistent
+  PASS: hash different
+[Status Codes]
+  PASS: OK string
+  PASS: error string
+  PASS: not impl string
+
+Results: 17 passed, 0 failed
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"test_core" end time: Jul 25 11:49 EEST
+"test_core" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/6 Testing: test_memory
+2/6 Test: test_memory
+Command: "/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/tests/cos_test_memory"
+Directory: /run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/tests
+"test_memory" start time: Jul 25 11:49 EEST
+Output:
+----------------------------------------------------------
+═══ Memory Tests ═══
+
+[Arena Allocator]
+  PASS: arena created
+  PASS: arena context
+  PASS: arena alloc 64B
+  PASS: arena alloc 128B
+  PASS: arena distinct
+  PASS: arena after reset
+[Pool Allocator]
+  PASS: pool created
+  PASS: pool alloc 64B
+  PASS: pool alloc 64B #2
+  PASS: pool distinct
+  PASS: pool reuse after free
+[Stack Allocator]
+  PASS: stack created
+  PASS: stack alloc 64B
+  PASS: stack alloc 128B
+  PASS: stack alloc after mark
+  PASS: stack alloc after rewind
+
+Results: 16 passed, 0 failed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"test_memory" end time: Jul 25 11:49 EEST
+"test_memory" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/6 Testing: test_string
+3/6 Test: test_string
+Command: "/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/tests/cos_test_string"
+Directory: /run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/tests
+"test_string" start time: Jul 25 11:49 EEST
+Output:
+----------------------------------------------------------
+═══ String Tests ═══
+
+[String Interning]
+  PASS: table created
+  PASS: unique IDs
+  PASS: duplicate same ID
+  PASS: lookup correct
+  PASS: find exists
+  PASS: find missing
+  PASS: empty string
+  PASS: count
+  PASS: memory > 0
+
+Results: 9 passed, 0 failed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"test_string" end time: Jul 25 11:49 EEST
+"test_string" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/6 Testing: test_graph
+4/6 Test: test_graph
+Command: "/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/tests/cos_test_graph"
+Directory: /run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/tests
+"test_graph" start time: Jul 25 11:49 EEST
+Output:
+----------------------------------------------------------
+═══ Graph Tests ═══
+
+[Graph Basic]
+  PASS: graph created
+  PASS: nodes added
+  PASS: count
+  PASS: has node
+  PASS: !has node
+  PASS: edges added
+  PASS: remove node
+  PASS: !has node after remove
+[Graph Traversal]
+  PASS: BFS count
+
+Results: 9 passed, 0 failed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"test_graph" end time: Jul 25 11:49 EEST
+"test_graph" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/6 Testing: test_parser
+5/6 Test: test_parser
+Command: "/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/tests/cos_test_parser"
+Directory: /run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/tests
+"test_parser" start time: Jul 25 11:49 EEST
+Output:
+----------------------------------------------------------
+═══ Parser Tests ═══
+
+[Parser Basic]
+  PASS: parser created
+  PASS: parse OK
+  PASS: graph created
+  PASS: has root
+
+Results: 4 passed, 0 failed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"test_parser" end time: Jul 25 11:49 EEST
+"test_parser" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/6 Testing: test_conversation
+6/6 Test: test_conversation
+Command: "/run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/tests/cos_test_conversation"
+Directory: /run/media/dumbass/425873d7-4b87-45d6-b272-2c4c2a5ef461/github/no-inference/build/tests
+"test_conversation" start time: Jul 25 11:49 EEST
+Output:
+----------------------------------------------------------
+═══ Conversation Tests ═══
+
+[Conversation Basic]
+  PASS: conversation created
+  PASS: process OK
+  PASS: has response
+  Response: You like Python.
+  PASS: second turn OK
+  PASS: turn count
+
+Results: 5 passed, 0 failed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"test_conversation" end time: Jul 25 11:49 EEST
+"test_conversation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jul 25 11:49 EEST
