@@ -1,0 +1,322 @@
+[
+  {
+    "id": "status-definition-001",
+    "triggers": [
+      "What is the status of this?",
+      "What does this status mean?",
+      "Can you explain the current state?"
+    ],
+    "context_role": "topic",
+    "template": "Essentially, the current status of {context} refers to its present condition or stage in a defined process. It serves as a snapshot that tells us where we stand right now, whether it's 'pending,' 'active,' or 'completed,' allowing us to determine if the next steps can be initiated or if there are blockers in the way.",
+    "fallback": "I'm not sure which specific item you're referring to, but generally, a 'status' describes the current state or progress of a particular task or entity.",
+    "style": [
+      "informative",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "status-update-002",
+    "triggers": [
+      "Any updates on this?",
+      "Is there a status change?",
+      "What's the latest?"
+    ],
+    "context_role": "topic",
+    "template": "I've checked the latest information regarding {context}. The current status has shifted, and here is the breakdown of the most recent changes and what they imply for the overall timeline. It looks like we are moving in the right direction, though a few details are still being finalized.",
+    "fallback": "I don't have a specific topic to track right now. Could you tell me what you'd like an update on?",
+    "style": [
+      "conversational",
+      "formal"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "status-comparison-003",
+    "triggers": [
+      "How does this status compare?",
+      "Is this better than the previous status?",
+      "What's the difference between these states?"
+    ],
+    "context_role": "topic",
+    "template": "When comparing the current status of {context} to its previous state, the most notable difference is the shift in efficiency and stability. While the earlier phase was focused on setup and trial, the current status indicates a transition into a more stable, operational phase with fewer errors and better performance metrics.",
+    "fallback": "I need a bit more context to make a comparison. Which status or topic are we looking at?",
+    "style": [
+      "analytical",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "status-example-004",
+    "triggers": [
+      "Give me an example of this status",
+      "How would this look in real life?",
+      "Can you show a scenario for this?"
+    ],
+    "context_role": "topic",
+    "template": "To give you a concrete example of how {context} works in a real-world scenario: imagine a project management board. If the status is marked as 'In Review,' it means the work is finished, but a supervisor needs to give the green light before it moves to 'Done.' This ensures quality control before finalization.",
+    "fallback": "I'm not sure which status you mean, but typically, a status acts as a label—like 'Shipped' for a package or 'Complete' for a task.",
+    "style": [
+      "educational",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "status-application-005",
+    "triggers": [
+      "How is this status used?",
+      "What's the application of this state?",
+      "Why do we track this?"
+    ],
+    "context_role": "topic",
+    "template": "Tracking the status of {context} is incredibly useful for maintaining transparency and accountability. In professional environments, this application allows teams to identify bottlenecks instantly. By visualizing the status, stakeholders can see exactly where a delay is occurring without needing to hold a meeting for every minor update.",
+    "fallback": "Status tracking is generally used to monitor progress and ensure that nothing falls through the cracks in a workflow.",
+    "style": [
+      "analytical",
+      "formal"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "status-quick-check-006",
+    "triggers": [
+      "Quick status check?",
+      "Status?",
+      "Where are we at?"
+    ],
+    "context_role": "topic",
+    "template": "Right now, {context} is currently in progress. Everything seems to be on track!",
+    "fallback": "I'm not currently tracking a specific topic. What would you like me to check on?",
+    "style": [
+      "casual",
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "status-deep-dive-007",
+    "triggers": [
+      "Can you give me a detailed status report?",
+      "I need a full breakdown of the status",
+      "Explain the status in depth"
+    ],
+    "context_role": "topic",
+    "template": "Let's dive deep into the current status of {context}. First, we have to look at the primary indicators which show a steady progression. Second, we should analyze the secondary dependencies—things that are currently waiting on other tasks. Third, we can evaluate the risk factors that might change this status from 'healthy' to 'at risk.' By analyzing these three layers, we get a comprehensive view of where the project stands, what the immediate milestones are, and how the current state influences the long-term goals. This level of granularity ensures that no detail is overlooked and that the status is a true reflection of reality rather than just a superficial label.",
+    "fallback": "I don't have enough context to provide a detailed report. Please specify the topic or project you are interested in.",
+    "style": [
+      "analytical",
+      "formal"
+    ],
+    "response_length": "long"
+  },
+  {
+    "id": "status-concern-008",
+    "triggers": [
+      "Is the status worrying?",
+      "Should I be concerned about this state?",
+      "Is this status normal?"
+    ],
+    "context_role": "topic",
+    "template": "Regarding the status of {context}, it's important to stay calm but vigilant. While this particular state can sometimes signal a delay, it is often a normal part of the lifecycle. The key is to monitor the trend: if the status remains unchanged for too long, then it becomes a point of concern. For now, it's within the expected parameters.",
+    "fallback": "Without knowing the topic, I can't say if the status is normal. Could you provide more details?",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "status-future-pred-009",
+    "triggers": [
+      "What's the next status?",
+      "Where will this go next?",
+      "What is the future state of this?"
+    ],
+    "context_role": "topic",
+    "template": "Based on the current trajectory of {context}, the next logical status will likely be 'Final Review' or 'Deployment.' Once the current requirements are met, the system is designed to automatically transition to the next phase, provided that all quality gates are passed. We can expect this transition to happen shortly.",
+    "fallback": "I can't predict the next step without knowing what we are currently tracking. What is the topic?",
+    "style": [
+      "informative",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "status-creative-analogy-010",
+    "triggers": [
+      "Explain this status using an analogy",
+      "Give me a metaphor for this state",
+      "Make this status easy to understand"
+    ],
+    "context_role": "topic",
+    "template": "Think of the status of {context} like a traffic light. Right now, we're at a yellow light. We aren't completely stopped, but we are slowing down to ensure the intersection is clear before we accelerate into the green light phase. It's a cautious transition designed to prevent accidents and ensure a smooth ride to the finish line.",
+    "fallback": "If you tell me what you're asking about, I can come up with a fun analogy to explain its current status!",
+    "style": [
+      "creative",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "cos-definition-001",
+    "triggers": [
+      "What is COS?",
+      "Define COS",
+      "Can you explain what COS is?"
+    ],
+    "context_role": "topic",
+    "template": "At its core, {context} refers to a fundamental concept often used in mathematics, physics, or specific business frameworks. Depending on the field, it typically describes a specific ratio or a structured system of operation. To give you a better understanding, I can dive deeper into how {context} functions within a specific industry or a mathematical equation. Would you like a technical breakdown or a high-level overview?",
+    "fallback": "I'm not sure which 'COS' you are referring to, as it can stand for 'Cosine' in math, 'Cost of Sales' in business, or 'Chief of Staff'. Could you provide a bit more context?",
+    "style": [
+      "informative",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "cos-example-002",
+    "triggers": [
+      "Give me an example of COS",
+      "How does COS work in real life?",
+      "Can you show me a COS scenario?"
+    ],
+    "context_role": "topic",
+    "template": "To visualize how {context} works, let's look at a practical scenario. Imagine a situation where you need to calculate a specific value or organize a corporate hierarchy; this is where {context} comes into play. For instance, if we apply {context} to a real-world project, you would see a direct impact on the efficiency and the final outcome. Does this example help clarify things, or should we try a different scenario?",
+    "fallback": "I'd love to give you an example, but I need to know if we are talking about mathematics, business, or a professional role first!",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "cos-comparison-003",
+    "triggers": [
+      "How does COS differ from other things?",
+      "Compare COS to alternatives",
+      "What's the difference between COS and similar concepts?"
+    ],
+    "context_role": "topic",
+    "template": "When comparing {context} to similar concepts, the main distinction usually lies in its specific application and the goal it aims to achieve. While other methods might focus on general outcomes, {context} is specifically designed for precision and targeted results. If you look at them side-by-side, {context} offers more flexibility in some areas but requires more specific data in others. I can break down a detailed comparison table for you if that would be useful!",
+    "fallback": "I can certainly compare it for you, but I need to know if you mean Cosine vs Sine, or perhaps Cost of Sales vs Cost of Goods Sold.",
+    "style": [
+      "analytical",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "cos-application-004",
+    "triggers": [
+      "Where is COS used?",
+      "What are the applications of COS?",
+      "How is COS applied in industry?"
+    ],
+    "context_role": "topic",
+    "template": "The applications of {context} are surprisingly diverse. In professional settings, {context} is used to streamline decision-making and improve organizational flow. In technical fields, it's an essential tool for calculating angles, wave patterns, or financial margins. Because of its versatility, you'll find {context} being utilized in everything from architecture and engineering to high-level corporate strategy. Are you interested in a specific industry's use of it?",
+    "fallback": "Depending on the meaning of COS, it's used in everything from trigonometry to corporate management. Which one are you interested in?",
+    "style": [
+      "informative",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "cos-quick-summary-005",
+    "triggers": [
+      "Quick summary of COS",
+      "Give me the TL;DR on COS",
+      "COS in a nutshell"
+    ],
+    "context_role": "topic",
+    "template": "In a nutshell, {context} is all about efficiency and relationship—whether that's the relationship between sides of a triangle or the relationship between a CEO and their team. It's a tool used to simplify complex systems and provide a clear path toward a specific result. Short, sweet, and effective!",
+    "fallback": "COS can mean several things, but generally, it's either a math function (Cosine) or a business term (Cost of Sales/Chief of Staff). Which one should I summarize?",
+    "style": [
+      "casual",
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "cos-deep-dive-006",
+    "triggers": [
+      "Tell me everything about COS",
+      "I want a detailed explanation of COS",
+      "Can we go deep into COS?"
+    ],
+    "context_role": "topic",
+    "template": "Let's take a deep dive into {context}. To fully understand it, we first have to look at the theoretical foundations that make it work. From there, we can examine the nuances of its implementation, the common pitfalls people encounter when using {context}, and the advanced strategies used by experts to optimize it. We'll cover the historical context, the current industry standards, and future projections of how {context} will evolve. Where would you like to start our deep dive?",
+    "fallback": "I'm ready for a deep dive! Just let me know if we're exploring the trigonometry of Cosine, the financials of Cost of Sales, or the role of a Chief of Staff.",
+    "style": [
+      "educational",
+      "analytical"
+    ],
+    "response_length": "long"
+  },
+  {
+    "id": "cos-beginner-guide-007",
+    "triggers": [
+      "I'm new to COS",
+      "Explain COS like I'm five",
+      "Beginner's guide to COS"
+    ],
+    "context_role": "topic",
+    "template": "Imagine {context} as a helpful tool that helps us organize or measure things more easily. Instead of doing everything the hard way, {context} gives us a shortcut or a specific rule to follow so we get the right answer every time. It's like having a map for a complex city—it doesn't do the walking for you, but it makes sure you don't get lost! Does that make sense, or should I try a different analogy?",
+    "fallback": "I can explain it simply! Just let me know if you're asking about math or business.",
+    "style": [
+      "conversational",
+      "creative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "cos-pros-cons-008",
+    "triggers": [
+      "What are the pros and cons of COS?",
+      "Advantages and disadvantages of COS",
+      "Is COS actually useful?"
+    ],
+    "context_role": "topic",
+    "template": "Like any system, {context} has its strengths and weaknesses. On the plus side, {context} provides incredible precision and a standardized way of operating, which reduces errors. However, the downside is often the learning curve or the rigidity it can introduce if not applied flexibly. The key to success is knowing when to rely heavily on {context} and when to apply a bit of human intuition to get the best result.",
+    "fallback": "To give you the pros and cons, I need to know if we are discussing a mathematical function or a professional role/financial metric.",
+    "style": [
+      "analytical",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "cos-common-mistakes-009",
+    "triggers": [
+      "What are common mistakes with COS?",
+      "How do I avoid errors in COS?",
+      "Why is COS confusing?"
+    ],
+    "context_role": "topic",
+    "template": "One of the most frequent mistakes people make with {context} is overlooking the initial setup or the basic assumptions. Often, users try to apply {context} to a problem it wasn't designed for, which leads to skewed results. To avoid this, I recommend always double-checking your inputs and ensuring that the environment matches the requirements for {context} to function correctly. Would you like a checklist to help you avoid these errors?",
+    "fallback": "Mistakes vary wildly depending on the topic! Are we talking about calculator errors in Cosine or management errors in a Chief of Staff role?",
+    "style": [
+      "educational",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "cos-future-outlook-010",
+    "triggers": [
+      "What is the future of COS?",
+      "How is COS evolving?",
+      "Will COS change in the next few years?"
+    ],
+    "context_role": "topic",
+    "template": "Looking ahead, the way we approach {context} is likely to be transformed by automation and AI. We're seeing a shift where {context} is becoming more integrated into real-time data streams, allowing for instant adjustments and much higher accuracy than in the past. This evolution means that the human element of {context} will shift from manual calculation or administration toward high-level strategic oversight. It's an exciting time for anyone working with these systems!",
+    "fallback": "The future depends on the field! Are we talking about the evolution of financial accounting or the shifting role of corporate leadership?",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  }
+]

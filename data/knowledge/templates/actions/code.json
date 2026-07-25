@@ -1,0 +1,162 @@
+[
+  {
+    "id": "debug-def-001",
+    "triggers": [
+      "what is debugging",
+      "can you explain debugging",
+      "define debugging"
+    ],
+    "context_role": "topic",
+    "template": "At its core, debugging {context} is the process of finding and resolving defects or 'bugs' within a piece of software. Think of it like being a detective in your own code; you're looking for the discrepancy between what you expected the program to do and what it's actually doing. When dealing with {context}, this usually involves isolating the problematic section of code, reproducing the error consistently, and then applying a fix that doesn't break other parts of the system.",
+    "fallback": "Debugging is the process of identifying and removing errors from computer software to ensure the code runs as intended.",
+    "style": [
+      "educational",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-ex-002",
+    "triggers": [
+      "give me an example of debugging",
+      "how does debugging look in practice",
+      "show me a debugging scenario"
+    ],
+    "context_role": "topic",
+    "template": "To give you a practical example of debugging {context}, imagine you're seeing a 'NullPointerException' or a similar crash. You'd start by checking the stack trace to find the exact line of code triggering the error. Then, you might insert print statements or use a debugger to inspect the variables right before the crash. For instance, if {context} is failing because a variable is empty, the debugging process is the act of tracing that variable back to where it was first initialized to find out why it never received a value.",
+    "fallback": "A common debugging example is using print statements to track a variable's value until you find where it unexpectedly changes.",
+    "style": [
+      "informative",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-comp-003",
+    "triggers": [
+      "debugging vs testing",
+      "what is the difference between testing and debugging",
+      "is debugging the same as testing"
+    ],
+    "context_role": "topic",
+    "template": "It's easy to confuse the two, but there's a key difference when it comes to {context}. Testing is the process of *finding* the bug—it's like a health check that tells you 'something is wrong here.' Debugging, on the other hand, is the process of *fixing* the bug. While testing for {context} involves running a suite of checks to see if the software fails, debugging starts the moment a test fails. Testing proves the existence of a flaw; debugging finds the cause and resolves it.",
+    "fallback": "Testing is the process of finding bugs, while debugging is the process of fixing them.",
+    "style": [
+      "analytical",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-app-004",
+    "triggers": [
+      "how to apply debugging",
+      "what tools are used for debugging",
+      "best ways to debug"
+    ],
+    "context_role": "topic",
+    "template": "Depending on the complexity of {context}, you have a few great options for applying debugging techniques. For simple issues, 'Print Debugging' (inserting logs) is a quick way to see state changes. For more complex logic in {context}, using an Integrated Development Environment (IDE) debugger is a game-changer; it allows you to set breakpoints, step through the code line-by-line, and watch variables change in real-time. For high-level architectural issues, 'Rubber Ducking'—explaining your code out loud to someone (or a rubber duck)—often helps you spot the logic gap yourself.",
+    "fallback": "You can apply debugging using print statements for quick checks or an IDE debugger for deep analysis of the code execution.",
+    "style": [
+      "informative",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-strat-005",
+    "triggers": [
+      "debugging strategy",
+      "how should I approach debugging",
+      "steps for debugging"
+    ],
+    "context_role": "topic",
+    "template": "When you're tackling {context}, I recommend a systematic approach to avoid getting overwhelmed. First, reproduce the bug reliably—if you can't trigger it on command, you can't prove you've fixed it. Second, isolate the variable: comment out sections of {context} or use binary search (splitting the code in half) to find exactly where the failure occurs. Third, form a hypothesis about why it's happening. Finally, apply the fix and run your tests again to ensure no regressions were introduced. This methodical loop is much more effective than guessing randomly.",
+    "fallback": "A good debugging strategy involves reproducing the error, isolating the cause, forming a hypothesis, and verifying the fix.",
+    "style": [
+      "analytical",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-tip-006",
+    "triggers": [
+      "quick debugging tips",
+      "how to debug faster",
+      "shortcuts for debugging"
+    ],
+    "context_role": "topic",
+    "template": "Want to speed up your work with {context}? Here are a few pro tips: 1. Read the error message carefully—often the answer is hidden in the last line of the stack trace. 2. Use Git to compare your current broken version of {context} with the last known working version using 'git bisect'. 3. Don't forget to check your assumptions; often the bug isn't where you think it is, but in a utility function you assumed was working perfectly. 4. Take a break; stepping away from {context} for ten minutes often lets your brain spot the error instantly upon return.",
+    "fallback": "To debug faster, read your error messages thoroughly, use version control to find when the bug appeared, and take short breaks to clear your head.",
+    "style": [
+      "casual",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-types-007",
+    "triggers": [
+      "types of bugs",
+      "what are different debugging scenarios",
+      "kinds of software errors"
+    ],
+    "context_role": "topic",
+    "template": "When debugging {context}, you'll typically encounter three main types of errors. First are Syntax Errors: these are 'grammar' mistakes in the code that prevent it from running at all. Then there are Runtime Errors: the code starts, but crashes while executing {context} due to an unexpected event. Finally, the trickiest are Logic Errors: the program runs without crashing, but the output for {context} is simply wrong. These are often the hardest to debug because the computer thinks everything is fine, but the human result is incorrect.",
+    "fallback": "Software bugs usually fall into three categories: syntax errors (grammar), runtime errors (crashes), and logic errors (wrong results).",
+    "style": [
+      "educational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-mindset-008",
+    "triggers": [
+      "debugging is frustrating",
+      "why is debugging so hard",
+      "how to stay sane while debugging"
+    ],
+    "context_role": "topic",
+    "template": "It is completely normal to feel frustrated when debugging {context}. The 'rabbit hole' effect is real—you fix one thing, and three more break. The key is to shift your mindset: instead of seeing the bug in {context} as a failure, view it as a puzzle. Every time you rule out a possibility, you are actually making progress, even if the code isn't working yet. Remember that debugging is where the deepest learning happens; you're learning exactly how {context} works by seeing how it breaks.",
+    "fallback": "Debugging can be stressful, but viewing it as a puzzle rather than a failure can help you stay motivated and learn more about your code.",
+    "style": [
+      "conversational",
+      "creative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-automation-009",
+    "triggers": [
+      "automated debugging",
+      "can AI debug code",
+      "automated error detection"
+    ],
+    "context_role": "topic",
+    "template": "Automating the debugging process for {context} has evolved significantly. We now have static analysis tools that scan {context} for common patterns of failure before the code even runs. Additionally, AI-powered assistants can now suggest fixes by analyzing the error log and suggesting the likely line of code that needs changing. However, automation can't replace the conceptual understanding of {context}. While a tool can tell you *where* the crash is, a human developer is usually needed to understand *why* the business logic is failing and how to fix it holistically.",
+    "fallback": "Automated debugging tools and AI can help identify errors quickly, but human oversight is still needed to understand the underlying logic.",
+    "style": [
+      "informative",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-long-guide-010",
+    "triggers": [
+      "comprehensive guide to debugging",
+      "detailed debugging process",
+      "how to master debugging"
+    ],
+    "context_role": "topic",
+    "template": "Mastering the art of debugging {context} requires a combination of technical skill and a disciplined mental approach. To start, you must build a 'mental model' of how data flows through {context}. When a bug appears, don't touch the code immediately. Instead, trace the path of the data from input to output. \n\nFirst, create a 'Minimal Reproducible Example.' Strip away everything from {context} that isn't directly related to the bug until you have the smallest possible piece of code that still fails. This removes noise and isolates the variable. \n\nNext, employ the 'Scientific Method': Observe the behavior, form a hypothesis ('I think the loop is off-by-one'), predict the outcome if that hypothesis is true, and then test it. If you change five things at once, you'll never know which one actually fixed the problem. \n\nFinally, once you've resolved the issue in {context}, perform a 'Post-Mortem.' Ask yourself: Why did this bug happen? How could I have caught it with a test? By adding a regression test—a test that specifically checks for this bug—you ensure that this particular issue in {context} never returns. This cycle of isolate, fix, and prevent is what separates a novice from a professional developer.",
+    "fallback": "Mastering debugging involves creating minimal reproducible examples, using the scientific method to test hypotheses, and writing regression tests to prevent future errors.",
+    "style": [
+      "educational",
+      "formal"
+    ],
+    "response_length": "long"
+  }
+]

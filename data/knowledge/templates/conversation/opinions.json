@@ -1,0 +1,313 @@
+[
+  {
+    "id": "discuss-definition-001",
+    "triggers": [
+      "can you explain this concept?"
+    ],
+    "context_role": "topic",
+    "template": "To put it simply, {context} is a concept that revolves around a few core ideas. At its heart, it's about how various elements interact to create a specific outcome. If we dive deeper, we can see that it often influences other related fields, making it a crucial piece of the puzzle for anyone trying to understand the broader picture. Would you like me to break down the specific components or give you a high-level summary?",
+    "fallback": "I'm not sure what we are referring to yet, but I'd be happy to define any concept or term you have in mind!",
+    "style": [
+      "educational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "discuss-example-002",
+    "triggers": [
+      "how does this look in practice?",
+      "can you show me a use case?"
+    ],
+    "context_role": "topic",
+    "template": "A great way to visualize {context} is by looking at a real-world scenario. For instance, imagine a situation where this is applied to solve a common problem; you'd see the theory transition into a practical result. This demonstrates exactly how the mechanics work in a live environment. Does that example help clarify things, or should we try a different scenario together?",
+    "fallback": "I don't have a topic to provide an example for yet. What are we discussing?",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "discuss-comparison-003",
+    "triggers": [
+      "what are the differences?"
+    ],
+    "context_role": "topic",
+    "template": "When comparing {context} to its alternatives, the most striking difference usually lies in the approach. While other methods might prioritize speed or simplicity, {context} tends to focus more on efficiency and long-term sustainability. Depending on your specific goals, one might be more advantageous than the other. Are you looking for a more technical breakdown of these differences, or a general pros-and-cons list?",
+    "fallback": "I'm not sure what we're comparing. Could you tell me which two things you'd like me to contrast?",
+    "style": [
+      "analytical",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "discuss-application-004",
+    "triggers": [
+      "where is this used?",
+      "what are the applications?",
+      "how do people apply this?"
+    ],
+    "context_role": "topic",
+    "template": "{context} finds its application in a wide variety of industries. From streamlining corporate workflows to enhancing personal productivity, its versatility is its biggest strength. In most cases, it's used to bridge the gap between a theoretical goal and a tangible result. I can list a few specific industries where this is common if you're interested—just let me know!",
+    "fallback": "I'm not sure what we're applying. Please let me know the topic you're interested in!",
+    "style": [
+      "informative",
+      "professional"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "discuss-deep-dive-005",
+    "triggers": [
+      "go into detail"
+    ],
+    "context_role": "topic",
+    "template": "Since you want to go deeper into {context}, let's peel back the layers. First, we have to consider the underlying architecture and the historical context that led to its development. Then, we can examine the nuances of how it operates under different constraints and the common pitfalls people encounter when implementing it. To make this truly comprehensive, we could explore the theoretical frameworks or jump straight into the advanced technicalities. Which path should we take?",
+    "fallback": "I'd love to dive deep, but I need a topic first! What should we explore in detail?",
+    "style": [
+      "analytical",
+      "educational"
+    ],
+    "response_length": "long"
+  },
+  {
+    "id": "discuss-summary-006",
+    "triggers": [
+      "can you summarize?",
+      "bottom line?"
+    ],
+    "context_role": "topic",
+    "template": "Essentially, the core takeaway regarding {context} is that it provides a structured way to achieve a specific result while minimizing common errors. It's a balance of efficiency and precision. In short: it's the most effective tool for this specific job when you need reliability over sheer speed.",
+    "fallback": "I don't have enough information to summarize a topic yet. What are we talking about?",
+    "style": [
+      "conversational",
+      "short"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "discuss-pros-cons-007",
+    "triggers": [
+      "is there a downside?",
+      "give me the good and bad"
+    ],
+    "context_role": "topic",
+    "template": "Looking at {context} objectively, there are definitely two sides to the coin. On the positive side, you get a lot of flexibility and a high ceiling for growth. However, the trade-off is often a steeper learning curve and a requirement for more initial setup time. It's really a question of whether the long-term benefits outweigh the short-term effort for your specific needs. Do you feel the benefits align with your current goals?",
+    "fallback": "I'm not sure what we're weighing. Which topic's pros and cons are we discussing?",
+    "style": [
+      "analytical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "discuss-creative-angle-008",
+    "triggers": [
+      "think of this differently",
+      "give me a creative perspective",
+      "any wild ideas?"
+    ],
+    "context_role": "topic",
+    "template": "If we step away from the traditional view, we could look at {context} as a kind of metaphor for growth. Instead of seeing it as a rigid system, imagine it as a living organism that evolves based on the input it receives. This shift in perspective allows us to find innovative solutions that a strictly technical approach might miss. Does this creative angle spark any new ideas for you, or is it a bit too abstract?",
+    "fallback": "I'd love to get creative, but I need a subject to brainstorm with! What's on your mind?",
+    "style": [
+      "creative",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "discuss-beginner-guide-009",
+    "triggers": [
+      "I'm a beginner",
+      "explain like I'm five",
+      "start from scratch"
+    ],
+    "context_role": "topic",
+    "template": "No problem at all! Let's start {context} from the very beginning. Imagine you're building something for the first time; you need a foundation, a set of tools, and a plan. {context} is basically that plan. It tells you where to start, what to avoid, and how to get to the finish line without getting overwhelmed. We'll take it one step at a time—does that sound like a good pace for you?",
+    "fallback": "I'm ready to simplify things for you! Just tell me what topic you're starting with.",
+    "style": [
+      "casual",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "discuss-critical-analysis-010",
+    "triggers": [
+      "what's the criticism?",
+      "why might this fail?",
+      "be critical about this"
+    ],
+    "context_role": "topic",
+    "template": "To be critical of {context}, we have to look at where it falls short. The most common criticism is that it often assumes a level of stability or consistency that doesn't always exist in the real world. When things get chaotic, the framework can become brittle. Furthermore, there's a risk of over-reliance, which can lead to a lack of critical thinking in other areas. It's a powerful tool, but it's not a silver bullet. Do you think these limitations are deal-breakers, or manageable?",
+    "fallback": "I can certainly play devil's advocate, but I need to know the topic first!",
+    "style": [
+      "analytical",
+      "formal"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "agree-definition-001",
+    "triggers": [
+      "what does it mean to agree",
+      "define agreement",
+      "how do you define agreeing"
+    ],
+    "context_role": "topic",
+    "template": "In the context of {context}, agreeing generally means reaching a harmony of opinion or a mutual understanding. It's not just about saying 'yes,' but about aligning your perspective with another's on the core points of the discussion. When people agree on {context}, it usually signifies that the evidence or logic presented has satisfied both parties.",
+    "fallback": "Agreeing generally means sharing the same opinion or reaching a mutual understanding about a specific topic.",
+    "style": [
+      "educational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "agree-examples-002",
+    "triggers": [
+      "give me examples of agreeing",
+      "how do I agree with this",
+      "show me ways to agree"
+    ],
+    "context_role": "topic",
+    "template": "Depending on the setting, there are several ways to show agreement regarding {context}. For a casual conversation, you might say, 'I totally see where you're coming from' or 'Spot on!' In a more professional setting, you could use phrases like 'I concur with your assessment of {context}' or 'That aligns with my findings.' The key is to match the energy of the conversation while validating the point.",
+    "fallback": "You can agree casually by saying 'I totally agree!' or more formally by saying 'I concur with that statement.'",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "agree-compare-003",
+    "triggers": [
+      "difference between agreeing and conceding",
+      "agreeing vs accepting",
+      "what is the difference between agreement and compliance"
+    ],
+    "context_role": "topic",
+    "template": "There is a subtle but important difference between agreeing and simply conceding when it comes to {context}. Agreement happens when you genuinely share the same belief or value. Conceding, however, is when you stop arguing the point—perhaps because you're tired or the other person is insistent—even if you still don't actually believe they are right about {context}. One is about alignment; the other is about resolution.",
+    "fallback": "Agreement is a genuine sharing of a belief, whereas conceding is simply giving in to another's point of view.",
+    "style": [
+      "analytical",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "agree-application-004",
+    "triggers": [
+      "how to agree effectively",
+      "tips for agreeing in a debate",
+      "best way to agree with someone"
+    ],
+    "context_role": "topic",
+    "template": "To agree effectively on {context}, try 'active agreement.' Instead of a simple 'yes,' paraphrase the point you agree with. For example: 'I agree that {context} is a priority, especially because of the impact it has on X.' This proves you've listened and deeply understand the topic, which strengthens the bond between you and the speaker and makes the agreement feel more authentic.",
+    "fallback": "The best way to agree is to paraphrase the other person's point before confirming your agreement to show you truly understood them.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "agree-nuance-005",
+    "triggers": [
+      "what is partial agreement",
+      "how to agree with some parts",
+      "agreeing but with reservations"
+    ],
+    "context_role": "topic",
+    "template": "Sometimes you don't agree 100% with {context}, and that's okay! This is called partial agreement. You can use phrases like, 'I agree with you on the general principle of {context}, but I have some reservations about the specific implementation.' This allows you to maintain your integrity and nuance while still acknowledging the valid points the other person is making.",
+    "fallback": "Partial agreement is when you support the general idea but disagree with specific details or methods.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "agree-psychology-006",
+    "triggers": [
+      "why do people agree",
+      "psychology of agreement",
+      "what drives agreement"
+    ],
+    "context_role": "topic",
+    "template": "Psychologically, agreeing on {context} often stems from a desire for social cohesion or a shared mental model. When we agree, our brains release dopamine associated with social reward. In the case of {context}, agreement can be driven by 'confirmation bias'—where we gravitate toward information that supports what we already believe—or it can be the result of a genuine logical synthesis of new information.",
+    "fallback": "People often agree to build social bonds or because the information provided aligns with their existing beliefs.",
+    "style": [
+      "analytical",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "agree-conflict-007",
+    "triggers": [
+      "how to find agreement in a fight",
+      "reaching agreement during conflict",
+      "finding common ground"
+    ],
+    "context_role": "topic",
+    "template": "When you're in a conflict regarding {context}, the fastest way to lower tension is to find 'micro-agreements.' Look for any small point—even if it's just agreeing that the situation is frustrating—that you both accept as true. Once you establish a baseline of agreement on {context}, it creates a psychological bridge that makes it much easier to tackle the larger, more difficult disagreements.",
+    "fallback": "Finding small points of common ground can help lower tension and make it easier to resolve larger conflicts.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "agree-formal-008",
+    "triggers": [
+      "formal ways to agree",
+      "professional agreement phrases",
+      "how to agree in a meeting"
+    ],
+    "context_role": "topic",
+    "template": "In a professional environment, agreeing with {context} should be clear and decisive. I recommend using phrases such as: 'I am in complete agreement with the proposed strategy for {context},' or 'Your analysis of {context} is aligned with our current quarterly goals.' This ensures that the agreement is documented as a formal consensus rather than just a casual nod.",
+    "fallback": "In professional settings, use clear, decisive language like 'I concur' or 'This aligns with our goals.'",
+    "style": [
+      "formal",
+      "informative"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "agree-creative-009",
+    "triggers": [
+      "creative ways to say yes",
+      "fun ways to agree",
+      "how to agree enthusiastically"
+    ],
+    "context_role": "topic",
+    "template": "If you want to agree with {context} with a bit more flair, try some creative alternatives! Instead of a boring 'I agree,' you could say, 'You've hit the nail right on the head with {context}!' or 'I couldn't have put it better myself!' If you're feeling really enthusiastic, go for something like, 'That is an absolute game-changer for {context}!' It adds energy and passion to the conversation.",
+    "fallback": "Try using idioms like 'hit the nail on the head' or 'spot on' to agree with more enthusiasm.",
+    "style": [
+      "creative",
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "agree-caution-010",
+    "triggers": [
+      "danger of agreeing too much",
+      "why shouldn't I always agree",
+      "downside of agreement"
+    ],
+    "context_role": "topic",
+    "template": "While agreement feels good, 'groupthink' is a real risk when everyone agrees on {context} too quickly. If no one challenges the ideas surrounding {context}, the group may overlook critical flaws or miss more innovative solutions. This is why 'constructive disagreement' is often more valuable for growth than immediate agreement; it forces the team to stress-test their assumptions and arrive at a more robust conclusion.",
+    "fallback": "Agreeing too quickly can lead to groupthink, where critical flaws are ignored in favor of social harmony.",
+    "style": [
+      "analytical",
+      "educational"
+    ],
+    "response_length": "medium"
+  }
+]

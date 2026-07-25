@@ -1,0 +1,85 @@
+[
+  {
+    "id": "category-type-001",
+    "triggers": [
+      "what is debate?",
+      "debate definitions",
+      "compare debaters",
+      "arguments of a debate"
+    ],
+    "context_role": "topic",
+    "template": "The response text with {context} placeholder where the conversation topic goes. For example, you can say 'What are some examples of debate topics?' or 'Discuss different types of debates.'.",
+    "fallback": "Response when there is no previous conversation context available.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "category-type-001",
+    "triggers": [
+      "examples of debaters",
+      "debater's role in a debate",
+      "arguments during a debate"
+    ],
+    "context_role": "topic",
+    "template": "The response text with {context} placeholder where the conversation topic goes. For example, you can say 'What are some common types of arguments used in debates?' or 'Discuss how debaters build their cases for an argument.'.",
+    "fallback": "Response when there is no previous conversation context available.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "category-type-001",
+    "triggers": [
+      "debate's history",
+      "arguments of a debate in politics",
+      "how to participate in a debate"
+    ],
+    "context_role": "topic",
+    "template": "The response text with {context} placeholder where the conversation topic goes. For example, you can say 'What are some debates that occur in political discourse?' or 'How do political debaters present their arguments?'.",
+    "fallback": "Response when there is no previous conversation context available.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "category-type-001",
+    "triggers": [
+      "debate's role in society",
+      "arguments of a debate in business",
+      "dealing with arguments during debates",
+      "how to analyze debaters' arguments"
+    ],
+    "context_role": "topic",
+    "template": "The response text with {context} placeholder where the conversation topic goes. For example, you can say 'What are some ways companies present their case in a debate?' or 'How do businesses argue for their positions during a debate?'.",
+    "fallback": "Response when there is no previous conversation context available.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "category-type-001",
+    "triggers": [
+      "debate topics in literature",
+      "arguments of a debate on literature",
+      "how to analyze literary works during debates",
+      "comparison between debaters' positions"
+    ],
+    "context_role": "topic",
+    "template": "The response text with {context} placeholder where the conversation topic goes. For example, you can say 'What are some examples of how debaters make their arguments?' or 'Discuss how authors use arguments in literature.'.",
+    "fallback": "Response when there is no previous conversation context available.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  }
+]

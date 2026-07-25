@@ -1,0 +1,82 @@
+[
+  {
+    "q": [
+      "What is machine learning?",
+      "How do you define machine learning?",
+      "What does machine learning actually do?"
+    ],
+    "a": "Machine learning is a branch of artificial intelligence focused on building systems that can learn from data. Instead of being explicitly programmed with a set of rigid rules to follow, these systems use algorithms to find patterns in data and make decisions or predictions based on what they've discovered."
+  },
+  {
+    "q": [
+      "What is the difference between supervised and unsupervised learning?",
+      "How does supervised learning differ from unsupervised learning?",
+      "What are the main types of machine learning algorithms?"
+    ],
+    "a": "Supervised learning uses 'labeled' data, meaning the algorithm is told the correct answer during training (like showing a computer 1,000 photos labeled 'cat' so it learns what a cat looks like). Unsupervised learning deals with unlabeled data; the algorithm looks for hidden patterns or groupings on its own, such as grouping customers with similar shopping habits without being told what the groups are."
+  },
+  {
+    "q": [
+      "What is reinforcement learning?",
+      "How does reinforcement learning work?",
+      "What is the concept of reward-based learning in AI?"
+    ],
+    "a": "Reinforcement learning is a type of machine learning where an agent learns by trial and error in an environment. It receives 'rewards' for correct actions and 'penalties' for mistakes. This is the logic behind systems like DeepMind's AlphaGo, which learned to beat world champions at the game of Go by playing millions of games against itself."
+  },
+  {
+    "q": [
+      "What is overfitting in machine learning?",
+      "Why is overfitting a problem in ML models?",
+      "What does it mean when a model overfits the data?"
+    ],
+    "a": "Overfitting happens when a model learns the training data *too* well, including the noise and random fluctuations. Because it has basically 'memorized' the specific examples it was trained on, it fails to generalize to new, unseen data. It's like a student who memorizes the exact answers to a practice test but doesn't actually understand the subject, so they fail the real exam."
+  },
+  {
+    "q": [
+      "What are neural networks?",
+      "How do artificial neural networks work?",
+      "What is the basis of deep learning?"
+    ],
+    "a": "Neural networks are computing systems inspired by the biological brain. They consist of layers of interconnected 'nodes' (neurons). Data passes through these layers, and each connection has a weight that adjusts as the network learns. 'Deep learning' is simply a neural network with many hidden layers, allowing it to handle incredibly complex data like human speech or high-resolution images."
+  },
+  {
+    "q": [
+      "How is machine learning used in everyday life?",
+      "What are some common examples of machine learning?",
+      "Where do we encounter ML in the real world?"
+    ],
+    "a": "Machine learning is everywhere: it powers the recommendation engines on Netflix and Amazon, the spam filters in your email, and the voice recognition in Siri or Alexa. It's also used in banking for fraud detection, where algorithms flag a transaction as suspicious if it deviates from your usual spending patterns."
+  },
+  {
+    "q": [
+      "What is a decision tree in machine learning?",
+      "How does a decision tree algorithm work?",
+      "What are decision-tree-based models?"
+    ],
+    "a": "A decision tree is a model that maps observations about a data point to conclusions about the data point. It looks like an upside-down tree where each internal node represents a 'test' on an attribute (e.g., 'Is the temperature above 70 degrees?'), and each branch represents the result of that test. It keeps splitting the data until it reaches a final decision at the 'leaf' nodes."
+  },
+  {
+    "q": [
+      "Who coined the term 'machine learning' and when?",
+      "What is the history of the term machine learning?",
+      "When did machine learning start as a field?"
+    ],
+    "a": "The term 'machine learning' was coined by Arthur Samuel in 1959. Samuel, a pioneer in the field, created a checkers-playing program that improved its performance by playing against itself, proving that a computer could learn to perform a task without being explicitly programmed for every possible scenario."
+  },
+  {
+    "q": [
+      "What is the role of a training set and a test set?",
+      "Why do we split data into training and testing sets?",
+      "How do you evaluate a machine learning model?"
+    ],
+    "a": "To ensure a model actually works, data is split into two groups. The training set is used to teach the model patterns. The test set is a separate group of data the model has never seen before. If the model performs well on the test set, developers know it can handle real-world data and hasn't just memorized the training examples."
+  },
+  {
+    "q": [
+      "What is 'Natural Language Processing' (NLP)?",
+      "How does machine learning help computers understand language?",
+      "What is the relationship between ML and NLP?"
+    ],
+    "a": "Natural Language Processing (NLP) is the use of machine learning to help computers understand, interpret, and generate human language. It involves tasks like sentiment analysis (deciding if a review is positive or negative), machine translation (Google Translate), and generating text (like ChatGPT), converting words into mathematical vectors that the computer can process."
+  }
+]

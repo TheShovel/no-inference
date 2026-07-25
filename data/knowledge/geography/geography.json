@@ -1,0 +1,11 @@
+[
+  {"q": ["how far is the sun from earth", "distance from earth to the sun"], "a": "The Sun is approximately 93 million miles (150 million kilometers) from Earth. This distance is called one Astronomical Unit (AU)."},
+  {"q": ["how far is the moon from earth", "distance from earth to the moon"], "a": "The Moon is about 238,855 miles (384,400 kilometers) from Earth on average. It takes about 3 days for a spacecraft to travel there."},
+  {"q": ["what is the largest country in the world", "what is the biggest country by area"], "a": "Russia is the largest country in the world by land area, at 6.6 million square miles (17.1 million square kilometers), covering about 11% of the world's landmass."},
+  {"q": ["what is the smallest country in the world"], "a": "Vatican City is the smallest country in the world, with an area of just 0.17 square miles (0.44 square kilometers). It is an independent city-state enclaved within Rome, Italy."},
+  {"q": ["what is the longest river in the world"], "a": "The Nile River in Africa is generally considered the longest river, at about 6,650 km (4,130 miles). However, the Amazon River in South America carries the most water by far and some consider it the longest at about 6,400 km (4,000 miles)."},
+  {"q": ["what is the highest mountain in the world", "what is the tallest mountain"], "a": "Mount Everest is the highest mountain on Earth, reaching 29,032 feet (8,849 meters) above sea level. It is located in the Himalayas on the border between Nepal and Tibet."},
+  {"q": ["what is the deepest ocean trench", "what is the deepest point in the ocean"], "a": "The Mariana Trench in the Pacific Ocean is the deepest oceanic trench, with its deepest point (Challenger Deep) reaching about 36,070 feet (10,994 meters) below sea level."},
+  {"q": ["how many continents are there", "what are the continents"], "a": "There are seven continents: Asia, Africa, North America, South America, Antarctica, Europe, and Australia. Asia is the largest by area and population, while Australia is the smallest."},
+  {"q": ["how many oceans are there", "what are the oceans"], "a": "There are five oceans: the Pacific Ocean (largest and deepest), Atlantic Ocean, Indian Ocean, Southern Ocean (around Antarctica), and Arctic Ocean (smallest and shallowest)."}
+]

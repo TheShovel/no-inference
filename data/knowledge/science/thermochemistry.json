@@ -1,0 +1,82 @@
+[
+  {
+    "q": [
+      "What is thermochemistry?",
+      "Can you define thermochemistry?",
+      "What does the study of thermochemistry involve?"
+    ],
+    "a": "Thermochemistry is the branch of physical chemistry that studies the energy changes—specifically heat—that occur during chemical reactions. It focuses on how energy is absorbed or released as bonds break and form, allowing scientists to determine whether a reaction will happen spontaneously or require an external energy source."
+  },
+  {
+    "q": [
+      "What is the difference between exothermic and endothermic reactions?",
+      "How do exothermic and endothermic reactions differ?",
+      "What happens to heat in exothermic vs endothermic processes?"
+    ],
+    "a": "An exothermic reaction releases energy into the surroundings, usually as heat, making the environment feel warmer; a common example is combustion, like burning wood. Conversely, an endothermic reaction absorbs energy from its surroundings, often making the environment feel colder; an example is the process of photosynthesis, where plants absorb sunlight to create glucose."
+  },
+  {
+    "q": [
+      "What is enthalpy?",
+      "How is enthalpy defined in chemistry?",
+      "What does the symbol H represent in thermochemistry?"
+    ],
+    "a": "Enthalpy is a measurement of the total heat content of a thermodynamic system. In a chemical reaction, the change in enthalpy (denoted as ΔH) tells us if the reaction is exothermic (negative ΔH) or endothermic (positive ΔH). It essentially tracks the heat exchanged at constant pressure."
+  },
+  {
+    "q": [
+      "What is Hess's Law?",
+      "How does Hess's Law work?",
+      "Can you explain the principle of Hess's Law?"
+    ],
+    "a": "Hess's Law states that the total enthalpy change for a chemical reaction is the same regardless of whether the reaction takes place in one step or a series of steps. This is incredibly useful because it allows chemists to calculate the energy of a complex reaction by adding up the enthalpy changes of simpler, known reactions that lead to the same products."
+  },
+  {
+    "q": [
+      "What is the standard enthalpy of formation?",
+      "How is the enthalpy of formation defined?",
+      "What is meant by ΔHf°?"
+    ],
+    "a": "The standard enthalpy of formation is the change in enthalpy when one mole of a substance is formed from its pure elements in their most stable state under standard conditions (usually 25°C and 1 atmosphere of pressure). By convention, the standard enthalpy of formation for any element in its most stable form, like O2 gas, is zero."
+  },
+  {
+    "q": [
+      "How does a calorimeter work?",
+      "What is the purpose of a calorimeter?",
+      "How do scientists measure heat in a chemical reaction?"
+    ],
+    "a": "A calorimeter is a device used to measure the amount of heat absorbed or released during a chemical reaction or physical process. It works by insulating a reaction vessel so that heat exchange only happens between the system and a known mass of water. By measuring the temperature change of the water, scientists can calculate the exact amount of energy transferred using the specific heat capacity of water."
+  },
+  {
+    "q": [
+      "What is the relationship between entropy and thermochemistry?",
+      "How does entropy affect chemical reactions?",
+      "What is the role of disorder in thermochemistry?"
+    ],
+    "a": "Entropy is a measure of the disorder or randomness of a system. While enthalpy deals with heat, entropy determines if a process is spontaneous. The Second Law of Thermodynamics states that the total entropy of the universe always increases. If a reaction increases disorder (like a solid turning into a gas), it is more likely to occur spontaneously."
+  },
+  {
+    "q": [
+      "What is Gibbs Free Energy?",
+      "How do you calculate if a reaction is spontaneous?",
+      "What is the significance of G in thermochemistry?"
+    ],
+    "a": "Gibbs Free Energy (G) is the energy associated with a chemical reaction that can actually be used to do work. It combines enthalpy and entropy into one equation: ΔG = ΔH - TΔS. If the change in Gibbs Free Energy (ΔG) is negative, the reaction is spontaneous; if it is positive, the reaction requires energy to proceed."
+  },
+  {
+    "q": [
+      "What is bond enthalpy?",
+      "How is the energy of a chemical bond measured?",
+      "What is bond dissociation energy?"
+    ],
+    "a": "Bond enthalpy is the amount of energy required to break one mole of a specific type of chemical bond in a gaseous molecule. Breaking bonds always requires an input of energy (endothermic), while forming new bonds releases energy (exothermic). The net difference between the energy used to break old bonds and the energy released by forming new ones determines the overall ΔH of a reaction."
+  },
+  {
+    "q": [
+      "Why is thermochemistry important in real-world applications?",
+      "How is thermochemistry used in industry?",
+      "What are practical examples of thermochemistry?"
+    ],
+    "a": "Thermochemistry is vital for designing everything from car engines to medicine. It allows engineers to calculate the fuel efficiency of rockets by understanding the energy released during combustion. It also helps food scientists determine caloric content through bomb calorimetry and helps chemists design stable materials that won't decompose or explode under specific temperature conditions."
+  }
+]

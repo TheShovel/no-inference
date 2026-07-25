@@ -1,0 +1,162 @@
+[
+  {
+    "id": "resume-definition-001",
+    "triggers": [
+      "what is a resume",
+      "can you explain what a resume is",
+      "define resume"
+    ],
+    "context_role": "topic",
+    "template": "In simple terms, {context} is a formal document that summarizes your professional experience, skills, and educational background. Think of it as your personal marketing brochure designed to convince a hiring manager that you are the right fit for a specific role. It typically includes your contact information, a summary of your strengths, and a detailed history of your work achievements.",
+    "fallback": "A resume is a professional document used to showcase your work history, skills, and education to potential employers.",
+    "style": [
+      "educational",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "resume-examples-002",
+    "triggers": [
+      "give me some examples",
+      "show me some samples",
+      "what does a good one look like"
+    ],
+    "context_role": "topic",
+    "template": "Depending on your career stage, there are a few ways to approach {context}. For a student, you might lead with education and internships. For a seasoned professional, you'd lead with a 'Professional Summary' and quantified achievements. I can help you draft a specific section or provide a structural outline if you tell me your industry!",
+    "fallback": "I can provide various examples depending on whether you are a student, a mid-career professional, or changing fields.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "resume-comparison-003",
+    "triggers": [
+      "resume vs cv",
+      "what is the difference between a resume and a cv",
+      "should i use a cv or a resume"
+    ],
+    "context_role": "topic",
+    "template": "The main difference between {context} and a CV (Curriculum Vitae) is length and purpose. While a resume is typically a concise 1-2 page document tailored for a specific job, a CV is a comprehensive record of your entire academic and professional history. CVs are more common in academia, medicine, or when applying for roles in Europe and Asia.",
+    "fallback": "Resumes are short, tailored professional summaries, while CVs are detailed, comprehensive academic and professional histories.",
+    "style": [
+      "analytical",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "resume-application-004",
+    "triggers": [
+      "how do i use this",
+      "where do i send my resume",
+      "how to apply with a resume"
+    ],
+    "context_role": "topic",
+    "template": "Using {context} effectively starts with tailoring. You shouldn't send the exact same version to every employer. Instead, look at the job description and mirror the keywords they use. Once tailored, you typically upload it as a PDF to an Applicant Tracking System (ATS) or email it directly to a recruiter with a strong cover letter.",
+    "fallback": "You apply for jobs by tailoring your resume to the job description and submitting it via a company portal or email.",
+    "style": [
+      "informative",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "resume-tips-005",
+    "triggers": [
+      "any tips",
+      "how to make it better",
+      "how to improve my resume"
+    ],
+    "context_role": "topic",
+    "template": "To make your {context} really stand out, focus on accomplishments rather than just duties. Instead of saying 'Responsible for managing a team,' try 'Led a team of 5 to increase quarterly sales by 15%.' Quantifying your impact with numbers and percentages is the fastest way to grab a recruiter's attention.",
+    "fallback": "The best tip for a great resume is to use action verbs and quantify your achievements with data.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "resume-formatting-006",
+    "triggers": [
+      "how should it look",
+      "formatting advice",
+      "best layout"
+    ],
+    "context_role": "topic",
+    "template": "When it comes to the layout of {context}, clean and professional is always best. Use a standard font like Arial or Calibri, keep margins at 1 inch, and use clear section headings. Avoid using overly complex graphics or images, as these can sometimes confuse the automated scanning software (ATS) that many companies use.",
+    "fallback": "Keep your formatting clean, use professional fonts, and avoid complex graphics to ensure it is ATS-friendly.",
+    "style": [
+      "informative",
+      "formal"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "resume-chronological-007",
+    "triggers": [
+      "what is chronological",
+      "explain the chronological format",
+      "reverse chronological style"
+    ],
+    "context_role": "topic",
+    "template": "The reverse-chronological format for {context} is the most traditional layout. It lists your work experience starting with your current or most recent position and works backward. This is generally the preferred style for recruiters because it clearly shows your career progression and recent growth.",
+    "fallback": "A reverse-chronological resume lists your work history from most recent to oldest.",
+    "style": [
+      "educational",
+      "formal"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "resume-functional-008",
+    "triggers": [
+      "what is a functional resume",
+      "skills based resume",
+      "resume for gaps in employment"
+    ],
+    "context_role": "topic",
+    "template": "A functional approach to {context} prioritizes skills over a timeline. Instead of a detailed work history, you group your achievements under skill categories (e.g., 'Project Management' or 'Software Development'). This is a great strategy if you have significant employment gaps or are making a total career pivot.",
+    "fallback": "A functional resume focuses on your skills and strengths rather than the chronological order of your jobs.",
+    "style": [
+      "educational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "resume-keywords-009",
+    "triggers": [
+      "what are keywords",
+      "how to beat the ats",
+      "adding keywords to my resume"
+    ],
+    "context_role": "topic",
+    "template": "Keywords in {context} are specific terms, tools, or qualifications that employers list in their job postings. Since many companies use AI to filter applications, you need to integrate these specific words naturally into your experience section. For example, if the job asks for 'Agile Project Management,' make sure that exact phrase appears in your text.",
+    "fallback": "Keywords are industry-specific terms found in job descriptions that help your resume pass through automated filters.",
+    "style": [
+      "informative",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "resume-review-010",
+    "triggers": [
+      "can you check my resume",
+      "review my text",
+      "is this a good resume"
+    ],
+    "context_role": "topic",
+    "template": "I would be happy to help you polish your {context}! Please paste the text of your resume here, along with the job description you are targeting. I can then provide specific feedback on your wording, suggest stronger action verbs, and check if you've included the right keywords for that specific role.",
+    "fallback": "I can certainly review your resume! Please paste the text here and tell me what kind of job you are applying for.",
+    "style": [
+      "conversational",
+      "creative"
+    ],
+    "response_length": "short"
+  }
+]

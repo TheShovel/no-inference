@@ -1,0 +1,143 @@
+[
+  {
+    "q": [
+      "What is a greeting?",
+      "How do you define a greeting?",
+      "What purpose do greetings serve in communication?"
+    ],
+    "a": "A greeting is a communicative act used to acknowledge another person's presence and establish a social connection. Beyond just saying words, greetings serve as a 'social lubricant' that signals peace, friendliness, or respect, effectively opening a channel for further interaction."
+  },
+  {
+    "q": [
+      "What are the different types of greetings?",
+      "How do greetings vary by formality?",
+      "What is the difference between formal and informal greetings?"
+    ],
+    "a": "Greetings are generally split into formal and informal categories. Formal greetings, such as 'Good morning' or 'It is a pleasure to meet you,' are used in professional settings or with superiors. Informal greetings, like 'Hey' or 'What's up?', are reserved for friends, family, and casual acquaintances where social hierarchy is less important."
+  },
+  {
+    "q": [
+      "How do greetings vary across different cultures?",
+      "What are some examples of cultural greeting differences?",
+      "How do non-verbal greetings differ globally?"
+    ],
+    "a": "Greetings vary wildly across the globe based on local customs. In Japan, a bow is the standard way to show respect and acknowledge others. In many Middle Eastern and Southern European cultures, cheek-kissing is common. Meanwhile, in Thailand, the 'Wai' involves placing palms together in a prayer-like position and bowing slightly."
+  },
+  {
+    "q": [
+      "Why are greetings important in social psychology?",
+      "What is the psychological function of greeting someone?",
+      "How do greetings affect human interaction?"
+    ],
+    "a": "Greetings act as a primary signal for social validation. By greeting someone, you acknowledge their existence and value, which reduces social anxiety and establishes a baseline of trust. It essentially functions as a 'handshake' for the brain, letting both parties know that the interaction is safe and welcomed."
+  },
+  {
+    "q": [
+      "What is the origin of the word 'Hello'?",
+      "Where did the greeting 'Hello' come from?",
+      "Is 'Hello' an ancient greeting?"
+    ],
+    "a": "Interestingly, 'Hello' is relatively modern. While versions of the word existed earlier, it became a standard greeting with the invention of the telephone in the late 19th century. Thomas Edison promoted 'Hello' as the standard way to answer the phone, whereas Alexander Graham Bell preferred the nautical term 'Ahoy'."
+  },
+  {
+    "q": [
+      "What are some common non-verbal greetings?",
+      "How can people greet each other without speaking?",
+      "What are examples of silent greetings?"
+    ],
+    "a": "Non-verbal greetings use body language to convey a message. Common examples include a handshake in Western business culture, a wave of the hand from a distance, a nod of the head, or a hug among close friends. These gestures often communicate the level of intimacy or the power dynamic between two people."
+  },
+  {
+    "q": [
+      "How has technology changed the way we greet people?",
+      "What are digital greetings?",
+      "How do greetings work in the age of social media?"
+    ],
+    "a": "Technology has introduced 'asynchronous greetings,' where we acknowledge others through emojis, GIFs, or short text messages like 'DM's' or 'pings.' These digital greetings often strip away the physical cues of tone and body language, replacing them with visual symbols to convey emotion and intent."
+  },
+  {
+    "q": [
+      "What is the significance of the handshake in history?",
+      "Where did the handshake originate?",
+      "Why do people shake hands when meeting?"
+    ],
+    "a": "The handshake is believed to have originated in ancient Greece as a way to prove that neither party was carrying a weapon. By extending an open hand and shaking it, you demonstrated that you were unarmed and came in peace. Over centuries, this evolved from a security check into a symbol of agreement and trust."
+  },
+  {
+    "q": [
+      "What are 'honorifics' in greetings?",
+      "How do titles affect how we greet people?",
+      "Why are honorifics used in some languages?"
+    ],
+    "a": "Honorifics are titles or specific words used in greetings to show respect or denote social rank. Examples include using 'Mr.', 'Dr.', or 'Professor' in English, or the suffix '-san' in Japanese. These modifiers tell the speaker and listener exactly where they stand in the social or professional hierarchy."
+  },
+  {
+    "q": [
+      "What happens when there is a greeting mismatch?",
+      "What is a social faux pas in greetings?",
+      "What occurs when greeting customs conflict?"
+    ],
+    "a": "A greeting mismatch occurs when two people use different social scripts—for example, one person offers a handshake while the other leans in for a kiss. This often creates a moment of social awkwardness or a 'faux pas.' In intercultural communication, these mishaps are common and are usually resolved through laughter or a quick apology."
+  },
+  {
+    "q": [
+      "hello",
+      "hi",
+      "hey",
+      "greetings",
+      "howdy",
+      "good morning",
+      "good afternoon",
+      "good evening"
+    ],
+    "a": "Hello! How can I help you today?"
+  },
+  {
+    "q": [
+      "whats up",
+      "what's up",
+      "sup",
+      "how are you",
+      "how are you doing",
+      "how's it going"
+    ],
+    "a": "I'm doing well! I'm here to answer questions, help with problems, or just chat. What's on your mind?"
+  },
+  {
+    "q": [
+      "goodbye",
+      "good bye",
+      "bye",
+      "see you",
+      "see ya",
+      "later",
+      "farewell"
+    ],
+    "a": "Goodbye! It was nice talking to you. Feel free to come back anytime!"
+  },
+  {
+    "q": [
+      "who are you",
+      "what are you",
+      "tell me about yourself"
+    ],
+    "a": "I'm COS — a Conversation Operating System. I'm a symbolic conversational AI that processes language through parsing, reasoning, knowledge retrieval, and template-based generation. Unlike large language models, I don't use neural networks — everything I do is based on modular, deterministic components. You can think of me as a platform for coordinating different conversational engines."
+  },
+  {
+    "q": [
+      "what can you do",
+      "what can you help with",
+      "what are your capabilities"
+    ],
+    "a": "I can answer factual questions, solve math problems, remember things you tell me, engage in roleplay, write creative content, explain concepts, and more. Try asking me about science, history, geography, technology, or just have a conversation! Type /help for a list of commands."
+  },
+  {
+    "q": [
+      "thanks",
+      "thank you",
+      "thank you very much",
+      "thanks a lot"
+    ],
+    "a": "You're welcome! Happy to help. Let me know if you need anything else."
+  }
+]

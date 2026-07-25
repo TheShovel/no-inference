@@ -1,0 +1,82 @@
+[
+  {
+    "q": [
+      "What are time zones?",
+      "How do time zones work?",
+      "What is the purpose of a time zone?"
+    ],
+    "a": "Time zones are geographical regions that observe a uniform standard time for legal, commercial, and social purposes. Because the Earth rotates on its axis, the sun appears to rise and set at different times depending on your longitude. To prevent every city from having its own unique local time based on the sun's position, the world is divided into longitudinal strips, each roughly 15 degrees wide, representing one hour of the Earth's rotation."
+  },
+  {
+    "q": [
+      "What is UTC and how does it differ from GMT?",
+      "What does UTC stand for?",
+      "Is UTC the same as Greenwich Mean Time?"
+    ],
+    "a": "UTC stands for Coordinated Universal Time. It is the primary time standard by which the world regulates clocks and time. While Greenwich Mean Time (GMT) was originally based on astronomical observations of the stars, UTC is based on extremely precise atomic clocks. For most general purposes, they are the same, but UTC is the official scientific standard used in aviation, weather reporting, and the internet."
+  },
+  {
+    "q": [
+      "Why are some time zones not straight lines?",
+      "Why do time zone boundaries zig-zag?",
+      "Why aren't time zones perfectly longitudinal?"
+    ],
+    "a": "While time zones are theoretically based on 15-degree increments of longitude, the boundaries are often adjusted to follow political borders, state lines, or national boundaries. This is done for convenience; it is much easier for a country or a specific city to operate on the same time as its neighbors or trading partners than to have a single town split between two different hours."
+  },
+  {
+    "q": [
+      "What is the International Date Line?",
+      "What happens when you cross the International Date Line?",
+      "Where is the International Date Line located?"
+    ],
+    "a": "The International Date Line (IDL) is an imaginary line located roughly along the 180th meridian in the Pacific Ocean. When you cross this line traveling west, you effectively 'jump' forward one calendar day. If you cross it traveling east, you go back one calendar day. It exists to solve the problem of the day changing as you travel around the globe."
+  },
+  {
+    "q": [
+      "How many time zones are there in the world?",
+      "Is the world divided into exactly 24 time zones?",
+      "How many different local times exist globally?"
+    ],
+    "a": "While the Earth is divided into 24 basic hourly zones based on 360 degrees of rotation, there are actually more than 38 different local times in use today. This is because many countries use offset time zones—shifting their clocks by 30 or 45 minutes instead of a full hour—to better align with their actual solar time."
+  },
+  {
+    "q": [
+      "Why do some countries use Daylight Saving Time?",
+      "What is the point of DST?",
+      "How does Daylight Saving Time affect time zones?"
+    ],
+    "a": "Daylight Saving Time (DST) is the practice of advancing clocks forward by one hour during the warmer months so that darkness falls at a later clock time. The goal is to make better use of natural daylight and reduce the need for artificial lighting in the evenings. When a region observes DST, its offset from UTC changes temporarily (e.g., moving from UTC-5 to UTC-4)."
+  },
+  {
+    "q": [
+      "Which country has the most time zones?",
+      "Does France or Russia have more time zones?",
+      "Which nation spans the most time zones?"
+    ],
+    "a": "France holds the record for the most time zones, with 12. While mainland France is in only one zone, the country has numerous overseas territories and departments scattered across the Atlantic, Pacific, and Indian Oceans, each observing its own local time."
+  },
+  {
+    "q": [
+      "Who invented the system of standard time zones?",
+      "When were time zones first established?",
+      "What is the history of the global time zone system?"
+    ],
+    "a": "The concept of standard time zones was popularized in the late 19th century, largely driven by the expansion of railroads. Before this, every town used 'local mean time,' which made train schedules nearly impossible to manage. Sir Sandford Fleming, a Canadian engineer, is credited with proposing the global system of 24 hourly zones, which was internationally adopted at the International Meridian Conference in 1884."
+  },
+  {
+    "q": [
+      "What is a 'half-hour' time zone?",
+      "Do all time zones differ by exactly one hour?",
+      "Which countries use non-standard time zone offsets?"
+    ],
+    "a": "A half-hour time zone is a region that observes a time offset from UTC that ends in 30 minutes rather than a full hour. Examples include India (UTC+5:30) and Iran (UTC+3:30). These offsets are typically chosen by governments to more accurately reflect the actual position of the sun over their specific geographic territory."
+  },
+  {
+    "q": [
+      "How does time zone offset notation work?",
+      "What does UTC+5 mean?",
+      "How do I read time zone offsets?"
+    ],
+    "a": "Time zone offsets are expressed as the difference in hours and minutes from Coordinated Universal Time (UTC). A 'plus' sign (e.g., UTC+2) means the region is ahead of UTC and the sun rises there earlier. A 'minus' sign (e.g., UTC-8) means the region is behind UTC and the sun rises later. For example, if it is 12:00 PM UTC, it would be 2:00 PM in a UTC+2 zone and 4:00 AM in a UTC-8 zone."
+  }
+]

@@ -1,0 +1,142 @@
+[
+  {
+    "id": "guidance-definition-001",
+    "triggers": [
+      "What is this?",
+      "Can you explain what this means?",
+      "Define this for me"
+    ],
+    "context_role": "topic",
+    "template": "Simply put, {context} is all about the fundamental principles and frameworks that govern this area. To give you a better understanding, it generally refers to the structured approach of organizing information or actions to achieve a specific outcome. If we look deeper, it involves both the theoretical basis and the practical application, ensuring that anyone engaging with {context} has a clear roadmap to follow.",
+    "fallback": "I'm not sure what specific topic you're referring to, but generally, a definition provides the essential meaning and characteristics of a subject to create a shared understanding.",
+    "style": [
+      "educational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "guidance-example-002",
+    "triggers": [
+      "Can you show me how this looks?",
+      "Any real-world cases?"
+    ],
+    "context_role": "topic",
+    "template": "To make {context} more concrete, let's look at a practical example. Imagine a scenario where you are applying these principles in a real-world setting; you would likely see {context} manifesting as a series of stepped actions or a specific set of guidelines being followed to avoid common pitfalls. This approach transforms the abstract idea into a tangible result, making the overall process much more intuitive.",
+    "fallback": "Could you tell me what topic you're interested in? Once I know the subject, I can provide a specific, real-world example for you.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "guidance-comparison-003",
+    "triggers": [
+      "How does this compare?",
+      "Is this better than the alternative?"
+    ],
+    "context_role": "topic",
+    "template": "When comparing {context} to other similar methods, the main distinction usually lies in the approach to efficiency and flexibility. While other frameworks might prioritize rigid rules, {context} tends to emphasize a more balanced integration of theory and practice. Depending on your goals, you might find that {context} offers more scalability, whereas alternatives might be better for quick, one-off tasks.",
+    "fallback": "I'll need to know what you're comparing {context} to in order to give you a detailed breakdown of the differences.",
+    "style": [
+      "analytical",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "guidance-application-004",
+    "triggers": [
+      "How do I use this?",
+      "Where is this applied?",
+      "How can I implement this?"
+    ],
+    "context_role": "topic",
+    "template": "Applying {context} in your daily workflow can actually be quite straightforward if you take it step-by-step. First, identify the specific area where {context} is needed. Then, implement the core principles by integrating them into your existing process. Over time, you'll notice that the guidance provided by {context} helps reduce errors and streamlines the way you handle complex tasks.",
+    "fallback": "If you tell me what you're working on, I can guide you through the specific steps to implement the right strategy.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "guidance-quick-start-005",
+    "triggers": [
+      "Get me started",
+      "Quick tips?",
+      "Fast track this"
+    ],
+    "context_role": "topic",
+    "template": "Want to dive right into {context}? The fastest way to start is by focusing on the 'big wins'—the 20% of effort that gives you 80% of the results. Start with the basic setup, don't overthink the edge cases, and just get a prototype of {context} running. You can always refine the details as you get more comfortable with the process.",
+    "fallback": "I'd love to give you a quick-start guide! Just let me know what topic we are focusing on.",
+    "style": [
+      "casual",
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "guidance-deep-dive-006",
+    "triggers": [
+      "Give me a detailed explanation",
+      "I want a deep dive"
+    ],
+    "context_role": "topic",
+    "template": "Since you're interested in a deeper look at {context}, let's peel back the layers. At its core, {context} isn't just a set of rules, but a philosophy of operation. We should examine the historical evolution of this approach, the psychological or technical drivers behind it, and how it interacts with surrounding systems. Furthermore, we can analyze the common criticisms of {context} and how the community has evolved to address those gaps, providing a comprehensive view of its current state in the industry.",
+    "fallback": "I'm ready to go deep! Please specify the topic you'd like me to analyze in detail.",
+    "style": [
+      "analytical",
+      "educational"
+    ],
+    "response_length": "long"
+  },
+  {
+    "id": "guidance-pros-cons-007",
+    "triggers": [
+      "What are the pros and cons?",
+      "Is this a good idea?"
+    ],
+    "context_role": "topic",
+    "template": "Evaluating {context} requires looking at both sides of the coin. On the positive side, it offers significant benefits in terms of consistency and reliability. However, the trade-off is often a steeper learning curve or a lack of flexibility in highly volatile environments. Whether {context} is the 'right' choice depends entirely on whether you prioritize stability over rapid, unstructured experimentation.",
+    "fallback": "Every approach has its trade-offs. Tell me what you're considering, and I'll list the pros and cons for you.",
+    "style": [
+      "analytical",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "guidance-troubleshooting-008",
+    "triggers": [
+      "It's not working",
+      "I'm stuck",
+      "What am I doing wrong?"
+    ],
+    "context_role": "topic",
+    "template": "It sounds like you've hit a snag with {context}. Don't worry; that's a common part of the learning process. Usually, when people struggle with {context}, it's due to one of three things: a misconfiguration in the initial setup, a misunderstanding of the core logic, or an external conflict. Let's try isolating the problem—can you tell me exactly where the process breaks down?",
+    "fallback": "I can help you troubleshoot! Please let me know what you're working on and what specifically is going wrong.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "guidance-future-outlook-009",
+    "triggers": [
+      "Where is this going?",
+      "Future of this?",
+      "What's next?"
+    ],
+    "context_role": "topic",
+    "template": "Looking ahead, the evolution of {context} is likely to be driven by automation and smarter integration. We are seeing a shift where {context} is becoming more adaptive, moving away from static guidelines toward dynamic, AI-driven support. In the next few years, you can expect {context} to be more personalized, reducing the friction for beginners while providing deeper complexity for experts.",
+    "fallback": "The future is always changing! Tell me the topic you're curious about, and I'll give you a prediction of where it's headed.",
+    "style": [
+      "creative",
+      "analytical"
+    ],
+    "response_length": "medium"
+  }
+]

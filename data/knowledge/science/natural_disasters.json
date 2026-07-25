@@ -1,0 +1,82 @@
+[
+  {
+    "q": [
+      "What is a natural disaster?",
+      "How are natural disasters defined?",
+      "What constitutes a natural disaster?"
+    ],
+    "a": "A natural disaster is a major adverse event resulting from natural processes of the Earth. These events cause significant loss of life, environmental damage, and economic hardship. While the event itself—like a storm or an earthquake—is a natural phenomenon, it becomes a 'disaster' when it affects human populations and exceeds their ability to cope using their own resources."
+  },
+  {
+    "q": [
+      "How do earthquakes happen?",
+      "What causes an earthquake?",
+      "Why does the ground shake during an earthquake?"
+    ],
+    "a": "Earthquakes occur when there is a sudden release of energy in the Earth's crust, usually along fault lines. This happens because tectonic plates are constantly moving; sometimes they get stuck due to friction, causing stress to build up. When the stress overcomes the friction, the rocks snap and release energy in the form of seismic waves that travel through the ground, causing it to shake."
+  },
+  {
+    "q": [
+      "What is the difference between a hurricane, a typhoon, and a cyclone?",
+      "Are hurricanes and typhoons the same thing?",
+      "What determines if a storm is called a cyclone or a hurricane?"
+    ],
+    "a": "These are all the same weather phenomenon—tropical cyclones—but they are named differently based on where they occur. In the North Atlantic, central and eastern North Pacific, and Caribbean, they are called hurricanes. In the Northwest Pacific, they are called typhoons. In the South Pacific and Indian Ocean, they are called cyclones."
+  },
+  {
+    "q": [
+      "How do tsunamis form?",
+      "What causes a tsunami?",
+      "Why do massive waves occur after underwater earthquakes?"
+    ],
+    "a": "Tsunamis are most commonly triggered by undersea earthquakes that cause a vertical displacement of the seafloor. This movement pushes a massive column of water upward, creating waves that travel across the ocean at high speeds—sometimes over 500 miles per hour. As the waves reach shallow water near a coastline, they slow down and grow in height, leading to devastating flooding."
+  },
+  {
+    "q": [
+      "What causes a volcano to erupt?",
+      "How do volcanic eruptions work?",
+      "Why do volcanoes explode?"
+    ],
+    "a": "Volcanoes erupt when magma—molten rock from deep within the Earth—rises to the surface. This happens because magma is less dense than the surrounding solid rock. As magma rises, dissolved gases (like water vapor and carbon dioxide) expand and create pressure. When that pressure becomes too great for the overlying rock to contain, it forces the magma through a vent in an eruption."
+  },
+  {
+    "q": [
+      "What is the 'Ring of Fire'?",
+      "Where is the Ring of Fire located?",
+      "Why are there so many earthquakes and volcanoes in the Pacific?"
+    ],
+    "a": "The Ring of Fire is a horse-shoe-shaped zone in the Pacific Ocean basin where a large number of earthquakes and volcanic eruptions occur. It is caused by the movement of tectonic plates, specifically subduction zones where one plate slides beneath another. This process melts rock into magma and creates intense seismic tension, making it the most geologically active region on Earth."
+  },
+  {
+    "q": [
+      "How do tornadoes form?",
+      "What are the conditions needed for a tornado?",
+      "Why do tornadoes occur in the US Midwest?"
+    ],
+    "a": "Tornadoes typically form during severe thunderstorms called supercells. They require a combination of warm, moist air near the ground and cold, dry air above it, creating instability. When wind speeds change at different altitudes (wind shear), it can cause the air to rotate horizontally. An updraft then tilts this rotation into a vertical column, creating a funnel cloud that can touch the ground."
+  },
+  {
+    "q": [
+      "What causes a drought?",
+      "How do droughts start?",
+      "Why do some regions experience long periods without rain?"
+    ],
+    "a": "Droughts occur when a region experiences a deficiency in precipitation over an extended period, causing a shortage of water. This can be caused by shifting atmospheric pressure patterns that block rain-bearing clouds from entering an area. Climate change and deforestation can worsen droughts by altering local humidity and temperature levels, leading to a cycle where dry soil absorbs more heat and further repels rain."
+  },
+  {
+    "q": [
+      "What is the Richter scale and how does it measure earthquakes?",
+      "How is earthquake magnitude calculated?",
+      "What does the Richter scale measure?"
+    ],
+    "a": "The Richter scale is a logarithmic scale used to measure the magnitude, or the amount of energy released, by an earthquake. Because it is logarithmic, each whole number increase on the scale represents a ten-fold increase in the measured amplitude of the seismic waves. For example, a magnitude 6.0 earthquake is ten times stronger in amplitude than a 5.0 earthquake."
+  },
+  {
+    "q": [
+      "How can people prepare for natural disasters?",
+      "What are the best ways to mitigate natural disaster damage?",
+      "How do we reduce the impact of natural disasters?"
+    ],
+    "a": "Preparation involves both individual and systemic efforts. Individuals can create emergency kits and evacuation plans. On a larger scale, governments use engineering to mitigate risk, such as building sea walls for tsunamis, constructing earthquake-resistant skyscrapers with base isolators, and zoning laws that prevent building in high-risk flood plains. Early warning systems, like sirens and satellite alerts, also save countless lives by providing precious minutes of lead time."
+  }
+]

@@ -1,0 +1,311 @@
+[
+  {
+    "id": "reg-def-001",
+    "triggers": [
+      "What is that?",
+      "Can you define that?",
+      "What does that mean?"
+    ],
+    "context_role": "concept",
+    "template": "To put it simply, {context} is essentially a concept where... [AI expands on definition]. It's often used to describe situations where the core goal is efficiency and clarity. Does that definition align with what you were thinking, or should I dive deeper into a specific part of it?",
+    "fallback": "I'm not sure what we are referring to specifically. Could you tell me what topic you'd like me to define?",
+    "style": [
+      "educational",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "reg-ex-002",
+    "triggers": [
+      "How does that look in practice?",
+      "Give me a scenario for that"
+    ],
+    "context_role": "topic",
+    "template": "Sure! A great example of {context} in action would be... [AI provides detailed scenario]. In this case, you can see how the principles we discussed apply directly to the outcome. Can you think of a similar scenario in your own work, or would you like another example?",
+    "fallback": "I'd love to give you an example, but I'm not sure what topic we're discussing. What should I illustrate for you?",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "reg-comp-003",
+    "triggers": [
+      "How does that compare?",
+      "What's the difference?",
+      "Is that better than the alternative?"
+    ],
+    "context_role": "item",
+    "template": "When comparing {context} to other similar options, the main distinction usually lies in the approach. While alternatives might focus on speed, {context} prioritizes sustainability and long-term growth. Here is a quick breakdown of the pros and cons... [AI provides analysis]. Which of those priorities is more important for your current goal?",
+    "fallback": "I need to know what I'm comparing! Could you tell me what 'that' refers to and what the alternative is?",
+    "style": [
+      "analytical",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "reg-app-004",
+    "triggers": [
+      "How do I use that?",
+      "Where is that applied?",
+      "What's the practical use for that?"
+    ],
+    "context_role": "tool/method",
+    "template": "Applying {context} to a real-world project usually happens in a few key stages. First, you'd want to... [AI explains steps]. By following this workflow, you can maximize the benefits of {context} while minimizing common pitfalls. Would you like a step-by-step guide on how to get started with this today?",
+    "fallback": "I can certainly explain the application, but I'm not sure which tool or method you're referring to. What are we working with?",
+    "style": [
+      "educational",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "reg-crit-005",
+    "triggers": [
+      "What are the downsides?",
+      "What's the catch?",
+      "Are there any risks with that?"
+    ],
+    "context_role": "strategy",
+    "template": "It's important to look at the flip side. While {context} has many benefits, the primary risks include... [AI lists drawbacks]. These challenges often arise when the implementation is rushed or the goals aren't clearly defined. Does that change how you feel about using this approach, or do those risks seem manageable?",
+    "fallback": "I'm not sure which strategy we're analyzing. Could you let me know what you're concerned about?",
+    "style": [
+      "analytical",
+      "formal"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "reg-sum-006",
+    "triggers": [
+      "Can you summarize that?",
+      "TL;DR?",
+      "Give me the gist of that"
+    ],
+    "context_role": "information",
+    "template": "In a nutshell: {context} is all about... [AI provides 2-3 sentence summary]. The key takeaway is that it allows you to achieve better results with less effort by focusing on the most impactful variables. Does that cover the main points you were looking for?",
+    "fallback": "I don't have any previous text to summarize. What topic would you like a summary of?",
+    "style": [
+      "conversational",
+      "casual"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "reg-hist-007",
+    "triggers": [
+      "Where did that come from?",
+      "What's the history of that?",
+      "How did that start?"
+    ],
+    "context_role": "concept",
+    "template": "The origins of {context} are actually quite fascinating. It started back when... [AI explains historical context and evolution]. Over time, it evolved from a niche idea into the standard we see today because of a shift in how people approached the problem. It's interesting to see how those early iterations still influence the modern version, isn't it?",
+    "fallback": "I'm not sure which concept we're tracing back. Could you tell me what you're curious about?",
+    "style": [
+      "educational",
+      "creative"
+    ],
+    "response_length": "long"
+  },
+  {
+    "id": "reg-opt-008",
+    "triggers": [
+      "How can I improve that?",
+      "Any tips for that?",
+      "How do I make that better?"
+    ],
+    "context_role": "process",
+    "template": "To really optimize {context}, I'd recommend focusing on three specific areas. First, refine your initial input by... Second, automate the repetitive parts of... And third, consistently monitor the output to ensure... [AI details optimization]. If you implement these tweaks, you should see a noticeable increase in efficiency. Which of these areas feels like the biggest bottleneck for you right now?",
+    "fallback": "I'd love to give you some tips, but I'm not sure what process we're trying to improve. What are you working on?",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "reg-sim-009",
+    "triggers": [
+      "Can you explain that simply?",
+      "Explain it like I'm five",
+      "Put that in plain English"
+    ],
+    "context_role": "complex-topic",
+    "template": "Imagine that {context} is like... [AI uses a simple analogy]. Just like in that example, the main idea is that you're taking something complicated and breaking it down into smaller, manageable pieces so that everything runs smoother. Does that analogy make it easier to visualize, or should we try a different one?",
+    "fallback": "I'm not sure what I'm simplifying! Tell me the topic, and I'll break it down for you in the simplest terms possible.",
+    "style": [
+      "conversational",
+      "creative"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "reg-fut-010",
+    "triggers": [
+      "Where is that going?",
+      "What's the future of that?",
+      "Will that change soon?"
+    ],
+    "context_role": "trend",
+    "template": "Looking ahead, the trajectory for {context} seems to be moving toward... [AI predicts future developments]. We are likely to see a heavy integration of AI and automation, which will make {context} even more accessible to non-experts. This shift could fundamentally change how the industry operates over the next five years. Do you think these changes will be welcomed, or do you see them as a potential problem?",
+    "fallback": "I'm not sure which trend we're discussing. Could you specify the topic so I can speculate on its future?",
+    "style": [
+      "analytical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "context-about-that-001",
+    "triggers": [
+      "about that",
+      "about this",
+      "regarding that",
+      "on that topic",
+      "regarding this",
+      "on the subject of that",
+      "write about that",
+      "tell me about that"
+    ],
+    "context_role": "topic",
+    "template": "Regarding {context} — let me share more insights.\n\n{context} is richer and more complex than a single explanation can capture. There are several fascinating dimensions worth exploring further.\n\n**Deeper Perspective:**\nWhen we look at {context} more closely, we discover layers of meaning and connection that aren't immediately apparent. The relationships between its various aspects reveal patterns that deepen our understanding.\n\n**Practical Angle:**\nOne particularly valuable way to engage with {context} is to consider its practical applications. How does this knowledge translate into real-world action? What can we do differently armed with this understanding?\n\n**Connections:**\n{context} also connects to other important ideas in surprising ways. These connections create a web of knowledge where each insight illuminates others.\n\nI'd be happy to explore any specific aspect of {context} in more detail. What interests you most about it?",
+    "fallback": "I'd be happy to discuss that! What topic were we talking about?",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "context-elaborate-001",
+    "triggers": [
+      "can you elaborate on that",
+      "elaborate on that",
+      "expand on that",
+      "go deeper on that",
+      "tell me more about that",
+      "more details about that"
+    ],
+    "context_role": "topic",
+    "template": "Let me elaborate further on {context}.\n\n**Going Deeper:**\n{context} reveals its true depth when we look beyond surface-level understanding. The nuances and subtleties are what make it both challenging and rewarding to study.\n\n**Key Insight:**\nOne of the most important things to understand about {context} is that it's not static. Our understanding evolves as new discoveries are made and new perspectives emerge. This dynamism is part of what keeps the subject fresh and exciting.\n\n**Another Layer:**\nBeyond the basics, {context} involves [specific deeper aspect]. This dimension adds complexity but also richness to our understanding.\n\n**Why This Matters:**\nAppreciating these deeper aspects of {context} allows us to apply it more effectively and see connections that might otherwise remain hidden.\n\nWould you like me to go even deeper, or explore a specific subtopic?",
+    "fallback": "I'd be happy to elaborate! What topic would you like me to expand on?",
+    "style": [
+      "informative",
+      "thorough"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "context-simplify-001",
+    "triggers": [
+      "simplify that",
+      "make that simpler",
+      "dumb that down",
+      "put that more simply",
+      "in plain language",
+      "in simpler terms"
+    ],
+    "context_role": "topic",
+    "template": "Let me explain {context} in simpler terms.\n\n**The Core Idea:**\nAt its simplest, {context} is about [core simplified concept]. It's a way of understanding [key phenomenon] by looking at [essential elements].\n\n**Everyday Analogy:**\nThink of it like [everyday analogy]. Just as [analogy explanation], {context} works on a similar principle.\n\n**The Main Takeaway:**\nYou don't need to know every detail about {context} to benefit from understanding it. The key is grasping the basic idea and then building from there.\n\nDoes this simpler explanation help? I can try explaining it differently if this still isn't clear!",
+    "fallback": "Let me simplify! What topic would you like me to explain more clearly?",
+    "style": [
+      "simple",
+      "patient"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "context-connect-001",
+    "triggers": [
+      "how does that connect to",
+      "how is that related to",
+      "what's the connection between",
+      "relate that to",
+      "link that to"
+    ],
+    "context_role": "topic",
+    "template": "Great question about how {context} connects to other ideas!\n\n**The Connection:**\n{context} is not an isolated subject — it's deeply connected to many other domains. The relationships between them reveal a richer understanding of both.\n\n**Shared Foundations:**\n{context} shares fundamental principles with several related fields. These common foundations mean that insights from one area often illuminate another.\n\n**Practical Bridges:**\nIn practice, {context} and its related domains frequently overlap. Understanding these intersections is where some of the most valuable insights emerge.\n\n**Why It Matters:**\nRecognizing these connections helps us see the bigger picture and apply knowledge more flexibly across different situations.\n\nWhat specific connection would you like me to explore further?",
+    "fallback": "I can help connect ideas! What two or more topics would you like me to relate?",
+    "style": [
+      "analytical",
+      "connective"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "context-summarize-001",
+    "triggers": [
+      "summarize that",
+      "summarize what you just said",
+      "tl;dr that",
+      "in summary",
+      "to summarize",
+      "give me the short version of that"
+    ],
+    "context_role": "topic",
+    "template": "Here's the summary of {context}:\n\n**Key Takeaway:** {context} is fundamentally about understanding how core principles and mechanisms work together to create the outcomes and phenomena we observe.\n\n**Main Points:**\n1. It rests on well-established foundations that have been developed over time\n2. It has practical applications across multiple domains\n3. It connects to other important areas of knowledge\n\n**Bottom Line:** {context} provides a valuable framework for understanding and engaging with an important aspect of our world. The more you explore it, the more valuable it becomes.\n\nDoes this summary capture what you needed?",
+    "fallback": "I'll summarize! What topic would you like me to recap concisely?",
+    "style": [
+      "concise",
+      "informative"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "context-implications-001",
+    "triggers": [
+      "so what about that",
+      "why care about that",
+      "what's the point of that",
+      "what does that mean for me",
+      "how does that affect me"
+    ],
+    "context_role": "topic",
+    "template": "Great question — let me explain why {context} matters to you.\n\n**Why It's Relevant:**\n{context} might seem abstract at first, but it has very real implications for how we navigate the world. Understanding it can help you make better decisions, ask better questions, and see opportunities you might otherwise miss.\n\n**Practical Benefits:**\n- You'll be able to recognize {context} in everyday situations\n- It provides a framework for thinking about related problems\n- It connects to things you already know, deepening your overall understanding\n\n**The Bigger Picture:**\nUltimately, {context} is valuable because it enriches your understanding of how things work. Every new concept you learn adds to your mental toolkit, and {context} is a particularly versatile tool.\n\nDoes that help explain why it matters? I'm happy to discuss further!",
+    "fallback": "I'll explain why it matters! What topic are we discussing the significance of?",
+    "style": [
+      "relevant",
+      "practical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "context-critical-001",
+    "triggers": [
+      "what's wrong with that",
+      "critique that",
+      "what are the problems with that",
+      "what are the limitations of that",
+      "weaknesses of that"
+    ],
+    "context_role": "topic",
+    "template": "Let me offer a critical perspective on {context}.\n\n**A Balanced View:**\nWhile {context} offers valuable insights, it's important to consider its limitations and the critiques that have been raised.\n\n**Potential Limitations:**\n1. {context} may not capture the full complexity of real-world situations\n2. Different frameworks within this domain can lead to conflicting conclusions\n3. Our understanding continues to evolve, meaning some current views may be incomplete\n\n**Alternative Perspectives:**\nSome thoughtful critics have pointed out that [alternative viewpoint]. These perspectives deserve consideration and highlight the importance of intellectual humility.\n\n**The Takeaway:**\nThe best approach is to use {context} as a tool while remaining aware of its limitations. No single framework has all the answers, and maintaining a critical, questioning attitude is always valuable.\n\nWhat specific aspect would you like me to examine more critically?",
+    "fallback": "I can offer a critical perspective! What topic would you like me to examine the limitations of?",
+    "style": [
+      "critical",
+      "balanced"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "context-history-001",
+    "triggers": [
+      "history of that",
+      "background of that",
+      "how did that develop",
+      "origins of that",
+      "where did that come from"
+    ],
+    "context_role": "topic",
+    "template": "Let me share the history and development of {context}.\n\n**Early Origins:**\nThe foundations of {context} can be traced back to early thinkers and practitioners who first recognized its importance. These pioneers laid the groundwork for everything that followed.\n\n**Key Developments:**\nOver time, understanding of {context} evolved through several important phases:\n- Early observations and foundational theories\n- Periods of significant advance and refinement\n- Modern synthesis and contemporary understanding\n\n**Milestones:**\nSeveral key milestones mark the journey of {context}:\n- Initial formulation of core ideas\n- Major discoveries that shifted understanding\n- Practical applications that demonstrated real-world value\n\n**Present Day:**\nToday, {context} continues to evolve. Ongoing research, debate, and application ensure that our understanding remains dynamic and growing.\n\nWould you like me to go into more detail about any particular period or milestone?",
+    "fallback": "I'll share the history! What topic would you like to know the background of?",
+    "style": [
+      "historical",
+      "informative"
+    ],
+    "response_length": "medium"
+  }
+]

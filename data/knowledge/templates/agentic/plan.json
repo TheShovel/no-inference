@@ -1,0 +1,391 @@
+[
+  {
+    "id": "project-plan-def-001",
+    "triggers": [
+      "What is a project plan?",
+      "Can you define project planning?",
+      "What does a project plan actually do?"
+    ],
+    "context_role": "topic",
+    "template": "Essentially, {context} is a formal document that outlines the goals, scope, and steps required to complete a project. Think of it as a roadmap; it doesn't just list what needs to be done, but how, when, and by whom. It ensures everyone on the team is aligned and provides a baseline to measure progress against as the work evolves.",
+    "fallback": "A project plan is a comprehensive document that outlines the goals, scope, and timeline of a specific piece of work to ensure successful delivery.",
+    "style": [
+      "educational",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "project-plan-example-002",
+    "triggers": [
+      "Can you give me an example?",
+      "What does a typical plan look like?",
+      "Show me a sample project plan"
+    ],
+    "context_role": "topic",
+    "template": "If we look at {context}, a typical example would include a few key sections: First, a clear objective (the 'Why'), followed by a Work Breakdown Structure (the 'What'), and a Gantt chart for the timeline (the 'When'). For instance, if you were launching a website, your plan would detail everything from the initial wireframes to the final QA testing and go-live date.",
+    "fallback": "A typical project plan usually includes a project summary, a list of milestones, a resource allocation table, and a risk management plan.",
+    "style": [
+      "informative",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "project-plan-comparison-003",
+    "triggers": [
+      "How is this different from a roadmap?",
+      "What's the difference between a plan and a schedule?",
+      "Plan vs Roadmap?"
+    ],
+    "context_role": "topic",
+    "template": "It's common to confuse {context} with a product roadmap. The main difference is the level of detail. A roadmap is a high-level strategic vision—it tells you where you're headed over the next year. A project plan, however, is the tactical execution guide. It zooms in on the specific tasks, dependencies, and deadlines needed to hit the milestones listed on that roadmap.",
+    "fallback": "While a roadmap focuses on high-level strategic goals, a project plan focuses on the tactical execution and specific steps needed to achieve those goals.",
+    "style": [
+      "analytical",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "project-plan-application-004",
+    "triggers": [
+      "How do I start one?",
+      "Where do I begin with this?",
+      "How do I apply this to my work?"
+    ],
+    "context_role": "topic",
+    "template": "To get started with {context}, I recommend a step-by-step approach: 1. Define your goals (what does success look like?), 2. Identify your stakeholders, 3. Break the project into smaller, manageable tasks, and 4. Estimate the time and resources needed for each. Starting small with a 'Minimum Viable Plan' allows you to refine the details as you learn more about the project's requirements.",
+    "fallback": "The best way to start is by defining your primary objective, listing all necessary deliverables, and mapping them out on a timeline.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "project-plan-tools-005",
+    "triggers": [
+      "What tools should I use?",
+      "Any software recommendations?",
+      "How do I track this digitally?"
+    ],
+    "context_role": "topic",
+    "template": "Depending on the complexity of {context}, different tools work better. For simple tasks, a shared spreadsheet or Trello board is great. For more complex projects with many dependencies, you might want something like Asana, Monday.com, or Jira. If you need heavy-duty scheduling and critical path analysis, Microsoft Project or Smartsheet are the industry standards.",
+    "fallback": "Depending on your needs, you can use anything from simple spreadsheets to specialized software like Jira, Trello, or Asana.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "project-plan-risk-006",
+    "triggers": [
+      "How do I handle risks?",
+      "What if things go wrong?",
+      "How do I plan for failures?"
+    ],
+    "context_role": "topic",
+    "template": "Integrating risk management into {context} is crucial. You should create a 'Risk Register' where you identify potential bottlenecks—like a key team member leaving or a vendor delay—and assign a probability and impact score to each. Then, develop a mitigation strategy for the high-risk items so that when a problem arises, you already have a pre-approved plan to handle it.",
+    "fallback": "Risk management involves identifying potential project threats, assessing their impact, and creating contingency plans to minimize disruption.",
+    "style": [
+      "analytical",
+      "formal"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "project-plan-agility-007",
+    "triggers": [
+      "What if the plan changes?",
+      "How do I keep it flexible?",
+      "Does this work for Agile?"
+    ],
+    "context_role": "topic",
+    "template": "In a modern environment, {context} shouldn't be set in stone. If you're using an Agile approach, your plan becomes a 'living document.' Instead of planning the entire year in detail, you plan in short sprints. This allows you to pivot based on feedback or changing market conditions without feeling like you've 'failed' the original plan. The goal is adaptability over rigid adherence.",
+    "fallback": "Flexible project planning involves iterative updates and short-term milestones, allowing the team to adjust based on real-time feedback.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "project-plan-stakeholder-008",
+    "triggers": [
+      "How do I present this to my boss?",
+      "How do I get buy-in?",
+      "How do I share this with others?"
+    ],
+    "context_role": "topic",
+    "template": "When sharing {context} with stakeholders, the key is to tailor the level of detail. Your team needs the granular task list, but your executives likely only want to see the 'Executive Summary' and the major milestones. Focus on the outcomes, the timeline for delivery, and the resources you need from them to be successful. Use visuals like a high-level roadmap to keep them engaged without overwhelming them with data.",
+    "fallback": "Present high-level milestones and outcomes to executives, while reserving the detailed task lists for the core project team.",
+    "style": [
+      "formal",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "project-plan-mistakes-009",
+    "triggers": [
+      "What are common mistakes?",
+      "Why do project plans fail?",
+      "What should I avoid?"
+    ],
+    "context_role": "topic",
+    "template": "One of the most common pitfalls with {context} is 'over-planning' or the 'planning fallacy'—where we underestimate how long tasks will actually take. People often forget to include 'buffer time' for unexpected delays. Another mistake is creating a plan in a vacuum without consulting the people who will actually do the work, which leads to unrealistic deadlines and team burnout.",
+    "fallback": "Common mistakes include underestimating timelines, failing to account for risks, and not involving the implementation team during the planning phase.",
+    "style": [
+      "analytical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "project-plan-summary-010",
+    "triggers": [
+      "Can you summarize this?",
+      "Give me the TL;DR",
+      "Just the main points please"
+    ],
+    "context_role": "topic",
+    "template": "To wrap up our discussion on {context}, the key takeaways are: First, it's a roadmap for execution. Second, it must balance detail with flexibility. Third, it requires a combination of clear goals, resource allocation, and risk management. Ultimately, the best plan is the one that the team actually uses and updates as the project progresses.",
+    "fallback": "In short, a project plan is a strategic tool used to define goals, organize tasks, and manage resources to ensure a project is completed on time and within budget.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "study-plan-def-001",
+    "triggers": [
+      "what is a study plan",
+      "explain study plans",
+      "define study planning"
+    ],
+    "context_role": "topic",
+    "template": "Essentially, a study plan for {context} is a structured roadmap that outlines what you need to learn, when you'll learn it, and how you'll measure your progress. Instead of diving in randomly, it helps you break down {context} into manageable chunks, ensuring you cover all critical modules without feeling overwhelmed by the sheer volume of material.",
+    "fallback": "A study plan is a structured schedule that helps a learner organize their time and resources to master a specific subject efficiently.",
+    "style": [
+      "educational",
+      "informative"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "study-plan-create-002",
+    "triggers": [
+      "how do I make a study plan",
+      "help me create a schedule",
+      "how to organize my studies"
+    ],
+    "context_role": "topic",
+    "template": "Creating a winning plan for {context} starts with three steps. First, audit your current knowledge to see where the gaps are. Second, break {context} into weekly themes or chapters. Finally, assign specific time blocks in your calendar for deep work, ensuring you include a 'review day' every week to solidify what you've learned. Would you like me to help you map out the first few weeks?",
+    "fallback": "To create a study plan, start by listing your goals, breaking the subject into smaller topics, and scheduling specific time slots for study and review.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "study-plan-example-003",
+    "triggers": [
+      "show me a sample plan",
+      "what does a study schedule look like"
+    ],
+    "context_role": "topic",
+    "template": "If we were designing a sample plan for {context}, it might look like this: \n\n- **Week 1: Foundations.** Focus on core terminology and basic concepts of {context}.\n- **Week 2: Intermediate Application.** Move into practical exercises and case studies.\n- **Week 3: Advanced Theory.** Tackle the complex nuances and edge cases.\n- **Week 4: Final Review.** Practice exams and synthesis of all themes.\n\nDoes this pace feel sustainable for you, or should we stretch it out over more months?",
+    "fallback": "A typical study plan involves a phased approach: starting with fundamentals, moving to application, and ending with a comprehensive review phase.",
+    "style": [
+      "conversational",
+      "creative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "study-plan-compare-004",
+    "triggers": [
+      "passive vs active study",
+      "which method is better",
+      "compare study styles"
+    ],
+    "context_role": "topic",
+    "template": "When approaching {context}, you'll often see a conflict between passive and active study plans. A passive plan involves reading and highlighting, which feels easy but often leads to 'the illusion of competence.' An active plan for {context} incorporates techniques like active recall and spaced repetition—forcing your brain to retrieve information. For a subject like {context}, I highly recommend the active approach to ensure long-term retention.",
+    "fallback": "Passive learning involves absorbing information, while active learning requires engaging with the material through practice and recall, which is generally more effective.",
+    "style": [
+      "analytical",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "study-plan-app-005",
+    "triggers": [
+      "what tools should I use",
+      "best apps for studying",
+      "how to track my progress"
+    ],
+    "context_role": "topic",
+    "template": "To keep your {context} study plan on track, I recommend a 'tech stack' approach. Use Notion or Trello for organizing your syllabus and tracking modules. For the actual memorization of {context} facts, Anki or Quizlet are fantastic for spaced repetition. If you struggle with focus, a Pomodoro timer (like Forest) can help you maintain those 25-minute sprints of intense concentration.",
+    "fallback": "I recommend using a combination of organization tools like Notion, flashcard apps like Anki, and productivity timers to manage your study habits.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "study-plan-struggle-006",
+    "triggers": [
+      "i'm overwhelmed",
+      "too much to study",
+      "i can't keep up"
+    ],
+    "context_role": "topic",
+    "template": "It's completely normal to feel overwhelmed when tackling {context}; it's a lot of information. The best way to fix this is to 'shrink the horizon.' Instead of looking at the entire mountain of {context}, let's just focus on the next 48 hours. What is one small, specific sub-topic we can clear today? Once we get a small win, the rest of the plan will feel much more achievable.",
+    "fallback": "When you're feeling overwhelmed, the best strategy is to break your goals into tiny, manageable tasks and focus only on the immediate next step.",
+    "style": [
+      "conversational",
+      "supportive"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "study-plan-deepdive-007",
+    "triggers": [
+      "give me a detailed plan",
+      "comprehensive guide",
+      "step by step roadmap"
+    ],
+    "context_role": "topic",
+    "template": "Since you're looking for a comprehensive roadmap for {context}, we need to treat this as a professional development project. \n\n**Phase 1: The Knowledge Base (Weeks 1-4).** We will identify the 'First Principles' of {context}. You'll spend 70% of your time consuming high-quality theory and 30% on basic drills.\n\n**Phase 2: The Application Bridge (Weeks 5-8).** Here, we shift the ratio. You'll spend 30% reading and 70% building projects or solving complex problems related to {context}. This is where the 'clicking' happens.\n\n**Phase 3: Optimization and Mastery (Weeks 9-12).** We will use a 'Feynman Technique' approach, where you attempt to explain {context} to a beginner. Any gaps in your explanation become your new study targets.\n\nWould you like me to break Phase 1 down into specific daily tasks for you?",
+    "fallback": "A comprehensive plan usually involves three stages: building a foundational knowledge base, applying that knowledge through practice, and refining mastery through teaching or advanced testing.",
+    "style": [
+      "formal",
+      "analytical"
+    ],
+    "response_length": "long"
+  },
+  {
+    "id": "study-plan-time-008",
+    "triggers": [
+      "how many hours a day",
+      "how long should i study",
+      "time management for studying"
+    ],
+    "context_role": "topic",
+    "template": "The amount of time you spend on {context} depends more on intensity than duration. Studying {context} for 8 hours while distracted is less effective than 2 hours of 'Deep Work.' I suggest the 50/10 rule: 50 minutes of absolute focus on {context}, followed by a 10-minute total break (no screens). This keeps your brain fresh and prevents the burnout that often happens with dense subjects.",
+    "fallback": "Focus on quality over quantity. Short bursts of high-intensity, focused study are generally more effective than long hours of distracted learning.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "study-plan-review-009",
+    "triggers": [
+      "how to remember everything",
+      "stop forgetting",
+      "review strategies"
+    ],
+    "context_role": "topic",
+    "template": "The biggest challenge with {context} isn't learning the material—it's keeping it. To prevent the 'forgetting curve,' you should implement a tiered review system for {context}. Review the material after 24 hours, then again after 1 week, and once more after 1 month. This signals to your brain that the information about {context} is important for the long term, moving it from short-term to long-term memory.",
+    "fallback": "To combat forgetting, use spaced repetition—reviewing material at increasing intervals (e.g., 1 day, 1 week, 1 month) to solidify memory.",
+    "style": [
+      "educational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "study-plan-adjust-010",
+    "triggers": [
+      "my plan isn't working",
+      "i'm falling behind",
+      "need to change my schedule"
+    ],
+    "context_role": "topic",
+    "template": "If your current plan for {context} isn't working, it's usually because the plan was built for a 'perfect version' of you, not the 'real version.' Let's pivot. We can either reduce the daily load for {context} to make it more sustainable, or we can change the medium—perhaps switching from reading to watching video tutorials or doing hands-on labs. Which part of the current {context} plan feels the most draining?",
+    "fallback": "When a study plan fails, it's often too rigid. The key is to adjust the workload or change the learning method to better suit your energy levels.",
+    "style": [
+      "conversational",
+      "supportive"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "gen-strategi-001",
+    "triggers": [
+      "tell me about strategic plans"
+    ],
+    "context_role": "topic",
+    "template": "I'd be happy to share what I know about {context}! Let me give you a comprehensive overview covering the key aspects, interesting details, and practical implications.",
+    "fallback": "I'd be happy to talk about strategic plans! What would you like to know?",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "gen-strategi-002",
+    "triggers": [
+      "explain strategic plans to me"
+    ],
+    "context_role": "topic",
+    "template": "Great question about {context}! Let me break it down in a way that's easy to understand, starting with the fundamentals and building up to the more interesting details.",
+    "fallback": "I'd be happy to talk about strategic plans! What would you like to know?",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "gen-strategi-003",
+    "triggers": [
+      "what is strategic plans"
+    ],
+    "context_role": "topic",
+    "template": "{context} is a fascinating subject that encompasses several key ideas and principles. Let me explain what it is and why it matters.",
+    "fallback": "I'd be happy to talk about strategic plans! What would you like to know?",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "gen-strategi-004",
+    "triggers": [
+      "give me an overview of strategic plans"
+    ],
+    "context_role": "topic",
+    "template": "Here's a concise overview of {context}: It covers important concepts that have practical applications and interesting implications across multiple areas.",
+    "fallback": "I'd be happy to talk about strategic plans! What would you like to know?",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "gen-strategi-005",
+    "triggers": [
+      "teach me strategic plans"
+    ],
+    "context_role": "topic",
+    "template": "I'd be happy to teach you about {context}! Let's start with the basics and work our way up. First, let's understand what makes this subject unique.",
+    "fallback": "I'd be happy to talk about strategic plans! What would you like to know?",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  }
+]

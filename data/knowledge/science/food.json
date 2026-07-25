@@ -1,0 +1,32 @@
+[
+  {
+    "patterns": ["what are carrots made of", "what are carrots made out of", "carrots composed of", "carrots contain"],
+    "answer": "Carrots are made mostly of water (about 88%), with carbohydrates (primarily sugars and fiber) making up most of the rest. They are rich in beta-carotene, which the body converts to vitamin A, and also contain vitamin K1, potassium, and antioxidants.",
+    "tags": ["food", "nutrition", "vegetables"]
+  },
+  {
+    "patterns": ["what is an apple made of", "what are apples made of"],
+    "answer": "Apples are composed of about 86% water, 14% carbohydrates (mainly sugars and fiber), with small amounts of protein and fat. They are rich in vitamin C, various antioxidants (quercetin, catechin), and dietary fiber, especially pectin.",
+    "tags": ["food", "nutrition", "fruit"]
+  },
+  {
+    "patterns": ["what is bread made of", "what is bread made from"],
+    "answer": "Bread is primarily made from flour (usually wheat), water, yeast, and salt. The flour provides gluten proteins that give bread its structure, yeast produces carbon dioxide that makes it rise, and salt adds flavor and controls fermentation.",
+    "tags": ["food", "nutrition", "baking"]
+  },
+  {
+    "patterns": ["what is milk made of", "what is milk composed of"],
+    "answer": "Milk is composed of about 87% water, 4.8% lactose (milk sugar), 3.7% fat, 3.4% protein (mainly casein and whey), and 0.7% minerals including calcium, phosphorus, and potassium. It also contains vitamins A, D, B12, and riboflavin.",
+    "tags": ["food", "nutrition", "dairy"]
+  },
+  {
+    "patterns": ["what is chocolate made of", "how is chocolate made"],
+    "answer": "Chocolate is made from cacao beans through a process of fermenting, drying, roasting, and grinding. The resulting cocoa mass is combined with cocoa butter, sugar, and often milk powder (for milk chocolate). Dark chocolate contains cocoa solids and sugar, while white chocolate contains cocoa butter, sugar, and milk solids but no cocoa solids.",
+    "tags": ["food", "nutrition", "confectionery"]
+  },
+  {
+    "patterns": ["what is the healthiest food", "what is the most nutritious food"],
+    "answer": "There is no single healthiest food, but some of the most nutrient-dense foods include leafy greens (spinach, kale), fatty fish (salmon, sardines), berries, eggs, legumes, nuts, seeds, and cruciferous vegetables (broccoli, Brussels sprouts). A varied diet with these foods provides comprehensive nutrition.",
+    "tags": ["food", "nutrition", "health"]
+  }
+]
