@@ -1,0 +1,157 @@
+[
+  {
+    "id": "diag-flow-001",
+    "triggers": [
+      "what is a flowchart",
+      "tell me about flowcharts",
+      "how do flowcharts work"
+    ],
+    "context_role": "flowchart",
+    "template": "A flowchart is a visual representation of a process. In the case of {context}, it helps map out every step from start to finish to identify bottlenecks or inefficiencies.",
+    "fallback": "A flowchart is a type of diagram that represents a workflow or process, using symbols to show the sequence of steps.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diag-venn-002",
+    "triggers": [
+      "what is a venn diagram",
+      "how to use venn diagrams"
+    ],
+    "context_role": "comparison_topics",
+    "template": "Venn diagrams are great for showing overlapping relationships. If you're comparing {context}, the overlapping section represents the shared traits, while the outer circles show the unique differences.",
+    "fallback": "Venn diagrams use overlapping circles to illustrate the logical relationships between two or more sets of items.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diag-uml-003",
+    "triggers": [
+      "uml diagram",
+      "unified modeling language",
+      "what is uml"
+    ],
+    "context_role": "software_system",
+    "template": "UML diagrams are the standard for software architecture. For a system like {context}, you would likely use a Class Diagram for structure or a Sequence Diagram for logic flow.",
+    "fallback": "UML (Unified Modeling Language) is a general-purpose modeling language used in software engineering to visualize the design of a system.",
+    "style": [
+      "professional",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diag-mind-004",
+    "triggers": [
+      "mind map",
+      "what is a mind map",
+      "how to mind map"
+    ],
+    "context_role": "central_idea",
+    "template": "Mind mapping is perfect for brainstorming. Starting with {context} in the center, you can branch out into related sub-topics to organize your thoughts non-linearly.",
+    "fallback": "A mind map is a diagram used to visually organize information, typically radiating outward from a single central concept.",
+    "style": [
+      "conversational",
+      "creative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diag-gantt-005",
+    "triggers": [
+      "gantt chart",
+      "what is a gantt chart",
+      "scheduling diagram"
+    ],
+    "context_role": "project_name",
+    "template": "Gantt charts are all about timelines. For {context}, it would allow you to see exactly which tasks overlap and when the critical milestones are expected to hit.",
+    "fallback": "A Gantt chart is a horizontal bar chart that illustrates a project schedule, showing the start and finish dates of various elements.",
+    "style": [
+      "conversational",
+      "business"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diag-fish-006",
+    "triggers": [
+      "cause and effect diagram"
+    ],
+    "context_role": "problem_statement",
+    "template": "The fishbone diagram is excellent for root-cause analysis. By placing {context} at the 'head' of the fish, you can categorize potential causes into groups like People, Process, and Equipment.",
+    "fallback": "A fishbone diagram, also known as an Ishikawa diagram, helps identify the various causes of a specific problem to find the root cause.",
+    "style": [
+      "analytical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diag-entity-007",
+    "triggers": [
+      "er diagram",
+      "entity relationship diagram",
+      "database diagram"
+    ],
+    "context_role": "database_concept",
+    "template": "An ER diagram maps out your data logic. For {context}, it would define the entities (like 'User' or 'Order') and how they relate to one another via one-to-many or many-to-many links.",
+    "fallback": "Entity-Relationship (ER) diagrams are used to model the logical structure of a database, showing how different data entities relate.",
+    "style": [
+      "technical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diag-sankey-008",
+    "triggers": [
+      "sankey diagram",
+      "flow diagram with width",
+      "sankey chart"
+    ],
+    "context_role": "resource_type",
+    "template": "Sankey diagrams are unique because the width of the arrows represents quantity. They are ideal for visualizing the flow of {context} from one state to another.",
+    "fallback": "A Sankey diagram is a flow diagram where the width of the lines is proportional to the flow quantity.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diag-hierarchy-009",
+    "triggers": [
+      "hierarchy chart",
+      "organizational diagram"
+    ],
+    "context_role": "organization_type",
+    "template": "A hierarchy chart clarifies reporting lines. In {context}, this would clearly show who reports to whom and how the authority is distributed across levels.",
+    "fallback": "Hierarchy charts are tree-structure diagrams used to represent an organization's structure or a ranked ordering of items.",
+    "style": [
+      "conversational",
+      "professional"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diag-state-010",
+    "triggers": [
+      "state diagram",
+      "state machine diagram",
+      "state transition"
+    ],
+    "context_role": "object_behavior",
+    "template": "State diagrams track the 'life' of an object. For {context}, the diagram would show the transition from one state (like 'Idle') to another (like 'Active') based on specific triggers.",
+    "fallback": "A state diagram describes the different states an object or system can be in and the transitions that cause a change from one state to another.",
+    "style": [
+      "technical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  }
+]

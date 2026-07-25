@@ -21,6 +21,9 @@ import os
 import re
 import subprocess
 import sys
+import json
+import urllib.request
+import urllib.parse
 from pathlib import Path
 
 from state import conversation_history, current_roleplay, fact_memory
@@ -29,8 +32,161 @@ from memory import extract_and_store, recall as memory_recall, get_all_facts_tex
 from knowledge import lookup as knowledge_lookup
 from templates import match_instruction
 from roleplay import match_roleplay, generate_followup as roleplay_followup
+from llm_fallback import extract_search_terms
 from followup import rewrite_previous_response
 from template_engine import match_template, get_context_topic, reload as reload_templates
+
+# ── Wikipedia search (fallback) ───────────────────────────────────────────────
+
+_WIKI_CACHE = {}  # query_lower -> (summary, source_url)
+
+
+def _extract_search_topic(query):
+    """Extract a clean search topic using symbolic extraction."""
+    # Try symbolic extraction first
+    try:
+        from llm_fallback import extract_topic
+        topic = extract_topic(query)
+        if topic and len(topic) > 2:
+            return topic
+    except Exception:
+        pass
+    # Fallback regex patterns
+    q = query.lower().strip()
+    patterns = [
+        r'^(?:what|who|which)\'?s\s+(?:a|an|the|this|that)?\s*(.+?)\??$',
+        r'^(?:what|who|which)\s+(?:is|are|was|were)\s+(?:a|an|the|this|that)?\s*(.+?)\??$',
+        r'^(?:what|who|which)\s+are\s+(?:a|an|the|this|that)?\s*(.+?)\??$',
+        r'^(?:tell|teach|show)\s+(?:me|us)\s+(?:about|what|how)\s+(.+?)\??$',
+        r'^(?:explain|describe|define)\s+(?:the\s+)?(?:concept\s+of\s+)?(.+?)\??$',
+        r'^(?:how)\s+(?:(?:does|do|is|are|can|would|will|shall|should|could)\s+)?(?:i|we|you|they|he|she|it|one)\s+(?:to\s+)?(?:make|bake|cook|create|build|write|find|get|know)?\s*(.+?)\??$',
+        r'^i\s+(?:like|love|enjoy|hate|want|have|use)\s+(.+?)$',
+    ]
+    for pat in patterns:
+        m = re.search(pat, q)
+        if m:
+            topic = m.group(1).strip().rstrip('.!?,;: ')
+            if len(topic) > 2:
+                return topic
+    return q
+
+
+def _resolve_topic(query, conversation_history):
+    """Resolve a query's topic, using conversation history for context-dependent queries.
+
+    When a query uses pronouns or follow-up signals ("it", "them", "that",
+    "tell me more", "yeah but how"), the topic is resolved from the
+    conversation history instead of the raw query text.
+    """
+    # First try direct extraction
+    topic = _extract_search_topic(query)
+
+    # Check if the query is context-dependent (pronouns, follow-ups)
+    is_vague = (not topic or topic.lower() in (
+        'that', 'it', 'this', 'them', 'those', 'these', 'they', 'he', 'she'
+    ))
+
+    if is_vague or _query_is_context_dependent(query):
+        try:
+            from cos.context_extraction import extract_context_topic
+            ctx_topic = extract_context_topic(
+                conversation_history,
+                current_query=query,
+            )
+            if ctx_topic and len(ctx_topic) > 2:
+                return ctx_topic
+        except Exception:
+            pass
+
+    return topic
+
+
+def _query_is_context_dependent(query):
+    """Check if a query primarily refers to prior conversation context."""
+    q = query.lower().strip()
+    if not q:
+        return False
+
+    pronoun_refs = {'it', 'that', 'this', 'them', 'those', 'these', 'they'}
+    words = q.split()
+    has_pronoun = any(w in pronoun_refs for w in words)
+
+    followup_signals = [
+        'tell me more', 'tell me about that', 'explain that',
+        'go on', 'continue', 'more about', 'expand on',
+        'yeah but', 'yes but', 'ok but', 'well what about',
+        'how about it', 'what about it', 'what about them',
+        'regarding that', 'about that',
+    ]
+    has_signal = any(s in q for s in followup_signals)
+
+    return has_pronoun or has_signal
+
+
+def _search_wikipedia(query):
+    """Search Wikipedia for a query and return a summary.
+    
+    Returns (summary_text, source_url) or (None, None) on failure.
+    Uses a simple in-memory cache to avoid repeat requests.
+    Uses conversation history to resolve pronouns in context-dependent queries.
+    """
+    # Try to extract a clean topic, resolving pronouns from context
+    topic = _resolve_topic(query, conversation_history)
+    if not topic or len(topic) < 3:
+        topic = query.strip()[:100]
+    
+    cache_key = topic.lower().strip()
+    if cache_key in _WIKI_CACHE:
+        return _WIKI_CACHE[cache_key]
+
+    try:
+        # Step 1: Search for the best page title via opensearch
+        search_url = (
+            'https://en.wikipedia.org/w/api.php?'
+            'action=opensearch&search=' + urllib.parse.quote(topic) +
+            '&limit=1&namespace=0&format=json'
+        )
+        req = urllib.request.Request(search_url, headers={
+            'User-Agent': 'COS/1.0 (conversational AI; no-inference)'
+        })
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            result = json.loads(resp.read().decode())
+        
+        if not result or len(result) < 2 or not result[1]:
+            _WIKI_CACHE[cache_key] = (None, None)
+            return None, None
+        
+        page_title = result[1][0]
+        page_url = result[3][0] if len(result) > 3 and result[3] else None
+        
+        # Step 2: Get the page summary
+        summary_url = (
+            'https://en.wikipedia.org/api/rest_v1/page/summary/' +
+            urllib.parse.quote(page_title)
+        )
+        req = urllib.request.Request(summary_url, headers={
+            'User-Agent': 'COS/1.0 (conversational AI; no-inference)'
+        })
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            data = json.loads(resp.read().decode())
+        
+        extract = data.get('extract', '')
+        if not extract:
+            _WIKI_CACHE[cache_key] = (None, None)
+            return None, None
+        
+        # Truncate to first paragraph or reasonable length
+        first_para = extract.split('\\n')[0] if '\\n' in extract else extract
+        if len(first_para) > 600:
+            first_para = first_para[:first_para.rfind('. ', 0, 600) + 1] or first_para[:600]
+        
+        result = (first_para.strip(), page_url or summary_url)
+        _WIKI_CACHE[cache_key] = result
+        return result
+    except Exception:
+        _WIKI_CACHE[cache_key] = (None, None)
+        return None, None
+
 
 # ── Paths ────────────────────────────────────────────────────────────────────
 SCRIPT_DIR = Path(__file__).parent.absolute()
@@ -99,6 +255,26 @@ def _solve_word_problem(question):
 
 # ── C runner ─────────────────────────────────────────────────────────────────
 
+_KNOWN_GENERIC = {
+    'i understand.', 'i understand', 'i don\'t know.', 'i don\'t know',
+    'i don\'t understand.', 'i don\'t understand',
+    'i do not know.', 'i do not know',
+    'i have no information about that.',
+    'that doesn\'t make sense.',
+    'you mentioned',  # prefix check
+}
+
+def _is_generic_response(response):
+    """Check if a response is a generic non-answer."""
+    r = response.lower().strip().rstrip('.!?')
+    if r in _KNOWN_GENERIC:
+        return True
+    for prefix in ('you mentioned', 'i understand'):
+        if r.startswith(prefix):
+            return True
+    return False
+
+
 def _run_cos_runner(query, timeout=30):
     """Run the COS C bench_runner and return the response."""
     try:
@@ -109,7 +285,9 @@ def _run_cos_runner(query, timeout=30):
             timeout=timeout
         )
         response = result.stdout.decode().strip()
-        if response and response != "[ERROR]" and len(response) > 5:
+        if (response and response != "[ERROR]"
+                and len(response) > 5
+                and not _is_generic_response(response)):
             return response
     except:
         pass
@@ -134,12 +312,30 @@ def process_query(query, use_cos=True):
     if not q_clean:
         return ""
 
-    # 1. Check template engine first (context-aware conversational templates)
-    # This catches "write an essay about that", "tell me more", "explain that", etc.
-    # even before intent detection, so context is preserved.
+    # 1. Check template engine for context-dependent follow-ups first.
+    # This catches "tell me more about that", "write an essay about that",
+    # "explain that" — queries that only make sense with prior context.
+    # Generic templates (no context_role) are handled later per-intent,
+    # so they don't override knowledge base or Wikipedia lookups.
+    # IMPORTANT: Only use the template early if context was actually
+    # available (not via fallback), otherwise the fallback filler text
+    # can override real factual answers.
     ctx = get_context_topic()
     tmpl_result = match_template(q_clean, context=ctx)
-    if tmpl_result:
+    # Only use the early template path for genuinely context-dependent queries
+    # (e.g. "tell me more about that", "write an essay about it") where the
+    # query uses a pronoun/demonstrative instead of naming a new topic.
+    # Standalone queries like "what is the capital of france" should go
+    # through intent routing so KB/Wikipedia can answer first.
+    current_topic = _resolve_topic(q_clean, conversation_history)
+    is_contextual_ref = (_query_is_context_dependent(q_clean)
+                         or current_topic is None
+                         or current_topic.lower() in ('that', 'it', 'this', 'them', 'those'))
+    if (tmpl_result
+            and is_contextual_ref
+            and tmpl_result.get('template_info', {}).get('requires_context')
+            and not tmpl_result.get('template_info', {}).get('used_fallback')
+            and ctx is not None):
         conversation_history.append((q_clean, tmpl_result['response']))
         return tmpl_result['response']
 
@@ -253,9 +449,41 @@ What would you like to discuss? I am ready to respond entirely in character!"""
 def _handle_instruction(query):
     """Handle instruction/coding queries."""
     q = query.strip()
-    
+
+    # Detect creative writing requests (essay, story, poem, article, etc.)
+    # For these, prefer Wikipedia content over template filler.
+    q_lower = q.lower()
+    writing_match = re.search(
+        r'(?:write|compose|draft|create|make)'
+        r'\s+(?:a|an|the)?\s*'
+        r'(?:short\s+)?'
+        r'(poem|essay|story|article|paragraph|report|letter|summary|description|post|page|song|haiku|verse)'
+        r'\s+(?:about|on|regarding|covering|titled|called|for)\s+'
+        r'(.+?)\??$',
+        q_lower
+    )
+
+    if writing_match:
+        fmt = writing_match.group(1).lower()  # poem, essay, story, etc.
+        topic = writing_match.group(2).strip().rstrip('.!?')
+        if topic:
+            # For poems, use the poem generator with Wikipedia content
+            if fmt == 'poem' or fmt == 'haiku' or fmt == 'verse' or fmt == 'song':
+                wiki_summary, wiki_url = _search_wikipedia(topic)
+                from llm_fallback import generate_poem
+                poem = generate_poem(topic, wiki_summary or '')
+                source = f'\n  (inspired by Wikipedia)' if wiki_url else ''
+                return f"A poem about {topic}:\n\n{poem}{source}"
+            # For essays and other prose, use Wikipedia content directly
+            kb_answer = knowledge_lookup(topic)
+            if kb_answer:
+                return f"Here is an essay on {topic}:\n\n{kb_answer}"
+            wiki_summary, wiki_url = _search_wikipedia(topic)
+            if wiki_summary:
+                url_suffix = f'\n\n  Source: {wiki_url}' if wiki_url else ''
+                return f"Here is an essay on {topic}:\n\n{wiki_summary}{url_suffix}"
+
     # First try template engine (context-aware conversational templates)
-    # This catches "write an essay about that", "explain that", etc.
     ctx = get_context_topic()
     tmpl_result = match_template(q, context=ctx)
     if tmpl_result:
@@ -336,23 +564,70 @@ def _handle_factual(query, use_cos):
     """Handle factual knowledge queries."""
     q = query.strip()
 
-    # First try: template engine (context-aware conversation templates)
+    # For context-dependent queries, resolve topic from conversation history
+    search_query = q
+    if _query_is_context_dependent(q):
+        resolved = _resolve_topic(q, conversation_history)
+        if resolved and len(resolved) > 2:
+            search_query = resolved
+
+    # First try: common knowledge base (most accurate for facts)
+    kb_answer = knowledge_lookup(search_query)
+    if kb_answer:
+        return kb_answer
+
+    # Second try: Wikipedia search (broad coverage for anything the KB lacks)
+    wiki_summary, wiki_url = _search_wikipedia(search_query)
+    if wiki_summary:
+        url_suffix = f'\n  Source: {wiki_url}' if wiki_url else ''
+        return wiki_summary + url_suffix
+
+    # Third try: multi-keyword search (symbolic extraction, then KB + Wikipedia lookup)
+    try:
+        keywords = extract_search_terms(search_query)
+        if keywords:
+            # Search KB with each keyword
+            kb_results = []
+            for kw in keywords:
+                ans = knowledge_lookup(kw)
+                if ans:
+                    kb_results.append(ans)
+            # Search Wikipedia with keywords
+            wiki_text = ''
+            for kw in keywords[:2]:
+                summary, url = _search_wikipedia(kw)
+                if summary:
+                    wiki_text += summary + ' '
+            # Combine results
+            information = ' '.join(kb_results)
+            if wiki_text:
+                information += '\\n' + wiki_text
+            if information.strip():
+                return information.strip()
+    except Exception:
+        pass
+
+    # Fourth try: template engine (context-aware templates, follow-ups)
     # Catches "write an essay about that", "tell me more about that", etc.
     ctx = get_context_topic()
     tmpl_result = match_template(q, context=ctx)
     if tmpl_result:
         return tmpl_result['response']
 
-    # Second try: common knowledge base
-    kb_answer = knowledge_lookup(q)
-    if kb_answer:
-        return kb_answer
-
-    # Third try: C COS runner
+    # Fourth try: C COS runner (only for factual trivia, not how-to questions)
+    # The C runner uses TruthfulQA facts with loose keyword matching,
+    # which can produce garbage for procedural queries (e.g. "french"
+    # in "french fries" matching a fact about French people).
     if use_cos:
-        response = _run_cos_runner(q)
-        if response:
-            return response
+        q_lower = q.lower()
+        is_how_to = any(q_lower.startswith(p) for p in [
+            'how can i', 'how do i', 'how to', 'how would i',
+            'how does one', 'how could i',
+        ])
+        if not is_how_to:
+            response = _run_cos_runner(q)
+            if response:
+                return response
 
     return None  # Fall through
 

@@ -1,0 +1,157 @@
+[
+  {
+    "id": "debug-type-print-001",
+    "triggers": [
+      "print debugging",
+      "printf debugging",
+      "logging"
+    ],
+    "context_role": "explanation",
+    "template": "Print debugging is the most common approach. Essentially, you insert {context} into your code to track variable states and flow. It's great for quick checks, though it can clutter your source code.",
+    "fallback": "Print debugging involves adding output statements to your code to see what's happening during execution.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-type-interact-002",
+    "triggers": [
+      "interactive debugger",
+      "breakpoints",
+      "stepping through"
+    ],
+    "context_role": "tooling",
+    "template": "Interactive debugging is a powerhouse move. By using {context}, you can freeze the program execution at a specific line and inspect the entire memory heap in real-time.",
+    "fallback": "An interactive debugger lets you pause your program and examine its state step-by-step.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-type-rubber-003",
+    "triggers": [
+      "rubber ducking",
+      "rubber duck debugging"
+    ],
+    "context_role": "method",
+    "template": "Rubber ducking is a psychological trick! By explaining {context} to an inanimate object, you force your brain to process the logic differently, often revealing the bug yourself.",
+    "fallback": "Rubber ducking is the act of explaining your code line-by-line to someone (or something) to find logic errors.",
+    "style": [
+      "conversational",
+      "lighthearted"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-type-remote-004",
+    "triggers": [
+      "remote debugging",
+      "remote server debug"
+    ],
+    "context_role": "environment",
+    "template": "Remote debugging is essential when the bug only happens on a server. It allows you to connect your local IDE to {context} to diagnose issues in a production-like environment.",
+    "fallback": "Remote debugging lets you debug code that is running on a different machine than your IDE.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-type-binary-005",
+    "triggers": [
+      "binary search debugging",
+      "git bisect",
+      "wolf fence"
+    ],
+    "context_role": "strategy",
+    "template": "Binary search debugging is a systematic way to isolate a bug. You divide the {context} in half repeatedly until you pinpoint the exact change that introduced the error.",
+    "fallback": "Binary search debugging involves splitting the problematic area of code in half to narrow down the bug's location.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-type-static-006",
+    "triggers": [
+      "static analysis",
+      "linting",
+      "static debugging"
+    ],
+    "context_role": "tooling",
+    "template": "Static debugging doesn't even require running the code. It uses {context} to find potential errors, like null pointers or syntax issues, before the program ever executes.",
+    "fallback": "Static analysis checks your code for errors without actually running the program.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-type-dynamic-007",
+    "triggers": [
+      "dynamic analysis",
+      "runtime debugging",
+      "profiling"
+    ],
+    "context_role": "explanation",
+    "template": "Dynamic analysis happens while the program is live. It focuses on {context}, helping you catch memory leaks or performance bottlenecks that static analysis would miss.",
+    "fallback": "Dynamic analysis is the process of debugging a program while it is actively running.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-type-backtrace-008",
+    "triggers": [
+      "stack trace",
+      "backtrace",
+      "call stack"
+    ],
+    "context_role": "artifact",
+    "template": "Looking at a stack trace is like reading a map of the crash. It shows you {context}, which tells you exactly which sequence of function calls led to the failure.",
+    "fallback": "A stack trace provides a report of the active stack frames at a specific point in time, usually during a crash.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-type-regression-009",
+    "triggers": [
+      "regression debugging"
+    ],
+    "context_role": "process",
+    "template": "Regression debugging is all about making sure new fixes don't break old features. By checking {context}, you ensure that the system's stability is maintained after a patch.",
+    "fallback": "Regression debugging ensures that recent changes haven't reintroduced old bugs or broken existing functionality.",
+    "style": [
+      "conversational",
+      "professional"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-type-diff-010",
+    "triggers": [
+      "diff debugging",
+      "comparing versions"
+    ],
+    "context_role": "strategy",
+    "template": "Diff debugging is a great way to spot errors by comparing {context}. When you have a working version and a broken one, the differences usually point straight to the bug.",
+    "fallback": "Diff debugging involves comparing two versions of a codebase to identify the specific change that caused a bug.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  }
+]

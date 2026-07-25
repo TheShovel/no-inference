@@ -1,0 +1,160 @@
+[
+  {
+    "id": "debug-use-001",
+    "triggers": [
+      "why debug",
+      "purpose of debugging",
+      "what is debugging used for"
+    ],
+    "context_role": "software_development",
+    "template": "In {context}, debugging is primarily used to isolate the root cause of a crash or unexpected behavior, allowing developers to move from 'it doesn't work' to 'I know exactly why it fails'.",
+    "fallback": "Debugging is the process of finding and fixing errors in code to ensure the program runs as intended.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-use-002",
+    "triggers": [
+      "debugging for learning",
+      "how debugging helps beginners",
+      "learn via debugging"
+    ],
+    "context_role": "learning_language",
+    "template": "When learning {context}, debugging acts as a real-time feedback loop; by stepping through code, you can see exactly how variables change and how the logic flows.",
+    "fallback": "Debugging is a great way to learn because it shows you the internal state of a program as it executes.",
+    "style": [
+      "encouraging",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-use-003",
+    "triggers": [
+      "slow code",
+      "optimizing with debugging"
+    ],
+    "context_role": "performance_metric",
+    "template": "To improve {context}, we use profiling and debugging to identify 'bottlenecks'—those specific lines of code that are consuming the most CPU or memory.",
+    "fallback": "Debugging helps identify performance lags by pinpointing inefficient loops or memory leaks.",
+    "style": [
+      "technical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-use-004",
+    "triggers": [
+      "security debugging",
+      "finding vulnerabilities",
+      "debug for security"
+    ],
+    "context_role": "security_threat",
+    "template": "In the context of {context}, debugging is essential for simulating attacks to see how the system fails, which helps in patching vulnerabilities before they are exploited.",
+    "fallback": "Debugging is used in security to trace how malicious input affects the system state.",
+    "style": [
+      "professional",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-use-005",
+    "triggers": [
+      "legacy code debugging",
+      "fixing old code",
+      "working with old systems"
+    ],
+    "context_role": "legacy_system",
+    "template": "When dealing with {context}, debugging is often the only way to reverse-engineer how the original logic worked when documentation is missing.",
+    "fallback": "Debugging helps developers understand the behavior of old codebases by observing their execution in real-time.",
+    "style": [
+      "conversational",
+      "practical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-use-006",
+    "triggers": [
+      "debugging api",
+      "api integration errors",
+      "network debugging"
+    ],
+    "context_role": "api_endpoint",
+    "template": "For {context}, debugging involves inspecting the request and response payloads to ensure the data format matches what the server expects.",
+    "fallback": "Debugging APIs usually means checking the HTTP status codes and the JSON bodies of the messages being sent.",
+    "style": [
+      "technical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-use-007",
+    "triggers": [
+      "ui debugging",
+      "frontend bugs",
+      "visual glitch debugging"
+    ],
+    "context_role": "ui_element",
+    "template": "When a {context} isn't rendering correctly, CSS and DOM debugging tools allow you to tweak styles in real-time without refreshing the page.",
+    "fallback": "UI debugging is used to fix layout issues and ensure a responsive design across different screen sizes.",
+    "style": [
+      "conversational",
+      "helpful"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-use-008",
+    "triggers": [
+      "database debugging",
+      "sql errors",
+      "query debugging"
+    ],
+    "context_role": "database_query",
+    "template": "If a {context} is returning the wrong data, debugging involves running the raw query in a console to isolate whether the issue is in the SQL or the application logic.",
+    "fallback": "Database debugging helps ensure that queries are efficient and returning the correct filtered results.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-use-009",
+    "triggers": [
+      "automation debugging",
+      "ci cd failure",
+      "pipeline debugging"
+    ],
+    "context_role": "pipeline_stage",
+    "template": "When the {context} fails in a CI/CD pipeline, debugging involves analyzing the logs to find the environment mismatch that caused the build to break.",
+    "fallback": "Debugging automation is about finding why a test passed locally but failed in the cloud environment.",
+    "style": [
+      "professional",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-use-010",
+    "triggers": [
+      "difference between debug and test",
+      "why not just test"
+    ],
+    "context_role": "testing_method",
+    "template": "While {context} tells you that something is broken, debugging is the active process of figuring out exactly where and why it broke.",
+    "fallback": "Testing identifies the presence of a bug, whereas debugging is the practical act of removing it.",
+    "style": [
+      "conversational",
+      "clarifying"
+    ],
+    "response_length": "medium"
+  }
+]

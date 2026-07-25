@@ -1,0 +1,157 @@
+[
+  {
+    "id": "debate-industry-001",
+    "triggers": [
+      "what is the main conflict",
+      "core debate",
+      "industry tension"
+    ],
+    "context_role": "conflict",
+    "template": "The central debate in {context} typically revolves around the tension between short-term profitability and long-term sustainability.",
+    "fallback": "Industry debates usually center on the trade-off between immediate gains and future stability.",
+    "style": [
+      "analytical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-industry-002",
+    "triggers": [
+      "pros and cons",
+      "advantages and disadvantages",
+      "is it better"
+    ],
+    "context_role": "technology",
+    "template": "When looking at {context}, proponents argue for its efficiency, while critics often point to concerns regarding implementation costs and ethics.",
+    "fallback": "Generally, the debate weighs technological efficiency against the cost and ethical implications of adoption.",
+    "style": [
+      "balanced",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-industry-003",
+    "triggers": [
+      "who is right",
+      "which side is winning",
+      "consensus"
+    ],
+    "context_role": "perspective",
+    "template": "There isn't a clear winner yet, but the shift in {context} suggests that the industry is leaning toward a more integrated approach.",
+    "fallback": "Consensus is rare in these debates, though trends suggest a move toward integration.",
+    "style": [
+      "objective",
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "debate-industry-004",
+    "triggers": [
+      "where is it heading",
+      "prediction"
+    ],
+    "context_role": "trend",
+    "template": "The debate over {context} will likely be settled as we see more real-world data on scalability and user adoption over the next few years.",
+    "fallback": "The future of this industry debate will likely depend on upcoming scalability data.",
+    "style": [
+      "forward-looking",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-industry-005",
+    "triggers": [
+      "ethical concerns",
+      "moral dilemma",
+      "controversy"
+    ],
+    "context_role": "ethics",
+    "template": "The most controversial aspect of {context} is how to balance rapid innovation with rigorous safety and ethical standards.",
+    "fallback": "The core ethical dilemma is balancing the speed of innovation with necessary safety standards.",
+    "style": [
+      "serious",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-industry-006",
+    "triggers": [
+      "impact on jobs",
+      "automation debate",
+      "workforce change"
+    ],
+    "context_role": "labor",
+    "template": "In the context of {context}, the debate isn't about whether jobs will disappear, but how roles will evolve to coexist with new tech.",
+    "fallback": "The primary labor debate focuses on the evolution of roles rather than total job displacement.",
+    "style": [
+      "reassuring",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-industry-007",
+    "triggers": [
+      "regulatory view",
+      "government role",
+      "legislation"
+    ],
+    "context_role": "regulation",
+    "template": "Industry leaders are divided on {context}; some want light-touch regulation to spur growth, while others push for strict frameworks to ensure stability.",
+    "fallback": "There is a split between those wanting minimal regulation for growth and those wanting strict frameworks for stability.",
+    "style": [
+      "professional",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-industry-008",
+    "triggers": [
+      "why is this a problem",
+      "source of friction"
+    ],
+    "context_role": "friction",
+    "template": "The friction regarding {context} usually stems from a misalignment between legacy infrastructure and modern digital demands.",
+    "fallback": "Industry friction often arises from the gap between legacy systems and modern demands.",
+    "style": [
+      "diagnostic",
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "debate-industry-009",
+    "triggers": [
+      "versus"
+    ],
+    "context_role": "comparison",
+    "template": "Comparing the two sides of {context} reveals a fundamental difference in philosophy: one prioritizes agility, while the other prioritizes reliability.",
+    "fallback": "The two sides of this debate differ primarily in their prioritization of agility versus reliability.",
+    "style": [
+      "comparative",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-industry-010",
+    "triggers": [
+      "what's the takeaway",
+      "summary"
+    ],
+    "context_role": "summary",
+    "template": "Ultimately, the debate over {context} highlights that there is no one-size-fits-all solution for the entire industry.",
+    "fallback": "The bottom line is that no single solution fits every need within the industry.",
+    "style": [
+      "concise",
+      "conversational"
+    ],
+    "response_length": "short"
+  }
+]

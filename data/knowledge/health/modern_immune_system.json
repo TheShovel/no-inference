@@ -1,0 +1,81 @@
+[
+  {
+    "q": [
+      "How does the innate immune system differ from the adaptive immune system?",
+      "What distinguishes the innate immune response from the adaptive response?"
+    ],
+    "a": "Innate immunity provides a rapid, non-specific first line of defense using barriers and general phagocytic cells. Adaptive immunity is slower but highly specific, utilizing B-cells and T-cells to recognize particular pathogens and create long-term immunological memory."
+  },
+  {
+    "q": [
+      "What is the role of MHC molecules in the immune system?",
+      "How do Major Histocompatibility Complex (MHC) molecules function?",
+      "What purpose do MHC proteins serve in antigen presentation?"
+    ],
+    "a": "MHC molecules bind to peptide fragments derived from proteins and display them on the cell surface for recognition by T-cells. This allows the immune system to distinguish between the body's own cells and those infected by viruses or cancerous mutations."
+  },
+  {
+    "q": [
+      "How do vaccines create immunological memory?",
+      "What is the mechanism by which vaccines provide long-term protection?",
+      "How does vaccination trigger the production of memory cells?"
+    ],
+    "a": "Vaccines introduce a harmless version of a pathogen to trigger a primary immune response without causing disease. This process stimulates the production of memory B and T cells, which allow the body to recognize and neutralize the actual pathogen rapidly upon future exposure."
+  },
+  {
+    "q": [
+      "What are cytokines and how do they affect the immune response?",
+      "What is the function of cytokines in the immune system?",
+      "How do signaling proteins called cytokines coordinate immune activity?"
+    ],
+    "a": "Cytokines are small signaling proteins that act as chemical messengers to regulate the intensity and duration of the immune response. They coordinate the movement and activation of white blood cells to the site of an infection or injury."
+  },
+  {
+    "q": [
+      "What is the function of Regulatory T-cells (Tregs)?",
+      "How do Regulatory T-cells prevent autoimmune diseases?",
+      "What role do Tregs play in maintaining immune tolerance?"
+    ],
+    "a": "Regulatory T-cells suppress the activity of other immune cells to prevent the system from attacking the body's own healthy tissues. By maintaining this immune tolerance, they protect the organism from autoimmune disorders and limit excessive inflammation."
+  },
+  {
+    "q": [
+      "How do antibodies neutralize pathogens?",
+      "What is the mechanism of action for antibodies in the immune system?",
+      "How do immunoglobulins stop viruses and bacteria from functioning?"
+    ],
+    "a": "Antibodies bind to specific antigens on the surface of pathogens, physically blocking them from entering or infecting host cells. Additionally, they mark pathogens for destruction by other immune cells through a process called opsonization."
+  },
+  {
+    "q": [
+      "What is the Complement System in the immune response?",
+      "How does the complement system assist the immune system?",
+      "What are complement proteins and their primary function?"
+    ],
+    "a": "The complement system is a group of proteins in the blood that enhance the ability of antibodies and phagocytic cells to clear microbes. They can create pores in the membranes of bacteria to lyse them or signal for an inflammatory response."
+  },
+  {
+    "q": [
+      "What happens during a cytokine storm?",
+      "What is a cytokine storm in the context of immune overreaction?",
+      "How does a hypercytokinemia event affect the body?"
+    ],
+    "a": "A cytokine storm occurs when the body releases too many cytokines into the blood during a severe infection or inflammatory event. This overreaction causes systemic inflammation, which can lead to multi-organ failure and damage to healthy tissues."
+  },
+  {
+    "q": [
+      "What is the role of the thymus in T-cell maturation?",
+      "How does the thymus contribute to the development of the immune system?",
+      "Why is the thymus necessary for T-cell training?"
+    ],
+    "a": "The thymus is the primary lymphoid organ where T-cell precursors migrate to mature and undergo a selection process. This ensures that only T-cells capable of recognizing foreign antigens—and not the body's own proteins—are released into the bloodstream."
+  },
+  {
+    "q": [
+      "What are CAR T-cell therapies used for?",
+      "How does Chimeric Antigen Receptor (CAR) T-cell therapy work in cancer treatment?",
+      "What is the application of engineered T-cells in modern medicine?"
+    ],
+    "a": "CAR T-cell therapy is a form of immunotherapy where a patient's T-cells are genetically engineered to express receptors that target specific proteins on cancer cells. These modified cells are then infused back into the patient to seek out and destroy malignant tumors."
+  }
+]

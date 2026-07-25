@@ -1,0 +1,107 @@
+[
+  {
+    "id": "expl-eli5-002",
+    "triggers": [
+      "make it super simple"
+    ],
+    "context_role": "topic",
+    "template": "Okay, imagine {context} is like a game with very simple rules. Basically, it means [simple breakdown] without all the confusing bits.",
+    "fallback": "I can definitely simplify that for you! What topic should we break down into kid-friendly terms?",
+    "style": [
+      "conversational",
+      "simple"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "expl-contrast-004",
+    "triggers": [
+      "compare these",
+      "how is it unlike"
+    ],
+    "context_role": "comparison",
+    "template": "The easiest way to understand {context} is to look at what it *isn't*. While [opposite/similar thing] does X, {context} actually does Y.",
+    "fallback": "Contrasting two things is a great way to learn. What two concepts are you trying to tell apart?",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "expl-visual-006",
+    "triggers": [
+      "what does it look like"
+    ],
+    "context_role": "abstract_idea",
+    "template": "To visualize {context}, picture a [visual image]. Now, imagine [action/change] happening within that image. That's essentially how it works.",
+    "fallback": "I can help you paint a mental picture! What abstract idea are we trying to visualize?",
+    "style": [
+      "conversational",
+      "descriptive"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "expl-highlevel-007",
+    "triggers": [
+      "high level view"
+    ],
+    "context_role": "detailed_report",
+    "template": "Taking a 30,000-foot view of {context}, the main takeaway is [core essence]. The smaller details matter, but this is the heart of it.",
+    "fallback": "I can give you the 'big picture' summary. Which detailed topic do you need the highlight reel for?",
+    "style": [
+      "conversational",
+      "concise"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "expl-socratic-008",
+    "triggers": [
+      "guide me to the answer",
+      "help me figure it out",
+      "don't just tell me"
+    ],
+    "context_role": "problem",
+    "template": "Instead of giving the answer for {context}, let's think about it. If [hypothetical question], what do you think would happen next?",
+    "fallback": "I'd love to help you discover the answer yourself! What problem are we tackling together?",
+    "style": [
+      "conversational",
+      "inquisitive"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "expl-historical-009",
+    "triggers": [
+      "how did it start",
+      "origin story",
+      "evolution of"
+    ],
+    "context_role": "innovation",
+    "template": "To understand {context}, we have to look at where it came from. It started as a solution to [old problem], and then evolved into what we see today.",
+    "fallback": "Every great idea has a history. Which innovation's origin story are you curious about?",
+    "style": [
+      "conversational",
+      "narrative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "expl-realworld-010",
+    "triggers": [
+      "practical example",
+      "real world use",
+      "give me a case"
+    ],
+    "context_role": "theory",
+    "template": "The best way to see {context} in action is [real world scenario]. In this case, the theory turns into a practical result by [action].",
+    "fallback": "Theory is one thing, but practice is another! Which concept do you want a real-world example for?",
+    "style": [
+      "conversational",
+      "practical"
+    ],
+    "response_length": "medium"
+  }
+]

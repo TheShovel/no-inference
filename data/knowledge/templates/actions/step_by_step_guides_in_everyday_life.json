@@ -1,0 +1,161 @@
+[
+  {
+    "id": "life-cooking-001",
+    "triggers": [
+      "how to cook",
+      "recipe for",
+      "way to make"
+    ],
+    "context_role": "dish",
+    "template": "I can definitely help you whip up some {context}! Here is a simple step-by-step guide to getting it just right: [Insert steps]. Pro tip: don't forget to taste as you go!",
+    "fallback": "I'm not sure which dish you're referring to, but if you tell me what you want to cook, I can give you a detailed guide!",
+    "style": [
+      "conversational",
+      "encouraging"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "life-cleaning-002",
+    "triggers": [
+      "how to clean",
+      "remove stain",
+      "deep clean"
+    ],
+    "context_role": "object",
+    "template": "Tackling a dirty {context} can be satisfying! Here is the best way to get it sparkling again: [Insert steps]. Make sure to test a small area first to be safe!",
+    "fallback": "What exactly are we cleaning today? Let me know the item and I'll give you the best scrubbing strategy.",
+    "style": [
+      "conversational",
+      "helpful"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "life-tech-003",
+    "triggers": [
+      "install",
+      "configure"
+    ],
+    "context_role": "device",
+    "template": "Setting up your {context} is pretty straightforward. Just follow these steps: [Insert steps]. If you hit a snag at any point, just let me know!",
+    "fallback": "Which device are you trying to set up? Give me the model or name and I'll walk you through it.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "life-wellness-004",
+    "triggers": [
+      "how to meditate",
+      "start yoga",
+      "breathing exercise"
+    ],
+    "context_role": "practice",
+    "template": "Taking time for {context} is a great way to reset. Here is a gentle guide to get you started: [Insert steps]. Remember, it's all about the process, not perfection.",
+    "fallback": "Which wellness practice are you interested in? I can guide you through a few different routines.",
+    "style": [
+      "conversational",
+      "calming"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "life-finance-005",
+    "triggers": [
+      "how to budget",
+      "save money",
+      "create a spending plan"
+    ],
+    "context_role": "goal",
+    "template": "Getting your finances in order for {context} is a smart move. Here is a step-by-step approach to managing your money: [Insert steps]. Small changes lead to big results!",
+    "fallback": "What are your financial goals? Tell me what you're aiming for and I'll help you build a plan.",
+    "style": [
+      "conversational",
+      "professional"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "life-gardening-006",
+    "triggers": [
+      "how to plant",
+      "grow",
+      "care for"
+    ],
+    "context_role": "plant",
+    "template": "Growing {context} can be so rewarding! Here is the step-by-step process to help it thrive: [Insert steps]. Just keep an eye on the sunlight and water!",
+    "fallback": "Which plant are you looking to grow? Let me know and I'll give you the specific care instructions.",
+    "style": [
+      "conversational",
+      "cheerful"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "life-organization-007",
+    "triggers": [
+      "how to organize",
+      "declutter",
+      "tidy up"
+    ],
+    "context_role": "space",
+    "template": "A tidy {context} leads to a tidy mind! Here is a simple system to get everything organized: [Insert steps]. You've got this—just take it one drawer at a time!",
+    "fallback": "Which area of your home needs some love? Tell me the room or space and I'll help you organize it.",
+    "style": [
+      "conversational",
+      "motivational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "life-travel-008",
+    "triggers": [
+      "how to plan a trip",
+      "pack for",
+      "itinerary for"
+    ],
+    "context_role": "destination",
+    "template": "Planning a getaway to {context} sounds amazing! Here is a step-by-step checklist to make sure you don't miss a thing: [Insert steps]. Safe travels!",
+    "fallback": "Where are you heading? Tell me your destination and I'll help you plan the perfect trip.",
+    "style": [
+      "conversational",
+      "excited"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "life-social-009",
+    "triggers": [
+      "how to make friends",
+      "network",
+      "start a conversation"
+    ],
+    "context_role": "situation",
+    "template": "Navigating {context} can feel a bit nerve-wracking, but you can do it! Here are a few steps to help you connect with others: [Insert steps]. Just be yourself!",
+    "fallback": "What kind of social situation are you facing? I can give you some tips on how to handle it smoothly.",
+    "style": [
+      "conversational",
+      "supportive"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "life-diy-010",
+    "triggers": [
+      "how to fix",
+      "repair",
+      "build a"
+    ],
+    "context_role": "item",
+    "template": "Time to get handy! Fixing a {context} is a great project. Here is the step-by-step way to get it done: [Insert steps]. Don't forget your safety gear!",
+    "fallback": "What are you trying to fix or build? Give me the details and I'll find the best DIY method for you.",
+    "style": [
+      "conversational",
+      "practical"
+    ],
+    "response_length": "medium"
+  }
+]

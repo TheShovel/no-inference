@@ -1,0 +1,162 @@
+[
+  {
+    "id": "exp-physics-001",
+    "triggers": [
+      "how does gravity work",
+      "explain gravity",
+      "what is gravity"
+    ],
+    "context_role": "gravity",
+    "template": "Think of {context} like a heavy ball sitting on a trampoline; it curves the fabric around it, which is why smaller objects roll toward the center.",
+    "fallback": "Imagine a heavy object curving the space around it, pulling everything else toward it.",
+    "style": [
+      "conversational",
+      "analogical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "exp-finance-002",
+    "triggers": [
+      "what is inflation",
+      "explain inflation",
+      "why are prices rising"
+    ],
+    "context_role": "inflation",
+    "template": "Basically, {context} is like having more people with money chasing the same amount of goods—since there's more demand but not more stuff, the price goes up.",
+    "fallback": "It's when the purchasing power of money drops, meaning your dollar buys fewer things than it used to.",
+    "style": [
+      "conversational",
+      "simplified"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "exp-tech-003",
+    "triggers": [
+      "what is the cloud",
+      "how does the cloud work",
+      "explain cloud computing"
+    ],
+    "context_role": "the cloud",
+    "template": "{context} isn't actually in the sky; it's just a fancy way of saying 'someone else's computer' that you access over the internet.",
+    "fallback": "It's a network of remote servers that store and manage your data instead of your local hard drive.",
+    "style": [
+      "conversational",
+      "witty"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "exp-bio-004",
+    "triggers": [
+      "how do vaccines work",
+      "explain vaccines",
+      "what does a vaccine do"
+    ],
+    "context_role": "vaccines",
+    "template": "Think of {context} as a 'Wanted' poster for your immune system. It shows your body what the virus looks like so it can fight it before the real thing arrives.",
+    "fallback": "They train your immune system to recognize and fight specific pathogens without you having to get sick first.",
+    "style": [
+      "conversational",
+      "analogical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "exp-econ-005",
+    "triggers": [
+      "what is supply and demand",
+      "explain supply and demand",
+      "how do markets work"
+    ],
+    "context_role": "supply and demand",
+    "template": "It's a tug-of-war: if {context} shows everyone wants a toy but there are only five left, the price jumps. If there are millions of toys but nobody wants them, the price drops.",
+    "fallback": "It's the relationship between how much of something is available and how much people actually want it.",
+    "style": [
+      "conversational",
+      "simplified"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "exp-comp-006",
+    "triggers": [
+      "what is an algorithm",
+      "explain algorithms",
+      "how do algorithms work"
+    ],
+    "context_role": "an algorithm",
+    "template": "An {context} is essentially just a recipe. Just like following steps to bake a cake, a computer follows a specific set of instructions to get a result.",
+    "fallback": "It is a step-by-step procedure or set of rules to be followed in calculations or problem-solving operations.",
+    "style": [
+      "conversational",
+      "analogical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "exp-chem-007",
+    "triggers": [
+      "what is a catalyst",
+      "explain catalysts",
+      "how do catalysts work"
+    ],
+    "context_role": "a catalyst",
+    "template": "Think of {context} as a matchmaker. It helps two things come together and react much faster, but the matchmaker itself doesn't change in the process.",
+    "fallback": "It's a substance that increases the rate of a chemical reaction without being consumed by the reaction itself.",
+    "style": [
+      "conversational",
+      "analogical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "exp-astro-008",
+    "triggers": [
+      "what is a black hole",
+      "explain black holes",
+      "how do black holes work"
+    ],
+    "context_role": "a black hole",
+    "template": "{context} is like a cosmic vacuum cleaner with infinite strength; once something gets too close, not even light is fast enough to escape its pull.",
+    "fallback": "It is a region of spacetime where gravity is so strong that nothing, including light, can escape.",
+    "style": [
+      "conversational",
+      "simplified"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "exp-psych-009",
+    "triggers": [
+      "what is cognitive dissonance",
+      "explain cognitive dissonance",
+      "why do I feel conflicted"
+    ],
+    "context_role": "cognitive dissonance",
+    "template": "{context} is that uncomfortable feeling you get when your beliefs clash with your actions—like knowing smoking is bad but doing it anyway.",
+    "fallback": "It's the mental discomfort experienced by a person who holds two or more contradictory beliefs or values.",
+    "style": [
+      "conversational",
+      "relatable"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "exp-net-010",
+    "triggers": [
+      "what is an IP address",
+      "explain IP addresses",
+      "how do computers find each other"
+    ],
+    "context_role": "an IP address",
+    "template": "Think of {context} as a digital home address. Without it, the internet wouldn't know where to send the data you requested, like a mailman with no address on an envelope.",
+    "fallback": "It's a unique string of numbers that identifies each computer using the Internet Protocol to communicate over a network.",
+    "style": [
+      "conversational",
+      "analogical"
+    ],
+    "response_length": "medium"
+  }
+]

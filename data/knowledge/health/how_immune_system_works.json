@@ -1,0 +1,78 @@
+[
+  {
+    "q": [
+      "How do the innate and adaptive immune systems differ?",
+      "Compare the innate immune response to the adaptive immune response."
+    ],
+    "a": "Innate immunity is the body's first line of defense, providing rapid, non-specific responses to a wide range of pathogens. In contrast, adaptive immunity is a slower, highly specific response that creates 'memory' of a pathogen to provide long-term protection against future infections."
+  },
+  {
+    "q": [
+      "What role do B cells play in the immune system?",
+      "How do B lymphocytes function to fight infection?",
+      "What is the primary function of B cells?"
+    ],
+    "a": "B cells are specialized white blood cells that produce antibodies, which are proteins that bind to specific antigens on the surface of pathogens. By tagging these invaders, B cells neutralize the threat and signal other immune cells to destroy the infected cells."
+  },
+  {
+    "q": [
+      "What are T cells and what are their primary functions?",
+      "How do T lymphocytes contribute to immune defense?",
+      "What is the difference between helper T cells and cytotoxic T cells?"
+    ],
+    "a": "T cells are lymphocytes that manage the cell-mediated immune response. Helper T cells coordinate the overall immune effort by releasing cytokines, while cytotoxic T cells directly attack and kill infected or cancerous cells."
+  },
+  {
+    "q": [
+      "How do antibodies recognize and neutralize pathogens?",
+      "What is the mechanism of antibody action?",
+      "How do antibodies target specific antigens?"
+    ],
+    "a": "Antibodies are Y-shaped proteins with unique binding sites that match specific antigens on a pathogen like a lock and key. Once bound, they can neutralize the pathogen directly or mark it for destruction by macrophages and other phagocytes."
+  },
+  {
+    "q": [
+      "What is the function of phagocytosis in the immune response?",
+      "How do phagocytes like macrophages eliminate pathogens?",
+      "What happens during the process of phagocytosis?"
+    ],
+    "a": "Phagocytosis is the process where specialized cells, such as macrophages and neutrophils, engulf and digest foreign particles, bacteria, and dead cells. Once the pathogen is internalized in a vesicle, enzymes are released to break it down and eliminate the threat."
+  },
+  {
+    "q": [
+      "How does the immune system create immunological memory?",
+      "What are memory B and T cells?"
+    ],
+    "a": "After an initial infection, the body produces memory B and T cells that persist in the bloodstream for years. If the same pathogen enters the body again, these cells recognize it immediately, allowing the immune system to launch a faster and more powerful attack."
+  },
+  {
+    "q": [
+      "What are cytokines and how do they influence immune signaling?",
+      "How do immune cells communicate using cytokines?",
+      "What is the role of signaling molecules in the immune system?"
+    ],
+    "a": "Cytokines are small proteins released by immune cells that act as chemical messengers to coordinate the immune response. They signal other cells to migrate to the site of infection, trigger inflammation, or stimulate the production of more white blood cells."
+  },
+  {
+    "q": [
+      "What is the purpose of the lymphatic system in immunity?",
+      "How do lymph nodes contribute to the body's defense?",
+      "What is the role of the lymphatic system in filtering pathogens?"
+    ],
+    "a": "The lymphatic system transports lymph fluid containing white blood cells and pathogens through a network of vessels. Lymph nodes act as filters where immune cells congregate to detect antigens and initiate an adaptive immune response."
+  },
+  {
+    "q": [
+      "What is the cause of autoimmune diseases?"
+    ],
+    "a": "Autoimmunity occurs when the immune system fails to distinguish between 'self' and 'non-self' antigens. This causes T cells and B cells to attack healthy organs and tissues, leading to chronic inflammatory conditions such as rheumatoid arthritis or type 1 diabetes."
+  },
+  {
+    "q": [
+      "How do physical barriers like the skin and mucus protect the body?",
+      "What is the role of the primary defense line in the immune system?",
+      "How do mucosal membranes prevent infection?"
+    ],
+    "a": "The skin acts as a waterproof physical shield that prevents most pathogens from entering the body. Mucus in the respiratory and digestive tracts traps microbes, while enzymes in saliva and stomach acid destroy many pathogens before they can cause infection."
+  }
+]

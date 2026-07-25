@@ -1,0 +1,82 @@
+[
+  {
+    "q": [
+      "What is the primary goal of green chemistry?",
+      "Define the central objective of green chemistry.",
+      "What does green chemistry aim to achieve?"
+    ],
+    "a": "Green chemistry aims to design chemical products and processes that reduce or eliminate the use and generation of hazardous substances. It focuses on preventing pollution at the molecular level rather than treating waste after it has been created."
+  },
+  {
+    "q": [
+      "Who formulated the 12 principles of green chemistry?",
+      "Which scientists are credited with the 12 principles of green chemistry?",
+      "Who developed the framework for green chemistry principles?"
+    ],
+    "a": "The 12 principles of green chemistry were formulated by Paul Anastas and John Warner in 1998. These guidelines provide a framework for chemists to design more sustainable processes, emphasizing waste prevention and energy efficiency."
+  },
+  {
+    "q": [
+      "What is 'atom economy' in the context of green chemistry?",
+      "How is atom economy defined in sustainable chemistry?",
+      "What does the concept of atom economy measure?"
+    ],
+    "a": "Atom economy is a measure of the efficiency of a chemical reaction, calculated as the ratio of the mass of the desired product to the mass of all reactants. A high atom economy means that most of the starting materials are incorporated into the final product, minimizing waste."
+  },
+  {
+    "q": [
+      "What are green solvents and why are they used?",
+      "What is the purpose of using sustainable solvents in chemistry?",
+      "Give examples of green solvents used to replace hazardous ones."
+    ],
+    "a": "Green solvents are sustainable alternatives to traditional volatile organic compounds (VOCs), such as supercritical carbon dioxide or water. They are used to reduce toxicity, lower the risk of fire, and decrease environmental pollution during chemical synthesis."
+  },
+  {
+    "q": [
+      "How does catalysis contribute to green chemistry?",
+      "What role do catalysts play in sustainable chemical processes?",
+      "Why are catalytic reagents preferred over stoichiometric reagents?"
+    ],
+    "a": "Catalysts speed up reactions and allow them to occur at lower temperatures and pressures, which saves energy. Because catalysts are not consumed in the reaction, they reduce the need for stoichiometric reagents that would otherwise create large amounts of waste."
+  },
+  {
+    "q": [
+      "What is the difference between green chemistry and environmental chemistry?",
+      "How does green chemistry differ from environmental chemistry?",
+      "Distinguish between the goals of green and environmental chemistry."
+    ],
+    "a": "Green chemistry focuses on the design of products and processes to prevent pollution before it happens. In contrast, environmental chemistry studies the behavior of chemicals in the environment and the impact of pollutants already present in nature."
+  },
+  {
+    "q": [
+      "What is a bio-based plastic and how does it relate to green chemistry?",
+      "How are bioplastics an example of green chemistry?",
+      "What are examples of sustainable alternatives to petroleum-based plastics?"
+    ],
+    "a": "Bio-based plastics, such as polylactic acid (PLA), are derived from renewable biomass sources like corn starch or sugarcane rather than petroleum. This applies green chemistry by reducing reliance on fossil fuels and creating materials that are often biodegradable."
+  },
+  {
+    "q": [
+      "What is the principle of 'design for degradation'?",
+      "What does it mean to design a chemical for degradation?",
+      "Why is biodegradability important in green chemistry?"
+    ],
+    "a": "Design for degradation ensures that chemical products are engineered to break down into innocuous substances after their intended use. This prevents the accumulation of persistent organic pollutants in the environment, such as microplastics or legacy pesticides."
+  },
+  {
+    "q": [
+      "How does the use of microwave irradiation implement green chemistry?",
+      "What are the benefits of using microwave heating in chemical synthesis?",
+      "Why is microwave-assisted chemistry considered more sustainable?"
+    ],
+    "a": "Microwave irradiation provides rapid, targeted heating, which significantly reduces the time and energy required for a chemical reaction. This often eliminates the need for traditional oil baths or heating mantles, resulting in higher efficiency and fewer byproducts."
+  },
+  {
+    "q": [
+      "What are renewable feedstocks in a chemical context?",
+      "Why does green chemistry emphasize the use of renewable feedstocks?",
+      "Give examples of renewable feedstocks used in sustainable chemistry."
+    ],
+    "a": "Renewable feedstocks are raw materials derived from agricultural products or waste, such as cellulose, lignin, and vegetable oils, rather than depleting fossil fuels. Using these materials ensures a sustainable supply chain and typically reduces the toxicity of the starting materials."
+  }
+]

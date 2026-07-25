@@ -1,0 +1,82 @@
+[
+  {
+    "q": [
+      "What is computational chemistry?",
+      "How is computational chemistry defined?",
+      "What does the field of computational chemistry entail?"
+    ],
+    "a": "Computational chemistry is a branch of chemistry that uses computer simulation to solve chemical problems. It employs mathematical models and algorithms to predict the properties and behavior of molecules and materials without the need for physical laboratory experiments."
+  },
+  {
+    "q": [
+      "What is the difference between ab initio and semi-empirical methods?",
+      "How do ab initio calculations differ from semi-empirical ones?",
+      "What distinguishes semi-empirical methods from ab initio approaches?"
+    ],
+    "a": "Ab initio methods are based on first-principles quantum mechanics and do not use experimental data to solve the Schrödinger equation. Semi-empirical methods, conversely, simplify the calculations by using parameters derived from experimental data to speed up the computation process."
+  },
+  {
+    "q": [
+      "What is Density Functional Theory (DFT)?",
+      "How does DFT work in computational chemistry?",
+      "What is the purpose of Density Functional Theory?"
+    ],
+    "a": "Density Functional Theory (DFT) is a quantum mechanical modelling method used to investigate the electronic structure of many-body systems. It focuses on the electron density of a system rather than the individual wavefunctions, making it computationally efficient for larger molecules."
+  },
+  {
+    "q": [
+      "What are molecular dynamics simulations?",
+      "How does molecular dynamics function in chemistry?",
+      "What is the goal of a molecular dynamics simulation?"
+    ],
+    "a": "Molecular dynamics (MD) is a computer simulation method for analyzing the physical movements of atoms and molecules over time. It calculates the trajectories of particles by solving Newton's equations of motion, allowing researchers to study protein folding and material phase transitions."
+  },
+  {
+    "q": [
+      "What is a force field in molecular modeling?",
+      "How are force fields used in computational chemistry?",
+      "What defines a force field in the context of molecular simulations?"
+    ],
+    "a": "A force field is a set of mathematical functions and parameters used to describe the potential energy of a system of atoms. It defines how atoms interact through bonds, angles, and non-bonded forces like Van der Waals and electrostatic interactions."
+  },
+  {
+    "q": [
+      "How is computational chemistry used in drug discovery?",
+      "What role does computational chemistry play in developing new medicines?",
+      "How do pharmaceutical companies use computational modeling?"
+    ],
+    "a": "Computational chemistry is used in drug discovery through techniques like molecular docking and virtual screening. These methods predict how a small molecule (drug candidate) will bind to a target protein, significantly reducing the time and cost of experimental trial-and-error."
+  },
+  {
+    "q": [
+      "What is the role of the Schrödinger equation in computational chemistry?",
+      "Why is the Schrödinger equation important for chemical simulations?",
+      "How does the Schrödinger equation relate to molecular modeling?"
+    ],
+    "a": "The Schrödinger equation is the fundamental equation of quantum mechanics used to determine the energy levels and wavefunctions of a system. Because it is impossible to solve exactly for systems with more than one electron, computational chemists use approximations to estimate molecular properties."
+  },
+  {
+    "q": [
+      "What is the purpose of geometry optimization?",
+      "What does it mean to optimize a molecular geometry?",
+      "Why is geometry optimization performed in computational chemistry?"
+    ],
+    "a": "Geometry optimization is the process of finding the most stable arrangement of atoms in a molecule. The computer iteratively adjusts the atomic positions to find the local minimum on the potential energy surface where the forces on the atoms are zero."
+  },
+  {
+    "q": [
+      "What are Quantum Monte Carlo methods?",
+      "How is the Monte Carlo method applied to quantum chemistry?",
+      "What is the function of QMC in chemical simulations?"
+    ],
+    "a": "Quantum Monte Carlo (QMC) methods use random sampling to solve the many-body Schrödinger equation. These techniques are highly accurate and are often used to calculate the ground-state energy of electrons in complex atoms and molecules."
+  },
+  {
+    "q": [
+      "What is the difference between QM and MM methods?",
+      "How do quantum mechanics (QM) and molecular mechanics (MM) differ?",
+      "When should a chemist choose MM over QM?"
+    ],
+    "a": "Quantum Mechanics (QM) methods model the electrons and nuclei explicitly, providing high accuracy for chemical reactions but requiring massive computing power. Molecular Mechanics (MM) treats atoms as spheres and bonds as springs, allowing for the simulation of much larger systems like entire proteins."
+  }
+]

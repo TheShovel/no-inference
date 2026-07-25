@@ -1,0 +1,110 @@
+[
+  {
+    "id": "breakdown-def-001",
+    "triggers": [
+      "what is a breakdown",
+      "define breakdown",
+      "what do you mean by breakdown"
+    ],
+    "context_role": "general_definition",
+    "template": "In simple terms, a breakdown is {context}. It generally refers to a state where a system, process, or mental state stops functioning correctly.",
+    "fallback": "A breakdown generally refers to a failure of a system or a mental state, where normal functioning ceases.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "breakdown-type-mechanical-002",
+    "triggers": [
+      "mechanical breakdown",
+      "hardware failure",
+      "machine broke"
+    ],
+    "context_role": "mechanical_category",
+    "template": "When we talk about mechanical breakdowns, we're usually looking at {context}. This typically involves physical wear and tear or component failure.",
+    "fallback": "Mechanical breakdowns involve the physical failure of machinery or hardware components, often due to wear or stress.",
+    "style": [
+      "technical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "breakdown-type-emotional-003",
+    "triggers": [
+      "nervous breakdown",
+      "mental breakdown"
+    ],
+    "context_role": "psychological_category",
+    "template": "An emotional or nervous breakdown is often characterized by {context}. It's essentially the mind's way of saying it's reached its limit.",
+    "fallback": "An emotional breakdown is a period of intense mental distress where a person feels unable to function in their daily life.",
+    "style": [
+      "empathetic",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "breakdown-type-systemic-005",
+    "triggers": [
+      "systemic failure",
+      "system breakdown",
+      "organizational collapse"
+    ],
+    "context_role": "systemic_category",
+    "template": "Systemic breakdowns are different because they involve {context}, meaning the failure isn't just one part, but the whole structure.",
+    "fallback": "A systemic breakdown is a failure of an entire system or organization rather than a single isolated component.",
+    "style": [
+      "professional",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "breakdown-type-data-007",
+    "triggers": [
+      "analyze the data"
+    ],
+    "context_role": "analytical_category",
+    "template": "When we perform a data breakdown, we are {context} to make complex information easier to digest.",
+    "fallback": "A data breakdown involves dividing a large set of information into smaller, more manageable categories for analysis.",
+    "style": [
+      "conversational",
+      "direct"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "breakdown-type-social-009",
+    "triggers": [
+      "social breakdown",
+      "societal collapse",
+      "breakdown of order"
+    ],
+    "context_role": "sociological_category",
+    "template": "Societal or social breakdowns are often triggered by {context}, leading to a loss of shared norms and stability.",
+    "fallback": "A social breakdown refers to the collapse of the structures and rules that maintain order within a community or society.",
+    "style": [
+      "conversational",
+      "academic"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "breakdown-comparison-010",
+    "triggers": [
+      "difference between breakdowns",
+      "compare types of breakdowns"
+    ],
+    "context_role": "comparison_category",
+    "template": "The main difference depends on whether the breakdown is {context}, affecting either physical objects, mental health, or abstract systems.",
+    "fallback": "Breakdowns vary wildly—some are physical (mechanical), some are mental (emotional), and others are structural (systemic).",
+    "style": [
+      "conversational",
+      "summarizing"
+    ],
+    "response_length": "medium"
+  }
+]

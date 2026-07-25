@@ -1,0 +1,161 @@
+[
+  {
+    "id": "summary-use-study-001",
+    "triggers": [
+      "how to use summaries for studying",
+      "study tips with summaries",
+      "summarizing for exams"
+    ],
+    "context_role": "subject",
+    "template": "When studying {context}, summaries are great for condensing dense material into key concepts, making it much easier to review a whole semester's worth of content in one sitting.",
+    "fallback": "Summaries are incredibly helpful for studying because they force you to synthesize information and highlight the most important points for quick review.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-use-work-002",
+    "triggers": [
+      "summaries at work",
+      "professional use of summaries",
+      "executive summaries"
+    ],
+    "context_role": "document_type",
+    "template": "In a professional setting, using a summary for a {context} allows busy stakeholders to grasp the primary goals and outcomes without digging through pages of raw data.",
+    "fallback": "Professional summaries, like executive summaries, are essential for communicating high-level insights to leadership quickly and efficiently.",
+    "style": [
+      "professional",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-use-reading-003",
+    "triggers": [
+      "why summarize books",
+      "reading summaries",
+      "summarizing long articles"
+    ],
+    "context_role": "text_source",
+    "template": "Summarizing {context} is a fantastic way to test your reading comprehension and ensure you've actually absorbed the core arguments before moving on.",
+    "fallback": "Summarizing long texts helps you filter out the noise and keep a record of the most impactful ideas for future reference.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-use-meeting-004",
+    "triggers": [
+      "meeting summaries",
+      "summarizing calls",
+      "meeting notes utility"
+    ],
+    "context_role": "meeting_topic",
+    "template": "After a discussion about {context}, a quick summary serves as a 'source of truth' to align everyone on the decided action items and deadlines.",
+    "fallback": "Meeting summaries are vital for ensuring that no one leaves a conversation with a different understanding of the next steps.",
+    "style": [
+      "conversational",
+      "practical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-use-decision-005",
+    "triggers": [
+      "summaries for decisions",
+      "comparing options",
+      "decision making summaries"
+    ],
+    "context_role": "choice",
+    "template": "If you're deciding on {context}, creating a summary of the pros and cons for each option helps you make a rational choice based on condensed evidence.",
+    "fallback": "Summarizing the key attributes of different options simplifies the decision-making process by removing irrelevant details.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-use-research-006",
+    "triggers": [
+      "summaries for research",
+      "literature review summaries",
+      "academic summaries"
+    ],
+    "context_role": "research_topic",
+    "template": "While researching {context}, maintaining a folder of summaries for each paper you read prevents you from having to re-read entire documents later.",
+    "fallback": "In research, summaries act as a map, allowing you to quickly locate which specific source contains the information you need.",
+    "style": [
+      "educational",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-use-content-007",
+    "triggers": [
+      "summaries for social media",
+      "repurposing content",
+      "summary for blog"
+    ],
+    "context_role": "content_type",
+    "template": "You can easily turn a long-form {context} into a series of short summaries for social media to drive more traffic to the original piece.",
+    "fallback": "Summaries are the perfect bridge for content repurposing, turning deep-dives into snackable bits of information.",
+    "style": [
+      "conversational",
+      "creative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-use-email-008",
+    "triggers": [
+      "summarizing emails",
+      "email TL;DR",
+      "long email chains"
+    ],
+    "context_role": "email_thread",
+    "template": "When dealing with a long thread about {context}, adding a 'TL;DR' summary at the top helps the recipient get the gist without scrolling through dozens of replies.",
+    "fallback": "Summarizing a long email chain respects the recipient's time and ensures the core request doesn't get lost in the noise.",
+    "style": [
+      "conversational",
+      "professional"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-use-memory-009",
+    "triggers": [
+      "summaries for memory",
+      "remembering things",
+      "summarizing for retention"
+    ],
+    "context_role": "experience",
+    "template": "Writing a summary of {context} shortly after it happens is one of the best ways to lock that experience into your long-term memory.",
+    "fallback": "The act of summarizing forces your brain to reorganize information, which significantly boosts your ability to recall it later.",
+    "style": [
+      "conversational",
+      "insightful"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-use-onboarding-010",
+    "triggers": [
+      "summaries for onboarding",
+      "training summaries",
+      "new hire summaries"
+    ],
+    "context_role": "process",
+    "template": "Providing a summary of the {context} process helps new team members get up to speed quickly without feeling overwhelmed by technical documentation.",
+    "fallback": "Summaries are essential in onboarding to provide a high-level conceptual framework before diving into the granular details.",
+    "style": [
+      "professional",
+      "conversational"
+    ],
+    "response_length": "medium"
+  }
+]

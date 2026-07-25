@@ -1,0 +1,77 @@
+[
+  {
+    "q": [
+      "How does a trophic cascade function in an ecosystem?",
+      "What happens during a trophic cascade in a food chain?"
+    ],
+    "a": "A trophic cascade occurs when the removal or addition of a top predator triggers indirect effects that propagate down through lower trophic levels. For example, the reintroduction of wolves to Yellowstone National Park reduced elk populations, which allowed willow and aspen trees to recover, fundamentally altering the landscape."
+  },
+  {
+    "q": [
+      "How do food webs differ from linear food chains?",
+      "Why is a food web a more accurate representation of an ecosystem than a food chain?"
+    ],
+    "a": "A food chain is a single, linear pathway showing who eats whom, whereas a food web is a complex network of interconnected food chains. Food webs more accurately reflect reality because most organisms consume multiple types of prey and are hunted by various predators."
+  },
+  {
+    "q": [
+      "What is the 10% rule in energy transfer?",
+      "What is the ecological efficiency of energy transfer in food chains?"
+    ],
+    "a": "The 10% rule states that only about 10% of the energy stored as biomass in one trophic level is passed on to the next level. The remaining 90% is lost as heat during respiration or remains unconsumed as waste."
+  },
+  {
+    "q": [
+      "What is the role of apex predators in advanced food chains?",
+      "Why are top carnivores important for ecological balance?",
+      "What function do apex predators serve in a food web?"
+    ],
+    "a": "Apex predators sit at the top of the food chain and have no natural predators of their own. They maintain biodiversity by controlling the populations of herbivores and mesopredators, preventing any one species from overgrazing or dominating the habitat."
+  },
+  {
+    "q": [
+      "What are detritivores and how do they fit into food chains?",
+      "What is the role of decomposers in a food web?",
+      "How do detritivores differ from primary consumers?"
+    ],
+    "a": "Detritivores are organisms, such as earthworms and fungi, that consume dead organic matter and waste. They provide a critical service by breaking down complex molecules into inorganic nutrients, which are then recycled back into the soil for primary producers to use."
+  },
+  {
+    "q": [
+      "How do toxins accumulate in higher trophic levels?"
+    ],
+    "a": "Biomagnification is the process where the concentration of a persistent toxin, such as mercury or DDT, increases as it moves up the food chain. Because predators eat many prey items, they accumulate a much higher concentration of these toxins in their tissues than organisms at lower levels."
+  },
+  {
+    "q": [
+      "What are omnivores and where do they sit in a food web?",
+      "How do omnivorous animals complicate simple food chain models?",
+      "What is the trophic position of an omnivore?"
+    ],
+    "a": "Omnivores are organisms that eat both plant and animal matter, meaning they can occupy multiple trophic levels simultaneously. For instance, a bear acting as a primary consumer when eating berries and a secondary or tertiary consumer when eating fish."
+  },
+  {
+    "q": [
+      "What are primary producers and how do they start a food chain?",
+      "What is the role of autotrophs in an ecosystem?",
+      "How is energy first introduced into a food web?"
+    ],
+    "a": "Primary producers, such as plants and algae, are autotrophs that convert solar energy into chemical energy through photosynthesis. They form the foundation of almost all food chains, providing the initial energy source for all subsequent consumers."
+  },
+  {
+    "q": [
+      "What is a keystone species in the context of food webs?",
+      "How does a keystone species influence its ecosystem?",
+      "What happens when a keystone species is removed from a food chain?"
+    ],
+    "a": "A keystone species is an organism that has a disproportionately large effect on its environment relative to its abundance. If a keystone species is removed, the entire ecosystem structure can collapse, often leading to a dramatic loss of biodiversity."
+  },
+  {
+    "q": [
+      "What is the difference between a grazer and a browser in a food chain?",
+      "How do herbivores differ in their feeding habits?",
+      "What distinguishes grazing from browsing in ecological terms?"
+    ],
+    "a": "Grazers are herbivores that primarily eat grasses and low-lying vegetation, such as cows or sheep. Browsers are herbivores that feed on higher-growing woody plants, such as leaves, shoots, and fruits, exemplified by giraffes or deer."
+  }
+]

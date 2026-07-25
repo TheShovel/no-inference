@@ -1,0 +1,81 @@
+[
+  {
+    "q": [
+      "What is the defining characteristic of the class Insecta?",
+      "How are modern insects biologically defined?",
+      "What anatomical features define an insect?"
+    ],
+    "a": "Modern insects are defined by having a three-part body consisting of a head, thorax, and abdomen. They possess three pairs of jointed legs, one pair of antennae, and usually two pairs of wings, although some species have lost them through evolution."
+  },
+  {
+    "q": [
+      "How does the exoskeleton of a modern insect function?",
+      "What is the purpose of an insect's chitinous exoskeleton?",
+      "What role does the cuticle play in insect biology?"
+    ],
+    "a": "The exoskeleton is composed of chitin and proteins, providing structural support and protection against predators. It also prevents desiccation by sealing in moisture, though it must be shed through molting for the insect to grow."
+  },
+  {
+    "q": [
+      "How do holometabolous and hemimetabolous development differ?",
+      "What are the stages of complete versus incomplete insect metamorphosis?"
+    ],
+    "a": "Complete metamorphosis (holometabolism) involves four stages: egg, larva, pupa, and adult, allowing larvae and adults to occupy different ecological niches. Incomplete metamorphosis (hemimetabolism) consists of three stages: egg, nymph, and adult, where the nymph resembles a miniature version of the adult."
+  },
+  {
+    "q": [
+      "How do insects breathe without lungs?",
+      "What is the tracheal system in insects?",
+      "How does gas exchange occur in modern insects?"
+    ],
+    "a": "Insects breathe through a network of internal tubes called tracheae that open to the outside via small pores called spiracles. Oxygen travels directly to the tissues via these tubes, bypassing the need for a complex circulatory system to transport gas."
+  },
+  {
+    "q": [
+      "What is the role of pheromones in insect communication?",
+      "How do insects use chemical signaling to communicate?",
+      "Why are pheromones important for insect social structures?"
+    ],
+    "a": "Pheromones are chemical signals released by insects to convey information about mating, alarm, and trail-marking. These substances allow social insects, such as ants and bees, to coordinate complex colony behaviors and maintain social hierarchies."
+  },
+  {
+    "q": [
+      "What are the primary orders of modern insects?",
+      "Which groups contain the majority of insect species?",
+      "What are the most diverse orders of Insecta?"
+    ],
+    "a": "The most diverse orders of modern insects include Coleoptera (beetles), Lepidoptera (butterflies and moths), Hymenoptera (bees, wasps, and ants), and Diptera (flies). Coleoptera is the largest order, containing more species than any other group of animals on Earth."
+  },
+  {
+    "q": [
+      "How do pollinators like bees contribute to modern ecosystems?",
+      "What is the ecological impact of insect pollination?",
+      "Why are insects critical for global food security?"
+    ],
+    "a": "Insects act as primary pollinators for many flowering plants, facilitating the production of seeds and fruits. This process is essential for the reproduction of diverse plant species and is critical for the production of a vast majority of human food crops."
+  },
+  {
+    "q": [
+      "What is the function of the malpighian tubules in insects?",
+      "How do insects excrete waste and regulate water?",
+      "What is the insect equivalent of a kidney?"
+    ],
+    "a": "Malpighian tubules are excretory organs that filter metabolic waste and excess salts from the insect's hemolymph. This system allows insects to efficiently conserve water, which is a key adaptation for survival in terrestrial and arid environments."
+  },
+  {
+    "q": [
+      "How do social insects like termites organize their colonies?",
+      "What is eusociality in insects?",
+      "What characterizes a eusocial insect colony?"
+    ],
+    "a": "Eusociality is characterized by cooperative brood care, overlapping generations, and a division of labor based on castes, such as workers, soldiers, and reproductives. This organization allows colonies to perform complex tasks like nest construction and resource management more efficiently."
+  },
+  {
+    "q": [
+      "What are compound eyes and how do they work in insects?",
+      "How does an insect's visual system differ from humans?",
+      "What is the structure of an ommatidium?"
+    ],
+    "a": "Compound eyes consist of thousands of individual visual units called ommatidia, each with its own lens and photoreceptor. This structure allows insects to detect movement very rapidly and perceive a wide field of vision, though with lower resolution than human eyes."
+  }
+]

@@ -1,0 +1,159 @@
+[
+  {
+    "id": "summary-news-001",
+    "triggers": [
+      "what happened in the news",
+      "summarize today's headlines",
+      "give me a news briefing"
+    ],
+    "context_role": "current_events",
+    "template": "Here is a quick breakdown of the top stories regarding {context}: the main takeaway is that things are evolving rapidly, with key developments focusing on recent shifts in policy and public reaction.",
+    "fallback": "I don't have the specific news feed open, but I can summarize any article or topic you paste here for me!",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-book-002",
+    "triggers": [
+      "summarize this book",
+      "what is this book about",
+      "give me a book summary"
+    ],
+    "context_role": "literary_work",
+    "template": "Essentially, {context} explores the core themes of human nature and conflict. The narrative arc follows a journey of transformation, ultimately concluding that the primary lesson is one of resilience.",
+    "fallback": "Which book are you referring to? Tell me the title, and I'll give you a concise summary of the plot and themes.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-meeting-003",
+    "triggers": [
+      "summarize the meeting",
+      "what were the key takeaways",
+      "meeting notes summary"
+    ],
+    "context_role": "meeting_transcript",
+    "template": "Based on the discussion about {context}, the team agreed on three main action items. The general consensus was to prioritize efficiency while keeping the stakeholder requirements in mind.",
+    "fallback": "Please provide the meeting notes or transcript, and I'll distill the key decisions and action items for you.",
+    "style": [
+      "professional",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-article-004",
+    "triggers": [
+      "summarize this article",
+      "too long didn't read"
+    ],
+    "context_role": "web_content",
+    "template": "In a nutshell, the article regarding {context} argues that the current trend is unsustainable. The author supports this by highlighting a few critical data points and proposing a new alternative approach.",
+    "fallback": "I'm ready to summarize! Just paste the text or the link to the article you're looking at.",
+    "style": [
+      "concise",
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "summary-legal-005",
+    "triggers": [
+      "summarize this contract",
+      "what does this legal doc say",
+      "explain these terms"
+    ],
+    "context_role": "legal_document",
+    "template": "Stripping away the legalese, the section on {context} basically means that you are agreeing to specific limitations regarding liability and duration. It's essentially a standard protective clause.",
+    "fallback": "Please share the specific clause or document. Keep in mind I'm an AI, not a lawyer, but I can help simplify the language for you!",
+    "style": [
+      "simplified",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-academic-006",
+    "triggers": [
+      "summarize this paper",
+      "what is the abstract",
+      "explain this study"
+    ],
+    "context_role": "research_paper",
+    "template": "The core hypothesis of the study on {context} is that there is a direct correlation between the observed variables. After analyzing the data, the researchers concluded that the effect is significant but conditional.",
+    "fallback": "If you provide the abstract or the main findings of the paper, I can break down the complex academic jargon for you.",
+    "style": [
+      "educational",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-movie-007",
+    "triggers": [
+      "summarize the plot",
+      "what happens in the movie"
+    ],
+    "context_role": "film_plot",
+    "template": "{context} is essentially a story about growth and betrayal. It starts with a high-stakes premise and winds up in a surprising conclusion that ties all the loose ends together.",
+    "fallback": "Which movie are we talking about? Let me know the title, and I'll give you a spoiler-free summary!",
+    "style": [
+      "enthusiastic",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-email-008",
+    "triggers": [
+      "summarize this email thread",
+      "what is the email about",
+      "catch me up on this thread"
+    ],
+    "context_role": "email_conversation",
+    "template": "The email chain regarding {context} is mostly a back-and-forth about scheduling and expectations. The final consensus seems to be that the deadline has been pushed back by one week.",
+    "fallback": "Paste the email thread here, and I'll let you know exactly what you missed and if there are any pending tasks for you.",
+    "style": [
+      "direct",
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "summary-history-009",
+    "triggers": [
+      "summarize this event",
+      "what happened during",
+      "give me a history summary"
+    ],
+    "context_role": "historical_event",
+    "template": "To put {context} into perspective, it was a pivotal moment triggered by social unrest and political tension. The outcome fundamentally changed how the region was governed for decades.",
+    "fallback": "Which historical event or era are you interested in? I can give you a concise overview of the causes and effects.",
+    "style": [
+      "narrative",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-product-010",
+    "triggers": [
+      "is this product good",
+      "what do people say about this"
+    ],
+    "context_role": "product_feedback",
+    "template": "Looking at the general consensus for {context}, most users love the build quality but find the software a bit buggy. Overall, it's seen as a great value for the price point.",
+    "fallback": "Tell me which product you're looking at, or paste some reviews, and I'll synthesize the pros and cons for you.",
+    "style": [
+      "objective",
+      "conversational"
+    ],
+    "response_length": "medium"
+  }
+]

@@ -1,0 +1,156 @@
+[
+  {
+    "id": "chart-class-comparison-001",
+    "triggers": [
+      "compare these charts",
+      "contrast"
+    ],
+    "context_role": "chart_types",
+    "template": "When comparing {context}, the main difference lies in their intent: one is typically used for showing trends over time, while the other focuses on proportional distribution.",
+    "fallback": "Different charts serve different purposes; some are for comparison, while others are for composition or distribution.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "chart-class-suggestion-002",
+    "triggers": [
+      "best chart for",
+      "recommend a visualization"
+    ],
+    "context_role": "data_goal",
+    "template": "Since your goal is {context}, I'd recommend a chart from the comparison category, such as a bar chart or a column chart, as they make differences in magnitude very clear.",
+    "fallback": "To give you the best recommendation, could you tell me if you are trying to show a trend, a part-to-whole relationship, or a correlation?",
+    "style": [
+      "conversational",
+      "helpful"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "chart-class-definition-003",
+    "triggers": [
+      "what are comparison charts",
+      "define comparison category",
+      "explain comparison charts"
+    ],
+    "context_role": "category_name",
+    "template": "Comparison charts, like {context}, are designed to show how one value stacks up against another across different categories.",
+    "fallback": "Comparison charts are a broad classification used to visualize differences between two or more data points.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "chart-class-composition-004",
+    "triggers": [
+      "what are composition charts",
+      "explain part-to-whole",
+      "how to show proportions"
+    ],
+    "context_role": "example_chart",
+    "template": "Composition charts, such as the {context}, are perfect for showing how individual parts make up a whole 100% of a dataset.",
+    "fallback": "Composition charts help you visualize the breakdown of a total into its constituent percentages or categories.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "chart-class-relationship-005",
+    "triggers": [
+      "what are relationship charts",
+      "show correlation",
+      "explain scatter plots"
+    ],
+    "context_role": "variable_pair",
+    "template": "To show the relationship between {context}, you would use a relationship chart like a scatter plot, which helps identify if one variable affects the other.",
+    "fallback": "Relationship charts are used to identify correlations or dependencies between two or more variables.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "chart-class-distribution-006",
+    "triggers": [
+      "what are distribution charts",
+      "explain histograms",
+      "show data spread"
+    ],
+    "context_role": "dataset_name",
+    "template": "If you want to see how {context} is spread across a range, a distribution chart like a histogram is your best bet.",
+    "fallback": "Distribution charts show the frequency of values within a dataset, helping you spot outliers or normal patterns.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "chart-class-temporal-007",
+    "triggers": [
+      "charts for time",
+      "track trends",
+      "temporal classification"
+    ],
+    "context_role": "time_period",
+    "template": "For tracking changes over {context}, you should look at the temporal classification, where line charts are the gold standard for showing continuity.",
+    "fallback": "Temporal charts are specifically designed to visualize data points ordered chronologically to reveal trends.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "chart-class-mistake-008",
+    "triggers": [
+      "is this chart wrong",
+      "wrong chart type",
+      "common mistakes"
+    ],
+    "context_role": "chart_choice",
+    "template": "Using a {context} in this scenario might be misleading because that classification is meant for composition, whereas your data is actually showing a trend.",
+    "fallback": "The most common mistake in chart classification is using a pie chart when a bar chart would more accurately represent the differences.",
+    "style": [
+      "conversational",
+      "critical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "chart-class-hierarchy-009",
+    "triggers": [
+      "show hierarchy",
+      "organizational charts",
+      "treemap explanation"
+    ],
+    "context_role": "structure_type",
+    "template": "To visualize a {context}, you'll want a hierarchical chart like a Treemap or a Sunburst chart, which nests smaller categories inside larger ones.",
+    "fallback": "Hierarchical charts are a specialized classification used to show the structure and nesting of data.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "chart-class-summary-010",
+    "triggers": [
+      "summarize chart types",
+      "overview of all charts",
+      "chart classification cheat sheet"
+    ],
+    "context_role": "user_expertise",
+    "template": "Depending on whether you are a {context}, the easiest way to remember chart classification is to ask: 'Am I comparing, composing, relating, or distributing?'",
+    "fallback": "Basically, charts are classified by the story they tell: Comparison, Composition, Distribution, and Relationship.",
+    "style": [
+      "conversational",
+      "concise"
+    ],
+    "response_length": "medium"
+  }
+]

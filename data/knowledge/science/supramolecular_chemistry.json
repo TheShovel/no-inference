@@ -1,0 +1,82 @@
+[
+  {
+    "q": [
+      "What is supramolecular chemistry?",
+      "How is supramolecular chemistry defined?",
+      "What does the term supramolecular chemistry refer to?"
+    ],
+    "a": "Supramolecular chemistry is the study of chemistry beyond the molecule, focusing on the non-covalent interactions between molecules. It examines how molecules organize themselves into larger, complex structures through forces like hydrogen bonding, hydrophobic effects, and van der Waals interactions."
+  },
+  {
+    "q": [
+      "What is a host-guest complex?",
+      "How does the host-guest relationship work in supramolecular chemistry?",
+      "What is meant by host-guest chemistry?"
+    ],
+    "a": "A host-guest complex is a supramolecular assembly where a larger molecule (the host) binds a smaller molecule (the guest) through non-covalent interactions. This process is typically driven by molecular recognition and the complementarity of shape and chemical affinity between the two entities."
+  },
+  {
+    "q": [
+      "What are crown ethers?",
+      "What is the function of crown ethers in supramolecular chemistry?",
+      "What are examples of macrocyclic ligands like crown ethers?"
+    ],
+    "a": "Crown ethers are cyclic chemical compounds that consist of a ring containing ether linkages. They are widely used as host molecules that can selectively bind specific metal ions, such as potassium, based on the size of the ring's cavity."
+  },
+  {
+    "q": [
+      "What is the difference between covalent and non-covalent bonds?",
+      "How do non-covalent interactions differ from covalent bonds in molecular assembly?",
+      "Compare covalent bonding with the interactions used in supramolecular chemistry."
+    ],
+    "a": "Covalent bonds involve the sharing of electron pairs between atoms and are strong and permanent. In contrast, non-covalent interactions—such as hydrogen bonding and electrostatic forces—are weaker, reversible, and allow for the dynamic assembly and disassembly of molecular structures."
+  },
+  {
+    "q": [
+      "What are rotaxanes?",
+      "How is a rotaxane structured?",
+      "What characterizes a rotaxane in supramolecular chemistry?"
+    ],
+    "a": "Rotaxanes are mechanically interlocked molecular architectures consisting of a dumbbell-shaped molecule threaded through a ring. The bulky groups at the ends of the dumbbell prevent the ring from slipping off, creating a structure held together by mechanical rather than chemical bonds."
+  },
+  {
+    "q": [
+      "What is the role of Jean-Marie Lehn in supramolecular chemistry?",
+      "Who was awarded the Nobel Prize for the development of supramolecular chemistry?",
+      "What were Jean-Marie Lehn's contributions to the field?"
+    ],
+    "a": "Jean-Marie Lehn is a pioneer of supramolecular chemistry who received the Nobel Prize in Chemistry in 1987. He developed the concept of molecular recognition and designed synthetic receptors that mimic the selectivity of biological systems."
+  },
+  {
+    "q": [
+      "What are catenanes?",
+      "How are catenanes formed?",
+      "What defines a catenane molecular structure?"
+    ],
+    "a": "Catenanes are supramolecular complexes consisting of two or more interlocked rings. Because the rings are physically linked like a chain, they cannot be separated without breaking a covalent bond, despite not being bonded to one another."
+  },
+  {
+    "q": [
+      "How is supramolecular chemistry used in drug delivery?",
+      "What are the applications of supramolecular chemistry in medicine?",
+      "How do supramolecular assemblies improve drug targeting?"
+    ],
+    "a": "Supramolecular chemistry is used to create nanocarriers, such as micelles or cyclodextrins, that encapsulate pharmaceutical agents. These carriers protect the drug from degradation and can be designed to release the payload only when they encounter specific triggers, like pH changes in a tumor."
+  },
+  {
+    "q": [
+      "What is molecular self-assembly?",
+      "How does the process of self-assembly work in supramolecular systems?",
+      "What characterizes the self-assembly of molecules?"
+    ],
+    "a": "Molecular self-assembly is the spontaneous organization of components into a patterned structure without external direction. This process is governed by the local interactions between molecules, such as hydrophobic collapse or complementary hydrogen bonding, leading to a thermodynamically stable state."
+  },
+  {
+    "q": [
+      "What are calixarenes?",
+      "What is the structure and use of calixarenes?",
+      "How do calixarenes function as host molecules?"
+    ],
+    "a": "Calixarenes are macrocyclic compounds formed by the condensation of phenols with ketones. They possess a basket-like shape that allows them to act as hosts for various ions and small molecules, making them useful for sensors and extraction processes."
+  }
+]

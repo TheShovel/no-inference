@@ -1,0 +1,81 @@
+[
+  {
+    "q": [
+      "What is the International Date Line and how does it function?",
+      "How does crossing the International Date Line affect the date?",
+      "What is the purpose of the International Date Line?"
+    ],
+    "a": "The International Date Line (IDL) is an imaginary line on Earth's surface, located primarily along the 180th meridian, that separates two calendar days. When crossing the line from east to west, the date advances by one day; conversely, crossing from west to east causes the date to go back one day."
+  },
+  {
+    "q": [
+      "What are fractional time zones and where are they used?",
+      "What is a non-standard time zone offset?"
+    ],
+    "a": "Fractional time zones are time offsets that differ from Coordinated Universal Time (UTC) by increments other than a full hour, such as 30 or 45 minutes. Examples include India Standard Time (UTC+5:30) and Nepal Standard Time (UTC+5:45), often adopted to better align with a region's actual solar noon."
+  },
+  {
+    "q": [
+      "What is the difference between UTC and GMT?",
+      "How does Coordinated Universal Time differ from Greenwich Mean Time?",
+      "Is UTC the same as GMT?"
+    ],
+    "a": "Greenwich Mean Time (GMT) is a time zone based on the Earth's rotation relative to the prime meridian, whereas Coordinated Universal Time (UTC) is a high-precision atomic time standard. While they share the same current time, UTC is the primary time standard used by scientists and aviation to avoid irregularities in Earth's rotation."
+  },
+  {
+    "q": [
+      "Why do some countries observe Daylight Saving Time (DST) while others do not?",
+      "What is the purpose of Daylight Saving Time shifts?",
+      "Why is DST implemented in specific regions?"
+    ],
+    "a": "Daylight Saving Time is the practice of advancing clocks during warmer months to extend evening daylight and reduce energy consumption. It is typically observed in mid-latitude regions where there is a significant difference in day length between summer and winter, while tropical regions rarely use it because their day length remains constant."
+  },
+  {
+    "q": [
+      "What are nautical time zones and how are they measured?",
+      "How does nautical time differ from land-based time zones?",
+      "What is the system for timing in open oceans?"
+    ],
+    "a": "Nautical time zones divide the world into 24 longitudinal strips of 15 degrees each, centered on the prime meridian. Ships in open waters often follow these strict longitudinal offsets, though they may adjust their clocks daily by small increments to maintain a consistent solar noon."
+  },
+  {
+    "q": [
+      "What is 'Solar Time' and how does it differ from 'Standard Time'?",
+      "What is the difference between apparent solar time and mean solar time?",
+      "How is solar time calculated?"
+    ],
+    "a": "Solar time is based on the actual position of the sun in the sky, where noon occurs when the sun is at its highest point. Standard time is a human-made construct that applies a uniform time to an entire region, meaning the actual solar noon only occurs precisely at the region's central meridian."
+  },
+  {
+    "q": [
+      "What is the 'Equation of Time' in the context of timekeeping?",
+      "Why does a sundial differ from a mechanical clock over a year?",
+      "What causes the discrepancy between apparent solar time and mean solar time?"
+    ],
+    "a": "The Equation of Time is the difference between the time shown by a sundial (apparent solar time) and a clock (mean solar time). This variance is caused by the Earth's elliptical orbit around the sun and the tilt of its axis, causing the sun's movement to appear faster or slower throughout the year."
+  },
+  {
+    "q": [
+      "How do 'leap seconds' work and why are they necessary?",
+      "What is a leap second in UTC?",
+      "Why is the UTC clock occasionally adjusted by one second?"
+    ],
+    "a": "Leap seconds are one-second adjustments applied to Coordinated Universal Time (UTC) to keep it in sync with the Earth's rotation, which is slightly irregular. Because atomic clocks are more stable than the Earth's rotation, these seconds are added to prevent the clock time from drifting away from astronomical time."
+  },
+  {
+    "q": [
+      "What is the purpose of the Prime Meridian in global timekeeping?",
+      "Where is the zero point for the world's time zones located?",
+      "How does the Prime Meridian define UTC offset?"
+    ],
+    "a": "The Prime Meridian is the line of 0° longitude, passing through Greenwich, England, which serves as the reference point for the world's time zones. All other time zones are expressed as a positive or negative offset (e.g., UTC+2 or UTC-5) based on their distance east or west of this line."
+  },
+  {
+    "q": [
+      "What are 'time zone anomalies' and can you give an example?",
+      "Why do some political borders ignore longitudinal time zones?",
+      "What is an example of a political time zone shift?"
+    ],
+    "a": "Time zone anomalies occur when a country chooses a time zone for political or economic reasons rather than geographical ones. A prominent example is China, which spans five geographical time zones but observes a single official time (Beijing Time) across the entire nation for administrative unity."
+  }
+]

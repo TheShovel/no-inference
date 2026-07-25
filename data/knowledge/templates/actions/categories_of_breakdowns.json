@@ -1,0 +1,136 @@
+[
+  {
+    "id": "breakdown-mechanical-001",
+    "triggers": [
+      "machinery stop"
+    ],
+    "context_role": "equipment_type",
+    "template": "It sounds like you're dealing with a mechanical failure involving {context}. Usually, these stem from wear and tear or lubrication issues. Have you checked the primary moving parts?",
+    "fallback": "Mechanical breakdowns typically involve physical components failing. Could you tell me what equipment is malfunctioning?",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "breakdown-electrical-002",
+    "triggers": [
+      "electrical glitch",
+      "power failure",
+      "short circuit"
+    ],
+    "context_role": "device",
+    "template": "Electrical breakdowns in {context} can be tricky. It could be a blown fuse or a surge. Is the power indicator light on, or is it completely dead?",
+    "fallback": "Electrical failures can range from simple tripped breakers to complex circuit shorts. Which device is affected?",
+    "style": [
+      "conversational",
+      "helpful"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "breakdown-software-003",
+    "triggers": [
+      "software crash",
+      "system bug",
+      "app failure"
+    ],
+    "context_role": "application",
+    "template": "A software breakdown in {context} is often caused by memory leaks or incompatible updates. When exactly does the crash occur?",
+    "fallback": "Software breakdowns usually involve logic errors or resource exhaustion. Which app or system is crashing?",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "breakdown-emotional-004",
+    "triggers": [
+      "mental collapse"
+    ],
+    "context_role": "situation",
+    "template": "I'm sorry you're going through an emotional breakdown regarding {context}. Please remember to breathe; it's okay to feel overwhelmed when things get this intense.",
+    "fallback": "It sounds like you're experiencing a very difficult emotional moment. Would you like to talk about what's triggering this?",
+    "style": [
+      "conversational",
+      "empathetic"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "breakdown-structural-005",
+    "triggers": [
+      "building collapse",
+      "crack in wall"
+    ],
+    "context_role": "material",
+    "template": "A structural breakdown involving {context} can be serious. This often happens due to stress fractures or environmental degradation. Is the area secure?",
+    "fallback": "Structural breakdowns occur when a load-bearing element fails. What part of the structure are you concerned about?",
+    "style": [
+      "conversational",
+      "urgent"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "breakdown-chemical-007",
+    "triggers": [
+      "molecular decay"
+    ],
+    "context_role": "substance",
+    "template": "The chemical breakdown of {context} is typically a result of oxidation or thermal decomposition. Are you observing a change in color or smell?",
+    "fallback": "Chemical breakdowns involve the separation of a compound into simpler substances. Which substance are we discussing?",
+    "style": [
+      "conversational",
+      "scientific"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "breakdown-logistic-008",
+    "triggers": [
+      "logistics breakdown",
+      "supply chain failure",
+      "delivery collapse"
+    ],
+    "context_role": "process",
+    "template": "A logistic breakdown in {context} usually points to a bottleneck in the distribution chain. Is the delay happening at the origin or the last mile?",
+    "fallback": "Logistic breakdowns happen when the flow of goods or information is interrupted. Which part of the process failed?",
+    "style": [
+      "conversational",
+      "professional"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "breakdown-financial-009",
+    "triggers": [
+      "budget collapse",
+      "economic failure"
+    ],
+    "context_role": "entity",
+    "template": "A financial breakdown for {context} often stems from excessive leverage or unexpected market volatility. Are you looking for recovery strategies?",
+    "fallback": "Financial breakdowns occur when expenditures consistently exceed income or assets. Which entity's finances are we analyzing?",
+    "style": [
+      "conversational",
+      "formal"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "breakdown-process-010",
+    "triggers": [
+      "operational gap"
+    ],
+    "context_role": "workflow_step",
+    "template": "It looks like there is a process breakdown at the {context} stage. This usually happens when there is a lack of standardized documentation.",
+    "fallback": "A process breakdown occurs when a planned sequence of events fails to produce the intended result. Where did the sequence break?",
+    "style": [
+      "conversational",
+      "objective"
+    ],
+    "response_length": "medium"
+  }
+]

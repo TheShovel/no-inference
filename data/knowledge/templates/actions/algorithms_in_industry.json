@@ -1,0 +1,156 @@
+[
+  {
+    "id": "algo-industry-001",
+    "triggers": [
+      "how are algorithms used in business",
+      "industrial applications of algorithms",
+      "where do companies use algorithms"
+    ],
+    "context_role": "sector",
+    "template": "In the {sector} industry, algorithms are primarily used to optimize operational efficiency and automate decision-making processes, often reducing overhead costs significantly.",
+    "fallback": "Across various industries, algorithms are used to optimize efficiency and automate complex decision-making processes.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-industry-002",
+    "triggers": [
+      "how does netflix suggest",
+      "amazon product recommendations"
+    ],
+    "context_role": "platform",
+    "template": "Platforms like {platform} utilize collaborative filtering and deep learning algorithms to analyze user behavior and suggest content that matches your specific preferences.",
+    "fallback": "Recommendation engines typically use collaborative filtering to analyze user patterns and suggest relevant content.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-industry-003",
+    "triggers": [
+      "high frequency trading",
+      "stock market bots"
+    ],
+    "context_role": "strategy",
+    "template": "In quantitative finance, {strategy} algorithms execute trades at speeds impossible for humans, leveraging arbitrage and trend analysis to capture micro-opportunities.",
+    "fallback": "Algorithmic trading uses pre-programmed instructions to execute trades at high speeds based on market data.",
+    "style": [
+      "professional"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-industry-004",
+    "triggers": [
+      "logistics optimization",
+      "route planning"
+    ],
+    "context_role": "logistics_company",
+    "template": "Companies like {logistics_company} apply Dijkstra's or A* search algorithms to solve the 'Traveling Salesperson Problem,' ensuring the most fuel-efficient delivery routes.",
+    "fallback": "Logistics companies use pathfinding algorithms to minimize travel time and fuel consumption during deliveries.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-industry-005",
+    "triggers": [
+      "algorithmic bias",
+      "unfair algorithms",
+      "AI discrimination"
+    ],
+    "context_role": "industry_domain",
+    "template": "Within {industry_domain}, algorithmic bias often emerges from skewed training data, which can lead to unintentional discrimination in automated screening or scoring.",
+    "fallback": "Algorithmic bias occurs when training data is unrepresentative, leading to unfair outcomes in automated systems.",
+    "style": [
+      "critical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-industry-006",
+    "triggers": [
+      "predictive maintenance",
+      "industrial IoT algorithms",
+      "preventing machine failure"
+    ],
+    "context_role": "machinery_type",
+    "template": "By analyzing sensor data from {machinery_type}, predictive algorithms can forecast equipment failure before it happens, shifting from reactive to proactive maintenance.",
+    "fallback": "Predictive maintenance algorithms analyze real-time sensor data to alert operators before a hardware failure occurs.",
+    "style": [
+      "conversational",
+      "industrial"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-industry-007",
+    "triggers": [
+      "dynamic pricing",
+      "uber surge pricing",
+      "airline ticket prices"
+    ],
+    "context_role": "service",
+    "template": "For services like {service}, dynamic pricing algorithms adjust costs in real-time based on current demand, competitor pricing, and inventory levels.",
+    "fallback": "Dynamic pricing algorithms adjust costs in real-time based on supply and demand fluctuations.",
+    "style": [
+      "conversational",
+      "economic"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-industry-008",
+    "triggers": [
+      "fraud detection",
+      "banking algorithms",
+      "credit card security"
+    ],
+    "context_role": "financial_institution",
+    "template": "At {financial_institution}, anomaly detection algorithms scan millions of transactions per second to identify patterns that deviate from a user's typical behavior.",
+    "fallback": "Fraud detection systems use anomaly detection to flag transactions that don't fit a user's historical spending profile.",
+    "style": [
+      "professional",
+      "secure"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-industry-009",
+    "triggers": [
+      "indexing algorithms"
+    ],
+    "context_role": "search_engine",
+    "template": "The {search_engine} algorithm uses complex ranking signals, such as PageRank and relevance scores, to deliver the most useful information in milliseconds.",
+    "fallback": "Search engines use ranking algorithms to index the web and deliver the most relevant results based on user queries.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-industry-010",
+    "triggers": [
+      "automated hiring",
+      "ATS algorithms",
+      "resume screening"
+    ],
+    "context_role": "job_role",
+    "template": "When filtering for {job_role} positions, Applicant Tracking Systems use keyword-matching algorithms to rank candidates before a human recruiter ever sees the resume.",
+    "fallback": "Automated hiring systems use parsing algorithms to filter candidates based on specific keywords and experience levels.",
+    "style": [
+      "conversational",
+      "cautionary"
+    ],
+    "response_length": "medium"
+  }
+]

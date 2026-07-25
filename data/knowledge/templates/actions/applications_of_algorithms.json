@@ -1,0 +1,159 @@
+[
+  {
+    "id": "algo-app-search-001",
+    "triggers": [
+      "how do search engines work",
+      "how does google find results",
+      "search algorithm applications"
+    ],
+    "context_role": "search_engine",
+    "template": "Search engines primarily use indexing and ranking algorithms like {context} to sift through billions of pages and deliver the most relevant results in milliseconds.",
+    "fallback": "Search engines use complex ranking algorithms to organize the web and deliver the most relevant information based on your query.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-app-social-002",
+    "triggers": [
+      "social media algorithms",
+      "how does the tiktok feed work",
+      "instagram algorithm"
+    ],
+    "context_role": "platform_name",
+    "template": "On {context}, algorithms analyze your engagement patterns—like likes and watch time—to predict what content will keep you on the app longer.",
+    "fallback": "Social media platforms use recommendation algorithms to curate a personalized feed based on your past behavior and interests.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-app-gps-003",
+    "triggers": [
+      "how does gps calculate routes",
+      "shortest path algorithm",
+      "google maps algorithms"
+    ],
+    "context_role": "algorithm_name",
+    "template": "GPS navigation relies on pathfinding algorithms, most notably {context}, to calculate the quickest route between two points while accounting for traffic and distance.",
+    "fallback": "GPS systems use shortest-path algorithms to analyze a network of roads and find the most efficient route to your destination.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-app-finance-004",
+    "triggers": [
+      "algorithmic trading",
+      "how do stock bots work",
+      "finance algorithms"
+    ],
+    "context_role": "trading_strategy",
+    "template": "In high-frequency trading, algorithms implement {context} to execute trades at speeds impossible for humans, reacting to market changes in microseconds.",
+    "fallback": "Financial algorithms automate trading by executing orders based on pre-defined criteria like timing, price, or technical indicators.",
+    "style": [
+      "conversational",
+      "professional"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-app-medical-005",
+    "triggers": [
+      "algorithms in healthcare",
+      "medical diagnosis ai",
+      "how are algorithms used in medicine"
+    ],
+    "context_role": "medical_field",
+    "template": "In the field of {context}, algorithms are being used to analyze imaging data and patient records to detect anomalies far faster than traditional manual reviews.",
+    "fallback": "Healthcare uses algorithms for everything from predicting patient outbreaks to assisting doctors in diagnosing diseases via pattern recognition.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-app-streaming-006",
+    "triggers": [
+      "how does netflix recommend movies",
+      "spotify discovery algorithm",
+      "streaming recommendations"
+    ],
+    "context_role": "service_name",
+    "template": "{context} uses a technique called collaborative filtering to suggest content based on what users with similar tastes have enjoyed.",
+    "fallback": "Streaming services use recommendation algorithms to analyze your viewing or listening habits and suggest similar content you might like.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-app-crypto-007",
+    "triggers": [
+      "how does blockchain work",
+      "cryptography algorithms",
+      "bitcoin algorithm"
+    ],
+    "context_role": "crypto_algorithm",
+    "template": "Blockchain security depends on cryptographic algorithms like {context}, which ensure that data is immutable and transactions are verified without a central authority.",
+    "fallback": "Cryptocurrencies use hashing and consensus algorithms to secure the network and validate transactions across a distributed ledger.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-app-logistics-008",
+    "triggers": [
+      "delivery optimization",
+      "amazon shipping algorithms",
+      "logistics algorithms"
+    ],
+    "context_role": "logistics_problem",
+    "template": "Logistics companies solve the {context} by using optimization algorithms to minimize fuel costs and delivery times across their fleet.",
+    "fallback": "Delivery services use optimization algorithms to plan the most efficient routes for drivers, reducing time and operational costs.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-app-gaming-009",
+    "triggers": [
+      "game ai",
+      "how do npcs think",
+      "algorithms in video games"
+    ],
+    "context_role": "game_mechanic",
+    "template": "Game developers use algorithms to handle {context}, allowing non-player characters to react dynamically to the player's actions.",
+    "fallback": "Video games use a variety of algorithms, from A* pathfinding for character movement to procedural generation for creating infinite worlds.",
+    "style": [
+      "conversational",
+      "playful"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-app-compression-010",
+    "triggers": [
+      "how do zip files work",
+      "image compression algorithms",
+      "mp3 how it works"
+    ],
+    "context_role": "file_format",
+    "template": "The {context} format uses lossy compression algorithms to remove redundant data, making files small enough to stream easily over the internet.",
+    "fallback": "Compression algorithms reduce the size of data by identifying patterns and removing unnecessary information, which is essential for digital storage.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  }
+]

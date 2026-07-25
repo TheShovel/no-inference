@@ -1,0 +1,162 @@
+[
+  {
+    "id": "summary-life-001",
+    "triggers": [
+      "how to summarize a book",
+      "summarize a novel",
+      "book summary tips"
+    ],
+    "context_role": "book_title",
+    "template": "To summarize {context}, I recommend focusing on the core conflict and the character arcs. Try breaking it down into the inciting incident, the climax, and the final resolution.",
+    "fallback": "When summarizing a book, focus on the main plot points and the central theme rather than every single detail.",
+    "style": [
+      "helpful",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-life-002",
+    "triggers": [
+      "elevator pitch",
+      "pitch myself",
+      "quick introduction"
+    ],
+    "context_role": "profession",
+    "template": "For a {context} professional, your elevator pitch should highlight your biggest win and exactly how you solve a specific problem in under 30 seconds.",
+    "fallback": "An effective elevator pitch focuses on who you are, what you do, and the unique value you bring to the table.",
+    "style": [
+      "professional",
+      "encouraging"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-life-003",
+    "triggers": [
+      "summarize a meeting",
+      "meeting minutes",
+      "recap the call"
+    ],
+    "context_role": "meeting_topic",
+    "template": "Since the meeting was about {context}, your summary should lead with the key decisions made, followed by a bulleted list of action items and deadlines.",
+    "fallback": "The best meeting summaries focus on outcomes and action items rather than a transcript of who said what.",
+    "style": [
+      "efficient",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-life-004",
+    "triggers": [
+      "summarize a movie",
+      "movie recap",
+      "tell me the plot"
+    ],
+    "context_role": "movie_name",
+    "template": "If you're describing {context} to a friend, start with the premise and the main stakes, but be careful not to give away the twist ending!",
+    "fallback": "When recapping a movie, give the setup and the primary conflict, then let the other person ask for the spoilers.",
+    "style": [
+      "casual",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-life-005",
+    "triggers": [
+      "summarize a long email",
+      "TL;DR email",
+      "shorten a message"
+    ],
+    "context_role": "email_subject",
+    "template": "For an email regarding {context}, try using a 'TL;DR' section at the top with one sentence explaining the request and the deadline.",
+    "fallback": "The key to summarizing long emails is putting the 'ask' right at the beginning so the recipient knows exactly what is needed.",
+    "style": [
+      "practical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-life-006",
+    "triggers": [
+      "summarize my day",
+      "daily recap",
+      "what happened today"
+    ],
+    "context_role": "mood",
+    "template": "Since you're feeling {context}, try summarizing your day by listing three 'small wins' and one thing you're looking forward to tomorrow.",
+    "fallback": "Summarizing your day is a great way to reflect; try focusing on the most impactful moment and one thing you learned.",
+    "style": [
+      "reflective",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-life-007",
+    "triggers": [
+      "summarize a news article",
+      "gist of the news",
+      "article breakdown"
+    ],
+    "context_role": "news_topic",
+    "template": "To get the gist of this {context} article, look for the 'inverted pyramid'—the most important facts are usually in the first two paragraphs.",
+    "fallback": "When summarizing news, focus on the Who, What, Where, When, and Why to capture the essence of the story.",
+    "style": [
+      "informative",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-life-008",
+    "triggers": [
+      "summarize a recipe",
+      "simplified cooking",
+      "recipe gist"
+    ],
+    "context_role": "dish_name",
+    "template": "To summarize the process for {context}, just group the steps into three phases: Prep, Cooking, and Finishing touches.",
+    "fallback": "Summarizing a recipe is all about highlighting the key techniques and the total time required rather than every measurement.",
+    "style": [
+      "casual",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-life-009",
+    "triggers": [
+      "summarize a lecture",
+      "class notes summary",
+      "study recap"
+    ],
+    "context_role": "subject",
+    "template": "When summarizing a {context} lecture, try the Cornell method: write the main ideas in the margin and a three-sentence summary at the bottom.",
+    "fallback": "The best way to summarize a lecture is to identify the main themes and the supporting evidence the professor emphasized.",
+    "style": [
+      "academic",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-life-010",
+    "triggers": [
+      "summarize a dream",
+      "dream recap",
+      "weird dream"
+    ],
+    "context_role": "dream_theme",
+    "template": "Since your dream was about {context}, try summarizing it by focusing on the strongest emotion you felt rather than the literal sequence of events.",
+    "fallback": "Dream summaries are most interesting when you describe the mood and the most vivid image that stuck with you.",
+    "style": [
+      "curious",
+      "conversational"
+    ],
+    "response_length": "medium"
+  }
+]

@@ -1,0 +1,159 @@
+[
+  {
+    "id": "simple-exp-001",
+    "triggers": [
+      "why simplify things",
+      "benefits of simple explanations",
+      "value of clarity"
+    ],
+    "context_role": "benefit",
+    "template": "The main advantage of simplifying complex ideas is {context}. It removes the cognitive load, allowing the listener to grasp the core concept without getting bogged down in jargon.",
+    "fallback": "Simplifying complex ideas helps remove cognitive load, making it much easier for anyone to grasp the core concept quickly.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "simple-exp-002",
+    "triggers": [
+      "teaching beginners",
+      "explaining to a child",
+      "ELI5 approach"
+    ],
+    "context_role": "audience",
+    "template": "When you're explaining this to {context}, the key is to use relatable analogies. Instead of technical terms, try comparing the process to a common daily activity.",
+    "fallback": "When explaining complex topics to beginners, use relatable analogies to bridge the gap between the unknown and the familiar.",
+    "style": [
+      "conversational",
+      "helpful"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "simple-exp-003",
+    "triggers": [
+      "business communication",
+      "pitching an idea"
+    ],
+    "context_role": "business_scenario",
+    "template": "In a business setting, especially during {context}, simplicity is power. Decision-makers need the 'bottom line' quickly to make an informed choice without needing a PhD in the subject.",
+    "fallback": "In business, simplicity is power. Decision-makers generally need the bottom line quickly to make an informed choice.",
+    "style": [
+      "professional",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "simple-exp-004",
+    "triggers": [
+      "studying complex topics",
+      "Feynman technique"
+    ],
+    "context_role": "learning_method",
+    "template": "Using simple explanations is actually a great learning tool for {context}. If you can't explain a concept simply, it usually means there's a gap in your own understanding.",
+    "fallback": "Simplification is a powerful learning tool; if you can't explain a concept simply, you likely have a gap in your own understanding.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "simple-exp-005",
+    "triggers": [
+      "technical support",
+      "user manuals"
+    ],
+    "context_role": "technical_issue",
+    "template": "When dealing with {context}, breaking the solution into simple, step-by-step instructions prevents the user from feeling overwhelmed and reduces errors.",
+    "fallback": "Breaking technical solutions into simple, step-by-step instructions prevents users from feeling overwhelmed and reduces errors.",
+    "style": [
+      "conversational",
+      "practical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "simple-exp-006",
+    "triggers": [
+      "medical explanations",
+      "doctor patient communication",
+      "health clarity"
+    ],
+    "context_role": "medical_term",
+    "template": "In healthcare, translating {context} into plain language is crucial for patient compliance and reducing anxiety around a diagnosis.",
+    "fallback": "Translating medical jargon into plain language is crucial for patient compliance and reducing anxiety.",
+    "style": [
+      "empathetic",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "simple-exp-007",
+    "triggers": [
+      "public speaking",
+      "giving a presentation",
+      "keynote tips"
+    ],
+    "context_role": "presentation_topic",
+    "template": "If you're presenting on {context}, remember that the audience will remember a simple, powerful story far longer than a complex set of statistics.",
+    "fallback": "When presenting complex data, remember that a simple, powerful story is often more memorable than a set of statistics.",
+    "style": [
+      "conversational",
+      "encouraging"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "simple-exp-008",
+    "triggers": [
+      "conflict resolution",
+      "clearing up misunderstandings",
+      "effective arguments"
+    ],
+    "context_role": "misunderstanding",
+    "template": "To resolve {context}, try stripping away the emotional layers and stating the core issue in one simple sentence. This refocuses the conversation on the solution.",
+    "fallback": "To resolve a misunderstanding, strip away the emotional layers and state the core issue in one simple sentence to refocus on the solution.",
+    "style": [
+      "conversational",
+      "diplomatic"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "simple-exp-009",
+    "triggers": [
+      "marketing copy",
+      "writing an ad",
+      "landing page tips"
+    ],
+    "context_role": "product_feature",
+    "template": "When marketing {context}, don't sell the feature—sell the simple benefit. People don't buy specifications; they buy solutions to their problems.",
+    "fallback": "In marketing, don't sell the technical feature—sell the simple benefit. People buy solutions, not specifications.",
+    "style": [
+      "conversational",
+      "persuasive"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "simple-exp-010",
+    "triggers": [
+      "coding documentation",
+      "API guides",
+      "developer onboarding"
+    ],
+    "context_role": "code_concept",
+    "template": "For something like {context}, the best documentation uses 'Quick Start' guides that favor simple examples over exhaustive theoretical explanations.",
+    "fallback": "The best technical documentation favors simple 'Quick Start' examples over exhaustive theoretical explanations.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "q": [
+      "What is a grazing food chain?",
+      "How does a grazing food chain operate?",
+      "Define the grazing food chain."
+    ],
+    "a": "A grazing food chain starts with photosynthetic autotrophs, such as green plants or algae, as the primary producers. Energy flows from these producers to herbivores and then to various levels of carnivores. For example, a grass-zebra-lion sequence is a classic grazing food chain."
+  },
+  {
+    "q": [
+      "What characterizes a detritus food chain?",
+      "How does a detritus food chain differ from a grazing one?",
+      "What is a detritus-based food chain?"
+    ],
+    "a": "A detritus food chain begins with dead organic matter, such as decaying leaves or animal carcasses, rather than living plants. Decomposers like fungi and bacteria break down this matter, which is then consumed by detritivores like earthworms. This process is essential for nutrient recycling in an ecosystem."
+  },
+  {
+    "q": [
+      "What is a parasitic food chain?",
+      "How does energy move in a parasitic food chain?",
+      "Define the parasitic food chain model."
+    ],
+    "a": "In a parasitic food chain, the energy flow moves from a larger host organism to a smaller parasite. Unlike grazing chains, the consumer does not typically kill the host immediately but derives nutrients from it over time. An example is a human host being fed upon by a tapeworm."
+  },
+  {
+    "q": [
+      "How do food chains and food webs differ?",
+      "Contrast a food chain with a food web."
+    ],
+    "a": "A food chain is a linear sequence showing a single path of energy transfer from one organism to another. In contrast, a food web is a complex network of interconnected food chains that reflects the reality that most organisms eat more than one type of food. Food webs provide a more comprehensive view of ecosystem stability."
+  },
+  {
+    "q": [
+      "What are primary producers in a food chain?",
+      "Which organisms occupy the first trophic level?"
+    ],
+    "a": "Primary producers are organisms, mainly green plants and phytoplankton, that produce their own energy through photosynthesis. They form the base of almost all food chains by converting solar energy into chemical energy. Without these producers, higher trophic levels would have no energy source."
+  },
+  {
+    "q": [
+      "What is the role of apex predators in a food chain?",
+      "Who are the tertiary consumers in a food chain?",
+      "What defines an apex predator?"
+    ],
+    "a": "Apex predators occupy the highest trophic level and have no natural predators of their own within their ecosystem. They play a critical role in regulating the populations of prey and maintaining the health of the entire food chain. Examples include orcas in the ocean or eagles in the sky."
+  },
+  {
+    "q": [
+      "How does the 10 percent rule affect food chains?",
+      "Why are food chains usually limited in length?",
+      "Explain the energy loss between trophic levels."
+    ],
+    "a": "The 10 percent rule states that only about 10% of the energy from one trophic level is transferred to the next; the rest is lost as heat or used for metabolism. Because energy diminishes so rapidly, most food chains cannot support more than five or six trophic levels. This explains why apex predators are much rarer than producers."
+  },
+  {
+    "q": [
+      "What are omnivores and where do they fit in food chains?",
+      "How do omnivores affect food chain linearity?",
+      "What is the position of an omnivore in a food chain?"
+    ],
+    "a": "Omnivores are organisms that eat both plants and animals, meaning they can occupy multiple trophic levels simultaneously. Because they shift their diet based on availability, they often bridge the gap between primary and secondary consumers. This flexibility makes them highly adaptable in changing environments."
+  },
+  {
+    "q": [
+      "What is a marine food chain example?",
+      "Describe a typical ocean food chain.",
+      "How does energy flow in a marine environment?"
+    ],
+    "a": "A common marine food chain begins with phytoplankton as the primary producer, which are eaten by zooplankton. These zooplankton are then consumed by small fish, which are in turn eaten by larger predators like tuna or sharks. This illustrates the flow of energy from microscopic algae to large aquatic carnivores."
+  },
+  {
+    "q": [
+      "What is the function of saprotrophs in food chains?",
+      "How do scavengers and decomposers fit into food chains?",
+      "What role do fungi and bacteria play in energy cycles?"
+    ],
+    "a": "Saprotrophs and decomposers break down dead organic material and waste, returning essential minerals to the soil. While they often appear at the end of a chain, they effectively link the detritus food chain back to the grazing food chain by enriching the soil for plants. This ensures that matter is recycled within the biosphere."
+  }
+]

@@ -1,0 +1,161 @@
+[
+  {
+    "id": "breakdown-analysis-001",
+    "triggers": [
+      "how do breakdowns help",
+      "benefit of breaking things down",
+      "why analyze a failure"
+    ],
+    "context_role": "analytical_framework",
+    "template": "Breakdowns are actually powerful tools for growth. When you apply {context}, you can pinpoint the exact point of failure and build a more resilient system.",
+    "fallback": "Breakdowns act as a diagnostic tool, allowing you to identify weaknesses that were hidden during normal operation.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "breakdown-learning-002",
+    "triggers": [
+      "learning from mistakes",
+      "failure as a teacher",
+      "breakdown lessons"
+    ],
+    "context_role": "skill_gap",
+    "template": "The best part about a breakdown is the clarity it provides. In terms of {context}, it reveals exactly which skill or piece of knowledge is missing.",
+    "fallback": "A breakdown is essentially a real-world stress test that shows you exactly where you need to improve.",
+    "style": [
+      "encouraging",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "breakdown-innovation-003",
+    "triggers": [
+      "innovation through failure",
+      "creative breakthroughs",
+      "breaking the system"
+    ],
+    "context_role": "industry_sector",
+    "template": "Many of the biggest breakthroughs in {context} happened because something broke first, forcing engineers to rethink the entire approach.",
+    "fallback": "Innovation often requires a total breakdown of current methods to make room for a completely new way of thinking.",
+    "style": [
+      "inspiring",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "breakdown-mental-004",
+    "triggers": [
+      "emotional breakdown utility",
+      "mental health reset",
+      "breaking point benefits"
+    ],
+    "context_role": "coping_mechanism",
+    "template": "While painful, an emotional breakdown can serve as a critical signal that your current {context} is no longer sustainable and needs to change.",
+    "fallback": "Sometimes a breakdown is the mind's way of forcing a necessary reset when we've ignored our limits for too long.",
+    "style": [
+      "empathetic",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "breakdown-process-005",
+    "triggers": [
+      "process breakdown",
+      "workflow failure",
+      "systematic crash"
+    ],
+    "context_role": "business_process",
+    "template": "When a {context} breaks down, it's the perfect time to audit your workflow and remove redundancies you didn't know existed.",
+    "fallback": "A process breakdown exposes the 'invisible' flaws in a system that usually go unnoticed during smooth operations.",
+    "style": [
+      "professional",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "breakdown-technical-006",
+    "triggers": [
+      "technical failure utility",
+      "debugging benefits",
+      "why things crash"
+    ],
+    "context_role": "software_feature",
+    "template": "From a technical side, a breakdown in {context} gives you a stack trace of exactly what went wrong, which is far more useful than a vague error.",
+    "fallback": "Technical breakdowns are essentially forced documentation of where the system's logic fails.",
+    "style": [
+      "technical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "breakdown-relationship-007",
+    "triggers": [
+      "relationship breakdown",
+      "argument benefits",
+      "fighting to grow"
+    ],
+    "context_role": "communication_style",
+    "template": "A breakdown in a relationship often forces a conversation about {context} that would have otherwise been avoided for years.",
+    "fallback": "Breakdowns in communication can actually be the catalyst for deeper honesty and stronger boundaries.",
+    "style": [
+      "reflective",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "breakdown-mechanical-008",
+    "triggers": [
+      "broken machine",
+      "equipment breakdown"
+    ],
+    "context_role": "maintenance_strategy",
+    "template": "A mechanical breakdown is a prompt for {context}, ensuring that the equipment is updated to a safer, more modern standard.",
+    "fallback": "Breakdowns shift your strategy from reactive maintenance to proactive prevention.",
+    "style": [
+      "practical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "breakdown-logic-009",
+    "triggers": [
+      "logical breakdown",
+      "deconstructing arguments",
+      "breaking down a concept"
+    ],
+    "context_role": "complex_topic",
+    "template": "If you break down {context} into its smallest possible components, you can tackle the problem one piece at a time without feeling overwhelmed.",
+    "fallback": "The practical use of a logical breakdown is to turn a complex, intimidating problem into a series of manageable tasks.",
+    "style": [
+      "instructive",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "breakdown-strategic-010",
+    "triggers": [
+      "strategic failure",
+      "plan gone wrong",
+      "pivot after breakdown"
+    ],
+    "context_role": "goal_target",
+    "template": "When a strategy for {context} breaks down, it's an immediate signal to pivot your resources toward a more viable path.",
+    "fallback": "A strategic breakdown provides the 'negative data' necessary to refine your goals and find a winning approach.",
+    "style": [
+      "strategic",
+      "conversational"
+    ],
+    "response_length": "medium"
+  }
+]

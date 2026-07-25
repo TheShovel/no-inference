@@ -1,0 +1,90 @@
+[
+  {
+    "id": "debug-type-rubber-duck-003",
+    "triggers": [
+      "explaining code"
+    ],
+    "context_role": "concept",
+    "template": "Rubber duck debugging is a psychological trick where explaining your {context} logic to an inanimate object helps you spot the flaw in your own reasoning.",
+    "fallback": "Rubber ducking is the act of explaining your code out loud to someone (or something) to find bugs through verbalization.",
+    "style": [
+      "conversational",
+      "lighthearted"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-type-binary-search-004",
+    "triggers": [
+      "half-split"
+    ],
+    "context_role": "strategy",
+    "template": "Binary search debugging is great for large files; you basically {context} the code into sections to isolate exactly where the error is introduced.",
+    "fallback": "This method involves repeatedly splitting the suspected code area in half to narrow down the location of the bug.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-type-remote-005",
+    "triggers": [
+      "cloud debugging",
+      "server debugging"
+    ],
+    "context_role": "environment",
+    "template": "Remote debugging is essential when a bug only appears in {context}, allowing you to attach a local debugger to a process running on a different machine.",
+    "fallback": "Remote debugging lets you troubleshoot code that is executing on a server or device other than your own.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-type-backtracking-006",
+    "triggers": [
+      "backtracking",
+      "manual trace",
+      "tracing back"
+    ],
+    "context_role": "process",
+    "template": "Backtracking is a manual process where you start at the {context} and work backward through the execution flow to find the point of failure.",
+    "fallback": "Backtracking involves starting from the error message and tracing the logic backward to find the root cause.",
+    "style": [
+      "conversational",
+      "instructive"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-type-regression-009",
+    "triggers": [
+      "breaking changes"
+    ],
+    "context_role": "version",
+    "template": "Regression debugging happens when a new feature breaks {context}, requiring you to compare the current state against a previously working version.",
+    "fallback": "Regression debugging is the process of finding out why a feature that used to work is now broken after a change.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-type-heuristic-010",
+    "triggers": [
+      "trial and error",
+      "guessing"
+    ],
+    "context_role": "approach",
+    "template": "Heuristic debugging is more of an intuitive approach, often based on {context} and previous experience to make an educated guess about the bug.",
+    "fallback": "Heuristic debugging relies on intuition and common patterns to hypothesize where a bug might be hiding.",
+    "style": [
+      "conversational",
+      "casual"
+    ],
+    "response_length": "medium"
+  }
+]

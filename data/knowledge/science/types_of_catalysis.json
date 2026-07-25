@@ -1,0 +1,80 @@
+[
+  {
+    "q": [
+      "What is homogeneous catalysis?",
+      "How does homogeneous catalysis work?",
+      "Define homogeneous catalysis."
+    ],
+    "a": "Homogeneous catalysis occurs when the catalyst and the reactants are in the same phase, typically both being liquids or both being gases. In this process, the catalyst reacts with one or more reactants to form an intermediate complex that then reacts to give the final product. A common example is the use of gaseous palladium in certain hydrogenation reactions."
+  },
+  {
+    "q": [
+      "What is heterogeneous catalysis?",
+      "How does heterogeneous catalysis differ from homogeneous?",
+      "Explain the process of heterogeneous catalysis."
+    ],
+    "a": "Heterogeneous catalysis occurs when the catalyst is in a different phase from the reactants, most commonly a solid catalyst interacting with liquid or gaseous reactants. The process typically involves adsorption, where reactants bind to the catalyst surface, lowering the activation energy for the reaction to occur. An example is the use of solid platinum in catalytic converters to treat exhaust gases."
+  },
+  {
+    "q": [
+      "What is autocatalysis?",
+      "How does an autocatalyst function?",
+      "What defines an autocatalytic reaction?"
+    ],
+    "a": "Autocatalysis is a process in which one of the products of a chemical reaction also acts as a catalyst for that same reaction. As the reaction progresses and more product is formed, the rate of reaction increases because there is a higher concentration of the catalyst. This often results in a characteristic sigmoidal or S-shaped curve for the reaction rate over time."
+  },
+  {
+    "q": [
+      "What is enzymatic catalysis?",
+      "How do enzymes act as biological catalysts?",
+      "What characterizes biocatalysis?"
+    ],
+    "a": "Enzymatic catalysis involves the use of proteins called enzymes to speed up biochemical reactions within living organisms. These catalysts possess a specific 'active site' that binds to a substrate molecule via a lock-and-key or induced-fit mechanism. They are highly efficient and specific, often operating under mild temperature and pH conditions."
+  },
+  {
+    "q": [
+      "How does light trigger catalysis?",
+      "Define the role of photons in photocatalysis."
+    ],
+    "a": "Photocatalysis is a form of catalysis where a catalyst is activated by the absorption of light, typically ultraviolet or visible light. The absorbed photons promote electrons from the valence band to the conduction band of a semiconductor, creating electron-hole pairs that drive chemical reactions. Titanium dioxide (TiO2) is a widely used photocatalyst for air and water purification."
+  },
+  {
+    "q": [
+      "What is electrocatalysis?",
+      "How do catalysts work in electrochemical reactions?",
+      "Explain the concept of an electrocatalyst."
+    ],
+    "a": "Electrocatalysis occurs at the interface between an electrode and an electrolyte, where the catalyst increases the rate of an electron transfer reaction. These catalysts are used to lower the overpotential required to drive a reaction, such as the oxygen reduction reaction in fuel cells. Platinum and iridium are common materials used as electrocatalysts."
+  },
+  {
+    "q": [
+      "What are zeolites in the context of catalysis?",
+      "How do zeolites function as catalysts?",
+      "What is the catalytic role of microporous aluminosilicates?"
+    ],
+    "a": "Zeolites are microporous, aluminosilicate minerals that act as shape-selective heterogeneous catalysts. Their unique crystalline structure creates pores of precise sizes, allowing only molecules of specific dimensions to enter and react. They are extensively used in the petrochemical industry for the cracking of hydrocarbons."
+  },
+  {
+    "q": [
+      "What is organocatalysis?",
+      "How does organocatalysis differ from metal catalysis?",
+      "What are organic catalysts?"
+    ],
+    "a": "Organocatalysis is the use of small organic molecules, primarily composed of carbon, hydrogen, nitrogen, and sulfur, to accelerate chemical reactions. Unlike traditional catalysis, it avoids the use of heavy metals, making it more environmentally friendly and often less toxic. Proline, an amino acid, is a classic example of an organocatalyst used in asymmetric synthesis."
+  },
+  {
+    "q": [
+      "What is the role of a promoter in catalysis?",
+      "How do promoters affect catalytic activity?",
+      "What is a catalytic promoter?"
+    ],
+    "a": "A promoter is a substance added to a catalyst to increase its activity, selectivity, or stability, even though the promoter itself is not catalytically active. For example, potassium is often added to iron catalysts in the Haber process to enhance the rate of ammonia synthesis. Promoters can alter the electronic properties or the surface morphology of the active catalyst."
+  },
+  {
+    "q": [
+      "How does a catalyst become poisoned?",
+      "What causes a loss of activity in heterogeneous catalysts?"
+    ],
+    "a": "Catalyst poisoning occurs when impurities in the reaction mixture bind strongly and irreversibly to the active sites of a catalyst, blocking reactants from accessing them. This effectively reduces the surface area available for the reaction, leading to a significant drop in efficiency. Lead is a well-known poison for the platinum catalysts found in automotive catalytic converters."
+  }
+]

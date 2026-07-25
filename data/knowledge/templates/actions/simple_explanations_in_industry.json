@@ -1,0 +1,124 @@
+[
+  {
+    "id": "industry-explainer-001",
+    "triggers": [
+      "how does it work",
+      "layman terms"
+    ],
+    "context_role": "technology",
+    "template": "Think of {context} like a digital post office; it takes the information, sorts it, and ensures it reaches the right destination without getting lost in transit.",
+    "fallback": "In simple terms, it's a system designed to automate a complex process to make it more efficient.",
+    "style": [
+      "conversational",
+      "analogical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "industry-explainer-002",
+    "triggers": [
+      "what is",
+      "define",
+      "meaning of"
+    ],
+    "context_role": "industry_term",
+    "template": "At its core, {context} is basically a way for companies to track their progress using specific markers so they know if they are hitting their goals.",
+    "fallback": "It's essentially a professional standard used to ensure quality and consistency across the board.",
+    "style": [
+      "conversational",
+      "direct"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "industry-explainer-003",
+    "triggers": [
+      "why is this used",
+      "purpose of",
+      "benefit of"
+    ],
+    "context_role": "tool",
+    "template": "The main reason people use {context} is to stop wasting time on repetitive tasks. It's like having a personal assistant that handles the boring stuff automatically.",
+    "fallback": "It's used to streamline operations and reduce the margin for human error.",
+    "style": [
+      "conversational",
+      "persuasive"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "industry-explainer-005",
+    "triggers": [
+      "compare"
+    ],
+    "context_role": "comparison",
+    "template": "The easiest way to see the difference is that {context} focuses on the 'how' (the process), while the alternative focuses on the 'what' (the result).",
+    "fallback": "One is generally more focused on speed, while the other prioritizes precision.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "industry-explainer-006",
+    "triggers": [
+      "how is this applied"
+    ],
+    "context_role": "concept",
+    "template": "Imagine you're running a lemonade stand; {context} would be the part where you decide to buy lemons in bulk to save money per cup.",
+    "fallback": "In a typical business day, this would look like automating your email responses to save time.",
+    "style": [
+      "conversational",
+      "storytelling"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "industry-explainer-007",
+    "triggers": [
+      "risk of",
+      "downside"
+    ],
+    "context_role": "innovation",
+    "template": "The main risk with {context} is similar to using a powerful tool—it's incredibly effective, but if you don't follow the safety manual, you might get unexpected results.",
+    "fallback": "Like any new industry standard, there's a learning curve and a few teething problems at the start.",
+    "style": [
+      "conversational",
+      "cautious"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "industry-explainer-008",
+    "triggers": [
+      "future of",
+      "where is it going",
+      "next steps"
+    ],
+    "context_role": "trend",
+    "template": "Right now, {context} is moving toward being invisible. Instead of you managing it, it will eventually just run in the background of your apps.",
+    "fallback": "The general trend is moving toward more automation and less manual input.",
+    "style": [
+      "conversational",
+      "forward-looking"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "industry-explainer-009",
+    "triggers": [
+      "who uses this",
+      "target audience",
+      "applicable to"
+    ],
+    "context_role": "demographic",
+    "template": "Usually, {context} is a lifesaver for people who deal with huge amounts of data but aren't necessarily programmers.",
+    "fallback": "It's primarily used by project managers and stakeholders who need high-level overviews.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "short"
+  }
+]

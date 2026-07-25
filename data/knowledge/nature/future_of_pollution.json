@@ -1,0 +1,82 @@
+[
+  {
+    "q": [
+      "What is the projected impact of microplastics on marine food webs in the coming decades?",
+      "How will microplastic pollution evolve in ocean ecosystems?",
+      "What are the future risks of microplastics in the marine food chain?"
+    ],
+    "a": "As plastic degradation continues, the concentration of nanoplastics is expected to increase, allowing pollutants to penetrate cellular membranes of marine organisms more easily. This will likely lead to higher bioaccumulation of toxins up the food chain, potentially affecting human health through seafood consumption."
+  },
+  {
+    "q": [
+      "What is space debris pollution and how will it affect future satellite missions?",
+      "What is the 'Kessler Syndrome' in the context of orbital pollution?",
+      "How does orbital debris threaten future space exploration?"
+    ],
+    "a": "Space debris consists of defunct satellites and spent rocket stages orbiting Earth at high speeds. The Kessler Syndrome describes a scenario where the density of objects in Low Earth Orbit is high enough that collisions create a cascade of further debris, potentially making certain orbits unusable for future generations."
+  },
+  {
+    "q": [
+      "How is the concept of 'forever chemicals' or PFAS expected to change environmental policy?",
+      "What are the future challenges associated with PFAS pollution?",
+      "Why are PFAS considered a long-term pollution threat?"
+    ],
+    "a": "Per- and polyfluoroalkyl substances (PFAS) are synthetic chemicals that do not break down in the environment. Future policy is expected to shift toward total bans and the development of advanced remediation technologies to remove these 'forever chemicals' from groundwater and soil globally."
+  },
+  {
+    "q": [
+      "What role will carbon capture and storage (CCS) play in mitigating atmospheric pollution?",
+      "How does CCS technology aim to reduce future air pollution?",
+      "Can carbon capture reverse current atmospheric carbon levels?"
+    ],
+    "a": "Carbon capture and storage involves trapping carbon dioxide at the source or directly from the air and storing it underground. While it cannot instantly reverse pollution, it is projected to be a critical tool for reaching net-zero emissions by neutralizing hard-to-abate industrial sectors."
+  },
+  {
+    "q": [
+      "What is electronic waste (e-waste) pollution and what are its future trends?",
+      "How will the increase in smart devices affect global e-waste levels?",
+      "What are the long-term environmental impacts of increasing e-waste?"
+    ],
+    "a": "E-waste refers to discarded electronic devices containing hazardous materials like lead and mercury. With the accelerating cycle of consumer electronics, the future focuses on 'circular electronics' where products are designed for modularity and easy recycling to prevent toxic leaching into landfills."
+  },
+  {
+    "q": [
+      "How will the transition to electric vehicles impact different types of pollution?",
+      "Will EVs eliminate all forms of transport pollution?",
+      "What new pollution challenges arise from the shift to electric cars?"
+    ],
+    "a": "While EVs reduce direct tailpipe emissions and urban air pollution, they shift the pollution burden to lithium and cobalt mining. Future challenges include managing the disposal and recycling of massive quantities of spent lithium-ion batteries to avoid soil and water contamination."
+  },
+  {
+    "q": [
+      "What is pharmaceutical pollution and how is it expected to impact wildlife?",
+      "How do drug residues in water systems affect future biodiversity?",
+      "What are the risks of antibiotic pollution in the environment?"
+    ],
+    "a": "Pharmaceutical pollution occurs when medications enter waterways via human excretion or improper disposal. This is expected to lead to increased antibiotic resistance in bacteria and endocrine disruption in aquatic species, potentially altering the reproductive cycles of fish and amphibians."
+  },
+  {
+    "q": [
+      "How is light pollution expected to evolve with the growth of megacities?",
+      "What are the future effects of artificial light at night (ALAN) on ecosystems?",
+      "How does increasing urban light pollution impact migratory patterns?"
+    ],
+    "a": "As urbanization expands, the increase in artificial light at night disrupts the circadian rhythms of humans and wildlife. Future impacts include the misalignment of migratory birds' navigation and the disruption of nocturnal pollinators, which could threaten global food security."
+  },
+  {
+    "q": [
+      "What are the projected effects of nitrogen runoff on future ocean 'dead zones'?",
+      "How does agricultural pollution lead to oceanic hypoxia?",
+      "What is the future of eutrophication in coastal waters?"
+    ],
+    "a": "Excessive nitrogen and phosphorus from fertilizers cause algal blooms that deplete oxygen as they decompose. This process, known as eutrophication, is projected to expand the number and size of 'dead zones' in the ocean where most marine life cannot survive."
+  },
+  {
+    "q": [
+      "How will noise pollution affect marine mammal communication in the future?",
+      "What is the impact of anthropogenic underwater noise on whales and dolphins?",
+      "How does shipping noise pollution evolve with global trade growth?"
+    ],
+    "a": "The increase in commercial shipping and sonar activities creates chronic underwater noise that masks the communication and echolocation of cetaceans. In the future, this may lead to lower mating success and increased strandings as animals lose their ability to navigate and find food."
+  }
+]

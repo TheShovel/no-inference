@@ -1,0 +1,151 @@
+[
+  {
+    "id": "class-type-001",
+    "triggers": [
+      "what is a simple explanation",
+      "define simple explanation"
+    ],
+    "context_role": "definition",
+    "template": "In simple terms, {context} is a way of breaking down a complex concept into its most basic elements so anyone can understand it without prior expertise.",
+    "fallback": "A simple explanation is a way of distilling complex information into an easily digestible format for a general audience.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "class-type-002",
+    "triggers": [
+      "types of simple explanations",
+      "classify explanations",
+      "different kinds of simple explanations"
+    ],
+    "context_role": "classification_list",
+    "template": "When we classify simple explanations, we generally see them fall into these categories: {context}. Each serves a different purpose depending on the audience.",
+    "fallback": "Simple explanations are usually classified by their approach, such as using analogies, visual aids, or step-by-step breakdowns.",
+    "style": [
+      "conversational",
+      "structured"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "class-type-003",
+    "triggers": [
+      "what is an analogy explanation",
+      "explain using analogy"
+    ],
+    "context_role": "analogy_type",
+    "template": "An analogy-based explanation works by comparing {context} to something familiar, making the abstract feel concrete.",
+    "fallback": "An analogy-based explanation compares a complex idea to a common everyday experience to make it easier to grasp.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "class-type-004",
+    "triggers": [
+      "what is a functional explanation",
+      "explain how it works simply"
+    ],
+    "context_role": "functional_type",
+    "template": "A functional explanation focuses strictly on what {context} does rather than how it's built, which strips away unnecessary technical noise.",
+    "fallback": "A functional explanation focuses on the 'what' and the 'result' rather than the internal mechanical process.",
+    "style": [
+      "conversational",
+      "direct"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "class-type-005",
+    "triggers": [
+      "what is a conceptual explanation",
+      "explain the core idea"
+    ],
+    "context_role": "conceptual_type",
+    "template": "A conceptual explanation ignores the details and focuses on the 'big picture' of {context}, providing a mental map before diving deeper.",
+    "fallback": "A conceptual explanation prioritizes the overarching idea over specific technical details.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "class-type-006",
+    "triggers": [
+      "explain like im five",
+      "simplest possible terms"
+    ],
+    "context_role": "extreme_simplification",
+    "template": "Imagine {context} is like a child's toy—it's designed to do one simple thing without any of the complicated parts getting in the way.",
+    "fallback": "Think of it as the most basic version of the idea, removing all jargon and focusing only on the primary purpose.",
+    "style": [
+      "conversational",
+      "playful"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "class-type-007",
+    "triggers": [
+      "comparison of explanation types",
+      "analogy vs functional"
+    ],
+    "context_role": "comparison",
+    "template": "While an analogy helps you visualize {context}, a functional explanation tells you how to use it. One builds a bridge, the other gives you a map.",
+    "fallback": "The main difference is that some explanations focus on familiarity (analogies), while others focus on utility (functional).",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "class-type-008",
+    "triggers": [
+      "how to choose an explanation type",
+      "best way to simplify"
+    ],
+    "context_role": "selection_criteria",
+    "template": "To pick the right type for {context}, ask yourself: does the user need to visualize it, or do they just need to know what it does?",
+    "fallback": "The best explanation type depends on whether your audience needs a conceptual overview or a practical understanding.",
+    "style": [
+      "conversational",
+      "guiding"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "class-type-009",
+    "triggers": [
+      "what is a narrative explanation",
+      "explain with a story"
+    ],
+    "context_role": "narrative_type",
+    "template": "A narrative explanation turns {context} into a story with a beginning, middle, and end, making the information more memorable.",
+    "fallback": "A narrative explanation frames a concept as a sequence of events or a story to make it more engaging and intuitive.",
+    "style": [
+      "conversational",
+      "storytelling"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "class-type-010",
+    "triggers": [
+      "limitations of simple explanations",
+      "is simplifying bad"
+    ],
+    "context_role": "tradeoff",
+    "template": "The trade-off with simplifying {context} is that you gain clarity but lose precision. It's a balance between being 'mostly right' and 'perfectly complex'.",
+    "fallback": "Simple explanations always sacrifice some level of technical accuracy in exchange for accessibility.",
+    "style": [
+      "conversational",
+      "critical"
+    ],
+    "response_length": "medium"
+  }
+]

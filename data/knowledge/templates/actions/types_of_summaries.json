@@ -1,0 +1,150 @@
+[
+  {
+    "id": "summary-type-abstractive-001",
+    "triggers": [
+      "what is an abstractive summary",
+      "explain abstractive summarization"
+    ],
+    "context_role": "topic",
+    "template": "An abstractive summary is essentially a 'rephrasing' of the main ideas. Instead of just copying sentences, it generates new text to capture the essence of {context}. It's more like how a human would describe a movie to a friend!",
+    "fallback": "An abstractive summary involves paraphrasing the main points of a text using new words rather than just extracting original sentences.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-type-extractive-002",
+    "triggers": [
+      "what is an extractive summary",
+      "how does extractive summarization work"
+    ],
+    "context_role": "topic",
+    "template": "Think of an extractive summary like using a highlighter. It identifies the most important sentences exactly as they are written in {context} and strings them together. It's very precise, but sometimes lacks a natural flow.",
+    "fallback": "Extractive summarization works by picking out key phrases and sentences directly from the source text to create a condensed version.",
+    "style": [
+      "conversational",
+      "analogical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-type-executive-003",
+    "triggers": [
+      "what is an executive summary",
+      "executive summary explanation"
+    ],
+    "context_role": "topic",
+    "template": "An executive summary is designed for busy decision-makers. For {context}, it focuses on the key findings, conclusions, and actionable recommendations so the reader doesn't have to dig through the whole report.",
+    "fallback": "An executive summary is a short section at the beginning of a long report that summarizes the main points and recommendations.",
+    "style": [
+      "professional",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-type-descriptive-004",
+    "triggers": [
+      "what is a descriptive summary",
+      "describe a descriptive summary"
+    ],
+    "context_role": "topic",
+    "template": "A descriptive summary acts like a map. Instead of giving away the plot or the results of {context}, it tells the reader what the text is about and what topics are covered.",
+    "fallback": "A descriptive summary provides an overview of the source material without delving into the specific details or conclusions.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "summary-type-informative-005",
+    "triggers": [
+      "what is an informative summary",
+      "how to write an informative summary"
+    ],
+    "context_role": "topic",
+    "template": "Unlike a descriptive one, an informative summary actually gives you the 'meat' of the content. For {context}, it would include the main arguments and the final results so the reader gets the core value immediately.",
+    "fallback": "An informative summary conveys the actual information and key points contained in the original text.",
+    "style": [
+      "conversational",
+      "instructive"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-type-blurb-006",
+    "triggers": [
+      "what is a blurb",
+      "how to write a book blurb"
+    ],
+    "context_role": "topic",
+    "template": "A blurb is essentially a 'teaser' summary. For {context}, the goal isn't just to summarize, but to hook the reader and make them want to read the full version!",
+    "fallback": "A blurb is a short, promotional summary usually found on the back of a book to attract potential readers.",
+    "style": [
+      "conversational",
+      "enthusiastic"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "summary-type-TLDR-007",
+    "triggers": [
+      "what is a tldr summary"
+    ],
+    "context_role": "topic",
+    "template": "TL;DR stands for 'Too Long; Didn't Read.' It's the ultimate conversational summary—usually just one or two punchy sentences that boil down {context} to its absolute core.",
+    "fallback": "TL;DR is an internet slang term used to provide a very brief summary of a long piece of text.",
+    "style": [
+      "casual",
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "summary-type-synopsis-008",
+    "triggers": [
+      "what is a synopsis",
+      "synopsis vs summary"
+    ],
+    "context_role": "topic",
+    "template": "A synopsis is a comprehensive narrative summary. When dealing with {context}, a synopsis covers the entire arc, including the ending, unlike a blurb which keeps secrets.",
+    "fallback": "A synopsis is a detailed summary of a story's plot, typically used in publishing to give an overview of the entire narrative.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-type-abstract-009",
+    "triggers": [
+      "what is an academic abstract",
+      "explain an abstract summary"
+    ],
+    "context_role": "topic",
+    "template": "An abstract is a highly structured summary used in research. For {context}, it briefly covers the objective, method, results, and conclusion in a very formal way.",
+    "fallback": "An abstract is a concise summary of a research paper, typically appearing at the beginning to help readers decide if the paper is relevant.",
+    "style": [
+      "professional",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-type-bulleted-010",
+    "triggers": [
+      "what is a bulleted summary",
+      "benefits of bullet point summaries"
+    ],
+    "context_role": "topic",
+    "template": "A bulleted summary is all about scannability. Instead of paragraphs, it breaks {context} into a list of key takeaways, making it perfect for quick review and checklists.",
+    "fallback": "A bulleted summary uses a list format to present the most important points of a text for easier reading.",
+    "style": [
+      "conversational",
+      "practical"
+    ],
+    "response_length": "short"
+  }
+]

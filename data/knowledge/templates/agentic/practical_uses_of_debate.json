@@ -1,0 +1,160 @@
+[
+  {
+    "id": "debate-career-001",
+    "triggers": [
+      "how does debate help my career",
+      "career benefits of debating",
+      "debate in the workplace"
+    ],
+    "context_role": "profession",
+    "template": "In a {context} career, debate skills are incredibly valuable for navigating high-stakes negotiations and presenting data-driven arguments to stakeholders.",
+    "fallback": "Debate skills translate well to most professional environments by improving your ability to persuade others and structure logical arguments.",
+    "style": [
+      "conversational",
+      "professional"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-critical-002",
+    "triggers": [
+      "critical thinking",
+      "how to think better",
+      "debate and logic"
+    ],
+    "context_role": "skill",
+    "template": "Practicing debate sharpens {context} by forcing you to analyze an issue from multiple perspectives and identify logical fallacies in real-time.",
+    "fallback": "Debating enhances critical thinking by requiring a rigorous analysis of evidence and a structured approach to problem-solving.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-conflict-003",
+    "triggers": [
+      "resolving arguments",
+      "stop fighting"
+    ],
+    "context_role": "relationship",
+    "template": "When dealing with a {context} conflict, applying debate techniques like 'steelmanning' helps you understand the other person's position before responding.",
+    "fallback": "Debate frameworks can turn emotional arguments into productive discussions by focusing on evidence and mutual understanding.",
+    "style": [
+      "conversational",
+      "empathetic"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-student-004",
+    "triggers": [
+      "student benefits",
+      "debate for kids",
+      "academic advantages"
+    ],
+    "context_role": "subject",
+    "template": "For students studying {context}, debate helps in synthesizing complex information and articulating it clearly during exams or presentations.",
+    "fallback": "Academic debate boosts confidence and improves research skills, making students more adept at writing persuasive essays.",
+    "style": [
+      "conversational",
+      "encouraging"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-democracy-005",
+    "triggers": [
+      "politics",
+      "civic engagement",
+      "democratic process"
+    ],
+    "context_role": "political_system",
+    "template": "In a {context}, structured debate ensures that diverse viewpoints are aired and policies are stress-tested before they become law.",
+    "fallback": "Debate is the cornerstone of a healthy democracy, allowing citizens to challenge ideas and reach informed decisions collectively.",
+    "style": [
+      "conversational",
+      "formal"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-empathy-006",
+    "triggers": [
+      "empathy",
+      "understanding others",
+      "open mindedness"
+    ],
+    "context_role": "perspective",
+    "template": "By debating from the {context} point of view, you develop cognitive empathy, learning to see the world through a lens different from your own.",
+    "fallback": "One of the best practical uses of debate is the ability to argue a position you disagree with, which fosters profound intellectual empathy.",
+    "style": [
+      "conversational",
+      "reflective"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-public-007",
+    "triggers": [
+      "fear of talking",
+      "presentation skills"
+    ],
+    "context_role": "setting",
+    "template": "Whether you are in a {context} or a boardroom, the poise gained from competitive debate helps you manage nerves and maintain flow.",
+    "fallback": "Debate provides a safe environment to practice public speaking, helping you master pacing, volume, and audience engagement.",
+    "style": [
+      "conversational",
+      "supportive"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-decision-008",
+    "triggers": [
+      "making decisions",
+      "choosing an option",
+      "decision making"
+    ],
+    "context_role": "scenario",
+    "template": "When facing a {context} decision, running a 'mini-debate' in your head—listing pros and cons for both sides—leads to a more rational choice.",
+    "fallback": "Using debate logic helps you avoid confirmation bias by forcing you to seek out evidence that contradicts your initial preference.",
+    "style": [
+      "conversational",
+      "practical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-leadership-009",
+    "triggers": [
+      "leadership skills",
+      "being a boss",
+      "managing people"
+    ],
+    "context_role": "leadership_style",
+    "template": "A {context} leader uses debate techniques to encourage 'devils advocacy' within their team, preventing groupthink and costly mistakes.",
+    "fallback": "Leadership is enhanced by debate skills, as it allows you to guide a team toward a consensus through reasoned discourse.",
+    "style": [
+      "conversational",
+      "professional"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-legal-010",
+    "triggers": [
+      "law",
+      "legal career",
+      "courtroom"
+    ],
+    "context_role": "legal_field",
+    "template": "In {context}, the ability to anticipate an opponent's rebuttal is the difference between a winning and losing argument.",
+    "fallback": "The legal profession is essentially the practical application of formal debate, relying on precedent, evidence, and persuasive rhetoric.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  }
+]

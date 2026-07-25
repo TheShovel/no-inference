@@ -1,0 +1,153 @@
+[
+  {
+    "id": "alg-sorting-001",
+    "triggers": [
+      "what is a sorting algorithm",
+      "sorting algorithms"
+    ],
+    "context_role": "algorithm_type",
+    "template": "A sorting algorithm is designed to put elements of a list in a certain order. For example, {context} is a popular one that organizes data efficiently.",
+    "fallback": "Sorting algorithms are used to arrange data in a specific order, like alphabetical or numerical.",
+    "style": [
+      "educational",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "alg-search-002",
+    "triggers": [
+      "what is a search algorithm",
+      "how to find data in a list",
+      "search types"
+    ],
+    "context_role": "search_method",
+    "template": "Search algorithms are used to retrieve data from a data structure. If you are looking for something specific, {context} is often the best approach depending on whether the data is sorted.",
+    "fallback": "Search algorithms help locate a specific piece of information within a larger dataset.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "alg-recursive-003",
+    "triggers": [
+      "what is recursion",
+      "recursive algorithms",
+      "how does a recursive function work"
+    ],
+    "context_role": "example_case",
+    "template": "Recursion is when an algorithm calls itself to solve a smaller version of the same problem. A classic example of this is {context}, where the process repeats until a base case is met.",
+    "fallback": "A recursive algorithm is one that solves a problem by breaking it down into smaller, identical sub-problems.",
+    "style": [
+      "technical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "alg-greedy-004",
+    "triggers": [
+      "what is a greedy algorithm",
+      "greedy approach",
+      "greedy method"
+    ],
+    "context_role": "use_case",
+    "template": "Greedy algorithms make the locally optimal choice at each step with the hope of finding the global optimum. They are frequently used in {context} to find quick, efficient solutions.",
+    "fallback": "A greedy algorithm picks the best immediate option without worrying about the long-term consequences.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "alg-dp-005",
+    "triggers": [
+      "what is dynamic programming",
+      "DP algorithms",
+      "memoization"
+    ],
+    "context_role": "optimization_type",
+    "template": "Dynamic Programming, or DP, solves complex problems by breaking them into simpler overlapping sub-problems. Using {context} allows the algorithm to avoid redundant calculations.",
+    "fallback": "Dynamic Programming is a method for solving problems by storing the results of sub-problems to avoid repeating work.",
+    "style": [
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "alg-divide-conquer-006",
+    "triggers": [
+      "divide and conquer",
+      "divide and conquer algorithm",
+      "split and merge"
+    ],
+    "context_role": "algorithm_name",
+    "template": "The divide-and-conquer strategy breaks a problem into smaller sub-problems, solves them, and combines the results. {context} is a perfect illustration of this technique.",
+    "fallback": "Divide and conquer is a strategy that recursively breaks a problem down into two or more sub-problems of the same or smaller size.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "alg-hashing-007",
+    "triggers": [
+      "what is a hashing algorithm",
+      "how does hashing work",
+      "hash functions"
+    ],
+    "context_role": "application",
+    "template": "Hashing algorithms transform data into a fixed-size string of characters. This is incredibly useful for {context}, as it allows for near-instant data retrieval.",
+    "fallback": "Hashing is the process of mapping data of arbitrary size to a fixed-size value using a mathematical function.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "alg-graph-008",
+    "triggers": [
+      "graph algorithms",
+      "how to traverse a graph",
+      "BFS and DFS"
+    ],
+    "context_role": "traversal_type",
+    "template": "Graph algorithms are used to navigate networks of nodes. Depending on your goal, you might use {context} to explore the neighbors first or dive deep into one path.",
+    "fallback": "Graph algorithms are specialized procedures for traversing and analyzing nodes and edges in a network.",
+    "style": [
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "alg-backtracking-009",
+    "triggers": [
+      "what is backtracking",
+      "backtracking algorithm",
+      "how to solve a maze"
+    ],
+    "context_role": "problem_example",
+    "template": "Backtracking is a refined brute-force approach that abandons a path as soon as it determines it cannot lead to a solution. It's the primary way we solve {context}.",
+    "fallback": "Backtracking is an algorithmic technique for solving problems incrementally and abandoning a path that fails to satisfy the constraints.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "alg-randomized-010",
+    "triggers": [
+      "randomized algorithms",
+      "what is a randomized algorithm",
+      "probabilistic algorithms"
+    ],
+    "context_role": "benefit",
+    "template": "Randomized algorithms use a degree of randomness to find a solution. The main advantage of this approach is {context}, which often makes the process faster on average.",
+    "fallback": "Randomized algorithms use a random number generator to make decisions during their execution.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  }
+]

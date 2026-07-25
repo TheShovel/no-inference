@@ -1,0 +1,147 @@
+[
+  {
+    "id": "rwf-def-001",
+    "triggers": [
+      "what is a real world function",
+      "explain real world functions"
+    ],
+    "context_role": "definition",
+    "template": "In simple terms, a real-world function is {context}. Think of it as a predictable relationship where one input consistently leads to a specific output.",
+    "fallback": "A real-world function is a mathematical relationship that describes how one variable changes in response to another in a practical scenario.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "rwf-ex-002",
+    "triggers": [
+      "example of a function in real life"
+    ],
+    "context_role": "example",
+    "template": "Sure! A great example is {context}. In this case, the input is the cause and the output is the resulting effect.",
+    "fallback": "A classic example is a vending machine: the input is the button you press, and the output is the specific snack you receive.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "rwf-linear-003",
+    "triggers": [
+      "linear functions examples",
+      "what is a linear real world function"
+    ],
+    "context_role": "linear_concept",
+    "template": "Linear functions in the real world are all about constant rates. For instance, {context} is linear because it increases by the same amount every time.",
+    "fallback": "Linear functions describe scenarios with a constant rate of change, like earning a fixed hourly wage.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "rwf-input-004",
+    "triggers": [
+      "what is the input",
+      "what is the independent variable"
+    ],
+    "context_role": "independent_variable",
+    "template": "In this scenario, the input (or independent variable) is {context}. This is the part you can control or change to see how the result shifts.",
+    "fallback": "The input is the variable that starts the process, often denoted as 'x' in a mathematical equation.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "rwf-output-005",
+    "triggers": [
+      "what is the output",
+      "what is the dependent variable"
+    ],
+    "context_role": "dependent_variable",
+    "template": "The output here is {context}. It's called 'dependent' because its value depends entirely on what happened with the input.",
+    "fallback": "The output is the final result or measurement, typically denoted as 'y' or 'f(x)'.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "rwf-quadratic-006",
+    "triggers": [
+      "quadratic functions real life",
+      "non linear examples"
+    ],
+    "context_role": "quadratic_concept",
+    "template": "Not everything moves in a straight line! {context} is a perfect example of a quadratic function because it creates a curved path or a peak.",
+    "fallback": "Quadratic functions often describe things like the arc of a thrown ball or the area of a square as its sides grow.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "rwf-inverse-007",
+    "triggers": [
+      "inverse function example",
+      "opposite function"
+    ],
+    "context_role": "inverse_logic",
+    "template": "An inverse function basically 'undoes' the original action. If the first function is {context}, the inverse would be the process of reversing that result back to the start.",
+    "fallback": "An inverse function switches the input and output, effectively reversing the original operation.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "rwf-modeling-008",
+    "triggers": [
+      "how to model a function",
+      "write a function for this"
+    ],
+    "context_role": "modeling_steps",
+    "template": "To model this, first identify your constant and your rate of change. For {context}, your equation would look something like f(x) = mx + b.",
+    "fallback": "To model a real-world function, identify the starting value and the rate at which the value changes per unit.",
+    "style": [
+      "conversational",
+      "instructive"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "rwf-discrete-009",
+    "triggers": [
+      "discrete vs continuous",
+      "what is a discrete function"
+    ],
+    "context_role": "discrete_concept",
+    "template": "A discrete function deals with separate, distinct values. {context} is discrete because you can't have a fraction of a unit in that situation.",
+    "fallback": "Discrete functions have a countable number of inputs, unlike continuous functions which flow smoothly without gaps.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "rwf-benefit-010",
+    "triggers": [
+      "why learn this",
+      "importance of functions"
+    ],
+    "context_role": "utility",
+    "template": "Understanding these functions helps you predict {context}. It's basically the math of forecasting and optimization!",
+    "fallback": "Learning real-world functions allows you to turn chaotic data into predictable patterns, helping you make better decisions.",
+    "style": [
+      "conversational",
+      "encouraging"
+    ],
+    "response_length": "short"
+  }
+]

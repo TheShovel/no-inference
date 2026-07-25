@@ -1,0 +1,156 @@
+[
+  {
+    "id": "charts-comparison-001",
+    "triggers": [
+      "which chart is better",
+      "compare charts",
+      "difference between chart types"
+    ],
+    "context_role": "chart_comparison",
+    "template": "When deciding between the two, it depends on your goal. For {context}, I'd recommend the first option, but if you're focusing on the second, the other is better.",
+    "fallback": "Choosing the right chart depends on your data. Are you looking to show a trend, a comparison, or a distribution?",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "charts-bar-002",
+    "triggers": [
+      "bar chart",
+      "column chart",
+      "how to use bar graphs"
+    ],
+    "context_role": "bar_chart_usage",
+    "template": "Bar charts are fantastic for comparing discrete categories. In your case, using them for {context} will make the differences really pop visually.",
+    "fallback": "Bar charts are great for comparing different groups or tracking changes over time when the changes are small.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "charts-line-003",
+    "triggers": [
+      "line graph",
+      "time series",
+      "trend line"
+    ],
+    "context_role": "line_chart_usage",
+    "template": "Since you're tracking {context} over a period of time, a line chart is your best bet. It'll clearly show the upward or downward trajectory.",
+    "fallback": "Line charts are the gold standard for showing trends over time, as they connect individual data points to reveal a pattern.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "charts-pie-004",
+    "triggers": [
+      "pie chart",
+      "donut chart",
+      "percentage slice"
+    ],
+    "context_role": "pie_chart_usage",
+    "template": "A pie chart works well here since {context} represents a whole 100%. Just be careful not to add too many slices, or it gets cluttered!",
+    "fallback": "Pie charts are best for showing proportions of a whole. Just remember to keep the number of categories small for readability.",
+    "style": [
+      "conversational",
+      "cautionary"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "charts-scatter-005",
+    "triggers": [
+      "scatter plot",
+      "correlation",
+      "dot plot"
+    ],
+    "context_role": "scatter_plot_usage",
+    "template": "If you want to see if there's a relationship between {context}, a scatter plot is perfect. It'll show you if the variables correlate or are just random.",
+    "fallback": "Scatter plots are ideal for visualizing the relationship or correlation between two numerical variables.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "charts-heatmap-006",
+    "triggers": [
+      "heatmap",
+      "color matrix",
+      "density map"
+    ],
+    "context_role": "heatmap_usage",
+    "template": "A heatmap would be a clever way to visualize {context} by using color intensity to represent the values. It's much more intuitive than a table.",
+    "fallback": "Heatmaps use colors to represent data density or magnitude, making them great for spotting patterns in large datasets.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "charts-histogram-007",
+    "triggers": [
+      "histogram",
+      "frequency distribution",
+      "bell curve"
+    ],
+    "context_role": "histogram_usage",
+    "template": "To understand the distribution of {context}, a histogram is the way to go. It'll show you exactly where most of your data points fall.",
+    "fallback": "Histograms are used to show the distribution of a single continuous variable by grouping data into bins.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "charts-area-008",
+    "triggers": [
+      "area chart",
+      "stacked area",
+      "volume trend"
+    ],
+    "context_role": "area_chart_usage",
+    "template": "An area chart is a great choice if you want to show the total volume of {context} while also seeing how the individual components contribute.",
+    "fallback": "Area charts are essentially line charts with the area below the line filled in, emphasizing the magnitude of change.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "charts-radar-009",
+    "triggers": [
+      "radar chart",
+      "spider chart",
+      "polygon chart"
+    ],
+    "context_role": "radar_chart_usage",
+    "template": "For comparing multiple qualitative traits of {context}, a radar chart provides a unique 'profile' view that's very easy to compare at a glance.",
+    "fallback": "Radar charts are used to compare multiple quantitative variables, creating a shape that represents the strengths and weaknesses of a subject.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "charts-waterfall-010",
+    "triggers": [
+      "waterfall chart",
+      "bridge chart",
+      "financial flow"
+    ],
+    "context_role": "waterfall_usage",
+    "template": "Since you're dealing with {context}, a waterfall chart is ideal. It'll show exactly how you get from the starting value to the final result through various increments.",
+    "fallback": "Waterfall charts are specifically designed to show the cumulative effect of sequentially introduced positive or negative values.",
+    "style": [
+      "conversational",
+      "professional"
+    ],
+    "response_length": "medium"
+  }
+]

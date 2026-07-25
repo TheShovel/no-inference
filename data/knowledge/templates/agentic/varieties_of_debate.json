@@ -1,0 +1,152 @@
+[
+  {
+    "id": "debate-style-001",
+    "triggers": [
+      "tell me about parliamentary style",
+      "how does parliamentary debate work"
+    ],
+    "context_role": "parliamentary_debate",
+    "template": "Parliamentary debate is modeled after government proceedings. {context} Typically, it involves a government side and an opposition side competing on a motion.",
+    "fallback": "Parliamentary debate is a style of competitive debating modeled after the British Parliament, focusing on quick thinking and rebuttal.",
+    "style": [
+      "educational",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-style-002",
+    "triggers": [
+      "explain linux debate",
+      "how does lincoln-douglas work"
+    ],
+    "context_role": "lincoln_douglas",
+    "template": "Lincoln-Douglas debate is a one-on-one format focusing heavily on values and ethics. {context} It's designed to simulate a philosophical clash between two individuals.",
+    "fallback": "Lincoln-Douglas is a value-based, one-on-one debate format that emphasizes philosophical arguments over purely empirical evidence.",
+    "style": [
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-style-003",
+    "triggers": [
+      "explain cx debate",
+      "how does policy debating work"
+    ],
+    "context_role": "policy_debate",
+    "template": "Policy debate (or CX) is highly technical and focuses on a single topic for an entire year. {context} It involves deep research and specific evidence-based claims.",
+    "fallback": "Policy debate is a rigorous format where teams argue for or against a specific government policy change, utilizing extensive evidence and cross-examination.",
+    "style": [
+      "formal",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-style-004",
+    "triggers": [
+      "what is public forum debate",
+      "explain pf debate",
+      "how does public forum work"
+    ],
+    "context_role": "public_forum",
+    "template": "Public Forum debate is designed to be accessible to a general audience. {context} It focuses on current events and uses a more natural conversational tone than policy debate.",
+    "fallback": "Public Forum is a style of debate intended to be understood by a layperson, focusing on current events and persuasive communication.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-style-005",
+    "triggers": [
+      "explain formal debating",
+      "how to do a formal debate"
+    ],
+    "context_role": "formal_structure",
+    "template": "A formal debate follows a strict set of rules and timed speeches. {context} This structure ensures that both sides have an equal opportunity to present their case and rebut their opponent.",
+    "fallback": "Formal debates are structured competitions with specific time limits and a set order of speakers to ensure fairness and clarity.",
+    "style": [
+      "instructive"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-style-006",
+    "triggers": [
+      "what is informal debate",
+      "how is informal debating different",
+      "explain casual debate"
+    ],
+    "context_role": "informal_debate",
+    "template": "Informal debate is more like a structured conversation. {context} Unlike competitive formats, it often lacks a moderator and fixed time limits.",
+    "fallback": "Informal debate is a spontaneous exchange of opposing views without the rigid rules or scoring systems found in competitive leagues.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "debate-style-007",
+    "triggers": [
+      "what is a oxford style debate",
+      "explain oxford debate",
+      "how does oxford debate work"
+    ],
+    "context_role": "oxford_style",
+    "template": "Oxford-style debates are unique because the audience votes before and after the debate. {context} The winner is determined by who shifted the most opinions.",
+    "fallback": "Oxford-style debate focuses on whether the speakers can actually change the minds of the audience, measured by pre- and post-debate polling.",
+    "style": [
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-style-008",
+    "triggers": [
+      "what is a debate tournament",
+      "how do debate comps work",
+      "explain debate competitions"
+    ],
+    "context_role": "tournament_structure",
+    "template": "In a debate tournament, teams compete in multiple rounds against different opponents. {context} Judges award wins based on the quality of arguments and delivery.",
+    "fallback": "A debate tournament is a competitive event where teams move through brackets or power-pairings based on their win-loss records.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-style-009",
+    "triggers": [
+      "difference between debate and argument",
+      "debate vs argument",
+      "is debating just arguing"
+    ],
+    "context_role": "debate_vs_argument",
+    "template": "The main difference is structure. {context} While an argument can be chaotic, a debate is a systematic attempt to prove a point using logic and evidence.",
+    "fallback": "Debate is essentially a structured, rule-based form of arguing that prioritizes logic and evidence over emotional impulse.",
+    "style": [
+      "analytical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-style-010",
+    "triggers": [
+      "how to start debating",
+      "beginner debate tips",
+      "where to learn debate"
+    ],
+    "context_role": "beginner_guide",
+    "template": "Starting in debate often begins with learning how to research a topic and build a logical case. {context} Many people start with Public Forum because it's the most intuitive.",
+    "fallback": "To get started in debate, focus on active listening, research skills, and practicing your public speaking in a low-pressure environment.",
+    "style": [
+      "encouraging",
+      "conversational"
+    ],
+    "response_length": "medium"
+  }
+]

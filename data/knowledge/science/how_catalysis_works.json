@@ -1,0 +1,76 @@
+[
+  {
+    "q": [
+      "What is a catalyst?",
+      "How is a catalyst defined in chemistry?",
+      "What is the basic function of a catalyst?"
+    ],
+    "a": "A catalyst is a substance that increases the rate of a chemical reaction without being consumed by the process. It achieves this by providing an alternative reaction pathway with a lower activation energy, allowing the reaction to proceed faster."
+  },
+  {
+    "q": [
+      "What is activation energy?",
+      "How does activation energy affect chemical reactions?",
+      "What role does the energy barrier play in catalysis?"
+    ],
+    "a": "Activation energy is the minimum amount of energy required for reactants to collide with enough force and correct orientation to trigger a chemical reaction. Catalysts work by lowering this energy barrier, enabling more reactant molecules to reach the transition state at a given temperature."
+  },
+  {
+    "q": [
+      "What characterizes a homogeneous catalyst?",
+      "What is the difference between a catalyst and reactants in a homogeneous system?"
+    ],
+    "a": "Homogeneous catalysis occurs when the catalyst is in the same phase as the reactants, typically both being dissolved in a liquid or existing as gases. The catalyst reacts with one of the reactants to form an intermediate complex, which then reacts more readily to produce the final product and regenerate the catalyst."
+  },
+  {
+    "q": [
+      "How does a heterogeneous catalyst function?",
+      "What is the process of catalysis when reactants and catalysts are in different phases?"
+    ],
+    "a": "Heterogeneous catalysis involves a catalyst in a different phase than the reactants, most commonly a solid catalyst interacting with gas or liquid reactants. The process typically involves adsorption of reactants onto the catalyst's surface, a reaction on that surface, and the subsequent desorption of the products."
+  },
+  {
+    "q": [
+      "What is the role of active sites in catalysis?",
+      "Where does the reaction occur on a solid catalyst?",
+      "How do active sites influence catalytic activity?"
+    ],
+    "a": "Active sites are specific locations on the surface of a heterogeneous catalyst, such as edges, steps, or defects, where reactant molecules bind. These sites provide the optimal geometric and electronic environment to weaken chemical bonds in the reactants, facilitating the reaction."
+  },
+  {
+    "q": [
+      "What is the function of enzymes in the body?",
+      "How do biological catalysts speed up biochemical reactions?"
+    ],
+    "a": "Enzymes are protein catalysts that use a 'lock and key' or 'induced fit' mechanism to bind specific substrate molecules at an active site. By stabilizing the transition state and orienting substrates correctly, enzymes allow complex biological reactions to occur at body temperature and neutral pH."
+  },
+  {
+    "q": [
+      "What is the purpose of a catalytic converter in a car?",
+      "What chemical processes happen inside a car's catalytic converter?"
+    ],
+    "a": "Catalytic converters use metals like platinum, palladium, and rhodium to convert harmful pollutants such as carbon monoxide and nitrogen oxides into less harmful gases like carbon dioxide and nitrogen. This is achieved through a combination of oxidation and reduction reactions occurring on the surface of the metal catalyst."
+  },
+  {
+    "q": [
+      "What is the Haber-Bosch process and how does it use catalysis?",
+      "How is iron used as a catalyst in ammonia production?",
+      "What is the catalytic role of iron in the synthesis of ammonia?"
+    ],
+    "a": "The Haber-Bosch process synthesizes ammonia from nitrogen and hydrogen gases using a porous iron catalyst. The iron surface provides a site where the strong triple bonds of nitrogen molecules are broken, allowing them to react with hydrogen more efficiently."
+  },
+  {
+    "q": [
+      "Why do catalysts lose their effectiveness over time?",
+      "How does catalyst poisoning occur?"
+    ],
+    "a": "Catalyst poisoning occurs when impurities or side-products bind irreversibly to the active sites of a catalyst, blocking reactants from accessing the surface. This reduces the catalyst's efficiency and can eventually render it completely inactive, requiring the catalyst to be replaced or regenerated."
+  },
+  {
+    "q": [
+      "How does a promoter assist a catalyst?",
+      "What is the role of a promoter in chemical catalysis?"
+    ],
+    "a": "While a catalyst directly lowers the activation energy, a promoter is a substance added to a catalyst to increase its activity or stability. Promoters do not catalyze the reaction themselves but instead modify the electronic or structural properties of the primary catalyst to make it more effective."
+  }
+]

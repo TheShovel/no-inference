@@ -1,0 +1,122 @@
+[
+  {
+    "id": "simple-exp-002",
+    "triggers": [
+      "why is the sky",
+      "why does it happen",
+      "reason for"
+    ],
+    "context_role": "phenomenon",
+    "template": "It all comes down to {context}. Basically, nature has a way of balancing things out, and this happens because of a simple reaction between a few elements.",
+    "fallback": "That's a great question! Nature has some pretty cool reasons for how things work.",
+    "style": [
+      "conversational",
+      "curious"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "simple-exp-003",
+    "triggers": [
+      "explain like i am five",
+      "for a child"
+    ],
+    "context_role": "complex_topic",
+    "template": "Imagine {context} is like a big box of toys. Instead of doing everything at once, it just organizes them one by one so everything stays neat and tidy!",
+    "fallback": "I'll put this in the simplest terms possible! Give me a topic to break down.",
+    "style": [
+      "conversational",
+      "playful"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "simple-exp-004",
+    "triggers": [
+      "how are they different"
+    ],
+    "context_role": "comparison",
+    "template": "The main difference between the two is that {context} is more like a sprint, while the other is more like a marathon. One is fast and intense, the other is slow and steady.",
+    "fallback": "Comparing two things is a great way to learn! What are we looking at?",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "simple-exp-005",
+    "triggers": [
+      "how does this affect me",
+      "daily life"
+    ],
+    "context_role": "application",
+    "template": "You actually see {context} in your life every day! It's just like when you wake up and do your morning routine—it's a sequence of events that leads to a goal.",
+    "fallback": "It's always easier to understand when we see it in action in the real world.",
+    "style": [
+      "conversational",
+      "relatable"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "simple-exp-007",
+    "triggers": [
+      "like what"
+    ],
+    "context_role": "abstract_idea",
+    "template": "{context} is a lot like a library. You have a lot of information stored away, and you just need the right 'index card' to find exactly what you're looking for.",
+    "fallback": "Analogies are the best way to learn! What should I compare this to?",
+    "style": [
+      "conversational",
+      "imaginative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "simple-exp-008",
+    "triggers": [
+      "how is this possible",
+      "that sounds crazy",
+      "how can that be"
+    ],
+    "context_role": "counterintuitive_fact",
+    "template": "It sounds wild, but {context} works because of a hidden rule of physics/logic. It's like a magic trick, but the 'magic' is actually just science!",
+    "fallback": "It does sound surprising at first, doesn't it? Let me explain the logic behind it.",
+    "style": [
+      "conversational",
+      "enthusiastic"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "simple-exp-009",
+    "triggers": [
+      "step by step",
+      "how to do"
+    ],
+    "context_role": "process",
+    "template": "Let's break {context} into three easy steps: first, you prep; second, you act; and third, you check the result. Just like baking a cake!",
+    "fallback": "Breaking things down into steps makes everything feel much more manageable.",
+    "style": [
+      "conversational",
+      "supportive"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "simple-exp-010",
+    "triggers": [
+      "what is it called",
+      "what term is this"
+    ],
+    "context_role": "vocabulary",
+    "template": "In plain English, {context} is just a fancy way of saying that something is happening in a specific pattern. Don't let the big word intimidate you!",
+    "fallback": "Jargon can be confusing! I'm happy to translate that into everyday language for you.",
+    "style": [
+      "conversational",
+      "encouraging"
+    ],
+    "response_length": "short"
+  }
+]

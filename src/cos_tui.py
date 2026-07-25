@@ -11,10 +11,11 @@ import os
 import time
 import readline
 import shutil
+import textwrap
 from pathlib import Path
 
 # Add benchmark directory to path for imports
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'benchmark'))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 # ── Colors ───────────────────────────────────────────────────────────────────
 class Colors:
@@ -22,7 +23,7 @@ class Colors:
     BOLD      = '\033[1m'
     DIM       = '\033[2m'
     ITALIC    = '\033[3m'
-    
+
     # Foreground
     BLACK     = '\033[30m'
     RED       = '\033[31m'
@@ -32,33 +33,58 @@ class Colors:
     MAGENTA   = '\033[35m'
     CYAN      = '\033[36m'
     WHITE     = '\033[37m'
-    
+
     # Background
     BG_BLACK  = '\033[40m'
     BG_BLUE   = '\033[44m'
     BG_GREEN  = '\033[42m'
     BG_YELLOW = '\033[43m'
-    
+
     @staticmethod
     def rgb_fg(r, g, b):
         return f'\033[38;2;{r};{g};{b}m'
-    
+
     @staticmethod
     def rgb_bg(r, g, b):
         return f'\033[48;2;{r};{g};{b}m'
+
+# ── Helpers ──────────────────────────────────────────────────────────────────
+
+def _term_width():
+    """Get current terminal width."""
+    return shutil.get_terminal_size().columns
+
+
+def _fill_line(char='─', padding=0):
+    """Return a horizontal rule spanning the terminal width."""
+    w = _term_width() - padding
+    return char * max(w, 1)
+
+
+def _word_wrap(text, width=None, indent=2):
+    """Wrap text to terminal width with indentation."""
+    if width is None:
+        width = _term_width() - indent
+    wrapped = []
+    for para in text.split('\n'):
+        if para.strip() == '':
+            wrapped.append('')
+        else:
+            wrapped.extend(textwrap.wrap(para, width=width))
+    return '\n'.join(' ' * indent + line for line in wrapped)
+
 
 # ── TUI ──────────────────────────────────────────────────────────────────────
 
 class COSTUI:
     def __init__(self):
-        self.width = shutil.get_terminal_size().columns
         self.conversation_history = []
         self.debug_mode = True
         self.verbose_mode = False
-        
+
         # Import COS orchestrator handlers from the new modular structure
         try:
-            from benchmark.orchestrator import process_query, detect_intent, reset_conversation, get_conversation_history
+            from cos.engine import process_query, detect_intent, reset_conversation, get_conversation_history
             self.process_query = process_query
             self.detect_intent = detect_intent
             self.reset_conversation = reset_conversation
@@ -73,27 +99,35 @@ class COSTUI:
                 print(f"{Colors.RED}Error: Could not import orchestrator{Colors.RESET}")
                 print(f"Make sure src/benchmark/orchestrator.py exists")
                 sys.exit(1)
-    
+
     def clear_screen(self):
         os.system('clear' if os.name == 'posix' else 'cls')
-    
+
     def print_banner(self):
-        term_width = shutil.get_terminal_size().columns
-        banner = [
-            "╔══════════════════════════════════════════════════════════════╗",
-            "║     COS — Conversation Operating System v0.1.0              ║",
-            "║     Symbolic Conversational Runtime (no neural nets)        ║",
-            "║                                                             ║",
-            "║     Type '/help' for commands  |  '/quit' to exit           ║",
-            "╚══════════════════════════════════════════════════════════════╝",
-        ]
-        for line in banner:
-            print(f"{Colors.CYAN}{Colors.BOLD}{line}{Colors.RESET}")
-    
+        w = _term_width()
+        inner_w = w - 4  # space inside the box border
+        title = "COS — Conversation Operating System v0.1.0"
+        subtitle = "Symbolic Conversational Runtime (no neural nets)"
+        help_text = "Type '/help' for commands  |  '/quit' to exit"
+
+        # Dynamic banner that adapts to terminal width
+        top = f"╔{'═' * (inner_w)}╗"
+        mid1 = f"║ {title:<{inner_w - 1}}║"
+        mid2 = f"║ {subtitle:<{inner_w - 1}}║"
+        mid3 = f"║{' ' * inner_w}║"
+        mid4 = f"║ {help_text:<{inner_w - 1}}║"
+        bot = f"╚{'═' * (inner_w)}╝"
+
+        print(f"{Colors.CYAN}{Colors.BOLD}{top}{Colors.RESET}")
+        print(f"{Colors.CYAN}{Colors.BOLD}{mid1}{Colors.RESET}")
+        print(f"{Colors.CYAN}{Colors.BOLD}{mid2}{Colors.RESET}")
+        print(f"{Colors.CYAN}{Colors.BOLD}{mid3}{Colors.RESET}")
+        print(f"{Colors.CYAN}{Colors.BOLD}{mid4}{Colors.RESET}")
+        print(f"{Colors.CYAN}{Colors.BOLD}{bot}{Colors.RESET}")
+
     def print_separator(self, char='─'):
-        w = shutil.get_terminal_size().columns
-        print(f"{Colors.DIM}{char * w}{Colors.RESET}")
-    
+        print(f"{Colors.DIM}{_fill_line(char)}{Colors.RESET}")
+
     def print_system_status(self):
         """Show current system status with benchmark scores."""
         scores = [
@@ -103,17 +137,23 @@ class COSTUI:
             ("ARC-Easy",   "42.9%", Colors.YELLOW),
             ("HellaSwag",  "35.0%", Colors.YELLOW),
         ]
+        w = _term_width()
+        bar_total_width = max(10, min(30, w - 30))  # scale bar to terminal
+
         print(f"\n{Colors.DIM}  Benchmark Scores:{Colors.RESET}")
         for name, score, color in scores:
-            bar_len = int(float(score.strip('%')) / 5)
-            bar = '█' * bar_len + '░' * (20 - bar_len)
-            print(f"  {Colors.DIM}{name:15s}{Colors.RESET} {color}{score:>5s}{Colors.RESET} {Colors.DIM}{bar}{Colors.RESET}")
+            pct = float(score.strip('%'))
+            bar_len = int(pct / 100 * bar_total_width)
+            bar = '█' * bar_len + '░' * (bar_total_width - bar_len)
+            print(f"  {Colors.DIM}{name:15s}{Colors.RESET} {color}{score:>5s}{Colors.RESET}  {Colors.DIM}{bar}{Colors.RESET}")
         print()
-    
+
     def show_help(self):
+        w = _term_width()
+        sep = _fill_line('─', padding=0)
         help_text = f"""
 {Colors.BOLD}{Colors.CYAN}  COS Commands{Colors.RESET}
-{Colors.DIM}  {'─' * 40}{Colors.RESET}
+{Colors.DIM}  {sep}{Colors.RESET}
   {Colors.GREEN}/help{Colors.RESET}          Show this help
   {Colors.GREEN}/quit{Colors.RESET}          Exit COS
   {Colors.GREEN}/clear{Colors.RESET}         Clear the screen
@@ -122,9 +162,9 @@ class COSTUI:
   {Colors.GREEN}/status{Colors.RESET}        Show benchmark scores
   {Colors.GREEN}/history{Colors.RESET}       Show conversation history
   {Colors.GREEN}/reset{Colors.RESET}         Reset conversation memory
-  
+
 {Colors.BOLD}{Colors.CYAN}  Examples{Colors.RESET}
-{Colors.DIM}  {'─' * 40}{Colors.RESET}
+{Colors.DIM}  {sep}{Colors.RESET}
   {Colors.GREEN}hi{Colors.RESET}                    → Greeting
   {Colors.GREEN}What is the capital of France?{Colors.RESET}  → Fact lookup
   {Colors.GREEN}Write a poem about AI{Colors.RESET} → Instruction template
@@ -134,12 +174,18 @@ class COSTUI:
   {Colors.GREEN}Pretend to be a pirate{Colors.RESET}→ Roleplay
         """
         print(help_text)
-    
+
+    def _ellipsize(self, text, max_len):
+        """Truncate text with ellipsis if it exceeds max_len."""
+        if len(text) <= max_len:
+            return text
+        return text[:max_len - 1] + '…'
+
     def format_response(self, response, intent, timing):
         """Format a response with optional debug info."""
-        w = shutil.get_terminal_size().columns
+        w = _term_width()
         output = []
-        
+
         # Debug info
         if self.debug_mode:
             intent_colors = {
@@ -152,121 +198,124 @@ class COSTUI:
                 'follow_up': Colors.CYAN,
             }
             ic = intent_colors.get(intent, Colors.WHITE)
-            
-            output.append(f"{Colors.DIM}  ── [{intent}] ──────────────────────────────────────{Colors.RESET}")
+
+            sep = _fill_line('─', padding=4)
+            output.append(f"{Colors.DIM}  ── [{intent}] {'─' * max(2, w - 12 - len(intent))}{Colors.RESET}")
             output.append(f"{Colors.DIM}  Routing: {ic}{intent}{Colors.RESET}  |  {timing:.1f}s{Colors.RESET}")
-            output.append(f"{Colors.DIM}  {'─' * (w-4)}{Colors.RESET}")
-        
-        # The actual response
+            output.append(f"{Colors.DIM}  {sep}{Colors.RESET}")
+
+        # The actual response — word-wrapped to terminal width
         if response:
-            # Word wrap the response
-            lines = response.split('\n')
-            for line in lines:
-                output.append(f"  {Colors.WHITE}{line}{Colors.RESET}")
+            wrapped = _word_wrap(response, indent=2)
+            output.append(wrapped)
         else:
             output.append(f"  {Colors.YELLOW}(empty response){Colors.RESET}")
-        
+
         return '\n'.join(output)
-    
+
     def run(self):
         self.clear_screen()
         self.print_banner()
         self.print_system_status()
-        
+
         while True:
             try:
                 # Get user input with prompt
                 prompt = f"\n{Colors.BOLD}{Colors.GREEN}❯{Colors.RESET} "
                 user_input = input(prompt).strip()
-                
+
                 if not user_input:
                     continue
-                
+
                 # Handle commands
                 if user_input.startswith('/'):
                     cmd = user_input[1:].lower()
-                    
+
                     if cmd == 'quit' or cmd == 'exit':
                         print(f"\n{Colors.YELLOW}  Goodbye!{Colors.RESET}\n")
                         break
-                    
+
                     elif cmd == 'help':
                         self.show_help()
                         continue
-                    
+
                     elif cmd == 'clear':
                         self.clear_screen()
                         self.print_banner()
                         continue
-                    
+
                     elif cmd == 'debug':
                         self.debug_mode = not self.debug_mode
                         status = f"{Colors.GREEN}ON{Colors.RESET}" if self.debug_mode else f"{Colors.RED}OFF{Colors.RESET}"
                         print(f"  Debug output: {status}")
                         continue
-                    
+
                     elif cmd == 'verbose':
                         self.verbose_mode = not self.verbose_mode
                         status = f"{Colors.GREEN}ON{Colors.RESET}" if self.verbose_mode else f"{Colors.RED}OFF{Colors.RESET}"
                         print(f"  Verbose output: {status}")
                         continue
-                    
+
                     elif cmd == 'status':
                         self.print_system_status()
                         continue
-                    
+
                     elif cmd == 'history':
                         if not self.conversation_history:
                             print(f"  {Colors.YELLOW}(no conversation history){Colors.RESET}")
                         else:
-                            print(f"\n{Colors.BOLD}{Colors.CYAN}  Conversation History{Colors.RESET}")
-                            print(f"{Colors.DIM}  {'─' * 50}{Colors.RESET}")
+                            sep = _fill_line('─', padding=2)
+                            print(f"\n{Colors.BOLD}{Colors.CYAN}  Conversation History (last 10){Colors.RESET}")
+                            print(f"{Colors.DIM}  {sep}{Colors.RESET}")
                             for i, (q, r, intent) in enumerate(self.conversation_history[-10:]):
-                                print(f"  {Colors.DIM}[{i+1}]{Colors.RESET} {Colors.GREEN}You:{Colors.RESET} {q[:50]}")
-                                print(f"  {Colors.DIM}     {Colors.RESET} {Colors.CYAN}COS:{Colors.RESET} {r[:50]}...")
+                                q_display = self._ellipsize(q, 60)
+                                r_display = self._ellipsize(r, 60)
+                                intent_label = f" [{intent}]" if intent else ""
+                                print(f"  {Colors.DIM}#{i+1}{Colors.RESET} {Colors.GREEN}You:{Colors.RESET} {q_display}{Colors.DIM}{intent_label}{Colors.RESET}")
+                                print(f"  {Colors.DIM}     {Colors.RESET} {Colors.CYAN}COS:{Colors.RESET} {r_display}")
                         continue
-                    
+
                     elif cmd == 'reset':
                         self.conversation_history = []
                         self.reset_conversation()
                         print(f"  {Colors.GREEN}Conversation memory reset.{Colors.RESET}")
                         continue
-                    
+
                     else:
                         print(f"  {Colors.YELLOW}Unknown command: {user_input}. Type /help for commands.{Colors.RESET}")
                         continue
-                
+
                 # Process query through COS
                 start_time = time.time()
-                
+
                 # Detect intent
                 intent = self.detect_intent(user_input)
-                
+
                 # Process
                 response = self.process_query(user_input, use_cos=True)
                 elapsed = time.time() - start_time
-                
+
                 # Store in local history
-                self.conversation_history.append((user_input, response[:100], intent))
-                
+                self.conversation_history.append((user_input, response[:200], intent))
+
                 # Display response
                 formatted = self.format_response(response, intent, elapsed)
                 print(formatted)
-                
+
                 # Show timing info
                 if self.debug_mode:
-                    w = shutil.get_terminal_size().columns
-                    print(f"{Colors.DIM}  {'─' * (w-4)}{Colors.RESET}")
+                    w = _term_width()
+                    print(f"{Colors.DIM}  {_fill_line('─', padding=2)}{Colors.RESET}")
                     print(f"{Colors.DIM}  Response time: {elapsed:.2f}s  |  Length: {len(response)} chars{Colors.RESET}")
-                
+
             except KeyboardInterrupt:
                 print(f"\n{Colors.YELLOW}  Use /quit to exit.{Colors.RESET}")
                 continue
-            
+
             except EOFError:
                 print(f"\n{Colors.YELLOW}  Goodbye!{Colors.RESET}\n")
                 break
-            
+
             except Exception as e:
                 print(f"\n{Colors.RED}  Error: {e}{Colors.RESET}")
                 import traceback

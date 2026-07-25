@@ -1,0 +1,142 @@
+[
+  {
+    "id": "summary-cat-executive-001",
+    "triggers": [
+      "high-level overview"
+    ],
+    "context_role": "document_type",
+    "template": "An executive summary for {context} is designed for decision-makers, focusing on key findings, conclusions, and actionable recommendations without getting bogged down in technical detail.",
+    "fallback": "An executive summary provides a high-level overview of a document's main points for quick decision-making.",
+    "style": [
+      "professional",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-cat-abstract-002",
+    "triggers": [
+      "abstract",
+      "academic summary",
+      "research summary"
+    ],
+    "context_role": "field_of_study",
+    "template": "In the context of {context}, an abstract serves as a concise standalone summary that outlines the research objective, methodology, and primary results.",
+    "fallback": "An abstract is a brief summary of a research paper, typically found at the beginning to help readers determine the relevance of the study.",
+    "style": [
+      "academic",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-cat-descriptive-004",
+    "triggers": [
+      "descriptive summary",
+      "outline summary",
+      "indicative summary"
+    ],
+    "context_role": "topic",
+    "template": "A descriptive summary of {context} acts like a table of contents in prose; it tells the reader what topics are covered without actually summarizing the arguments.",
+    "fallback": "A descriptive summary provides an overview of the structure and topics of a work rather than condensing the actual content.",
+    "style": [
+      "informative",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-cat-informative-005",
+    "triggers": [
+      "informative summary",
+      "detailed summary",
+      "comprehensive summary"
+    ],
+    "context_role": "source_material",
+    "template": "An informative summary of {context} goes beyond a simple outline to provide the actual main ideas and supporting points of the original text.",
+    "fallback": "An informative summary replaces the original text for a reader by condensing the main arguments and essential data.",
+    "style": [
+      "informative",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-cat-narrative-006",
+    "triggers": [
+      "narrative summary",
+      "plot summary",
+      "story summary"
+    ],
+    "context_role": "story_title",
+    "template": "A narrative summary of {context} focuses on the chronological flow of events, highlighting the inciting incident, climax, and resolution.",
+    "fallback": "A narrative summary condenses a story's plot, focusing on the sequence of events and character arcs.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-cat-critical-007",
+    "triggers": [
+      "critical summary",
+      "analytical summary",
+      "evaluative summary"
+    ],
+    "context_role": "author_work",
+    "template": "A critical summary of {context} doesn't just condense the facts; it evaluates the strength of the arguments and the validity of the evidence provided.",
+    "fallback": "A critical summary involves condensing a work while simultaneously providing an analysis or critique of its effectiveness.",
+    "style": [
+      "analytical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-cat-bullet-008",
+    "triggers": [
+      "bullet point summary",
+      "list summary",
+      "key takeaways"
+    ],
+    "context_role": "meeting_notes",
+    "template": "A bulleted summary for {context} is best for scanning, breaking the information into digestible chunks of key takeaways and action items.",
+    "fallback": "Bullet point summaries prioritize readability and speed, listing the most important facts without narrative transitions.",
+    "style": [
+      "concise",
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "summary-cat-synopsis-009",
+    "triggers": [
+      "synopsis",
+      "book synopsis",
+      "film synopsis"
+    ],
+    "context_role": "media_type",
+    "template": "A synopsis for {context} is a condensed version of the plot used primarily to pitch the work or give a general idea of the story's trajectory.",
+    "fallback": "A synopsis is a brief summary of a plot, usually written in the present tense to describe the arc of a story.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-cat-abstractive-010",
+    "triggers": [
+      "abstractive summary",
+      "paraphrased summary",
+      "rephrased summary"
+    ],
+    "context_role": "complex_text",
+    "template": "An abstractive summary of {context} involves rewriting the core ideas in new words, rather than just extracting existing sentences from the text.",
+    "fallback": "Abstractive summarization uses natural language generation to create a new, concise version of a text based on its meaning.",
+    "style": [
+      "technical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  }
+]

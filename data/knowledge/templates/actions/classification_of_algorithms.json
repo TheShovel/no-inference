@@ -1,0 +1,156 @@
+[
+  {
+    "id": "algo-class-supervised-001",
+    "triggers": [
+      "what are supervised algorithms",
+      "explain supervised learning",
+      "supervised classification"
+    ],
+    "context_role": "supervised_examples",
+    "template": "Supervised algorithms learn from labeled data to predict outcomes. Common examples include {context}, where the model maps an input to a known output.",
+    "fallback": "Supervised algorithms learn from labeled training data to make predictions about new, unseen data.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-class-unsupervised-002",
+    "triggers": [
+      "what is unsupervised learning",
+      "unsupervised algorithm examples",
+      "how does clustering work"
+    ],
+    "context_role": "clustering_types",
+    "template": "Unsupervised learning finds hidden patterns in unlabeled data. A great example is {context}, which helps group similar data points together without prior guidance.",
+    "fallback": "Unsupervised algorithms analyze unlabeled datasets to discover inherent structures or patterns within the data.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-class-reinforcement-003",
+    "triggers": [
+      "what is reinforcement learning",
+      "how does rl work",
+      "explain reward-based learning"
+    ],
+    "context_role": "rl_application",
+    "template": "Reinforcement learning is all about trial and error to maximize a reward. You see this often in {context}, where an agent learns the best action through interaction.",
+    "fallback": "Reinforcement learning is a type of machine learning where an agent learns to make decisions by receiving rewards or penalties.",
+    "style": [
+      "conversational",
+      "explainer"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-class-linear-004",
+    "triggers": [
+      "linear algorithms",
+      "what is linear regression",
+      "explain linear classification"
+    ],
+    "context_role": "linear_model_name",
+    "template": "Linear algorithms assume a straight-line relationship between variables. For instance, {context} is used to predict a continuous value based on a linear trend.",
+    "fallback": "Linear algorithms are models that assume a linear relationship between the input variables and the target output.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-class-tree-005",
+    "triggers": [
+      "what are tree-based algorithms",
+      "random forest explanation"
+    ],
+    "context_role": "tree_variant",
+    "template": "Tree-based algorithms split data into branches to reach a decision. {context} is a popular approach that uses this logic to handle complex datasets.",
+    "fallback": "Tree-based algorithms use a flowchart-like structure to split data into subsets based on specific feature values.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-class-probabilistic-006",
+    "triggers": [
+      "naive bayes",
+      "how does bayesian classification work"
+    ],
+    "context_role": "probabilistic_usecase",
+    "template": "Probabilistic algorithms calculate the likelihood of an event occurring. They are incredibly useful for tasks like {context} due to their efficiency.",
+    "fallback": "Probabilistic algorithms use probability theory to predict the class of an input based on the likelihood of specific features.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-class-neural-007",
+    "triggers": [
+      "neural networks",
+      "deep learning classification",
+      "what are artificial neurons"
+    ],
+    "context_role": "network_architecture",
+    "template": "Neural networks mimic the human brain to recognize complex patterns. By using {context}, these algorithms can process incredibly high-dimensional data.",
+    "fallback": "Neural networks are a class of algorithms consisting of interconnected layers of nodes that learn non-linear relationships in data.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-class-distance-008",
+    "triggers": [
+      "k-nearest neighbors",
+      "knn algorithm",
+      "distance based classification"
+    ],
+    "context_role": "distance_metric",
+    "template": "Distance-based algorithms classify data points based on how close they are to others. For example, using {context} helps the algorithm determine the nearest neighbor.",
+    "fallback": "Distance-based algorithms assign a class to a data point based on the distance between it and other known points in the feature space.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-class-ensemble-009",
+    "triggers": [
+      "ensemble learning",
+      "what is boosting",
+      "what is bagging"
+    ],
+    "context_role": "ensemble_method",
+    "template": "Ensemble methods combine multiple models to improve accuracy. A common strategy is {context}, which reduces variance or bias by aggregating predictions.",
+    "fallback": "Ensemble learning is the process of combining several machine learning models to create one superior predictive model.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-class-comparison-010",
+    "triggers": [
+      "supervised vs unsupervised",
+      "which algorithm should i use",
+      "compare ml algorithms"
+    ],
+    "context_role": "decision_factor",
+    "template": "Choosing between algorithm classes usually depends on {context}. If you have labeled data, go supervised; if you're exploring patterns, go unsupervised.",
+    "fallback": "The choice of algorithm depends on your data type, the problem you are solving, and whether you have labeled target outputs.",
+    "style": [
+      "conversational",
+      "advisory"
+    ],
+    "response_length": "medium"
+  }
+]

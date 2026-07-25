@@ -1,0 +1,146 @@
+[
+  {
+    "id": "algo-sorting-001",
+    "triggers": [
+      "how to sort data",
+      "best sorting method"
+    ],
+    "context_role": "sorting_algo",
+    "template": "When it comes to {context}, the choice usually depends on the size of your dataset and whether stability is required. For example, QuickSort is generally fast, while MergeSort is great for linked lists.",
+    "fallback": "Sorting algorithms are designed to rearrange elements in a specific order, typically numerical or alphabetical.",
+    "style": [
+      "informative",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-search-002",
+    "triggers": [
+      "search algorithms",
+      "finding elements",
+      "binary search vs linear search"
+    ],
+    "context_role": "search_algo",
+    "template": "If you're looking at {context}, the key is the structure of your data. If the list is sorted, you can use a logarithmic approach to find your target much faster than scanning every item.",
+    "fallback": "Search algorithms are used to retrieve information from data structures, ranging from simple linear scans to complex binary searches.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-greedy-003",
+    "triggers": [
+      "greedy algorithms",
+      "what is a greedy algo"
+    ],
+    "context_role": "greedy_example",
+    "template": "A greedy algorithm makes the locally optimal choice at each step. A classic example of this is {context}, where the goal is to reach the immediate best solution without worrying about the global outcome.",
+    "fallback": "Greedy algorithms are intuitive; they grab the best available option right now in hopes that it leads to the overall best solution.",
+    "style": [
+      "educational",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-dp-004",
+    "triggers": [
+      "dynamic programming",
+      "DP approach"
+    ],
+    "context_role": "dp_problem",
+    "template": "Dynamic programming is all about breaking a complex problem into overlapping subproblems. For instance, solving {context} becomes much more efficient when you store the results of previous calculations.",
+    "fallback": "Dynamic Programming is a method for solving complex problems by breaking them down into simpler subproblems and storing the results to avoid redundant work.",
+    "style": [
+      "technical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-recursive-005",
+    "triggers": [
+      "recursion",
+      "recursive functions"
+    ],
+    "context_role": "recursion_case",
+    "template": "Recursion happens when a function calls itself. It's particularly elegant for handling {context}, as long as you have a clear base case to prevent an infinite loop!",
+    "fallback": "Recursive algorithms solve a problem by solving smaller instances of the same problem until they reach a simple base case.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-graph-006",
+    "triggers": [
+      "BFS vs DFS",
+      "Dijkstra's"
+    ],
+    "context_role": "graph_algo",
+    "template": "Depending on whether you need the shortest path or just to explore all nodes, {context} is a powerful tool for navigating networks and social maps.",
+    "fallback": "Graph algorithms are used to traverse and analyze networks, such as finding the shortest distance between two points on a map.",
+    "style": [
+      "conversational",
+      "helpful"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-divideconquer-007",
+    "triggers": [
+      "binary partitioning"
+    ],
+    "context_role": "dc_algorithm",
+    "template": "The divide-and-conquer strategy, used in {context}, works by recursively breaking a problem into two or more sub-problems of the same or related type until they become simple enough to solve.",
+    "fallback": "Divide and Conquer is a strategy that splits a large problem into smaller, manageable pieces, solves them, and then combines the results.",
+    "style": [
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-hashing-008",
+    "triggers": [
+      "hashing algorithms",
+      "hash maps"
+    ],
+    "context_role": "hash_use_case",
+    "template": "Hashing is incredible for near-instant data retrieval. In the case of {context}, a hash function transforms a key into an index for extremely fast lookups.",
+    "fallback": "Hashing algorithms map data of arbitrary size to fixed-size values, which is essential for creating efficient dictionaries and caches.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-backtracking-009",
+    "triggers": [
+      "backtracking algorithms",
+      "solve by trial and error"
+    ],
+    "context_role": "backtrack_problem",
+    "template": "Backtracking is essentially a refined trial-and-error method. It's the go-to approach for things like {context}, where you explore a path and backtrack as soon as you realize it's a dead end.",
+    "fallback": "Backtracking is an algorithm that searches for a solution by incrementally building candidates and abandoning those that fail to satisfy constraints.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-randomized-010",
+    "triggers": [
+      "random shuffle"
+    ],
+    "context_role": "random_algo",
+    "template": "Not all algorithms are deterministic. With {context}, we introduce randomness to potentially achieve a faster average runtime, even if the result is probabilistic.",
+    "fallback": "Randomized algorithms use a degree of randomness as part of their logic to solve problems more efficiently on average.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  }
+]

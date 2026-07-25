@@ -1,0 +1,159 @@
+[
+  {
+    "id": "summary-exec-001",
+    "triggers": [
+      "bottom line"
+    ],
+    "context_role": "document_type",
+    "template": "Here is the executive summary for the {context}. I've focused on the key deliverables and high-level outcomes to save you time.",
+    "fallback": "Here is a high-level summary focusing on the most critical outcomes.",
+    "style": [
+      "professional",
+      "concise"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "summary-trend-002",
+    "triggers": [
+      "industry trends",
+      "market overview",
+      "current state"
+    ],
+    "context_role": "industry_sector",
+    "template": "Looking at the {context} sector, the primary trends currently driving the market are focused on efficiency and digital transformation.",
+    "fallback": "The current industry trends show a strong shift toward automation and sustainability.",
+    "style": [
+      "analytical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-meeting-003",
+    "triggers": [
+      "meeting notes",
+      "what was decided",
+      "recap"
+    ],
+    "context_role": "meeting_topic",
+    "template": "Based on the discussion regarding {context}, the main takeaways are the agreed-upon deadlines and the assigned owners for each task.",
+    "fallback": "Here is a recap of the meeting, including the key decisions and next steps.",
+    "style": [
+      "organized",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-tech-004",
+    "triggers": [
+      "technical breakdown",
+      "plain english"
+    ],
+    "context_role": "technical_concept",
+    "template": "To put it simply, {context} is essentially a way to optimize performance by reducing latency in the system.",
+    "fallback": "In simpler terms, this technology is designed to make the process faster and more reliable.",
+    "style": [
+      "accessible",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-comp-005",
+    "triggers": [
+      "competitor analysis",
+      "how do we stack up",
+      "market comparison"
+    ],
+    "context_role": "competitor_name",
+    "template": "When comparing our current strategy to {context}, we see a significant advantage in user experience, though they lead in pricing flexibility.",
+    "fallback": "Compared to the main market players, our strengths lie in quality and support.",
+    "style": [
+      "strategic",
+      "professional"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-risk-006",
+    "triggers": [
+      "risks",
+      "red flags",
+      "potential issues"
+    ],
+    "context_role": "project_phase",
+    "template": "During the {context} phase, the most critical risks identified involve resource constraints and potential vendor delays.",
+    "fallback": "The primary risks identified involve timing and resource availability.",
+    "style": [
+      "cautious",
+      "direct"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "summary-legal-007",
+    "triggers": [
+      "legal summary",
+      "compliance check",
+      "terms overview"
+    ],
+    "context_role": "contract_type",
+    "template": "The core obligations in this {context} focus primarily on data privacy and the specific limitations of liability.",
+    "fallback": "The main points of this agreement center on compliance and legal obligations.",
+    "style": [
+      "formal",
+      "precise"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-perf-008",
+    "triggers": [
+      "KPI summary",
+      "performance review",
+      "metrics"
+    ],
+    "context_role": "time_period",
+    "template": "For the {context} period, the metrics show a steady increase in growth, though customer acquisition costs remain a challenge.",
+    "fallback": "The performance metrics show positive growth overall, despite some volatility in acquisition costs.",
+    "style": [
+      "data-driven",
+      "professional"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "summary-step-009",
+    "triggers": [
+      "how it works",
+      "process flow",
+      "workflow summary"
+    ],
+    "context_role": "process_name",
+    "template": "The {context} process can be summarized in three main steps: intake, validation, and final deployment.",
+    "fallback": "The workflow generally follows a path of intake, review, and execution.",
+    "style": [
+      "instructional",
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "summary-feedback-010",
+    "triggers": [
+      "customer feedback",
+      "user sentiment",
+      "what do they think"
+    ],
+    "context_role": "product_feature",
+    "template": "Overall sentiment toward {context} is positive, with most users praising the ease of use, though some requested better integration.",
+    "fallback": "General user feedback is positive, with a few specific requests for feature improvements.",
+    "style": [
+      "empathetic",
+      "conversational"
+    ],
+    "response_length": "medium"
+  }
+]

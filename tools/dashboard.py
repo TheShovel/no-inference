@@ -1,44 +1,58 @@
 #!/usr/bin/env python3
 """
-COS Generator Dashboard — TUI for launching and tracking knowledge/template generation.
+COS Infinite Generator Dashboard — curses TUI for launching and monitoring
+the self-discovering knowledge/template generators.
 
-Single command to start everything:
-  python3 tools/dashboard.py
+Design:
+  - Single command: python3 tools/dashboard.py
+  - Auto-refreshes every 2 seconds (no manual refresh needed)
+  - Shows live previews of recent generations
+  - Shows topic tree growth stats
+  - Shows file splitting activity
+  - Both generators run independently in the background
 
 Controls:
-  [1] Start/stop template generator
-  [2] Start/stop knowledge generator
-  [3] Start both
-  [K] Kill all
-  [R] Refresh
+  [1] Start/stop knowledge generator
+  [2] Start/stop template generator
+  [3] Start both generators
+  [K] Kill all generators
   [Q] Quit
+  [Space] Force refresh now
 """
 
 import curses
 import json
 import os
+import re
 import signal
 import subprocess
 import sys
 import time
 from pathlib import Path
 from datetime import datetime
+from collections import defaultdict
 
 ROOT = Path(__file__).parent.parent
 TEMPLATE_LOG = ROOT / 'logs' / 'template_gen.log'
 KNOWLEDGE_LOG = ROOT / 'logs' / 'knowledge_gen.log'
-TRACKING_FILE = ROOT / 'data' / '.generated_topics.json'
+TRACKING_FILE = ROOT / 'data' / 'knowledge' / '.generated_topics.json'
 TEMPLATE_TRACKING = ROOT / 'data' / '.template_tracking.json'
 TEMPLATE_DIR = ROOT / 'data' / 'knowledge' / 'templates'
 KNOWLEDGE_DIR = ROOT / 'data' / 'knowledge'
 
-# ── Process management ──────────────────────────────────────────────────────
+# ── Color pair indices ───────────────────────────────────────────────────────
+CP_WHITE   = 0
+CP_RED     = 1
+CP_GREEN   = 2
+CP_YELLOW  = 3
+CP_BLUE    = 4
+CP_CYAN    = 5
+CP_MAGENTA = 6
 
+# ── Process management ──────────────────────────────────────────────────────
 processes = {}  # name -> subprocess.Popen or None
 
-
 def _is_running(name):
-    """Check if a generator process is running."""
     proc = processes.get(name)
     if proc is None:
         return False
@@ -47,9 +61,7 @@ def _is_running(name):
         return False
     return True
 
-
 def _start_generator(name, cmd, log_path):
-    """Start a generator in the background."""
     if _is_running(name):
         return False
     log_path.parent.mkdir(parents=True, exist_ok=True)
@@ -63,9 +75,7 @@ def _start_generator(name, cmd, log_path):
     processes[name] = proc
     return True
 
-
 def _stop_generator(name):
-    """Stop a generator process."""
     proc = processes.get(name)
     if proc is None:
         return
@@ -82,388 +92,396 @@ def _stop_generator(name):
             pass
     processes[name] = None
 
+def _stop_all():
+    for name in list(processes.keys()):
+        _stop_generator(name)
 
 def _get_pid(name):
-    """Get PID of a generator process."""
     proc = processes.get(name)
     if proc and proc.poll() is None:
         return proc.pid
     return None
 
-
-def _stop_all():
-    _stop_generator('template')
-    _stop_generator('knowledge')
-
-
-# ── Data loading ─────────────────────────────────────────────────────────────
+# ── Data loading ────────────────────────────────────────────────────────────
 
 def _load_json(path):
-    try:
-        return json.loads(path.read_text())
-    except:
-        return {}
-
+    if path and path.exists():
+        try:
+            return json.loads(path.read_text())
+        except Exception:
+            pass
+    return None
 
 def _count_json_files(directory):
-    """Count non-empty JSON files in a directory tree."""
-    count = 0
-    entries = 0
-    for path in sorted(directory.rglob('*.json')):
+    """Count JSON files recursively, excluding hidden files."""
+    if not directory.exists():
+        return 0
+    return sum(1 for p in directory.rglob('*.json') if not p.name.startswith('.'))
+
+def _count_entries_in_files(directory):
+    """Count total JSON entries across all files in a directory."""
+    total = 0
+    if not directory.exists():
+        return 0
+    for path in directory.rglob('*.json'):
         if path.name.startswith('.'):
             continue
-        count += 1
         try:
             data = json.loads(path.read_text())
             if isinstance(data, list):
-                entries += len(data)
-        except:
+                total += len(data)
+            elif isinstance(data, dict):
+                total += 1
+        except Exception:
             pass
-    return count, entries
+    return total
 
+def _get_file_split_stats(directory):
+    """Count how many topics have been split into multiple files."""
+    if not directory.exists():
+        return 0, 0
+    files = [p for p in directory.rglob('*.json') if not p.name.startswith('.')]
+    # Group files by base name (ignoring trailing digits)
+    groups = defaultdict(list)
+    for f in files:
+        stem = f.stem
+        base = re.sub(r'\d+$', '', stem) if stem else stem
+        groups[base].append(f)
+    multi_file = sum(1 for g in groups.values() if len(g) > 1)
+    return multi_file, len(groups)
 
-# ── Coverage data ────────────────────────────────────────────────────────────
-
-TEMPLATE_CATEGORIES = {
-    "actions": {"write": 9, "explain": 7, "create": 5, "code": 5, "analyze": 5},
-    "conversation": {"followups": 4, "opinions": 5, "clarifications": 4, "meta": 4},
-    "agentic": {"research": 4, "plan": 4, "brainstorm": 4, "critique": 4, "teach": 4, "debate": 3, "advise": 4},
-    "contextual": {"references": 5, "continuation": 4, "elaboration": 4, "transformation": 4, "summarization": 4},
-}
-
-KNOWLEDGE_CATEGORIES = {
-    "science": 87, "geography": 24, "history": 44, "technology": 39,
-    "conversation": 10, "arts": 25, "health": 17, "nature": 23, "daily_life": 19,
-}
-
-
-def _get_template_coverage(tracking):
-    """Get coverage stats for template types."""
-    covered = tracking.get("templates", {})
-    results = {}
-    for cat, types in TEMPLATE_CATEGORIES.items():
-        total = sum(types.values())
-        done = sum(1 for k in covered if k.startswith(cat + "."))
-        results[cat] = (done, total)
-    return results
-
-
-def _get_knowledge_coverage(tracking):
-    """Get coverage stats for knowledge topics."""
-    covered = tracking.get("topics", {})
-    results = {}
-    for cat, total in KNOWLEDGE_CATEGORIES.items():
-        done = sum(1 for k in covered if k.startswith(cat + "."))
-        results[cat] = (done, total)
-    return results
-
-
-def _get_latest_log(log_path, n=3):
-    """Get last n lines from a log file."""
+def _get_latest_log(log_path, max_lines=15):
+    """Get the last N lines from a log file."""
     if not log_path.exists():
         return []
     try:
-        lines = log_path.read_text().splitlines()
-        return lines[-n:]
-    except:
+        text = log_path.read_text()
+        lines = text.strip().split('\n')
+        return lines[-max_lines:]
+    except Exception:
         return []
 
+def _get_topic_tree_depth(tracking):
+    """Calculate average and max depth of the topic tree."""
+    if not tracking:
+        return 0, 0
+    topics = tracking.get("topics", {})
+    depths = [info.get("depth", 0) for info in topics.values()]
+    if not depths:
+        return 0, 0
+    return max(depths), sum(depths) / len(depths)
 
-# ── Dashboard ────────────────────────────────────────────────────────────────
+# ── UI helpers ──────────────────────────────────────────────────────────────
 
-def _draw_progress_bar(win, y, x, width, done, total, label=""):
-    """Draw a progress bar at (y, x)."""
-    pct = (done / total * 100) if total > 0 else 0
-    filled = int(pct / 100 * (width - 10))
-    bar = "█" * filled + "░" * (width - 10 - filled)
-    text = f" {label}{done}/{total} {pct:3.0f}%"
+def _safe_addstr(win, y, x, text, attr=0):
+    """Write to curses window with bounds checking. Silently skips if out of bounds."""
+    height, width = win.getmaxyx()
+    if y < 0 or y >= height or x < 0 or x >= width:
+        return
+    max_len = width - x
+    if max_len <= 0:
+        return
+    display = text[:max_len] if len(text) > max_len else text
     try:
-        win.addstr(y, x, bar, curses.color_pair(3) if pct < 50 else curses.color_pair(2) if pct < 80 else curses.color_pair(4))
-        win.addstr(y, x + width - 10, text[:30])
-    except:
+        if attr:
+            win.addstr(y, x, display, attr)
+        else:
+            win.addstr(y, x, display)
+    except curses.error:
         pass
 
+
+def _draw_section_header(win, y, x, text, width):
+    """Draw a section header with horizontal rule, e.g. '─── Controls ───'."""
+    avail = max(3, width - x)
+    label = f" {text} "
+    dash_total = avail - len(label)
+    left = dash_total // 2
+    right = dash_total - left
+    line = '─' * left + label + '─' * right
+    _safe_addstr(win, y, x, line, curses.color_pair(CP_CYAN) | curses.A_BOLD)
+
+
+def _draw_progress_bar(win, y, x, bar_width, pct, label=""):
+    """Draw a progress bar."""
+    filled = int(bar_width * pct / 100)
+    bar = '█' * filled + '░' * (bar_width - filled)
+    _safe_addstr(win, y, x, f"{label} [{bar}] {pct:.0f}%")
+
+
+# ── Main ────────────────────────────────────────────────────────────────────
 
 def _main(stdscr):
     curses.curs_set(0)
     curses.use_default_colors()
-    curses.init_pair(1, curses.COLOR_CYAN, -1)
-    curses.init_pair(2, curses.COLOR_GREEN, -1)
-    curses.init_pair(3, curses.COLOR_YELLOW, -1)
-    curses.init_pair(4, curses.COLOR_BLUE, -1)
-    curses.init_pair(5, curses.COLOR_RED, -1)
-    curses.init_pair(6, curses.COLOR_MAGENTA, -1)
 
-    height, width = stdscr.getmaxyx()
+    # Initialize color pairs
+    curses.init_pair(CP_RED,     curses.COLOR_RED,     -1)
+    curses.init_pair(CP_GREEN,   curses.COLOR_GREEN,   -1)
+    curses.init_pair(CP_YELLOW,  curses.COLOR_YELLOW,  -1)
+    curses.init_pair(CP_BLUE,    curses.COLOR_BLUE,    -1)
+    curses.init_pair(CP_CYAN,    curses.COLOR_CYAN,    -1)
+    curses.init_pair(CP_MAGENTA, curses.COLOR_MAGENTA, -1)
 
-    last_refresh = 0
-    refresh_interval = 2  # seconds
-    template_interval = 0  # no wait — generate continuously
-    knowledge_interval = 0  # no wait — generate continuously
+    stdscr.nodelay(1)  # Non-blocking input
+    refresh_interval = 2  # Auto-refresh every 2 seconds
 
-    stdscr.nodelay(1)  # Non-blocking getch — auto-refresh works
+    # Auto-detect backend: prefer Ollama if available, fall back to template
+    backend = "template"
+    backend_model = ""
+    try:
+        import urllib.request
+        req = urllib.request.Request("http://localhost:11434/api/tags", method="GET")
+        with urllib.request.urlopen(req, timeout=2) as resp:
+            if resp.status == 200:
+                backend = "ollama"
+                backend_model = "gemma4:31b-cloud"
+    except Exception:
+        pass
+
+    # Build backend args for subprocess calls
+    be_args = ["--backend", backend]
+    if backend_model:
+        be_args += ["--model", backend_model]
+    backend_label = f"Ollama ({backend_model})" if backend == "ollama" else "Template (no LLM)"
+
+    last_refresh = time.time()
+    last_preview_update = time.time()
+    preview_buffer = {"knowledge": [], "template": []}
 
     while True:
         now = time.time()
-        if now - last_refresh > refresh_interval:
-            try:
-                stdscr.clear()
-            except:
-                pass
-            last_refresh = now
-            height, width = stdscr.getmaxyx()
-            bar_width = min(width - 15, 60)
-            if bar_width < 10:
-                bar_width = 10
+        height, width = stdscr.getmaxyx()
 
-            # ── Title ──
-            try:
-                title = "COS Generator Dashboard"
-                stdscr.addstr(0, max(0, (width - len(title)) // 2), title, curses.A_BOLD | curses.color_pair(1))
-                stdscr.addstr(1, 0, "─" * min(width, 100), curses.color_pair(3))
-            except:
-                pass
+        # ── Clear and redraw every cycle ─────────────────────────────────
+        stdscr.erase()
 
-            # ── Generator Status ──
-            row = 3
-            try:
-                stdscr.addstr(row, 0, "  GENERATORS", curses.A_BOLD)
-            except:
-                pass
+        # ── Header (full-width reversed) ─────────────────────────────────
+        title = "COS Generator Dashboard — Infinite Mode"
+        try:
+            _safe_addstr(stdscr, 0, max(0, (width - len(title)) // 2), title,
+                          curses.A_BOLD | curses.A_REVERSE)
+        except Exception:
+            pass
+
+        # ── Status line ─────────────────────────────────────────────────
+        ts = datetime.now().strftime('%H:%M:%S')
+        status_text = f"  {ts}  |  Backend: {backend_label}  |  [Space] refresh  |  [Q]uit"
+        # Truncate if too long
+        if len(status_text) > width:
+            status_text = status_text[:width]
+        _safe_addstr(stdscr, 1, 0, status_text)
+
+        # ── Generator Controls ──────────────────────────────────────────
+        row = 3
+        _draw_section_header(stdscr, row, 0, "Controls", width)
+        row += 1
+
+        k_running = _is_running("knowledge_gen")
+        t_running = _is_running("template_gen")
+
+        k_status = "● RUNNING" if k_running else "○ stopped"
+        t_status = "● RUNNING" if t_running else "○ stopped"
+        k_color = curses.color_pair(CP_GREEN) if k_running else curses.color_pair(CP_YELLOW)
+        t_color = curses.color_pair(CP_GREEN) if t_running else curses.color_pair(CP_YELLOW)
+
+        _safe_addstr(stdscr, row, 2, "[1]", curses.A_BOLD)
+        _safe_addstr(stdscr, row, 5, f" Knowledge gen: {k_status}", k_color)
+        if k_running:
+            _safe_addstr(stdscr, row, 35, f" PID:{_get_pid('knowledge_gen')}")
+        row += 1
+
+        _safe_addstr(stdscr, row, 2, "[2]", curses.A_BOLD)
+        _safe_addstr(stdscr, row, 5, f" Template gen:  {t_status}", t_color)
+        if t_running:
+            _safe_addstr(stdscr, row, 35, f" PID:{_get_pid('template_gen')}")
+        row += 1
+
+        _safe_addstr(stdscr, row, 2, "[3]", curses.A_BOLD)
+        _safe_addstr(stdscr, row, 5, " Start both")
+        row += 1
+
+        _safe_addstr(stdscr, row, 2, "[K]", curses.A_BOLD)
+        _safe_addstr(stdscr, row, 5, " Kill all")
+        row += 1
+
+        # ── Knowledge Stats ─────────────────────────────────────────────
+        row += 1
+        _draw_section_header(stdscr, row, 0, "Knowledge Base Growth", width)
+        row += 1
+
+        tracking = _load_json(TRACKING_FILE)
+        k_files = _count_json_files(KNOWLEDGE_DIR)
+        k_entries = _count_entries_in_files(KNOWLEDGE_DIR)
+
+        if tracking:
+            topics = tracking.get("topics", {})
+            total_gen = tracking.get("total_generated", 0)
+            max_depth, avg_depth = _get_topic_tree_depth(tracking)
+            multi_split, total_bases = _get_file_split_stats(KNOWLEDGE_DIR)
+
+            _safe_addstr(stdscr, row, 2, f"Total entries:     {k_entries}  (tracked: {total_gen})")
+            row += 1
+            _safe_addstr(stdscr, row, 2, f"Total files:       {k_files}")
+            row += 1
+            _safe_addstr(stdscr, row, 2, f"Topics discovered: {len(topics)}")
+            row += 1
+            _safe_addstr(stdscr, row, 2, f"Tree depth:        max={max_depth}  avg={avg_depth:.1f}")
+            row += 1
+            _safe_addstr(stdscr, row, 2, f"Multi-file topics: {multi_split}/{total_bases}")
             row += 1
 
-            # Load tracking data
-            t_tracking = _load_json(TEMPLATE_TRACKING) if TEMPLATE_TRACKING.exists() else {}
-            k_tracking = _load_json(TRACKING_FILE) if TRACKING_FILE.exists() else {}
-
-            # Template generator
-            t_running = _is_running('template')
-            t_pid = _get_pid('template')
-            t_status = f"RUNNING (PID {t_pid})" if t_running else "STOPPED"
-            t_color = curses.color_pair(2) if t_running else curses.color_pair(5)
-            t_total = t_tracking.get('total_generated', 0)
-            t_tcount, t_entries = _count_json_files(TEMPLATE_DIR)
-            try:
-                stdscr.addstr(row, 2, "[1] Template Generator:", curses.A_BOLD)
-                if row < height:
-                    stdscr.addstr(row, 26, t_status, t_color)
-                    stdscr.addstr(row, min(46, width-20), f"  {t_entries} entries in {t_tcount} files")
-            except:
-                pass
-            row += 1
-
-            # Knowledge generator
-            k_running = _is_running('knowledge')
-            k_pid = _get_pid('knowledge')
-            k_status = f"RUNNING (PID {k_pid})" if k_running else "STOPPED"
-            k_color = curses.color_pair(2) if k_running else curses.color_pair(5)
-            k_total = k_tracking.get('total_generated', 0)
-            k_tcount, k_entries = _count_json_files(KNOWLEDGE_DIR)
-            try:
-                stdscr.addstr(row, 2, "[2] Knowledge Generator:", curses.A_BOLD)
-                if row < height:
-                    stdscr.addstr(row, 26, k_status, k_color)
-                    stdscr.addstr(row, min(46, width-20), f"  {k_entries} entries in {k_tcount} files")
-            except:
-                pass
-            row += 2
-
-            # ── Template Coverage ──
-            try:
-                stdscr.addstr(row, 0, "  TEMPLATE COVERAGE", curses.A_BOLD)
-            except: pass
-            row += 1
-            t_coverage = _get_template_coverage(t_tracking)
-            for cat, (done, total) in t_coverage.items():
-                if row >= height - 2:
-                    break
-                try:
-                    _draw_progress_bar(stdscr, row, 2, bar_width, done, total, f"{cat:15s}")
-                except: pass
+            # Category breakdown
+            cats = tracking.get("categories", {})
+            if cats:
                 row += 1
-
-            row += 1
-
-            # ── Knowledge Coverage ──
-            if row < height - 2:
-                try:
-                    stdscr.addstr(row, 0, "  KNOWLEDGE COVERAGE", curses.A_BOLD)
-                except: pass
+                _safe_addstr(stdscr, row, 2, "Categories:")
                 row += 1
-                k_coverage = _get_knowledge_coverage(k_tracking)
-                for cat, (done, total) in k_coverage.items():
+                bar_max = max(10, width - 35)  # dynamic bar width
+                for cat_name in sorted(cats.keys()):
                     if row >= height - 2:
+                        _safe_addstr(stdscr, row, 2, "... (more categories off screen)", curses.color_pair(CP_YELLOW))
+                        row += 1
                         break
-                    try:
-                        _draw_progress_bar(stdscr, row, 2, bar_width, done, total, f"{cat:15s}")
-                    except: pass
+                    info = cats[cat_name]
+                    bar_count = info.get("count", 0)
+                    bar_len = min(bar_count, bar_max)
+                    bar = '█' * bar_len
+                    _safe_addstr(stdscr, row, 4, f"{cat_name:15s} {bar_count:5d} entries {bar}")
                     row += 1
-
+        else:
+            _safe_addstr(stdscr, row, 2, "No knowledge data yet. Start the generator!",
+                          curses.color_pair(CP_YELLOW))
             row += 1
 
-            # ── Live Preview (latest generated entry) ──
-            try:
-                if row < height - 12:
-                    stdscr.addstr(row, 0, "  LATEST PREVIEW", curses.A_BOLD)
+        # ── Template Stats ──────────────────────────────────────────────
+        row += 1
+        _draw_section_header(stdscr, row, 0, "Template Growth", width)
+        row += 1
+
+        tmpl_tracking = _load_json(TEMPLATE_TRACKING)
+        t_files = _count_json_files(TEMPLATE_DIR)
+        t_entries = _count_entries_in_files(TEMPLATE_DIR)
+
+        if tmpl_tracking:
+            templates = tmpl_tracking.get("templates", {})
+            total_tmpl = tmpl_tracking.get("total_generated", 0)
+
+            _safe_addstr(stdscr, row, 2, f"Total entries:     {t_entries}  (tracked: {total_tmpl})")
+            row += 1
+            _safe_addstr(stdscr, row, 2, f"Total files:       {t_files}")
+            row += 1
+            _safe_addstr(stdscr, row, 2, f"Template types:    {len(templates)}")
+            row += 1
+        else:
+            _safe_addstr(stdscr, row, 2, "No template data yet. Start the generator!",
+                          curses.color_pair(CP_YELLOW))
+            row += 1
+
+        # ── Live Generation Previews ────────────────────────────────────
+        if now - last_preview_update >= 3:
+            last_preview_update = now
+            preview_buffer["knowledge"] = _get_latest_log(KNOWLEDGE_LOG, 8)
+            preview_buffer["template"] = _get_latest_log(TEMPLATE_LOG, 8)
+
+        row += 1
+        _draw_section_header(stdscr, row, 0, "Live Output Preview", width)
+
+        # Knowledge preview
+        row += 1
+        if preview_buffer["knowledge"]:
+            _safe_addstr(stdscr, row, 2, "Knowledge gen:", curses.A_BOLD)
+            row += 1
+            for line in preview_buffer["knowledge"][-6:]:
+                if row >= height - 1:
+                    _safe_addstr(stdscr, row, 4, "... (more lines off screen)", curses.color_pair(CP_YELLOW))
                     row += 1
+                    break
+                display = line[:width - 4] if len(line) > width - 4 else line
+                if "✓" in line or "Wrote" in line:
+                    _safe_addstr(stdscr, row, 4, display, curses.color_pair(CP_GREEN))
+                elif "FAILED" in line or "Error" in line:
+                    _safe_addstr(stdscr, row, 4, display, curses.color_pair(CP_RED))
+                else:
+                    _safe_addstr(stdscr, row, 4, display)
+                row += 1
+        else:
+            _safe_addstr(stdscr, row, 2, "Knowledge gen: (no output yet)", curses.color_pair(CP_YELLOW))
+            row += 1
 
-                    # Find most recently modified template file
-                    t_files = sorted(TEMPLATE_DIR.rglob('*.json'), key=lambda p: p.stat().st_mtime, reverse=True)
-                    if t_files:
-                        try:
-                            data = json.loads(t_files[0].read_text())
-                            if isinstance(data, list) and data:
-                                last = data[-1]
-                                triggers = last.get('triggers', ['?'])
-                                t_text = last.get('template', '')[:width-20]
-                                trig_text = triggers[0][:width-30] if triggers else '?'
-                                fname = str(t_files[0].relative_to(TEMPLATE_DIR))[:width-20]
-                                stdscr.addstr(row, 2, f"Template: [{fname}]", curses.color_pair(1))
-                                row += 1
-                                stdscr.addstr(row, 4, f"Trigger: \"{trig_text}\"")
-                                row += 1
-                                if t_text:
-                                    preview_line = t_text[:width-6].replace('\n', ' ')
-                                    stdscr.addstr(row, 4, f"Preview: {preview_line}")
-                                    row += 1
-                        except: pass
-
+        # Template preview
+        row += 1
+        if preview_buffer["template"]:
+            _safe_addstr(stdscr, row, 2, "Template gen:", curses.A_BOLD)
+            row += 1
+            for line in preview_buffer["template"][-6:]:
+                if row >= height - 1:
+                    _safe_addstr(stdscr, row, 4, "... (more lines off screen)", curses.color_pair(CP_YELLOW))
                     row += 1
+                    break
+                display = line[:width - 4] if len(line) > width - 4 else line
+                if "✓" in line or "Wrote" in line:
+                    _safe_addstr(stdscr, row, 4, display, curses.color_pair(CP_GREEN))
+                elif "FAILED" in line or "Error" in line:
+                    _safe_addstr(stdscr, row, 4, display, curses.color_pair(CP_RED))
+                else:
+                    _safe_addstr(stdscr, row, 4, display)
+                row += 1
+        else:
+            _safe_addstr(stdscr, row, 2, "Template gen: (no output yet)", curses.color_pair(CP_YELLOW))
+            row += 1
 
-                    # Find most recently modified knowledge file
-                    k_files = sorted(KNOWLEDGE_DIR.rglob('*.json'), key=lambda p: p.stat().st_mtime, reverse=True)
-                    k_files = [f for f in k_files if 'templates' not in str(f) and not f.name.startswith('.')]
-                    if k_files:
-                        try:
-                            data = json.loads(k_files[0].read_text())
-                            if isinstance(data, list) and data:
-                                last = data[-1]
-                                qs = last.get('q', last.get('patterns', ['?']))
-                                a_text = last.get('a', last.get('answer', ''))[:width-20]
-                                q_text = qs[0][:width-30] if qs else '?'
-                                fname = str(k_files[0].relative_to(KNOWLEDGE_DIR))[:width-20]
-                                stdscr.addstr(row, 2, f"Knowledge: [{fname}]", curses.color_pair(1))
-                                row += 1
-                                stdscr.addstr(row, 4, f"Q: \"{q_text}\"")
-                                row += 1
-                                if a_text:
-                                    preview_line = a_text[:width-6].replace('\n', ' ')
-                                    stdscr.addstr(row, 4, f"A: {preview_line}")
-                                    row += 1
-                        except: pass
-            except: pass
-
-            # ── Recent Logs ──
-            try:
-                if row < height - 6:
-                    stdscr.addstr(row, 0, "  RECENT LOGS", curses.A_BOLD)
-                    row += 1
-                    t_logs = _get_latest_log(TEMPLATE_LOG, 2)
-                    k_logs = _get_latest_log(KNOWLEDGE_LOG, 2)
-                    stdscr.addstr(row, 2, "Template:", curses.color_pair(1))
-                    if t_logs:
-                        for line in t_logs:
-                            if row >= height - 2:
-                                break
-                            display = line[:width-4] if len(line) > width-4 else line
-                            stdscr.addstr(row, 12, display[:width-12])
-                            row += 1
-                    else:
-                        stdscr.addstr(row, 12, "(idle)")
-                        row += 1
-                    row += 1
-                    stdscr.addstr(row, 2, "Knowledge:", curses.color_pair(1))
-                    if k_logs:
-                        for line in k_logs:
-                            if row >= height - 2:
-                                break
-                            display = line[:width-4] if len(line) > width-4 else line
-                            stdscr.addstr(row, 12, display[:width-12])
-                            row += 1
-                    else:
-                        stdscr.addstr(row, 12, "(idle)")
-                        row += 1
-            except: pass
-
-            # ── Controls ──
-            try:
-                row = height - 3
-                controls = "[1] Template  [2] Knowledge  [3] Both  [K] Kill All  [R] Refresh  [Q] Quit"
-                if len(controls) > width - 2:
-                    controls = "[1]T [2]K [3]Both [K]Kill [R]Ref [Q]Quit"
-                stdscr.addstr(row, max(0, (width - len(controls)) // 2), controls, curses.A_DIM)
-                stdscr.addstr(row + 1, 0, "─" * min(width, 100), curses.color_pair(3))
-            except: pass
-
-            try:
-                stdscr.refresh()
-            except: pass
-
-        # ── Key handling ──
+        # ── Handle Input ────────────────────────────────────────────────
         key = stdscr.getch()
-        if key == -1:  # No key pressed (nodelay mode)
-            continue
+        if key != -1:
+            if key == ord('1'):
+                if not _is_running("knowledge_gen"):
+                    cmd = [
+                        sys.executable, '-u', str(ROOT / 'tools' / 'knowledge_generator.py'),
+                        '--mode', 'continuous',
+                        '--interval', '3', '--count', '5',
+                    ] + be_args
+                    _start_generator("knowledge_gen", cmd, KNOWLEDGE_LOG)
+                else:
+                    _stop_generator("knowledge_gen")
+            elif key == ord('2'):
+                if not _is_running("template_gen"):
+                    cmd = [
+                        sys.executable, '-u', str(ROOT / 'tools' / 'knowledge_generator.py'),
+                        '--type', 'template', '--mode', 'continuous',
+                        '--interval', '3', '--count', '5',
+                    ] + be_args
+                    _start_generator("template_gen", cmd, TEMPLATE_LOG)
+                else:
+                    _stop_generator("template_gen")
+            elif key == ord('3'):
+                if not _is_running("knowledge_gen"):
+                    cmd = [
+                        sys.executable, '-u', str(ROOT / 'tools' / 'knowledge_generator.py'),
+                        '--mode', 'continuous',
+                        '--interval', '3', '--count', '5',
+                    ] + be_args
+                    _start_generator("knowledge_gen", cmd, KNOWLEDGE_LOG)
+                if not _is_running("template_gen"):
+                    cmd = [
+                        sys.executable, '-u', str(ROOT / 'tools' / 'knowledge_generator.py'),
+                        '--type', 'template', '--mode', 'continuous',
+                        '--interval', '4', '--count', '5',
+                    ] + be_args
+                    _start_generator("template_gen", cmd, TEMPLATE_LOG)
+            elif key == ord('k') or key == ord('K'):
+                _stop_all()
+            elif key == ord('q') or key == ord('Q'):
+                _stop_all()
+                break
+            elif key == ord(' '):
+                last_refresh = 0  # Force refresh
 
-        if key == ord('q') or key == ord('Q'):
-            _stop_all()
-            break
+        # ── Flush updates to screen ─────────────────────────────────────
+        stdscr.refresh()
 
-        elif key == ord('k') or key == ord('K'):
-            _stop_all()
-
-        elif key == ord('r') or key == ord('R'):
-            last_refresh = 0  # Force refresh
-
-        elif key == ord('1'):
-            if _is_running('template'):
-                _stop_generator('template')
-            else:
-                cmd = [
-                    sys.executable, '-u', str(ROOT / 'tools' / 'knowledge_generator.py'),
-                    '--type', 'template', '--mode', 'continuous',
-                    '--interval', str(template_interval), '--count', '5',
-                    '--backend', 'ollama', '--model', 'gemma4:31b-cloud',
-                ]
-                _start_generator('template', cmd, TEMPLATE_LOG)
-
-        elif key == ord('2'):
-            if _is_running('knowledge'):
-                _stop_generator('knowledge')
-            else:
-                cmd = [
-                    sys.executable, '-u', str(ROOT / 'tools' / 'knowledge_generator.py'),
-                    '--mode', 'continuous',
-                    '--interval', str(knowledge_interval), '--count', '5',
-                    '--backend', 'ollama', '--model', 'gemma4:31b-cloud',
-                ]
-                _start_generator('knowledge', cmd, KNOWLEDGE_LOG)
-
-        elif key == ord('3'):
-            if not _is_running('template'):
-                cmd = [
-                    sys.executable, '-u', str(ROOT / 'tools' / 'knowledge_generator.py'),
-                    '--type', 'template', '--mode', 'continuous',
-                    '--interval', str(template_interval), '--count', '5',
-                    '--backend', 'ollama', '--model', 'gemma4:31b-cloud',
-                ]
-                _start_generator('template', cmd, TEMPLATE_LOG)
-            if not _is_running('knowledge'):
-                cmd = [
-                    sys.executable, '-u', str(ROOT / 'tools' / 'knowledge_generator.py'),
-                    '--mode', 'continuous',
-                    '--interval', str(knowledge_interval), '--count', '5',
-                    '--backend', 'ollama', '--model', 'gemma4:31b-cloud',
-                ]
-                _start_generator('knowledge', cmd, KNOWLEDGE_LOG)
-
-        elif key == ord('5'):
-            template_interval = max(0, template_interval - 1)
-        elif key == ord('6'):
-            template_interval = min(30, template_interval + 1)
-        elif key == ord('7'):
-            knowledge_interval = max(0, knowledge_interval - 1)
-        elif key == ord('8'):
-            knowledge_interval = min(30, knowledge_interval + 1)
+        # Brief sleep to prevent busy-looping
+        time.sleep(0.1)
 
 
 def main():
@@ -473,10 +491,9 @@ def main():
         _stop_all()
     except Exception as e:
         _stop_all()
-        print(f"Error: {e}")
-    finally:
-        print("\nDashboard closed.")
+        print(f"Dashboard error: {e}")
+        sys.exit(1)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

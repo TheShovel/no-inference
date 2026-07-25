@@ -1,0 +1,162 @@
+[
+  {
+    "id": "expl-app-edu-001",
+    "triggers": [
+      "how are simple explanations used in schools",
+      "educational applications of simplification",
+      "teaching with simple terms"
+    ],
+    "context_role": "learning-objective",
+    "template": "In an educational setting, simplifying complex ideas helps students grasp {context} without feeling overwhelmed, creating a foundation for more advanced study.",
+    "fallback": "In education, simple explanations act as a bridge, allowing students to master core concepts before diving into technical details.",
+    "style": [
+      "encouraging",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "expl-app-biz-002",
+    "triggers": [
+      "business use of simple explanations",
+      "simplifying corporate jargon",
+      "explaining a product simply"
+    ],
+    "context_role": "product-feature",
+    "template": "For business communication, distilling {context} into a simple explanation ensures that stakeholders and customers understand the value proposition instantly.",
+    "fallback": "In business, removing jargon allows for faster decision-making and clearer alignment across different departments.",
+    "style": [
+      "professional",
+      "concise"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "expl-app-med-003",
+    "triggers": [
+      "medical simple explanations",
+      "explaining health issues simply",
+      "patient communication"
+    ],
+    "context_role": "medical-condition",
+    "template": "In healthcare, using a simple explanation for {context} helps patients feel less anxious and improves their compliance with treatment plans.",
+    "fallback": "Translating medical jargon into plain language is crucial for patient autonomy and informed consent.",
+    "style": [
+      "empathetic",
+      "clear"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "expl-app-tech-004",
+    "triggers": [
+      "technical documentation simplification",
+      "explaining code simply",
+      "tech support simple terms"
+    ],
+    "context_role": "technical-concept",
+    "template": "When dealing with {context}, a simple explanation allows non-technical users to interact with the system without needing a degree in computer science.",
+    "fallback": "Simplifying technical concepts reduces the barrier to entry for new users and lowers the volume of support tickets.",
+    "style": [
+      "helpful",
+      "direct"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "expl-app-law-005",
+    "triggers": [
+      "legal simplification",
+      "explaining contracts simply",
+      "plain language law"
+    ],
+    "context_role": "legal-clause",
+    "template": "Applying simple explanations to {context} ensures that the average person understands their legal rights and obligations without a lawyer present.",
+    "fallback": "Plain-language legal drafting prevents misunderstandings and reduces the likelihood of costly litigation.",
+    "style": [
+      "formal",
+      "accessible"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "expl-app-sci-006",
+    "triggers": [
+      "science communication",
+      "explaining physics simply",
+      "pop science applications"
+    ],
+    "context_role": "scientific-theory",
+    "template": "In science communication, a simple explanation of {context} can spark curiosity in the general public and encourage interest in STEM fields.",
+    "fallback": "Breaking down complex theories into analogies makes scientific discoveries accessible to everyone, regardless of their background.",
+    "style": [
+      "enthusiastic",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "expl-app-parent-007",
+    "triggers": [
+      "explaining things to kids",
+      "parenting simple answers",
+      "talking to children"
+    ],
+    "context_role": "complex-life-event",
+    "template": "When a child asks about {context}, a simple explanation provides them with a sense of security and understanding appropriate for their developmental stage.",
+    "fallback": "Using age-appropriate, simple language helps children process emotions and understand the world around them without confusion.",
+    "style": [
+      "gentle",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "expl-app-gov-008",
+    "triggers": [
+      "government communication",
+      "public policy simplification",
+      "explaining laws to citizens"
+    ],
+    "context_role": "policy-change",
+    "template": "For public administration, providing a simple explanation of {context} increases civic engagement and ensures citizens can access necessary services.",
+    "fallback": "Transparent and simple government communication builds trust between the state and the public.",
+    "style": [
+      "neutral",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "expl-app-sales-009",
+    "triggers": [
+      "sales pitches",
+      "simplifying a pitch",
+      "explaining value simply"
+    ],
+    "context_role": "benefit-statement",
+    "template": "In a sales pitch, focusing on a simple explanation of {context} prevents 'analysis paralysis' and helps the client make a quicker buying decision.",
+    "fallback": "The most effective sales arguments are those that strip away complexity to highlight a single, clear benefit.",
+    "style": [
+      "persuasive",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "expl-app-inter-010",
+    "triggers": [
+      "cross-cultural communication",
+      "explaining to non-native speakers",
+      "language barriers"
+    ],
+    "context_role": "cultural-norm",
+    "template": "When bridging language gaps, a simple explanation of {context} minimizes misunderstandings and fosters better cross-cultural collaboration.",
+    "fallback": "Using basic vocabulary and clear structures allows people from different linguistic backgrounds to find common ground quickly.",
+    "style": [
+      "inclusive",
+      "conversational"
+    ],
+    "response_length": "medium"
+  }
+]

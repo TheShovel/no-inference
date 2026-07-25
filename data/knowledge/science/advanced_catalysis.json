@@ -1,0 +1,79 @@
+[
+  {
+    "q": [
+      "What is single-atom catalysis?",
+      "How does single-atom catalysis differ from nanoparticle catalysis?"
+    ],
+    "a": "Single-atom catalysis involves isolating individual metal atoms anchored on a solid support to maximize atom efficiency. Unlike nanoparticles, where only surface atoms are active, every single metal atom in these catalysts serves as an active site, significantly reducing the amount of precious metals required."
+  },
+  {
+    "q": [
+      "What is the role of photocatalysis in water splitting?",
+      "How does photocatalysis facilitate hydrogen production from water?",
+      "What is the process of photocatalytic water splitting?"
+    ],
+    "a": "Photocatalysis uses semiconductor materials to absorb light energy, creating electron-hole pairs that drive chemical reactions. In water splitting, these charges migrate to the surface to reduce protons into hydrogen gas and oxidize water into oxygen, providing a carbon-neutral way to produce fuel."
+  },
+  {
+    "q": [
+      "What are zeolites in the context of advanced catalysis?",
+      "How do zeolites act as shape-selective catalysts?",
+      "What makes zeolites effective for industrial catalysis?"
+    ],
+    "a": "Zeolites are microporous aluminosilicate minerals that act as molecular sieves. Their precise pore sizes allow only molecules of specific dimensions to enter and react, making them essential for shape-selective processes such as fluid catalytic cracking in petroleum refining."
+  },
+  {
+    "q": [
+      "What is the function of a co-catalyst in chemical reactions?",
+      "Why are co-catalysts added to primary catalysts?",
+      "What is the purpose of employing a co-catalyst?"
+    ],
+    "a": "A co-catalyst is a substance added to a primary catalyst to improve its activity, selectivity, or stability. While it may not be catalytic on its own, it modifies the electronic properties of the active site or helps in the efficient transfer of electrons and protons during the reaction."
+  },
+  {
+    "q": [
+      "How does electrocatalysis enable fuel cell operation?",
+      "What is the role of electrocatalysts in fuel cells?",
+      "How do electrocatalysts facilitate energy conversion in fuel cells?"
+    ],
+    "a": "Electrocatalysis involves catalysts that accelerate electron transfer reactions at the interface between an electrode and an electrolyte. In fuel cells, platinum-based electrocatalysts are typically used to lower the activation energy for the oxygen reduction reaction, allowing chemical energy to be converted into electricity."
+  },
+  {
+    "q": [
+      "What are Metal-Organic Frameworks (MOFs) used for in catalysis?",
+      "How do MOFs function as advanced catalysts?",
+      "What are the catalytic applications of Metal-Organic Frameworks?"
+    ],
+    "a": "MOFs are crystalline materials consisting of metal ions coordinated to organic ligands, creating highly porous structures. They are used in catalysis because their high surface area and tunable pore sizes allow for the precise entrapment and activation of reactant molecules."
+  },
+  {
+    "q": [
+      "How do homogeneous catalysts differ from heterogeneous ones?"
+    ],
+    "a": "Homogeneous catalysis occurs when the catalyst is in the same phase as the reactants, typically liquid, offering high selectivity but difficult separation. Heterogeneous catalysis involves a catalyst in a different phase, usually a solid surface interacting with gas or liquid reactants, which allows for easier catalyst recovery and continuous processing."
+  },
+  {
+    "q": [
+      "What is the Sabatier principle in catalysis?",
+      "How does the Sabatier principle explain catalyst efficiency?",
+      "What is the concept of the 'volcano plot' in the Sabatier principle?"
+    ],
+    "a": "The Sabatier principle states that the interaction between a catalyst and a reactant must be 'just right'—neither too strong nor too weak. If the bond is too weak, the reactant won't bind; if it is too strong, the product won't release, leading to a bell-shaped 'volcano plot' of activity versus binding energy."
+  },
+  {
+    "q": [
+      "What is biomimetic catalysis?",
+      "How do researchers use nature to design advanced catalysts?",
+      "What defines a biomimetic catalytic system?"
+    ],
+    "a": "Biomimetic catalysis is the design of synthetic catalysts that mimic the active sites and mechanisms of enzymes. By replicating the coordination environment of metal centers found in proteins, scientists can achieve high specificity and efficiency for complex organic transformations."
+  },
+  {
+    "q": [
+      "How does the concept of 'active sites' explain catalytic activity?",
+      "What are active sites in a catalyst?",
+      "Why are active sites important for chemical reactions?"
+    ],
+    "a": "Active sites are specific locations on a catalyst's surface, often defects or edges, where the chemical reaction actually takes place. These sites possess the precise electronic and geometric configuration required to bind reactants and lower the activation energy of the transition state."
+  }
+]

@@ -1,0 +1,131 @@
+[
+  {
+    "id": "diag-venn-002",
+    "triggers": [
+      "compare two things with a diagram",
+      "overlapping circles"
+    ],
+    "context_role": "comparison_subjects",
+    "template": "A Venn diagram is the best way to show relationships. By placing {context} in the overlapping circles, you can easily see what they share and where they differ.",
+    "fallback": "A Venn diagram uses overlapping circles to illustrate the logical relationships between two or more sets of items.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "diag-uml-003",
+    "triggers": [
+      "what is a UML diagram",
+      "software architecture diagram"
+    ],
+    "context_role": "system_component",
+    "template": "UML diagrams are standard for software design. If you are looking at {context}, a class diagram or sequence diagram would be the most effective choice to model it.",
+    "fallback": "UML, or Unified Modeling Language, is a standardized way to visualize the design of a system, commonly used in software engineering.",
+    "style": [
+      "professional",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diag-gantt-004",
+    "triggers": [
+      "schedule visualization"
+    ],
+    "context_role": "project_name",
+    "template": "For managing {context}, a Gantt chart is ideal. It provides a horizontal bar chart that tracks your schedule, milestones, and dependencies over time.",
+    "fallback": "A Gantt chart is a type of bar chart that illustrates a project schedule, showing the start and finish dates of the various elements of a project.",
+    "style": [
+      "conversational",
+      "helpful"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diag-mindmap-005",
+    "triggers": [
+      "brainstorming diagram",
+      "concept map"
+    ],
+    "context_role": "central_idea",
+    "template": "A mind map is great for expanding on {context}. You start with that core idea in the center and branch out into related topics and sub-ideas organically.",
+    "fallback": "Mind maps are radial diagrams used to visually organize information, typically starting with a single concept in the center and branching outward.",
+    "style": [
+      "conversational",
+      "creative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diag-fishbone-006",
+    "triggers": [
+      "cause and effect chart"
+    ],
+    "context_role": "problem_statement",
+    "template": "To get to the root of {context}, I'd suggest a Fishbone diagram. It helps you categorize potential causes of a problem to find the actual source.",
+    "fallback": "A Fishbone (or Ishikawa) diagram is a visualization tool for categorizing the potential causes of a problem to identify its root source.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diag-entity-007",
+    "triggers": [
+      "database schema map"
+    ],
+    "context_role": "data_entities",
+    "template": "An ER diagram is the gold standard for database design. It would allow you to map out how {context} relates to other entities in your system.",
+    "fallback": "Entity-Relationship (ER) diagrams are used to model the logical structure of a database by showing the relationships between different entities.",
+    "style": [
+      "professional",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diag-sankey-008",
+    "triggers": [
+      "flow of energy diagram",
+      "data flow volume"
+    ],
+    "context_role": "flow_material",
+    "template": "A Sankey diagram is fascinating for showing quantities. It would visually demonstrate how {context} moves from one state or location to another, with the width of the lines showing the volume.",
+    "fallback": "Sankey diagrams are flow diagrams where the width of the arrows is proportional to the flow rate, making them great for energy or material balance.",
+    "style": [
+      "conversational",
+      "enthusiastic"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diag-hierarchy-009",
+    "triggers": [
+      "organizational chart",
+      "hierarchy diagram"
+    ],
+    "context_role": "organization_name",
+    "template": "An organizational chart is the way to go for {context}. It clearly defines the reporting lines and the structural hierarchy of the team.",
+    "fallback": "A hierarchy diagram, such as an org chart, is used to represent a system in which units are ranked one above another.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "diag-swimlane-010",
+    "triggers": [
+      "process ownership diagram"
+    ],
+    "context_role": "department_roles",
+    "template": "If you want to show who does what, a swimlane diagram is best. It splits the flowchart into lanes, showing exactly when {context} takes over the task.",
+    "fallback": "Swimlane diagrams are a specialized type of flowchart that distinguishes role responsibilities for particular steps in a process.",
+    "style": [
+      "conversational",
+      "practical"
+    ],
+    "response_length": "medium"
+  }
+]

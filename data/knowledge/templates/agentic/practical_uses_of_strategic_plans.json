@@ -1,0 +1,160 @@
+[
+  {
+    "id": "strat-plan-resource-001",
+    "triggers": [
+      "how to allocate resources",
+      "budgeting with a strategic plan",
+      "resource distribution"
+    ],
+    "context_role": "resource_allocation",
+    "template": "A strategic plan acts as your financial roadmap. By aligning your {context}, you can ensure that funds and manpower are directed toward the initiatives that actually move the needle on your long-term goals.",
+    "fallback": "Strategic plans help you prioritize budget and manpower by aligning spending with long-term objectives.",
+    "style": [
+      "conversational",
+      "professional"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "strat-plan-decision-002",
+    "triggers": [
+      "decision framework",
+      "how to choose"
+    ],
+    "context_role": "decision_criteria",
+    "template": "When you're torn between two options, use your {context} as a filter. If a potential project doesn't directly support one of those pillars, it's much easier to say 'no' and avoid scope creep.",
+    "fallback": "You can use your strategic plan as a decision-making filter to ensure every project aligns with your core goals.",
+    "style": [
+      "conversational",
+      "direct"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "strat-plan-alignment-003",
+    "triggers": [
+      "team alignment",
+      "getting everyone on the same page",
+      "company synergy"
+    ],
+    "context_role": "organizational_alignment",
+    "template": "The real magic happens when your team understands the {context}. It transforms a list of tasks into a shared mission, so everyone knows exactly why their daily work matters to the bigger picture.",
+    "fallback": "Strategic plans align teams by connecting individual daily tasks to the organization's overarching mission.",
+    "style": [
+      "conversational",
+      "inspiring"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "strat-plan-kpi-004",
+    "triggers": [
+      "measuring success",
+      "setting KPIs",
+      "tracking progress"
+    ],
+    "context_role": "metrics",
+    "template": "You can't manage what you can't measure. By deriving your {context} directly from your strategic plan, you create a feedback loop that tells you exactly when to pivot or double down.",
+    "fallback": "Strategic plans provide the foundation for creating KPIs that actually measure meaningful progress toward your goals.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "strat-plan-risk-005",
+    "triggers": [
+      "handling risks",
+      "risk management",
+      "unexpected changes"
+    ],
+    "context_role": "risk_mitigation",
+    "template": "While a plan can't predict the future, having a {context} allows you to respond to crises with composure. You aren't reacting blindly; you're adjusting your tactics to protect your ultimate objective.",
+    "fallback": "A strategic plan helps in risk management by providing a stable objective to return to after an unexpected disruption.",
+    "style": [
+      "conversational",
+      "reassuring"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "strat-plan-comm-006",
+    "triggers": [
+      "communicating vision",
+      "stakeholder updates",
+      "investor relations"
+    ],
+    "context_role": "stakeholder_communication",
+    "template": "When talking to stakeholders, refer to the {context}. It shifts the conversation from 'what we are doing' to 'why it's creating value,' which builds significantly more trust and confidence.",
+    "fallback": "Using a strategic plan in communications helps you demonstrate the value and logic behind your current activities to stakeholders.",
+    "style": [
+      "conversational",
+      "professional"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "strat-plan-prioritize-007",
+    "triggers": [
+      "prioritization",
+      "what to do first",
+      "managing workload"
+    ],
+    "context_role": "priority_list",
+    "template": "Feeling overwhelmed? Look at your {context}. If a task doesn't map back to a strategic priority, it's likely a distraction that can be delegated or deleted.",
+    "fallback": "Strategic plans help you prioritize by identifying which tasks are critical to your long-term success and which are merely noise.",
+    "style": [
+      "conversational",
+      "practical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "strat-plan-growth-008",
+    "triggers": [
+      "scaling the business",
+      "growth strategy"
+    ],
+    "context_role": "growth_levers",
+    "template": "Growth without a plan is just chaos. By utilizing {context}, you can scale your operations sustainably without losing sight of the core value proposition that got you here.",
+    "fallback": "Strategic plans ensure that growth and expansion are handled sustainably and remain aligned with the core mission.",
+    "style": [
+      "conversational",
+      "authoritative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "strat-plan-review-009",
+    "triggers": [
+      "quarterly reviews",
+      "annual planning",
+      "performance audit"
+    ],
+    "context_role": "review_cycle",
+    "template": "During your {context}, don't just look at the numbers. Use the strategic plan to ask: 'Are we still pursuing the right goals, or has the market shifted?'",
+    "fallback": "Strategic plans serve as the benchmark for periodic reviews to determine if the organization needs to pivot its approach.",
+    "style": [
+      "conversational",
+      "reflective"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "strat-plan-culture-010",
+    "triggers": [
+      "company culture",
+      "employee engagement",
+      "shared values"
+    ],
+    "context_role": "cultural_values",
+    "template": "A strategic plan actually shapes your culture. When you embed {context} into your operations, employees feel a sense of purpose and ownership in the organization's victory.",
+    "fallback": "Strategic plans improve company culture by giving employees a clear sense of purpose and a shared vision of success.",
+    "style": [
+      "conversational",
+      "empathetic"
+    ],
+    "response_length": "medium"
+  }
+]

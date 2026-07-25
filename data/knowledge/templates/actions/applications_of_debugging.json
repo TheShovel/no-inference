@@ -1,0 +1,158 @@
+[
+  {
+    "id": "debug-app-software-001",
+    "triggers": [
+      "how is debugging used in software development",
+      "role of debugging in coding",
+      "software debugging applications"
+    ],
+    "context_role": "software_lifecycle",
+    "template": "In the realm of {context}, debugging is essential for identifying logical errors and crashes. It allows developers to step through code to ensure that the actual output matches the expected behavior.",
+    "fallback": "In software development, debugging is the process of finding and fixing bugs to ensure the application runs smoothly.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-app-embedded-002",
+    "triggers": [
+      "debugging hardware",
+      "debugging embedded systems",
+      "firmware debugging"
+    ],
+    "context_role": "hardware_platform",
+    "template": "When working with {context}, debugging often involves using JTAG or hardware probes to inspect memory and registers in real-time, which is critical since you can't always rely on standard print statements.",
+    "fallback": "Debugging embedded systems involves specialized tools to monitor hardware states and firmware execution.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-app-security-003",
+    "triggers": [
+      "debugging for security",
+      "how to find vulnerabilities",
+      "exploit debugging"
+    ],
+    "context_role": "security_threat",
+    "template": "From a security perspective, debugging is used to analyze {context}. By tracing memory leaks or buffer overflows, security researchers can patch vulnerabilities before they are exploited.",
+    "fallback": "Debugging is a key part of security auditing, used to find and fix vulnerabilities in a system's code.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-app-performance-004",
+    "triggers": [
+      "performance debugging",
+      "fixing lag",
+      "optimizing code speed"
+    ],
+    "context_role": "bottleneck",
+    "template": "When you're dealing with {context}, debugging shifts toward profiling. This helps identify which specific functions are consuming the most CPU or memory resources.",
+    "fallback": "Performance debugging focuses on identifying bottlenecks to optimize the speed and efficiency of an application.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-app-data-005",
+    "triggers": [
+      "debugging data pipelines",
+      "data science debugging",
+      "fixing ETL errors"
+    ],
+    "context_role": "data_flow",
+    "template": "In {context}, debugging is applied to validate data integrity. It involves checking for null values or schema mismatches that could corrupt the final analysis.",
+    "fallback": "Debugging data pipelines ensures that data is transformed and moved correctly without loss or corruption.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-app-game-006",
+    "triggers": [
+      "game debugging",
+      "fixing game bugs",
+      "game engine debugging"
+    ],
+    "context_role": "game_mechanic",
+    "template": "Debugging in gaming is unique because it often involves {context}. Developers use visual debuggers to see hitboxes and physics collisions in real-time during gameplay.",
+    "fallback": "Game debugging involves fixing glitches in physics, AI, and rendering to ensure a seamless player experience.",
+    "style": [
+      "conversational",
+      "engaging"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-app-web-007",
+    "triggers": [
+      "web debugging",
+      "frontend debugging",
+      "browser developer tools"
+    ],
+    "context_role": "browser_element",
+    "template": "For web applications, debugging often centers around {context}. Using browser dev tools allows you to inspect the DOM and network requests instantly.",
+    "fallback": "Web debugging typically involves using browser tools to fix layout issues or API communication errors.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-app-ai-008",
+    "triggers": [
+      "debugging AI",
+      "debugging machine learning",
+      "fixing neural networks"
+    ],
+    "context_role": "model_behavior",
+    "template": "Debugging AI is tricky because it's about {context}. Instead of traditional crashes, you're debugging the weights and biases to understand why a model is misclassifying data.",
+    "fallback": "AI debugging involves analyzing model outputs and training data to correct unexpected behaviors or biases.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-app-os-009",
+    "triggers": [
+      "kernel debugging",
+      "OS debugging",
+      "debugging operating systems"
+    ],
+    "context_role": "system_resource",
+    "template": "Debugging at the OS level requires managing {context}. Since the debugger cannot rely on the OS it is debugging, developers often use remote kernel debugging.",
+    "fallback": "Operating system debugging involves low-level analysis of memory and CPU scheduling to ensure system stability.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-app-qa-010",
+    "triggers": [
+      "debugging in QA",
+      "regression testing debugging",
+      "quality assurance"
+    ],
+    "context_role": "test_case",
+    "template": "In quality assurance, debugging is triggered by {context}. The goal is to reproduce the failure consistently so that developers can pinpoint the exact line of code causing the issue.",
+    "fallback": "In QA, debugging is used to investigate failed test cases and provide detailed reports for the engineering team.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  }
+]

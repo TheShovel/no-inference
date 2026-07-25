@@ -1,0 +1,161 @@
+[
+  {
+    "id": "debug-heisenbug-001",
+    "triggers": [
+      "heisenbug",
+      "bug disappears",
+      "intermittent issue"
+    ],
+    "context_role": "symptom",
+    "template": "Dealing with a {context} can be incredibly frustrating since the act of observing it often changes the behavior. Have you tried adding detailed logging or using a memory dump to capture the state without altering the execution flow?",
+    "fallback": "Intermittent bugs are the toughest to squash. I recommend capturing as much telemetry as possible to find a pattern.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-rubberduck-002",
+    "triggers": [
+      "rubber duck",
+      "explain my code",
+      "walk through"
+    ],
+    "context_role": "logic_block",
+    "template": "I'm ready to be your rubber duck! Please walk me through the {context} step-by-step, and I'll help you spot any logical gaps or assumptions that might be causing the bug.",
+    "fallback": "I'm listening. Explain your logic to me piece by piece, and we'll find the leak together.",
+    "style": [
+      "conversational",
+      "supportive"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-binarysearch-003",
+    "triggers": [
+      "too many logs",
+      "where to start",
+      "huge codebase"
+    ],
+    "context_role": "module",
+    "template": "Since the codebase is massive, let's try a binary search approach on the {context}. Can you isolate the point where the data is still correct and where it first becomes corrupted?",
+    "fallback": "When the search space is too large, the best move is to bisect the execution path to narrow down the culprit.",
+    "style": [
+      "conversational",
+      "strategic"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-env-diff-004",
+    "triggers": [
+      "works on my machine",
+      "production only",
+      "env difference"
+    ],
+    "context_role": "environment",
+    "template": "The 'works on my machine' syndrome usually points to a discrepancy in the {context}. Have you compared the environment variables, dependency versions, or network permissions between the two setups?",
+    "fallback": "If it's an environment-specific issue, we need to audit the configuration differences between local and production.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-racecondition-005",
+    "triggers": [
+      "race condition",
+      "threading issue",
+      "concurrency"
+    ],
+    "context_role": "resource",
+    "template": "Race conditions usually happen when multiple threads fight over the {context}. Are you using proper mutexes or atomic operations, or could there be a deadlock occurring here?",
+    "fallback": "Concurrency bugs are tricky. Let's examine how shared resources are being accessed and locked.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-regression-006",
+    "triggers": [
+      "regression",
+      "used to work",
+      "broke after update"
+    ],
+    "context_role": "commit_range",
+    "template": "Since this is a regression, we can use `git bisect` to pinpoint the exact change in {context} that introduced the bug. Do you have a stable commit hash from before the issue started?",
+    "fallback": "The fastest way to fix a regression is to find the exact commit that broke it and analyze the diff.",
+    "style": [
+      "conversational",
+      "practical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-memoryleak-007",
+    "triggers": [
+      "memory leak",
+      "out of memory",
+      "OOM"
+    ],
+    "context_role": "object_type",
+    "template": "If you're seeing a memory leak, it's likely that {context} instances aren't being garbage collected. Have you checked for circular references or unclosed event listeners?",
+    "fallback": "Memory leaks usually stem from references that aren't being cleared. I suggest profiling the heap to see what's sticking around.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-api-payload-008",
+    "triggers": [
+      "API error",
+      "wrong response",
+      "payload issue"
+    ],
+    "context_role": "endpoint",
+    "template": "Let's look at the raw request and response for the {context} endpoint. Often, a subtle type mismatch or a missing header is the culprit in these API failures.",
+    "fallback": "I recommend using a tool like Postman or cURL to isolate the API call from the frontend logic.",
+    "style": [
+      "conversational",
+      "direct"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-perf-bottleneck-009",
+    "triggers": [
+      "slowdown",
+      "lagging"
+    ],
+    "context_role": "function",
+    "template": "If the {context} is causing a slowdown, we should check the time complexity. Is there a nested loop or an expensive database query that's running more often than expected?",
+    "fallback": "Performance issues are best solved by profiling. Let's find the 'hot path' in your code.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-silent-failure-010",
+    "triggers": [
+      "silent failure",
+      "no error message",
+      "swallowed exception"
+    ],
+    "context_role": "try-catch-block",
+    "template": "Silent failures are often caused by an empty {context} that's swallowing the exception. Try adding a log statement or re-throwing the error to see what's actually happening under the hood.",
+    "fallback": "When there are no error messages, the first step is to find where the exception is being caught and suppressed.",
+    "style": [
+      "conversational",
+      "instructive"
+    ],
+    "response_length": "medium"
+  }
+]

@@ -1,0 +1,81 @@
+[
+  {
+    "q": [
+      "What is the mechanism of eutrophication in water bodies?",
+      "How does nutrient pollution cause dead zones in lakes and oceans?"
+    ],
+    "a": "Eutrophication occurs when excess nutrients, such as nitrates and phosphates from fertilizers, trigger an overgrowth of algae. As this algae decomposes, bacteria consume the dissolved oxygen in the water, creating hypoxic 'dead zones' where fish and other aquatic life cannot survive."
+  },
+  {
+    "q": [
+      "How does the greenhouse effect cause global warming?",
+      "What is the process by which air pollution traps heat in the atmosphere?",
+      "How do greenhouse gases contribute to rising global temperatures?"
+    ],
+    "a": "Certain gases, such as carbon dioxide and methane, act as a thermal blanket by absorbing and emitting infrared radiation. Instead of escaping into space, heat is radiated back toward the Earth's surface, gradually increasing the average global temperature."
+  },
+  {
+    "q": [
+      "What is biomagnification in a food chain?",
+      "How do toxins accumulate in apex predators?",
+      "What is the process of biological magnification of pollutants?"
+    ],
+    "a": "Biomagnification is the process where the concentration of a persistent toxin, like mercury or DDT, increases as it moves up the food chain. Because predators eat many contaminated prey, the pollutant accumulates in higher concentrations in the tissues of top-level consumers."
+  },
+  {
+    "q": [
+      "How does acid rain form in the atmosphere?",
+      "What chemical process leads to the creation of acid rain?",
+      "How do sulfur dioxide and nitrogen oxides cause rainfall to become acidic?"
+    ],
+    "a": "Acid rain forms when sulfur dioxide and nitrogen oxides react with water, oxygen, and other chemicals in the atmosphere to form sulfuric and nitric acids. These acids then fall to the ground as precipitation, lowering the pH of soil and water bodies."
+  },
+  {
+    "q": [
+      "What is the difference between primary and secondary pollutants?",
+      "How are primary pollutants distinguished from secondary pollutants?",
+      "What defines a secondary air pollutant?"
+    ],
+    "a": "Primary pollutants are emitted directly from a source, such as carbon monoxide from a car exhaust. Secondary pollutants are not emitted directly but form in the air through chemical reactions between primary pollutants and environmental factors, such as the formation of ground-level ozone."
+  },
+  {
+    "q": [
+      "How does particulate matter (PM2.5) affect human respiratory health?",
+      "What happens when fine particulate matter enters the lungs?",
+      "How does PM2.5 cause health issues in the body?"
+    ],
+    "a": "Particulate matter 2.5 refers to particles small enough to bypass the nose and throat and penetrate deep into the alveolar sacs of the lungs. From there, they can enter the bloodstream, causing systemic inflammation and increasing the risk of cardiovascular and respiratory diseases."
+  },
+  {
+    "q": [
+      "How does plastic pollution affect marine wildlife through ingestion?",
+      "What happens when sea animals consume microplastics?",
+      "How do plastics physically harm marine organisms?"
+    ],
+    "a": "Marine animals often mistake plastic debris for food, which can lead to physical blockages in their digestive tracts and a false sense of fullness. This prevents them from eating actual nutrients, leading to malnutrition, starvation, and internal injuries."
+  },
+  {
+    "q": [
+      "What is the process of soil salinization due to pollution?",
+      "How does improper irrigation and chemical runoff lead to salty soil?",
+      "What causes the buildup of salts in agricultural land?"
+    ],
+    "a": "Soil salinization occurs when soluble salts accumulate in the soil, often due to irrigation with salty water or the overuse of certain fertilizers. This process disrupts the osmotic balance, making it difficult for plants to absorb water and eventually rendering the land infertile."
+  },
+  {
+    "q": [
+      "How does photochemical smog form in urban areas?",
+      "What is the chemical reaction that creates urban smog?",
+      "What role do sunlight and NOx play in smog formation?"
+    ],
+    "a": "Photochemical smog forms when nitrogen oxides and volatile organic compounds react in the presence of sunlight and heat. This reaction produces ground-level ozone and other oxidants, creating a thick, brownish haze that reduces visibility and irritates the lungs."
+  },
+  {
+    "q": [
+      "How does leachate from landfills contaminate groundwater?",
+      "What is the process of groundwater pollution via landfills?",
+      "How do chemicals from waste seep into aquifers?"
+    ],
+    "a": "Leachate is a toxic liquid formed when rainwater filters through waste in a landfill, picking up soluble organic and inorganic pollutants. If the landfill liner fails, this contaminated liquid seeps through the soil and enters underground aquifers, polluting the drinking water supply."
+  }
+]

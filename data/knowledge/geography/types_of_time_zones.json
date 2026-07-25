@@ -1,0 +1,71 @@
+[
+  {
+    "q": [
+      "What does UTC stand for and what is its purpose?",
+      "How is UTC defined?"
+    ],
+    "a": "Coordinated Universal Time (UTC) is the primary time standard by which the world regulates clocks and time. It is based on a weighted average of over 400 atomic clocks and is used as the reference point for all other time zones."
+  },
+  {
+    "q": [
+      "What are standard time zones?",
+      "How do standard time zones function?",
+      "What is the basis for standard time zones?"
+    ],
+    "a": "Standard time zones are longitudinal strips of the Earth, roughly 15 degrees wide, where a uniform standard time is maintained. This system was developed to simplify scheduling and travel by dividing the globe into 24 equal segments based on the Earth's rotation."
+  },
+  {
+    "q": [
+      "How does DST work?",
+      "What is the purpose of Daylight Saving Time?"
+    ],
+    "a": "Daylight Saving Time (DST) is the practice of advancing clocks forward by one hour during warmer months to extend evening daylight. This allows people to make better use of natural light, potentially reducing the amount of artificial lighting needed."
+  },
+  {
+    "q": [
+      "What are offset time zones?",
+      "How are time zone offsets expressed?",
+      "What does it mean when a time zone is UTC+5?"
+    ],
+    "a": "Offset time zones are defined by their difference in hours and minutes relative to UTC. For example, UTC+5 means the local time is five hours ahead of Coordinated Universal Time, while UTC-8 means it is eight hours behind."
+  },
+  {
+    "q": [
+      "Do all time zones follow exact hour increments?",
+      "Are there time zones with half-hour or quarter-hour offsets?"
+    ],
+    "a": "No, some countries use offsets that are not full hours to better align their local time with the solar noon of their specific geography. Examples include India (UTC+5:30) and Nepal (UTC+5:45)."
+  },
+  {
+    "q": [
+      "What is solar time?",
+      "How is solar time different from standard time?",
+      "What defines local apparent solar time?"
+    ],
+    "a": "Solar time is based on the actual position of the sun in the sky, where noon occurs exactly when the sun reaches its highest point. Unlike standard time, which is uniform across a whole zone, solar time varies continuously from one longitude to the next."
+  },
+  {
+    "q": [
+      "What is nautical time?",
+      "How was nautical time used historically?",
+      "What defines the nautical time system?"
+    ],
+    "a": "Nautical time was a system used by sailors to determine longitude at sea by comparing local solar time with a reference time. It divided the world into 24 zones, but the boundaries were shifted to ensure that the date change occurred in the open ocean."
+  },
+  {
+    "q": [
+      "What is the purpose of a time zone map?",
+      "How do time zone maps represent global time differences?",
+      "What do the vertical lines on a time zone map indicate?"
+    ],
+    "a": "A time zone map visually represents the geographical boundaries where specific standard times are observed. The lines indicate where the time changes, though these lines often zigzag to follow national or state borders for political and economic convenience."
+  },
+  {
+    "q": [
+      "What is the difference between GMT and UTC?",
+      "Is Greenwich Mean Time the same as Coordinated Universal Time?",
+      "Why is UTC preferred over GMT for scientific purposes?"
+    ],
+    "a": "Greenwich Mean Time (GMT) is a time zone based on the Earth's rotation and the sun, whereas UTC is a high-precision atomic time scale. While they share the same time value for most practical purposes, UTC is the global scientific standard because it does not fluctuate based on Earth's irregular rotation."
+  }
+]

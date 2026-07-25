@@ -1,0 +1,142 @@
+[
+  {
+    "id": "guide-type-technical-001",
+    "triggers": [
+      "how do I set this up",
+      "technical guide",
+      "installation steps"
+    ],
+    "context_role": "software or hardware",
+    "template": "Setting up your {context} is straightforward. First, ensure you have all the components ready, then follow these sequential steps to complete the installation.",
+    "fallback": "I can help you with the setup! Could you tell me which specific device or software you are installing?",
+    "style": [
+      "instructional",
+      "clear"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "guide-type-recipe-002",
+    "triggers": [
+      "cooking steps"
+    ],
+    "context_role": "dish name",
+    "template": "To prepare a delicious {context}, you'll need to gather your ingredients first. Here is the step-by-step process to get it just right.",
+    "fallback": "I'd love to share a recipe with you! What dish are you craving today?",
+    "style": [
+      "warm",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "guide-type-creative-004",
+    "triggers": [
+      "crafting guide",
+      "DIY steps"
+    ],
+    "context_role": "project",
+    "template": "Creating a {context} is a great way to get creative! I've broken the process down into manageable phases so you can build it piece by piece.",
+    "fallback": "That sounds like a fun project! What exactly are you looking to create?",
+    "style": [
+      "encouraging",
+      "creative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "guide-type-educational-005",
+    "triggers": [
+      "explain how",
+      "learning path",
+      "study guide"
+    ],
+    "context_role": "concept",
+    "template": "Mastering {context} is best done in stages. We'll start with the foundational basics and gradually move toward the more advanced applications.",
+    "fallback": "I can certainly help you learn that. Which concept or topic should we dive into?",
+    "style": [
+      "educational",
+      "structured"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "guide-type-fitness-006",
+    "triggers": [
+      "workout routine",
+      "exercise steps",
+      "how to perform"
+    ],
+    "context_role": "exercise",
+    "template": "To perform {context} with proper form, focus on your alignment first. Here is the step-by-step movement pattern to maximize results and avoid injury.",
+    "fallback": "I can guide you through a workout! Which exercise or routine are you interested in?",
+    "style": [
+      "motivational",
+      "precise"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "guide-type-administrative-007",
+    "triggers": [
+      "how to apply",
+      "application process",
+      "filing steps"
+    ],
+    "context_role": "document or application",
+    "template": "Navigating the process for {context} can be tricky. Here is a checklist and a step-by-step timeline to ensure you don't miss any requirements.",
+    "fallback": "I can help you with the paperwork. Which application or document process are you referring to?",
+    "style": [
+      "professional",
+      "formal"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "guide-type-gaming-008",
+    "triggers": [
+      "walkthrough",
+      "how to beat",
+      "game guide"
+    ],
+    "context_role": "game level or boss",
+    "template": "Getting through {context} requires a specific strategy. Follow these steps to optimize your approach and clear this section efficiently.",
+    "fallback": "I've got the strategy! Which level or boss are you currently stuck on?",
+    "style": [
+      "casual",
+      "helpful"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "guide-type-cleaning-009",
+    "triggers": [
+      "removal guide",
+      "cleaning steps"
+    ],
+    "context_role": "surface or item",
+    "template": "Cleaning {context} requires the right materials to avoid damage. Here is the safe, step-by-step method to get it sparkling again.",
+    "fallback": "I can help you clean that up! What material or item are we working with?",
+    "style": [
+      "practical",
+      "cautious"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "guide-type-travel-010",
+    "triggers": [
+      "itinerary steps",
+      "how to visit",
+      "travel guide"
+    ],
+    "context_role": "destination",
+    "template": "Planning a trip to {context} is exciting! I've outlined a step-by-step itinerary from arrival to departure to help you make the most of your visit.",
+    "fallback": "I'd love to help you plan a trip! Where are you dreaming of going?",
+    "style": [
+      "enthusiastic",
+      "organized"
+    ],
+    "response_length": "medium"
+  }
+]

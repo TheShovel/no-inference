@@ -1,0 +1,154 @@
+[
+  {
+    "id": "ind-breakdown-001",
+    "triggers": [
+      "what caused the failure",
+      "why did it break",
+      "root cause"
+    ],
+    "context_role": "failure_mechanism",
+    "template": "Based on the data, the breakdown was primarily caused by {context}. This typically happens when operational limits are exceeded over time.",
+    "fallback": "I don't have the specific root cause analysis for this event, but I can help you investigate common failure patterns.",
+    "style": [
+      "analytical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "ind-breakdown-002",
+    "triggers": [
+      "repair steps",
+      "recovery process"
+    ],
+    "context_role": "repair_protocol",
+    "template": "To get things back online, you should follow the {context} procedure. Start by isolating the affected unit to prevent further damage.",
+    "fallback": "Please refer to the standard operating procedure (SOP) manual for the specific repair steps for this equipment.",
+    "style": [
+      "instructional"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "ind-breakdown-003",
+    "triggers": [
+      "cost of downtime",
+      "financial impact",
+      "loss per hour"
+    ],
+    "context_role": "economic_impact",
+    "template": "The estimated impact of this breakdown is {context}, which includes both lost production volume and emergency labor costs.",
+    "fallback": "I can't calculate the exact cost without the current production rate, but downtime in this sector is typically very expensive.",
+    "style": [
+      "professional"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "ind-breakdown-004",
+    "triggers": [
+      "prevent this",
+      "avoid future breakdowns",
+      "maintenance tips"
+    ],
+    "context_role": "preventative_measure",
+    "template": "To prevent this from happening again, I recommend implementing {context}. This will help identify wear and tear before a total failure occurs.",
+    "fallback": "A more rigorous preventative maintenance schedule is generally the best way to minimize unplanned outages.",
+    "style": [
+      "advisory"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "ind-breakdown-005",
+    "triggers": [
+      "is it safe",
+      "safety risks",
+      "hazard check"
+    ],
+    "context_role": "safety_hazard",
+    "template": "Caution is advised. The primary safety concern during this breakdown is {context}. Ensure all lockout-tagout procedures are verified.",
+    "fallback": "Always prioritize safety and clear the area of non-essential personnel until a safety officer gives the all-clear.",
+    "style": [
+      "urgent",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "ind-breakdown-006",
+    "triggers": [
+      "expected downtime",
+      "how long to fix",
+      "estimated recovery"
+    ],
+    "context_role": "time_estimate",
+    "template": "The current estimate for returning to full capacity is {context}, depending on the availability of replacement parts.",
+    "fallback": "I don't have a precise timeline, but typical repairs for this type of failure take several hours to a few days.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "ind-breakdown-007",
+    "triggers": [
+      "which part failed",
+      "component failure",
+      "broken piece"
+    ],
+    "context_role": "failed_component",
+    "template": "The diagnostic reports indicate that the {context} has failed, which is causing the downstream interruption.",
+    "fallback": "The exact component hasn't been identified yet, but the failure is localized to the primary drive system.",
+    "style": [
+      "technical"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "ind-breakdown-008",
+    "triggers": [
+      "who to call",
+      "contact support",
+      "maintenance team"
+    ],
+    "context_role": "contact_person",
+    "template": "You should immediately notify {context}, who is the lead technician responsible for this sector of the plant.",
+    "fallback": "Please contact your immediate supervisor or the on-call maintenance department.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "ind-breakdown-009",
+    "triggers": [
+      "similar cases",
+      "has this happened before",
+      "history of failure"
+    ],
+    "context_role": "historical_data",
+    "template": "Looking at the logs, a similar breakdown occurred {context}. In that instance, the issue was resolved by replacing the bearings.",
+    "fallback": "I couldn't find any identical failures in the recent history, which might suggest this is a unique occurrence.",
+    "style": [
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "ind-breakdown-010",
+    "triggers": [
+      "temporary workaround",
+      "quick fix",
+      "bypass"
+    ],
+    "context_role": "mitigation_strategy",
+    "template": "While a permanent fix is pending, you can use {context} as a temporary workaround to maintain partial production.",
+    "fallback": "I don't recommend any workarounds for this specific failure as it could compromise the integrity of the machine.",
+    "style": [
+      "cautionary",
+      "conversational"
+    ],
+    "response_length": "medium"
+  }
+]

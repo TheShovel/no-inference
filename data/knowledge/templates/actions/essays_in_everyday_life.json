@@ -1,0 +1,114 @@
+[
+  {
+    "id": "gen-Essays i-001",
+    "triggers": [
+      "tell me about Essays in everyday life"
+    ],
+    "context_role": "topic",
+    "template": "I'd be happy to share what I know about {context}! Let me give you a comprehensive overview covering the key aspects, interesting details, and practical implications.",
+    "fallback": "I'd be happy to talk about Essays in everyday life! What would you like to know?",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "gen-Essays i-002",
+    "triggers": [
+      "explain Essays in everyday life to me"
+    ],
+    "context_role": "topic",
+    "template": "Great question about {context}! Let me break it down in a way that's easy to understand, starting with the fundamentals and building up to the more interesting details.",
+    "fallback": "I'd be happy to talk about Essays in everyday life! What would you like to know?",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "gen-Essays i-003",
+    "triggers": [
+      "what is Essays in everyday life"
+    ],
+    "context_role": "topic",
+    "template": "{context} is a fascinating subject that encompasses several key ideas and principles. Let me explain what it is and why it matters.",
+    "fallback": "I'd be happy to talk about Essays in everyday life! What would you like to know?",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "gen-Essays i-004",
+    "triggers": [
+      "give me an overview of Essays in everyday life"
+    ],
+    "context_role": "topic",
+    "template": "Here's a concise overview of {context}: It covers important concepts that have practical applications and interesting implications across multiple areas.",
+    "fallback": "I'd be happy to talk about Essays in everyday life! What would you like to know?",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "gen-Essays i-005",
+    "triggers": [
+      "teach me Essays in everyday life"
+    ],
+    "context_role": "topic",
+    "template": "I'd be happy to teach you about {context}! Let's start with the basics and work our way up.",
+    "fallback": "I'd be happy to talk about Essays in everyday life! What would you like to know?",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "gen-Essays i-006",
+    "triggers": [
+      "I want to learn about Essays in everyday life"
+    ],
+    "context_role": "topic",
+    "template": "Excellent choice! {context} is a rewarding subject to explore. Let me guide you through the fundamental concepts and help you build a solid understanding.",
+    "fallback": "I'd be happy to talk about Essays in everyday life! What would you like to know?",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "gen-Essays i-007",
+    "triggers": [
+      "can you help me with Essays in everyday life"
+    ],
+    "context_role": "topic",
+    "template": "Of course! I'd be glad to help you with {context}. Let me start by understanding what you already know, and then we can build from there.",
+    "fallback": "I'd be happy to talk about Essays in everyday life! What would you like to know?",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "gen-Essays i-008",
+    "triggers": [
+      "what do you know about Essays in everyday life"
+    ],
+    "context_role": "topic",
+    "template": "I know quite a bit about {context}! Here are some of the key things you should know, starting with the fundamentals and moving to more advanced concepts.",
+    "fallback": "I'd be happy to talk about Essays in everyday life! What would you like to know?",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  }
+]

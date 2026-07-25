@@ -1,0 +1,155 @@
+[
+  {
+    "id": "algo-social-001",
+    "triggers": [
+      "how does my social media feed work",
+      "social media algorithm"
+    ],
+    "context_role": "platform",
+    "template": "Your {context} feed is powered by a recommendation algorithm that analyzes your past likes, shares, and watch time to predict what will keep you engaged longest.",
+    "fallback": "Social media algorithms analyze your behavior and preferences to curate content that keeps you scrolling.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-nav-002",
+    "triggers": [
+      "google maps algorithm",
+      "shortest path"
+    ],
+    "context_role": "destination",
+    "template": "To get you to {context}, your navigation app likely uses Dijkstra's algorithm or A* search to find the most efficient path across a network of roads.",
+    "fallback": "GPS apps use pathfinding algorithms to calculate the quickest route by treating roads as weighted edges in a graph.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-shop-003",
+    "triggers": [
+      "personalized shopping",
+      "product recommendations"
+    ],
+    "context_role": "product",
+    "template": "Since you looked at {context}, the site is using 'collaborative filtering'—basically suggesting items that other people with similar tastes also bought.",
+    "fallback": "Shopping algorithms use collaborative filtering to suggest products based on the purchasing patterns of similar users.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-music-004",
+    "triggers": [
+      "how does spotify know my taste",
+      "music discovery algorithm",
+      "playlist generation"
+    ],
+    "context_role": "genre",
+    "template": "For {context} music, platforms often use 'natural language processing' to scan blogs and 'audio analysis' to match the mood of songs you enjoy.",
+    "fallback": "Music algorithms combine audio signal analysis with user behavior data to discover new tracks you'll love.",
+    "style": [
+      "conversational",
+      "enthusiastic"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-search-005",
+    "triggers": [
+      "search engine ranking",
+      "page rank"
+    ],
+    "context_role": "query",
+    "template": "When you search for {context}, the algorithm ranks pages based on relevance, authority, and your location to give you the most helpful result first.",
+    "fallback": "Search algorithms index the web and use ranking signals like backlinks and keywords to surface the best information.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-date-006",
+    "triggers": [
+      "how do dating apps match people",
+      "tinder algorithm",
+      "matching logic"
+    ],
+    "context_role": "preference",
+    "template": "Based on your preference for {context}, the app uses a matching algorithm to find users with overlapping interests and similar activity levels.",
+    "fallback": "Dating apps use a mix of preference filters and behavioral data to suggest profiles you're most likely to swipe right on.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-sort-007",
+    "triggers": [
+      "how does sorting work",
+      "sorting a list",
+      "organizing data"
+    ],
+    "context_role": "item",
+    "template": "If you're sorting a list of {context}, the computer might use 'QuickSort' or 'MergeSort' to efficiently arrange them in ascending or descending order.",
+    "fallback": "Sorting algorithms provide a systematic way to organize data, ensuring the computer can find specific items much faster.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-credit-008",
+    "triggers": [
+      "how is my credit score calculated",
+      "loan approval algorithm",
+      "credit scoring"
+    ],
+    "context_role": "factor",
+    "template": "Your score isn't just one number; it's an algorithm weighing {context} against your payment history and total debt to assess risk.",
+    "fallback": "Credit scoring algorithms use a weighted formula based on financial history to determine a borrower's creditworthiness.",
+    "style": [
+      "conversational",
+      "serious"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-stream-009",
+    "triggers": [
+      "netflix recommendations",
+      "what to watch next",
+      "movie algorithm"
+    ],
+    "context_role": "movie",
+    "template": "Because you enjoyed {context}, the algorithm identified similar tags and user-clusters to suggest a new title you'd likely enjoy.",
+    "fallback": "Streaming services use content-based filtering to suggest shows based on the attributes of what you've already watched.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "algo-daily-010",
+    "triggers": [
+      "are algorithms everywhere",
+      "examples of algorithms in life",
+      "do i use algorithms"
+    ],
+    "context_role": "activity",
+    "template": "Absolutely! Even when you are {context}, you're interacting with algorithms—from the traffic lights timing your commute to the way your email filters spam.",
+    "fallback": "Algorithms are everywhere, from the simple logic in your microwave to the complex AI powering your smartphone.",
+    "style": [
+      "conversational",
+      "thought-provoking"
+    ],
+    "response_length": "medium"
+  }
+]

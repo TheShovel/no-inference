@@ -1,0 +1,156 @@
+[
+  {
+    "id": "guide-cooking-001",
+    "triggers": [
+      "how do I cook",
+      "step by step meal"
+    ],
+    "context_role": "dish",
+    "template": "Cooking {context} is easier than it looks! First, gather your ingredients. Then, follow these steps: 1. Prep your station, 2. Heat your pan/oven, and 3. Combine ingredients in the order listed. Would you like the full detailed list of measurements?",
+    "fallback": "I'd love to help you cook something! What dish are you looking to prepare?",
+    "style": [
+      "conversational",
+      "helpful"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "guide-tech-002",
+    "triggers": [
+      "install guide",
+      "configuration steps"
+    ],
+    "context_role": "device_or_software",
+    "template": "Setting up your {context} is a straightforward process. Start by powering it on and connecting to Wi-Fi. Next, download the official app and create an account. Finally, follow the on-screen pairing instructions. Do you have the device in front of you now?",
+    "fallback": "I can help you get that set up. Which device or software are you working with?",
+    "style": [
+      "technical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "guide-cleaning-003",
+    "triggers": [
+      "remove stain from"
+    ],
+    "context_role": "item",
+    "template": "To get your {context} looking like new, start by removing any loose debris. Apply a gentle cleaning agent—avoid harsh chemicals unless specified. Scrub lightly in circular motions, then wipe clean with a damp microfiber cloth. Does the stain look fresh or is it old?",
+    "fallback": "I can give you a cleaning guide! What exactly are you trying to clean?",
+    "style": [
+      "conversational",
+      "practical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "guide-fitness-004",
+    "triggers": [
+      "how to do a",
+      "exercise form for",
+      "step by step workout"
+    ],
+    "context_role": "exercise",
+    "template": "Perfecting your {context} form is key to avoiding injury. First, establish a stable base with your feet. Second, engage your core and maintain a neutral spine. Finally, execute the movement with a controlled tempo. Should I break down the common mistakes to avoid?",
+    "fallback": "I can guide you through that movement! Which exercise are we focusing on?",
+    "style": [
+      "encouraging",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "guide-diy-005",
+    "triggers": [
+      "how to build",
+      "DIY guide for",
+      "how to make a"
+    ],
+    "context_role": "project",
+    "template": "Starting a {context} project is exciting! Begin by sketching your design and listing all necessary hardware. Once you have your materials, cut your pieces to size and assemble them using the strongest joints possible. Do you have a toolkit ready, or are you still shopping?",
+    "fallback": "That sounds like a great project! What are you planning to build?",
+    "style": [
+      "conversational",
+      "enthusiastic"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "guide-garden-006",
+    "triggers": [
+      "gardening steps for"
+    ],
+    "context_role": "plant",
+    "template": "Growing {context} requires a bit of patience and the right environment. Start by choosing a spot with the correct sunlight exposure. Dig a hole twice as wide as the root ball, place the plant carefully, and water it immediately. Do you know your current soil type?",
+    "fallback": "I can help your garden grow! Which plant or vegetable are you interested in?",
+    "style": [
+      "conversational",
+      "natural"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "guide-travel-007",
+    "triggers": [
+      "how to plan a trip to",
+      "travel guide for",
+      "visit"
+    ],
+    "context_role": "destination",
+    "template": "Planning a trip to {context} is all about the itinerary! First, check your passport and visa requirements. Next, book your flights and accommodation in the central district. Finally, map out the top three must-see landmarks. Are you traveling solo or with a group?",
+    "fallback": "I'd love to help you plan a getaway! Where are you headed?",
+    "style": [
+      "conversational",
+      "adventurous"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "guide-finance-008",
+    "triggers": [
+      "how to start a",
+      "step by step budget",
+      "investing in"
+    ],
+    "context_role": "financial_goal",
+    "template": "Getting started with {context} is a smart move for your future. First, track your current monthly spending. Second, set a specific, reachable target amount. Third, automate your contributions to ensure consistency. Would you like a simple template to track this?",
+    "fallback": "I can help you organize your finances. What specific goal are you aiming for?",
+    "style": [
+      "professional",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "guide-auto-009",
+    "triggers": [
+      "how to change",
+      "car repair steps",
+      "fix my"
+    ],
+    "context_role": "car_part",
+    "template": "Replacing your {context} is a common maintenance task. First, ensure the car is safely parked and the engine is cool. Use the correct tools to loosen the bolts, swap the part, and tighten everything back to spec. Do you have a jack and stands for safety?",
+    "fallback": "I can walk you through the repair! Which part of the car are we looking at?",
+    "style": [
+      "cautious",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "guide-art-010",
+    "triggers": [
+      "how to draw",
+      "painting steps for",
+      "learn to"
+    ],
+    "context_role": "art_style",
+    "template": "Mastering {context} is all about practicing the basics. Start by sketching light guidelines to get the proportions right. Then, add your primary shapes and gradually refine the details. Finally, add shading and highlights for depth. Do you prefer digital or traditional tools?",
+    "fallback": "I can help you unlock your creativity! What art style or subject do you want to learn?",
+    "style": [
+      "conversational",
+      "inspiring"
+    ],
+    "response_length": "medium"
+  }
+]

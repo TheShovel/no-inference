@@ -233,6 +233,12 @@ def match_template(query, context=None):
     # Check if this template requires context
     context_role = best.get('context_role')
     ctx = context or get_context_topic()
+
+    # If the current query explicitly mentions a topic (e.g. "about carrots",
+    # "on carrots"), prefer that over stale historical context.
+    current_topic = _extract_topic_from_query(query)
+    if current_topic and ctx:
+        ctx['topic'] = current_topic
     
     if context_role and not ctx:
         # Template requires context but none available — use fallback

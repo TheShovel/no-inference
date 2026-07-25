@@ -1,0 +1,114 @@
+[
+  {
+    "id": "debate-class-001",
+    "triggers": [
+      "what are the types of debate",
+      "classify debates",
+      "kinds of debating"
+    ],
+    "context_role": "debate_styles",
+    "template": "Debate can be classified into several styles depending on the format and goals. The most common ones include {context}, each with its own unique set of rules.",
+    "fallback": "Debate is generally classified into formal competitive styles and informal argumentative styles.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-class-003",
+    "triggers": [
+      "how does parliamentary style work"
+    ],
+    "context_role": "parliamentary_variations",
+    "template": "Parliamentary debate mimics a legislative session. You'll often see versions like {context}, where speakers must think quickly with limited preparation.",
+    "fallback": "Parliamentary debate is a fast-paced style that focuses on wit, logic, and rhetoric rather than extensive research.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-class-005",
+    "triggers": [
+      "formal vs informal debate",
+      "difference between formal and informal"
+    ],
+    "context_role": "debate_comparison",
+    "template": "The main difference is structure. Formal debates have strict rules and moderators, while informal debates, such as {context}, are more fluid and spontaneous.",
+    "fallback": "Formal debates follow a rigid protocol, whereas informal debates are unstructured discussions between two or more parties.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-class-006",
+    "triggers": [
+      "what is a public forum debate",
+      "explain public forum"
+    ],
+    "context_role": "pf_characteristics",
+    "template": "Public Forum debate is designed to be accessible to a general audience. It typically covers {context} using a a more conversational tone than policy debate.",
+    "fallback": "Public Forum is a style that emphasizes evidence-based arguments delivered in a way that a layperson can easily understand.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-class-007",
+    "triggers": [
+      "competitive vs non-competitive debate",
+      "academic debating"
+    ],
+    "context_role": "competitive_goals",
+    "template": "Competitive debate is judged by a score based on technical skill, whereas non-competitive debate focuses on {context} and changing minds.",
+    "fallback": "Competitive debate is a sport with specific rules and winners, while non-competitive debate is a tool for dialogue and exploration.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-class-008",
+    "triggers": [
+      "what is a cross-examination",
+      "how does cx work in debate"
+    ],
+    "context_role": "cx_purpose",
+    "template": "Cross-examination is a phase in many debate classifications where you can {context} to expose weaknesses in the opponent's case.",
+    "fallback": "Cross-examination is the period where debaters ask each other direct questions to clarify points and find contradictions.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-class-009",
+    "triggers": [
+      "what is wsdc"
+    ],
+    "context_role": "ws_global_reach",
+    "template": "World Schools style is an international format that blends elements of parliamentary and policy debate, often focusing on {context} on a global scale.",
+    "fallback": "World Schools debate is a prestigious international format that emphasizes a broad knowledge of current affairs and global issues.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-class-010",
+    "triggers": [
+      "how to choose a debate style",
+      "which debate format is best"
+    ],
+    "context_role": "style_recommendation",
+    "template": "Choosing a style depends on your goal. If you enjoy philosophy, {context} is great; if you prefer research and data, policy debate is the way to go.",
+    "fallback": "The best debate style depends on whether you prefer deep research, quick thinking, or ethical exploration.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  }
+]

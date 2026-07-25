@@ -1,0 +1,162 @@
+[
+  {
+    "id": "diagram-flow-001",
+    "triggers": [
+      "how to use flowcharts",
+      "what are flowcharts for",
+      "practical use of flowcharts"
+    ],
+    "context_role": "business process",
+    "template": "In the context of {context}, flowcharts are incredibly practical for mapping out step-by-step sequences. They help identify bottlenecks and ensure everyone follows the same standardized procedure.",
+    "fallback": "Flowcharts are great for visualizing a sequence of steps to make complex processes easier to understand and optimize.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diagram-mindmap-002",
+    "triggers": [
+      "mind map uses",
+      "how to use a mind map",
+      "benefits of mind mapping"
+    ],
+    "context_role": "brainstorming session",
+    "template": "When you're dealing with {context}, a mind map is a powerful tool. It allows you to radiate ideas from a central theme, helping you spot connections you might miss in a linear list.",
+    "fallback": "Mind maps are excellent for brainstorming and organizing unstructured thoughts into a visual hierarchy.",
+    "style": [
+      "conversational",
+      "encouraging"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diagram-uml-003",
+    "triggers": [
+      "UML diagrams practical use",
+      "why use UML",
+      "software architecture diagrams"
+    ],
+    "context_role": "software project",
+    "template": "For a {context}, UML diagrams serve as the blueprint. They allow developers to visualize the system architecture and class relationships before a single line of code is written.",
+    "fallback": "UML diagrams provide a standardized way to visualize the design of a software system, making communication between developers much smoother.",
+    "style": [
+      "professional",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diagram-venn-004",
+    "triggers": [
+      "Venn diagram use case",
+      "when to use Venn diagrams",
+      "comparing sets visually"
+    ],
+    "context_role": "comparison analysis",
+    "template": "If you are performing a {context}, a Venn diagram is your best bet. It clearly highlights the unique characteristics of each group and the overlapping commonalities.",
+    "fallback": "Venn diagrams are perfect for visually demonstrating the relationships and differences between two or more sets of items.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diagram-gantt-005",
+    "triggers": [
+      "Gantt chart practical use",
+      "managing timelines with diagrams",
+      "what is a Gantt chart for"
+    ],
+    "context_role": "project management",
+    "template": "In {context}, Gantt charts are indispensable for tracking timelines. They show you exactly which tasks depend on others and help you monitor the project's overall progress.",
+    "fallback": "Gantt charts are used to plan and schedule projects, providing a visual timeline of tasks and milestones.",
+    "style": [
+      "conversational",
+      "practical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diagram-entity-006",
+    "triggers": [
+      "ER diagram use",
+      "database mapping",
+      "entity relationship diagram practical"
+    ],
+    "context_role": "database design",
+    "template": "When designing {context}, ER diagrams are used to define how data entities relate to one another, ensuring the database is normalized and efficient.",
+    "fallback": "Entity-Relationship diagrams help visualize the structure of a database and the logical relationships between different data tables.",
+    "style": [
+      "technical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diagram-fishbone-007",
+    "triggers": [
+      "fishbone diagram use",
+      "Ishikawa diagram practical",
+      "root cause analysis visual"
+    ],
+    "context_role": "problem solving",
+    "template": "For {context}, a fishbone diagram is a great way to categorize potential causes of a problem, helping you drill down to the actual root cause rather than just the symptoms.",
+    "fallback": "Fishbone diagrams are used in root cause analysis to brainstorm and organize all possible factors contributing to a specific effect.",
+    "style": [
+      "conversational",
+      "problem-solving"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diagram-sankey-008",
+    "triggers": [
+      "Sankey diagram use",
+      "visualizing flow",
+      "energy flow diagrams"
+    ],
+    "context_role": "resource distribution",
+    "template": "If you're analyzing {context}, a Sankey diagram is ideal because the width of the arrows shows the quantity of flow, making it easy to see where resources are being lost or diverted.",
+    "fallback": "Sankey diagrams are used to visualize the flow of energy, materials, or money through a system.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diagram-hierarchy-009",
+    "triggers": [
+      "organizational chart use",
+      "hierarchy diagram practical",
+      "mapping company structure"
+    ],
+    "context_role": "organizational structure",
+    "template": "Within {context}, a hierarchy diagram clarifies reporting lines and authority. It removes ambiguity about who is responsible for what within the team.",
+    "fallback": "Hierarchy diagrams, like org charts, are used to visualize the structure of an organization and the chain of command.",
+    "style": [
+      "conversational",
+      "professional"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "diagram-state-010",
+    "triggers": [
+      "state diagram use",
+      "visualizing states",
+      "finite state machine diagram"
+    ],
+    "context_role": "system behavior",
+    "template": "When mapping out {context}, state diagrams help you visualize all possible conditions a system can be in and the triggers that cause it to move from one state to another.",
+    "fallback": "State diagrams are used to describe the behavior of a system by showing the transitions between different states based on specific events.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  }
+]

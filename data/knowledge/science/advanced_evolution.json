@@ -1,0 +1,79 @@
+[
+  {
+    "q": [
+      "How does convergent evolution work?",
+      "What defines convergent evolution in biology?"
+    ],
+    "a": "Convergent evolution occurs when unrelated species independently evolve similar traits or adaptations as a result of having to adapt to similar environments. A classic example is the streamlined body shapes of sharks and dolphins, which evolved for efficient swimming despite the two animals belonging to different taxonomic classes."
+  },
+  {
+    "q": [
+      "What is the concept of punctuated equilibrium?",
+      "How does punctuated equilibrium differ from phyletic gradualism?",
+      "What defines the theory of punctuated equilibrium?"
+    ],
+    "a": "Punctuated equilibrium is a theory in evolutionary biology which proposes that species experience long periods of stasis where little change occurs, interrupted by brief, rapid bursts of significant change. This contrasts with gradualism, which suggests that evolution occurs at a slow and steady pace over millions of years."
+  },
+  {
+    "q": [
+      "How does horizontal gene transfer differ from vertical transmission?",
+      "What is the process of lateral gene transfer?"
+    ],
+    "a": "Horizontal gene transfer is the movement of genetic material between unicellular and/or multicellular organisms other than by the transmission of DNA from parent to offspring. It is highly prevalent in bacteria via processes like conjugation and transformation, allowing for the rapid spread of antibiotic resistance."
+  },
+  {
+    "q": [
+      "What is the Endosymbiotic Theory?",
+      "How did mitochondria and chloroplasts evolve according to endosymbiosis?",
+      "What explains the origin of eukaryotic organelles?"
+    ],
+    "a": "The Endosymbiotic Theory suggests that eukaryotic organelles, specifically mitochondria and chloroplasts, originated as free-living prokaryotic cells that were engulfed by another cell. Over time, these engulfed cells formed a symbiotic relationship and became permanent, specialized organelles within the host cell."
+  },
+  {
+    "q": [
+      "What is an evolutionary arms race?",
+      "How does the Red Queen Hypothesis explain evolutionary arms races?",
+      "What characterizes biological coevolutionary arms races?"
+    ],
+    "a": "An evolutionary arms race is a struggle between competing species, such as predator and prey, where each evolves adaptations to counter the other's defenses. This is often linked to the Red Queen Hypothesis, which posits that species must constantly evolve just to maintain their relative fitness and avoid extinction."
+  },
+  {
+    "q": [
+      "What is the difference between homology and analogy in evolution?",
+      "How do homologous structures differ from analogous structures?",
+      "What is the distinction between homologies and analogies?"
+    ],
+    "a": "Homologous structures are features shared by different species due to common ancestry, such as the bone structure in a human arm and a bat wing. Analogous structures are features that serve similar functions but evolved independently, such as the wings of a bee and the wings of a bird."
+  },
+  {
+    "q": [
+      "How does adaptive radiation lead to biodiversity?",
+      "What defines the process of adaptive radiation?"
+    ],
+    "a": "Adaptive radiation is the process in which organisms diversify rapidly from an ancestral species into a multitude of new forms to fill different ecological niches. A famous example is Darwin's finches in the Galápagos Islands, where birds evolved various beak shapes to exploit different food sources."
+  },
+  {
+    "q": [
+      "What is epigenetic inheritance?",
+      "How do epigenetic changes affect evolution?",
+      "What is the role of epigenetics in evolutionary biology?"
+    ],
+    "a": "Epigenetic inheritance involves changes in gene expression or phenotype that do not involve alterations to the underlying DNA sequence. These changes, such as DNA methylation, can be influenced by environmental factors and may be passed down to subsequent generations, affecting how genes are activated."
+  },
+  {
+    "q": [
+      "What is the concept of a 'bottleneck effect' in population genetics?",
+      "How does a genetic bottleneck impact evolutionary diversity?",
+      "What defines a population bottleneck?"
+    ],
+    "a": "A bottleneck effect occurs when a population's size is drastically reduced for at least one generation, leading to a significant loss of genetic variation. This results in a surviving population that may not represent the original genetic diversity, increasing the impact of genetic drift."
+  },
+  {
+    "q": [
+      "What is sexual selection?",
+      "How does sexual selection differ from natural selection?",
+      "What defines the process of sexual selection in evolution?"
+    ],
+    "a": "Sexual selection is a mode of natural selection where members of one sex compete for access to mates, or are chosen by the opposite sex based on specific traits. This often leads to the evolution of exaggerated physical characteristics, such as the peacock's tail, which may not provide a survival advantage but increase mating success."
+  }
+]

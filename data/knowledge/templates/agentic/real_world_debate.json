@@ -1,0 +1,162 @@
+[
+  {
+    "id": "debate-logic-001",
+    "triggers": [
+      "what is a straw man",
+      "explain straw man fallacy",
+      "strawman argument"
+    ],
+    "context_role": "fallacy_type",
+    "template": "A straw man occurs when someone misrepresents {context} to make it easier to attack. Instead of addressing the actual point, they create a 'straw' version of it.",
+    "fallback": "A straw man fallacy is when someone distorts an opponent's argument to make it easier to refute.",
+    "style": [
+      "educational",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-strategy-002",
+    "triggers": [
+      "how to win a debate",
+      "debate tips",
+      "best way to argue"
+    ],
+    "context_role": "debate_goal",
+    "template": "If your goal is {context}, I recommend focusing on evidence-based claims and active listening to identify gaps in your opponent's logic.",
+    "fallback": "To succeed in a debate, focus on clear structure, strong evidence, and addressing your opponent's points directly.",
+    "style": [
+      "strategic",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-structure-003",
+    "triggers": [
+      "debate format",
+      "how is a debate structured",
+      "debate rounds"
+    ],
+    "context_role": "format_style",
+    "template": "In a {context} style debate, the structure typically involves a timed opening statement, a rebuttal phase, and a closing summary.",
+    "fallback": "Debates are generally structured with an introduction, a series of arguments and counter-arguments, and a final conclusion.",
+    "style": [
+      "informative",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-ethics-004",
+    "triggers": [
+      "is it wrong to lie in a debate",
+      "debate ethics",
+      "fair play in arguing"
+    ],
+    "context_role": "ethical_dilemma",
+    "template": "When dealing with {context}, the ethical standard in debating is typically to maintain intellectual honesty, even if it makes your position harder to defend.",
+    "fallback": "Ethical debating requires honesty and a commitment to truth over simply 'winning' the exchange.",
+    "style": [
+      "reflective",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-evidence-005",
+    "triggers": [
+      "how to use sources",
+      "best evidence for debate",
+      "citing facts"
+    ],
+    "context_role": "source_type",
+    "template": "Using {context} as a source can be very powerful, but be sure to verify the credibility and bias of the data before presenting it.",
+    "fallback": "The strongest evidence in a debate consists of peer-reviewed data, official statistics, and expert testimony.",
+    "style": [
+      "analytical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-rebuttal-006",
+    "triggers": [
+      "how to rebut",
+      "countering an argument",
+      "responding to a point"
+    ],
+    "context_role": "opponent_claim",
+    "template": "To effectively counter the claim that {context}, you should first acknowledge the point and then provide evidence that proves it is either incorrect or irrelevant.",
+    "fallback": "A strong rebuttal identifies the flaw in the opposing logic and presents a more compelling alternative.",
+    "style": [
+      "instructive",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-burden-007",
+    "triggers": [
+      "burden of proof",
+      "who has to prove it",
+      "proving a point"
+    ],
+    "context_role": "proposition",
+    "template": "In this scenario, the burden of proof lies with the person arguing {context}, as they are the ones introducing a new claim to the table.",
+    "fallback": "The burden of proof generally falls on the person making the positive assertion or proposing a change.",
+    "style": [
+      "formal",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-emotion-008",
+    "triggers": [
+      "using emotion in debate",
+      "pathos",
+      "emotional appeals"
+    ],
+    "context_role": "emotional_angle",
+    "template": "While {context} can be a powerful tool for persuasion, relying too heavily on emotion without logical backing can make your argument seem weak to a critical judge.",
+    "fallback": "Emotional appeals, or pathos, can make an argument more relatable, but they should complement logical evidence, not replace it.",
+    "style": [
+      "balanced",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-ad-hominem-009",
+    "triggers": [
+      "personal attacks",
+      "ad hominem",
+      "attacking the person"
+    ],
+    "context_role": "attack_target",
+    "template": "Attacking {context} rather than the argument itself is known as an ad hominem fallacy; it generally weakens the attacker's credibility.",
+    "fallback": "An ad hominem attack happens when someone attacks the character of the person instead of the substance of their argument.",
+    "style": [
+      "critical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-conclusion-010",
+    "triggers": [
+      "closing statement tips",
+      "how to end a debate",
+      "final argument"
+    ],
+    "context_role": "key_takeaway",
+    "template": "Your closing statement should reiterate that {context} is the most critical point of the debate and summarize why your position remains standing.",
+    "fallback": "A great conclusion summarizes your main points and leaves the audience with a strong, memorable final thought.",
+    "style": [
+      "encouraging",
+      "conversational"
+    ],
+    "response_length": "medium"
+  }
+]

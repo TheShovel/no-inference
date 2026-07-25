@@ -1,0 +1,153 @@
+[
+  {
+    "id": "debug-class-general-001",
+    "triggers": [
+      "what are the types of debugging",
+      "classify debugging",
+      "debugging categories"
+    ],
+    "context_role": "classification_overview",
+    "template": "Debugging can be broadly classified into several types depending on the approach. {context} Generally, these range from manual code reviews to automated runtime analysis.",
+    "fallback": "Debugging is typically classified by the method used to find the bug, such as static analysis, dynamic analysis, and interactive debugging.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-class-static-002",
+    "triggers": [
+      "what is static debugging",
+      "explain static analysis",
+      "static vs dynamic debugging"
+    ],
+    "context_role": "static_debugging",
+    "template": "Static debugging involves examining the code without actually running it. {context} It's like proofreading a document before publishing it to find typos or logic gaps.",
+    "fallback": "Static debugging is the process of analyzing code for errors without executing the program, often using linters or manual code reviews.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-class-dynamic-003",
+    "triggers": [
+      "what is dynamic debugging",
+      "dynamic analysis explanation",
+      "debugging during runtime"
+    ],
+    "context_role": "dynamic_debugging",
+    "template": "Dynamic debugging happens while the program is running. {context} This allows you to see exactly how the data changes in real-time as the code executes.",
+    "fallback": "Dynamic debugging is the process of identifying bugs by observing the program's behavior during actual execution.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-class-interactive-004",
+    "triggers": [
+      "interactive debugging",
+      "what is a debugger tool",
+      "using breakpoints"
+    ],
+    "context_role": "interactive_tools",
+    "template": "Interactive debugging is a subset of dynamic debugging where you use a tool to control execution. {context} It's incredibly powerful for stepping through code line-by-line.",
+    "fallback": "Interactive debugging involves using tools like IDE debuggers to set breakpoints and inspect variables while the program is paused.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-class-remote-005",
+    "triggers": [
+      "debugging on a server",
+      "remote vs local debugging"
+    ],
+    "context_role": "remote_environment",
+    "template": "Remote debugging is used when the code is running on a different machine than the one you're developing on. {context} This is essential for cloud environments or embedded systems.",
+    "fallback": "Remote debugging allows a developer to debug a program running on a remote host using a local debugger interface.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-class-postmortem-006",
+    "triggers": [
+      "postmortem debugging",
+      "analyzing crash dumps",
+      "debugging after a crash"
+    ],
+    "context_role": "postmortem_analysis",
+    "template": "Postmortem debugging is what you do after a program has already crashed. {context} You're essentially performing an 'autopsy' on a memory dump to find the cause of death.",
+    "fallback": "Postmortem debugging involves analyzing a core dump or log file to understand why a program crashed after the fact.",
+    "style": [
+      "conversational",
+      "analogical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-class-heuristic-007",
+    "triggers": [
+      "heuristic debugging",
+      "guessing the bug",
+      "experience-based debugging"
+    ],
+    "context_role": "heuristic_methods",
+    "template": "Heuristic debugging relies on experience and 'rules of thumb' rather than a strict formula. {context} It's often the first step a seasoned developer takes when they recognize a pattern.",
+    "fallback": "Heuristic debugging is an informal approach where developers use past experience and intuition to narrow down the source of a bug.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-class-backtracking-008",
+    "triggers": [
+      "backtracking debugging",
+      "tracing back the bug",
+      "manual trace debugging"
+    ],
+    "context_role": "backtracking_technique",
+    "template": "Backtracking is a manual classification of debugging where you start from the point of failure and work backward. {context} It's a bit tedious but very effective for simple logic errors.",
+    "fallback": "Backtracking debugging involves starting at the site of the error and tracing the program execution backward through the source code.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-class-automated-009",
+    "triggers": [
+      "auto-debugging tools"
+    ],
+    "context_role": "automated_systems",
+    "template": "Automated debugging uses specialized software to detect and sometimes even fix bugs automatically. {context} This is common in modern CI/CD pipelines to ensure code stability.",
+    "fallback": "Automated debugging refers to the use of software tools that can automatically identify, isolate, and occasionally resolve defects in a program.",
+    "style": [
+      "conversational",
+      "technical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "debug-class-comparative-010",
+    "triggers": [
+      "comparative debugging",
+      "differential debugging"
+    ],
+    "context_role": "comparative_analysis",
+    "template": "Comparative debugging involves comparing a working version of the code with a broken one. {context} By finding the difference, you can isolate the exact change that introduced the bug.",
+    "fallback": "Comparative (or differential) debugging is the process of comparing two versions of a system to identify where a regression was introduced.",
+    "style": [
+      "conversational"
+    ],
+    "response_length": "medium"
+  }
+]
