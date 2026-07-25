@@ -32,11 +32,11 @@ DEFAULT_CONFIG = NLGConfig()
 STYLE_PROFILES = {
     "friendly": {
         "contraction_rate": 0.9,
-        "filler_rate": 0.4,
-        "hedge_rate": 0.2,
-        "opener_variety_rate": 0.35,
-        "sentence_variation_rate": 0.6,
-        "closing_rate": 0.7,
+        "filler_rate": 0.15,
+        "hedge_rate": 0.0,
+        "opener_variety_rate": 0.15,
+        "sentence_variation_rate": 0.4,
+        "closing_rate": 0.5,
         "combine_rate": 0.3,
     },
     "neutral": {

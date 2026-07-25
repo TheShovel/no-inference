@@ -33,3 +33,6 @@ data/.template_tracking.json
 /tmp/arc_easy.jsonl
 /tmp/arc_easy_train.jsonl
 /tmp/mt_bench.jsonl
+
+# Generated evaluation results
+data/eval_results.json

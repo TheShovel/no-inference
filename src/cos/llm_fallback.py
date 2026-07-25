@@ -8,7 +8,6 @@ to the symbolic context_extraction module.
 No neural networks, no LLMs, no GGUF models required.
 """
 
-import os
 import re
 from pathlib import Path
 from typing import List, Optional, Tuple
@@ -22,10 +21,7 @@ from .context_extraction import (
     remove_stop_words,
 )
 
-# ── Paths (kept for backward compatibility) ──────────────────────────────────
-MODELS_DIR = Path(__file__).parent.parent.parent / 'models'
-EXTRACT_MODEL = str(MODELS_DIR / 'LFM2-350M-Extract-Q4_0.gguf')
-GEN_MODEL = str(MODELS_DIR / 'Tiny-LLM.Q2_K.gguf')
+# All model references removed — purely symbolic extraction only.
 
 
 def extract_search_terms(query: str) -> List[str]:
@@ -87,7 +83,8 @@ ESSAY_PROMPT = ""       # No longer used; kept for import compatibility
 
 # ── Poem generator ────────────────────────────────────────────────────────────
 
-_POEMS_DIR = MODELS_DIR.parent / 'data' / 'knowledge' / 'templates' / 'poems'
+_SCRIPT_DIR = Path(__file__).parent.absolute()
+_POEMS_DIR = _SCRIPT_DIR.parent.parent / 'data' / 'knowledge' / 'templates' / 'poems'
 _POEM_CACHE = None
 
 _DEFAULT_CONTEXT_WORDS = [

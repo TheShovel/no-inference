@@ -17,9 +17,8 @@ _PATTERNS = {
     "definition": {
         "friendly": [
             "{subject} {verb} {obj}.",
-            "So {subject} {verb} {obj}.",
-            "Basically, {subject} {verb} {obj}.",
-            "{subject} {verb} {obj} — plain and simple.",
+            "{subject} {verb} {obj} — that's the core idea.",
+            "{subject} {verb} {obj}.",
         ],
         "neutral": [
             "{subject} {verb} {obj}.",
@@ -32,11 +31,9 @@ _PATTERNS = {
         "friendly": [
             "You can find it {prep} {place}.",
             "It's located {prep} {place}.",
-            "It's over {prep} {place}.",
         ],
         "neutral": [
             "{subject} is located {prep} {place}.",
-            "It's located {prep} {place}.",
         ],
         "concise": [
             "{prep} {place}.",
@@ -45,13 +42,11 @@ _PATTERNS = {
     "property": {
         "friendly": [
             "{subject} has {obj}.",
-            "It's got {obj}.",
-            "It comes with {obj}.",
+            "{subject} includes {obj}.",
         ],
         "neutral": [
             "{subject} has {obj}.",
             "{subject} includes {obj}.",
-            "It features {obj}.",
         ],
         "concise": [
             "Has {obj}.",
@@ -141,12 +136,8 @@ def realize_fact(
     style_templates = list(templates.get(style, templates.get("neutral", [])))
 
     # ── Ensure "refers to" is only used for true definition predicates ──
-    # The "refers to" variant should only fire when the fact's predicate
-    # is a copular verb (is/are/was/were), not for action or other predicates
-    # that happened to be classified as "definition".
     copular = fact.predicate.strip().lower() in ("is", "are", "was", "were")
     if not copular:
-        # Remove any "refers to" template from the pool
         style_templates = [t for t in style_templates if "refers to" not in t]
         if not style_templates:
             style_templates = ["{subject} {verb} {obj}."]
@@ -156,9 +147,19 @@ def realize_fact(
     subject = fact.subject
     obj = fact.obj
     obj_lower = lower_first(obj)
+    
+    # ── Determine correct pronoun for subject from discourse state ──
+    subject_pronoun = "it"
+    subject_objective = "it"
+    subject_possessive = "its"
+    if state and use_pronoun:
+        entity = state.get_entity(subject)
+        if entity:
+            subject_pronoun = entity.pronoun
+            subject_objective = entity.objective_pronoun
+            subject_possessive = entity.possessive_pronoun
 
     # ── Determine if subject is plural for verb agreement ──
-    # This mirrors the heuristic in apply_pronouns().
     subj_lower = subject.strip().lower()
     is_plural_subject = (
         subj_lower.endswith("s") and not subj_lower.endswith("ss")
@@ -169,10 +170,15 @@ def realize_fact(
     if "refers to" in template and is_plural_subject:
         template = template.replace("refers to", "refer to")
 
+    # Replace hardcoded "It's"/"It " patterns with correct pronoun
+    # This handles templates that contain "It's" or "It " as the subject
+    template = template.replace("It's ", subject_pronoun + "'s ")
+    template = template.replace("It ", subject_pronoun + " ")
+
     # Try to build the sentence from the template
     try:
         if fact.fact_type == "location":
-            # Parse location: "located in Paris" -> prep="in", place="Paris"
+            # Parse location
             loc_match = re.match(
                 r'(?:located|situated|found|based)\s+(in|on|at|near)\s+(.+)',
                 obj, re.IGNORECASE
@@ -213,23 +219,23 @@ def realize_fact(
 
 _OPENINGS = {
     "how": {
-        "friendly": ["Here's what you do:", "Here's how it works:", "It's pretty straightforward:"],
+        "friendly": ["Here's what you do:", "Here's how it works:"],
         "neutral": ["Here's how:", "The process is:"],
         "concise": [""],
     },
     "who": {
-        "friendly": ["Let me tell you:", "Here's what I know:", "Great question!"],
-        "neutral": ["So,", "Well,"],
+        "friendly": ["Let me tell you:", "Here's what I know:"],
+        "neutral": [""],
         "concise": [""],
     },
     "explain": {
-        "friendly": ["Great question! So", "Happy to explain!", "Okay, so", "So here's the thing:"],
-        "neutral": ["So,", "Well,", "Here's the answer:"],
+        "friendly": ["Happy to explain!", "Here's the thing:"],
+        "neutral": ["Here's the answer:"],
         "concise": [""],
     },
     "define": {
-        "friendly": ["Great question! So", "Okay, so", "Alright, so"],
-        "neutral": ["So,", "Well,", "By definition,"],
+        "friendly": ["Great question!", "Alright, here goes:"],
+        "neutral": ["By definition,"],
         "concise": [""],
     },
     "where": {
@@ -238,8 +244,8 @@ _OPENINGS = {
         "concise": [""],
     },
     "factual": {
-        "friendly": ["So here's the deal:", "Well,", "Okay, so"],
-        "neutral": ["So,", "Well,", "Here's the answer:"],
+        "friendly": ["Here's the thing:", "Here's what I know:"],
+        "neutral": ["Here's the answer:"],
         "concise": [""],
     },
 }

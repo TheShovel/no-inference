@@ -141,6 +141,14 @@ def naturalize(
                 sent
             )
             realized_sentences[i] = sent
+    # Post-combine cleanup v2 (fix combine artifacts)
+    for i, sent in enumerate(realized_sentences):
+        sent = re.sub(r', and is ', ', which is ', sent)
+        sent = re.sub(r' and is (a|an|the)', r' and is \1', sent)
+        sent = re.sub(r' and is ([A-Z][a-z]+)', r', which is \1', sent)
+        sent = re.sub(r', and is ([a-z])', r', and \1', sent)
+        sent = re.sub(r', and it is ', " and it's ", sent)
+        realized_sentences[i] = sent
 
     # Build response
     result = " ".join(realized_sentences)

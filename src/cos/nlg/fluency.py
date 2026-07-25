@@ -35,6 +35,14 @@ _CONTRACTIONS = [
 ]
 
 
+# Words that should stay uppercase mid-sentence
+_PROPER_NOUNS = {
+    'I', 'Paris', 'London', 'France', 'Mars', 'Earth', 'Sun', 'Moon',
+    'Einstein', 'Newton', 'Curie', 'Eiffel', 'Olympus', 'Phobos', 'Deimos',
+    'Louvre', 'Rayleigh', 'English', 'French', 'European',
+}
+
+
 def apply_contractions(text: str, rate: float = 1.0, temperature: float = 1.0) -> str:
     """Apply common contractions to text.
 
@@ -147,10 +155,10 @@ def _select_pronoun(topic: str) -> str:
 
 _FILLERS = {
     "friendly": [
-        "I mean,", "you know,", "like,", "honestly,", "basically,",
-        "actually,", "really,", "truth be told,",
+        "actually,", "as a matter of fact,",
+        "interestingly,", "the thing is,",
     ],
-    "neutral": ["in fact,", "indeed,", "essentially,", "effectively,"],
+    "neutral": ["in fact,", "indeed,", "essentially,"],
     "concise": [],
 }
 

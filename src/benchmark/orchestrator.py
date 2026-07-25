@@ -19,22 +19,21 @@ Pipeline:
 
 import os
 import re
-import subprocess
 import sys
 import json
 import urllib.request
 import urllib.parse
 from pathlib import Path
 
-from state import conversation_history, current_roleplay, fact_memory
-from intent import detect_intent
-from memory import extract_and_store, recall as memory_recall, get_all_facts_text
-from knowledge import lookup as knowledge_lookup
-from templates import match_instruction
-from roleplay import match_roleplay, generate_followup as roleplay_followup
-from llm_fallback import extract_search_terms
-from followup import rewrite_previous_response
-from template_engine import match_template, get_context_topic, reload as reload_templates
+from cos.state import conversation_history, current_roleplay, fact_memory
+from cos.intent import detect_intent
+from cos.memory import extract_and_store, recall as memory_recall, get_all_facts_text
+from cos.knowledge import lookup as knowledge_lookup
+from cos.templates import match_instruction
+from cos.roleplay import match_roleplay, generate_followup as roleplay_followup
+from cos.llm_fallback import extract_search_terms
+from cos.followup import rewrite_previous_response
+from cos.template_engine import match_template, get_context_topic, reload as reload_templates
 
 # ── NLG integration (unified system) ────────────────────────────────────────
 _NLG_NATURALIZE = None
@@ -71,7 +70,7 @@ def _extract_search_topic(query):
     """Extract a clean search topic using symbolic extraction."""
     # Try symbolic extraction first
     try:
-        from llm_fallback import extract_topic
+        from cos.llm_fallback import extract_topic
         topic = extract_topic(query)
         if topic and len(topic) > 2:
             return topic
@@ -216,9 +215,6 @@ def _search_wikipedia(query):
 
 # ── Paths ────────────────────────────────────────────────────────────────────
 SCRIPT_DIR = Path(__file__).parent.absolute()
-BUILD_DIR = SCRIPT_DIR / '..' / '..' / 'build'
-COS_RUNNER = str(BUILD_DIR / 'src/benchmark/cos_bench_runner')
-COS_TMPL = str(BUILD_DIR / 'cos_templates.txt')
 
 
 # ── Global state accessors (for the TUI) ─────────────────────────────────────
@@ -272,7 +268,7 @@ def _solve_math(expr):
 def _solve_word_problem(question):
     """Solve a word problem using the math solver."""
     try:
-        from math_solver import solve_word_problem as wp
+        from cos.math_solver import solve_word_problem as wp
         return wp(question)
     except Exception:
         return None
@@ -298,25 +294,6 @@ def _is_generic_response(response):
         if r.startswith(prefix):
             return True
     return False
-
-
-def _run_cos_runner(query, timeout=30):
-    """Run the COS C bench_runner and return the response."""
-    try:
-        result = subprocess.run(
-            [COS_RUNNER, COS_TMPL],
-            input=(query + '\n').encode(),
-            capture_output=True,
-            timeout=timeout
-        )
-        response = result.stdout.decode().strip()
-        if (response and response != "[ERROR]"
-                and len(response) > 5
-                and not _is_generic_response(response)):
-            return response
-    except:
-        pass
-    return None
 
 
 # ── Main query processor ────────────────────────────────────────────────────
@@ -495,7 +472,7 @@ def _handle_instruction(query):
             # For poems, use the poem generator with Wikipedia content
             if fmt == 'poem' or fmt == 'haiku' or fmt == 'verse' or fmt == 'song':
                 wiki_summary, wiki_url = _search_wikipedia(topic)
-                from llm_fallback import generate_poem
+                from cos.llm_fallback import generate_poem
                 poem = generate_poem(topic, wiki_summary or '')
                 source = f'\n  (inspired by Wikipedia)' if wiki_url else ''
                 return f"A poem about {topic}:\n\n{poem}{source}"
@@ -638,21 +615,6 @@ def _handle_factual(query, use_cos):
     if tmpl_result:
         return tmpl_result['response']
 
-    # Fourth try: C COS runner (only for factual trivia, not how-to questions)
-    # The C runner uses TruthfulQA facts with loose keyword matching,
-    # which can produce garbage for procedural queries (e.g. "french"
-    # in "french fries" matching a fact about French people).
-    if use_cos:
-        q_lower = q.lower()
-        is_how_to = any(q_lower.startswith(p) for p in [
-            'how can i', 'how do i', 'how to', 'how would i',
-            'how does one', 'how could i',
-        ])
-        if not is_how_to:
-            response = _run_cos_runner(q)
-            if response:
-                return response
-
     return None  # Fall through
 
 
@@ -664,12 +626,6 @@ def _handle_fallback(query, use_cos, intent):
     instruction_response = match_instruction(q)
     if instruction_response:
         return instruction_response
-
-    # Try COS runner
-    if use_cos and intent not in ('instruction', 'code', 'roleplay', 'factual'):
-        response = _run_cos_runner(q)
-        if response:
-            return response
 
     return None  # Final fallback in process_query
 

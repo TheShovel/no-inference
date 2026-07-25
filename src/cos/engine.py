@@ -19,7 +19,6 @@ Pipeline:
 
 import os
 import re
-import subprocess
 import sys
 import json
 import urllib.request
@@ -208,9 +207,6 @@ def _search_wikipedia(query):
 
 # ── Paths ────────────────────────────────────────────────────────────────────
 SCRIPT_DIR = Path(__file__).parent.absolute()
-BUILD_DIR = SCRIPT_DIR / '..' / '..' / 'build'
-COS_RUNNER = str(BUILD_DIR / 'src/benchmark/cos_bench_runner')
-COS_TMPL = str(BUILD_DIR / 'cos_templates.txt')
 
 
 # ── Global state accessors (for the TUI) ─────────────────────────────────────
@@ -293,23 +289,24 @@ def _is_generic_response(response):
     return False
 
 
-def _run_cos_runner(query, timeout=30):
-    """Run the COS C bench_runner and return the response."""
-    try:
-        result = subprocess.run(
-            [COS_RUNNER, COS_TMPL],
-            input=(query + '\n').encode(),
-            capture_output=True,
-            timeout=timeout
-        )
-        response = result.stdout.decode().strip()
-        if (response and response != "[ERROR]"
-                and len(response) > 5
-                and not _is_generic_response(response)):
-            return response
-    except:
-        pass
-    return None
+def _is_generic_response(text):
+    """Check if a response is a generic placeholder."""
+    r = text.lower().strip().rstrip('.!?')
+    generic_phrases = {
+        'i understand', 'i don\'t know', 'i do not know',
+        'i don\'t understand', 'i cannot answer',
+        'that is a good question', 'that\'s a good question',
+    }
+    if r in generic_phrases:
+        return True
+    if len(r) < 15:
+        return True
+    # Check for excessive repetition
+    import re
+    words = r.split()
+    if len(words) >= 5 and len(set(words)) <= 2:
+        return True
+    return False
 
 
 # ── Main query processor ────────────────────────────────────────────────────
@@ -319,7 +316,7 @@ def process_query(query, use_cos=True):
 
     Args:
         query: The user's input string
-        use_cos: Whether to use the C COS runner as a fallback
+        use_cos: Unused — kept for API compatibility
 
     Returns:
         Response string
@@ -630,21 +627,11 @@ def _handle_factual(query, use_cos):
     tmpl_result = match_template(q, context=ctx)
     if tmpl_result:
         return tmpl_result['response']
-
-    # Fourth try: C COS runner (only for factual trivia, not how-to questions)
-    # The C runner uses TruthfulQA facts with loose keyword matching,
-    # which can produce garbage for procedural queries (e.g. "french"
-    # in "french fries" matching a fact about French people).
-    if use_cos:
-        q_lower = q.lower()
-        is_how_to = any(q_lower.startswith(p) for p in [
-            'how can i', 'how do i', 'how to', 'how would i',
-            'how does one', 'how could i',
-        ])
-        if not is_how_to:
-            response = _run_cos_runner(q)
-            if response:
-                return response
+# Fallback: try Wikipedia search directly
+    if not response:
+        wiki_summary, wiki_url = _search_wikipedia(q)
+        if wiki_summary:
+            return _nlg(q, topic, wiki_summary)
 
     return None  # Fall through
 
@@ -657,12 +644,6 @@ def _handle_fallback(query, use_cos, intent):
     instruction_response = match_instruction(q)
     if instruction_response:
         return instruction_response
-
-    # Try COS runner
-    if use_cos and intent not in ('instruction', 'code', 'roleplay', 'factual'):
-        response = _run_cos_runner(q)
-        if response:
-            return response
 
     return None  # Final fallback in process_query
 
