@@ -85,7 +85,6 @@ target_link_libraries(cos_main
     cos_generator
     cos_grammar
     cos_language
-    cos_generator
     cos_reasoning
     cos_knowledge
     cos_planner

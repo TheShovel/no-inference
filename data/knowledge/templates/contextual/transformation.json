@@ -1,5 +1,165 @@
 [
   {
+    "id": "formal-rewrite-001",
+    "triggers": [
+      "make it formal",
+      "rewrite this formally",
+      "professionalize this"
+    ],
+    "context_role": "topic",
+    "template": "I've rewritten the text regarding {context} to be more professional. I focused on replacing casual idioms with standard business terminology and adjusting the tone to be more objective and polished. Here is the formal version: [Insert Rewrite]",
+    "fallback": "I can certainly help you make your text more formal. Please provide the content you'd like me to rewrite!",
+    "style": [
+      "professional",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "formal-explanation-002",
+    "triggers": [
+      "why is this more formal",
+      "what changed",
+      "explain the formal version"
+    ],
+    "context_role": "topic",
+    "template": "To make the discussion about {context} sound more formal, I made a few key adjustments. First, I shifted from active to passive voice where appropriate to maintain neutrality. Second, I eliminated contractions and slang. Finally, I used more precise, academic vocabulary to ensure the tone is suitable for a professional environment.",
+    "fallback": "Usually, formalizing text involves removing slang, avoiding contractions, and using more precise, sophisticated vocabulary.",
+    "style": [
+      "educational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "formal-email-003",
+    "triggers": [
+      "turn this into a formal email",
+      "make this an email to my boss",
+      "formal email version"
+    ],
+    "context_role": "topic",
+    "template": "Since you're addressing this to a professional contact, I've structured the information about {context} into a formal email format. I've included a professional salutation, a clear objective statement in the opening paragraph, and a polite closing. Here is the draft: [Insert Email]",
+    "fallback": "I can transform your notes into a professional email. Just let me know what the subject is and who the recipient is!",
+    "style": [
+      "formal",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "formal-comparison-004",
+    "triggers": [
+      "compare casual vs formal",
+      "what's the difference here",
+      "show me both versions"
+    ],
+    "context_role": "topic",
+    "template": "When talking about {context}, the choice between casual and formal depends on your audience. A casual tone is great for building rapport and speed, whereas the formal version—which I've provided below—is better for establishing authority, showing respect, or documenting a decision. Here is a side-by-side comparison: [Insert Comparison]",
+    "fallback": "Casual language is typically used for friends and peers, while formal language is reserved for superiors, clients, or official documentation.",
+    "style": [
+      "analytical",
+      "educational"
+    ],
+    "response_length": "long"
+  },
+  {
+    "id": "formal-short-edit-005",
+    "triggers": [
+      "fix the tone",
+      "make it sound better",
+      "clean this up"
+    ],
+    "context_role": "topic",
+    "template": "Here is a polished, more formal version of your thoughts on {context}: [Insert Edit]",
+    "fallback": "I'd be happy to clean that up for you. Please paste the text you're working on!",
+    "style": [
+      "conversational",
+      "short"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "formal-application-006",
+    "triggers": [
+      "how to say this in a cover letter",
+      "make this formal for a job",
+      "application tone"
+    ],
+    "context_role": "topic",
+    "template": "When mentioning {context} in a job application or cover letter, you want to highlight the value you provide while remaining humble and professional. Instead of using conversational language, I recommend using 'action verbs' and industry-standard terminology. Here is how I would phrase it: [Insert Phrase]",
+    "fallback": "For job applications, it's best to use a tone that is confident yet respectful, focusing on achievements rather than just duties.",
+    "style": [
+      "professional",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "formal-politeness-007",
+    "triggers": [
+      "make it more polite",
+      "how to say this nicely",
+      "soften the tone"
+    ],
+    "context_role": "topic",
+    "template": "To make the request regarding {context} sound more formal and polite, I've added 'hedging' language (like 'I was wondering if' or 'would it be possible'). This removes the bluntness of the original request and makes it more likely to be received positively by a superior. Here is the softened version: [Insert Text]",
+    "fallback": "The key to being formal yet polite is using indirect questions and adding courtesy markers to your requests.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "formal-academic-008",
+    "triggers": [
+      "make it academic",
+      "write this for a paper",
+      "scholarly tone"
+    ],
+    "context_role": "topic",
+    "template": "To shift the discussion of {context} into an academic register, I have removed all first-person pronouns (like 'I' or 'me') and replaced emotive language with evidence-based descriptors. This ensures the focus remains on the data and the argument rather than the author's opinion. Here is the scholarly version: [Insert Text]",
+    "fallback": "Academic writing typically requires a third-person perspective, an objective tone, and the avoidance of contractions and colloquialisms.",
+    "style": [
+      "formal",
+      "analytical"
+    ],
+    "response_length": "long"
+  },
+  {
+    "id": "formal-critique-009",
+    "triggers": [
+      "is this too casual",
+      "critique my tone",
+      "does this sound professional"
+    ],
+    "context_role": "topic",
+    "template": "Looking at your text regarding {context}, it currently leans toward a 'casual-professional' hybrid. While it's clear, some phrases like [Insert Phrase] might be seen as too informal for a strict corporate environment. I suggest changing those specific spots to make the overall impression more authoritative. Would you like me to rewrite it for you?",
+    "fallback": "I can review your text for tone. Please provide the passage and tell me who the intended audience is!",
+    "style": [
+      "analytical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "formal-vocabulary-010",
+    "triggers": [
+      "better words for this",
+      "formal synonyms",
+      "sophisticated language"
+    ],
+    "context_role": "topic",
+    "template": "If you want to elevate the language you're using for {context}, you can swap out common verbs for more precise, formal alternatives. For example, instead of 'do', use 'execute' or 'implement'. Instead of 'get', use 'acquire' or 'obtain'. Here is a list of vocabulary upgrades tailored to your topic: [Insert List]",
+    "fallback": "I can provide a list of professional synonyms. Just let me know which words or phrases you're looking to replace!",
+    "style": [
+      "educational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
     "id": "simpler-definition-001",
     "triggers": [
       "what does this mean in simple terms",

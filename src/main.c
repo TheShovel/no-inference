@@ -5,6 +5,10 @@
 //
 // Memory: Creates a system arena and pool for the runtime.
 // All major subsystems are initialized at startup.
+//
+// Philosophy: Purely symbolic. No neural networks, no LLMs, no transformers.
+// Every response is generated through template matching, grammar rules,
+// knowledge lookup, and symbolic reasoning.
 
 #include "cos/core.h"
 #include "cos/allocator.h"
@@ -213,8 +217,10 @@ static void run_repl(cos_runtime_t* rt) {
             }
         }
 
-        // Check if input matches a registered tool name (single word = tool call)
-        bool tool_executed = false;
+        // Process input through the symbolic pipeline
+        bool handled = false;
+
+        // 1. Check if input matches a registered tool name (single word = tool call)
         const cos_tool_t* tool = cos_tool_find(rt->tool_registry, buffer);
         if (tool) {
             char tool_buf[4096];
@@ -224,13 +230,12 @@ static void run_repl(cos_runtime_t* rt) {
                 tool_buf[tool_written < sizeof(tool_buf) ? tool_written : sizeof(tool_buf)-1] = '\0';
                 printf("%s", tool_buf);
                 if (tool_written > 0 && tool_buf[tool_written-1] != '\n') printf("\n");
-                tool_executed = true;
+                handled = true;
             }
         }
 
-        // Try math tool for arithmetic expressions (before template matching)
-        bool template_used = false;
-        if (!tool_executed) {
+        // 2. Try math tool for arithmetic expressions (before template matching)
+        if (!handled) {
             bool has_math = false;
             for (size_t i = 0; i < len && !has_math; i++) {
                 if (buffer[i] == '+' || buffer[i] == '-' || buffer[i] == '*' ||
@@ -247,13 +252,13 @@ static void run_repl(cos_runtime_t* rt) {
                         math_buf, sizeof(math_buf), &math_written);
                     math_buf[math_written < sizeof(math_buf) ? math_written : sizeof(math_buf)-1] = '\0';
                     printf("%s\n", math_buf);
-                    template_used = true;
+                    handled = true;
                 }
             }
         }
 
-        // Try template matching for questions
-        if (!tool_executed && !template_used && rt->templates) {
+        // 3. Try template matching for questions
+        if (!handled && rt->templates) {
             bool is_question = false;
             const char* qwords[] = {"what", "why", "how", "when", "where", "who", "whom",
                 "whose", "which", "explain", "describe", "define", "tell me",
@@ -272,39 +277,39 @@ static void run_repl(cos_runtime_t* rt) {
             if (is_question) {
                 const template_entry_t* tmpl = NULL;
                 float score = cos_template_db_match(rt->templates, buffer, len, &tmpl);
-                if (score > 0.15f && tmpl) {
+                if (score > 0.20f && tmpl) {
                     printf("%s\n", tmpl->answer);
-                    template_used = true;
+                    handled = true;
                 }
             }
         }
 
-        if (!tool_executed && !template_used) {
-            // Process conversation turn
+        // 4. Process through conversation system
+        if (!handled) {
             cos_string_view_t input = cos_sv(buffer, len);
             const char* out_response = NULL;
             size_t out_length = 0;
 
-            cos_timestamp_t start = cos_timestamp_now();
             cos_status_t status = cos_conversation_process(
                 rt->conversation, input, &out_response, &out_length);
-            cos_timestamp_t elapsed = cos_timestamp_now() - start;
 
-            if (status == COS_OK && out_response) {
-                printf("%s\n", out_response);
-            } else {
-                printf("[Error: %d] I encountered an issue processing that.\n", (int)status);
+            if (status == COS_OK && out_response && out_length > 3) {
+                printf("%.*s\n", (int)out_length, out_response);
+                handled = true;
             }
-
-            // Log to debugger
-            cos_debug_log_fmt(rt->debugger, COS_DEBUG_PARSE, "main",
-                              "Turn %zu processed in %lld ms",
-                              cos_conversation_turn_count(rt->conversation),
-                              (long long)elapsed);
-
-            // Reset scratch arena for next turn
-            cos_arena_reset(rt->scratch_arena);
         }
+
+        // 5. Final fallback
+        if (!handled) {
+            printf("I understand your request. Could you provide more details?\n");
+        }
+
+        // Log to debugger
+        cos_debug_log_fmt(rt->debugger, COS_DEBUG_PARSE, "main",
+                          "Turn processed");
+
+        // Reset scratch arena for next turn
+        cos_arena_reset(rt->scratch_arena);
     }
 }
 

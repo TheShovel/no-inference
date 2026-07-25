@@ -1,0 +1,82 @@
+[
+  {
+    "q": [
+      "What is neuroscience?",
+      "What does the study of neuroscience involve?",
+      "Can you explain what neuroscience is?"
+    ],
+    "a": "Neuroscience is the scientific study of the nervous system, encompassing everything from the molecular structure of individual neurons to the complex networks that enable consciousness and behavior. It is a multidisciplinary field that blends biology, chemistry, physics, and psychology to understand how the brain and spinal cord function."
+  },
+  {
+    "q": [
+      "How do neurons communicate with each other?",
+      "What is the process of synaptic transmission?",
+      "How do brain cells send signals?"
+    ],
+    "a": "Neurons communicate through a combination of electrical and chemical signals. An electrical impulse called an action potential travels down the neuron's axon to the synapse, the tiny gap between cells. Here, the neuron releases chemical messengers called neurotransmitters, which cross the gap and bind to receptors on the neighboring neuron, either triggering or inhibiting a new electrical signal."
+  },
+  {
+    "q": [
+      "What is neuroplasticity?",
+      "Can the brain change and adapt over time?",
+      "What does it mean when people say the brain is plastic?"
+    ],
+    "a": "Neuroplasticity is the brain's ability to reorganize itself by forming new neural connections throughout life. This process allows the brain to compensate for injury and adjust its activities in response to new situations or learning. For example, if one area of the brain is damaged, other parts can sometimes take over those functions through the strengthening of existing synapses or the creation of new ones."
+  },
+  {
+    "q": [
+      "What is the role of the hippocampus in the brain?",
+      "Where are memories stored in the brain?",
+      "What does the hippocampus do?"
+    ],
+    "a": "The hippocampus, located in the temporal lobe, is primarily responsible for the formation of new memories and spatial navigation. It converts short-term memories into long-term ones, a process known as consolidation. Because of its critical role, damage to the hippocampus often results in the inability to form new memories, a condition known as anterograde amnesia."
+  },
+  {
+    "q": [
+      "What is the difference between the sympathetic and parasympathetic nervous systems?",
+      "How does the fight-or-flight response differ from the rest-and-digest state?",
+      "What are the two main divisions of the autonomic nervous system?"
+    ],
+    "a": "The sympathetic nervous system prepares the body for action during stressful or dangerous situations—the 'fight-or-flight' response—by increasing heart rate and dilating pupils. In contrast, the parasympathetic nervous system promotes 'rest-and-digest' activities, calming the body down, slowing the heart rate, and facilitating digestion once the threat has passed."
+  },
+  {
+    "q": [
+      "What is the blood-brain barrier?",
+      "How does the brain protect itself from toxins in the blood?",
+      "What is the function of the BBB?"
+    ],
+    "a": "The blood-brain barrier (BBB) is a highly selective semipermeable border of endothelial cells that prevents harmful toxins, pathogens, and many medications from leaking from the bloodstream into the brain's extracellular space. While it protects the brain, it also makes treating certain neurological diseases difficult because many drugs cannot cross this barrier."
+  },
+  {
+    "q": [
+      "How does an fMRI work?",
+      "What is functional Magnetic Resonance Imaging?",
+      "How do scientists see brain activity in real-time?"
+    ],
+    "a": "Functional Magnetic Resonance Imaging (fMRI) detects changes in blood flow and oxygenation levels in the brain. When a specific area of the brain becomes active, it requires more oxygen, and blood flow increases to that region. The fMRI machine detects these magnetic changes, allowing researchers to map which parts of the brain are engaged during specific tasks, like speaking or listening to music."
+  },
+  {
+    "q": [
+      "What are neurotransmitters and what do they do?",
+      "What chemicals are used in the brain to send signals?",
+      "Can you give examples of common neurotransmitters?"
+    ],
+    "a": "Neurotransmitters are chemical messengers that transmit signals across a chemical synapse. Common examples include dopamine, which is linked to reward and motivation; serotonin, which helps regulate mood and sleep; and glutamate, the primary excitatory neurotransmitter that helps with learning and memory."
+  },
+  {
+    "q": [
+      "What is the prefrontal cortex responsible for?",
+      "Which part of the brain handles decision making?",
+      "What is the function of the frontal lobe's prefrontal area?"
+    ],
+    "a": "The prefrontal cortex is the area of the brain located at the very front of the frontal lobe. It is responsible for 'executive functions,' which include complex cognitive behavior, decision-making, impulse control, personality expression, and moderating social behavior. It essentially acts as the brain's control center for higher-level thinking."
+  },
+  {
+    "q": [
+      "What was the significance of the Golgi stain in the history of neuroscience?",
+      "How did Camillo Golgi contribute to the study of neurons?",
+      "How were neurons first visualized?"
+    ],
+    "a": "In the late 19th century, Camillo Golgi developed the 'black reaction' (silver nitrate stain), which allowed scientists to see individual neurons in their entirety for the first time. This was revolutionary because previously, brain tissue looked like a tangled web. This technique enabled Santiago Ramón y Cajal to prove the 'Neuron Doctrine'—the idea that the nervous system is made of discrete individual cells rather than one continuous network."
+  }
+]

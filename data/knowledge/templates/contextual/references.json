@@ -1,5 +1,160 @@
 [
   {
+    "id": "info-definition-001",
+    "triggers": [
+      "What exactly is that?"
+    ],
+    "context_role": "topic",
+    "template": "In simple terms, {context} refers to a concept or object that is characterized by its unique properties and functions. To give you a better understanding, it generally involves several key components that allow it to operate effectively within its field. Depending on the perspective, people might view {context} as either a tool, a methodology, or a foundational principle, but at its core, it serves to solve a specific problem or provide a specific utility.",
+    "fallback": "I'm not sure what you're referring to. Could you please tell me what topic you're asking about?",
+    "style": [
+      "educational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "info-example-002",
+    "triggers": [
+      "Give me an example of that",
+      "Can you show me how that works?",
+      "Any examples of that?"
+    ],
+    "context_role": "topic",
+    "template": "Sure! A great way to visualize {context} is by looking at a real-world scenario. For instance, imagine a situation where you need to achieve a specific goal; {context} would come into play by streamlining the process or providing the necessary structure to make it happen. Another common example would be in a professional setting, where applying {context} helps in organizing data or improving efficiency. Does that help clarify how it works in practice?",
+    "fallback": "I don't have a topic in mind to provide an example for. What are we discussing?",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "info-comparison-003",
+    "triggers": [
+      "Is that different from other things?",
+      "What's the alternative to that?"
+    ],
+    "context_role": "topic",
+    "template": "When comparing {context} to similar alternatives, the main difference usually lies in the approach and the intended outcome. While other methods might prioritize speed or simplicity, {context} typically focuses on precision and long-term sustainability. If you look at the trade-offs, you'll find that {context} offers more robustness, though it might require a slightly steeper learning curve or more initial setup compared to basic versions. It really depends on whether you value immediate results or a more comprehensive solution.",
+    "fallback": "I'm not sure what we are comparing. Could you specify the topic?",
+    "style": [
+      "analytical",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "info-application-004",
+    "triggers": [
+      "Where is that used?",
+      "What are the applications of that?",
+      "How is that applied?"
+    ],
+    "context_role": "topic",
+    "template": "{context} is incredibly versatile and finds its way into various industries. In a corporate environment, it's often used to optimize workflows and ensure consistency. In a creative or technical field, {context} acts as a framework that allows for experimentation while maintaining a core structure. Because of its flexibility, you'll see it appearing in everything from small-scale personal projects to massive enterprise-level operations, making it a staple in its respective domain.",
+    "fallback": "I need a topic to tell you how it's applied. What are we talking about?",
+    "style": [
+      "informative",
+      "professional"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "info-summary-005",
+    "triggers": [
+      "Give me the TL;DR of that",
+      "Wrap that up for me"
+    ],
+    "context_role": "topic",
+    "template": "To put it simply: {context} is essentially about maximizing efficiency and clarity. The main takeaway is that by utilizing the core principles of {context}, you can achieve a better result with less friction. It bridges the gap between a complex problem and a streamlined solution, making it an essential tool for anyone looking to improve their approach to this specific area.",
+    "fallback": "There isn't enough context for me to summarize. What would you like me to summarize?",
+    "style": [
+      "conversational",
+      "short"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "info-deepdive-006",
+    "triggers": [
+      "Can you go deeper into that?",
+      "I want a detailed explanation of that"
+    ],
+    "context_role": "topic",
+    "template": "Let's dive deeper into {context}. To truly understand it, we have to look at the underlying mechanics. First, there is the foundational layer, which establishes the rules and parameters. Then, we move into the operational phase, where {context} interacts with other variables to produce a result. This intersection is where the real magic happens, as it allows for a level of nuance that simpler systems lack. Furthermore, if we analyze the historical evolution of {context}, we can see how it has adapted to meet changing needs, evolving from a niche application into a broad standard. This progression highlights why it remains relevant today, especially when considering the scalability and the ability to integrate with modern technology. If you look at the specific edge cases, {context} still holds up because it is designed to handle variability while maintaining core stability.",
+    "fallback": "I'd love to go deeper, but I don't know what 'that' refers to. What topic should I explore?",
+    "style": [
+      "analytical",
+      "educational"
+    ],
+    "response_length": "long"
+  },
+  {
+    "id": "info-proscons-007",
+    "triggers": [
+      "What are the pros and cons of that?",
+      "Is that actually good?",
+      "What's the downside of that?"
+    ],
+    "context_role": "topic",
+    "template": "Looking at {context}, there are definitely two sides to the coin. On the positive side, it provides an immense amount of structure and reliability, which is great for avoiding errors. However, the downside is that {context} can sometimes feel rigid or overly complex for simple tasks. In short: the pros are stability and scalability, while the cons are the potential for overhead and a slower start-up time. Whether it's the 'right' choice depends entirely on your specific goals and constraints.",
+    "fallback": "I can't weigh the pros and cons without knowing the topic. What are we evaluating?",
+    "style": [
+      "analytical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "info-opinion-008",
+    "triggers": [
+      "What do you think about that?",
+      "Is that a good idea?",
+      "How's that for a solution?"
+    ],
+    "context_role": "topic",
+    "template": "From an AI perspective, {context} is a highly effective approach because it relies on logical consistency and proven patterns. While I don't have personal opinions, the data suggests that utilizing {context} leads to more predictable and successful outcomes in most scenarios. It's generally considered a best practice, although it's always wise to pair it with a bit of flexibility to account for unique, unexpected variables.",
+    "fallback": "I'm not sure what you're asking my opinion on. Could you clarify the topic?",
+    "style": [
+      "formal",
+      "analytical"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "info-stepbystep-009",
+    "triggers": [
+      "How do I do that?",
+      "Walk me through that",
+      "What are the steps for that?"
+    ],
+    "context_role": "topic",
+    "template": "Getting started with {context} is easier than it looks if you follow a few key steps. First, you'll want to prepare your environment and gather the necessary prerequisites. Second, implement the core logic of {context} by setting up the basic framework. Third, refine the process by testing it against small samples to ensure everything is working as expected. Finally, once you're comfortable, you can scale it up to a full implementation. It's all about taking it one step at a time!",
+    "fallback": "I can't give you a walkthrough without knowing the task. What are you trying to do?",
+    "style": [
+      "educational",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "info-curiosity-010",
+    "triggers": [
+      "Why does that matter?",
+      "Why is that important?",
+      "What's the point of that?"
+    ],
+    "context_role": "topic",
+    "template": "The reason {context} is so important is that it addresses a fundamental gap that other methods ignore. Without {context}, you would likely face issues with inefficiency or a lack of coherence. By implementing this, you're not just solving a surface-level problem, but you're actually building a more sustainable system for the future. It essentially acts as the glue that holds the rest of the process together, ensuring that everything runs smoothly and predictably.",
+    "fallback": "I'm not sure why it matters because I don't know what it is! What are we talking about?",
+    "style": [
+      "informative",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
     "id": "reg-def-001",
     "triggers": [
       "What is that?",

@@ -1,0 +1,82 @@
+[
+  {
+    "q": [
+      "What is organic chemistry?",
+      "How would you define organic chemistry?",
+      "What exactly does organic chemistry study?"
+    ],
+    "a": "Organic chemistry is the scientific study of the structure, properties, composition, reactions, and synthesis of compounds that contain carbon. While it focuses primarily on carbon, it also heavily involves hydrogen, nitrogen, oxygen, phosphorus, and sulfur. Essentially, it is the chemistry of carbon-based molecules, which form the basis of all known life on Earth."
+  },
+  {
+    "q": [
+      "Why is carbon the central element of organic chemistry?",
+      "What makes carbon so special for forming organic molecules?",
+      "Why does organic chemistry focus on carbon atoms?"
+    ],
+    "a": "Carbon is unique because it has four valence electrons, allowing it to form four strong covalent bonds with other atoms. This ability, called tetravalence, enables carbon to create complex structures like long chains, branched trees, and rings. Because carbon can bond so flexibly with other carbon atoms and various elements, it can build the incredibly diverse range of molecules needed for biological processes."
+  },
+  {
+    "q": [
+      "What is the difference between saturated and unsaturated hydrocarbons?",
+      "How do you tell if a hydrocarbon is saturated or unsaturated?",
+      "What characterizes saturated versus unsaturated fats in organic chemistry?"
+    ],
+    "a": "Saturated hydrocarbons contain only single bonds between carbon atoms, meaning the carbon skeleton is 'saturated' with as many hydrogen atoms as possible (like alkanes). Unsaturated hydrocarbons contain one or more double or triple bonds between carbon atoms (like alkenes or alkynes), which means they have fewer hydrogen atoms attached than a saturated molecule of the same length."
+  },
+  {
+    "q": [
+      "What are functional groups in organic chemistry?",
+      "What is the purpose of a functional group?",
+      "How do functional groups affect organic molecules?"
+    ],
+    "a": "Functional groups are specific clusters of atoms within a molecule that determine how that molecule will react chemically. They act like 'reactive sites.' For example, a hydroxyl group (-OH) makes a molecule an alcohol, while a carboxyl group (-COOH) makes it an organic acid. By identifying the functional group, chemists can predict how a molecule will behave without needing to map every single atom."
+  },
+  {
+    "q": [
+      "What is isomerism in organic molecules?",
+      "What are isomers in chemistry?",
+      "How can two organic molecules have the same formula but be different?"
+    ],
+    "a": "Isomerism occurs when two or more compounds have the same molecular formula (the same number of atoms of each element) but different structural arrangements. Structural isomers have atoms bonded in a different order, while stereoisomers have the same bonding order but different spatial orientations. This is crucial because a slight change in shape can completely change how a drug works in the body or how a scent smells."
+  },
+  {
+    "q": [
+      "Who is credited with the first synthesis of an organic compound from inorganic materials?",
+      "How was the theory of 'vitalism' debunked in organic chemistry?",
+      "What was Friedrich Wöhler's major contribution to chemistry?"
+    ],
+    "a": "In 1828, Friedrich Wöhler synthesized urea from ammonium cyanate. Before this, scientists believed in 'vitalism'—the idea that organic compounds could only be produced by living organisms through a 'vital force.' Wöhler's experiment proved that organic molecules could be created in a lab from inorganic precursors, effectively launching the modern era of organic chemistry."
+  },
+  {
+    "q": [
+      "What are polymers and how are they formed?",
+      "How does polymerization work?",
+      "What is the relationship between monomers and polymers?"
+    ],
+    "a": "Polymers are giant molecules made of repeating smaller units called monomers. They are formed through a process called polymerization, where monomers bond together in long chains. Natural examples include DNA and proteins, while synthetic examples include plastics like polyethylene and polystyrene. The properties of the resulting plastic depend on the type of monomer used and how the chain is structured."
+  },
+  {
+    "q": [
+      "What is the role of organic chemistry in the pharmaceutical industry?",
+      "How are medicines developed using organic chemistry?",
+      "Why is organic chemistry important for making drugs?"
+    ],
+    "a": "Pharmaceuticals are largely organic molecules designed to interact with specific biological targets, such as proteins or receptors in the body. Organic chemists use synthesis to create these precise shapes, ensuring the drug fits into a target site like a key into a lock. They also modify functional groups to make a drug more soluble in water or more stable in the bloodstream."
+  },
+  {
+    "q": [
+      "What is chirality and why does it matter in organic chemistry?",
+      "What are enantiomers in chemistry?",
+      "Why is molecular 'handedness' important in biology?"
+    ],
+    "a": "Chirality refers to molecules that are non-superimposable mirror images of each other, much like your left and right hands. These pairs are called enantiomers. This is critical in biology because most biological systems are chiral. For example, one 'hand' of a molecule might be a life-saving medicine, while the mirror image of that same molecule could be inactive or even toxic."
+  },
+  {
+    "q": [
+      "What are aromatic compounds and what makes them stable?",
+      "What is the significance of the benzene ring?",
+      "How does aromaticity work in organic chemistry?"
+    ],
+    "a": "Aromatic compounds are cyclic, planar molecules that possess a ring of resonance-stabilized pi electrons. The most famous example is benzene (C6H6). Unlike typical double bonds, the electrons in an aromatic ring are delocalized, meaning they spread across the whole ring. This makes aromatic compounds exceptionally stable and less reactive than other unsaturated hydrocarbons."
+  }
+]

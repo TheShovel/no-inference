@@ -1,0 +1,82 @@
+[
+  {
+    "q": [
+      "What is a differential equation?",
+      "Can you explain what a differential equation is?",
+      "What does it mean for an equation to be differential?"
+    ],
+    "a": "A differential equation is a mathematical equation that relates a function with its own derivatives. While a standard algebraic equation asks you to find a number (like x = 5), a differential equation asks you to find a function. Essentially, it describes how a quantity changes over time or space based on its current state."
+  },
+  {
+    "q": [
+      "What is the difference between ordinary and partial differential equations?",
+      "How do ODEs differ from PDEs?",
+      "What are ordinary vs partial differential equations?"
+    ],
+    "a": "Ordinary Differential Equations (ODEs) involve functions of only one independent variable, such as time. For example, tracking the position of a single falling object over time is an ODE. Partial Differential Equations (PDEs) involve functions of multiple independent variables and their partial derivatives, such as a wave moving across a 2D surface or heat spreading through a metal plate."
+  },
+  {
+    "q": [
+      "What is a linear differential equation?",
+      "How do you identify a linear differential equation?",
+      "What makes a differential equation linear?"
+    ],
+    "a": "A differential equation is linear if the unknown function and its derivatives appear only to the first power and are not multiplied together. For example, if you see a term like (dy/dx)² or sin(y), the equation is non-linear. Linear equations are generally much easier to solve because they follow the principle of superposition, meaning you can add two solutions together to get a third valid solution."
+  },
+  {
+    "q": [
+      "How are differential equations used in physics?",
+      "What is the role of differential equations in the physical sciences?",
+      "Where do we see differential equations in physics?"
+    ],
+    "a": "Physics is almost entirely built on differential equations. Newton's Second Law (F=ma) is actually a second-order differential equation because acceleration is the second derivative of position. Similarly, Maxwell's equations describe how electric and magnetic fields change and interact, and Schrödinger's equation governs the behavior of quantum particles."
+  },
+  {
+    "q": [
+      "What is the significance of the heat equation?",
+      "How does the heat equation work?",
+      "What does the heat equation describe?"
+    ],
+    "a": "The heat equation is a fundamental PDE that describes how heat diffuses through a given region over time. It shows that the rate of change of temperature at a point is proportional to the curvature of the temperature distribution. It is a classic example of a 'parabolic' PDE and is used in everything from engineering thermal insulation to modeling financial markets."
+  },
+  {
+    "q": [
+      "What is a general solution versus a particular solution?",
+      "How do general and particular solutions differ in differential equations?",
+      "Why do we have different types of solutions for differential equations?"
+    ],
+    "a": "A general solution is a family of functions that satisfies the differential equation, usually containing an arbitrary constant (like +C in integration). A particular solution is one specific function from that family, found by applying 'initial conditions' or 'boundary conditions'—such as knowing the exact starting position of a pendulum at time zero."
+  },
+  {
+    "q": [
+      "What are the Lotka-Volterra equations?",
+      "How are differential equations used to model predator-prey populations?",
+      "What is the predator-prey model in mathematics?"
+    ],
+    "a": "The Lotka-Volterra equations are a pair of first-order, non-linear differential equations used to describe the dynamics of biological systems in which two species interact. They model how the prey population grows in the absence of predators, and how the predator population fluctuates based on the availability of prey, resulting in oscillating population cycles."
+  },
+  {
+    "q": [
+      "Who were the key figures in the development of differential equations?",
+      "Who discovered differential equations?",
+      "What is the history of the development of differential equations?"
+    ],
+    "a": "The field emerged in the late 17th century through the independent work of Isaac Newton and Gottfried Wilhelm Leibniz, who both developed calculus. Later, Leonhard Euler and the Bernoulli family expanded the field in the 18th century by solving more complex types of equations and establishing the formal methods used in engineering today."
+  },
+  {
+    "q": [
+      "What is the order of a differential equation?",
+      "How do you determine the order of a differential equation?",
+      "What does 'first-order' or 'second-order' mean in this context?"
+    ],
+    "a": "The order of a differential equation is determined by the highest derivative present in the equation. If the highest derivative is the first derivative (dy/dx), it is a first-order equation. If it contains a second derivative (d²y/dx²), it is a second-order equation. The order is crucial because it tells you how many initial conditions you need to find a unique particular solution."
+  },
+  {
+    "q": [
+      "What happens if a differential equation cannot be solved analytically?",
+      "How do mathematicians solve equations that have no exact formula?",
+      "What are numerical methods for differential equations?"
+    ],
+    "a": "Many real-world differential equations are too complex for a 'closed-form' or exact pen-and-paper solution. In these cases, scientists use numerical methods—like the Euler Method or the Runge-Kutta method—which use computers to approximate the solution by taking very small, discrete steps forward in time or space to estimate the function's value."
+  }
+]

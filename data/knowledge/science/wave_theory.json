@@ -1,0 +1,82 @@
+[
+  {
+    "q": [
+      "What is wave theory?",
+      "How do you define wave theory in physics?",
+      "What is the basic concept of wave theory?"
+    ],
+    "a": "Wave theory is the study of how disturbances move through a medium or space, transporting energy from one point to another without permanently displacing the matter itself. Instead of a physical object moving from A to B, a wave creates a rhythmic oscillation—like a ripple in a pond—where the energy travels forward while the particles of the medium simply move up and down or back and forth."
+  },
+  {
+    "q": [
+      "What is the difference between longitudinal and transverse waves?",
+      "How do transverse waves differ from longitudinal waves?",
+      "What are the two main types of wave motion?"
+    ],
+    "a": "The difference lies in the direction of the vibration relative to the direction the wave travels. In a transverse wave, the medium moves perpendicular to the wave's path, creating peaks and valleys (like a vibrating guitar string). In a longitudinal wave, the medium vibrates parallel to the wave's direction, creating areas of compression and rarefaction (like sound waves traveling through air)."
+  },
+  {
+    "q": [
+      "How does wave interference work?",
+      "What happens when two waves meet?",
+      "What is the principle of superposition in wave theory?"
+    ],
+    "a": "Interference occurs when two or more waves overlap at the same point in space. If the crests of two waves align, they undergo 'constructive interference,' which results in a wave with a larger amplitude. If a crest meets a trough, they undergo 'destructive interference,' which can cancel each other out, potentially resulting in no wave at all."
+  },
+  {
+    "q": [
+      "What is the Doppler effect?",
+      "Why does the pitch of a siren change as it passes by?",
+      "How does motion affect wave frequency?"
+    ],
+    "a": "The Doppler effect is the change in frequency of a wave in relation to an observer moving relative to the wave source. When a source (like an ambulance siren) moves toward you, the sound waves are compressed, increasing the frequency and making the pitch sound higher. As the source moves away, the waves stretch out, lowering the frequency and making the pitch sound lower."
+  },
+  {
+    "q": [
+      "What is wave-particle duality?",
+      "Can something be both a particle and a wave?",
+      "What does the quantum theory of light say about waves and particles?"
+    ],
+    "a": "Wave-particle duality is a fundamental concept in quantum mechanics stating that every particle or quantum entity may be described as either a particle or a wave. For example, light behaves as a wave when it diffracts through a slit, but behaves as a stream of particles called photons when it hits a metal surface to eject electrons (the photoelectric effect)."
+  },
+  {
+    "q": [
+      "What is diffraction in wave theory?",
+      "How do waves bend around corners?",
+      "What happens when a wave hits an opening or an obstacle?"
+    ],
+    "a": "Diffraction is the bending or spreading of waves as they pass through an opening or around the edge of an obstacle. This happens because the wave front is disrupted, causing it to radiate outward. A common example is hearing someone talking in another room; the sound waves diffract through the open doorway to reach your ears even if you cannot see the person."
+  },
+  {
+    "q": [
+      "What is the role of frequency and wavelength in wave theory?",
+      "How are frequency and wavelength related?",
+      "What determines the color of light or the pitch of sound?"
+    ],
+    "a": "Frequency is the number of wave cycles that pass a point per second (measured in Hertz), while wavelength is the distance between two consecutive peaks. They have an inverse relationship: as the frequency increases, the wavelength decreases. In sound, higher frequency means a higher pitch; in light, different wavelengths create different colors, with violet being the shortest and red being the longest."
+  },
+  {
+    "q": [
+      "Who were the key figures in the development of wave theory?",
+      "Who discovered the nature of light waves?",
+      "What is the history of wave theory?"
+    ],
+    "a": "Christiaan Huygens proposed the wave theory of light in 1678, arguing that light travels as a series of waves. Later, in the early 19th century, Thomas Young's double-slit experiment provided crucial evidence for interference, confirming the wave nature of light. In the 20th century, Louis de Broglie expanded this by suggesting that matter itself (like electrons) also exhibits wave-like properties."
+  },
+  {
+    "q": [
+      "What is a standing wave?",
+      "How are standing waves formed?",
+      "Why do musical instruments produce specific notes?"
+    ],
+    "a": "A standing wave is created when two waves of the same frequency and amplitude travel in opposite directions and interfere with each other. Instead of moving forward, the wave appears to vibrate in place with fixed points called 'nodes' (where there is no movement) and 'antinodes' (where movement is maximum). This is how the strings of a violin or the air in a flute create stable musical notes."
+  },
+  {
+    "q": [
+      "What are the practical applications of wave theory?",
+      "How is wave theory used in technology?",
+      "Where do we see wave theory in real-world tools?"
+    ],
+    "a": "Wave theory is the foundation for many modern technologies. Ultrasound imaging uses high-frequency sound waves to see inside the body, while SONAR uses wave reflection to map the ocean floor. In communication, radio waves and microwaves transmit data across the globe, and X-ray crystallography uses short-wavelength waves to determine the atomic structure of crystals and DNA."
+  }
+]

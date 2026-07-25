@@ -1,0 +1,321 @@
+[
+  {
+    "id": "creative-def-001",
+    "triggers": [
+      "what is creative thinking",
+      "define creative thinking",
+      "can you explain what creative thinking means"
+    ],
+    "context_role": "topic",
+    "template": "At its core, {context} is the ability to look at a problem or a situation from a fresh perspective. It's not just about artistic talent; it's about breaking away from established patterns of thought to find unconventional solutions. When we engage in {context}, we are essentially training our brains to connect seemingly unrelated ideas to create something entirely new and valuable.",
+    "fallback": "Creative thinking is the process of using imagination to create new ideas or solve problems in original ways.",
+    "style": [
+      "educational",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "creative-ex-002",
+    "triggers": [
+      "what does this look like in practice",
+      "can you show me an example of this"
+    ],
+    "context_role": "topic",
+    "template": "There are so many ways {context} manifests in the real world. For instance, in a business setting, it might look like 'pivotting' a product's purpose based on unexpected user behavior. In daily life, it could be as simple as repurposing a household object to fix a broken appliance. Essentially, any time someone asks 'What if we tried it this way instead?' they are practicing {context}.",
+    "fallback": "An example of creative thinking would be finding a non-obvious solution to a common problem, like using a paperclip to reset a router.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "creative-comp-003",
+    "triggers": [
+      "how is this different from logic",
+      "creative vs analytical thinking",
+      "difference between this and critical thinking"
+    ],
+    "context_role": "topic",
+    "template": "It's helpful to think of {context} and analytical thinking as two sides of the same coin. While analytical thinking is about converging on a single, correct answer through logic and data, {context} is about diverging—expanding the possibilities and exploring multiple potential paths. You need the first to validate the ideas that the second generates; without {context}, you're limited to what already exists, but without logic, your creative ideas might not be actionable.",
+    "fallback": "While critical thinking analyzes and evaluates existing information, creative thinking generates new ideas and possibilities.",
+    "style": [
+      "analytical",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "creative-app-004",
+    "triggers": [
+      "how can I use this at work",
+      "practical applications for this",
+      "how to apply this to my career"
+    ],
+    "context_role": "topic",
+    "template": "Applying {context} in a professional environment can be a total game-changer. You can start by implementing 'brainstorming sprints' where no idea is too wild to be mentioned, or by using a technique called 'reverse brainstorming' where you imagine how to cause the problem you're trying to solve, then flip those findings. By intentionally integrating {context} into your workflow, you move from being a task-executor to a strategic problem-solver.",
+    "fallback": "You can apply creative thinking at work by challenging the status quo and proposing alternative methods for completing routine tasks.",
+    "style": [
+      "formal",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "creative-tip-005",
+    "triggers": [
+      "how do I get better at this",
+      "tips for improving my creativity",
+      "how can I train my brain for this"
+    ],
+    "context_role": "topic",
+    "template": "The great thing about {context} is that it's a muscle you can actually train. I recommend starting with 'cross-pollination': read a book or watch a documentary on a topic you know nothing about. When you expose yourself to foreign concepts, your brain starts making new connections. Also, try the '10 ideas a day' exercise—force yourself to write ten solutions to a problem, even if the first seven are terrible. The magic of {context} usually happens after the obvious answers are exhausted.",
+    "fallback": "To improve your creative thinking, try stepping outside your comfort zone, practicing mindfulness, and regularly challenging your own assumptions.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "long"
+  },
+  {
+    "id": "creative-block-006",
+    "triggers": [
+      "why am I stuck",
+      "how to overcome a creative block",
+      "i can't think of any new ideas"
+    ],
+    "context_role": "topic",
+    "template": "Feeling stuck is actually a natural part of the process of {context}. Often, 'blocks' happen because we are editing our ideas before they are even fully formed. To break through, try a change of scenery or a 'timed freestyle' where you write or sketch without stopping for five minutes. The goal isn't quality; it's just to get the gears of {context} moving again. Sometimes the best way to find a solution is to stop looking for it directly and let your subconscious work in the background.",
+    "fallback": "Creative blocks often stem from perfectionism. Try stepping away from the task and engaging in a low-pressure activity to reset your mind.",
+    "style": [
+      "conversational",
+      "casual"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "creative-tool-007",
+    "triggers": [
+      "any tools for this",
+      "what techniques should I use",
+      "best methods for creative thinking"
+    ],
+    "context_role": "topic",
+    "template": "If you're looking for structured ways to spark {context}, I highly recommend trying 'SCAMPER'. It's an acronym that stands for Substitute, Combine, Adapt, Modify, Put to another use, Eliminate, and Reverse. By applying each of these verbs to a problem, you force your brain to view the situation from seven different angles. It's a fantastic framework for turning {context} from a random spark of inspiration into a repeatable process.",
+    "fallback": "Techniques like Mind Mapping, SCAMPER, and Brainwriting are excellent tools for stimulating creative thinking.",
+    "style": [
+      "informative",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "creative-myth-008",
+    "triggers": [
+      "is this only for artists",
+      "do i need to be born creative",
+      "common misconceptions about this"
+    ],
+    "context_role": "topic",
+    "template": "There's a huge myth that {context} is only for 'artistic' types like painters or musicians. In reality, {context} is a fundamental cognitive skill used by engineers to design bridges, coders to optimize algorithms, and entrepreneurs to disrupt industries. It isn't a magical gift you're born with; it's a way of processing information. Anyone can develop their capacity for {context} with the right habits and a willingness to be wrong.",
+    "fallback": "Creative thinking is not limited to the arts; it is a problem-solving skill applicable to every professional field.",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "creative-short-009",
+    "triggers": [
+      "summary please",
+      "bottom line on this",
+      "give it to me in a nutshell"
+    ],
+    "context_role": "topic",
+    "template": "In short: {context} is about curiosity, experimentation, and the courage to challenge the 'standard' way of doing things to find a better alternative.",
+    "fallback": "Creative thinking is essentially the act of generating original ideas to solve problems.",
+    "style": [
+      "casual",
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "creative-future-010",
+    "triggers": [
+      "why is this important now",
+      "future of creative thinking",
+      "role of this in the age of AI"
+    ],
+    "context_role": "topic",
+    "template": "As AI takes over more routine and analytical tasks, {context} is becoming the most valuable human skill in the economy. While a machine can optimize a process based on existing data, it struggles to imagine a completely new paradigm. The future belongs to those who can combine technical literacy with {context}—using AI as a tool to execute ideas, but relying on human intuition and imagination to decide which ideas are actually worth pursuing.",
+    "fallback": "Creative thinking is increasingly important because it allows humans to perform tasks that require nuance, empathy, and original synthesis—things AI cannot yet replicate.",
+    "style": [
+      "formal",
+      "analytical"
+    ],
+    "response_length": "long"
+  },
+  {
+    "id": "idea-gen-def-001",
+    "triggers": [
+      "What is idea generation?",
+      "Define idea generation",
+      "Can you explain the concept of coming up with ideas?"
+    ],
+    "context_role": "topic",
+    "template": "At its core, {context} is the creative process of generating, developing, and communicating new concepts. It's not just about a single 'eureka' moment, but rather a structured approach to exploring possibilities and challenging existing assumptions to find a viable solution or innovation.",
+    "fallback": "Idea generation is the systematic process of creating new concepts or ideas to solve a problem or spark innovation.",
+    "style": [
+      "educational",
+      "informative"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "idea-gen-tech-002",
+    "triggers": [
+      "How do I generate more ideas?",
+      "What are some brainstorming techniques?",
+      "Give me some methods for ideation"
+    ],
+    "context_role": "topic",
+    "template": "When you're looking to dive deep into {context}, there are several proven techniques you can use. First, try 'Mind Mapping' to visually connect related thoughts. Second, the 'SCAMPER' method helps you substitute, combine, or adapt existing elements. Third, 'Reverse Brainstorming' involves thinking about how to cause the problem you're trying to solve, which often reveals hidden solutions. Which of these sounds most helpful for your current project?",
+    "fallback": "There are many ways to generate ideas, such as mind mapping, the SCAMPER method, or simple freestyle brainstorming. Would you like a detailed breakdown of one?",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "idea-gen-ex-003",
+    "triggers": [
+      "Can you give me examples of this?",
+      "Show me how this works in real life",
+      "Give me an example of idea generation"
+    ],
+    "context_role": "topic",
+    "template": "To put {context} into perspective, imagine a company trying to design a new reusable water bottle. Instead of just sketching a bottle, they might use 'Analogous Inspiration' by looking at how nature filters water or how luxury perfume bottles are designed. By applying these unrelated concepts to their problem, they generate an idea for a modular, filtration-based bottle that they never would have thought of through standard brainstorming.",
+    "fallback": "For example, a team might use a 'brain-writing' session where everyone writes ideas on cards silently to avoid groupthink, ensuring a wider variety of creative solutions.",
+    "style": [
+      "creative",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "idea-gen-comp-004",
+    "triggers": [
+      "How is this different from brainstorming?",
+      "What's the difference between ideation and brainstorming?",
+      "Compare these two concepts"
+    ],
+    "context_role": "topic",
+    "template": "It's easy to confuse the two, but {context} is actually a broader umbrella. While brainstorming is a specific activity—usually a group session where people shout out ideas—idea generation encompasses the entire pipeline. This includes the preparatory research, the actual brainstorming, the incubation period where your subconscious works, and the eventual filtering and selection of the best ideas. One is a tool; the other is the whole process.",
+    "fallback": "While brainstorming is a specific tool for gathering ideas, idea generation refers to the entire strategic process of creating and refining new concepts.",
+    "style": [
+      "analytical",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "idea-gen-app-005",
+    "triggers": [
+      "How can I apply this to my business?",
+      "Where can I use this in real life?",
+      "What are the practical applications for this?"
+    ],
+    "context_role": "topic",
+    "template": "Applying {context} to a professional setting can be a game-changer. In business, you can use it for product development to stay ahead of competitors, or in operational efficiency to find 'hacks' that save time. For instance, setting up a 'Innovation Hour' once a week where employees can pitch wild, unpolished ideas without judgment creates a culture of psychological safety that leads to genuine breakthroughs. Would you like a step-by-step plan on how to implement this in your team?",
+    "fallback": "You can apply idea generation to product design, marketing strategies, or even personal productivity by systematically questioning the status quo.",
+    "style": [
+      "conversational",
+      "formal"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "idea-gen-block-006",
+    "triggers": [
+      "I'm stuck, what do I do?",
+      "How do I overcome creative block?",
+      "Why can't I think of any ideas?"
+    ],
+    "context_role": "topic",
+    "template": "Hitting a wall with {context} is completely normal—it's often called 'creative block.' The best way to break through is to change your environment or your constraints. Try 'Constraint-Based Thinking': instead of asking 'What's the best idea?', ask 'What would I do if I had a budget of zero dollars?' or 'How would a 5-year-old solve this?' Shifting the parameters forces your brain to forge new neural paths and often unlocks the solution.",
+    "fallback": "Creative blocks are common. Try changing your physical environment, taking a walk, or imposing artificial constraints on the problem to spark new perspectives.",
+    "style": [
+      "conversational",
+      "encouraging"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "idea-gen-strat-007",
+    "triggers": [
+      "What is the best strategy for this?",
+      "Give me a framework for generating ideas",
+      "How should I structure my ideation process?"
+    ],
+    "context_role": "topic",
+    "template": "A highly effective framework for {context} is the 'Double Diamond' model. It starts with 'Discover' (gathering a wide range of insights), moves to 'Define' (narrowing down to a specific problem), then 'Develop' (generating a vast array of potential solutions), and finally 'Deliver' (testing and refining the best one). This ensures you aren't just coming up with random ideas, but are solving the *right* problem in the most effective way possible.",
+    "fallback": "A great strategy is to move from divergent thinking (creating many options) to convergent thinking (narrowing down to the best option).",
+    "style": [
+      "analytical",
+      "formal"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "idea-gen-crit-008",
+    "triggers": [
+      "How do I know if an idea is good?",
+      "How do I filter these ideas?",
+      "What's the best way to evaluate an idea?"
+    ],
+    "context_role": "topic",
+    "template": "Generating ideas for {context} is only half the battle; the magic happens in the filtering. I recommend using an 'Impact vs. Effort' matrix. Plot your ideas on a graph where one axis is the potential value and the other is the effort required to implement it. Focus on the 'Quick Wins' (high impact, low effort) first. This keeps you from getting overwhelmed by overly complex ideas that might not actually move the needle.",
+    "fallback": "To evaluate ideas, try scoring them based on feasibility, desirability, and viability to see which ones are worth pursuing.",
+    "style": [
+      "analytical",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "idea-gen-tool-009",
+    "triggers": [
+      "Are there any tools for this?",
+      "What software helps with ideation?",
+      "Recommend some apps for generating ideas"
+    ],
+    "context_role": "topic",
+    "template": "Depending on how you approach {context}, different tools can help. For visual thinkers, tools like Miro or Mural are fantastic for digital whiteboarding and sticky-note sessions. If you prefer structured lists and interconnected notes, Notion or Obsidian are great for building a 'second brain' where ideas can marinate. If you're looking for raw inspiration, even simple tools like Pinterest or random word generators can help break your current patterns of thinking.",
+    "fallback": "Digital whiteboards like Miro and note-taking apps like Notion are excellent for organizing and developing new ideas.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "idea-gen-deep-010",
+    "triggers": [
+      "Tell me everything about this",
+      "I want a comprehensive guide to this",
+      "Explain this in great detail"
+    ],
+    "context_role": "topic",
+    "template": "Let's take a deep dive into {context}. To truly master this, you need to understand the interplay between divergent and convergent thinking. Divergent thinking is the 'flare' phase—where you open your mind to all possibilities, ignoring judgment and practicality to maximize volume. Convergent thinking is the 'focus' phase—where you apply logic, constraints, and critical analysis to distill those possibilities into a workable plan.\n\nTo implement this effectively, follow these four stages:\n1. Preparation: Immerse yourself in the problem. Read everything, talk to users, and gather raw data.\n2. Incubation: Step away. Let your subconscious process the information while you do something unrelated.\n3. Illumination: The 'aha' moment where the pieces click together.\n4. Verification: Testing the idea against reality to see if it actually works.\n\nBy treating this as a cycle rather than a one-time event, you can consistently produce high-quality innovations rather than relying on luck.",
+    "fallback": "Idea generation is a multi-stage process involving preparation, divergent thinking to create options, and convergent thinking to select the best solution.",
+    "style": [
+      "educational",
+      "analytical"
+    ],
+    "response_length": "long"
+  }
+]

@@ -1,5 +1,157 @@
 [
   {
+    "id": "alg-def-001",
+    "triggers": [
+      "can you define it?"
+    ],
+    "context_role": "algorithm_name",
+    "template": "In simple terms, {context} is a specific set of step-by-step instructions used to solve a problem or achieve a goal. Think of it like a recipe: you have specific inputs, a series of precise actions to take, and a final output. In the world of computing, {context} is designed to handle data efficiently, ensuring that the computer arrives at the correct result every time without guesswork.",
+    "fallback": "An algorithm is essentially a step-by-step procedure or a set of rules to be followed in calculations or other problem-solving operations.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "alg-ex-002",
+    "triggers": [
+      "how is this used in real life?"
+    ],
+    "context_role": "algorithm_type",
+    "template": "A great real-world example of {context} can be seen in how modern apps function. For instance, if you look at how streaming services suggest new music or how GPS calculates the fastest route, they are often employing versions of {context} to process massive amounts of data quickly. It takes a complex problem and breaks it down into manageable patterns to give you a result in milliseconds.",
+    "fallback": "Algorithms are everywhere, from the way Google searches the web to how your thermostat regulates temperature.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "alg-comp-003",
+    "triggers": [
+      "how does it compare?",
+      "what is the difference?",
+      "which one is better?"
+    ],
+    "context_role": "comparison_pair",
+    "template": "When comparing the two, the main difference comes down to efficiency and use-case. {context} typically handles data in a different way—one might prioritize speed (time complexity), while the other might prioritize memory usage (space complexity). Depending on whether you are dealing with a small dataset or a massive one, you'd choose one over the other based on these trade-offs.",
+    "fallback": "Comparing algorithms usually involves looking at their time and space complexity to see which is more efficient for a specific task.",
+    "style": [
+      "analytical",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "alg-sim-004",
+    "triggers": [
+      "make it simpler",
+      "i don't understand the technical part"
+    ],
+    "context_role": "algorithm_name",
+    "template": "Imagine you're trying to find a specific page in a book. Instead of flipping every single page one by one, you might jump to the middle, see if the page you want is before or after that point, and then keep splitting the remaining pages in half. That's basically how {context} works! It's just a clever shortcut to find an answer without having to check every single possibility.",
+    "fallback": "Think of an algorithm as a recipe for a computer—a list of steps it must follow exactly to get the right dish.",
+    "style": [
+      "casual",
+      "creative"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "alg-app-005",
+    "triggers": [
+      "what industries use this?",
+      "what's the application?"
+    ],
+    "context_role": "algorithm_category",
+    "template": "The applications for {context} are incredibly broad. In healthcare, it's used for analyzing medical imagery to spot anomalies; in finance, it powers high-frequency trading and fraud detection; and in social media, it determines which posts appear in your feed to keep you engaged. Essentially, anywhere you see automation or data-driven decision making, {context} is likely working behind the scenes.",
+    "fallback": "These types of algorithms are used across various fields, including data science, robotics, and software engineering.",
+    "style": [
+      "informative",
+      "formal"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "alg-perf-006",
+    "triggers": [
+      "is it fast?",
+      "how efficient is it?",
+      "what is the complexity?"
+    ],
+    "context_role": "algorithm_name",
+    "template": "The efficiency of {context} is usually measured using 'Big O' notation. This tells us how the runtime grows as the input size increases. For {context}, the time complexity is generally considered to be [insert complexity], which means it performs quite well under [specific conditions], though it might struggle if the dataset becomes exponentially larger.",
+    "fallback": "Algorithm efficiency is measured by time and space complexity, determining how resources scale with input size.",
+    "style": [
+      "analytical",
+      "formal"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "alg-step-007",
+    "triggers": [
+      "walk me through the process",
+      "what are the stages?"
+    ],
+    "context_role": "algorithm_name",
+    "template": "To understand how {context} works, let's break it down into steps: First, it takes the raw input and initializes the necessary variables. Second, it enters a loop or a recursive phase where it evaluates the data against specific criteria. Third, it refines the result based on the outcome of those evaluations. Finally, it outputs the optimized solution. It's a repetitive process of elimination and refinement.",
+    "fallback": "Most algorithms follow a general pattern: input, processing (via loops or logic), and output.",
+    "style": [
+      "educational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "alg-pros-008",
+    "triggers": [
+      "what is the downside?",
+      "why use this over others?"
+    ],
+    "context_role": "algorithm_name",
+    "template": "The biggest advantage of {context} is its [strength, e.g., speed/accuracy], making it a go-to choice for [use case]. However, the downside is often [weakness, e.g., high memory usage/complexity of implementation]. If you need something quick and dirty, this might be overkill, but if you need precision and scalability, it's the right tool for the job.",
+    "fallback": "Every algorithm has trade-offs, usually balancing speed, memory usage, and implementation complexity.",
+    "style": [
+      "analytical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "alg-hist-009",
+    "triggers": [
+      "who invented this?",
+      "what is the history?",
+      "where did this come from?"
+    ],
+    "context_role": "algorithm_name",
+    "template": "The development of {context} emerged from the need to solve [specific problem] more efficiently. It was influenced by earlier mathematical theories and was formalized as computers became more capable of handling the necessary calculations. Over the decades, it has been refined by researchers to reduce its computational overhead and increase its reliability in production environments.",
+    "fallback": "Many algorithms are based on mathematical principles that existed long before electronic computers were invented.",
+    "style": [
+      "informative",
+      "formal"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "alg-crit-010",
+    "triggers": [
+      "is it biased?",
+      "what are the ethical concerns?",
+      "can it be wrong?"
+    ],
+    "context_role": "algorithm_type",
+    "template": "When we talk about {context}, a major point of discussion is the potential for bias. Because these algorithms learn from data provided by humans, they can inadvertently mirror human prejudices. If the input data is skewed, the output of {context} will be skewed too. This is why 'algorithmic fairness' and transparency are such critical topics in AI ethics today.",
+    "fallback": "Algorithmic bias occurs when an AI system produces systematically prejudiced results due to flawed training data.",
+    "style": [
+      "analytical",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
     "id": "debug-def-001",
     "triggers": [
       "what is debugging",

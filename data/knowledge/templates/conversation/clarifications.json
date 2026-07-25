@@ -1,0 +1,310 @@
+[
+  {
+    "id": "rephrase-def-001",
+    "triggers": [
+      "what is rephrasing",
+      "define rephrasing",
+      "can you explain what rephrasing means"
+    ],
+    "context_role": "topic",
+    "template": "At its core, rephrasing {context} is the process of expressing the same idea using different words to improve clarity or change the tone. When we rephrase {context}, we aren't changing the underlying meaning, but rather adjusting the delivery. This is incredibly useful when the original wording is too complex, too blunt, or simply doesn't fit the intended audience. Think of it as 'translating' the same thought into a more effective version.",
+    "fallback": "Rephrasing is the act of expressing a piece of information using different words to make the meaning clearer or more suited to a specific audience without changing the original message.",
+    "style": [
+      "educational",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "rephrase-example-002",
+    "triggers": [
+      "show me how to rephrase this"
+    ],
+    "context_role": "topic",
+    "template": "Sure! If we take the core concept of {context}, we can pivot the wording depending on your goal. For a formal setting, you might say it one way, while in a casual conversation, you'd use different terminology. For instance, instead of a direct statement about {context}, you could use a softer approach or a more technical description to better fit the situation. Would you like me to try a few different versions for you?",
+    "fallback": "I'd be happy to provide an example! Just share the text you're working with, and I'll show you a few ways to rewrite it.",
+    "style": [
+      "conversational",
+      "helpful"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "rephrase-compare-003",
+    "triggers": [
+      "rephrasing vs paraphrasing",
+      "how is this different from summarizing"
+    ],
+    "context_role": "topic",
+    "template": "That's a great question. When dealing with {context}, people often confuse rephrasing with paraphrasing or summarizing. Rephrasing is usually a more targeted change—like swapping a few words to change the tone of {context}. Paraphrasing is a more complete rewrite of the passage. Summarizing, on the other hand, strips {context} down to only the most essential points. In short: rephrasing polishes, paraphrasing rewrites, and summarizing condenses.",
+    "fallback": "Rephrasing focuses on changing the wording for clarity or tone, paraphrasing involves rewriting a passage in your own words, and summarizing focuses on condensing the main ideas.",
+    "style": [
+      "analytical",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "rephrase-apply-004",
+    "triggers": [
+      "when should I rephrase",
+      "why is rephrasing useful",
+      "how can I use this in writing"
+    ],
+    "context_role": "topic",
+    "template": "Rephrasing {context} is a powerful tool in several scenarios. First, it's great for avoiding repetition in your writing. Second, it helps you tailor your message to different audiences—like explaining {context} to a child versus a colleague. Finally, it's essential for academic integrity; rephrasing allows you to incorporate ideas about {context} into your work without relying too heavily on direct quotes. It basically gives you a way to 'own' the information.",
+    "fallback": "Rephrasing is useful for improving flow, adapting your tone for different audiences, and avoiding plagiarism by integrating ideas in your own words.",
+    "style": [
+      "informative",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "rephrase-quick-005",
+    "triggers": [
+      "rephrase this quickly",
+      "rewrite this for me",
+      "make this shorter"
+    ],
+    "context_role": "topic",
+    "template": "I can certainly help you polish {context}! Give me a moment to streamline the wording and make it punchier for you.",
+    "fallback": "I'd be happy to rewrite that for you! Please provide the text you'd like me to rephrase.",
+    "style": [
+      "conversational",
+      "casual"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "rephrase-formal-006",
+    "triggers": [
+      "make this professional",
+      "how do I say this formally",
+      "professional rephrasing"
+    ],
+    "context_role": "topic",
+    "template": "To make {context} sound more professional, we should focus on removing colloquialisms and using more precise, industry-standard terminology. Instead of a casual approach, we can frame {context} using a more objective and polished tone, which typically commands more authority and respect in a corporate or academic environment. I can provide a few variations depending on how formal you need to be.",
+    "fallback": "I can help you elevate your tone. Please provide the text, and I will rewrite it using professional, business-appropriate language.",
+    "style": [
+      "formal",
+      "analytical"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "rephrase-casual-007",
+    "triggers": [
+      "make this sound natural",
+      "how do I say this casually",
+      "less formal version"
+    ],
+    "context_role": "topic",
+    "template": "If you want {context} to sound more relaxed and natural, we should strip away the jargon and use a more conversational flow. The goal is to make {context} feel like something you'd actually say to a friend over coffee rather than in a report. I'll help you find a version that feels approachable and easy to digest without losing the main point.",
+    "fallback": "I can definitely make that sound more casual! Just send over the text and I'll give it a friendlier, more relaxed vibe.",
+    "style": [
+      "casual",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "rephrase-deep-dive-008",
+    "triggers": [
+      "give me a detailed guide",
+      "how do I master rephrasing",
+      "tips for better rewriting"
+    ],
+    "context_role": "topic",
+    "template": "Mastering the art of rephrasing {context} requires a few specific steps. First, you must fully comprehend the original meaning so you don't accidentally change the facts. Second, identify the 'key' words in {context} that cannot be changed (like technical terms). Third, experiment with different sentence structures—try moving the end of the sentence to the beginning. Finally, read your new version of {context} aloud to ensure it sounds natural. By iterating through these steps, you can transform a clunky sentence into a polished gem.",
+    "fallback": "Improving your rephrasing skills involves deep comprehension of the source text, identifying non-negotiable keywords, varying sentence structures, and reading the final result aloud for flow.",
+    "style": [
+      "educational",
+      "analytical"
+    ],
+    "response_length": "long"
+  },
+  {
+    "id": "rephrase-creative-009",
+    "triggers": [
+      "make this more interesting",
+      "creative ways to say this",
+      "give it some flair"
+    ],
+    "context_role": "topic",
+    "template": "Let's inject some personality into {context}! Depending on the mood you want, we could use more vivid imagery, unexpected adjectives, or a more rhythmic sentence structure to make {context} really pop. Instead of just stating the fact, we can paint a picture with words that engages the reader's imagination. Do you want something poetic, witty, or perhaps a bit dramatic?",
+    "fallback": "I can definitely add some flair to your writing! Tell me what kind of 'vibe' you're going for, and I'll give you some creative alternatives.",
+    "style": [
+      "creative",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "rephrase-check-010",
+    "triggers": [
+      "does this sound right",
+      "check my rephrasing",
+      "is this version better"
+    ],
+    "context_role": "topic",
+    "template": "I've looked at your version of {context}. In terms of meaning, you've captured the essence perfectly. However, we might want to tweak a few words to improve the overall flow or clarity. Compared to the original, this version of {context} is [more/less] effective because [reason]. I can suggest a couple of small adjustments to make it even stronger if you'd like!",
+    "fallback": "I'd be happy to review your work! Please provide both the original text and your rephrased version so I can compare them.",
+    "style": [
+      "analytical",
+      "helpful"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "clarify-definition-001",
+    "triggers": [
+      "i don't understand this term"
+    ],
+    "context_role": "term",
+    "template": "Of course! When we talk about {context}, we are essentially referring to the core concept of how it functions and its primary purpose. To put it simply, {context} is the process or entity that allows us to achieve a specific result in a given environment. Depending on the field, the definition might shift slightly, but the fundamental idea remains the same. Does that clear things up, or would you like a more technical breakdown?",
+    "fallback": "I'm not sure which term you're referring to. Could you tell me what you'd like me to define?",
+    "style": [
+      "educational",
+      "conversational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "clarify-example-002",
+    "triggers": [
+      "can you show me how this works",
+      "any real world scenarios"
+    ],
+    "context_role": "concept",
+    "template": "Sure thing! A great way to visualize {context} is to look at a real-world scenario. Imagine a situation where you are trying to solve a common problem; in that case, {context} would act as the primary mechanism to resolve it. For instance, if you apply this to a daily routine, you'll see how it streamlines the process and reduces friction. Does this example help make {context} more concrete for you?",
+    "fallback": "I'd love to give you an example, but I'm not sure what topic we are discussing. What are we looking at?",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "clarify-comparison-003",
+    "triggers": [
+      "how is this different",
+      "what is the difference",
+      "compare this to something else"
+    ],
+    "context_role": "topic",
+    "template": "That's a common point of confusion. To clarify, while {context} shares some similarities with related concepts, the key distinction lies in its specific approach and outcome. Where other methods might focus on breadth, {context} prioritizes depth and precision. Think of it as the difference between a general tool and a specialized instrument; one is versatile, while {context} is designed for a very particular purpose.",
+    "fallback": "I can certainly compare things for you, but I need to know what topic you're referring to first!",
+    "style": [
+      "analytical",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "clarify-application-004",
+    "triggers": [
+      "what is the practical use"
+    ],
+    "context_role": "tool",
+    "template": "In practical terms, {context} is typically applied in environments where efficiency and accuracy are paramount. You'll often see it used in professional workflows to automate repetitive tasks or to provide a structured framework for decision-making. By implementing {context}, users can significantly reduce the margin of error and speed up their overall output. Would you like to walk through a step-by-step guide on how to implement it?",
+    "fallback": "I'm not sure which tool or method you're asking about. Could you specify the topic?",
+    "style": [
+      "informative",
+      "formal"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "clarify-simplification-005",
+    "triggers": [
+      "put it in simple terms",
+      "too complex, simplify please"
+    ],
+    "context_role": "complex_topic",
+    "template": "Let's strip away the jargon. Imagine {context} is like a simple game with a few basic rules. Instead of worrying about the technical details, just think of it as a way to get from point A to point B as quickly as possible. It's basically a shortcut that helps the system stay organized without needing a manual. Does that make {context} feel a bit more approachable?",
+    "fallback": "I can definitely simplify things for you! Just let me know which topic is feeling too complex.",
+    "style": [
+      "casual",
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "clarify-nuance-006",
+    "triggers": [
+      "is there a catch",
+      "what are the nuances",
+      "tell me the fine print"
+    ],
+    "context_role": "concept",
+    "template": "It's a bit more nuanced than it first appears. While the general idea of {context} is straightforward, the 'catch' usually lies in the edge cases. For example, {context} works perfectly under standard conditions, but when you introduce external variables or extreme constraints, the behavior can change. This is why it's important to consider the environment in which you're applying it. Shall we dive deeper into these specific exceptions?",
+    "fallback": "I'm not sure which concept we're analyzing for nuances. Could you remind me of the topic?",
+    "style": [
+      "analytical",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "clarify-analogy-007",
+    "triggers": [
+      "use an analogy",
+      "give me a metaphor",
+      "compare it to something simple"
+    ],
+    "context_role": "topic",
+    "template": "Think of {context} as being like a librarian in a massive library. Just as a librarian knows exactly where every book is located and how to categorize them so you can find what you need instantly, {context} organizes information and processes to ensure everything is accessible and efficient. It doesn't do the reading for you, but it makes the act of finding the right information effortless.",
+    "fallback": "I'd love to use an analogy, but I need to know what we're talking about first!",
+    "style": [
+      "creative",
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "clarify-stepbystep-008",
+    "triggers": [
+      "break it down",
+      "step by step please",
+      "how does it happen"
+    ],
+    "context_role": "process",
+    "template": "Let's break {context} down into a few manageable steps. First, there is the initialization phase where the requirements are set. Second, the system processes the input according to the rules of {context}. Third, the data is validated and refined. Finally, the output is delivered. By looking at it as a sequence rather than a single event, it's much easier to see where each piece of the puzzle fits. Does that sequence make sense?",
+    "fallback": "I can break this down for you, but I need to know which process we are discussing.",
+    "style": [
+      "educational",
+      "formal"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "clarify-importance-009",
+    "triggers": [
+      "what is the point of this",
+      "why is this important"
+    ],
+    "context_role": "topic",
+    "template": "The reason {context} is so critical is that without it, we would face significant inefficiencies and potential errors. It provides the necessary structure to ensure that results are consistent and scalable. In a broader sense, {context} allows us to move from a chaotic approach to a strategic one, which is essential for any long-term success in this area. Without this foundation, the whole system would likely struggle to maintain stability.",
+    "fallback": "I can explain the importance of the topic, but I'm not sure what we're discussing right now.",
+    "style": [
+      "analytical",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "clarify-summary-010",
+    "triggers": [
+      "bottom line please"
+    ],
+    "context_role": "discussion",
+    "template": "To wrap everything up, the bottom line regarding {context} is that it serves as a bridge between the theoretical goal and the practical execution. By focusing on efficiency, clarity, and structured application, {context} ensures that the objective is met with the least amount of wasted effort. In short: it's about maximizing output while minimizing confusion. Does that encapsulate everything you were looking for?",
+    "fallback": "I'd be happy to summarize, but I need a bit more context on what we've been discussing!",
+    "style": [
+      "conversational",
+      "analytical"
+    ],
+    "response_length": "short"
+  }
+]

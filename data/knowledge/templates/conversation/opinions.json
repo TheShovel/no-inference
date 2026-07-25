@@ -1,5 +1,165 @@
 [
   {
+    "id": "opinion-def-001",
+    "triggers": [
+      "what is an opinion",
+      "define opinion",
+      "what does it mean to have an opinion"
+    ],
+    "context_role": "topic",
+    "template": "When we talk about {context}, an opinion is essentially a judgment or belief that isn't necessarily based on absolute proof. Unlike a fact, which is verifiable, an opinion on {context} reflects a person's values, feelings, or perspective. It's what makes discussions about {context} so interesting—everyone brings their own unique lens to the table!",
+    "fallback": "An opinion is a personal belief or judgment that isn't based on definitive proof or universal fact.",
+    "style": [
+      "educational",
+      "conversational"
+    ],
+    "response_length": "short"
+  },
+  {
+    "id": "opinion-examples-002",
+    "triggers": [
+      "give me examples of opinions",
+      "what are some opinion statements",
+      "show me how to express an opinion"
+    ],
+    "context_role": "topic",
+    "template": "If you're looking for ways to express a viewpoint on {context}, here are a few examples of how that might sound:\n\n1. Subjective Preference: 'I personally find {context} to be the most effective approach because...'\n2. Evaluative Judgment: 'In my view, the most challenging part of {context} is...'\n3. Value-Based: 'I believe that {context} is essential for success in this field.'\n\nNotice how these statements focus on 'I' and 'my view' rather than claiming universal truth.",
+    "fallback": "Examples of opinions include phrases like 'I believe this is the best way' or 'In my experience, this is true,' which reflect personal perspectives rather than proven facts.",
+    "style": [
+      "educational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "opinion-compare-003",
+    "triggers": [
+      "opinion vs fact",
+      "difference between fact and opinion",
+      "is this a fact or an opinion"
+    ],
+    "context_role": "topic",
+    "template": "Distinguishing between fact and opinion regarding {context} is key to critical thinking. A fact about {context} is something that can be proven true or false with evidence (e.g., 'The project deadline is Friday'). An opinion, however, is a subjective interpretation (e.g., 'The project deadline is too tight'). While facts provide the foundation, opinions on {context} provide the interpretation and meaning.",
+    "fallback": "The main difference is verifiability: facts can be proven with evidence, while opinions are based on personal beliefs and cannot be proven true or false for everyone.",
+    "style": [
+      "analytical",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "opinion-ask-004",
+    "triggers": [
+      "how do i ask for an opinion",
+      "best way to ask someone's view",
+      "phrases for asking opinions"
+    ],
+    "context_role": "topic",
+    "template": "Depending on who you're talking to, there are different ways to ask for an opinion on {context}. \n\nFor a casual setting, try: 'What do you think about {context}?' or 'How do you feel about {context}?'. \n\nFor a professional environment, you might use: 'I'd value your perspective on {context}' or 'From your professional standpoint, how do you view {context}?'. \n\nThe key is to make the other person feel that their specific insight is valued.",
+    "fallback": "You can ask for opinions using phrases like 'What are your thoughts on this?' for casual settings or 'I'd appreciate your perspective' for formal ones.",
+    "style": [
+      "conversational",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "opinion-bias-005",
+    "triggers": [
+      "why are opinions biased",
+      "how does bias affect opinions",
+      "opinion and bias"
+    ],
+    "context_role": "topic",
+    "template": "Opinions on {context} are naturally shaped by 'cognitive biases'—the mental shortcuts our brains take. When someone forms an opinion on {context}, they are often influenced by their past experiences, cultural background, and the information they've been exposed to. This is why two people can look at the exact same data regarding {context} and come to completely opposite conclusions!",
+    "fallback": "Opinions are biased because they are filtered through an individual's unique personal history, beliefs, and mental shortcuts.",
+    "style": [
+      "analytical",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "opinion-conflict-006",
+    "triggers": [
+      "how to handle disagreeing opinions",
+      "what to do when opinions clash",
+      "dealing with different viewpoints"
+    ],
+    "context_role": "topic",
+    "template": "When you encounter a conflicting opinion about {context}, the goal shouldn't necessarily be to 'win' the argument, but to understand the perspective. Try using 'Active Listening'—instead of rebutting, ask: 'That's an interesting take on {context}; can you tell me more about why you feel that way?' This transforms a potential conflict into a collaborative exploration of {context}.",
+    "fallback": "When opinions clash, focus on curiosity rather than conflict. Ask open-ended questions to understand the reasoning behind the other person's view.",
+    "style": [
+      "conversational",
+      "educational"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "opinion-form-007",
+    "triggers": [
+      "how to form a strong opinion",
+      "how to develop a viewpoint",
+      "building an informed opinion"
+    ],
+    "context_role": "topic",
+    "template": "Forming a well-rounded opinion on {context} involves a few critical steps. First, gather diverse sources of information to avoid the 'echo chamber' effect. Second, analyze the evidence supporting different sides of {context}. Finally, reflect on how your own values intersect with those facts. The strongest opinions on {context} are usually those that have been challenged and refined over time.",
+    "fallback": "To form a strong opinion, research multiple perspectives, evaluate the evidence critically, and be open to changing your mind as new information emerges.",
+    "style": [
+      "analytical",
+      "informative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "opinion-importance-008",
+    "triggers": [
+      "why are opinions important",
+      "value of having an opinion",
+      "why does perspective matter"
+    ],
+    "context_role": "topic",
+    "template": "Opinions on {context} are incredibly valuable because they drive innovation and growth. If everyone had the same 'factual' approach to {context}, we would never have creative breakthroughs or social progress. By sharing different opinions on {context}, we uncover blind spots in our own thinking and find more comprehensive solutions to complex problems.",
+    "fallback": "Opinions are important because they provide diverse perspectives, spark creativity, and allow us to evaluate a subject from multiple angles.",
+    "style": [
+      "conversational",
+      "creative"
+    ],
+    "response_length": "medium"
+  },
+  {
+    "id": "opinion-professional-009",
+    "triggers": [
+      "giving opinions at work",
+      "professional opinion etiquette",
+      "how to state an opinion to a boss"
+    ],
+    "context_role": "topic",
+    "template": "Giving an opinion on {context} in a professional setting requires a balance of confidence and humility. I recommend the 'Evidence-Opinion-Impact' framework: \n1. Start with the evidence regarding {context}. \n2. State your opinion clearly. \n3. Explain the impact this opinion has on the project goal. \nFor example: 'Based on the current data for {context}, I believe we should pivot our strategy because it will likely increase efficiency by 10%.'",
+    "fallback": "In professional settings, back your opinions with evidence and explain the practical impact of your viewpoint to make it more persuasive.",
+    "style": [
+      "formal",
+      "informative"
+    ],
+    "response_length": "long"
+  },
+  {
+    "id": "opinion-soften-010",
+    "triggers": [
+      "how to sound less aggressive",
+      "softening an opinion",
+      "making an opinion sound polite"
+    ],
+    "context_role": "topic",
+    "template": "If you're worried that your opinion on {context} sounds too blunt, you can use 'hedging' phrases to soften the delivery. Instead of saying 'This is wrong,' try 'I'm not sure I entirely agree with this approach to {context}.' or 'From my perspective, it seems like {context} might be handled differently.' This keeps the conversation open and prevents the other person from becoming defensive.",
+    "fallback": "Use phrases like 'It seems to me' or 'I might be wrong, but' to make your opinions sound more like suggestions than absolute demands.",
+    "style": [
+      "conversational",
+      "casual"
+    ],
+    "response_length": "short"
+  },
+  {
     "id": "discuss-definition-001",
     "triggers": [
       "can you explain this concept?"

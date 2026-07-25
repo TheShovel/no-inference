@@ -1,0 +1,82 @@
+[
+  {
+    "q": [
+      "What is computer architecture?",
+      "How would you define computer architecture?",
+      "What does computer architecture involve?"
+    ],
+    "a": "Computer architecture is the set of rules and methods that describe the functionality, logical structure, and organization of a computer system. It acts as the blueprint for how hardware components—like the CPU, memory, and input/output devices—interact to execute software instructions."
+  },
+  {
+    "q": [
+      "What is the Von Neumann architecture?",
+      "How does the Von Neumann model work?",
+      "What are the characteristics of Von Neumann architecture?"
+    ],
+    "a": "Proposed by John von Neumann in 1945, this architecture describes a system where the CPU is separate from the memory. Its defining feature is the 'stored-program concept,' meaning both data and program instructions are stored in the same read-write memory. While simple and flexible, it creates a 'Von Neumann bottleneck' because the CPU can only access one piece of data or instruction at a time over the shared bus."
+  },
+  {
+    "q": [
+      "What is the difference between RISC and CISC?",
+      "Compare RISC vs CISC architectures.",
+      "What are Reduced Instruction Set Computers and Complex Instruction Set Computers?"
+    ],
+    "a": "CISC (Complex Instruction Set Computer) aims to complete tasks in as few lines of assembly code as possible by using complex instructions that can perform multiple operations. In contrast, RISC (Reduced Instruction Set Computer) uses a small, highly optimized set of simple instructions that each take one clock cycle to execute. While CISC is common in desktop CPUs like Intel x86, RISC is the foundation for ARM processors used in almost all modern smartphones."
+  },
+  {
+    "q": [
+      "What is the purpose of a CPU cache?",
+      "Why do processors have L1, L2, and L3 caches?",
+      "How does caching improve computer performance?"
+    ],
+    "a": "CPU cache is a small amount of incredibly fast memory located directly on or very near the processor. It stores frequently used data so the CPU doesn't have to wait for the slower main RAM to deliver information. Caches are organized in levels: L1 is the fastest and smallest, followed by L2 and L3, which are larger but slightly slower."
+  },
+  {
+    "q": [
+      "How does pipelining work in a processor?",
+      "What is instruction pipelining?",
+      "Why is pipelining used in computer architecture?"
+    ],
+    "a": "Pipelining is a technique where the CPU begins executing a second instruction before the first one has finished. It breaks the process of handling an instruction into stages—such as fetch, decode, execute, and write-back. This works like an assembly line in a factory, allowing the processor to handle multiple instructions at different stages of completion simultaneously, which significantly increases throughput."
+  },
+  {
+    "q": [
+      "What is the difference between Harvard architecture and Von Neumann architecture?",
+      "How does Harvard architecture differ from Von Neumann?",
+      "Why use Harvard architecture instead of Von Neumann?"
+    ],
+    "a": "The primary difference is that Harvard architecture uses separate physical memory paths (buses) for instructions and data. This allows the CPU to read a program instruction and access data at the same time, avoiding the 'bottleneck' found in Von Neumann systems. This design is frequently used in microcontrollers and Digital Signal Processors (DSPs)."
+  },
+  {
+    "q": [
+      "What is the role of the Arithmetic Logic Unit (ALU)?",
+      "What does the ALU do in a computer?",
+      "How does the ALU process information?"
+    ],
+    "a": "The ALU is the 'calculator' of the CPU. It performs all the mathematical calculations (like addition and subtraction) and logical operations (like AND, OR, and NOT). Every piece of software, from a simple text editor to a complex 3D game, eventually boils down to a series of basic math and logic operations handled by the ALU."
+  },
+  {
+    "q": [
+      "What is multi-core processing?",
+      "How do multi-core CPUs work?",
+      "What is the benefit of having multiple cores in a processor?"
+    ],
+    "a": "Multi-core processing involves placing two or more independent processing units (cores) on a single integrated circuit. This allows a computer to perform true parallel processing, where different cores handle different tasks or split a single complex task into parts. This is more power-efficient and generates less heat than simply increasing the clock speed of a single core."
+  },
+  {
+    "q": [
+      "What is the system bus and how does it work?",
+      "What is the function of the data, address, and control buses?",
+      "How do components communicate in computer architecture?"
+    ],
+    "a": "The system bus is a communication system that transfers data between the CPU, memory, and peripherals. It consists of three main parts: the Data Bus (carries the actual information), the Address Bus (specifies where the data should go or come from), and the Control Bus (transmits signals to synchronize activities, like read or write commands)."
+  },
+  {
+    "q": [
+      "What is the importance of the Instruction Set Architecture (ISA)?",
+      "What does ISA stand for and what does it do?",
+      "How does the ISA bridge hardware and software?"
+    ],
+    "a": "The Instruction Set Architecture (ISA) is the abstract boundary between the hardware and the software. It defines the commands that a processor can understand, including the available registers, memory addressing modes, and the data types it can handle. Common examples include x86-64 for PCs and ARM for mobile devices; the ISA ensures that a compiler knows exactly how to translate high-level code into signals the physical transistors can execute."
+  }
+]

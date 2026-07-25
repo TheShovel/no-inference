@@ -1,0 +1,82 @@
+[
+  {
+    "q": [
+      "What is a problem solving method?",
+      "How do you define problem solving techniques?",
+      "What does it mean to use a structured approach to solve a problem?"
+    ],
+    "a": "A problem solving method is a structured, step-by-step process used to find a solution to a complex issue or a gap between a current state and a desired goal. Instead of relying on guesswork or trial-and-error, these methods provide a framework—such as defining the problem, analyzing causes, and testing solutions—to ensure that the root cause is addressed rather than just the symptoms."
+  },
+  {
+    "q": [
+      "What is the IDEAL problem solving model?",
+      "How does the IDEAL method work?",
+      "What are the steps of the IDEAL approach to problem solving?"
+    ],
+    "a": "The IDEAL model is a five-step framework designed to guide a person through a logical sequence of actions. It stands for Identify the problem, Define the goals, Explore possible strategies, Anticipate the outcomes and Act, and finally, Look back and learn. It is particularly effective because it emphasizes the final step of reflection, which helps prevent the same mistake from happening twice."
+  },
+  {
+    "q": [
+      "What is Root Cause Analysis?",
+      "How do you find the root cause of a problem?",
+      "What is RCA in problem solving?"
+    ],
+    "a": "Root Cause Analysis (RCA) is a method used to dig beneath the surface of a problem to find the underlying reason why it occurred. A popular technique within RCA is the '5 Whys' method, where you ask 'why' repeatedly (usually five times) until you reach the origin of the failure. By fixing the root cause rather than the immediate symptom, you ensure the problem doesn't recur."
+  },
+  {
+    "q": [
+      "What is the difference between convergent and divergent thinking?",
+      "How do convergent and divergent thinking work together in problem solving?",
+      "When should I use divergent versus convergent thinking?"
+    ],
+    "a": "Divergent thinking is the process of generating many unique ideas or possibilities—essentially 'opening the funnel' during a brainstorming session. Convergent thinking is the opposite; it involves narrowing those options down to the single best solution using logic and criteria. Effective problem solvers use both: they diverge to find all possible options and then converge to select the most viable one."
+  },
+  {
+    "q": [
+      "What is Heuristic problem solving?",
+      "What are heuristics in cognitive psychology?",
+      "How do mental shortcuts help in solving problems?"
+    ],
+    "a": "Heuristics are mental shortcuts or 'rules of thumb' that allow people to solve problems quickly and efficiently. While they don't guarantee a perfect solution every time, they are essential for making fast decisions. For example, a 'trial and error' approach is a basic heuristic, while a professional's 'intuition' is often just a highly developed heuristic based on years of experience."
+  },
+  {
+    "q": [
+      "What is the PDCA cycle?",
+      "What is the Plan-Do-Check-Act method?",
+      "How does the Deming Cycle work?"
+    ],
+    "a": "The PDCA cycle, also known as the Deming Cycle, is a four-step iterative management method used for the continuous improvement of processes. You Plan the change, Do (implement) the change on a small scale, Check the results to see if it worked, and Act to standardize the solution across the organization. It is widely used in manufacturing and quality control to incrementally improve efficiency."
+  },
+  {
+    "q": [
+      "What is Means-Ends Analysis?",
+      "How does means-ends analysis help solve complex tasks?",
+      "What is the process of breaking a goal into sub-goals?"
+    ],
+    "a": "Means-Ends Analysis is a problem-solving strategy where you identify the difference between your current state and your goal state, and then create 'sub-goals' to bridge that gap. By breaking a massive, intimidating problem into smaller, manageable pieces, you can tackle one piece at a time. If you hit a roadblock on a sub-goal, you simply adjust your means to achieve that specific step."
+  },
+  {
+    "q": [
+      "What is a Fishbone Diagram?",
+      "How do you use an Ishikawa diagram for problem solving?",
+      "What is a cause-and-effect diagram?"
+    ],
+    "a": "A Fishbone Diagram, officially called an Ishikawa diagram, is a visual tool used to categorize the potential causes of a problem. The 'head' of the fish is the problem itself, and the 'bones' branching off the spine represent different categories of causes, such as People, Methods, Machines, and Materials. This helps teams visualize all possible contributing factors without overlooking any specific area."
+  },
+  {
+    "q": [
+      "What is Design Thinking?",
+      "How does the design thinking process work?",
+      "What are the stages of human-centered problem solving?"
+    ],
+    "a": "Design Thinking is a human-centered approach to problem solving that prioritizes empathy for the end-user. It typically follows five stages: Empathize (understanding the user's needs), Define (stating the users' needs and problems), Ideate (creating a wide range of ideas), Prototype (building a scaled-down version of the solution), and Test (trying the solution with real users). It is heavily used in product design and software development."
+  },
+  {
+    "q": [
+      "What is Algorithm-based problem solving?",
+      "How does an algorithmic approach differ from a heuristic approach?",
+      "What is a step-by-step logical procedure for solving problems?"
+    ],
+    "a": "An algorithm is a precise, step-by-step set of instructions that, if followed correctly, guarantees a correct result every time. Unlike heuristics, which are based on a 'best guess,' algorithms are rigid and logical. A classic example is a mathematical formula or a baking recipe; as long as the inputs and steps are exact, the output is predictable and consistent."
+  }
+]
