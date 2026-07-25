@@ -835,13 +835,347 @@ def run_continuous(backend="ollama", ollama_model="llama3.2", count_per_topic=5,
             time.sleep(interval)
 
 
+# ── Template Generation ─────────────────────────────────────────────────────
+# Knowledge templates are stored in data/knowledge/templates/ and define
+# conversational response patterns. Each template has triggers, a response
+# template with {context} placeholders, and a fallback.
+
+TEMPLATE_CATEGORIES = {
+    "actions": {
+        "write": ["essays", "emails", "stories", "poems", "reports", "articles", "summaries", "outlines", "letters"],
+        "explain": ["simple explanations", "detailed explanations", "analogies", "step-by-step guides", "comparisons"],
+        "create": ["recipes", "routines", "schedules", "lists", "charts", "diagrams"],
+        "code": ["functions", "algorithms", "debugging", "optimization", "architecture"],
+        "analyze": ["breakdowns", "critiques", "evaluations", "comparisons", "root cause"],
+    },
+    "conversation": {
+        "followups": ["tell me more", "continue", "go on", "give an example", "elaborate"],
+        "opinions": ["asking opinions", "sharing perspectives", "agreeing", "disagreeing", "discussing"],
+        "clarifications": ["clarifying", "rephrasing", "simplifying", "defining terms"],
+        "meta": ["system capabilities", "help", "about COS", "status"],
+    },
+    "agentic": {
+        "research": ["researching topics", "gathering info", "fact-checking", "deep dives"],
+        "plan": ["strategic plans", "project plans", "study plans", "action plans"],
+        "brainstorm": ["idea generation", "creative thinking", "problem solving", "innovation"],
+        "critique": ["feedback", "review", "assessment", "evaluation"],
+        "teach": ["lessons", "tutorials", "explanations", "guided learning"],
+        "debate": ["arguments", "counterarguments", "discussion", "dialectic"],
+        "advise": ["recommendations", "guidance", "suggestions", "best practices"],
+    },
+    "contextual": {
+        "references": ["about that", "regarding that", "on that topic", "related to that"],
+        "continuation": ["continue the conversation", "pick up where we left off", "resume"],
+        "elaboration": ["expand on that", "go deeper", "more detail", "further explanation"],
+        "transformation": ["make it simpler", "make it formal", "make it casual", "translate style"],
+        "summarization": ["summarize", "tl;dr", "recap", "key points"],
+    },
+}
+
+TEMPLATE_DIR = ROOT / 'data' / 'knowledge' / 'templates'
+
+
+TEMPLATE_SYSTEM_PROMPT = """You are a conversational template generator for an AI assistant. Generate response templates that the AI can use in conversations.
+
+Each template entry must be in this JSON format:
+[
+  {
+    "id": "category-type-001",
+    "triggers": ["trigger phrase 1", "trigger phrase 2", "trigger phrase 3"],
+    "context_role": "topic",
+    "template": "The response text with {context} placeholder where the conversation topic goes",
+    "fallback": "Response when there is no conversation context available",
+    "style": ["conversational", "informative"],
+    "response_length": "medium"
+  }
+]
+
+Guidelines:
+- Each entry needs 2-4 trigger phrases (different ways users might ask)
+- The template should use {context} where the current topic should be inserted
+- The fallback is used when there's no previous conversation context
+- Templates should sound natural and conversational, like a helpful assistant
+- Cover different angles: definitions, examples, comparisons, applications
+- Response lengths: "short" (<100 words), "medium" (100-300 words), "long" (300+ words)
+- Style tags describe the tone: conversational, educational, formal, casual, creative, analytical"""
+
+
+def _generate_templates_with_llm(template_type, count=5, backend="ollama", model="llama3.2"):
+    """Generate template entries using an LLM."""
+    prompt = f"""{TEMPLATE_SYSTEM_PROMPT}
+
+Generate {count} diverse conversational template entries about "{template_type}".
+
+These are response templates for when a user asks about {template_type}.
+Each should be a complete, ready-to-use response that the AI can fill in with the conversation topic.
+
+Output ONLY valid JSON array, no other text:"""
+
+    response = _call_llm_backend(backend, prompt, template_type, model=model)
+    if not response:
+        return None
+
+    try:
+        json_match = re.search(r'\[.*\]', response, re.DOTALL)
+        if json_match:
+            entries = json.loads(json_match.group(0))
+        else:
+            entries = json.loads(response)
+    except (json.JSONDecodeError, ValueError) as e:
+        print(f"  [ERROR] Failed to parse LLM output: {e}")
+        return None
+
+    if not isinstance(entries, list):
+        return None
+
+    validated = []
+    for entry in entries:
+        if not isinstance(entry, dict):
+            continue
+        triggers = entry.get("triggers", [])
+        template = entry.get("template", "")
+        if isinstance(triggers, str):
+            triggers = [triggers]
+        if triggers and template:
+            if "id" not in entry:
+                entry["id"] = f"gen-{random.randint(1000,9999)}"
+            if "fallback" not in entry:
+                entry["fallback"] = f"I'd be happy to help with that! What specifically would you like to know about?"
+            if "context_role" not in entry:
+                entry["context_role"] = "topic"
+            if "response_length" not in entry:
+                entry["response_length"] = "medium"
+            if "style" not in entry:
+                entry["style"] = ["conversational"]
+            validated.append(entry)
+
+    if not validated:
+        return None
+
+    print(f"  Generated {len(validated)} template entries via {backend}")
+    return validated
+
+
+def _generate_templates_template(template_type, count=5):
+    """Generate template entries using built-in templates (no LLM)."""
+    entries = []
+
+    question_templates = [
+        (f"tell me about {{topic}}", f"I'd be happy to share what I know about {{context}}! Let me give you a comprehensive overview covering the key aspects, interesting details, and practical implications."),
+        (f"explain {{topic}} to me", f"Great question about {{context}}! Let me break it down in a way that's easy to understand, starting with the fundamentals and building up to the more interesting details."),
+        (f"what is {{topic}}", f"{{context}} is a fascinating subject that encompasses several key ideas and principles. Let me explain what it is and why it matters."),
+        (f"give me an overview of {{topic}}", f"Here's a concise overview of {{context}}: It covers important concepts that have practical applications and interesting implications across multiple areas."),
+        (f"teach me {{topic}}", f"I'd be happy to teach you about {{context}}! Let's start with the basics and work our way up. First, let's understand what makes this subject unique."),
+    ]
+
+    for i in range(min(count, len(question_templates))):
+        trigger_text, template_text = question_templates[i]
+        trigger_topic = template_type
+        entries.append({
+            "id": f"gen-{template_type[:8]}-{i+1:03d}",
+            "triggers": [trigger_text.format(topic=template_type)],
+            "context_role": "topic",
+            "template": template_text,
+            "fallback": f"I'd be happy to talk about {template_type}! What would you like to know?",
+            "style": ["conversational", "educational"],
+            "response_length": "medium",
+        })
+
+    return entries
+
+
+def generate_templates(template_type, category=None, subcategory=None, count=5,
+                       backend="ollama", ollama_model="llama3.2", force=False):
+    """Generate conversation template entries."""
+    tracking_file = ROOT / 'data' / '.template_tracking.json'
+
+    # Load tracking
+    tracking = {"templates": {}, "total_generated": 0}
+    if tracking_file.exists():
+        try:
+            tracking = json.loads(tracking_file.read_text())
+        except:
+            pass
+
+    print(f"\n  Generating template '{template_type}' ({category or 'auto'}/{subcategory or 'auto'})...")
+
+    # Load existing templates for dedup
+    existing_triggers = set()
+    for path in sorted(TEMPLATE_DIR.rglob('*.json')):
+        if path.name.startswith('.'):
+            continue
+        try:
+            data = json.loads(path.read_text())
+            if isinstance(data, list):
+                for entry in data:
+                    triggers = entry.get('triggers', [])
+                    if isinstance(triggers, str):
+                        triggers = [triggers]
+                    for t in triggers:
+                        existing_triggers.add(t.lower().strip())
+        except:
+            pass
+
+    # Generate
+    entries = None
+    retries = 3
+    while retries > 0 and entries is None:
+        if backend == "template":
+            entries = _generate_templates_template(template_type, count * 2)
+            break
+        else:
+            entries = _generate_templates_with_llm(template_type, count * 2, backend, ollama_model)
+        if entries is None:
+            if backend != "template":
+                print(f"  LLM failed, retrying... ({retries-1} left)")
+                time.sleep(2)
+            retries -= 1
+
+    if entries is None:
+        print(f"  [FAILED] Could not generate templates for '{template_type}'")
+        return 0
+
+    # Filter duplicates
+    filtered = []
+    dup_count = 0
+    for entry in entries:
+        triggers = entry.get('triggers', [])
+        if isinstance(triggers, str):
+            triggers = [triggers]
+        
+        # Check for duplicates
+        new_triggers = []
+        for t in triggers:
+            tl = t.lower().strip()
+            if tl in existing_triggers:
+                dup_count += 1
+            else:
+                new_triggers.append(t)
+                existing_triggers.add(tl)
+        
+        if not new_triggers:
+            continue
+        entry['triggers'] = new_triggers
+        filtered.append(entry)
+
+    if not filtered:
+        print(f"  All {len(entries)} entries were duplicates — skipped")
+        return 0
+
+    if dup_count > 0:
+        print(f"  Removed {dup_count} duplicate triggers")
+
+    # Determine file path
+    if category and subcategory:
+        filename = f"{subcategory}.json"
+        target_path = TEMPLATE_DIR / category / filename
+    else:
+        # Auto-categorize: match by key name or value
+        tl = template_type.lower()
+        for cat_name, subcats in TEMPLATE_CATEGORIES.items():
+            for subcat_name, types in subcats.items():
+                if tl == subcat_name.lower() or tl in [t.lower() for t in types]:
+                    category = cat_name
+                    subcategory = subcat_name
+                    break
+        if not category:
+            category = "conversation"
+            subcategory = "followups"
+        target_path = TEMPLATE_DIR / category / f"{subcategory}.json"
+
+    # Merge with existing
+    target_path.parent.mkdir(parents=True, exist_ok=True)
+    existing_data = []
+    if target_path.exists():
+        try:
+            existing_data = json.loads(target_path.read_text())
+            if not isinstance(existing_data, list):
+                existing_data = []
+        except:
+            existing_data = []
+
+    # Remove existing entries with duplicate IDs
+    new_ids = {e.get('id', '') for e in filtered}
+    filtered_existing = [e for e in existing_data if e.get('id', '') not in new_ids]
+    merged = filtered + filtered_existing
+
+    with open(target_path, 'w') as f:
+        json.dump(merged, f, indent=2, ensure_ascii=False)
+        f.write('\n')
+
+    # Update tracking
+    key = f"{category}.{subcategory}.{template_type}"
+    if key not in tracking["templates"]:
+        tracking["templates"][key] = {"count": 0, "category": category}
+    tracking["templates"][key]["count"] += len(filtered)
+    tracking["total_generated"] += len(filtered)
+    tracking_file.write_text(json.dumps(tracking, indent=2))
+
+    print(f"  ✓ Wrote {len(filtered)} template entries to {target_path.relative_to(ROOT)}")
+    return len(filtered)
+
+
+def run_template_continuous(backend="ollama", ollama_model="llama3.2", count_per_type=5,
+                            interval=10, max_iterations=None):
+    """Run the template generator continuously."""
+    tracking_file = ROOT / 'data' / '.template_tracking.json'
+
+    print(f"\n{'='*60}")
+    print(f"  COS Template Generator — Continuous Mode")
+    print(f"  Backend: {backend}")
+    print(f"  Output: {TEMPLATE_DIR}")
+    print(f"{'='*60}\n")
+
+    # Collect all template types
+    all_types = []
+    for cat, subcats in TEMPLATE_CATEGORIES.items():
+        for subcat, types in subcats.items():
+            for t in types:
+                all_types.append((cat, subcat, t))
+
+    iteration = 0
+    while max_iterations is None or iteration < max_iterations:
+        iteration += 1
+        print(f"\n{'─'*60}")
+        print(f"  Iteration {iteration}")
+        print(f"{'─'*60}")
+
+        # Pick next type
+        tracking = json.loads(tracking_file.read_text()) if tracking_file.exists() else {"templates": {}, "total_generated": 0}
+        covered = tracking.get("templates", {})
+
+        uncovered = [(c, s, t) for c, s, t in all_types if f"{c}.{s}.{t}" not in covered]
+        if uncovered:
+            cat, subcat, t = random.choice(uncovered)
+            print(f"  Next: NEW template '{t}' ({cat}/{subcat})")
+        else:
+            cat, subcat, t = random.choice(all_types)
+            print(f"  Next: DEEPEN template '{t}' ({cat}/{subcat})")
+
+        generate_templates(
+            template_type=t,
+            category=cat,
+            subcategory=subcat,
+            count=count_per_type,
+            backend=backend,
+            ollama_model=ollama_model,
+        )
+
+        if max_iterations is None or iteration < max_iterations:
+            print(f"\n  Waiting {interval}s before next generation...")
+            time.sleep(interval)
+
+
 # ── CLI ──────────────────────────────────────────────────────────────────────
 
+
 def main():
-    parser = argparse.ArgumentParser(description="COS Knowledge Generator")
+    parser = argparse.ArgumentParser(description="COS Knowledge & Template Generator")
     parser.add_argument("--topic", help="Specific topic to generate about")
-    parser.add_argument("--category", help="Category (science, history, etc.)")
-    parser.add_argument("--subcategory", help="Subcategory (physics, chemistry, etc.)")
+    parser.add_argument("--type", choices=["knowledge", "template"],
+                       default="knowledge", help="Type of content to generate")
+    parser.add_argument("--category", help="Category (science, history, or template category)")
+    parser.add_argument("--subcategory", help="Subcategory")
     parser.add_argument("--count", type=int, default=5, help="Entries per topic")
     parser.add_argument("--backend", choices=["ollama", "openai", "template"],
                        default="template", help="Generation backend")
@@ -859,10 +1193,18 @@ def main():
 
     args = parser.parse_args()
 
+    # Determine output directory
+    if args.type == "template":
+        output_dir = TEMPLATE_DIR
+        output_name = "templates"
+    else:
+        output_dir = KNOWLEDGE_DIR
+        output_name = "knowledge"
+
     # Print banner
     print(f"\n╔{'═'*58}╗")
-    print(f"║  COS Knowledge Generator                                 ║")
-    print(f"║  Output: {str(KNOWLEDGE_DIR):>44s} ║")
+    print(f"║  COS {output_name.upper()} Generator{' '*(40-len(output_name))}║")
+    print(f"║  Output: {str(output_dir):>44s} ║")
     print(f"╚{'═'*58}╝")
 
     # Coverage report only
@@ -891,43 +1233,85 @@ def main():
 
     if args.backend == "template":
         print(f"  ℹ Using template-based generation (no LLM)")
-    print(f"  ℹ Knowledge directory: {KNOWLEDGE_DIR}")
+    print(f"  ℹ Output directory: {output_dir}")
 
     # Run
-    if args.mode == "continuous":
-        run_continuous(
-            backend=args.backend,
-            ollama_model=args.model,
-            count_per_topic=args.count,
-            interval=args.interval,
-            max_iterations=args.iterations,
-        )
-    elif args.topic:
-        generate_knowledge(
-            topic=args.topic,
-            category=args.category,
-            subcategory=args.subcategory,
-            count=args.count,
-            backend=args.backend,
-            ollama_model=args.model,
-            force=args.force,
-        )
+    if args.type == "template":
+        if args.mode == "continuous":
+            run_template_continuous(
+                backend=args.backend,
+                ollama_model=args.model,
+                count_per_type=args.count,
+                interval=args.interval,
+                max_iterations=args.iterations,
+            )
+        elif args.topic:
+            generate_templates(
+                template_type=args.topic,
+                category=args.category,
+                subcategory=args.subcategory,
+                count=args.count,
+                backend=args.backend,
+                ollama_model=args.model,
+                force=args.force,
+            )
+        else:
+            # Auto-pick a template type
+            all_types = []
+            for cat, subcats in TEMPLATE_CATEGORIES.items():
+                for subcat, types in subcats.items():
+                    for t in types:
+                        all_types.append((cat, subcat, t))
+            if all_types:
+                cat, subcat, t = random.choice(all_types)
+                generate_templates(
+                    template_type=t,
+                    category=cat,
+                    subcategory=subcat,
+                    count=args.count,
+                    backend=args.backend,
+                    ollama_model=args.model,
+                    force=args.force,
+                )
     else:
-        # Single iteration with auto-topic selection
-        tracking = _load_tracking()
-        cat, subcat, topic, key = _pick_next_topic(tracking)
-        generate_knowledge(
-            topic=topic,
-            category=cat,
-            subcategory=subcat,
-            count=args.count,
-            backend=args.backend,
-            ollama_model=args.model,
-            force=args.force,
-        )
+        # Knowledge mode
+        if args.mode == "continuous":
+            run_continuous(
+                backend=args.backend,
+                ollama_model=args.model,
+                count_per_topic=args.count,
+                interval=args.interval,
+                max_iterations=args.iterations,
+            )
+        elif args.topic:
+            generate_knowledge(
+                topic=args.topic,
+                category=args.category,
+                subcategory=args.subcategory,
+                count=args.count,
+                backend=args.backend,
+                ollama_model=args.model,
+                force=args.force,
+            )
+        else:
+            # Single iteration with auto-topic selection
+            tracking = _load_tracking()
+            cat, subcat, topic, key = _pick_next_topic(tracking)
+            generate_knowledge(
+                topic=topic,
+                category=cat,
+                subcategory=subcat,
+                count=args.count,
+                backend=args.backend,
+                ollama_model=args.model,
+                force=args.force,
+            )
 
     # Show final coverage
-    print(_get_coverage_report())
+    if args.type == "template":
+        print(f"\n  Template generation complete. See {TEMPLATE_DIR}")
+    else:
+        print(_get_coverage_report())
 
 
 if __name__ == "__main__":

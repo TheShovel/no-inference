@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcos_reasoning.a CMakeFiles/cos_reasoning.dir/reasoning.c.o CMakeFiles/cos_reasoning.dir/logic.c.o CMakeFiles/cos_reasoning.dir/math.c.o CMakeFiles/cos_reasoning.dir/temporal.c.o
-/usr/bin/ranlib libcos_reasoning.a

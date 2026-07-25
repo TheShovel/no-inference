@@ -1,1 +1,0 @@
-/usr/bin/cc -g -fsanitize=address -Wl,--dependency-file=CMakeFiles/cos_test_memory.dir/link.d CMakeFiles/cos_test_memory.dir/test_memory.c.o -o cos_test_memory  ../src/core/libcos_core.a ../src/memory/libcos_memory.a ../src/core/libcos_core.a

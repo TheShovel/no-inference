@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcos_string.a CMakeFiles/cos_string.dir/string_intern.c.o
-/usr/bin/ranlib libcos_string.a

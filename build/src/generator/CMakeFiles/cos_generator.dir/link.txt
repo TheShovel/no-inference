@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcos_generator.a CMakeFiles/cos_generator.dir/generator.c.o
-/usr/bin/ranlib libcos_generator.a

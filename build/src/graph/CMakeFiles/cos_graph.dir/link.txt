@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcos_graph.a CMakeFiles/cos_graph.dir/graph.c.o
-/usr/bin/ranlib libcos_graph.a

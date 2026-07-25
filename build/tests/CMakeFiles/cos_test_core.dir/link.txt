@@ -1,1 +1,0 @@
-/usr/bin/cc -g -fsanitize=address -Wl,--dependency-file=CMakeFiles/cos_test_core.dir/link.d CMakeFiles/cos_test_core.dir/test_core.c.o -o cos_test_core  ../src/core/libcos_core.a

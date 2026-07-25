@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcos_memory.a CMakeFiles/cos_memory.dir/arena.c.o CMakeFiles/cos_memory.dir/pool.c.o CMakeFiles/cos_memory.dir/stack_alloc.c.o
-/usr/bin/ranlib libcos_memory.a

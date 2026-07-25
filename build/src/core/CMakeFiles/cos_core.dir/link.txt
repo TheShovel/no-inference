@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcos_core.a CMakeFiles/cos_core.dir/core.c.o CMakeFiles/cos_core.dir/hash.c.o CMakeFiles/cos_core.dir/sys_alloc.c.o
-/usr/bin/ranlib libcos_core.a

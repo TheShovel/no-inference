@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcos_fact_lookup.a CMakeFiles/cos_fact_lookup.dir/fact_lookup.c.o
-/usr/bin/ranlib libcos_fact_lookup.a

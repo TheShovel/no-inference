@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcos_grammar.a CMakeFiles/cos_grammar.dir/grammar.c.o
-/usr/bin/ranlib libcos_grammar.a

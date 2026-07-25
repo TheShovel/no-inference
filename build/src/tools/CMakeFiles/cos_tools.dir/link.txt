@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcos_tools.a CMakeFiles/cos_tools.dir/tools.c.o CMakeFiles/cos_tools.dir/builtin_tools.c.o CMakeFiles/cos_tools.dir/math_tool.c.o
-/usr/bin/ranlib libcos_tools.a
