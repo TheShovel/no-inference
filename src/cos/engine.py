@@ -506,6 +506,23 @@ def _handle_instruction(query):
                 url_suffix = f'\n\n  Source: {wiki_url}' if wiki_url else ''
                 return f"Here is an essay on {topic}:\n\n{wiki_summary}{url_suffix}"
 
+    # ── How-to / procedural queries (use Wikipedia + NLG) ────────────────
+    how_match = re.search(
+        r'how\s+(?:do|to|can|would|should|could)\s+(?:i|we|you)?\s*'
+        r'(?:make|cook|prepare|build|fix|install|set\s+up|create|write|do)\s+'
+        r'(?:a|an|the|some|my)?\s*(.+)',
+        q_lower
+    )
+    if how_match:
+        raw_topic = how_match.group(1).strip().rstrip('.!?')
+        if raw_topic and len(raw_topic) > 2:
+            # Strip leading adjectives to get the core topic ("good salad" -> "salad")
+            core_topic = re.sub(r'^(good|great|easy|simple|best|perfect|basic|delicious|healthy|quick|fresh|homemade)\s+', '', raw_topic)
+            for search_term in [core_topic, raw_topic]:
+                wiki_summary, wiki_url = _search_wikipedia(search_term)
+                if wiki_summary and len(wiki_summary) > 50:
+                    return _nlg(q, raw_topic, wiki_summary)
+
     # First try template engine (context-aware conversational templates)
     ctx = get_context_topic()
     tmpl_result = match_template(q, context=ctx)

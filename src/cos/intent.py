@@ -160,6 +160,11 @@ def detect_intent(query):
                              'paragraph', 'headline', 'description', 'outline']):
         return 'instruction'
 
+    # ── How-to / procedural ──────────────────────────────────────────────
+    # "how do i make a salad", "how to cook pasta", etc.
+    if re.search(r'\bhow\s+(do|to|can|would|should|could)\b', q):
+        return 'instruction'
+
     # ── STEM ──────────────────────────────────────────────────────────────
     # STEM questions route to factual for template engine / knowledge base
     stem_signals = ["explain", "describe", "what is", "how does", "why does"]

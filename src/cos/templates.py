@@ -432,6 +432,9 @@ def match_instruction(query):
     return None
 
 
+# ── Template output functions ─────────────────────────────────────────────────
+
+
 def _template_evaluation():
     return """Here's my evaluation:
 
