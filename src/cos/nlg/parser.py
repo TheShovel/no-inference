@@ -15,24 +15,28 @@ from .util import split_sentences
 # Pattern: (Subject) (predicate) (object/rest)
 _SVO_PATTERN = re.compile(
     r'((?:The|A|An|This|That|These|Those|Some|Many|Most|Several)?'
-    r'(?:[A-Z]?\w+(?:\s+[A-Z]?\w+?)??))\s+'
+    r'(?:[A-Z]?[\w\'-]+(?:\s+[A-Z]?[\w\'-]+?)??))\s+'
     r'(is|are|was|were|has|have|had|refers?\s+to|means?|'
     r'can\s+be\s+(?:defined|described|found|used|made)|'
     r'is\s+(?:located|situated|found|based|made|used|known|'
     r'served|eaten|called|considered|regarded|seen)|'
     r'are\s+(?:located|situated|found|based|made|used|known|'
     r'served|eaten|called|considered|regarded|seen)|'
+    r'was\s+(?:released|created|invented|developed|born|formed|attacked|dropped|performed)|'
+    r'were\s+(?:released|created|invented|developed|born|formed|attacked|dropped|performed)|'
     r'consists?\s+of|composed\s+of|'
     r'contain[s]?|include[s]?|feature[s]?|'
     r'produce[s]?|generate[s]?|create[s]?|convert[s]?|'
-    r'discover(?:ed)?|invent(?:ed)?|develop(?:ed)?|'
-    r'conduct(?:ed)?|win|won|write?|wrote|built|build?|'
+    r'discover(?:ed)?|invent(?:ed)?|develop(?:ed)?|formulat(?:e|ed|es)|'
+    r'conduct(?:ed)?|win|won|write?|wrote|written|built|build?|'
     r'use[s]?|require[s]?|need[s]?|'
-    r'lie[s]?|occur[s]?|live[s]?|'
+    r'lie[s]?|occur(?:red|s)?|live[s]?|'
     r'work(?:ed)?|stud(?:y|ied)|play[s]?|serv(?:e|ed)?|'
     r'allow[s]?|enable[s]?|help[s]?|make[s]?|made|take[s]?|took|given?|give[s]?|'
     r'orbit[s]?|rotate[s]?|revolve[s]?|circle[s]?|travel[s]?|move[s]?|'
-    r'remain[s]?|stay[s]?|keep[s]?|last[s]?|continue[s]?|'
+    r'remain[s]?|stay[s]?|keep[s]?|last[s]?|continue[s]?|span[s]?|cover[s]?|weigh[s]?|'
+    r'protect[s]?|stabiliz(?:e|es|ed)|emphasiz(?:e|es|ed)|support[s]?|consum(?:e|es|ed)|'
+    r'invad(?:e|es|ed)|attack(?:ed|s)|surrender(?:ed|s)|enter(?:ed|s)|mark(?:ed|s)|die[s|d]|'
     r'begin[s]?|start[s]?|stop[s]?|end[s]?|finish[s]?)\s+'
     r'(.+)',
     re.IGNORECASE,
@@ -67,6 +71,7 @@ _PREDICATE_TYPE_MAP = [
     (r'\bdiscover[ed]?\b', 'action'),
     (r'\binvent[ed]?\b', 'action'),
     (r'\bdevelop[ed]?\b', 'action'),
+    (r'\bformulat[ed]?\b', 'action'),
     (r'\bfound[ed]?\b', 'action'),
     (r'\bbuild?|built\b', 'action'),
     (r'\bwrite?|wrote|written\b', 'action'),
@@ -141,26 +146,16 @@ def parse_facts(information: str, topic: str = "") -> List[Fact]:
         if fact:
             facts.append(fact)
         else:
-            # Fallback: create an unknown-type fact with the full sentence as object
-            # If the object starts with "The " + topic, strip it to avoid duplication
-            obj = orig.rstrip('.,;:')
-            topic_title = topic.strip().title() if topic else ""
-            if topic_title and obj.lower().startswith('the ' + topic_title.lower()):
-                # Strip "The Topic" prefix from object to avoid "Eiffel Tower is The Eiffel Tower is..."
-                obj = obj[len('the ' + topic_title):].strip()
-                if obj.startswith(('is ', 'are ', 'was ', 'were ')):
-                    # If what remains starts with a verb, use it directly
-                    pass
-                else:
-                    # Otherwise, keep the full sentence
-                    obj = orig.rstrip('.,;:')
+            # Fallback: unknown fact type — store original sentence in obj with empty predicate
+            # so realization returns the sentence as-is without prepending "Topic is "
             facts.append(Fact(
                 subject=topic or "",
-                predicate="is",
-                obj=obj,
+                predicate="",
+                obj=orig,
                 fact_type="unknown",
                 original=orig,
                 certainty=0.4,
+                is_negated=bool(re.search(r'\b(?:not|never|no|without|neither|nor)\b', orig, re.IGNORECASE)),
             ))
 
     return facts
@@ -189,8 +184,8 @@ def _parse_sentence(sentence: str, topic_lower: str) -> Optional[Fact]:
     # Detect tense
     tense = _detect_tense(analysis)
 
-    # Check for negation
-    is_negated = bool(re.search(r'\b(?:not|never|no)\b', predicate, re.IGNORECASE))
+    # Check for negation across sentence, predicate, or object
+    is_negated = bool(re.search(r'\b(?:not|never|no|without|neither|nor)\b', sentence, re.IGNORECASE))
 
     return Fact(
         subject=subject,

@@ -16,22 +16,51 @@ from .util import pick, maybe, lower_first
 _MARKERS: Dict[str, Dict[str, List[str]]] = {
     "elaborate": {
         "friendly": [
-            "Plus,",
-            "Also,",
-            "Interestingly,",
-            "Notably,",
-            "",
             "",
             "",
         ],
         "neutral": [
-            "In addition,",
-            "Furthermore,",
-            "Additionally,",
-            "",
             "",
         ],
         "concise": ["", "", ""],
+    },
+    "locate": {
+        "friendly": [
+            "",
+            "",
+        ],
+        "neutral": [
+            "",
+        ],
+        "concise": ["", ""],
+    },
+    "attribute": {
+        "friendly": [
+            "",
+            "",
+        ],
+        "neutral": [
+            "",
+        ],
+        "concise": ["", ""],
+    },
+    "structure": {
+        "friendly": [
+            "",
+        ],
+        "neutral": [
+            "",
+        ],
+        "concise": ["", ""],
+    },
+    "reason": {
+        "friendly": [
+            "",
+        ],
+        "neutral": [
+            "",
+        ],
+        "concise": ["", ""],
     },
     "contrast": {
         "friendly": [
@@ -41,7 +70,6 @@ _MARKERS: Dict[str, Dict[str, List[str]]] = {
         ],
         "neutral": [
             "However,",
-            "Nevertheless,",
             "On the other hand,",
             "In contrast,",
         ],
@@ -51,11 +79,9 @@ _MARKERS: Dict[str, Dict[str, List[str]]] = {
         "friendly": [
             "Because of that,",
             "That's why",
-            "As a result,",
             "So",
         ],
         "neutral": [
-            "Consequently,",
             "As a result,",
             "Therefore,",
         ],
@@ -64,9 +90,7 @@ _MARKERS: Dict[str, Dict[str, List[str]]] = {
     "example": {
         "friendly": [
             "For example,",
-            "Like,",
             "For instance,",
-            "Take this:",
         ],
         "neutral": [
             "For example,",
@@ -76,14 +100,12 @@ _MARKERS: Dict[str, Dict[str, List[str]]] = {
     },
     "concession": {
         "friendly": [
-            "I mean, sure,",
             "Of course,",
             "Admittedly,",
             "To be fair,",
         ],
         "neutral": [
             "Admittedly,",
-            "While it's true that",
             "Of course,",
         ],
         "concise": ["Sure,", "", ""],
@@ -110,12 +132,9 @@ _MARKERS: Dict[str, Dict[str, List[str]]] = {
         "friendly": [
             "Similarly,",
             "Likewise,",
-            "In the same way,",
-            "By contrast,",
         ],
         "neutral": [
             "Similarly,",
-            "Likewise,",
             "By comparison,",
         ],
         "concise": ["", ""],
@@ -202,9 +221,14 @@ def build_discourse_tree(
             if not same_subj:
                 # Different subject — pick a relation based on type transition
                 rel = _transition_relation(prev.fact_type, fact.fact_type, i, len(facts))
-                # Only use markers ~35% of the time (at temp>0) and not for "introduce"
-                if config.temperature > 0.0 and rel != "introduce" and maybe(0.35):
-                    marker = get_marker(rel, config)
+                # Use markers for natural flow between different subjects
+                if rel != "introduce":
+                    if config.temperature <= 0.0 or maybe(0.35):
+                        marker = get_marker(rel, config)
+            elif i >= 4 and config.temperature > 0.0:
+                # Same subject, deep in response — very occasional connector for flow
+                if maybe(0.15):
+                    marker = get_marker("elaborate", config)
 
         unit = DiscourseUnit(
             relation=rel,
@@ -223,24 +247,29 @@ def build_discourse_tree(
 def _transition_relation(prev_type: str, next_type: str, position: int, total: int) -> DiscourseRelation:
     """Determine the discourse relation between two fact types."""
     transitions = {
-        ("definition", "location"): "elaborate",
-        ("definition", "property"): "elaborate",
-        ("definition", "composition"): "elaborate",
-        ("definition", "purpose"): "elaborate",
-        ("location", "property"): "elaborate",
-        ("location", "composition"): "elaborate",
+        ("definition", "location"): "locate",
+        ("definition", "property"): "attribute",
+        ("definition", "composition"): "structure",
+        ("definition", "purpose"): "reason",
+        ("location", "property"): "attribute",
+        ("location", "composition"): "structure",
         ("composition", "purpose"): "cause",
+        ("composition", "property"): "attribute",
         ("property", "usage"): "elaborate",
         ("property", "comparison"): "contrast",
         ("purpose", "usage"): "elaborate",
         ("purpose", "example"): "example",
         ("usage", "example"): "example",
         ("usage", "comparison"): "contrast",
+        ("action", "property"): "attribute",
+        ("action", "purpose"): "reason",
+        ("comparison", "property"): "attribute",
     }
     key = (prev_type, next_type)
     if key in transitions:
         return transitions[key]  # type: ignore
-    if position >= total - 1:
+    # Only conclude for longer responses (5+ facts); otherwise just elaborate
+    if total >= 5 and position >= total - 1:
         return "conclude"
     return "elaborate"
 

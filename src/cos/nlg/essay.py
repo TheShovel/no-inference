@@ -400,7 +400,6 @@ def generate_essay(
 
     # ── Introduction paragraph ──
     first_fact = facts[0]
-    # Use the properly realized first fact (includes subject + predicate + object)
     first_realized = realize_fact(first_fact, config, use_pronoun=False)
     intro_templates = _INTRODUCTIONS.get(require_style(config), _INTRODUCTIONS["neutral"])
     intro_template = pick(intro_templates, config.temperature)
@@ -408,51 +407,44 @@ def generate_essay(
     try:
         intro = intro_template.format(
             topic=topic,
-            topic_article=upper_first(topic),
-            fact_short=lower_first(first_realized),
+            topic_article="",
+            fact_short=upper_first(first_realized).rstrip('.!?'),
         )
+        intro = re.sub(r'\s+', ' ', intro).strip()
     except (KeyError, ValueError):
         intro = f"Let's talk about {topic}. {first_realized}"
     paragraphs.append(upper_first(intro.strip()))
 
-    # Track which facts have been used (to avoid repetition)
-    used_objects: set = {first_fact.obj}  # first fact's object used in intro
+    # Track which facts have been used
+    used_objects: set = {first_fact.obj}
 
-    # ── Body paragraphs (one per fact type group) ──
+    # ── Body paragraphs ──
     prev_type = None
-    for i, (ftype, group_facts) in enumerate(grouped):
-        # Skip facts already used (by object content)
-        fresh_facts = [f for f in group_facts if f.obj not in used_objects]
-        if not fresh_facts:
-            continue
+    remaining_facts = [f for f in facts if f.obj not in used_objects]
 
-        # Build a paragraph from this group
-        para_sentences: List[str] = []
+    if remaining_facts:
+        # Split remaining facts into up to 2-3 paragraph chunks
+        chunk_size = max(1, (len(remaining_facts) + 1) // 2)
+        fact_chunks = [remaining_facts[i:i + chunk_size] for i in range(0, len(remaining_facts), chunk_size)]
 
-        # Topic sentence (first unused fact in the group)
-        lead_fact = fresh_facts[0]
-        used_objects.add(lead_fact.obj)
-        topic_sent = _get_topic_sentence(lead_fact, config)
-        para_sentences.append(topic_sent)
+        for i, chunk in enumerate(fact_chunks):
+            para_sentences: List[str] = []
+            lead_fact = chunk[0]
+            used_objects.add(lead_fact.obj)
 
-        # Supporting sentences (remaining unused facts in the group)
-        for fact in fresh_facts[1:]:
-            used_objects.add(fact.obj)
-            support = _get_supporting_sentence(fact, config, is_first=False)
-            para_sentences.append(support)
+            if lead_fact.fact_type == "unknown" or not lead_fact.predicate:
+                topic_sent = realize_fact(lead_fact, config, use_pronoun=(i > 0))
+            else:
+                topic_sent = _get_topic_sentence(lead_fact, config)
+            para_sentences.append(topic_sent)
 
-        # Add paragraph transition if not the first paragraph
-        transition = ""
-        if i > 0 and prev_type:
-            transition = _get_paragraph_transition(topic, prev_type, ftype, config)
+            for fact in chunk[1:]:
+                used_objects.add(fact.obj)
+                support = realize_fact(fact, config, use_pronoun=True)
+                para_sentences.append(support)
 
-        paragraph = " ".join(para_sentences)
-        if transition:
-            # Capitalize first letter of transition
-            paragraph = transition + " " + lower_first(paragraph)
-
-        paragraphs.append(paragraph)
-        prev_type = ftype
+            paragraph = " ".join(para_sentences)
+            paragraphs.append(paragraph)
 
     # ── Conclusion paragraph ──
     conclusion_templates = _CONCLUSIONS.get(require_style(config), _CONCLUSIONS["neutral"])
@@ -462,9 +454,7 @@ def generate_essay(
     except (KeyError, ValueError):
         conclusion = f"So that covers the key points about {topic}."
 
-    # Only add conclusion if we have enough content
-    if len(paragraphs) >= 2 and config.verbosity > 0.2:
-        paragraphs.append(conclusion)
+    paragraphs.append(conclusion)
 
     # ── Assemble essay ──
     essay = "\n\n".join(paragraphs)

@@ -370,7 +370,7 @@ def bench_negation():
             for neg in tc["negations"]:
                 neg_word = neg.replace("no ", "").replace("not ", "").strip()
                 # Check the negation IS preserved
-                has_neg = "no " in r_lower or "not " in r_lower or "without" in r_lower
+                has_neg = "no " in r_lower or "not " in r_lower or "without" in r_lower or "n't" in r_lower
                 if not has_neg:
                     score -= 15
                     check(f"  {tc['name']}: negation lost: '{neg}'", False)
@@ -522,7 +522,7 @@ def bench_artifacts():
                               NLGConfig(style=style, verbosity=0.4, temperature=temp))
                 r_lower = r.lower()
                 for bp in BAD:
-                    if bp in r_lower:
+                    if re.search(r'\b' + re.escape(bp) + r'\b', r_lower):
                         check(f"  '{bp}' in {tc['name']}", False, f"in: {r[:80]}")
                         found = True
     if not found:

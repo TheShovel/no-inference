@@ -22,7 +22,7 @@ from .realize import realize_fact, get_opening, get_closing, classify_query
 from .combine import combine_all
 from .fluency import enhance_fluency
 from .fallback import fallback_response
-from .util import split_sentences, lower_first, upper_first, require_style
+from .util import split_sentences, lower_first, upper_first, require_style, maybe, pick
 
 
 def naturalize(
@@ -81,6 +81,11 @@ def naturalize(
     tree = build_discourse_tree(facts, config)
     units = flatten_tree(tree)
 
+    # For concise style or low verbosity, summarize to top 2-3 units for style separation
+    if config.style == "concise" or config.verbosity < 0.25:
+        units = units[:2]
+
+
     # ── Pass 4: Sentence realization ──
     opening = get_opening(query, config)
     realized_sentences: List[str] = []
@@ -108,6 +113,9 @@ def naturalize(
     # ── Sentence combining (clause fusion) ──
     if len(realized_sentences) > 1:
         realized_sentences = combine_all(realized_sentences, config)
+
+        # Light transition insertion between different-subject sentences
+        realized_sentences = _insert_transitions(realized_sentences, config)
 
         # Post-combine cleanup:
         # 1. Fix "[Name] is She/He/It" -> "[Name] is she/he/it"
@@ -145,7 +153,13 @@ def naturalize(
             realized_sentences[i] = sent
     # Post-combine cleanup v2 (fix combine artifacts)
     for i, sent in enumerate(realized_sentences):
+        # Only convert "and is" to ", which is" — this is safe because "is"
+        # creates copular clauses where the subject carries over naturally.
+        # Avoid converting "and was/has/have/had" which can attach to the
+        # wrong antecedent (e.g., "conducted X, and was Y" -> "conducted X, which was Y").
         sent = re.sub(r', and is ', ', which is ', sent)
+        # Keep simple "and" for active past-tense verbs ("conducted", "won", etc.)
+        # But clean up "and is" before articles/determiners
         sent = re.sub(r' and is (a|an|the)', r' and is \1', sent)
         sent = re.sub(r' and is ([A-Z][a-z]+)', r', which is \1', sent)
         sent = re.sub(r', and is ([a-z])', r', and \1', sent)
@@ -211,6 +225,53 @@ def _extract_topic_from_info(information: str, query: str) -> str:
              {'what', 'who', 'how', 'why', 'when', 'where', 'tell', 'show',
               'explain', 'describe', 'define', 'give'}]
     return words[0] if words else query
+
+
+def _insert_transitions(sentences: List[str], config: NLGConfig) -> List[str]:
+    """Add light transitions between sentences with different subjects.
+
+    Uses _get_subject to detect subject changes and inserts simple
+    connectors like "Also," to improve discourse flow.
+    Only fires at temp>0 for naturalistic variation.
+
+    Pure function.
+    """
+    if len(sentences) < 2 or config.temperature <= 0.0:
+        return sentences
+
+    from .combine import _get_subject
+
+    _TRANSITION_WORDS = {
+        'and', 'but', 'however', 'moreover', 'furthermore', 'additionally',
+        'plus', 'so', 'then', 'also', 'nevertheless', 'nonetheless',
+        'consequently', 'therefore', 'thus', 'hence', 'meanwhile',
+        'finally', 'first', 'second', 'third', 'next', 'lastly',
+        'similarly', 'likewise', 'conversely', 'instead',
+    }
+
+    result = [sentences[0]]
+    for i in range(1, len(sentences)):
+        curr = sentences[i]
+        prev_subj = _get_subject(result[-1])
+        curr_subj = _get_subject(curr)
+
+        # Don't add if current sentence already has a transition word
+        first_word = curr.split()[0].lower().rstrip(',:;') if curr.split() else ''
+        already_has = first_word in _TRANSITION_WORDS
+
+        if (prev_subj and curr_subj
+                and prev_subj.lower() != curr_subj.lower()
+                and not already_has
+                and maybe(0.30)):
+            # Light transition pool — simple, natural words only
+            transitions = ["", "", "Also,"]
+            t = pick(transitions, config.temperature)
+            if t:
+                curr = t + " " + upper_first(curr)
+
+        result.append(curr)
+
+    return result
 
 
 import re  # noqa: E811 — used in _extract_topic_from_info and sentinel

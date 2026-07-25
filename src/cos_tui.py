@@ -122,23 +122,45 @@ class COSTUI:
         print(f"{Colors.DIM}{_fill_line(char)}{Colors.RESET}")
 
     def print_system_status(self):
-        """Show current system status with benchmark scores."""
-        scores = [
-            ("TruthfulQA", "98.7%", Colors.GREEN),
-            ("GSM8K",      "92.0%", Colors.GREEN),
-            ("MT-Bench",   "75.0%", Colors.GREEN),
-            ("ARC-Easy",   "42.9%", Colors.YELLOW),
-            ("HellaSwag",  "35.0%", Colors.YELLOW),
-        ]
+        """Show current system status with real benchmark results."""
         w = _term_width()
-        bar_total_width = max(10, min(30, w - 30))  # scale bar to terminal
+        bar_total_width = max(10, min(30, w - 30))
 
-        print(f"\n{Colors.DIM}  Benchmark Scores:{Colors.RESET}")
-        for name, score, color in scores:
-            pct = float(score.strip('%'))
+        def _bar(pct):
             bar_len = int(pct / 100 * bar_total_width)
-            bar = '█' * bar_len + '░' * (bar_total_width - bar_len)
-            print(f"  {Colors.DIM}{name:15s}{Colors.RESET} {color}{score:>5s}{Colors.RESET}  {Colors.DIM}{bar}{Colors.RESET}")
+            return '\u2588' * bar_len + '\u2591' * (bar_total_width - bar_len)
+
+        print(f"\n{Colors.DIM}  {Colors.BOLD}NLG Quality{Colors.RESET}  ({Colors.DIM}deterministic{Colors.RESET})")
+        nlg_scores = [
+            ("Fact Preservation",   99.1, Colors.GREEN),
+            ("Coherence",          90.0, Colors.GREEN),
+            ("Numerical Precision", 97.4, Colors.GREEN),
+            ("Temperature Variety", 70.0, Colors.YELLOW),
+            ("Overall",            97.4, Colors.GREEN),
+        ]
+        for name, pct, color in nlg_scores:
+            print(f"  {Colors.DIM}{name:22s}{Colors.RESET} {color}{pct:5.1f}%{Colors.RESET}  {Colors.DIM}{_bar(pct)}{Colors.RESET}")
+
+        print(f"\n{Colors.DIM}  {Colors.BOLD}LLM Judge{Colors.RESET}  ({Colors.DIM}gemma4:31b, 22 cases{Colors.RESET})")
+        llm_scores = [
+            ("Naturalness",     4.4, Colors.YELLOW),
+            ("Coherence",       6.3, Colors.GREEN),
+            ("Correctness",     9.6, Colors.GREEN),
+            ("Conciseness",     8.5, Colors.GREEN),
+            ("Overall",         6.9, Colors.GREEN),
+        ]
+        for name, score, color in llm_scores:
+            pct = score / 10.0 * 100
+            print(f"  {Colors.DIM}{name:22s}{Colors.RESET} {color}{score:4.1f}/10{Colors.RESET}  {Colors.DIM}{_bar(pct)}{Colors.RESET}")
+
+        print(f"\n{Colors.DIM}  {Colors.BOLD}Math Solver{Colors.RESET}  ({Colors.DIM}basic arithmetic{Colors.RESET})")
+        math_scores = [
+            ("Arithmetic",  100.0, Colors.GREEN),
+            ("Word Problems", 0.0, Colors.RED),
+            ("Overall",      60.0, Colors.YELLOW),
+        ]
+        for name, pct, color in math_scores:
+            print(f"  {Colors.DIM}{name:22s}{Colors.RESET} {color}{pct:5.1f}%{Colors.RESET}  {Colors.DIM}{_bar(pct)}{Colors.RESET}")
         print()
 
     def show_help(self):

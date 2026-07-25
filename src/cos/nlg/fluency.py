@@ -125,34 +125,23 @@ def apply_pronouns(text: str, topic: str, config: NLGConfig, source_text: str = 
 
 # ── Pragmatic fillers ──────────────────────────────────────────────────────
 def _select_pronoun(topic: str) -> str:
-    """Select the correct pronoun for a topic using purely algorithmic heuristics.
-
-    No hardcoded name lists. Uses:
-      1. Uncountable noun detection
-      2. Plural ending detection
-      3. Person-name heuristics (capitalized multi-word names use singular they)
-      4. Default to "it"
+    """Select the correct pronoun for a topic using algorithmic heuristics.
 
     Pure function.
     """
     t = topic.lower().strip()
-
-    # Uncountable/abstract nouns take "it"
-    if t in _UNCOUNTABLE_NOUNS or t.endswith('ing'):
-        return 'it'
-
-    # Plural (ends in 's' but not 'ss')
-    if t.endswith('s') and not t.endswith('ss'):
+    if " and " in t or " & " in t:
         return 'they'
-
-    # Person name heuristic: capitalized multi-word name
-    # Without source text, use gender-neutral singular "they"
     parts = topic.split()
     if len(parts) >= 2 and all(p[0].isupper() for p in parts if p):
-        # Could be a person — if we had source text we'd check pronoun usage
-        # Fall back to "they" (accepted gender-neutral singular)
-        return 'they'
-
+        place_indicators = {'reef', 'island', 'river', 'mountain', 'lake', 'ocean', 'sea',
+                            'bay', 'gulf', 'forest', 'desert', 'valley', 'plain', 'park',
+                            'city', 'town', 'state', 'country', 'continent', 'planet',
+                            'star', 'galaxy', 'nebula', 'asteroid', 'comet', 'rainforest',
+                            'system', 'war', 'tower', 'ii', 'iii', 'iv', 'v', 'vi', 'vii'}
+        last_word = parts[-1].lower().strip('.,;:!?')
+        if last_word not in place_indicators:
+            return 'they'
     return 'it'
 
 
@@ -160,19 +149,30 @@ def _select_pronoun(topic: str) -> str:
 
 _FILLERS = {
     "friendly": [
-        "actually,", "as a matter of fact,",
-        "interestingly,", "the thing is,",
+        "What's more,", "On top of that,",
+        "It's also worth noting that", "Beyond that,",
     ],
-    "neutral": ["in fact,", "indeed,", "essentially,"],
+    "neutral": ["Additionally,", "Furthermore,", "It's worth noting that"],
     "concise": [],
 }
 
 _OPENER_VARIETY = [
-    "Interestingly,",
+    "",
+    "",
     "",
     "",
     "",
 ]
+
+# Sentence-level transition injectors — added between sentences for flow
+_TRANSITIONS = {
+    "friendly": [
+        "Beyond that,", "On top of that,", "What's more,",
+        "Additionally,", "It's also worth noting that",
+    ],
+    "neutral": ["Additionally,", "Furthermore,", "Moreover,"],
+    "concise": [],
+}
 
 # Words that indicate a sentence already has a discourse opener
 _ALREADY_OPENED_WORDS = {
@@ -191,6 +191,8 @@ _ALREADY_OPENED_PREFIXES = [
     'For example,', 'For instance,', 'Similarly,',
     'First,', 'Then,', 'Next,', 'After that,', 'Finally,',
     'Because of that,', 'As a result,', 'Consequently,',
+    'Worth mentioning,', 'Beyond that,', 'On top of that,',
+    'It\'s also worth', 'It\'s worth noting',
 ]
 
 
@@ -207,18 +209,32 @@ def enhance_fluency(
     if not text or not text.strip():
         return ""
 
+    paragraphs = text.split('\n\n')
+    enhanced_paras = []
+
+    for p in paragraphs:
+        if not p.strip():
+            continue
+        p_res = _enhance_single_paragraph(p.strip(), config, topic, source_text)
+        enhanced_paras.append(p_res)
+
+    return '\n\n'.join(enhanced_paras).strip()
+
+
+def _enhance_single_paragraph(
+    text: str,
+    config: NLGConfig,
+    topic: str = "",
+    source_text: str = "",
+) -> str:
     profile = get_profile(config)
-
-    # At temperature=0, disable all probabilistic features for determinism
-    is_deterministic = config.temperature <= 0.0
-
     result = text
 
-    # 1. Apply pronouns (before contractions so "it is" -> "it's")
+    # 1. Apply pronouns
     if topic:
         result = apply_pronouns(result, topic, config, source_text=source_text)
 
-    # 2. Apply contractions (pass temperature for determinism at temp=0)
+    # 2. Apply contractions
     result = apply_contractions(result, rate=profile.get("contraction_rate", 0.8), temperature=config.temperature)
 
     # 3. Vary sentence openers (skip first sentence)
@@ -230,14 +246,14 @@ def enhance_fluency(
             already_opened = first_word in _ALREADY_OPENED_WORDS or any(
                 s.startswith(m) for m in _ALREADY_OPENED_PREFIXES
             )
-            if len(s) > 25 and not already_opened and maybe(profile.get("opener_variety_rate", 0.2)):
+            if len(s) > 25 and not already_opened and maybe(profile.get("opener_variety_rate", 0.08)):
                 opener = pick(_OPENER_VARIETY, config.temperature)
                 varied.append(f"{opener} {lower_first(s)}")
             else:
                 varied.append(s)
         result = ' '.join(varied)
 
-    # 4. Tasteful filler (one, in the middle)
+    # 4. Tasteful filler
     if config.verbosity > 0.4 and config.temperature > 0.0:
         sents = split_sentences(result)
         if len(sents) >= 3 and maybe(profile.get("filler_rate", 0.25)):
@@ -250,18 +266,19 @@ def enhance_fluency(
     # 5. Fix capitalization
     result = fix_caps(result)
 
-    # 6. Clean up whitespace and double punctuation
-    result = re.sub(r'\s+', ' ', result).strip()
-    result = re.sub(r'\.\.+', '.', result)
-    result = re.sub(r'\s+\.', '.', result)
-    result = re.sub(r'\s+,', ',', result)
-    
-    # 7. Remove doubled words ("So so", "and and", "the the")
-    result = re.sub(r'\b(\w+)\s+\1\b', lambda m: m.group(1), result, flags=re.IGNORECASE)
-    # Also handle "So So" with different cases
-    result = re.sub(r'\b([Ss]o)\s+[Ss]o\b', r'\1', result)
+    # 6. Clean up whitespace and artifacts
+    p_clean = re.sub(r'[ \t]+', ' ', result).strip()
+    p_clean = re.sub(r'\.\.+', '.', p_clean)
+    p_clean = re.sub(r'\s+\.', '.', p_clean)
+    p_clean = re.sub(r'\s+,', ',', p_clean)
+    p_clean = re.sub(r'\bit is it\b', 'it is', p_clean, flags=re.IGNORECASE)
+    p_clean = re.sub(r'\bis she she\b', 'is she', p_clean, flags=re.IGNORECASE)
+    p_clean = re.sub(r'\band is she\b', 'and she', p_clean, flags=re.IGNORECASE)
+    p_clean = re.sub(r'\bunlike unlike\b', 'unlike', p_clean, flags=re.IGNORECASE)
+    p_clean = re.sub(r'\b(\w+)\s+\1\b', r'\1', p_clean, flags=re.IGNORECASE)
+    p_clean = re.sub(r'\b([Ss]o)\s+[Ss]o\b', r'\1', p_clean)
 
-    return result
+    return p_clean
 
 import random  # noqa: E811 — used in filler selection
 

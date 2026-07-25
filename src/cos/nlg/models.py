@@ -106,39 +106,24 @@ class Entity:
 
     @property
     def pronoun(self) -> str:
-        """Get the subject pronoun for this entity.
-
-        Algorithmic — no hardcoded name lists:
-          1. Use gender inferred from source text if available (most reliable)
-          2. Check plural/uncountable
-          3. Person-name heuristic (multi-word capitalized -> they) — only if
-             the entity doesn't look like a place/thing
-          4. Default to it
-        """
+        """Get the subject pronoun for this entity."""
         if self.gender == "masculine":
             return "he"
         if self.gender == "feminine":
             return "she"
-        if self.is_plural:
+        name_lower = self.canonical_name.lower().strip()
+        if self.is_plural or " and " in name_lower or " & " in name_lower:
             return "they"
-        if self.is_uncountable:
-            return "it"
-        # Person name heuristic: multi-word, all parts capitalized
-        # Only applies if the name looks like a person (not a place/thing)
         parts = self.canonical_name.split()
         if len(parts) >= 2 and all(p[0].isupper() for p in parts if p):
-            # Check if it looks like a place (contains "Reef", "Island", "River", "Mountain", etc.)
             place_indicators = {'reef', 'island', 'river', 'mountain', 'lake', 'ocean', 'sea',
                                 'bay', 'gulf', 'forest', 'desert', 'valley', 'plain', 'park',
                                 'city', 'town', 'state', 'country', 'continent', 'planet',
-                                'star', 'galaxy', 'nebula', 'asteroid', 'comet'}
+                                'star', 'galaxy', 'nebula', 'asteroid', 'comet', 'rainforest',
+                                'system', 'war', 'tower', 'ii', 'iii', 'iv', 'v', 'vi', 'vii'}
             last_word = parts[-1].lower().strip('.,;:!?')
-            if last_word in place_indicators:
-                return "it"
-            # Looks like a person name
-            return "they"  # gender-neutral singular they
-        if self.canonical_name.lower().endswith("s") and not self.canonical_name.lower().endswith("ss"):
-            return "they"
+            if last_word not in place_indicators:
+                return "they"
         return "it"
 
     @property
@@ -153,17 +138,12 @@ class Entity:
 
 
 def build_entity(name: str, source_text: str = "") -> Entity:
-    """Build an Entity from a name string with auto-inferred properties.
-
-    Gender/pronoun is inferred ALGORITHMICALLY from the source text
-    by checking what pronouns are used to refer to the entity.
-    No hardcoded name lists.
-    """
+    """Build an Entity from a name string with auto-inferred properties."""
     n = name.strip()
     if not n:
         return Entity(canonical_name="")
     is_proper = n[0].isupper() if n else False
-    is_plural = n.lower().endswith("s") and not n.lower().endswith("ss") and not is_proper
+    is_plural = (n.lower().endswith("s") and not n.lower().endswith("ss") and not is_proper) or (" and " in n.lower())
 
     gender = _infer_gender_from_text(n, source_text)
 
@@ -176,18 +156,14 @@ def build_entity(name: str, source_text: str = "") -> Entity:
 
 
 def _infer_gender_from_text(entity_name: str, source_text: str) -> Optional[str]:
-    """Infer an entity's gender from pronoun usage in source text.
-
-    Algorithm:
-      1. Find sentences in source_text that mention the entity
-      2. In nearby sentences, look for gendered pronouns (she/her, he/him)
-      3. Return the gender corresponding to the most common pronoun found
-      4. If no pronouns found, return None (default to "it")
-
-    No hardcoded name lists. Purely data-driven.
-    """
+    """Infer an entity's gender from pronoun usage in source text."""
     if not source_text or not entity_name:
         return None
+
+    name_lower = entity_name.lower().strip()
+    if " and " in name_lower or " & " in name_lower:
+        return None  # Compound subject is plural (they)
+
 
     import re
     name_lower = entity_name.lower().strip()
@@ -261,6 +237,7 @@ def _infer_gender_from_text(entity_name: str, source_text: str) -> Optional[str]
 DiscourseRelation = Literal[
     "introduce", "elaborate", "contrast", "cause", "example",
     "concession", "conclude", "sequence", "compare",
+    "locate", "attribute", "structure", "reason",
 ]
 
 

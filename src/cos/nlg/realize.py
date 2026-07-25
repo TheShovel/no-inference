@@ -30,9 +30,11 @@ _PATTERNS = {
         "friendly": [
             "You can find it {prep} {place}.",
             "It's located {prep} {place}.",
+            "It sits {prep} {place}.",
         ],
         "neutral": [
             "{subject} is located {prep} {place}.",
+            "{subject} is found {prep} {place}.",
         ],
         "concise": [
             "{prep} {place}.",
@@ -42,13 +44,19 @@ _PATTERNS = {
         "friendly": [
             "{subject} has {obj}.",
             "{subject} includes {obj}.",
+            "{subject} features {obj}.",
+            "One thing it has is {obj}.",
+            "Among its features is {obj}.",
         ],
         "neutral": [
             "{subject} has {obj}.",
             "{subject} includes {obj}.",
+            "{subject} features {obj}.",
+            "One notable feature is {obj}.",
         ],
         "concise": [
             "Has {obj}.",
+            "Features {obj}.",
         ],
     },
     "composition": {
@@ -56,10 +64,12 @@ _PATTERNS = {
             "It's made from {obj}.",
             "It's made up of {obj}.",
             "It consists of {obj}.",
+            "It's composed of {obj}.",
         ],
         "neutral": [
             "It's made of {obj}.",
             "{subject} consists of {obj}.",
+            "{subject} is made of {obj}.",
         ],
         "concise": [
             "Made of {obj}.",
@@ -69,10 +79,13 @@ _PATTERNS = {
         "friendly": [
             "It's used for {obj}.",
             "People use it to {obj}.",
+            "It's designed for {obj}.",
+            "It serves as {obj}.",
         ],
         "neutral": [
             "It's used for {obj}.",
             "{subject} serves as {obj}.",
+            "{subject} functions as {obj}.",
         ],
         "concise": [
             "Used {obj}.",
@@ -118,16 +131,13 @@ def realize_fact(
     """Generate a natural sentence from a Fact.
 
     Pure function.
-
-    Args:
-        fact: The fact to realize.
-        config: NLG configuration.
-        state: Optional discourse state for reference tracking.
-        use_pronoun: Whether to use pronouns for known entities.
-
-    Returns:
-        A natural language sentence.
     """
+    if fact.fact_type == "unknown" or not fact.predicate:
+        res = fact.obj.strip()
+        if not res.endswith(('.', '!', '?')):
+            res += "."
+        return upper_first(res)
+
     style = require_style(config)
     templates = _PATTERNS.get(fact.fact_type)
     if not templates:
@@ -146,6 +156,10 @@ def realize_fact(
     subject = fact.subject
     obj = fact.obj
     obj_lower = lower_first(obj)
+
+    # Escape any literal braces in obj to prevent format() crashes
+    obj_safe = obj.replace("{", "{{").replace("}", "}}")
+    obj_lower_safe = obj_lower.replace("{", "{{").replace("}", "}}")
     
     # ── Determine correct pronoun for subject from discourse state ──
     subject_pronoun = "it"
@@ -160,17 +174,67 @@ def realize_fact(
 
     # ── Determine if subject is plural for verb agreement ──
     subj_lower = subject.strip().lower()
+    non_plural_s = {
+        "this", "thus", "bus", "gas", "was", "its", "paris", "mars", "venus", "uranus",
+        "athens", "brussels", "dallas", "texas", "kansas", "photosynthesis", "physics",
+        "mathematics", "cosmos", "series", "species", "apparatus", "corpus"
+    }
     is_plural_subject = (
-        subj_lower.endswith("s") and not subj_lower.endswith("ss")
-        and subj_lower not in ("this", "thus", "bus", "gas", "was", "its")
+        (subj_lower.endswith("s") and not subj_lower.endswith("ss") and subj_lower not in non_plural_s)
+        or " and " in subj_lower or " & " in subj_lower
     )
+
+    # Fix verb agreement (is -> are, was -> were, has -> have, includes -> include) if subject is plural
+    verb = fact.predicate
+
+    # ── For property/action facts: use actual predicate when it's a specific transitive verb ──
+    # This preserves "Benefits include..." while still letting "Paris has..." use the template.
+    _SPECIFIC_TRANSITIVE_VERBS = {
+        "include", "contain", "comprise", "feature", "require",
+        "support", "involve", "use", "produce", "generate",
+        "enable", "allow", "prevent", "protect", "destroy",
+        "connect", "combine", "convert", "represent", "describe",
+        "cover", "span", "offer", "provide", "occur", "appear",
+        "function", "operate", "perform", "serve", "act",
+    }
+    actual_verb_lower = fact.predicate.strip().lower()
+    if fact.fact_type in ("property", "action") and (
+        actual_verb_lower in _SPECIFIC_TRANSITIVE_VERBS
+        or actual_verb_lower in ("are", "were")  # copular plural predicate — use direct SVO
+    ):
+        # Use a direct subject-verb-object pattern to honour the actual verb
+        template = "{subject} {verb} {obj}."
+
+    if is_plural_subject:
+        if verb in ("is", "are"):
+            verb = "are"
+        elif verb in ("was", "were"):
+            verb = "were"
+        elif verb in ("has", "have"):
+            verb = "have"
+        elif verb in ("includes", "include"):
+            verb = "include"
+        elif verb in ("contains", "contain"):
+            verb = "contain"
+        elif verb in ("features", "feature"):
+            verb = "feature"
+
+    # For singular subjects, normalise template "includes" -> "has" so we don't get
+    # "Paris includes a population" when the predicate is 'has'
+    if not is_plural_subject and actual_verb_lower == "has":
+        template = template.replace("{subject} includes ", "{subject} has ")
+
+    # Replace third person singular verb in template if subject is plural
+    if is_plural_subject:
+        template = template.replace("{subject} includes ", "{subject} include ")
+        template = template.replace("{subject} has ", "{subject} have ")
+        template = template.replace("{subject} contains ", "{subject} contain ")
 
     # ── Resolve "refers to"/"refer to" based on subject number ──
     if "refers to" in template and is_plural_subject:
         template = template.replace("refers to", "refer to")
 
     # Replace hardcoded "It's"/"It " patterns with correct pronoun
-    # This handles templates that contain "It's" or "It " as the subject
     template = template.replace("It's ", subject_pronoun + "'s ")
     template = template.replace("It ", subject_pronoun + " ")
 
@@ -186,25 +250,29 @@ def realize_fact(
                 loc_match = re.match(r'(in|on|at|near)\s+(.+)', obj, re.IGNORECASE)
             if loc_match:
                 prep = loc_match.group(1)
-                place = loc_match.group(2)
+                place = loc_match.group(2).replace("{", "{{").replace("}", "}}")
             else:
                 prep = "in"
-                place = obj
-            sentence = template.format(subject=subject, verb=fact.predicate,
-                                       obj=obj, obj_pro=lower_first(obj),
+                place = obj_safe
+            sentence = template.format(subject=subject, verb=verb,
+                                       obj=obj_safe, obj_pro=lower_first(obj_safe),
                                        prep=prep, place=place)
         elif fact.fact_type == "composition":
             comp_match = re.match(r'(?:made|composed|consisting)\s+(?:of|from|with|using)\s+(.+)', obj, re.IGNORECASE)
             clean_obj = comp_match.group(1) if comp_match else obj
-            sentence = template.format(subject=subject, verb=fact.predicate,
-                                       obj=lower_first(clean_obj), obj_pro=lower_first(clean_obj))
+            clean_obj_safe = clean_obj.replace("{", "{{").replace("}", "}}")
+            sentence = template.format(subject=subject, verb=verb,
+                                       obj=lower_first(clean_obj_safe), obj_pro=lower_first(clean_obj_safe))
         else:
-            sentence = template.format(subject=subject, verb=fact.predicate,
-                                       obj=obj, obj_pro=obj_lower, obj_lower=obj_lower,
-                                       place=obj)
+            sentence = template.format(subject=subject, verb=verb,
+                                       obj=obj_safe, obj_pro=obj_lower_safe, obj_lower=obj_lower_safe,
+                                       place=obj_safe)
     except (KeyError, ValueError):
-        # Fallback: simple subject-verb-object
-        sentence = f"{subject} {fact.predicate} {obj}."
+        # Fallback: simple subject-verb-object or object
+        if not verb or fact.fact_type == "unknown":
+            sentence = obj
+        else:
+            sentence = f"{subject} {verb} {obj}."
 
     # Capitalize and ensure ending punctuation
     sentence = upper_first(sentence.strip())
@@ -212,17 +280,14 @@ def realize_fact(
         sentence += "."
 
     # Fix duplication: "Eiffel Tower is The Eiffel Tower is..." -> "Eiffel Tower is..."
-    # This happens when the parser creates a fact with subject="Eiffel Tower"
-    # and obj="The Eiffel Tower is a..." (full sentence as object)
-    dup_match = re.match(
-        r'(' + re.escape(subject) + r'\s+' + re.escape(fact.predicate) + r'\s+)The\s+' + re.escape(subject) + r'\s+',
-        sentence, re.IGNORECASE
-    )
-    if dup_match:
-        # Remove the duplicated "The Subject" part
-        sentence = sentence[:dup_match.end(1)] + sentence[dup_match.end():]
-        # Recapitalize
-        sentence = upper_first(sentence.strip())
+    if verb:
+        dup_match = re.match(
+            r'(' + re.escape(subject) + r'\s+' + re.escape(verb) + r'\s+)The\s+' + re.escape(subject) + r'\s+',
+            sentence, re.IGNORECASE
+        )
+        if dup_match:
+            sentence = sentence[:dup_match.end(1)] + sentence[dup_match.end():]
+            sentence = upper_first(sentence.strip())
 
     return sentence
 
@@ -231,8 +296,8 @@ def realize_fact(
 
 _OPENINGS = {
     "how": {
-        "friendly": ["Here's how:", "You can do it like this:"],
-        "neutral": ["Here's how:"],
+        "friendly": ["", "", ""],
+        "neutral": [""],
         "concise": [""],
     },
     "who": {
@@ -251,8 +316,8 @@ _OPENINGS = {
         "concise": [""],
     },
     "where": {
-        "friendly": ["It's located", "It's found"],
-        "neutral": ["It's located"],
+        "friendly": ["", ""],
+        "neutral": [""],
         "concise": [""],
     },
     "factual": {
