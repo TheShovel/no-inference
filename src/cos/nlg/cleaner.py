@@ -15,6 +15,12 @@ def clean_information(text: str, max_sentences: Optional[int] = None) -> str:
     text = re.sub(r'\(\s*\)', '', text)
     # Remove citation brackets like [1], [2]
     text = re.sub(r'\[\d+(?:–\d+)?\]', '', text)
+    # Remove code blocks and code-like lines (def, class, import, print, return with indentation)
+    text = re.sub(r'(?:^|\n)\s*(?:def |class |import |from \S+ import |print\(|if __name__|for .+ in .+:|while .+:|try:|except |raise |yield |async |await ).*?(?:\n|$)', '\n', text)
+    # Remove lines that look like code (indented with specific patterns)
+    text = re.sub(r'(?:^|\n)\s{4,}(?:return |self\.|raise |print\().*?(?:\n|$)', '\n', text)
+    # Remove function signature lines like "def solution(input_data):"
+    text = re.sub(r'(?:^|\n)\s*def\s+\w+\s*\(.*?\)\s*(?:->.*?)?:\s*\n', '\n', text)
     # Normalize whitespace
     text = re.sub(r'\s+', ' ', text).strip()
     # Truncate only if max_sentences is explicitly specified

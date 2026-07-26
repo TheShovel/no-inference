@@ -61,11 +61,14 @@ def _load_all():
             for trigger in triggers:
                 if not trigger:
                     continue
-                words = trigger.lower().split()
-                if len(words) == 1 and len(trigger) <= 5:
-                    regex = re.compile(r'\b' + re.escape(trigger.lower()) + r'\b', re.IGNORECASE)
+                t = trigger.lower().strip()
+                words = t.split()
+                if len(words) == 1:
+                    # Single word triggers always use word boundaries
+                    regex = re.compile(r'\b' + re.escape(t) + r'\b', re.IGNORECASE)
                 else:
-                    regex = re.compile(re.escape(trigger.lower()), re.IGNORECASE)
+                    # Multi-word: word boundary at start and end
+                    regex = re.compile(r'\b' + re.escape(t) + r'\b', re.IGNORECASE)
                 _TEMPLATES.append((regex, entry))
                 loaded += 1
 

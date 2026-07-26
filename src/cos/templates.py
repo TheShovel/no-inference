@@ -398,8 +398,8 @@ def match_instruction(query):
         return match_coding(query)
 
     # 3. Reasoning patterns
-    reason_keywords = ["reason", "logic", "deduce", "infer", "syllogism",
-                       "if.*then", "riddle", "puzzle"]
+    reason_keywords = [r'\breason\b', r'\blogic\b', r'\bdeduce\b', r'\binfer\b', r'\bsyllogism\b',
+                       r'\bif\b.*\bthen\b', r'\briddle\b', r'\bpuzzle\b']
     is_reasoning = any(re.search(kw, q) for kw in reason_keywords)
 
     if is_reasoning:
@@ -411,7 +411,9 @@ def match_instruction(query):
         return _template_evaluation()
 
     # 5. List/enumerate patterns
-    list_keywords = ["list", "enumerate", "name some", "what are some", "give me"]
+    # Only match bare "list" or "enumerate" commands, not "what are some"
+    # which should go through factual knowledge retrieval instead
+    list_keywords = ["list", "enumerate", "name some"]
     if any(q.startswith(kw) for kw in list_keywords):
         topic = q
         for kw in list_keywords:
@@ -421,6 +423,8 @@ def match_instruction(query):
         return _template_list(topic)
 
     # 6. Explain/describe patterns
+    # Only match bare "explain" or "describe" commands, not "what is"
+    # which should go through factual knowledge retrieval instead
     if q.startswith("explain") or q.startswith("describe") or q.startswith("define"):
         topic = q
         for kw in ["explain", "describe", "define"]:

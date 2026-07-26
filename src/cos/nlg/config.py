@@ -32,18 +32,18 @@ DEFAULT_CONFIG = NLGConfig()
 STYLE_PROFILES = {
     "friendly": {
         "contraction_rate": 0.9,
-        "filler_rate": 0.05,
+        "filler_rate": 0.02,
         "hedge_rate": 0.0,
-        "opener_variety_rate": 0.08,
+        "opener_variety_rate": 0.04,
         "sentence_variation_rate": 0.3,
         "closing_rate": 0.4,
-        "combine_rate": 0.10,  # Reduced to avoid excessive 'and' chaining
+        "combine_rate": 0.10,
     },
     "neutral": {
         "contraction_rate": 0.7,
-        "filler_rate": 0.05,
+        "filler_rate": 0.02,
         "hedge_rate": 0.0,
-        "opener_variety_rate": 0.1,
+        "opener_variety_rate": 0.05,
         "sentence_variation_rate": 0.3,
         "closing_rate": 0.3,
         "combine_rate": 0.25,

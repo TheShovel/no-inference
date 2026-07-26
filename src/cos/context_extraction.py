@@ -957,6 +957,8 @@ _FOLLOWUP_SIGNALS: List[str] = [
     'and then what', 'and then', 'what else', 'anything else',
     'what does that mean', 'how does that work',
     'can you elaborate', 'can you expand',
+    'what were the', 'what colors', 'why is that', 'how does that',
+    'how does it', 'what about that', 'tell me about that',
 ]
 
 # Pronoun referents (words that primarily refer to prior context)
@@ -1002,8 +1004,17 @@ def _is_pronoun_query(query: str) -> bool:
             q_after = q.replace(signal, '', 1).strip().lstrip(',;: ')
             after_words = q_after.split()
             # If the remaining query is just pronouns/punctuation, it IS context-dependent
+            # Also treat question verbs (see, show, tell, etc.) as non-content words
+            # since they're part of the question structure, not the topic
+            non_content = _PRONOUN_REFS | _STOP_WORDS | {
+                'yeah', 'yes', 'no', 'ok', 'okay', 'sure', 'well', 'so',
+                'but', 'and', 'oh', 'ah', 'hmm', '?',
+                'see', 'show', 'tell', 'explain', 'describe', 'find', 'give',
+                'make', 'do', 'does', 'did', 'can', 'could', 'would', 'should',
+                'will', 'may', 'might', 'shall',
+            }
             is_vague = all(
-                w in _PRONOUN_REFS or w in _STOP_WORDS or w in {'yeah', 'yes', 'no', 'ok', 'okay', 'sure', 'well', 'so', 'but', 'and', 'oh', 'ah', 'hmm', '?'}
+                w.rstrip('.,;:!?') in non_content
                 for w in after_words
             ) if after_words else True
             if is_vague:
@@ -1013,17 +1024,30 @@ def _is_pronoun_query(query: str) -> bool:
 
     # Content-to-pronoun ratio analysis
     # Count content words vs pronoun references
+    # Strip punctuation from words so "it?" is recognized as "it"
+    _word_cleaner = lambda w: w.rstrip('.,;:!?()[]"\'')
+    words_clean = [_word_cleaner(w) for w in words]
+
     content_words_in_query = [
-        w for w in words
+        w for w in words_clean
         if w not in _STOP_WORDS
         and w not in _PRONOUN_REFS
         and w not in {'yeah', 'yes', 'no', 'ok', 'okay', 'sure', 'well', 'so', 'but', 'and', 'oh', 'ah', 'hmm'}
     ]
 
-    has_pronoun_ref = any(w in _PRONOUN_REFS for w in words)
+    has_pronoun_ref = any(w in _PRONOUN_REFS for w in words_clean)
 
     # If it has pronouns AND very little specific content, it's context-dependent
     if has_pronoun_ref and len(content_words_in_query) <= 1:
+        return True
+
+    # Referential pronouns ("it", "them", "they", "that", "this") are almost always
+    # references to prior context, even in longer queries.
+    # e.g., "What are some fun facts about it?" — "it" refers to France.
+    # e.g., "How does that compare to other empires?" — "that" refers to the topic.
+    referential_pronouns = {'it', 'them', 'they', 'that', 'this'}
+    has_referential_pronoun = any(w in referential_pronouns for w in words_clean)
+    if has_referential_pronoun:
         return True
 
     # Queries starting with "what about", "how about" with a pronoun
@@ -1093,6 +1117,12 @@ def extract_context_topic(
     for i in range(start, len(conversation_history)):
         query, response = conversation_history[i]
 
+        # Skip the current query — it's the one we're trying to resolve.
+        # Its keywords (e.g., "see", "main factors") would pollute the topic
+        # scores. We want to resolve from prior context, not from itself.
+        if current_query and query == current_query:
+            continue
+
         # Exponential recency weight: most recent exchanges count most
         distance_from_end = len(conversation_history) - 1 - i
         recency = 0.4 * (0.65 ** distance_from_end)
@@ -1120,9 +1150,22 @@ def extract_context_topic(
         return None
 
     # Filter out pronoun-like topics when context-dependent
+    # Also always filter topics that contain pronoun words as standalone tokens
+    # e.g., "that work" should be filtered because "that" is a pronoun
+    def _contains_pronoun(topic: str) -> bool:
+        words = topic.split()
+        return any(w in _PRONOUN_REFS or w in _EMPTY_TOPICS for w in words)
+
     if is_context_dep:
         topic_scores = {k: v for k, v in topic_scores.items()
-                       if k not in _PRONOUN_REFS and k not in _EMPTY_TOPICS}
+                       if k not in _PRONOUN_REFS
+                       and k not in _EMPTY_TOPICS
+                       and not _contains_pronoun(k)}
+    else:
+        # Even when not explicitly context-dependent, filter out topics
+        # that contain pronouns (they're never good standalone topics)
+        topic_scores = {k: v for k, v in topic_scores.items()
+                       if not _contains_pronoun(k)}
 
     if not topic_scores:
         return None

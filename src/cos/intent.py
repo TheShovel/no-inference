@@ -14,7 +14,7 @@ Intents:
 """
 
 import re
-from cos.state import current_roleplay
+from cos.state import current_roleplay, conversation_history
 
 
 def detect_intent(query):
@@ -41,6 +41,12 @@ def detect_intent(query):
         'make the following adjustments'
     ]
     if any(p in q for p in follow_up_patterns):
+        return 'follow_up'
+
+    # Single-word expansion requests (e.g., "longer", "more", "continue")
+    # that need conversation history context to make sense.
+    expansion_words = {'longer', 'more', 'further', 'elaborate', 'details'}
+    if q in expansion_words and conversation_history:
         return 'follow_up'
 
     # ── Math expression (before factual, since "what is X times Y" matches both) ──
@@ -165,7 +171,7 @@ def detect_intent(query):
     # "how do i make a salad", "how to cook pasta", "can i substitute...", etc.
     if re.search(r'\bhow\s+(do|to|can|would|should|could)\b', q):
         return 'instruction'
-    if re.search(r'\bcan\s+(?:i|we|you)\s+', q):
+    if re.match(r'\bcan\s+(?:i|we|you)\s+', q):
         return 'instruction'
     if re.search(r'what.?(?:s|\s+is)\s+(?:the\s+)?best\s+way', q):
         return 'instruction'
@@ -225,7 +231,7 @@ def detect_intent(query):
         r'what\s+does\s+(?:he|she|it)\s+',
         r'what\s+(?:is|are)\s+(?:my|your|his|her|our|their)\s+',
         r'(?:tell|show)\s+me\s+(?:what|the)\s+',
-        r'what\s+(?:language|food|game|book|movie|song|color|animal)',
+        r'what\s+(?:language|food|game|book|movie|song|color|animal)\s+(?:do|is|are)\s+(?:you|i|we|they)',
         r'do\s+(?:i|you|we|they)\s+(?:like|have|want|know|remember)\s+',
         r'does\s+(?:he|she|it)\s+(?:like|have|want|know)\s+',
     ]

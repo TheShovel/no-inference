@@ -1,0 +1,29 @@
+[
+    {
+        "q": [
+            "Tell me about the history of the printing press",
+            "What is the history of the printing press?",
+            "When was the printing press invented?",
+            "Who invented the printing press?",
+            "What is the history of printing?"
+        ],
+        "a": "The printing press was invented by Johannes Gutenberg in Mainz, Germany, around 1440. Gutenberg's key innovation was movable type — individual metal letters that could be arranged, inked, and pressed onto paper repeatedly. Before the printing press, books were copied by hand by scribes, making them rare and expensive. The first major book printed with movable type was the Gutenberg Bible, completed around 1455. The printing press revolutionized the spread of knowledge, enabling the Renaissance, the Protestant Reformation, and the Scientific Revolution. By 1500, printing presses had spread across Europe, and over 20 million books had been printed. The technology eventually evolved into modern offset printing and digital printing."
+    },
+    {
+        "q": [
+            "How do bees communicate with each other?",
+            "How do bees talk to each other?",
+            "What is bee communication?",
+            "How do bees use the waggle dance?"
+        ],
+        "a": "Bees communicate primarily through a combination of chemical signals (pheromones) and the famous 'waggle dance.' When a forager bee finds a rich source of nectar or pollen, it returns to the hive and performs a waggle dance on the vertical honeycomb surface. The direction of the dance relative to gravity indicates the direction of the food source relative to the sun, while the duration of the waggle run indicates the distance. Other bees follow the dance to locate the food. Bees also use pheromones to signal alarm, mark food sources, and coordinate colony activities. The queen releases pheromones that suppress worker reproduction and maintain colony cohesion."
+    },
+    {
+        "q": [
+            "Why is the sky blue?",
+            "Why is the sky blue during the day?",
+            "What makes the sky blue?"
+        ],
+        "a": "The sky appears blue due to Rayleigh scattering, a phenomenon where molecules and small particles in the atmosphere scatter sunlight in all directions. Sunlight contains all colors of the visible spectrum, but blue light has a shorter wavelength and is scattered more efficiently than red light. When you look up at the sky, you see this scattered blue light coming from all directions. At sunrise and sunset, the sun is lower in the sky, so sunlight travels through more atmosphere, scattering away most of the blue light and leaving the longer red and orange wavelengths to dominate. The same scattering explains why distant mountains appear bluish and why the ocean appears blue."
+    }
+]

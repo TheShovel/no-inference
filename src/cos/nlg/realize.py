@@ -17,10 +17,13 @@ _PATTERNS = {
     "definition": {
         "friendly": [
             "{subject} {verb} {obj}.",
-            "Well, {subject} {verb} {obj}.",
-            "You could say {subject} {verb} {obj}.",
+            "{subject} {verb} {obj}.",
+            "{subject} {verb} {obj}.",
+            "In essence, {subject} {verb} {obj}.",
+            "Simply put, {subject} {verb} {obj}.",
         ],
         "neutral": [
+            "{subject} {verb} {obj}.",
             "{subject} {verb} {obj}.",
             "{subject} refers to {obj}.",
         ],
@@ -87,7 +90,7 @@ _PATTERNS = {
     "action": {
         "friendly": [
             "{subject} {verb} {obj}.",
-            "{subject} actually {verb} {obj}.",
+            "{subject} {verb} {obj}.",
         ],
         "neutral": [
             "{subject} {verb} {obj}.",
@@ -141,16 +144,53 @@ def realize_fact(
 
     # ── Ensure "refers to" is only used for true definition predicates ──
     copular = fact.predicate.strip().lower() in ("is", "are", "was", "were")
+    obj = fact.obj
     if not copular:
         style_templates = [t for t in style_templates if "refers to" not in t]
+        if not style_templates:
+            style_templates = ["{subject} {verb} {obj}."]
+    # Also filter "refers to" when the object doesn't look like a simple definition
+    # (e.g., "often called the Red Planet" should not become "refers to often called...")
+    _obj_lower = obj.lower().strip()
+    if copular and style_templates:
+        _REFERS_TO_SKIP_PATTERNS = (
+            'often called', 'sometimes called', 'also called', 'known as',
+            'called ', 'referred to as', 'known for', 'famous for',
+            'because of', 'due to', 'as a', 'in a', 'on a',
+        )
+        if any(_obj_lower.startswith(p) for p in _REFERS_TO_SKIP_PATTERNS):
+            style_templates = [t for t in style_templates if "refers to" not in t]
+            if not style_templates:
+                style_templates = ["{subject} {verb} {obj}."]
+
+    # For negated facts, avoid templates that drop negation (e.g., "known for"
+    # would turn "has no magnetic field" into "is known for no magnetic field")
+    if fact.is_negated:
+        style_templates = [t for t in style_templates if "known for" not in t]
         if not style_templates:
             style_templates = ["{subject} {verb} {obj}."]
 
     template = pick(style_templates, config.temperature)
 
     subject = fact.subject
-    obj = fact.obj
     obj_lower = lower_first(obj)
+
+    # Fix: if subject is just an adjective (no noun), use the fact's original subject or topic
+    _ADJECTIVES_ONLY = {
+        'high-quality', 'low-quality', 'good-quality', 'bad-quality',
+        'large-scale', 'small-scale', 'long-term', 'short-term',
+        'well-known', 'little-known', 'well-known', 'far-reaching',
+    }
+    if subject.lower().rstrip('.,;:!?') in _ADJECTIVES_ONLY:
+        # Try to extract a better subject from the original sentence
+        if fact.original:
+            # Look for "X have/has/are" pattern in original
+            orig_match = re.match(r'^([A-Z][^.]*?)\s+(?:have|has|are|is|were|was)\b', fact.original)
+            if orig_match:
+                subject = orig_match.group(1).strip()
+        # If still just an adjective, use a generic subject based on the topic
+        if subject.lower().rstrip('.,;:!?') in _ADJECTIVES_ONLY:
+            subject = "This"  # Fallback to generic subject
 
     # Escape any literal braces in obj to prevent format() crashes
     obj_safe = obj.replace("{", "{{").replace("}", "}}")
@@ -174,8 +214,12 @@ def realize_fact(
         "athens", "brussels", "dallas", "texas", "kansas", "photosynthesis", "physics",
         "mathematics", "cosmos", "series", "species", "apparatus", "corpus"
     }
+    # Compound subjects are always plural
+    _COMPOUND_SUBJECTS = ('both', 'all', 'some', 'many', 'several', 'each', 'every')
+    is_compound_subject = any(subj_lower.startswith(p) for p in _COMPOUND_SUBJECTS)
     is_plural_subject = (
-        (subj_lower.endswith("s") and not subj_lower.endswith("ss") and subj_lower not in non_plural_s)
+        is_compound_subject
+        or (subj_lower.endswith("s") and not subj_lower.endswith("ss") and subj_lower not in non_plural_s)
         or " and " in subj_lower or " & " in subj_lower
     )
 
@@ -193,12 +237,25 @@ def realize_fact(
         "function", "operate", "perform", "serve", "act",
     }
     actual_verb_lower = fact.predicate.strip().lower()
+
+    # Fix: if predicate is "include" but object starts with "been", use "have" instead
+    # (e.g., "Carrot seeds include been found" -> "Carrot seeds have been found")
+    _fixed_include_been = False
+    if actual_verb_lower == "include" and obj_lower.startswith("been"):
+        verb = "have" if is_plural_subject else "has"
+        actual_verb_lower = verb.lower()
+        template = "{subject} {verb} {obj}."
+        _fixed_include_been = True
+
     if fact.fact_type in ("property", "action") and (
         actual_verb_lower in _SPECIFIC_TRANSITIVE_VERBS
         or actual_verb_lower in ("are", "were")  # copular plural predicate — use direct SVO
     ):
         # Use a direct subject-verb-object pattern to honour the actual verb
         template = "{subject} {verb} {obj}."
+        # Also mark so "known for" skip filters don't override this SVO template
+        if actual_verb_lower in ("are", "were"):
+            _fixed_include_been = True
 
     if is_plural_subject:
         if verb in ("is", "are"):
@@ -213,6 +270,49 @@ def realize_fact(
             verb = "contain"
         elif verb in ("features", "feature"):
             verb = "feature"
+
+    # For property facts with "has" predicate, avoid "known for" templates
+    # when the object is a measurement or concrete thing (not an abstract quality)
+    # Skip if we already fixed "include been" to use SVO pattern
+    if not _fixed_include_been and fact.fact_type == "property" and actual_verb_lower == "has":
+        _KNOWN_FOR_SKIP = (
+            'a diameter', 'a population', 'a mass', 'a height', 'a width',
+            'a length', 'a weight', 'a temperature', 'a speed', 'a distance',
+            'a year', 'a day', 'an atmosphere', 'the tallest', 'the largest',
+            'the smallest', 'two small', 'no global', 'a large proportion',
+            'a small proportion', 'a significant', 'a substantial',
+        )
+        if any(_obj_lower.startswith(p) for p in _KNOWN_FOR_SKIP):
+            _filtered = [t for t in style_templates if "known for" not in t]
+            if _filtered:
+                style_templates = _filtered
+                template = pick(style_templates, config.temperature)
+
+    # Also skip "known for" when the subject looks like a compound subject
+    # (e.g., "Both X and Y" or "X, Y, and Z") - these need plural verbs
+    _COMPOUND_SUBJECTS = ('both', 'all', 'some', 'many', 'several', 'each', 'every')
+    if not _fixed_include_been and subj_lower.startswith(_COMPOUND_SUBJECTS):
+        _filtered = [t for t in style_templates if "known for" not in t]
+        if _filtered:
+            style_templates = _filtered
+            template = pick(style_templates, config.temperature)
+
+    # Also skip "known for" when the subject has an adjective prefix
+    # (e.g., "High-quality carrots" -> should use "has" not "is known for")
+    _ADJECTIVE_PREFIXES = ('high-', 'low-', 'good-', 'bad-', 'large-', 'small-', 'big-')
+    if not _fixed_include_been and any(subj_lower.startswith(p) for p in _ADJECTIVE_PREFIXES):
+        _filtered = [t for t in style_templates if "known for" not in t]
+        if _filtered:
+            style_templates = _filtered
+            template = pick(style_templates, config.temperature)
+
+    # Also skip "known for" when the object contains "been" or "have been"
+    # (e.g., "seeds have been found" should not become "seeds is known for been found")
+    if not _fixed_include_been and ('been' in _obj_lower or 'have been' in _obj_lower):
+        _filtered = [t for t in style_templates if "known for" not in t]
+        if _filtered:
+            style_templates = _filtered
+            template = pick(style_templates, config.temperature)
 
     # For singular subjects, normalise template "includes" -> "has" so we don't get
     # "Paris includes a population" when the predicate is 'has'
@@ -232,6 +332,54 @@ def realize_fact(
     # Replace hardcoded "It's"/"It " patterns with correct pronoun
     template = template.replace("It's ", subject_pronoun + "'s ")
     template = template.replace("It ", subject_pronoun + " ")
+
+    # If the subject starts with a capitalized word and the template starts
+    # with a prefix like "You could say", lowercase the subject's first word
+    # for natural flow: "You could say the Eiffel Tower" not "You could say The Eiffel Tower"
+    _PROPER_NOUNS_REALIZE = {
+        'albert', 'einstein', 'curie', 'eiffel', 'mars', 'earth', 'jupiter',
+        'saturn', 'venus', 'uranus', 'neptune', 'mercury', 'france', 'paris',
+        'london', 'germany', 'vienna', 'bonn', 'austria', 'beethoven',
+        'olympus', 'phobos', 'deimos', 'brain', 'neural', 'chemistry',
+        'physics', 'biology', 'mathematics', 'calculus', 'algebra',
+        'relativity', 'darwin', 'newton', 'galileo', 'tesla',
+        'hawking', 'feynman', 'copernicus', 'kepler', 'shakespeare',
+        'homer', 'plato', 'aristotle', 'confucius', 'buddha',
+    }
+    _PREFIXES = (
+        "You could say ", "Well, ", "Actually, ", "So, ",
+        "What's more, ", "Beyond that, ", "On top of that, ",
+        "Also, ", "Notably, ", "Interestingly, ",
+    )
+    for prefix in _PREFIXES:
+        if template.startswith(prefix + "{subject}"):
+            # Lowercase the first letter of the subject for natural flow:
+            # "You could say the Eiffel Tower" not "You could say The Eiffel Tower"
+            # "You could say machine learning" not "You could say Machine learning"
+            # "You could say he developed" not "You could say He developed"
+            # But keep proper nouns capitalized: "You could say Albert Einstein"
+            _subj_words = subject.split()
+            if _subj_words:
+                _first_word_lower = _subj_words[0].lower()
+                if _first_word_lower in ("the", "a", "an"):
+                    # Article: always lowercase
+                    template = template.replace(prefix + "{subject}", prefix + lower_first(subject), 1)
+                elif _first_word_lower in ("he", "she", "it", "they", "we", "you"):
+                    # Pronouns: always lowercase after a prefix
+                    template = template.replace(prefix + "{subject}", prefix + _first_word_lower, 1)
+                elif _first_word_lower in _PROPER_NOUNS_REALIZE:
+                    # Known proper noun: keep capitalized
+                    pass
+                elif _subj_words[0][0].isupper() and len(_subj_words) > 1:
+                    # Multi-word subject where first word might be common noun
+                    # (e.g., "Machine learning", "French fries") -> lowercase first word
+                    template = template.replace(prefix + "{subject}", prefix + lower_first(subject), 1)
+                elif _subj_words[0][0].isupper() and len(_subj_words) == 1:
+                    # Single word subject: lowercase unless it's a known proper noun
+                    # (e.g., "Photosynthesis" -> "photosynthesis", "Sunlight" -> "sunlight")
+                    # but "Mars" -> "Mars", "Einstein" -> "Einstein"
+                    template = template.replace(prefix + "{subject}", prefix + _first_word_lower, 1)
+            break
 
     # Try to build the sentence from the template
     try:

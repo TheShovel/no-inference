@@ -142,6 +142,20 @@ def parse_facts(information: str, topic: str = "") -> List[Fact]:
         if not orig:
             continue
 
+        # Skip sentences that start with "Both" as they need special handling
+        # (e.g., "Both X and Y indicate..." should be parsed differently)
+        if re.match(r'^Both\b', orig, re.IGNORECASE):
+            facts.append(Fact(
+                subject=topic or "",
+                predicate="",
+                obj=orig,
+                fact_type="unknown",
+                original=orig,
+                certainty=0.4,
+                is_negated=False,
+            ))
+            continue
+
         fact = _parse_sentence(orig, topic_lower)
         if fact:
             facts.append(fact)

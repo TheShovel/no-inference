@@ -180,7 +180,7 @@ def combine_by_coordination(sentences: List[str], config: NLGConfig) -> List[str
         if same_subj and curr_body:
             # Don't chain more than 2 clauses together — avoids run-on sentences.
             # Check if the previous sentence already contains a coordinate ('and' + verb).
-            _already_chained = bool(re.search(r', and [a-z]+(?:ed|s |\b)', result[-1]))
+            _already_chained = bool(re.search(r',? and [a-z]+(?:ed|s |\b)', result[-1]))
             if _already_chained:
                 # Already have 2+ clauses — avoid run-on sentences.
                 # At temp=0, always break the chain (deterministic quality).
@@ -229,7 +229,16 @@ def combine_by_coordination(sentences: List[str], config: NLGConfig) -> List[str
                 if config.temperature > 0.0 and maybe(0.5):  # 50% keep separate
                     result.append(curr)
                     continue
-                combined = prev.rstrip('.!?') + ", and " + _lower_clause(curr_clean)
+                # Use comma for copular/auxiliary verbs (is, was, has) to separate
+                # clauses, but no comma for action verbs to create natural compound
+                # predicates: "Einstein was a physicist and developed relativity"
+                _COPALAR_AUX = ('is ', 'are ', 'was ', 'were ', 'has ', 'have ', 'had ')
+                _lower_body = curr_clean.lower()
+                if _lower_body.startswith(_COPALAR_AUX):
+                    combined = prev.rstrip('.!?') + ", and " + _lower_clause(curr_clean)
+                else:
+                    # Action verbs: no comma for smoother compound predicate
+                    combined = prev.rstrip('.!?') + " and " + _lower_clause(curr_clean)
                 result[-1] = combined
                 continue
 
@@ -270,9 +279,22 @@ def combine_by_relative_clause(sentences: List[str], config: NLGConfig) -> List[
             if ', who' in result[i - 1] or ', which' in result[i - 1]:
                 i += 1
                 continue
+            # Skip if previous sentence already has a coordinate conjunction
+            # (avoids run-on sentences like "X was Y and developed Z, who was born...")
+            if re.search(r' and [a-z]+', result[i - 1]):
+                i += 1
+                continue
             # Use relative clauses at temp>0 — combine aggressively for richer prose
             if config.temperature > 0.0 and maybe(0.65):
-                curr_body = result[i][len(curr_subj):].strip().lstrip(',').strip()
+                # Find the actual position of the subject in the text (it may be
+                # preceded by a discourse marker like "Well, " or "Also, ")
+                curr_lower = result[i].lower()
+                subj_pos = curr_lower.find(curr_subj.lower())
+                if subj_pos >= 0:
+                    curr_body = result[i][subj_pos + len(curr_subj):].strip()
+                else:
+                    curr_body = result[i][len(curr_subj):].strip()
+                curr_body = curr_body.lstrip(', ').strip()
                 # Use 'who' for people/animate, 'which' for things
                 _PERSON_PRONOUNS = {'she', 'he', 'they', 'i', 'we', 'who', 'everyone', 'somebody'}
                 _KNOWN_PEOPLE = {'marie curie', 'einstein', 'newton', 'curie', 'gustave eiffel'}

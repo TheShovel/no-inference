@@ -137,6 +137,31 @@ _TOPIC_SENTENCES = {
 }
 
 
+def _is_plural_topic(topic: str) -> bool:
+    """Check if a topic name refers to a plural noun.
+
+    Pure function.
+    """
+    t = topic.lower().strip().rstrip('.,;:!?')
+    if " and " in t or " & " in t:
+        return True
+    t_words = t.split()
+    last_word = t_words[-1] if t_words else t
+    _SINGULAR_NOUNS = {
+        'this', 'thus', 'bus', 'gas', 'was', 'its', 'paris', 'mars', 'venus',
+        'uranus', 'athens', 'brussels', 'dallas', 'texas', 'kansas', 'species',
+        'series', 'apparatus', 'corpus', 'radius', 'basis', 'crisis', 'thesis',
+        'analysis', 'oasis', 'alas', 'status', 'plus', 'minus',
+        'linguistics', 'mathematics', 'physics', 'economics', 'statistics',
+        'politics', 'ethics', 'aesthetics', 'logics', 'informatics',
+        'news', 'mumps', 'measles', 'diabetes', 'rabies', 'tetanus',
+    }
+    if (last_word.endswith('s') and not last_word.endswith('ss')
+            and last_word not in _SINGULAR_NOUNS):
+        return True
+    return False
+
+
 def _get_topic_sentence(fact: Fact, config: NLGConfig) -> str:
     """Generate a topic sentence for a paragraph about this fact type."""
     style = require_style(config)
@@ -147,6 +172,36 @@ def _get_topic_sentence(fact: Fact, config: NLGConfig) -> str:
     topic = fact.subject
     obj_lower = lower_first(fact.obj)
     topic_article = _get_article(topic)
+
+    # Detect if topic is plural for verb agreement
+    is_plural = _is_plural_topic(topic)
+    if is_plural:
+        # Only replace "is" when it's the main copular verb, not in subordinate clauses
+        # e.g., "So what exactly is {topic}?" → "So what exactly are {topic}?"
+        # But NOT "One of the key things about {topic} is that..." (singular subject)
+        template = re.sub(r'\bis\b(?=\s+\{topic\}|\s+what\b|\s+this\b)', 'are', template)
+        template = template.replace("What's", "What are")
+        topic_article = ""  # No article for plurals
+        # Replace hardcoded "it" with "they" for plural topics
+        # e.g., "One of the key things about Carrots are that it {verb}" → "...they {verb}"
+        template = re.sub(r'\bit\b(?=\s+\{verb\})', 'they', template)
+
+    # Fix predicate when obj starts with "been" (e.g., "include been found" → "have been found")
+    verb = fact.predicate
+    if verb.lower() == "include" and obj_lower.startswith("been"):
+        verb = "have" if is_plural else "has"
+
+    # For templates that use "{topic_article} {verb}" as a sentence fragment
+    # (e.g., "So what exactly is {topic}? {topic_article} {verb} {obj}."),
+    # we need an explicit subject. Replace "{topic_article} {verb}" with
+    # "{topic} {verb}" so it becomes "{topic} verb obj" (e.g., "Carrots are ...").
+    # This prevents fragments like "Are originally from..." when topic_article is empty.
+    if is_plural:
+        # Replace "{topic_article} {verb}" with "{topic} {verb}" so the subject is explicit
+        template = template.replace("{topic_article} {verb}", "{topic} {verb}")
+    else:
+        # For singular, replace "{topic_article} {verb}" with "it {verb}"
+        template = template.replace("{topic_article} {verb}", "it {verb}")
 
     # Handle location facts specially
     if fact.fact_type == "location":
@@ -171,16 +226,31 @@ def _get_topic_sentence(fact: Fact, config: NLGConfig) -> str:
             topic=topic,
             topic_article=topic_article,
             obj=_lower_article(obj_lower),
-            verb=fact.predicate,
+            verb=verb,
             place=place,
             prep=prep,
         )
     except (KeyError, ValueError):
-        sentence = f"{topic} {fact.predicate} {fact.obj}."
+        sentence = f"{topic} {verb} {fact.obj}."
 
     sentence = upper_first(sentence.strip())
     if not sentence.endswith(('.', '!', '?')):
         sentence += "."
+
+    # Fix: lowercase topic after "So" prefix (e.g., "So Carrots" -> "So carrots")
+    sentence = re.sub(r'\bSo\s+([A-Z][a-z])', lambda m: "So " + m.group(1).lower(), sentence)
+
+    # Fix: lowercase topic mid-sentence after verbs like "are", "is"
+    # (e.g., "So what exactly are Carrots?" -> "So what exactly are carrots?")
+    # Only apply if topic is more than one word or doesn't start the sentence
+    topic_lower = lower_first(topic)
+    sentence = sentence.replace(f"are {topic}?", f"are {topic_lower}?")
+    sentence = sentence.replace(f"are {topic}.", f"are {topic_lower}.")
+    sentence = sentence.replace(f"is {topic}?", f"is {topic_lower}?")
+    sentence = sentence.replace(f"is {topic}.", f"is {topic_lower}.")
+    # Also lowercase topic in "One of the key things about {topic}" patterns
+    sentence = sentence.replace(f"about {topic} ", f"about {topic_lower} ")
+
     return sentence
 
 
@@ -287,17 +357,36 @@ _CONCLUSIONS = {
 # ═════════════════════════════════════════════════════════════════════════════
 
 def _get_article(noun: str) -> str:
-    """Get the appropriate article ('a' or 'an') for a noun."""
+    """Get the appropriate article ('a' or 'an') for a noun.
+
+    Returns empty string for plurals and uncountable nouns.
+    """
     if not noun:
         return ""
-    n = noun.strip()
-    # Check for uncountable/plural
-    if n.lower().endswith('s') and not n.lower().endswith('ss'):
-        return ""  # No article for plurals
-    if n.lower() in {'photosynthesis', 'quantum computing', 'music', 'research',
-                      'information', 'knowledge', 'nature', 'life', 'gravity',
-                      'electricity', 'radiation', 'energy', 'weather'}:
+    n = noun.strip().rstrip('.,;:!?')
+    n_lower = n.lower()
+
+    # Common uncountable nouns
+    if n_lower in {'photosynthesis', 'quantum computing', 'music', 'research',
+                    'information', 'knowledge', 'nature', 'life', 'gravity',
+                    'electricity', 'radiation', 'energy', 'weather', 'physics',
+                    'mathematics', 'biology', 'chemistry', 'geometry'}:
         return ""
+
+    # Check for plural: ends in 's' but not 'ss', excluding singular nouns ending in 's'
+    _SINGULAR_NOUNS = {
+        'this', 'thus', 'bus', 'gas', 'was', 'its', 'paris', 'mars', 'venus',
+        'uranus', 'athens', 'brussels', 'dallas', 'texas', 'kansas', 'species',
+        'series', 'apparatus', 'corpus', 'radius', 'basis', 'crisis', 'thesis',
+        'analysis', 'oasis', 'alas', 'status', 'plus', 'minus',
+        'linguistics', 'mathematics', 'physics', 'economics', 'statistics',
+        'politics', 'ethics', 'aesthetics', 'logics', 'informatics',
+        'news', 'mumps', 'measles', 'diabetes', 'rabies', 'tetanus',
+    }
+    if (n_lower.endswith('s') and not n_lower.endswith('ss')
+            and n_lower not in _SINGULAR_NOUNS):
+        return ""  # No article for plurals
+
     first = n[0].lower()
     if first in 'aeiou':
         return "an"
@@ -390,6 +479,12 @@ def generate_essay(
     if not facts:
         return _fallback_essay(topic, config)
 
+    # Clean up incomplete fragments from Wikipedia parsing
+    facts = _clean_fragments(facts)
+
+    # Deduplicate facts to avoid repetition
+    facts = _deduplicate_facts(facts)
+
     # Group facts by type for paragraph organization
     grouped = _group_facts_by_type(facts)
 
@@ -419,13 +514,33 @@ def generate_essay(
     used_objects: set = {first_fact.obj}
 
     # ── Body paragraphs ──
-    prev_type = None
+    # Split facts into small paragraphs of 3-5 sentences each
+    # Target: 200-400 chars per paragraph for readable essays
     remaining_facts = [f for f in facts if f.obj not in used_objects]
 
     if remaining_facts:
-        # Split remaining facts into up to 2-3 paragraph chunks
-        chunk_size = max(1, (len(remaining_facts) + 1) // 2)
-        fact_chunks = [remaining_facts[i:i + chunk_size] for i in range(0, len(remaining_facts), chunk_size)]
+        # Group into small chunks of max 4 facts, breaking if paragraph would exceed 400 chars
+        MAX_PARA_FACTS = 4
+        MAX_PARA_CHARS = 400
+        fact_chunks = []
+        current_chunk = []
+        current_len = 0
+
+        for fact in remaining_facts:
+            fact_sent = realize_fact(fact, config, use_pronoun=len(current_chunk) > 0)
+            fact_len = len(fact_sent) + 1  # +1 for space
+
+            if (len(current_chunk) >= MAX_PARA_FACTS
+                    or (current_len + fact_len > MAX_PARA_CHARS and current_chunk)):
+                fact_chunks.append(current_chunk)
+                current_chunk = [fact]
+                current_len = fact_len
+            else:
+                current_chunk.append(fact)
+                current_len += fact_len
+
+        if current_chunk:
+            fact_chunks.append(current_chunk)
 
         for i, chunk in enumerate(fact_chunks):
             para_sentences: List[str] = []
@@ -483,6 +598,106 @@ def _shorten(text: str, max_len: int = 60) -> str:
     if last_space > 0:
         return truncated[:last_space] + "..."
     return truncated + "..."
+
+
+def _clean_fragments(facts: List[Fact]) -> List[Fact]:
+    """Remove incomplete sentence fragments from Wikipedia parsing.
+
+    Filters out sentences that end mid-word, have unmatched parentheses,
+    or are too short to be meaningful facts.
+    """
+    if not facts:
+        return []
+
+    cleaned = []
+    for fact in facts:
+        obj = fact.obj.strip()
+
+        # Skip very short fragments (less than 15 chars)
+        if len(obj) < 15 and fact.fact_type != "unknown":
+            continue
+
+        # Skip fragments ending with incomplete parenthetical
+        if obj.endswith(('subsp.', 'var.', 'f.', 'spp.')):
+            continue
+
+        # Skip fragments with unmatched opening parenthesis
+        if obj.count('(') > obj.count(')'):
+            continue
+
+        # Skip fragments that look like truncated words (ending with lowercase letter
+        # followed by period, suggesting the sentence was cut off)
+        if re.search(r'[a-z]\.$', obj) and not obj.endswith(('etc.', 'e.g.', 'i.e.')):
+            continue
+
+        # Skip fragments that end mid-word (no punctuation at all, ends lowercase)
+        if obj and re.search(r'[a-z]$', obj) and not any(obj.endswith(w) for w in (
+            'etc', 'e.g', 'i.e', 'ie', 'eg', 'vs', 'al', 'approx',
+        )):
+            # Only skip if the object is short enough that truncation is likely
+            # (longer texts may just lack trailing punctuation but are complete)
+            if len(obj) < 80:
+                continue
+
+        # Skip fragments ending with incomplete quoted string
+        if obj.count('"') % 2 != 0 or obj.count("'") % 2 != 0:
+            continue
+
+        # Skip facts where subject is "The word" or similar generic reference
+        # (these come from etymology sentences like "The word is first recorded...")
+        subject_lower = fact.subject.lower().strip()
+        if subject_lower in ('the word', 'word', 'the name', 'name', 'the term', 'term'):
+            # Convert to unknown type so it passes through as-is
+            fact = Fact(
+                subject=fact.subject,
+                predicate="",
+                obj=fact.original or obj,
+                fact_type="unknown",
+                original=fact.original,
+                certainty=fact.certainty,
+                tense=fact.tense,
+                is_negated=fact.is_negated,
+            )
+
+        cleaned.append(fact)
+
+    return cleaned if cleaned else facts
+
+
+def _deduplicate_facts(facts: List[Fact]) -> List[Fact]:
+    """Remove duplicate or near-duplicate facts.
+
+    Uses a combination of exact object matching and word overlap
+    to detect semantically similar facts that convey the same information.
+    """
+    if not facts:
+        return []
+
+    seen_objects = set()
+    seen_words = set()
+    deduplicated = []
+
+    for fact in facts:
+        # Normalize the object for comparison
+        obj_key = fact.obj.lower().strip().rstrip('.,;:!?')
+        # Remove articles and common words for fuzzy matching
+        obj_words = set(w for w in re.findall(r'\w{3,}', obj_key)
+                       if w not in {'the', 'and', 'are', 'for', 'with', 'from',
+                                    'this', 'that', 'which', 'into', 'over', 'also',
+                                    'has', 'have', 'been', 'can', 'may', 'will'})
+        # Check for exact duplicate
+        if obj_key in seen_objects:
+            continue
+        # Check for high word overlap (>60% shared words = likely duplicate)
+        if obj_words and seen_words:
+            overlap = len(obj_words & seen_words) / max(len(obj_words), 1)
+            if overlap > 0.6:
+                continue
+        seen_objects.add(obj_key)
+        seen_words.update(obj_words)
+        deduplicated.append(fact)
+
+    return deduplicated
 
 
 def _fallback_essay(topic: str, config: NLGConfig) -> str:

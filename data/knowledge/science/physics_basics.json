@@ -1,0 +1,35 @@
+[
+    {
+        "q": [
+            "How do airplanes fly?",
+            "How do planes fly?",
+            "What makes an airplane stay in the air?",
+            "How does flight work?"
+        ],
+        "a": "Airplanes stay aloft through a combination of four forces: lift, weight, thrust, and drag. The wings are shaped with a curved upper surface and flatter lower surface, causing air to flow faster over the top than underneath. This creates lower pressure above the wing and higher pressure below, producing lift. Engines provide thrust to propel the plane forward, overcoming drag. The pilot controls the plane's attitude using ailerons, elevators, and rudder. Modern jets can carry hundreds of passengers across oceans, while small planes serve shorter routes. The first powered flight by the Wright brothers in 1903 lasted just 12 seconds and covered 120 feet."
+    },
+    {
+        "q": [
+            "How do magnets work?",
+            "What is magnetism?",
+            "Why do magnets attract metal?"
+        ],
+        "a": "Magnets work through the magnetic field, an invisible force field that exerts a push or pull on certain materials. The field is created by the motion of electric charges, particularly the electrons in atoms. In magnetic materials like iron, the atoms' magnetic moments align, creating a net magnetic field. The magnetic field has two poles — north and south — and opposite poles attract while like poles repel. The field lines flow from the north pole to the south pole outside the magnet. Electromagnets use electric current to create a magnetic field, which can be turned on and off. Magnets are used in everything from refrigerator doors to MRI machines to electric motors."
+    },
+    {
+        "q": [
+            "What is the speed of light?",
+            "How fast is light?",
+            "Why can nothing go faster than light?"
+        ],
+        "a": "The speed of light in a vacuum is exactly 299,792,458 meters per second, or about 186,282 miles per second. This fundamental constant, denoted as c, is one of the most important numbers in physics. According to Einstein's theory of relativity, nothing with mass can reach or exceed this speed because as an object approaches c, its relativistic mass increases toward infinity, requiring infinite energy to accelerate further. Light from the Sun takes about 8 minutes and 20 seconds to reach Earth. The speed of light is the ultimate speed limit of the universe and underlies many phenomena including time dilation, length contraction, and the equivalence of mass and energy expressed in E=mc²."
+    },
+    {
+        "q": [
+            "What is the golden ratio?",
+            "What is the golden mean?",
+            "What is phi in math?"
+        ],
+        "a": "The golden ratio, denoted by the Greek letter phi (φ), is approximately 1.6180339887. It is an irrational number that appears when a line is divided so that the ratio of the whole to the larger part equals the ratio of the larger part to the smaller part. This proportion has been considered aesthetically pleasing since ancient times and appears in art, architecture, and nature. The Parthenon in Greece, the pyramids of Egypt, and Leonardo da Vinci's Mona Lisa are said to incorporate the golden ratio. In nature, it appears in the spiral patterns of seashells, the arrangement of leaves on stems, and the proportions of the human body. The Fibonacci sequence, where each number is the sum of the two preceding ones, produces ratios that converge to the golden ratio."
+    }
+]

@@ -10,10 +10,9 @@ _FALLBACK_HOW = [
 ]
 
 _FALLBACK_GENERIC = [
-    "I'm not sure I have the information to answer that. Could you rephrase your question?",
-    "I don't have a great answer for that one. Can you ask it a different way?",
-    "Hmm, I'm drawing a blank on that. What else can I help you with?",
-    "Good question, but I don't have the details handy. Can you narrow it down?",
+    "I'm still learning about that topic. Could you share more details about what you're looking for?",
+    "That's outside what I currently know well enough to explain confidently. What specific aspect interests you?",
+    "I'm not confident I can give you an accurate answer on that one yet. Can you tell me more?",
 ]
 
 _FALLBACK_MATH = [

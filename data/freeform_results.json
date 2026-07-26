@@ -1,0 +1,631 @@
+{
+  "analysis": {
+    "overall_average": 4.8,
+    "dimension_averages": {
+      "naturalness": 4.4,
+      "informativeness": 1.4,
+      "coherence": 4.8,
+      "correctness": 5.6,
+      "conciseness": 7.8
+    },
+    "total_cases": 10,
+    "total_mistakes": 22,
+    "severity_counts": {
+      "high": 17,
+      "medium": 5
+    },
+    "type_counts": {
+      "missing_info": 9,
+      "factual_error": 3,
+      "template_artifact": 3,
+      "flow_issue": 2,
+      "incomplete_sentence": 1,
+      "grammar": 1,
+      "awkward_phrasing": 1,
+      "repetition": 1,
+      "word_choice": 1
+    },
+    "type_examples": {
+      "missing_info": [
+        {
+          "excerpt": "In essence, massive is an adjective related to mass.",
+          "description": "The response ignores the core question about skyscraper earthquake resistance and provides an irrelevant linguistic definition.",
+          "fix": "Explain concepts such as base isolation, tuned mass dampers, and flexible steel frames.",
+          "severity": "high"
+        },
+        {
+          "excerpt": "The entire response",
+          "description": "The assistant failed to identify any mysterious manuscripts (e.g., Voynich Manuscript).",
+          "fix": "Provide a detailed answer regarding the Voynich Manuscript.",
+          "severity": "high"
+        },
+        {
+          "excerpt": "A manuscript was...",
+          "description": "The response fails to address the user's query regarding why people see colors when hearing music.",
+          "fix": "Provide information on neural cross-wiring and the sensory processing of synesthesia.",
+          "severity": "high"
+        }
+      ],
+      "factual_error": [
+        {
+          "excerpt": "Simply put, problem solving is the process of achieving a goal",
+          "description": "The response completely ignores the user's prompt about unsolved manuscripts and discusses problem-solving theory instead.",
+          "fix": "Replace the entire response with information about the Voynich Manuscript.",
+          "severity": "high"
+        },
+        {
+          "excerpt": "A manuscript was, traditionally, any document written by hand...",
+          "description": "The response is entirely unrelated to the user's question about synesthesia.",
+          "fix": "Replace the entire response with an explanation of chromesthesia (sound-to-color synesthesia).",
+          "severity": "high"
+        },
+        {
+          "excerpt": "highly optimized tool for communication that has been refined over centuries",
+          "description": "The response treats emotional musical response as a conscious 'tool' developed by people, ignoring psychoacoustics and biological imperatives.",
+          "fix": "Explain the role of tension, release, and biological responses to frequency.",
+          "severity": "medium"
+        }
+      ],
+      "incomplete_sentence": [
+        {
+          "excerpt": "but it's",
+          "description": "The response cuts off abruptly at the end.",
+          "fix": "Complete the sentence or remove the trailing fragment.",
+          "severity": "high"
+        }
+      ],
+      "flow_issue": [
+        {
+          "excerpt": "In Canada, the designations remote, isolated, outport and fly-in refer to a sett",
+          "description": "The response is non-sequitur; it does not address the prompt's intent.",
+          "fix": "Rewrite the entire response to focus on global isolation rather than Canadian terminology.",
+          "severity": "high"
+        },
+        {
+          "excerpt": "The reason it that... works the way it does is",
+          "description": "The entire second sentence is a syntactic disaster that fails to convey a clear thought.",
+          "fix": "Rewrite the entire paragraph for clarity.",
+          "severity": "high"
+        }
+      ],
+      "template_artifact": [
+        {
+          "excerpt": "Could you share more details about what you're looking for?",
+          "description": "The response uses a generic 'I don't know' template for a query that does not require further clarification.",
+          "fix": "Answer the question directly instead of asking for more details.",
+          "severity": "medium"
+        },
+        {
+          "excerpt": "Could you share more details about what you're looking for?",
+          "description": "This is a generic fallback response used when the AI cannot answer, rather than a helpful engagement with the user's specific prompt.",
+          "fix": "Replace the generic request for details with the actual answer to the user's question.",
+          "severity": "medium"
+        },
+        {
+          "excerpt": "That's outside what I currently know well enough to explain confidently.",
+          "description": "The phrasing sounds like a canned refusal or a restrictive system prompt rather than a natural conversational response.",
+          "fix": "Use a more natural transition or actually answer the question.",
+          "severity": "medium"
+        }
+      ],
+      "grammar": [
+        {
+          "excerpt": "The reason it that some melodies evoke such strong emotions",
+          "description": "Missing verb and incorrect syntax; it repeats the prompt instead of forming a sentence.",
+          "fix": "The reason some melodies evoke such strong emotions",
+          "severity": "high"
+        }
+      ],
+      "awkward_phrasing": [
+        {
+          "excerpt": "works the way it does is largely due to",
+          "description": "The sentence structure is nonsensical and grammatically collapsed.",
+          "fix": "is largely due to",
+          "severity": "high"
+        }
+      ],
+      "repetition": [
+        {
+          "excerpt": "it that some melodies evoke such strong emotions even if we've never heard them ",
+          "description": "The assistant verbatim repeats the user's question as a subject, creating a circular, unnatural phrase.",
+          "fix": "this phenomenon",
+          "severity": "high"
+        }
+      ],
+      "word_choice": [
+        {
+          "excerpt": "When something has deemed effective",
+          "description": "Incorrect passive construction; 'has' should be 'is' or 'has been'.",
+          "fix": "When something is deemed effective",
+          "severity": "medium"
+        }
+      ]
+    },
+    "module_counts": {
+      "parser.py (fact extraction), cleaner.py": 9,
+      "knowledge retrieval, parser.py": 3,
+      "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)": 3,
+      "discourse.py, combine.py": 2,
+      "essay.py (_clean_fragments), parser.py": 1,
+      "fluency.py, realize.py": 1,
+      "realize.py (templates), combine.py": 1,
+      "fluency.py (filler dedup), essay.py (_deduplicate_facts)": 1,
+      "realize.py (templates), fluency.py": 1
+    },
+    "module_examples": {
+      "parser.py (fact extraction), cleaner.py": [
+        {
+          "type": "missing_info",
+          "excerpt": "In essence, massive is an adjective related to mass.",
+          "fix": "Explain concepts such as base isolation, tuned mass dampers, and flexible steel frames."
+        },
+        {
+          "type": "missing_info",
+          "excerpt": "The entire response",
+          "fix": "Provide a detailed answer regarding the Voynich Manuscript."
+        },
+        {
+          "type": "missing_info",
+          "excerpt": "A manuscript was...",
+          "fix": "Provide information on neural cross-wiring and the sensory processing of synesthesia."
+        }
+      ],
+      "knowledge retrieval, parser.py": [
+        {
+          "type": "factual_error",
+          "excerpt": "Simply put, problem solving is the process of achieving a goal",
+          "fix": "Replace the entire response with information about the Voynich Manuscript."
+        },
+        {
+          "type": "factual_error",
+          "excerpt": "A manuscript was, traditionally, any document written by hand...",
+          "fix": "Replace the entire response with an explanation of chromesthesia (sound-to-color synesthesia)."
+        },
+        {
+          "type": "factual_error",
+          "excerpt": "highly optimized tool for communication that has been refined over centuries",
+          "fix": "Explain the role of tension, release, and biological responses to frequency."
+        }
+      ],
+      "essay.py (_clean_fragments), parser.py": [
+        {
+          "type": "incomplete_sentence",
+          "excerpt": "but it's",
+          "fix": "Complete the sentence or remove the trailing fragment."
+        }
+      ],
+      "discourse.py, combine.py": [
+        {
+          "type": "flow_issue",
+          "excerpt": "In Canada, the designations remote, isolated, outport and fly-in refer to a sett",
+          "fix": "Rewrite the entire response to focus on global isolation rather than Canadian terminology."
+        },
+        {
+          "type": "flow_issue",
+          "excerpt": "The reason it that... works the way it does is",
+          "fix": "Rewrite the entire paragraph for clarity."
+        }
+      ],
+      "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)": [
+        {
+          "type": "template_artifact",
+          "excerpt": "Could you share more details about what you're looking for?",
+          "fix": "Answer the question directly instead of asking for more details."
+        },
+        {
+          "type": "template_artifact",
+          "excerpt": "Could you share more details about what you're looking for?",
+          "fix": "Replace the generic request for details with the actual answer to the user's question."
+        },
+        {
+          "type": "template_artifact",
+          "excerpt": "That's outside what I currently know well enough to explain confidently.",
+          "fix": "Use a more natural transition or actually answer the question."
+        }
+      ],
+      "fluency.py, realize.py": [
+        {
+          "type": "grammar",
+          "excerpt": "The reason it that some melodies evoke such strong emotions",
+          "fix": "The reason some melodies evoke such strong emotions"
+        }
+      ],
+      "realize.py (templates), combine.py": [
+        {
+          "type": "awkward_phrasing",
+          "excerpt": "works the way it does is largely due to",
+          "fix": "is largely due to"
+        }
+      ],
+      "fluency.py (filler dedup), essay.py (_deduplicate_facts)": [
+        {
+          "type": "repetition",
+          "excerpt": "it that some melodies evoke such strong emotions even if we've never heard them ",
+          "fix": "this phenomenon"
+        }
+      ],
+      "realize.py (templates), fluency.py": [
+        {
+          "type": "word_choice",
+          "excerpt": "When something has deemed effective",
+          "fix": "When something is deemed effective"
+        }
+      ]
+    },
+    "worst_cases": [
+      {
+        "query": "What is the most mysterious unsolved manuscript in history?",
+        "score": 1.8,
+        "mistakes": 3,
+        "high_severity": 3,
+        "feedback": "The response is a complete hallucination/failure. It provides a generic definition of problem solving instead of answering the user's question about mysterious manuscripts, and it ends mid-sentence."
+      },
+      {
+        "query": "What are the most effective ways to reduce plastic waste in a typical household?",
+        "score": 1.8,
+        "mistakes": 2,
+        "high_severity": 1,
+        "feedback": "The assistant completely failed to answer the user's question. Instead of providing ways to reduce plastic waste, it provided a dictionary definition of the word 'effectiveness'."
+      },
+      {
+        "query": "Why is it that some melodies evoke such strong emotions even if we've never heard them before?",
+        "score": 2.2,
+        "mistakes": 5,
+        "high_severity": 4,
+        "feedback": "The response is severely flawed, exhibiting 'hallucinated' sentence structures where the user's prompt is repeated as a noun phrase within broken sentences. It fails to provide a scientific explanatio"
+      },
+      {
+        "query": "Why do some people experience synesthesia where they see colors when hearing music?",
+        "score": 2.8,
+        "mistakes": 2,
+        "high_severity": 2,
+        "feedback": "The assistant provided a completely irrelevant response. The user asked about synesthesia, but the assistant defined the word 'manuscript'."
+      },
+      {
+        "query": "Tell me about the most isolated inhabited place on Earth.",
+        "score": 3.0,
+        "mistakes": 2,
+        "high_severity": 2,
+        "feedback": "The response is completely irrelevant to the user's request. Instead of identifying the most isolated inhabited place on Earth (e.g., Tristan da Cunha), it provides a generic definition of terminology"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "query": "How does a skyscraper actually withstand a massive earthquake?",
+      "response": "In essence, massive is an adjective related to mass.",
+      "time": 4.36,
+      "scores": {
+        "naturalness": 1,
+        "informativeness": 1,
+        "coherence": 1,
+        "correctness": 5,
+        "conciseness": 10,
+        "average": 3.6
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "In essence, massive is an adjective related to mass.",
+          "description": "The response ignores the core question about skyscraper earthquake resistance and provides an irrelevant linguistic definition.",
+          "suggested_fix": "Explain concepts such as base isolation, tuned mass dampers, and flexible steel frames.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The assistant completely failed to answer the user's question, providing a pedantic definition of a word instead of explaining structural engineering."
+    },
+    {
+      "query": "What is the most mysterious unsolved manuscript in history?",
+      "response": "Simply put, problem solving is the process of achieving a goal by overcoming obstacles, a frequent part of most activities. Problems in need of solutions range from simple personal tasks to complex issues in business and technical fields. The former is an example of simple problem solving (SPS) addressing one issue, whereas the latter is complex problem solving (CPS) with multiple interrelated obstacles. Another classification of problem-solving tasks is into well-defined problems with specific ",
+      "time": 4.31,
+      "scores": {
+        "naturalness": 1,
+        "informativeness": 1,
+        "coherence": 1,
+        "correctness": 1,
+        "conciseness": 5,
+        "average": 1.8
+      },
+      "mistakes": [
+        {
+          "mistake_type": "factual_error",
+          "severity": "high",
+          "excerpt": "Simply put, problem solving is the process of achieving a goal",
+          "description": "The response completely ignores the user's prompt about unsolved manuscripts and discusses problem-solving theory instead.",
+          "suggested_fix": "Replace the entire response with information about the Voynich Manuscript.",
+          "likely_module": "knowledge retrieval, parser.py"
+        },
+        {
+          "mistake_type": "incomplete_sentence",
+          "severity": "high",
+          "excerpt": "but it's",
+          "description": "The response cuts off abruptly at the end.",
+          "suggested_fix": "Complete the sentence or remove the trailing fragment.",
+          "likely_module": "essay.py (_clean_fragments), parser.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "The entire response",
+          "description": "The assistant failed to identify any mysterious manuscripts (e.g., Voynich Manuscript).",
+          "suggested_fix": "Provide a detailed answer regarding the Voynich Manuscript.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The response is a complete hallucination/failure. It provides a generic definition of problem solving instead of answering the user's question about mysterious manuscripts, and it ends mid-sentence."
+    },
+    {
+      "query": "Why do some people experience synesthesia where they see colors when hearing music?",
+      "response": "A manuscript was, traditionally, any document written by hand or typewritten, as opposed to mechanically printed or reproduced in an indirect or automated way. More recently, the term has come to be understood to further include any written, typed, or word-processed copy of an author's work, as opposed to the printed version of the same thing.",
+      "time": 3.96,
+      "scores": {
+        "naturalness": 1,
+        "informativeness": 1,
+        "coherence": 1,
+        "correctness": 1,
+        "conciseness": 10,
+        "average": 2.8
+      },
+      "mistakes": [
+        {
+          "mistake_type": "factual_error",
+          "severity": "high",
+          "excerpt": "A manuscript was, traditionally, any document written by hand...",
+          "description": "The response is entirely unrelated to the user's question about synesthesia.",
+          "suggested_fix": "Replace the entire response with an explanation of chromesthesia (sound-to-color synesthesia).",
+          "likely_module": "knowledge retrieval, parser.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "A manuscript was...",
+          "description": "The response fails to address the user's query regarding why people see colors when hearing music.",
+          "suggested_fix": "Provide information on neural cross-wiring and the sensory processing of synesthesia.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The assistant provided a completely irrelevant response. The user asked about synesthesia, but the assistant defined the word 'manuscript'."
+    },
+    {
+      "query": "Tell me about the most isolated inhabited place on Earth.",
+      "response": "In Canada, the designations remote, isolated, outport and fly-in refer to a settlement that is either a long distance from larger settlements or lacks transportation links that are typical in more populated areas.",
+      "time": 0.26,
+      "scores": {
+        "naturalness": 2,
+        "informativeness": 1,
+        "coherence": 2,
+        "correctness": 5,
+        "conciseness": 5,
+        "average": 3.0
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "In Canada, the designations remote, isolated, outport and fly-in refer to...",
+          "description": "The assistant failed to answer the specific question about the most isolated inhabited place on Earth, providing a definition of Canadian regional terms instead.",
+          "suggested_fix": "Identify and describe Tristan da Cunha or another globally recognized most isolated inhabited settlement.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "flow_issue",
+          "severity": "high",
+          "excerpt": "In Canada, the designations remote, isolated, outport and fly-in refer to a sett",
+          "description": "The response is non-sequitur; it does not address the prompt's intent.",
+          "suggested_fix": "Rewrite the entire response to focus on global isolation rather than Canadian terminology.",
+          "likely_module": "discourse.py, combine.py"
+        }
+      ],
+      "raw_feedback": "The response is completely irrelevant to the user's request. Instead of identifying the most isolated inhabited place on Earth (e.g., Tristan da Cunha), it provides a generic definition of terminology used in Canada."
+    },
+    {
+      "query": "What would actually happen to a human body if it fell into a black hole?",
+      "response": "I'm still learning about that topic. Could you share more details about what you're looking for?",
+      "time": 6.51,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 1,
+        "coherence": 10,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 8.2
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "I'm still learning about that topic.",
+          "description": "The assistant fails to provide any information about spaghettification or event horizons, which are well-documented scientific concepts.",
+          "suggested_fix": "Provide a detailed explanation of what happens to a body falling into a black hole.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "template_artifact",
+          "severity": "medium",
+          "excerpt": "Could you share more details about what you're looking for?",
+          "description": "The response uses a generic 'I don't know' template for a query that does not require further clarification.",
+          "suggested_fix": "Answer the question directly instead of asking for more details.",
+          "likely_module": "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)"
+        }
+      ],
+      "raw_feedback": "The response is a refusal/placeholder that fails to answer a common scientific question, resulting in a total lack of informativeness."
+    },
+    {
+      "query": "How did the concept of \"time\" evolve from sundials to atomic clocks?",
+      "response": "I'm still learning about that topic. Could you share more details about what you're looking for?",
+      "time": 8.44,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 1,
+        "coherence": 10,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 8.2
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "I'm still learning about that topic.",
+          "description": "The assistant failed to provide any information regarding the evolution of timekeeping, which is a general knowledge topic it should be able to answer.",
+          "suggested_fix": "Provide a detailed explanation covering sundials, mechanical clocks, pendulum clocks, quartz clocks, and atomic clocks.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "template_artifact",
+          "severity": "medium",
+          "excerpt": "Could you share more details about what you're looking for?",
+          "description": "This is a generic fallback response used when the AI cannot answer, rather than a helpful engagement with the user's specific prompt.",
+          "suggested_fix": "Replace the generic request for details with the actual answer to the user's question.",
+          "likely_module": "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)"
+        }
+      ],
+      "raw_feedback": "The assistant failed to answer a straightforward historical and scientific question, providing a canned refusal response instead of the requested information."
+    },
+    {
+      "query": "Why is it that some melodies evoke such strong emotions even if we've never heard them before?",
+      "response": "That's a great question! The reason it that some melodies evoke such strong emotions even if we've never heard them before works the way it does is largely due to cultural evolution and the practical needs of the people who developed it. While it might seem arbitrary at first, it that some melodies evoke such strong emotions even if we've never heard them before is actually a highly optimized tool for communication that has been refined over centuries of use.",
+      "time": 0.01,
+      "scores": {
+        "naturalness": 1,
+        "informativeness": 2,
+        "coherence": 2,
+        "correctness": 3,
+        "conciseness": 3,
+        "average": 2.2
+      },
+      "mistakes": [
+        {
+          "mistake_type": "grammar",
+          "severity": "high",
+          "excerpt": "The reason it that some melodies evoke such strong emotions",
+          "description": "Missing verb and incorrect syntax; it repeats the prompt instead of forming a sentence.",
+          "suggested_fix": "The reason some melodies evoke such strong emotions",
+          "likely_module": "fluency.py, realize.py"
+        },
+        {
+          "mistake_type": "awkward_phrasing",
+          "severity": "high",
+          "excerpt": "works the way it does is largely due to",
+          "description": "The sentence structure is nonsensical and grammatically collapsed.",
+          "suggested_fix": "is largely due to",
+          "likely_module": "realize.py (templates), combine.py"
+        },
+        {
+          "mistake_type": "repetition",
+          "severity": "high",
+          "excerpt": "it that some melodies evoke such strong emotions even if we've never heard them ",
+          "description": "The assistant verbatim repeats the user's question as a subject, creating a circular, unnatural phrase.",
+          "suggested_fix": "this phenomenon",
+          "likely_module": "fluency.py (filler dedup), essay.py (_deduplicate_facts)"
+        },
+        {
+          "mistake_type": "factual_error",
+          "severity": "medium",
+          "excerpt": "highly optimized tool for communication that has been refined over centuries",
+          "description": "The response treats emotional musical response as a conscious 'tool' developed by people, ignoring psychoacoustics and biological imperatives.",
+          "suggested_fix": "Explain the role of tension, release, and biological responses to frequency.",
+          "likely_module": "knowledge retrieval, parser.py"
+        },
+        {
+          "mistake_type": "flow_issue",
+          "severity": "high",
+          "excerpt": "The reason it that... works the way it does is",
+          "description": "The entire second sentence is a syntactic disaster that fails to convey a clear thought.",
+          "suggested_fix": "Rewrite the entire paragraph for clarity.",
+          "likely_module": "discourse.py, combine.py"
+        }
+      ],
+      "raw_feedback": "The response is severely flawed, exhibiting 'hallucinated' sentence structures where the user's prompt is repeated as a noun phrase within broken sentences. It fails to provide a scientific explanation and reads like a corrupted template."
+    },
+    {
+      "query": "What are the most effective ways to reduce plastic waste in a typical household?",
+      "response": "Effectiveness or effectivity is the capability of producing a desired result or the ability to produce desired output. When something has deemed effective, it means it has an intended or expected outcome, or produces a deep, vivid impression.",
+      "time": 2.12,
+      "scores": {
+        "naturalness": 1,
+        "informativeness": 1,
+        "coherence": 1,
+        "correctness": 1,
+        "conciseness": 5,
+        "average": 1.8
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "Effectiveness or effectivity is the capability...",
+          "description": "The response provides a definition of a word instead of answering the user's request for ways to reduce plastic waste.",
+          "suggested_fix": "Provide a list of actionable tips to reduce plastic waste in a household (e.g., using reusable bags, avoiding single-use plastics).",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "word_choice",
+          "severity": "medium",
+          "excerpt": "When something has deemed effective",
+          "description": "Incorrect passive construction; 'has' should be 'is' or 'has been'.",
+          "suggested_fix": "When something is deemed effective",
+          "likely_module": "realize.py (templates), fluency.py"
+        }
+      ],
+      "raw_feedback": "The assistant completely failed to answer the user's question. Instead of providing ways to reduce plastic waste, it provided a dictionary definition of the word 'effectiveness'."
+    },
+    {
+      "query": "How does the gut microbiome actually influence our mental health and mood?",
+      "response": "That's outside what I currently know well enough to explain confidently. What specific aspect interests you?",
+      "time": 10.39,
+      "scores": {
+        "naturalness": 7,
+        "informativeness": 1,
+        "coherence": 10,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 7.6
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "That's outside what I currently know well enough to explain confidently.",
+          "description": "The assistant refuses to answer a general knowledge question about the gut-brain axis, which is widely documented in scientific literature.",
+          "suggested_fix": "Provide an explanation of the gut-brain axis, mentioning neurotransmitters like serotonin and the vagus nerve.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "template_artifact",
+          "severity": "medium",
+          "excerpt": "That's outside what I currently know well enough to explain confidently.",
+          "description": "The phrasing sounds like a canned refusal or a restrictive system prompt rather than a natural conversational response.",
+          "suggested_fix": "Use a more natural transition or actually answer the question.",
+          "likely_module": "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)"
+        }
+      ],
+      "raw_feedback": "The response is grammatically correct but fails to provide any information on a well-documented scientific topic, resulting in a total lack of informativeness."
+    },
+    {
+      "query": "What is the philosophy behind the \"Ship of Theseus\" paradox?",
+      "response": "The Ship of Theseus, also known as Theseus's Paradox, is a paradox and common thought experiment about whether an object is the same object after having all of its original components replaced with others over time.",
+      "time": 0.28,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 4,
+        "coherence": 10,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 8.8
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "The Ship of Theseus... is a paradox and common thought experiment about whether ",
+          "description": "The response defines the paradox but ignores the 'philosophy behind' it (e.g., persistence of identity, mereological theory, spatio-temporal continuity).",
+          "suggested_fix": "Expand the answer to discuss the philosophical implications regarding identity and substance.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The response is grammatically perfect and accurate, but it fails to answer the core of the user's request. The user asked for the 'philosophy behind' the paradox, but the assistant only provided a definition of the paradox itself."
+    }
+  ]
+}
