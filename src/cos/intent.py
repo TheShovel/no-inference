@@ -48,6 +48,7 @@ def detect_intent(query):
         'how many', 'how much', 'total', 'altogether', 'per ', 'each',
         'calculate', 'how far',
         'how long', 'how old', 'many dollars', 'what percentage', 'what fraction',
+        'percent', 'percentage',
         'miles', 'kilometers', 'gallons', 'liters', 'hours', 'minutes',
         'per day', 'per hour', 'per week', 'per year', 'per month',
         'than', 'remaining', 'left over', 'sold', 'bought', 'costs',
@@ -90,7 +91,7 @@ def detect_intent(query):
         is_word_problem = any(w in q for w in word_problem_keywords)
         has_question = '?' in q
         has_measurement = bool(re.search(
-            r'\d+\s*(?:%|dollars?|miles?|km|hours?|minutes?|eggs?|cups?|lbs?|kg|gallons?|liters?|years?|months?|weeks?|days?|scores?|points?|coins?|shares?|bolts?|feet?|inches?|cm|meters?|books?|copies?)', q))
+            r'\d+\s*(?:%|percent|dollars?|miles?|km|hours?|minutes?|eggs?|cups?|lbs?|kg|gallons?|liters?|years?|months?|weeks?|days?|scores?|points?|coins?|shares?|bolts?|feet?|inches?|cm|meters?|books?|copies?)', q))
 
         # "than" needs a nearby number to avoid "fewer than two paragraphs"
         if 'than' in q:
@@ -161,8 +162,14 @@ def detect_intent(query):
         return 'instruction'
 
     # ── How-to / procedural ──────────────────────────────────────────────
-    # "how do i make a salad", "how to cook pasta", etc.
+    # "how do i make a salad", "how to cook pasta", "can i substitute...", etc.
     if re.search(r'\bhow\s+(do|to|can|would|should|could)\b', q):
+        return 'instruction'
+    if re.search(r'\bcan\s+(?:i|we|you)\s+', q):
+        return 'instruction'
+    if re.search(r'what.?(?:s|\s+is)\s+(?:the\s+)?best\s+way', q):
+        return 'instruction'
+    if re.search(r'what.?(?:s|\s+is)\s+a\s+good\s+(?:substitute|alternative|replacement)', q):
         return 'instruction'
 
     # ── STEM ──────────────────────────────────────────────────────────────

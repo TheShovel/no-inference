@@ -185,7 +185,7 @@ def combine_by_coordination(sentences: List[str], config: NLGConfig) -> List[str
                 # Already have 2+ clauses — avoid run-on sentences.
                 # At temp=0, always break the chain (deterministic quality).
                 # At temp>0, rarely allow 3+ clauses.
-                if config.temperature <= 0.0 or not maybe(0.10):
+                if config.temperature <= 0.0 or not maybe(0.15):
                     result.append(curr)
                     continue
             else:
@@ -224,6 +224,11 @@ def combine_by_coordination(sentences: List[str], config: NLGConfig) -> List[str
             )
             if curr_body.startswith(_COMBINABLE_VERBS):
                 curr_clean = curr_body.lstrip(', ').strip()
+                # Reduce combining to avoid repetitive "and" usage
+                # At temp>0, sometimes keep sentences separate for better flow
+                if config.temperature > 0.0 and maybe(0.5):  # 50% keep separate
+                    result.append(curr)
+                    continue
                 combined = prev.rstrip('.!?') + ", and " + _lower_clause(curr_clean)
                 result[-1] = combined
                 continue
@@ -249,9 +254,24 @@ def combine_by_relative_clause(sentences: List[str], config: NLGConfig) -> List[
         prev_subj = _get_subject(result[i - 1])
         curr_subj = _get_subject(result[i])
 
-        if prev_subj and curr_subj and prev_subj.lower() == curr_subj.lower():
-            # Use relative clauses at temp>0 with moderate probability for richer prose
-            if config.temperature > 0.0 and maybe(0.45):
+        same_subj = False
+        if prev_subj and curr_subj:
+            # Check same subject including pronoun references (like coordination does)
+            prev_lower = prev_subj.lower().strip()
+            curr_lower = curr_subj.lower().strip()
+            curr_is_pronoun = curr_lower in ('it', 'she', 'he', 'they', 'this')
+            same_subj = (
+                prev_lower == curr_lower or
+                (curr_is_pronoun and prev_lower not in ('it', 'she', 'he', 'they'))
+            )
+        
+        if same_subj:
+            # Skip if previous sentence already has a relative clause (avoids cascading)
+            if ', who' in result[i - 1] or ', which' in result[i - 1]:
+                i += 1
+                continue
+            # Use relative clauses at temp>0 — combine aggressively for richer prose
+            if config.temperature > 0.0 and maybe(0.65):
                 curr_body = result[i][len(curr_subj):].strip().lstrip(',').strip()
                 # Use 'who' for people/animate, 'which' for things
                 _PERSON_PRONOUNS = {'she', 'he', 'they', 'i', 'we', 'who', 'everyone', 'somebody'}

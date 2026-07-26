@@ -160,9 +160,12 @@ _OPENER_VARIETY = [
     "",
     "",
     "",
-    "",
-    "",
-]
+    "Also",
+    "Notably",
+    "Interestingly",
+    "What's more",
+    "Beyond that",
+]  # Mostly empty to keep naturalness high; occasional variety added
 
 # Sentence-level transition injectors — added between sentences for flow
 _TRANSITIONS = {

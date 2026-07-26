@@ -1,50 +1,42 @@
 [
   {
     "id": "poem-context-001",
-    "template": "{topic}, so {context} and {context},\nA {context} sight to see,\nA gift for you and me.",
-    "style": ["descriptive", "simple"],
-    "response_length": "short"
+    "template": "I see a {topic} before me,\nSo {context} and {context},\nA truly lovely sight.",
+    "style": ["descriptive", "observation"]
   },
   {
     "id": "poem-context-002",
-    "template": "The {context} {topic}\nDances in the {context} light,\nA {context} dream.",
-    "style": ["descriptive", "nature"],
-    "response_length": "short"
+    "template": "Oh, {context} {topic}!\nHow {context} you are,\nA wonder to behold.",
+    "style": ["descriptive", "couplet"]
   },
   {
     "id": "poem-context-003",
-    "template": "{topic}, {topic},\n{context} and {context},\nForever {context}.",
-    "style": ["simple", "praise"],
-    "response_length": "short"
+    "template": "{topic}, {topic},\nSo {context} and {context},\nForever in my thoughts.",
+    "style": ["simple", "praise"]
   },
   {
     "id": "poem-context-004",
-    "template": "Oh, {context} {topic}!\nHow {context} and {context} you are,\nA {context} wonder.",
-    "style": ["descriptive", "couplet"],
-    "response_length": "short"
+    "template": "There once was a {topic} so {context},\nIt filled up the world with its {context} grace,\nA treasure to cherish and hold.",
+    "style": ["narrative", "limerick-like"]
   },
   {
     "id": "poem-context-005",
-    "template": "I gaze upon the {topic},\nSo {context} and {context},\nA {context} treasure.",
-    "style": ["reflective", "observation"],
-    "response_length": "short"
+    "template": "I gaze upon the {topic},\nSo {context} and {context},\nA moment of peace.",
+    "style": ["reflective", "observation"]
   },
   {
     "id": "poem-context-006",
-    "template": "The {context} {topic} calls,\nThrough {context} skies and {context} seas,\nA {context} peace.",
-    "style": ["nature", "descriptive"],
-    "response_length": "short"
+    "template": "When I think of {topic},\nI feel so {context} and {context},\nA {context} feeling.",
+    "style": ["reflective", "personal"]
   },
   {
     "id": "poem-context-007",
-    "template": "{topic} of {context} and {context},\n{context} and {context} and {context},\nForever shining on.",
-    "style": ["lyrical", "descriptive"],
-    "response_length": "short"
+    "template": "The {topic} shines brightly,\nA {context} and {context} light,\nGuiding us forward.",
+    "style": ["nature", "inspirational"]
   },
   {
     "id": "poem-context-008",
-    "template": "When {context} {topic} appears,\nAll the {context} world rejoices,\nIn {context} voices.",
-    "style": ["reflective", "nature"],
-    "response_length": "short"
+    "template": "In a world of {context} and {context},\nStands the {topic} alone,\n{context} and {context}.",
+    "style": ["lyrical", "descriptive"]
   }
 ]

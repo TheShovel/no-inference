@@ -485,7 +485,9 @@
       "i don't think so",
       "i see it differently",
       "that's wrong",
-      "actually"
+      "actually, i think",
+      "actually, that's",
+      "no, actually"
     ],
     "context_role": "topic",
     "template": "I appreciate you pushing back on that! Let me reconsider my explanation of {context}.\n\nYou raise a fair point. Let me clarify what I meant and see if we can find common ground.\n\nI think the key here is that {context} can be understood from multiple perspectives, and different experiences lead people to different conclusions. Let me try approaching it from another angle.\n\n**Another Way to Look At It:**\nPerhaps instead of thinking about {context} in terms of [original framing], we could consider it as [alternative framing]. This perspective might better align with your understanding.\n\nDoes this alternative framing make more sense? I genuinely appreciate the discussion — it helps me think more carefully about the subject.",

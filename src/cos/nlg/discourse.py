@@ -18,8 +18,12 @@ _MARKERS: Dict[str, Dict[str, List[str]]] = {
         "friendly": [
             "",
             "",
+            "",
+            "Also,",
         ],
         "neutral": [
+            "",
+            "",
             "",
         ],
         "concise": ["", "", ""],
@@ -223,7 +227,7 @@ def build_discourse_tree(
                 rel = _transition_relation(prev.fact_type, fact.fact_type, i, len(facts))
                 # Use markers for natural flow between different subjects
                 if rel != "introduce":
-                    if config.temperature <= 0.0 or maybe(0.35):
+                    if config.temperature <= 0.0 or maybe(0.50):
                         marker = get_marker(rel, config)
             elif i >= 4 and config.temperature > 0.0:
                 # Same subject, deep in response — very occasional connector for flow

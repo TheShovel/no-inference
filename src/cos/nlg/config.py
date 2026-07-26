@@ -37,7 +37,7 @@ STYLE_PROFILES = {
         "opener_variety_rate": 0.08,
         "sentence_variation_rate": 0.3,
         "closing_rate": 0.4,
-        "combine_rate": 0.15,
+        "combine_rate": 0.10,  # Reduced to avoid excessive 'and' chaining
     },
     "neutral": {
         "contraction_rate": 0.7,

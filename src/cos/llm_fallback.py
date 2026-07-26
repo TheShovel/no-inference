@@ -137,33 +137,84 @@ def reload_poems():
     return _load_poem_templates()
 
 
+# ── Universal poetic word bank ──────────────────────────────────────────────
+# These words work for any topic — no need to extract from Wikipedia text
+_POETIC_WORDS = [
+    'beautiful', 'gentle', 'peaceful', 'golden', 'silent', 'ancient',
+    'mighty', 'bright', 'deep', 'rich', 'warm', 'soft', 'wild', 'vast',
+    'rare', 'pure', 'calm', 'bold', 'fair', 'swift', 'keen',
+    'humble', 'noble', 'grand', 'serene', 'vivid',
+    'endless', 'graceful', 'lovely', 'shining', 'timeless', 'wondrous',
+    'sacred', 'subtle', 'tender', 'fierce', 'quiet', 'luminous',
+    'fragrant', 'crimson', 'amber', 'crystal', 'velvet', 'silver',
+]
+
+
 def _extract_context_words(text, max_words=10):
-    """Extract descriptive words from text using symbolic extraction.
+    """Extract descriptive words from text.
 
-    This replaces the previous LFM2-350M based extraction.
-    Uses content word scoring from context_extraction.
+    Returns a blend of the curated poetic word bank (primary) and
+    any genuinely poetic words found in the text (bonus). This
+    ensures poems always use beautiful language regardless of topic.
     """
-    if not text or len(text.strip()) < 10:
-        return []
+    import random
+    
+    # Start with the curated poetic word bank as foundation
+    result = list(_POETIC_WORDS)
+    
+    # Try to enrich with topic-specific descriptive words
+    if text and len(text.strip()) >= 10:
+        try:
+            words = extract_content_words(text, max_words=20)
+            _ADJ_LIKE = ('ous', 'ive', 'ful', 'less', 'ish', 'like', 'some',
+                         'ant', 'ent', 'ic', 'al', 'ial', 'ual', 'y')
+            _NOUN_WORDS = {
+                'family', 'species', 'genus', 'type', 'form', 'part', 'area',
+                'system', 'process', 'method', 'technique', 'study', 'field',
+                'research', 'center', 'unit', 'structure', 'element', 'source',
+                'level', 'group', 'class', 'includes', 'including', 'known',
+                'called', 'refers', 'example', 'found', 'described', 'located',
+                'galaxy', 'planet', 'star', 'nebula', 'species', 'organism',
+                'mineral', 'chemical', 'protein', 'bacteria', 'fungus', 'plant',
+                'animal', 'fabric', 'texture', 'surface', 'pattern',
+            }
+            for word, score in words:
+                w = word.lower().strip()
+                if not w.isalpha() or len(w) < 3 or w.endswith('ly'):
+                    continue
+                if w in _NOUN_WORDS:
+                    continue
+                if w.endswith(_ADJ_LIKE) and score > 0.3 and w not in result:
+                    result.append(w)
+        except Exception:
+            pass
+    
+    random.shuffle(result)
+    return result[:max_words]
 
-    words = extract_content_words(text, max_words=max_words * 2)
-    # Filter to likely descriptive words (adjectives)
-    descriptive = []
-    stop_words = {'the', 'a', 'an', 'is', 'are', 'was', 'were', 'it', 'its',
-                  'they', 'them', 'also', 'very', 'just', 'more', 'some',
-                  'such', 'both', 'each', 'this', 'that'}
-    for word, score in words:
-        w = word.lower().strip()
-        if w.isalpha() and len(w) > 2 and w not in stop_words and score > 0.3:
-            descriptive.append(w)
-        if len(descriptive) >= max_words:
+
+def _clean_topic(topic):
+    """Clean a topic string for use in poems.
+    Strips leading articles so templates don't produce 'the the moon'.
+    """
+    t = topic.strip()
+    # Strip leading articles
+    for prefix in ['the ', 'a ', 'an ']:
+        if t.lower().startswith(prefix):
+            t = t[len(prefix):].strip()
             break
+    return t
 
-    if descriptive:
-        import random
-        random.shuffle(descriptive)
-        return descriptive[:max_words]
-    return []
+
+def _is_plural(topic):
+    """Rough heuristic: does the topic look plural?"""
+    t = topic.strip().lower()
+    return t.endswith('s') and not t.endswith(('ss', 'us'))
+
+
+def _format_article(word):
+    """Return 'an' if word starts with a vowel sound, 'a' otherwise."""
+    return 'an' if word[0].lower() in 'aeiou' else 'a'
 
 
 def generate_poem(topic, information=None):
@@ -174,24 +225,37 @@ def generate_poem(topic, information=None):
         return f"A poem about {topic}."
     template = random.choice(templates)
 
-    topic_lower = topic.strip().lower()
-    topic_cap = topic.strip().capitalize()
+    raw_topic = topic.strip()
+    clean_topic = _clean_topic(raw_topic)
+    topic_lower = clean_topic.lower()
+    topic_cap = clean_topic[0].upper() + clean_topic[1:] if clean_topic else ''
+    topic_plural = _is_plural(clean_topic)
 
     context_words = _extract_context_words(information or '')
     if not context_words:
-        context_words = list(_DEFAULT_CONTEXT_WORDS)
+        context_words = list(_POETIC_WORDS)
         random.shuffle(context_words)
 
+    # Fill context placeholders
     context_count = template.count('{context}')
     chosen = []
     for i in range(context_count):
         chosen.append(context_words[i % len(context_words)])
-
     for cw in chosen:
         template = template.replace('{context}', cw, 1)
 
+    # Fill topic placeholders with grammar fixes
     result = []
     for line in template.split('\n'):
+        # Fix 'a [plural]' -> '[plural]'
+        if topic_plural:
+            line = re.sub(r'\ba\s+(?=\{topic\})', '', line)
+            line = re.sub(r'\bThere once was a\b', 'There once were', line)
+            line = re.sub(r'\bStands the\b', 'Stand the', line)
+        # Fix 'a [vowel]' -> 'an [vowel]'
+        line = re.sub(r'\bA\s+(?=[aeiou])', 'An ', line)
+        line = re.sub(r'\ba\s+(?=[aeiou])', 'an ', line)
+        
         if '{topic}' in line:
             is_start = line.strip().startswith('{topic}')
             replacement = topic_cap if is_start else topic_lower

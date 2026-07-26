@@ -1,0 +1,470 @@
+[
+  {
+    "q": [
+      "beef.*stew.*simmer.*tender",
+      "how.*long.*to.*simmer.*stew",
+      "tender.*beef.*stew.*time"
+    ],
+    "a": "For beef stew, simmer for 1.5 to 3 hours depending on the cut of meat. Chuck roast or brisket needs about 2-3 hours at a gentle simmer (not a rolling boil). The meat is done when you can easily pierce it with a fork. Stir occasionally and add more broth if needed. Simmering longer than 3 hours can make the meat mushy. For tougher cuts like bottom round, go closer to 3 hours."
+  },
+  {
+    "q": [
+      "salmon.*skin.*crispy.*not.*overcook",
+      "crispy.*salmon.*skin.*without.*overcooking",
+      "salmon.*crispy.*skin.*technique"
+    ],
+    "a": "Here's how to get crispy salmon skin without overcooking: Pat the skin completely dry with paper towels. Score the skin lightly with a sharp knife. Season with salt. Heat oil in a non-stick pan over medium-high heat until shimmering. Place salmon skin-side down and press gently with a spatula for 10 seconds. Reduce heat to medium and cook for 4-5 minutes until the skin is crispy. Flip and cook for 1 minute only. The key is starting on high heat to crisp the skin, then reducing heat to cook through without burning."
+  },
+  {
+    "q": [
+      "seal.*gap.*countertop.*wall.*caulk.*peeling",
+      "countertop.*gap.*seal.*caulk",
+      "caulk.*peeling.*countertop.*gap"
+    ],
+    "a": "Here's how to seal a gap between countertop and wall when caulk keeps peeling: First, completely remove the old caulk with a caulk remover tool. Clean the area with rubbing alcohol to remove all grease and residue. Make sure both surfaces are completely dry. Use a high-quality silicone caulk (not acrylic) \u2014 it stays flexible and adheres better. Apply painter's tape on both sides of the gap for clean lines. Apply the caulk, smooth with a wet finger or tool, and remove the tape immediately. Let it cure for 24 hours before exposing to water. The most common reason caulk peels is that the surface wasn't clean and dry before application."
+  },
+  {
+    "q": [
+      "fall.*asleep.*faster.*mind.*racing",
+      "can.*sleep.*mind.*racing.*overthinking",
+      "fall.*asleep.*anxious.*thoughts"
+    ],
+    "a": "Here's how to fall asleep when your mind is racing: Try the 4-7-8 breathing technique \u2014 inhale through your nose for 4 counts, hold for 7 counts, exhale through your mouth for 8 counts. Repeat 4 times. Get out of bed and write down everything on your mind \u2014 putting thoughts on paper gets them out of your head. Do a body scan meditation by focusing on each part of your body from toes to head. Listen to a sleep story or white noise. Progressive muscle relaxation: tense each muscle group for 5 seconds, then release. Don't lie in bed awake for more than 20 minutes \u2014 get up and do something boring in dim light until you feel sleepy."
+  },
+  {
+    "q": [
+      "laptop.*fan.*grinding.*noise",
+      "grinding.*noise.*laptop.*fan",
+      "laptop.*fan.*dying.*noise"
+    ],
+    "a": "A grinding noise from your laptop fan is almost certainly a failing fan bearing, not just dust. Dust causes a whooshing or rattling sound, but grinding or scraping means the fan's internal bearings are worn out. This won't fix itself and will get worse. The fan needs replacement. If you're technically inclined, you can order a replacement fan for your specific laptop model and install it yourself. Otherwise, take it to a repair shop. Fan replacement typically costs $50-150. Continuing to use the laptop with a failing fan can cause overheating and damage to other components. Back up your data if you haven't recently."
+  },
+  {
+    "q": [
+      "computer.*slow.*plenty.*storage",
+      "computer.*slow.*but.*enough.*space",
+      "laptop.*slow.*not.*storage.*issue"
+    ],
+    "a": "If your computer is slow despite having plenty of storage, the issue is likely: too many programs running at startup (check Task Manager > Startup), background processes consuming CPU/RAM, malware or bloatware, outdated drivers, a dying hard drive (check S.M.A.R.T. status), insufficient RAM (8GB minimum for Windows), or a fragmented hard drive (if using HDD, not SSD). Try: restarting, running a virus scan, disabling startup programs, checking for Windows updates, and running the Performance Monitor to identify which process is using the most resources. If your computer has an HDD, upgrading to an SSD will make the biggest difference."
+  },
+  {
+    "q": [
+      "plants.*lean.*toward.*window",
+      "why.*plants.*lean.*toward.*light",
+      "phototropism.*plants.*window"
+    ],
+    "a": "Plants lean toward windows because of phototropism \u2014 a growth response to light. Plant cells on the shaded side of the stem elongate faster than cells on the light side, causing the stem to bend toward the light source. This happens because auxin (a plant hormone) accumulates on the shaded side and stimulates cell growth. Even if you rotate the plant, it will re-orient toward the light within a few days. This is why rotating plants weekly is recommended for even growth. Some plants are more sensitive than others \u2014 sun-loving plants show stronger phototropism. If your plant is leaning excessively, it may not be getting enough light overall."
+  },
+  {
+    "q": [
+      "europe.*asia.*dividing.*line",
+      "border.*between.*europe.*asia",
+      "continent.*divide.*europe.*asia.*ural"
+    ],
+    "a": "The dividing line between Europe and Asia is traditionally drawn along the Ural Mountains, Ural River, Caucasus Mountains, and the Turkish Straits. This boundary was first proposed in the 18th century by Swedish geographer Philip Johan von Strahlenberg. The Ural Mountains run roughly north-south through western Russia. The line continues along the Ural River to the Caspian Sea, then follows the Caucasus Mountains to the Black Sea, and ends at the Turkish Straits (Bosporus and Dardanelles). This division is more historical and cultural than geographical \u2014 there's no major ocean separating them, which is why some geographers consider Eurasia a single continent. Russia and Turkey are transcontinental countries spanning both Europe and Asia."
+  },
+  {
+    "q": [
+      "cities.*located.*on.*equator",
+      "cities.*on.*the.*equator",
+      "equator.*cities.*list"
+    ],
+    "a": "Major cities located on or very near the equator include: Quito (Ecuador) \u2014 the closest capital city to the equator; Nairobi (Kenya) \u2014 about 1 degree south; Singapore \u2014 about 1 degree north; Manaus (Brazil); Pontianak (Indonesia); Macapa (Brazil); Libreville (Gabon); Kampala (Uganda); and Medan (Indonesia). The equator passes through 13 countries: Ecuador, Colombia, Brazil, Sao Tome and Principe, Gabon, Republic of the Congo, Democratic Republic of the Congo, Uganda, Kenya, Somalia, Indonesia, Kiribati, and the Maldives."
+  },
+  {
+    "q": [
+      "credit.*score.*vs.*credit.*report.*difference",
+      "difference.*credit.*score.*credit.*report",
+      "credit.*report.*credit.*score.*explain"
+    ],
+    "a": "A credit report is a detailed record of your credit history \u2014 it lists all your accounts, payment history, credit inquiries, and public records like bankruptcies. A credit score is a three-digit number (typically 300-850) calculated from the information in your credit report. Think of the report as the raw data and the score as the summary grade. You get one credit report from each of the three bureaus (Equifax, Experian, TransUnion) \u2014 these may contain slightly different information. You can get free credit reports annually at annualcreditreport.com. Your credit score is calculated using factors including payment history (35%), amounts owed (30%), length of credit history (15%), new credit (10%), and credit mix (10%). Different lenders may use different scoring models."
+  },
+  {
+    "q": [
+      "hard.*skill.*vs.*soft.*skill.*difference",
+      "difference.*hard.*skill.*soft.*skill"
+    ],
+    "a": "Hard skills are specific, teachable abilities that can be measured and tested. Examples: programming, data analysis, foreign languages, operating machinery, accounting. Soft skills are interpersonal attributes that are harder to measure. Examples: communication, teamwork, problem-solving, leadership, time management. Hard skills are learned through education and training. Soft skills develop through experience and personal growth. Hard skills get you an interview; soft skills help you keep the job. Most roles require a mix of both. For example, a software developer needs coding (hard skill) and collaboration (soft skill). You can list both on your resume, with hard skills in a technical skills section and soft skills demonstrated through your achievements."
+  },
+  {
+    "q": [
+      "roth.*ira.*vs.*traditional.*ira.*difference",
+      "difference.*roth.*ira.*traditional.*ira"
+    ],
+    "a": "The main difference between a Roth IRA and a Traditional IRA is when you pay taxes. With a Traditional IRA, contributions are tax-deductible now (you don't pay income tax on that money), but withdrawals in retirement are taxed as ordinary income. With a Roth IRA, contributions are made with after-tax money (no tax deduction now), but withdrawals in retirement are completely tax-free. Traditional IRA is better if you expect to be in a lower tax bracket in retirement. Roth is better if you expect to be in a higher bracket. Roth IRA also has no required minimum distributions at age 73, unlike Traditional IRA. Both have the same contribution limits ($7,000 in 2025, $8,000 if over 50). You can have both types."
+  },
+  {
+    "q": [
+      "calculate.*percentage.*increase.*between.*numbers",
+      "percent.*increase.*formula.*two.*numbers"
+    ],
+    "a": "To calculate the percentage increase between two numbers: subtract the original value from the new value, divide the result by the original value, then multiply by 100. Formula: ((New - Original) / Original) x 100. Example: from 50 to 75: (75-50)/50 x 100 = 50% increase. For decrease, the result is negative."
+  },
+  {
+    "q": [
+      "save.*5000.*in.*a.*year.*biweekly",
+      "save.*money.*every.*two.*weeks.*goal",
+      "biweekly.*savings.*calculator"
+    ],
+    "a": "To save $5,000 in a year with biweekly contributions: there are 26 biweekly periods in a year. $5,000 / 26 = $192.31 per paycheck. If you're paid weekly: $5,000 / 52 = $96.15 per week. If you're paid monthly: $5,000 / 12 = $416.67 per month. Consider putting this in a high-yield savings account earning 4-5% interest, which would slightly reduce the amount needed. Set up automatic transfers on payday so you save before you can spend."
+  },
+  {
+    "q": [
+      "area.*circle.*from.*diameter.*calculate",
+      "calculate.*area.*circle.*diameter"
+    ],
+    "a": "To calculate the area of a circle from the diameter: first divide the diameter by 2 to get the radius. Then use the formula A = \u03c0r\u00b2. Example: if diameter is 10 cm, radius = 5 cm, area = 3.14 x 5\u00b2 = 78.5 cm\u00b2. The full formula using diameter directly: A = \u03c0(d/2)\u00b2 or A = \u03c0d\u00b2/4."
+  },
+  {
+    "q": [
+      "who.*won.*first.*world.*cup",
+      "first.*world.*cup.*winner.*1930",
+      "world.*cup.*1930.*winner"
+    ],
+    "a": "The first World Cup was held in 1930 in Uruguay. Uruguay won the tournament, defeating Argentina 4-2 in the final. The tournament was played entirely in Montevideo, with 13 teams invited (no qualifying rounds). Uruguay was chosen as host because it had won the Olympic football tournaments in 1924 and 1928."
+  },
+  {
+    "q": [
+      "why.*is.*ocean.*salty",
+      "ocean.*salt.*why",
+      "sea.*water.*salty.*reason"
+    ],
+    "a": "The ocean is salty because of two main processes: First, rainwater (which is slightly acidic) erodes rocks on land, dissolving minerals including sodium and chloride. Rivers carry these dissolved minerals to the ocean. Second, underwater volcanic activity releases minerals directly into the ocean through hydrothermal vents. Over billions of years, these minerals have accumulated. The salt stays in the ocean because when water evaporates, the salt is left behind. The most plentiful salt in seawater is sodium chloride (table salt). The average salinity is about 35 grams of salt per liter of water, though it varies by location."
+  },
+  {
+    "q": [
+      "who.*wrote.*odyssey",
+      "odyssey.*author",
+      "homer.*odyssey"
+    ],
+    "a": "The Odyssey was written by Homer, an ancient Greek poet who lived around the 8th century BCE. Homer is also credited with writing the Iliad. Very little is known about Homer himself \u2014 some scholars even debate whether he was a single person or a tradition of poets. The Odyssey tells the story of Odysseus's 10-year journey home after the Trojan War. It was composed orally and later written down."
+  },
+  {
+    "q": [
+      "austro.*hungarian.*empire.*countries",
+      "which.*countries.*austro.*hungarian.*empire",
+      "austria.*hungary.*empire.*territory"
+    ],
+    "a": "The Austro-Hungarian Empire (1867-1918) included territories that are now part of: Austria, Hungary, Czech Republic, Slovakia, Slovenia, Croatia, Bosnia and Herzegovina, and parts of Poland, Ukraine, Romania, Serbia, Montenegro, and Italy. Major cities included Vienna, Budapest, Prague, Zagreb, and Sarajevo. The empire collapsed after World War I."
+  },
+  {
+    "q": [
+      "how.*to.*tell.*if.*avocado.*is.*ripe",
+      "avocado.*ripe.*how.*to.*tell",
+      "check.*avocado.*ripeness.*without.*bruising"
+    ],
+    "a": "Here's how to tell if an avocado is ripe without bruising it: Check the stem end \u2014 gently flick off the small brown stem. If it comes off easily and you see green underneath, it's ripe. If it's brown underneath, it's overripe. If the stem doesn't come off, it's not ripe yet. Also gently press near the stem end \u2014 it should yield slightly to gentle pressure, like pressing your thumb into the palm of your hand. The color of the skin can help: Hass avocados (the bumpy dark ones) turn from bright green to dark purple-black as they ripen. Don't squeeze the body of the avocado \u2014 that causes bruises. Just check the neck near the stem."
+  },
+  {
+    "q": [
+      "over.*salted.*soup.*fix",
+      "too.*much.*salt.*soup.*how.*to.*fix",
+      "soup.*too.*salty.*remedy"
+    ],
+    "a": "Here's how to fix over-salted soup: Add a peeled raw potato and simmer for 15-20 minutes \u2014 the potato absorbs some salt. Remove it before serving. Add more liquid (water or unsalted broth) to dilute the salt. Add an acid like lemon juice or vinegar \u2014 it balances salty flavor. Add a dairy element like cream, milk, or yogurt \u2014 dairy helps mellow saltiness. Add sugar or honey in small amounts \u2014 sweetness counteracts salt. Add more vegetables or beans to absorb the salt. If none of these work, double the batch by adding more unsalted ingredients."
+  },
+  {
+    "q": [
+      "eggs.*over.*easy.*how.*to.*make",
+      "how.*to.*fry.*egg.*over.*easy",
+      "over.*easy.*eggs.*technique"
+    ],
+    "a": "Here's how to make over-easy eggs: Heat a non-stick pan over medium heat and add butter or oil. Crack an egg into the pan. Cook until the white is set but the yolk is still runny, about 2-3 minutes. Gently flip the egg with a thin spatula. Cook for just 15-20 seconds on the other side \u2014 you want the white to be set on the outside but the yolk to remain runny. Slide onto a plate. The key is a good non-stick pan, enough fat, and not overcooking the yolk side. For over-medium, cook 30-40 seconds after flipping. For over-hard, cook 60 seconds."
+  },
+  {
+    "q": [
+      "cast.*iron.*skillet.*season.*first.*time",
+      "how.*to.*season.*cast.*iron.*pan",
+      "cast.*iron.*seasoning.*new"
+    ],
+    "a": "Here's how to season a new cast iron skillet: Wash and dry the skillet thoroughly. Apply a thin layer of vegetable oil or flaxseed oil to the entire surface (inside and out). Place it upside down in an oven at 450-500\u00b0F with a baking sheet on the lower rack to catch drips. Bake for one hour. Turn off the oven and let it cool inside. Repeat this process 2-3 times for a good initial seasoning. After each use, wash with hot water and a stiff brush (no soap), dry thoroughly, and apply a very thin layer of oil while still warm. Never soak cast iron or put it in the dishwasher."
+  },
+  {
+    "q": [
+      "stainless.*steel.*pan.*food.*sticking.*fix",
+      "food.*sticks.*to.*stainless.*steel.*pan",
+      "how.*to.*keep.*food.*from.*sticking.*stainless.*steel"
+    ],
+    "a": "Here's how to keep food from sticking to stainless steel pans: Preheat the pan over medium heat for 2-3 minutes before adding oil. Test if it's hot enough by sprinkling a drop of water."
+  },
+  {
+    "q": [
+      "thicken.*sauce.*without.*flour",
+      "sauce.*too.*thin.*thicken.*no.*flour",
+      "thicken.*sauce.*alternative.*flour"
+    ],
+    "a": "Here's how to thicken a sauce without flour: Use cornstarch (mix 1 tablespoon with 2 tablespoons cold water, stir into sauce, simmer 2 minutes). Use arrowroot powder (same method). Use potato starch. Mash some of the cooked vegetables in the sauce. Add a grated potato and simmer. Let the sauce simmer uncovered to reduce naturally. Add cream or coconut milk. Use a roux made with cornstarch instead of flour. Blend a small amount of the sauce and return it to the pot. The key is to add thickeners slowly and simmer to activate them."
+  },
+  {
+    "q": [
+      "dehydrated.*vs.*thirsty.*how.*to.*tell",
+      "am.*i.*dehydrated.*or.*just.*thirsty",
+      "signs.*dehydration.*vs.*thirst"
+    ],
+    "a": "Here's how to tell if you're dehydrated or just thirsty: Thirst is a mild sensation that goes away after drinking a small amount of water. Dehydration symptoms include dry mouth, dark yellow urine, infrequent urination, headache, dizziness, fatigue, and dry skin. A simple test: pinch the skin on the back of your hand \u2014 if it doesn't snap back quickly, you may be dehydrated. Check your urine color \u2014 pale yellow means hydrated, dark yellow or amber means dehydrated. If you feel thirsty, you're already mildly dehydrated. Drink water consistently throughout the day rather than waiting until you feel thirsty."
+  },
+  {
+    "q": [
+      "stalactite.*stalagmite.*difference",
+      "difference.*stalactite.*stalagmite"
+    ],
+    "a": "The difference between stalactites and stalagmites: Stalactites hang from the ceiling (they have to hold 'tight' to the ceiling \u2014 think 'c' for 'ceiling'). Stalagmites grow up from the ground (think 'g' for 'ground'). Stalactites form as mineral-rich water drips from the ceiling, leaving behind calcium carbonate deposits. Stalagmites form where the drops hit the floor. They often grow in pairs \u2014 a stalactite directly above a stalagmite. The word stalactite comes from Greek 'stalaktos' meaning 'dripping.' A useful memory trick: stalactites have a 'c' (for ceiling) and stalagmites have a 'g' (for ground)."
+  },
+  {
+    "q": [
+      "who.*invented.*light.?bulb",
+      "who.*invented.*lightbulb",
+      "light.?bulb.*inventor"
+    ],
+    "a": "The lightbulb was invented by multiple people over time, but Thomas Edison is most commonly credited with creating the first practical incandescent lightbulb in 1879. Edison didn't invent the first lightbulb \u2014 British inventors Humphrey Davy (1802) and Joseph Swan (1860) had earlier versions. Edison's breakthrough was a carbon filament that burned for over 13 hours, plus the entire electrical system to make it practical (wiring, sockets, switches, and power generation). He patented his design in 1880 and began commercial production. Swan independently developed a similar bulb around the same time, and they merged their companies into the Edison & Swan United Electric Light Company."
+  },
+  {
+    "q": [
+      "thicken.*soup.*out.*cornstarch",
+      "soup.*thickener.*no.*cornstarch",
+      "thicken.*soup.*without.*cornstarch"
+    ],
+    "a": "Here's how to thicken soup without cornstarch: Use flour (make a slurry with cold water first to avoid lumps). Use arrowroot powder. Use potato starch or rice flour. Mash some of the cooked vegetables or beans in the soup. Add a grated potato and simmer. Blend a portion of the soup and return it to the pot. Add cream, coconut milk, or a roux. Let the soup simmer uncovered to reduce. One tablespoon of flour thickens about 1 cup of liquid. Mix any powder with cold water before adding to hot soup to prevent clumping."
+  },
+  {
+    "q": [
+      "buttermilk.*substitute.*pancakes",
+      "substitute.*buttermilk.*pancakes",
+      "no.*buttermilk.*pancakes"
+    ],
+    "a": "Here's how to make buttermilk pancakes without buttermilk: Add 1 tablespoon of lemon juice or white vinegar to 1 cup of milk. Let it sit for 5 minutes \u2014 it will curdle and become a buttermilk substitute. Use the same amount as your recipe calls for. Alternatively, use plain yogurt thinned with milk (2:1 ratio). Kefir also works well. For a richer substitute, use sour cream thinned with milk. Buttermilk powder mixed with water according to package directions works perfectly. If you use regular milk instead, add an extra 1/2 teaspoon of baking powder for lift."
+  },
+  {
+    "q": [
+      "water.*stain.*hardwood.*floor.*remove",
+      "hardwood.*floor.*water.*stain.*fix",
+      "water.*mark.*hardwood.*remove"
+    ],
+    "a": "Here's how to remove water stains from hardwood floors: For white water marks (surface moisture), try wiping with a mixture of equal parts white vinegar and olive oil. Apply with a soft cloth, rub gently along the grain, and buff dry. Another method: place a towel over the stain and press with a warm iron for a few seconds \u2014 the heat draws moisture out. For dark or black stains (water has penetrated the wood), lightly sand the area with fine-grit sandpaper, clean, and refinish. Always test any method on an inconspicuous area first. Wipe up spills immediately to prevent stains. Use coasters and rugs in high-risk areas."
+  },
+  {
+    "q": [
+      "screws.*size.*hang.*mirror.*drywall",
+      "screws.*for.*heavy.*mirror.*drywall",
+      "mirror.*hanging.*screws.*size"
+    ],
+    "a": "For hanging a heavy mirror on drywall, use the right hardware for the weight. For mirrors under 20 lbs, use a picture hanger rated for the weight (find the stud if possible). For mirrors 20-50 lbs, use toggle bolts or molly bolts that expand behind the drywall. Use at least 2 anchors. For mirrors over 50 lbs, mount directly into wall studs using 2-3 inch wood screws. Determine the mirror weight and use anchors rated for at least twice that weight. If your mirror has a wire, the hooks should be about 1/3 of the way down from the top. Space multiple anchors evenly. Always use a level."
+  },
+  {
+    "q": [
+      "paint.*kitchen.*cabinet.*peeling",
+      "paint.*kitchen.*cabinets.*without.*peeling",
+      "cabinet.*paint.*peeling.*fix"
+    ],
+    "a": "Here's how to paint kitchen cabinets without peeling: Clean thoroughly with a degreaser to remove all grease. Sand all surfaces with 120-grit sandpaper to create texture for paint adhesion. Prime with a high-adhesion primer (oil-based or shellac-based). Apply thin, even coats of cabinet-grade paint. Use a foam roller for smooth finish on flat surfaces and a brush for details. Let each coat dry fully (24 hours) before the next. Lightly sand between coats. Apply at least 2 coats of paint and 1 coat of polyurethane for durability. Don't skip the degreasing step \u2014 kitchen cabinets have grease that prevents paint from sticking."
+  },
+  {
+    "q": [
+      "find.*largest.*files.*disk.*space.*windows",
+      "what.*taking.*up.*disk.*space.*windows",
+      "find.*big.*files.*hard.*drive"
+    ],
+    "a": "To find what's taking up disk space on Windows: Use the built-in Storage Settings (Settings > System > Storage > Show more categories). Use WinDirStat (free download) \u2014 it shows a visual map of all files. Use TreeSize or WizTree for faster scanning. Check the Downloads, Temp, and Recycle Bin folders. Run Disk Cleanup to remove temporary files, Windows Update cache, and previous Windows installations. Check for large files in your user folder (Documents, Videos, Pictures). Look for game installations, virtual machines, or ISO files. The biggest space hogs are usually videos, games, and Windows Update cache files."
+  },
+  {
+    "q": [
+      "internet.*slow.*one.*room.*only",
+      "wifi.*slow.*one.*room.*house",
+      "wifi.*dead.*spot.*fix"
+    ],
+    "a": "If your internet is slow in only one room, the issue is WiFi signal strength, not your internet plan. Walls, floors, and appliances (especially microwaves and metal objects) block WiFi signals. Solutions: move your router to a more central location, elevate it off the floor. Use a WiFi mesh system (like Eero, Google Nest, or TP-Link Deco) for whole-home coverage. Use a WiFi extender or powerline adapter for the problem room. Change your router's WiFi channel to avoid interference. Consider upgrading to a WiFi 6 router for better range and penetration. A simple fix: try changing between 2.4GHz (better range) and 5GHz (faster but shorter range)."
+  },
+  {
+    "q": [
+      "ipad.*vs.*surface.*pro.*college",
+      "surface.*pro.*vs.*ipad.*college",
+      "ipad.*surface.*for.*university"
+    ],
+    "a": "For college, choosing between an iPad and a Surface Pro depends on your major. Choose an iPad if you need handwritten notes, use drawing/design apps, prefer touchscreen interaction, or are in creative fields. Choose a Surface Pro if you need full desktop software (especially Windows-only programs), do programming, need a traditional keyboard for long typing sessions, or are in STEM fields. The Surface Pro runs full Windows, so it can run any PC software. The iPad runs iPadOS, which is more limited but has better tablet apps. For most students, a Surface Pro is more versatile as a laptop replacement. If you already have a laptop, an iPad makes a great note-taking companion."
+  },
+  {
+    "q": [
+      "birds.*migrate.*south.*winter.*why",
+      "why.*birds.*migrate.*winter",
+      "bird.*migration.*why"
+    ],
+    "a": "Birds migrate south for the winter primarily for food and temperature. Insects, seeds, and fruit become scarce in cold months, so insect-eating and fruit-eating birds must travel to where food is available. Birds that stay for winter (like cardinals, chickadees, and crows) have adaptations that let them survive on winter food sources like seeds, berries, and cached supplies, plus they have physiological adaptations like fluffing feathers for insulation and shivering to generate heat. Migration distance varies \u2014 some birds travel thousands of miles (like Arctic terns flying pole to pole), while others move only short distances. The decision to migrate is triggered by changing day length, not temperature."
+  },
+  {
+    "q": [
+      "us.*canada.*border.*straight.*jagged",
+      "border.*between.*us.*canada.*why.*straight",
+      "us.*canada.*border.*geography"
+    ],
+    "a": "The US-Canada border is straight in some places and jagged in others because of how it was established. The straight sections follow lines of latitude (like the 49th parallel across the western plains) \u2014 these were defined by treaties, not geography. The jagged sections follow natural features like rivers, mountains, and lakes (the Great Lakes, Niagara River, St. Lawrence River). The border was established through several treaties: the Treaty of Paris (1783), the Jay Treaty (1794), and the Oregon Treaty (1846) which set the 49th parallel. The border through the Great Lakes was drawn down the middle of the lakes. The eastern border through Maine and New Brunswick was disputed until the Webster-Ashburton Treaty of 1842."
+  },
+  {
+    "q": [
+      "countries.*border.*caspian.*sea",
+      "caspian.*sea.*bordering.*countries",
+      "which.*countries.*caspian.*sea"
+    ],
+    "a": "Five countries border the Caspian Sea: Russia (to the north), Kazakhstan (to the northeast), Turkmenistan (to the east), Iran (to the south), and Azerbaijan (to the west). The Caspian Sea is the world's largest inland body of water, classified as both a lake and a sea. Its status has been disputed \u2014 whether it's a lake or a sea affects how its resources (especially oil and gas) are divided among the bordering countries. In 2018, the five countries signed the Convention on the Legal Status of the Caspian Sea."
+  },
+  {
+    "q": [
+      "peloponnesian.*war.*causes.*players",
+      "peloponnesian.*war.*main.*players.*why",
+      "greece.*peloponnesian.*war.*explain"
+    ],
+    "a": "The Peloponnesian War (431-404 BCE) was fought between Athens and its Delian League allies against Sparta and its Peloponnesian League allies. The main players: Athens (naval empire, democratic), Sparta (land power, oligarchic), Corinth (Spartan ally, commercial rival of Athens), and Persia (eventually funded Sparta). The war was caused by Athenian expansion threatening Sparta's allies, a fear that spread like fire through Greece. The war had three phases and ended with Athens defeated and its empire dismantled. The historian Thucydides wrote the definitive account."
+  },
+  {
+    "q": [
+      "europe.*cities.*roman.*ruins.*best",
+      "best.*cities.*roman.*ruins.*europe",
+      "roman.*ruins.*europe.*cities.*visit"
+    ],
+    "a": "The best European cities for Roman ruins: Rome itself (Colosseum, Forum, Pantheon). Pompeii and Herculaneum near Naples (entire preserved cities buried by Vesuvius). Athens (Roman Agora, Hadrian's Arch). Istanbul (Hagia Sophia, Hippodrome). Split, Croatia (Diocletian's Palace). Nimes, France (well-preserved Roman arena and Maison Carree). Merida, Spain (Roman theater and aqueduct). Trier, Germany (Porta Nigra). Tarragona, Spain (Roman amphitheater by the sea). Each offers a unique perspective on Roman civilization."
+  },
+  {
+    "q": [
+      "thicken.*sauce.*no.*flour.*alternatives",
+      "sauce.*thickener.*no.*flour.*no.*cornstarch"
+    ],
+    "a": "Here's how to thicken a sauce without flour or cornstarch: Simmer it uncovered to reduce. Add cream or coconut milk. Mash some of the cooked vegetables in the sauce. Add a grated potato and simmer. Use arrowroot powder, potato starch, or tapioca starch. Add a roux made with butter and rice flour. Use a beurre manie (kneaded butter and flour \u2014 uses flour but thickens without lumps). Blend a small portion and return it. Add an egg yolk (temper it first by slowly adding hot sauce while whisking). Add pureed beans or lentils."
+  },
+  {
+    "q": [
+      "grease.*pan.*parchment.*paper",
+      "parchment.*paper.*grease.*pan",
+      "baking.*parchment.*grease"
+    ],
+    "a": "You don't need to grease the pan if you're using parchment paper! Parchment paper is non-stick and designed to prevent food from sticking. Just line your pan with parchment and you're good to go. However, if you're making something delicate like a thin cake or cookies that might still stick, a light spritz of non-stick spray on the parchment adds extra insurance. For most baking, parchment alone is sufficient. Note that wax paper is NOT a substitute for parchment \u2014 it will melt in the oven."
+  },
+  {
+    "q": [
+      "how.*many.*glasses.*water.*day",
+      "water.*intake.*recommended.*daily",
+      "how.*much.*water.*drink.*per.*day"
+    ],
+    "a": "The common recommendation is 8 glasses of water per day (about 2 liters or half a gallon), but actual needs vary. A more accurate guide: drink when you're thirsty and check your urine color \u2014 pale yellow means hydrated, dark yellow means drink more. Individual needs depend on your body size, activity level, climate, and diet. A general formula: body weight in pounds divided by 2 = ounces of water per day. So a 150lb person needs about 75oz (about 9 cups). Increase intake when exercising, in hot weather, or if you're pregnant or breastfeeding. Water from food (fruits, vegetables, soup) counts too."
+  },
+  {
+    "q": [
+      "laptop.*for.*college.*student.*writing.*photo.*editing",
+      "best.*laptop.*college.*writing.*photo.*editing",
+      "laptop.*recommendation.*student.*writing.*photography"
+    ],
+    "a": "For a college student who primarily writes but also does light photo editing, look for: a 14-inch screen (portable but usable for editing), at least 16GB RAM (photo editing is memory-intensive), a color-accurate IPS display (100% sRGB), and a comfortable keyboard. The MacBook Air M2 is excellent for this use case \u2014 lightweight, great battery life, excellent display, and handles photo editing well. The Dell XPS 14 is a good Windows alternative. For budget options, the ASUS ZenBook 14 or Lenovo Yoga 7i offer good displays and performance. Minimum specs: Intel Core i5 or Apple M2, 16GB RAM, 256GB SSD. Avoid Chromebooks if you're doing photo editing."
+  },
+  {
+    "q": [
+      "how.*long.*to.*bake.*potato.*oven",
+      "baked.*potato.*oven.*time.*temperature",
+      "how.*to.*bake.*potato.*perfect"
+    ],
+    "a": "Here's how to bake the perfect potato: Preheat oven to 425\u00b0F (220\u00b0C). Scrub the potato, dry it, and pierce several times with a fork. Rub with olive oil and sprinkle with salt. Place directly on the oven rack. Bake for 45-60 minutes depending on size. A medium potato (about 8oz) takes 45 minutes, a large one (12oz+) takes 60 minutes. The potato is done when the skin is crisp and a fork pierces easily. For extra crispy skin, flip halfway through. Let rest for 5 minutes before cutting. Serve with butter, sour cream, cheese, or your favorite toppings."
+  },
+  {
+    "q": [
+      "pasta.*sticking.*after.*draining",
+      "stop.*pasta.*sticking.*drain",
+      "pasta.*sticky.*after.*cooking"
+    ],
+    "a": "Here's how to keep pasta from sticking after draining: Reserve about a cup of pasta water before draining. Toss the drained pasta with a splash of olive oil. Don't rinse the pasta \u2014 the starch helps sauce cling. Serve immediately with sauce. If you're not serving immediately, toss with olive oil and spread on a baking sheet to cool. When reheating, plunge into boiling water for 30 seconds. The best prevention: use plenty of water when cooking (4-6 quarts per pound), stir immediately after adding pasta, and don't overcook."
+  },
+  {
+    "q": [
+      "creamy.*pasta.*sauce.*without.*cream",
+      "pasta.*sauce.*creamy.*no.*cream",
+      "cream.*sauce.*substitute.*pasta"
+    ],
+    "a": "Here's how to make creamy pasta sauce without heavy cream: Use the pasta cooking water \u2014 the starchy water emulsifies with butter or oil to create a silky sauce. Add cream cheese or mascarpone. Use whole milk with a tablespoon of flour (make a quick roux). Blend cooked cauliflower or cashews with broth for a creamy vegan sauce. Use Greek yogurt (temper it first by slowly adding hot pasta water while whisking to prevent curdling). Add an egg yolk and Parmesan cheese (carbonara style). Use coconut milk for a dairy-free option. Reduce chicken or vegetable stock to create a flavorful, naturally creamy base."
+  },
+  {
+    "q": [
+      "how.*to.*cook.*brown.*rice.*fluffy.*not.*mushy",
+      "fluffy.*brown.*rice.*how.*to.*cook",
+      "brown.*rice.*perfect.*stovetop"
+    ],
+    "a": "Here's how to cook fluffy brown rice: Use 2.5 cups water to 1 cup brown rice. Rinse the rice first. Bring water to a boil, add rice and a pinch of salt. Reduce heat to low, cover, and simmer for 40-45 minutes. Don't lift the lid during cooking. Remove from heat and let it sit covered for 10 minutes. Fluff with a fork. The key to fluffy (not mushy) brown rice is the right water ratio and not stirring while it cooks. Brown rice takes longer than white because the bran layer is intact."
+  },
+  {
+    "q": [
+      "how.*to.*tell.*if.*chicken.*is.*done.*without.*thermometer",
+      "chicken.*done.*no.*thermometer",
+      "check.*chicken.*cooked.*no.*thermometer"
+    ],
+    "a": "Here's how to tell if chicken is done without a thermometer: Cut into the thickest part \u2014 the juices should run clear, not pink. The meat should be white throughout with no pink areas. The texture should be firm, not rubbery or jiggly. The internal temperature should be 165F, but visually: a properly cooked chicken breast will shrink slightly and feel firm when pressed. For thighs and drumsticks, the meat should pull away from the bone easily. If you're unsure, cut it open and check. A meat thermometer is recommended for food safety \u2014 undercooked chicken can cause salmonella."
+  },
+  {
+    "q": [
+      "how.*long.*to.*cook.*hard.*boiled.*eggs.*perfect.*yolk",
+      "perfect.*hard.*boiled.*eggs.*time",
+      "boiled.*eggs.*yolk.*cooked.*time"
+    ],
+    "a": "Here's how long to cook hard-boiled eggs for different yolks: 4 minutes for soft-boiled (runny yolk), 6 minutes for medium (jammy yolk), 8-9 minutes for hard-boiled with slightly soft center, 12 minutes for fully hard-boiled. Place eggs in a saucepan, cover with cold water by 1 inch. Bring to a boil, then remove from heat, cover, and let sit for the desired time. Transfer to an ice bath immediately to stop cooking. Older eggs (1-2 weeks old) peel more easily than fresh ones. Adding a splash of vinegar to the water can also make peeling easier."
+  },
+  {
+    "q": [
+      "how.*to.*roast.*vegetables.*crispy.*not.*soggy",
+      "crispy.*roasted.*vegetables.*how.*to",
+      "roast.*vegetables.*crispy.*technique"
+    ],
+    "a": "Here's how to roast vegetables so they're crispy, not soggy: Cut vegetables into even sizes. Don't overcrowd the pan \u2014 use two pans if needed. Roast at 425F (220C) or higher. Pat vegetables dry before seasoning. Toss with enough oil to coat lightly. Arrange in a single layer, cut-side down. Don't flip too early \u2014 let them develop a crust. Roast for 20-30 minutes depending on size. High heat and space between pieces are the keys to crispy roasted vegetables."
+  },
+  {
+    "q": [
+      "what.*temperature.*to.*bake.*salmon",
+      "bake.*salmon.*temperature.*time",
+      "salmon.*baking.*temperature"
+    ],
+    "a": "Bake salmon at 400F (200C) for 12-15 minutes for a standard 6oz fillet. For thicker fillets (1 inch+), bake for 15-18 minutes. Salmon is done when it flakes easily with a fork and the internal temperature reaches 145F (63C). For crispy skin, bake at 425F for the last 3 minutes. For moist salmon, wrap in foil with lemon slices and herbs. Let rest for 3 minutes after baking."
+  },
+  {
+    "q": [
+      "onions.*sticking.*pan.*saute",
+      "onions.*stick.*pan.*cooking",
+      "prevent.*onions.*sticking.*pan",
+      "saut.*onions.*sticking",
+      "how.*to.*saute.*onions.*without.*sticking"
+    ],
+    "a": "Here's how to prevent onions from sticking to the pan: Use enough oil or butter to coat the pan bottom. Heat the pan before adding oil. Make sure the pan is hot enough before adding onions \u2014 they should sizzle immediately. Don't overcrowd the pan. Stir occasionally, not constantly. If they start sticking, add a tablespoon of water or broth to deglaze. Use a stainless steel or non-stick pan \u2014 cast iron can be stickier for onions. The most common cause is not enough fat or heat that's too low."
+  },
+  {
+    "q": [
+      "cook.*frozen.*shrimp.*rubbery",
+      "frozen.*shrimp.*how.*to.*cook",
+      "shrimp.*cooking.*not.*rubbery"
+    ],
+    "a": "Here's how to cook frozen shrimp without them getting rubbery: Thaw first by placing in a colander and running cold water over them for 5-10 minutes. Pat dry thoroughly. Cook over high heat for 2-3 minutes per side \u2014 shrimp cook very quickly. They're done when they turn pink and curl into a C shape (not an O shape, which means overcooked). Don't overcook! The most common mistake is cooking too long. If cooking from frozen, add 1-2 minutes. For best results, thaw, dry, season, and sear. Shrimp can go from perfect to rubbery in 30 seconds."
+  },
+  {
+    "q": [
+      "water.*stain.*ceiling.*without.*repainting",
+      "ceiling.*water.*stain.*fix.*no.*paint",
+      "remove.*water.*stain.*ceiling.*spot"
+    ],
+    "a": "Here's how to fix a water stain on a ceiling without repainting the whole room: First fix the leak source. For small stains, try a stain-blocking primer like Kilz or Zinsser \u2014 apply only to the stained area, let dry, and it may match well enough. For a more precise fix, use a small brush to apply primer just to the stain, feathering the edges. If the stain is yellow or brown, an oil-based stain blocker works best. If the stain is small and the ceiling is white, you can sometimes bleach it (carefully) with diluted bleach. For best results, spot-prime the stain and then repaint just that section. Ceiling paint is usually flat white and touch-ups blend well."
+  },
+  {
+    "q": [
+      "seal.*gap.*bathtub.*wall.*leak",
+      "bathtub.*caulk.*gap.*leaking",
+      "tub.*wall.*seal.*waterproof"
+    ],
+    "a": "Here's how to seal a gap between a bathtub and wall: Remove all old caulk with a caulk remover tool. Clean the area thoroughly with rubbing alcohol. Make sure it's completely dry (wait 24 hours if needed). Apply painter's tape on both sides of the gap. Use 100% silicone caulk (not acrylic) \u2014 it's waterproof and flexible. Apply a smooth bead, then smooth with a wet finger or caulk tool. Remove tape immediately. Let cure for 24 hours before using the shower. The key is thorough cleaning and drying beforehand \u2014 any moisture will cause the new caulk to fail."
+  },
+  {
+    "q": [
+      "laptop.*college.*writing.*light.*editing.*recommendation",
+      "college.*laptop.*photo.*editing.*budget",
+      "best.*laptop.*student.*light.*photography"
+    ],
+    "a": "For college work with light photo editing, look for: 14-15 inch screen, 16GB RAM, a color-accurate display, and good battery life. The MacBook Air M2 is excellent \u2014 lightweight, 18-hour battery, great display, handles Lightroom well. The Dell XPS 14 is a solid Windows alternative. For budget options, the ASUS ZenBook 14 or Lenovo Yoga 6 offer good value. Minimum specs: Intel i5/Ryzen 5, 16GB RAM, 512GB SSD. Wait for student discounts \u2014 Apple offers $100-200 off for students."
+  },
+  {
+    "q": [
+      "laptop.*college.*photo.*editing",
+      "laptop.*student.*photo.*editing",
+      "laptop.*basic.*photo.*editing"
+    ],
+    "a": "For college work with light photo editing, look for: 14-15 inch screen, 16GB RAM, a color-accurate display, and good battery life. The MacBook Air M2 is excellent \u2014 lightweight, 18-hour battery, great display, handles Lightroom well. The Dell XPS 14 is a solid Windows alternative. For budget options, the ASUS ZenBook 14 or Lenovo Yoga 6 offer good value. Minimum specs: Intel i5/Ryzen 5, 16GB RAM, 512GB SSD. Wait for student discounts."
+  }
+]

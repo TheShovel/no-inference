@@ -17,10 +17,12 @@ _PATTERNS = {
     "definition": {
         "friendly": [
             "{subject} {verb} {obj}.",
-            "{subject} {verb} {obj}.",
+            "Well, {subject} {verb} {obj}.",
+            "You could say {subject} {verb} {obj}.",
         ],
         "neutral": [
             "{subject} {verb} {obj}.",
+            "{subject} refers to {obj}.",
         ],
         "concise": [
             "{subject}: {obj}.",
@@ -44,19 +46,14 @@ _PATTERNS = {
         "friendly": [
             "{subject} has {obj}.",
             "{subject} includes {obj}.",
-            "{subject} features {obj}.",
-            "One thing it has is {obj}.",
-            "Among its features is {obj}.",
+            "{subject} is known for {obj}.",
         ],
         "neutral": [
             "{subject} has {obj}.",
             "{subject} includes {obj}.",
-            "{subject} features {obj}.",
-            "One notable feature is {obj}.",
         ],
         "concise": [
             "Has {obj}.",
-            "Features {obj}.",
         ],
     },
     "composition": {
@@ -64,12 +61,10 @@ _PATTERNS = {
             "It's made from {obj}.",
             "It's made up of {obj}.",
             "It consists of {obj}.",
-            "It's composed of {obj}.",
         ],
         "neutral": [
             "It's made of {obj}.",
             "{subject} consists of {obj}.",
-            "{subject} is made of {obj}.",
         ],
         "concise": [
             "Made of {obj}.",
@@ -79,13 +74,11 @@ _PATTERNS = {
         "friendly": [
             "It's used for {obj}.",
             "People use it to {obj}.",
-            "It's designed for {obj}.",
             "It serves as {obj}.",
         ],
         "neutral": [
             "It's used for {obj}.",
             "{subject} serves as {obj}.",
-            "{subject} functions as {obj}.",
         ],
         "concise": [
             "Used {obj}.",
@@ -94,6 +87,7 @@ _PATTERNS = {
     "action": {
         "friendly": [
             "{subject} {verb} {obj}.",
+            "{subject} actually {verb} {obj}.",
         ],
         "neutral": [
             "{subject} {verb} {obj}.",
@@ -106,6 +100,7 @@ _PATTERNS = {
         "friendly": [
             "It's like {obj}.",
             "Think of it as {obj}.",
+            "You could compare it to {obj}.",
         ],
         "neutral": [
             "It is similar to {obj}.",
@@ -115,7 +110,7 @@ _PATTERNS = {
         ],
     },
     "unknown": {
-        "friendly": ["{obj}.", "Also, {obj_lower}."],
+        "friendly": ["{obj}.", "{obj_lower}."],
         "neutral": ["{obj}."],
         "concise": ["{obj}."],
     },
@@ -254,17 +249,17 @@ def realize_fact(
             else:
                 prep = "in"
                 place = obj_safe
-            sentence = template.format(subject=subject, verb=verb,
+            sentence = template.format(subject=subject, verb=verb, subject_lower=lower_first(subject),
                                        obj=obj_safe, obj_pro=lower_first(obj_safe),
                                        prep=prep, place=place)
         elif fact.fact_type == "composition":
             comp_match = re.match(r'(?:made|composed|consisting)\s+(?:of|from|with|using)\s+(.+)', obj, re.IGNORECASE)
             clean_obj = comp_match.group(1) if comp_match else obj
             clean_obj_safe = clean_obj.replace("{", "{{").replace("}", "}}")
-            sentence = template.format(subject=subject, verb=verb,
+            sentence = template.format(subject=subject, verb=verb, subject_lower=lower_first(subject),
                                        obj=lower_first(clean_obj_safe), obj_pro=lower_first(clean_obj_safe))
         else:
-            sentence = template.format(subject=subject, verb=verb,
+            sentence = template.format(subject=subject, verb=verb, subject_lower=lower_first(subject),
                                        obj=obj_safe, obj_pro=obj_lower_safe, obj_lower=obj_lower_safe,
                                        place=obj_safe)
     except (KeyError, ValueError):

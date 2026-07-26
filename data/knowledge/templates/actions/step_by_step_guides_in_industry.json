@@ -81,9 +81,8 @@
   {
     "id": "guide-bestpractices-006",
     "triggers": [
-      "best way to",
-      "industry standards",
-      "properly do"
+      "industry standards for this process",
+      "properly do this task"
     ],
     "context_role": "task",
     "template": "In the industry, the gold standard for {context} involves a few key steps to ensure quality and efficiency. Here is the recommended approach.",

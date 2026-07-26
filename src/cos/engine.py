@@ -48,16 +48,34 @@ def _get_nlg():
             _NLG_NATURALIZE = False
     return _NLG_NATURALIZE
 
+
 def _nlg(query, topic, info):
-    """Pass information through the unified NLG system."""
+    """Pass information through the template NLG pipeline."""
+    if not info or len(info) < 10:
+        return info
     nat = _get_nlg()
-    if nat and info and len(info) > 10:
+    if nat:
         try:
             from cos.nlg.config import NLGConfig
             return nat(query, topic, info, "factual", NLGConfig(style="friendly", verbosity=0.5, temperature=0.6))
         except Exception:
             pass
     return info
+
+
+def _make_conversational(text: str) -> str:
+    """Apply conversational polish to text.
+    Adds contractions and fixes capitalization.
+    """
+    if not text or len(text) < 20:
+        return text
+    try:
+        from cos.nlg.fluency import apply_contractions, fix_caps
+        result = apply_contractions(text, rate=1.0, temperature=0.0)
+        result = fix_caps(result)
+        return result
+    except Exception:
+        return text
 
 
 # ── Wikipedia search (fallback) ───────────────────────────────────────────────
@@ -93,6 +111,72 @@ def _extract_search_topic(query):
             if len(topic) > 2:
                 return topic
     return q
+
+
+def _retrieve_multi_content(query: str, max_sources: int = 3) -> str:
+    """Retrieve rich content from multiple topics and sources.
+
+    Extracts keywords from the query, then searches the knowledge base
+    and Wikipedia for each keyword. Combines results into a single
+    text body for the NLG pipeline.
+
+    Pure function.
+    """
+    import re as _multi_re
+    
+    # Direct query lookups
+    kb_answer = knowledge_lookup(query)
+    wiki_summary, wiki_url = _search_wikipedia(query)
+
+    # Multi-keyword extraction
+    keywords = extract_search_terms(query)
+
+    # Get the core nouns from the query for relevance filtering
+    # Secondary content must share at least one significant word with the query
+    q_words = set(w.lower() for w in _multi_re.findall(r'\w{4,}', query)
+                  if w.lower() not in {'what', 'how', 'why', 'when', 'where', 'who',
+                                       'which', 'tell', 'about', 'does', 'this',
+                                       'that', 'with', 'from', 'they', 'have'})
+
+    # Gather unique, relevant content parts
+    seen = set()
+    parts = []
+
+    def _add(text, must_contain_query_words=False):
+        text = text.strip()
+        if not text or len(text) < 40 or text in seen:
+            return
+        # For secondary content, require at least one core query word match
+        if must_contain_query_words and q_words:
+            text_lower = text.lower()
+            if not any(w in text_lower for w in q_words):
+                return
+        seen.add(text)
+        parts.append(text)
+
+    # Primary content from direct query match
+    if kb_answer:
+        _add(kb_answer)
+    if wiki_summary:
+        _add(wiki_summary)
+
+    # Secondary content from keyword expansion (must be relevant to query)
+    if keywords:
+        for kw in keywords[:max_sources]:
+            kw_lower = kw.lower().strip()
+            q_lower = query.lower().strip()
+            if kw_lower == q_lower or (len(kw_lower) > 3 and kw_lower in q_lower):
+                continue
+            kw_kb = knowledge_lookup(kw)
+            if kw_kb:
+                _add(kw_kb, must_contain_query_words=True)
+            kw_wiki, _ = _search_wikipedia(kw)
+            if kw_wiki:
+                _add(kw_wiki, must_contain_query_words=True)
+
+    if parts:
+        return '\n\n'.join(parts)
+    return ''
 
 
 def _resolve_topic(query, conversation_history):
@@ -192,12 +276,11 @@ def _search_wikipedia(query):
             _WIKI_CACHE[cache_key] = (None, None)
             return None, None
         
-        # Truncate to first paragraph or reasonable length
-        first_para = extract.split('\\n')[0] if '\\n' in extract else extract
-        if len(first_para) > 600:
-            first_para = first_para[:first_para.rfind('. ', 0, 600) + 1] or first_para[:600]
+        # For essays and rich content, use the full extract (up to 2000 chars)
+        if len(extract) > 2000:
+            extract = extract[:extract.rfind('. ', 0, 2000) + 1] or extract[:2000]
         
-        result = (first_para.strip(), page_url or summary_url)
+        result = (extract.strip(), page_url or summary_url)
         _WIKI_CACHE[cache_key] = result
         return result
     except Exception:
@@ -268,8 +351,7 @@ def _solve_math(expr):
 def _solve_word_problem(question):
     """Solve a word problem using the math solver."""
     try:
-        sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'benchmark'))
-        from math_solver import solve_word_problem as wp
+        from cos.math_solver import solve_word_problem as wp
         return wp(question)
     except Exception:
         return None
@@ -433,7 +515,7 @@ def _handle_word_problem(query):
     q = query.strip()
     answer = _solve_word_problem(q)
     if answer is not None:
-        return f"The answer is {answer}."
+        return answer
     return None  # Fall through to other handlers
 
 
@@ -479,7 +561,7 @@ def _handle_instruction(query):
     writing_match = re.search(
         r'(?:write|compose|draft|create|make)'
         r'\s+(?:a|an|the)?\s*'
-        r'(?:short\s+)?'
+        r'(?:\w+\s+)?'  # optional adjective (long, short, detailed, etc.)
         r'(poem|essay|story|article|paragraph|report|letter|summary|description|post|page|song|haiku|verse)'
         r'\s+(?:about|on|regarding|covering|titled|called|for)\s+'
         r'(.+?)\??$',
@@ -497,27 +579,38 @@ def _handle_instruction(query):
                 poem = generate_poem(topic, wiki_summary or '')
                 source = f'\n  (inspired by Wikipedia)' if wiki_url else ''
                 return f"A poem about {topic}:\n\n{poem}{source}"
-            # For essays and other prose, use Wikipedia content directly
-            kb_answer = knowledge_lookup(topic)
-            if kb_answer:
-                return f"Here is an essay on {topic}:\n\n{kb_answer}"
-            wiki_summary, wiki_url = _search_wikipedia(topic)
-            if wiki_summary:
-                url_suffix = f'\n\n  Source: {wiki_url}' if wiki_url else ''
-                return f"Here is an essay on {topic}:\n\n{wiki_summary}{url_suffix}"
+            # For essays and other prose, gather rich multi-source content
+            content = _retrieve_multi_content(topic, max_sources=3)
+            if content:
+                return f"Here is an essay on {topic}:\n\n{content}"
 
-    # ── How-to / procedural queries (use Wikipedia + NLG) ────────────────
+    # ── How-to / procedural queries ──────────────────────────────────────
+    # Catches: "how do I...", "how to...", "what's the best way to...",
+    #          "what is the best way to...", "what's a good substitute...",
+    #          "can I ...?"
     how_match = re.search(
-        r'how\s+(?:do|to|can|would|should|could)\s+(?:i|we|you)?\s*'
-        r'(?:make|cook|prepare|build|fix|install|set\s+up|create|write|do)\s+'
-        r'(?:a|an|the|some|my)?\s*(.+)',
+        r'(?:how\s+(?:do|to|can|would|should|could)\s+(?:i|we|you)?\s*'
+        r'|what.?(?:s|\s+is)\s+the\s+best\s+way\s+(?:to|for)\s+'
+        r'|what.?(?:s|\s+is)\s+a\s+good\s+(?:substitute|alternative|replacement)\s+'
+        r'|can\s+(?:i|we|you)\s+)'
+        r'(.+)',
         q_lower
     )
     if how_match:
         raw_topic = how_match.group(1).strip().rstrip('.!?')
         if raw_topic and len(raw_topic) > 2:
-            # Strip leading adjectives to get the core topic ("good salad" -> "salad")
-            core_topic = re.sub(r'^(good|great|easy|simple|best|perfect|basic|delicious|healthy|quick|fresh|homemade)\s+', '', raw_topic)
+            # Strip leading articles/determiners/adjectives
+            core_topic = re.sub(r'^(a|an|the|some|my|your|our|their)\s+', '', raw_topic)
+            core_topic = re.sub(r'^(good|great|easy|simple|best|perfect|basic|delicious|healthy|quick|fresh|homemade|better)\s+', '', core_topic)
+            # First: direct KB lookup — curated content with light conversational polish
+            kb_answer = knowledge_lookup(q)
+            if kb_answer and len(kb_answer) > 15:
+                return _make_conversational(kb_answer)
+            # Fallback: multi-source retrieval with NLG for Wikipedia content
+            content = _retrieve_multi_content(core_topic, max_sources=3)
+            if content and len(content) > 60:
+                return _nlg(q, core_topic, content)
+            # Final fallback: raw topic Wikipedia
             for search_term in [core_topic, raw_topic]:
                 wiki_summary, wiki_url = _search_wikipedia(search_term)
                 if wiki_summary and len(wiki_summary) > 50:
@@ -611,41 +704,30 @@ def _handle_factual(query, use_cos):
         if resolved and len(resolved) > 2:
             search_query = resolved
 
-    # First try: common knowledge base (most accurate for facts)
+    # Quick check: if this looks like a math/arithmetic query, try the math solver
+    # Catches queries with multiple numbers and math-related words
+    has_nums = len(re.findall(r'\d+', search_query)) >= 2
+    has_math_words = any(w in search_query.lower() for w in
+        ['what is', 'calculate', 'compute', 'solve', 'how many', 'how much',
+         'percent', 'plus', 'minus', 'times', 'divided', 'per', 'total',
+         'survey', 'probability', 'found that', 'both'])
+    if (has_nums or re.search(r'\d+', search_query)) and has_math_words:
+        from cos.math_solver import solve_word_problem as _solve_wp
+        math_answer = _solve_wp(search_query)
+        if math_answer:
+            return math_answer
+
+    # First: direct KB lookup — curated content with light conversational polish
     kb_answer = knowledge_lookup(search_query)
-    if kb_answer:
-        return _nlg(q, search_query, kb_answer)
+    if kb_answer and len(kb_answer) > 15:
+        return _make_conversational(kb_answer)
 
-    # Second try: Wikipedia search (broad coverage for anything the KB lacks)
-    wiki_summary, wiki_url = _search_wikipedia(search_query)
-    if wiki_summary:
-        return _nlg(q, search_query, wiki_summary)
+    # Fallback: multi-source retrieval with NLG
+    content = _retrieve_multi_content(search_query, max_sources=3)
+    if content:
+        return _nlg(q, search_query, content)
 
-    # Third try: multi-keyword search (symbolic extraction, then KB + Wikipedia lookup)
-    try:
-        keywords = extract_search_terms(search_query)
-        if keywords:
-            # Search KB with each keyword
-            kb_results = []
-            for kw in keywords:
-                ans = knowledge_lookup(kw)
-                if ans:
-                    kb_results.append(ans)
-            # Search Wikipedia with keywords
-            wiki_text = ''
-            for kw in keywords[:2]:
-                summary, url = _search_wikipedia(kw)
-                if summary:
-                    wiki_text += summary + ' '
-            # Combine results
-            information = ' '.join(kb_results)
-            if wiki_text:
-                information += '\\n' + wiki_text
-            if information.strip():
-                return _nlg(q, search_query, information.strip())
-    except Exception:
-        pass
-
+    return None  # Fall through
     # Fourth try: template engine (context-aware templates, follow-ups)
     # Catches "write an essay about that", "tell me more about that", etc.
     ctx = get_context_topic()

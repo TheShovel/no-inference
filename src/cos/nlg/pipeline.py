@@ -231,8 +231,9 @@ def _insert_transitions(sentences: List[str], config: NLGConfig) -> List[str]:
     """Add light transitions between sentences with different subjects.
 
     Uses _get_subject to detect subject changes and inserts simple
-    connectors like "Also," to improve discourse flow.
-    Only fires at temp>0 for naturalistic variation.
+    connectors between unrelated sentences to improve discourse flow.
+    Avoids inserting transitions when the new subject is a pronoun
+    referring to the previous subject.
 
     Pure function.
     """
@@ -247,6 +248,7 @@ def _insert_transitions(sentences: List[str], config: NLGConfig) -> List[str]:
         'consequently', 'therefore', 'thus', 'hence', 'meanwhile',
         'finally', 'first', 'second', 'third', 'next', 'lastly',
         'similarly', 'likewise', 'conversely', 'instead',
+        'located', 'situated', 'found', 'known', 'called', 'named',
     }
 
     result = [sentences[0]]
@@ -255,16 +257,31 @@ def _insert_transitions(sentences: List[str], config: NLGConfig) -> List[str]:
         prev_subj = _get_subject(result[-1])
         curr_subj = _get_subject(curr)
 
+        # Skip if current subject is a pronoun referring to previous subject
+        # "The Eiffel Tower" -> "It" doesn't need a transition
+        curr_is_pronoun = (curr_subj or '').lower().strip() in {'it', 'she', 'he', 'they', 'this', 'that'}
+        
+        # Skip if previous subject contains the current subject word
+        # (e.g., prev="Eiffel Tower" curr="The tower" -> skip because "tower" in "Eiffel Tower")
+        prev_words = set(prev_subj.lower().split()) if prev_subj else set()
+        curr_words = set(curr_subj.lower().split()) if curr_subj else set()
+        shares_word = bool(prev_words & curr_words) if prev_words and curr_words else False
+
         # Don't add if current sentence already has a transition word
         first_word = curr.split()[0].lower().rstrip(',:;') if curr.split() else ''
         already_has = first_word in _TRANSITION_WORDS
 
         if (prev_subj and curr_subj
+                and not curr_is_pronoun
+                and not shares_word
                 and prev_subj.lower() != curr_subj.lower()
                 and not already_has
-                and maybe(0.30)):
-            # Light transition pool — simple, natural words only
-            transitions = ["", "", "Also,"]
+                and maybe(0.35)):
+            # Different genuine subjects — add a natural transition
+            transitions = ["", "", "", "",  # 60% no transition, 40% varied transitions
+                          "It's also worth noting that", 
+                          "What's more,", 
+                          "On top of that,"]
             t = pick(transitions, config.temperature)
             if t:
                 curr = t + " " + upper_first(curr)

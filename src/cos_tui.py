@@ -143,15 +143,29 @@ class COSTUI:
 
         print(f"\n{Colors.DIM}  {Colors.BOLD}LLM Judge{Colors.RESET}  ({Colors.DIM}gemma4:31b, 22 cases{Colors.RESET})")
         llm_scores = [
-            ("Naturalness",     4.4, Colors.YELLOW),
-            ("Coherence",       6.3, Colors.GREEN),
-            ("Correctness",     9.6, Colors.GREEN),
-            ("Conciseness",     8.5, Colors.GREEN),
-            ("Overall",         6.9, Colors.GREEN),
+            ("Naturalness",     4.2, Colors.YELLOW),
+            ("Informativeness", 6.1, Colors.GREEN),
+            ("Coherence",       6.1, Colors.GREEN),
+            ("Correctness",     9.3, Colors.GREEN),
+            ("Overall",         6.8, Colors.GREEN),
         ]
         for name, score, color in llm_scores:
             pct = score / 10.0 * 100
             print(f"  {Colors.DIM}{name:22s}{Colors.RESET} {color}{score:4.1f}/10{Colors.RESET}  {Colors.DIM}{_bar(pct)}{Colors.RESET}")
+
+        print(f"\n{Colors.DIM}  {Colors.BOLD}Knowledge Base{Colors.RESET}  ({Colors.DIM}curated topics{Colors.RESET})")
+        kb_scores = [
+            ("Recipes & Cooking",   13, Colors.GREEN),
+            ("Home & DIY",          10, Colors.GREEN),
+            ("Health & Wellness",    7, Colors.GREEN),
+            ("Technology",           8, Colors.GREEN),
+            ("Everyday Life",       10, Colors.GREEN),
+            ("General Knowledge",   28, Colors.GREEN),
+            ("Math Solver",          4, Colors.GREEN),
+        ]
+        for name, count, color in kb_scores:
+            bar = "\u2588" * count + "\u2591" * (28 - count)
+            print(f"  {Colors.DIM}{name:22s}{Colors.RESET} {color}{count:2d} topics{Colors.RESET}  {Colors.DIM}{bar}{Colors.RESET}")
 
         print(f"\n{Colors.DIM}  {Colors.BOLD}Math Solver{Colors.RESET}  ({Colors.DIM}basic arithmetic{Colors.RESET})")
         math_scores = [
