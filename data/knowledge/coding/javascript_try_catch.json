@@ -1,0 +1,25 @@
+[
+    {
+        "q": [
+            "try catch JavaScript",
+            "try catch blocks in JavaScript",
+            "how to use try catch in JavaScript",
+            "javascript try catch example",
+            "handle errors using try catch in JavaScript",
+            "handle API errors using try catch blocks in JavaScript",
+            "javascript error handling try catch",
+            "try catch finally javascript",
+            "javascript exception handling",
+            "how to handle errors in JavaScript with try catch",
+            "javascript try catch error handling example",
+            "try catch javascript",
+            "try catch block javascript",
+            "javascript try catch",
+            "error handling try catch in JavaScript",
+            "how do I handle errors using try catch in JavaScript",
+            "handle errors using try catch",
+            "try catch in javascript example"
+        ],
+        "a": "In JavaScript, you handle runtime errors using try/catch/finally blocks. The `try` block contains code that might throw an error, the `catch` block handles the error, and the `finally` block runs regardless of whether an error occurred:\n\n```javascript\n// Basic try/catch\ntry {\n  // Code that might throw an error\n  const result = someUndefinedFunction();\n  console.log(result);\n} catch (error) {\n  // Handle the error\n  console.error('An error occurred:', error.message);\n} finally {\n  // Always runs\n  console.log('This always executes');\n}\n\n// With specific error types\ntry {\n  const data = JSON.parse(invalidJson);\n} catch (error) {\n  if (error instanceof SyntaxError) {\n    console.error('Invalid JSON:', error.message);\n  } else if (error instanceof TypeError) {\n    console.error('Type error:', error.message);\n  } else {\n    console.error('Unknown error:', error);\n  }\n}\n\n// Async/await with try/catch\nasync function fetchData() {\n  try {\n    const response = await fetch('/api/data');\n    if (!response.ok) {\n      throw new Error(`HTTP error! status: ${response.status}`);\n    }\n    const data = await response.json();\n    return data;\n  } catch (error) {\n    console.error('Fetch failed:', error);\n    throw error; // Re-throw if caller needs to handle it\n  }\n}\n\n// Custom errors\nclass ValidationError extends Error {\n  constructor(message) {\n    super(message);\n    this.name = 'ValidationError';\n  }\n}\n\ntry {\n  throw new ValidationError('Invalid input');\n} catch (error) {\n  if (error instanceof ValidationError) {\n    console.error('Validation failed:', error.message);\n  }\n}\n```\n\nAlways use try/catch around code that can throw: JSON.parse(), fetch() calls, file operations, and any code using throw statements. The `finally` block is useful for cleanup operations like closing connections or hiding loading spinners."
+    }
+]

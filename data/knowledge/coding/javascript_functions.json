@@ -1,0 +1,17 @@
+[
+    {
+        "q": [
+            "how to write a function in JavaScript",
+            "write a function in JavaScript",
+            "javascript function syntax",
+            "how do I write a function in JavaScript",
+            "javascript function declaration",
+            "javascript arrow function",
+            "function expression javascript",
+            "javascript function examples",
+            "how to create a function in JavaScript",
+            "define a function in JavaScript"
+        ],
+        "a": "In JavaScript, there are three main ways to write functions:\n\n```javascript\n// 1. Function Declaration (hoisted - can be called before definition)\nfunction greet(name) {\n  return `Hello, ${name}!`;\n}\nconsole.log(greet('Alice'));  // Hello, Alice!\n\n// 2. Function Expression (not hoisted - stored in a variable)\nconst greet = function(name) {\n  return `Hello, ${name}!`;\n};\nconsole.log(greet('Bob'));  // Hello, Bob!\n\n// 3. Arrow Function (ES6+ - shorter syntax, inherits 'this' from parent scope)\nconst greet = (name) => {\n  return `Hello, ${name}!`;\n};\n// Even shorter for single-expression functions:\nconst greet = (name) => `Hello, ${name}!`;\nconsole.log(greet('Charlie'));  // Hello, Charlie!\n```\n\nFunction declarations are hoisted to the top of their scope, meaning you can call them before they appear in the code. Function expressions are not hoisted. Arrow functions are ideal for short callbacks and when you need to preserve the `this` context from the enclosing scope. All three can accept parameters and return values. Parameters can have default values: `function greet(name = 'World') { ... }`. Functions can also be passed as arguments to other functions (callbacks), which is fundamental to JavaScript's asynchronous programming model."
+    }
+]

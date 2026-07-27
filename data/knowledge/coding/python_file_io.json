@@ -1,0 +1,34 @@
+[
+    {
+        "q": [
+            "how to read a file in Python",
+            "read a file in Python",
+            "read a file python",
+            "how do I read a file in Python",
+            "read file python",
+            "python read file",
+            "python read text file",
+            "how to open a file in Python",
+            "open file python",
+            "python file reading",
+            "how to read a text file in Python",
+            "python read file example",
+            "read from file python",
+            "file input python"
+        ],
+        "a": "To read a file in Python, you can use the built-in `open()` function with a context manager (the `with` statement). Here is the most common approach:\n\n```python\n# Read entire file at once\nwith open('filename.txt', 'r') as file:\n    content = file.read()\n    print(content)\n\n# Read line by line\nwith open('filename.txt', 'r') as file:\n    for line in file:\n        print(line.strip())\n\n# Read all lines into a list\nwith open('filename.txt', 'r') as file:\n    lines = file.readlines()\n\n# Read with explicit encoding\nwith open('filename.txt', 'r', encoding='utf-8') as file:\n    content = file.read()\n```\n\nThe `'r'` mode opens the file for reading (text mode). The context manager (`with`) automatically closes the file when done, which is the recommended practice. For binary files, use `'rb'` mode. You can also specify an encoding like `encoding='utf-8'` to handle text files with specific character encodings."
+    },
+    {
+        "q": [
+            "how to write to a file in Python",
+            "write to a file python",
+            "python write file",
+            "write file python",
+            "how do I write to a file in Python",
+            "python write to text file",
+            "python file writing",
+            "python write to file example"
+        ],
+        "a": "To write to a file in Python, use the `open()` function with mode `'w'` (write) or `'a'` (append):\n\n```python\n# Write to a file (overwrites existing content)\nwith open('filename.txt', 'w') as file:\n    file.write('Hello, World!\\n')\n    file.write('Second line\\n')\n\n# Append to a file (adds to existing content)\nwith open('filename.txt', 'a') as file:\n    file.write('This line is appended\\n')\n\n# Write multiple lines from a list\nlines = ['Line 1', 'Line 2', 'Line 3']\nwith open('filename.txt', 'w') as file:\n    file.writelines(line + '\\n' for line in lines)\n```\n\nMode `'w'` creates a new file or overwrites an existing one. Mode `'a'` appends to the end of an existing file. Use `'x'` to create a new file and fail if it already exists. Always use a context manager (`with`) to ensure the file is properly closed."
+    }
+]

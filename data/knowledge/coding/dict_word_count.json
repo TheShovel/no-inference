@@ -1,0 +1,21 @@
+[
+  {
+    "q": [
+      "how do i use a dictionary to count word frequency in python",
+      "count word frequency python dictionary",
+      "python count words in string using dictionary",
+      "word frequency counter python",
+      "how to count word occurrences in python",
+      "python dictionary count words",
+      "word counting with dictionary python",
+      "python count frequency of words in list",
+      "how to count word frequency using dict in python",
+      "dictionary word count python example",
+      "count occurrences of words in string python",
+      "python word frequency counter with dictionary"
+    ],
+    "a": "To count word frequencies using a dictionary in Python, iterate over the words and use the dictionary to track counts. For each word, check if it exists in the dict: if so, increment it; otherwise, add it with a count of 1. This can be done manually or with `collections.Counter`.",
+    "code": "# Manual approach\nwords = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple']\nword_count = {}\nfor word in words:\n    if word in word_count:\n        word_count[word] += 1\n    else:\n        word_count[word] = 1\nprint(word_count)  # {'apple': 3, 'banana': 2, 'orange': 1}\n\n# Using collections.Counter\nfrom collections import Counter\nword_count = Counter(words)\nprint(word_count)  # Counter({'apple': 3, 'banana': 2, 'orange': 1})\n\n# From a string\nfrom collections import Counter\ntext = \"the quick brown fox jumps over the lazy dog\"\nwords = text.lower().split()\nword_count = Counter(words)\nprint(word_count.most_common(3))  # [('the', 2), ('quick', 1), ('brown', 1)]",
+    "lang": "python"
+  }
+]

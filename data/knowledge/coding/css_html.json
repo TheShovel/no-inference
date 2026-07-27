@@ -1,0 +1,67 @@
+[
+  {
+    "q": [
+      "how to center a div using css flexbox",
+      "how to center a div vertically and horizontally css",
+      "how to center a div in css",
+      "how to center a div in css flexbox",
+      "center a div css",
+      "css flexbox center child",
+      "flexbox center div both axes",
+      "how to center content with flexbox"
+    ],
+    "a": "Flexbox makes centering trivial. On the parent container, set `display: flex` and `justify-content: center` (horizontal alignment) together with `align-items: center` (vertical alignment). For a single child, this centers it perfectly. The child does not need any centering properties. This approach works regardless of the child's dimensions.",
+    "code": "<div class=\"container\">\n  <div class=\"box\">Centered Content</div>\n</div>\n\n<style>\n.container {\n  display: flex;\n  justify-content: center;  /* horizontal */\n  align-items: center;      /* vertical */\n  height: 100vh;            /* full viewport height */\n}\n\n.box {\n  background: #4f46e5;\n  color: white;\n  padding: 2rem;\n  border-radius: 8px;\n}\n</style>",
+    "lang": "html"
+  },
+  {
+    "q": [
+      "how to center a div using css grid",
+      "css grid center div horizontally and vertically",
+      "how to center with css grid",
+      "grid center content example",
+      "place items center css grid"
+    ],
+    "a": "CSS Grid provides even more concise centering. Set `display: grid` on the parent with `place-items: center` (shorthand for `align-items: center` and `justify-items: center`). Alternatively, set `place-content: center` on the parent or `place-self: center` on the child for more granular control. All methods work responsively.",
+    "code": "<div class=\"container\">\n  <div class=\"box\">Grid Centered</div>\n</div>\n\n<style>\n.container {\n  display: grid;\n  place-items: center;  /* centers both axes */\n  height: 100vh;\n}\n\n.box {\n  background: #059669;\n  color: white;\n  padding: 2rem;\n  border-radius: 8px;\n}\n\n/* Alternative: place-content on parent */\n/* .container {\n  display: grid;\n  place-content: center;\n  height: 100vh;\n} */\n\n/* Alternative: place-self on child */\n/* .box {\n  place-self: center;\n} */\n</style>",
+    "lang": "html"
+  },
+  {
+    "q": [
+      "how to make a responsive website",
+      "css responsive design tutorial",
+      "how to use media queries in css",
+      "responsive layout with flexbox and grid",
+      "css desktop mobile responsive example",
+      "how to use css clamp for responsive typography"
+    ],
+    "a": "Responsive design relies on three pillars: fluid grids (use `%`, `fr`, `vw`/`vh` instead of fixed pixels), flexible images (`max-width: 100%`), and media queries (`@media (max-width: 768px)`). Use the `clamp()` function for fluid typography that scales between min and max values. Mobile-first design starts with the small screen layout then adds complexity via `min-width` media queries. CSS Grid with `auto-fit`/`auto-fill` and `minmax()` creates auto-responsive layouts without media queries.",
+    "code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Responsive Page</title>\n  <style>\n    /* Mobile-first base styles */\n    * { box-sizing: border-box; margin: 0; padding: 0; }\n\n    body {\n      font-family: system-ui, sans-serif;\n      /* Fluid typography: min 1rem, preferred 2vw+1rem, max 2rem */\n      font-size: clamp(1rem, 2vw + 0.5rem, 1.5rem);\n    }\n\n    /* Responsive grid: auto-fill columns as space allows */\n    .grid {\n      display: grid;\n      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n      gap: 1rem;\n      padding: 1rem;\n    }\n\n    .card {\n      background: #f3f4f6;\n      padding: 1.5rem;\n      border-radius: 8px;\n    }\n\n    .card img {\n      max-width: 100%;\n      height: auto;\n      border-radius: 4px;\n    }\n\n    /* Media query adjustments for larger screens */\n    @media (min-width: 768px) {\n      .grid {\n        gap: 2rem;\n        padding: 2rem;\n      }\n    }\n\n    @media (min-width: 1024px) {\n      .container {\n        max-width: 1200px;\n        margin: 0 auto;\n      }\n    }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"grid\">\n      <div class=\"card\">\n        <img src=\"https://via.placeholder.com/400x250\" alt=\"placeholder\">\n        <h3>Card Title</h3>\n        <p>Responsive card that adapts to any screen size.</p>\n      </div>\n      <div class=\"card\">\n        <img src=\"https://via.placeholder.com/400x250\" alt=\"placeholder\">\n        <h3>Card Title</h3>\n        <p>No media queries needed for this layout.</p>\n      </div>\n      <div class=\"card\">\n        <img src=\"https://via.placeholder.com/400x250\" alt=\"placeholder\">\n        <h3>Card Title</h3>\n        <p>Auto-fill handles columns automatically.</p>\n      </div>\n    </div>\n  </div>\n</body>\n</html>",
+    "lang": "html"
+  },
+  {
+    "q": [
+      "css selectors cheat sheet",
+      "how to use css selectors",
+      "css class vs id selector",
+      "css attribute selector example",
+      "css pseudo classes explained",
+      "css combinator selectors"
+    ],
+    "a": "CSS selectors target HTML elements for styling. Basic selectors: `element`, `.class`, `#id`, `[attribute]`. Combinators: descendant (space), child (`>`), adjacent sibling (`+`), general sibling (`~`). Pseudo-classes (`:hover`, `:nth-child()`, `:not()`) style elements in a specific state. Pseudo-elements (`::before`, `::after`) style parts of an element. Specificity: inline > ID > class/attribute/pseudo-class > element/pseudo-element.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    /* Element selector */\n    p { line-height: 1.6; }\n\n    /* Class selector */\n    .highlight { background: yellow; }\n\n    /* ID selector */\n    #header { font-size: 2rem; }\n\n    /* Attribute selector */\n    [type=\"text\"] { border: 1px solid gray; }\n    [href^=\"https\"] { color: green; }    /* starts with */\n    [src$=\".png\"] { border: 2px solid blue; }  /* ends with */\n\n    /* Combinators */\n    .card p { color: #333; }           /* descendant */\n    .list > li { list-style: none; }   /* direct child */\n    h2 + p { margin-top: 0; }          /* adjacent sibling */\n    h2 ~ p { color: #666; }            /* general sibling */\n\n    /* Pseudo-classes */\n    button:hover { opacity: 0.8; }\n    li:nth-child(odd) { background: #f9f9f9; }\n    li:not(.active) { color: gray; }\n    input:focus { outline: 2px solid blue; }\n    p:empty { display: none; }\n\n    /* Pseudo-elements */\n    .tooltip::before {\n      content: \"\\2139\\FE0F \";\n    }\n    blockquote::after {\n      content: \" — source\";\n      font-style: italic;\n    }\n    ::selection {\n      background: #6366f1;\n      color: white;\n    }\n  </style>\n</head>\n<body>\n  <h2>Title</h2>\n  <p class=\"highlight\">This paragraph has a yellow background.</p>\n  <div id=\"header\">Main Header</div>\n  <input type=\"text\" placeholder=\"Name\">\n</body>\n</html>",
+    "lang": "html"
+  },
+  {
+    "q": [
+      "html semantic elements example",
+      "html page structure template",
+      "html5 semantic tags",
+      "how to structure an html document",
+      "html head body meta tags example"
+    ],
+    "a": "Semantic HTML elements clearly describe their meaning to both the browser and developer. Key elements: `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`, `<figure>`, `<figcaption>`, `<time>`. Use `<div>` and `<span>` only for styling hooks when no semantic element fits. Semantic HTML improves accessibility (screen readers), SEO, and code maintainability. Always include `lang`, `charset`, and `viewport` meta tags.",
+    "code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <meta name=\"description\" content=\"A semantic HTML5 page structure example\">\n  <title>Semantic HTML Example</title>\n</head>\n<body>\n  <header>\n    <nav>\n      <a href=\"/\">Home</a>\n      <a href=\"/about\">About</a>\n      <a href=\"/contact\">Contact</a>\n    </nav>\n  </header>\n\n  <main>\n    <article>\n      <header>\n        <h1>Article Title</h1>\n        <time datetime=\"2026-07-27\">July 27, 2026</time>\n      </header>\n\n      <section>\n        <h2>Introduction</h2>\n        <p>Content goes here.</p>\n      </section>\n\n      <section>\n        <h2>Details</h2>\n        <figure>\n          <img src=\"diagram.png\" alt=\"Architecture diagram\">\n          <figcaption>Figure 1: System architecture</figcaption>\n        </figure>\n      </section>\n    </article>\n\n    <aside>\n      <h3>Related Articles</h3>\n      <ul>\n        <li><a href=\"/post1\">Related post</a></li>\n      </ul>\n    </aside>\n  </main>\n\n  <footer>\n    <small>&copy; 2026 Example Corp</small>\n  </footer>\n</body>\n</html>",
+    "lang": "html"
+  }
+]

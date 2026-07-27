@@ -192,7 +192,7 @@ class EvalCase:
     def to_dict(self) -> dict:
         d = {
             "query": self.query,
-            "response": self.response[:500],
+            "response": self.response[:2000],
             "time": round(self.time_taken, 2),
         }
         if self.judgment:
@@ -211,7 +211,7 @@ class EvalCase:
 
 @dataclass
 class MultiTurnTurn:
-    """One turn in a multi-turn conversation."""
+    """A single turn in a multi-turn conversation."""
     query: str
     response: str
     judgment: Optional[Judgment] = None
@@ -220,7 +220,7 @@ class MultiTurnTurn:
     def to_dict(self) -> dict:
         d = {
             "query": self.query,
-            "response": self.response[:500],
+            "response": self.response[:2000],
             "time": round(self.time_taken, 2),
         }
         if self.judgment:
@@ -301,9 +301,10 @@ def generate_questions(n: int = 20, dry_run: bool = False) -> List[str]:
         prompt = f"""You are a curious person exploring a knowledge assistant. Generate exactly {count} interesting questions you'd want to ask.
 
 Rules:
-- Ask about topics YOU find interesting (science, history, philosophy, everyday life, geography, art, anything)
+- Ask about topics YOU find interesting (science, history, philosophy, everyday life, geography, art, technology, coding, anything)
 - Vary the topics — don't cluster around one subject
-- Ask like a real human, not a test: "What causes...", "How does...", "Why is...", "Tell me about..."
+- Mix general knowledge questions with CODING questions (e.g., "How do I sort a list in Python?", "How to write a function in JavaScript?", "How do I read a file in Python?")
+- Ask like a real human, not a test: "What causes...", "How does...", "Why is...", "Tell me about...", "How to...", "How do I..."
 - Avoid questions already asked: {list(used) if used else "none yet"}
 - Return ONLY the questions, one per line, no numbering or bullets"""
 
@@ -542,6 +543,20 @@ def generate_responses(questions: List[str]) -> List[EvalCase]:
     """Feed each question through the full COS pipeline."""
     from cos.engine import process_query, reset_conversation
 
+    # Pre-load knowledge base to avoid race conditions during processing
+    try:
+        from cos.knowledge import get_all_knowledge
+        get_all_knowledge()  # Warms the KB cache
+    except Exception:
+        pass
+
+    # Pre-load coding knowledge
+    try:
+        from cos.code_knowledge import _load_coding_knowledge
+        _load_coding_knowledge()
+    except Exception:
+        pass
+
     print(f"\n  Phase 2: Generating {len(questions)} responses...")
     reset_conversation()
 
@@ -650,7 +665,7 @@ def evaluate_response(case: EvalCase, dry_run: bool = False) -> Judgment:
 
     prompt = _EVAL_PROMPT.format(
         query=case.query[:200],
-        response=case.response[:600],
+        response=case.response[:2000],
     )
 
     raw = _ollama(prompt, temperature=0.2, num_predict=800)

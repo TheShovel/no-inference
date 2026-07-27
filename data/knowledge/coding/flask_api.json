@@ -1,0 +1,19 @@
+[
+  {
+    "q": [
+      "how do i create a basic api endpoint using flask in python",
+      "flask api endpoint example",
+      "how to create a rest api with flask",
+      "flask rest api tutorial",
+      "how to make an api with flask",
+      "create api endpoint flask python",
+      "flask app route api example",
+      "flask get post api example",
+      "simple flask rest api example",
+      "flask json api endpoint",
+      "flask blueprint api example",
+      "build a restful api with flask"
+    ],
+    "a": "To create a basic API endpoint using Flask in Python, start by installing Flask with `pip install flask`. Then create a new Python file, for example `app.py`. The simplest endpoint uses the `@app.route` decorator to bind a URL to a Python function. By default, routes respond to GET requests. Import `Flask`, `jsonify`, and `request` from the flask module. Instantiate a Flask app, define your route, and run the app with `if __name__ == '__main__': app.run(debug=True)`. For returning JSON responses, use `jsonify()` which converts Python dictionaries or lists into JSON and sets the correct Content-Type header. Here is a complete example that demonstrates GET and POST endpoints:\n\n```python\nfrom flask import Flask, jsonify, request\n\napp = Flask(__name__)\n\n# In-memory data store\nitems = [\n    {'id': 1, 'name': 'Widget', 'price': 9.99},\n    {'id': 2, 'name': 'Gadget', 'price': 14.99}\n]\n\n# GET all items\n@app.route('/api/items', methods=['GET'])\ndef get_items():\n    return jsonify(items)\n\n# GET a single item by id\n@app.route('/api/items/<int:item_id>', methods=['GET'])\ndef get_item(item_id):\n    item = next((i for i in items if i['id'] == item_id), None)\n    if item is None:\n        return jsonify({'error': 'Item not found'}), 404\n    return jsonify(item)\n\n# POST a new item\n@app.route('/api/items', methods=['POST'])\ndef create_item():\n    if not request.is_json:\n        return jsonify({'error': 'Request must be JSON'}), 400\n    data = request.get_json()\n    if 'name' not in data or 'price' not in data:\n        return jsonify({'error': 'Missing required fields: name, price'}), 400\n    new_item = {\n        'id': len(items) + 1,\n        'name': data['name'],\n        'price': data['price']\n    }\n    items.append(new_item)\n    return jsonify(new_item), 201\n\nif __name__ == '__main__':\n    app.run(debug=True)\n```\n\nRun the file with `python app.py` and your API will be available at `http://127.0.0.1:5000`. You can test GET endpoints in a browser or with curl: `curl http://127.0.0.1:5000/api/items`. Test POST with `curl -X POST -H \"Content-Type: application/json\" -d '{\"name\":\"Thing\",\"price\":5.99}' http://127.0.0.1:5000/api/items`. Flask's `request` object provides access to JSON data via `request.get_json()`, query parameters via `request.args`, and form data via `request.form`. For larger applications, consider organizing routes into Blueprints, using Flask-RESTful for class-based views, and adding input validation with libraries like Marshmallow. Always return meaningful HTTP status codes such as 200 for success, 201 for creation, 400 for bad requests, 404 for not found, and 500 for server errors."
+  }
+]

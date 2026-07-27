@@ -1,0 +1,19 @@
+[
+    {
+        "q": [
+            "how to read a JSON file in Python",
+            "read JSON file in Python",
+            "python read json file",
+            "json.load python",
+            "how do I parse JSON in Python",
+            "python json parse example",
+            "read and write json file python",
+            "json.loads python",
+            "python json.load",
+            "how to parse JSON in Python",
+            "python json file reading",
+            "load json python"
+        ],
+        "a": "To read a JSON file in Python, use the built-in `json` module with `json.load()` for files or `json.loads()` for strings:\n\n```python\nimport json\n\n# Read JSON from a file\nwith open('data.json', 'r') as file:\n    data = json.load(file)\n    print(data)\n\n# Parse JSON from a string\njson_string = '{\"name\": \"Alice\", \"age\": 30}'\ndata = json.loads(json_string)\nprint(data['name'])  # Alice\n\n# Write JSON to a file\nwith open('output.json', 'w') as file:\n    json.dump(data, file, indent=2)\n\n# Convert Python object to JSON string\ndata = {\"name\": \"Bob\", \"scores\": [85, 92, 78]}\njson_str = json.dumps(data, indent=2)\nprint(json_str)\n```\n\nKey functions: `json.load(file)` reads from a file object, `json.loads(string)` parses from a string, `json.dump(data, file)` writes to a file, and `json.dumps(data)` converts to a JSON string. The `indent` parameter makes the output human-readable. JSON types map to Python types: objects become dicts, arrays become lists, strings become str, numbers become int/float, booleans become bool, and null becomes None."
+    }
+]

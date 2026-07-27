@@ -1,0 +1,95 @@
+[
+  {
+    "q": [
+      "how to write a function in javascript",
+      "how do i write a function in javascript",
+      "how to write function in javascript",
+      "javascript function syntax",
+      "how to define a function in javascript",
+      "how to create a function in javascript",
+      "javascript function declaration example",
+      "how to write a function in js"
+    ],
+    "a": "JavaScript has several ways to define functions. The traditional `function` declaration is hoisted (usable before declaration). Function expressions assign a function to a variable but are NOT hoisted. Arrow functions (ES6+) provide a concise syntax and inherit `this` from the enclosing scope rather than creating their own. For named functions that need recursion or debugging, use declarations or named expressions. For short callbacks, use arrows.",
+    "code": "// Function declaration (hoisted)\nfunction greet(name) {\n    return `Hello, ${name}!`;\n}\nconsole.log(greet('World'));  // 'Hello, World!'\n\n// Function expression (not hoisted)\nconst greetExpr = function(name) {\n    return `Hello, ${name}!`;\n};\n\n// Arrow function\nconst greetArrow = (name) => {\n    return `Hello, ${name}!`;\n};\n\n// Shorthand arrow (single expression, implicit return)\nconst greetShort = name => `Hello, ${name}!`;\n\n// Functions as callbacks\nconst numbers = [1, 2, 3];\nconst doubled = numbers.map(n => n * 2);  // [2, 4, 6]\n\n// Default parameters\nfunction multiply(a, b = 1) {\n    return a * b;\n}\nmultiply(5);     // 5\nmultiply(5, 2);  // 10",
+    "lang": "javascript"
+  },
+  {
+    "q": [
+      "how to write async function in javascript",
+      "how to write an asynchronous function in javascript",
+      "how do i write an asynchronous function in javascript",
+      "javascript async await example",
+      "how to use await in javascript",
+      "async function javascript tutorial",
+      "how to handle promises with async await"
+    ],
+    "a": "An `async` function always returns a Promise. Inside it, `await` pauses execution until a Promise settles. Use `try/catch` for error handling instead of `.catch()`. `await` can only be used inside `async` functions (top-level await works in modules). Multiple independent promises should be awaited with `Promise.all()` for concurrency rather than sequential `await`s.",
+    "code": "// Basic async/await\nasync function fetchUserData(userId) {\n    try {\n        const response = await fetch(`https://api.example.com/users/${userId}`);\n        if (!response.ok) {\n            throw new Error(`HTTP ${response.status}`);\n        }\n        const data = await response.json();\n        return data;\n    } catch (error) {\n        console.error('Failed to fetch user:', error);\n        throw error;\n    }\n}\n\n// Concurrent requests with Promise.all\nasync function fetchMultipleUsers(ids) {\n    const promises = ids.map(id => fetchUserData(id));\n    const users = await Promise.all(promises);\n    return users;\n}\n\n// Arrow function async\nconst getData = async () => {\n    const result = await fetchUserData(1);\n    return result;\n};\n\n// Top-level await (ES modules)\n// const config = await fetch('/config.json').then(r => r.json());",
+    "lang": "javascript"
+  },
+  {
+    "q": [
+      "javascript arrow function syntax",
+      "how to use arrow functions in javascript",
+      "arrow function vs regular function javascript",
+      "javascript arrow function example",
+      "implicit return arrow function javascript"
+    ],
+    "a": "Arrow functions (`=>`) provide a concise syntax for writing functions. Unlike regular functions, they don't have their own `this`, `arguments`, `super`, or `new.target`. They inherit `this` from the enclosing lexical scope, making them ideal for callbacks and methods where you want to preserve context. Parentheses are optional with a single parameter; curly braces and `return` are optional for a single expression.",
+    "code": "// Basic syntax\nconst add = (a, b) => a + b;  // implicit return\nconst square = x => x * x;    // single param, no parens needed\n\n// Block body (explicit return)\nconst getUser = id => {\n    const url = `https://api.example.com/users/${id}`;\n    return fetch(url).then(r => r.json());\n};\n\n// Arrow functions for this binding\nfunction Counter() {\n    this.count = 0;\n    setInterval(() => {\n        // `this` refers to Counter instance\n        this.count++;\n        console.log(this.count);\n    }, 1000);\n}\n\n// Array methods with arrows\nconst nums = [1, 2, 3, 4, 5];\nconst doubled = nums.map(n => n * 2);    // [2, 4, 6, 8, 10]\nconst evens = nums.filter(n => n % 2 === 0); // [2, 4]\n\n// Object method (DON'T use arrow - breaks this)\nconst obj = {\n    value: 42,\n    // getValue: () => this.value  // WRONG - this is not obj\n    getValue() { return this.value; }  // correct\n};",
+    "lang": "javascript"
+  },
+  {
+    "q": [
+      "how to use map function in javascript to transform array",
+      "javascript map filter reduce explained",
+      "javascript array map example",
+      "how to use filter in javascript",
+      "how to use reduce in javascript",
+      "javascript map vs forEach"
+    ],
+    "a": "`map()`, `filter()`, and `reduce()` are the three core array transformation methods. `map` transforms every element and returns a new array of the same length. `filter` returns a subset of elements that pass a test. `reduce` accumulates values into any data type (number, object, array). All three are immutable — they don't modify the original array. Chain them for readable data pipelines.",
+    "code": "const numbers = [1, 2, 3, 4, 5, 6];\n\n// map: transform each element\nconst doubled = numbers.map(n => n * 2);\n// [2, 4, 6, 8, 10, 12]\n\nconst users = [\n    { name: 'Alice', age: 30 },\n    { name: 'Bob', age: 25 },\n    { name: 'Charlie', age: 35 }\n];\nconst names = users.map(u => u.name);\n// ['Alice', 'Bob', 'Charlie']\n\n// filter: keep elements that pass the test\nconst evens = numbers.filter(n => n % 2 === 0);\n// [2, 4, 6]\n\nconst adults = users.filter(u => u.age >= 30);\n// [{ name: 'Alice', age: 30 }, { name: 'Charlie', age: 35 }]\n\n// reduce: accumulate into a single value\nconst sum = numbers.reduce((acc, n) => acc + n, 0);\n// 21\n\nconst totalAge = users.reduce((acc, u) => acc + u.age, 0);\n// 90\n\nconst groupedByAge = users.reduce((acc, u) => {\n    const key = u.age >= 30 ? 'over30' : 'under30';\n    (acc[key] = acc[key] || []).push(u);\n    return acc;\n}, {});\n// { over30: [Alice, Charlie], under30: [Bob] }\n\n// Chaining\nconst result = numbers\n    .filter(n => n > 2)\n    .map(n => n * 10)\n    .reduce((a, b) => a + b, 0);\n// (3*10 + 4*10 + 5*10 + 6*10) = 180",
+    "lang": "javascript"
+  },
+  {
+    "q": [
+      "javascript promises explained",
+      "how to create a promise in javascript",
+      "javascript promise then catch",
+      "promise vs callback javascript",
+      "javascript promise all example",
+      "how to chain promises in javascript"
+    ],
+    "a": "A Promise represents a value that may be available now, later, or never. It has three states: `pending`, `fulfilled`, or `rejected`. Create one with `new Promise((resolve, reject) => {...})`. Handle results with `.then()`, errors with `.catch()`, and cleanup with `.finally()`. `Promise.all()` waits for all to settle (one rejects => entire rejection). `Promise.allSettled()` waits for all regardless. `Promise.race()` resolves/rejects on the first settled promise.",
+    "code": "// Create a promise\nfunction delay(ms) {\n    return new Promise(resolve => setTimeout(resolve, ms));\n}\n\nfunction fetchWithTimeout(url, timeoutMs = 5000) {\n    return new Promise((resolve, reject) => {\n        const controller = new AbortController();\n        const timer = setTimeout(() => controller.abort(), timeoutMs);\n\n        fetch(url, { signal: controller.signal })\n            .then(response => {\n                clearTimeout(timer);\n                if (!response.ok) reject(new Error(`HTTP ${response.status}`));\n                else resolve(response.json());\n            })\n            .catch(err => {\n                clearTimeout(timer);\n                reject(err);\n            });\n    });\n}\n\n// Chaining\nfetchWithTimeout('/api/user')\n    .then(user => fetchWithTimeout(`/api/posts/${user.id}`))\n    .then(posts => console.log(posts))\n    .catch(err => console.error('Request failed:', err))\n    .finally(() => console.log('Request completed'));\n\n// Promise.all - concurrent execution\nconst [user, posts] = await Promise.all([\n    fetchWithTimeout('/api/user'),\n    fetchWithTimeout('/api/posts')\n]);\n\n// Promise.allSettled - all results regardless of failure\nconst results = await Promise.allSettled([\n    fetchWithTimeout('/api/a'),\n    fetchWithTimeout('/api/b')\n]);\nresults.forEach(r => {\n    if (r.status === 'fulfilled') console.log(r.value);\n    else console.error(r.reason);\n});",
+    "lang": "javascript"
+  },
+  {
+    "q": [
+      "javascript array methods tutorial",
+      "how to use array methods in javascript",
+      "javascript array push pop shift unshift",
+      "javascript array slice vs splice",
+      "javascript array find filter example",
+      "how to remove element from array javascript"
+    ],
+    "a": "JavaScript arrays have a rich set of built-in methods. Mutating methods: `push`/`pop` (end), `shift`/`unshift` (start), `splice` (add/remove anywhere). Non-mutating: `slice` (shallow copy), `concat`, `includes`, `indexOf`, `find`, `findIndex`, `some`, `every`, `includes`. Use `Array.isArray()` to check if something is an array. Spread operator `[...arr]` creates a shallow copy.",
+    "code": "const arr = [1, 2, 3, 4, 5];\n\n// Add/remove at end\narr.push(6);        // [1, 2, 3, 4, 5, 6]\nconst last = arr.pop();  // 6, arr is [1, 2, 3, 4, 5]\n\n// Add/remove at start\narr.unshift(0);     // [0, 1, 2, 3, 4, 5]\nconst first = arr.shift();  // 0, arr is [1, 2, 3, 4, 5]\n\n// slice (non-mutating, copy portion)\nconst slice = arr.slice(1, 3);  // [2, 3], arr unchanged\n\n// splice (mutating, add/remove anywhere)\narr.splice(2, 1);     // remove 1 at index 2: [1, 2, 4, 5]\narr.splice(2, 0, 3);  // insert 3 at index 2: [1, 2, 3, 4, 5]\n\n// find and findIndex\nconst found = arr.find(x => x > 3);       // 4\nconst idx = arr.findIndex(x => x === 3);  // 2\n\n// some / every\nconst hasEven = arr.some(x => x % 2 === 0);  // true\nconst allPositive = arr.every(x => x > 0);   // true\n\n// includes\narr.includes(4);  // true\n\n// Remove element by value\nconst removeItem = (arr, val) => arr.filter(x => x !== val);\n// or const removeItem = (arr, val) => { const i = arr.indexOf(val); if (i > -1) arr.splice(i, 1); return arr; }",
+    "lang": "javascript"
+  },
+  {
+    "q": [
+      "how to manipulate dom in javascript",
+      "javascript dom manipulation examples",
+      "how to change html content with javascript",
+      "how to add event listener in javascript",
+      "javascript query selector example",
+      "how to create element in javascript dom"
+    ],
+    "a": "DOM manipulation uses the `document` object. Select elements with `querySelector(selector)` (first match) or `querySelectorAll(selector)` (NodeList). Modify content via `textContent` (safe, no HTML parsing), `innerHTML` (parses HTML — XSS risk), or `setAttribute`/`classList`. Create elements with `document.createElement()` and attach with `appendChild`/`append`. Handle events with `addEventListener`. Use `documentFragment` for batch inserts.",
+    "code": "// Selecting elements\nconst header = document.querySelector('h1');\nconst items = document.querySelectorAll('.item');\nconst container = document.getElementById('app');\n\n// Modifying content\nheader.textContent = 'New Title';  // safe\nheader.innerHTML = '<span>New</span>';  // XSS risk if content is user-provided\n\n// Working with classes\nheader.classList.add('active');\nheader.classList.remove('hidden');\nheader.classList.toggle('visible');\nheader.classList.contains('active');  // true\n\n// Creating and inserting elements\nconst list = document.querySelector('ul');\nconst li = document.createElement('li');\nli.textContent = 'New item';\nli.dataset.id = '42';\nlist.appendChild(li);\n\n// Batch insert with DocumentFragment\nconst fragment = document.createDocumentFragment();\nfor (let i = 0; i < 100; i++) {\n    const el = document.createElement('p');\n    el.textContent = `Item ${i}`;\n    fragment.appendChild(el);\n}\ndocument.body.appendChild(fragment);  // single reflow\n\n// Event handling\nconst button = document.querySelector('#submit');\nbutton.addEventListener('click', (event) => {\n    event.preventDefault();\n    console.log('Clicked!', event.target);\n});\n\n// Event delegation\nconst parent = document.querySelector('ul');\nparent.addEventListener('click', (e) => {\n    if (e.target.tagName === 'LI') {\n        console.log('Item clicked:', e.target.textContent);\n    }\n});\n\n// Styling\nheader.style.color = 'blue';\nheader.style.fontSize = '24px';  // camelCase for CSS properties",
+    "lang": "javascript"
+  }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "q": [
+            "create a virtual environment in Python",
+            "python virtual environment",
+            "how to create a virtual environment in Python",
+            "python virtualenv",
+            "python venv",
+            "create virtual environment python",
+            "how to set up a virtual environment in Python",
+            "python virtual environment tutorial",
+            "activate virtual environment python",
+            "python venv create"
+        ],
+        "a": "To create a virtual environment in Python, use the built-in `venv` module (Python 3.3+):\n\n```bash\n# Create a virtual environment\npython3 -m venv myenv\n\n# Activate it on Linux/macOS\nsource myenv/bin/activate\n\n# Activate it on Windows\nmyenv\\Scripts\\activate\n\n# Deactivate when done\ndeactivate\n```\n\nAfter activation, you can install packages with pip:\n```bash\npip install requests\n```\n\nTo save and share your dependencies:\n```bash\npip freeze > requirements.txt\npip install -r requirements.txt\n```\n\nFor older Python versions, you can use `virtualenv` (install via `pip install virtualenv`). The `venv` module creates isolated Python environments with their own package installations, preventing conflicts between different projects' dependencies. Always create a virtual environment for each project and add `myenv/` (or whatever you name it) to your `.gitignore` file."
+    }
+]

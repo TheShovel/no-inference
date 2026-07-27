@@ -1,32 +1,17 @@
 [
-  {
-    "q": [
-      "why does time seem to speed up as we get older",
-      "why does time seem to speed up with age",
-      "time perception aging",
-      "why does time go faster when you get older",
-      "why does it feel like time goes faster as you age",
-      "proportional theory of time perception",
-      "novelty theory time",
-      "time perception theory aging",
-      "why does life feel shorter as you get older",
-      "why do years feel shorter as you age"
-    ],
-    "a": "The sensation that time accelerates as we age is nearly universal among adults, and several complementary theories from psychology and cognitive neuroscience explain why this occurs. The most widely cited explanation is the proportional theory, first formally articulated by French philosopher Paul Janet in 1877. According to this view, a year felt subjectively long to a five-year-old because it represented 20% of their entire lived experience. By age fifty, the same year amounts to only 2% of one's life, so each unit of time feels proportionally shorter against the backdrop of accumulated memories. A related explanation is the novelty theory, which argues that our brains encode time based on the amount of new information they process. Children and young adults encounter a constant stream of first-time experiences — learning to read, traveling to unfamiliar places, meeting new people — and the brain responds by forming dense, detailed memories. These rich memory encodings make past periods feel longer when recalled. Conversely, adults who settle into routines experience fewer novel events; the brain compresses familiar days into compressed, less detailed memory traces. When an adult looks back on a month of repetitive workdays, it may feel like it passed in an instant. Neuroscientific research adds another layer: the brain's dopaminergic system, which helps regulate time perception, changes with age. Dopamine neurons in the basal ganglia act as an internal pacemaker, and age-related declines in dopamine receptor density (which can exceed 10% per decade) may slow the brain's internal clock, making external events seem to speed up. Attention also plays a critical role. When we are fully absorbed in a task — a state known as flow — we lose awareness of time passing, and adults spend more of their daily lives in such routines compared to children, who are frequently alert and attentive to new surroundings. Finally, the way we consolidate memories influences retrospective time judgment. The brain discards routine, predictable information while preserving emotionally salient or novel events. A life with fewer landmark moments leaves fewer anchor points for the brain to reconstruct time, making whole months or years feel as though they passed indistinguishably and quickly. Taken together, these mechanisms — proportional scaling, reduced novelty, altered dopamine processing, and routine-driven memory compression — create the pervasive feeling that life accelerates with each passing decade."
-  },
-  {
-    "q": [
-      "does time speed up when you get older",
-      "why does time seem to pass faster as we age",
-      "time speeding up with age",
-      "why does time feel faster as an adult",
-      "psychological explanation for time speeding up with age",
-      "retrospective time perception aging",
-      "prospective time perception aging",
-      "time perception neuroscience",
-      "how memory affects time perception",
-      "why does time go by faster the older you get"
-    ],
-    "a": "The subjective acceleration of time with age is supported by both experimental research and introspective experience, and it involves a complex interaction between how the brain encodes moments as they happen and how it reconstructs them later. The distinction between prospective time perception (experiencing time in the moment) and retrospective time perception (judging time after the fact) is crucial. In prospective studies, older adults often perceive short intervals — minutes to hours — as passing at roughly the same rate as younger adults do, or even slightly slower. The dramatic acceleration people report is primarily retrospective: when looking back on months or years, older individuals consistently estimate that periods were shorter than younger individuals do. This discrepancy highlights the role of memory encoding. The brain's hippocampus, which is essential for forming episodic memories, responds more strongly to novel events than to familiar ones. Neuroimaging studies show that the hippocampus and surrounding medial temporal lobe structures release more dopamine and show greater neural activity when encountering unexpected or salient stimuli. As adults age and accumulate experience, fewer events qualify as genuinely novel, resulting in sparser memory encoding. This phenomenon is also linked to the reminiscence bump — the tendency for people over forty to disproportionately recall memories from adolescence and early adulthood, a period rich in novel, identity-defining experiences. The absence of similarly dense encoding in midlife contributes to the feeling that those years slipped by quickly. Another contributing factor is the brain's decreasing efficiency in processing temporal information. The striatum and prefrontal cortex, which work together to estimate elapsed time, undergo age-related structural changes. The loss of dopamine-producing neurons in the substantia nigra and ventral tegmental area alters the speed of the brain's internal pacemaker. Some researchers have proposed that as this internal pacemaker slows, the brain registers fewer \"ticks\" per unit of objective time, making external events seem to be passing more quickly. Contextual factors also matter: adults juggle multiple responsibilities — work, family, financial obligations — that divide attention and reduce the mindful awareness of the present moment. When attention is distributed across competing demands, the brain records fewer detailed time-stamped memories, and entire weeks can blur together. Practical strategies to counteract this effect include seeking novel experiences, practicing mindfulness, and deliberately creating memorable events — all of which increase the density of neural encoding and stretch subjective time."
-  }
+    {
+        "q": [
+            "perception of time",
+            "time speeding up",
+            "time seem to speed up as we get older",
+            "why does time seem to go faster as we age",
+            "why does time speed up as we get older",
+            "why does time seem to speed up with age",
+            "time perception aging",
+            "why time flies when you get older",
+            "time goes faster as you age",
+            "why do we perceive time differently as we age"
+        ],
+        "a": "The feeling that time speeds up as we get older is a well-documented psychological phenomenon with several scientific explanations. The proportional theory suggests that each passing year represents a smaller fraction of our total life experience. For a 5-year-old, one year is 20% of their entire life, while for a 50-year-old, it's only 2%. This makes each year feel relatively shorter. The novelty theory states that our brains encode time based on the amount of new information we process. Children constantly encounter novel experiences, creating dense, rich memories that make time feel longer in retrospect. Adults fall into routines, processing less novel information, so fewer memories are formed and periods feel shorter when looked back on. Neurologically, the brain's dopamine levels and the speed of neural processing change with age, potentially affecting our internal clock. The brain's default mode network also becomes more activated with age, which is associated with mind-wandering and less focused attention on the present moment. Additionally, as we age, the neurotransmitter dopamine declines, which may affect the brain's ability to register new experiences as distinct events. The combination of less novelty, routine-driven lives, and neurological changes creates the subjective experience of time accelerating with age."
+    }
 ]

@@ -1,0 +1,67 @@
+[
+  {
+    "q": [
+      "how to write a sql query with join",
+      "sql inner join example",
+      "sql left join vs right join",
+      "how to join multiple tables in sql",
+      "sql join types explained",
+      "sql self join example"
+    ],
+    "a": "JOINs combine rows from two or more tables based on a related column. `INNER JOIN` returns only matching rows. `LEFT JOIN` returns all rows from the left table and matching rows from the right (NULL if no match). `RIGHT JOIN` is the opposite. `FULL OUTER JOIN` returns all rows from both tables. `CROSS JOIN` produces a cartesian product. Always qualify column names with table aliases and use meaningful aliases for readability.",
+    "code": "-- Sample tables: users, orders, products\n\n-- INNER JOIN: only users with orders\nSELECT u.name, o.order_date, o.total\nFROM users u\nINNER JOIN orders o ON u.id = o.user_id;\n\n-- LEFT JOIN: all users, even those without orders\nSELECT u.name, o.id AS order_id, o.total\nFROM users u\nLEFT JOIN orders o ON u.id = o.user_id;\n\n-- Joining 3 tables\nSELECT u.name, o.order_date, p.name AS product_name\nFROM users u\nJOIN orders o ON u.id = o.user_id\nJOIN order_items oi ON o.id = oi.order_id\nJOIN products p ON oi.product_id = p.id;\n\n-- Self join: employees and their managers\nSELECT e.name AS employee, m.name AS manager\nFROM employees e\nLEFT JOIN employees m ON e.manager_id = m.id;\n\n-- FULL OUTER JOIN (syntax varies by DB)\nSELECT u.name, o.id\nFROM users u\nFULL OUTER JOIN orders o ON u.id = o.user_id;\n\n-- CROSS JOIN (all combinations)\nSELECT sizes.size, colors.color\nFROM sizes\nCROSS JOIN colors;",
+    "lang": "sql"
+  },
+  {
+    "q": [
+      "how to group by in sql",
+      "sql group by having example",
+      "sql aggregate functions example",
+      "group by multiple columns sql",
+      "sql having vs where",
+      "sql count sum avg group by"
+    ],
+    "a": "`GROUP BY` groups rows sharing a value and lets you run aggregate functions (`COUNT`, `SUM`, `AVG`, `MIN`, `MAX`) on each group. `HAVING` filters groups after aggregation (unlike `WHERE`, which filters rows before grouping). You can group by multiple columns by listing them separated by commas. `GROUP BY 1, 2` groups by the first and second selected columns (not recommended for maintainability).",
+    "code": "-- Count orders per user\nSELECT user_id, COUNT(*) AS order_count\nFROM orders\nGROUP BY user_id;\n\n-- With HAVING: only users with 5+ orders\nSELECT user_id, COUNT(*) AS order_count\nFROM orders\nGROUP BY user_id\nHAVING COUNT(*) >= 5;\n\n-- Multiple aggregates\nSELECT\n    user_id,\n    COUNT(*) AS total_orders,\n    SUM(total) AS total_spent,\n    AVG(total) AS avg_order_value,\n    MIN(total) AS smallest_order,\n    MAX(total) AS largest_order\nFROM orders\nGROUP BY user_id;\n\n-- Group by multiple columns\nSELECT status, payment_method, COUNT(*) AS count\nFROM orders\nGROUP BY status, payment_method;\n\n-- WHERE before GROUP BY, HAVING after\nSELECT\n    category_id,\n    AVG(price) AS avg_price\nFROM products\nWHERE active = 1           -- filter rows first\nGROUP BY category_id\nHAVING AVG(price) > 50;   -- filter groups\n\n-- GROUP BY with JOIN\nSELECT u.name, COUNT(o.id) AS order_count\nFROM users u\nLEFT JOIN orders o ON u.id = o.user_id\nGROUP BY u.id, u.name;\n-- Note: group by unique column (id) to avoid issues\n\n-- GROUP_CONCAT / string_agg (DB-specific)\n-- PostgreSQL: STRING_AGG(name, ', ')\n-- MySQL/GROUP_CONCAT(name, ', ')\n-- SQLite: GROUP_CONCAT(name, ', ')",
+    "lang": "sql"
+  },
+  {
+    "q": [
+      "how to create a table in sql",
+      "sql create table statement",
+      "sql column types example",
+      "how to define primary key in sql",
+      "sql foreign key constraint example",
+      "sql create table with constraints"
+    ],
+    "a": "`CREATE TABLE` defines a new table with columns, data types, and constraints. Common constraints: `PRIMARY KEY` (unique identifier), `FOREIGN KEY` (referential integrity), `NOT NULL`, `UNIQUE`, `CHECK`, `DEFAULT`. Choose appropriate data types: `INTEGER`, `VARCHAR(n)`, `TEXT`, `DECIMAL(p,s)`, `DATE`, `TIMESTAMP`, `BOOLEAN`. Always define the primary key and consider indexing columns used in WHERE/JOIN conditions.",
+    "code": "CREATE TABLE users (\n    id SERIAL PRIMARY KEY,\n    email VARCHAR(255) NOT NULL UNIQUE,\n    username VARCHAR(100) NOT NULL,\n    password_hash VARCHAR(255) NOT NULL,\n    full_name VARCHAR(255),\n    is_active BOOLEAN DEFAULT true,\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);\n\nCREATE TABLE orders (\n    id SERIAL PRIMARY KEY,\n    user_id INTEGER NOT NULL,\n    status VARCHAR(50) NOT NULL DEFAULT 'pending',\n    total DECIMAL(10, 2) NOT NULL CHECK (total >= 0),\n    shipping_address TEXT,\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (user_id) REFERENCES users(id)\n);\n\nCREATE TABLE order_items (\n    id SERIAL PRIMARY KEY,\n    order_id INTEGER NOT NULL,\n    product_id INTEGER NOT NULL,\n    quantity INTEGER NOT NULL CHECK (quantity > 0),\n    unit_price DECIMAL(10, 2) NOT NULL,\n    FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE,\n    FOREIGN KEY (product_id) REFERENCES products(id)\n);\n\n-- Add index for performance\nCREATE INDEX idx_orders_user_id ON orders(user_id);\nCREATE INDEX idx_orders_created_at ON orders(created_at);\n\n-- Drop table\nDROP TABLE IF EXISTS order_items;",
+    "lang": "sql"
+  },
+  {
+    "q": [
+      "how to insert data in sql",
+      "sql insert multiple rows example",
+      "how to update records in sql",
+      "how to delete records in sql",
+      "sql insert update delete tutorial",
+      "sql merge upsert example"
+    ],
+    "a": "`INSERT` adds rows, `UPDATE` modifies existing rows, and `DELETE` removes rows. Always use a `WHERE` clause with `UPDATE` and `DELETE` to avoid affecting all rows (unless that's intentional). Use transactions (`BEGIN`/`COMMIT`/`ROLLBACK`) for multiple related changes. `INSERT ... ON CONFLICT DO UPDATE` (PostgreSQL) or `REPLACE INTO` (MySQL) handles upserts. Use parameterized queries in application code to prevent SQL injection.",
+    "code": "-- INSERT single row\nINSERT INTO users (email, username, password_hash, full_name)\nVALUES ('alice@example.com', 'alice', 'hash123', 'Alice Johnson');\n\n-- INSERT multiple rows\nINSERT INTO products (name, price, category_id)\nVALUES\n    ('Widget', 9.99, 1),\n    ('Gadget', 24.99, 1),\n    ('Doohickey', 14.99, 2);\n\n-- INSERT from SELECT\nINSERT INTO archived_orders (id, user_id, total, created_at)\nSELECT id, user_id, total, created_at\nFROM orders\nWHERE created_at < '2025-01-01';\n\n-- UPDATE specific rows\nUPDATE orders\nSET status = 'shipped', updated_at = CURRENT_TIMESTAMP\nWHERE id = 123;\n\n-- UPDATE with JOIN (PostgreSQL)\nUPDATE orders o\nSET status = 'cancelled'\nFROM users u\nWHERE o.user_id = u.id AND u.is_active = false;\n\n-- DELETE specific rows\nDELETE FROM orders WHERE status = 'cancelled' AND created_at < '2024-01-01';\n\n-- Transaction for atomicity\nBEGIN;\nUPDATE accounts SET balance = balance - 100 WHERE id = 1;\nUPDATE accounts SET balance = balance + 100 WHERE id = 2;\nCOMMIT;\n-- Or ROLLBACK on error\n\n-- Upsert (PostgreSQL)\nINSERT INTO users (id, email, username)\nVALUES (1, 'new@example.com', 'newuser')\nON CONFLICT (id) DO UPDATE\nSET email = EXCLUDED.email,\n    username = EXCLUDED.username;\n\n-- Safe parameterized queries (application code)\n-- Python example:\n-- cursor.execute(\n--     \"INSERT INTO users (email) VALUES (%s)\",\n--     (user_email,)\n-- )",
+    "lang": "sql"
+  },
+  {
+    "q": [
+      "how to write a select query in sql",
+      "sql where clause examples",
+      "sql order by limit offset",
+      "sql like wildcard pattern matching",
+      "sql subquery example",
+      "sql select distinct example"
+    ],
+    "a": "The `SELECT` statement retrieves data. Basic clauses: `SELECT columns FROM table WHERE condition GROUP BY having ORDER BY LIMIT/OFFSET`. Use `DISTINCT` to remove duplicates. String patterns with `LIKE` (`%` any sequence, `_` single char). Subqueries can be used in `WHERE`, `FROM`, or `SELECT` clauses. `LIMIT`/`OFFSET` paginate results. Use `EXPLAIN ANALYZE` to understand query performance.",
+    "code": "-- Basic SELECT\nSELECT id, name, price\nFROM products;\n\n-- All columns (avoid in production - be explicit)\nSELECT * FROM products;\n\n-- WHERE clause with conditions\nSELECT *\nFROM orders\nWHERE status = 'pending'\n  AND total > 100\n  AND created_at >= '2026-01-01';\n\n-- DISTINCT values\nSELECT DISTINCT category_id FROM products;\n\n-- Pattern matching with LIKE\nSELECT * FROM users\nWHERE email LIKE '%@example.com';\n\nSELECT * FROM products\nWHERE name LIKE 'Widget %';\n\n-- ORDER BY, LIMIT, OFFSET\nSELECT name, price\nFROM products\nWHERE active = true\nORDER BY price DESC, name ASC\nLIMIT 10 OFFSET 20;  -- page 3 of 10 results\n\n-- Subquery in WHERE\nSELECT name, price\nFROM products\nWHERE category_id IN (\n    SELECT id FROM categories WHERE active = true\n);\n\n-- Subquery in SELECT (scalar)\nSELECT\n    u.name,\n    (SELECT COUNT(*) FROM orders o WHERE o.user_id = u.id) AS order_count\nFROM users u;\n\n-- Subquery in FROM (derived table)\nSELECT category_name, avg_price\nFROM (\n    SELECT c.name AS category_name, AVG(p.price) AS avg_price\n    FROM products p\n    JOIN categories c ON p.category_id = c.id\n    GROUP BY c.id, c.name\n) AS stats\nWHERE avg_price > 50;\n\n-- CASE expression for conditional logic\nSELECT\n    name,\n    price,\n    CASE\n        WHEN price < 10 THEN 'budget'\n        WHEN price < 50 THEN 'mid-range'\n        ELSE 'premium'\n    END AS price_tier\nFROM products;\n\n-- EXPLAIN to check performance\nEXPLAIN ANALYZE\nSELECT * FROM orders WHERE user_id = 42;",
+    "lang": "sql"
+  }
+]

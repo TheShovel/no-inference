@@ -1,28 +1,28 @@
-"""COS NLG Pipeline — orchestrates all NLG stages.
+"""NLG Pipeline — orchestrates full naturalize pipeline.
 
-The naturalize() function runs the full 5-pass pipeline:
-  1. clean_information() — Remove noise, truncate
-  2. parse_facts() → build_discourse_tree() — Extract facts, build discourse tree
-  3. flatten_tree() → realize_fact() — Generate sentences per discourse unit
-  4. combine_all() — Fuse related sentences
-  5. enhance_fluency() — Contractions, pronouns, fillers, caps
+Five-pass pipeline:
+  1. Clean — Remove noise from raw information
+  2. Parse — Extract structured Facts and entities
+  3. Discourse — Build discourse tree with rhetorical relations
+  4. Realize — Generate varied sentences per fact type
+  5. Fluency — Contractions, pronouns, fillers, capitalization
 
-Usage:
-    from cos.nlg import naturalize
-    response = naturalize("What is France?", "France", info, "factual")
+Pure functions — no I/O, no side effects.
 """
 
-from typing import Optional, List
-from .config import NLGConfig, DEFAULT_CONFIG
-from .models import DiscourseState
-from .cleaner import clean_information
+import re
+from typing import List, Optional
+
+from .config import NLGConfig, DEFAULT_CONFIG, get_profile
+from .models import Fact, DiscourseState, DiscourseTree, DiscourseUnit
 from .parser import parse_facts, extract_entities, merge_subject_entities
+from .realize import realize_fact, get_opening, get_closing
 from .discourse import build_discourse_tree, flatten_tree
-from .realize import realize_fact, get_opening, get_closing, classify_query
-from .combine import combine_all
 from .fluency import enhance_fluency
+from .combine import combine_all
+from .cleaner import clean_information
 from .fallback import fallback_response
-from .util import split_sentences, lower_first, upper_first, require_style, maybe, pick
+from .util import pick, maybe, split_sentences, lower_first, upper_first, require_style
 
 
 def naturalize(
@@ -263,7 +263,7 @@ def naturalize(
         opening_last_word = opening_stripped.split()[-1].lower().rstrip(',:;') if opening_stripped.split() else ''
         if opening_last_word == first_word and first_word in ('so', 'well', 'okay'):
             opening = opening_stripped + " "
-            
+
         first_sent = sents[0] if sents else result
         if first_sent and first_sent[0].isupper():
             result = opening + " " + result
@@ -279,111 +279,134 @@ def naturalize(
         result = result.rstrip() + " " + closing
 
     # Final safety: ensure the response doesn't end mid-word or mid-sentence.
-    # If the last sentence is incomplete (ends with lowercase letter and no punctuation),
-    # find the last complete sentence boundary and truncate there.
-    if result and re.search(r'[a-z]\s*$', result):
-        # Look for the last sentence-ending punctuation before the end
-        last_period = result.rfind('.')
-        last_excl = result.rfind('!')
-        last_q = result.rfind('?')
-        last_end = max(last_period, last_excl, last_q)
-        if last_end >= 0 and len(result) - last_end < 100:
-            result = result[:last_end + 1]
+    # If the text doesn't end with sentence-ending punctuation,
+    # trim back to the last complete sentence boundary.
+    result = _ensure_complete_sentences(result)
 
     return result
 
 
 def make_conversational(text: str, config: Optional[NLGConfig] = None) -> str:
-    """Light touch: apply fluency to any text without full NLG pipeline.
-
-    Pure function.
-    """
+    """Convert raw information into conversational text quickly."""
     if config is None:
         config = DEFAULT_CONFIG
-    result = enhance_fluency(text, config)
-    result = re.sub(r'\s+', ' ', result).strip()
+    # Simple path: just apply contractions and fluency
+    from .fluency import apply_contractions, fix_caps
+    result = apply_contractions(text, rate=1.0, temperature=0.0)
+    result = fix_caps(result)
     return result
 
 
-def _extract_topic_from_info(information: str, query: str) -> str:
-    """Extract a plausible topic from information text when none provided."""
-    import re
-    first_sentence = information.split('.')[0] if '.' in information else information
-    # Capture multi-word topics: "The Roman Empire", "A black hole", etc.
-    m = re.match(r'(The|A|An)\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,2})', first_sentence)
-    if m:
-        return m.group(2)
-    m = re.match(r'([A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,2})', first_sentence)
-    if m:
-        return m.group(1)
-    words = [w for w in query.split() if len(w) > 3 and w.lower() not in
-             {'what', 'who', 'how', 'why', 'when', 'where', 'tell', 'show',
-              'explain', 'describe', 'define', 'give'}]
-    return words[0] if words else query
+def _extract_topic_from_info(info: str, query: str) -> str:
+    """Extract a topic from the info text if not explicitly provided."""
+    if not info:
+        return query
+    # Use first sentence of info as topic if it starts with a definition pattern
+    first_line = info.split('\n')[0].strip()
+    match = re.match(r'^([A-Z][^,\.]+?)\s+(?:is|are|was|were|refers to|means)\b', first_line)
+    if match:
+        return match.group(1).strip()
+    return query
 
 
 def _insert_transitions(sentences: List[str], config: NLGConfig) -> List[str]:
-    """Add light transitions between sentences with different subjects.
-
-    Uses _get_subject to detect subject changes and inserts simple
-    connectors between unrelated sentences to improve discourse flow.
-    Avoids inserting transitions when the new subject is a pronoun
-    referring to the previous subject.
-
-    Pure function.
-    """
-    if len(sentences) < 2 or config.temperature <= 0.0:
+    """Insert light discourse transitions between different-subject sentences."""
+    if len(sentences) < 2:
         return sentences
-
-    from .combine import _get_subject
-
-    _TRANSITION_WORDS = {
-        'and', 'but', 'however', 'moreover', 'furthermore', 'additionally',
-        'plus', 'so', 'then', 'also', 'nevertheless', 'nonetheless',
-        'consequently', 'therefore', 'thus', 'hence', 'meanwhile',
-        'finally', 'first', 'second', 'third', 'next', 'lastly',
-        'similarly', 'likewise', 'conversely', 'instead',
-        'located', 'situated', 'found', 'known', 'called', 'named',
-    }
 
     result = [sentences[0]]
     for i in range(1, len(sentences)):
         curr = sentences[i]
-        prev_subj = _get_subject(result[-1])
-        curr_subj = _get_subject(curr)
+        prev = result[-1]
 
-        # Skip if current subject is a pronoun referring to previous subject
-        # "The Eiffel Tower" -> "It" doesn't need a transition
-        curr_is_pronoun = (curr_subj or '').lower().strip() in {'it', 'she', 'he', 'they', 'this', 'that'}
-        
-        # Skip if previous subject contains the current subject word
-        # (e.g., prev="Eiffel Tower" curr="The tower" -> skip because "tower" in "Eiffel Tower")
-        prev_words = set(prev_subj.lower().split()) if prev_subj else set()
-        curr_words = set(curr_subj.lower().split()) if curr_subj else set()
-        shares_word = bool(prev_words & curr_words) if prev_words and curr_words else False
+        # Extract subjects heuristically (first noun phrase)
+        prev_subj = _get_noun_phrase(prev)
+        curr_subj = _get_noun_phrase(curr)
 
-        # Don't add if current sentence already has a transition word
-        first_word = curr.split()[0].lower().rstrip(',:;') if curr.split() else ''
-        already_has = first_word in _TRANSITION_WORDS
+        # Skip if subjects are the same (flow is natural)
+        if prev_subj and curr_subj and prev_subj.lower() == curr_subj.lower():
+            result.append(curr)
+            continue
 
-        if (prev_subj and curr_subj
-                and not curr_is_pronoun
-                and not shares_word
-                and prev_subj.lower() != curr_subj.lower()
-                and not already_has
-                and maybe(0.35)):
-            # Different genuine subjects — add a natural transition
-            transitions = ["", "", "", "",  # 60% no transition, 40% varied transitions
-                          "It's also worth noting that", 
-                          "What's more,", 
-                          "On top of that,"]
-            t = pick(transitions, config.temperature)
-            if t:
-                curr = t + " " + upper_first(curr)
+        # For different subjects, occasionally insert a light transition
+        if config.temperature > 0.0 and maybe(0.12):
+            transition = pick([
+                "Speaking of which,",
+                "On a related note,",
+                "In addition,",
+                "What's more,",
+                "",
+                "",
+                "",
+            ], config.temperature)
+            if transition:
+                curr = transition + " " + curr
 
         result.append(curr)
 
     return result
 
 
-import re  # noqa: E811 — used in _extract_topic_from_info and sentinel
+def _get_noun_phrase(sentence: str) -> str:
+    """Extract the likely subject/noun phrase from a sentence."""
+    m = re.match(r'^([A-Z][a-zA-Z]*(?:\s+[A-Z][a-zA-Z]*)?)', sentence)
+    if m:
+        return m.group(1)
+    return ""
+
+
+def _ensure_complete_sentences(text: str) -> str:
+    """Ensure text doesn't end mid-sentence.
+    
+    If the last character isn't sentence-ending punctuation, trim to
+    the last complete sentence. Also handles truncated word fragments
+    like 'from sub-atomic particles to e' (single-letter ending).
+    Handles code blocks by preserving them.
+    """
+    if not text:
+        return text
+    
+    text = text.rstrip()
+    
+    # If text contains code blocks, don't trim to last period
+    # because code blocks have periods inside strings that would
+    # cause false truncation.
+    if '```' in text:
+        return text
+    
+    # If already ending with proper punctuation, we're good
+    if text.endswith(('.', '!', '?')):
+        return text
+    
+    # Check if the text ends with a single-letter fragment (likely truncated)
+    last_word = text.split()[-1].lower() if text.split() else ''
+    if len(last_word) == 1 and last_word not in ('i', 'a'):
+        # Single letter that's not 'I' or 'a' - likely a truncated word fragment
+        # Find the last sentence boundary and trim there
+        dots = [m.end() for m in re.finditer(r'\. ', text)]
+        if dots:
+            text = text[:dots[-1]]
+        return text.strip()
+    
+    # Also handle short fragments that look incomplete (ends with lowercase letter
+    # that isn't a complete word-ending)
+    if text and text[-1].islower() and not text.endswith(('etc.', 'e.g.', 'i.e.')):
+        # Check if last word is very short (likely truncated)
+        words = text.split()
+        last_word = words[-1].lower().rstrip('.,;:!?"\'') if words else ''
+        if len(last_word) <= 3 and last_word not in ('the', 'and', 'for', 'not', 'are', 'was', 'had', 'but', 'its', 'all', 'any', 'can', 'has', 'may', 'per', 'via', 'use', 'get', 'see', 'set', 'put', 'cut', 'let', 'yet', 'now', 'how', 'why', 'two', 'new', 'old', 'big', 'far', 'got', 'say', 'way', 'own', 'too', 'tie', 'lie', 'die', 'fee', 'era', 'ion', 'ism', 'ist', 'ary'):
+            # Find the last sentence boundary and trim there
+            dots = [m.end() for m in re.finditer(r'\. ', text)]
+            if dots:
+                text = text[:dots[-1]]
+            return text.strip()
+    
+    # Find last complete sentence ending with punctuation
+    last_period = text.rfind('.')
+    last_excl = text.rfind('!')
+    last_q = text.rfind('?')
+    last_end = max(last_period, last_excl, last_q)
+    if last_end >= 20:  # at least 20 chars before the end
+        text = text[:last_end + 1]
+    
+    return text.strip()

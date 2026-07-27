@@ -1,0 +1,76 @@
+[
+  {
+    "q": [
+      "how to create a new branch in git",
+      "git create branch command",
+      "how to switch branches in git",
+      "git branch checkout example",
+      "git create and switch to branch"
+    ],
+    "a": "Use `git branch <name>` to create a new branch at the current commit. Use `git switch <name>` (Git 2.23+) or `git checkout <name>` to switch. Combine both with `git switch -c <name>` or `git checkout -b <name>`. Branch names should be descriptive and use hyphens (e.g., `feature/add-auth`). List branches with `git branch` (local) or `git branch -a` (all, including remotes).",
+    "code": "# Create a new branch (stays on current branch)\ngit branch feature/login\n\n# Switch to branch (Git 2.23+)\ngit switch feature/login\n\n# Create and switch in one command\ngit switch -c feature/login\n# Legacy equivalent:\ngit checkout -b feature/login\n\n# List branches\ngit branch\n# * feature/login\n#   main\n\ngit branch -a  # includes remote branches\n\n# Rename a branch (while on it)\ngit branch -m feature-login\n\n# Delete a branch (merged)\ngit branch -d feature/login\n\n# Delete a branch (force, even if unmerged)\ngit branch -D feature/login",
+    "lang": "bash"
+  },
+  {
+    "q": [
+      "how to merge branches in git",
+      "git merge example",
+      "how to merge branch into main git",
+      "git merge vs rebase",
+      "how to merge feature branch to main"
+    ],
+    "a": "`git merge` integrates changes from one branch into another. First, switch to the target branch (e.g., `main`), then run `git merge <source-branch>`. Git creates a merge commit that has two parents, preserving the full history of both branches. Use `--no-ff` to force a merge commit even for fast-forward merges. Merge conflicts happen when both branches modify the same lines — resolve them manually, stage, then commit.",
+    "code": "# Merge feature branch into main\ngit switch main\ngit merge feature/login\n\n# With a merge commit message\ngit merge feature/login -m \"Merge login feature into main\"\n\n# Force non-fast-forward merge (preserves branch history)\ngit merge --no-ff feature/login\n\n# Abort a merge if conflicts are too complex\ngit merge --abort\n\n# After resolving conflicts:\ngit add .\ngit merge --continue\n# Or: git commit (without --continue in older versions)\n\n# View merge history\ngit log --graph --oneline --all\n\n# Integration flow example:\n# git switch main\n# git pull origin main           # update main\n# git switch -c feature/new-feature\n# ... work, commit, work, commit ...\n# git switch main\n# git pull origin main           # get latest\n# git merge feature/new-feature\n# git push origin main",
+    "lang": "bash"
+  },
+  {
+    "q": [
+      "how to rebase in git",
+      "git rebase explained",
+      "git rebase vs merge",
+      "how to rebase branch onto main",
+      "git interactive rebase example",
+      "how to squash commits with rebase"
+    ],
+    "a": "Rebasing rewrites commit history by applying commits from one branch onto the tip of another. Unlike merging (which creates a merge commit), rebase produces a linear history. Use `git rebase main` while on your feature branch to replay your commits after the latest main commits. Interactive rebase (`git rebase -i HEAD~n`) lets you squash, reorder, reword, or drop commits. Never rebase shared/public branches — it rewrites history and causes issues for collaborators.",
+    "code": "# Rebase feature branch onto latest main\ngit switch feature/login\ngit rebase main\n\n# Interactive rebase for last 3 commits\ngit rebase -i HEAD~3\n# Editor opens with:\n# pick abc123 First commit\n# pick def456 Second commit\n# pick 789ghi Third commit\n# Change 'pick' to:\n#   squash (s) - combine with previous commit\n#   reword (r) - change commit message\n#   fixup (f) - combine, discard message\n#   edit (e) - stop to amend\n#   drop (d) - delete commit\n\n# Rebase onto specific branch\ngit rebase origin/main\n\n# Continue after resolving conflicts\ngit rebase --continue\n\n# Skip a problematic commit\ngit rebase --skip\n\n# Abort rebase entirely\ngit rebase --abort\n\n# Config: auto-stash before rebase\ngit config --global rebase.autoStash true",
+    "lang": "bash"
+  },
+  {
+    "q": [
+      "how to resolve merge conflicts in git",
+      "git merge conflict resolution",
+      "how to fix merge conflicts git",
+      "git conflict markers explained",
+      "how to resolve git conflicts in vscode"
+    ],
+    "a": "Merge conflicts occur when two branches modify the same part of a file. Git marks conflicts in the file with `<<<<<<<`, `=======`, and `>>>>>>>` markers. The section between `<<<<<<< HEAD` and `=======` is your current branch's version; between `=======` and `>>>>>>> theirs` is the incoming branch's version. Manually edit to keep the correct code (or a mix of both), remove the conflict markers, then `git add` the resolved file and `git merge --continue`.",
+    "code": "# Scenario: merging feature into main causes conflict\n\n# File with conflict markers (_index.html_):\n# <<<<<<< HEAD (current: main)\n# <title>My Site</title>\n# =======\n# <title>My Awesome Site</title>\n# >>>>>>> feature/update-title\n\n# Steps to resolve:\n# 1. Open the conflicted file in editor\n# 2. Decide which version(s) to keep\n# 3. Remove conflict markers\n# 4. Result:\n# <title>My Awesome Site</title>\n# 5. Stage the resolved file\ngit add index.html\n\n# 6. Continue the merge\ngit merge --continue\n# Or: git commit\n\n# Alternative: accept one side entirely\n# Keep current branch version:\ngit checkout --ours index.html\n# Keep incoming branch version:\ngit checkout --theirs index.html\n\n# See which files are conflicted\ngit status\n# Both modified:   index.html\n\n# Use a merge tool\ngit mergetool",
+    "lang": "bash"
+  },
+  {
+    "q": [
+      "how to create a pull request in git",
+      "git pull request workflow",
+      "how to push to remote and create PR",
+      "git push origin branch example",
+      "github pull request how to"
+    ],
+    "a": "A pull request (PR) is a review mechanism on platforms like GitHub, GitLab, or Bitbucket. The workflow: create a feature branch, make commits, push to remote with `git push origin <branch>`, then open a PR via the platform UI or CLI (e.g., `gh pr create`). Before pushing, ensure your branch is up to date with the target branch via rebase or merge. After the PR is approved and merged, delete the remote branch and clean up locally.",
+    "code": "# Full PR workflow example\n\n# 1. Start from up-to-date main\ngit switch main\ngit pull origin main\n\n# 2. Create feature branch\ngit switch -c feature/user-auth\n\n# 3. Work and commit\necho \"auth logic\" > auth.py\ngit add auth.py\ngit commit -m \"Add user authentication module\"\n\n# 4. Push to remote\ngit push origin feature/user-auth\n# Output: remote: Create a pull request for 'feature/user-auth' on GitHub by visiting:\n# remote:   https://github.com/user/repo/pull/new/feature/user-auth\n\n# 5. Using GitHub CLI to create PR\ngit push origin feature/user-auth\ngh pr create --title \"Add user authentication\" --body \"Implements login, signup, and password reset.\" --base main\n\n# 6. Update PR with more commits\n# (just push more commits to the same branch)\necho \"tests\" > test_auth.py\ngit add test_auth.py\ngit commit -m \"Add auth tests\"\ngit push origin feature/user-auth  # PR updates automatically\n\n# 7. After PR is merged, clean up\ngit switch main\ngit pull origin main\ngit branch -d feature/user-auth      # delete local\ngit push origin --delete feature/user-auth  # delete remote",
+    "lang": "bash"
+  },
+  {
+    "q": [
+      "how to undo last commit in git",
+      "git revert vs reset explained",
+      "how to undo changes in git",
+      "git reset soft mixed hard",
+      "how to unstage a file in git",
+      "git discard local changes"
+    ],
+    "a": "Git offers several ways to undo changes depending on scope. `git reset` moves the HEAD and optionally the index/working directory: `--soft` (keeps changes staged), `--mixed` (default, unstages changes), `--hard` (discards changes entirely). `git revert` creates a new commit that undoes a previous commit — safe for shared branches. `git restore` unstages or discards working directory changes. Use `git reflog` to recover lost commits after a reset.",
+    "code": "# Undo last commit but keep changes staged\ngit reset --soft HEAD~1\n\n# Undo last commit and unstage (keep changes in working dir)\ngit reset HEAD~1\n# or: git reset --mixed HEAD~1\n\n# Undo last commit and discard all changes\n# WARNING: this deletes your changes\ngit reset --hard HEAD~1\n\n# Undo a specific commit safely (creates new commit)\ngit revert abc123\n\n# Unstage a file (keep working directory changes)\ngit restore --staged file.py\n# or legacy: git reset HEAD file.py\n\n# Discard working directory changes\ngit restore file.py\n# or legacy: git checkout -- file.py\n\n# Undo all local changes (reset to remote)\ngit fetch origin\ngit reset --hard origin/main\n\n# View reflog to find lost commits\ngit reflog\n# Then reset to the lost commit:\n# git reset --hard HEAD@{2}",
+    "lang": "bash"
+  }
+]

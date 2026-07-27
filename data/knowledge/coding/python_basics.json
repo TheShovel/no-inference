@@ -1,0 +1,73 @@
+[
+  {
+    "q": [
+      "how to read a JSON file in python",
+      "how to parse json from file in python",
+      "how to load json in python",
+      "python read json file example"
+    ],
+    "a": "Python's built-in `json` module provides `json.load()` to read JSON from a file and `json.loads()` to parse a JSON string. Use `json.load(file)` where file is a file object opened in read mode. Always wrap file operations in a `with` statement for proper resource management and handle potential `json.JSONDecodeError` or `FileNotFoundError` exceptions.",
+    "code": "import json\nfrom pathlib import Path\n\ndata_path = Path('data.json')\n\n# Read JSON from file\ntry:\n    with data_path.open('r') as f:\n        data = json.load(f)\n        print(data)\nexcept FileNotFoundError:\n    print(f'File {data_path} not found')\nexcept json.JSONDecodeError:\n    print('Invalid JSON format')\n\n# Parse JSON from string\njson_string = '{\"name\": \"Alice\", \"age\": 30}'\nparsed = json.loads(json_string)\nprint(parsed['name'])  # Alice",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "how to sort a list in python",
+      "how to sort a dictionary in python",
+      "how to sort list of dictionaries python",
+      "python sort by key",
+      "python sorted function example"
+    ],
+    "a": "Python provides two main ways to sort: the `sorted()` function (returns a new sorted list) and the `.sort()` list method (sorts in-place). Both accept `key` (a callable to extract comparison key) and `reverse` (bool). For dictionaries, use `sorted()` on `.items()`, `.keys()`, or `.values()`. To sort a list of dicts, pass a `key` function that extracts the field to sort by.",
+    "code": "# Sort a list\nnums = [3, 1, 4, 1, 5, 9]\nsorted_nums = sorted(nums)               # [1, 1, 3, 4, 5, 9]\nnums.sort(reverse=True)                   # [9, 5, 4, 3, 1, 1]\n\n# Sort a list of dicts by a key\nusers = [\n    {'name': 'Alice', 'age': 30},\n    {'name': 'Bob', 'age': 25},\n    {'name': 'Charlie', 'age': 35}\n]\nusers_sorted = sorted(users, key=lambda u: u['age'])\n# [{'name': 'Bob', 'age': 25}, {'name': 'Alice', 'age': 30}, ...]\n\n# Sort a dictionary by value\nscores = {'math': 90, 'physics': 85, 'chemistry': 95}\nsorted_by_score = dict(sorted(scores.items(), key=lambda x: x[1], reverse=True))\n# {'chemistry': 95, 'math': 90, 'physics': 85}",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "how to merge two dictionaries in python",
+      "python merge dicts",
+      "how to combine dictionaries in python",
+      "python dictionary merge example",
+      "how to merge dicts in python 3.9"
+    ],
+    "a": "Python 3.9+ supports the `|` operator for merging dictionaries: `merged = dict1 | dict2`. If a key exists in both, the right-hand dict's value wins. For older versions, use `{**dict1, **dict2}` unpacking or `dict1.copy(); dict1.update(dict2)`. The `|` operator and `|=` (in-place merge) are the most readable approaches in modern Python.",
+    "code": "dict_a = {'a': 1, 'b': 2}\ndict_b = {'b': 3, 'c': 4}\n\n# Python 3.9+ merge operator\nmerged = dict_a | dict_b\nprint(merged)  # {'a': 1, 'b': 3, 'c': 4}\n\n# In-place merge\ndict_a |= dict_b\nprint(dict_a)  # {'a': 1, 'b': 3, 'c': 4}\n\n# Python 3.5+ unpacking (creates new dict)\nmerged2 = {**dict_a, **dict_b}\n\n# Classic .update() method\nbase = {'x': 10}\nbase.update({'y': 20})\nprint(base)  # {'x': 10, 'y': 20}",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "how to create a virtual environment in python",
+      "how to activate virtual environment python",
+      "python venv tutorial",
+      "how to use virtual environments in python",
+      "python virtual environment setup"
+    ],
+    "a": "Use `python -m venv <name>` to create a virtual environment. Activate it with `source <name>/bin/activate` (Linux/macOS) or `<name>\\Scripts\\activate` (Windows). Deactivate with `deactivate`. Modern alternatives include `python -m venv` (built-in), `virtualenv` (more features), and `pipenv`/`poetry` (higher-level dependency management). Always use a `.gitignore` entry for the environment directory.",
+    "code": "# Create virtual environment\npython3 -m venv .venv\n\n# Activate (Linux/macOS)\nsource .venv/bin/activate\n\n# Activate (Windows CMD)\n.venv\\Scripts\\activate\n\n# Activate (Windows PowerShell)\n.venv\\Scripts\\Activate.ps1\n\n# Install packages\npip install requests==2.31.0\n\n# Freeze requirements\npip freeze > requirements.txt\n\n# Deactivate\ndeactivate\n\n# Example .gitignore entry\n# .venv/",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "how to use list comprehension in python",
+      "python list comprehension example",
+      "how to write list comprehension python",
+      "list comprehension with condition python",
+      "nested list comprehension python"
+    ],
+    "a": "List comprehensions provide a concise way to create lists. Syntax: `[expression for item in iterable if condition]`. They are more readable and faster than manual for-loops in most cases. You can nest them, use multiple `for` clauses (cartesian product), and add conditional expressions on both the item and the output expression. Use set comprehensions `{...}` and dict comprehensions `{k: v ...}` similarly.",
+    "code": "# Basic list comprehension\nsquares = [x**2 for x in range(10)]\n# [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]\n\n# With condition\nevens = [x for x in range(20) if x % 2 == 0]\n# [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]\n\n# Nested loops (flatten)\nmatrix = [[1, 2], [3, 4], [5, 6]]\nflat = [val for row in matrix for val in row]\n# [1, 2, 3, 4, 5, 6]\n\n# With expression condition (ternary)\nlabels = ['even' if x % 2 == 0 else 'odd' for x in range(5)]\n# ['even', 'odd', 'even', 'odd', 'even']\n\n# Dict comprehension\nsquares_dict = {x: x**2 for x in range(5)}\n# {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "how to read and write files in python",
+      "python file io example",
+      "how to open a file in python",
+      "python with open statement",
+      "how to read file line by line python"
+    ],
+    "a": "Python's built-in `open()` function with a `with` statement (context manager) is the standard way to handle file I/O. Modes: `'r'` (read), `'w'` (write, truncates), `'a'` (append), `'r+'` (read/write), `'b'` (binary mode). The `with` block ensures the file is closed automatically even if an exception occurs. For large files, iterate over the file object directly instead of calling `.readlines()`.",
+    "code": "from pathlib import Path\n\n# Write to file (overwrites)\nwith open('example.txt', 'w') as f:\n    f.write('Hello, World!\\n')\n    f.write('Second line\\n')\n\n# Append to file\nwith open('example.txt', 'a') as f:\n    f.write('Third line\\n')\n\n# Read entire file\nwith open('example.txt', 'r') as f:\n    content = f.read()\n    print(content)\n\n# Read line by line (memory efficient for large files)\nwith open('example.txt', 'r') as f:\n    for line in f:\n        print(line.strip())  # strip removes trailing newline\n\n# Using pathlib\npath = Path('example.txt')\npath.write_text('Hello from pathlib!')\nread_back = path.read_text()\nprint(read_back)\n\n# Binary mode\nwith open('image.jpg', 'rb') as f:\n    data = f.read(1024)  # Read first 1024 bytes",
+    "lang": "python"
+  }
+]

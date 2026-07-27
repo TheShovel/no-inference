@@ -1,0 +1,17 @@
+[
+    {
+        "q": [
+            "how to handle API errors in fetch JavaScript",
+            "handle API errors fetch request JavaScript",
+            "fetch error handling JavaScript",
+            "how to handle fetch errors JavaScript",
+            "API error handling fetch JavaScript",
+            "javascript fetch catch error",
+            "javascript fetch api error handling",
+            "handle HTTP errors fetch javascript",
+            "fetch api error handling js",
+            "how to handle errors in fetch requests JavaScript"
+        ],
+        "a": "To handle API errors when using the Fetch API in JavaScript, you need to check the `response.ok` property because fetch only rejects on network failures, not HTTP error status codes like 404 or 500:\n\n```javascript\nfetch('https://api.example.com/data')\n  .then(response => {\n    if (!response.ok) {\n      throw new Error(`HTTP error! status: ${response.status}`);\n    }\n    return response.json();\n  })\n  .then(data => {\n    console.log('Success:', data);\n  })\n  .catch(error => {\n    console.error('Fetch error:', error.message);\n  });\n```\n\nWith async/await, the same pattern is cleaner:\n```javascript\nasync function fetchData() {\n  try {\n    const response = await fetch('https://api.example.com/data');\n    if (!response.ok) {\n      throw new Error(`HTTP error! status: ${response.status}`);\n    }\n    const data = await response.json();\n    console.log('Success:', data);\n  } catch (error) {\n    console.error('Fetch error:', error.message);\n  }\n}\n```\n\nKey points: Always check `response.ok` or `response.status` after a fetch, use try/catch with async/await or .catch() with promises, and handle network errors separately from HTTP errors. The fetch API throws an error only when a network failure occurs (offline, DNS failure, etc.), not for 4xx or 5xx responses."
+    }
+]

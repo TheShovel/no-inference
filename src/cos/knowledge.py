@@ -145,6 +145,10 @@ def lookup(query):
     from the query before matching, so questions with quoted terms
     (e.g. How do headphones "erase" sound?) still match KB entries.
 
+    Also tries matching against a version of the query with common
+    filler/stop words removed, so patterns like "mushrooms communicate"
+    match queries like "How do mushrooms actually communicate?"
+
     Args:
         query: The user's question string
 
@@ -157,20 +161,58 @@ def lookup(query):
 
     # Strip common punctuation artifacts that can prevent matching
     q = query.lower().strip()
-    # Remove quotation marks and normalize whitespace
     q = re.sub(r'[\"\'\'\"\u201c\u201d\u2018\u2019]', '', q)
     q = re.sub(r'\s+', ' ', q).strip()
+
+    # Normalize common grammatical variations to increase matching.
+    # E.g., "why is it that we dream" -> "why do we dream"
+    # This lets patterns match despite different phrasing.
+    q_norm = q
+    _NORMALIZATIONS = [
+        # "why is it that we X" -> "why do we X" (and similar)
+        (r'\bwhy\s+is\s+it\s+that\s+(we|you|they|i|he|she|it)\b', r'why do \1'),
+        (r'\bwhy\s+is\s+it\s+that\s+', 'why '),
+        (r'\bwhat\s+is\s+it\s+that\s+', 'what '),
+        (r'\bhow\s+is\s+it\s+that\b', 'how'),
+        # "what would actually happen if" -> "what would happen if"
+        (r'\bwhat\s+would\s+actually\s+happen\b', 'what would happen'),
+        (r'\bwhat\s+actually\s+happens\b', 'what happens'),
+        # Remove 'actually' and filler words from middle of questions
+        (r'\bthat\s+(?:actually\s+)?can\b', 'that can'),
+        # "tell me about" -> "tell me about" (keep as-is, already matches)
+        # "how does the process of" -> "how does"
+        (r'\bhow\s+does\s+the\s+process\s+of\b', 'how does'),
+    ]
+    for pat, repl in _NORMALIZATIONS:
+        q_norm = re.sub(pat, repl, q_norm)
+
+    # Also create a simplified query with filler/stop words removed.
+    # This allows patterns like "how do mushrooms communicate" to match
+    # queries like "How do mushrooms actually communicate with each other".
+    _FILLER_WORDS = {
+        'actually', 'basically', 'essentially', 'really', 'literally',
+        'honestly', 'just', 'simply', 'truly', 'definitely', 'certainly',
+        'absolutely', 'totally', 'completely', 'entirely', 'quite',
+        'rather', 'somewhat', 'fairly', 'pretty', 'and',
+        'with', 'their', 'your', 'our', 'its', 'his', 'her',
+    }
+    q_simple = ' '.join(w for w in q.split() if w not in _FILLER_WORDS)
+    q_simple = re.sub(r'\s+', ' ', q_simple).strip()
 
     best_answer = None
     best_match_len = 0
 
+    # Try matching against the original query and variants
     for pattern, answer in entries:
-        m = pattern.search(q)
-        if m:
-            match_len = len(m.group(0))
-            if match_len > best_match_len:
-                best_match_len = match_len
-                best_answer = answer
+        for variant in (q, q_norm, q_simple):
+            if not variant or len(variant) < 5:
+                continue
+            m = pattern.search(variant)
+            if m:
+                match_len = len(m.group(0))
+                if match_len > best_match_len:
+                    best_match_len = match_len
+                    best_answer = answer
 
     return best_answer
 

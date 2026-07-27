@@ -71,6 +71,17 @@ _UNCOUNTABLE_NOUNS = {
     "time", "space", "music", "furniture", "equipment",
     "research", "advice", "news", "weather", "homework",
     "traffic", "pollution", "progress", "poetry", "fiction",
+    # Scientific phenomena / concepts that should use "it", not inferred gender
+    "synesthesia", "synesthesia", "photosynthesis", "respiration",
+    "bioluminescence", "fluorescence", "phosphorescence",
+    "stoicism", "epicureanism", "existentialism", "nihilism",
+    "absurdism", "determinism", "fatalism", "materialism",
+    "dualism", "monism", "empiricism", "rationalism",
+    "romanticism", "impressionism", "expressionism", "modernism",
+    "postmodernism", "surrealism", "cubism", "dadaism",
+    "quantum mechanics", "classical mechanics",
+    "thermodynamics", "electromagnetism",
+    "consciousness", "awareness","
 }
 
 # Pronoun indicator words (for algorithmic inference from text)
@@ -163,6 +174,18 @@ def _infer_gender_from_text(entity_name: str, source_text: str) -> Optional[str]
     name_lower = entity_name.lower().strip()
     if " and " in name_lower or " & " in name_lower:
         return None  # Compound subject is plural (they)
+
+    # Only infer gender for clear person names (multi-word capitalized names).
+    # Scientific concepts, phenomena, and single-word topics should always
+    # use "it" as pronoun to avoid false gender inference from source text
+    # that uses "he" generically (e.g., Wikipedia articles often say "he/she").
+    name_words = entity_name.strip().split()
+    if len(name_words) < 2:
+        # Single word names ("Synesthesia", "Stoicism") are not persons
+        return None
+    if not all(w[0].isupper() for w in name_words if w):
+        # Not a proper name (not all words capitalized)
+        return None
 
 
     import re

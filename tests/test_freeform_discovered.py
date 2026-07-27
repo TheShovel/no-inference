@@ -23,223 +23,153 @@ def check(n, c, d=""):
     if c: _p += 1; print(f"    \u2713 {n}")
     else: _f += 1; print(f"    \u2717 {n}" + (f"\n        {d}" if d else ""))
 
-def test_discovered_why_do_we_dream_in_stories_instead_of_ra():
-    """Auto-discovered: The response ends abruptly in the middle of a word and sentence."""
+def test_discovered_why_do_some_people_have_such_strong_nost():
+    """Auto-discovered: The assistant defines nostalgia but fails to address the core of the user's ques"""
     cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("Why do we dream in stories instead of random images?", "", "", "factual", cfg)
-    check(
-        "response should not contain \"One theory suggests that dreams evol\"",
-        "One theory suggests that dreams evol" not in response,
-        f"Found problematic text in response: {response[:150]}"
-    )
-
-def test_discovered_why_do_we_dream_in_stories_instead_of_ra_1():
-    """Auto-discovered: The assistant explains why we dream, but fails to directly answer the specific u"""
-    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("Why do we dream in stories instead of random images?", "", "", "factual", cfg)
+    response = naturalize("Why do some people have such strong nostalgia for eras they never actually lived through?", "", "", "factual", cfg)
     check(
         "response should not contain \"The entire response\"",
         "The entire response" not in response,
         f"Found problematic text in response: {response[:150]}"
     )
 
-def test_discovered_how_did_people_actually_navigate_the_ope():
-    """Auto-discovered: The response does not answer the question about open ocean navigation; it define"""
+def test_discovered_how_does_a_quantum_computer_actually_dif():
+    """Auto-discovered: The response cuts off mid-sentence at the very end."""
     cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("How did people actually navigate the open ocean before the invention of the compass?", "", "", "factual", cfg)
+    response = naturalize("How does a quantum computer actually differ from a classical one?", "", "", "factual", cfg)
     check(
-        "response should not contain \"An invention is a unique or novel device\"",
-        "An invention is a unique or novel device..." not in response,
+        "response should not contain \"Such tasks are not necessarily useful fo\"",
+        "Such tasks are not necessarily useful for \"" not in response,
         f"Found problematic text in response: {response[:150]}"
     )
 
-def test_discovered_how_did_people_actually_navigate_the_ope_3():
-    """Auto-discovered: The response is completely irrelevant to the user prompt."""
+def test_discovered_what_causes_the_uncanny_valley_effect_wh():
+    """Auto-discovered: The assistant defines the effect but does not explain the causes (e.g., cognitiv"""
     cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("How did people actually navigate the open ocean before the invention of the compass?", "", "", "factual", cfg)
+    response = naturalize("What causes the \"uncanny valley\" effect when looking at CGI humans?", "", "", "factual", cfg)
+    check(
+        "response should not contain \"The uncanny valley effect is a hypothesi\"",
+        "The uncanny valley effect is a hypothesized psychological and aesthetic relation" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_what_is_the_philosophical_difference_bet():
+    """Auto-discovered: The assistant defines the two terms separately but never explicitly explains the"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("What is the philosophical difference between nihilism and existentialism?", "", "", "factual", cfg)
     check(
         "response should not contain \"The entire response\"",
         "The entire response" not in response,
         f"Found problematic text in response: {response[:150]}"
     )
 
-def test_discovered_what_would_happen_to_the_earth_s_atmosph():
-    """Auto-discovered: The response ends abruptly in the middle of a sentence, leaving the thought unfi"""
+def test_discovered_why_is_the_sky_blue_on_earth_but_red_on():
+    """Auto-discovered: The assistant failed to explain why the sky is red on Mars, which was a core par"""
     cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("What would happen to the Earth's atmosphere if all the plants disappeared tomorrow?", "", "", "factual", cfg)
-    check(
-        "response should not contain \"The loss of plants would also trigger ma\"",
-        "The loss of plants would also trigger mass" not in response,
-        f"Found problematic text in response: {response[:150]}"
-    )
-
-def test_discovered_what_would_happen_to_the_earth_s_atmosph_5():
-    """Auto-discovered: The atmosphere contains a massive reservoir of oxygen (about 21%). Even without """
-    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("What would happen to the Earth's atmosphere if all the plants disappeared tomorrow?", "", "", "factual", cfg)
-    check(
-        "response should not contain \"oxygen levels could drop to dangerously \"",
-        "oxygen levels could drop to dangerously low levels for humans and animals" not in response,
-        f"Found problematic text in response: {response[:150]}"
-    )
-
-def test_discovered_tell_me_about_the_most_mysterious_unsolv():
-    """Auto-discovered: The response ends abruptly in the middle of a word and sentence."""
-    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("Tell me about the most mysterious unsolved manuscript in history.", "", "", "factual", cfg)
-    check(
-        "response should not contain \"It's hou\"",
-        "It's hou" not in response,
-        f"Found problematic text in response: {response[:150]}"
-    )
-
-def test_discovered_why_does_time_seem_to_speed_up_as_we_get():
-    """Auto-discovered: The response defines what time is rather than explaining why it seems to speed u"""
-    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("Why does time seem to speed up as we get older?", "", "", "factual", cfg)
-    check(
-        "response should not contain \"In essence, time is the continuous progr\"",
-        "In essence, time is the continuous progression..." not in response,
-        f"Found problematic text in response: {response[:150]}"
-    )
-
-def test_discovered_why_does_time_seem_to_speed_up_as_we_get_8():
-    """Auto-discovered: The response ends abruptly in the middle of a word/sentence."""
-    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("Why does time seem to speed up as we get older?", "", "", "factual", cfg)
-    check(
-        "response should not contain \"the speed of an object is the ma\"",
-        "the speed of an object is the ma" not in response,
-        f"Found problematic text in response: {response[:150]}"
-    )
-
-def test_discovered_why_does_time_seem_to_speed_up_as_we_get_9():
-    """Auto-discovered: The transition to kinematics is irrelevant to the user's question and the previo"""
-    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("Why does time seem to speed up as we get older?", "", "", "factual", cfg)
-    check(
-        "response should not contain \"In kinematics, the speed of an object is\"",
-        "In kinematics, the speed of an object is the ma" not in response,
-        f"Found problematic text in response: {response[:150]}"
-    )
-
-def test_discovered_how_does_a_noise_canceling_headphone_act():
-    """Auto-discovered: The response is a total hallucination/mismatch; it answers a question about slee"""
-    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("How does a noise-canceling headphone actually \"erase\" sound?", "", "", "factual", cfg)
-    check(
-        "response should not contain \"Simply put, somnology is the scientific \"",
-        "Simply put, somnology is the scientific study of sleep." not in response,
-        f"Found problematic text in response: {response[:150]}"
-    )
-
-def test_discovered_how_does_a_noise_canceling_headphone_act_11():
-    """Auto-discovered: The response fails to address the user's query regarding how noise-canceling hea"""
-    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("How does a noise-canceling headphone actually \"erase\" sound?", "", "", "factual", cfg)
-    check(
-        "response should not contain \"Simply put, somnology is the scientific \"",
-        "Simply put, somnology is the scientific study of sleep." not in response,
-        f"Found problematic text in response: {response[:150]}"
-    )
-
-def test_discovered_what_is_the_philosophical_argument_for_w():
-    """Auto-discovered: The response cuts off mid-sentence, leaving the thought unfinished."""
-    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("What is the philosophical argument for why there is something rather than nothing?", "", "", "factual", cfg)
-    check(
-        "response should not contain \"meaning that \"\"",
-        "meaning that \"" not in response,
-        f"Found problematic text in response: {response[:150]}"
-    )
-
-def test_discovered_what_is_the_philosophical_argument_for_w_13():
-    """Auto-discovered: The response only mentions Leibniz and a physics perspective, omitting other maj"""
-    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("What is the philosophical argument for why there is something rather than nothing?", "", "", "factual", cfg)
-    check(
-        "response should not contain \"Philosophers have offered several approa\"",
-        "Philosophers have offered several approaches." not in response,
-        f"Found problematic text in response: {response[:150]}"
-    )
-
-def test_discovered_which_city_in_the_world_has_the_most_uni():
-    """Auto-discovered: The response ignores the core of the user's query regarding 'unique architecture"""
-    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("Which city in the world has the most unique architecture?", "", "", "factual", cfg)
-    check(
-        "response should not contain \"In essence, a city is a human settlement\"",
-        "In essence, a city is a human settlement..." not in response,
-        f"Found problematic text in response: {response[:150]}"
-    )
-
-def test_discovered_which_city_in_the_world_has_the_most_uni_15():
-    """Auto-discovered: The response cuts off mid-sentence with a trailing comma and quotation mark."""
-    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("Which city in the world has the most unique architecture?", "", "", "factual", cfg)
-    check(
-        "response should not contain \"Cities generally includes extensive syst\"",
-        "Cities generally includes extensive systems for housing, transportation, sanitat" not in response,
-        f"Found problematic text in response: {response[:150]}"
-    )
-
-def test_discovered_which_city_in_the_world_has_the_most_uni_16():
-    """Auto-discovered: Subject-verb agreement error: 'Cities' (plural) requires 'include' (plural)."""
-    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("Which city in the world has the most unique architecture?", "", "", "factual", cfg)
-    check(
-        "response should not contain \"Cities generally includes\"",
-        "Cities generally includes" not in response,
-        f"Found problematic text in response: {response[:150]}"
-    )
-
-def test_discovered_how_do_fungi_communicate_with_each_other():
-    """Auto-discovered: The assistant claims a lack of information on a widely known biological process """
-    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("How do fungi communicate with each other underground?", "", "", "factual", cfg)
-    check(
-        "response should not contain \"I don't have reliable details on that ye\"",
-        "I don't have reliable details on that yet." not in response,
-        f"Found problematic text in response: {response[:150]}"
-    )
-
-def test_discovered_why_is_it_that_some_songs_can_instantly():
-    """Auto-discovered: The assistant ignores the core of the prompt (music/songs triggering memories) a"""
-    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("Why is it that some songs can instantly trigger a vivid memory from years ago?", "", "", "factual", cfg)
+    response = naturalize("Why is the sky blue on Earth but red on Mars?", "", "", "factual", cfg)
     check(
         "response should not contain \"The entire response\"",
         "The entire response" not in response,
         f"Found problematic text in response: {response[:150]}"
     )
 
-def test_discovered_why_is_it_that_some_songs_can_instantly_19():
-    """Auto-discovered: This is a sentence fragment lacking a subject and a verb."""
+def test_discovered_how_do_i_handle_api_errors_using_try_exc():
+    """Auto-discovered: The response is entirely irrelevant to the user's question about Python try-exce"""
     cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("Why is it that some songs can instantly trigger a vivid memory from years ago?", "", "", "factual", cfg)
+    response = naturalize("How do I handle API errors using try-except blocks in Python?", "", "", "factual", cfg)
     check(
-        "response should not contain \"Usually described as forgetfulness or a \"",
-        "Usually described as forgetfulness or a disorder such as amnesia." not in response,
+        "response should not contain \"In JavaScript, there are several ways to\"",
+        "In JavaScript, there are several ways to merge two arrays." not in response,
         f"Found problematic text in response: {response[:150]}"
     )
 
-def test_discovered_why_is_it_that_some_songs_can_instantly_20():
-    """Auto-discovered: The tone is overly academic and robotic, sounding like a dictionary entry rather"""
+def test_discovered_how_do_i_handle_api_errors_using_try_exc_6():
+    """Auto-discovered: The response contains no information regarding Python, API errors, or try-except"""
     cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("Why is it that some songs can instantly trigger a vivid memory from years ago?", "", "", "factual", cfg)
+    response = naturalize("How do I handle API errors using try-except blocks in Python?", "", "", "factual", cfg)
     check(
-        "response should not contain \"Simply put, memory is the faculty of the\"",
-        "Simply put, memory is the faculty of the mind" not in response,
+        "response should not contain \"The entire response\"",
+        "The entire response" not in response,
         f"Found problematic text in response: {response[:150]}"
     )
 
-def test_discovered_why_is_it_that_some_songs_can_instantly_21():
-    """Auto-discovered: The transition 'On top of that' is used incorrectly to connect two slightly diff"""
+def test_discovered_what_causes_the_phenomenon_of_phantom_li():
+    """Auto-discovered: The assistant claims ignorance of a well-documented medical phenomenon and fails"""
     cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("Why is it that some songs can instantly trigger a vivid memory from years ago?", "", "", "factual", cfg)
+    response = naturalize("What causes the phenomenon of \"phantom limb\" pain?", "", "", "factual", cfg)
     check(
-        "response should not contain \"On top of that, it is the retention of i\"",
-        "On top of that, it is the retention of information" not in response,
+        "response should not contain \"I'm not sure about that.\"",
+        "I'm not sure about that." not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_how_to_create_a_responsive_grid_layout_u():
+    """Auto-discovered: The response provides information about JavaScript array merging instead of CSS """
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("How to create a responsive grid layout using CSS Grid?", "", "", "factual", cfg)
+    check(
+        "response should not contain \"In JavaScript, there are several ways to\"",
+        "In JavaScript, there are several ways to merge two arrays." not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_how_to_create_a_responsive_grid_layout_u_9():
+    """Auto-discovered: The response contains zero information regarding CSS Grid or responsive web desi"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("How to create a responsive grid layout using CSS Grid?", "", "", "factual", cfg)
+    check(
+        "response should not contain \"The entire response\"",
+        "The entire response" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_why_is_the_platypus_such_a_biological_an():
+    """Auto-discovered: The first two paragraphs are generic definitions of sex and biology that are com"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Why is the platypus such a biological anomaly?", "", "", "factual", cfg)
+    check(
+        "response should not contain \"Sex is the phenotypic trait... Biology i\"",
+        "Sex is the phenotypic trait... Biology is the scientific study of life..." not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_why_is_the_platypus_such_a_biological_an_11():
+    """Auto-discovered: The response describes the platypus but doesn't explicitly explain *why* these t"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Why is the platypus such a biological anomaly?", "", "", "factual", cfg)
+    check(
+        "response should not contain \"The platypus... is a semiaquatic, egg-la\"",
+        "The platypus... is a semiaquatic, egg-laying mammal" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_why_is_the_platypus_such_a_biological_an_12():
+    """Auto-discovered: The response cuts off mid-sentence at the very end."""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Why is the platypus such a biological anomaly?", "", "", "factual", cfg)
+    check(
+        "response should not contain \"The platypus (Ornithorhynchus anatinus),\"",
+        "The platypus (Ornithorhynchus anatinus), sometimes referred to as the \"" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_what_is_the_most_efficient_way_to_implem():
+    """Auto-discovered: The response is entirely irrelevant to the user's prompt regarding Binary Search"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("What is the most efficient way to implement a binary search tree?", "", "", "factual", cfg)
+    check(
+        "response should not contain \"In JavaScript, there are several ways to\"",
+        "In JavaScript, there are several ways to merge two arrays." not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_what_is_the_most_efficient_way_to_implem_14():
+    """Auto-discovered: The response contains zero information about Binary Search Trees, their efficien"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("What is the most efficient way to implement a binary search tree?", "", "", "factual", cfg)
+    check(
+        "response should not contain \"The entire response\"",
+        "The entire response" not in response,
         f"Found problematic text in response: {response[:150]}"
     )
 

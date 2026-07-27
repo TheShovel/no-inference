@@ -1,0 +1,16 @@
+[
+    {
+        "q": [
+            "bubble sort in Python",
+            "python bubble sort",
+            "implement bubble sort in Python",
+            "how to implement bubble sort in Python",
+            "bubble sort algorithm Python",
+            "basic bubble sort in Python",
+            "bubble sort python code",
+            "python sorting algorithm bubble sort",
+            "bubble sort implementation python"
+        ],
+        "a": "Bubble sort is a simple sorting algorithm that repeatedly steps through a list, compares adjacent elements, and swaps them if they are in the wrong order. Here's how to implement it in Python:\n\n```python\ndef bubble_sort(arr):\n    \"\"\"Sort a list using bubble sort algorithm.\"\"\"\n    n = len(arr)\n    # Traverse through all array elements\n    for i in range(n):\n        # Flag to optimize: if no swaps, list is already sorted\n        swapped = False\n        # Last i elements are already in place\n        for j in range(0, n - i - 1):\n            # Compare adjacent elements\n            if arr[j] > arr[j + 1]:\n                # Swap if they are in wrong order\n                arr[j], arr[j + 1] = arr[j + 1], arr[j]\n                swapped = True\n        # If no swaps occurred, array is sorted\n        if not swapped:\n            break\n    return arr\n\n# Example usage:\nnumbers = [64, 34, 25, 12, 22, 11, 90]\nsorted_numbers = bubble_sort(numbers)\nprint(sorted_numbers)  # [11, 12, 22, 25, 34, 64, 90]\n```\n\nBubble sort has a time complexity of O(n²) in the average and worst case, making it inefficient for large datasets. However, it has O(n) best-case time complexity when the list is already sorted (with the optimization flag). It is a stable sorting algorithm and uses O(1) extra space. While not practical for production use, bubble sort is excellent for educational purposes to understand the fundamentals of sorting algorithms and algorithm analysis."
+    }
+]

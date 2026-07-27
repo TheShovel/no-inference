@@ -1,31 +1,19 @@
 [
     {
         "q": [
-            "How do noise-canceling headphones actually block out sound?",
-            "How does a noise-canceling headphone actually block out sound?",
-            "How does a noise-canceling headphone actually block out sound",
-            "How does a noise-canceling headphone block out sound?",
-            "How do noise-canceling headphones block out sound?",
-            "How does a noise-canceling headphone block out sound?",
-            "How does a noise-canceling headphone actually erase sound?",
-            "How does a noise-canceling headphone actually erase sound",
-            "How does a noise-canceling headphone erase sound?",
-            "How do noise-canceling headphones erase sound?",
-            "How does a noise-canceling headphone actually cancel sound?",
-            "How do noise-canceling headphones work?",
-            "How does active noise cancellation work?",
-            "How do noise-canceling headphones cancel sound?",
-            "What is active noise control?",
-            "How do ANC headphones work?"
+            "noise-canceling headphone",
+            "how does noise-canceling work",
+            "how do noise cancelling headphones work",
+            "noise cancellation",
+            "how does a noise-canceling headphone erase sound",
+            "how does noise canceling actually work",
+            "active noise cancellation explained",
+            "how do noise cancelling headphones actually work",
+            "noise canceling technology",
+            "active noise control",
+            "how do noise canceling headphones erase noise",
+            "noise cancellation explained simply"
         ],
-        "a": "Noise-canceling headphones use a technology called active noise control (ANC) to reduce unwanted ambient sounds. The process works in three steps: first, external microphones detect incoming sound waves; second, a digital signal processor analyzes these waves and generates an 'anti-noise' wave that is the exact inverse (180 degrees out of phase) of the original sound; third, this anti-noise wave is played through the headphones' speakers, where it combines with the original sound wave and cancels it out through a process called destructive interference. This is most effective for continuous low-frequency sounds like airplane engines, air conditioners, or traffic noise. For higher-frequency sounds, noise-canceling headphones also rely on passive noise isolation — the physical seal of the ear cups blocking sound from entering. The anti-noise wave must be generated in real-time, with the system continuously monitoring and adjusting to changing ambient sounds. Some advanced systems use multiple microphones and machine learning to predict and cancel noise more effectively. While active noise cancellation can reduce ambient noise by 15-30 decibels, it cannot eliminate all sound, particularly sudden, high-frequency noises like voices or door slams."
-    },
-    {
-        "q": [
-            "What is active noise cancellation?",
-            "How does ANC work?",
-            "What is destructive interference in sound?"
-        ],
-        "a": "Active noise cancellation (ANC) works by detecting ambient sound waves with microphones, generating an inverse 'anti-noise' wave that is 180 degrees out of phase with the original sound, and playing it through the headphones to cancel the noise through destructive interference. This works best for low-frequency, continuous sounds like airplane engines."
+        "a": "Noise-canceling headphones work using a technology called active noise control (ANC). They have tiny microphones on the outside of the earcups that pick up ambient noise, and a digital signal processor (DSP) analyzes the incoming sound waves in real time. The electronics generate an identical sound wave that is precisely 180 degrees out of phase (inverted) with the ambient noise. When the original noise wave and the inverted wave meet in your ear, they undergo destructive interference and cancel each other out. This is because sound waves are pressure waves: a peak in one wave cancels a trough in the other. ANC is most effective at low frequencies (like engine hums, airplane noise, and fan sounds) because these are constant and predictable. Higher-frequency sounds (like human voices or sudden noises) are harder to cancel because they change too quickly for the electronics to respond. For these, noise-canceling headphones also use passive noise isolation: the physical materials of the earcups (foam, padding, thick plastic) block sound waves from reaching your ear. The combination of active noise cancellation for low-frequency noise and passive isolation for higher frequencies is what makes these headphones so effective at creating a quiet listening environment."
     }
 ]

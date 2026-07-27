@@ -137,13 +137,25 @@ def realize_fact(
         res = upper_first(res)
         # Fix verb agreement in raw text where subject is clearly plural but verb is singular
         # This handles cases like "Cities generally includes" -> "Cities generally include"
+        # Also handles any irregular verb form for plural subjects
+        _PLURAL_SUBJECTS = '|'.join([
+            'Cities', 'Countries', 'Buildings', 'Mountains', 'Rivers', 'Lakes',
+            'Oceans', 'Seas', 'Islands', 'Plants', 'Animals', 'Humans',
+            'People', 'Children', 'Women', 'Men', 'Cultures', 'Languages',
+            'Nations', 'States', 'Cities', 'Villages', 'Towns', 'Regions',
+            'Zones', 'Areas', 'Districts', 'Provinces', 'Territories',
+        ])
         _plural_subj_verbs = [
-            (r'\b(Cities|Countries|Buildings|Mountains|Rivers|Lakes|Oceans|Seas|Islands|Plants|Animals|Humans|People|Children|Women|Men)\s+\w+\s+includes\b',
+            (rf'\b({_PLURAL_SUBJECTS})\s+\w+\s+includes\b',
              lambda m: m.group(0).replace(' includes', ' include')),
-            (r'\b(Cities|Countries|Buildings|Mountains|Rivers|Lakes|Oceans|Seas|Islands|Plants|Animals|Humans|People|Children|Women|Men)\s+\w+\s+contains\b',
+            (rf'\b({_PLURAL_SUBJECTS})\s+\w+\s+contains\b',
              lambda m: m.group(0).replace(' contains', ' contain')),
-            (r'\b(Cities|Countries|Buildings|Mountains|Rivers|Lakes|Oceans|Seas|Islands|Plants|Animals|Humans|People|Children|Women|Men)\s+\w+\s+has\b',
+            (rf'\b({_PLURAL_SUBJECTS})\s+\w+\s+has\b',
              lambda m: m.group(0).replace(' has', ' have')),
+            (rf'\b({_PLURAL_SUBJECTS})\s+\w+\s+is\b',
+             lambda m: m.group(0).replace(' is', ' are')),
+            (rf'\b({_PLURAL_SUBJECTS})\s+\w+\s+was\b',
+             lambda m: m.group(0).replace(' was', ' were')),
         ]
         for pattern, repl in _plural_subj_verbs:
             res = re.sub(pattern, repl, res)

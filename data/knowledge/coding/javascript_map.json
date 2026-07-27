@@ -1,0 +1,25 @@
+[
+    {
+        "q": [
+            "map function JavaScript",
+            "how to use map function in JavaScript",
+            "javascript map function",
+            "array map javascript",
+            "javascript array map example",
+            "how does map work in JavaScript",
+            "map array method javascript",
+            "javascript map array transform",
+            "use map to transform list JavaScript",
+            "javascript map method",
+            "map function to transform a list in JavaScript",
+            "use the map function in javascript",
+            "use map in javascript to transform",
+            "map to transform data javascript",
+            "javascript map transform array",
+            "use map javascript",
+            "how to use map javascript",
+            "map function to transform data"
+        ],
+        "a": "The `map()` method in JavaScript creates a new array by transforming every element in an existing array using a callback function. It does not modify the original array:\n\n```javascript\n// Basic example: double each number\nconst numbers = [1, 2, 3, 4, 5];\nconst doubled = numbers.map(num => num * 2);\nconsole.log(doubled); // [2, 4, 6, 8, 10]\nconsole.log(numbers); // [1, 2, 3, 4, 5] (original unchanged)\n\n// Transform objects: extract property\nconst users = [\n  { name: 'Alice', age: 30 },\n  { name: 'Bob', age: 25 },\n  { name: 'Charlie', age: 35 }\n];\nconst names = users.map(user => user.name);\nconsole.log(names); // ['Alice', 'Bob', 'Charlie']\n\n// With index parameter\nconst withIndex = numbers.map((num, index) => `${index}: ${num}`);\nconsole.log(withIndex); // ['0: 1', '1: 2', '2: 3', '3: 4', '4: 5']\n\n// Chaining: map then filter\nconst result = numbers\n  .map(n => n * 2)\n  .filter(n => n > 5);\nconsole.log(result); // [6, 8, 10]\n```\n\nThe callback function receives three arguments: the current element, the index, and the original array. Use arrow functions (`() =>`) for concise syntax. `map()` is ideal for transforming data without side effects and is a fundamental tool in functional JavaScript programming alongside `filter()` and `reduce()`."
+    }
+]

@@ -1,0 +1,24 @@
+[
+    {
+        "q": [
+            "list comprehension",
+            "list comprehension in Python",
+            "python list comprehension",
+            "how to use list comprehension in Python",
+            "list comprehension python example",
+            "python list comprehension filter",
+            "use a list comprehension to filter data",
+            "list comprehension filter python",
+            "python list comprehension syntax",
+            "python list comprehension vs for loop",
+            "how does list comprehension work in Python",
+            "list comprehension python",
+            "list comprehension to filter data",
+            "comprehension python",
+            "filter data using list comprehension",
+            "filter with list comprehension python",
+            "python list comprehension examples"
+        ],
+        "a": "List comprehensions in Python provide a concise way to create lists by applying an expression to each item in an iterable, optionally filtering with a condition:\n\n```python\n# Basic syntax: [expression for item in iterable if condition]\n\n# Square each number\nsquares = [x**2 for x in range(10)]\n# [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]\n\n# Filter even numbers\nevens = [x for x in range(20) if x % 2 == 0]\n# [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]\n\n# Filter with transformation\nnegative_squares = [x**2 for x in range(-5, 6) if x < 0]\n# [25, 16, 9, 4, 1]\n\n# Nested list comprehension (flatten a matrix)\nmatrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\nflat = [num for row in matrix for num in row]\n# [1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n# Dictionary comprehension\nsquares_dict = {x: x**2 for x in range(5)}\n# {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}\n\n# Set comprehension\nunique_lengths = {len(word) for word in ['hello', 'world', 'python', 'code']}\n# {3, 4, 5, 6}\n```\n\nList comprehensions are generally faster than manual for-loops because they are optimized at the C level in CPython. They are best used for simple transformations and filtering. For complex operations with side effects, regular for-loops are preferred for readability. Generator expressions (using parentheses instead of brackets) create lazy iterators instead of building the full list in memory."
+    }
+]
