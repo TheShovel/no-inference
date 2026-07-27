@@ -1,147 +1,156 @@
 [
-  {
-    "q": [
-      "What is a black hole?",
-      "How would you define a black hole?",
-      "What exactly is a black hole in space?"
-    ],
-    "a": "A black hole is a region of space where gravity is so intense that nothing—not even light—can escape its pull. This happens because a massive amount of matter has been squeezed into an incredibly tiny space, creating a gravitational field so strong that it warps the fabric of spacetime around it."
-  },
-  {
-    "q": [
-      "What creates a black hole?",
-      "How does a star become a black hole?"
-    ],
-    "a": "Most black holes form from the remnants of massive stars. When a star about 20 times the mass of our Sun runs out of fuel, it can no longer support its own weight. The core collapses inward violently, triggering a supernova explosion and leaving behind an ultra-dense core that collapses into a black hole."
-  },
-  {
-    "q": [
-      "What is the event horizon?",
-      "What happens at the edge of a black hole?",
-      "What is the point of no return in a black hole?"
-    ],
-    "a": "The event horizon is the theoretical boundary surrounding a black hole. Once an object or light crosses this threshold, the gravitational pull is so overwhelming that escape becomes physically impossible. It is effectively the 'point of no return' for anything entering the black hole."
-  },
-  {
-    "q": [
-      "What is spaghettification?",
-      "What happens to a person falling into a black hole?",
-      "Why is it called spaghettification?"
-    ],
-    "a": "Spaghettification is the process where an object is stretched vertically and compressed horizontally by extreme tidal forces. Because the gravity at your feet would be significantly stronger than the gravity at your head, your body would be pulled into a long, thin strand—much like a noodle—as you fall toward the singularity."
-  },
-  {
-    "q": [
-      "What is a singularity?",
-      "What is at the center of a black hole?",
-      "What is the singularity in a black hole?"
-    ],
-    "a": "The singularity is the very center of a black hole, where all the matter of the collapsed star has been crushed into a point of infinite density and zero volume. At this point, our current understanding of physics and general relativity breaks down because the curvature of spacetime becomes infinite."
-  },
-  {
-    "q": [
-      "What is the difference between a stellar-mass and a supermassive black hole?",
-      "How do different types of black holes differ?",
-      "What are the various sizes of black holes?"
-    ],
-    "a": "Stellar-mass black holes are small (typically 5 to several dozen times the mass of the Sun) and form from single collapsing stars. Supermassive black holes are millions or billions of times more massive than the Sun and are usually found at the centers of galaxies, like Sagittarius A* at the center of our Milky Way."
-  },
-  {
-    "q": [
-      "Can we see black holes if they don't emit light?",
-      "How do astronomers find black holes?",
-      "How do we detect things that are invisible?"
-    ],
-    "a": "While we can't see the black hole itself, we see its effect on nearby matter. Astronomers look for accretion disks—swirling clouds of gas and dust that heat up and emit X-rays as they spiral inward. We also observe stars orbiting an invisible, massive object, which reveals the black hole's location."
-  },
-  {
-    "q": [
-      "What is Hawking Radiation?",
-      "Do black holes eventually disappear?",
-      "How do black holes evaporate?"
-    ],
-    "a": "Proposed by physicist Stephen Hawking in 1974, Hawking Radiation suggests that black holes aren't completely black but emit tiny amounts of radiation due to quantum effects near the event horizon. Over unimaginably long periods, this causes the black hole to lose mass and eventually evaporate entirely."
-  },
-  {
-    "q": [
-      "What is the first image of a black hole?",
-      "When was the first photo of a black hole taken?",
-      "Who took the first picture of a black hole?"
-    ],
-    "a": "The first direct image of a black hole's shadow was captured by the Event Horizon Telescope (EHT) and released in April 2019. It showed the supermassive black hole M87* in the center of the Messier 87 galaxy, appearing as a glowing ring of gas surrounding a dark center."
-  },
-  {
-    "q": [
-      "Would the Sun ever become a black hole?",
-      "Can our Sun turn into a black hole?",
-      "Is the Sun massive enough to collapse into a black hole?"
-    ],
-    "a": "No, our Sun is far too small. To become a black hole, a star needs to be much more massive. Instead, in about 5 billion years, the Sun will expand into a red giant and eventually shrink into a white dwarf—a dense, glowing ember—but it will never have enough gravity to collapse into a black hole."
-  },
-  {
-    "q": [
-      "What is a black hole? How does it work?"
-    ],
-    "a": "A black hole is an extremely dense and compact object in space. It has such a strong gravitational pull that nothing, including light, can escape its pull. The stronger the gravity of a black hole, the harder it is to predict where it will go or how it forms."
-  },
-  {
-    "q": [
-      "How does a black hole work? What makes it unique?"
-    ],
-    "a": "A black hole works by drawing in matter and radiation from a large mass, like a star. It has such a strong gravitational pull that nothing can escape its gravity, including light. This is known as Hawking radiation."
-  },
-  {
-    "q": [
-      "How are black holes formed in stars?"
-    ],
-    "a": "Black holes are often formed when a star collapses under its own gravity. The amount of energy released during this process is so intense that it forms a black hole. It's important to note that black holes can also be created through the expansion and contraction of interstellar gas clouds or other merging processes."
-  },
-  {
-    "q": [
-      "What are some key features of black holes in physics?"
-    ],
-    "a": "Key features include: 1) A black hole has a strong gravitational pull; 2) It is made of matter, not light, so it can't be seen directly; 3) The presence of matter and radiation at the event horizon indicates that the black hole is not a normal star."
-  },
-  {
-    "q": [
-      "What are some applications of black holes in technology?"
-    ],
-    "a": "Black holes have been the subject of much research in various fields, including astronomy, physics, and even space exploration. Some potential applications include: 1) As a means to test theoretical models; 2) To study the behavior of particles at the smallest scales."
-  },
-  {
-    "q": [
-      "What are black holes?"
-    ],
-    "a": "Black holes are regions of space where the gravitational pull is so strong that nothing can escape. They exist because they are too far from matter and light to be contained by their own gravity, meaning anything near them will fall towards the center."
-  },
-  {
-    "q": [
-      "How do black holes work?"
-    ],
-    "a": "Black holes form when a massive object like a star collapses under its own gravity. This process leads to regions of space where the gravitational pull is so intense that nothing can escape, including light and matter."
-  },
-  {
-    "q": [
-      "What happens to objects near a black hole?"
-    ],
-    "a": "Objects approaching a black hole are pulled in by their gravity but not slowed down or stopped. They may be deflected from their path around the black hole or caught by tidal forces."
-  },
-  {
-    "q": [
-      "How did black holes form?"
-    ],
-    "a": "Black holes can form through several mechanisms, including star mergers, supernovas, and neutron stars colliding with each other. These events result in the collapse of a larger object that was once part of a star system."
-  },
-  {
-    "q": [
-      "Why are black holes important for our understanding of physics?"
-    ],
-    "a": "Black holes are crucial for our understanding of physics because they help explain various fundamental interactions such as general relativity, quantum mechanics, and even the way light behaves at its speed of light. They provide insights into how gravity affects mass-energy."
-  },
-  {
-    "q": [
-      "What are some fascinating facts about black holes?"
-    ],
-    "a": "Fascinating facts about black holes include that they can be so bright as to appear to us as a single point in the sky, that they have been observed merging with other objects in the universe through a phenomenon called gravitational lensing, and that their existence has led scientists to propose the existence of dark matter."
-  }
+    {
+        "q": [
+            "What is a black hole?",
+            "How would you define a black hole?",
+            "What exactly is a black hole in space?"
+        ],
+        "a": "A black hole is a region of space where gravity is so intense that nothing\u2014not even light\u2014can escape its pull. This happens because a massive amount of matter has been squeezed into an incredibly tiny space, creating a gravitational field so strong that it warps the fabric of spacetime around it."
+    },
+    {
+        "q": [
+            "What creates a black hole?",
+            "How does a star become a black hole?"
+        ],
+        "a": "Most black holes form from the remnants of massive stars. When a star about 20 times the mass of our Sun runs out of fuel, it can no longer support its own weight. The core collapses inward violently, triggering a supernova explosion and leaving behind an ultra-dense core that collapses into a black hole."
+    },
+    {
+        "q": [
+            "What is the event horizon?",
+            "What happens at the edge of a black hole?",
+            "What is the point of no return in a black hole?"
+        ],
+        "a": "The event horizon is the theoretical boundary surrounding a black hole. Once an object or light crosses this threshold, the gravitational pull is so overwhelming that escape becomes physically impossible. It is effectively the 'point of no return' for anything entering the black hole."
+    },
+    {
+        "q": [
+            "What is spaghettification?",
+            "What happens to a person falling into a black hole?",
+            "Why is it called spaghettification?"
+        ],
+        "a": "Spaghettification is the process where an object is stretched vertically and compressed horizontally by extreme tidal forces. Because the gravity at your feet would be significantly stronger than the gravity at your head, your body would be pulled into a long, thin strand\u2014much like a noodle\u2014as you fall toward the singularity."
+    },
+    {
+        "q": [
+            "What is a singularity?",
+            "What is at the center of a black hole?",
+            "What is the singularity in a black hole?"
+        ],
+        "a": "The singularity is the very center of a black hole, where all the matter of the collapsed star has been crushed into a point of infinite density and zero volume. At this point, our current understanding of physics and general relativity breaks down because the curvature of spacetime becomes infinite."
+    },
+    {
+        "q": [
+            "What is the difference between a stellar-mass and a supermassive black hole?",
+            "How do different types of black holes differ?",
+            "What are the various sizes of black holes?"
+        ],
+        "a": "Stellar-mass black holes are small (typically 5 to several dozen times the mass of the Sun) and form from single collapsing stars. Supermassive black holes are millions or billions of times more massive than the Sun and are usually found at the centers of galaxies, like Sagittarius A* at the center of our Milky Way."
+    },
+    {
+        "q": [
+            "Can we see black holes if they don't emit light?",
+            "How do astronomers find black holes?",
+            "How do we detect things that are invisible?"
+        ],
+        "a": "While we can't see the black hole itself, we see its effect on nearby matter. Astronomers look for accretion disks\u2014swirling clouds of gas and dust that heat up and emit X-rays as they spiral inward. We also observe stars orbiting an invisible, massive object, which reveals the black hole's location."
+    },
+    {
+        "q": [
+            "What is Hawking Radiation?",
+            "Do black holes eventually disappear?",
+            "How do black holes evaporate?"
+        ],
+        "a": "Proposed by physicist Stephen Hawking in 1974, Hawking Radiation suggests that black holes aren't completely black but emit tiny amounts of radiation due to quantum effects near the event horizon. Over unimaginably long periods, this causes the black hole to lose mass and eventually evaporate entirely."
+    },
+    {
+        "q": [
+            "What is the first image of a black hole?",
+            "When was the first photo of a black hole taken?",
+            "Who took the first picture of a black hole?"
+        ],
+        "a": "The first direct image of a black hole's shadow was captured by the Event Horizon Telescope (EHT) and released in April 2019. It showed the supermassive black hole M87* in the center of the Messier 87 galaxy, appearing as a glowing ring of gas surrounding a dark center."
+    },
+    {
+        "q": [
+            "Would the Sun ever become a black hole?",
+            "Can our Sun turn into a black hole?",
+            "Is the Sun massive enough to collapse into a black hole?"
+        ],
+        "a": "No, our Sun is far too small. To become a black hole, a star needs to be much more massive. Instead, in about 5 billion years, the Sun will expand into a red giant and eventually shrink into a white dwarf\u2014a dense, glowing ember\u2014but it will never have enough gravity to collapse into a black hole."
+    },
+    {
+        "q": [
+            "What is a black hole? How does it work?"
+        ],
+        "a": "A black hole is an extremely dense and compact object in space. It has such a strong gravitational pull that nothing, including light, can escape its pull. The stronger the gravity of a black hole, the harder it is to predict where it will go or how it forms."
+    },
+    {
+        "q": [
+            "How does a black hole work? What makes it unique?"
+        ],
+        "a": "A black hole works by drawing in matter and radiation from a large mass, like a star. It has such a strong gravitational pull that nothing can escape its gravity, including light. This is known as Hawking radiation."
+    },
+    {
+        "q": [
+            "How are black holes formed in stars?"
+        ],
+        "a": "Black holes are often formed when a star collapses under its own gravity. The amount of energy released during this process is so intense that it forms a black hole. It's important to note that black holes can also be created through the expansion and contraction of interstellar gas clouds or other merging processes."
+    },
+    {
+        "q": [
+            "What are some key features of black holes in physics?"
+        ],
+        "a": "Key features include: 1) A black hole has a strong gravitational pull; 2) It is made of matter, not light, so it can't be seen directly; 3) The presence of matter and radiation at the event horizon indicates that the black hole is not a normal star."
+    },
+    {
+        "q": [
+            "What are some applications of black holes in technology?"
+        ],
+        "a": "Black holes have been the subject of much research in various fields, including astronomy, physics, and even space exploration. Some potential applications include: 1) As a means to test theoretical models; 2) To study the behavior of particles at the smallest scales."
+    },
+    {
+        "q": [
+            "What are black holes?"
+        ],
+        "a": "Black holes are regions of space where the gravitational pull is so strong that nothing can escape. They exist because they are too far from matter and light to be contained by their own gravity, meaning anything near them will fall towards the center."
+    },
+    {
+        "q": [
+            "How do black holes work?"
+        ],
+        "a": "Black holes form when a massive object like a star collapses under its own gravity. This process leads to regions of space where the gravitational pull is so intense that nothing can escape, including light and matter."
+    },
+    {
+        "q": [
+            "What happens to objects near a black hole?"
+        ],
+        "a": "Objects approaching a black hole are pulled in by their gravity but not slowed down or stopped. They may be deflected from their path around the black hole or caught by tidal forces."
+    },
+    {
+        "q": [
+            "How did black holes form?"
+        ],
+        "a": "Black holes can form through several mechanisms, including star mergers, supernovas, and neutron stars colliding with each other. These events result in the collapse of a larger object that was once part of a star system."
+    },
+    {
+        "q": [
+            "Why are black holes important for our understanding of physics?"
+        ],
+        "a": "Black holes are crucial for our understanding of physics because they help explain various fundamental interactions such as general relativity, quantum mechanics, and even the way light behaves at its speed of light. They provide insights into how gravity affects mass-energy."
+    },
+    {
+        "q": [
+            "What are some fascinating facts about black holes?"
+        ],
+        "a": "Fascinating facts about black holes include that they can be so bright as to appear to us as a single point in the sky, that they have been observed merging with other objects in the universe through a phenomenon called gravitational lensing, and that their existence has led scientists to propose the existence of dark matter."
+    },
+    {
+        "q": [
+            "What would actually happen to a human body if it fell into a black hole?",
+            "What happens to a human body falling into a black hole?",
+            "What would happen if a person fell into a black hole?",
+            "What happens to the human body in a black hole?"
+        ],
+        "a": "If a human body fell into a stellar-mass black hole, it would be subjected to spaghettification. As the body approaches the event horizon, the gravitational difference between head and feet would stretch it vertically and compress it horizontally, turning it into a long, thin strand of matter. This happens because the gravitational force increases dramatically over small distances near a black hole. Before reaching the event horizon, the person would likely lose consciousness due to the extreme tidal forces disrupting brain function. Once past the event horizon, no escape is possible and the body would eventually be crushed at the singularity, where density becomes infinite and spacetime curvature diverges. For supermassive black holes, the tidal forces at the event horizon are weaker, so a person might survive the crossing but would still be destroyed deeper inside."
+    }
 ]

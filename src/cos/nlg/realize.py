@@ -134,7 +134,20 @@ def realize_fact(
         res = fact.obj.strip()
         if not res.endswith(('.', '!', '?')):
             res += "."
-        return upper_first(res)
+        res = upper_first(res)
+        # Fix verb agreement in raw text where subject is clearly plural but verb is singular
+        # This handles cases like "Cities generally includes" -> "Cities generally include"
+        _plural_subj_verbs = [
+            (r'\b(Cities|Countries|Buildings|Mountains|Rivers|Lakes|Oceans|Seas|Islands|Plants|Animals|Humans|People|Children|Women|Men)\s+\w+\s+includes\b',
+             lambda m: m.group(0).replace(' includes', ' include')),
+            (r'\b(Cities|Countries|Buildings|Mountains|Rivers|Lakes|Oceans|Seas|Islands|Plants|Animals|Humans|People|Children|Women|Men)\s+\w+\s+contains\b',
+             lambda m: m.group(0).replace(' contains', ' contain')),
+            (r'\b(Cities|Countries|Buildings|Mountains|Rivers|Lakes|Oceans|Seas|Islands|Plants|Animals|Humans|People|Children|Women|Men)\s+\w+\s+has\b',
+             lambda m: m.group(0).replace(' has', ' have')),
+        ]
+        for pattern, repl in _plural_subj_verbs:
+            res = re.sub(pattern, repl, res)
+        return res
 
     style = require_style(config)
     templates = _PATTERNS.get(fact.fact_type)
@@ -290,7 +303,7 @@ def realize_fact(
 
     # Also skip "known for" when the subject looks like a compound subject
     # (e.g., "Both X and Y" or "X, Y, and Z") - these need plural verbs
-    _COMPOUND_SUBJECTS = ('both', 'all', 'some', 'many', 'several', 'each', 'every')
+    _COMPOUND_SUBJECTS = ('both', 'all', 'some', 'many', 'several', 'each', 'every', 'most')
     if not _fixed_include_been and subj_lower.startswith(_COMPOUND_SUBJECTS):
         _filtered = [t for t in style_templates if "known for" not in t]
         if _filtered:

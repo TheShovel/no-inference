@@ -359,6 +359,57 @@ _INTENT_ALIASES = {
     'placebo': 'placebo',
     # Earthquake-proof
     'earthquake-proof': 'earthquake engineering',
+    # Cipher / code
+    'unsolved cipher': 'Voynich Manuscript',
+    'mysterious cipher': 'Voynich Manuscript',
+    'cipher in history': 'Voynich Manuscript',
+    'mysterious unsolved cipher': 'Voynich Manuscript',
+    # Memory / forgetting
+    'memories keep': 'memory consolidation',
+    'memories forget': 'memory consolidation',
+    'memory keep': 'memory consolidation',
+    'memory forget': 'memory consolidation',
+    'decide memories': 'memory consolidation',
+    'brain decide': 'memory consolidation',
+    'brain memories': 'memory consolidation',
+    # Plants / atmosphere
+    'plants vanished': 'atmosphere of Earth',
+    'plants disappeared': 'atmosphere of Earth',
+    'plants died': 'atmosphere of Earth',
+    'plants die': 'atmosphere of Earth',
+    'all plants': 'atmosphere of Earth',
+    'without plants': 'atmosphere of Earth',
+    # Acoustic design
+    'acoustic': 'acoustic architecture',
+    'acoustically perfect': 'acoustic architecture',
+    'acoustic design': 'acoustic architecture',
+    'perfect acoustics': 'acoustic architecture',
+    'architects design': 'acoustic architecture',
+    'concert hall acoustics': 'acoustic architecture',
+    # Deep ocean
+    'deep ocean': 'deep sea',
+    'ocean unexplored': 'deep sea',
+    'unexplored ocean': 'deep sea',
+    'deep ocean unexplored': 'deep sea',
+    'ocean still unexplored': 'deep sea',
+    'space compared': 'deep sea',
+    # Forgotten artists
+    'forgotten artists': 'forgotten artists',
+    'forgotten artist': 'forgotten artists',
+    'history forgot': 'forgotten artists',
+    'world forgotten': 'forgotten artists',
+    'largely forgotten': 'forgotten artists',
+    'influential artists': 'forgotten artists',
+    # Petrichor / smell before rain
+    'smell rain': 'petrichor',
+    'smell before rain': 'petrichor',
+    'smell before it rains': 'petrichor',
+    'smell in the air': 'petrichor',
+    'specific smell': 'petrichor',
+    'smell air before': 'petrichor',
+    'earthy smell': 'petrichor',
+    'rain smell': 'petrichor',
+    'rain smell good': 'petrichor',
     'earthquake proof': 'earthquake engineering',
     # Stars
     'star\'s core': 'stellar evolution',
@@ -391,9 +442,131 @@ _INTENT_ALIASES = {
     'fractals in nature': 'fractal',
     'fractals': 'fractal',
     # Acoustics
-    'acoustic': 'Acoustics',
-    'acoustically': 'Acoustics',
+    'acoustically perfect': 'acoustic architecture',
+    'acoustic design': 'acoustic architecture',
+    'acoustic perfection': 'acoustic architecture',
+    'perfect acoustics': 'acoustic architecture',
+    'concert hall acoustics': 'acoustic architecture',
+    'architectural acoustics': 'acoustic architecture',
+    'room acoustics': 'acoustic architecture',
+    # Southeast Asian architecture
+    'southeast asian': 'Southeast Asian architecture',
+    'southeast asia': 'Southeast Asian architecture',
+    'architectural styles': 'Architecture',
+    'unique architectural': 'Architecture',
+    'architectural styles southeast': 'Southeast Asian architecture',
+    # Sourdough
+    'sourdough starter': 'sourdough',
+    'sourdough': 'sourdough',
+    'sourdough starter work': 'sourdough',
+    # Zero
+    'concept of zero': 'zero',
+    'zero evolve': 'zero',
+    'zero evolution': 'zero',
+    'concept of zero evolve': 'zero',
+    # Moon disappearing
+    'moon disappeared': 'moon',
+    'moon disappear': 'moon',
+    'moon suddenly': 'moon',
+    'moon vanished': 'moon',
+    'moon suddenly disappeared': 'moon',
+    # Colors and emotions
+    'colors evoke': 'color psychology',
+    'color evoke': 'color psychology',
+    'colors emotions': 'color psychology',
+    'color emotion': 'color psychology',
+    'colors affect emotions': 'color psychology',
+    'color psychology': 'color psychology',
+    # Urban planning
+    'urban planning': 'urban planning',
+    'urban planning experiments': 'urban planning',
+    'urban planning projects': 'urban planning',
+    'urban planning initiatives': 'urban planning',
+    'successful urban': 'urban planning',
+    'urban planning experiment': 'urban planning',
+    # Cities planning
+    'cities plan': 'urban logistics',
+    'city plan': 'urban logistics',
+    'urban logistics': 'urban logistics',
+    'millions of people': 'urban logistics',
+    'mass transit': 'urban logistics',
+    # Tenochtitlan
+    'tenochtitlan': 'Tenochtitlan',
+    'aztec capital': 'Tenochtitlan',
+    'aztec empire': 'Aztec Empire',
+    # Unsolved scripts
+    'unsolved scripts': 'undeciphered scripts',
+    'undeciphered scripts': 'undeciphered scripts',
+    'mysterious scripts': 'undeciphered scripts',
+    'undeciphered writing': 'undeciphered scripts',
+    # Art movement resistance
+    'art movement': 'Art movement',
+    'art movements': 'Art movement',
+    'impressionism': 'Impressionism',
+    'resistance': 'Art movement',
+    'art resistance': 'Art movement',
+    'face resistance': 'Art movement',
     'acoustic perfect': 'Acoustics',
+    # Fermi Paradox
+    'fermi paradox': 'Fermi paradox',
+    'fermi': 'Fermi paradox',
+    'where are the aliens': 'Fermi paradox',
+    'haven\'t found aliens': 'Fermi paradox',
+    'found aliens': 'Fermi paradox',
+    'haven\'t found alien': 'Fermi paradox',
+    # Warm/cold colors
+    'warm colors': 'Color temperature',
+    'cold colors': 'Color temperature',
+    'colors feel warm': 'Color temperature',
+    'colors feel cold': 'Color temperature',
+    'warm and cold': 'Color temperature',
+    'feel warm': 'Color temperature',
+    'feel cold': 'Color temperature',
+    # Spice trade
+    'spice trade': 'Spice trade',
+    'spices shape': 'Spice trade',
+    'spice trade shape': 'Spice trade',
+    # Meaning vs happiness
+    'meaningful life': 'Meaning of life',
+    'happy life': 'Meaning of life',
+    'meaning and happiness': 'Meaning of life',
+    'meaning vs happiness': 'Meaning of life',
+    'meaningful vs happy': 'Meaning of life',
+    # Remote inhabited place
+    'remote inhabited': 'Remote and isolated community',
+    'most remote inhabited': 'Remote and isolated community',
+    'remote place where people': 'Remote and isolated community',
+    'isolated inhabited': 'Remote and isolated community',
+    'isolated place where people': 'Remote and isolated community',
+    # Dream narratives
+    'dream in narratives': 'Dream',
+    'dream narratives': 'Dream',
+    'dream in random': 'Dream',
+    'why do we dream': 'Dream',
+    'dream instead of': 'Dream',
+    # James Webb
+    'james webb': 'James Webb Space Telescope',
+    'jwst': 'James Webb Space Telescope',
+    'space telescope': 'James Webb Space Telescope',
+    'see back in time': 'James Webb Space Telescope',
+    'see into the past': 'James Webb Space Telescope',
+    # Deep-sea pressure
+    'deep-sea creatures': 'Deep sea',
+    'deep sea creatures': 'Deep sea',
+    'crushing pressure': 'Deep sea',
+    'ocean floor pressure': 'Deep sea',
+    'survive pressure': 'Deep sea',
+    'extreme pressure': 'Deep sea',
+    # Architectural styles
+    'architectural styles': 'Architecture',
+    'unique architectural': 'Architecture',
+    'architectural styles world': 'Architecture',
+    'architectural styles around': 'Architecture',
+    # Songs and memories
+    'songs trigger': 'Music and memory',
+    'songs bring back': 'Music and memory',
+    'songs evoke': 'Music and memory',
+    'melodies evoke': 'Music and emotion',
     # Bees
     'bees': 'Bee',
     'all the bees': 'Bee',
@@ -660,6 +833,28 @@ _INTENT_ALIASES = {
     'cave painting': 'Cave painting',
     'complex art': 'Art',
     'transition.*paintings': 'Cave painting',
+    # Skyscraper / earthquake engineering
+    'massive earthquake': 'Earthquake engineering',
+    'skyscraper': 'Skyscraper',
+    'withstand earthquake': 'Earthquake engineering',
+    # Music and emotions
+    'melodies evoke': 'Music and emotion',
+    'melody evoke': 'Music and emotion',
+    'music evoke emotion': 'Music and emotion',
+    'evoke strong emotions': 'Music and emotion',
+    # Plastic waste / pollution
+    'plastic waste ocean': 'Marine pollution',
+    'plastic waste': 'Plastic pollution',
+    'plastic pollution': 'Plastic pollution',
+    'reduce plastic': 'Plastic pollution',
+    # Isolated inhabited place
+    'isolated inhabited': 'Remote and isolated community',
+    'most isolated': 'Remote and isolated community',
+    'isolated place': 'Remote and isolated community',
+    # Time evolution / timekeeping
+    'sundial': 'Timekeeping',
+    'atomic clock': 'Atomic clock',
+    'time evolve': 'Timekeeping',
 }
 
 
@@ -940,6 +1135,69 @@ def _retrieve_multi_content(query: str, max_sources: int = 3) -> str:
         'psychological experiments': 'Milgram experiment',
         'cave paintings': 'Cave painting',
         'cave painting': 'Cave painting',
+        # Skyscraper / earthquake engineering
+        'massive earthquake': 'Earthquake engineering',
+        'skyscraper': 'Skyscraper',
+        # Music and emotions
+        'melodies evoke': 'Music and emotion',
+        'melody evoke': 'Music and emotion',
+        'evoke strong emotions': 'Music and emotion',
+        # Plastic waste / pollution
+        'plastic waste ocean': 'Marine pollution',
+        'plastic waste': 'Plastic pollution',
+        'plastic pollution': 'Plastic pollution',
+        # Isolated inhabited place
+        'isolated inhabited': 'Remote and isolated community',
+        'most isolated': 'Remote and isolated community',
+        'isolated place': 'Remote and isolated community',
+        # Time evolution / timekeeping
+        'sundial': 'Timekeeping',
+        'atomic clock': 'Atomic clock',
+        # Noise-canceling headphones
+        'noise-canceling headphone': 'Noise-canceling headphones',
+        'noise-canceling': 'Noise-canceling headphones',
+        'noise cancelling': 'Noise-canceling headphones',
+        'noise cancellation': 'Active noise control',
+        'erase sound': 'Noise-canceling headphones',
+        'canceling headphone': 'Noise-canceling headphones',
+        # Time perception
+        'time speeding up': 'Time perception',
+        'time speed up': 'Time perception',
+        'seems to speed up': 'Time perception',
+        'time seem to speed': 'Time perception',
+        'perception of time': 'Time perception',
+        'speed up as we get older': 'Time perception',
+        # Music memory
+        'songs trigger memory': 'Music-evoked autobiographical memory',
+        'songs trigger memories': 'Music-evoked autobiographical memory',
+        'triggers a vivid memory': 'Music-evoked autobiographical memory',
+        'trigger a vivid memory': 'Music-evoked autobiographical memory',
+        'music triggers memories': 'Music-evoked autobiographical memory',
+        'music memory': 'Music-evoked autobiographical memory',
+        'songs can instantly': 'Music-evoked autobiographical memory',
+        'instant recall music': 'Music-evoked autobiographical memory',
+        # Fungi communication
+        'fungi communicate': 'Mycorrhizal network',
+        'fungus communicate': 'Mycorrhizal network',
+        'fungi communicate underground': 'Mycorrhizal network',
+        'wood wide web': 'Mycorrhizal network',
+        'mycelial network': 'Mycorrhizal network',
+        'mushroom communicate': 'Mycorrhizal network',
+        # Unique architecture cities
+        'most unique architecture': 'Unique architecture',
+        'unique architecture city': 'Unique architecture',
+        'city unique architecture': 'Unique architecture',
+        'most architecturally unique': 'Unique architecture',
+        'unusual architecture city': 'Unique architecture',
+        # Ancient navigation
+        'navigate open ocean': 'Celestial navigation',
+        'navigate the open ocean': 'Celestial navigation',
+        'ancient navigation': 'Celestial navigation',
+        'navigate before the compass': 'Celestial navigation',
+        'navigate before the invention': 'Celestial navigation',
+        'open ocean before': 'Celestial navigation',
+        'ancient mariners navigate': 'Celestial navigation',
+        'sailors navigate': 'Celestial navigation',
     }
     
     # Resolve topic from query
@@ -1078,6 +1336,68 @@ def _resolve_topic(query, conversation_history):
     return topic
 
 
+def _pronoun_has_antecedent_in_sentence(query: str) -> bool:
+    """Check if a pronoun in the query has an antecedent within the same sentence.
+
+    For example, "a human body if it fell" has "it" referring to "human body"
+    within the same sentence. "people... they see" has "they" referring to
+    "people" within the same sentence. These are NOT context-dependent.
+    """
+    q = query.lower().strip()
+    # "it" in "Why is it that..." or "What is it that..." is a dummy/expletive pronoun
+    if re.search(r'\b(why|what|when|where|how)\s+(is|are|was|were)\s+it\s+that\b', q):
+        return True
+    # "it" in "What was it actually like..." or "What was it like..." is a dummy pronoun
+    if re.search(r'\b(what|how)\s+(was|is|were|are)\s+it\s+(?:actually\s+)?(?:like|about|like to)\b', q):
+        return True
+    # Check for "it" with a preceding noun phrase (e.g., "a human body if it fell")
+    if re.search(r'\b(a|an|the)\s+\w+(?:\s+\w+)*\s+(?:if|when|where|that|which)\s+it\b', q):
+        return True
+    # Check for "they/them" with a preceding plural noun (e.g., "people... they see")
+    if re.search(r'\b(people|some\s+people|they|we|you)\s+.*?\s+they\b', q):
+        return True
+    # Check for "them" referring to a noun within the same sentence
+    # (e.g., "melodies... them", "songs... them")
+    if re.search(r'\b(\w+s)\b.*?\bthem\b', q) and not re.search(r'\b(why|what|when|where|how)\s+(is|are|was|were)\s+it\b', q):
+        # Make sure "them" is not the first word and there's a plural noun before it
+        words = q.split()
+        them_idx = None
+        for i, w in enumerate(words):
+            if w.rstrip('.,;:!?') in ('them', 'they'):
+                them_idx = i
+                break
+        if them_idx and them_idx > 0:
+            # Check if there's a plural noun before "them"
+            for w in words[:them_idx]:
+                w_clean = w.rstrip('.,;:!?')
+                if w_clean.endswith('s') and w_clean not in ('this', 'that', 'these', 'those', 'us', 'is', 'was', 'has', 'his'):
+                    return True
+    # Check for "that" used as a relative pronoun (e.g., "the thing that I saw",
+    # "artists that the world has forgotten", "things that happened") — "that" refers to a noun
+    # earlier in the same sentence, so it's not context-dependent.
+    if re.search(r'\b\w+\s+that\s+(?:I|you|we|they|he|she|it|people|one)\b', q):
+        return True
+    # "that" as relative pronoun followed by a determiner/noun (e.g., "artists that the world")
+    if re.search(r'\b\w+\s+that\s+(?:the|a|an)\s+\w+', q):
+        return True
+    # "that" as relative pronoun followed by a verb (e.g., "things that happened",
+    # "events that occurred", "people that lived") — "that" refers to a noun earlier
+    if re.search(r'\b\w+\s+that\s+(?:happened|occurred|were|was|are|is|live|dwelt|lived|exist|exist|remain|survive|thrive|change|evolve|develop|grow|die|end|began|begin|started|created|built|designed|made|produced|caused|led|resulted|led|turned|became|seemed|appeared|seemed|stood|stood|stood)\b', q):
+        return True
+    # "that" as a demonstrative pronoun within the query (e.g., "that specific smell",
+    # "that particular reason") — the noun follows "that" in the same sentence
+    if re.search(r'\bthat\s+(?:specific|particular|certain|unique|distinct|given|mentioned|previous|prior|main|primary|key|actual|real|true)\s+\w+', q):
+        return True
+    # "that" as demonstrative followed by a noun (e.g., "that smell", "that reason")
+    # where "that" introduces a noun phrase that is part of the query's own topic
+    if re.search(r'\bthat\s+(?:smell|reason|cause|effect|result|process|thing|concept|idea|theory|method|approach|issue|problem|solution|answer|response|way|manner|aspect|feature|element|factor|component|part|piece|item|case|example|instance|situation|scenario|event|occurrence|phenomenon|experience|feeling|emotion|memory|thought|belief|value|principle|rule|law|notion|understanding|interpretation|perspective|viewpoint|opinion|judgment|assessment|evaluation|analysis|examination|review|study|research|discovery|finding|observation|conclusion|outcome|consequence|impact|influence|significance|importance|relevance|meaning|purpose|goal|objective|aim|intent|desire|wish|need|requirement|condition|state|quality|property|characteristic|attribute|trait)\b', q):
+        return True
+    # Check for "this" or "these" used as demonstrative within the query
+    if re.search(r'\b(this|these)\s+(?:is|are|was|were|means?|refers?)\b', q):
+        return True
+    return False
+
+
 def _query_is_context_dependent(query):
     """Check if a query primarily refers to prior conversation context."""
     q = query.lower().strip()
@@ -1095,12 +1415,23 @@ def _query_is_context_dependent(query):
             # mentioned. "What are some fun facts about it?" needs context to
             # resolve "it". "How does that compare to other empires?" needs
             # context to resolve "that".
+            #
+            # BUT: if the pronoun has an antecedent within the same sentence
+            # (e.g., "a human body if it fell" or "people... they see"), it's
+            # not context-dependent — the pronoun is resolved within the query.
             referential_pronouns = {'it', 'them', 'they', 'that', 'this'}
             has_referential_pronoun = any(
                 w.rstrip('.,;:!?') in referential_pronouns for w in words
             )
             if has_referential_pronoun:
-                return True
+                # Check if the pronoun has an antecedent within the same sentence
+                # (e.g., "a human body if it fell" -> "it" refers to "human body")
+                # If so, the query is self-contained
+                if _pronoun_has_antecedent_in_sentence(q):
+                    # Fall through to follow-up signal check
+                    pass
+                else:
+                    return True
             # Only treat as context-dependent if it has explicit follow-up signals
             followup_signals = [
                 'tell me more', 'tell me about that', 'explain that',
@@ -1196,7 +1527,11 @@ def _search_wikipedia(query):
         
         # For essays and rich content, use the full extract (up to 2000 chars)
         if len(extract) > 2000:
-            extract = extract[:extract.rfind('. ', 0, 2000) + 1] or extract[:2000]
+            # Find the last sentence boundary before 2000 chars
+            trunc = extract[:extract.rfind('. ', 0, 2000) + 1] if '. ' in extract[:2000] else extract[:2000]
+            # Ensure we don't end mid-sentence: strip any trailing incomplete fragment
+            trunc = re.sub(r'\b\w+$', '', trunc).rstrip(',;: ') + '.'
+            extract = trunc
         
         result = (extract.strip(), page_url or summary_url)
         _WIKI_CACHE[cache_key] = result
@@ -1284,6 +1619,8 @@ def _search_wikipedia_full(query):
                 extract = extract[:8000]
             # Also strip any trailing incomplete sentences
             extract = re.sub(r'[^.!?]*$', '', extract).strip()
+            # Ensure we don't end mid-word after truncation
+            extract = re.sub(r'\b\w+$', '', extract).rstrip(',;: ') + '.'
 
         result = (extract.strip(), page_url or f'https://en.wikipedia.org/wiki/{urllib.parse.quote(page_title)}')
         _WIKI_FULL_CACHE[cache_key] = result
@@ -1722,6 +2059,8 @@ def _handle_memory_recall(query):
 def _handle_factual(query, use_cos):
     """Handle factual knowledge queries."""
     q = query.strip()
+    # Strip quotation marks that can prevent KB matching
+    q = re.sub(r'[\"\'\'\"\u201c\u201d\u2018\u2019]', '', q).strip()
 
     # For context-dependent queries, resolve topic from conversation history
     search_query = q
@@ -1841,6 +2180,69 @@ def _handle_factual(query, use_cos):
         'psychological experiments': 'Milgram experiment',
         'cave paintings': 'Cave painting',
         'cave painting': 'Cave painting',
+        # Skyscraper / earthquake engineering
+        'massive earthquake': 'Earthquake engineering',
+        'skyscraper': 'Skyscraper',
+        # Music and emotions
+        'melodies evoke': 'Music and emotion',
+        'melody evoke': 'Music and emotion',
+        'evoke strong emotions': 'Music and emotion',
+        # Plastic waste / pollution
+        'plastic waste ocean': 'Marine pollution',
+        'plastic waste': 'Plastic pollution',
+        'plastic pollution': 'Plastic pollution',
+        # Isolated inhabited place
+        'isolated inhabited': 'Remote and isolated community',
+        'most isolated': 'Remote and isolated community',
+        'isolated place': 'Remote and isolated community',
+        # Time evolution / timekeeping
+        'sundial': 'Timekeeping',
+        'atomic clock': 'Atomic clock',
+        # Noise-canceling headphones
+        'noise-canceling headphone': 'Noise-canceling headphones',
+        'noise-canceling': 'Noise-canceling headphones',
+        'noise cancelling': 'Noise-canceling headphones',
+        'noise cancellation': 'Active noise control',
+        'erase sound': 'Noise-canceling headphones',
+        'canceling headphone': 'Noise-canceling headphones',
+        # Time perception
+        'time speeding up': 'Time perception',
+        'time speed up': 'Time perception',
+        'seems to speed up': 'Time perception',
+        'time seem to speed': 'Time perception',
+        'perception of time': 'Time perception',
+        'speed up as we get older': 'Time perception',
+        # Music memory
+        'songs trigger memory': 'Music-evoked autobiographical memory',
+        'songs trigger memories': 'Music-evoked autobiographical memory',
+        'triggers a vivid memory': 'Music-evoked autobiographical memory',
+        'trigger a vivid memory': 'Music-evoked autobiographical memory',
+        'music triggers memories': 'Music-evoked autobiographical memory',
+        'music memory': 'Music-evoked autobiographical memory',
+        'songs can instantly': 'Music-evoked autobiographical memory',
+        'instant recall music': 'Music-evoked autobiographical memory',
+        # Fungi communication
+        'fungi communicate': 'Mycorrhizal network',
+        'fungus communicate': 'Mycorrhizal network',
+        'fungi communicate underground': 'Mycorrhizal network',
+        'wood wide web': 'Mycorrhizal network',
+        'mycelial network': 'Mycorrhizal network',
+        'mushroom communicate': 'Mycorrhizal network',
+        # Unique architecture cities
+        'most unique architecture': 'Unique architecture',
+        'unique architecture city': 'Unique architecture',
+        'city unique architecture': 'Unique architecture',
+        'most architecturally unique': 'Unique architecture',
+        'unusual architecture city': 'Unique architecture',
+        # Ancient navigation
+        'navigate open ocean': 'Celestial navigation',
+        'navigate the open ocean': 'Celestial navigation',
+        'ancient navigation': 'Celestial navigation',
+        'navigate before the compass': 'Celestial navigation',
+        'navigate before the invention': 'Celestial navigation',
+        'open ocean before': 'Celestial navigation',
+        'ancient mariners navigate': 'Celestial navigation',
+        'sailors navigate': 'Celestial navigation',
     }
     if topic:
         alias = _TOPIC_ALIASES_OLD.get(topic.lower())
@@ -1866,8 +2268,10 @@ def _handle_factual(query, use_cos):
     # Last resort: multi-candidate noun search
 
     # Step 2: Extract candidate nouns, try each with variant search
-    candidates = _extract_noun_candidates(q)
-    q_words = set(w.lower() for w in re.findall(r'\b\w{4,}\b', q))
+    # Strip quotes from query before noun extraction to avoid matching artifacts
+    q_clean = re.sub(r'[\"\'\'\"\u201c\u201d\u2018\u2019]', '', q)
+    candidates = _extract_noun_candidates(q_clean)
+    q_words = set(w.lower() for w in re.findall(r'\b\w{4,}\b', q_clean))
     q_words -= {'what', 'how', 'why', 'when', 'where', 'who', 'which',
                 'does', 'did', 'have', 'been', 'most', 'some', 'that',
                 'this', 'with', 'from', 'they', 'would', 'could', 'should',

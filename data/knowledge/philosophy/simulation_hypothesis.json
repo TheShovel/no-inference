@@ -1,0 +1,20 @@
+[
+    {
+        "q": [
+            "What is the philosophical argument for the existence of a simulation?",
+            "What is the simulation hypothesis?",
+            "What are the arguments for the simulation hypothesis?",
+            "Why might we be living in a simulation?",
+            "What is Nick Bostrom's simulation argument?"
+        ],
+        "a": "The simulation hypothesis, popularized by philosopher Nick Bostrom in 2003, argues that at least one of the following three propositions is true: (1) civilizations never reach the technological capability to run 'ancestor simulations' (detailed simulations of past humans); (2) civilizations that reach that capability almost never choose to run such simulations; or (3) we are almost certainly living in a computer simulation. Bostrom's argument is based on the premise that if advanced civilizations can run vast numbers of simulations, the simulated minds would vastly outnumber 'real' minds, making it statistically more likely that we are in a simulation. Supporting arguments include the rapid advancement of computing power, the existence of quantum mechanics phenomena that seem to exhibit computational properties (such as wave function collapse), and the apparent 'pixelation' of space-time at the Planck length scale. Critics argue that the premise of running vast simulations may be physically impossible or that the assumptions about posthuman civilizations are speculative. Physicists have also proposed potential tests for the simulation hypothesis, such as looking for lattice artifacts in cosmic ray distributions or energy limitations in particle accelerators. While the hypothesis is unproven, it raises profound questions about the nature of reality, consciousness, and our understanding of the universe."
+    },
+    {
+        "q": [
+            "What is the simulation argument?",
+            "Are we living in a simulation?",
+            "What is the Bostrom simulation hypothesis?"
+        ],
+        "a": "Nick Bostrom's simulation argument posits that at least one of these must be true: (1) civilizations never reach the capability to run detailed ancestor simulations; (2) they reach it but choose not to run them; or (3) we are almost certainly living in a simulation. The argument suggests that if advanced civilizations can run vast numbers of simulations, simulated minds would outnumber real ones, making it statistically likely we are simulated."
+    }
+]

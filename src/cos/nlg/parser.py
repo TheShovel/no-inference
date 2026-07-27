@@ -37,7 +37,8 @@ _SVO_PATTERN = re.compile(
     r'remain[s]?|stay[s]?|keep[s]?|last[s]?|continue[s]?|span[s]?|cover[s]?|weigh[s]?|'
     r'protect[s]?|stabiliz(?:e|es|ed)|emphasiz(?:e|es|ed)|support[s]?|consum(?:e|es|ed)|'
     r'invad(?:e|es|ed)|attack(?:ed|s)|surrender(?:ed|s)|enter(?:ed|s)|mark(?:ed|s)|die[s|d]|'
-    r'begin[s]?|start[s]?|stop[s]?|end[s]?|finish[s]?)\s+'
+    r'begin[s]?|start[s]?|stop[s]?|end[s]?|finish[s]?|'
+    r'describe[s]?|described|describing)\s+'
     r'(.+)',
     re.IGNORECASE,
 )
@@ -112,6 +113,75 @@ def _detect_tense(text: str) -> str:
 
 
 # ═════════════════════════════════════════════════════════════════════════════
+# Fragment Detection
+# ═════════════════════════════════════════════════════════════════════════════
+
+# Words that indicate a sentence fragment when at the start
+_FRAGMENT_START_WORDS = {
+    'but', 'and', 'so', 'or', 'yet', 'however', 'therefore', 'thus',
+    'hence', 'moreover', 'furthermore', 'additionally', 'meanwhile',
+    'nevertheless', 'nonetheless', 'consequently', 'accordingly',
+    'otherwise', 'instead', 'anyway', 'anyhow', 'anywhere',
+}
+
+
+def _is_fragment(sentence: str) -> bool:
+    """Detect sentence fragments that should be skipped.
+
+    Catches incomplete sentences, truncated text, and sentences that
+    start with conjunctions but lack a proper subject-verb structure.
+    """
+    s = sentence.strip().rstrip('.!?,;:')
+    if not s:
+        return True
+
+    # Very short sentences (less than 5 chars) are almost always fragments
+    if len(s) < 5:
+        return True
+
+    # Sentences ending with a contraction fragment (e.g., "but it's", "and it's")
+    if re.search(r'\b\w+\s+it\'s$', s, re.IGNORECASE) and len(s) < 30:
+        return True
+
+    # Sentences that start with a conjunction and are very short
+    first_word = s.split()[0].lower().rstrip('.,;:') if s.split() else ''
+    if first_word in _FRAGMENT_START_WORDS and len(s) < 25:
+        return True
+
+    # Sentences starting with "When something" are often fragments from
+    # parsing errors (e.g., "When something has deemed effective")
+    if re.match(r'^When\s+something\s+\w+\s+(?:deemed|is|are|was|were|has|have)\b', s, re.IGNORECASE):
+        return True
+
+    # Incomplete quoted strings
+    if s.count('"') % 2 != 0 or s.count("'") % 2 != 0:
+        return True
+
+    # Unmatched parentheses
+    if s.count('(') > s.count(')'):
+        return True
+
+    # Question sentences (starting with question words) should not be parsed as facts
+    # They are the user's question repeated in the info text, not actual information
+    _QUESTION_WORDS = {
+        'who', 'what', 'when', 'where', 'why', 'how', 'which',
+        'is', 'are', 'was', 'were', 'do', 'does', 'did',
+        'can', 'could', 'would', 'should', 'will', 'shall',
+        'may', 'might', 'tell', 'explain', 'describe', 'define',
+    }
+    first_word_lower = first_word.lower()
+    if first_word_lower in _QUESTION_WORDS:
+        # Check if it looks like a question (has question mark or question structure)
+        if sentence.rstrip().endswith('?') or re.match(
+            r'^(?:why|what|how|when|where|who|which)\s+(?:is|are|was|were|does|do|did|can|could|would|should|will|shall|may|might)\b',
+            s, re.IGNORECASE
+        ):
+            return True
+
+    return False
+
+
+# ═════════════════════════════════════════════════════════════════════════════
 # Main Parsing API
 # ═════════════════════════════════════════════════════════════════════════════
 
@@ -154,6 +224,11 @@ def parse_facts(information: str, topic: str = "") -> List[Fact]:
                 certainty=0.4,
                 is_negated=False,
             ))
+            continue
+
+        # Skip sentence fragments that are too short or incomplete
+        # (e.g., "but it's", "and so", "so")
+        if _is_fragment(orig):
             continue
 
         fact = _parse_sentence(orig, topic_lower)

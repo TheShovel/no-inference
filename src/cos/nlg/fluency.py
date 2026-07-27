@@ -427,6 +427,13 @@ def _enhance_single_paragraph(
     p_clean = re.sub(r'\b(\w+)\s+\1\b', r'\1', p_clean, flags=re.IGNORECASE)
     p_clean = re.sub(r'\b([Ss]o)\s+[Ss]o\b', r'\1', p_clean)
 
+    # Fix "it that" patterns from parsing errors (e.g., "The reason it that some...")
+    # These occur when question text is incorrectly parsed as a fact subject
+    p_clean = re.sub(r'\bit\s+that\s+(?:some|the|a|an)\s', 'that ', p_clean, flags=re.IGNORECASE)
+
+    # Fix "works the way it does is" → remove the nonsensical "works the way it does" prefix
+    p_clean = re.sub(r'\bworks the way it does is\b', 'is', p_clean, flags=re.IGNORECASE)
+
     # Fix missing possessive apostrophes (e.g., "the nation ideals" → "the nation's ideals")
     p_clean = re.sub(r'\b(the world) leading\b', r"\1's leading", p_clean)
     p_clean = re.sub(r'\b(the|a|an|this|that) (nation|world|country|city|empire|kingdom|republic) (ideals?|sake|behalf|point|view|views|way|ways|role|roles|goal|goals|purpose|purposes|part|parts|heart|hearts|name|names|story|stories)\b',

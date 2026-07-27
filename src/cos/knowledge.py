@@ -141,6 +141,10 @@ def lookup(query):
     This prevents short, generic triggers (e.g. "french") from
     overriding more specific ones (e.g. "french fries").
 
+    Strips quotation marks and other common punctuation artifacts
+    from the query before matching, so questions with quoted terms
+    (e.g. How do headphones "erase" sound?) still match KB entries.
+
     Args:
         query: The user's question string
 
@@ -151,7 +155,11 @@ def lookup(query):
     if not entries:
         return None
 
+    # Strip common punctuation artifacts that can prevent matching
     q = query.lower().strip()
+    # Remove quotation marks and normalize whitespace
+    q = re.sub(r'[\"\'\'\"\u201c\u201d\u2018\u2019]', '', q)
+    q = re.sub(r'\s+', ' ', q).strip()
 
     best_answer = None
     best_match_len = 0

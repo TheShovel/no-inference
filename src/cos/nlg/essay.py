@@ -604,14 +604,21 @@ def _clean_fragments(facts: List[Fact]) -> List[Fact]:
     """Remove incomplete sentence fragments from Wikipedia parsing.
 
     Filters out sentences that end mid-word, have unmatched parentheses,
-    or are too short to be meaningful facts.
+    are too short to be meaningful facts, or look like parsing artifacts.
     """
     if not facts:
         return []
 
+    from .parser import _is_fragment
+
     cleaned = []
     for fact in facts:
         obj = fact.obj.strip()
+        orig = (fact.original or obj).strip()
+
+        # Use the parser's fragment detection on both obj and original
+        if _is_fragment(orig) or _is_fragment(obj):
+            continue
 
         # Skip very short fragments (less than 15 chars)
         if len(obj) < 15 and fact.fact_type != "unknown":
@@ -634,10 +641,19 @@ def _clean_fragments(facts: List[Fact]) -> List[Fact]:
         if obj and re.search(r'[a-z]$', obj) and not any(obj.endswith(w) for w in (
             'etc', 'e.g', 'i.e', 'ie', 'eg', 'vs', 'al', 'approx',
         )):
-            # Only skip if the object is short enough that truncation is likely
-            # (longer texts may just lack trailing punctuation but are complete)
-            if len(obj) < 80:
+            # Skip incomplete-looking fragments regardless of length
+            # A complete sentence should end with punctuation or look complete
+            if len(obj) < 120:
                 continue
+            # For longer objects, check if the last word looks complete
+            # by verifying it's a word we'd expect at end of sentence
+            last_word = re.findall(r'\b(\w+)$', obj)
+            if last_word:
+                lw = last_word[0].lower()
+                # Very short last words or words ending in common truncation
+                # signals are likely truncated
+                if len(lw) <= 3:
+                    continue
 
         # Skip fragments ending with incomplete quoted string
         if obj.count('"') % 2 != 0 or obj.count("'") % 2 != 0:
@@ -667,33 +683,50 @@ def _clean_fragments(facts: List[Fact]) -> List[Fact]:
 def _deduplicate_facts(facts: List[Fact]) -> List[Fact]:
     """Remove duplicate or near-duplicate facts.
 
-    Uses a combination of exact object matching and word overlap
-    to detect semantically similar facts that convey the same information.
+    Uses a combination of exact object matching, word overlap,
+    and substring detection to catch semantically similar facts
+    that convey the same information.
     """
     if not facts:
         return []
 
     seen_objects = set()
     seen_words = set()
+    seen_originals = set()
     deduplicated = []
 
     for fact in facts:
         # Normalize the object for comparison
         obj_key = fact.obj.lower().strip().rstrip('.,;:!?')
+        orig_key = (fact.original or obj_key).lower().strip().rstrip('.,;:!?')
+
+        # Check for exact duplicate object
+        if obj_key in seen_objects:
+            continue
+
+        # Check for exact duplicate original
+        if orig_key in seen_originals:
+            continue
+
+        # Check if this object is a substring of a previously seen object
+        # (e.g., "is a bird" is a substring of "is a bird that can fly")
+        if any(obj_key in s or s in obj_key for s in seen_objects if len(s) > 10):
+            continue
+
         # Remove articles and common words for fuzzy matching
         obj_words = set(w for w in re.findall(r'\w{3,}', obj_key)
                        if w not in {'the', 'and', 'are', 'for', 'with', 'from',
                                     'this', 'that', 'which', 'into', 'over', 'also',
                                     'has', 'have', 'been', 'can', 'may', 'will'})
-        # Check for exact duplicate
-        if obj_key in seen_objects:
-            continue
-        # Check for high word overlap (>60% shared words = likely duplicate)
+
+        # Check for high word overlap (>70% shared words = likely duplicate)
         if obj_words and seen_words:
             overlap = len(obj_words & seen_words) / max(len(obj_words), 1)
-            if overlap > 0.6:
+            if overlap > 0.7:
                 continue
+
         seen_objects.add(obj_key)
+        seen_originals.add(orig_key)
         seen_words.update(obj_words)
         deduplicated.append(fact)
 

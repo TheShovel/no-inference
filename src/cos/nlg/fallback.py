@@ -10,8 +10,8 @@ _FALLBACK_HOW = [
 ]
 
 _FALLBACK_GENERIC = [
-    "I'm still learning about that topic. Could you share more details about what you're looking for?",
-    "That's outside what I currently know well enough to explain confidently. What specific aspect interests you?",
+    "I don't have enough details on that subject to give you a thorough answer right now.",
+    "I wish I could give you a more complete answer, but I don't have reliable details on that yet.",
     "I'm not confident I can give you an accurate answer on that one yet. Can you tell me more?",
 ]
 

@@ -278,6 +278,18 @@ def naturalize(
     if closing:
         result = result.rstrip() + " " + closing
 
+    # Final safety: ensure the response doesn't end mid-word or mid-sentence.
+    # If the last sentence is incomplete (ends with lowercase letter and no punctuation),
+    # find the last complete sentence boundary and truncate there.
+    if result and re.search(r'[a-z]\s*$', result):
+        # Look for the last sentence-ending punctuation before the end
+        last_period = result.rfind('.')
+        last_excl = result.rfind('!')
+        last_q = result.rfind('?')
+        last_end = max(last_period, last_excl, last_q)
+        if last_end >= 0 and len(result) - last_end < 100:
+            result = result[:last_end + 1]
+
     return result
 
 

@@ -1,0 +1,22 @@
+[
+    {
+        "q": [
+            "How does the process of creating a digital image actually work at the pixel level?",
+            "How do digital images work at the pixel level?",
+            "How are digital images created?",
+            "What is a pixel and how does it work?",
+            "How does digital image capture work?",
+            "How does a digital camera create an image?"
+        ],
+        "a": "A digital image is created by capturing light through a lens and converting it into electrical signals using a sensor (either a charge-coupled device or a complementary metal-oxide-semiconductor sensor). The sensor is covered with millions of tiny light-sensitive pixels, each of which records the intensity of light hitting it. Most sensors use a color filter array (the Bayer pattern) where each pixel is covered by a red, green, or blue filter, allowing the camera to capture color information. The sensor converts the light into electrical charges proportional to the light intensity, which are then digitized into numerical values (typically 0-255 for each color channel). These values are stored as a grid of pixels, with each pixel having a red, green, and blue (RGB) component. Software then interpolates the missing color values for each pixel using information from neighboring pixels (a process called demosaicing). The final image is a two-dimensional array of pixels, each with specific RGB values that, when displayed, recreate the visual scene. Higher pixel counts (megapixels) allow for more detail and larger print sizes."
+    },
+    {
+        "q": [
+            "What is a digital image?",
+            "How do pixels work?",
+            "What is a CCD sensor?",
+            "What is a CMOS sensor?"
+        ],
+        "a": "A digital image is a grid of pixels, each with RGB color values. Pixels are created by light sensors (CCD or CMOS) that convert light into electrical signals, which are digitized into numerical values. A color filter array (Bayer pattern) allows each pixel to capture red, green, or blue light, and software interpolates missing colors from neighboring pixels."
+    }
+]

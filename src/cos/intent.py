@@ -169,7 +169,12 @@ def detect_intent(query):
 
     # ── How-to / procedural ──────────────────────────────────────────────
     # "how do i make a salad", "how to cook pasta", "can i substitute...", etc.
-    if re.search(r'\bhow\s+(do|to|can|would|should|could)\b', q):
+    # Only flag as instruction if it's a first-person procedural question
+    # (e.g., "How do I...", "How do we...", "How to...").
+    # Third-person "How do [noun]..." questions are factual (e.g., "How do cities plan...")
+    if re.search(r'\bhow\s+(do|to|can|would|should|could)\s+(i|we|you)\b', q):
+        return 'instruction'
+    if re.search(r'\bhow\s+to\b', q) and not re.search(r'\bhow\s+to\s+(?:the\s+)?(?:evolution|history|origin|development|concept|process|way\s+cities|way\s+do)', q):
         return 'instruction'
     if re.match(r'\bcan\s+(?:i|we|you)\s+', q):
         return 'instruction'

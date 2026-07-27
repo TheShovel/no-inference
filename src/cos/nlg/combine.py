@@ -284,17 +284,34 @@ def combine_by_relative_clause(sentences: List[str], config: NLGConfig) -> List[
             if re.search(r' and [a-z]+', result[i - 1]):
                 i += 1
                 continue
+            # Find the actual position of the subject in the text (it may be
+            # preceded by a discourse marker like "Well, " or "Also, ")
+            curr_lower = result[i].lower()
+            subj_pos = curr_lower.find(curr_subj.lower())
+            if subj_pos >= 0:
+                curr_body = result[i][subj_pos + len(curr_subj):].strip()
+            else:
+                curr_body = result[i][len(curr_subj):].strip()
+            curr_body = curr_body.lstrip(', ').strip()
+
+            # Skip if the body is empty or too short to form a meaningful relative clause
+            if not curr_body or len(curr_body) < 10:
+                i += 1
+                continue
+
+            # Skip if the body starts with a question word (indicates a parsing error)
+            _body_first_word = curr_body.split()[0].lower().rstrip('.,;:') if curr_body.split() else ''
+            if _body_first_word in ('why', 'what', 'how', 'when', 'where', 'who', 'which', 'is', 'are'):
+                i += 1
+                continue
+
+            # Skip if the body contains "it that" or similar nonsensical patterns
+            if re.search(r'\bit\s+that\b', curr_body, re.IGNORECASE):
+                i += 1
+                continue
+
             # Use relative clauses at temp>0 — combine aggressively for richer prose
             if config.temperature > 0.0 and maybe(0.65):
-                # Find the actual position of the subject in the text (it may be
-                # preceded by a discourse marker like "Well, " or "Also, ")
-                curr_lower = result[i].lower()
-                subj_pos = curr_lower.find(curr_subj.lower())
-                if subj_pos >= 0:
-                    curr_body = result[i][subj_pos + len(curr_subj):].strip()
-                else:
-                    curr_body = result[i][len(curr_subj):].strip()
-                curr_body = curr_body.lstrip(', ').strip()
                 # Use 'who' for people/animate, 'which' for things
                 _PERSON_PRONOUNS = {'she', 'he', 'they', 'i', 'we', 'who', 'everyone', 'somebody'}
                 _KNOWN_PEOPLE = {'marie curie', 'einstein', 'newton', 'curie', 'gustave eiffel'}

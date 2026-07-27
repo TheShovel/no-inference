@@ -1,324 +1,281 @@
 {
   "analysis": {
-    "overall_average": 4.8,
+    "overall_average": 5.12,
     "dimension_averages": {
-      "naturalness": 4.4,
-      "informativeness": 1.4,
-      "coherence": 4.8,
-      "correctness": 5.6,
-      "conciseness": 7.8
+      "naturalness": 5.0,
+      "informativeness": 2.8,
+      "coherence": 4.2,
+      "correctness": 6.0,
+      "conciseness": 7.6
     },
     "total_cases": 10,
     "total_mistakes": 22,
     "severity_counts": {
-      "high": 17,
-      "medium": 5
+      "high": 15,
+      "medium": 7
     },
     "type_counts": {
-      "missing_info": 9,
-      "factual_error": 3,
-      "template_artifact": 3,
-      "flow_issue": 2,
-      "incomplete_sentence": 1,
-      "grammar": 1,
-      "awkward_phrasing": 1,
-      "repetition": 1,
-      "word_choice": 1
+      "missing_info": 8,
+      "incomplete_sentence": 7,
+      "flow_issue": 3,
+      "factual_error": 2,
+      "verb_agreement": 1,
+      "awkward_phrasing": 1
     },
     "type_examples": {
-      "missing_info": [
-        {
-          "excerpt": "In essence, massive is an adjective related to mass.",
-          "description": "The response ignores the core question about skyscraper earthquake resistance and provides an irrelevant linguistic definition.",
-          "fix": "Explain concepts such as base isolation, tuned mass dampers, and flexible steel frames.",
-          "severity": "high"
-        },
-        {
-          "excerpt": "The entire response",
-          "description": "The assistant failed to identify any mysterious manuscripts (e.g., Voynich Manuscript).",
-          "fix": "Provide a detailed answer regarding the Voynich Manuscript.",
-          "severity": "high"
-        },
-        {
-          "excerpt": "A manuscript was...",
-          "description": "The response fails to address the user's query regarding why people see colors when hearing music.",
-          "fix": "Provide information on neural cross-wiring and the sensory processing of synesthesia.",
-          "severity": "high"
-        }
-      ],
-      "factual_error": [
-        {
-          "excerpt": "Simply put, problem solving is the process of achieving a goal",
-          "description": "The response completely ignores the user's prompt about unsolved manuscripts and discusses problem-solving theory instead.",
-          "fix": "Replace the entire response with information about the Voynich Manuscript.",
-          "severity": "high"
-        },
-        {
-          "excerpt": "A manuscript was, traditionally, any document written by hand...",
-          "description": "The response is entirely unrelated to the user's question about synesthesia.",
-          "fix": "Replace the entire response with an explanation of chromesthesia (sound-to-color synesthesia).",
-          "severity": "high"
-        },
-        {
-          "excerpt": "highly optimized tool for communication that has been refined over centuries",
-          "description": "The response treats emotional musical response as a conscious 'tool' developed by people, ignoring psychoacoustics and biological imperatives.",
-          "fix": "Explain the role of tension, release, and biological responses to frequency.",
-          "severity": "medium"
-        }
-      ],
       "incomplete_sentence": [
         {
-          "excerpt": "but it's",
-          "description": "The response cuts off abruptly at the end.",
-          "fix": "Complete the sentence or remove the trailing fragment.",
+          "excerpt": "One theory suggests that dreams evol",
+          "description": "The response ends abruptly in the middle of a word and sentence.",
+          "fix": "Complete the sentence (e.g., 'One theory suggests that dreams evolved as a way to simulate threats.')",
+          "severity": "high"
+        },
+        {
+          "excerpt": "The loss of plants would also trigger mass",
+          "description": "The response ends abruptly in the middle of a sentence, leaving the thought unfinished.",
+          "fix": "Complete the sentence, e.g., 'The loss of plants would also trigger mass extinctions across the food chain.'",
+          "severity": "high"
+        },
+        {
+          "excerpt": "It's hou",
+          "description": "The response ends abruptly in the middle of a word and sentence.",
+          "fix": "Complete the sentence (e.g., 'It is housed at the Beinecke Rare Book & Manuscript Library.')",
+          "severity": "high"
+        }
+      ],
+      "missing_info": [
+        {
+          "excerpt": "The entire response",
+          "description": "The assistant explains why we dream, but fails to directly answer the specific user question about why dreams are structured as 'stories' rather than 'random images'.",
+          "fix": "Add an explanation regarding the brain's tendency to create narratives (confabulation) to make sense of random neural firing.",
+          "severity": "medium"
+        },
+        {
+          "excerpt": "An invention is a unique or novel device...",
+          "description": "The response does not answer the question about open ocean navigation; it defines 'invention' instead.",
+          "fix": "Replace the entire response with information about celestial navigation, dead reckoning, and coastal piloting.",
+          "severity": "high"
+        },
+        {
+          "excerpt": "In essence, time is the continuous progression...",
+          "description": "The response defines what time is rather than explaining why it seems to speed up as we age.",
+          "fix": "Explain the psychological theories of time perception, such as the proportional theory or the lack of new novel experiences.",
           "severity": "high"
         }
       ],
       "flow_issue": [
         {
-          "excerpt": "In Canada, the designations remote, isolated, outport and fly-in refer to a sett",
-          "description": "The response is non-sequitur; it does not address the prompt's intent.",
-          "fix": "Rewrite the entire response to focus on global isolation rather than Canadian terminology.",
+          "excerpt": "The entire response",
+          "description": "The response is completely irrelevant to the user prompt.",
+          "fix": "Address the specific historical methods of navigation (stars, sun, currents).",
           "severity": "high"
         },
         {
-          "excerpt": "The reason it that... works the way it does is",
-          "description": "The entire second sentence is a syntactic disaster that fails to convey a clear thought.",
-          "fix": "Rewrite the entire paragraph for clarity.",
-          "severity": "high"
-        }
-      ],
-      "template_artifact": [
-        {
-          "excerpt": "Could you share more details about what you're looking for?",
-          "description": "The response uses a generic 'I don't know' template for a query that does not require further clarification.",
-          "fix": "Answer the question directly instead of asking for more details.",
+          "excerpt": "In kinematics, the speed of an object is the ma",
+          "description": "The transition to kinematics is irrelevant to the user's question and the previous paragraphs.",
+          "fix": "Remove this section entirely.",
           "severity": "medium"
         },
         {
-          "excerpt": "Could you share more details about what you're looking for?",
-          "description": "This is a generic fallback response used when the AI cannot answer, rather than a helpful engagement with the user's specific prompt.",
-          "fix": "Replace the generic request for details with the actual answer to the user's question.",
-          "severity": "medium"
-        },
-        {
-          "excerpt": "That's outside what I currently know well enough to explain confidently.",
-          "description": "The phrasing sounds like a canned refusal or a restrictive system prompt rather than a natural conversational response.",
-          "fix": "Use a more natural transition or actually answer the question.",
+          "excerpt": "On top of that, it is the retention of information",
+          "description": "The transition 'On top of that' is used incorrectly to connect two slightly different definitions of the same concept.",
+          "fix": "Combine the definitions into a single cohesive sentence.",
           "severity": "medium"
         }
       ],
-      "grammar": [
+      "factual_error": [
         {
-          "excerpt": "The reason it that some melodies evoke such strong emotions",
-          "description": "Missing verb and incorrect syntax; it repeats the prompt instead of forming a sentence.",
-          "fix": "The reason some melodies evoke such strong emotions",
+          "excerpt": "oxygen levels could drop to dangerously low levels for humans and animals",
+          "description": "The atmosphere contains a massive reservoir of oxygen (about 21%). Even without plants, it would take thousands of years, not 'a few decades', for oxygen to deplete to lethal levels via respiration.",
+          "fix": "Clarify that while CO2 would rise quickly, the depletion of the total oxygen reservoir would be a much slower process.",
+          "severity": "medium"
+        },
+        {
+          "excerpt": "Simply put, somnology is the scientific study of sleep.",
+          "description": "The response is a total hallucination/mismatch; it answers a question about sleep science instead of noise-canceling technology.",
+          "fix": "Replace the entire response with an explanation of active noise cancellation (destructive interference).",
           "severity": "high"
+        }
+      ],
+      "verb_agreement": [
+        {
+          "excerpt": "Cities generally includes",
+          "description": "Subject-verb agreement error: 'Cities' (plural) requires 'include' (plural).",
+          "fix": "Cities generally include",
+          "severity": "medium"
         }
       ],
       "awkward_phrasing": [
         {
-          "excerpt": "works the way it does is largely due to",
-          "description": "The sentence structure is nonsensical and grammatically collapsed.",
-          "fix": "is largely due to",
-          "severity": "high"
-        }
-      ],
-      "repetition": [
-        {
-          "excerpt": "it that some melodies evoke such strong emotions even if we've never heard them ",
-          "description": "The assistant verbatim repeats the user's question as a subject, creating a circular, unnatural phrase.",
-          "fix": "this phenomenon",
-          "severity": "high"
-        }
-      ],
-      "word_choice": [
-        {
-          "excerpt": "When something has deemed effective",
-          "description": "Incorrect passive construction; 'has' should be 'is' or 'has been'.",
-          "fix": "When something is deemed effective",
+          "excerpt": "Simply put, memory is the faculty of the mind",
+          "description": "The tone is overly academic and robotic, sounding like a dictionary entry rather than a conversational response.",
+          "fix": "Start by addressing why music specifically triggers memories.",
           "severity": "medium"
         }
       ]
     },
     "module_counts": {
-      "parser.py (fact extraction), cleaner.py": 9,
-      "knowledge retrieval, parser.py": 3,
-      "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)": 3,
-      "discourse.py, combine.py": 2,
-      "essay.py (_clean_fragments), parser.py": 1,
-      "fluency.py, realize.py": 1,
-      "realize.py (templates), combine.py": 1,
-      "fluency.py (filler dedup), essay.py (_deduplicate_facts)": 1,
-      "realize.py (templates), fluency.py": 1
+      "parser.py (fact extraction), cleaner.py": 8,
+      "essay.py (_clean_fragments), parser.py": 7,
+      "discourse.py, combine.py": 3,
+      "knowledge retrieval, parser.py": 2,
+      "realize.py (is_plural_subject check), fluency.py": 1,
+      "realize.py (templates), combine.py": 1
     },
     "module_examples": {
-      "parser.py (fact extraction), cleaner.py": [
-        {
-          "type": "missing_info",
-          "excerpt": "In essence, massive is an adjective related to mass.",
-          "fix": "Explain concepts such as base isolation, tuned mass dampers, and flexible steel frames."
-        },
-        {
-          "type": "missing_info",
-          "excerpt": "The entire response",
-          "fix": "Provide a detailed answer regarding the Voynich Manuscript."
-        },
-        {
-          "type": "missing_info",
-          "excerpt": "A manuscript was...",
-          "fix": "Provide information on neural cross-wiring and the sensory processing of synesthesia."
-        }
-      ],
-      "knowledge retrieval, parser.py": [
-        {
-          "type": "factual_error",
-          "excerpt": "Simply put, problem solving is the process of achieving a goal",
-          "fix": "Replace the entire response with information about the Voynich Manuscript."
-        },
-        {
-          "type": "factual_error",
-          "excerpt": "A manuscript was, traditionally, any document written by hand...",
-          "fix": "Replace the entire response with an explanation of chromesthesia (sound-to-color synesthesia)."
-        },
-        {
-          "type": "factual_error",
-          "excerpt": "highly optimized tool for communication that has been refined over centuries",
-          "fix": "Explain the role of tension, release, and biological responses to frequency."
-        }
-      ],
       "essay.py (_clean_fragments), parser.py": [
         {
           "type": "incomplete_sentence",
-          "excerpt": "but it's",
-          "fix": "Complete the sentence or remove the trailing fragment."
+          "excerpt": "One theory suggests that dreams evol",
+          "fix": "Complete the sentence (e.g., 'One theory suggests that dreams evolved as a way to simulate threats.')"
+        },
+        {
+          "type": "incomplete_sentence",
+          "excerpt": "The loss of plants would also trigger mass",
+          "fix": "Complete the sentence, e.g., 'The loss of plants would also trigger mass extinctions across the food chain.'"
+        },
+        {
+          "type": "incomplete_sentence",
+          "excerpt": "It's hou",
+          "fix": "Complete the sentence (e.g., 'It is housed at the Beinecke Rare Book & Manuscript Library.')"
+        }
+      ],
+      "parser.py (fact extraction), cleaner.py": [
+        {
+          "type": "missing_info",
+          "excerpt": "The entire response",
+          "fix": "Add an explanation regarding the brain's tendency to create narratives (confabulation) to make sense of random neural firing."
+        },
+        {
+          "type": "missing_info",
+          "excerpt": "An invention is a unique or novel device...",
+          "fix": "Replace the entire response with information about celestial navigation, dead reckoning, and coastal piloting."
+        },
+        {
+          "type": "missing_info",
+          "excerpt": "In essence, time is the continuous progression...",
+          "fix": "Explain the psychological theories of time perception, such as the proportional theory or the lack of new novel experiences."
         }
       ],
       "discourse.py, combine.py": [
         {
           "type": "flow_issue",
-          "excerpt": "In Canada, the designations remote, isolated, outport and fly-in refer to a sett",
-          "fix": "Rewrite the entire response to focus on global isolation rather than Canadian terminology."
+          "excerpt": "The entire response",
+          "fix": "Address the specific historical methods of navigation (stars, sun, currents)."
         },
         {
           "type": "flow_issue",
-          "excerpt": "The reason it that... works the way it does is",
-          "fix": "Rewrite the entire paragraph for clarity."
-        }
-      ],
-      "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)": [
-        {
-          "type": "template_artifact",
-          "excerpt": "Could you share more details about what you're looking for?",
-          "fix": "Answer the question directly instead of asking for more details."
+          "excerpt": "In kinematics, the speed of an object is the ma",
+          "fix": "Remove this section entirely."
         },
         {
-          "type": "template_artifact",
-          "excerpt": "Could you share more details about what you're looking for?",
-          "fix": "Replace the generic request for details with the actual answer to the user's question."
-        },
-        {
-          "type": "template_artifact",
-          "excerpt": "That's outside what I currently know well enough to explain confidently.",
-          "fix": "Use a more natural transition or actually answer the question."
+          "type": "flow_issue",
+          "excerpt": "On top of that, it is the retention of information",
+          "fix": "Combine the definitions into a single cohesive sentence."
         }
       ],
-      "fluency.py, realize.py": [
+      "knowledge retrieval, parser.py": [
         {
-          "type": "grammar",
-          "excerpt": "The reason it that some melodies evoke such strong emotions",
-          "fix": "The reason some melodies evoke such strong emotions"
+          "type": "factual_error",
+          "excerpt": "oxygen levels could drop to dangerously low levels for humans and animals",
+          "fix": "Clarify that while CO2 would rise quickly, the depletion of the total oxygen reservoir would be a much slower process."
+        },
+        {
+          "type": "factual_error",
+          "excerpt": "Simply put, somnology is the scientific study of sleep.",
+          "fix": "Replace the entire response with an explanation of active noise cancellation (destructive interference)."
+        }
+      ],
+      "realize.py (is_plural_subject check), fluency.py": [
+        {
+          "type": "verb_agreement",
+          "excerpt": "Cities generally includes",
+          "fix": "Cities generally include"
         }
       ],
       "realize.py (templates), combine.py": [
         {
           "type": "awkward_phrasing",
-          "excerpt": "works the way it does is largely due to",
-          "fix": "is largely due to"
-        }
-      ],
-      "fluency.py (filler dedup), essay.py (_deduplicate_facts)": [
-        {
-          "type": "repetition",
-          "excerpt": "it that some melodies evoke such strong emotions even if we've never heard them ",
-          "fix": "this phenomenon"
-        }
-      ],
-      "realize.py (templates), fluency.py": [
-        {
-          "type": "word_choice",
-          "excerpt": "When something has deemed effective",
-          "fix": "When something is deemed effective"
+          "excerpt": "Simply put, memory is the faculty of the mind",
+          "fix": "Start by addressing why music specifically triggers memories."
         }
       ]
     },
     "worst_cases": [
       {
-        "query": "What is the most mysterious unsolved manuscript in history?",
-        "score": 1.8,
+        "query": "Which city in the world has the most unique architecture?",
+        "score": 1.2,
         "mistakes": 3,
-        "high_severity": 3,
-        "feedback": "The response is a complete hallucination/failure. It provides a generic definition of problem solving instead of answering the user's question about mysterious manuscripts, and it ends mid-sentence."
+        "high_severity": 2,
+        "feedback": "The assistant completely failed to answer the user's question, providing a generic dictionary definition of a 'city' instead of discussing architecture. Additionally, the response ends abruptly in an "
       },
       {
-        "query": "What are the most effective ways to reduce plastic waste in a typical household?",
+        "query": "How did people actually navigate the open ocean before the invention of the compass?",
         "score": 1.8,
         "mistakes": 2,
-        "high_severity": 1,
-        "feedback": "The assistant completely failed to answer the user's question. Instead of providing ways to reduce plastic waste, it provided a dictionary definition of the word 'effectiveness'."
+        "high_severity": 2,
+        "feedback": "The assistant completely failed to answer the user's question. Instead of explaining ancient navigation techniques, it provided a generic, dictionary-style definition of what an 'invention' and a 'pat"
       },
       {
-        "query": "Why is it that some melodies evoke such strong emotions even if we've never heard them before?",
-        "score": 2.2,
-        "mistakes": 5,
-        "high_severity": 4,
-        "feedback": "The response is severely flawed, exhibiting 'hallucinated' sentence structures where the user's prompt is repeated as a noun phrase within broken sentences. It fails to provide a scientific explanatio"
+        "query": "Why does time seem to speed up as we get older?",
+        "score": 2.8,
+        "mistakes": 3,
+        "high_severity": 2,
+        "feedback": "The assistant completely failed to answer the user's specific question about the perception of time. Instead, it provided a generic, encyclopedic definition of time and then cut off mid-sentence."
       },
       {
-        "query": "Why do some people experience synesthesia where they see colors when hearing music?",
+        "query": "How does a noise-canceling headphone actually \"erase\" sound?",
         "score": 2.8,
         "mistakes": 2,
         "high_severity": 2,
-        "feedback": "The assistant provided a completely irrelevant response. The user asked about synesthesia, but the assistant defined the word 'manuscript'."
+        "feedback": "The response is completely irrelevant to the user's question. The user asked about noise-canceling headphones, but the assistant provided a definition of somnology (sleep study)."
       },
       {
-        "query": "Tell me about the most isolated inhabited place on Earth.",
+        "query": "Why is it that some songs can instantly trigger a vivid memory from years ago?",
         "score": 3.0,
-        "mistakes": 2,
+        "mistakes": 4,
         "high_severity": 2,
-        "feedback": "The response is completely irrelevant to the user's request. Instead of identifying the most isolated inhabited place on Earth (e.g., Tristan da Cunha), it provides a generic definition of terminology"
+        "feedback": "The assistant completely failed to answer the user's specific question about music and memory, instead providing a generic, textbook-style definition of memory that ends with a fragmented sentence."
       }
     ]
   },
   "cases": [
     {
-      "query": "How does a skyscraper actually withstand a massive earthquake?",
-      "response": "In essence, massive is an adjective related to mass.",
-      "time": 4.36,
+      "query": "Why do we dream in stories instead of random images?",
+      "response": "We dream primarily during REM (Rapid Eye Movement) sleep, when brain activity is similar to wakefulness. The exact function of dreaming is still debated, but several theories are supported by scientific evidence. The memory consolidation theory suggests that dreams help transfer information from short-term to long-term memory, processing and organizing the day's experiences. The emotional regulation theory proposes that dreams help us process and manage emotions, particularly negative ones, by a",
+      "time": 0.53,
       "scores": {
-        "naturalness": 1,
-        "informativeness": 1,
-        "coherence": 1,
-        "correctness": 5,
+        "naturalness": 8,
+        "informativeness": 5,
+        "coherence": 7,
+        "correctness": 10,
         "conciseness": 10,
-        "average": 3.6
+        "average": 8.0
       },
       "mistakes": [
         {
-          "mistake_type": "missing_info",
+          "mistake_type": "incomplete_sentence",
           "severity": "high",
-          "excerpt": "In essence, massive is an adjective related to mass.",
-          "description": "The response ignores the core question about skyscraper earthquake resistance and provides an irrelevant linguistic definition.",
-          "suggested_fix": "Explain concepts such as base isolation, tuned mass dampers, and flexible steel frames.",
+          "excerpt": "One theory suggests that dreams evol",
+          "description": "The response ends abruptly in the middle of a word and sentence.",
+          "suggested_fix": "Complete the sentence (e.g., 'One theory suggests that dreams evolved as a way to simulate threats.')",
+          "likely_module": "essay.py (_clean_fragments), parser.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "medium",
+          "excerpt": "The entire response",
+          "description": "The assistant explains why we dream, but fails to directly answer the specific user question about why dreams are structured as 'stories' rather than 'random images'.",
+          "suggested_fix": "Add an explanation regarding the brain's tendency to create narratives (confabulation) to make sense of random neural firing.",
           "likely_module": "parser.py (fact extraction), cleaner.py"
         }
       ],
-      "raw_feedback": "The assistant completely failed to answer the user's question, providing a pedantic definition of a word instead of explaining structural engineering."
+      "raw_feedback": "The response is factually accurate and well-written, but it is critically flawed because it cuts off mid-sentence, leaving the answer incomplete."
     },
     {
-      "query": "What is the most mysterious unsolved manuscript in history?",
-      "response": "Simply put, problem solving is the process of achieving a goal by overcoming obstacles, a frequent part of most activities. Problems in need of solutions range from simple personal tasks to complex issues in business and technical fields. The former is an example of simple problem solving (SPS) addressing one issue, whereas the latter is complex problem solving (CPS) with multiple interrelated obstacles. Another classification of problem-solving tasks is into well-defined problems with specific ",
-      "time": 4.31,
+      "query": "How did people actually navigate the open ocean before the invention of the compass?",
+      "response": "An invention is a unique or novel device, method, composition, idea, or process. Also, an invention may be an improvement upon a machine, product, or process for increasing efficiency or lowering cost. It may also be an entirely new concept. If an idea is unique enough either as a stand-alone invention or as a significant improvement over the work of others, it can be patented. A patent, if granted, gives the inventor a proprietary interest in the patent over a specific period of time, which can",
+      "time": 0.55,
       "scores": {
         "naturalness": 1,
         "informativeness": 1,
@@ -329,36 +286,124 @@
       },
       "mistakes": [
         {
-          "mistake_type": "factual_error",
+          "mistake_type": "missing_info",
           "severity": "high",
-          "excerpt": "Simply put, problem solving is the process of achieving a goal",
-          "description": "The response completely ignores the user's prompt about unsolved manuscripts and discusses problem-solving theory instead.",
-          "suggested_fix": "Replace the entire response with information about the Voynich Manuscript.",
+          "excerpt": "An invention is a unique or novel device...",
+          "description": "The response does not answer the question about open ocean navigation; it defines 'invention' instead.",
+          "suggested_fix": "Replace the entire response with information about celestial navigation, dead reckoning, and coastal piloting.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "flow_issue",
+          "severity": "high",
+          "excerpt": "The entire response",
+          "description": "The response is completely irrelevant to the user prompt.",
+          "suggested_fix": "Address the specific historical methods of navigation (stars, sun, currents).",
+          "likely_module": "discourse.py, combine.py"
+        }
+      ],
+      "raw_feedback": "The assistant completely failed to answer the user's question. Instead of explaining ancient navigation techniques, it provided a generic, dictionary-style definition of what an 'invention' and a 'patent' are. This is a total hallucination of intent or a severe retrieval error."
+    },
+    {
+      "query": "What would happen to the Earth's atmosphere if all the plants disappeared tomorrow?",
+      "response": "If all plants disappeared, Earth's atmosphere would undergo catastrophic changes. Plants are responsible for producing approximately 50-80% of the Earth's oxygen through photosynthesis, absorbing carbon dioxide and releasing oxygen. Without plants, atmospheric oxygen levels would gradually decline as they're consumed by respiration and combustion, while carbon dioxide levels would rise dramatically, leading to a severe greenhouse effect and global warming. Within a few decades, oxygen levels cou",
+      "time": 0.01,
+      "scores": {
+        "naturalness": 9,
+        "informativeness": 6,
+        "coherence": 7,
+        "correctness": 8,
+        "conciseness": 10,
+        "average": 8.0
+      },
+      "mistakes": [
+        {
+          "mistake_type": "incomplete_sentence",
+          "severity": "high",
+          "excerpt": "The loss of plants would also trigger mass",
+          "description": "The response ends abruptly in the middle of a sentence, leaving the thought unfinished.",
+          "suggested_fix": "Complete the sentence, e.g., 'The loss of plants would also trigger mass extinctions across the food chain.'",
+          "likely_module": "essay.py (_clean_fragments), parser.py"
+        },
+        {
+          "mistake_type": "factual_error",
+          "severity": "medium",
+          "excerpt": "oxygen levels could drop to dangerously low levels for humans and animals",
+          "description": "The atmosphere contains a massive reservoir of oxygen (about 21%). Even without plants, it would take thousands of years, not 'a few decades', for oxygen to deplete to lethal levels via respiration.",
+          "suggested_fix": "Clarify that while CO2 would rise quickly, the depletion of the total oxygen reservoir would be a much slower process.",
           "likely_module": "knowledge retrieval, parser.py"
+        }
+      ],
+      "raw_feedback": "The response is factually sound and well-written, but it is critically flawed because it cuts off mid-sentence at the end."
+    },
+    {
+      "query": "Tell me about the most mysterious unsolved manuscript in history.",
+      "response": "The Voynich Manuscript is a medieval codex dating to the early 15th century, named after the book dealer Wilfrid Voynich who purchased it in 1912. It's written in an unknown script and illustrated with bizarre diagrams of plants, astronomical charts, and human figures in what appear to be tubs. Despite over a century of study by professional cryptographers, including those from World War I and II, the text remains undeciphered. The manuscript contains roughly 240 pages of vellum, with some pages",
+      "time": 0.01,
+      "scores": {
+        "naturalness": 8,
+        "informativeness": 7,
+        "coherence": 6,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 8.2
+      },
+      "mistakes": [
+        {
+          "mistake_type": "incomplete_sentence",
+          "severity": "high",
+          "excerpt": "It's hou",
+          "description": "The response ends abruptly in the middle of a word and sentence.",
+          "suggested_fix": "Complete the sentence (e.g., 'It is housed at the Beinecke Rare Book & Manuscript Library.')",
+          "likely_module": "essay.py (_clean_fragments), parser.py"
+        }
+      ],
+      "raw_feedback": "The response provides accurate information but is critically flawed because it cuts off mid-word at the very end."
+    },
+    {
+      "query": "Why does time seem to speed up as we get older?",
+      "response": "In essence, time is the continuous progression of existence that occurs in an apparently irreversible succession from the past, through the present, and into the future. Time dictates all forms of action, age, and causality, being a component quantity of various measurements used to sequence events, to compare the duration of events, and to quantify rates of change of quantities in material reality or in conscious experience. Time is often referred to as the fourth dimension and the temporal dim",
+      "time": 4.12,
+      "scores": {
+        "naturalness": 2,
+        "informativeness": 1,
+        "coherence": 2,
+        "correctness": 5,
+        "conciseness": 4,
+        "average": 2.8
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "In essence, time is the continuous progression...",
+          "description": "The response defines what time is rather than explaining why it seems to speed up as we age.",
+          "suggested_fix": "Explain the psychological theories of time perception, such as the proportional theory or the lack of new novel experiences.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
         },
         {
           "mistake_type": "incomplete_sentence",
           "severity": "high",
-          "excerpt": "but it's",
-          "description": "The response cuts off abruptly at the end.",
-          "suggested_fix": "Complete the sentence or remove the trailing fragment.",
+          "excerpt": "the speed of an object is the ma",
+          "description": "The response ends abruptly in the middle of a word/sentence.",
+          "suggested_fix": "Complete the sentence or remove the irrelevant section.",
           "likely_module": "essay.py (_clean_fragments), parser.py"
         },
         {
-          "mistake_type": "missing_info",
-          "severity": "high",
-          "excerpt": "The entire response",
-          "description": "The assistant failed to identify any mysterious manuscripts (e.g., Voynich Manuscript).",
-          "suggested_fix": "Provide a detailed answer regarding the Voynich Manuscript.",
-          "likely_module": "parser.py (fact extraction), cleaner.py"
+          "mistake_type": "flow_issue",
+          "severity": "medium",
+          "excerpt": "In kinematics, the speed of an object is the ma",
+          "description": "The transition to kinematics is irrelevant to the user's question and the previous paragraphs.",
+          "suggested_fix": "Remove this section entirely.",
+          "likely_module": "discourse.py, combine.py"
         }
       ],
-      "raw_feedback": "The response is a complete hallucination/failure. It provides a generic definition of problem solving instead of answering the user's question about mysterious manuscripts, and it ends mid-sentence."
+      "raw_feedback": "The assistant completely failed to answer the user's specific question about the perception of time. Instead, it provided a generic, encyclopedic definition of time and then cut off mid-sentence."
     },
     {
-      "query": "Why do some people experience synesthesia where they see colors when hearing music?",
-      "response": "A manuscript was, traditionally, any document written by hand or typewritten, as opposed to mechanically printed or reproduced in an indirect or automated way. More recently, the term has come to be understood to further include any written, typed, or word-processed copy of an author's work, as opposed to the printed version of the same thing.",
-      "time": 3.96,
+      "query": "How does a noise-canceling headphone actually \"erase\" sound?",
+      "response": "Simply put, somnology is the scientific study of sleep. It includes clinical study and treatment of sleep disorders and irregularities. Sleep medicine is a subset of somnology. Hypnology has a similar meaning but includes hypnotic phenomena.",
+      "time": 9.34,
       "scores": {
         "naturalness": 1,
         "informativeness": 1,
@@ -371,26 +416,122 @@
         {
           "mistake_type": "factual_error",
           "severity": "high",
-          "excerpt": "A manuscript was, traditionally, any document written by hand...",
-          "description": "The response is entirely unrelated to the user's question about synesthesia.",
-          "suggested_fix": "Replace the entire response with an explanation of chromesthesia (sound-to-color synesthesia).",
+          "excerpt": "Simply put, somnology is the scientific study of sleep.",
+          "description": "The response is a total hallucination/mismatch; it answers a question about sleep science instead of noise-canceling technology.",
+          "suggested_fix": "Replace the entire response with an explanation of active noise cancellation (destructive interference).",
           "likely_module": "knowledge retrieval, parser.py"
         },
         {
           "mistake_type": "missing_info",
           "severity": "high",
-          "excerpt": "A manuscript was...",
-          "description": "The response fails to address the user's query regarding why people see colors when hearing music.",
-          "suggested_fix": "Provide information on neural cross-wiring and the sensory processing of synesthesia.",
+          "excerpt": "Simply put, somnology is the scientific study of sleep.",
+          "description": "The response fails to address the user's query regarding how noise-canceling headphones work.",
+          "suggested_fix": "Provide information on microphones, phase inversion, and sound wave cancellation.",
           "likely_module": "parser.py (fact extraction), cleaner.py"
         }
       ],
-      "raw_feedback": "The assistant provided a completely irrelevant response. The user asked about synesthesia, but the assistant defined the word 'manuscript'."
+      "raw_feedback": "The response is completely irrelevant to the user's question. The user asked about noise-canceling headphones, but the assistant provided a definition of somnology (sleep study)."
     },
     {
-      "query": "Tell me about the most isolated inhabited place on Earth.",
-      "response": "In Canada, the designations remote, isolated, outport and fly-in refer to a settlement that is either a long distance from larger settlements or lacks transportation links that are typical in more populated areas.",
-      "time": 0.26,
+      "query": "What is the philosophical argument for why there is something rather than nothing?",
+      "response": "The question of why there's something rather than nothing is one of philosophy's most fundamental puzzles, known as the 'principle of sufficient reason.' Philosophers have offered several approaches. Leibniz argued that there must be a sufficient reason for why the universe exists, and that reason is God \u2014 a necessary being whose own existence explains why anything exists at all. Modern physicists have proposed alternatives: quantum mechanics suggests that 'nothing' (a quantum vacuum) is actuall",
+      "time": 0.01,
+      "scores": {
+        "naturalness": 8,
+        "informativeness": 4,
+        "coherence": 5,
+        "correctness": 9,
+        "conciseness": 10,
+        "average": 7.2
+      },
+      "mistakes": [
+        {
+          "mistake_type": "incomplete_sentence",
+          "severity": "high",
+          "excerpt": "meaning that \"",
+          "description": "The response cuts off mid-sentence, leaving the thought unfinished.",
+          "suggested_fix": "Complete the sentence, e.g., 'meaning that the universe could have emerged from a quantum fluctuation.'",
+          "likely_module": "essay.py (_clean_fragments), parser.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "medium",
+          "excerpt": "Philosophers have offered several approaches.",
+          "description": "The response only mentions Leibniz and a physics perspective, omitting other major philosophical views like the 'Brute Fact' argument (Russell/Wittgenstein) or the 'Necessary Existence' of the universe.",
+          "suggested_fix": "Include a mention of the view that the universe is a brute fact requiring no further explanation.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The response is factually accurate but ends abruptly in the middle of a sentence, leaving the explanation incomplete."
+    },
+    {
+      "query": "Which city in the world has the most unique architecture?",
+      "response": "In essence, a city is a human settlement of a substantial size. The term \"city\" has different meanings around the world and in some places the settlement can be very small. Even where the term is limited to larger settlements, there's no universally agreed definition of the lower numerical boundary for their size. In a more specific sense, a city can be defined as a permanent and densely populated place with administratively defined boundaries whose members work primarily on non-agricultural tas",
+      "time": 2.47,
+      "scores": {
+        "naturalness": 1,
+        "informativeness": 1,
+        "coherence": 1,
+        "correctness": 1,
+        "conciseness": 2,
+        "average": 1.2
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "In essence, a city is a human settlement...",
+          "description": "The response ignores the core of the user's query regarding 'unique architecture' and instead defines what a city is.",
+          "suggested_fix": "Provide a list of cities known for unique architecture (e.g., Barcelona, Dubai, Prague) and explain why.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "incomplete_sentence",
+          "severity": "high",
+          "excerpt": "Cities generally includes extensive systems for housing, transportation, sanitat",
+          "description": "The response cuts off mid-sentence with a trailing comma and quotation mark.",
+          "suggested_fix": "Complete the sentence or remove the fragment.",
+          "likely_module": "essay.py (_clean_fragments), parser.py"
+        },
+        {
+          "mistake_type": "verb_agreement",
+          "severity": "medium",
+          "excerpt": "Cities generally includes",
+          "description": "Subject-verb agreement error: 'Cities' (plural) requires 'include' (plural).",
+          "suggested_fix": "Cities generally include",
+          "likely_module": "realize.py (is_plural_subject check), fluency.py"
+        }
+      ],
+      "raw_feedback": "The assistant completely failed to answer the user's question, providing a generic dictionary definition of a 'city' instead of discussing architecture. Additionally, the response ends abruptly in an incomplete sentence."
+    },
+    {
+      "query": "How do fungi communicate with each other underground?",
+      "response": "I wish I could give you a more complete answer, but I don't have reliable details on that yet.",
+      "time": 14.13,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 1,
+        "coherence": 10,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 8.2
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "I don't have reliable details on that yet.",
+          "description": "The assistant claims a lack of information on a widely known biological process (mycelial networks/Wood Wide Web), failing to provide any answer to the user's question.",
+          "suggested_fix": "Explain how fungi use mycelial networks to exchange chemical signals and nutrients.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The response is a refusal to answer a well-documented scientific topic, resulting in a total failure of informativeness."
+    },
+    {
+      "query": "Why is it that some songs can instantly trigger a vivid memory from years ago?",
+      "response": "Simply put, memory is the faculty of the mind by which data or information is encoded, stored, and retrieved when needed. On top of that, it is the retention of information over time for the purpose of influencing future action. If past events couldn't be remembered, it would be impossible for language, relationships, or personal identity to develop. Usually described as forgetfulness or a disorder such as amnesia.",
+      "time": 9.74,
       "scores": {
         "naturalness": 2,
         "informativeness": 1,
@@ -403,229 +544,37 @@
         {
           "mistake_type": "missing_info",
           "severity": "high",
-          "excerpt": "In Canada, the designations remote, isolated, outport and fly-in refer to...",
-          "description": "The assistant failed to answer the specific question about the most isolated inhabited place on Earth, providing a definition of Canadian regional terms instead.",
-          "suggested_fix": "Identify and describe Tristan da Cunha or another globally recognized most isolated inhabited settlement.",
+          "excerpt": "The entire response",
+          "description": "The assistant ignores the core of the prompt (music/songs triggering memories) and provides a general definition of memory instead.",
+          "suggested_fix": "Explain the connection between the auditory cortex, hippocampus, and emotional memory (the Proustian effect).",
           "likely_module": "parser.py (fact extraction), cleaner.py"
         },
         {
-          "mistake_type": "flow_issue",
+          "mistake_type": "incomplete_sentence",
           "severity": "high",
-          "excerpt": "In Canada, the designations remote, isolated, outport and fly-in refer to a sett",
-          "description": "The response is non-sequitur; it does not address the prompt's intent.",
-          "suggested_fix": "Rewrite the entire response to focus on global isolation rather than Canadian terminology.",
-          "likely_module": "discourse.py, combine.py"
-        }
-      ],
-      "raw_feedback": "The response is completely irrelevant to the user's request. Instead of identifying the most isolated inhabited place on Earth (e.g., Tristan da Cunha), it provides a generic definition of terminology used in Canada."
-    },
-    {
-      "query": "What would actually happen to a human body if it fell into a black hole?",
-      "response": "I'm still learning about that topic. Could you share more details about what you're looking for?",
-      "time": 6.51,
-      "scores": {
-        "naturalness": 10,
-        "informativeness": 1,
-        "coherence": 10,
-        "correctness": 10,
-        "conciseness": 10,
-        "average": 8.2
-      },
-      "mistakes": [
-        {
-          "mistake_type": "missing_info",
-          "severity": "high",
-          "excerpt": "I'm still learning about that topic.",
-          "description": "The assistant fails to provide any information about spaghettification or event horizons, which are well-documented scientific concepts.",
-          "suggested_fix": "Provide a detailed explanation of what happens to a body falling into a black hole.",
-          "likely_module": "parser.py (fact extraction), cleaner.py"
-        },
-        {
-          "mistake_type": "template_artifact",
-          "severity": "medium",
-          "excerpt": "Could you share more details about what you're looking for?",
-          "description": "The response uses a generic 'I don't know' template for a query that does not require further clarification.",
-          "suggested_fix": "Answer the question directly instead of asking for more details.",
-          "likely_module": "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)"
-        }
-      ],
-      "raw_feedback": "The response is a refusal/placeholder that fails to answer a common scientific question, resulting in a total lack of informativeness."
-    },
-    {
-      "query": "How did the concept of \"time\" evolve from sundials to atomic clocks?",
-      "response": "I'm still learning about that topic. Could you share more details about what you're looking for?",
-      "time": 8.44,
-      "scores": {
-        "naturalness": 10,
-        "informativeness": 1,
-        "coherence": 10,
-        "correctness": 10,
-        "conciseness": 10,
-        "average": 8.2
-      },
-      "mistakes": [
-        {
-          "mistake_type": "missing_info",
-          "severity": "high",
-          "excerpt": "I'm still learning about that topic.",
-          "description": "The assistant failed to provide any information regarding the evolution of timekeeping, which is a general knowledge topic it should be able to answer.",
-          "suggested_fix": "Provide a detailed explanation covering sundials, mechanical clocks, pendulum clocks, quartz clocks, and atomic clocks.",
-          "likely_module": "parser.py (fact extraction), cleaner.py"
-        },
-        {
-          "mistake_type": "template_artifact",
-          "severity": "medium",
-          "excerpt": "Could you share more details about what you're looking for?",
-          "description": "This is a generic fallback response used when the AI cannot answer, rather than a helpful engagement with the user's specific prompt.",
-          "suggested_fix": "Replace the generic request for details with the actual answer to the user's question.",
-          "likely_module": "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)"
-        }
-      ],
-      "raw_feedback": "The assistant failed to answer a straightforward historical and scientific question, providing a canned refusal response instead of the requested information."
-    },
-    {
-      "query": "Why is it that some melodies evoke such strong emotions even if we've never heard them before?",
-      "response": "That's a great question! The reason it that some melodies evoke such strong emotions even if we've never heard them before works the way it does is largely due to cultural evolution and the practical needs of the people who developed it. While it might seem arbitrary at first, it that some melodies evoke such strong emotions even if we've never heard them before is actually a highly optimized tool for communication that has been refined over centuries of use.",
-      "time": 0.01,
-      "scores": {
-        "naturalness": 1,
-        "informativeness": 2,
-        "coherence": 2,
-        "correctness": 3,
-        "conciseness": 3,
-        "average": 2.2
-      },
-      "mistakes": [
-        {
-          "mistake_type": "grammar",
-          "severity": "high",
-          "excerpt": "The reason it that some melodies evoke such strong emotions",
-          "description": "Missing verb and incorrect syntax; it repeats the prompt instead of forming a sentence.",
-          "suggested_fix": "The reason some melodies evoke such strong emotions",
-          "likely_module": "fluency.py, realize.py"
+          "excerpt": "Usually described as forgetfulness or a disorder such as amnesia.",
+          "description": "This is a sentence fragment lacking a subject and a verb.",
+          "suggested_fix": "This failure of memory is usually described as forgetfulness...",
+          "likely_module": "essay.py (_clean_fragments), parser.py"
         },
         {
           "mistake_type": "awkward_phrasing",
-          "severity": "high",
-          "excerpt": "works the way it does is largely due to",
-          "description": "The sentence structure is nonsensical and grammatically collapsed.",
-          "suggested_fix": "is largely due to",
+          "severity": "medium",
+          "excerpt": "Simply put, memory is the faculty of the mind",
+          "description": "The tone is overly academic and robotic, sounding like a dictionary entry rather than a conversational response.",
+          "suggested_fix": "Start by addressing why music specifically triggers memories.",
           "likely_module": "realize.py (templates), combine.py"
         },
         {
-          "mistake_type": "repetition",
-          "severity": "high",
-          "excerpt": "it that some melodies evoke such strong emotions even if we've never heard them ",
-          "description": "The assistant verbatim repeats the user's question as a subject, creating a circular, unnatural phrase.",
-          "suggested_fix": "this phenomenon",
-          "likely_module": "fluency.py (filler dedup), essay.py (_deduplicate_facts)"
-        },
-        {
-          "mistake_type": "factual_error",
-          "severity": "medium",
-          "excerpt": "highly optimized tool for communication that has been refined over centuries",
-          "description": "The response treats emotional musical response as a conscious 'tool' developed by people, ignoring psychoacoustics and biological imperatives.",
-          "suggested_fix": "Explain the role of tension, release, and biological responses to frequency.",
-          "likely_module": "knowledge retrieval, parser.py"
-        },
-        {
           "mistake_type": "flow_issue",
-          "severity": "high",
-          "excerpt": "The reason it that... works the way it does is",
-          "description": "The entire second sentence is a syntactic disaster that fails to convey a clear thought.",
-          "suggested_fix": "Rewrite the entire paragraph for clarity.",
+          "severity": "medium",
+          "excerpt": "On top of that, it is the retention of information",
+          "description": "The transition 'On top of that' is used incorrectly to connect two slightly different definitions of the same concept.",
+          "suggested_fix": "Combine the definitions into a single cohesive sentence.",
           "likely_module": "discourse.py, combine.py"
         }
       ],
-      "raw_feedback": "The response is severely flawed, exhibiting 'hallucinated' sentence structures where the user's prompt is repeated as a noun phrase within broken sentences. It fails to provide a scientific explanation and reads like a corrupted template."
-    },
-    {
-      "query": "What are the most effective ways to reduce plastic waste in a typical household?",
-      "response": "Effectiveness or effectivity is the capability of producing a desired result or the ability to produce desired output. When something has deemed effective, it means it has an intended or expected outcome, or produces a deep, vivid impression.",
-      "time": 2.12,
-      "scores": {
-        "naturalness": 1,
-        "informativeness": 1,
-        "coherence": 1,
-        "correctness": 1,
-        "conciseness": 5,
-        "average": 1.8
-      },
-      "mistakes": [
-        {
-          "mistake_type": "missing_info",
-          "severity": "high",
-          "excerpt": "Effectiveness or effectivity is the capability...",
-          "description": "The response provides a definition of a word instead of answering the user's request for ways to reduce plastic waste.",
-          "suggested_fix": "Provide a list of actionable tips to reduce plastic waste in a household (e.g., using reusable bags, avoiding single-use plastics).",
-          "likely_module": "parser.py (fact extraction), cleaner.py"
-        },
-        {
-          "mistake_type": "word_choice",
-          "severity": "medium",
-          "excerpt": "When something has deemed effective",
-          "description": "Incorrect passive construction; 'has' should be 'is' or 'has been'.",
-          "suggested_fix": "When something is deemed effective",
-          "likely_module": "realize.py (templates), fluency.py"
-        }
-      ],
-      "raw_feedback": "The assistant completely failed to answer the user's question. Instead of providing ways to reduce plastic waste, it provided a dictionary definition of the word 'effectiveness'."
-    },
-    {
-      "query": "How does the gut microbiome actually influence our mental health and mood?",
-      "response": "That's outside what I currently know well enough to explain confidently. What specific aspect interests you?",
-      "time": 10.39,
-      "scores": {
-        "naturalness": 7,
-        "informativeness": 1,
-        "coherence": 10,
-        "correctness": 10,
-        "conciseness": 10,
-        "average": 7.6
-      },
-      "mistakes": [
-        {
-          "mistake_type": "missing_info",
-          "severity": "high",
-          "excerpt": "That's outside what I currently know well enough to explain confidently.",
-          "description": "The assistant refuses to answer a general knowledge question about the gut-brain axis, which is widely documented in scientific literature.",
-          "suggested_fix": "Provide an explanation of the gut-brain axis, mentioning neurotransmitters like serotonin and the vagus nerve.",
-          "likely_module": "parser.py (fact extraction), cleaner.py"
-        },
-        {
-          "mistake_type": "template_artifact",
-          "severity": "medium",
-          "excerpt": "That's outside what I currently know well enough to explain confidently.",
-          "description": "The phrasing sounds like a canned refusal or a restrictive system prompt rather than a natural conversational response.",
-          "suggested_fix": "Use a more natural transition or actually answer the question.",
-          "likely_module": "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)"
-        }
-      ],
-      "raw_feedback": "The response is grammatically correct but fails to provide any information on a well-documented scientific topic, resulting in a total lack of informativeness."
-    },
-    {
-      "query": "What is the philosophy behind the \"Ship of Theseus\" paradox?",
-      "response": "The Ship of Theseus, also known as Theseus's Paradox, is a paradox and common thought experiment about whether an object is the same object after having all of its original components replaced with others over time.",
-      "time": 0.28,
-      "scores": {
-        "naturalness": 10,
-        "informativeness": 4,
-        "coherence": 10,
-        "correctness": 10,
-        "conciseness": 10,
-        "average": 8.8
-      },
-      "mistakes": [
-        {
-          "mistake_type": "missing_info",
-          "severity": "high",
-          "excerpt": "The Ship of Theseus... is a paradox and common thought experiment about whether ",
-          "description": "The response defines the paradox but ignores the 'philosophy behind' it (e.g., persistence of identity, mereological theory, spatio-temporal continuity).",
-          "suggested_fix": "Expand the answer to discuss the philosophical implications regarding identity and substance.",
-          "likely_module": "parser.py (fact extraction), cleaner.py"
-        }
-      ],
-      "raw_feedback": "The response is grammatically perfect and accurate, but it fails to answer the core of the user's request. The user asked for the 'philosophy behind' the paradox, but the assistant only provided a definition of the paradox itself."
+      "raw_feedback": "The assistant completely failed to answer the user's specific question about music and memory, instead providing a generic, textbook-style definition of memory that ends with a fragmented sentence."
     }
   ]
 }

@@ -1,0 +1,28 @@
+[
+    {
+        "q": [
+            "How does a skyscraper actually withstand a massive earthquake?",
+            "How do skyscrapers survive earthquakes?",
+            "How do tall buildings resist earthquakes?",
+            "What keeps a skyscraper from falling during an earthquake?",
+            "How do buildings withstand earthquakes?"
+        ],
+        "a": "Skyscrapers are engineered to withstand earthquakes through several key techniques. Base isolation systems use flexible bearings or pads between the building and its foundation, allowing the structure to move independently of the ground motion. Tuned mass dampers are large weights installed near the top of the building that swing counter to the sway caused by seismic waves, reducing oscillation. The building's steel frame is designed to flex rather than rigidly resist, absorbing and dissipating energy. Deep foundations extend down to bedrock or stable soil layers, and the building's natural frequency is carefully calculated to avoid resonance with typical earthquake frequencies."
+    },
+    {
+        "q": [
+            "What is base isolation?",
+            "How does base isolation work in buildings?",
+            "What is an earthquake base isolation system?"
+        ],
+        "a": "Base isolation is an earthquake protection technique that decouples a building from the ground motion beneath it. The building rests on flexible bearings or sliding plates that allow it to move horizontally during an earthquake, while the foundation moves with the ground. This reduces the seismic forces transmitted to the structure by up to 70-80%, significantly lowering the risk of structural damage."
+    },
+    {
+        "q": [
+            "What is a tuned mass damper?",
+            "How does a tuned mass damper work?",
+            "Why do tall buildings have giant weights at the top?"
+        ],
+        "a": "A tuned mass damper is a large mass, often hundreds of tons, suspended near the top of a tall building or tower. It is tuned to the building's natural frequency so that when the building begins to sway during wind or earthquake loading, the damper swings in the opposite direction, counteracting the motion. This reduces sway by up to 40-50%, making the building safer and more comfortable for occupants."
+    }
+]
