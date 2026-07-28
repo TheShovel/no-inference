@@ -1290,27 +1290,20 @@ def _extract_search_topic(query):
     # Pre-clean: strip trailing clauses that make Wikipedia search fail
     # These patterns match the end of essay/coding prompts where users specify
     # additional requirements ("covering X, Y, Z", "including...", "with...")
-    q = re.sub(r'(?:,\s+and|,\s+or)\s+.*$', '', q)
+    q = re.sub(r'(?:,\s+and|;\s+and|,\s+or|;\s+or)\s+.*$', '', q)
     q = re.sub(r'\s+(?:covering|including|featuring|focusing|specifically|especially|particularly)\s+.*$', '', q)
     q = re.sub(r'\s+and\s+(?:do|does|did|is|are|was|were|can|could|would|should)\s+.*$', '', q)
-    # Strip trailing details after the first comma for coding/specific tasks
-    # (e.g., "remove duplicates and sort alphabetically" -> just "remove duplicates")
-    # This keeps the Wikipedia search focused on the main topic
+    # Strip trailing details after the first comma/semicolon for coding/specific tasks
     if 'write a' in q or 'create a' in q or 'make a' in q or 'build a' in q:
-        q = re.sub(r',\s+.*$', '', q)
-    # First, pre-process common comparison/question patterns
-    # "X and how it differs from Y" -> just extract X
-    # "X as well as Y" -> just extract X
-    # "X including Y" -> just extract X
+        q = re.sub(r'[,;]\s+.*$', '', q)
+    # Pre-process common comparison/question patterns
     q = re.sub(r'\s+and\s+how\s+(?:it|this|that)\s+(?:differs|compares|relates|connects|works)\s+.*$', '', q)
     q = re.sub(r'\s+as\s+well\s+as\s+.*$', '', q)
     q = re.sub(r'\s+and\s+(?:why|how|what|who|when|where)\s+.*$', '', q)
-    q = re.sub(r',\s+and\s+is\s+.*$', '', q)
-    q = re.sub(r',\s+including\s+.*$', '', q)
-    q = re.sub(r',\s+such\s+as\s+.*$', '', q)
-    # Strip trailing "difference" clauses
-    # Handle "difference between X and Y" queries: keep both X and Y
-    # Don't strip them entirely, instead try to extract X
+    q = re.sub(r'[,;]\s+and\s+is\s+.*$', '', q)
+    q = re.sub(r'[,;]\s+including\s+.*$', '', q)
+    q = re.sub(r'[,;]\s+such\s+as\s+.*$', '', q)
+    # Handle "difference between X and Y" queries
     diff_match = re.search(r'difference\s+between\s+(.+?)\s+and\s+', q)
     if diff_match:
         q = diff_match.group(1).strip()

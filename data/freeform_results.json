@@ -1,262 +1,177 @@
 {
   "analysis": {
-    "overall_average": 6.43,
+    "overall_average": 6.94,
     "dimension_averages": {
-      "naturalness": 6.95,
-      "informativeness": 5.2,
-      "coherence": 5.95,
-      "correctness": 6.3,
-      "conciseness": 7.75
+      "naturalness": 7.8,
+      "informativeness": 4.9,
+      "coherence": 6.6,
+      "correctness": 6.6,
+      "conciseness": 8.8
     },
     "total_cases": 20,
-    "total_mistakes": 39,
+    "total_mistakes": 37,
     "severity_counts": {
-      "high": 28,
-      "medium": 7,
-      "low": 4
+      "low": 4,
+      "high": 25,
+      "medium": 8
     },
     "type_counts": {
-      "missing_info": 15,
-      "incomplete_sentence": 7,
+      "missing_info": 16,
+      "incomplete_sentence": 6,
       "factual_error": 5,
-      "repetition": 3,
-      "flow_issue": 3,
-      "template_artifact": 2,
+      "flow_issue": 4,
+      "awkward_phrasing": 2,
       "word_choice": 1,
-      "awkward_phrasing": 1,
+      "template_artifact": 1,
       "grammar": 1,
-      "punctuation": 1
+      "capitalization": 1
     },
     "type_examples": {
-      "missing_info": [
+      "factual_error": [
         {
-          "excerpt": "entire response",
-          "description": "The assistant failed to explain why we dream or mention any scientific theories (e.g., activation-synthesis or memory consolidation).",
-          "fix": "Add a detailed explanation of the purposes of dreaming and the leading scientific theories.",
-          "severity": "high"
+          "excerpt": "affects roughly 1 in 2,000 people",
+          "description": "The prevalence of synesthesia is generally estimated to be higher, typically between 2% and 4% of the population, rather than 0.05%.",
+          "fix": "affects roughly 2% to 4% of the population",
+          "severity": "low"
         },
         {
-          "excerpt": "Write me a detailed essay",
-          "description": "The assistant provided a summary/list of facts rather than a structured essay with an introduction, body paragraphs, and a conclusion.",
-          "fix": "Rewrite the content into a formal essay format.",
+          "excerpt": "extremely isolated inhabited places include... Campbell Island",
+          "description": "Campbell Island is not permanently inhabited; it only hosts rotating scientists/personnel.",
+          "fix": "Remove Campbell Island from the list of inhabited places.",
+          "severity": "low"
+        },
+        {
+          "excerpt": "Here's a Python function that takes a list of strings, removes duplicates, and s",
+          "description": "The assistant ignored the user's specific requirements (filter length < 5, uppercase) and instead implemented a deduplication function.",
+          "fix": "Rewrite the function to filter strings by length and convert them to uppercase.",
           "severity": "high"
+        }
+      ],
+      "missing_info": [
+        {
+          "excerpt": ".parent { display: grid; place-items: center; }",
+          "description": "The code examples lack a height definition for the parent container. Without a height (e.g., min-height: 100vh), vertical centering is not visually apparent as the container defaults to the height of its content.",
+          "fix": "Add 'height: 100vh;' or 'min-height: 100vh;' to the .parent examples.",
+          "severity": "low"
         },
         {
           "excerpt": "The entire response",
-          "description": "The response is missing the logic to filter strings by length (>= 5) and the logic to sort strings alphabetically.",
-          "fix": "Implement the specific logic requested by the user.",
+          "description": "The assistant failed to address any part of the user's request regarding nuclear fusion, plasma, the sun's core, or ITER.",
+          "fix": "Provide a detailed explanation of nuclear fusion and the specific requested topics.",
+          "severity": "high"
+        },
+        {
+          "excerpt": "the entire response",
+          "description": "Missing the logic to filter strings shorter than 5 characters.",
+          "fix": "Add a list comprehension or filter: [s for s in strings if len(s) >= 5]",
           "severity": "high"
         }
       ],
       "incomplete_sentence": [
         {
-          "excerpt": "and the efficiency of the civil administrati",
-          "description": "The response cuts off abruptly at the end of the final sentence.",
-          "fix": "Complete the word to 'administration' and finish the sentence/essay.",
+          "excerpt": "the tendency in much of the recent philosophical literature has been to assum",
+          "description": "The response cuts off abruptly at the end.",
+          "fix": "Complete the sentence and the thought.",
+          "severity": "high"
+        },
+        {
+          "excerpt": "They include conceptual analysis, reliance on common sense and intuitions, use o",
+          "description": "The response ends abruptly in the middle of a sentence.",
+          "fix": "Complete the sentence or end the response properly.",
           "severity": "high"
         },
         {
           "excerpt": "background: #1a1a4e;\n       \"",
-          "description": "The code block ends abruptly mid-CSS rule, leaving the HTML file unfinished and broken.",
-          "fix": "Complete the CSS, close the style tag, add the HTML body content (grid and form), and close the HTML tags.",
-          "severity": "high"
-        },
-        {
-          "excerpt": "Positive parenting is par",
-          "description": "The response cuts off abruptly at the end.",
-          "fix": "Complete the sentence or remove the irrelevant section.",
-          "severity": "medium"
-        }
-      ],
-      "repetition": [
-        {
-          "excerpt": "The fall of the Western Roman Empire, also called the fall of the Roman Empire",
-          "description": "The text repeats the definition of the event in a way that sounds like a Wikipedia copy-paste, breaking the flow of the narrative.",
-          "fix": "Remove the redundant definition and integrate the information into the main analysis.",
-          "severity": "medium"
-        },
-        {
-          "excerpt": "likely due to a combination of genetic predisposition and early developmental pr",
-          "description": "The explanation of neural pruning is mentioned twice in the same paragraph, making the flow slightly redundant.",
-          "fix": "Combine these two points into a single explanation of the developmental process.",
-          "severity": "low"
-        },
-        {
-          "excerpt": "javascript function validates email address",
-          "description": "The exact phrase is repeated in every single paragraph, creating a robotic and unnatural flow.",
-          "fix": "Use pronouns or varied terminology.",
-          "severity": "medium"
-        }
-      ],
-      "flow_issue": [
-        {
-          "excerpt": "Key causes included: the Crisis of the Third Century",
-          "description": "The transition from a narrative introduction to a list-like structure is jarring and not appropriate for an essay.",
-          "fix": "Use transitional phrases to connect these points into cohesive paragraphs.",
-          "severity": "medium"
-        },
-        {
-          "excerpt": "Writing is the act of creating a persistent...",
-          "description": "Complete non-sequitur; the assistant suddenly switches from philosophy to defining the act of writing.",
-          "fix": "Remove the entire section regarding writing.",
-          "severity": "high"
-        },
-        {
-          "excerpt": "destroying several major civilizations including the Mycenaean Greeks, the Hitti",
-          "description": "Parallelism error in the list. The first three items are objects of 'including', but the last item is a full independent clause.",
-          "fix": "change to '...the Kassites of Babylonia, and the New Kingdom of Egypt, which was severely weakened.'",
-          "severity": "low"
-        }
-      ],
-      "factual_error": [
-        {
-          "excerpt": "extremely isolated inhabited places include... Campbell Island",
-          "description": "Campbell Island is not permanently inhabited; it only has a rotating staff of scientists/personnel.",
-          "fix": "Remove Campbell Island from the list of inhabited places.",
-          "severity": "low"
-        },
-        {
-          "excerpt": "Here's a Python function that takes a list of integers, removes duplicates",
-          "description": "The assistant ignored the user's request for string filtering and instead wrote a function for integer deduplication.",
-          "fix": "Rewrite the function to filter strings shorter than five characters and sort them alphabetically.",
-          "severity": "high"
-        },
-        {
-          "excerpt": "grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));",
-          "description": "The user specifically requested a 'masonry grid layout'. The assistant provided a standard CSS Grid, which creates uniform rows rather than a masonry effect.",
-          "fix": "Use column-count or a JavaScript library like Masonry.js, or use CSS columns to achieve a true masonry layout.",
-          "severity": "medium"
-        }
-      ],
-      "template_artifact": [
-        {
-          "excerpt": "Let me provide a thorough explanation of give detailed explanation quantum entan",
-          "description": "The assistant has inserted the user's prompt instructions directly into the sentence structure, creating a nonsensical phrase.",
-          "fix": "Let me provide a thorough explanation of quantum entanglement.",
-          "severity": "high"
-        },
-        {
-          "excerpt": "Great, let me expand on javascript function validates email address, further!",
-          "description": "The response uses a generic filler template that repeats the user's keywords without providing content.",
-          "fix": "Remove the template and answer the prompt directly.",
+          "description": "The code block cuts off mid-CSS rule, leaving the HTML file unfinished and broken.",
+          "fix": "Complete the CSS, add the HTML body content, and close the tags.",
           "severity": "high"
         }
       ],
       "word_choice": [
         {
-          "excerpt": "What Is give detailed explanation quantum entanglement?",
-          "description": "Incorrect use of the prompt as a subject; grammatically incoherent.",
-          "fix": "What is quantum entanglement?",
-          "severity": "high"
+          "excerpt": "rely to the subject\u2019s beliefs",
+          "description": "Incorrect preposition usage; 'rely' should be followed by 'on'.",
+          "fix": "rely on the subject's beliefs",
+          "severity": "medium"
         }
       ],
-      "awkward_phrasing": [
+      "template_artifact": [
         {
-          "excerpt": "give detailed explanation quantum entanglement is a multifaceted subject",
-          "description": "The response treats the instruction 'give detailed explanation' as part of the name of the subject.",
-          "fix": "Quantum entanglement is a multifaceted subject",
+          "excerpt": "Philosophy (from Ancient Greek philosoph\u00eda, lit. 'love of wisdom') is a systemat",
+          "description": "The text appears to be a copy-paste from a Wikipedia-style introduction rather than a conversational AI response.",
+          "fix": "Rewrite the response to be direct and helpful to the user's query.",
+          "severity": "medium"
+        }
+      ],
+      "flow_issue": [
+        {
+          "excerpt": "The terraforming of Mars is a hypothetical procedure",
+          "description": "The transition from a list of colonization challenges to a definition of terraforming is jarring and occurs only at the very end.",
+          "fix": "Integrate the definition of terraforming into the introduction of the essay.",
+          "severity": "medium"
+        },
+        {
+          "excerpt": "The Roman Empire was a state...",
+          "description": "The response provides a general history of the Empire rather than an analysis of the fall of the Republic as requested.",
+          "fix": "Align the content with the user's specific request regarding the Roman Republic.",
+          "severity": "high"
+        },
+        {
+          "excerpt": "Entire response",
+          "description": "The response is a non-sequitur; it answers a theoretical chemistry question rather than a practical hobbyist request.",
+          "fix": "Rewrite the response to be a comprehensive guide for a reef tank beginner.",
           "severity": "high"
         }
       ],
       "grammar": [
         {
-          "excerpt": "javascript function validates email address,",
-          "description": "Incorrect phrasing and punctuation; it treats a descriptive phrase as a noun and ends with a random comma.",
-          "fix": "Change to 'JavaScript email validation functions'.",
+          "excerpt": "Using function calculates fibonacci sequence term allows",
+          "description": "The sentence is grammatically incoherent; it lacks articles and a proper subject-verb structure.",
+          "fix": "Using a function that calculates the Fibonacci sequence term allows...",
+          "severity": "high"
+        }
+      ],
+      "capitalization": [
+        {
+          "excerpt": "fibonacci sequence",
+          "description": "Fibonacci is a proper noun and should be capitalized.",
+          "fix": "Fibonacci sequence",
           "severity": "medium"
         }
       ],
-      "punctuation": [
+      "awkward_phrasing": [
         {
-          "excerpt": "email address, further!",
-          "description": "Incorrect comma placement before 'further'.",
-          "fix": "Remove the comma.",
-          "severity": "low"
+          "excerpt": "Using function calculates fibonacci sequence term allows the algorithm",
+          "description": "The phrasing is fragmented and reads like a bad translation or a template error.",
+          "fix": "Implementing memoization allows the algorithm to avoid redundant calculations.",
+          "severity": "medium"
+        },
+        {
+          "excerpt": "Fictional Futuristic Coffee Shop Called \"Cyberbrew,\"",
+          "description": "The assistant copied the prompt's description and used it as the page title and header text instead of just using the brand name 'CyberBrew'.",
+          "fix": "Change to 'CyberBrew'",
+          "severity": "medium"
         }
       ]
     },
     "module_counts": {
-      "parser.py (fact extraction), cleaner.py": 15,
-      "essay.py (_clean_fragments), parser.py": 7,
+      "parser.py (fact extraction), cleaner.py": 16,
+      "essay.py (_clean_fragments), parser.py": 6,
       "knowledge retrieval, parser.py": 5,
-      "fluency.py (filler dedup), essay.py (_deduplicate_facts)": 3,
-      "discourse.py, combine.py": 3,
-      "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)": 2,
+      "discourse.py, combine.py": 4,
+      "realize.py (templates), combine.py": 2,
       "realize.py (templates), fluency.py": 1,
-      "realize.py (templates), combine.py": 1,
+      "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)": 1,
       "fluency.py, realize.py": 1,
-      "fluency.py (cleanup), realize.py": 1
+      "fluency.py (fix_caps), essay.py": 1
     },
     "module_examples": {
-      "parser.py (fact extraction), cleaner.py": [
-        {
-          "type": "missing_info",
-          "excerpt": "entire response",
-          "fix": "Add a detailed explanation of the purposes of dreaming and the leading scientific theories."
-        },
-        {
-          "type": "missing_info",
-          "excerpt": "Write me a detailed essay",
-          "fix": "Rewrite the content into a formal essay format."
-        },
-        {
-          "type": "missing_info",
-          "excerpt": "The entire response",
-          "fix": "Implement the specific logic requested by the user."
-        }
-      ],
-      "essay.py (_clean_fragments), parser.py": [
-        {
-          "type": "incomplete_sentence",
-          "excerpt": "and the efficiency of the civil administrati",
-          "fix": "Complete the word to 'administration' and finish the sentence/essay."
-        },
-        {
-          "type": "incomplete_sentence",
-          "excerpt": "background: #1a1a4e;\n       \"",
-          "fix": "Complete the CSS, close the style tag, add the HTML body content (grid and form), and close the HTML tags."
-        },
-        {
-          "type": "incomplete_sentence",
-          "excerpt": "Positive parenting is par",
-          "fix": "Complete the sentence or remove the irrelevant section."
-        }
-      ],
-      "fluency.py (filler dedup), essay.py (_deduplicate_facts)": [
-        {
-          "type": "repetition",
-          "excerpt": "The fall of the Western Roman Empire, also called the fall of the Roman Empire",
-          "fix": "Remove the redundant definition and integrate the information into the main analysis."
-        },
-        {
-          "type": "repetition",
-          "excerpt": "likely due to a combination of genetic predisposition and early developmental pr",
-          "fix": "Combine these two points into a single explanation of the developmental process."
-        },
-        {
-          "type": "repetition",
-          "excerpt": "javascript function validates email address",
-          "fix": "Use pronouns or varied terminology."
-        }
-      ],
-      "discourse.py, combine.py": [
-        {
-          "type": "flow_issue",
-          "excerpt": "Key causes included: the Crisis of the Third Century",
-          "fix": "Use transitional phrases to connect these points into cohesive paragraphs."
-        },
-        {
-          "type": "flow_issue",
-          "excerpt": "Writing is the act of creating a persistent...",
-          "fix": "Remove the entire section regarding writing."
-        },
-        {
-          "type": "flow_issue",
-          "excerpt": "destroying several major civilizations including the Mycenaean Greeks, the Hitti",
-          "fix": "change to '...the Kassites of Babylonia, and the New Kingdom of Egypt, which was severely weakened.'"
-        }
-      ],
       "knowledge retrieval, parser.py": [
+        {
+          "type": "factual_error",
+          "excerpt": "affects roughly 1 in 2,000 people",
+          "fix": "affects roughly 2% to 4% of the population"
+        },
         {
           "type": "factual_error",
           "excerpt": "extremely isolated inhabited places include... Campbell Island",
@@ -264,186 +179,233 @@
         },
         {
           "type": "factual_error",
-          "excerpt": "Here's a Python function that takes a list of integers, removes duplicates",
-          "fix": "Rewrite the function to filter strings shorter than five characters and sort them alphabetically."
-        },
-        {
-          "type": "factual_error",
-          "excerpt": "grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));",
-          "fix": "Use column-count or a JavaScript library like Masonry.js, or use CSS columns to achieve a true masonry layout."
+          "excerpt": "Here's a Python function that takes a list of strings, removes duplicates, and s",
+          "fix": "Rewrite the function to filter strings by length and convert them to uppercase."
         }
       ],
-      "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)": [
+      "parser.py (fact extraction), cleaner.py": [
         {
-          "type": "template_artifact",
-          "excerpt": "Let me provide a thorough explanation of give detailed explanation quantum entan",
-          "fix": "Let me provide a thorough explanation of quantum entanglement."
+          "type": "missing_info",
+          "excerpt": ".parent { display: grid; place-items: center; }",
+          "fix": "Add 'height: 100vh;' or 'min-height: 100vh;' to the .parent examples."
         },
         {
-          "type": "template_artifact",
-          "excerpt": "Great, let me expand on javascript function validates email address, further!",
-          "fix": "Remove the template and answer the prompt directly."
+          "type": "missing_info",
+          "excerpt": "The entire response",
+          "fix": "Provide a detailed explanation of nuclear fusion and the specific requested topics."
+        },
+        {
+          "type": "missing_info",
+          "excerpt": "the entire response",
+          "fix": "Add a list comprehension or filter: [s for s in strings if len(s) >= 5]"
+        }
+      ],
+      "essay.py (_clean_fragments), parser.py": [
+        {
+          "type": "incomplete_sentence",
+          "excerpt": "the tendency in much of the recent philosophical literature has been to assum",
+          "fix": "Complete the sentence and the thought."
+        },
+        {
+          "type": "incomplete_sentence",
+          "excerpt": "They include conceptual analysis, reliance on common sense and intuitions, use o",
+          "fix": "Complete the sentence or end the response properly."
+        },
+        {
+          "type": "incomplete_sentence",
+          "excerpt": "background: #1a1a4e;\n       \"",
+          "fix": "Complete the CSS, add the HTML body content, and close the tags."
         }
       ],
       "realize.py (templates), fluency.py": [
         {
           "type": "word_choice",
-          "excerpt": "What Is give detailed explanation quantum entanglement?",
-          "fix": "What is quantum entanglement?"
+          "excerpt": "rely to the subject\u2019s beliefs",
+          "fix": "rely on the subject's beliefs"
         }
       ],
-      "realize.py (templates), combine.py": [
+      "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)": [
         {
-          "type": "awkward_phrasing",
-          "excerpt": "give detailed explanation quantum entanglement is a multifaceted subject",
-          "fix": "Quantum entanglement is a multifaceted subject"
+          "type": "template_artifact",
+          "excerpt": "Philosophy (from Ancient Greek philosoph\u00eda, lit. 'love of wisdom') is a systemat",
+          "fix": "Rewrite the response to be direct and helpful to the user's query."
+        }
+      ],
+      "discourse.py, combine.py": [
+        {
+          "type": "flow_issue",
+          "excerpt": "The terraforming of Mars is a hypothetical procedure",
+          "fix": "Integrate the definition of terraforming into the introduction of the essay."
+        },
+        {
+          "type": "flow_issue",
+          "excerpt": "The Roman Empire was a state...",
+          "fix": "Align the content with the user's specific request regarding the Roman Republic."
+        },
+        {
+          "type": "flow_issue",
+          "excerpt": "Entire response",
+          "fix": "Rewrite the response to be a comprehensive guide for a reef tank beginner."
         }
       ],
       "fluency.py, realize.py": [
         {
           "type": "grammar",
-          "excerpt": "javascript function validates email address,",
-          "fix": "Change to 'JavaScript email validation functions'."
+          "excerpt": "Using function calculates fibonacci sequence term allows",
+          "fix": "Using a function that calculates the Fibonacci sequence term allows..."
         }
       ],
-      "fluency.py (cleanup), realize.py": [
+      "fluency.py (fix_caps), essay.py": [
         {
-          "type": "punctuation",
-          "excerpt": "email address, further!",
-          "fix": "Remove the comma."
+          "type": "capitalization",
+          "excerpt": "fibonacci sequence",
+          "fix": "Fibonacci sequence"
+        }
+      ],
+      "realize.py (templates), combine.py": [
+        {
+          "type": "awkward_phrasing",
+          "excerpt": "Using function calculates fibonacci sequence term allows the algorithm",
+          "fix": "Implementing memoization allows the algorithm to avoid redundant calculations."
+        },
+        {
+          "type": "awkward_phrasing",
+          "excerpt": "Fictional Futuristic Coffee Shop Called \"Cyberbrew,\"",
+          "fix": "Change to 'CyberBrew'"
         }
       ]
     },
     "worst_cases": [
       {
-        "query": "Who is considered the father of conceptual art and why?",
+        "query": "Who were the most influential female philosophers of the 19th century?",
         "score": 1.0,
         "mistakes": 3,
         "high_severity": 2,
-        "feedback": "The assistant completely failed to answer the user's question. Instead of identifying the father of conceptual art (e.g., Marcel Duchamp or Sol LeWitt), it provided a generic, encyclopedic definition "
+        "feedback": "The assistant completely failed to answer the user's specific question, providing a generic encyclopedia entry on philosophy instead. Additionally, the response cuts off mid-sentence."
       },
       {
-        "query": "Write a JavaScript function that validates an email address, checks if the domain is on a blacklist, and then formats the string to be lowercase.",
-        "score": 1.6,
-        "mistakes": 5,
+        "query": "Write a detailed explanation of how nuclear fusion works, including the role of plasma, the conditions found in the sun's core, and the current progress of ITER.",
+        "score": 1.2,
+        "mistakes": 3,
         "high_severity": 2,
-        "feedback": "The assistant completely failed to provide the requested code. It produced a generic, repetitive, and nonsensical template response that does not address the user's prompt."
+        "feedback": "The assistant completely failed to answer the user's prompt. Instead of explaining nuclear fusion, it provided a philosophical definition of what an 'explanation' is. Furthermore, the response ends mi"
       },
       {
-        "query": "Give me a detailed explanation of how quantum entanglement works, including the EPR paradox, the concept of superposition, and how it differs from classical correlation.",
-        "score": 2.0,
-        "mistakes": 6,
-        "high_severity": 6,
-        "feedback": "The response is a catastrophic failure. It uses a generic template and fails to provide any actual information about quantum entanglement, instead repeating the user's prompt as a noun phrase througho"
+        "query": "Write a function that calculates the Fibonacci sequence up to the nth term using recursion and memoization.",
+        "score": 3.6,
+        "mistakes": 4,
+        "high_severity": 2,
+        "feedback": "The assistant completely failed to provide the requested code and provided a grammatically broken explanation instead."
       },
       {
-        "query": "How to implement a custom hook in React to handle window resizing?",
-        "score": 2.0,
+        "query": "Write a persuasive essay about the ethics of terraforming Mars, ensuring you cover the potential for indigenous microbial life, the responsibility of Earth's governments, and the long-term survival of the human species.",
+        "score": 4.0,
         "mistakes": 3,
-        "high_severity": 3,
-        "feedback": "The assistant completely failed to answer the user's request. The user asked for a window resizing hook, but the assistant provided a data fetching hook. Additionally, the response ends mid-sentence."
+        "high_severity": 2,
+        "feedback": "The assistant completely failed to follow the user's prompt. Instead of a persuasive essay on ethics, it provided a technical list of colonization challenges. Furthermore, the response cuts off mid-se"
       },
       {
-        "query": "Write a detailed comparison of Stoicism and Epicureanism, focusing on their differing views on pleasure, the role of emotion in a virtuous life, and their respective approaches to handling grief.",
-        "score": 3.0,
-        "mistakes": 3,
-        "high_severity": 3,
-        "feedback": "The response is a catastrophic failure. It provides basic definitions of the two philosophies but fails to compare them as requested. Most critically, it suffers from a severe hallucination/drift wher"
+        "query": "Tell me about the discovery of the Rosetta Stone.",
+        "score": 4.6,
+        "mistakes": 2,
+        "high_severity": 2,
+        "feedback": "The assistant completely failed to answer the user's prompt. The user asked about the Rosetta Stone, but the assistant provided a detailed summary of the Age of Discovery. This is a total hallucinatio"
       }
     ]
   },
   "cases": [
     {
-      "query": "Why do we dream and what is the leading scientific theory on why it happens?",
-      "response": "A dream is a succession of images, dynamic scenes and situations, ideas, emotions, and sensations that usually occur involuntarily in the mind during certain stages of sleep. Humans spend more than two hours dreaming per night, and each dream lasts around 5\u201320 minutes.",
+      "query": "Why do some people experience \"synesthesia\" where they can taste colors or see sounds?",
+      "response": "Synesthesia is a neurological condition where stimulation of one sensory pathway leads to involuntary experiences in another. When someone with sound-to-color synesthesia hears music, specific frequencies and notes automatically trigger the perception of colors. This happens due to increased neural cross-wiring in the brain, where connections between the auditory cortex and visual processing areas remain active. Instead of being filtered out during brain development, these cross-connections persist, causing sounds to activate color-processing regions. The experience is consistent and involuntary \u2014 a specific musical note will always produce the same color perception for that individual. Synesthesia affects roughly 1 in 2,000 people and is often genetic, running in families.",
       "time": 0.18,
       "scores": {
-        "naturalness": 8,
-        "informativeness": 2,
+        "naturalness": 10,
+        "informativeness": 9,
         "coherence": 10,
-        "correctness": 10,
+        "correctness": 9,
         "conciseness": 10,
-        "average": 8.0
+        "average": 9.6
       },
       "mistakes": [
         {
-          "mistake_type": "missing_info",
-          "severity": "high",
-          "excerpt": "entire response",
-          "description": "The assistant failed to explain why we dream or mention any scientific theories (e.g., activation-synthesis or memory consolidation).",
-          "suggested_fix": "Add a detailed explanation of the purposes of dreaming and the leading scientific theories.",
-          "likely_module": "parser.py (fact extraction), cleaner.py"
+          "mistake_type": "factual_error",
+          "severity": "low",
+          "excerpt": "affects roughly 1 in 2,000 people",
+          "description": "The prevalence of synesthesia is generally estimated to be higher, typically between 2% and 4% of the population, rather than 0.05%.",
+          "suggested_fix": "affects roughly 2% to 4% of the population",
+          "likely_module": "knowledge retrieval, parser.py"
         }
       ],
-      "raw_feedback": "The assistant provided a definition of dreaming but completely failed to answer the core questions of the prompt: 'Why do we dream' and 'what is the leading scientific theory'."
+      "raw_feedback": "The response is highly accurate, well-structured, and grammatically correct. The only minor issue is a slightly restrictive statistic regarding prevalence."
     },
     {
-      "query": "How do I center a div both horizontally and vertically using only CSS Grid?",
+      "query": "How do I center a div both horizontally and vertically using modern CSS Grid?",
       "response": "CSS Grid provides several powerful ways to center a div both horizontally and vertically. The simplest method uses place-items on the parent container:\n\n```css\n.parent {\n    display: grid;\n    place-items: center;  /* Centers both horizontally and vertically */\n}\n```\n\nThis is equivalent to setting both align-items: center and justify-items: center. For more control:\n\n```css\n.parent {\n    display: grid;\n    align-items: center;  /* Vertical centering */\n    justify-items: center;  /* Horizontal centering */\n}\n```\n\nYou can also use place-self on the child element:\n```css\n.child {\n    place-self: center;  /* Centers within the grid cell */\n}\n```\n\nOr use margin: auto on the child within a grid:\n```css\n.parent {\n    display: grid;\n}\n.child {\n    margin: auto;  /* Centers both axes */\n}\n```\n\nCSS Grid is one of the most reliable methods for centering content, working well for both single elements and complex layouts.",
       "time": 0.01,
       "scores": {
         "naturalness": 10,
-        "informativeness": 10,
+        "informativeness": 9,
         "coherence": 10,
         "correctness": 10,
         "conciseness": 10,
-        "average": 10.0
+        "average": 9.8
       },
-      "mistakes": [],
-      "raw_feedback": "The response is technically accurate, concise, and well-structured. It provides multiple valid CSS Grid methods for centering a div."
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "low",
+          "excerpt": ".parent { display: grid; place-items: center; }",
+          "description": "The code examples lack a height definition for the parent container. Without a height (e.g., min-height: 100vh), vertical centering is not visually apparent as the container defaults to the height of its content.",
+          "suggested_fix": "Add 'height: 100vh;' or 'min-height: 100vh;' to the .parent examples.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The response is technically accurate, concise, and well-structured. It provides multiple valid modern CSS Grid methods for centering."
     },
     {
-      "query": "Write me a detailed essay on the fall of the Roman Empire, making sure to analyze both the internal political decay and the external pressures from barbarian tribes.",
-      "response": "The fall of the Western Roman Empire in 476 CE (traditionally marked by the deposition of Emperor Romulus Augustulus by the Germanic chieftain Odoacer) was caused by multiple interconnected factors over several centuries. Key causes included: the Crisis of the Third Century (235-284 CE), when the empire faced civil war, economic collapse, plague, and barbarian invasions, nearly destroying it. Diocletian's reforms temporarily stabilized the empire but divided it into administrative halves. Economic problems included inflation caused by debasing the currency, heavy taxation to support the military and bureaucracy, and a declining agricultural base. Military pressures mounted as Germanic tribes like the Visigoths, Vandals, and Ostrogoths were pushed into Roman territory by the Huns. The Battle of Adrianople (378 CE) saw a devastating Roman defeat by the Visigoths. The empire increasingly relied on barbarian mercenaries (foederati) who were often disloyal. Internal political instability meant frequent emperor assassinations and civil wars. The Eastern Roman Empire (Byzantine Empire) survived because it was wealthier, had shorter borders to defend, and its capital Constantinople was more defensible. The western provinces were poorer and more exposed to invasions. The fall of the Western Roman Empire, also called the fall of the Roman Empire or the fall of Rome, was the loss of central political control in the Western Roman Empire, a process in which the Empire failed to enforce its rule, and its vast territory was divided among several successor polities. The Roman Empire lost the strengths that had allowed it to exercise effective control over its Western provinces; modern historians posit factors including the effectiveness and numbers of the army, the health and numbers of the Roman population, the strength of the economy, the competence of the emperors, the internal struggles for power, the religious changes of the period, and the efficiency of the civil administrati",
-      "time": 1.22,
+      "query": "Write a detailed explanation of how nuclear fusion works, including the role of plasma, the conditions found in the sun's core, and the current progress of ITER.",
+      "response": "An explanation is a set of statements usually constructed to describe a set of facts that clarifies the causes, context, and consequences of those facts. It may establish rules or laws, and clarifies the existing rules or laws in relation to any objects or phenomena examined. In philosophy, an explanation is a set of statements which render understandable the existence or occurrence of an object, event, or state of affairs. Among its most common forms are:\n\nCausal explanation\nDeductive-nomological explanation, involves subsuming the explanandum under a generalization from which it may be derived in a deductive argument. For example, \u201cAll gases expand when heated; this gas was heated; therefore, this gas expanded\". Statistical explanation, involves subsuming the explanandum under a generalization that gives it inductive support. For example, \u201cMost people who use tobacco contract cancer; this person used tobacco; therefore, this person contracted cancer\u201d. Explanations of human behavior usually rely to the subject\u2019s beliefs, desires and other relevant facts. They operate under the assumption that the behavior in question is rational to some extent. Thus an explanation of why the subject removed his coat might cite the fact that he felt hot and desired to feel cooler, and believed that he would feel cooler if he took off his coat. Scientific explanation\nThe recent discussions presuppose that science offers explanations (rather than mere description) and that the task of a theory or model of scientific explanation is to outline the structure of such explanations. It's thus assumed that there's a single kind or form of explanation that's \u201cscientific\u201d. In fact, the notion of \u201cscientific explanation\u201d suggests a contrast between those \"explanations\", that are characteristic of \"science\" and those which are outside the science, and second a contrast between \"explanation\" and something else. However, the tendency in much of the recent philosophical literature has been to assum",
+      "time": 2.74,
       "scores": {
-        "naturalness": 4,
-        "informativeness": 6,
-        "coherence": 5,
-        "correctness": 10,
-        "conciseness": 8,
-        "average": 6.6
+        "naturalness": 1,
+        "informativeness": 1,
+        "coherence": 1,
+        "correctness": 1,
+        "conciseness": 2,
+        "average": 1.2
       },
       "mistakes": [
         {
           "mistake_type": "missing_info",
           "severity": "high",
-          "excerpt": "Write me a detailed essay",
-          "description": "The assistant provided a summary/list of facts rather than a structured essay with an introduction, body paragraphs, and a conclusion.",
-          "suggested_fix": "Rewrite the content into a formal essay format.",
+          "excerpt": "The entire response",
+          "description": "The assistant failed to address any part of the user's request regarding nuclear fusion, plasma, the sun's core, or ITER.",
+          "suggested_fix": "Provide a detailed explanation of nuclear fusion and the specific requested topics.",
           "likely_module": "parser.py (fact extraction), cleaner.py"
         },
         {
           "mistake_type": "incomplete_sentence",
           "severity": "high",
-          "excerpt": "and the efficiency of the civil administrati",
-          "description": "The response cuts off abruptly at the end of the final sentence.",
-          "suggested_fix": "Complete the word to 'administration' and finish the sentence/essay.",
+          "excerpt": "the tendency in much of the recent philosophical literature has been to assum",
+          "description": "The response cuts off abruptly at the end.",
+          "suggested_fix": "Complete the sentence and the thought.",
           "likely_module": "essay.py (_clean_fragments), parser.py"
         },
         {
-          "mistake_type": "repetition",
+          "mistake_type": "word_choice",
           "severity": "medium",
-          "excerpt": "The fall of the Western Roman Empire, also called the fall of the Roman Empire",
-          "description": "The text repeats the definition of the event in a way that sounds like a Wikipedia copy-paste, breaking the flow of the narrative.",
-          "suggested_fix": "Remove the redundant definition and integrate the information into the main analysis.",
-          "likely_module": "fluency.py (filler dedup), essay.py (_deduplicate_facts)"
-        },
-        {
-          "mistake_type": "flow_issue",
-          "severity": "medium",
-          "excerpt": "Key causes included: the Crisis of the Third Century",
-          "description": "The transition from a narrative introduction to a list-like structure is jarring and not appropriate for an essay.",
-          "suggested_fix": "Use transitional phrases to connect these points into cohesive paragraphs.",
-          "likely_module": "discourse.py, combine.py"
+          "excerpt": "rely to the subject\u2019s beliefs",
+          "description": "Incorrect preposition usage; 'rely' should be followed by 'on'.",
+          "suggested_fix": "rely on the subject's beliefs",
+          "likely_module": "realize.py (templates), fluency.py"
         }
       ],
-      "raw_feedback": "The assistant failed to follow the primary instruction to write an 'essay'. Instead, it provided a series of disjointed paragraphs and a list of facts. Most critically, the response ends mid-sentence, indicating a technical cutoff."
+      "raw_feedback": "The assistant completely failed to answer the user's prompt. Instead of explaining nuclear fusion, it provided a philosophical definition of what an 'explanation' is. Furthermore, the response ends mid-sentence."
     },
     {
-      "query": "What is the most remote inhabited place on Earth?",
+      "query": "What is the most isolated inhabited place on Earth?",
       "response": "The most isolated inhabited place on Earth is generally considered to be Tristan da Cunha, a volcanic island in the South Atlantic Ocean. Located roughly 2,400 kilometers (1,500 miles) west of Cape Town, South Africa, and 3,360 kilometers (2,090 miles) east of Rio de Janeiro, Brazil, it's the most remote island in the world with a permanent population. The island has about 250 year-round residents who live in the settlement of Edinburgh of the Seven Seas. Supplies arrive only every six weeks by ship from Cape Town, and the nearest other inhabited land is over 2,000 kilometers away. In addition, extremely isolated inhabited places include Easter Island, Pitcairn Island, and Campbell Island, but Tristan da Cunha holds the record for the greatest distance from any other human settlement.",
-      "time": 0.03,
+      "time": 0.02,
       "scores": {
         "naturalness": 10,
         "informativeness": 10,
@@ -457,132 +419,92 @@
           "mistake_type": "factual_error",
           "severity": "low",
           "excerpt": "extremely isolated inhabited places include... Campbell Island",
-          "description": "Campbell Island is not permanently inhabited; it only has a rotating staff of scientists/personnel.",
+          "description": "Campbell Island is not permanently inhabited; it only hosts rotating scientists/personnel.",
           "suggested_fix": "Remove Campbell Island from the list of inhabited places.",
           "likely_module": "knowledge retrieval, parser.py"
         }
       ],
-      "raw_feedback": "The response is highly accurate, well-structured, and natural. There is one minor factual inaccuracy regarding Campbell Island."
+      "raw_feedback": "The response is highly accurate, well-structured, and natural. There is a minor factual nuance regarding Campbell Island, which is not permanently inhabited."
     },
     {
-      "query": "Write a Python function that takes a list of strings, filters out those shorter than five characters, and returns the remaining strings sorted alphabetically.",
-      "response": "Here's a Python function that takes a list of integers, removes duplicates, returns sorted unique values, and handles errors gracefully:\n\n```python\ndef deduplicate_and_sort_integers(numbers):\n    \"\"\"Remove duplicates from a list of integers, sort ascending.\n    \n    Args:\n        numbers: A list of integers (or values that can be converted to int)\n    \n    Returns:\n        A sorted list of unique integers\n    \n    Raises:\n        TypeError: If input is not a list\n        ValueError: If elements cannot be converted to integers\n    \"\"\"\n    # Validate input type\n    if not isinstance(numbers, list):\n        raise TypeError(\"Input must be a list\")\n    \n    # Convert and validate each element\n    try:\n        integers = [int(x) for x in numbers]\n    except (ValueError, TypeError) as e:\n        raise ValueError(f\"All elements must be convertible to integers: {e}\")\n    \n    # Remove duplicates and sort\n    return sorted(set(integers))\n\n# Example usage:\ntry:\n    result = deduplicate_and_sort_integers([5, 3, 8, 3, 1, 5, 9])\n    print(result)  # [1, 3, 5, 8, 9]\n    \n    result = deduplicate_and_sort_integers('not a list')  # TypeError\nexcept (TypeError, ValueError) as e:\n    print(f\"Error: {e}\")\n```\n\nThe function uses `set()` for deduplication and `sorted()` for sorting. It validates that the input is a list and that all elements can be converted to integers, raising descriptive errors for invalid inputs.",
-      "time": 0.04,
+      "query": "Write a Python function that takes a list of strings, filters out those shorter than 5 characters, sorts them alphabetically, and returns the final list in uppercase.",
+      "response": "Here's a Python function that takes a list of strings, removes duplicates, and sorts the result alphabetically:\n\n```python\ndef deduplicate_and_sort(strings):\n    \"\"\"Remove duplicates from a list of strings and sort alphabetically.\n    \n    Args:\n        strings: A list of strings to process\n    \n    Returns:\n        A new list with duplicates removed, sorted alphabetically\n    \"\"\"\n    # Convert to set to remove duplicates, then sort\n    return sorted(set(strings))\n\n# Example usage:\nwords = ['banana', 'apple', 'cherry', 'apple', 'banana', 'date']\nresult = deduplicate_and_sort(words)\nprint(result)  # ['apple', 'banana', 'cherry', 'date']\n\n# Alternative preserving original order (Python 3.7+):\ndef deduplicate_preserve_order(strings):\n    \"\"\"Remove duplicates while preserving original order.\"\"\"\n    seen = set()\n    result = []\n    for s in strings:\n        if s not in seen:\n            seen.add(s)\n            result.append(s)\n    return result\n\n# Sort by string length then alphabetically:\ndef deduplicate_sort_by_length(strings):\n    unique = list(set(strings))\n    unique.sort(key=lambda s: (len(s), s))\n    return unique\n\n# Example:\nwords2 = ['cat', 'elephant', 'dog', 'bird', 'cat', 'ant']\nprint(deduplicate_sort_by_length(words2))  # ['ant', 'cat', 'dog', 'bird', 'elephant']\n```\n\nThe simplest approach uses `sorted(set(strings))` which creates a set (removing duplicates) and sorts the remaining items.",
+      "time": 0.02,
       "scores": {
         "naturalness": 10,
         "informativeness": 1,
-        "coherence": 1,
+        "coherence": 5,
         "correctness": 1,
         "conciseness": 10,
-        "average": 4.6
+        "average": 5.4
       },
       "mistakes": [
         {
           "mistake_type": "factual_error",
           "severity": "high",
-          "excerpt": "Here's a Python function that takes a list of integers, removes duplicates",
-          "description": "The assistant ignored the user's request for string filtering and instead wrote a function for integer deduplication.",
-          "suggested_fix": "Rewrite the function to filter strings shorter than five characters and sort them alphabetically.",
+          "excerpt": "Here's a Python function that takes a list of strings, removes duplicates, and s",
+          "description": "The assistant ignored the user's specific requirements (filter length < 5, uppercase) and instead implemented a deduplication function.",
+          "suggested_fix": "Rewrite the function to filter strings by length and convert them to uppercase.",
           "likely_module": "knowledge retrieval, parser.py"
         },
         {
           "mistake_type": "missing_info",
           "severity": "high",
-          "excerpt": "The entire response",
-          "description": "The response is missing the logic to filter strings by length (>= 5) and the logic to sort strings alphabetically.",
-          "suggested_fix": "Implement the specific logic requested by the user.",
+          "excerpt": "the entire response",
+          "description": "Missing the logic to filter strings shorter than 5 characters.",
+          "suggested_fix": "Add a list comprehension or filter: [s for s in strings if len(s) >= 5]",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "the entire response",
+          "description": "Missing the logic to return the final list in uppercase.",
+          "suggested_fix": "Apply .upper() to the strings in the final list.",
           "likely_module": "parser.py (fact extraction), cleaner.py"
         }
       ],
-      "raw_feedback": "The assistant completely failed to address the user's prompt. It provided a function for deduplicating integers instead of filtering and sorting strings based on length."
+      "raw_feedback": "The assistant completely failed to follow the user's instructions. It provided a solution for deduplicating lists instead of filtering by length and converting to uppercase."
     },
     {
-      "query": "Give me a detailed explanation of how quantum entanglement works, including the EPR paradox, the concept of superposition, and how it differs from classical correlation.",
-      "response": "Let me provide a thorough explanation of give detailed explanation quantum entanglement.\n\n**What Is give detailed explanation quantum entanglement?**\ngive detailed explanation quantum entanglement is a multifaceted subject that encompasses a range of concepts, principles, and applications. To understand it fully, we need to examine it from several angles.\n\n**The Fundamentals**\nAt its core, give detailed explanation quantum entanglement rests on several foundational principles. These include the basic mechanisms that govern how it operates, the key entities involved, and the relationships between them. Understanding these fundamentals is essential before exploring more advanced aspects.\n\n**How It Works**\nThe operation of give detailed explanation quantum entanglement involves a series of interconnected processes. These can be broken down into discrete steps, each building on the previous one. The system as a whole exhibits properties that emerge from the interaction of its parts, creating complexity from relatively simple rules.\n\n**Important Nuances**\nSeveral important nuances deserve attention:\n1. give detailed explanation quantum entanglement is not static \u2014 it evolves with new discoveries and perspectives\n2. There are different schools of thought within this domain\n3. Practical applications often reveal complexities not apparent in theory\n\n**Broader Implications**\nUnderstanding give detailed explanation quantum entanglement has implications that extend beyond the subject itself. It connects to other fields, informs decision-making, and provides a framework for thinking about related problems.\n\nI hope this detailed explanation helps! Feel free to ask about any aspect you'd like me to expand on further.",
-      "time": 0.02,
+      "query": "Who were the most influential female philosophers of the 19th century?",
+      "response": "Philosophy (from Ancient Greek philosoph\u00eda, lit. 'love of wisdom') is a systematic study of general and fundamental questions concerning topics like existence, knowledge, mind, reason, language, and value. It's a rational and critical inquiry that reflects on its methods and assumptions. Historically, many of the individual sciences, such as physics and psychology, formed part of philosophy. However, they're considered separate academic disciplines in the modern sense of the term. Influential traditions in the history of philosophy include Western, Arabic\u2013Persian, Indian, and Chinese philosophy. Western philosophy originated in Ancient Greece and covers a wide area of philosophical subfields. A central topic in Arabic\u2013Persian philosophy is the relation between reason and revelation. Indian philosophy combines the spiritual problem of how to reach enlightenment with the exploration of the nature of reality and the ways of arriving at knowledge. Chinese philosophy focuses principally on practical issues about right social conduct, government, and self-cultivation. Major branches of philosophy are epistemology, ethics, logic, and metaphysics. Epistemology studies what knowledge is and how to acquire it. Ethics investigates moral principles and what constitutes right conduct. Logic is the study of correct reasoning and explores how good arguments can be distinguished from bad ones. Metaphysics examines the most general features of reality, existence, objects, and properties. Other subfields are aesthetics, philosophy of language, philosophy of mind, philosophy of mathematics, philosophy of science, philosophy of religion, philosophy of history, and political philosophy. Within each branch, there are competing schools of philosophy that promote different principles, theories, or methods. Philosophers use a great variety of methods to arrive at philosophical knowledge. They include conceptual analysis, reliance on common sense and intuitions, use of thought experiments, a",
+      "time": 2.87,
       "scores": {
         "naturalness": 1,
         "informativeness": 1,
-        "coherence": 2,
+        "coherence": 1,
         "correctness": 1,
-        "conciseness": 5,
-        "average": 2.0
+        "conciseness": 1,
+        "average": 1.0
       },
       "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "Philosophy (from Ancient Greek philosoph\u00eda...",
+          "description": "The response provides a general definition of philosophy instead of answering the question about influential female philosophers of the 19th century.",
+          "suggested_fix": "Remove the general definition and list 19th-century female philosophers such as Harriet Taylor Mill or Anna Julia Yeandell.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "incomplete_sentence",
+          "severity": "high",
+          "excerpt": "They include conceptual analysis, reliance on common sense and intuitions, use o",
+          "description": "The response ends abruptly in the middle of a sentence.",
+          "suggested_fix": "Complete the sentence or end the response properly.",
+          "likely_module": "essay.py (_clean_fragments), parser.py"
+        },
         {
           "mistake_type": "template_artifact",
-          "severity": "high",
-          "excerpt": "Let me provide a thorough explanation of give detailed explanation quantum entan",
-          "description": "The assistant has inserted the user's prompt instructions directly into the sentence structure, creating a nonsensical phrase.",
-          "suggested_fix": "Let me provide a thorough explanation of quantum entanglement.",
+          "severity": "medium",
+          "excerpt": "Philosophy (from Ancient Greek philosoph\u00eda, lit. 'love of wisdom') is a systemat",
+          "description": "The text appears to be a copy-paste from a Wikipedia-style introduction rather than a conversational AI response.",
+          "suggested_fix": "Rewrite the response to be direct and helpful to the user's query.",
           "likely_module": "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)"
-        },
-        {
-          "mistake_type": "missing_info",
-          "severity": "high",
-          "excerpt": "The Fundamentals",
-          "description": "The section contains zero actual information about quantum physics, superposition, or entanglement.",
-          "suggested_fix": "Explain the concept of quantum states and wavefunctions.",
-          "likely_module": "parser.py (fact extraction), cleaner.py"
-        },
-        {
-          "mistake_type": "missing_info",
-          "severity": "high",
-          "excerpt": "How It Works",
-          "description": "The section describes 'interconnected processes' without naming or explaining any of them.",
-          "suggested_fix": "Explain how particles become entangled and the collapse of the wavefunction.",
-          "likely_module": "parser.py (fact extraction), cleaner.py"
-        },
-        {
-          "mistake_type": "missing_info",
-          "severity": "high",
-          "excerpt": "The entire response",
-          "description": "The assistant completely ignored the specific requests for the EPR paradox, superposition, and classical correlation.",
-          "suggested_fix": "Include detailed sections on the EPR paradox, superposition, and Bell's Theorem.",
-          "likely_module": "parser.py (fact extraction), cleaner.py"
-        },
-        {
-          "mistake_type": "word_choice",
-          "severity": "high",
-          "excerpt": "What Is give detailed explanation quantum entanglement?",
-          "description": "Incorrect use of the prompt as a subject; grammatically incoherent.",
-          "suggested_fix": "What is quantum entanglement?",
-          "likely_module": "realize.py (templates), fluency.py"
-        },
-        {
-          "mistake_type": "awkward_phrasing",
-          "severity": "high",
-          "excerpt": "give detailed explanation quantum entanglement is a multifaceted subject",
-          "description": "The response treats the instruction 'give detailed explanation' as part of the name of the subject.",
-          "suggested_fix": "Quantum entanglement is a multifaceted subject",
-          "likely_module": "realize.py (templates), combine.py"
         }
       ],
-      "raw_feedback": "The response is a catastrophic failure. It uses a generic template and fails to provide any actual information about quantum entanglement, instead repeating the user's prompt as a noun phrase throughout the text."
-    },
-    {
-      "query": "How did the invention of the printing press specifically change the religious landscape of Europe?",
-      "response": "The printing press was invented by Johannes Gutenberg in Mainz, Germany, around 1440 CE. His revolutionary innovation was the movable type printing press, which combined several existing technologies: a wine press mechanism, oil-based ink, and individual metal type pieces that could be rearranged and reused. Gutenberg's first major publication was the Gutenberg Bible (1455), printed in Latin. The printing press had an enormous impact on European and world history. It made books affordable and accessible for the first time \u2014 before Gutenberg, books were hand-copied by scribes and cost as much as a farm. By 1500, printers across Europe had produced over 20 million books. This democratization of knowledge directly enabled the Renaissance, the Reformation (Martin Luther's 95 Theses were mass-produced and spread across Europe in weeks), the Scientific Revolution (scientists could share findings and build on each other's work), and the Age of Enlightenment (ideas about democracy, rights, and reason spread to a mass audience). The printing press standardized languages, reduced the power of religious and political elites who controlled information, enabled widespread literacy, created new industries and jobs, and fundamentally changed how knowledge was preserved and transmitted. Historians consider it one of the most important inventions in human history, comparable to writing itself or the internet.",
-      "time": 0.03,
-      "scores": {
-        "naturalness": 9,
-        "informativeness": 6,
-        "coherence": 10,
-        "correctness": 10,
-        "conciseness": 8,
-        "average": 8.6
-      },
-      "mistakes": [
-        {
-          "mistake_type": "missing_info",
-          "severity": "high",
-          "excerpt": "The printing press had an enormous impact on European and world history.",
-          "description": "The response provides a general overview of the printing press's impact rather than focusing specifically on the religious landscape as requested.",
-          "suggested_fix": "Expand on the shift from Latin to vernacular Bibles, the rise of individual interpretation of scripture, and the challenge to the Catholic Church's monopoly on salvation.",
-          "likely_module": "parser.py (fact extraction), cleaner.py"
-        }
-      ],
-      "raw_feedback": "The response is grammatically correct and factual, but it fails to answer the user's specific question. The user asked how it changed the 'religious landscape,' but the assistant provided a general history of the printing press, spending too much time on the Scientific Revolution, Enlightenment, and"
+      "raw_feedback": "The assistant completely failed to answer the user's specific question, providing a generic encyclopedia entry on philosophy instead. Additionally, the response cuts off mid-sentence."
     },
     {
       "query": "Create a single-page HTML portfolio for a freelance photographer using a dark-mode aesthetic, a responsive masonry grid layout for images, and a contact form at the bottom.",
@@ -601,72 +523,111 @@
           "mistake_type": "incomplete_sentence",
           "severity": "high",
           "excerpt": "background: #1a1a4e;\n       \"",
-          "description": "The code block ends abruptly mid-CSS rule, leaving the HTML file unfinished and broken.",
-          "suggested_fix": "Complete the CSS, close the style tag, add the HTML body content (grid and form), and close the HTML tags.",
+          "description": "The code block cuts off mid-CSS rule, leaving the HTML file unfinished and broken.",
+          "suggested_fix": "Complete the CSS, add the HTML body content, and close the tags.",
           "likely_module": "essay.py (_clean_fragments), parser.py"
-        },
-        {
-          "mistake_type": "factual_error",
-          "severity": "medium",
-          "excerpt": "grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));",
-          "description": "The user specifically requested a 'masonry grid layout'. The assistant provided a standard CSS Grid, which creates uniform rows rather than a masonry effect.",
-          "suggested_fix": "Use column-count or a JavaScript library like Masonry.js, or use CSS columns to achieve a true masonry layout.",
-          "likely_module": "knowledge retrieval, parser.py"
         },
         {
           "mistake_type": "missing_info",
           "severity": "high",
           "excerpt": "N/A",
-          "description": "The assistant completely omitted the requested contact form at the bottom of the page.",
-          "suggested_fix": "Add a <form> element with input fields and a submit button in the HTML body.",
+          "description": "The assistant completely failed to provide the requested contact form at the bottom.",
+          "suggested_fix": "Add a <form> section with input fields and a submit button.",
           "likely_module": "parser.py (fact extraction), cleaner.py"
-        }
-      ],
-      "raw_feedback": "The response is critically flawed because the code block is truncated, leaving the HTML and CSS incomplete. Furthermore, the assistant failed to implement a 'masonry grid' as requested, instead providing a standard CSS grid."
-    },
-    {
-      "query": "Who is considered the father of conceptual art and why?",
-      "response": "A father, dad, or daddy, is the male parent of a child. Besides the paternal bonds of a father to his child or children, fathers may have a parental, legal, and social relationship with their child or children that carries with it certain rights and obligations. A biological father is the male genetic contributor to the creation of the child, through sexual intercourse or sperm donation. A biological father may have legal obligations to a child not raised by him, such as an obligation of monetary support. A putative father is a man whose biological relationship to a child is alleged but hasn't been established. A stepfather is a non-biological male parent married to a child's parent and forms a family unit but generally doesn't have the legal rights and responsibilities of a parent in relation to the child. An adoptive father is a man who has become the child's parent through the legal process of adoption. The adjective \"paternal\" refers to a father and comparatively to \"maternal\" for a mother. The verb \"to father\" means to procreate or to sire a child from which also derives the noun \"fathering\". Biological fathers determine the sex of their child through a sperm cell which either contains an X chromosome (female), or Y chromosome (male). Related terms of endearment are dad (dada, daddy), baba, papa, pappa, papasita, (pa, pap) and pop. A male role model that children can look up to is sometimes referred to as a father-figure. Determination of fatherhood\nRoman law defined fatherhood as \"Mater semper certa; pater est quem nuptiae demonstrant\" (\"The [identity of the] mother is always certain; the father is whom the marriage vows indicate\"). The biological father can be determined by DNA paternity testing. Non-biological children can be adopted according to the family law. Responsible and positive parenting\nIn today's world, the terms responsible parenting and positive parenting are often used. UNICEF distinguishes the term positive parenting. Positive parenting is par",
-      "time": 4.2,
-      "scores": {
-        "naturalness": 1,
-        "informativeness": 1,
-        "coherence": 1,
-        "correctness": 1,
-        "conciseness": 1,
-        "average": 1.0
-      },
-      "mistakes": [
+        },
         {
           "mistake_type": "factual_error",
-          "severity": "high",
-          "excerpt": "A father, dad, or daddy, is the male parent of a child.",
-          "description": "The assistant misinterpreted the metaphorical use of 'father of' (meaning founder/pioneer) as a literal request for a definition of parenthood.",
-          "suggested_fix": "Identify the influential artist associated with the start of conceptual art, such as Marcel Duchamp.",
+          "severity": "medium",
+          "excerpt": "display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));",
+          "description": "The user specifically requested a 'masonry grid'. The provided code is a standard CSS Grid, which creates uniform rows, not a masonry layout.",
+          "suggested_fix": "Use CSS columns (column-count) or a JavaScript library like Masonry.js to achieve a true masonry effect.",
           "likely_module": "knowledge retrieval, parser.py"
-        },
+        }
+      ],
+      "raw_feedback": "The response is critically flawed because the code block is truncated, leaving the HTML and CSS incomplete. Furthermore, it failed to implement the requested 'masonry grid' (using a standard CSS grid instead) and completely omitted the requested contact form."
+    },
+    {
+      "query": "How does the \"Ship of Theseus\" paradox challenge our understanding of personal identity?",
+      "response": "The Ship of Theseus is a thought experiment about whether an object that has all of its components replaced remains fundamentally the same object. The paradox was first recorded by Plutarch in the 1st century AD, who asked whether a ship that was preserved by Athenians and had its rotten planks replaced one by one over time remained the same ship. The paradox extends to questions about identity over time: if every part of an object is replaced, is it still the same object? This question has deep implications for our understanding of personal identity, where philosophers ask whether a person who changes gradually over time (cells replaced, memories changed, personality evolved) remains the same person. It also relates to modern questions about identity in the context of cell regeneration in biology, software versioning, and cultural preservation.",
+      "time": 0.03,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 8,
+        "coherence": 10,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 9.6
+      },
+      "mistakes": [],
+      "raw_feedback": "The response is accurate, well-structured, and grammatically correct. It addresses the prompt clearly, though it could have delved deeper into specific philosophical theories (like psychological vs. biological continuity) to increase informativeness."
+    },
+    {
+      "query": "Write a persuasive essay about the ethics of terraforming Mars, ensuring you cover the potential for indigenous microbial life, the responsibility of Earth's governments, and the long-term survival of the human species.",
+      "response": "Colonizing Mars is one of humanity's most ambitious goals, pursued by NASA (Artemis program, Mars Sample Return), SpaceX (Starship), and other space agencies. The key challenges include: Transportation: getting humans to Mars requires overcoming the 225 million km average distance, with a 6-9 month transit time. SpaceX's Starship aims to carry 100+ passengers per trip. Radiation: Mars lacks a global magnetic field and has a thin atmosphere, exposing colonists to high levels of cosmic and solar radiation. Habitats would need thick regolith shielding or underground construction. Atmosphere: Martian atmosphere is 95% CO2 with only 0.13% oxygen and surface pressure less than 1% of Earth's. Habitats must be pressurized and provide breathable air. ISRU (In-Situ Resource Utilization) can extract oxygen from CO2 using the MOXIE process. Water: frozen water exists at Mars' poles and as subsurface ice at mid-latitudes. This can be mined, melted, and purified for drinking, oxygen production, and rocket fuel (split into hydrogen and oxygen). Temperature: average surface temperature is -63\u00b0C, with extremes from -140\u00b0C at night to 20\u00b0C at equator in summer. Gravity: Mars has 38% of Earth's gravity, and long-term health effects are unknown. Food: initial colonies would rely on hydroponics, aeroponics, and eventually Martian greenhouse agriculture. The first settlers would face extreme isolation, with communication delays of 4-24 minutes each way. The psychological challenges of living in confined underground habitats on a barren world can't be overstated. Despite these challenges, Mars colonization offers humanity a chance to become a multi-planetary species, ensuring our long-term survival, advancing technology, and providing a new frontier for scientific discovery. The terraforming of Mars is a hypothetical procedure that would consist of a planetary engineering project or concurrent projects aspiring to transform Mars from a planet hostile to life to one that could sustainably ",
+      "time": 1.43,
+      "scores": {
+        "naturalness": 3,
+        "informativeness": 4,
+        "coherence": 2,
+        "correctness": 5,
+        "conciseness": 6,
+        "average": 4.0
+      },
+      "mistakes": [
         {
           "mistake_type": "missing_info",
           "severity": "high",
           "excerpt": "The entire response",
-          "description": "The response contains zero information regarding conceptual art, the artists involved, or the reasons why they are considered the 'father' of the movement.",
-          "suggested_fix": "Provide a detailed explanation of conceptual art and its origins.",
+          "description": "The assistant failed to write a persuasive essay and ignored the specific requirements regarding indigenous microbial life and government responsibility.",
+          "suggested_fix": "Rewrite the response as a persuasive essay focusing on the ethics of terraforming.",
           "likely_module": "parser.py (fact extraction), cleaner.py"
         },
         {
           "mistake_type": "incomplete_sentence",
-          "severity": "medium",
-          "excerpt": "Positive parenting is par",
-          "description": "The response cuts off abruptly at the end.",
-          "suggested_fix": "Complete the sentence or remove the irrelevant section.",
+          "severity": "high",
+          "excerpt": "one that could sustainably \"",
+          "description": "The response ends abruptly in the middle of a sentence.",
+          "suggested_fix": "Complete the sentence and the essay.",
           "likely_module": "essay.py (_clean_fragments), parser.py"
+        },
+        {
+          "mistake_type": "flow_issue",
+          "severity": "medium",
+          "excerpt": "The terraforming of Mars is a hypothetical procedure",
+          "description": "The transition from a list of colonization challenges to a definition of terraforming is jarring and occurs only at the very end.",
+          "suggested_fix": "Integrate the definition of terraforming into the introduction of the essay.",
+          "likely_module": "discourse.py, combine.py"
         }
       ],
-      "raw_feedback": "The assistant completely failed to answer the user's question. Instead of identifying the father of conceptual art (e.g., Marcel Duchamp or Sol LeWitt), it provided a generic, encyclopedic definition of biological and legal fatherhood. The response is irrelevant and ends mid-sentence."
+      "raw_feedback": "The assistant completely failed to follow the user's prompt. Instead of a persuasive essay on ethics, it provided a technical list of colonization challenges. Furthermore, the response cuts off mid-sentence at the end."
     },
     {
-      "query": "How to implement a basic debounce function in JavaScript to limit how often a search API is called?",
-      "response": "A debounce function limits how often a function can be called. It ensures the function is only called after a specified delay since the last invocation. This is useful for search inputs, window resizing, and button clicks:\n\n```javascript\nfunction debounce(func, delay) {\n    let timeoutId;\n    \n    return function(...args) {\n        // Clear any pending timeout\n        clearTimeout(timeoutId);\n        \n        // Set new timeout\n        timeoutId = setTimeout(() => {\n            func.apply(this, args);\n        }, delay);\n    };\n}\n\n// Usage example: debounce a search input\nconst searchInput = document.getElementById('search');\nconst debouncedSearch = debounce(function(event) {\n    console.log('Searching for:', event.target.value);\n    // API call here\n}, 300);\n\nsearchInput.addEventListener('input', debouncedSearch);\n\n// Immediate version (leading edge): fires immediately then debounces\nfunction debounceLeading(func, delay) {\n    let timeoutId;\n    \n    return function(...args) {\n        const callNow = !timeoutId;\n        \n        clearTimeout(timeoutId);\n        timeoutId = setTimeout(() => {\n            timeoutId = null;\n        }, delay);\n        \n        if (callNow) {\n            func.apply(this, args);\n        }\n    };\n}\n\n// Throttle vs Debounce:\n// - Debounce: delays execution until after a pause\n// - Throttle: ensures execution at most once per interval\n```\n\nKey points: each call resets the timer. The function only executes after the specified delay since the LAST call. Common delay values: 300ms for search inputs, 150ms for resize handlers.",
+      "query": "Tell me about the history of the Byzantine Empire's fall.",
+      "response": "The Byzantine Empire, also known as the Eastern Roman Empire, was the continuation of the Roman Empire centred on Constantinople during late antiquity and the Middle Ages. Having survived the fall of the Western Roman Empire in the 5th century AD, it endured until the fall of Constantinople to the Ottoman Empire in 1453. The term 'Byzantine Empire' was coined only after its demise; its citizens used the term 'Roman Empire' and called themselves 'Romans'.",
+      "time": 0.03,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 4,
+        "coherence": 10,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 8.8
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "The Byzantine Empire... endured until the fall of Constantinople to the Ottoman ",
+          "description": "The response provides a definition and a date, but ignores the 'history' (causes, events, and process) of the fall requested by the user.",
+          "suggested_fix": "Expand the response to include the Fourth Crusade, the decline of territory, and the siege of 1453.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The response is grammatically perfect and factually accurate, but it fails to answer the user's specific request. The user asked for the 'history of the fall', but the assistant provided a general definition of the empire and only mentioned the date of the fall without explaining the process or caus"
+    },
+    {
+      "query": "What causes the \"marangoni effect\" in liquids?",
+      "response": "The Marangoni effect (also called the Gibbs-Marangoni effect) is a fluid dynamics phenomenon where fluid flows along an interface due to a gradient in surface tension. Named after Italian physicist Carlo Marangoni, who studied it in the 1860s, the effect occurs when variations in surface tension cause fluid to move from regions of lower surface tension to regions of higher surface tension. Surface tension gradients can be created by differences in temperature (thermocapillary flow) or concentration (solutocapillary flow). For example, in the classic 'tears of wine' phenomenon, alcohol evaporates faster from the thin film of wine on a glass wall, creating a region of higher surface tension (due to higher water concentration) that pulls more liquid upward against gravity, forming droplets that eventually fall back down. In microgravity environments, the Marangoni effect becomes especially important because it can dominate fluid behavior in the absence of buoyancy-driven convection. The effect has practical applications in materials science (crystal growth, soldering), chemical engineering (mass transfer in liquid-liquid extraction), and biology (cell motility and tear film stability in the eye). The dimensionless Marangoni number (Ma) quantifies the relative importance of Marangoni flow versus thermal or mass diffusion.",
       "time": 0.01,
       "scores": {
         "naturalness": 10,
@@ -677,166 +638,144 @@
         "average": 10.0
       },
       "mistakes": [],
-      "raw_feedback": "The response is technically accurate, well-structured, and follows best practices for JavaScript implementation. The code is clean and the explanations are concise."
+      "raw_feedback": "The response is technically accurate, well-structured, and provides a comprehensive explanation of the Marangoni effect with relevant examples and applications."
     },
     {
-      "query": "Why do some people have synesthesia?",
-      "response": "Synesthesia is a neurological condition where stimulation of one sensory pathway leads to automatic, involuntary experiences in another sensory pathway. For example, some people see colors when they hear music (chromesthesia), or associate letters and numbers with specific colors (grapheme-color synesthesia). The condition is caused by increased cross-connectivity between different brain regions, a phenomenon called cross-activation. In typical brains, sensory information is processed in specialized, separate regions. In synesthetes, there's unusual neural communication between these regions, likely due to a combination of genetic predisposition and early developmental pruning differences. Synesthesia runs in families, suggesting a genetic component, though the specific genes are still being studied. It's not a disorder but a different way of perceiving the world, and research suggests it stems from a failure of normal neural pruning during early development, where excess neural connections that would normally be eliminated are retained. Brain imaging studies using fMRI show that synesthetes have increased white matter connectivity between sensory areas. The condition affects approximately 2-4% of the population, is more common in women, artists, and creative professionals, and synesthetes often report that their additional sensory experiences are consistent, predictable, and even helpful for memory and creative thinking.",
+      "query": "How do I implement a binary search tree in Java?",
+      "response": "A Binary Search Tree (BST) is a tree data structure where each node has at most two children, and for any given node, all values in its left subtree are less than the node's value, while all values in its right subtree are greater. This property enables efficient O(log n) search, insertion, and deletion operations on average. In Java, a BST is typically implemented with a Node class as an inner class and a BST class that manages the root reference and exposes public methods. Each Node contains a value (often using generics with Comparable or a Comparator for ordering) and references to left and right children. The most straightforward way to implement BST operations is recursively, since the tree structure naturally lends itself to recursive algorithms. For insertion, you compare the value to the current node; if it is less, you recursively insert into the left subtree; if greater, into the right subtree; if equal, you may either ignore the duplicate or handle it based on your design. For search, you follow the same comparison logic until you either find the value or reach a null reference, indicating the value is not in the tree. Deletion is more complex, with three cases: deleting a leaf (simply remove it), deleting a node with one child (replace it with its child), and deleting a node with two children (find the in-order successor or predecessor, copy its value, and recursively delete that node). Traversal methods \u2014 in-order (left, root, right) which produces sorted output, pre-order, and post-order \u2014 are also commonly implemented. Additional useful methods include finding the minimum and maximum values, checking the height of the tree, and validating whether the tree maintains BST properties. For a robust implementation, you should also consider whether the tree allows duplicates, how to handle null values, and the potential for the tree to become unbalanced, which degrades performance to O(n) in the worst case. Self-balancing variants like AVL trees or Red-Blac",
       "time": 0.01,
       "scores": {
-        "naturalness": 9,
-        "informativeness": 10,
+        "naturalness": 8,
+        "informativeness": 5,
         "coherence": 9,
         "correctness": 10,
-        "conciseness": 8,
-        "average": 9.2
+        "conciseness": 9,
+        "average": 8.2
       },
       "mistakes": [
-        {
-          "mistake_type": "repetition",
-          "severity": "low",
-          "excerpt": "likely due to a combination of genetic predisposition and early developmental pr",
-          "description": "The explanation of neural pruning is mentioned twice in the same paragraph, making the flow slightly redundant.",
-          "suggested_fix": "Combine these two points into a single explanation of the developmental process.",
-          "likely_module": "fluency.py (filler dedup), essay.py (_deduplicate_facts)"
-        }
-      ],
-      "raw_feedback": "The response is factually accurate and comprehensive. There is a slight repetition regarding the concept of neural pruning, but otherwise, it is high quality."
-    },
-    {
-      "query": "Write a Python function that calculates the Fibonacci sequence up to the nth term and returns the result as a list.",
-      "response": "Here is a Python function that calculates the Fibonacci sequence using memoization:\n\ndef fibonacci_memo(n, memo=None):\n    if memo is None:\n        memo = {}\n    if n <= 1:\n        return n\n    if n in memo:\n        return memo[n]\n    memo[n] = fibonacci_memo(n-1, memo) + fibonacci_memo(n-2, memo)\n    return memo[n]\n\ndef fibonacci_iterative(n):\n    if n <= 1:\n        return n\n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    return b\n\n# Example\nfor i in range(10):\n    print(f'F({i}) = {fibonacci_memo(i)}')\n\nMemoization reduces time complexity from O(2^n) to O(n). The iterative version uses O(1) space. Python handles arbitrarily large Fibonacci numbers with its built-in big integers.",
-      "time": 0.04,
-      "scores": {
-        "naturalness": 5,
-        "informativeness": 5,
-        "coherence": 5,
-        "correctness": 5,
-        "conciseness": 5,
-        "average": 5.0
-      },
-      "mistakes": [],
-      "raw_feedback": "[No response from judge]"
-    },
-    {
-      "query": "How to implement a custom hook in React to handle window resizing?",
-      "response": "Custom hooks in React are JavaScript functions that start with 'use' and allow you to encapsulate reusable stateful logic. For data fetching, a custom hook typically manages loading, error, and data states, and triggers side effects. The most common pattern uses `useState` to hold the fetched data and error status, and `useEffect` to perform the actual fetch when the component mounts or when dependencies change. You should handle cleanup to prevent state updates on unmounted components and support aborting stale requests. Here is a robust `useFetch` custom hook example:\n\n```javascript\nimport { useState, useEffect, useCallback } from 'react';\n\nfunction useFetch(url, options = {}) {\n  const [data, setData] = useState(null);\n  const [loading, setLoading] = useState(true);\n  const [error, setError] = useState(null);\n\n  const fetchData = useCallback(async (abortController) => {\n    setLoading(true);\n    setError(null);\n    try {\n      const response = await fetch(url, {\n        ...options,\n        signal: abortController.signal\n      });\n      if (!response.ok) {\n        throw new Error(`HTTP error! status: ${response.status}`);\n      }\n      const result = await response.json();\n      setData(result);\n    } catch (err) {\n      if (err.name !== 'AbortError') {\n        setError(err.message);\n      }\n    } finally {\n      setLoading(false);\n    }\n  }, [url]);\n\n  useEffect(() => {\n    const abortController = new AbortController();\n    fetchData(abortController);\n    return () => abortController.abort();\n  }, [fetchData]);\n\n  return { data, loading, error };\n}\n\n// Usage in a component:\nfunction UserProfile({ userId }) {\n  const { data, loading, error } = useFetch(\n    `https://api.example.com/users/${userId}`\n  );\n\n  if (loading) return <p>Loading...</p>;\n  if (error) return <p>Error: {error}</p>;\n  return (\n    <div>\n      <h1>{data.name}</h1>\n      <p>{data.email}</p>\n    </div>\n  );\n}\n```\n\nKey design considerations: always handle the cleanup function in `useEffect` to abo",
-      "time": 0.01,
-      "scores": {
-        "naturalness": 2,
-        "informativeness": 1,
-        "coherence": 1,
-        "correctness": 1,
-        "conciseness": 5,
-        "average": 2.0
-      },
-      "mistakes": [
-        {
-          "mistake_type": "factual_error",
-          "severity": "high",
-          "excerpt": "For data fetching, a custom hook typically manages loading...",
-          "description": "The assistant provided a solution for data fetching instead of window resizing, ignoring the user's specific prompt.",
-          "suggested_fix": "Provide a hook that uses window.addEventListener('resize', ...).",
-          "likely_module": "knowledge retrieval, parser.py"
-        },
         {
           "mistake_type": "incomplete_sentence",
           "severity": "high",
-          "excerpt": "always handle the cleanup function in `useEffect` to abo",
-          "description": "The response cuts off abruptly at the end.",
-          "suggested_fix": "Complete the sentence (e.g., '...to abort the request').",
+          "excerpt": "Self-balancing variants like AVL trees or Red-Blac",
+          "description": "The response ends abruptly in the middle of a word and sentence.",
+          "suggested_fix": "Complete the sentence: 'Self-balancing variants like AVL trees or Red-Black trees can be used to prevent this.'",
           "likely_module": "essay.py (_clean_fragments), parser.py"
         },
         {
           "mistake_type": "missing_info",
           "severity": "high",
           "excerpt": "The entire response",
-          "description": "The response contains no information regarding window resizing, event listeners, or window dimensions.",
-          "suggested_fix": "Rewrite the response to address the window resize requirement.",
+          "description": "The user asked how to implement a BST in Java, but the assistant provided only a theoretical description without any code examples or implementation steps.",
+          "suggested_fix": "Provide a complete Java code implementation including the Node class and BST class.",
           "likely_module": "parser.py (fact extraction), cleaner.py"
         }
       ],
-      "raw_feedback": "The assistant completely failed to answer the user's request. The user asked for a window resizing hook, but the assistant provided a data fetching hook. Additionally, the response ends mid-sentence."
+      "raw_feedback": "The response provides a technically accurate conceptual overview, but it fails to answer the user's specific request for 'how to implement' by providing no actual code. Most critically, the response cuts off mid-sentence at the end."
     },
     {
-      "query": "What causes the \"northern lights\" to appear in different colors?",
-      "response": "The aurora borealis (northern lights) and aurora australis (southern lights) are caused by the interaction between charged particles from the Sun and Earth's magnetic field and atmosphere. The Sun constantly emits a stream of charged particles (mostly electrons and protons) called the solar wind. When these particles reach Earth, they're guided by the planet's magnetic field toward the polar regions, where the magnetic field lines converge. As the charged particles enter the upper atmosphere (about 100-300 km altitude), they collide with gas molecules, primarily oxygen and nitrogen. These collisions excite the gas molecules, causing them to emit light, similar to how a neon sign works. The different colors of the aurora are caused by different gases at different altitudes: green (the most common) is from oxygen at lower altitudes (100-250 km), red is from oxygen at higher altitudes (300-400 km), blue and purple are from nitrogen, and pink is from nitrogen at lower altitudes. The reason auroras are only visible near the polar regions is that Earth's magnetic field directs the solar wind particles toward the magnetic poles. During periods of intense solar activity (solar storms), the aurora can sometimes be seen at lower latitudes. The aurora is more common during solar maximum, which occurs approximately every 11 years.",
-      "time": 0.02,
+      "query": "Write a detailed analysis of the fall of the Roman Republic, specifically focusing on the rise of Julius Caesar, the failure of the Senate, and the socio-economic pressures of the era.",
+      "response": "The Roman Empire was a state that dominated the Mediterranean and much of Europe, Western Asia, and North Africa during the classical period. The Roman Republic had previously conquered most of these territories, which later came under permanent single-person rule following Octavian's rise to power and the establishment of the Augustan Principate in 27 BC. By the late 3rd century AD, the empire had been divided many times. The Western Roman Empire collapsed in 476 AD, whereas the Eastern Roman Empire persisted until the fall of Constantinople in 1453.",
+      "time": 0.08,
       "scores": {
-        "naturalness": 10,
-        "informativeness": 10,
-        "coherence": 10,
+        "naturalness": 8,
+        "informativeness": 1,
+        "coherence": 5,
         "correctness": 10,
-        "conciseness": 9,
-        "average": 9.8
-      },
-      "mistakes": [],
-      "raw_feedback": "The response is accurate, well-structured, and directly answers the user's question with scientific precision."
-    },
-    {
-      "query": "Write a detailed comparison of Stoicism and Epicureanism, focusing on their differing views on pleasure, the role of emotion in a virtuous life, and their respective approaches to handling grief.",
-      "response": "Epicureanism, less commonly Epicurism, is a school of philosophy founded in 307 BCE and based upon the teachings of Epicurus, an ancient Greek philosopher. Epicurus was an atomist and materialist, following in the steps of Democritus. His materialism led him to religious skepticism and a general attack on superstition and divine intervention. Epicureanism was originally a challenge to Platonism, and its main opponent later became Stoicism. It's a form of hedonism insofar as it declares pleasure to be its sole intrinsic goal. However, the concept that the absence of pain and fear constitutes the greatest pleasure, and its advocacy of a simple life, make it very different from hedonism as colloquially understood. Stoicism is a philosophical movement and practical guide to living, emphasizing daily self-discipline and moral improvement, which originated in the Hellenistic period of ancient Greece and proliferated well into the Roman Imperial period. The ancient Stoics believed that the universe operated according to reason, or logos, providing a unified account of the world, constructed from ideals of rational discourse, monistic physics, and naturalistic ethics. These ideals constitute virtue, which is necessary for the Stoic goal of 'living a well-reasoned life'. Writing is the act of creating a persistent, usually visual representation of language on a surface. As a structured system of communication, writing is also known as written language. Historically, written languages have emerged as a way to record corresponding spoken languages. A particular set of symbols, called a script, as well as the rules by which they encode a particular spoken language, is known as a writing system. In some rare cases, writing may be tactile rather than visual. The cognitive and social activity of writing involves neuropsychological and physical processes whose physical output is also called writing (or a text): a series of physically inscribed, mechanically transferred, or digitall",
-      "time": 2.08,
-      "scores": {
-        "naturalness": 2,
-        "informativeness": 3,
-        "coherence": 1,
-        "correctness": 5,
-        "conciseness": 4,
-        "average": 3.0
+        "conciseness": 10,
+        "average": 6.8
       },
       "mistakes": [
         {
           "mistake_type": "missing_info",
           "severity": "high",
-          "excerpt": "The entire response",
-          "description": "The assistant failed to address the specific prompts: differing views on pleasure, the role of emotion, and approaches to handling grief.",
-          "suggested_fix": "Rewrite the response to specifically compare the two schools on the three requested points.",
+          "excerpt": "The Roman Empire was a state that dominated...",
+          "description": "The response ignores all three specific requirements: the rise of Julius Caesar, the failure of the Senate, and socio-economic pressures.",
+          "suggested_fix": "Rewrite the response to focus on the transition from Republic to Empire, detailing Caesar's ascent and the systemic failures of the Senate.",
           "likely_module": "parser.py (fact extraction), cleaner.py"
         },
         {
           "mistake_type": "flow_issue",
           "severity": "high",
-          "excerpt": "Writing is the act of creating a persistent...",
-          "description": "Complete non-sequitur; the assistant suddenly switches from philosophy to defining the act of writing.",
-          "suggested_fix": "Remove the entire section regarding writing.",
+          "excerpt": "The Roman Empire was a state...",
+          "description": "The response provides a general history of the Empire rather than an analysis of the fall of the Republic as requested.",
+          "suggested_fix": "Align the content with the user's specific request regarding the Roman Republic.",
           "likely_module": "discourse.py, combine.py"
-        },
-        {
-          "mistake_type": "incomplete_sentence",
-          "severity": "high",
-          "excerpt": "digitall",
-          "description": "The response cuts off mid-word at the very end.",
-          "suggested_fix": "Complete the sentence or remove the irrelevant paragraph.",
-          "likely_module": "essay.py (_clean_fragments), parser.py"
         }
       ],
-      "raw_feedback": "The response is a catastrophic failure. It provides basic definitions of the two philosophies but fails to compare them as requested. Most critically, it suffers from a severe hallucination/drift where it begins discussing the definition of 'writing' and then cuts off mid-sentence."
+      "raw_feedback": "The assistant completely failed to answer the user's prompt. Instead of providing a detailed analysis of the fall of the Roman Republic, it provided a generic summary of the Roman Empire's overall timeline."
     },
     {
-      "query": "Tell me about the most mysterious unsolved manuscript in history.",
-      "response": "The Voynich Manuscript is a medieval codex dating to the early 15th century, named after the book dealer Wilfrid Voynich who purchased it in 1912. It's written in an unknown script and illustrated with bizarre diagrams of plants, astronomical charts, and human figures in what appear to be tubs. Despite over a century of study by professional cryptographers, including those from World War I and II, the text remains undeciphered. The manuscript contains roughly 240 pages of vellum, with some pages missing. No one knows who wrote it, what language it's in, or what the text actually says. It's housed at Yale University's Beinecke Rare Book Library.",
+      "query": "Why is the sky blue during the day but red at sunset?",
+      "response": "The sky appears blue during the day and red at sunset due to a phenomenon called Rayleigh scattering. Sunlight is composed of all colors of visible light, each with a different wavelength. Blue light has a shorter wavelength and is scattered more strongly by the molecules in Earth's atmosphere (mainly nitrogen and oxygen). When the sun is high in the sky, the sunlight travels a relatively short path through the atmosphere. The shorter blue wavelengths are scattered in all directions by air molecules, making the entire sky appear blue from our perspective. At sunrise and sunset, the sun is near the horizon, and sunlight must travel through a much thicker layer of atmosphere. The increased path length causes even more scattering, but the blue light is scattered so much that it's largely removed from the direct sunlight. The longer wavelengths (red, orange, yellow) are scattered less and pass through the atmosphere more directly, reaching our eyes as the dominant colors. This is why sunsets and sunrises appear red, orange, and pink. The same principle also explains why the sky appears pale blue or white near the horizon during the day, and why clouds (which contain larger water droplets that scatter all wavelengths equally) appear white.",
       "time": 0.02,
       "scores": {
         "naturalness": 10,
-        "informativeness": 9,
+        "informativeness": 10,
         "coherence": 10,
         "correctness": 10,
         "conciseness": 10,
-        "average": 9.8
+        "average": 10.0
       },
       "mistakes": [],
-      "raw_feedback": "The response is accurate, well-structured, and naturally written. It provides all the essential details about the Voynich Manuscript without unnecessary filler."
+      "raw_feedback": "The response is scientifically accurate, well-structured, and grammatically correct. It explains the concept of Rayleigh scattering clearly and comprehensively."
     },
     {
-      "query": "Create a responsive HTML landing page for a fictional futuristic travel agency with a neon-cyberpunk aesthetic, a three-column feature section, and an embedded Google Maps iframe.",
-      "response": "Here is a responsive HTML and CSS landing page template for a travel agency:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Cosmic Travels - Explore the Universe</title>\n    <style>\n        * { margin: 0; padding: 0; box-sizing: border-box; }\n        body {\n            font-family: \"Segoe UI\", Tahoma, sans-serif;\n            background: linear-gradient(135deg, #0a0a2e 0%, #1a1a4e 100%);\n            color: #e0e0e0;\n            min-height: 100vh;\n        }\n        .hero {\n            height: 100vh;\n            display: flex;\n            flex-direction: column;\n            justify-content: center;\n            align-items: center;\n            text-align: center;\n            padding: 20px;\n        }\n        .hero h1 { font-size: 4em; margin-bottom: 20px; color: #fff; }\n        .hero p { font-size: 1.3em; max-width: 600px; margin-bottom: 30px; }\n        .cta-button {\n            padding: 15px 40px;\n            background: #8ab4f8;\n            color: #0a0a2e;\n            text-decoration: none;\n            border-radius: 30px;\n            font-weight: bold;\n            font-size: 1.2em;\n            transition: transform 0.3s;\n        }\n        .cta-button:hover { transform: scale(1.05); background: #a8c8ff; }\n        .features {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n            gap: 30px;\n            padding: 80px 40px;\n            max-width: 1200px;\n            margin: 0 auto;\n        }\n        .feature-card {\n            background: #1a1a3e;\n            padding: 40px;\n            border-radius: 15px;\n            border: 1px solid #333;\n            text-align: center;\n        }\n        .feature-card h3 { color: #8ab4f8; margin-bottom: 15px; }\n        footer {\n            text-align: center;\n            padding: 30px;\n            color: #666;\n        }\n        @media (max-width: 768px) {\n            ",
-      "time": 0.03,
+      "query": "Write a function that calculates the Fibonacci sequence up to the nth term using recursion and memoization.",
+      "response": "Dynamic Programming, or DP, solves complex problems by breaking them into simpler overlapping sub-problems. Using function calculates fibonacci sequence term allows the algorithm to avoid redundant calculations.",
+      "time": 0.02,
       "scores": {
-        "naturalness": 10,
+        "naturalness": 3,
+        "informativeness": 1,
+        "coherence": 4,
+        "correctness": 2,
+        "conciseness": 8,
+        "average": 3.6
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "The entire response",
+          "description": "The assistant did not provide the function requested by the user.",
+          "suggested_fix": "Provide a Python/JavaScript function implementing recursion and memoization.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "grammar",
+          "severity": "high",
+          "excerpt": "Using function calculates fibonacci sequence term allows",
+          "description": "The sentence is grammatically incoherent; it lacks articles and a proper subject-verb structure.",
+          "suggested_fix": "Using a function that calculates the Fibonacci sequence term allows...",
+          "likely_module": "fluency.py, realize.py"
+        },
+        {
+          "mistake_type": "capitalization",
+          "severity": "medium",
+          "excerpt": "fibonacci sequence",
+          "description": "Fibonacci is a proper noun and should be capitalized.",
+          "suggested_fix": "Fibonacci sequence",
+          "likely_module": "fluency.py (fix_caps), essay.py"
+        },
+        {
+          "mistake_type": "awkward_phrasing",
+          "severity": "medium",
+          "excerpt": "Using function calculates fibonacci sequence term allows the algorithm",
+          "description": "The phrasing is fragmented and reads like a bad translation or a template error.",
+          "suggested_fix": "Implementing memoization allows the algorithm to avoid redundant calculations.",
+          "likely_module": "realize.py (templates), combine.py"
+        }
+      ],
+      "raw_feedback": "The assistant completely failed to provide the requested code and provided a grammatically broken explanation instead."
+    },
+    {
+      "query": "Create a full HTML and CSS landing page for a fictional futuristic coffee shop called \"CyberBrew,\" featuring a neon-cyberpunk aesthetic, a navigation bar with hover effects, and a responsive pricing table.",
+      "response": "Here is a responsive HTML page template with a dark theme that you can customize for Fictional Futuristic Coffee Shop Called \"Cyberbrew,\":\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Fictional Futuristic Coffee Shop Called \"Cyberbrew,\"</title>\n    <style>\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n        body {\n            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n            background: #0a0a2e;\n            color: #e0e0e0;\n            line-height: 1.6;\n            min-height: 100vh;\n        }\n        .container {\n            max-width: 1200px;\n            margin: 0 auto;\n            padding: 20px;\n        }\n        header {\n            background: linear-gradient(135deg, #1a1a4e, #0a0a2e);\n            padding: 40px 0;\n            text-align: center;\n            border-bottom: 2px solid #333;\n        }\n        header h1 { font-size: 2.5em; color: #fff; margin-bottom: 10px; }\n        nav {\n            background: #1a1a4e;\n            padding: 15px 0;\n        }\n        nav ul {\n            list-style: none;\n            display: flex;\n            justify-content: center;\n            gap: 30px;\n            flex-wrap: wrap;\n        }\n        nav a { color: #8ab4f8; text-decoration: none; font-weight: 500; }\n        nav a:hover { color: #fff; }\n        .grid {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n            gap: 20px;\n            padding: 40px 0;\n        }\n        .card {\n            background: #1a1a3e;\n            border-radius: 10px;\n            padding: 25px;\n            border: 1px solid #333;\n            transition: transform 0.3s;\n        }\n        .card:hover { transform: translateY(-5px); }\n        .card h3 { color: #8ab4f8; margin-bottom: 10px; }\n        footer {\n            text-align: center;\n       ",
+      "time": 0.02,
+      "scores": {
+        "naturalness": 4,
         "informativeness": 2,
-        "coherence": 1,
-        "correctness": 1,
+        "coherence": 5,
+        "correctness": 3,
         "conciseness": 10,
         "average": 4.8
       },
@@ -844,141 +783,149 @@
         {
           "mistake_type": "incomplete_sentence",
           "severity": "high",
-          "excerpt": "@media (max-width: 768px) {",
-          "description": "The code block ends abruptly, leaving the CSS media query and the entire HTML body/closing tags missing.",
-          "suggested_fix": "Complete the CSS and provide the full HTML body including the feature section and iframe.",
+          "excerpt": "footer {\n            text-align: center,\n       ",
+          "description": "The response cuts off mid-code, leaving the CSS and HTML tags unclosed.",
+          "suggested_fix": "Complete the CSS and close the HTML tags.",
           "likely_module": "essay.py (_clean_fragments), parser.py"
         },
         {
-          "mistake_type": "missing_info",
-          "severity": "high",
-          "excerpt": "entire response",
-          "description": "The assistant failed to include the embedded Google Maps iframe requested by the user.",
-          "suggested_fix": "Add an <iframe> element with a Google Maps embed URL.",
-          "likely_module": "parser.py (fact extraction), cleaner.py"
+          "mistake_type": "awkward_phrasing",
+          "severity": "medium",
+          "excerpt": "Fictional Futuristic Coffee Shop Called \"Cyberbrew,\"",
+          "description": "The assistant copied the prompt's description and used it as the page title and header text instead of just using the brand name 'CyberBrew'.",
+          "suggested_fix": "Change to 'CyberBrew'",
+          "likely_module": "realize.py (templates), combine.py"
         },
-        {
-          "mistake_type": "missing_info",
-          "severity": "high",
-          "excerpt": "entire response",
-          "description": "The assistant failed to provide the actual HTML content for the three-column feature section, only providing the CSS for it.",
-          "suggested_fix": "Add the HTML markup for the .features container and .feature-card elements.",
-          "likely_module": "parser.py (fact extraction), cleaner.py"
-        }
-      ],
-      "raw_feedback": "The response is critically flawed as it cuts off mid-sentence in the CSS section, failing to provide the requested HTML structure, the three-column feature content, or the Google Maps iframe."
-    },
-    {
-      "query": "Why is the ocean mostly unexplored compared to outer space?",
-      "response": "The ocean remains mostly unexplored despite advances in technology due to extreme environmental challenges and immense costs. Over 80% of the ocean floor has never been directly observed by humans, and less than 5% has been mapped in detail. The primary obstacle is pressure \u2014 at the deepest parts of the ocean, such as the Mariana Trench, the pressure exceeds 1,000 atmospheres, or about 15,000 pounds per square inch, which crushes most conventional submersibles and equipment. Building vessels that can withstand such pressure is extremely expensive and technically challenging. The ocean is also completely dark below about 1,000 meters, requiring submersibles to carry their own powerful lighting and cameras, which adds complexity and cost. Communication is another major issue \u2014 radio waves can't penetrate seawater, so underwater vehicles must operate autonomously or be connected by cables, which are prone to tangling and breakage. The vast scale of the ocean is also a factor \u2014 the Pacific Ocean alone covers over 60 million square miles, and surveying even a small portion requires significant time and resources. Ocean currents, storms, and unpredictable weather make operations difficult and dangerous. Additionally, the ocean floor is one of the most hostile environments on Earth, with corrosive saltwater, extreme cold, and unique geological activity like hydrothermal vents that can damage equipment. While satellite technology can map the ocean surface, it can't see below the water. Side-scan sonar and other remote sensing technologies have mapped large areas, but these provide only low-resolution images. The cost of deep-sea exploration is enormous \u2014 a single deep-sea expedition can cost millions of dollars, and the scientific returns are often uncertain. Despite these challenges, recent advances in autonomous underwater vehicles (AUVs), remotely operated vehicles (ROVs), and improved materials are gradually expanding our knowledge of the deep ocean, but it will likely ",
-      "time": 0.03,
-      "scores": {
-        "naturalness": 9,
-        "informativeness": 8,
-        "coherence": 7,
-        "correctness": 10,
-        "conciseness": 9,
-        "average": 8.6
-      },
-      "mistakes": [
-        {
-          "mistake_type": "incomplete_sentence",
-          "severity": "high",
-          "excerpt": "but it will likely",
-          "description": "The response cuts off mid-sentence at the very end.",
-          "suggested_fix": "Complete the sentence, e.g., 'but it will likely take decades to fully map the ocean floor.'",
-          "likely_module": "essay.py (_clean_fragments), parser.py"
-        }
-      ],
-      "raw_feedback": "The response is factually accurate and well-written, but it ends abruptly in an incomplete sentence, which is a critical failure in coherence."
-    },
-    {
-      "query": "Write a JavaScript function that validates an email address, checks if the domain is on a blacklist, and then formats the string to be lowercase.",
-      "response": "Great, let me expand on javascript function validates email address, further!\n\nThere's so much more to explore about javascript function validates email address,. Beyond the basics, there are fascinating details that really bring the subject to life.\n\nFor instance, one particularly interesting aspect is how javascript function validates email address, connects to other areas you might not expect. The relationships between different ideas often reveal surprising insights that deepen our understanding.\n\nAnother dimension worth exploring is the practical side \u2014 how javascript function validates email address, applies in real-world situations. These applications often illuminate aspects that pure theory doesn't capture.\n\nWould you like me to dive deeper into any specific aspect of javascript function validates email address,? I can explore the history, the practical applications, the underlying principles, or the latest developments.",
-      "time": 0.04,
-      "scores": {
-        "naturalness": 1,
-        "informativeness": 1,
-        "coherence": 2,
-        "correctness": 1,
-        "conciseness": 3,
-        "average": 1.6
-      },
-      "mistakes": [
         {
           "mistake_type": "missing_info",
           "severity": "high",
           "excerpt": "The entire response",
-          "description": "The assistant failed to provide the JavaScript function requested by the user.",
-          "suggested_fix": "Write the actual JavaScript code for email validation, domain blacklisting, and lowercase formatting.",
+          "description": "The user specifically asked for a 'responsive pricing table', which is completely missing from the provided code snippet.",
+          "suggested_fix": "Add a pricing table section to the HTML and CSS.",
           "likely_module": "parser.py (fact extraction), cleaner.py"
-        },
-        {
-          "mistake_type": "template_artifact",
-          "severity": "high",
-          "excerpt": "Great, let me expand on javascript function validates email address, further!",
-          "description": "The response uses a generic filler template that repeats the user's keywords without providing content.",
-          "suggested_fix": "Remove the template and answer the prompt directly.",
-          "likely_module": "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)"
-        },
-        {
-          "mistake_type": "grammar",
-          "severity": "medium",
-          "excerpt": "javascript function validates email address,",
-          "description": "Incorrect phrasing and punctuation; it treats a descriptive phrase as a noun and ends with a random comma.",
-          "suggested_fix": "Change to 'JavaScript email validation functions'.",
-          "likely_module": "fluency.py, realize.py"
-        },
-        {
-          "mistake_type": "repetition",
-          "severity": "medium",
-          "excerpt": "javascript function validates email address",
-          "description": "The exact phrase is repeated in every single paragraph, creating a robotic and unnatural flow.",
-          "suggested_fix": "Use pronouns or varied terminology.",
-          "likely_module": "fluency.py (filler dedup), essay.py (_deduplicate_facts)"
-        },
-        {
-          "mistake_type": "punctuation",
-          "severity": "low",
-          "excerpt": "email address, further!",
-          "description": "Incorrect comma placement before 'further'.",
-          "suggested_fix": "Remove the comma.",
-          "likely_module": "fluency.py (cleanup), realize.py"
         }
       ],
-      "raw_feedback": "The assistant completely failed to provide the requested code. It produced a generic, repetitive, and nonsensical template response that does not address the user's prompt."
+      "raw_feedback": "The response is critically flawed because it is truncated, leaving the code incomplete. Additionally, the assistant used the user's prompt description as the actual title of the website, which is unnatural."
     },
     {
-      "query": "Give me a comprehensive breakdown of the Bronze Age Collapse, including the role of the \"Sea Peoples,\" the impact of climate change, and how the disruption of trade networks led to the fall of multiple civilizations.",
-      "response": "The Bronze Age collapse was a period of widespread societal collapse during the 12th century BCE, between approximately 1200 and 1150 BCE. It primarily affected the Eastern Mediterranean and Near East, destroying several major civilizations including the Mycenaean Greeks, the Hittite Empire, the Kassites of Babylonia, and the New Kingdom of Egypt was severely weakened. The causes are debated among historians but likely included a combination of factors: the enigmatic Sea Peoples who raided coastal cities, earthquakes that devastated infrastructure, climate change leading to drought and famine, internal rebellions and economic collapse, and disruption of trade routes. The collapse ushered in a Dark Age period that lasted several centuries in Greece and Anatolia. However, it also led to the adoption of ironworking technology, which eventually gave rise to new civilizations in the Iron Age. The Bronze Age collapse remains one of the most studied and debated periods in ancient history.",
-      "time": 0.06,
+      "query": "Tell me about the discovery of the Rosetta Stone.",
+      "response": "The Age of Discovery, also known as the Age of Exploration, was part of the early modern period and overlapped with the Age of Sail. It was a period from approximately the 15th to the 17th century, during which seafarers from European countries explored, colonized, and conquered regions across the globe. The Age of Discovery was a transformative period when previously isolated parts of the world became connected to form the world-system, and laid the groundwork for globalization. The extensive overseas exploration, particularly the opening of maritime routes to the East Indies and European colonization of the Americas by the Spaniards and Portuguese, later joined by the English, French, and Dutch, spurred international global trade. The interconnected global economy of the 21st century has its origins in the expansion of trade networks during this era. The exploration created European colonial empires and marked an increased adoption of colonialism as a government policy in several European states. As such, it's sometimes synonymous with the first wave of European colonization. This colonization reshaped power dynamics causing geopolitical shifts in Europe and creating new centers of power beyond Europe.",
+      "time": 0.02,
       "scores": {
-        "naturalness": 8,
-        "informativeness": 6,
-        "coherence": 9,
+        "naturalness": 10,
+        "informativeness": 1,
+        "coherence": 1,
+        "correctness": 1,
+        "conciseness": 10,
+        "average": 4.6
+      },
+      "mistakes": [
+        {
+          "mistake_type": "factual_error",
+          "severity": "high",
+          "excerpt": "The Age of Discovery, also known as the Age of Exploration...",
+          "description": "The entire response discusses the Age of Discovery instead of the discovery of the Rosetta Stone.",
+          "suggested_fix": "Replace the entire text with information regarding the 1799 discovery of the Rosetta Stone by French soldiers in Egypt.",
+          "likely_module": "knowledge retrieval, parser.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "The Age of Discovery...",
+          "description": "The response contains zero information about the Rosetta Stone.",
+          "suggested_fix": "Provide details on the Rosetta Stone's discovery, its inscriptions, and its role in deciphering hieroglyphics.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The assistant completely failed to answer the user's prompt. The user asked about the Rosetta Stone, but the assistant provided a detailed summary of the Age of Discovery. This is a total hallucination of intent/topic."
+    },
+    {
+      "query": "How to implement a custom middleware in Express.js for authentication?",
+      "response": "To implement custom middleware in Express.js, create a function that takes (req, res, next) and call next() to pass control to the next middleware:\n\n```javascript\nconst express = require('express');\nconst app = express();\n\n// Custom middleware - logs request details\napp.use((req, res, next) => {\n  console.log(`${req.method} ${req.url} - ${new Date().toISOString()}`);\n  next();\n});\n\n// Middleware for authentication\napp.use((req, res, next) => {\n  const token = req.headers['authorization'];\n  if (!token) {\n    return res.status(401).json({ error: 'No token provided' });\n  }\n  req.user = { id: 1, name: 'User' }; // decoded from token\n  next();\n});\n\n// Middleware for specific routes\nconst validateInput = (req, res, next) => {\n  if (!req.body.name) {\n    return res.status(400).json({ error: 'Name is required' });\n  }\n  next();\n};\n\napp.post('/api/users', validateInput, (req, res) => {\n  res.json({ message: 'User created' });\n});\n\n// Error-handling middleware (has 4 params)\napp.use((err, req, res, next) => {\n  console.error(err.stack);\n  res.status(500).json({ error: 'Something went wrong' });\n});\n\napp.listen(3000);\n```\n\nMiddleware runs in the order it's defined. Use next() to pass control, send a response to end the chain, or use error-handling middleware (4 parameters) to catch errors.",
+      "time": 0.01,
+      "scores": {
+        "naturalness": 9,
+        "informativeness": 8,
+        "coherence": 10,
         "correctness": 10,
         "conciseness": 10,
-        "average": 8.6
+        "average": 9.4
       },
       "mistakes": [
         {
           "mistake_type": "missing_info",
           "severity": "medium",
-          "excerpt": "The Bronze Age collapse was a period...",
-          "description": "The user asked for a 'comprehensive breakdown' including specific roles of Sea Peoples, climate change, and trade networks. The assistant provided a high-level summary paragraph rather than a detailed breakdown.",
-          "suggested_fix": "Expand the response into sections or bullet points detailing how climate change caused famine, how the Sea Peoples operated, and the specific mechanics of the trade network collapse (e.g., tin and copper shortages).",
+          "excerpt": "app.post('/api/users', validateInput, (req, res) => {",
+          "description": "The code uses 'req.body.name' in the validateInput middleware, but the assistant failed to include 'app.use(express.json())'. Without this, req.body will be undefined and the code will crash or fail.",
+          "suggested_fix": "Add 'app.use(express.json());' before the routes.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The response is technically accurate and concise. However, it lacks a critical piece of information regarding the 'express.json()' middleware, which is required for the 'validateInput' example to actually work."
+    },
+    {
+      "query": "Give me a comprehensive guide on how to start a saltwater reef tank, including the nitrogen cycle, essential equipment like protein skimmers, and a list of beginner-friendly corals.",
+      "response": "The nitrogen cycle is the biogeochemical cycle by which nitrogen is converted into multiple chemical forms as it circulates among atmospheric, terrestrial, and marine ecosystems. The conversion of nitrogen can be carried out through both biological and physical processes. Important processes in the nitrogen cycle include fixation, ammonification, nitrification, and denitrification. The majority of Earth's atmosphere (78%) is atmospheric nitrogen, making it the largest source of nitrogen. However, atmospheric nitrogen has limited availability for biological use, leading to a scarcity of usable nitrogen in many types of ecosystems.",
+      "time": 0.06,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 1,
+        "coherence": 5,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 7.2
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "The nitrogen cycle is the biogeochemical cycle...",
+          "description": "The response provides a general scientific definition of the nitrogen cycle instead of explaining how it applies to a saltwater aquarium (cycling a tank).",
+          "suggested_fix": "Explain the process of ammonia to nitrite to nitrate specifically for aquarium setup.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "Entire response",
+          "description": "The assistant completely omitted the requested guide on essential equipment (protein skimmers) and the list of beginner-friendly corals.",
+          "suggested_fix": "Add sections for equipment recommendations and a list of hardy corals like Zoanthids or Mushrooms.",
           "likely_module": "parser.py (fact extraction), cleaner.py"
         },
         {
           "mistake_type": "flow_issue",
-          "severity": "low",
-          "excerpt": "destroying several major civilizations including the Mycenaean Greeks, the Hitti",
-          "description": "Parallelism error in the list. The first three items are objects of 'including', but the last item is a full independent clause.",
-          "suggested_fix": "change to '...the Kassites of Babylonia, and the New Kingdom of Egypt, which was severely weakened.'",
+          "severity": "high",
+          "excerpt": "Entire response",
+          "description": "The response is a non-sequitur; it answers a theoretical chemistry question rather than a practical hobbyist request.",
+          "suggested_fix": "Rewrite the response to be a comprehensive guide for a reef tank beginner.",
           "likely_module": "discourse.py, combine.py"
         }
       ],
-      "raw_feedback": "The response is factually accurate and coherent, but it fails to provide the 'comprehensive breakdown' requested by the user, offering a brief summary instead of a detailed analysis of the specific factors mentioned."
+      "raw_feedback": "The assistant completely failed to answer the user's request. Instead of providing a guide on starting a reef tank, it provided a generic textbook definition of the global nitrogen cycle, ignoring all specific requirements (equipment, corals, and practical application)."
+    },
+    {
+      "query": "Why do we dream?",
+      "response": "We dream primarily during REM (Rapid Eye Movement) sleep, when brain activity is similar to wakefulness. The exact function of dreaming is still debated, but several theories are supported by scientific evidence. The memory consolidation theory suggests that dreams help transfer information from short-term to long-term memory, processing and organizing the day's experiences. The emotional regulation theory proposes that dreams help us process and manage emotions, particularly negative ones, by allowing us to experience them in a safe, simulated environment. One theory suggests that dreams evolved as a way to practice responding to dangerous situations, improving our survival skills. The cognitive development theory proposes that dreams help the brain develop and maintain neural pathways, particularly in children. Regarding dream meaning, while Freud famously argued that dreams represent wish fulfillment and unconscious desires, modern neuroscience suggests that dreams are largely random neural firing with no inherent symbolic meaning. However, dreams often reflect our waking concerns, fears, and desires because they draw from our memory and emotional experiences. The bizarre, illogical nature of dreams is due to the brain's prefrontal cortex being less active during REM sleep, which normally handles logic and reality testing. Lucid dreaming, where the dreamer becomes aware they're dreaming, demonstrates that consciousness and self-awareness can persist during sleep. Most dreams are forgotten within minutes of waking because the brain doesn't form long-term memories during REM sleep.",
+      "time": 0.01,
+      "scores": {
+        "naturalness": 9,
+        "informativeness": 10,
+        "coherence": 9,
+        "correctness": 9,
+        "conciseness": 10,
+        "average": 9.4
+      },
+      "mistakes": [
+        {
+          "mistake_type": "flow_issue",
+          "severity": "low",
+          "excerpt": "One theory suggests that dreams evolved as a way to practice",
+          "description": "Unlike the previous two paragraphs which explicitly name the theories (Memory consolidation theory, Emotional regulation theory), this one omits the name of the theory (Threat Simulation Theory).",
+          "suggested_fix": "The threat simulation theory suggests that dreams evolved as a way to practice",
+          "likely_module": "discourse.py, combine.py"
+        }
+      ],
+      "raw_feedback": "The response is highly informative and accurate. The only minor issue is a slight flow disruption where one theory is presented without a formal name compared to the others."
     }
   ]
 }
