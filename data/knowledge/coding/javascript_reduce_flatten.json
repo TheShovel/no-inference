@@ -1,0 +1,14 @@
+[
+  {
+    "q": [
+      "reduce method in JavaScript to flatten an array",
+      "javascript reduce flatten array",
+      "flatten array using reduce javascript",
+      "use reduce to flatten array javascript",
+      "how to flatten an array with reduce in javascript",
+      "javascript reduce array flatten nested",
+      "reduce flatten array js"
+    ],
+    "a": "To flatten an array using the reduce method in JavaScript:\n\n```javascript\n// Basic: flatten one level\nconst nested = [[1, 2], [3, 4], [5, 6]];\nconst flat = nested.reduce((acc, curr) => acc.concat(curr), []);\nconsole.log(flat); // [1, 2, 3, 4, 5, 6]\n\n// Flatten with spread operator\nconst flat2 = nested.reduce((acc, curr) => [...acc, ...curr], []);\n\n// Flatten multiple levels (recursive)\nfunction flattenDeep(arr) {\n  return arr.reduce((acc, curr) => {\n    return acc.concat(Array.isArray(curr) ? flattenDeep(curr) : curr);\n  }, []);\n}\n\nconst deeplyNested = [1, [2, 3], [4, [5, 6]]];\nconsole.log(flattenDeep(deeplyNested)); // [1, 2, 3, 4, 5, 6]\n\n// With depth control\nfunction flattenWithDepth(arr, depth = 1) {\n  return arr.reduce((acc, curr) => {\n    if (Array.isArray(curr) && depth > 0) {\n      return acc.concat(flattenWithDepth(curr, depth - 1));\n    }\n    return acc.concat(curr);\n  }, []);\n}\n\n// Alternative: using Array.flat() (ES2019) - built-in method\nconsole.log(nested.flat());        // [1, 2, 3, 4, 5, 6]\nconsole.log(deeplyNested.flat(2)); // [1, 2, 3, 4, 5, 6]\n```\n\nThe reduce approach is useful when you need custom flattening logic. For simple cases, Array.flat() is cleaner."
+  }
+]

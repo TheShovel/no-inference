@@ -1,0 +1,22 @@
+[
+  {
+    "q": [
+      "dark mode preference reason",
+      "why do people prefer dark mode",
+      "dark mode preference explanation",
+      "why do some people have a strong preference for dark mode",
+      "dark mode vs light mode preference"
+    ],
+    "a": "The preference for dark mode varies among individuals due to several factors. Visual perception plays a key role: people with astigmatism (about one-third of the population) often find bright white backgrounds cause text to appear blurry or create 'halo' effects around letters because the iris closes differently for bright versus dark backgrounds, affecting how light enters the eye. Dark mode reduces this effect, improving text clarity. Sensitivity to screen brightness also matters — some people experience eye strain, headaches, or photophobia (light sensitivity) when viewing bright screens, especially in dark environments. Dark mode reduces overall screen luminance, which can alleviate these symptoms. Environmental context influences preference: in low-light conditions (nighttime, dimly lit rooms), dark mode creates less contrast with the surrounding environment, reducing visual fatigue. The content type affects readability — dark mode works better for code editors and data visualization (where bright text on dark backgrounds enhances focus), but research suggests light mode (dark text on light background) actually improves reading comprehension and speed for prose text. Studies have found no significant difference in overall eye strain between dark and light modes for most people, suggesting preference is largely personal. Some research indicates dark mode can worsen readability in bright conditions (because the screen reflects ambient light, reducing contrast) and for people with certain visual impairments like myopia. The most comfortable choice depends on your vision, the current lighting, and the task at hand."
+  },
+  {
+    "q": [
+      "kessler syndrome satellite orbits",
+      "what is the kessler syndrome",
+      "kessler effect space debris",
+      "kessler syndrome explained",
+      "kessler syndrome space junk chain reaction"
+    ],
+    "a": "The Kessler Syndrome is a theoretical scenario proposed by NASA scientist Donald J. Kessler in 1978, in which the density of space debris in low Earth orbit (LEO) becomes so high that collisions cascade catastrophically. It describes a chain reaction where each collision between objects generates more debris, which in turn causes more collisions, eventually making certain orbital regions unusable. The process works like this: as more satellites and spacecraft are launched, the number of objects in orbit increases. When objects collide (or break up due to explosions or deterioration), they create thousands of smaller fragments traveling at extremely high velocities (up to 7-8 km/s in LEO). These fragments then collide with other objects, creating even more debris. If the debris density reaches a critical threshold, the cascade becomes self-sustaining, and the region becomes too hazardous for satellites or spacecraft. The Kessler Syndrome would have severe consequences: communications, GPS, weather monitoring, and scientific observation satellites would be at risk. Mitigation strategies include active debris removal (capturing and deorbiting defunct satellites), passivation (venting residual fuel to prevent explosions), designing satellites for controlled reentry at end of life, and international space debris mitigation guidelines. The situation in LEO is already concerning, with over 25,000 trackable debris objects larger than 10 cm and an estimated 100 million smaller fragments. High-profile collisions like the 2009 Iridium-Cosmos collision and the 2007 Chinese anti-satellite test have already demonstrated the real-world risks. While the Kessler Syndrome has not yet occurred, some orbital bands are approaching critical debris densities."
+  }
+]

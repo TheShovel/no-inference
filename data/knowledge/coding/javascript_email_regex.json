@@ -1,0 +1,14 @@
+[
+  {
+    "q": [
+      "validate email with regex in JavaScript",
+      "javascript email validation regex",
+      "email regex javascript",
+      "javascript email validator",
+      "email validation regex js",
+      "validate email address javascript regex",
+      "how to validate an email with regex in JavaScript"
+    ],
+    "a": "Here is a JavaScript function to validate an email address using regex:\n\n```javascript\nfunction validateEmail(email) {\n    // Simple, widely-used regex for email validation\n    const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;\n    return emailRegex.test(email);\n}\n\n// More comprehensive pattern that checks common email formats\nfunction validateEmailComprehensive(email) {\n    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/;\n    return emailRegex.test(email);\n}\n\n// With detailed error messages\nfunction validateEmailDetailed(email) {\n    const errors = [];\n    if (!email || email.length === 0) {\n        errors.push(\"Email is required\");\n        return { valid: false, errors };\n    }\n    if (!/^[^\\s@]+@/.test(email)) {\n        errors.push(\"Missing local part or @ symbol\");\n    }\n    if (!/@[^\\s@]+\\.[^\\s@]+$/.test(email)) {\n        errors.push(\"Invalid domain or missing dot\");\n    }\n    if (/\\s/.test(email)) {\n        errors.push(\"Email cannot contain spaces\");\n    }\n    return { valid: errors.length === 0, errors };\n}\n\n// Examples\nconsole.log(validateEmail(\"user@example.com\"));     // true\nconsole.log(validateEmail(\"invalid-email\"));         // false\nconsole.log(validateEmail(\"user@.com\"));             // false\n```\n\nThe simple regex ensures there is text before @, text between @ and ., and text after the dot. For production use, the HTML5 input type=\"email\" also provides built-in validation."
+  }
+]

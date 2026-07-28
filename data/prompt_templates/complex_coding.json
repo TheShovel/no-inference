@@ -1,0 +1,128 @@
+[
+    {
+        "id": "coding_function_multi_req",
+        "patterns": [
+            "(?:write|create|implement|make|build|develop)\\s+(?:a|an|the)?\\s*(?P<language>\\w+)?\\s*(?:function|method|program|script|routine|module)\\s+(?:that|which|to)\\s+(?P<task>.+?)(?:,\\s*(?:returning|return|that\\s+returns)\\s+(?P<returnval>.+?))?(?:,\\s*(?:and|also)\\s+(?:handle|handling|with)\\s+(?P<handling>.+?))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"language": "language", "task": "task", "returnval": "returnval", "handling": "handling"},
+        "response_type": "code_function",
+        "weight": 1.0
+    },
+    {
+        "id": "coding_class",
+        "patterns": [
+            "(?:write|create|implement|make|build|design)\\s+(?:a|an|the)?\\s*(?P<language>\\w+)?\\s*(?:class|interface|type|struct)\\s+(?:called|named)\\s+(?P<name>\\w+)\\s+(?:that|which|to)\\s+(?P<task>.+?)(?:,\\s*(?:with|having|containing)\\s+(?:methods?|properties?|attributes?|fields?)\\s+(?P<members>.+?))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"language": "language", "name": "name", "task": "task", "members": "members"},
+        "response_type": "code_function",
+        "weight": 1.0
+    },
+    {
+        "id": "coding_html_page_complex",
+        "patterns": [
+            "(?:create|make|build|design|develop)\\s+(?:a|an|the)?\\s*(?:complete|responsive|single-page|full)?\\s*(?:HTML|html)?\\s*(?:and\\s*CSS\\s*)?(?:page|site|webpage|website|landing\\s*page|portfolio)\\s+(?:about|for|covering|on|for\\s+a)\\s+(?P<topic>.+?)(?:\\s+with\\s+(?:a|an|the)?\\s*(?P<style>.+?)\\s*(?:style|theme|design|look))?(?:\\s+(?:and|that\\s+has|including|featuring)\\s+(?P<features>.+?))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "style": "style", "features": "features"},
+        "response_type": "html_page",
+        "weight": 1.0
+    },
+    {
+        "id": "coding_html_with_sections",
+        "patterns": [
+            "(?:create|make|build|design)\\s+(?:a|an|the)?\\s*(?:complete|responsive|full)?\\s*(?:HTML|html)?\\s*(?:page|site|webpage)\\s+(?:about|for)\\s+(?P<topic>.+?)\\s+(?:with|containing|including|having)\\s+(?:a|an|the)?\\s*(?:header|navbar|navigation)\\s+(?:about|with|for|on)\\s+(?P<header>.+?)(?:,\\s*(?:a|an|the)?\\s*(?:main|body|content|section)\\s+(?:about|with|for|on)\\s+(?P<content>.+?))?(?:,\\s*(?:and|with|and\\s+a|and\\s+an)?\\s*(?:footer|bottom)\\s+(?:about|with|for)\\s+(?P<footer>.+?))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "header": "header", "content": "content", "footer": "footer"},
+        "response_type": "html_page",
+        "weight": 1.0
+    },
+    {
+        "id": "coding_sql_query",
+        "patterns": [
+            "(?:write|create|make|build)\\s+(?:a|an|the)?\\s*(?:SQL|sql)?\\s*(?:query|statement|script)\\s+(?:that|which|to)\\s+(?P<task>.+?)(?:,\\s*(?:from|on)\\s+(?P<table>.+?)\\s*(?:table|relation|dataset))?(?:,\\s*(?:with|using)\\s+(?P<condition>.+?))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"task": "task", "table": "table", "condition": "condition"},
+        "response_type": "code_function",
+        "weight": 0.9
+    },
+    {
+        "id": "coding_rest_api",
+        "patterns": [
+            "(?:create|make|build|implement|design)\\s+(?:a|an|the)?\\s*(?:REST|rest|RESTful|restful)?\\s*(?:API|api|endpoint|service|server)\\s+(?:for|that|which|to)\\s+(?P<task>.+?)(?:,\\s*(?:with|using|in)\\s+(?P<language>.+?))?(?:,\\s*(?:handling|with|providing)\\s+(?P<features>.+?))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"task": "task", "language": "language", "features": "features"},
+        "response_type": "code_function",
+        "weight": 0.9
+    },
+    {
+        "id": "coding_algorithm",
+        "patterns": [
+            "(?:write|create|implement|solve)\\s+(?:a|an|the)?\\s*(?P<language>\\w+)?\\s*(?:algorithm|solution|function)\\s+(?:for|to|that|which)\\s+(?P<task>.+?)(?:,\\s*(?:with|using)\\s+(?P<complexity>.+?)\\s*(?:time|space)?\\s*(?:complexity|constraint))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"language": "language", "task": "task", "complexity": "complexity"},
+        "response_type": "code_function",
+        "weight": 0.9
+    },
+    {
+        "id": "coding_script_file_processing",
+        "patterns": [
+            "(?:write|create|make|build)\\s+(?:a|an|the)?\\s*(?P<language>\\w+)?\\s*(?:script|program|tool|utility)\\s+(?:that|which|to)\\s+(?:read|parse|process|analyze)\\s+(?P<input>.+?)(?:,\\s*(?:and|then)\\s+(?:produce|generate|write|output|return|create)\\s+(?P<output>.+?))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"language": "language", "input": "input", "output": "output"},
+        "response_type": "code_function",
+        "weight": 0.9
+    },
+    {
+        "id": "coding_css_stylesheet",
+        "patterns": [
+            "(?:create|make|build|write)\\s+(?:a|an|the)?\\s*(?:CSS|css)?\\s*(?:stylesheet|style|styles|design)\\s+(?:for|that|with|using)\\s+(?P<topic>.+?)(?:,\\s*(?:with|using|having)\\s+(?P<layout>.+?)\\s*(?:layout|grid|flexbox))?(?:,\\s*(?:and|with)\\s+(?P<colors>.+?)\\s*(?:color\\s* scheme|colors|palette|theme))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "layout": "layout", "colors": "colors"},
+        "response_type": "code_function",
+        "weight": 0.85
+    },
+    {
+        "id": "coding_react_component",
+        "patterns": [
+            "(?:write|create|make|build|implement)\\s+(?:a|an|the)?\\s*(?:React|react)?\\s*(?:component|hook|custom\\s*hook)\\s+(?:called|named)?\\s*(?P<name>\\w+)?\\s*(?:that|which|to)\\s+(?P<task>.+?)(?:,\\s*(?:with|using|accepting)\\s+(?P<props>.+?)\\s*(?:props|parameters|arguments))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"name": "name", "task": "task", "props": "props"},
+        "response_type": "code_function",
+        "weight": 0.9
+    },
+    {
+        "id": "coding_unit_test",
+        "patterns": [
+            "(?:write|create|make|add)\\s+(?:a|an|the)?\\s*(?:unit|integration|regression)?\\s*(?:test|test\\s*case|test\\s*suite|spec)\\s+(?:for|to\\s+test|that\\s+tests|that\\s+verifies|that\\s+validates)\\s+(?P<target>.+?)(?:,\\s*(?:using|with)\\s+(?P<framework>.+?)\\s*(?:framework|library))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"target": "target", "framework": "framework"},
+        "response_type": "code_function",
+        "weight": 0.85
+    },
+    {
+        "id": "coding_configuration",
+        "patterns": [
+            "(?:write|create|make|set\\s*up|configure)\\s+(?:a|an|the)?\\s*(?:configuration|config|setup|docker|dockerfile|docker-compose|makefile|build\\s*file)\\s+(?:for|to|that|which)\\s+(?P<task>.+?)(?:,\\s*(?:using|with)\\s+(?P<tool>.+?))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"task": "task", "tool": "tool"},
+        "response_type": "code_function",
+        "weight": 0.8
+    },
+    {
+        "id": "coding_debug_fix",
+        "patterns": [
+            "(?:fix|debug|resolve|correct|repair)\\s+(?:a|an|the|this)?\\s*(?:bug|issue|problem|error|defect|malfunction|regression)\\s+(?:in|with|within)\\s+(?P<target>.+?)(?:,\\s*(?:where|that|which)\\s+(?P<symptom>.+?))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"target": "target", "symptom": "symptom"},
+        "response_type": "code_function",
+        "weight": 0.8
+    },
+    {
+        "id": "coding_full_stack",
+        "patterns": [
+            "(?:build|create|make|develop|implement)\\s+(?:a|an|the)?\\s*(?:full-stack|full stack|complete|full)?\\s*(?:web\\s*app|web\\s*application|app|application|website)\\s+(?:for|that|which|to)\\s+(?P<task>.+?)(?:,\\s*(?:using|with)\\s+(?P<tech>.+?))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"task": "task", "tech": "tech"},
+        "response_type": "code_function",
+        "weight": 0.8
+    }
+]

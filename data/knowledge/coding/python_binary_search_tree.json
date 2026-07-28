@@ -1,0 +1,14 @@
+[
+  {
+    "q": [
+      "implement a binary search tree in python",
+      "binary search tree python implementation",
+      "bst in python",
+      "binary search tree python code",
+      "python binary search tree insert",
+      "how to implement a bst in python"
+    ],
+    "a": "Here's an implementation of a Binary Search Tree (BST) in Python:\n\n```python\nclass Node:\n    def __init__(self, value):\n        self.value = value\n        self.left = None\n        self.right = None\n\nclass BinarySearchTree:\n    def __init__(self):\n        self.root = None\n    \n    def insert(self, value):\n        \"\"\"Insert a value into the BST.\"\"\"\n        if not self.root:\n            self.root = Node(value)\n        else:\n            self._insert(self.root, value)\n    \n    def _insert(self, node, value):\n        if value < node.value:\n            if node.left is None:\n                node.left = Node(value)\n            else:\n                self._insert(node.left, value)\n        elif value > node.value:\n            if node.right is None:\n                node.right = Node(value)\n            else:\n                self._insert(node.right, value)\n    \n    def search(self, value):\n        \"\"\"Search for a value in the BST. Returns True if found.\"\"\"\n        return self._search(self.root, value)\n    \n    def _search(self, node, value):\n        if node is None:\n            return False\n        if value == node.value:\n            return True\n        elif value < node.value:\n            return self._search(node.left, value)\n        else:\n            return self._search(node.right, value)\n    \n    def inorder(self):\n        \"\"\"Return inorder traversal as a list.\"\"\"\n        result = []\n        self._inorder(self.root, result)\n        return result\n    \n    def _inorder(self, node, result):\n        if node:\n            self._inorder(node.left, result)\n            result.append(node.value)\n            self._inorder(node.right, result)\n\n# Example usage:\nbst = BinarySearchTree()\nfor v in [5, 3, 7, 2, 4, 8]:\n    bst.insert(v)\nprint(bst.inorder())  # [2, 3, 4, 5, 7, 8]\nprint(bst.search(4))  # True\nprint(bst.search(9))  # False\n```\n\nThe BST maintains the property: left child < parent < right child. Insertion and search both run in O(log n) average time for balanced trees. The inorder traversal returns values in sorted order.",
+    "lang": "python"
+  }
+]

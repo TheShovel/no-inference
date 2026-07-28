@@ -23,153 +23,345 @@ def check(n, c, d=""):
     if c: _p += 1; print(f"    \u2713 {n}")
     else: _f += 1; print(f"    \u2717 {n}" + (f"\n        {d}" if d else ""))
 
-def test_discovered_why_do_some_people_have_such_strong_nost():
-    """Auto-discovered: The assistant defines nostalgia but fails to address the core of the user's ques"""
+def test_discovered_why_do_we_dream_and_what_is_the_leading():
+    """Auto-discovered: The assistant failed to explain why we dream or mention any scientific theories """
     cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("Why do some people have such strong nostalgia for eras they never actually lived through?", "", "", "factual", cfg)
+    response = naturalize("Why do we dream and what is the leading scientific theory on why it happens?", "", "", "factual", cfg)
+    check(
+        "response should not contain \"entire response\"",
+        "entire response" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_write_me_a_detailed_essay_on_the_fall_of():
+    """Auto-discovered: The assistant provided a summary/list of facts rather than a structured essay wi"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Write me a detailed essay on the fall of the Roman Empire, making sure to analyze both the internal political decay and the external pressures from barbarian tribes.", "", "", "factual", cfg)
+    check(
+        "response should not contain \"Write me a detailed essay\"",
+        "Write me a detailed essay" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_write_me_a_detailed_essay_on_the_fall_of_2():
+    """Auto-discovered: The response cuts off abruptly at the end of the final sentence."""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Write me a detailed essay on the fall of the Roman Empire, making sure to analyze both the internal political decay and the external pressures from barbarian tribes.", "", "", "factual", cfg)
+    check(
+        "response should not contain \"and the efficiency of the civil administ\"",
+        "and the efficiency of the civil administrati" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_write_me_a_detailed_essay_on_the_fall_of_3():
+    """Auto-discovered: The text repeats the definition of the event in a way that sounds like a Wikiped"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Write me a detailed essay on the fall of the Roman Empire, making sure to analyze both the internal political decay and the external pressures from barbarian tribes.", "", "", "factual", cfg)
+    check(
+        "response should not contain \"The fall of the Western Roman Empire, al\"",
+        "The fall of the Western Roman Empire, also called the fall of the Roman Empire" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_write_me_a_detailed_essay_on_the_fall_of_4():
+    """Auto-discovered: The transition from a narrative introduction to a list-like structure is jarring"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Write me a detailed essay on the fall of the Roman Empire, making sure to analyze both the internal political decay and the external pressures from barbarian tribes.", "", "", "factual", cfg)
+    check(
+        "response should not contain \"Key causes included: the Crisis of the T\"",
+        "Key causes included: the Crisis of the Third Century" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_write_a_python_function_that_takes_a_lis():
+    """Auto-discovered: The assistant ignored the user's request for string filtering and instead wrote """
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Write a Python function that takes a list of strings, filters out those shorter than five characters, and returns the remaining strings sorted alphabetically.", "", "", "factual", cfg)
+    check(
+        "response should not contain \"Here's a Python function that takes a li\"",
+        "Here's a Python function that takes a list of integers, removes duplicates" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_write_a_python_function_that_takes_a_lis_6():
+    """Auto-discovered: The response is missing the logic to filter strings by length (>= 5) and the log"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Write a Python function that takes a list of strings, filters out those shorter than five characters, and returns the remaining strings sorted alphabetically.", "", "", "factual", cfg)
     check(
         "response should not contain \"The entire response\"",
         "The entire response" not in response,
         f"Found problematic text in response: {response[:150]}"
     )
 
-def test_discovered_how_does_a_quantum_computer_actually_dif():
+def test_discovered_give_me_a_detailed_explanation_of_how_qu():
+    """Auto-discovered: The assistant has inserted the user's prompt instructions directly into the sent"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Give me a detailed explanation of how quantum entanglement works, including the EPR paradox, the concept of superposition, and how it differs from classical correlation.", "", "", "factual", cfg)
+    check(
+        "response should not contain \"Let me provide a thorough explanation of\"",
+        "Let me provide a thorough explanation of give detailed explanation quantum entan" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_give_me_a_detailed_explanation_of_how_qu_8():
+    """Auto-discovered: The section contains zero actual information about quantum physics, superpositio"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Give me a detailed explanation of how quantum entanglement works, including the EPR paradox, the concept of superposition, and how it differs from classical correlation.", "", "", "factual", cfg)
+    check(
+        "response should not contain \"The Fundamentals\"",
+        "The Fundamentals" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_give_me_a_detailed_explanation_of_how_qu_9():
+    """Auto-discovered: The section describes 'interconnected processes' without naming or explaining an"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Give me a detailed explanation of how quantum entanglement works, including the EPR paradox, the concept of superposition, and how it differs from classical correlation.", "", "", "factual", cfg)
+    check(
+        "response should not contain \"How It Works\"",
+        "How It Works" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_give_me_a_detailed_explanation_of_how_qu_10():
+    """Auto-discovered: The assistant completely ignored the specific requests for the EPR paradox, supe"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Give me a detailed explanation of how quantum entanglement works, including the EPR paradox, the concept of superposition, and how it differs from classical correlation.", "", "", "factual", cfg)
+    check(
+        "response should not contain \"The entire response\"",
+        "The entire response" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_give_me_a_detailed_explanation_of_how_qu_11():
+    """Auto-discovered: Incorrect use of the prompt as a subject; grammatically incoherent."""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Give me a detailed explanation of how quantum entanglement works, including the EPR paradox, the concept of superposition, and how it differs from classical correlation.", "", "", "factual", cfg)
+    check(
+        "response should not contain \"What Is give detailed explanation quantu\"",
+        "What Is give detailed explanation quantum entanglement?" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_give_me_a_detailed_explanation_of_how_qu_12():
+    """Auto-discovered: The response treats the instruction 'give detailed explanation' as part of the n"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Give me a detailed explanation of how quantum entanglement works, including the EPR paradox, the concept of superposition, and how it differs from classical correlation.", "", "", "factual", cfg)
+    check(
+        "response should not contain \"give detailed explanation quantum entang\"",
+        "give detailed explanation quantum entanglement is a multifaceted subject" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_how_did_the_invention_of_the_printing_pr():
+    """Auto-discovered: The response provides a general overview of the printing press's impact rather t"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("How did the invention of the printing press specifically change the religious landscape of Europe?", "", "", "factual", cfg)
+    check(
+        "response should not contain \"The printing press had an enormous impac\"",
+        "The printing press had an enormous impact on European and world history." not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_create_a_single_page_html_portfolio_for():
+    """Auto-discovered: The code block ends abruptly mid-CSS rule, leaving the HTML file unfinished and """
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Create a single-page HTML portfolio for a freelance photographer using a dark-mode aesthetic, a responsive masonry grid layout for images, and a contact form at the bottom.", "", "", "factual", cfg)
+    check(
+        "response should not contain \"background: #1a1a4e;
+       \"\"",
+        "background: #1a1a4e;
+       \"" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_create_a_single_page_html_portfolio_for_15():
+    """Auto-discovered: The user specifically requested a 'masonry grid layout'. The assistant provided """
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Create a single-page HTML portfolio for a freelance photographer using a dark-mode aesthetic, a responsive masonry grid layout for images, and a contact form at the bottom.", "", "", "factual", cfg)
+    check(
+        "response should not contain \"grid-template-columns: repeat(auto-fit, \"",
+        "grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_who_is_considered_the_father_of_conceptu():
+    """Auto-discovered: The assistant misinterpreted the metaphorical use of 'father of' (meaning founde"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Who is considered the father of conceptual art and why?", "", "", "factual", cfg)
+    check(
+        "response should not contain \"A father, dad, or daddy, is the male par\"",
+        "A father, dad, or daddy, is the male parent of a child." not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_who_is_considered_the_father_of_conceptu_17():
+    """Auto-discovered: The response contains zero information regarding conceptual art, the artists inv"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Who is considered the father of conceptual art and why?", "", "", "factual", cfg)
+    check(
+        "response should not contain \"The entire response\"",
+        "The entire response" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_who_is_considered_the_father_of_conceptu_18():
+    """Auto-discovered: The response cuts off abruptly at the end."""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Who is considered the father of conceptual art and why?", "", "", "factual", cfg)
+    check(
+        "response should not contain \"Positive parenting is par\"",
+        "Positive parenting is par" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_how_to_implement_a_custom_hook_in_react():
+    """Auto-discovered: The assistant provided a solution for data fetching instead of window resizing, """
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("How to implement a custom hook in React to handle window resizing?", "", "", "factual", cfg)
+    check(
+        "response should not contain \"For data fetching, a custom hook typical\"",
+        "For data fetching, a custom hook typically manages loading..." not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_how_to_implement_a_custom_hook_in_react_20():
+    """Auto-discovered: The response cuts off abruptly at the end."""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("How to implement a custom hook in React to handle window resizing?", "", "", "factual", cfg)
+    check(
+        "response should not contain \"always handle the cleanup function in `u\"",
+        "always handle the cleanup function in `useEffect` to abo" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_how_to_implement_a_custom_hook_in_react_21():
+    """Auto-discovered: The response contains no information regarding window resizing, event listeners,"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("How to implement a custom hook in React to handle window resizing?", "", "", "factual", cfg)
+    check(
+        "response should not contain \"The entire response\"",
+        "The entire response" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_write_a_detailed_comparison_of_stoicism():
+    """Auto-discovered: The assistant failed to address the specific prompts: differing views on pleasur"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Write a detailed comparison of Stoicism and Epicureanism, focusing on their differing views on pleasure, the role of emotion in a virtuous life, and their respective approaches to handling grief.", "", "", "factual", cfg)
+    check(
+        "response should not contain \"The entire response\"",
+        "The entire response" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_write_a_detailed_comparison_of_stoicism_23():
+    """Auto-discovered: Complete non-sequitur; the assistant suddenly switches from philosophy to defini"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Write a detailed comparison of Stoicism and Epicureanism, focusing on their differing views on pleasure, the role of emotion in a virtuous life, and their respective approaches to handling grief.", "", "", "factual", cfg)
+    check(
+        "response should not contain \"Writing is the act of creating a persist\"",
+        "Writing is the act of creating a persistent..." not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_write_a_detailed_comparison_of_stoicism_24():
+    """Auto-discovered: The response cuts off mid-word at the very end."""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Write a detailed comparison of Stoicism and Epicureanism, focusing on their differing views on pleasure, the role of emotion in a virtuous life, and their respective approaches to handling grief.", "", "", "factual", cfg)
+    check(
+        "response should not contain \"digitall\"",
+        "digitall" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_create_a_responsive_html_landing_page_fo():
+    """Auto-discovered: The code block ends abruptly, leaving the CSS media query and the entire HTML bo"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Create a responsive HTML landing page for a fictional futuristic travel agency with a neon-cyberpunk aesthetic, a three-column feature section, and an embedded Google Maps iframe.", "", "", "factual", cfg)
+    check(
+        "response should not contain \"@media (max-width: 768px) {\"",
+        "@media (max-width: 768px) {" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_create_a_responsive_html_landing_page_fo_26():
+    """Auto-discovered: The assistant failed to include the embedded Google Maps iframe requested by the"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Create a responsive HTML landing page for a fictional futuristic travel agency with a neon-cyberpunk aesthetic, a three-column feature section, and an embedded Google Maps iframe.", "", "", "factual", cfg)
+    check(
+        "response should not contain \"entire response\"",
+        "entire response" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_create_a_responsive_html_landing_page_fo_27():
+    """Auto-discovered: The assistant failed to provide the actual HTML content for the three-column fea"""
+    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
+    response = naturalize("Create a responsive HTML landing page for a fictional futuristic travel agency with a neon-cyberpunk aesthetic, a three-column feature section, and an embedded Google Maps iframe.", "", "", "factual", cfg)
+    check(
+        "response should not contain \"entire response\"",
+        "entire response" not in response,
+        f"Found problematic text in response: {response[:150]}"
+    )
+
+def test_discovered_why_is_the_ocean_mostly_unexplored_compa():
     """Auto-discovered: The response cuts off mid-sentence at the very end."""
     cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("How does a quantum computer actually differ from a classical one?", "", "", "factual", cfg)
+    response = naturalize("Why is the ocean mostly unexplored compared to outer space?", "", "", "factual", cfg)
     check(
-        "response should not contain \"Such tasks are not necessarily useful fo\"",
-        "Such tasks are not necessarily useful for \"" not in response,
+        "response should not contain \"but it will likely\"",
+        "but it will likely" not in response,
         f"Found problematic text in response: {response[:150]}"
     )
 
-def test_discovered_what_causes_the_uncanny_valley_effect_wh():
-    """Auto-discovered: The assistant defines the effect but does not explain the causes (e.g., cognitiv"""
+def test_discovered_write_a_javascript_function_that_validat():
+    """Auto-discovered: The assistant failed to provide the JavaScript function requested by the user."""
     cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("What causes the \"uncanny valley\" effect when looking at CGI humans?", "", "", "factual", cfg)
-    check(
-        "response should not contain \"The uncanny valley effect is a hypothesi\"",
-        "The uncanny valley effect is a hypothesized psychological and aesthetic relation" not in response,
-        f"Found problematic text in response: {response[:150]}"
-    )
-
-def test_discovered_what_is_the_philosophical_difference_bet():
-    """Auto-discovered: The assistant defines the two terms separately but never explicitly explains the"""
-    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("What is the philosophical difference between nihilism and existentialism?", "", "", "factual", cfg)
+    response = naturalize("Write a JavaScript function that validates an email address, checks if the domain is on a blacklist, and then formats the string to be lowercase.", "", "", "factual", cfg)
     check(
         "response should not contain \"The entire response\"",
         "The entire response" not in response,
         f"Found problematic text in response: {response[:150]}"
     )
 
-def test_discovered_why_is_the_sky_blue_on_earth_but_red_on():
-    """Auto-discovered: The assistant failed to explain why the sky is red on Mars, which was a core par"""
+def test_discovered_write_a_javascript_function_that_validat_30():
+    """Auto-discovered: The response uses a generic filler template that repeats the user's keywords wit"""
     cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("Why is the sky blue on Earth but red on Mars?", "", "", "factual", cfg)
+    response = naturalize("Write a JavaScript function that validates an email address, checks if the domain is on a blacklist, and then formats the string to be lowercase.", "", "", "factual", cfg)
     check(
-        "response should not contain \"The entire response\"",
-        "The entire response" not in response,
+        "response should not contain \"Great, let me expand on javascript funct\"",
+        "Great, let me expand on javascript function validates email address, further!" not in response,
         f"Found problematic text in response: {response[:150]}"
     )
 
-def test_discovered_how_do_i_handle_api_errors_using_try_exc():
-    """Auto-discovered: The response is entirely irrelevant to the user's question about Python try-exce"""
+def test_discovered_write_a_javascript_function_that_validat_31():
+    """Auto-discovered: Incorrect phrasing and punctuation; it treats a descriptive phrase as a noun and"""
     cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("How do I handle API errors using try-except blocks in Python?", "", "", "factual", cfg)
+    response = naturalize("Write a JavaScript function that validates an email address, checks if the domain is on a blacklist, and then formats the string to be lowercase.", "", "", "factual", cfg)
     check(
-        "response should not contain \"In JavaScript, there are several ways to\"",
-        "In JavaScript, there are several ways to merge two arrays." not in response,
+        "response should not contain \"javascript function validates email addr\"",
+        "javascript function validates email address," not in response,
         f"Found problematic text in response: {response[:150]}"
     )
 
-def test_discovered_how_do_i_handle_api_errors_using_try_exc_6():
-    """Auto-discovered: The response contains no information regarding Python, API errors, or try-except"""
+def test_discovered_write_a_javascript_function_that_validat_32():
+    """Auto-discovered: The exact phrase is repeated in every single paragraph, creating a robotic and u"""
     cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("How do I handle API errors using try-except blocks in Python?", "", "", "factual", cfg)
+    response = naturalize("Write a JavaScript function that validates an email address, checks if the domain is on a blacklist, and then formats the string to be lowercase.", "", "", "factual", cfg)
     check(
-        "response should not contain \"The entire response\"",
-        "The entire response" not in response,
+        "response should not contain \"javascript function validates email addr\"",
+        "javascript function validates email address" not in response,
         f"Found problematic text in response: {response[:150]}"
     )
 
-def test_discovered_what_causes_the_phenomenon_of_phantom_li():
-    """Auto-discovered: The assistant claims ignorance of a well-documented medical phenomenon and fails"""
+def test_discovered_give_me_a_comprehensive_breakdown_of_the():
+    """Auto-discovered: The user asked for a 'comprehensive breakdown' including specific roles of Sea P"""
     cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("What causes the phenomenon of \"phantom limb\" pain?", "", "", "factual", cfg)
+    response = naturalize("Give me a comprehensive breakdown of the Bronze Age Collapse, including the role of the \"Sea Peoples,\" the impact of climate change, and how the disruption of trade networks led to the fall of multiple civilizations.", "", "", "factual", cfg)
     check(
-        "response should not contain \"I'm not sure about that.\"",
-        "I'm not sure about that." not in response,
-        f"Found problematic text in response: {response[:150]}"
-    )
-
-def test_discovered_how_to_create_a_responsive_grid_layout_u():
-    """Auto-discovered: The response provides information about JavaScript array merging instead of CSS """
-    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("How to create a responsive grid layout using CSS Grid?", "", "", "factual", cfg)
-    check(
-        "response should not contain \"In JavaScript, there are several ways to\"",
-        "In JavaScript, there are several ways to merge two arrays." not in response,
-        f"Found problematic text in response: {response[:150]}"
-    )
-
-def test_discovered_how_to_create_a_responsive_grid_layout_u_9():
-    """Auto-discovered: The response contains zero information regarding CSS Grid or responsive web desi"""
-    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("How to create a responsive grid layout using CSS Grid?", "", "", "factual", cfg)
-    check(
-        "response should not contain \"The entire response\"",
-        "The entire response" not in response,
-        f"Found problematic text in response: {response[:150]}"
-    )
-
-def test_discovered_why_is_the_platypus_such_a_biological_an():
-    """Auto-discovered: The first two paragraphs are generic definitions of sex and biology that are com"""
-    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("Why is the platypus such a biological anomaly?", "", "", "factual", cfg)
-    check(
-        "response should not contain \"Sex is the phenotypic trait... Biology i\"",
-        "Sex is the phenotypic trait... Biology is the scientific study of life..." not in response,
-        f"Found problematic text in response: {response[:150]}"
-    )
-
-def test_discovered_why_is_the_platypus_such_a_biological_an_11():
-    """Auto-discovered: The response describes the platypus but doesn't explicitly explain *why* these t"""
-    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("Why is the platypus such a biological anomaly?", "", "", "factual", cfg)
-    check(
-        "response should not contain \"The platypus... is a semiaquatic, egg-la\"",
-        "The platypus... is a semiaquatic, egg-laying mammal" not in response,
-        f"Found problematic text in response: {response[:150]}"
-    )
-
-def test_discovered_why_is_the_platypus_such_a_biological_an_12():
-    """Auto-discovered: The response cuts off mid-sentence at the very end."""
-    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("Why is the platypus such a biological anomaly?", "", "", "factual", cfg)
-    check(
-        "response should not contain \"The platypus (Ornithorhynchus anatinus),\"",
-        "The platypus (Ornithorhynchus anatinus), sometimes referred to as the \"" not in response,
-        f"Found problematic text in response: {response[:150]}"
-    )
-
-def test_discovered_what_is_the_most_efficient_way_to_implem():
-    """Auto-discovered: The response is entirely irrelevant to the user's prompt regarding Binary Search"""
-    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("What is the most efficient way to implement a binary search tree?", "", "", "factual", cfg)
-    check(
-        "response should not contain \"In JavaScript, there are several ways to\"",
-        "In JavaScript, there are several ways to merge two arrays." not in response,
-        f"Found problematic text in response: {response[:150]}"
-    )
-
-def test_discovered_what_is_the_most_efficient_way_to_implem_14():
-    """Auto-discovered: The response contains zero information about Binary Search Trees, their efficien"""
-    cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
-    response = naturalize("What is the most efficient way to implement a binary search tree?", "", "", "factual", cfg)
-    check(
-        "response should not contain \"The entire response\"",
-        "The entire response" not in response,
+        "response should not contain \"The Bronze Age collapse was a period...\"",
+        "The Bronze Age collapse was a period..." not in response,
         f"Found problematic text in response: {response[:150]}"
     )
 

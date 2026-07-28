@@ -124,23 +124,7 @@ Would you like me to write about a specific topic?"""
 
 
 def _template_essay(topic):
-    return f"""Here is an essay on {topic if topic else 'the given topic'}:
-
-**Introduction**
-
-The subject of {topic if topic else 'this essay'} is one that deserves careful examination. In the following pages, we will explore the key aspects, analyze the evidence, and draw meaningful conclusions.
-
-**Main Body**
-
-First, we must establish the foundational context. Understanding the background is essential to appreciating the nuances of this subject.
-
-Second, the evidence suggests several important patterns. By examining these closely, we can identify the underlying principles at work.
-
-Third, we must consider alternative perspectives. A thorough analysis requires engaging with different viewpoints and addressing potential counterarguments.
-
-**Conclusion**
-
-In summary, this topic reveals important insights about our world. The evidence points toward several key conclusions that deserve further attention and discussion."""
+    return f"I couldn't find enough information to write a full essay about {topic if topic else 'that topic'} from my knowledge sources. If you'd like, you could ask a more specific question about particular aspects of this topic."
 
 
 def _template_character():
@@ -158,19 +142,7 @@ Her apartment in Marrakech has no photographs. She says it's because she lives i
 
 
 def _template_generic(topic):
-    return f"""Here's a {'composition' if not topic else topic}:
-
-I'd be happy to help with that! Based on your request, I've prepared a response that addresses the key points in a clear and engaging manner.
-
-The content is structured to be informative yet accessible, with a focus on the most important aspects. I've aimed for a tone that is professional yet warm, making it suitable for a broad audience.
-
-**Key Elements:**
-1. Clear introduction of the topic
-2. Well-organized main points
-3. Supporting details and examples
-4. A thoughtful conclusion
-
-Please let me know if you'd like me to adjust the tone, length, or focus of this piece!"""
+    return "I'd be happy to help with that topic. Could you provide more specific details about what you'd like to know?"
 
 
 # ── Coding templates ─────────────────────────────────────────────────────────
@@ -471,23 +443,7 @@ Would you like me to elaborate on any of these?"""
 
 
 def _template_explain(topic):
-    return f"""Here's an explanation of {topic if topic else 'the concept'}:
-
-**Overview:**
-This concept is fundamental to understanding the broader subject. At its core, it deals with how different elements interact and influence each other.
-
-**Key Points:**
-1. The basic principle is straightforward — it's about understanding the relationship between components
-2. The mechanism works through a series of well-defined steps
-3. Real-world applications demonstrate its practical importance
-
-**Example:**
-Think of it like a simple system where inputs are transformed into outputs through a predictable process. Each step builds on the previous one, creating a chain of cause and effect.
-
-**Why It Matters:**
-Understanding this concept helps us make better decisions, predict outcomes, and solve complex problems in the real world.
-
-Would you like me to go deeper into any specific aspect?"""
+    return f"The topic \"{topic if topic else 'your question'}\" covers a broad subject. I'd be happy to explain it if you can provide more specific details about what aspect interests you. Topics like this are best explored by focusing on particular subtopics or examples."
 
 
 # ── STEM templates (for MT-Bench etc.) ───────────────────────────────────────

@@ -1,0 +1,21 @@
+[
+    {
+        "q": [
+            "binary search in Java",
+            "implement binary search in Java",
+            "binary search java code",
+            "binary search algorithm java",
+            "implement binary search",
+            "binary search implementation",
+            "how to implement binary search",
+            "most efficient way to implement binary search",
+            "binary search algorithm implementation",
+            "binary search code",
+            "efficient binary search",
+            "binary search python",
+            "binary search iterative recursive",
+            "implementing binary search algorithm"
+        ],
+        "a": "Binary search is an efficient algorithm for finding an element in a sorted array with O(log n) time complexity.\n\n**Java implementation:**\n\n```java\npublic class BinarySearch {\n    public static int binarySearch(int[] arr, int target) {\n        int left = 0;\n        int right = arr.length - 1;\n        \n        while (left <= right) {\n            int mid = left + (right - left) / 2;\n            \n            if (arr[mid] == target) {\n                return mid;\n            } else if (arr[mid] < target) {\n                left = mid + 1;\n            } else {\n                right = mid - 1;\n            }\n        }\n        \n        return -1;\n    }\n    \n    public static void main(String[] args) {\n        int[] arr = {1, 3, 5, 7, 9, 11, 13, 15};\n        int index = binarySearch(arr, 7);\n        System.out.println(\"Found at index: \" + index);\n    }\n}\n```\n\n**Python implementation:**\n\n```python\ndef binary_search(arr, target):\n    left, right = 0, len(arr) - 1\n    \n    while left <= right:\n        mid = left + (right - left) // 2\n        \n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    \n    return -1\n```\n\nKey requirements: the array must be sorted. Both implementations use `left + (right - left) / 2` to avoid integer overflow. Time complexity is O(log n), space complexity is O(1) for the iterative version."
+    }
+]

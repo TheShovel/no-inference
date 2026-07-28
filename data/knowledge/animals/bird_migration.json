@@ -1,21 +1,13 @@
 [
-    {
-        "q": [
-            "How do migratory birds know exactly where to go every year?",
-            "How do migratory birds navigate?",
-            "How do birds know where to migrate?",
-            "What guides migratory birds?",
-            "How do birds find their way during migration?",
-            "What is bird migration navigation?"
-        ],
-        "a": "Migratory birds navigate using a combination of celestial cues, Earth's magnetic field, visual landmarks, and innate biological mechanisms. Birds use the position of the sun during the day as a compass, compensating for its movement across the sky by using their internal circadian clock. At night, many species navigate by the stars, with the North Star and other constellations serving as reference points. Most remarkably, birds can detect Earth's magnetic field through specialized cells containing a protein called cryptochrome in their eyes, which allows them to 'see' magnetic fields as visual patterns. Some birds also use polarized light patterns in the sky, which are invisible to humans but provide directional information. Young birds often inherit their migratory routes genetically — they know when and where to go without being taught. Experiments have shown that birds raised in isolation will still attempt to migrate in the correct direction at the right time. Birds also use visual landmarks like coastlines, rivers, and mountain ranges during migration. Some species fly thousands of miles non-stop, such as the Arctic Tern which travels from the Arctic to Antarctica and back each year. The combination of these navigation systems — magnetic, celestial, visual, and innate — allows birds to undertake some of the most remarkable journeys in the natural world, often returning to the exact same nesting sites year after year."
-    },
-    {
-        "q": [
-            "How do migratory birds navigate?",
-            "How do birds use Earth's magnetic field?",
-            "What is bird migration?"
-        ],
-        "a": "Migratory birds use celestial cues (sun, stars), Earth's magnetic field (detected through cryptochrome proteins in their eyes), visual landmarks, and innate genetic programming. Young birds inherit their routes genetically. Some species fly thousands of miles non-stop, like the Arctic Tern which travels from Arctic to Antarctica annually."
-    }
+  {
+    "q": [
+      "why do birds migrate",
+      "bird migration",
+      "why do some birds migrate thousands of miles",
+      "why do species of birds migrate",
+      "bird migration reasons",
+      "migratory birds why do they migrate"
+    ],
+    "a": "Birds migrate primarily to find abundant food and suitable breeding conditions. The main drivers are seasonal changes that affect food availability: in temperate and arctic regions, insects, fruits, and seeds become scarce during winter, so insect-eating and fruit-eating birds must move to warmer areas where food remains available. Many birds also migrate to specific breeding grounds that offer abundant food for raising chicks during spring and summer, then return to wintering grounds. The Arctic Tern holds the record for the longest migration, traveling up to 44,000 miles (71,000 km) each year between the Arctic and Antarctic. Birds navigate using multiple cues: the sun's position during the day, the stars at night, the Earth's magnetic field (detected through specialized magnetoreceptors in their beaks or eyes), polarized light patterns, and even infrasound and landmarks. Some species learn migration routes from older birds, while others are genetically programmed with the route. Climate change is affecting migration patterns, causing some species to migrate earlier or shift their ranges northward. Not all birds migrate - resident birds have adapted to survive winter in place through behavioral and physiological adaptations."
+  }
 ]

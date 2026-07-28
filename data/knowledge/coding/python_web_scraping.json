@@ -1,0 +1,14 @@
+[
+  {
+    "q": [
+      "python scrape website all images",
+      "python function that scrapes a website for all images",
+      "web scraping images python",
+      "python web scraper download all images",
+      "function to scrape images from website",
+      "scrape a website for all its images python"
+    ],
+    "a": "Here's a Python function that scrapes a website for all its images using requests and BeautifulSoup:\n\n```python\nimport requests\nfrom bs4 import BeautifulSoup\nfrom urllib.parse import urljoin\n\ndef scrape_images(url):\n    \"\"\"Scrape a website for all images and return their URLs.\"\"\"\n    try:\n        response = requests.get(url, timeout=10)\n        response.raise_for_status()\n    except requests.RequestException as e:\n        return f\"Error fetching the website: {e}\"\n    \n    soup = BeautifulSoup(response.text, 'html.parser')\n    images = []\n    for img in soup.find_all('img'):\n        src = img.get('src')\n        if src:\n            full_url = urljoin(url, src)\n            images.append(full_url)\n    \n    return images\n\n# Example usage:\nurl = 'https://example.com'\nimage_urls = scrape_images(url)\nfor img_url in image_urls:\n    print(img_url)\n```\n\nTo also download the images:\n```python\nimport os\n\ndef download_images(image_urls, output_dir='images'):\n    \"\"\"Download images from a list of URLs.\"\"\"\n    os.makedirs(output_dir, exist_ok=True)\n    for i, url in enumerate(image_urls):\n        try:\n            response = requests.get(url, timeout=10)\n            ext = os.path.splitext(url.split('?')[0])[1] or '.jpg'\n            filename = f\"image_{i}{ext}\"\n            with open(os.path.join(output_dir, filename), 'wb') as f:\n                f.write(response.content)\n            print(f\"Downloaded: {filename}\")\n        except Exception as e:\n            print(f\"Failed to download {url}: {e}\")\n```\n\nThis uses BeautifulSoup to parse the HTML, finds all `<img>` tags, and converts relative URLs to absolute URLs using urljoin.",
+    "lang": "python"
+  }
+]

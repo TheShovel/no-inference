@@ -1,0 +1,19 @@
+[
+  {
+    "q": [
+      "large language models",
+      "how do large language models work",
+      "transformers neural network",
+      "attention mechanism",
+      "tokenization llm",
+      "what is a transformer model",
+      "how LLMs work",
+      "large language model explained",
+      "transformer architecture",
+      "attention is all you need",
+      "how does GPT work",
+      "language model training"
+    ],
+    "a": "Large Language Models (LLMs) like GPT-4, Claude, and LLaMA are neural networks trained on massive text datasets to predict and generate human-like text. They are based on the Transformer architecture, introduced in the 2017 paper Attention Is All You Need. The key innovation is the attention mechanism, which allows the model to weigh the importance of different words in a sequence when processing each word, enabling it to capture long-range dependencies in text. Transformers consist of an encoder and decoder stack, each made up of multiple layers containing self-attention and feed-forward neural networks. Self-attention computes a weighted sum of all input tokens for each position, using query, key, and value matrices. Multi-head attention runs multiple attention operations in parallel, capturing different types of relationships. Tokenization is the process of splitting text into smaller units (tokens) like words, subwords, or characters. Common tokenizers include Byte-Pair Encoding (BPE), WordPiece, and SentencePiece. BPE iteratively merges the most frequent character pairs. LLMs are pre-trained on large corpora using objectives like next token prediction (autoregressive) or masked language modeling (BERT). They are then fine-tuned for specific tasks. Key scaling laws show that model performance improves predictably with more parameters, more data, and more compute. Modern LLMs have billions to trillions of parameters and are trained on datasets with trillions of tokens."
+  }
+]

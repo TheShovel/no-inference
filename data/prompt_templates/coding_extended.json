@@ -1,0 +1,191 @@
+[
+    {
+        "id": "python_script",
+        "patterns": [
+            "(?:write|create|make|build)\\s+(?:a|an|the)?\\s*Python\\s*script\\s+(?:that|which|to)\\s+(?P<task>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"task": "task"},
+        "response_type": "code_function",
+        "weight": 1.0
+    },
+    {
+        "id": "javascript_function",
+        "patterns": [
+            "(?:write|create|make|build|implement)\\s+(?:a|an|the)?\\s*JavaScript\\s*function\\s+(?:that|which|to)\\s+(?P<task>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"task": "task"},
+        "response_type": "code_function",
+        "weight": 1.0
+    },
+    {
+        "id": "sql_query",
+        "patterns": [
+            "(?:write|create|make|build)\\s+(?:a|an|the)?\\s*(?:SQL|sql)?\\s*query\\s+(?:to|that|which)\\s+(?P<task>.+?)(?:,\\s*(?:from|on|using)\\s+(?P<table>.+?))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"task": "task", "table": "table"},
+        "response_type": "code_function",
+        "weight": 0.95
+    },
+    {
+        "id": "bash_script",
+        "patterns": [
+            "(?:write|create|make|build)\\s+(?:a|an|the)?\\s*(?:bash|shell|sh)\\s*script\\s+(?:that|which|to)\\s+(?P<task>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"task": "task"},
+        "response_type": "code_function",
+        "weight": 0.95
+    },
+    {
+        "id": "regex_pattern",
+        "patterns": [
+            "(?:write|create|make|build)\\s+(?:a|an|the)?\\s*(?:regex|regular\\s*expression|regexp)\\s*(?:pattern)?\\s+(?:that|which|to)\\s+(?P<task>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"task": "task"},
+        "response_type": "code_function",
+        "weight": 0.9
+    },
+    {
+        "id": "dockerfile",
+        "patterns": [
+            "(?:write|create|make|build)\\s+(?:a|an|the)?\\s*Dockerfile\\s+(?:for|to|that|which)\\s+(?P<task>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"task": "task"},
+        "response_type": "code_function",
+        "weight": 0.9
+    },
+    {
+        "id": "rest_api_endpoint",
+        "patterns": [
+            "(?:write|create|make|build|implement|design)\\s+(?:a|an|the)?\\s*(?:REST|rest|RESTful|restful)?\\s*(?:API|api)\\s*endpoint\\s+(?:for|that|which|to)\\s+(?P<task>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"task": "task"},
+        "response_type": "code_function",
+        "weight": 0.95
+    },
+    {
+        "id": "unit_test_framework",
+        "patterns": [
+            "(?:write|create|make|add)\\s+(?:a|an|the)?\\s*(?:unit|integration)?\\s*test\\s+(?:for|of)\\s+(?P<target>.+?)\\s+(?:using|with)\\s+(?P<framework>.+?)\\s*(?:framework|library)?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"target": "target", "framework": "framework"},
+        "response_type": "code_function",
+        "weight": 0.9
+    },
+    {
+        "id": "database_schema",
+        "patterns": [
+            "(?:write|create|make|build|design)\\s+(?:a|an|the)?\\s*(?:database|db|data)?\\s*schema\\s+(?:for|of|to\\s+support)\\s+(?P<task>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"task": "task"},
+        "response_type": "code_function",
+        "weight": 0.9
+    },
+    {
+        "id": "css_animation",
+        "patterns": [
+            "(?:write|create|make|build)\\s+(?:a|an|the)?\\s*CSS\\s*animation\\s+(?:for|that|which|to)\\s+(?P<task>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"task": "task"},
+        "response_type": "code_function",
+        "weight": 0.85
+    },
+    {
+        "id": "react_component_props",
+        "patterns": [
+            "(?:write|create|make|build|implement)\\s+(?:a|an|the)?\\s*React\\s*component\\s+(?:that|which|to)\\s+(?P<task>.+?)\\s+(?:with|accepting|using)\\s+(?P<props>.+?)\\s*(?:props|properties|arguments|parameters)?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"task": "task", "props": "props"},
+        "response_type": "code_function",
+        "weight": 0.95
+    },
+    {
+        "id": "nodejs_middleware",
+        "patterns": [
+            "(?:write|create|make|build|implement)\\s+(?:a|an|the)?\\s*(?:Node\\.js|Node\\s*js|express)?\\s*middleware\\s+(?:that|which|to|function\\s+that)\\s+(?P<task>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"task": "task"},
+        "response_type": "code_function",
+        "weight": 0.9
+    },
+    {
+        "id": "python_class_methods",
+        "patterns": [
+            "(?:write|create|make|build|implement|design)\\s+(?:a|an|the)?\\s*Python\\s*class\\s+(?:that|which|to)\\s+(?P<task>.+?)\\s+(?:with|having|containing)\\s+methods?\\s+(?P<methods>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"task": "task", "methods": "methods"},
+        "response_type": "code_function",
+        "weight": 0.9
+    },
+    {
+        "id": "makefile",
+        "patterns": [
+            "(?:write|create|make|build)\\s+(?:a|an|the)?\\s*Makefile\\s+(?:to|that|which|for)\\s+(?P<task>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"task": "task"},
+        "response_type": "code_function",
+        "weight": 0.85
+    },
+    {
+        "id": "cicd_pipeline",
+        "patterns": [
+            "(?:write|create|make|build|set\\s*up|configure)\\s+(?:a|an|the)?\\s*(?:CI/CD|ci/cd|continuous\\s*integration|continuous\\s*delivery)?\\s*pipeline\\s+(?:for|to|that|which)\\s+(?P<task>.+?)\\s+(?:using|with)\\s+(?P<tool>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"task": "task", "tool": "tool"},
+        "response_type": "code_function",
+        "weight": 0.9
+    },
+    {
+        "id": "command_line_tool",
+        "patterns": [
+            "(?:write|create|make|build|develop)\\s+(?:a|an|the)?\\s*(?:command\\s*line|CLI|terminal)\\s*(?:tool|utility|program|app|application)\\s+(?:that|which|to)\\s+(?P<task>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"task": "task"},
+        "response_type": "code_function",
+        "weight": 0.9
+    },
+    {
+        "id": "web_scraper",
+        "patterns": [
+            "(?:write|create|make|build|develop)\\s+(?:a|an|the)?\\s*(?:web|website|web\\s*page)?\\s*scraper\\s+(?:for|to|that|which)\\s+(?P<task>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"task": "task"},
+        "response_type": "code_function",
+        "weight": 0.9
+    },
+    {
+        "id": "implement_algorithm",
+        "patterns": [
+            "(?:implement|write|create|code)\\s+(?P<algorithm>.+?)\\s*algorithm\\s+in\\s+(?P<language>.+?)\\s+(?:with|having|achieving)\\s+(?P<complexity>.+?)\\s*(?:time|space)?\\s*complexity(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"algorithm": "algorithm", "language": "language", "complexity": "complexity"},
+        "response_type": "code_function",
+        "weight": 0.9
+    },
+    {
+        "id": "convert_code_language",
+        "patterns": [
+            "(?:convert|translate|port|migrate|transform)\\s+(?:this|the|that)?\\s*(?P<source_lang>.+?)\\s*(?:code|program|function|script)\\s+(?:to|into)\\s+(?P<target_lang>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"source_lang": "source_lang", "target_lang": "target_lang"},
+        "response_type": "code_function",
+        "weight": 0.85
+    },
+    {
+        "id": "optimize_function",
+        "patterns": [
+            "(?:optimize|improve|refactor|speed\\s*up|make\\s+faster)\\s+(?:this|the|that)?\\s*(?P<function>.+?)\\s*function\\s+(?:for|in\\s+terms\\s+of|to\\s+improve)\\s+(?P<goal>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"function": "function", "goal": "goal"},
+        "response_type": "code_function",
+        "weight": 0.85
+    },
+    {
+        "id": "debug_code_issue",
+        "patterns": [
+            "(?:debug|fix|resolve|correct)\\s+(?:this|the|that)?\\s*(?P<language>\\w+)?\\s*(?:code|program|script|function)\\s+(?:that|which|with|having)\\s+(?:a|an|the)?\\s*(?P<issue>.+?)\\s*(?:issue|problem|bug|error)?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"language": "language", "issue": "issue"},
+        "response_type": "code_function",
+        "weight": 0.85
+    }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "q": [
+      "why do we dream in a way that feels logically consistent while asleep",
+      "dream logical consistency while asleep",
+      "why dreams feel real when dreaming",
+      "dreams seem logical while sleeping",
+      "why do dreams make sense when we are dreaming"
+    ],
+    "a": "Dreams often feel logically consistent while we're experiencing them because the brain's prefrontal cortex (responsible for critical thinking, logic, and self-awareness) is suppressed during REM sleep. This allows the brain to accept bizarre scenarios without question. During dreaming, the brain's default mode network is highly active, creating narratives from random neural firings using pattern recognition. The brain's ability to construct coherent stories is so powerful that it can weave together disparate elements into a seemingly logical sequence, even when those elements would be clearly impossible in waking life. Additionally, the dorsolateral prefrontal cortex, which handles working memory and reality testing, is one of the most deactivated areas during REM sleep. This means we lack the cognitive capacity to step back and evaluate whether the dream narrative makes sense. We also lack access to our full waking memories, so we can't easily compare dream events to our real-world knowledge. The phenomenon is similar to how we can become fully immersed in a movie or book while temporarily suspending disbelief. Once we wake up and the prefrontal cortex becomes active again, we immediately recognize the inconsistencies. This post-awakening recognition is what people refer to as 'that didn't make sense' — but during the dream, it seemed perfectly logical because the part of the brain that would object was essentially offline."
+  },
+  {
+    "q": [
+      "react custom hook tracks whether user is online",
+      "react hook online offline status",
+      "custom hook for network status in react",
+      "react useOnlineStatus hook",
+      "react hook to detect if user is online"
+    ],
+    "a": "Here's a custom React hook that tracks whether the user is online:\n\n```javascript\nimport { useState, useEffect } from 'react';\n\nfunction useOnlineStatus() {\n    const [isOnline, setIsOnline] = useState(navigator.onLine);\n\n    useEffect(() => {\n        const handleOnline = () => setIsOnline(true);\n        const handleOffline = () => setIsOnline(false);\n\n        window.addEventListener('online', handleOnline);\n        window.addEventListener('offline', handleOffline);\n\n        // Cleanup on unmount\n        return () => {\n            window.removeEventListener('online', handleOnline);\n            window.removeEventListener('offline', handleOffline);\n        };\n    }, []);\n\n    return isOnline;\n}\n\nexport default useOnlineStatus;\n\n// Usage:\n// function MyComponent() {\n//     const isOnline = useOnlineStatus();\n//     return (\n//         <div>\n//             {isOnline \n//                 ? <p>You are online ✓</p> \n//                 : <p>You are offline - some features may not work</p>\n//             }\n//         </div>\n//     );\n// }\n```\n\nThis hook uses the browser's `navigator.onLine` property and the `online`/`offline` events to track connection status. It initializes with the current state and updates reactively when the user's network status changes. The cleanup function removes event listeners when the component unmounts.",
+    "lang": "jsx"
+  }
+]

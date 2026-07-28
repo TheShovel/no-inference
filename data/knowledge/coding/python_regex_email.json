@@ -1,0 +1,25 @@
+[
+  {
+    "q": [
+      "python regex email validation",
+      "regular expression in python to validate an email",
+      "python regex validate email address",
+      "how to validate email with regex in python",
+      "python email regex pattern",
+      "regex for email validation python"
+    ],
+    "a": "Here's how to use a regular expression in Python to validate an email address:\n\n```python\nimport re\n\ndef validate_email(email):\n    \"\"\"Validate an email address using regex.\"\"\"\n    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$'\n    return bool(re.match(pattern, email))\n\n# Example usage:\nemails = ['user@example.com', 'invalid-email', 'user@.com', 'user@domain.co.uk']\nfor e in emails:\n    print(f'{e}: {validate_email(e)}')\n```\n\nA more comprehensive version that supports subdomains and longer TLDs:\n```python\ndef validate_email_strict(email):\n    \"\"\"Strict email validation.\"\"\"\n    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$'\n    if not re.match(pattern, email):\n        return False\n    local_part, domain = email.rsplit('@', 1)\n    if len(local_part) > 64:\n        return False\n    if len(domain) > 255:\n        return False\n    return True\n```\n\nThe basic pattern breaks down as: `^[a-zA-Z0-9._%+-]+` (local part with allowed chars), `@` (separator), `[a-zA-Z0-9.-]+` (domain name), `\\.` (dot before TLD), `[a-zA-Z]{2,}$` (TLD of at least 2 letters).",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "python script scrape news headlines",
+      "scrape a news website for headlines python",
+      "python web scraper news headlines",
+      "scraping headlines from news site python",
+      "python script that scrapes a news website for headlines"
+    ],
+    "a": "Here's a Python script that scrapes a news website for headlines using requests and BeautifulSoup:\n\n```python\nimport requests\nfrom bs4 import BeautifulSoup\n\ndef scrape_headlines(url):\n    \"\"\"Scrape a news website for headlines.\"\"\"\n    try:\n        headers = {'User-Agent': 'Mozilla/5.0'}\n        response = requests.get(url, headers=headers, timeout=10)\n        response.raise_for_status()\n    except requests.RequestException as e:\n        return f\"Error fetching the website: {e}\"\n    \n    soup = BeautifulSoup(response.text, 'html.parser')\n    headlines = []\n    \n    # Common headline containers: h1, h2, h3 tags, or article titles\n    for tag in soup.find_all(['h1', 'h2', 'h3']):\n        text = tag.get_text(strip=True)\n        if text and len(text) > 10:  # Filter out short text\n            headlines.append(text)\n    \n    # Also try common news article classes\n    for tag in soup.select('.headline, .title, .article-title, h2 a, h3 a'):\n        text = tag.get_text(strip=True)\n        if text and len(text) > 10 and text not in headlines:\n            headlines.append(text)\n    \n    return headlines\n\n# Example usage:\nurl = 'https://news.ycombinator.com/'\nheadlines = scrape_headlines(url)\nfor i, h in enumerate(headlines[:10], 1):\n    print(f'{i}. {h}')\n```\n\nThis function uses BeautifulSoup to parse the HTML and looks for headlines in common HTML elements. It checks h1-h3 tags and common CSS classes like 'headline' and 'title'. The User-Agent header helps avoid being blocked by some websites.",
+    "lang": "python"
+  }
+]

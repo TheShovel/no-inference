@@ -1,0 +1,24 @@
+[
+    {
+        "q": [
+            "responsive grid layout CSS Grid",
+            "CSS Grid responsive layout",
+            "how to create responsive grid layout CSS Grid",
+            "create responsive grid CSS Grid",
+            "responsive layout CSS Grid",
+            "CSS grid responsive design",
+            "how to create a responsive grid layout using CSS Grid",
+            "css grid responsive example",
+            "CSS Grid layout tutorial",
+            "responsive grid css",
+            "grid layout css responsive",
+            "responsive navigation bar using CSS Grid",
+            "responsive navbar CSS Grid",
+            "create responsive nav with CSS Grid",
+            "CSS Grid navigation bar",
+            "nav bar with CSS Grid",
+            "CSS Grid navbar responsive"
+        ],
+        "a": "To create a responsive grid layout using CSS Grid, you use the `grid-template-columns` property with responsive units like `fr`, `auto`, or `minmax()`, combined with media queries or the `auto-fit`/`auto-fill` keywords:\n\n```css\n/* Basic responsive grid with auto-fit */\n.grid-container {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n  gap: 20px;\n  padding: 20px;\n}\n\n/* With media queries for more control */\n.grid-container {\n  display: grid;\n  gap: 20px;\n  padding: 20px;\n}\n\n/* Mobile: single column */\n@media (max-width: 600px) {\n  .grid-container {\n    grid-template-columns: 1fr;\n  }\n}\n\n/* Tablet: two columns */\n@media (min-width: 601px) and (max-width: 1024px) {\n  .grid-container {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n\n/* Desktop: three columns */\n@media (min-width: 1025px) {\n  .grid-container {\n    grid-template-columns: repeat(3, 1fr);\n  }\n}\n\n/* Grid item styling */\n.grid-item {\n  background: #f0f0f0;\n  padding: 20px;\n  border-radius: 8px;\n}\n```\n\nThe `auto-fit` keyword automatically adjusts the number of columns based on available space. The `minmax(250px, 1fr)` function sets a minimum column width of 250px and a maximum of 1 fraction unit. You can also use `grid-template-areas` for complex layouts and `grid-column`/`grid-row` to span items across multiple columns. CSS Grid is perfect for two-dimensional layouts (rows and columns), while Flexbox is better for one-dimensional layouts.\n\nFor a navigation bar specifically with CSS Grid, use: `grid-template-columns: 1fr auto;` for the main navbar layout with logo and links, and media queries to stack vertically on mobile."
+    }
+]

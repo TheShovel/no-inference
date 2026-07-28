@@ -81,7 +81,7 @@ _UNCOUNTABLE_NOUNS = {
     "postmodernism", "surrealism", "cubism", "dadaism",
     "quantum mechanics", "classical mechanics",
     "thermodynamics", "electromagnetism",
-    "consciousness", "awareness","
+    "consciousness", "awareness",
 }
 
 # Pronoun indicator words (for algorithmic inference from text)

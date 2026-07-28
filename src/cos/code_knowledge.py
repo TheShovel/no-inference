@@ -43,7 +43,7 @@ def _search_stack(query: str, max_files: int = 2) -> List[dict]:
             req = urllib.request.Request(search_url, headers={
                 'User-Agent': 'COS/1.0'
             })
-            with urllib.request.urlopen(req, timeout=10) as resp:
+            with urllib.request.urlopen(req, timeout=30) as resp:
                 data = json.loads(resp.read().decode())
 
             for row_wrapper in data.get('rows', []):
@@ -158,6 +158,10 @@ def _load_coding_knowledge():
 
         for entry in data:
             questions = entry.get('q', entry.get('patterns', []))
+            # Normalize: if q is a single string, wrap it in a list so iteration
+            # doesn't decompose it into individual characters.
+            if isinstance(questions, str):
+                questions = [questions]
             answer = entry.get('a', entry.get('answer', ''))
             code = entry.get('code', '')
             full = answer
@@ -244,26 +248,53 @@ _CODING_KEYWORDS_STRICT = {
 
 def is_coding_query(query: str) -> bool:
     """Check if a query is clearly a coding/programming question.
-    
+
     Conservative: uses multi-word patterns and specific coding terms
     to avoid flagging general questions as coding questions.
     """
     q = query.lower().strip()
-    
+
     # Code syntax patterns (most reliable indicator)
     # "from" alone is too broad (matches English preposition).
     # Only check "from x import" pattern.
-    if re.search(r'\b(?:def |function |class |import |#include|public |private |int |float |string |var |let |const |=>|from\s+\w+\s+import|`[^`]+`)', q):
+    # NOTE: "class" alone is intentionally excluded from this check because it
+    # is a common English word ("working-class"). Instead, "class" followed by
+    # an identifier (capitalized or with colon/brace) is matched below.
+    if re.search(r'\b(?:def |function |import |#include|public |private |int |float |string |var |let |const |=>|from\s+\w+\s+import|`[^`]+`|class\s+\w+\s*[:{(])', q):
         return True
-    
+
+    # English word that is also a coding keyword — requires a second
+    # coding indicator (another keyword match or code punctuation) to avoid
+    # false positives on queries like "working-class families".
+    _AMBIGUOUS = {'class'}
+
+    # Check for code-specific punctuation (braces, parens, semicolons, etc.)
+    has_code_punct = bool(re.search(r'[{}\(\)]|->|::|;', q))
+
     # Multi-word coding phrases (reliable)
     # Check longest phrases first using WORD BOUNDARIES to avoid
     # false positives like "class" matching inside "classical".
+    # Also normalize hyphens: "try-except" -> "try except" to match
+    # the keyword set which uses spaces.
+    q_norm = re.sub(r'[-–—]', ' ', q)
     sorted_kw = sorted(_CODING_KEYWORDS_STRICT, key=len, reverse=True)
+
+    unambiguous_match = False
+    ambiguous_count = 0
     for kw in sorted_kw:
-        if re.search(r'\b' + re.escape(kw) + r'\b', q):
-            return True
-    
+        if re.search(r'\b' + re.escape(kw) + r'\b', q_norm):
+            if kw in _AMBIGUOUS:
+                ambiguous_count += 1
+            else:
+                unambiguous_match = True
+
+    # If we have at least one unambiguous keyword + OR code punctuation
+    # OR two ambiguous keywords, treat as coding.
+    if unambiguous_match or has_code_punct:
+        return True
+    if ambiguous_count >= 2:
+        return True
+
     return False
 
 
@@ -315,21 +346,50 @@ def code_lookup(query: str) -> Optional[str]:
         # Keep "in <language>" intact to match KB patterns
         (r'\b(?:using|with\s+the)\s+', ''),
         (r'\b(?:properly|efficiently|effectively|correctly)\b', ''),
+        # Normalize hyphens in compound terms like "try-except" -> "try except"
+        (r'[-–—]', ' '),
+        # Normalize nouns: plural -> singular (so patterns match both forms)
+        (r'\berrors\b', 'error'),
+        (r'\bhandles\b', 'handle'),
+        (r'\bhandling\b', 'handle'),
+        (r'\bfunctions\b', 'function'),
+        (r'\barrays\b', 'array'),
+        (r'\blists\b', 'list'),
+        (r'\bvalues\b', 'value'),
+        (r'\bnums\b', 'number'),
+        (r'\bstrings\b', 'string'),
+        (r'\bobjects\b', 'object'),
+        (r'\bdecorators\b', 'decorator'),
+        (r'\blogging\b', 'log'),
+        (r'\blogged\b', 'log'),
+        (r'\blogs\b', 'log'),
+        (r'\bsorting\b', 'sort'),
+        (r'\bsorted\b', 'sort'),
+        (r'\bmerging\b', 'merge'),
+        (r'\bmerged\b', 'merge'),
+        # Normalize punctuation: remove commas, semicolons, and extra spaces
+        (r'[,;:()]+', ' '),
         (r'\s+', ' '),
     ]
     for pat, repl in _NORMALIZE:
         q_norm = re.sub(pat, repl, q_norm).strip()
 
     # Build multiple query variants
-    variants = [q]
+    # Normalize all variants: hyphens -> spaces, commas -> spaces
+    def _norm_variant(t):
+        t = re.sub(r'[-–—]', ' ', t)
+        t = re.sub(r'[,;:()]+', ' ', t)
+        t = re.sub(r'\s+', ' ', t).strip()
+        return t
+    variants = [_norm_variant(q)]
     if q_norm and q_norm != q:
-        variants.append(q_norm)
+        variants.append(_norm_variant(q_norm))
     q_simple = ' '.join(w for w in q_norm.split() if w not in _FILLER) if q_norm else ''
     if q_simple and q_simple != q_norm:
-        variants.append(q_simple)
+        variants.append(_norm_variant(q_simple))
     q_simple2 = ' '.join(w for w in q.split() if w not in _FILLER)
     if q_simple2 and q_simple2 != q:
-        variants.append(q_simple2)
+        variants.append(_norm_variant(q_simple2))
 
     for pattern, answer in entries:
         for variant in variants:
@@ -341,6 +401,50 @@ def code_lookup(query: str) -> Optional[str]:
                 best = answer
 
     if best:
+        # Post-process the answer: substitute topic from the query
+        # into any __TOPIC__ placeholders in the answer text.
+        # This lets KB entries provide generic templates that get
+        # customized with the user's specific topic.
+        if '__TOPIC__' in best:
+            try:
+                # Extract the topic from the query (the subject the user is asking about)
+                # Try multiple patterns to find the topic
+                topic = None
+                topic_patterns = [
+                    r'(?:about|covering|for|on|regarding)\s+'
+                    r'(.+?)(?:\.\s*|\?\s*|\,\s*(?:including|covering|with|that|which|featuring)|$)',
+                    r'(?:page|site|portfolio)\s+(?:about|for|covering|on)\s+'
+                    r'(.+?)(?:\.\s*|\?\s*|$)',
+                    r'"([^"]+)"',
+                    r"['\"]([^'\"]+?)['\"]\s*(?:theme|style|layout)",
+                ]
+                for p in topic_patterns:
+                    m = re.search(p, query, re.IGNORECASE)
+                    if m:
+                        topic = m.group(1).strip().rstrip('.!?,;:')
+                        # Clean trailing clauses
+                        topic = re.sub(r'\s+(?:with|and|using|featuring|that|which|where)\s+.*$', '', topic)
+                        # Clean leading articles
+                        topic = re.sub(r'^(?:a|an|the)\s+', '', topic)
+                        if topic and len(topic) > 2:
+                            break
+                
+                if topic:
+                    best = best.replace('__TOPIC__', topic.title())
+                else:
+                    # Fallback: replace placeholder with extracted query keywords
+                    # Look for the main noun phrases
+                    words = [w for w in re.findall(r'\b[A-Z][a-z]+\b', query) if len(w) > 2]
+                    if words:
+                        best = best.replace('__TOPIC__', ' '.join(words))
+                    else:
+                        # Last resort: just use a clean version of the query
+                        clean = re.sub(r'^(?:create|make|write|build|design)\s+(?:a|an|the|me|us)?\s*', '', query.lower())
+                        clean = re.sub(r'\s+with\s+.*$', '', clean).strip()
+                        if clean:
+                            best = best.replace('__TOPIC__', clean.title())
+            except Exception:
+                pass
         return best
 
     # 2. Keyword-based fallback: if no exact match, find entries with
@@ -363,9 +467,16 @@ def code_lookup(query: str) -> Optional[str]:
                        'item', 'element', 'key', 'set', 'call', 'return',
                        'work', 'want', 'using', 'used', 'based', 'show',
                        'give', 'take', 'know'}
-        q_words = set(w for w in re.findall(r'\b\w{4,}\b', q.lower())
+        # Use 3+ char words to catch important short coding terms like 'div', 'css', 'js', 'api'
+        q_words = set(w for w in re.findall(r'\b\w{3,}\b', q.lower())
                       if w not in _STOP_WORDS)
         if q_words:
+            # Detect the language being asked about in the query
+            # Used to prefer entries that match the requested language
+            _LANG_WORDS = {'python', 'javascript', 'java', 'c++', 'c#', 'typescript',
+                           'rust', 'go', 'golang', 'ruby', 'swift', 'kotlin', 'php'}
+            query_lang = next((w for w in q_words if w in _LANG_WORDS), None)
+            
             for pattern, answer in entries:
                 pattern_str = pattern.pattern.lower() if hasattr(pattern, 'pattern') else ''
                 
@@ -379,6 +490,22 @@ def code_lookup(query: str) -> Optional[str]:
                 # Combined: pattern match is paramount, answer match is tiebreaker
                 combined = pattern_overlap * 10 + answer_overlap
                 
+                # Language bonus: if query asks for a specific language, prefer
+                # entries whose pattern mentions that language. This prevents
+                # returning Python code when Java was requested (e.g., "binary search
+                # in Java" matching a generic "implement binary search" Python entry).
+                if query_lang and query_lang in pattern_str:
+                    combined += 50  # Big bonus for matching the requested language
+
+                # Language penalty for MISMATCH: If query asks for Java but
+                # pattern mentions a different language, apply a penalty so
+                # Python entries don't dominate over the requested language.
+                if query_lang:
+                    for other_lang in _LANG_WORDS:
+                        if other_lang != query_lang and other_lang in pattern_str:
+                            combined -= 30  # Penalty for wrong language
+                            break
+
                 if combined > best_len:
                     best_len = combined
                     best = answer
@@ -386,26 +513,25 @@ def code_lookup(query: str) -> Optional[str]:
     if best:
         return best
 
-    # 3. Stack dataset API (last resort - disabled because it returns
-    # random repo code instead of helpful answers)
-    # try:
-    #     results = _search_stack(query, max_files=2)
-    #     if results:
-    #         parts = []
-    #         for r in results:
-    #             lang = r.get('language', '')
-    #             path = r.get('path', '')
-    #             content = r.get('content', '')
-    #             snippet = '\n'.join(content.split('\n')[:25])
-    #             if len(snippet) > 1800:
-    #                 snippet = snippet[:1800]
-    #             if snippet:
-    #                 header = f"Here's an example from `{path}`:" if path else "Here's a code example:"
-    #                 parts.append(f"{header}\n\n```{lang}\n{snippet}\n```")
-    #         if parts:
-    #             return "\n\n".join(parts)
-    # except Exception:
-    #     pass
+    # 3. Stack dataset API (last resort) — searches HuggingFace stack-v3 dataset
+    try:
+        results = _search_stack(query, max_files=1)
+        if results:
+            parts = []
+            for r in results:
+                lang = r.get('language', '')
+                path = r.get('path', '')
+                content = r.get('content', '')
+                snippet = '\n'.join(content.split('\n')[:25])
+                if len(snippet) > 1800:
+                    snippet = snippet[:1800]
+                if snippet:
+                    header = f"Here's an example from `{path}`:" if path else "Here's a code example:"
+                    parts.append(f"{header}\n\n```{lang}\n{snippet}\n```")
+            if parts:
+                return "\n\n".join(parts)
+    except Exception:
+        pass
 
     return None
 

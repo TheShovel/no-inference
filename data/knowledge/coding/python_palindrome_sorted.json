@@ -1,0 +1,38 @@
+[
+  {
+    "q": [
+      "takes a list of strings filters out palindromes and returns them sorted by length",
+      "takes list of strings filters palindromes returns sorted",
+      "list of strings filter palindromes sort by length",
+      "python filter palindromes and sort by length",
+      "function filters palindromes returns sorted list",
+      "filter strings that are palindromes then sort python",
+      "python list comprehension palindrome filter sort"
+    ],
+    "a": "Here's a Python function that takes a list of strings, filters out strings that are not palindromes, and returns the remaining strings sorted by length (shortest first):\n\n```python\ndef filter_palindromes_sorted(strings):\n    \"\"\"Filter palindromes and return sorted by length (shortest first).\n    \n    Args:\n        strings: A list of strings to filter\n    \n    Returns:\n        List of palindrome strings sorted by length (ascending)\n    \"\"\"\n    # Step 1: Filter for palindromes only\n    palindromes = [s for s in strings if s == s[::-1]]\n    \n    # Step 2: Sort by length (shortest first), then alphabetically for ties\n    palindromes.sort(key=lambda s: (len(s), s.lower()))\n    \n    return palindromes\n\n# Example usage:\nwords = ['racecar', 'hello', 'level', 'python', 'radar', 'madam', 'noon', 'world', 'a', 'bb']\nresult = filter_palindromes_sorted(words)\nprint(result)\n# Expected output: ['a', 'bb', 'noon', 'radar', 'level', 'madam', 'racecar']\n```\n\nHow it works:\n- `s == s[::-1]` checks if a string reads the same forwards and backwards (list comprehension filters)\n- `sort(key=lambda s: (len(s), s.lower()))` sorts by string length first, then alphabetically for ties\n- The result is a clean, readable function with type hints and docstring",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "lymphatic system differ from circulatory system",
+      "how does the lymphatic system differ from the circulatory system",
+      "difference between lymphatic and circulatory system",
+      "lymphatic system vs circulatory system comparison",
+      "compare lymphatic and circulatory systems"
+    ],
+    "a": "The lymphatic system and circulatory system are both transport systems in the body but serve different functions and have distinct structures. The circulatory system (cardiovascular system) consists of the heart, blood, and blood vessels (arteries, veins, capillaries). It transports oxygen, nutrients, hormones, and waste products throughout the body via a closed loop of vessels. The heart pumps blood continuously, and the system uses arteries to carry oxygenated blood away from the heart and veins to return deoxygenated blood back to it. The lymphatic system, by contrast, is a one-way drainage system. It consists of lymph nodes, lymph vessels, the spleen, thymus, and tonsils. It collects excess interstitial fluid (called lymph) from tissues and returns it to the bloodstream. Key differences include: the circulatory system has a central pump (the heart), while the lymphatic system has no pump and relies on body movements and muscle contractions; the circulatory system uses blood, while the lymphatic system uses lymph (a clear fluid containing white blood cells); the circulatory system delivers oxygen and nutrients, while the lymphatic system removes waste, absorbs fats from the digestive system, and plays a crucial role in immune defense by filtering pathogens in lymph nodes. The two systems are interconnected — the lymphatic system ultimately drains lymph into the subclavian veins, returning fluid to the circulatory system."
+  },
+  {
+    "q": [
+      "why do we dream in narratives",
+      "why dreams are stories",
+      "dream in narratives instead of random images",
+      "why do we dream in stories",
+      "why are dreams narrative",
+      "why do we dream and what purpose does it serve",
+      "purpose of dreaming memory",
+      "what purpose does dreaming serve for memory"
+    ],
+    "a": "Dreams often feel like stories because the brain attempts to make sense of random neural activity by creating a coherent narrative. During REM sleep, the brain's prefrontal cortex (responsible for logic and self-awareness) is suppressed, while the limbic system (emotions) and visual areas are highly active. The brain's default mode network, which is involved in daydreaming and autobiographical memory, generates a continuous stream of imagery and emotions. The brain then uses its innate pattern-recognition ability — the same mechanism that helps us make sense of the waking world — to weave these disparate elements into a narrative structure. This process is called 'dream synthesis' or 'narrative construction.' Dreams are not literally stories with plots; rather, they are the brain's post-hoc interpretation of random neural firings. The narrative structure emerges because the human brain is wired to find cause-and-effect relationships and create coherent stories from fragmented input. This is why dreams can feel so real and compelling — your brain is essentially improvising a story based on random activation of memories, emotions, and sensory impressions."
+  }
+]

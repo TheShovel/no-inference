@@ -1,0 +1,17 @@
+[
+    {
+        "q": [
+            "python read csv and generate summary",
+            "read csv file python generate report",
+            "python csv summary report",
+            "read a CSV file in Python and generate a summary",
+            "read CSV file process data generate summary report",
+            "python csv data processing summary",
+            "python script reads CSV file and generates summary",
+            "write a function in Python that reads a CSV file and generates a summary",
+            "python function to read csv and summarize",
+            "python csv analysis script"
+        ],
+        "a": "Here's a Python function that reads a CSV file, processes the data, and generates a summary report:\n\n```python\nimport csv\nfrom collections import Counter, defaultdict\n\ndef generate_csv_summary(file_path):\n    \"\"\"Read a CSV file and generate a summary report.\"\"\"\n    try:\n        with open(file_path, 'r', newline='', encoding='utf-8') as f:\n            reader = csv.DictReader(f)\n            rows = list(reader)\n    except FileNotFoundError:\n        return f'Error: File \"{file_path}\" not found.'\n    except Exception as e:\n        return f'Error reading file: {e}'\n    \n    if not rows:\n        return 'The CSV file is empty.'\n    \n    summary_lines = []\n    summary_lines.append(f'=== CSV Summary Report ===')\n    summary_lines.append(f'File: {file_path}')\n    summary_lines.append(f'Total rows: {len(rows)}')\n    summary_lines.append(f'Columns: {len(rows[0].keys())}')\n    summary_lines.append(f'Column names: {\", \".join(rows[0].keys())}')\n    summary_lines.append('')\n    \n    # Analyze each column\n    for col in rows[0].keys():\n        values = [row[col] for row in rows if row[col]]\n        if not values:\n            continue\n            \n        summary_lines.append(f'--- {col} ---')\n        summary_lines.append(f'  Non-null values: {len(values)}')\n        \n        # Try numeric analysis\n        try:\n            nums = [float(v) for v in values]\n            summary_lines.append(f'  Type: Numeric')\n            summary_lines.append(f'  Min: {min(nums):.2f}')\n            summary_lines.append(f'  Max: {max(nums):.2f}')\n            summary_lines.append(f'  Average: {sum(nums)/len(nums):.2f}')\n        except ValueError:\n            # Text analysis\n            counter = Counter(values)\n            summary_lines.append(f'  Type: Text')\n            summary_lines.append(f'  Unique values: {len(counter)}')\n            summary_lines.append(f'  Most common: {counter.most_common(3)}')\n        summary_lines.append('')\n    \n    return '\\n'.join(summary_lines)\n\n# Example usage\n# report = generate_csv_summary('sales_data.csv')\n# print(report)\n```\n\nThe function uses csv.DictReader for easy column access, handles missing files gracefully, and provides both numeric and text analysis per column. Install pandas for more advanced analysis: `pip install pandas`."
+    }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "q": [
+      "ethical implications of crispr",
+      "crispr gene editing ethics",
+      "crispr ethical concerns",
+      "crispr cas9 ethical implications",
+      "gene editing ethics crispr"
+    ],
+    "a": "CRISPR-Cas9 gene editing raises several profound ethical implications. First, germline editing (modifying sperm, eggs, or embryos) produces changes that would be inherited by future generations, raising concerns about consent from individuals who cannot consent to genetic modifications that will affect them. The 2018 case of He Jiankui, who created the first gene-edited babies, was widely condemned as unethical and premature. Second, the potential for eugenics — using gene editing to select for desired traits — raises concerns about designer babies, genetic discrimination, and exacerbating social inequalities. Third, off-target effects (unintended genetic modifications elsewhere in the genome) pose safety risks that are not fully understood. Fourth, access to CRISPR technology could widen existing health disparities if only wealthy individuals can afford genetic therapies. Fifth, ecological concerns arise from gene drives (CRISPR-modified organisms that spread genes through wild populations), which could have unintended ecosystem consequences. Many countries have banned germline editing or restricted it to research only. Ongoing ethical debates focus on the distinction between therapeutic uses (treating genetic diseases) and enhancement uses (improving traits), the appropriate regulatory frameworks, and the need for international consensus on acceptable applications."
+  },
+  {
+    "q": [
+      "how to start a vegetable garden comprehensive guide",
+      "comprehensive guide to starting a vegetable garden",
+      "vegetable gardening for beginners",
+      "start a vegetable garden step by step",
+      "beginner vegetable garden guide"
+    ],
+    "a": "Starting a vegetable garden is rewarding and straightforward. Here is a comprehensive guide for beginners.\n\nChoose the right location: Most vegetables need 6-8 hours of direct sunlight daily. Pick a spot with good drainage and access to water. If you don't have a yard, you can grow vegetables in containers on a balcony, patio, or windowsill.\n\nPrepare the soil: Good soil is the foundation of a healthy garden. Remove grass and weeds, loosen the soil to at least 12 inches deep, and mix in 2-3 inches of compost or aged manure. For containers, use a high-quality potting mix.\n\nStart small: Begin with 3-5 easy vegetables. Great choices for beginners include tomatoes (cherry tomatoes are especially easy), lettuce and other leafy greens (grow quickly, can be harvested repeatedly), radishes (ready in 25-30 days), bush beans (no trellis needed), cucumbers, zucchini, bell peppers, and herbs like basil, mint, chives, and parsley.\n\nPlant at the right time: Learn your local frost dates. Warm-season crops (tomatoes, peppers, cucumbers) should be planted after the last spring frost. Cool-season crops (lettuce, peas, carrots) can be planted earlier.\n\nWater consistently: Most vegetables need about 1-2 inches of water per week. Water deeply and less frequently to encourage deep root growth. Water at the base of plants in the morning to reduce evaporation and prevent fungal diseases.\n\nFertilize appropriately: Use a balanced organic fertilizer. Too much nitrogen produces lots of leaves but few fruits. Compost tea or fish emulsion are excellent natural options.\n\nWatch for pests: Common garden pests include aphids, caterpillars, and slugs. Use insecticidal soap, neem oil, or introduce beneficial insects like ladybugs. Companion planting (marigolds near tomatoes) naturally deters many pests.\n\nHarvest regularly: Most vegetables produce more when harvested frequently. Pick lettuce leaves from the outside, harvest beans when they're young and tender, and pick tomatoes when fully colored."
+  },
+  {
+    "q": [
+      "python function takes list of strings filters and sorts unique",
+      "python function filters list of strings returns sorted unique",
+      "python filter unique strings sorted",
+      "function that filters and sorts a list of strings python"
+    ],
+    "a": "Here's a Python function that takes a list of strings, filters them based on a condition, and returns sorted unique values:\n\n```python\ndef filter_and_sort_unique(strings, min_length=0):\n    \"\"\"Filter strings, remove duplicates, and sort alphabetically.\n    \n    Args:\n        strings: A list of strings to process\n        min_length: Minimum string length to include (0 = include all)\n    \n    Returns:\n        Sorted list of unique strings meeting the filter criteria\n    \"\"\"\n    # Filter by length, remove duplicates with set, then sort\n    return sorted(set(s for s in strings if len(s) >= min_length))\n\n# Example usage:\nwords = ['apple', 'banana', 'cat', 'apple', 'dog', 'elephant', 'cat', 'bee']\nprint(filter_and_sort_unique(words))\n# ['apple', 'banana', 'bee', 'cat', 'dog', 'elephant']\n\nprint(filter_and_sort_unique(words, min_length=4))\n# ['apple', 'banana', 'elephant']\n\n# Alternative with custom filter function:\ndef filter_custom_and_sort(strings, filter_func):\n    \"\"\"Filter using a custom function, deduplicate, and sort.\"\"\"\n    return sorted(set(s for s in strings if filter_func(s)))\n\n# Example: keep only palindromes\npal_filter = filter_custom_and_sort(words, lambda s: s == s[::-1])\nprint(pal_filter)\n# ['bee']  (bee is not a palindrome, but 'bob' would be)\n```\n\nThe core pattern is `sorted(set(condition for item in list))` which filters, deduplicates, and sorts in one line.",
+    "lang": "python"
+  }
+]

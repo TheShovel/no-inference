@@ -1,0 +1,15 @@
+[
+    {
+        "q": [
+            "debouncing function in JavaScript",
+            "javascript debounce function",
+            "implement debounce in JavaScript",
+            "how to implement debouncing in JavaScript",
+            "javascript debounce implementation",
+            "debounce javascript example",
+            "javascript debounce function example",
+            "how do I implement a debouncing function in JavaScript"
+        ],
+        "a": "A debounce function limits how often a function can be called. It ensures the function is only called after a specified delay since the last invocation. This is useful for search inputs, window resizing, and button clicks:\n\n```javascript\nfunction debounce(func, delay) {\n    let timeoutId;\n    \n    return function(...args) {\n        // Clear any pending timeout\n        clearTimeout(timeoutId);\n        \n        // Set new timeout\n        timeoutId = setTimeout(() => {\n            func.apply(this, args);\n        }, delay);\n    };\n}\n\n// Usage example: debounce a search input\nconst searchInput = document.getElementById('search');\nconst debouncedSearch = debounce(function(event) {\n    console.log('Searching for:', event.target.value);\n    // API call here\n}, 300);\n\nsearchInput.addEventListener('input', debouncedSearch);\n\n// Immediate version (leading edge): fires immediately then debounces\nfunction debounceLeading(func, delay) {\n    let timeoutId;\n    \n    return function(...args) {\n        const callNow = !timeoutId;\n        \n        clearTimeout(timeoutId);\n        timeoutId = setTimeout(() => {\n            timeoutId = null;\n        }, delay);\n        \n        if (callNow) {\n            func.apply(this, args);\n        }\n    };\n}\n\n// Throttle vs Debounce:\n// - Debounce: delays execution until after a pause\n// - Throttle: ensures execution at most once per interval\n```\n\nKey points: each call resets the timer. The function only executes after the specified delay since the LAST call. Common delay values: 300ms for search inputs, 150ms for resize handlers."
+    }
+]

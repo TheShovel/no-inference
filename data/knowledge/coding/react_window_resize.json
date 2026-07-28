@@ -1,0 +1,14 @@
+[
+  {
+    "q": [
+      "custom hook in React for window resize",
+      "react window resize hook",
+      "react hook window resize",
+      "react resize event handler",
+      "how to implement a custom hook in React for tracking window resize",
+      "useWindowSize react",
+      "react useWindowSize hook"
+    ],
+    "a": "Here is a custom React hook for tracking window resize:\n\n```jsx\nimport { useState, useEffect } from \"react\";\n\nfunction useWindowSize() {\n  const [windowSize, setWindowSize] = useState({\n    width: window.innerWidth,\n    height: window.innerHeight,\n  });\n\n  useEffect(() => {\n    function handleResize() {\n      setWindowSize({\n        width: window.innerWidth,\n        height: window.innerHeight,\n      });\n    }\n\n    // Debounce for performance\n    let timeoutId;\n    function debouncedHandleResize() {\n      clearTimeout(timeoutId);\n      timeoutId = setTimeout(handleResize, 100);\n    }\n\n    window.addEventListener(\"resize\", debouncedHandleResize);\n    handleResize(); // Get initial size\n    \n    return () => {\n      window.removeEventListener(\"resize\", debouncedHandleResize);\n      clearTimeout(timeoutId);\n    };\n  }, []);\n\n  return windowSize;\n}\n\n// Usage\nexport default function App() {\n  const { width, height } = useWindowSize();\n  \n  return (\n    <div>\n      <p>Window: {width} x {height}</p>\n      {width < 768 ? <MobileView /> : <DesktopView />}\n    </div>\n  );\n}\n```\n\nThe hook returns the current window dimensions and updates on resize with debouncing for performance. Common uses: responsive rendering, conditional layouts, and adapting component behavior based on viewport size."
+  }
+]

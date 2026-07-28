@@ -231,14 +231,22 @@ def detect_intent(query):
             return 'roleplay'
 
     # ── Memory recall ────────────────────────────────────────────────────
+    # These patterns detect queries about what was previously discussed.
+    # They require personal pronouns combined with memory-related verbs
+    # to avoid false-positive matches on factual knowledge questions.
     memory_recall_patterns = [
-        r'what\s+do\s+(?:i|you|we|they)\s+',
-        r'what\s+does\s+(?:he|she|it)\s+',
-        r'what\s+(?:is|are)\s+(?:my|your|his|her|our|their)\s+',
-        r'(?:tell|show)\s+me\s+(?:what|the)\s+',
-        r'what\s+(?:language|food|game|book|movie|song|color|animal)\s+(?:do|is|are)\s+(?:you|i|we|they)',
-        r'do\s+(?:i|you|we|they)\s+(?:like|have|want|know|remember)\s+',
-        r'does\s+(?:he|she|it)\s+(?:like|have|want|know)\s+',
+        # "What did I say...", "What did you say..."
+        r'what\s+(?:did|have)\s+(?:i|you|we|they)\s+(?:say|mention|tell|ask|talk|said|mentioned|told)\s+',
+        # "What is my...", "What are my...", "What is your..."
+        r'what\s+(?:is|are|was|were)\s+(?:my|your)\s+(?:name|favorite|opinion|thought|idea|suggestion|age|birthday|job|hobby)',
+        # "Do you remember...", "Do you know what I..."
+        r'do\s+you\s+(?:remember|recall)\s+',
+        r'do\s+i\s+(?:like|have|want|know|remember)',
+        # "Tell me what I...", "Show me what I..."
+        r'(?:tell|show)\s+me\s+what\s+(?:i|my|we)',
+        # Specific recall about previously stated facts
+        r'(?:what|which)\s+(?:color|food|movie|book|song|animal|language|city)\s+did\s+(?:i|you|we)\s+(?:say|mention)',
+        r'what\s+was\s+(?:i|we|he|she)\s+(?:talking|saying|discussing)',
     ]
     for pat in memory_recall_patterns:
         if re.search(pat, q):

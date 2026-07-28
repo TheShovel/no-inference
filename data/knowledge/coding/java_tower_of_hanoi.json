@@ -1,0 +1,15 @@
+[
+  {
+    "q": [
+      "tower of hanoi java",
+      "tower of hanoi recursive java",
+      "tower of hanoi puzzle java",
+      "implement tower of hanoi in java",
+      "tower of hanoi java recursion",
+      "solve tower of hanoi java",
+      "recursive function tower of hanoi java",
+      "how to implement a recursive function in Java to solve the Tower of Hanoi"
+    ],
+    "a": "Here is a Java implementation of the Tower of Hanoi using recursion:\n\npublic class TowerOfHanoi {\n    public static void solve(int n, char source, char auxiliary, char destination) {\n        if (n == 1) {\n            System.out.println(\"Move disk 1 from \" + source + \" to \" + destination);\n            return;\n        }\n        solve(n - 1, source, destination, auxiliary);\n        System.out.println(\"Move disk \" + n + \" from \" + source + \" to \" + destination);\n        solve(n - 1, auxiliary, source, destination);\n    }\n    \n    public static void main(String[] args) {\n        int n = 3; // Number of disks\n        System.out.println(\"Tower of Hanoi solution for \" + n + \" disks:\");\n        solve(n, \"A\", \"B\", \"C\");\n    }\n}\n\nThe recursive algorithm moves n-1 disks to the auxiliary peg, moves the largest disk to the destination, then moves n-1 disks from auxiliary to destination. Time complexity is O(2^n)."
+  }
+]

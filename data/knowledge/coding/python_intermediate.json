@@ -6,7 +6,13 @@
       "python decorator with arguments",
       "how to use decorators in python",
       "python function decorator tutorial",
-      "python class decorator example"
+      "python class decorator example",
+      "use a decorator in python to log function execution",
+      "decorator to log function execution",
+      "python decorator for logging",
+      "how to use a decorator to log function execution",
+      "python logging decorator",
+      "python decorator log function calls"
     ],
     "a": "A decorator is a function that takes another function and extends its behavior without modifying it. Use `@decorator_name` syntax above a function definition. For decorators with arguments, add an outer wrapper. Use `functools.wraps` to preserve the original function's metadata (`__name__`, `__doc__`, etc.). Decorators can be stacked by applying multiple `@` lines. Common use cases: logging, authentication, timing, caching.",
     "code": "import functools\nimport time\n\n# Basic decorator: log calls\ndef log_calls(func):\n    @functools.wraps(func)\n    def wrapper(*args, **kwargs):\n        print(f\"Calling {func.__name__} with args={args} kwargs={kwargs}\")\n        result = func(*args, **kwargs)\n        print(f\"{func.__name__} returned {result}\")\n        return result\n    return wrapper\n\n@log_calls\ndef add(a, b):\n    return a + b\n\nadd(3, 5)\n# Calling add with args=(3, 5) kwargs={}\n# add returned 8\n\n# Decorator with arguments\ndef repeat(n):\n    def decorator(func):\n        @functools.wraps(func)\n        def wrapper(*args, **kwargs):\n            for _ in range(n):\n                result = func(*args, **kwargs)\n            return result\n        return wrapper\n    return decorator\n\n@repeat(3)\ndef greet(name):\n    print(f\"Hello, {name}!\")\n\ngreet(\"Alice\")\n# Hello, Alice!\n# Hello, Alice!\n# Hello, Alice!\n\n# Timing decorator\ndef timer(func):\n    @functools.wraps(func)\n    def wrapper(*args, **kwargs):\n        start = time.perf_counter()\n        result = func(*args, **kwargs)\n        elapsed = time.perf_counter() - start\n        print(f\"{func.__name__} took {elapsed:.4f}s\")\n        return result\n    return wrapper\n\n@timer\ndef slow_function():\n    time.sleep(0.5)\n    return \"done\"\n\n# Class-based decorator\nclass CountCalls:\n    def __init__(self, func):\n        functools.update_wrapper(self, func)\n        self.func = func\n        self.count = 0\n\n    def __call__(self, *args, **kwargs):\n        self.count += 1\n        print(f\"Call {self.count} of {self.func.__name__}\")\n        return self.func(*args, **kwargs)\n\n@CountCalls\ndef say_hi():\n    print(\"Hi!\")\n\nsay_hi()  # Call 1 of say_hi\nsay_hi()  # Call 2 of say_hi",

@@ -1,0 +1,200 @@
+[
+    {
+        "id": "essay_persuasive_argue",
+        "patterns": [
+            "(?:write|compose|draft|create)\\s+(?:me|us)?\\s*(?:a|an|the)?\\s*persuasive\\s*essay\\s+(?:about|on)\\s+(?P<topic>.+?)\\s+arguing\\s+(?P<argument>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "argument": "argument"},
+        "response_type": "essay",
+        "weight": 1.0
+    },
+    {
+        "id": "essay_narrative_perspective",
+        "patterns": [
+            "(?:write|compose|draft|create)\\s+(?:a|an|the)?\\s*narrative\\s*essay\\s+(?:about|on)\\s+(?P<topic>.+?)\\s+(?:from\\s+the\\s+perspective\\s+of|as\\s+told\\s+by|through\\s+the\\s+eyes\\s+of)\\s+(?P<perspective>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "perspective": "perspective"},
+        "response_type": "essay",
+        "weight": 1.0
+    },
+    {
+        "id": "essay_reflective",
+        "patterns": [
+            "(?:write|compose|draft|create)\\s+(?:a|an|the)?\\s*reflective\\s*essay\\s+(?:on|about)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "essay",
+        "weight": 1.0
+    },
+    {
+        "id": "review_critical",
+        "patterns": [
+            "(?:write|compose|draft|create)\\s+(?:a|an|the)?\\s*(?:critical\\s+)?review\\s+(?:of|on)\\s+(?P<topic>.+?)(?:,\\s*(?:focusing\\s+on|highlighting|examining)\\s+(?P<focus>.+?))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "focus": "focus"},
+        "response_type": "essay",
+        "weight": 0.95
+    },
+    {
+        "id": "book_report_focus",
+        "patterns": [
+            "(?:write|compose|draft|create)\\s+(?:a|an|the)?\\s*(?:book\\s+)?report\\s+(?:on|about)\\s+(?P<topic>.+?)\\s+(?:focusing\\s+on|with\\s+emphasis\\s+on|highlighting)\\s+(?P<focus>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "focus": "focus"},
+        "response_type": "essay",
+        "weight": 0.95
+    },
+    {
+        "id": "research_proposal",
+        "patterns": [
+            "(?:write|compose|draft|create)\\s+(?:a|an|the)?\\s*research\\s*(?:proposal|plan|outline)\\s+(?:on|about|for)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "essay",
+        "weight": 0.95
+    },
+    {
+        "id": "case_study",
+        "patterns": [
+            "(?:write|compose|draft|create)\\s+(?:a|an|the)?\\s*case\\s*study\\s+(?:about|on|of)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "essay",
+        "weight": 0.95
+    },
+    {
+        "id": "biography_focus",
+        "patterns": [
+            "(?:write|compose|draft|create)\\s+(?:a|an|the)?\\s*(?:biography|biographical\\s+sketch|bio)\\s+(?:of|on|about)\\s+(?P<topic>.+?)\\s+(?:focusing\\s+on|with\\s+emphasis\\s+on|highlighting)\\s+(?P<focus>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "focus": "focus"},
+        "response_type": "essay",
+        "weight": 0.95
+    },
+    {
+        "id": "personal_statement",
+        "patterns": [
+            "(?:write|compose|draft|create)\\s+(?:a|an|the)?\\s*personal\\s*statement\\s+(?:for|about|regarding)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "essay",
+        "weight": 0.9
+    },
+    {
+        "id": "cover_letter",
+        "patterns": [
+            "(?:write|compose|draft|create)\\s+(?:a|an|the)?\\s*cover\\s*letter\\s+(?:for|applying\\s+to|for\\s+a)\\s+(?P<position>.+?)\\s+(?:position|job|role|post)?\\s+(?:at|with|for)\\s+(?P<company>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"position": "position", "company": "company"},
+        "response_type": "essay",
+        "weight": 0.9
+    },
+    {
+        "id": "business_plan",
+        "patterns": [
+            "(?:write|compose|draft|create|develop)\\s+(?:a|an|the)?\\s*business\\s*plan\\s+(?:for|about|covering)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "essay",
+        "weight": 0.9
+    },
+    {
+        "id": "product_description",
+        "patterns": [
+            "(?:write|compose|draft|create)\\s+(?:a|an|the)?\\s*product\\s*description\\s+(?:for|of|about)\\s+(?P<topic>.+?)\\s+(?:targeting|aimed\\s+at|for)\\s+(?P<audience>.+?)\\s*(?:audience|market|customers|users)?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "audience": "audience"},
+        "response_type": "essay",
+        "weight": 0.9
+    },
+    {
+        "id": "press_release",
+        "patterns": [
+            "(?:write|compose|draft|create|issue)\\s+(?:a|an|the)?\\s*press\\s*release\\s+(?:announcing|regarding|about)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "essay",
+        "weight": 0.9
+    },
+    {
+        "id": "memo",
+        "patterns": [
+            "(?:write|compose|draft|create)\\s+(?:a|an|the)?\\s*(?:memo|memorandum)\\s+(?:about|on|regarding|concerning)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "essay",
+        "weight": 0.9
+    },
+    {
+        "id": "speech_occasion",
+        "patterns": [
+            "(?:write|compose|draft|create|prepare)\\s+(?:a|an|the)?\\s*speech\\s+(?:about|on)\\s+(?P<topic>.+?)\\s+(?:for|at|on\\s+the\\s+occasion\\s+of)\\s+(?P<occasion>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "occasion": "occasion"},
+        "response_type": "essay",
+        "weight": 0.9
+    },
+    {
+        "id": "newsletter",
+        "patterns": [
+            "(?:write|compose|draft|create)\\s+(?:a|an|the)?\\s*newsletter\\s+(?:about|on|regarding)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "essay",
+        "weight": 0.85
+    },
+    {
+        "id": "white_paper",
+        "patterns": [
+            "(?:write|compose|draft|create)\\s+(?:a|an|the)?\\s*white\\s*paper\\s+(?:on|about|regarding)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "essay",
+        "weight": 0.9
+    },
+    {
+        "id": "thesis_statement",
+        "patterns": [
+            "(?:write|compose|draft|create|develop)\\s+(?:a|an|the)?\\s*thesis\\s*statement\\s+(?:for|about|on)\\s+(?:a|an|the)?\\s*essay\\s+(?:about|on)\\s+(?P<topic>.+?)\\s+(?:arguing|that|stating|claiming)\\s+(?P<argument>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "argument": "argument"},
+        "response_type": "essay",
+        "weight": 0.9
+    },
+    {
+        "id": "outline_essay",
+        "patterns": [
+            "(?:write|compose|draft|create|prepare)\\s+(?:a|an|the)?\\s*outline\\s+(?:for|of|about)\\s+(?:a|an|the)?\\s*essay\\s+(?:about|on)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "essay",
+        "weight": 0.85
+    },
+    {
+        "id": "literature_review",
+        "patterns": [
+            "(?:write|compose|draft|create)\\s+(?:a|an|the)?\\s*literature\\s*review\\s+(?:on|of|about)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "essay",
+        "weight": 0.9
+    },
+    {
+        "id": "abstract_paper",
+        "patterns": [
+            "(?:write|compose|draft|create)\\s+(?:a|an|the)?\\s*abstract\\s+(?:for|of|about)\\s+(?:a|an|the)?\\s*(?:paper|article|research|study)\\s+(?:about|on)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "essay",
+        "weight": 0.85
+    },
+    {
+        "id": "rewrite_paragraph_tone",
+        "patterns": [
+            "(?:rewrite|rephrase|revise|paraphrase)\\s+(?:this|the|that)?\\s*(?:paragraph|passage|text|section|content)\\s+(?:about|on|regarding)\\s+(?P<topic>.+?)\\s+(?:to\\s+be|to\\s+make\\s+it|in\\s+a)\\s+(?:more\\s+)?(?P<tone>.+?)\\s*(?:tone|style|way)?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "tone": "tone"},
+        "response_type": "essay",
+        "weight": 0.85
+    }
+]

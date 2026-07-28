@@ -48,7 +48,14 @@ def _load_knowledge(base_dir=None):
         return []
 
     entries = []
-    json_files = sorted(p for p in base_dir.rglob('*.json') if not p.name.startswith('.'))
+    # Exclude the 'templates/' subdirectory which contains context-aware
+    # conversational templates (not KB entries). These use 'triggers' and 'template'
+    # fields instead of 'q'/'a' format, and their generic triggers like "what is"
+    # can pollute KB lookups.
+    if base_dir != _KNOWLEDGE_DIR:
+        json_files = sorted(p for p in base_dir.rglob('*.json') if not p.name.startswith('.'))
+    else:
+        json_files = sorted(p for p in base_dir.rglob('*.json') if not p.name.startswith('.') and '/templates/' not in str(p) and '\\templates\\' not in str(p))
 
     if not json_files:
         print(f"  No JSON knowledge files found in {base_dir}")
@@ -86,20 +93,23 @@ def _load_knowledge(base_dir=None):
                 if not q_clean:
                     continue
                 try:
-                    # Check if pattern contains regex special characters
-                    has_regex_chars = any(c in q_clean for c in '.*+?[](){}|\\^$')
-                    if has_regex_chars:
-                        # Use as-is (user wrote a regex)
+                    # Check if pattern contains explicit regex syntax (backslash escapes)
+                    # Only treat as raw regex if the author intentionally used regex
+                    # constructs like \b, \s, \d, etc. Otherwise escape the pattern
+                    # to prevent accidental regex metacharacters (e.g., '+' in 'c++'
+                    # becoming a quantifier, or '?' in questions becoming optional).
+                    has_regex_backslash = '\\' in q_clean
+                    if has_regex_backslash:
+                        # Contains intentional regex escapes — use as-is
                         regex = re.compile(q_clean, re.IGNORECASE)
                     else:
-                        # Simple word/phrase match — use word boundaries to prevent
-                        # 'hi' matching inside 'china' or 'this' matching inside 'history'
+                        # Escape the pattern so 'c++' matches literally 'c++',
+                        # and 'What is X?' matches 'What is X?' literally.
+                        # Use word boundary for single short words.
                         words = q_clean.split()
                         if len(words) == 1 and len(q_clean) <= 5:
-                            # Single short word — use word boundary
                             regex = re.compile(r'\b' + re.escape(q_clean) + r'\b', re.IGNORECASE)
                         else:
-                            # Multi-word phrase — use as escaped substring
                             regex = re.compile(re.escape(q_clean), re.IGNORECASE)
                     entries.append((regex, answer))
                     loaded += 1
@@ -182,10 +192,57 @@ def lookup(query):
         # "tell me about" -> "tell me about" (keep as-is, already matches)
         # "how does the process of" -> "how does"
         (r'\bhow\s+does\s+the\s+process\s+of\b', 'how does'),
+        # Expand common contractions so patterns using "it's" match "it is" queries
+        (r"\bit\'s\b", 'it is'),
+        (r"\bdon\'t\b", 'do not'),
+        (r"\bcan\'t\b", 'cannot'),
+        (r"\bwon\'t\b", 'will not'),
+        (r"\bdoesn\'t\b", 'does not'),
+        (r"\bdidn\'t\b", 'did not'),
+        (r"\bhasn\'t\b", 'has not'),
+        (r"\bhaven\'t\b", 'have not'),
+        (r"\bisn\'t\b", 'is not'),
+        (r"\baren\'t\b", 'are not'),
+        (r"\bwasn\'t\b", 'was not'),
+        (r"\bweren\'t\b", 'were not'),
+        (r"\bcouldn\'t\b", 'could not'),
+        (r"\bwouldn\'t\b", 'would not'),
+        (r"\bshouldn\'t\b", 'should not'),
+        (r"\bmustn\'t\b", 'must not'),
+        (r"\bthat\'s\b", 'that is'),
+        (r"\bthere\'s\b", 'there is'),
+        (r"\bhere\'s\b", 'here is'),
+        (r"\bwhat\'s\b", 'what is'),
+        (r"\bhow\'s\b", 'how is'),
+        (r"\bwho\'s\b", 'who is'),
+        (r"\bwhere\'s\b", 'where is'),
+        (r"\bwhen\'s\b", 'when is'),
+        (r"\bwhy\'s\b", 'why is'),
     ]
     for pat, repl in _NORMALIZATIONS:
         q_norm = re.sub(pat, repl, q_norm)
 
+    # Also create variants with common writing prefixes stripped.
+    # E.g., "write a detailed explanation of how X works" -> "how X works"
+    # This helps KB patterns match queries wrapped in essay/explanation requests.
+    _WRITING_PREFIXES = [
+        r'^(?:write|compose|draft|create|build|make|design|develop|generate)\s+(?:me|us)?\s*(?:a|an|the)?\s*(?:short|long|detailed|brief|comprehensive|complete|simple|quick|basic|advanced|small|big)?\s*(?:explanation|essay|article|report|paper|guide|tutorial|description|summary|description|analysis|page|site|function|program|script|component|hook)\s+(?:about|of|on|regarding|covering|for)\s+',
+        r'^(?:write|compose|draft|create|build|make|design|develop)\s+(?:me|us)?\s*(?:a|an|the)?\s*(?:short|long|detailed|brief|comprehensive|complete|simple|quick)?\s+',
+        r'^(?:give|provide|offer)\s+(?:me|us)?\s*(?:a|an|the)?\s*(?:detailed|comprehensive|brief|short|quick|complete)?\s*(?:explanation|overview|introduction|description|analysis|guide|tutorial)\s+(?:of|on|about|regarding)\s+',
+        r'^tell\s+(?:me|us)\s+(?:about|what|how)\s+',
+        r'^(?:explain|describe|define)\s+(?:the\s+)?(?:concept\s+of\s+|idea\s+of\s+)?',
+        r'^what\s+is\s+(?:a|an|the|this|that)?\s*',
+        r'^what\s+are\s+',
+        r'^how\s+(?:does|do|would|can|should|could)\s+(?:a|an|the|this|that|i|we|you|they|he|she|it)?\s*',
+        r'^why\s+(?:is|are|do|does|did|would|could|should)\s+(?:a|an|the|this|that|i|we|you|they|he|she|it)?\s*',
+    ]
+    q_writing_stripped = q
+    for prefix in _WRITING_PREFIXES:
+        stripped = re.sub(prefix, '', q, flags=re.IGNORECASE).strip()
+        if stripped and len(stripped) > 5 and stripped != q:
+            q_writing_stripped = stripped
+            break
+    
     # Also create a simplified query with filler/stop words removed.
     # This allows patterns like "how do mushrooms communicate" to match
     # queries like "How do mushrooms actually communicate with each other".
@@ -199,20 +256,122 @@ def lookup(query):
     q_simple = ' '.join(w for w in q.split() if w not in _FILLER_WORDS)
     q_simple = re.sub(r'\s+', ' ', q_simple).strip()
 
+    # Also create a contracted version of the query ("it is" -> "it's", etc.)
+    # so patterns that use contractions match queries that don't.
+    # E.g., KB pattern "How does a seed know when it's time?" matches
+    # user query "how does a seed know when it is time?"
+    _CONTRACTIONS = [
+        (r'\bit\s+is\b', "it's"),
+        (r'\bdo\s+not\b', "don't"),
+        (r'\bcannot\b', "can't"),
+        (r'\bwill\s+not\b', "won't"),
+        (r'\bdoes\s+not\b', "doesn't"),
+        (r'\bdid\s+not\b', "didn't"),
+        (r'\bhas\s+not\b', "hasn't"),
+        (r'\bhave\s+not\b', "haven't"),
+        (r'\bis\s+not\b', "isn't"),
+        (r'\bare\s+not\b', "aren't"),
+        (r'\bwas\s+not\b', "wasn't"),
+        (r'\bwere\s+not\b', "weren't"),
+        (r'\bcould\s+not\b', "couldn't"),
+        (r'\bwould\s+not\b', "wouldn't"),
+        (r'\bshould\s+not\b', "shouldn't"),
+        (r'\bmust\s+not\b', "mustn't"),
+        (r'\bthat\s+is\b', "that's"),
+        (r'\bthere\s+is\b', "there's"),
+        (r'\bhere\s+is\b', "here's"),
+        (r'\bwhat\s+is\b', "what's"),
+        (r'\bhow\s+is\b', "how's"),
+        (r'\bwho\s+is\b', "who's"),
+        (r'\bwhere\s+is\b', "where's"),
+        (r'\bwhen\s+is\b', "when's"),
+        (r'\bwhy\s+is\b', "why's"),
+    ]
+    q_contracted = q
+    for pat, repl in _CONTRACTIONS:
+        q_contracted = re.sub(pat, repl, q_contracted)
+    if q_contracted == q:
+        q_contracted = None  # No change, skip it
+
     best_answer = None
     best_match_len = 0
 
     # Try matching against the original query and variants
+    variants = [q, q_norm, q_simple]
+    if q_contracted:
+        variants.append(q_contracted)
+    # Add the writing-stripped variant if different
+    if q_writing_stripped != q and q_writing_stripped not in variants:
+        variants.append(q_writing_stripped)
     for pattern, answer in entries:
-        for variant in (q, q_norm, q_simple):
+        for variant in variants:
             if not variant or len(variant) < 5:
                 continue
             m = pattern.search(variant)
             if m:
                 match_len = len(m.group(0))
-                if match_len > best_match_len:
+                # Require at least 3 characters to match — prevents accidental
+                # matches like 'c' (from regex 'c++') matching 'metallic'
+                if match_len >= 3 and match_len > best_match_len:
                     best_match_len = match_len
                     best_answer = answer
+
+    # Word-overlap fallback: if no exact substring match found, try
+    # matching by keyword overlap. This lets patterns match queries that
+    # have the right words but in a different order or with extra words.
+    if not best_answer:
+        try:
+            # Extract key content words from the query (exclude stop words)
+            _STOP_WORDS_FUZZY = {
+                'what', 'why', 'how', 'when', 'where', 'which', 'who', 'does',
+                'this', 'that', 'with', 'from', 'they', 'have', 'been', 'tell',
+                'about', 'just', 'also', 'still', 'even', 'only', 'more', 'some',
+                'like', 'into', 'over', 'such', 'than', 'then', 'very', 'really',
+                'actually', 'basically', 'essentially', 'these', 'those', 'their',
+                'your', 'will', 'would', 'could', 'should', 'can', 'are', 'was',
+                'were', 'did', 'been', 'being', 'has', 'had', 'its', 'his', 'her',
+                'our', 'all', 'any', 'each', 'every', 'both', 'most', 'other',
+                'such', 'way', 'ways', 'need', 'want', 'help', 'please', 'thanks',
+                'write', 'create', 'make', 'build', 'give', 'show', 'get', 'use',
+                'take', 'know', 'think', 'say', 'come', 'go', 'see', 'look',
+                'find', 'leave', 'work', 'call', 'try', 'ask', 'need', 'feel',
+                'tell', 'much', 'many', 'some', 'too', 'very', 'also', 'well',
+                'back', 'away', 'here', 'there', 'thing', 'things', 'people',
+                'world', 'life', 'time', 'year', 'day', 'part', 'kind', 'sort',
+                'way', 'number', 'group', 'place', 'case', 'fact', 'side',
+                'the', 'and', 'for', 'are', 'but', 'not', 'you', 'all', 'can',
+                'had', 'her', 'was', 'one', 'our', 'out', 'has', 'have', 'been',
+                'new', 'first', 'last', 'long', 'great', 'make', 'made', 'also',
+                'well', 'even', 'much', 'may', 'now', 'than', 'then', 'very',
+                'just', 'over', 'such', 'take', 'used', 'using', 'based', 'called',
+                'html', 'css', 'page', 'site', 'web', 'use', 'using', 'need',
+            }
+            q_words = set(w.lower() for w in re.findall(r'\b[a-zA-Z]{3,}\b', q)
+                         if w.lower() not in _STOP_WORDS_FUZZY)
+            if q_words:
+                best_fuzzy_score = 0
+                best_fuzzy_answer = None
+                for pattern, answer in entries:
+                    pattern_str = pattern.pattern.lower()
+                    # Count how many query words appear in the pattern
+                    word_hits = sum(1 for w in q_words if w in pattern_str)
+                    if word_hits > best_fuzzy_score:
+                        best_fuzzy_score = word_hits
+                        best_fuzzy_answer = answer
+                # Only use fuzzy match if at least 4 key words overlap
+                # AND the overlap covers at least 40% of query key words
+                # AND the overlap covers at least 30% of pattern key words
+                # Bidirectional check prevents false matches between unrelated topics
+                if q_words and best_fuzzy_score >= 4 and best_fuzzy_answer:
+                    q_ratio = best_fuzzy_score / len(q_words)
+                    # Count pattern words too for bidirectional check
+                    pattern_words = set(w for w in re.findall(r'\b[a-zA-Z]{3,}\b', pattern_str)
+                                       if w not in _STOP_WORDS_FUZZY)
+                    p_ratio = best_fuzzy_score / max(len(pattern_words), 1)
+                    if q_ratio >= 0.4 and p_ratio >= 0.3:
+                        best_answer = best_fuzzy_answer
+        except Exception:
+            pass
 
     return best_answer
 

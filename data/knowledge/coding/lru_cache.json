@@ -1,0 +1,43 @@
+[
+  {
+    "q": [
+      "persuasive essay arguing for implementation of a four day work week",
+      "four day work week persuasive essay",
+      "arguments for four day work week essay",
+      "implement a four day work week essay"
+    ],
+    "a": "The four-day work week is an arrangement where employees work four days per week instead of the traditional five, either compressing 40 hours into four days or reducing total hours. A persuasive essay on this topic should present the following arguments. First, productivity gains: multiple trials worldwide have shown that a four-day week maintains or increases productivity. A 2022 UK pilot with 61 companies found that 91 percent planned to continue the policy, with revenue remaining stable or increasing. Employees reported higher focus and efficiency, knowing they had a three-day weekend. Second, employee well-being: reduced burnout, lower stress, better work-life balance, and improved physical and mental health. Iceland's trials with 2,500 workers showed significant improvements in well-being. Third, environmental benefits: fewer commutes reduce carbon emissions. Fourth, gender equality: a shorter work week can help distribute domestic labor more equitably. Counterarguments include feasibility in client-facing roles, potential for compressed schedules to cause exhaustion, and reduced customer service hours. Organizations can address these through staggered teams and careful implementation. The evidence increasingly supports the four-day week as a viable alternative to the standard five-day model, with benefits for both workers and employers."
+  },
+  {
+    "q": [
+      "use fetch api to handle multiple concurrent requests javascript",
+      "javascript fetch multiple concurrent requests",
+      "handle multiple fetch requests simultaneously",
+      "fetch api concurrent requests parallel",
+      "javascript multiple api calls fetch"
+    ],
+    "a": "Here's how to use the Fetch API to handle multiple concurrent requests in JavaScript:\n\n```javascript\n// Method 1: Promise.all (all requests, fail if any fails)\nasync function fetchMultipleConcurrently(urls) {\n    try {\n        const promises = urls.map(url => \n            fetch(url).then(response => {\n                if (!response.ok) throw new Error(`HTTP ${response.status}: ${url}`);\n                return response.json();\n            })\n        );\n        const results = await Promise.all(promises);\n        return results;\n    } catch (error) {\n        console.error('One or more requests failed:', error);\n        throw error;\n    }\n}\n\n// Usage:\nconst urls = [\n    'https://api.example.com/users',\n    'https://api.example.com/posts',\n    'https://api.example.com/comments'\n];\nconst [users, posts, comments] = await fetchMultipleConcurrently(urls);\n\n// Method 2: Promise.allSettled (all requests, don't fail on errors)\nasync function fetchAllSettled(urls) {\n    const promises = urls.map(url =>\n        fetch(url).then(res => res.ok ? res.json() : { error: `HTTP ${res.status}` })\n            .catch(err => ({ error: err.message }))\n    );\n    return Promise.allSettled(promises);\n}\n\n// Method 3: Batch with concurrency limit\nasync function fetchWithConcurrencyLimit(urls, limit = 3) {\n    const results = [];\n    const executing = new Set();\n    \n    for (const url of urls) {\n        const promise = fetch(url).then(res => res.json());\n        results.push(promise);\n        executing.add(promise);\n        \n        promise.finally(() => executing.delete(promise));\n        \n        if (executing.size >= limit) {\n            await Promise.race(executing);\n        }\n    }\n    \n    return Promise.all(results);\n}\n```\n\nUse `Promise.all()` when all requests must succeed, `Promise.allSettled()` when individual failures are acceptable, and a concurrency limiter to avoid overwhelming the server or browser connection limits.",
+    "lang": "javascript"
+  },
+  {
+    "q": [
+      "weirdest biological defense mechanism in the animal kingdom",
+      "strangest animal defense mechanism",
+      "most unusual biological defense animal",
+      "weird animal self defense",
+      "crazy animal defense mechanisms"
+    ],
+    "a": "One of the weirdest biological defense mechanisms in the animal kingdom belongs to the bombardier beetle (family Carabidae). When threatened, this beetle ejects a boiling-hot chemical spray from its abdomen with remarkable accuracy. The beetle's body contains two separate chambers: one stores hydroquinone and hydrogen peroxide, while the other contains catalytic enzymes. When the beetle senses danger, it mixes these chemicals in a third chamber, triggering an exothermic reaction that reaches nearly 100°C (212°F). The resulting spray is expelled at 300 pulses per second with an audible pop, creating a noxious, scalding fog that deters predators like spiders, ants, and frogs. Other contenders for weirdest defense include: the hagfish, which secretes a slime that expands to 10,000 times its original volume in seconds, clogging predators' gills; the Texas horned lizard, which shoots blood from its eyes up to five feet, containing a chemical that repels canines; the sea cucumber, which expels its internal organs (including digestive tract and gonads) as a distraction and then regrows them; the hairy frog (Trichobatrachus robustus), which breaks its own toe bones to push sharp claws through its skin; the Malaysian exploding ant (Camponotus saundersi), which sacrifices itself by rupturing its body to release a sticky, toxic fluid; and the pygmy sperm whale, which releases a dark cloud of intestinal fluid (like an ink cloud) to confuse predators while it escapes."
+  },
+  {
+    "q": [
+      "implement a lru cache in python",
+      "lru cache implementation python",
+      "least recently used cache python",
+      "python lru cache function",
+      "implement lru cache from scratch python"
+    ],
+    "a": "Here's an LRU (Least Recently Used) cache implementation in Python:\n\n```python\nfrom collections import OrderedDict\n\nclass LRUCache:\n    \"\"\"LRU Cache with O(1) get and put operations.\"\"\"\n    \n    def __init__(self, capacity: int):\n        self.capacity = capacity\n        self.cache = OrderedDict()\n    \n    def get(self, key):\n        \"\"\"Get value and mark as recently used.\"\"\"\n        if key not in self.cache:\n            return -1\n        # Move to end (most recently used)\n        self.cache.move_to_end(key)\n        return self.cache[key]\n    \n    def put(self, key, value):\n        \"\"\"Insert or update a key-value pair.\"\"\"\n        if key in self.cache:\n            # Update existing: move to end (most recently used)\n            self.cache.move_to_end(key)\n        self.cache[key] = value\n        if len(self.cache) > self.capacity:\n            # Pop least recently used (first item)\n            self.cache.popitem(last=False)\n\n# Example usage:\ncache = LRUCache(3)\ncache.put(1, 'one')\ncache.put(2, 'two')\ncache.put(3, 'three')\nprint(cache.get(1))  # 'one' (moves 1 to MRU)\ncache.put(4, 'four')  # Evicts key 2 (LRU)\nprint(cache.get(2))  # -1 (evicted)\nprint(cache.get(3))  # 'three'\nprint(cache.get(4))  # 'four'\n```\n\nUsing `OrderedDict` provides O(1) operations: `move_to_end()` for marking items as recently used, and `popitem(last=False)` for removing the least recently used item. For a lower-level implementation without OrderedDict, you'd use a doubly-linked list with a hash map for the same O(1) complexity.",
+    "lang": "python"
+  }
+]

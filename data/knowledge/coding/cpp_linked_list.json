@@ -1,0 +1,18 @@
+[
+    {
+        "q": [
+            "linked list in C++",
+            "C++ linked list",
+            "implement linked list in C++",
+            "basic linked list in C++",
+            "implement a basic linked list in C++",
+            "linked list c++ implementation",
+            "singly linked list c++",
+            "c++ linked list example",
+            "how to implement a linked list in c++",
+            "linked list data structure c++",
+            "simple linked list c++"
+        ],
+        "a": "Here's how to implement a basic singly linked list in C++:\n\n```cpp\n#include <iostream>\n\nstruct Node {\n    int data;\n    Node* next;\n    \n    Node(int val) : data(val), next(nullptr) {}\n};\n\nclass LinkedList {\nprivate:\n    Node* head;\n\npublic:\n    LinkedList() : head(nullptr) {}\n    \n    // Insert at beginning\n    void insertFront(int val) {\n        Node* newNode = new Node(val);\n        newNode->next = head;\n        head = newNode;\n    }\n    \n    // Insert at end\n    void insertBack(int val) {\n        Node* newNode = new Node(val);\n        if (!head) {\n            head = newNode;\n            return;\n        }\n        Node* current = head;\n        while (current->next) {\n            current = current->next;\n        }\n        current->next = newNode;\n    }\n    \n    // Delete a node by value\n    void deleteValue(int val) {\n        if (!head) return;\n        if (head->data == val) {\n            Node* temp = head;\n            head = head->next;\n            delete temp;\n            return;\n        }\n        Node* current = head;\n        while (current->next && current->next->data != val) {\n            current = current->next;\n        }\n        if (current->next) {\n            Node* temp = current->next;\n            current->next = temp->next;\n            delete temp;\n        }\n    }\n    \n    // Print the list\n    void print() {\n        Node* current = head;\n        while (current) {\n            std::cout << current->data << \" -> \";\n            current = current->next;\n        }\n        std::cout << \"nullptr\" << std::endl;\n    }\n    \n    // Destructor to free memory\n    ~LinkedList() {\n        Node* current = head;\n        while (current) {\n            Node* next = current->next;\n            delete current;\n            current = next;\n        }\n    }\n};\n\nint main() {\n    LinkedList list;\n    list.insertFront(3);\n    list.insertFront(2);\n    list.insertFront(1);\n    list.insertBack(4);\n    list.print();  // 1 -> 2 -> 3 -> 4 -> nullptr\n    \n    list.deleteValue(2);\n    list.print();  // 1 -> 3 -> 4 -> nullptr\n    return 0;\n}\n```\n\nKey concepts: the list consists of nodes where each node stores data and a pointer to the next node. The head pointer tracks the first node. Always delete nodes when removing them to avoid memory leaks (C++ has no garbage collection). A destructor is essential to free all nodes when the list is destroyed."
+    }
+]

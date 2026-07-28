@@ -358,19 +358,15 @@ def _get_noun_phrase(sentence: str) -> str:
 def _ensure_complete_sentences(text: str) -> str:
     """Ensure text doesn't end mid-sentence.
     
-    If the last character isn't sentence-ending punctuation, trim to
-    the last complete sentence. Also handles truncated word fragments
-    like 'from sub-atomic particles to e' (single-letter ending).
-    Handles code blocks by preserving them.
+    Adds punctuation if missing but does NOT truncate content.
+    Handles code blocks by preserving them unchanged.
     """
     if not text:
         return text
     
     text = text.rstrip()
     
-    # If text contains code blocks, don't trim to last period
-    # because code blocks have periods inside strings that would
-    # cause false truncation.
+    # If text contains code blocks, don't modify to avoid corrupting code
     if '```' in text:
         return text
     
@@ -378,35 +374,20 @@ def _ensure_complete_sentences(text: str) -> str:
     if text.endswith(('.', '!', '?')):
         return text
     
-    # Check if the text ends with a single-letter fragment (likely truncated)
-    last_word = text.split()[-1].lower() if text.split() else ''
-    if len(last_word) == 1 and last_word not in ('i', 'a'):
-        # Single letter that's not 'I' or 'a' - likely a truncated word fragment
-        # Find the last sentence boundary and trim there
-        dots = [m.end() for m in re.finditer(r'\. ', text)]
-        if dots:
-            text = text[:dots[-1]]
-        return text.strip()
-    
-    # Also handle short fragments that look incomplete (ends with lowercase letter
-    # that isn't a complete word-ending)
-    if text and text[-1].islower() and not text.endswith(('etc.', 'e.g.', 'i.e.')):
-        # Check if last word is very short (likely truncated)
-        words = text.split()
-        last_word = words[-1].lower().rstrip('.,;:!?"\'') if words else ''
-        if len(last_word) <= 3 and last_word not in ('the', 'and', 'for', 'not', 'are', 'was', 'had', 'but', 'its', 'all', 'any', 'can', 'has', 'may', 'per', 'via', 'use', 'get', 'see', 'set', 'put', 'cut', 'let', 'yet', 'now', 'how', 'why', 'two', 'new', 'old', 'big', 'far', 'got', 'say', 'way', 'own', 'too', 'tie', 'lie', 'die', 'fee', 'era', 'ion', 'ism', 'ist', 'ary'):
-            # Find the last sentence boundary and trim there
+    # Check if the text ends with a single-letter fragment (likely a truncated word)
+    # In that case, find the last sentence boundary and trim there
+    words = text.split()
+    if words:
+        last_word = words[-1].lower().rstrip('.,;:!?"\'')
+        if len(last_word) == 1 and last_word not in ('i', 'a'):
             dots = [m.end() for m in re.finditer(r'\. ', text)]
             if dots:
                 text = text[:dots[-1]]
             return text.strip()
     
-    # Find last complete sentence ending with punctuation
-    last_period = text.rfind('.')
-    last_excl = text.rfind('!')
-    last_q = text.rfind('?')
-    last_end = max(last_period, last_excl, last_q)
-    if last_end >= 20:  # at least 20 chars before the end
-        text = text[:last_end + 1]
+    # Just ensure it ends with a period
+    text = text.rstrip()
+    if text and not text[-1] in '.!?' and not text[-1].isupper():
+        text += '.'
     
     return text.strip()

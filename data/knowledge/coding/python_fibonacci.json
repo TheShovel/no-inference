@@ -1,0 +1,15 @@
+[
+    {
+        "q": [
+            "python fibonacci sequence",
+            "fibonacci function python",
+            "calculate fibonacci in Python",
+            "fibonacci sequence using memoization",
+            "fibonacci with memoization python",
+            "python fibonacci recursive",
+            "fibonacci numbers python",
+            "write a function that calculates fibonacci in Python"
+        ],
+        "a": "Here's a Python function that calculates the Fibonacci sequence using memoization for efficiency:\n\n```python\ndef fibonacci_memo(n, memo=None):\n    \"\"\"Calculate the nth Fibonacci number using memoization.\n    \n    Args:\n        n: The position in the Fibonacci sequence (0-indexed).\n        memo: Dictionary for caching results (used internally).\n    \n    Returns:\n        The nth Fibonacci number.\n    \"\"\"\n    if memo is None:\n        memo = {}\n    \n    # Base cases\n    if n <= 1:\n        return n\n    \n    # Return cached result if available\n    if n in memo:\n        return memo[n]\n    \n    # Calculate and cache\n    memo[n] = fibonacci_memo(n - 1, memo) + fibonacci_memo(n - 2, memo)\n    return memo[n]\n\n# Alternative: iterative version (more memory efficient)\ndef fibonacci_iterative(n):\n    \"\"\"Calculate the nth Fibonacci number iteratively.\"\"\"\n    if n <= 1:\n        return n\n    \n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    return b\n\n# Generate first n Fibonacci numbers\ndef fibonacci_sequence(n):\n    \"\"\"Return list of first n Fibonacci numbers.\"\"\"\n    result = []\n    for i in range(n):\n        result.append(fibonacci_iterative(i))\n    return result\n\n# Example usage\nprint(fibonacci_memo(10))  # 55\nprint(fibonacci_iterative(10))  # 55\nprint(fibonacci_sequence(10))  # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]\n```\n\nMemoization reduces the time complexity from exponential O(2^n) to linear O(n). The iterative version uses O(1) space while the memoized version uses O(n). For very large values of n (above 1000), Python's arbitrary-precision integers handle the large numbers correctly."
+    }
+]

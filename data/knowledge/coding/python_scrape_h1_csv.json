@@ -1,0 +1,23 @@
+[
+  {
+    "q": [
+      "most influential woman in 18th century science",
+      "18th century woman scientist",
+      "influential woman science 1700s",
+      "most important female scientist 18th century",
+      "woman mathematician 18th century"
+    ],
+    "a": "One of the most influential women in 18th-century science was Émilie du Châtelet (1706-1749), a French mathematician, physicist, and author. Her most significant contribution was her translation and commentary on Isaac Newton's 'Principia Mathematica,' which remains the standard French translation to this day. She introduced Newton's ideas to continental Europe, expanding on them with her own insights. Du Châtelet also made important contributions to the understanding of energy, proposing that the energy of a moving object is proportional to its mass times the square of its velocity (the vis viva principle), a key precursor to the modern concept of kinetic energy. She conducted experiments on the nature of fire and heat, and wrote extensively on physics and philosophy. Other notable 18th-century women in science include Laura Bassi (1711-1778), the first woman to earn a professorship in physics at a European university (University of Bologna), and Caroline Herschel (1750-1848), who discovered several comets and nebulae and was the first woman to receive a salary as a scientist. Wang Zhenyi (1768-1797) was a Chinese astronomer and mathematician who made important contributions to astronomy and lunar eclipse theory."
+  },
+  {
+    "q": [
+      "python scrape h1 tags to csv",
+      "scrape website for all h1 tags python csv",
+      "python function scrapes website for all h1 tags returns csv",
+      "extract h1 headings to csv python",
+      "web scrape h1 tags save to csv python"
+    ],
+    "a": "Here's a Python function that scrapes a website for all H1 tags and returns them as CSV:\n\n```python\nimport requests\nfrom bs4 import BeautifulSoup\nimport csv\nimport io\n\ndef scrape_h1_to_csv(url):\n    \"\"\"Scrape a website for all H1 tags and return results as CSV.\"\"\"\n    try:\n        headers = {'User-Agent': 'Mozilla/5.0'}\n        response = requests.get(url, headers=headers, timeout=10)\n        response.raise_for_status()\n    except requests.RequestException as e:\n        return f\"Error fetching the website: {e}\"\n    \n    soup = BeautifulSoup(response.text, 'html.parser')\n    h1_tags = soup.find_all('h1')\n    \n    # Prepare CSV data\n    output = io.StringIO()\n    writer = csv.writer(output)\n    writer.writerow(['Index', 'H1 Text', 'Character Count'])  # Header row\n    \n    for i, h1 in enumerate(h1_tags, 1):\n        text = h1.get_text(strip=True)\n        writer.writerow([i, text, len(text)])\n    \n    return output.getvalue()\n\n# Example usage:\nurl = 'https://example.com'\ncsv_data = scrape_h1_to_csv(url)\nprint(csv_data)\n\n# To save to a file:\nwith open('headings.csv', 'w', newline='', encoding='utf-8') as f:\n    f.write(csv_data)\n```\n\nThis function uses BeautifulSoup to parse the HTML, finds all `<h1>` elements, extracts their text content, and writes the results to a CSV string with columns for Index, H1 Text, and Character Count. The User-Agent header helps avoid being blocked by some websites.",
+    "lang": "python"
+  }
+]

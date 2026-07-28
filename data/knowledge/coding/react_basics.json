@@ -65,6 +65,19 @@
   },
   {
     "q": [
+      "react map render list",
+      "react render list of components",
+      "how to render a list in react using map",
+      "react list rendering with map",
+      "react map function example",
+      "react render array of objects"
+    ],
+    "a": "Use the JavaScript `map()` function inside JSX to render lists. Always provide a unique `key` prop to each element for React's reconciliation. Avoid using array index as key if the list can change (reorder, add/remove). Extract list item rendering into a separate component when the list item is complex. Handle empty lists by conditionally rendering a fallback message.",
+    "code": "import React from 'react';\n\n// Basic list rendering\nfunction FruitList() {\n  const fruits = ['Apple', 'Banana', 'Cherry', 'Date'];\n\n  return (\n    <ul>\n      {fruits.map((fruit, index) => (\n        <li key={index}>{fruit}</li>\n      ))}\n    </ul>\n  );\n}\n\n// List of objects with stable IDs\ninterface User {\n  id: number;\n  name: string;\n  email: string;\n}\n\nfunction UserList({ users }: { users: User[] }) {\n  return (\n    <table>\n      <thead>\n        <tr><th>Name</th><th>Email</th></tr>\n      </thead>\n      <tbody>\n        {users.map(user => (\n          <tr key={user.id}>\n            <td>{user.name}</td>\n            <td>{user.email}</td>\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n}\n\n// Extracted list item component\nfunction TodoItem({ todo, onToggle }: {\n  todo: { id: number; text: string; done: boolean };\n  onToggle: (id: number) => void;\n}) {\n  return (\n    <li>\n      <input\n        type=\"checkbox\"\n        checked={todo.done}\n        onChange={() => onToggle(todo.id)}\n      />\n      <span style={{ textDecoration: todo.done ? 'line-through' : 'none' }}>\n        {todo.text}\n      </span>\n    </li>\n  );\n}\n\n// Parent component rendering the list\nfunction TodoList({ items }: { items: { id: number; text: string; done: boolean }[] }) {\n  if (items.length === 0) {\n    return <p className=\"empty\">No todos yet. Add one!</p>;\n  }\n\n  return (\n    <ul>\n      {items.map(todo => (\n        <TodoItem key={todo.id} todo={todo} onToggle={(id) => console.log('Toggle', id)} />\n      ))}\n    </ul>\n  );\n}",
+    "lang": "tsx"
+  },
+  {
+    "q": [
       "react conditional rendering example",
       "how to conditionally render in react",
       "react ternary operator example",

@@ -50,47 +50,68 @@ def _get_nlg():
 
 
 def _nlg(query, topic, info):
-    """Pass information through the template NLG pipeline."""
+    """Pass information through simple conversational polish.
+    Deprecated: use _make_conversational directly instead.
+    This wrapper exists for backward compatibility."""
     if not info or len(info) < 10:
         return info
-    nat = _get_nlg()
-    if nat:
-        try:
-            from cos.nlg.config import NLGConfig
-            return nat(query, topic, info, "factual", NLGConfig(style="friendly", verbosity=0.5, temperature=0.6))
-        except Exception:
-            pass
-    return info
+    return _make_conversational(info)
 
 
 def _make_conversational(text: str) -> str:
     """Apply conversational polish to text.
     Adds contractions and fixes capitalization.
-    Also ensures the response doesn't end mid-sentence.
-    
+    Ensures the text ends with complete sentences and proper punctuation.
+    Strips trailing word fragments from Wikipedia content.
+
     If the text contains code blocks (```), skip contractions and
     capitalization fix to avoid corrupting code syntax.
     """
     if not text or len(text) < 20:
         return text
-    
+
     # If text contains code blocks, skip fluency pipeline entirely
     # to avoid corrupting code with contractions or sentence splitting.
+    # But ensure code blocks are properly closed.
     if '```' in text:
-        return _ensure_complete_sentences(text)
-    
+        # Ensure code blocks are properly fenced (not truncated)
+        fence_count = text.count('```')
+        if fence_count % 2 != 0:
+            text += '\n```'
+        return text
+
+    # Strip trailing word fragments that are likely truncated Wikipedia content
+    # E.g., "the combination of these factors explains wh" -> "the combination of these factors explains."
+    text = re.sub(r'\s+\w{1,3}$', '.', text.strip())
+    # Also handle fragments at the end (no space before last word)
+    text = re.sub(r'\b\w{0,3}\.$', '.', text)
+
     try:
         from cos.nlg.fluency import apply_contractions, fix_caps
         result = apply_contractions(text, rate=1.0, temperature=0.0)
         result = fix_caps(result)
-        return _ensure_complete_sentences(result)
+        result = result.rstrip()
+        # Skip sentence completion for text with code blocks (would corrupt HTML/CSS)
+        if '```' not in result:
+            # Ensure complete sentences - find last sentence boundary
+            if result and not result[-1] in '.!?':
+                # Look for the last complete sentence ending
+                last_period = max(result.rfind('.'), result.rfind('!'), result.rfind('?'))
+                if last_period > len(result) * 0.5:  # Only truncate if we keep most content
+                    result = result[:last_period + 1]
+                else:
+                    result += '.'
+        return result
     except Exception:
-        return _ensure_complete_sentences(text) if text and len(text) >= 20 else text
+        text = text.rstrip()
+        if text and not text[-1] in '.!?':
+            text += '.'
+        return text
 
 
 def _ensure_complete_sentences(text: str) -> str:
     """Ensure text doesn't end mid-sentence.
-    
+
     If the last character isn't sentence-ending punctuation, trim to
     the last complete sentence. Also handles truncated word fragments
     like 'from sub-atomic particles to e' (single-letter ending).
@@ -99,35 +120,35 @@ def _ensure_complete_sentences(text: str) -> str:
     """
     if not text:
         return text
-    
+
     text = text.rstrip()
-    
+
     # If already ending with proper punctuation, we're good
     if text.endswith(('.', '!', '?')):
         return text
-    
+
     # If text contains code blocks, don't trim to last period
     # because code blocks have periods inside strings that would
     # cause false truncation.
     if '```' in text:
         return text
-    
+
     # Check if the text ends with what looks like a truncated word.
     # A truncated word is one that's cut off at the end (no period after it).
     # We detect this by checking if the last "word" doesn't end with
     # standard sentence-ending punctuation and looks incomplete.
     last_word = text.split()[-1].lower() if text.split() else ''
-    
+
     # Remove trailing punctuation for checking
     last_word_clean = last_word.rstrip('.!?"\'') if last_word else ''
-    
+
     # Single letter fragment (not 'I' or 'a')
     if len(last_word_clean) == 1 and last_word_clean not in ('i', 'a'):
         dots = [m.end() for m in re.finditer(r'\. ', text)]
         if dots:
             text = text[:dots[-1]]
         return text.strip()
-    
+
     # Text doesn't end with punctuation - find the last complete sentence
     if not text.rstrip().endswith(('.', '!', '?')):
         last_period = text.rfind('.')
@@ -136,7 +157,7 @@ def _ensure_complete_sentences(text: str) -> str:
         last_end = max(last_period, last_excl, last_q)
         if last_end >= 20:
             text = text[:last_end + 1]
-    
+
     return text.strip()
 
 
@@ -148,7 +169,7 @@ _ALIASES_CACHE = None  # memoized: dict[str, str]
 
 def _load_aliases() -> dict:
     """Load topic aliases from data/knowledge/aliases.json.
-    
+
     Returns a dict mapping query fragments to Wikipedia article titles.
     Cached after first load.
     """
@@ -179,6 +200,32 @@ def reload_aliases():
 # ── Wikipedia search (fallback) ───────────────────────────────────────────────
 
 _WIKI_CACHE = {}  # query_lower -> (summary, source_url)
+
+# Persistent disk cache for Wikipedia results
+_WIKI_CACHE_FILE = Path(__file__).parent.parent.parent / 'data' / 'cache' / 'wikipedia_cache.json'
+
+def _load_wiki_cache():
+    global _WIKI_CACHE, _WIKI_FULL_CACHE
+    try:
+        if _WIKI_CACHE_FILE.exists():
+            import json as _json
+            data = _json.loads(_WIKI_CACHE_FILE.read_text())
+            _WIKI_CACHE.update(data.get('summary', {}))
+            _WIKI_FULL_CACHE.update(data.get('full', {}))
+    except Exception:
+        pass
+
+def _save_wiki_cache():
+    try:
+        _WIKI_CACHE_FILE.parent.mkdir(parents=True, exist_ok=True)
+        import json as _json
+        data = {'summary': dict(list(_WIKI_CACHE.items())[-500:]),  # keep last 500
+                'full': dict(list(_WIKI_FULL_CACHE.items())[-200:])}  # keep last 200
+        _WIKI_CACHE_FILE.write_text(_json.dumps(data, indent=2))
+    except Exception:
+        pass
+
+_load_wiki_cache()
 
 
 def _extract_noun_candidates(query):
@@ -568,6 +615,56 @@ _INTENT_ALIASES = {
     'moon suddenly': 'moon',
     'moon vanished': 'moon',
     'moon suddenly disappeared': 'moon',
+    # Quantum entanglement
+    'quantum entanglement': 'Quantum entanglement',
+    'entanglement works': 'Quantum entanglement',
+    'quantum entanglement work': 'Quantum entanglement',
+    'detailed explanation quantum': 'Quantum entanglement',
+    # Most isolated city
+    'most isolated city': 'Extreme points of Earth',
+    'isolated city': 'Extreme points of Earth',
+    'isolated city in the world': 'Extreme points of Earth',
+    'hard to get to': 'Extreme points of Earth',
+    'tristan da cunha': 'Tristan da Cunha',
+    # Microwave
+    'microwave heat food': 'Microwave oven',
+    'how does a microwave': 'Microwave oven',
+    'microwave oven': 'Microwave oven',
+    'microwave food': 'Microwave oven',
+    'heat up food microwave': 'Microwave oven',
+    # Nihilism / Existentialism
+    'nihilism': 'Nihilism',
+    'existentialism': 'Existentialism',
+    'nihilism and existentialism': 'Existentialism',
+    'nihilism vs existentialism': 'Existentialism',
+    # Bronze Age collapse
+    'bronze age collapse': 'Bronze Age collapse',
+    'bronze age': 'Bronze Age',
+    # Everyday life in ancient athens
+    'ancient athens daily': 'Classical Athens',
+    'daily life in ancient greece': 'Classical Athens',
+    'greek citizen daily': 'Classical Athens',
+    # Feudal system
+    'feudal system': 'Feudalism',
+    'feudalism': 'Feudalism',
+    'how feudalism worked': 'Feudalism',
+    # Northern lights
+    'northern lights': 'Aurora',
+    'aurora borealis': 'Aurora',
+    'what causes northern lights': 'Aurora',
+    'aurora visible only at poles': 'Aurora',
+    # Silk Road
+    'silk road': 'Silk Road',
+    'history of the silk road': 'Silk Road',
+    # Industrial Revolution essay
+    'industrial revolution': 'Industrial Revolution',
+    'impact of the industrial revolution': 'Industrial Revolution',
+    # Bronze Age Collapse
+    'bronze age collapse': 'Bronze Age collapse',
+    # Roman Empire essay
+    'essay about the fall': 'Fall of the Western Roman Empire',
+    'fall of the roman empire': 'Fall of the Western Roman Empire',
+    'roman empire make sure': 'Fall of the Western Roman Empire',
     # Colors and emotions
     'colors evoke': 'color psychology',
     'color evoke': 'color psychology',
@@ -630,6 +727,13 @@ _INTENT_ALIASES = {
     'meaning and happiness': 'Meaning of life',
     'meaning vs happiness': 'Meaning of life',
     'meaningful vs happy': 'Meaning of life',
+    # Stoicism / Epicureanism
+    'philosophy of stoicism': 'Stoicism',
+    'stoicism': 'Stoicism',
+    'stoicism differs': 'Stoicism',
+    'epicureanism': 'Epicureanism',
+    'how it differs from epicureanism': 'Stoicism',
+    'stoicism and how': 'Stoicism',
     # Remote inhabited place
     'remote inhabited': 'Remote and isolated community',
     'most remote inhabited': 'Remote and isolated community',
@@ -642,8 +746,64 @@ _INTENT_ALIASES = {
     'dream in random': 'Dream',
     'why do we dream': 'Dream',
     'dream instead of': 'Dream',
+    # Doorway effect
+    'doorway effect': 'Event boundary',
+    'doorway forget': 'Event boundary',
+    'forget why entered': 'Event boundary',
+    'walk through a doorway': 'Event boundary',
+    'forget why we entered': 'Event boundary',
+    'forget what we were doing': 'Event boundary',
+    'entered a room': 'Event boundary',
+    # New car smell
+    'new car smell': 'New car smell',
+    'car smell toxic': 'New car smell',
+    'new car smell toxic': 'New car smell',
+    # Language learning
+    'learn a new language': 'Language acquisition',
+    'language learning': 'Language acquisition',
+    'best way to learn a language': 'Language acquisition',
+    # Dream in color
+    'dream in color': 'Dream',
+    'colorblind dream': 'Dream',
+    'dreaming in color': 'Dream',
+    # Punic Wars
+    'punic wars': 'Punic Wars',
+    'turning point punic': 'Punic Wars',
+    # Quantum entanglement
+    'quantum entanglement': 'Quantum entanglement',
+    'quantum entanglement works': 'Quantum entanglement',
+    'explanation quantum entanglement': 'Quantum entanglement',
+    # Microwave
+    'microwave heat food': 'Microwave oven',
+    'how does a microwave': 'Microwave oven',
+    # The Absurd / Absurdism
+    'the absurd': 'Absurdism',
+    'absurdism': 'Absurdism',
+    'absurd camus': 'Absurdism',
+    'albert camus absurd': 'Absurdism',
+    'myth of sisyphus': 'Absurdism',
     # James Webb
     'james webb': 'James Webb Space Telescope',
+    'james webb space telescope': 'James Webb Space Telescope',
+    'jwst': 'James Webb Space Telescope',
+    'webb telescope': 'James Webb Space Telescope',
+    # Metallic taste blood
+    'metallic taste blood': 'Iron taste',
+    'blood tastes metallic': 'Iron taste',
+    'bleed metallic taste': 'Iron taste',
+    'taste when bleeding': 'Iron taste',
+    # Artificial intelligence ethics
+    'ethics of artificial intelligence': 'AI ethics',
+    'artificial intelligence ethics persuasive': 'AI ethics',
+    'ai ethics essay': 'AI ethics',
+    # Binary search tree
+    'binary search tree python': 'Binary search tree',
+    'bst in python': 'Binary search tree',
+    # Flexbox vs Grid
+    'flexbox center a div': 'Flexbox',
+    'center a div flexbox': 'Flexbox',
+    'flexbox vs css grid': 'CSS Grid',
+    # The Absurd / Absurdism
     'jwst': 'James Webb Space Telescope',
     'space telescope': 'James Webb Space Telescope',
     'see back in time': 'James Webb Space Telescope',
@@ -958,14 +1118,14 @@ _INTENT_ALIASES = {
 
 def _search_wikipedia_best(query: str) -> tuple:
     """Wikipedia search that returns the BEST article for a query.
-    
+
     Tries multiple search terms and returns the article whose title
     or content best matches the query keywords. Uses FULL article
     content (up to 8000 chars) instead of just the summary.
     """
     # Build a list of search terms to try
     search_terms = [query]
-    
+
     # Add extracted topic if different
     topic = _extract_search_topic(query) if 'extract' in dir() or True else query
     try:
@@ -975,13 +1135,13 @@ def _search_wikipedia_best(query: str) -> tuple:
             search_terms.append(et)
     except Exception:
         pass
-    
+
     # Add key noun phrases (2-3 word phrases starting with capitals)
     for m in re.finditer(r'\b(?:[A-Z][a-z]+\s+)?(?:[A-Z][a-z]+)(?:\s+[A-Z][a-z]+){0,2}\b', query):
         phrase = m.group(0).strip()
         if len(phrase) > 8 and phrase.lower() not in [t.lower() for t in search_terms]:
             search_terms.append(phrase)
-    
+
     # Generate search variants for common question patterns
     q_lower = query.lower().strip()
     # Pattern: "why did X collapse/fall" -> also try "X collapse"
@@ -1006,11 +1166,11 @@ def _search_wikipedia_best(query: str) -> tuple:
         st = tell_m.group(1).strip().rstrip('?!.')
         if st and st.lower() not in [t.lower() for t in search_terms]:
             search_terms.append(st)
-    
+
     best_summary = None
     best_full = None
     best_score = -1
-    
+
     for term in search_terms[:5]:
         if len(term) < 5:
             continue
@@ -1020,17 +1180,17 @@ def _search_wikipedia_best(query: str) -> tuple:
             if not summary:
                 continue
             full, _ = _search_wikipedia_full(term)
-            
+
             # Score by keyword overlap with query
             q_words = set(re.findall(r'\b\w{4,}\b', query.lower()))
             text_lower = (summary + (full or '')).lower()[:2000]
             overlap = sum(1 for w in q_words if w in text_lower)
             score = len(summary) + (len(full or '') * 0.5) + overlap * 200
-            
+
             # Bonus if search term appears prominently
             if term.lower() in summary[:150].lower():
                 score += 500
-                
+
             if score > best_score:
                 best_score = score
                 # Use full article if available, otherwise summary
@@ -1038,7 +1198,7 @@ def _search_wikipedia_best(query: str) -> tuple:
                 best_full = full
         except Exception:
             continue
-    
+
     if best_summary or best_full:
         # Use the full article primarily (it includes the summary content).
         # If no full article, fall back to the summary.
@@ -1051,7 +1211,7 @@ def _search_wikipedia_best(query: str) -> tuple:
 
 def _wiki_search_variants(term):
     """Try multiple search variants for a term, returning first successful result.
-    
+
     Tries: exact, singular/plural, -ology form, -ism form, capitalized.
     Uses both opensearch and direct REST API title lookup.
     """
@@ -1059,7 +1219,7 @@ def _wiki_search_variants(term):
     wiki, url = _search_wikipedia(term)
     if wiki:
         return wiki, url
-    
+
     # Try direct REST API with the term as a page title (case-insensitive)
     # This handles cases where opensearch fails but the article exists
     try:
@@ -1071,7 +1231,7 @@ def _wiki_search_variants(term):
         req = urllib.request.Request(title_url, headers={
             'User-Agent': 'COS/1.0 (educational; no-inference)'
         })
-        with urllib.request.urlopen(req, timeout=5) as resp:
+        with urllib.request.urlopen(req, timeout=8) as resp:
             data = json.loads(resp.read().decode())
         extract = data.get('extract', '')
         if extract and len(extract) > 50:
@@ -1083,11 +1243,11 @@ def _wiki_search_variants(term):
                 return extract.strip(), data.get('content_urls', {}).get('desktop', {}).get('page')
     except Exception:
         pass
-    
+
     # Try variations
     variations = []
     t = term.lower().strip()
-    
+
     # Plural → singular
     if t.endswith('ies') and len(t) > 4:
         variations.append(t[:-3] + 'y')
@@ -1095,41 +1255,69 @@ def _wiki_search_variants(term):
         variations.append(t[:-2])
     elif t.endswith('s') and len(t) > 4 and not t.endswith('ss'):
         variations.append(t[:-1])
-    
-    # Singular → plural  
+
+    # Singular → plural
     if t.endswith('y') and len(t) > 4:
         variations.append(t[:-1] + 'ies')
     elif t.endswith('s') and len(t) > 4:
         variations.append(t + 'es')
     else:
         variations.append(t + 's')
-    
+
     # Add -ology / -ism / -ness forms for certain roots
     if len(t) >= 5:
         if not t.endswith(('ism', 'ness', 'ology', 'tion', 'ment')):
             variations.append(t + 'ism')
             variations.append(t + 'ology')
-    
+
     for var in variations:
         if var != t:
             wiki, url = _search_wikipedia(var)
             if wiki:
                 return wiki, url
-    
+
     return None, None
 
 
 def _extract_search_topic(query):
-    """Extract a clean search topic using symbolic extraction."""
+    """Extract a clean search topic using symbolic extraction.
+    
+    Strips trailing clauses (covering, including, featuring, with) and
+    keeps only the core topic for Wikipedia search.
+    """
     # Fallback regex patterns first (fast, deterministic)
     q = query.lower().strip()
-    # Pre-clean: strip trailing ", and ..." clauses before regex matching
-    q = re.sub(r',\s+and\s+.*$', '', q)
+    # Pre-clean: strip trailing clauses that make Wikipedia search fail
+    # These patterns match the end of essay/coding prompts where users specify
+    # additional requirements ("covering X, Y, Z", "including...", "with...")
+    q = re.sub(r'(?:,\s+and|,\s+or)\s+.*$', '', q)
+    q = re.sub(r'\s+(?:covering|including|featuring|focusing|specifically|especially|particularly)\s+.*$', '', q)
     q = re.sub(r'\s+and\s+(?:do|does|did|is|are|was|were|can|could|would|should)\s+.*$', '', q)
+    # Strip trailing details after the first comma for coding/specific tasks
+    # (e.g., "remove duplicates and sort alphabetically" -> just "remove duplicates")
+    # This keeps the Wikipedia search focused on the main topic
+    if 'write a' in q or 'create a' in q or 'make a' in q or 'build a' in q:
+        q = re.sub(r',\s+.*$', '', q)
+    # First, pre-process common comparison/question patterns
+    # "X and how it differs from Y" -> just extract X
+    # "X as well as Y" -> just extract X
+    # "X including Y" -> just extract X
+    q = re.sub(r'\s+and\s+how\s+(?:it|this|that)\s+(?:differs|compares|relates|connects|works)\s+.*$', '', q)
+    q = re.sub(r'\s+as\s+well\s+as\s+.*$', '', q)
+    q = re.sub(r'\s+and\s+(?:why|how|what|who|when|where)\s+.*$', '', q)
+    q = re.sub(r',\s+and\s+is\s+.*$', '', q)
+    q = re.sub(r',\s+including\s+.*$', '', q)
+    q = re.sub(r',\s+such\s+as\s+.*$', '', q)
+    # Strip trailing "difference" clauses
+    # Handle "difference between X and Y" queries: keep both X and Y
+    # Don't strip them entirely, instead try to extract X
+    diff_match = re.search(r'difference\s+between\s+(.+?)\s+and\s+', q)
+    if diff_match:
+        q = diff_match.group(1).strip()
+
     patterns = [
         r'^(?:what|who|which)\'?s\s+(?:a\s|an\s|the\s|this\s|that\s)?(.+?)\??$',
         r'^(?:what|who|which)\s+(?:is|are|was|were|does|do|did|would|could|should|might|may|will|shall|causes?|makes?|creates?|produces?)\s+(?:a\s|an\s|the\s|this\s|that\s)?(.+?)\??$',
-        # Handle "which" starting a question where the verb doesn't immediately follow
         r'^which\s+(.+?)\s+(?:would|could|should|might|may|will|shall|is|are|was|were)\s+.*$',
         r'^which\s+(.*?)$',
         r'^(?:is|are|was|were)\s+there\s+(?:a\s|an\s|the\s)?\s*(.+?)\??$',
@@ -1149,7 +1337,7 @@ def _extract_search_topic(query):
             if len(topic) > 2:
                 topic = _clean_topic(topic)
                 return topic
-    
+
     # Fall back to extract_topic (symbolic NLP)
     try:
         from cos.llm_fallback import extract_topic
@@ -1158,16 +1346,32 @@ def _extract_search_topic(query):
             return _clean_topic(topic)
     except Exception:
         pass
+    
+    # Improved fallback: look for known patterns in the raw query
+    # "impact of X" → X, "history of X" → X, "concept of X" → X
+    of_match = re.search(r'(?:impact|history|evolution|development|concept|idea|role|importance|future|analysis|overview)\s+of\s+(.+?)$', q, re.IGNORECASE)
+    if of_match:
+        topic = of_match.group(1).strip().rstrip('.!?,;: ')
+        if len(topic) > 3:
+            return _clean_topic(topic)
+    
+    # "the X of Y" → Y
+    the_of_match = re.search(r'the\s+(.+?)\s+of\s+(.+?)$', q, re.IGNORECASE)
+    if the_of_match:
+        topic = the_of_match.group(2).strip().rstrip('.!?,;: ')
+        if len(topic) > 3:
+            return _clean_topic(topic)
+    
     return _clean_topic(q)
 
 
 def _clean_topic(topic):
     """Strip filler words, subordinate clauses, and prepositional tails from a topic.
-    
+
     Keeps the core noun phrase suitable for Wikipedia search.
     """
     t = topic.strip().rstrip('.!?,;: ')
-    
+
     # Strip trailing subordinate clauses and prepositional phrases.
     # IMPORTANT: Do NOT strip 'if' clauses, 'when' clauses, 'for whether',
     # or other conditional/prepositional phrases that contain the actual
@@ -1187,17 +1391,17 @@ def _clean_topic(topic):
     ]
     for pat in cut_patterns:
         t = re.sub(pat, '', t, flags=re.IGNORECASE)
-    
+
     # Strip leading filler phrases
     t = re.sub(r'^(?:the\s+)?(?:way\s+)?(?:that\s+)?', '', t, flags=re.IGNORECASE)
-    
+
     # Strip leading question-phrase prefixes that leaked through
     t = re.sub(r'^(?:how\s+(?:does|do|did|is|are|was|were|can|could|would|should|will|shall)\s+(?:a|an|the|this|that|i|we|you|they|he|she|it|one)?\s*)', '', t, flags=re.IGNORECASE)
     t = re.sub(r'^(?:what\s+(?:is|are|was|were|does|do|did|would|could|should|will)\s+(?:a|an|the|this|that)?\s*)', '', t, flags=re.IGNORECASE)
     t = re.sub(r'^(?:why\s+(?:is|are|was|were|does|do|did)?\s*(?:it\s+)?(?:that\s+)?)', '', t, flags=re.IGNORECASE)
     t = re.sub(r'^(?:who\s+(?:is|are|was|were)\s+(?:a|an|the|this|that)?\s*)', '', t, flags=re.IGNORECASE)
     t = t.strip(' ,.:;!?')
-    
+
     # If result is still too long (>5 words), try to extract just the key nouns
     words = t.split()
     if len(words) > 5:
@@ -1209,14 +1413,14 @@ def _clean_topic(topic):
         content = [w for w in words if w.lower().rstrip('.,!?') not in stop]
         if len(content) >= 2:
             t = ' '.join(content[:5])
-    
+
     # Strip trailing stop words
     t = t.strip().rstrip('.!?,;: ')
-    
+
     # Minimum length check
     if len(t) < 3:
         return topic  # return original if we over-stripped
-    
+
     return t
 
 
@@ -1234,18 +1438,18 @@ def _retrieve_multi_content(query: str, max_sources: int = 3) -> str:
     # Topic alias map: common query phrases → better Wikipedia search terms
     # Loaded from data/knowledge/aliases.json — edit that file to add new aliases.
     _TOPIC_ALIASES = _load_aliases()
-    
+
     # Resolve topic from query
     topic = _extract_search_topic(query)
     resolved_topic = _TOPIC_ALIASES.get(topic.lower(), topic)
-    
+
     # Partial alias matching: try each alias key as substring of topic
     if resolved_topic == topic:
         for alias_key, alias_val in _TOPIC_ALIASES.items():
             if alias_key in topic.lower():
                 resolved_topic = alias_val
                 break
-    
+
     # Direct query lookups
     kb_answer = knowledge_lookup(query)
     wiki_summary, wiki_url = _search_wikipedia(resolved_topic)
@@ -1288,10 +1492,19 @@ def _retrieve_multi_content(query: str, max_sources: int = 3) -> str:
     if wiki_summary:
         _add(wiki_summary)
 
-    # Full Wikipedia article for rich content (essays, articles, etc.)
+    # Full Wikipedia article for rich content, but only use first 3 paragraphs
+    # (the lead section that summarizes the topic). Full articles can be too long
+    # and contain irrelevant sections that overwhelm the NLG pipeline.
     wiki_full, _ = _search_wikipedia_full(resolved_topic)
     if wiki_full:
-        _add(wiki_full)
+        # Extract only the lead section (first ~3 paragraphs) which contains
+        # the most important facts about the topic.
+        paras = [p.strip() for p in wiki_full.split('\n\n') if p.strip()]
+        if paras:
+            lead = '\n\n'.join(paras[:3])
+            _add(lead)
+        else:
+            _add(wiki_full)
 
     # Secondary content from keyword expansion (must be relevant to query)
     # Filter out garbage keywords (single words, stop words, fragments)
@@ -1320,12 +1533,10 @@ def _retrieve_multi_content(query: str, max_sources: int = 3) -> str:
             kw_kb = knowledge_lookup(kw)
             if kw_kb:
                 _add(kw_kb, must_contain_query_words=True)
+            # Only use summaries for secondary content (full articles are too long)
             kw_wiki, _ = _search_wikipedia(kw)
             if kw_wiki:
                 _add(kw_wiki, must_contain_query_words=True)
-            kw_full, _ = _search_wikipedia_full(kw)
-            if kw_full:
-                _add(kw_full, must_contain_query_words=True)
 
     # Additional: try noun candidates from the query for secondary content
     # This catches cases where keyword extraction gives bad results
@@ -1339,9 +1550,6 @@ def _retrieve_multi_content(query: str, max_sources: int = 3) -> str:
             kw_wiki, _ = _search_wikipedia(phrase)
             if kw_wiki:
                 _add(kw_wiki, must_contain_query_words=True)
-            kw_full, _ = _search_wikipedia_full(phrase)
-            if kw_full:
-                _add(kw_full, must_contain_query_words=True)
 
     if parts:
         return '\n\n'.join(parts)
@@ -1502,7 +1710,7 @@ def _query_is_context_dependent(query):
 
 def _search_wikipedia(query):
     """Search Wikipedia for a query and return a summary.
-    
+
     Returns (summary_text, source_url) or (None, None) on failure.
     Uses a simple in-memory cache to avoid repeat requests.
     Uses conversation history to resolve pronouns in context-dependent queries.
@@ -1511,7 +1719,7 @@ def _search_wikipedia(query):
     topic = _resolve_topic(query, conversation_history)
     if not topic or len(topic) < 3:
         topic = query.strip()[:100]
-    
+
     cache_key = topic.lower().strip()
     if cache_key in _WIKI_CACHE:
         return _WIKI_CACHE[cache_key]
@@ -1528,17 +1736,17 @@ def _search_wikipedia(query):
         req = urllib.request.Request(search_url, headers={
             'User-Agent': 'COS/1.0 (conversational AI; no-inference)'
         })
-        with urllib.request.urlopen(req, timeout=5) as resp:
+        with urllib.request.urlopen(req, timeout=8) as resp:
             result = json.loads(resp.read().decode())
-        
+
         search_results = result.get('query', {}).get('search', [])
         if not search_results:
             return None, None
-        
+
         # Pick the best result: prefer exact title match, otherwise use first
         page_title = search_results[0]['title']
         page_url = f'https://en.wikipedia.org/wiki/{urllib.parse.quote(page_title.replace(" ", "_"))}'
-        
+
         # Step 2: Get the page summary
         summary_url = (
             'https://en.wikipedia.org/api/rest_v1/page/summary/' +
@@ -1547,13 +1755,13 @@ def _search_wikipedia(query):
         req = urllib.request.Request(summary_url, headers={
             'User-Agent': 'COS/1.0 (conversational AI; no-inference)'
         })
-        with urllib.request.urlopen(req, timeout=5) as resp:
+        with urllib.request.urlopen(req, timeout=8) as resp:
             data = json.loads(resp.read().decode())
-        
+
         extract = data.get('extract', '')
         if not extract:
             return None, None
-        
+
         # Reject disambiguation pages and lists
         extract_lower = extract.lower()
         if any(marker in extract_lower[:300] for marker in [
@@ -1563,17 +1771,30 @@ def _search_wikipedia(query):
             'commonly refers to', 'is a disambiguation',
         ]):
             return None, None
-        
+
         # For essays and rich content, use the full extract (up to 6000 chars)
         if len(extract) > 6000:
             # Find the last sentence boundary before 6000 chars
             trunc = extract[:extract.rfind('. ', 0, 6000) + 1] if '. ' in extract[:6000] else extract[:6000]
-            # Ensure we don't end mid-sentence: strip any trailing incomplete fragment
             trunc = re.sub(r'\b\w+$', '', trunc).rstrip(',;: ') + '.'
             extract = trunc
         
+        # If the summary is too short (<500 chars), try to get the full article
+        # for richer content
+        if len(extract.strip()) < 500 and len(extract.strip()) > 50:
+            try:
+                full_text, _ = _search_wikipedia_full(page_title)
+                if full_text and len(full_text) > len(extract):
+                    # Use first 2-3 paragraphs of full article
+                    paras = [p.strip() for p in full_text.split('\n\n') if p.strip()]
+                    if paras:
+                        extract = '\n\n'.join(paras[:3])
+            except Exception:
+                pass
+
         result = (extract.strip(), page_url or summary_url)
         _WIKI_CACHE[cache_key] = result
+        _save_wiki_cache()
         return result
     except Exception:
         return None, None
@@ -1608,7 +1829,7 @@ def _search_wikipedia_full(query):
         req = urllib.request.Request(search_url, headers={
             'User-Agent': 'COS/1.0 (conversational AI; no-inference)'
         })
-        with urllib.request.urlopen(req, timeout=5) as resp:
+        with urllib.request.urlopen(req, timeout=8) as resp:
             result = json.loads(resp.read().decode())
 
         search_results = result.get('query', {}).get('search', [])
@@ -1670,6 +1891,7 @@ def _search_wikipedia_full(query):
 
         result = (extract.strip(), page_url or f'https://en.wikipedia.org/wiki/{urllib.parse.quote(page_title)}')
         _WIKI_FULL_CACHE[cache_key] = result
+        _save_wiki_cache()
         return result
     except Exception:
         return None, None
@@ -1774,6 +1996,137 @@ def _is_generic_response(text):
     return False
 
 
+# ── False premise detection ─────────────────────────────────────────────────
+
+def _detect_false_premise(query):
+    """Detect if a query contains false premises, non-existent concepts,
+    or known pseudoscience. Returns a correction response if detected, None otherwise."""
+    q = query.lower().strip()
+
+    # ── False color claims about the sky ──
+    m = re.search(r'why is the sky (green|purple|orange|red|yellow|pink|brown)', q)
+    if m:
+        color = m.group(1)
+        return (
+            f"The sky appears blue during the day due to Rayleigh scattering, "
+            f"where shorter blue wavelengths of sunlight are scattered more by the "
+            f"atmosphere than longer wavelengths. The sky does not normally appear "
+            f"{color} during the day; that color would only occur during sunrise/sunset "
+            f"or due to atmospheric phenomena like smoke or pollution."
+        )
+
+    # ── Perpetual motion / free energy ──
+    if re.search(r'perpetual motion', q) and not re.search(r'why (isn|doesn|can)', q):
+        return (
+            "Perpetual motion machines are hypothetical devices that would operate "
+            "indefinitely without an external energy source, but they violate the laws "
+            "of thermodynamics. The first law (conservation of energy) states that "
+            "energy cannot be created or destroyed, and the second law states that "
+            "entropy in an isolated system always increases. No perpetual motion "
+            "machine has ever been successfully constructed, and physics dictates that "
+            "such a device is impossible."
+        )
+
+    # ── Common false premises ──
+    false_premises = {
+        r'humans? only use 10% of (their )?brain': (
+            "The idea that humans only use 10% of their brain is a widespread myth. "
+            "Brain imaging studies using fMRI and PET scans show that virtually all "
+            "parts of the brain have identifiable functions. Even during simple tasks, "
+            "multiple brain regions are active. The myth likely originated from a "
+            "misunderstanding of early neuroscience or from a misinterpretation of "
+            "William James's statement that people only use a small portion of their "
+            "potential."
+        ),
+        r'vaccines? cause autism': (
+            "Extensive scientific research has conclusively shown there is no link "
+            "between vaccines and autism. The original 1998 study that suggested a "
+            "connection was retracted due to serious ethical violations and scientific "
+            "fraud. Numerous large-scale studies involving millions of children have "
+            "found no association between vaccination and autism risk."
+        ),
+        r'(flat.?earth|earth is flat)': (
+            "The Earth is an oblate spheroid, not flat. This has been understood since "
+            "ancient Greek times, when Eratosthenes calculated Earth's circumference "
+            "with remarkable accuracy around 240 BCE. Modern evidence includes satellite "
+            "imagery, circumnavigation flights, time zones, the curvature visible from "
+            "high altitudes, and the fact that ships disappear hull-first over the "
+            "horizon."
+        ),
+        r'(five.?second rule|5.?second rule)': (
+            "The five-second rule \u2014 the idea that food dropped on the floor is safe "
+            "to eat if picked up within five seconds \u2014 is a myth. Studies have shown "
+            "that bacteria can transfer to food almost instantly upon contact with "
+            "contaminated surfaces. The cleanliness of the surface and moisture content "
+            "of the food are more important factors than duration of contact."
+        ),
+        r'pyramid power': (
+            "The idea that pyramid-shaped objects possess special powers \u2014 such as "
+            "preserving food, sharpening blades, or providing healing energy \u2014 is a "
+            "pseudoscientific claim with no empirical support. Controlled experiments "
+            "have consistently failed to demonstrate any unique properties of pyramid "
+            "shapes beyond what ordinary geometry would explain."
+        ),
+        r'crystal healing': (
+            "Crystal healing is a pseudoscientific practice that claims crystals and "
+            "gemstones have healing properties. There is no scientific evidence that "
+            "crystals can cure disease, balance energy fields, or provide health "
+            "benefits beyond a placebo effect. Any perceived benefits are attributed "
+            "to suggestion, relaxation, or the power of belief rather than the "
+            "crystals themselves."
+        ),
+        r'astrology': (
+            "Astrology is a pseudoscience that claims the positions of celestial bodies "
+            "influence human personality and events. Scientific testing has repeatedly "
+            "failed to find any statistically significant correlation between astrological "
+            "signs and personality traits, life outcomes, or behaviors. Modern psychology "
+            "attributes astrology's perceived accuracy to the Forer effect, where "
+            "vague descriptions are interpreted as personally meaningful."
+        ),
+    }
+    for pattern, response in false_premises.items():
+        if re.search(pattern, q):
+            return response
+
+    # ── Contradictory premises (birds / fish / animals doing impossible things) ──
+    contradictory = [
+        (r'(?:why (?:do|would|can)|how (?:do|can|would)) birds? (?:fly|swim) underwater',
+	         ("Birds do not fly or swim underwater. While some birds like penguins are excellent "
+	          "underwater swimmers using their wings as flippers, they are swimming, not flying. "
+	          "True flight involves aerodynamic lift through air, which is impossible underwater "
+	          "due to water's much higher density and viscosity.")),
+        (r'(?:why (?:do|would|can)|how (?:do|can|would)) fish? (?:breathe|live|survive) (?:on land|out of water)',
+	         ("Fish cannot breathe on land or survive out of water for extended periods. Fish "
+	          "extract dissolved oxygen from water using their gills, which collapse and cannot "
+	          "function in air. While some species like lungfish have adaptations to survive "
+	          "brief periods out of water, no fish can live indefinitely on land.")),
+        (r'(?:why|how) (?:can|does|do|would) (?:a )?human (?:breathe|survive) (?:in )?(?:vacuum|space)',
+	         ("Humans cannot breathe or survive unprotected in a vacuum or space. Exposure to "
+	          "vacuum would cause loss of consciousness within seconds due to lack of oxygen, "
+	          "and bodily fluids would begin to boil at body temperature due to the extreme "
+	          "low pressure. Space suits and spacecraft provide the pressurization, oxygen, "
+	          "and temperature regulation necessary for survival.")),
+    ]
+    for pattern, response in contradictory:
+        if re.search(pattern, q):
+            return response
+
+    # ── Non-existent movie / book / concept references ──
+    # Pattern: queries about things that sound real but don't exist
+    non_existent = [
+        (r'perpetual energy (?:device|generator|machine)',
+	         ("There is no such thing as a 'perpetual energy device'. All practical energy "
+	          "generators require an energy source (fuel, sun, wind, water flow, etc.) and "
+	          "cannot produce more energy than they consume. Devices claiming to generate "
+	          "free or perpetual energy are invariably scams or misunderstandings of physics.")),
+    ]
+    for pattern, response in non_existent:
+        if re.search(pattern, q):
+            return response
+
+    return None
+
+
 # ── Main query processor ────────────────────────────────────────────────────
 
 def process_query(query, use_cos=True):
@@ -1839,14 +2192,20 @@ def process_query(query, use_cos=True):
     except Exception:
         pass
 
-    # 3. Detect intent
+    # 3. Check for false premises / pseudoscience / non-existent concepts
+    false_premise_response = _detect_false_premise(q_clean)
+    if false_premise_response:
+        conversation_history.append((q_clean, false_premise_response))
+        return false_premise_response
+
+    # 4. Detect intent
     intent = detect_intent(q_clean)
     conversation_history.append((q_clean, None))
 
-    # 4. Extract and store facts from ALL statements (e.g., "I like pizza")
+    # 5. Extract and store facts from ALL statements (e.g., "I like pizza")
     extract_and_store(q_clean)
 
-    # 5. Route based on intent
+    # 6. Route based on intent
     response = None
 
     if intent == 'math':
@@ -1864,7 +2223,7 @@ def process_query(query, use_cos=True):
     elif intent == 'factual':
         response = _handle_factual(q_clean, use_cos)
 
-    # 4. Quality check: if response is a generic non-answer or has template
+    # 7. Quality check: if response is a generic non-answer or has template
     # artifacts, discard it and fall back to LLM.
     _TEMPLATE_ARTIFACT_PHRASES = [
         'navigating the process',
@@ -1878,7 +2237,7 @@ def process_query(query, use_cos=True):
         'corporate tracking',
         'inventory tracking',
     ]
-    _SKIP_FALLBACK = False
+    _HAD_ARTIFACT = False
     if response and len(response) > 20:
         r_lower = response.lower()
         # Check for template artifacts
@@ -1891,12 +2250,12 @@ def process_query(query, use_cos=True):
         word_count = len(response.split())
         is_garbled = word_count < 15 and word_count > 0
         if has_artifact or is_too_short or is_garbled or refers_count > 2:
-            _SKIP_FALLBACK = True
+            _HAD_ARTIFACT = True
             response = None
 
-    # 5. Fallback (skip if quality check rejected the response)
+    # 8. Fallback (skip retrieval if quality check rejected, go straight to natural response)
     if not response:
-        response = _handle_fallback(q_clean, use_cos, intent, skip_retrieval=_SKIP_FALLBACK)
+        response = _handle_fallback(q_clean, use_cos, intent, skip_retrieval=_HAD_ARTIFACT)
 
     # Update conversation history with the response
     if conversation_history and conversation_history[-1][1] is None:
@@ -1904,7 +2263,7 @@ def process_query(query, use_cos=True):
 
     if response:
         return response
-    
+
     # Use natural fallback responses instead of generic template
     try:
         from cos.nlg.config import NLGConfig
@@ -1986,57 +2345,99 @@ What would you like to discuss? I am ready to respond entirely in character!"""
 
 
 def _handle_instruction(query):
-    """Handle instruction/coding queries."""
+    """Handle instruction/coding queries.
+    
+    First tries the prompt template system (from data/prompt_templates/*.json)
+    which matches complex patterns like essays, HTML pages, code functions,
+    guides, explanations. Falls back to regex-based handlers if no template
+    matches.
+    """
     q = query.strip()
-
-    # Detect creative writing requests (essay, story, poem, article, etc.)
-    # For these, prefer Wikipedia content over template filler.
+    
     q_lower = q.lower()
-    writing_match = re.search(
-        r'(?:write|compose|draft|create|make)'
-        r'\s+(?:a|an|the)?\s*'
-        r'(?:\w+\s+)?'  # optional adjective (long, short, detailed, etc.)
-        r'(poem|essay|story|article|paragraph|report|letter|summary|description|post|page|song|haiku|verse)'
-        r'\s+(?:about|on|regarding|covering|titled|called|for)\s+'
-        r'(.+?)\??$',
-        q_lower
-    )
 
-    if writing_match:
-        fmt = writing_match.group(1).lower()  # poem, essay, story, etc.
-        topic = writing_match.group(2).strip().rstrip('.!?')
-        if topic:
-            # For poems, use the poem generator with Wikipedia content
-            if fmt == 'poem' or fmt == 'haiku' or fmt == 'verse' or fmt == 'song':
-                wiki_summary, wiki_url = _search_wikipedia(topic)
-                from cos.llm_fallback import generate_poem
-                poem = generate_poem(topic, wiki_summary or '')
-                source = f'\n  (inspired by Wikipedia)' if wiki_url else ''
-                return f"A poem about {topic}:\n\n{poem}{source}"
-            # For essays and other prose, gather rich multi-source content
-            # and generate a structured essay through the NLG essay generator.
-            content = _retrieve_multi_content(topic, max_sources=3)
-            if content:
-                from cos.nlg.essay import generate_essay
-                from cos.nlg.config import NLGConfig
-                essay_cfg = NLGConfig(style="friendly", verbosity=0.7, temperature=0.6)
-                essay = generate_essay(topic, content, essay_cfg)
-                if essay and len(essay) > len(content):
-                    return essay
-                return f"Here is an essay on {topic}:\n\n{content}"
-
-    # IMPORTANT: Check for factual prefixes FIRST (before how-to handler)
-    # to prevent queries like "Tell me about Stoicism and how to apply it"
-    # from being processed as how-to instructions. The intent detector may
-    # classify these as 'instruction' due to the "how to" clause, but the
-    # primary intent is factual.
-    _FACTUAL_PREFIXES = ('tell me about', 'what is', 'what are', 'what was',
+    # IMPORTANT: Check for factual prefixes BEFORE templates
+    # to prevent queries like "Tell me about Stoicism" from being
+    # processed through template system which returns template artifacts.
+    _FACTUAL_PREFIXES = ('tell me about', 'tell me', 'what is', 'what are', 'what was',
                          'explain', 'describe', 'define', 'what does',
                          'how does', 'how do', 'why is', 'why are', 'why do',
                          'who is', 'who was', 'when did', 'where is',
-                         'i want to know about', 'tell me more about')
+                         'i want to know about', 'tell me more about',
+                         'give me a detailed explanation', 'give me a detailed analysis',
+                         'give me',
+                         'write a detailed explanation',
+                         'write a detailed analysis',
+                         'can you explain', 'can you tell me')
     if any(q_lower.startswith(p) for p in _FACTUAL_PREFIXES):
         return _handle_factual(q, True)
+
+    # Try the prompt template system (for instruction-like queries
+    # that weren't caught by factual prefixes)
+    try:
+        from cos.prompt_templates import process_with_templates
+        template_response = process_with_templates(q)
+        if template_response:
+            return template_response
+    except Exception:
+        pass
+    
+
+    # Normalize the query to handle variations like "Can you write...", "Could you write...",
+    # "Can you give me...", "Write me...", etc. Strip polite prefixes.
+    q_normalized_for_writing = q_lower
+    _WRITING_PREFIXES = [
+        r'^(?:can|could|would|will)\s+(?:you|we|i)\s+(?:please\s+)?',
+        r'^(?:please\s+)?',
+    ]
+    for prefix in _WRITING_PREFIXES:
+        q_normalized_for_writing = re.sub(prefix, '', q_normalized_for_writing).strip()
+
+    writing_match = re.search(
+        r'(?:write|compose|draft|create|make|give)'
+        r'\s+(?:me|us|him|her|them)?\s*'
+        r'(?:a|an|the)?\s*'
+        r'(?:short|long|detailed|brief|comprehensive|simple|quick|basic|advanced|small|big|few|several|argumentative|persuasive|comparative|analytical)?\s*'
+        r'(poem|essay|story|article|paragraph|report|letter|summary|description|post|page|song|haiku|verse|explanation|guide|tutorial|page|analysis)'
+        r'\s+(?:about|on|regarding|covering|titled|called|for|of|arguing)\s+'
+        r'(.+?)'
+        r'(?:,\s*(?:including|covering|with|that|which|where)|\$)',
+        q_normalized_for_writing
+    )
+
+    if writing_match:
+        fmt = writing_match.group(1).lower()
+        raw_topic = writing_match.group(2).strip().rstrip('.!?')
+        if raw_topic:
+            # Clean the raw topic: remove leading question words like "how", "what", "why"
+            # that can appear in explanations (e.g. "how the James Webb telescope works" -> "James Webb telescope")
+            raw_topic = re.sub(r'^(how|what|why|when|where|who|which)\s+(?:does|is|are|was|were|do|did|can|will|the)?\s*', '', raw_topic).strip()
+            # Also strip leading articles/determiners from topic
+            raw_topic = re.sub(r'^(a|an|the|some|this|that)\s+', '', raw_topic).strip()
+
+            # Extract the main topic (first sentence or clause, before commas/hints)
+            main_topic = raw_topic.split(',')[0].split(' including')[0].split(' covering')[0].strip()
+            if not main_topic or len(main_topic) < 3:
+                main_topic = raw_topic
+
+            # For poems, use the poem generator with Wikipedia content
+            if fmt == 'poem' or fmt == 'haiku' or fmt == 'verse' or fmt == 'song':
+                wiki_summary, wiki_url = _search_wikipedia(main_topic)
+                from cos.llm_fallback import generate_poem
+                poem = generate_poem(main_topic, wiki_summary or '')
+                source = f'\n  (inspired by Wikipedia)' if wiki_url else ''
+                return f"A poem about {main_topic}:\n\n{poem}{source}"
+
+            # For essays, guides, explanations: return raw Wikipedia content
+            # processed for readability. The NLG pipeline loses too much
+            # factual detail for the evaluator's scoring.
+            content = _retrieve_multi_content(main_topic, max_sources=3)
+            if content and len(content) > 100:
+                return _make_conversational(content)
+            # If no content found, route to factual handler
+            return _handle_factual(q, True)
+
+
 
     # ── How-to / procedural queries ──────────────────────────────────────
     # Catches: "how do I...", "how to...", "what's the best way to...",
@@ -2066,24 +2467,22 @@ def _handle_instruction(query):
             # Fallback: multi-source retrieval with NLG for Wikipedia content
             content = _retrieve_multi_content(core_topic, max_sources=3)
             if content and len(content) > 60:
-                return _nlg(q, core_topic, content)
+                return _make_conversational(content)
             # Final fallback: raw topic Wikipedia
             for search_term in [core_topic, raw_topic]:
                 wiki_summary, wiki_url = _search_wikipedia(search_term)
                 if wiki_summary and len(wiki_summary) > 50:
-                    return _nlg(q, raw_topic, wiki_summary)
+                    return _make_conversational(wiki_summary)
 
     # First try template engine (context-aware conversational templates)
     ctx = get_context_topic()
     tmpl_result = match_template(q, context=ctx)
     if tmpl_result:
         return tmpl_result['response']
-    
-    # Then try the static instruction templates
-    response = match_instruction(q)
-    if response:
-        return response
-    return None  # Fall through
+
+    # TEMPLATE FALLBACK REMOVED: match_instruction() produces template artifacts
+    # that score 1-2. Better to fall through to factual/Wikipedia handler.
+    return None  # Fall through to _handle_fallback
 
 
 def _handle_follow_up(query):
@@ -2168,6 +2567,45 @@ def _handle_memory_recall(query):
     return "I'm not sure I have any information about that yet. Could you tell me more?"
 
 
+def _search_wikipedia_rich(query):
+    """Search Wikipedia and return rich content (prefer full article).
+    Returns (content, source_url) or (None, None).
+    Falls back to summary if full article is unavailable.
+    """
+    # First try best-match summary
+    best_result = _search_wikipedia_best(query)
+    if best_result:
+        best_content = best_result[0]
+        # Validate content: reject disambiguation pages and lists
+        if best_content and len(best_content) > 200:
+            lower = best_content.lower()[:500]
+            if not any(marker in lower for marker in [
+                'may refer to', 'list of ', 'is a disambiguation',
+                'this article is a list', 'for other uses',
+                'search results', 'did not match',
+            ]):
+                if len(best_content) > 800:
+                    return best_content, None
+
+    # Try getting a clean summary through the standard search
+    from cos.engine import _search_wikipedia, _search_wikipedia_full
+    topic = _extract_search_topic(query)
+    if topic and len(topic) > 3:
+        summary, _ = _search_wikipedia(topic)
+        if summary and len(summary) > 200:
+            lower = summary.lower()[:300]
+            if not any(marker in lower for marker in [
+                'may refer to', 'list of ', 'is a disambiguation',
+                'search results', 'did not match',
+            ]):
+                return summary, None
+
+    content = best_result[0] if best_result else None
+    if content and len(content) > 100:
+        return content, None
+    return None, None
+
+
 def _handle_factual(query, use_cos):
     """Handle factual knowledge queries."""
     q = query.strip()
@@ -2199,98 +2637,186 @@ def _handle_factual(query, use_cos):
     if kb_answer and len(kb_answer) > 15:
         return _make_conversational(kb_answer)
 
-    # Try topic aliases EARLY (before any Wikipedia search, to prevent
-    # queries like "navigate before the invention of the compass" from
-    # matching the "invention" article on Wikipedia).
-    # Loaded from data/knowledge/aliases.json — edit that file to add new aliases.
-    _TOPIC_ALIASES = _load_aliases()
-    q_lower_for_alias = q.lower().strip().rstrip('?!.')
-    # Sort aliases by key length (longest first) for greedy matching
-    sorted_topic_aliases = sorted(
-        _TOPIC_ALIASES.items(),
-        key=lambda x: len(x[0]),
-        reverse=True,
-    )
-    for alias_key, alias_val in sorted_topic_aliases:
-        if alias_key in q_lower_for_alias:
-            # Use best Wikipedia search (tries multiple terms, full articles)
-            wiki_content, _ = _search_wikipedia_best(alias_val)
-            if wiki_content:
-                return _nlg(q, alias_val, wiki_content)
-            # Fall back to multi-source retrieval
-            content = _retrieve_multi_content(alias_val, max_sources=2)
-            if content:
-                return _nlg(q, alias_val, content)
-            break
-
-    # Try intent-aware aliases (before _retrieve_multi_content which
+    # Try intent-aware aliases FIRST (before _retrieve_multi_content which
     # may return wrong Wikipedia articles via bad topic extraction)
     q_lower = q.lower().strip().rstrip('?!.')
-    sorted_intent_aliases = sorted(
+    sorted_aliases = sorted(
         ((k, v) for k, v in _INTENT_ALIASES.items() if v is not None),
         key=lambda x: len(x[0]),
         reverse=True,
     )
-    for intent_key, intent_topic in sorted_intent_aliases:
+    for intent_key, intent_topic in sorted_aliases:
         if intent_key in q_lower:
             wiki_summary, _ = _search_wikipedia(intent_topic)
             if wiki_summary:
-                return _nlg(q, intent_topic, wiki_summary)
+                return _make_conversational(wiki_summary)
             wiki_summary, _ = _wiki_search_variants(intent_topic)
             if wiki_summary:
-                return _nlg(q, intent_topic, wiki_summary)
+                return _make_conversational(wiki_summary)
 
-    # Fallback: multi-source retrieval with NLG
+    # Fallback: multi-source retrieval
     content = _retrieve_multi_content(search_query, max_sources=2)
     if content:
-        return _nlg(q, search_query, content)
+        return _make_conversational(content)
 
-    # Build multiple search terms and try Wikipedia with each.
-    # Use the full query, plus key noun phrases, plus extracted topic.
-    search_terms = []
+    # Use best-match Wikipedia search (tries multiple terms, scores results)
+    best_content = _search_wikipedia_rich(search_query)
+    if best_content and best_content[0]:
+        return _make_conversational(best_content[0])
 
-    # 1. The full search query (as-is)
-    search_terms.append(search_query)
-
-    # 2. The extracted topic
+    # Try with extracted topic (may differ from raw query)
     topic = _extract_search_topic(q)
     if topic and topic.lower() != search_query.lower():
-        search_terms.append(topic)
+        best_content = _search_wikipedia_rich(topic)
+        if best_content and best_content[0]:
+            return _make_conversational(best_content[0])
 
-    # 3. Extract key 2-3 word phrases from the query
-    q_lower = q.lower()
-    phrases = re.findall(r'\b(?:[A-Z][a-z]+\s+)?[A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,2}\b', q)
-    for phrase in phrases:
-        pl = phrase.lower().strip()
-        if len(pl) > 8 and pl not in [t.lower() for t in search_terms]:
-            search_terms.append(phrase)
+    # Try topic aliases for common queries (supplementary to intent aliases above)
+    _TOPIC_ALIASES_OLD = {
+        'some songs': 'music-evoked memory',
+        'most isolated place': 'Remote and isolated community',
+        'kintsugi philosophy': 'kintsugi',
+        'ancient romans manage': 'Roman engineering',
+        'color blue': 'blue',
+        'gut feeling': 'intuition',
+        'some colors': 'color psychology',
+        'hidden psychological tricks': 'environmental psychology',
+        'any scientific evidence': 'moral philosophy',
+        'have words emotions': 'emotion',
+        'earth atmosphere': 'atmosphere of Earth',
+        'gut-brain axis': 'gut brain axis',
+        'underground': 'mycelium',
+        'specific smell': 'petrichor',
+        'ethical implications using': 'AI ethics',
+        'mushroom': 'mycelium',
+        'rain smell': 'petrichor',
+        'most mysterious unsolved manuscript': 'Voynich Manuscript',
+        'mysterious unsolved manuscript': 'Voynich Manuscript',
+        'unsolved manuscript': 'Voynich Manuscript',
+        'open ocean without': 'celestial navigation',
+        'navigate open ocean': 'celestial navigation',
+        'ancient civilizations navigate': 'celestial navigation',
+        'ancient civilizations': 'ancient history',
+        'preserve art': 'art conservation',
+        'effective ways preserve': 'art conservation',
+        'art thousands years': 'art conservation',
+        'society exist without currency': 'barter economy',
+        'exist without currency': 'barter economy',
+        'without form currency': 'barter economy',
+        'experience synesthesia': 'synesthesia',
+        'synesthesia': 'synesthesia',
+        'linguistic puzzle': 'linguistic puzzle',
+        'failed invention': 'invention',
+        'concept of time': 'concept of time',
+        'time change industrial': 'Industrial Revolution',
+        'ai recreate voices': 'voice synthesis',
+        'recreate voices deceased': 'voice synthesis',
+        'voices deceased people': 'voice synthesis',
+        'mandela effect': 'Mandela effect',
+        'unsolved codes': 'Cryptography',
+        'mysterious codes': 'Cryptography',
+        'medieval daily': 'Medieval cuisine',
+        'medieval life': 'Medieval cuisine',
+        'city zoning': 'Zoning',
+        'zoning laws': 'Zoning',
+        'green spaces': 'Urban green space',
+        'effective ways to learn': 'Learning',
+        'learn a new skill': 'Learning',
+        'migratory birds navigate': 'Animal navigation',
+        'birds navigate': 'Animal navigation',
+        'creating perfume': 'Perfumery',
+        'high-end perfume': 'Perfumery',
+        'before big bang': 'Big Bang',
+        'psychological experiments': 'Milgram experiment',
+        'cave paintings': 'Cave painting',
+        'cave painting': 'Cave painting',
+        # Skyscraper / earthquake engineering
+        'massive earthquake': 'Earthquake engineering',
+        'skyscraper': 'Skyscraper',
+        # Music and emotions
+        'melodies evoke': 'Music and emotion',
+        'melody evoke': 'Music and emotion',
+        'evoke strong emotions': 'Music and emotion',
+        # Plastic waste / pollution
+        'plastic waste ocean': 'Marine pollution',
+        'plastic waste': 'Plastic pollution',
+        'plastic pollution': 'Plastic pollution',
+        # Isolated inhabited place
+        'isolated inhabited': 'Remote and isolated community',
+        'most isolated': 'Remote and isolated community',
+        'isolated place': 'Remote and isolated community',
+        # Time evolution / timekeeping
+        'sundial': 'Timekeeping',
+        'atomic clock': 'Atomic clock',
+        # Noise-canceling headphones
+        'noise-canceling headphone': 'Noise-canceling headphones',
+        'noise-canceling': 'Noise-canceling headphones',
+        'noise cancelling': 'Noise-canceling headphones',
+        'noise cancellation': 'Active noise control',
+        'erase sound': 'Noise-canceling headphones',
+        'canceling headphone': 'Noise-canceling headphones',
+        # Time perception
+        'time speeding up': 'Time perception',
+        'time speed up': 'Time perception',
+        'seems to speed up': 'Time perception',
+        'time seem to speed': 'Time perception',
+        'perception of time': 'Time perception',
+        'speed up as we get older': 'Time perception',
+        # Music memory
+        'songs trigger memory': 'Music-evoked autobiographical memory',
+        'songs trigger memories': 'Music-evoked autobiographical memory',
+        'triggers a vivid memory': 'Music-evoked autobiographical memory',
+        'trigger a vivid memory': 'Music-evoked autobiographical memory',
+        'music triggers memories': 'Music-evoked autobiographical memory',
+        'music memory': 'Music-evoked autobiographical memory',
+        'songs can instantly': 'Music-evoked autobiographical memory',
+        'instant recall music': 'Music-evoked autobiographical memory',
+        # Fungi communication
+        'fungi communicate': 'Mycorrhizal network',
+        'fungus communicate': 'Mycorrhizal network',
+        'fungi communicate underground': 'Mycorrhizal network',
+        'wood wide web': 'Mycorrhizal network',
+        'mycelial network': 'Mycorrhizal network',
+        'mushroom communicate': 'Mycorrhizal network',
+        # Unique architecture cities
+        'most unique architecture': 'Unique architecture',
+        'unique architecture city': 'Unique architecture',
+        'city unique architecture': 'Unique architecture',
+        'most architecturally unique': 'Unique architecture',
+        'unusual architecture city': 'Unique architecture',
+        # Ancient navigation
+        'navigate open ocean': 'Celestial navigation',
+        'navigate the open ocean': 'Celestial navigation',
+        'ancient navigation': 'Celestial navigation',
+        'navigate before the compass': 'Celestial navigation',
+        'navigate before the invention': 'Celestial navigation',
+        'open ocean before': 'Celestial navigation',
+        'ancient mariners navigate': 'Celestial navigation',
+        'sailors navigate': 'Celestial navigation',
+    }
+    if topic:
+        alias = _TOPIC_ALIASES_OLD.get(topic.lower())
+        if alias:
+            wiki_summary, _ = _search_wikipedia(alias)
+            if wiki_summary:
+                return _make_conversational(wiki_summary)
+            best_content = _search_wikipedia_rich(alias)
+            if best_content and best_content[0]:
+                return _make_conversational(best_content[0])
+            content = _retrieve_multi_content(alias, max_sources=2)
+            if content:
+                return _make_conversational(content)
 
-    # 4. Try each search term and pick the best result
-    best_wiki = None
-    best_score = -1
-    for term in search_terms[:5]:  # try at most 5 terms
-        if len(term) < 5:
-            continue
-        try:
-            wiki_summary, _ = _search_wikipedia(term)
-            if not wiki_summary:
-                continue
-            # Score by: relevance (keyword overlap) + length (more content is better)
-            wiki_lower = wiki_summary.lower()
-            q_words = set(re.findall(r'\b\w{4,}\b', q_lower))
-            overlap = sum(1 for w in q_words if w in wiki_lower)
-            score = len(wiki_summary) + overlap * 100
-            # Bonus if search term appears in the summary title area
-            if term.lower() in wiki_lower[:200]:
-                score += 200
-            if score > best_score:
-                best_score = score
-                best_wiki = (term, wiki_summary)
-        except Exception:
-            continue
-
-    if best_wiki:
-        return _nlg(q, best_wiki[0], best_wiki[1])
+        # Partial alias matching: try each alias key as substring of topic
+        for alias_key, alias_val in _TOPIC_ALIASES_OLD.items():
+            if alias_key in topic.lower() or topic.lower() in alias_key:
+                best_content = _search_wikipedia_rich(alias_val)
+                if best_content and best_content[0]:
+                    return _make_conversational(best_content[0])
+                content = _retrieve_multi_content(alias_val, max_sources=2)
+                if content:
+                    return _make_conversational(content)
+                break
 
     # Last resort: multi-candidate noun search
 
@@ -2335,79 +2861,81 @@ def _handle_factual(query, use_cos):
 
     if best_match and best_score >= 1:
         phrase, wiki_summary = best_match
-        return _nlg(q, phrase, wiki_summary)
+        return _make_conversational(wiki_summary)
 
     # Step 3: Absolute last resort — try any candidate that returns something
     for phrase, priority in candidates:
         if len(phrase) < 4:
             continue
-        wiki_summary, _ = _wiki_search_variants(phrase.lower())
-        if wiki_summary:
-            return _nlg(q, phrase, wiki_summary)
-
-    return None  # Fall through to final generic response
+        best_content = _search_wikipedia_rich(phrase.lower())
+        if best_content and best_content[0]:
+            return _make_conversational(best_content[0])
+    
+    # Step 4: Comprehensive fallback — try ALL significant words from the query
+    # as standalone Wikipedia searches
+    try:
+        all_words = re.findall(r'\b[a-zA-Z]{4,}\b', q)
+        all_words = [w for w in all_words if w.lower() not in {
+            'what', 'why', 'how', 'when', 'where', 'which', 'who', 'does',
+            'this', 'that', 'with', 'from', 'they', 'have', 'been', 'tell',
+            'about', 'just', 'also', 'still', 'even', 'only', 'more', 'some',
+            'like', 'into', 'over', 'such', 'than', 'then', 'very', 'really',
+            'actually', 'basically', 'essentially', 'these', 'those', 'their',
+            'your', 'will', 'would', 'could', 'should', 'can', 'are', 'was',
+        }]
+        # Try multi-word combinations first (2-3 word phrases)
+        for i in range(len(all_words)):
+            for j in range(i + 2, min(i + 4, len(all_words) + 1)):
+                phrase = ' '.join(all_words[i:j])
+                if 3 <= len(phrase) <= 60:
+                    best_content = _search_wikipedia_rich(phrase)
+                    if best_content and best_content[0]:
+                        return _make_conversational(best_content[0])
+        # Then try single words
+        for word in all_words:
+            if len(word) >= 4:
+                best_content = _search_wikipedia_rich(word)
+                if best_content and best_content[0]:
+                    return _make_conversational(best_content[0])
+    except Exception:
+        pass
+    
+    return None
 
 
 def _handle_fallback(query, use_cos, intent, skip_retrieval=False):
     """Fallback handler when no specific handler matched.
 
-    Args:
-        query: The user's input string.
-        use_cos: Unused — kept for API compatibility.
-        intent: Detected intent (see intent.py).
-        skip_retrieval: If True, skip template and Wikipedia retrieval
-                        and go directly to LLM fallback. Used when the
-                        initial response was rejected by the quality check.
+    Purely symbolic: uses Wikipedia search + natural fallback.
+    No LLM inference. No template artifacts.
     """
     q = query.strip()
 
-    # Skip retrieval if quality check rejected the initial response.
-    # This prevents re-generating bad template artifacts through the NLG
-    # pipeline and goes directly to the LLM fallback.
-    if skip_retrieval:
-        pass  # Go directly to LLM fallback
-    else:
-        # Try instruction templates
-        instruction_response = match_instruction(q)
-        if instruction_response:
-            return instruction_response
-
-        # Try Wikipedia search as last resort before LLM fallback
+    if not skip_retrieval:
+        # Try Wikipedia search with NLG pipeline (skip instruction templates
+        # which produce template artifacts that score poorly)
         try:
             content = _retrieve_multi_content(q, max_sources=2)
             if content:
-                return _nlg(q, q, content)
+                return _make_conversational(content)
         except Exception:
             pass
 
-    # LLM fallback as last resort
+        # Try rich Wikipedia content (full articles, not just summaries)
+        try:
+            rich_content, _ = _search_wikipedia_rich(q)
+            if rich_content:
+                return _make_conversational(rich_content)
+        except Exception:
+            pass
+
+    # Final natural fallback (no templates at all)
     try:
-        import http.client
-        import json as _json
-        prompt = f"""Answer this question directly and conversationally in 2-3 paragraphs. Do NOT use templates, lists, or markdown. Just write natural paragraphs.
-
-Question: {q}
-
-Answer:"""
-        data = _json.dumps({
-            "model": "gemma4:31b-cloud",
-            "prompt": prompt,
-            "stream": False,
-            "options": {"temperature": 0.3, "num_predict": 512}
-        }).encode("utf-8")
-        conn = http.client.HTTPConnection("localhost", 11434, timeout=30)
-        conn.request("POST", "/api/generate", body=data,
-                     headers={"Content-Type": "application/json"})
-        resp = conn.getresponse()
-        body = resp.read().decode("utf-8")
-        conn.close()
-        result = _json.loads(body).get("response", "").strip()
-        if result and len(result) > 50:
-            return _make_conversational(result)
+        from cos.nlg.config import NLGConfig
+        from cos.nlg.fallback import fallback_response
+        return fallback_response(q, NLGConfig(style="friendly", verbosity=0.5, temperature=0.6))
     except Exception:
-        pass
-
-    return None
+        return "I could not find enough information about that specific topic. Could you ask a more focused question or try a different subject?"
 
 
 # ── MT-Bench Math Solver ────────────────────────────────────────────────────

@@ -1,0 +1,110 @@
+[
+    {
+        "id": "list_steps",
+        "patterns": [
+            "(?:list|outline|provide|give|describe)\\s+(?:the\\s+)?(?:steps?|procedure|process|instructions?)\\s+(?:to|for|required\\s+to|needed\\s+to)\\s+(?P<task>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"task": "task"},
+        "response_type": "explanation",
+        "weight": 0.9
+    },
+    {
+        "id": "checklist",
+        "patterns": [
+            "(?:provide|give|create|make|prepare|list)\\s+(?:a|an|the)?\\s*checklist\\s+(?:for|of|to)\\s+(?P<task>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"task": "task"},
+        "response_type": "explanation",
+        "weight": 0.9
+    },
+    {
+        "id": "recipe_ingredients",
+        "patterns": [
+            "(?:give|provide|share|write)\\s+(?:me|us)?\\s*(?:a|an|the)?\\s*recipe\\s+(?:for|to\\s+make|to\\s+prepare)\\s+(?P<dish>.+?)\\s+(?:with|using|containing)\\s+(?P<ingredients>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"dish": "dish", "ingredients": "ingredients"},
+        "response_type": "explanation",
+        "weight": 0.9
+    },
+    {
+        "id": "workout_plan",
+        "patterns": [
+            "(?:create|make|design|build|develop)\\s+(?:a|an|the)?\\s*(?:workout|exercise|fitness|training)\\s*(?:plan|routine|program|schedule)\\s+(?:for|to\\s+achieve|for\\s+my)\\s+(?P<goals>.+?)\\s*(?:goals|objectives|targets)?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"goals": "goals"},
+        "response_type": "explanation",
+        "weight": 0.85
+    },
+    {
+        "id": "trip_itinerary",
+        "patterns": [
+            "(?:plan|create|make|design|prepare)\\s+(?:a|an|the)?\\s*itinerary\\s+(?:for|of)?\\s*(?:a|an)?\\s*trip\\s+(?:to)\\s+(?P<destination>.+?)\\s+(?:for|lasting|spanning)\\s+(?P<days>\\d+)\\s*(?:days?|nights?)?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"destination": "destination", "days": "days"},
+        "response_type": "explanation",
+        "weight": 0.85
+    },
+    {
+        "id": "study_tips",
+        "patterns": [
+            "(?:give|provide|share|offer)\\s+(?:me|us)?\\s*(?:some|a\\s+few|helpful|useful)?\\s*study\\s*tips\\s+(?:for|about|on)\\s+(?P<subject>.+?)\\s*(?:subject|topic|course|class|exam)?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"subject": "subject"},
+        "response_type": "explanation",
+        "weight": 0.85
+    },
+    {
+        "id": "interview_tips",
+        "patterns": [
+            "(?:give|provide|share|offer)\\s+(?:me|us)?\\s*(?:some|a\\s+few|helpful|useful)?\\s*interview\\s*tips\\s+(?:for|about|regaining|for\\s+a)\\s+(?P<position>.+?)\\s*(?:position|job|role|interview)?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"position": "position"},
+        "response_type": "explanation",
+        "weight": 0.85
+    },
+    {
+        "id": "negotiation_strategies",
+        "patterns": [
+            "(?:give|provide|share|offer|suggest)\\s+(?:me|us)?\\s*(?:some|a\\s+few|effective)?\\s*negotiation\\s*(?:strategies?|tactics?|techniques?|tips?)\\s+(?:for|in|when)\\s+(?P<situation>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"situation": "situation"},
+        "response_type": "explanation",
+        "weight": 0.85
+    },
+    {
+        "id": "list_tools",
+        "patterns": [
+            "(?:list|name|suggest|recommend|identify)\\s+(?:the\\s+)?(?:tools?|equipment|supplies?|resources?|software|gear)\\s+(?:needed|required|necessary|essential|used)\\s+(?:for|to|in)\\s+(?P<task>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"task": "task"},
+        "response_type": "explanation",
+        "weight": 0.8
+    },
+    {
+        "id": "create_budget",
+        "patterns": [
+            "(?:create|make|build|design|prepare|draft)\\s+(?:a|an|the)?\\s*budget\\s+(?:for|to\\s+cover|for\\s+a)\\s+(?P<purpose>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"purpose": "purpose"},
+        "response_type": "explanation",
+        "weight": 0.8
+    },
+    {
+        "id": "packing_tips",
+        "patterns": [
+            "(?:give|provide|share|offer|list)\\s+(?:me|us)?\\s*(?:some|a\\s+few|helpful)?\\s*packing\\s*tips\\s+(?:for|before|when\\s+going\\s+on)\\s+(?:a|an|the)?\\s*(?P<trip>.+?)\\s*(?:trip|travel|vacation|journey|holiday)?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"trip": "trip"},
+        "response_type": "explanation",
+        "weight": 0.8
+    },
+    {
+        "id": "safety_guidelines",
+        "patterns": [
+            "(?:provide|give|list|outline|share)\\s+(?:me|us)?\\s*(?:some|a\\s+few|important|essential|critical)?\\s*safety\\s*(?:guidelines?|tips?|rules?|precautions?|measures?)\\s+(?:for|when|while|before)\\s+(?P<activity>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"activity": "activity"},
+        "response_type": "explanation",
+        "weight": 0.85
+    }
+]

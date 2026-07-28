@@ -1,0 +1,30 @@
+[
+    {
+        "id": "essay_with_emphasis",
+        "patterns": [
+            "(?:write|compose|draft|create)\\s+(?:a|an|the)?\\s*(?:short|long|detailed|brief|comprehensive)?\\s*essay\\s+(?:about|on|regarding|covering)\\s+(?P<topic>.+?)\\s+with\\s+(?:a|an)?\\s*(?:particular|special|specific)?\\s*emphasis\\s+(?:on|upon)\\s+(?P<emphasis>.+?)(?:\\.\\s*|\\?\\s*|$)",
+            "(?:write|compose|draft|create)\\s+(?:a|an|the)?\\s*(?:short|long|detailed|brief|comprehensive)?\\s*essay\\s+(?:about|on|regarding|covering)\\s+(?P<topic>.+?)\\s+(?:that|which|and)\\s+(?:covers?|focuses?|explores?|examines?|addresses?|highlights?|emphasizes?)\\s+(?P<emphasis>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "emphasis": "emphasis"},
+        "response_type": "essay",
+        "weight": 1.0
+    },
+    {
+        "id": "essay_simple",
+        "patterns": [
+            "(?:write|compose|draft|create)\\s+(?:me|us)?\\s*(?:a|an|the)?\\s*(?:short|long|detailed|brief|comprehensive|argumentative|persuasive|comparative|analytical)?\\s*(?:essay|article|report|paper)\\s+(?:about|on|regarding|covering|titled)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "essay",
+        "weight": 0.9
+    },
+    {
+        "id": "essay_comparative",
+        "patterns": [
+            "(?:write|compose|draft|create)\\s+(?:me|us)?\\s*(?:a|an|the)?\\s*comparative\\s*essay\\s+(?:about|on|comparing|between)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "essay",
+        "weight": 0.9
+    }
+]

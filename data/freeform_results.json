@@ -1,228 +1,386 @@
 {
   "analysis": {
-    "overall_average": 8.38,
+    "overall_average": 6.43,
     "dimension_averages": {
-      "naturalness": 9.05,
-      "informativeness": 6.4,
-      "coherence": 8.45,
-      "correctness": 8.65,
-      "conciseness": 9.35
+      "naturalness": 6.95,
+      "informativeness": 5.2,
+      "coherence": 5.95,
+      "correctness": 6.3,
+      "conciseness": 7.75
     },
     "total_cases": 20,
-    "total_mistakes": 17,
+    "total_mistakes": 39,
     "severity_counts": {
-      "high": 14,
-      "low": 2,
-      "medium": 1
+      "high": 28,
+      "medium": 7,
+      "low": 4
     },
     "type_counts": {
-      "missing_info": 9,
-      "factual_error": 3,
-      "incomplete_sentence": 2,
-      "repetition": 1,
+      "missing_info": 15,
+      "incomplete_sentence": 7,
+      "factual_error": 5,
+      "repetition": 3,
+      "flow_issue": 3,
+      "template_artifact": 2,
+      "word_choice": 1,
+      "awkward_phrasing": 1,
       "grammar": 1,
-      "flow_issue": 1
+      "punctuation": 1
     },
     "type_examples": {
       "missing_info": [
         {
-          "excerpt": "The entire response",
-          "description": "The assistant defines nostalgia but fails to address the core of the user's question regarding nostalgia for unlived eras.",
-          "fix": "Explain the concept of 'anemoia' and the psychological reasons behind it, such as media influence and romanticization.",
+          "excerpt": "entire response",
+          "description": "The assistant failed to explain why we dream or mention any scientific theories (e.g., activation-synthesis or memory consolidation).",
+          "fix": "Add a detailed explanation of the purposes of dreaming and the leading scientific theories.",
           "severity": "high"
         },
         {
-          "excerpt": "The uncanny valley effect is a hypothesized psychological and aesthetic relation",
-          "description": "The assistant defines the effect but does not explain the causes (e.g., cognitive dissonance, pathogen avoidance, or violation of expectations) as requested by the user.",
-          "fix": "Add explanations regarding why this happens, such as the brain's sensitivity to subtle imperfections in human movement or facial symmetry.",
+          "excerpt": "Write me a detailed essay",
+          "description": "The assistant provided a summary/list of facts rather than a structured essay with an introduction, body paragraphs, and a conclusion.",
+          "fix": "Rewrite the content into a formal essay format.",
           "severity": "high"
         },
         {
           "excerpt": "The entire response",
-          "description": "The assistant defines the two terms separately but never explicitly explains the difference or the relationship between them (e.g., that existentialism is often a response to nihilism).",
-          "fix": "Add a concluding paragraph explaining that while nihilism posits that life has no intrinsic meaning, existentialism suggests that individuals can create their own meaning.",
+          "description": "The response is missing the logic to filter strings by length (>= 5) and the logic to sort strings alphabetically.",
+          "fix": "Implement the specific logic requested by the user.",
           "severity": "high"
-        }
-      ],
-      "repetition": [
-        {
-          "excerpt": "It is often described as",
-          "description": "The phrase 'often described as' is used in two consecutive sentences, creating a repetitive and robotic flow.",
-          "fix": "Vary the sentence structure; e.g., 'It is also characterized as...'",
-          "severity": "low"
         }
       ],
       "incomplete_sentence": [
         {
-          "excerpt": "Such tasks are not necessarily useful for \"",
-          "description": "The response cuts off mid-sentence at the very end.",
-          "fix": "Complete the sentence, e.g., \"Such tasks are not necessarily useful for practical real-world applications.\"",
+          "excerpt": "and the efficiency of the civil administrati",
+          "description": "The response cuts off abruptly at the end of the final sentence.",
+          "fix": "Complete the word to 'administration' and finish the sentence/essay.",
           "severity": "high"
         },
         {
-          "excerpt": "The platypus (Ornithorhynchus anatinus), sometimes referred to as the \"",
-          "description": "The response cuts off mid-sentence at the very end.",
-          "fix": "Complete the sentence or remove the fragment.",
+          "excerpt": "background: #1a1a4e;\n       \"",
+          "description": "The code block ends abruptly mid-CSS rule, leaving the HTML file unfinished and broken.",
+          "fix": "Complete the CSS, close the style tag, add the HTML body content (grid and form), and close the HTML tags.",
           "severity": "high"
+        },
+        {
+          "excerpt": "Positive parenting is par",
+          "description": "The response cuts off abruptly at the end.",
+          "fix": "Complete the sentence or remove the irrelevant section.",
+          "severity": "medium"
+        }
+      ],
+      "repetition": [
+        {
+          "excerpt": "The fall of the Western Roman Empire, also called the fall of the Roman Empire",
+          "description": "The text repeats the definition of the event in a way that sounds like a Wikipedia copy-paste, breaking the flow of the narrative.",
+          "fix": "Remove the redundant definition and integrate the information into the main analysis.",
+          "severity": "medium"
+        },
+        {
+          "excerpt": "likely due to a combination of genetic predisposition and early developmental pr",
+          "description": "The explanation of neural pruning is mentioned twice in the same paragraph, making the flow slightly redundant.",
+          "fix": "Combine these two points into a single explanation of the developmental process.",
+          "severity": "low"
+        },
+        {
+          "excerpt": "javascript function validates email address",
+          "description": "The exact phrase is repeated in every single paragraph, creating a robotic and unnatural flow.",
+          "fix": "Use pronouns or varied terminology.",
+          "severity": "medium"
+        }
+      ],
+      "flow_issue": [
+        {
+          "excerpt": "Key causes included: the Crisis of the Third Century",
+          "description": "The transition from a narrative introduction to a list-like structure is jarring and not appropriate for an essay.",
+          "fix": "Use transitional phrases to connect these points into cohesive paragraphs.",
+          "severity": "medium"
+        },
+        {
+          "excerpt": "Writing is the act of creating a persistent...",
+          "description": "Complete non-sequitur; the assistant suddenly switches from philosophy to defining the act of writing.",
+          "fix": "Remove the entire section regarding writing.",
+          "severity": "high"
+        },
+        {
+          "excerpt": "destroying several major civilizations including the Mycenaean Greeks, the Hitti",
+          "description": "Parallelism error in the list. The first three items are objects of 'including', but the last item is a full independent clause.",
+          "fix": "change to '...the Kassites of Babylonia, and the New Kingdom of Egypt, which was severely weakened.'",
+          "severity": "low"
         }
       ],
       "factual_error": [
         {
-          "excerpt": "In JavaScript, there are several ways to merge two arrays.",
-          "description": "The response is entirely irrelevant to the user's question about Python try-except blocks.",
-          "fix": "Provide a response explaining how to use try-except blocks in Python for API error handling.",
+          "excerpt": "extremely isolated inhabited places include... Campbell Island",
+          "description": "Campbell Island is not permanently inhabited; it only has a rotating staff of scientists/personnel.",
+          "fix": "Remove Campbell Island from the list of inhabited places.",
+          "severity": "low"
+        },
+        {
+          "excerpt": "Here's a Python function that takes a list of integers, removes duplicates",
+          "description": "The assistant ignored the user's request for string filtering and instead wrote a function for integer deduplication.",
+          "fix": "Rewrite the function to filter strings shorter than five characters and sort them alphabetically.",
           "severity": "high"
         },
         {
-          "excerpt": "In JavaScript, there are several ways to merge two arrays.",
-          "description": "The response provides information about JavaScript array merging instead of CSS Grid layouts as requested.",
-          "fix": "Provide a guide on using 'display: grid', 'grid-template-columns', and 'repeat(auto-fit, ...)' for responsive layouts.",
+          "excerpt": "grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));",
+          "description": "The user specifically requested a 'masonry grid layout'. The assistant provided a standard CSS Grid, which creates uniform rows rather than a masonry effect.",
+          "fix": "Use column-count or a JavaScript library like Masonry.js, or use CSS columns to achieve a true masonry layout.",
+          "severity": "medium"
+        }
+      ],
+      "template_artifact": [
+        {
+          "excerpt": "Let me provide a thorough explanation of give detailed explanation quantum entan",
+          "description": "The assistant has inserted the user's prompt instructions directly into the sentence structure, creating a nonsensical phrase.",
+          "fix": "Let me provide a thorough explanation of quantum entanglement.",
           "severity": "high"
         },
         {
-          "excerpt": "In JavaScript, there are several ways to merge two arrays.",
-          "description": "The response is entirely irrelevant to the user's prompt regarding Binary Search Trees.",
-          "fix": "Provide an explanation and implementation of a Binary Search Tree instead of array merging.",
+          "excerpt": "Great, let me expand on javascript function validates email address, further!",
+          "description": "The response uses a generic filler template that repeats the user's keywords without providing content.",
+          "fix": "Remove the template and answer the prompt directly.",
+          "severity": "high"
+        }
+      ],
+      "word_choice": [
+        {
+          "excerpt": "What Is give detailed explanation quantum entanglement?",
+          "description": "Incorrect use of the prompt as a subject; grammatically incoherent.",
+          "fix": "What is quantum entanglement?",
+          "severity": "high"
+        }
+      ],
+      "awkward_phrasing": [
+        {
+          "excerpt": "give detailed explanation quantum entanglement is a multifaceted subject",
+          "description": "The response treats the instruction 'give detailed explanation' as part of the name of the subject.",
+          "fix": "Quantum entanglement is a multifaceted subject",
           "severity": "high"
         }
       ],
       "grammar": [
         {
-          "excerpt": "including the Mycenaean Greeks, the Hittite Empire, the Kassites of Babylonia, a",
-          "description": "Lack of parallel structure. The list begins with nouns (civilizations) but ends with a full independent clause.",
-          "fix": "including the Mycenaean Greeks, the Hittite Empire, the Kassites of Babylonia, and the New Kingdom of Egypt, which was severely weakened.",
-          "severity": "low"
+          "excerpt": "javascript function validates email address,",
+          "description": "Incorrect phrasing and punctuation; it treats a descriptive phrase as a noun and ends with a random comma.",
+          "fix": "Change to 'JavaScript email validation functions'.",
+          "severity": "medium"
         }
       ],
-      "flow_issue": [
+      "punctuation": [
         {
-          "excerpt": "Sex is the phenotypic trait... Biology is the scientific study of life...",
-          "description": "The first two paragraphs are generic definitions of sex and biology that are completely irrelevant to the specific question about platypuses.",
-          "fix": "Remove the first two paragraphs entirely.",
-          "severity": "high"
+          "excerpt": "email address, further!",
+          "description": "Incorrect comma placement before 'further'.",
+          "fix": "Remove the comma.",
+          "severity": "low"
         }
       ]
     },
     "module_counts": {
-      "parser.py (fact extraction), cleaner.py": 9,
-      "knowledge retrieval, parser.py": 3,
-      "essay.py (_clean_fragments), parser.py": 2,
-      "fluency.py (filler dedup), essay.py (_deduplicate_facts)": 1,
+      "parser.py (fact extraction), cleaner.py": 15,
+      "essay.py (_clean_fragments), parser.py": 7,
+      "knowledge retrieval, parser.py": 5,
+      "fluency.py (filler dedup), essay.py (_deduplicate_facts)": 3,
+      "discourse.py, combine.py": 3,
+      "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)": 2,
+      "realize.py (templates), fluency.py": 1,
+      "realize.py (templates), combine.py": 1,
       "fluency.py, realize.py": 1,
-      "discourse.py, combine.py": 1
+      "fluency.py (cleanup), realize.py": 1
     },
     "module_examples": {
       "parser.py (fact extraction), cleaner.py": [
         {
           "type": "missing_info",
-          "excerpt": "The entire response",
-          "fix": "Explain the concept of 'anemoia' and the psychological reasons behind it, such as media influence and romanticization."
+          "excerpt": "entire response",
+          "fix": "Add a detailed explanation of the purposes of dreaming and the leading scientific theories."
         },
         {
           "type": "missing_info",
-          "excerpt": "The uncanny valley effect is a hypothesized psychological and aesthetic relation",
-          "fix": "Add explanations regarding why this happens, such as the brain's sensitivity to subtle imperfections in human movement or facial symmetry."
+          "excerpt": "Write me a detailed essay",
+          "fix": "Rewrite the content into a formal essay format."
         },
         {
           "type": "missing_info",
           "excerpt": "The entire response",
-          "fix": "Add a concluding paragraph explaining that while nihilism posits that life has no intrinsic meaning, existentialism suggests that individuals can create their own meaning."
-        }
-      ],
-      "fluency.py (filler dedup), essay.py (_deduplicate_facts)": [
-        {
-          "type": "repetition",
-          "excerpt": "It is often described as",
-          "fix": "Vary the sentence structure; e.g., 'It is also characterized as...'"
+          "fix": "Implement the specific logic requested by the user."
         }
       ],
       "essay.py (_clean_fragments), parser.py": [
         {
           "type": "incomplete_sentence",
-          "excerpt": "Such tasks are not necessarily useful for \"",
-          "fix": "Complete the sentence, e.g., \"Such tasks are not necessarily useful for practical real-world applications.\""
+          "excerpt": "and the efficiency of the civil administrati",
+          "fix": "Complete the word to 'administration' and finish the sentence/essay."
         },
         {
           "type": "incomplete_sentence",
-          "excerpt": "The platypus (Ornithorhynchus anatinus), sometimes referred to as the \"",
-          "fix": "Complete the sentence or remove the fragment."
-        }
-      ],
-      "knowledge retrieval, parser.py": [
-        {
-          "type": "factual_error",
-          "excerpt": "In JavaScript, there are several ways to merge two arrays.",
-          "fix": "Provide a response explaining how to use try-except blocks in Python for API error handling."
+          "excerpt": "background: #1a1a4e;\n       \"",
+          "fix": "Complete the CSS, close the style tag, add the HTML body content (grid and form), and close the HTML tags."
         },
         {
-          "type": "factual_error",
-          "excerpt": "In JavaScript, there are several ways to merge two arrays.",
-          "fix": "Provide a guide on using 'display: grid', 'grid-template-columns', and 'repeat(auto-fit, ...)' for responsive layouts."
-        },
-        {
-          "type": "factual_error",
-          "excerpt": "In JavaScript, there are several ways to merge two arrays.",
-          "fix": "Provide an explanation and implementation of a Binary Search Tree instead of array merging."
+          "type": "incomplete_sentence",
+          "excerpt": "Positive parenting is par",
+          "fix": "Complete the sentence or remove the irrelevant section."
         }
       ],
-      "fluency.py, realize.py": [
+      "fluency.py (filler dedup), essay.py (_deduplicate_facts)": [
         {
-          "type": "grammar",
-          "excerpt": "including the Mycenaean Greeks, the Hittite Empire, the Kassites of Babylonia, a",
-          "fix": "including the Mycenaean Greeks, the Hittite Empire, the Kassites of Babylonia, and the New Kingdom of Egypt, which was severely weakened."
+          "type": "repetition",
+          "excerpt": "The fall of the Western Roman Empire, also called the fall of the Roman Empire",
+          "fix": "Remove the redundant definition and integrate the information into the main analysis."
+        },
+        {
+          "type": "repetition",
+          "excerpt": "likely due to a combination of genetic predisposition and early developmental pr",
+          "fix": "Combine these two points into a single explanation of the developmental process."
+        },
+        {
+          "type": "repetition",
+          "excerpt": "javascript function validates email address",
+          "fix": "Use pronouns or varied terminology."
         }
       ],
       "discourse.py, combine.py": [
         {
           "type": "flow_issue",
-          "excerpt": "Sex is the phenotypic trait... Biology is the scientific study of life...",
-          "fix": "Remove the first two paragraphs entirely."
+          "excerpt": "Key causes included: the Crisis of the Third Century",
+          "fix": "Use transitional phrases to connect these points into cohesive paragraphs."
+        },
+        {
+          "type": "flow_issue",
+          "excerpt": "Writing is the act of creating a persistent...",
+          "fix": "Remove the entire section regarding writing."
+        },
+        {
+          "type": "flow_issue",
+          "excerpt": "destroying several major civilizations including the Mycenaean Greeks, the Hitti",
+          "fix": "change to '...the Kassites of Babylonia, and the New Kingdom of Egypt, which was severely weakened.'"
+        }
+      ],
+      "knowledge retrieval, parser.py": [
+        {
+          "type": "factual_error",
+          "excerpt": "extremely isolated inhabited places include... Campbell Island",
+          "fix": "Remove Campbell Island from the list of inhabited places."
+        },
+        {
+          "type": "factual_error",
+          "excerpt": "Here's a Python function that takes a list of integers, removes duplicates",
+          "fix": "Rewrite the function to filter strings shorter than five characters and sort them alphabetically."
+        },
+        {
+          "type": "factual_error",
+          "excerpt": "grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));",
+          "fix": "Use column-count or a JavaScript library like Masonry.js, or use CSS columns to achieve a true masonry layout."
+        }
+      ],
+      "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)": [
+        {
+          "type": "template_artifact",
+          "excerpt": "Let me provide a thorough explanation of give detailed explanation quantum entan",
+          "fix": "Let me provide a thorough explanation of quantum entanglement."
+        },
+        {
+          "type": "template_artifact",
+          "excerpt": "Great, let me expand on javascript function validates email address, further!",
+          "fix": "Remove the template and answer the prompt directly."
+        }
+      ],
+      "realize.py (templates), fluency.py": [
+        {
+          "type": "word_choice",
+          "excerpt": "What Is give detailed explanation quantum entanglement?",
+          "fix": "What is quantum entanglement?"
+        }
+      ],
+      "realize.py (templates), combine.py": [
+        {
+          "type": "awkward_phrasing",
+          "excerpt": "give detailed explanation quantum entanglement is a multifaceted subject",
+          "fix": "Quantum entanglement is a multifaceted subject"
+        }
+      ],
+      "fluency.py, realize.py": [
+        {
+          "type": "grammar",
+          "excerpt": "javascript function validates email address,",
+          "fix": "Change to 'JavaScript email validation functions'."
+        }
+      ],
+      "fluency.py (cleanup), realize.py": [
+        {
+          "type": "punctuation",
+          "excerpt": "email address, further!",
+          "fix": "Remove the comma."
         }
       ]
     },
     "worst_cases": [
       {
-        "query": "Why is the platypus such a biological anomaly?",
-        "score": 4.2,
+        "query": "Who is considered the father of conceptual art and why?",
+        "score": 1.0,
         "mistakes": 3,
         "high_severity": 2,
-        "feedback": "The response is highly disjointed, containing irrelevant introductory paragraphs about general biology and ending abruptly in an incomplete sentence. It fails to directly answer 'why' the platypus is "
+        "feedback": "The assistant completely failed to answer the user's question. Instead of identifying the father of conceptual art (e.g., Marcel Duchamp or Sol LeWitt), it provided a generic, encyclopedic definition "
       },
       {
-        "query": "How do I handle API errors using try-except blocks in Python?",
-        "score": 4.6,
-        "mistakes": 2,
+        "query": "Write a JavaScript function that validates an email address, checks if the domain is on a blacklist, and then formats the string to be lowercase.",
+        "score": 1.6,
+        "mistakes": 5,
         "high_severity": 2,
-        "feedback": "The assistant completely ignored the user's prompt. The user asked about Python API error handling, but the assistant provided a detailed guide on merging arrays in JavaScript."
+        "feedback": "The assistant completely failed to provide the requested code. It produced a generic, repetitive, and nonsensical template response that does not address the user's prompt."
       },
       {
-        "query": "What is the most efficient way to implement a binary search tree?",
-        "score": 4.6,
-        "mistakes": 2,
-        "high_severity": 2,
-        "feedback": "The assistant completely failed to answer the user's question. The user asked about implementing a Binary Search Tree, but the assistant provided a detailed guide on merging arrays in JavaScript."
+        "query": "Give me a detailed explanation of how quantum entanglement works, including the EPR paradox, the concept of superposition, and how it differs from classical correlation.",
+        "score": 2.0,
+        "mistakes": 6,
+        "high_severity": 6,
+        "feedback": "The response is a catastrophic failure. It uses a generic template and fails to provide any actual information about quantum entanglement, instead repeating the user's prompt as a noun phrase througho"
       },
       {
-        "query": "How to create a responsive grid layout using CSS Grid?",
-        "score": 6.4,
-        "mistakes": 2,
-        "high_severity": 2,
-        "feedback": "The assistant completely ignored the user's request. The user asked about CSS Grid layouts, but the assistant provided a detailed guide on merging arrays in JavaScript. This is a critical failure in i"
+        "query": "How to implement a custom hook in React to handle window resizing?",
+        "score": 2.0,
+        "mistakes": 3,
+        "high_severity": 3,
+        "feedback": "The assistant completely failed to answer the user's request. The user asked for a window resizing hook, but the assistant provided a data fetching hook. Additionally, the response ends mid-sentence."
       },
       {
-        "query": "Why do some people have such strong nostalgia for eras they never actually lived through?",
-        "score": 6.6,
-        "mistakes": 2,
-        "high_severity": 1,
-        "feedback": "The assistant failed to answer the specific question asked. The user asked WHY people feel nostalgia for eras they didn't live through (anemoia), but the assistant provided a generic definition of nos"
+        "query": "Write a detailed comparison of Stoicism and Epicureanism, focusing on their differing views on pleasure, the role of emotion in a virtuous life, and their respective approaches to handling grief.",
+        "score": 3.0,
+        "mistakes": 3,
+        "high_severity": 3,
+        "feedback": "The response is a catastrophic failure. It provides basic definitions of the two philosophies but fails to compare them as requested. Most critically, it suffers from a severe hallucination/drift wher"
       }
     ]
   },
   "cases": [
     {
-      "query": "How do I read a file in Python?",
-      "response": "To read a file in Python, you can use the built-in `open()` function with a context manager (the `with` statement). Here is the most common approach:\n\n```python\n# Read entire file at once\nwith open('filename.txt', 'r') as file:\n    content = file.read()\n    print(content)\n\n# Read line by line\nwith open('filename.txt', 'r') as file:\n    for line in file:\n        print(line.strip())\n\n# Read all lines into a list\nwith open('filename.txt', 'r') as file:\n    lines = file.readlines()\n\n# Read with explicit encoding\nwith open('filename.txt', 'r', encoding='utf-8') as file:\n    content = file.read()\n```\n\nThe `'r'` mode opens the file for reading (text mode). The context manager (`with`) automatically closes the file when done, which is the recommended practice. For binary files, use `'rb'` mode. You can also specify an encoding like `encoding='utf-8'` to handle text files with specific character encodings.",
-      "time": 0.13,
+      "query": "Why do we dream and what is the leading scientific theory on why it happens?",
+      "response": "A dream is a succession of images, dynamic scenes and situations, ideas, emotions, and sensations that usually occur involuntarily in the mind during certain stages of sleep. Humans spend more than two hours dreaming per night, and each dream lasts around 5\u201320 minutes.",
+      "time": 0.18,
+      "scores": {
+        "naturalness": 8,
+        "informativeness": 2,
+        "coherence": 10,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 8.0
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "entire response",
+          "description": "The assistant failed to explain why we dream or mention any scientific theories (e.g., activation-synthesis or memory consolidation).",
+          "suggested_fix": "Add a detailed explanation of the purposes of dreaming and the leading scientific theories.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The assistant provided a definition of dreaming but completely failed to answer the core questions of the prompt: 'Why do we dream' and 'what is the leading scientific theory'."
+    },
+    {
+      "query": "How do I center a div both horizontally and vertically using only CSS Grid?",
+      "response": "CSS Grid provides several powerful ways to center a div both horizontally and vertically. The simplest method uses place-items on the parent container:\n\n```css\n.parent {\n    display: grid;\n    place-items: center;  /* Centers both horizontally and vertically */\n}\n```\n\nThis is equivalent to setting both align-items: center and justify-items: center. For more control:\n\n```css\n.parent {\n    display: grid;\n    align-items: center;  /* Vertical centering */\n    justify-items: center;  /* Horizontal centering */\n}\n```\n\nYou can also use place-self on the child element:\n```css\n.child {\n    place-self: center;  /* Centers within the grid cell */\n}\n```\n\nOr use margin: auto on the child within a grid:\n```css\n.parent {\n    display: grid;\n}\n.child {\n    margin: auto;  /* Centers both axes */\n}\n```\n\nCSS Grid is one of the most reliable methods for centering content, working well for both single elements and complex layouts.",
+      "time": 0.01,
       "scores": {
         "naturalness": 10,
         "informativeness": 10,
@@ -232,428 +390,283 @@
         "average": 10.0
       },
       "mistakes": [],
-      "raw_feedback": "The response is technically accurate, well-structured, and follows Python best practices. No linguistic or factual errors were found."
+      "raw_feedback": "The response is technically accurate, concise, and well-structured. It provides multiple valid CSS Grid methods for centering a div."
     },
     {
-      "query": "Why do some people have such strong nostalgia for eras they never actually lived through?",
-      "response": "Nostalgia is an emotion which is often described as a bittersweet longing for the past, typically for a period of time accompanied by happy memories or emotions. It is often described as a sort of sad pleasure, which typically involves longing for a past memory, whether real or romanticized, that cannot be recovered. It can also refer to a type of homesickness.",
-      "time": 0.57,
+      "query": "Write me a detailed essay on the fall of the Roman Empire, making sure to analyze both the internal political decay and the external pressures from barbarian tribes.",
+      "response": "The fall of the Western Roman Empire in 476 CE (traditionally marked by the deposition of Emperor Romulus Augustulus by the Germanic chieftain Odoacer) was caused by multiple interconnected factors over several centuries. Key causes included: the Crisis of the Third Century (235-284 CE), when the empire faced civil war, economic collapse, plague, and barbarian invasions, nearly destroying it. Diocletian's reforms temporarily stabilized the empire but divided it into administrative halves. Economic problems included inflation caused by debasing the currency, heavy taxation to support the military and bureaucracy, and a declining agricultural base. Military pressures mounted as Germanic tribes like the Visigoths, Vandals, and Ostrogoths were pushed into Roman territory by the Huns. The Battle of Adrianople (378 CE) saw a devastating Roman defeat by the Visigoths. The empire increasingly relied on barbarian mercenaries (foederati) who were often disloyal. Internal political instability meant frequent emperor assassinations and civil wars. The Eastern Roman Empire (Byzantine Empire) survived because it was wealthier, had shorter borders to defend, and its capital Constantinople was more defensible. The western provinces were poorer and more exposed to invasions. The fall of the Western Roman Empire, also called the fall of the Roman Empire or the fall of Rome, was the loss of central political control in the Western Roman Empire, a process in which the Empire failed to enforce its rule, and its vast territory was divided among several successor polities. The Roman Empire lost the strengths that had allowed it to exercise effective control over its Western provinces; modern historians posit factors including the effectiveness and numbers of the army, the health and numbers of the Roman population, the strength of the economy, the competence of the emperors, the internal struggles for power, the religious changes of the period, and the efficiency of the civil administrati",
+      "time": 1.22,
       "scores": {
-        "naturalness": 6,
-        "informativeness": 2,
-        "coherence": 8,
+        "naturalness": 4,
+        "informativeness": 6,
+        "coherence": 5,
         "correctness": 10,
-        "conciseness": 7,
+        "conciseness": 8,
         "average": 6.6
       },
       "mistakes": [
         {
           "mistake_type": "missing_info",
           "severity": "high",
-          "excerpt": "The entire response",
-          "description": "The assistant defines nostalgia but fails to address the core of the user's question regarding nostalgia for unlived eras.",
-          "suggested_fix": "Explain the concept of 'anemoia' and the psychological reasons behind it, such as media influence and romanticization.",
+          "excerpt": "Write me a detailed essay",
+          "description": "The assistant provided a summary/list of facts rather than a structured essay with an introduction, body paragraphs, and a conclusion.",
+          "suggested_fix": "Rewrite the content into a formal essay format.",
           "likely_module": "parser.py (fact extraction), cleaner.py"
         },
         {
-          "mistake_type": "repetition",
-          "severity": "low",
-          "excerpt": "It is often described as",
-          "description": "The phrase 'often described as' is used in two consecutive sentences, creating a repetitive and robotic flow.",
-          "suggested_fix": "Vary the sentence structure; e.g., 'It is also characterized as...'",
-          "likely_module": "fluency.py (filler dedup), essay.py (_deduplicate_facts)"
-        }
-      ],
-      "raw_feedback": "The assistant failed to answer the specific question asked. The user asked WHY people feel nostalgia for eras they didn't live through (anemoia), but the assistant provided a generic definition of nostalgia in general."
-    },
-    {
-      "query": "How does a quantum computer actually differ from a classical one?",
-      "response": "A quantum computer is a computer that represents and processes information using quantum states. Quantum computations exploit phenomena such as superposition, interference, and entanglement. Quantum computers have the potential to complete some calculations exponentially faster than classical computers. For example, a large-scale quantum computer could break widely used encryption schemes and aid physicists in performing physical simulations. However, current hardware implementations of quantum computation are largely experimental and suitable for only certain specialized tasks.\nThe basic unit of information in quantum computing, the qubit (quantum bit), serves a similar function as the bit in ordinary or \"classical\" computing. Unlike a classical bit, which can be in one of two states (a binary), a qubit can exist in a linear combination of states known as a quantum superposition. The result of measuring a qubit is one of the two states, given by a probabilistic rule. If a quantum computer manipulates the qubit in a particular way, wave interference effects amplify the probability of the desired measurement result. Quantum algorithm design involves creating procedures that allow a quantum computer to perform this amplification.\nQuantum computers are not yet practical for real-world applications. If a physical qubit is not sufficiently isolated from its environment, it suffers from quantum decoherence, introducing noise (error) into calculations. Governments have invested in research aimed at developing qubits with longer coherence times and lower error rates. Example implementations include superconductors (which isolate an electrical current by eliminating electrical resistance) and ion traps (which confine a single atomic particle using electromagnetic fields). Researchers have claimed that quantum devices can outperform classical computers on specific tasks, a metric referred to as quantum advantage or quantum supremacy. Such tasks are not necessarily useful for ",
-      "time": 1.53,
-      "scores": {
-        "naturalness": 9,
-        "informativeness": 8,
-        "coherence": 8,
-        "correctness": 10,
-        "conciseness": 9,
-        "average": 8.8
-      },
-      "mistakes": [
-        {
           "mistake_type": "incomplete_sentence",
           "severity": "high",
-          "excerpt": "Such tasks are not necessarily useful for \"",
-          "description": "The response cuts off mid-sentence at the very end.",
-          "suggested_fix": "Complete the sentence, e.g., \"Such tasks are not necessarily useful for practical real-world applications.\"",
+          "excerpt": "and the efficiency of the civil administrati",
+          "description": "The response cuts off abruptly at the end of the final sentence.",
+          "suggested_fix": "Complete the word to 'administration' and finish the sentence/essay.",
           "likely_module": "essay.py (_clean_fragments), parser.py"
+        },
+        {
+          "mistake_type": "repetition",
+          "severity": "medium",
+          "excerpt": "The fall of the Western Roman Empire, also called the fall of the Roman Empire",
+          "description": "The text repeats the definition of the event in a way that sounds like a Wikipedia copy-paste, breaking the flow of the narrative.",
+          "suggested_fix": "Remove the redundant definition and integrate the information into the main analysis.",
+          "likely_module": "fluency.py (filler dedup), essay.py (_deduplicate_facts)"
+        },
+        {
+          "mistake_type": "flow_issue",
+          "severity": "medium",
+          "excerpt": "Key causes included: the Crisis of the Third Century",
+          "description": "The transition from a narrative introduction to a list-like structure is jarring and not appropriate for an essay.",
+          "suggested_fix": "Use transitional phrases to connect these points into cohesive paragraphs.",
+          "likely_module": "discourse.py, combine.py"
         }
       ],
-      "raw_feedback": "The response is technically accurate and well-written, but it ends abruptly with an incomplete sentence."
+      "raw_feedback": "The assistant failed to follow the primary instruction to write an 'essay'. Instead, it provided a series of disjointed paragraphs and a list of facts. Most critically, the response ends mid-sentence, indicating a technical cutoff."
     },
     {
-      "query": "What causes the \"uncanny valley\" effect when looking at CGI humans?",
-      "response": "The uncanny valley effect is a hypothesized psychological and aesthetic relation between an object's degree of resemblance to a human being and the emotional response to the object. The uncanny valley hypothesis predicts that an entity appearing almost human will elicit uncanny or eerie feelings in viewers.",
-      "time": 0.58,
+      "query": "What is the most remote inhabited place on Earth?",
+      "response": "The most isolated inhabited place on Earth is generally considered to be Tristan da Cunha, a volcanic island in the South Atlantic Ocean. Located roughly 2,400 kilometers (1,500 miles) west of Cape Town, South Africa, and 3,360 kilometers (2,090 miles) east of Rio de Janeiro, Brazil, it's the most remote island in the world with a permanent population. The island has about 250 year-round residents who live in the settlement of Edinburgh of the Seven Seas. Supplies arrive only every six weeks by ship from Cape Town, and the nearest other inhabited land is over 2,000 kilometers away. In addition, extremely isolated inhabited places include Easter Island, Pitcairn Island, and Campbell Island, but Tristan da Cunha holds the record for the greatest distance from any other human settlement.",
+      "time": 0.03,
       "scores": {
-        "naturalness": 7,
-        "informativeness": 4,
+        "naturalness": 10,
+        "informativeness": 10,
         "coherence": 10,
-        "correctness": 10,
+        "correctness": 9,
         "conciseness": 10,
-        "average": 8.2
+        "average": 9.8
       },
       "mistakes": [
         {
-          "mistake_type": "missing_info",
-          "severity": "high",
-          "excerpt": "The uncanny valley effect is a hypothesized psychological and aesthetic relation",
-          "description": "The assistant defines the effect but does not explain the causes (e.g., cognitive dissonance, pathogen avoidance, or violation of expectations) as requested by the user.",
-          "suggested_fix": "Add explanations regarding why this happens, such as the brain's sensitivity to subtle imperfections in human movement or facial symmetry.",
-          "likely_module": "parser.py (fact extraction), cleaner.py"
+          "mistake_type": "factual_error",
+          "severity": "low",
+          "excerpt": "extremely isolated inhabited places include... Campbell Island",
+          "description": "Campbell Island is not permanently inhabited; it only has a rotating staff of scientists/personnel.",
+          "suggested_fix": "Remove Campbell Island from the list of inhabited places.",
+          "likely_module": "knowledge retrieval, parser.py"
         }
       ],
-      "raw_feedback": "The response is technically accurate but fails to answer the 'what causes' part of the user's question, providing only a definition of the effect rather than its causes."
+      "raw_feedback": "The response is highly accurate, well-structured, and natural. There is one minor factual inaccuracy regarding Campbell Island."
     },
     {
-      "query": "How to write a function in JavaScript?",
-      "response": "JavaScript has several ways to define functions. The traditional `function` declaration is hoisted (usable before declaration). Function expressions assign a function to a variable but are NOT hoisted. Arrow functions (ES6+) provide a concise syntax and inherit `this` from the enclosing scope rather than creating their own. For named functions that need recursion or debugging, use declarations or named expressions. For short callbacks, use arrows.\n\n```javascript\n// Function declaration (hoisted)\nfunction greet(name) {\n    return `Hello, ${name}!`;\n}\nconsole.log(greet('World'));  // 'Hello, World!'\n\n// Function expression (not hoisted)\nconst greetExpr = function(name) {\n    return `Hello, ${name}!`;\n};\n\n// Arrow function\nconst greetArrow = (name) => {\n    return `Hello, ${name}!`;\n};\n\n// Shorthand arrow (single expression, implicit return)\nconst greetShort = name => `Hello, ${name}!`;\n\n// Functions as callbacks\nconst numbers = [1, 2, 3];\nconst doubled = numbers.map(n => n * 2);  // [2, 4, 6]\n\n// Default parameters\nfunction multiply(a, b = 1) {\n    return a * b;\n}\nmultiply(5);     // 5\nmultiply(5, 2);  // 10\n```",
-      "time": 0.0,
+      "query": "Write a Python function that takes a list of strings, filters out those shorter than five characters, and returns the remaining strings sorted alphabetically.",
+      "response": "Here's a Python function that takes a list of integers, removes duplicates, returns sorted unique values, and handles errors gracefully:\n\n```python\ndef deduplicate_and_sort_integers(numbers):\n    \"\"\"Remove duplicates from a list of integers, sort ascending.\n    \n    Args:\n        numbers: A list of integers (or values that can be converted to int)\n    \n    Returns:\n        A sorted list of unique integers\n    \n    Raises:\n        TypeError: If input is not a list\n        ValueError: If elements cannot be converted to integers\n    \"\"\"\n    # Validate input type\n    if not isinstance(numbers, list):\n        raise TypeError(\"Input must be a list\")\n    \n    # Convert and validate each element\n    try:\n        integers = [int(x) for x in numbers]\n    except (ValueError, TypeError) as e:\n        raise ValueError(f\"All elements must be convertible to integers: {e}\")\n    \n    # Remove duplicates and sort\n    return sorted(set(integers))\n\n# Example usage:\ntry:\n    result = deduplicate_and_sort_integers([5, 3, 8, 3, 1, 5, 9])\n    print(result)  # [1, 3, 5, 8, 9]\n    \n    result = deduplicate_and_sort_integers('not a list')  # TypeError\nexcept (TypeError, ValueError) as e:\n    print(f\"Error: {e}\")\n```\n\nThe function uses `set()` for deduplication and `sorted()` for sorting. It validates that the input is a list and that all elements can be converted to integers, raising descriptive errors for invalid inputs.",
+      "time": 0.04,
       "scores": {
         "naturalness": 10,
-        "informativeness": 10,
-        "coherence": 10,
-        "correctness": 10,
+        "informativeness": 1,
+        "coherence": 1,
+        "correctness": 1,
         "conciseness": 10,
-        "average": 10.0
-      },
-      "mistakes": [],
-      "raw_feedback": "The response is technically accurate, well-structured, and covers all primary ways to define functions in modern JavaScript with clear examples."
-    },
-    {
-      "query": "Tell me about the most isolated inhabited place on Earth.",
-      "response": "The most isolated inhabited place on Earth is generally considered to be Tristan da Cunha, a volcanic island in the South Atlantic Ocean. Located roughly 2,400 kilometers (1,500 miles) west of Cape Town, South Africa, and 3,360 kilometers (2,090 miles) east of Rio de Janeiro, Brazil, it is the most remote permanently inhabited island in the world. The island has about 250 year-round residents who live in the settlement of Edinburgh of the Seven Seas. Supplies arrive only every six weeks by ship from Cape Town, and the nearest other inhabited land is over 2,000 kilometers away. Other extremely isolated inhabited places include Easter Island (Rapa Nui) in the Pacific, famous for its moai statues with around 7,700 residents, and Pitcairn Island with only about 50 residents. While Tristan da Cunha holds the record for the greatest distance from any other human settlement, Greenland and the remote islands of the Faroe archipelago, Svalbard, and St. Helena are also among the world's most isolated inhabited territories.",
-      "time": 0.01,
-      "scores": {
-        "naturalness": 10,
-        "informativeness": 10,
-        "coherence": 10,
-        "correctness": 10,
-        "conciseness": 10,
-        "average": 10.0
-      },
-      "mistakes": [],
-      "raw_feedback": "The response is accurate, well-structured, and provides the correct information regarding Tristan da Cunha and other remote locations. No linguistic or factual errors were found."
-    },
-    {
-      "query": "What is the philosophical difference between nihilism and existentialism?",
-      "response": "Existentialism is a family of philosophical views and inquiry that explore the human individual's struggle to lead an authentic life despite the apparent absurdity or incomprehensibility of existence. In examining meaning, purpose, and value, existentialist thought often includes concepts such as existential crises, angst, courage, and freedom.\n\nNihilism is a family of philosophical views that reject the existence of any objectively meaningful purpose, moral value, truth, or knowledge. Nihilistic views span several branches of philosophy, including ethics, value theory, epistemology, and metaphysics. Nihilism is also described as a broad cultural phenomenon or historical movement that pervades modernity in the Western world.",
-      "time": 3.02,
-      "scores": {
-        "naturalness": 8,
-        "informativeness": 6,
-        "coherence": 9,
-        "correctness": 10,
-        "conciseness": 9,
-        "average": 8.4
+        "average": 4.6
       },
       "mistakes": [
+        {
+          "mistake_type": "factual_error",
+          "severity": "high",
+          "excerpt": "Here's a Python function that takes a list of integers, removes duplicates",
+          "description": "The assistant ignored the user's request for string filtering and instead wrote a function for integer deduplication.",
+          "suggested_fix": "Rewrite the function to filter strings shorter than five characters and sort them alphabetically.",
+          "likely_module": "knowledge retrieval, parser.py"
+        },
         {
           "mistake_type": "missing_info",
           "severity": "high",
           "excerpt": "The entire response",
-          "description": "The assistant defines the two terms separately but never explicitly explains the difference or the relationship between them (e.g., that existentialism is often a response to nihilism).",
-          "suggested_fix": "Add a concluding paragraph explaining that while nihilism posits that life has no intrinsic meaning, existentialism suggests that individuals can create their own meaning.",
+          "description": "The response is missing the logic to filter strings by length (>= 5) and the logic to sort strings alphabetically.",
+          "suggested_fix": "Implement the specific logic requested by the user.",
           "likely_module": "parser.py (fact extraction), cleaner.py"
         }
       ],
-      "raw_feedback": "The response provides accurate definitions of both terms but fails to directly answer the user's request for the 'difference' between them. It defines them in isolation rather than synthesizing the philosophical contrast."
+      "raw_feedback": "The assistant completely failed to address the user's prompt. It provided a function for deduplicating integers instead of filtering and sorting strings based on length."
     },
     {
-      "query": "How do I sort a list in Python?",
-      "response": "To sort a list in Python, you have two main options: the `sort()` method (modifies the list in-place) and the `sorted()` function (returns a new sorted list).\n\n```python\n# The sort() method sorts the list in-place (modifies the original)\nnumbers = [3, 1, 4, 1, 5, 9, 2, 6]\nnumbers.sort()\nprint(numbers)  # [1, 1, 2, 3, 4, 5, 6, 9]\n\n# Sort in descending order\nnumbers.sort(reverse=True)\nprint(numbers)  # [9, 6, 5, 4, 3, 2, 1, 1]\n\n# The sorted() function returns a new sorted list\nnames = ['Charlie', 'Alice', 'Bob', 'David']\nsorted_names = sorted(names)\nprint(sorted_names)  # ['Alice', 'Bob', 'Charlie', 'David']\nprint(names)  # Original is unchanged: ['Charlie', 'Alice', 'Bob', 'David']\n\n# Sort with a custom key (e.g., by length)\nwords = ['apple', 'kiwi', 'banana', 'cherry']\nwords.sort(key=len)\nprint(words)  # ['kiwi', 'apple', 'cherry', 'banana']\n\n# Sort list of dictionaries by a key\npeople = [{'name': 'Alice', 'age': 30}, {'name': 'Bob', 'age': 25}]\npeople.sort(key=lambda p: p['age'])\nprint(people)  # [{'name': 'Bob', 'age': 25}, {'name': 'Alice', 'age': 30}]\n```\n\nKey differences: `list.sort()` modifies the original list and returns None (it's in-place), while `sorted()` works on any iterable and returns a new list. Use `reverse=True` for descending order. Use the `key` parameter for custom sort logic like sorting by string length, a dictionary field, or a custom function.",
-      "time": 0.0,
+      "query": "Give me a detailed explanation of how quantum entanglement works, including the EPR paradox, the concept of superposition, and how it differs from classical correlation.",
+      "response": "Let me provide a thorough explanation of give detailed explanation quantum entanglement.\n\n**What Is give detailed explanation quantum entanglement?**\ngive detailed explanation quantum entanglement is a multifaceted subject that encompasses a range of concepts, principles, and applications. To understand it fully, we need to examine it from several angles.\n\n**The Fundamentals**\nAt its core, give detailed explanation quantum entanglement rests on several foundational principles. These include the basic mechanisms that govern how it operates, the key entities involved, and the relationships between them. Understanding these fundamentals is essential before exploring more advanced aspects.\n\n**How It Works**\nThe operation of give detailed explanation quantum entanglement involves a series of interconnected processes. These can be broken down into discrete steps, each building on the previous one. The system as a whole exhibits properties that emerge from the interaction of its parts, creating complexity from relatively simple rules.\n\n**Important Nuances**\nSeveral important nuances deserve attention:\n1. give detailed explanation quantum entanglement is not static \u2014 it evolves with new discoveries and perspectives\n2. There are different schools of thought within this domain\n3. Practical applications often reveal complexities not apparent in theory\n\n**Broader Implications**\nUnderstanding give detailed explanation quantum entanglement has implications that extend beyond the subject itself. It connects to other fields, informs decision-making, and provides a framework for thinking about related problems.\n\nI hope this detailed explanation helps! Feel free to ask about any aspect you'd like me to expand on further.",
+      "time": 0.02,
       "scores": {
-        "naturalness": 10,
-        "informativeness": 10,
-        "coherence": 10,
-        "correctness": 10,
-        "conciseness": 10,
-        "average": 10.0
+        "naturalness": 1,
+        "informativeness": 1,
+        "coherence": 2,
+        "correctness": 1,
+        "conciseness": 5,
+        "average": 2.0
       },
-      "mistakes": [],
-      "raw_feedback": "The response is technically accurate, well-structured, and provides comprehensive examples covering the most common use cases for sorting in Python."
+      "mistakes": [
+        {
+          "mistake_type": "template_artifact",
+          "severity": "high",
+          "excerpt": "Let me provide a thorough explanation of give detailed explanation quantum entan",
+          "description": "The assistant has inserted the user's prompt instructions directly into the sentence structure, creating a nonsensical phrase.",
+          "suggested_fix": "Let me provide a thorough explanation of quantum entanglement.",
+          "likely_module": "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "The Fundamentals",
+          "description": "The section contains zero actual information about quantum physics, superposition, or entanglement.",
+          "suggested_fix": "Explain the concept of quantum states and wavefunctions.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "How It Works",
+          "description": "The section describes 'interconnected processes' without naming or explaining any of them.",
+          "suggested_fix": "Explain how particles become entangled and the collapse of the wavefunction.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "The entire response",
+          "description": "The assistant completely ignored the specific requests for the EPR paradox, superposition, and classical correlation.",
+          "suggested_fix": "Include detailed sections on the EPR paradox, superposition, and Bell's Theorem.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "word_choice",
+          "severity": "high",
+          "excerpt": "What Is give detailed explanation quantum entanglement?",
+          "description": "Incorrect use of the prompt as a subject; grammatically incoherent.",
+          "suggested_fix": "What is quantum entanglement?",
+          "likely_module": "realize.py (templates), fluency.py"
+        },
+        {
+          "mistake_type": "awkward_phrasing",
+          "severity": "high",
+          "excerpt": "give detailed explanation quantum entanglement is a multifaceted subject",
+          "description": "The response treats the instruction 'give detailed explanation' as part of the name of the subject.",
+          "suggested_fix": "Quantum entanglement is a multifaceted subject",
+          "likely_module": "realize.py (templates), combine.py"
+        }
+      ],
+      "raw_feedback": "The response is a catastrophic failure. It uses a generic template and fails to provide any actual information about quantum entanglement, instead repeating the user's prompt as a noun phrase throughout the text."
     },
     {
-      "query": "Why is the sky blue on Earth but red on Mars?",
-      "response": "The sky appears blue because of a phenomenon called Rayleigh scattering. Sunlight is made up of all colors of light, each with different wavelengths. Blue light has a shorter wavelength and is scattered more strongly by the molecules in Earth's atmosphere than longer wavelengths like red and orange. When you look up at the sky, you see the blue light that has been scattered in all directions. At sunrise and sunset, sunlight passes through more atmosphere, scattering away even more blue light and leaving the reds and oranges that we see. The same scattering effect is why the sky looks hazy or white on humid days \u2014 water droplets in the air scatter all colors equally, creating a white appearance.",
-      "time": 0.01,
+      "query": "How did the invention of the printing press specifically change the religious landscape of Europe?",
+      "response": "The printing press was invented by Johannes Gutenberg in Mainz, Germany, around 1440 CE. His revolutionary innovation was the movable type printing press, which combined several existing technologies: a wine press mechanism, oil-based ink, and individual metal type pieces that could be rearranged and reused. Gutenberg's first major publication was the Gutenberg Bible (1455), printed in Latin. The printing press had an enormous impact on European and world history. It made books affordable and accessible for the first time \u2014 before Gutenberg, books were hand-copied by scribes and cost as much as a farm. By 1500, printers across Europe had produced over 20 million books. This democratization of knowledge directly enabled the Renaissance, the Reformation (Martin Luther's 95 Theses were mass-produced and spread across Europe in weeks), the Scientific Revolution (scientists could share findings and build on each other's work), and the Age of Enlightenment (ideas about democracy, rights, and reason spread to a mass audience). The printing press standardized languages, reduced the power of religious and political elites who controlled information, enabled widespread literacy, created new industries and jobs, and fundamentally changed how knowledge was preserved and transmitted. Historians consider it one of the most important inventions in human history, comparable to writing itself or the internet.",
+      "time": 0.03,
       "scores": {
-        "naturalness": 10,
-        "informativeness": 4,
+        "naturalness": 9,
+        "informativeness": 6,
         "coherence": 10,
         "correctness": 10,
-        "conciseness": 9,
+        "conciseness": 8,
         "average": 8.6
       },
       "mistakes": [
         {
           "mistake_type": "missing_info",
           "severity": "high",
-          "excerpt": "The entire response",
-          "description": "The assistant failed to explain why the sky is red on Mars, which was a core part of the user's prompt.",
-          "suggested_fix": "Add a section explaining that Mars' atmosphere is thin and filled with dust (iron oxide), which scatters light differently, making the sky appear reddish-pink.",
+          "excerpt": "The printing press had an enormous impact on European and world history.",
+          "description": "The response provides a general overview of the printing press's impact rather than focusing specifically on the religious landscape as requested.",
+          "suggested_fix": "Expand on the shift from Latin to vernacular Bibles, the rise of individual interpretation of scripture, and the challenge to the Catholic Church's monopoly on salvation.",
           "likely_module": "parser.py (fact extraction), cleaner.py"
         }
       ],
-      "raw_feedback": "The assistant completely ignored the second half of the user's question regarding Mars, providing a detailed explanation for Earth but no information about Mars."
+      "raw_feedback": "The response is grammatically correct and factual, but it fails to answer the user's specific question. The user asked how it changed the 'religious landscape,' but the assistant provided a general history of the printing press, spending too much time on the Scientific Revolution, Enlightenment, and"
     },
     {
-      "query": "How do artists use perspective to create depth in a flat painting?",
-      "response": "Artists primarily use linear perspective to trick the eye into seeing a three-dimensional space on a flat surface. By establishing a horizon line and a single or multiple vanishing points, they can draw lines that converge as they recede into the distance. This creates a mathematical sense of scale where objects appear smaller and closer together the further away they are, which naturally guides the viewer's gaze deep into the composition.\n\nBeyond just lines, painters use atmospheric perspective and overlapping to enhance the feeling of depth. They often mute the colors and soften the edges of distant objects, mimicking how air and moisture blur the landscape in real life. By layering shapes so that one object partially hides another, they create a clear visual hierarchy of what is in the foreground versus the background, making the scene feel like a tangible environment rather than a flat image.",
-      "time": 11.73,
+      "query": "Create a single-page HTML portfolio for a freelance photographer using a dark-mode aesthetic, a responsive masonry grid layout for images, and a contact form at the bottom.",
+      "response": "Here is a responsive HTML page template with a dark theme that you can customize for Freelance Photographer:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Freelance Photographer</title>\n    <style>\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n        body {\n            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n            background: #0a0a2e;\n            color: #e0e0e0;\n            line-height: 1.6;\n            min-height: 100vh;\n        }\n        .container {\n            max-width: 1200px;\n            margin: 0 auto;\n            padding: 20px;\n        }\n        header {\n            background: linear-gradient(135deg, #1a1a4e, #0a0a2e);\n            padding: 40px 0;\n            text-align: center;\n            border-bottom: 2px solid #333;\n        }\n        header h1 { font-size: 2.5em; color: #fff; margin-bottom: 10px; }\n        nav {\n            background: #1a1a4e;\n            padding: 15px 0;\n        }\n        nav ul {\n            list-style: none;\n            display: flex;\n            justify-content: center;\n            gap: 30px;\n            flex-wrap: wrap;\n        }\n        nav a { color: #8ab4f8; text-decoration: none; font-weight: 500; }\n        nav a:hover { color: #fff; }\n        .grid {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n            gap: 20px;\n            padding: 40px 0;\n        }\n        .card {\n            background: #1a1a3e;\n            border-radius: 10px;\n            padding: 25px;\n            border: 1px solid #333;\n            transition: transform 0.3s;\n        }\n        .card:hover { transform: translateY(-5px); }\n        .card h3 { color: #8ab4f8; margin-bottom: 10px; }\n        footer {\n            text-align: center;\n            padding: 20px;\n            background: #1a1a4e;\n       ",
+      "time": 0.02,
       "scores": {
         "naturalness": 10,
-        "informativeness": 9,
-        "coherence": 10,
-        "correctness": 10,
+        "informativeness": 2,
+        "coherence": 5,
+        "correctness": 1,
         "conciseness": 10,
-        "average": 9.8
+        "average": 5.6
       },
-      "mistakes": [],
-      "raw_feedback": "The response is high-quality, accurate, and well-structured. It covers the primary methods of creating depth (linear, atmospheric, and overlapping) clearly and concisely."
+      "mistakes": [
+        {
+          "mistake_type": "incomplete_sentence",
+          "severity": "high",
+          "excerpt": "background: #1a1a4e;\n       \"",
+          "description": "The code block ends abruptly mid-CSS rule, leaving the HTML file unfinished and broken.",
+          "suggested_fix": "Complete the CSS, close the style tag, add the HTML body content (grid and form), and close the HTML tags.",
+          "likely_module": "essay.py (_clean_fragments), parser.py"
+        },
+        {
+          "mistake_type": "factual_error",
+          "severity": "medium",
+          "excerpt": "grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));",
+          "description": "The user specifically requested a 'masonry grid layout'. The assistant provided a standard CSS Grid, which creates uniform rows rather than a masonry effect.",
+          "suggested_fix": "Use column-count or a JavaScript library like Masonry.js, or use CSS columns to achieve a true masonry layout.",
+          "likely_module": "knowledge retrieval, parser.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "N/A",
+          "description": "The assistant completely omitted the requested contact form at the bottom of the page.",
+          "suggested_fix": "Add a <form> element with input fields and a submit button in the HTML body.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The response is critically flawed because the code block is truncated, leaving the HTML and CSS incomplete. Furthermore, the assistant failed to implement a 'masonry grid' as requested, instead providing a standard CSS grid."
     },
     {
-      "query": "How do I handle API errors using try-except blocks in Python?",
-      "response": "In JavaScript, there are several ways to merge two arrays. The most common and recommended approach is using the spread operator (`...`), which was introduced in ES6. You can merge arrays by spreading them into a new array literal: `const merged = [...array1, ...array2];`. This creates a new array containing all elements from array1 followed by all elements from array2. Another approach is the `concat()` method, which is available on all arrays: `const merged = array1.concat(array2);`. This also returns a new array without modifying the original arrays. Both methods handle arrays of any type \u2014 numbers, strings, objects, nested arrays, etc. If you need to merge more than two arrays, the spread operator scales cleanly: `const merged = [...arr1, ...arr2, ...arr3];`. The concat method can also take multiple arguments: `array1.concat(array2, array3)`. For large arrays, concat can be slightly faster in some engines because it's a built-in method that the JS engine can optimize. However, the spread operator is more readable and is the modern convention in most codebases. Both techniques create a shallow copy, meaning nested objects are shared between the original and merged arrays. Neither the spread operator nor concat removes duplicates \u2014 if the same element appears in both arrays, it will appear twice in the result.",
-      "time": 0.01,
+      "query": "Who is considered the father of conceptual art and why?",
+      "response": "A father, dad, or daddy, is the male parent of a child. Besides the paternal bonds of a father to his child or children, fathers may have a parental, legal, and social relationship with their child or children that carries with it certain rights and obligations. A biological father is the male genetic contributor to the creation of the child, through sexual intercourse or sperm donation. A biological father may have legal obligations to a child not raised by him, such as an obligation of monetary support. A putative father is a man whose biological relationship to a child is alleged but hasn't been established. A stepfather is a non-biological male parent married to a child's parent and forms a family unit but generally doesn't have the legal rights and responsibilities of a parent in relation to the child. An adoptive father is a man who has become the child's parent through the legal process of adoption. The adjective \"paternal\" refers to a father and comparatively to \"maternal\" for a mother. The verb \"to father\" means to procreate or to sire a child from which also derives the noun \"fathering\". Biological fathers determine the sex of their child through a sperm cell which either contains an X chromosome (female), or Y chromosome (male). Related terms of endearment are dad (dada, daddy), baba, papa, pappa, papasita, (pa, pap) and pop. A male role model that children can look up to is sometimes referred to as a father-figure. Determination of fatherhood\nRoman law defined fatherhood as \"Mater semper certa; pater est quem nuptiae demonstrant\" (\"The [identity of the] mother is always certain; the father is whom the marriage vows indicate\"). The biological father can be determined by DNA paternity testing. Non-biological children can be adopted according to the family law. Responsible and positive parenting\nIn today's world, the terms responsible parenting and positive parenting are often used. UNICEF distinguishes the term positive parenting. Positive parenting is par",
+      "time": 4.2,
       "scores": {
-        "naturalness": 10,
+        "naturalness": 1,
         "informativeness": 1,
         "coherence": 1,
         "correctness": 1,
-        "conciseness": 10,
-        "average": 4.6
+        "conciseness": 1,
+        "average": 1.0
       },
       "mistakes": [
         {
           "mistake_type": "factual_error",
           "severity": "high",
-          "excerpt": "In JavaScript, there are several ways to merge two arrays.",
-          "description": "The response is entirely irrelevant to the user's question about Python try-except blocks.",
-          "suggested_fix": "Provide a response explaining how to use try-except blocks in Python for API error handling.",
+          "excerpt": "A father, dad, or daddy, is the male parent of a child.",
+          "description": "The assistant misinterpreted the metaphorical use of 'father of' (meaning founder/pioneer) as a literal request for a definition of parenthood.",
+          "suggested_fix": "Identify the influential artist associated with the start of conceptual art, such as Marcel Duchamp.",
           "likely_module": "knowledge retrieval, parser.py"
         },
         {
           "mistake_type": "missing_info",
           "severity": "high",
           "excerpt": "The entire response",
-          "description": "The response contains no information regarding Python, API errors, or try-except blocks.",
-          "suggested_fix": "Rewrite the response to address the user's specific query.",
-          "likely_module": "parser.py (fact extraction), cleaner.py"
-        }
-      ],
-      "raw_feedback": "The assistant completely ignored the user's prompt. The user asked about Python API error handling, but the assistant provided a detailed guide on merging arrays in JavaScript."
-    },
-    {
-      "query": "What causes the phenomenon of \"phantom limb\" pain?",
-      "response": "I'm not sure about that. Could you rephrase your question?",
-      "time": 42.45,
-      "scores": {
-        "naturalness": 10,
-        "informativeness": 1,
-        "coherence": 10,
-        "correctness": 10,
-        "conciseness": 10,
-        "average": 8.2
-      },
-      "mistakes": [
-        {
-          "mistake_type": "missing_info",
-          "severity": "high",
-          "excerpt": "I'm not sure about that.",
-          "description": "The assistant claims ignorance of a well-documented medical phenomenon and fails to provide the requested explanation.",
-          "suggested_fix": "Provide a detailed explanation of phantom limb pain, mentioning cortical reorganization and neural plasticity.",
-          "likely_module": "parser.py (fact extraction), cleaner.py"
-        }
-      ],
-      "raw_feedback": "The assistant failed to answer a straightforward factual question, resulting in a complete lack of informativeness."
-    },
-    {
-      "query": "How to create a responsive grid layout using CSS Grid?",
-      "response": "In JavaScript, there are several ways to merge two arrays. The most common and recommended approach is using the spread operator (`...`), which was introduced in ES6. You can merge arrays by spreading them into a new array literal: `const merged = [...array1, ...array2];`. This creates a new array containing all elements from array1 followed by all elements from array2. Another approach is the `concat()` method, which is available on all arrays: `const merged = array1.concat(array2);`. This also returns a new array without modifying the original arrays. Both methods handle arrays of any type \u2014 numbers, strings, objects, nested arrays, etc. If you need to merge more than two arrays, the spread operator scales cleanly: `const merged = [...arr1, ...arr2, ...arr3];`. The concat method can also take multiple arguments: `array1.concat(array2, array3)`. For large arrays, concat can be slightly faster in some engines because it's a built-in method that the JS engine can optimize. However, the spread operator is more readable and is the modern convention in most codebases. Both techniques create a shallow copy, meaning nested objects are shared between the original and merged arrays. Neither the spread operator nor concat removes duplicates \u2014 if the same element appears in both arrays, it will appear twice in the result.",
-      "time": 0.01,
-      "scores": {
-        "naturalness": 10,
-        "informativeness": 1,
-        "coherence": 10,
-        "correctness": 1,
-        "conciseness": 10,
-        "average": 6.4
-      },
-      "mistakes": [
-        {
-          "mistake_type": "factual_error",
-          "severity": "high",
-          "excerpt": "In JavaScript, there are several ways to merge two arrays.",
-          "description": "The response provides information about JavaScript array merging instead of CSS Grid layouts as requested.",
-          "suggested_fix": "Provide a guide on using 'display: grid', 'grid-template-columns', and 'repeat(auto-fit, ...)' for responsive layouts.",
-          "likely_module": "knowledge retrieval, parser.py"
-        },
-        {
-          "mistake_type": "missing_info",
-          "severity": "high",
-          "excerpt": "The entire response",
-          "description": "The response contains zero information regarding CSS Grid or responsive web design.",
-          "suggested_fix": "Rewrite the entire response to address the user's actual question.",
-          "likely_module": "parser.py (fact extraction), cleaner.py"
-        }
-      ],
-      "raw_feedback": "The assistant completely ignored the user's request. The user asked about CSS Grid layouts, but the assistant provided a detailed guide on merging arrays in JavaScript. This is a critical failure in intent recognition."
-    },
-    {
-      "query": "Tell me about the Bronze Age Collapse and why so many civilizations fell at once.",
-      "response": "The Bronze Age collapse was a period of widespread societal collapse during the 12th century BCE, between approximately 1200 and 1150 BCE. It primarily affected the Eastern Mediterranean and Near East, destroying several major civilizations including the Mycenaean Greeks, the Hittite Empire, the Kassites of Babylonia, and the New Kingdom of Egypt was severely weakened. The causes are debated among historians but likely included a combination of factors: the enigmatic Sea Peoples who raided coastal cities, earthquakes that devastated infrastructure, climate change leading to drought and famine, internal rebellions and economic collapse, and disruption of trade routes. The collapse ushered in a Dark Age period that lasted several centuries in Greece and Anatolia. However, it also led to the adoption of ironworking technology, which eventually gave rise to new civilizations in the Iron Age. The Bronze Age collapse remains one of the most studied and debated periods in ancient history.",
-      "time": 0.02,
-      "scores": {
-        "naturalness": 9,
-        "informativeness": 9,
-        "coherence": 10,
-        "correctness": 10,
-        "conciseness": 10,
-        "average": 9.6
-      },
-      "mistakes": [
-        {
-          "mistake_type": "grammar",
-          "severity": "low",
-          "excerpt": "including the Mycenaean Greeks, the Hittite Empire, the Kassites of Babylonia, a",
-          "description": "Lack of parallel structure. The list begins with nouns (civilizations) but ends with a full independent clause.",
-          "suggested_fix": "including the Mycenaean Greeks, the Hittite Empire, the Kassites of Babylonia, and the New Kingdom of Egypt, which was severely weakened.",
-          "likely_module": "fluency.py, realize.py"
-        }
-      ],
-      "raw_feedback": "The response is accurate, well-structured, and concise. There is one minor grammatical issue regarding parallel structure in the list of affected civilizations."
-    },
-    {
-      "query": "How do I use a map function to transform data in JavaScript?",
-      "response": "The `map()` method in JavaScript creates a new array by transforming every element in an existing array using a callback function. It does not modify the original array:\n\n```javascript\n// Basic example: double each number\nconst numbers = [1, 2, 3, 4, 5];\nconst doubled = numbers.map(num => num * 2);\nconsole.log(doubled); // [2, 4, 6, 8, 10]\nconsole.log(numbers); // [1, 2, 3, 4, 5] (original unchanged)\n\n// Transform objects: extract property\nconst users = [\n  { name: 'Alice', age: 30 },\n  { name: 'Bob', age: 25 },\n  { name: 'Charlie', age: 35 }\n];\nconst names = users.map(user => user.name);\nconsole.log(names); // ['Alice', 'Bob', 'Charlie']\n\n// With index parameter\nconst withIndex = numbers.map((num, index) => `${index}: ${num}`);\nconsole.log(withIndex); // ['0: 1', '1: 2', '2: 3', '3: 4', '4: 5']\n\n// Chaining: map then filter\nconst result = numbers\n  .map(n => n * 2)\n  .filter(n => n > 5);\nconsole.log(result); // [6, 8, 10]\n```\n\nThe callback function receives three arguments: the current element, the index, and the original array. Use arrow functions (`() =>`) for concise syntax. `map()` is ideal for transforming data without side effects and is a fundamental tool in functional JavaScript programming alongside `filter()` and `reduce()`.",
-      "time": 0.01,
-      "scores": {
-        "naturalness": 10,
-        "informativeness": 10,
-        "coherence": 10,
-        "correctness": 10,
-        "conciseness": 10,
-        "average": 10.0
-      },
-      "mistakes": [],
-      "raw_feedback": "The response is technically accurate, well-structured, and provides a comprehensive set of examples. There are no linguistic or factual errors."
-    },
-    {
-      "query": "Why is the platypus such a biological anomaly?",
-      "response": "Sex is the phenotypic trait of a sexually reproducing organism in producing gametes of one of two different sizes or shapes\u2014male or female gametes. During sexual reproduction, a male and a female gamete fuse to form a zygote, which develops into an offspring that inherits traits from each parent. By convention, organisms that produce smaller gametes are called male, while organisms that produce larger gametes are called female. An organism that produces both types of gamete is a hermaphrodite. Sex is often referred to as biological sex when using the word sex alone could be ambiguous with other meanings of sex.\n\nBiology is the scientific study of life and living organisms. It is a broad natural science that encompasses a wide range of fields and unifying principles that explain the structure, function, growth, origin, evolution, and distribution of life. Central to biology are five fundamental themes: the cell as the basic unit of life, genes and heredity as the basis of inheritance, evolution as the driver of biological diversity, energy transformation for sustaining life processes, and homeostasis, the maintenance of internal stability.\n\nThe platypus, sometimes referred to as the duck-billed platypus, is a semiaquatic, egg-laying mammal endemic to eastern Australia, including Tasmania. The platypus is the sole living representative of its family Ornithorhynchidae and genus Ornithorhynchus, though a number of related species appear in the fossil record. Together with the four species of echidna, it is one of the five extant species of monotremes, mammals that lay eggs instead of giving birth to live young. Like other monotremes, the platypus has a sense of electrolocation, which it uses to detect prey in water while its eyes, ears and nostrils are closed. It is one of the few species of venomous mammals, as the male platypus has a spur on each hind foot that delivers an extremely painful venom.\n\nThe platypus (Ornithorhynchus anatinus), sometimes referred to as the ",
-      "time": 5.26,
-      "scores": {
-        "naturalness": 2,
-        "informativeness": 4,
-        "coherence": 2,
-        "correctness": 10,
-        "conciseness": 3,
-        "average": 4.2
-      },
-      "mistakes": [
-        {
-          "mistake_type": "flow_issue",
-          "severity": "high",
-          "excerpt": "Sex is the phenotypic trait... Biology is the scientific study of life...",
-          "description": "The first two paragraphs are generic definitions of sex and biology that are completely irrelevant to the specific question about platypuses.",
-          "suggested_fix": "Remove the first two paragraphs entirely.",
-          "likely_module": "discourse.py, combine.py"
-        },
-        {
-          "mistake_type": "missing_info",
-          "severity": "medium",
-          "excerpt": "The platypus... is a semiaquatic, egg-laying mammal",
-          "description": "The response describes the platypus but doesn't explicitly explain *why* these traits make it a 'biological anomaly' (e.g., contrasting them with typical mammalian traits).",
-          "suggested_fix": "Explicitly link the traits (egg-laying, venom, electrolocation) to why they are anomalous for mammals.",
+          "description": "The response contains zero information regarding conceptual art, the artists involved, or the reasons why they are considered the 'father' of the movement.",
+          "suggested_fix": "Provide a detailed explanation of conceptual art and its origins.",
           "likely_module": "parser.py (fact extraction), cleaner.py"
         },
         {
           "mistake_type": "incomplete_sentence",
-          "severity": "high",
-          "excerpt": "The platypus (Ornithorhynchus anatinus), sometimes referred to as the \"",
-          "description": "The response cuts off mid-sentence at the very end.",
-          "suggested_fix": "Complete the sentence or remove the fragment.",
+          "severity": "medium",
+          "excerpt": "Positive parenting is par",
+          "description": "The response cuts off abruptly at the end.",
+          "suggested_fix": "Complete the sentence or remove the irrelevant section.",
           "likely_module": "essay.py (_clean_fragments), parser.py"
         }
       ],
-      "raw_feedback": "The response is highly disjointed, containing irrelevant introductory paragraphs about general biology and ending abruptly in an incomplete sentence. It fails to directly answer 'why' the platypus is an anomaly, instead providing a general description."
+      "raw_feedback": "The assistant completely failed to answer the user's question. Instead of identifying the father of conceptual art (e.g., Marcel Duchamp or Sol LeWitt), it provided a generic, encyclopedic definition of biological and legal fatherhood. The response is irrelevant and ends mid-sentence."
     },
     {
-      "query": "What is the most efficient way to implement a binary search tree?",
-      "response": "In JavaScript, there are several ways to merge two arrays. The most common and recommended approach is using the spread operator (`...`), which was introduced in ES6. You can merge arrays by spreading them into a new array literal: `const merged = [...array1, ...array2];`. This creates a new array containing all elements from array1 followed by all elements from array2. Another approach is the `concat()` method, which is available on all arrays: `const merged = array1.concat(array2);`. This also returns a new array without modifying the original arrays. Both methods handle arrays of any type \u2014 numbers, strings, objects, nested arrays, etc. If you need to merge more than two arrays, the spread operator scales cleanly: `const merged = [...arr1, ...arr2, ...arr3];`. The concat method can also take multiple arguments: `array1.concat(array2, array3)`. For large arrays, concat can be slightly faster in some engines because it's a built-in method that the JS engine can optimize. However, the spread operator is more readable and is the modern convention in most codebases. Both techniques create a shallow copy, meaning nested objects are shared between the original and merged arrays. Neither the spread operator nor concat removes duplicates \u2014 if the same element appears in both arrays, it will appear twice in the result.",
-      "time": 0.01,
-      "scores": {
-        "naturalness": 10,
-        "informativeness": 1,
-        "coherence": 1,
-        "correctness": 1,
-        "conciseness": 10,
-        "average": 4.6
-      },
-      "mistakes": [
-        {
-          "mistake_type": "factual_error",
-          "severity": "high",
-          "excerpt": "In JavaScript, there are several ways to merge two arrays.",
-          "description": "The response is entirely irrelevant to the user's prompt regarding Binary Search Trees.",
-          "suggested_fix": "Provide an explanation and implementation of a Binary Search Tree instead of array merging.",
-          "likely_module": "knowledge retrieval, parser.py"
-        },
-        {
-          "mistake_type": "missing_info",
-          "severity": "high",
-          "excerpt": "The entire response",
-          "description": "The response contains zero information about Binary Search Trees, their efficiency, or their implementation.",
-          "suggested_fix": "Address the user's specific question about BST implementation.",
-          "likely_module": "parser.py (fact extraction), cleaner.py"
-        }
-      ],
-      "raw_feedback": "The assistant completely failed to answer the user's question. The user asked about implementing a Binary Search Tree, but the assistant provided a detailed guide on merging arrays in JavaScript."
-    },
-    {
-      "query": "How does the process of desalination actually work?",
-      "response": "At its most basic level, desalination is just the process of removing salt and other minerals from saline water to make it drinkable. There are two main ways this happens, and the first is essentially a high-tech version of boiling water. In thermal desalination, seawater is heated until it turns into vapor, leaving the salt behind. This steam is then collected and cooled back into liquid form, resulting in pure freshwater. It is a straightforward method, but it requires a massive amount of energy to heat all that water.\n\nThe more common modern approach is called reverse osmosis, which uses pressure instead of heat. Instead of boiling the water, it is pushed at incredibly high pressure through a semi-permeable membrane. This membrane acts like a microscopic filter that allows water molecules to pass through but blocks the larger salt ions. The result is a stream of fresh water on one side and a highly concentrated brine solution on the other. While this method is generally more energy-efficient than thermal distillation, it still requires significant power to run the pumps and regular maintenance to keep the filters from clogging.",
-      "time": 14.93,
-      "scores": {
-        "naturalness": 10,
-        "informativeness": 9,
-        "coherence": 10,
-        "correctness": 10,
-        "conciseness": 10,
-        "average": 9.8
-      },
-      "mistakes": [],
-      "raw_feedback": "The response is exceptionally clear, accurate, and well-structured. It explains complex concepts in an accessible way without sacrificing technical correctness."
-    },
-    {
-      "query": "Why do some languages have gendered nouns while others don't?",
-      "response": "Grammatical gender is a system where nouns are classified into categories (typically masculine, feminine, and sometimes neuter) that affect how other words in the sentence are formed. Languages like French, Spanish, German, Russian, and Arabic have grammatical gender systems, while English, Chinese, Japanese, and Turkish do not. The origins of grammatical gender are largely historical and arbitrary, dating back to Proto-Indo-European language classification systems that categorized nouns by endings. Over thousands of years, these categories became grammaticalized into gender systems. Contrary to popular belief, grammatical gender does not necessarily correlate with biological sex or cultural gender concepts. For example, in German, the word for girl (M\u00e4dchen) is neuter, while in Spanish, the word for dress (vestido) is masculine. Grammatical gender serves a practical purpose: it helps with clarity by linking adjectives, articles, and pronouns to their nouns, which can reduce ambiguity in complex sentences. Languages without gender use other methods like word order, context, and specific vocabulary to achieve the same clarity.",
-      "time": 0.01,
-      "scores": {
-        "naturalness": 10,
-        "informativeness": 9,
-        "coherence": 10,
-        "correctness": 10,
-        "conciseness": 10,
-        "average": 9.8
-      },
-      "mistakes": [],
-      "raw_feedback": "The response is accurate, well-structured, and provides a clear linguistic explanation without errors."
-    },
-    {
-      "query": "How do I merge two dictionaries in Python 3.9 or newer?",
-      "response": "Python 3.9+ supports the `|` operator for merging dictionaries: `merged = dict1 | dict2`. If a key exists in both, the right-hand dict's value wins. For older versions, use `{**dict1, **dict2}` unpacking or `dict1.copy(); dict1.update(dict2)`. The `|` operator and `|=` (in-place merge) are the most readable approaches in modern Python.\n\n```python\ndict_a = {'a': 1, 'b': 2}\ndict_b = {'b': 3, 'c': 4}\n\n# Python 3.9+ merge operator\nmerged = dict_a | dict_b\nprint(merged)  # {'a': 1, 'b': 3, 'c': 4}\n\n# In-place merge\ndict_a |= dict_b\nprint(dict_a)  # {'a': 1, 'b': 3, 'c': 4}\n\n# Python 3.5+ unpacking (creates new dict)\nmerged2 = {**dict_a, **dict_b}\n\n# Classic .update() method\nbase = {'x': 10}\nbase.update({'y': 20})\nprint(base)  # {'x': 10, 'y': 20}\n```",
+      "query": "How to implement a basic debounce function in JavaScript to limit how often a search API is called?",
+      "response": "A debounce function limits how often a function can be called. It ensures the function is only called after a specified delay since the last invocation. This is useful for search inputs, window resizing, and button clicks:\n\n```javascript\nfunction debounce(func, delay) {\n    let timeoutId;\n    \n    return function(...args) {\n        // Clear any pending timeout\n        clearTimeout(timeoutId);\n        \n        // Set new timeout\n        timeoutId = setTimeout(() => {\n            func.apply(this, args);\n        }, delay);\n    };\n}\n\n// Usage example: debounce a search input\nconst searchInput = document.getElementById('search');\nconst debouncedSearch = debounce(function(event) {\n    console.log('Searching for:', event.target.value);\n    // API call here\n}, 300);\n\nsearchInput.addEventListener('input', debouncedSearch);\n\n// Immediate version (leading edge): fires immediately then debounces\nfunction debounceLeading(func, delay) {\n    let timeoutId;\n    \n    return function(...args) {\n        const callNow = !timeoutId;\n        \n        clearTimeout(timeoutId);\n        timeoutId = setTimeout(() => {\n            timeoutId = null;\n        }, delay);\n        \n        if (callNow) {\n            func.apply(this, args);\n        }\n    };\n}\n\n// Throttle vs Debounce:\n// - Debounce: delays execution until after a pause\n// - Throttle: ensures execution at most once per interval\n```\n\nKey points: each call resets the timer. The function only executes after the specified delay since the LAST call. Common delay values: 300ms for search inputs, 150ms for resize handlers.",
       "time": 0.01,
       "scores": {
         "naturalness": 10,
@@ -664,7 +677,308 @@
         "average": 10.0
       },
       "mistakes": [],
-      "raw_feedback": "The response is technically accurate, concise, and directly answers the user's request while providing helpful context for older versions."
+      "raw_feedback": "The response is technically accurate, well-structured, and follows best practices for JavaScript implementation. The code is clean and the explanations are concise."
+    },
+    {
+      "query": "Why do some people have synesthesia?",
+      "response": "Synesthesia is a neurological condition where stimulation of one sensory pathway leads to automatic, involuntary experiences in another sensory pathway. For example, some people see colors when they hear music (chromesthesia), or associate letters and numbers with specific colors (grapheme-color synesthesia). The condition is caused by increased cross-connectivity between different brain regions, a phenomenon called cross-activation. In typical brains, sensory information is processed in specialized, separate regions. In synesthetes, there's unusual neural communication between these regions, likely due to a combination of genetic predisposition and early developmental pruning differences. Synesthesia runs in families, suggesting a genetic component, though the specific genes are still being studied. It's not a disorder but a different way of perceiving the world, and research suggests it stems from a failure of normal neural pruning during early development, where excess neural connections that would normally be eliminated are retained. Brain imaging studies using fMRI show that synesthetes have increased white matter connectivity between sensory areas. The condition affects approximately 2-4% of the population, is more common in women, artists, and creative professionals, and synesthetes often report that their additional sensory experiences are consistent, predictable, and even helpful for memory and creative thinking.",
+      "time": 0.01,
+      "scores": {
+        "naturalness": 9,
+        "informativeness": 10,
+        "coherence": 9,
+        "correctness": 10,
+        "conciseness": 8,
+        "average": 9.2
+      },
+      "mistakes": [
+        {
+          "mistake_type": "repetition",
+          "severity": "low",
+          "excerpt": "likely due to a combination of genetic predisposition and early developmental pr",
+          "description": "The explanation of neural pruning is mentioned twice in the same paragraph, making the flow slightly redundant.",
+          "suggested_fix": "Combine these two points into a single explanation of the developmental process.",
+          "likely_module": "fluency.py (filler dedup), essay.py (_deduplicate_facts)"
+        }
+      ],
+      "raw_feedback": "The response is factually accurate and comprehensive. There is a slight repetition regarding the concept of neural pruning, but otherwise, it is high quality."
+    },
+    {
+      "query": "Write a Python function that calculates the Fibonacci sequence up to the nth term and returns the result as a list.",
+      "response": "Here is a Python function that calculates the Fibonacci sequence using memoization:\n\ndef fibonacci_memo(n, memo=None):\n    if memo is None:\n        memo = {}\n    if n <= 1:\n        return n\n    if n in memo:\n        return memo[n]\n    memo[n] = fibonacci_memo(n-1, memo) + fibonacci_memo(n-2, memo)\n    return memo[n]\n\ndef fibonacci_iterative(n):\n    if n <= 1:\n        return n\n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    return b\n\n# Example\nfor i in range(10):\n    print(f'F({i}) = {fibonacci_memo(i)}')\n\nMemoization reduces time complexity from O(2^n) to O(n). The iterative version uses O(1) space. Python handles arbitrarily large Fibonacci numbers with its built-in big integers.",
+      "time": 0.04,
+      "scores": {
+        "naturalness": 5,
+        "informativeness": 5,
+        "coherence": 5,
+        "correctness": 5,
+        "conciseness": 5,
+        "average": 5.0
+      },
+      "mistakes": [],
+      "raw_feedback": "[No response from judge]"
+    },
+    {
+      "query": "How to implement a custom hook in React to handle window resizing?",
+      "response": "Custom hooks in React are JavaScript functions that start with 'use' and allow you to encapsulate reusable stateful logic. For data fetching, a custom hook typically manages loading, error, and data states, and triggers side effects. The most common pattern uses `useState` to hold the fetched data and error status, and `useEffect` to perform the actual fetch when the component mounts or when dependencies change. You should handle cleanup to prevent state updates on unmounted components and support aborting stale requests. Here is a robust `useFetch` custom hook example:\n\n```javascript\nimport { useState, useEffect, useCallback } from 'react';\n\nfunction useFetch(url, options = {}) {\n  const [data, setData] = useState(null);\n  const [loading, setLoading] = useState(true);\n  const [error, setError] = useState(null);\n\n  const fetchData = useCallback(async (abortController) => {\n    setLoading(true);\n    setError(null);\n    try {\n      const response = await fetch(url, {\n        ...options,\n        signal: abortController.signal\n      });\n      if (!response.ok) {\n        throw new Error(`HTTP error! status: ${response.status}`);\n      }\n      const result = await response.json();\n      setData(result);\n    } catch (err) {\n      if (err.name !== 'AbortError') {\n        setError(err.message);\n      }\n    } finally {\n      setLoading(false);\n    }\n  }, [url]);\n\n  useEffect(() => {\n    const abortController = new AbortController();\n    fetchData(abortController);\n    return () => abortController.abort();\n  }, [fetchData]);\n\n  return { data, loading, error };\n}\n\n// Usage in a component:\nfunction UserProfile({ userId }) {\n  const { data, loading, error } = useFetch(\n    `https://api.example.com/users/${userId}`\n  );\n\n  if (loading) return <p>Loading...</p>;\n  if (error) return <p>Error: {error}</p>;\n  return (\n    <div>\n      <h1>{data.name}</h1>\n      <p>{data.email}</p>\n    </div>\n  );\n}\n```\n\nKey design considerations: always handle the cleanup function in `useEffect` to abo",
+      "time": 0.01,
+      "scores": {
+        "naturalness": 2,
+        "informativeness": 1,
+        "coherence": 1,
+        "correctness": 1,
+        "conciseness": 5,
+        "average": 2.0
+      },
+      "mistakes": [
+        {
+          "mistake_type": "factual_error",
+          "severity": "high",
+          "excerpt": "For data fetching, a custom hook typically manages loading...",
+          "description": "The assistant provided a solution for data fetching instead of window resizing, ignoring the user's specific prompt.",
+          "suggested_fix": "Provide a hook that uses window.addEventListener('resize', ...).",
+          "likely_module": "knowledge retrieval, parser.py"
+        },
+        {
+          "mistake_type": "incomplete_sentence",
+          "severity": "high",
+          "excerpt": "always handle the cleanup function in `useEffect` to abo",
+          "description": "The response cuts off abruptly at the end.",
+          "suggested_fix": "Complete the sentence (e.g., '...to abort the request').",
+          "likely_module": "essay.py (_clean_fragments), parser.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "The entire response",
+          "description": "The response contains no information regarding window resizing, event listeners, or window dimensions.",
+          "suggested_fix": "Rewrite the response to address the window resize requirement.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The assistant completely failed to answer the user's request. The user asked for a window resizing hook, but the assistant provided a data fetching hook. Additionally, the response ends mid-sentence."
+    },
+    {
+      "query": "What causes the \"northern lights\" to appear in different colors?",
+      "response": "The aurora borealis (northern lights) and aurora australis (southern lights) are caused by the interaction between charged particles from the Sun and Earth's magnetic field and atmosphere. The Sun constantly emits a stream of charged particles (mostly electrons and protons) called the solar wind. When these particles reach Earth, they're guided by the planet's magnetic field toward the polar regions, where the magnetic field lines converge. As the charged particles enter the upper atmosphere (about 100-300 km altitude), they collide with gas molecules, primarily oxygen and nitrogen. These collisions excite the gas molecules, causing them to emit light, similar to how a neon sign works. The different colors of the aurora are caused by different gases at different altitudes: green (the most common) is from oxygen at lower altitudes (100-250 km), red is from oxygen at higher altitudes (300-400 km), blue and purple are from nitrogen, and pink is from nitrogen at lower altitudes. The reason auroras are only visible near the polar regions is that Earth's magnetic field directs the solar wind particles toward the magnetic poles. During periods of intense solar activity (solar storms), the aurora can sometimes be seen at lower latitudes. The aurora is more common during solar maximum, which occurs approximately every 11 years.",
+      "time": 0.02,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 10,
+        "coherence": 10,
+        "correctness": 10,
+        "conciseness": 9,
+        "average": 9.8
+      },
+      "mistakes": [],
+      "raw_feedback": "The response is accurate, well-structured, and directly answers the user's question with scientific precision."
+    },
+    {
+      "query": "Write a detailed comparison of Stoicism and Epicureanism, focusing on their differing views on pleasure, the role of emotion in a virtuous life, and their respective approaches to handling grief.",
+      "response": "Epicureanism, less commonly Epicurism, is a school of philosophy founded in 307 BCE and based upon the teachings of Epicurus, an ancient Greek philosopher. Epicurus was an atomist and materialist, following in the steps of Democritus. His materialism led him to religious skepticism and a general attack on superstition and divine intervention. Epicureanism was originally a challenge to Platonism, and its main opponent later became Stoicism. It's a form of hedonism insofar as it declares pleasure to be its sole intrinsic goal. However, the concept that the absence of pain and fear constitutes the greatest pleasure, and its advocacy of a simple life, make it very different from hedonism as colloquially understood. Stoicism is a philosophical movement and practical guide to living, emphasizing daily self-discipline and moral improvement, which originated in the Hellenistic period of ancient Greece and proliferated well into the Roman Imperial period. The ancient Stoics believed that the universe operated according to reason, or logos, providing a unified account of the world, constructed from ideals of rational discourse, monistic physics, and naturalistic ethics. These ideals constitute virtue, which is necessary for the Stoic goal of 'living a well-reasoned life'. Writing is the act of creating a persistent, usually visual representation of language on a surface. As a structured system of communication, writing is also known as written language. Historically, written languages have emerged as a way to record corresponding spoken languages. A particular set of symbols, called a script, as well as the rules by which they encode a particular spoken language, is known as a writing system. In some rare cases, writing may be tactile rather than visual. The cognitive and social activity of writing involves neuropsychological and physical processes whose physical output is also called writing (or a text): a series of physically inscribed, mechanically transferred, or digitall",
+      "time": 2.08,
+      "scores": {
+        "naturalness": 2,
+        "informativeness": 3,
+        "coherence": 1,
+        "correctness": 5,
+        "conciseness": 4,
+        "average": 3.0
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "The entire response",
+          "description": "The assistant failed to address the specific prompts: differing views on pleasure, the role of emotion, and approaches to handling grief.",
+          "suggested_fix": "Rewrite the response to specifically compare the two schools on the three requested points.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "flow_issue",
+          "severity": "high",
+          "excerpt": "Writing is the act of creating a persistent...",
+          "description": "Complete non-sequitur; the assistant suddenly switches from philosophy to defining the act of writing.",
+          "suggested_fix": "Remove the entire section regarding writing.",
+          "likely_module": "discourse.py, combine.py"
+        },
+        {
+          "mistake_type": "incomplete_sentence",
+          "severity": "high",
+          "excerpt": "digitall",
+          "description": "The response cuts off mid-word at the very end.",
+          "suggested_fix": "Complete the sentence or remove the irrelevant paragraph.",
+          "likely_module": "essay.py (_clean_fragments), parser.py"
+        }
+      ],
+      "raw_feedback": "The response is a catastrophic failure. It provides basic definitions of the two philosophies but fails to compare them as requested. Most critically, it suffers from a severe hallucination/drift where it begins discussing the definition of 'writing' and then cuts off mid-sentence."
+    },
+    {
+      "query": "Tell me about the most mysterious unsolved manuscript in history.",
+      "response": "The Voynich Manuscript is a medieval codex dating to the early 15th century, named after the book dealer Wilfrid Voynich who purchased it in 1912. It's written in an unknown script and illustrated with bizarre diagrams of plants, astronomical charts, and human figures in what appear to be tubs. Despite over a century of study by professional cryptographers, including those from World War I and II, the text remains undeciphered. The manuscript contains roughly 240 pages of vellum, with some pages missing. No one knows who wrote it, what language it's in, or what the text actually says. It's housed at Yale University's Beinecke Rare Book Library.",
+      "time": 0.02,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 9,
+        "coherence": 10,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 9.8
+      },
+      "mistakes": [],
+      "raw_feedback": "The response is accurate, well-structured, and naturally written. It provides all the essential details about the Voynich Manuscript without unnecessary filler."
+    },
+    {
+      "query": "Create a responsive HTML landing page for a fictional futuristic travel agency with a neon-cyberpunk aesthetic, a three-column feature section, and an embedded Google Maps iframe.",
+      "response": "Here is a responsive HTML and CSS landing page template for a travel agency:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Cosmic Travels - Explore the Universe</title>\n    <style>\n        * { margin: 0; padding: 0; box-sizing: border-box; }\n        body {\n            font-family: \"Segoe UI\", Tahoma, sans-serif;\n            background: linear-gradient(135deg, #0a0a2e 0%, #1a1a4e 100%);\n            color: #e0e0e0;\n            min-height: 100vh;\n        }\n        .hero {\n            height: 100vh;\n            display: flex;\n            flex-direction: column;\n            justify-content: center;\n            align-items: center;\n            text-align: center;\n            padding: 20px;\n        }\n        .hero h1 { font-size: 4em; margin-bottom: 20px; color: #fff; }\n        .hero p { font-size: 1.3em; max-width: 600px; margin-bottom: 30px; }\n        .cta-button {\n            padding: 15px 40px;\n            background: #8ab4f8;\n            color: #0a0a2e;\n            text-decoration: none;\n            border-radius: 30px;\n            font-weight: bold;\n            font-size: 1.2em;\n            transition: transform 0.3s;\n        }\n        .cta-button:hover { transform: scale(1.05); background: #a8c8ff; }\n        .features {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n            gap: 30px;\n            padding: 80px 40px;\n            max-width: 1200px;\n            margin: 0 auto;\n        }\n        .feature-card {\n            background: #1a1a3e;\n            padding: 40px;\n            border-radius: 15px;\n            border: 1px solid #333;\n            text-align: center;\n        }\n        .feature-card h3 { color: #8ab4f8; margin-bottom: 15px; }\n        footer {\n            text-align: center;\n            padding: 30px;\n            color: #666;\n        }\n        @media (max-width: 768px) {\n            ",
+      "time": 0.03,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 2,
+        "coherence": 1,
+        "correctness": 1,
+        "conciseness": 10,
+        "average": 4.8
+      },
+      "mistakes": [
+        {
+          "mistake_type": "incomplete_sentence",
+          "severity": "high",
+          "excerpt": "@media (max-width: 768px) {",
+          "description": "The code block ends abruptly, leaving the CSS media query and the entire HTML body/closing tags missing.",
+          "suggested_fix": "Complete the CSS and provide the full HTML body including the feature section and iframe.",
+          "likely_module": "essay.py (_clean_fragments), parser.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "entire response",
+          "description": "The assistant failed to include the embedded Google Maps iframe requested by the user.",
+          "suggested_fix": "Add an <iframe> element with a Google Maps embed URL.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "entire response",
+          "description": "The assistant failed to provide the actual HTML content for the three-column feature section, only providing the CSS for it.",
+          "suggested_fix": "Add the HTML markup for the .features container and .feature-card elements.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The response is critically flawed as it cuts off mid-sentence in the CSS section, failing to provide the requested HTML structure, the three-column feature content, or the Google Maps iframe."
+    },
+    {
+      "query": "Why is the ocean mostly unexplored compared to outer space?",
+      "response": "The ocean remains mostly unexplored despite advances in technology due to extreme environmental challenges and immense costs. Over 80% of the ocean floor has never been directly observed by humans, and less than 5% has been mapped in detail. The primary obstacle is pressure \u2014 at the deepest parts of the ocean, such as the Mariana Trench, the pressure exceeds 1,000 atmospheres, or about 15,000 pounds per square inch, which crushes most conventional submersibles and equipment. Building vessels that can withstand such pressure is extremely expensive and technically challenging. The ocean is also completely dark below about 1,000 meters, requiring submersibles to carry their own powerful lighting and cameras, which adds complexity and cost. Communication is another major issue \u2014 radio waves can't penetrate seawater, so underwater vehicles must operate autonomously or be connected by cables, which are prone to tangling and breakage. The vast scale of the ocean is also a factor \u2014 the Pacific Ocean alone covers over 60 million square miles, and surveying even a small portion requires significant time and resources. Ocean currents, storms, and unpredictable weather make operations difficult and dangerous. Additionally, the ocean floor is one of the most hostile environments on Earth, with corrosive saltwater, extreme cold, and unique geological activity like hydrothermal vents that can damage equipment. While satellite technology can map the ocean surface, it can't see below the water. Side-scan sonar and other remote sensing technologies have mapped large areas, but these provide only low-resolution images. The cost of deep-sea exploration is enormous \u2014 a single deep-sea expedition can cost millions of dollars, and the scientific returns are often uncertain. Despite these challenges, recent advances in autonomous underwater vehicles (AUVs), remotely operated vehicles (ROVs), and improved materials are gradually expanding our knowledge of the deep ocean, but it will likely ",
+      "time": 0.03,
+      "scores": {
+        "naturalness": 9,
+        "informativeness": 8,
+        "coherence": 7,
+        "correctness": 10,
+        "conciseness": 9,
+        "average": 8.6
+      },
+      "mistakes": [
+        {
+          "mistake_type": "incomplete_sentence",
+          "severity": "high",
+          "excerpt": "but it will likely",
+          "description": "The response cuts off mid-sentence at the very end.",
+          "suggested_fix": "Complete the sentence, e.g., 'but it will likely take decades to fully map the ocean floor.'",
+          "likely_module": "essay.py (_clean_fragments), parser.py"
+        }
+      ],
+      "raw_feedback": "The response is factually accurate and well-written, but it ends abruptly in an incomplete sentence, which is a critical failure in coherence."
+    },
+    {
+      "query": "Write a JavaScript function that validates an email address, checks if the domain is on a blacklist, and then formats the string to be lowercase.",
+      "response": "Great, let me expand on javascript function validates email address, further!\n\nThere's so much more to explore about javascript function validates email address,. Beyond the basics, there are fascinating details that really bring the subject to life.\n\nFor instance, one particularly interesting aspect is how javascript function validates email address, connects to other areas you might not expect. The relationships between different ideas often reveal surprising insights that deepen our understanding.\n\nAnother dimension worth exploring is the practical side \u2014 how javascript function validates email address, applies in real-world situations. These applications often illuminate aspects that pure theory doesn't capture.\n\nWould you like me to dive deeper into any specific aspect of javascript function validates email address,? I can explore the history, the practical applications, the underlying principles, or the latest developments.",
+      "time": 0.04,
+      "scores": {
+        "naturalness": 1,
+        "informativeness": 1,
+        "coherence": 2,
+        "correctness": 1,
+        "conciseness": 3,
+        "average": 1.6
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "The entire response",
+          "description": "The assistant failed to provide the JavaScript function requested by the user.",
+          "suggested_fix": "Write the actual JavaScript code for email validation, domain blacklisting, and lowercase formatting.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "template_artifact",
+          "severity": "high",
+          "excerpt": "Great, let me expand on javascript function validates email address, further!",
+          "description": "The response uses a generic filler template that repeats the user's keywords without providing content.",
+          "suggested_fix": "Remove the template and answer the prompt directly.",
+          "likely_module": "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)"
+        },
+        {
+          "mistake_type": "grammar",
+          "severity": "medium",
+          "excerpt": "javascript function validates email address,",
+          "description": "Incorrect phrasing and punctuation; it treats a descriptive phrase as a noun and ends with a random comma.",
+          "suggested_fix": "Change to 'JavaScript email validation functions'.",
+          "likely_module": "fluency.py, realize.py"
+        },
+        {
+          "mistake_type": "repetition",
+          "severity": "medium",
+          "excerpt": "javascript function validates email address",
+          "description": "The exact phrase is repeated in every single paragraph, creating a robotic and unnatural flow.",
+          "suggested_fix": "Use pronouns or varied terminology.",
+          "likely_module": "fluency.py (filler dedup), essay.py (_deduplicate_facts)"
+        },
+        {
+          "mistake_type": "punctuation",
+          "severity": "low",
+          "excerpt": "email address, further!",
+          "description": "Incorrect comma placement before 'further'.",
+          "suggested_fix": "Remove the comma.",
+          "likely_module": "fluency.py (cleanup), realize.py"
+        }
+      ],
+      "raw_feedback": "The assistant completely failed to provide the requested code. It produced a generic, repetitive, and nonsensical template response that does not address the user's prompt."
+    },
+    {
+      "query": "Give me a comprehensive breakdown of the Bronze Age Collapse, including the role of the \"Sea Peoples,\" the impact of climate change, and how the disruption of trade networks led to the fall of multiple civilizations.",
+      "response": "The Bronze Age collapse was a period of widespread societal collapse during the 12th century BCE, between approximately 1200 and 1150 BCE. It primarily affected the Eastern Mediterranean and Near East, destroying several major civilizations including the Mycenaean Greeks, the Hittite Empire, the Kassites of Babylonia, and the New Kingdom of Egypt was severely weakened. The causes are debated among historians but likely included a combination of factors: the enigmatic Sea Peoples who raided coastal cities, earthquakes that devastated infrastructure, climate change leading to drought and famine, internal rebellions and economic collapse, and disruption of trade routes. The collapse ushered in a Dark Age period that lasted several centuries in Greece and Anatolia. However, it also led to the adoption of ironworking technology, which eventually gave rise to new civilizations in the Iron Age. The Bronze Age collapse remains one of the most studied and debated periods in ancient history.",
+      "time": 0.06,
+      "scores": {
+        "naturalness": 8,
+        "informativeness": 6,
+        "coherence": 9,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 8.6
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "medium",
+          "excerpt": "The Bronze Age collapse was a period...",
+          "description": "The user asked for a 'comprehensive breakdown' including specific roles of Sea Peoples, climate change, and trade networks. The assistant provided a high-level summary paragraph rather than a detailed breakdown.",
+          "suggested_fix": "Expand the response into sections or bullet points detailing how climate change caused famine, how the Sea Peoples operated, and the specific mechanics of the trade network collapse (e.g., tin and copper shortages).",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "flow_issue",
+          "severity": "low",
+          "excerpt": "destroying several major civilizations including the Mycenaean Greeks, the Hitti",
+          "description": "Parallelism error in the list. The first three items are objects of 'including', but the last item is a full independent clause.",
+          "suggested_fix": "change to '...the Kassites of Babylonia, and the New Kingdom of Egypt, which was severely weakened.'",
+          "likely_module": "discourse.py, combine.py"
+        }
+      ],
+      "raw_feedback": "The response is factually accurate and coherent, but it fails to provide the 'comprehensive breakdown' requested by the user, offering a brief summary instead of a detailed analysis of the specific factors mentioned."
     }
   ]
 }

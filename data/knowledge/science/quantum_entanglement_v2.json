@@ -1,0 +1,16 @@
+[
+  {
+    "q": [
+      "comprehensive explanation of how quantum entanglement works",
+      "quantum entanglement explained simply",
+      "quantum entanglement and Bell's theorem",
+      "quantum entanglement Bell's inequality",
+      "quantum entanglement spooky action at a distance",
+      "how does quantum entanglement work Bell's theorem",
+      "quantum mechanics entanglement",
+      "quantum entanglement explained comprehensive",
+      "quantum entanglement physics"
+    ],
+    "a": "Quantum entanglement is a physical phenomenon that occurs when particles interact so their quantum states become correlated, meaning the state of one instantly determines the state of the other regardless of distance. It was called spooky action at a distance by Einstein, who was skeptical, but has been experimentally confirmed. Entanglement is created when particles interact in ways that conserve certain properties. Measuring one particle instantly determines the corresponding property of its entangled partner, even if they are light-years apart. This does NOT allow faster-than-light communication because measurement outcomes are random and cannot be controlled. Bell's Theorem, developed by John Bell in 1964, showed that any local hidden variable theory would be constrained by certain inequalities (Bell inequalities). Experimental tests, most notably by Alain Aspect in 1982 and later by many others, have shown that these inequalities are violated, proving that quantum entanglement is real and that local realism (the idea that objects have definite properties independent of measurement) cannot hold. Applications include quantum computing (entangled qubits enable exponential parallelism), quantum cryptography (eavesdropping detection), and quantum teleportation (transferring quantum states). Entanglement has been demonstrated across distances of over 1,200 km using satellite links."
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "q": [
+      "Express.js middleware",
+      "custom middleware in Express.js",
+      "how to implement middleware in Express",
+      "Express js middleware",
+      "create custom middleware Express",
+      "Express middleware example",
+      "how to create middleware in Express",
+      "how to implement a custom middleware in Express.js",
+      "Express.js custom middleware tutorial"
+    ],
+    "a": "To implement custom middleware in Express.js, create a function that takes (req, res, next) and call next() to pass control to the next middleware:\n\n```javascript\nconst express = require('express');\nconst app = express();\n\n// Custom middleware - logs request details\napp.use((req, res, next) => {\n  console.log(`${req.method} ${req.url} - ${new Date().toISOString()}`);\n  next();\n});\n\n// Middleware for authentication\napp.use((req, res, next) => {\n  const token = req.headers['authorization'];\n  if (!token) {\n    return res.status(401).json({ error: 'No token provided' });\n  }\n  req.user = { id: 1, name: 'User' }; // decoded from token\n  next();\n});\n\n// Middleware for specific routes\nconst validateInput = (req, res, next) => {\n  if (!req.body.name) {\n    return res.status(400).json({ error: 'Name is required' });\n  }\n  next();\n};\n\napp.post('/api/users', validateInput, (req, res) => {\n  res.json({ message: 'User created' });\n});\n\n// Error-handling middleware (has 4 params)\napp.use((err, req, res, next) => {\n  console.error(err.stack);\n  res.status(500).json({ error: 'Something went wrong' });\n});\n\napp.listen(3000);\n```\n\nMiddleware runs in the order it's defined. Use next() to pass control, send a response to end the chain, or use error-handling middleware (4 parameters) to catch errors."
+  }
+]

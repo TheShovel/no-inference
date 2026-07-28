@@ -303,8 +303,12 @@ def generate_questions(n: int = 20, dry_run: bool = False) -> List[str]:
 Rules:
 - Ask about topics YOU find interesting (science, history, philosophy, everyday life, geography, art, technology, coding, anything)
 - Vary the topics — don't cluster around one subject
-- Mix general knowledge questions with CODING questions (e.g., "How do I sort a list in Python?", "How to write a function in JavaScript?", "How do I read a file in Python?")
-- Ask like a real human, not a test: "What causes...", "How does...", "Why is...", "Tell me about...", "How to...", "How do I..."
+- INCLUDE A MIX OF QUESTION TYPES:
+  * Simple factual: "What causes...", "How does...", "Why is...", "Tell me about...", "Why do..."
+  * Coding tasks: "How do I...", "How to implement...", "Write a function that..."
+  * Complex multi-part prompts: "Write me an essay about X. Make sure it covers Y and Z.", "Create a HTML page about X with a Y style and Z layout.", "Make me a JavaScript function that does X, Y, and Z.", "Give me a detailed explanation of X including Y, Z, and W."
+- Include AT LEAST 3 complex multi-part prompts (essays, HTML pages, detailed explanations with specific requirements)
+- Ask like a real human, not a test
 - Avoid questions already asked: {list(used) if used else "none yet"}
 - Return ONLY the questions, one per line, no numbering or bullets"""
 

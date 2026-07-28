@@ -1,0 +1,17 @@
+[
+    {
+        "q": [
+            "React custom hook localStorage",
+            "custom hook in React for localStorage",
+            "react local storage hook",
+            "useLocalStorage hook React",
+            "react hook local storage synchronization",
+            "implement custom hook for localStorage in React",
+            "React hook to sync with localStorage",
+            "how to implement a custom hook in React to handle localStorage",
+            "React custom hook local storage",
+            "useLocalStorage react"
+        ],
+        "a": "Here's a custom React hook for synchronizing state with localStorage:\n\n```jsx\nimport { useState, useEffect } from 'react';\n\nfunction useLocalStorage(key, initialValue) {\n    // Get stored value or use initial\n    const [storedValue, setStoredValue] = useState(() => {\n        try {\n            const item = window.localStorage.getItem(key);\n            return item ? JSON.parse(item) : initialValue;\n        } catch (error) {\n            console.error('Error reading localStorage:', error);\n            return initialValue;\n        }\n    });\n\n    // Update localStorage when state changes\n    useEffect(() => {\n        try {\n            window.localStorage.setItem(key, JSON.stringify(storedValue));\n        } catch (error) {\n            console.error('Error writing to localStorage:', error);\n        }\n    }, [key, storedValue]);\n\n    // Sync across tabs\n    useEffect(() => {\n        function handleStorageChange(e) {\n            if (e.key === key) {\n                try {\n                    setStoredValue(JSON.parse(e.newValue));\n                } catch {}\n            }\n        }\n        window.addEventListener('storage', handleStorageChange);\n        return () => window.removeEventListener('storage', handleStorageChange);\n    }, [key]);\n\n    return [storedValue, setStoredValue];\n}\n\n// Usage\nexport default function App() {\n    const [theme, setTheme] = useLocalStorage('theme', 'light');\n    const [user, setUser] = useLocalStorage('user', null);\n\n    return (\n        <div className={theme}>\n            <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>\n                Toggle Theme\n            </button>\n        </div>\n    );\n}\n```\n\nThis hook handles JSON serialization/deserialization, error handling for localStorage quota exceeded or private browsing mode, and cross-tab synchronization via the storage event listener. It works as a drop-in replacement for useState with automatic persistence."
+    }
+]

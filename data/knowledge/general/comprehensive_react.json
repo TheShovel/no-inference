@@ -1,0 +1,51 @@
+[
+  {
+    "q": [
+      "usestate react",
+      "react usestate hook",
+      "react state management",
+      "how to use usestate",
+      "usestate hook explained"
+    ],
+    "a": "Information about usestate."
+  },
+  {
+    "q": [
+      "useeffect react",
+      "react useeffect",
+      "useeffect explained",
+      "react useeffect tutorial",
+      "useeffect hook fetch data",
+      "useeffect cleanup"
+    ],
+    "a": "Information about useeffect."
+  },
+  {
+    "q": [
+      "custom hook react",
+      "create custom hook react",
+      "react custom hook tutorial",
+      "how to create a custom hook in react",
+      "react custom hook"
+    ],
+    "a": "Information about custom hook."
+  },
+  {
+    "q": [
+      "localstorage react",
+      "react localstorage hook",
+      "uselocalstorage react",
+      "persist state react localstorage"
+    ],
+    "a": "Information about localstorage hook."
+  },
+  {
+    "q": [
+      "window resize react",
+      "react resize hook",
+      "usewindowsize react",
+      "window resize event react"
+    ],
+    "a": "Information about window resize hook."
+  }
+]

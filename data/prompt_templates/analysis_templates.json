@@ -1,0 +1,156 @@
+[
+    {
+        "id": "pros_cons",
+        "patterns": [
+            "(?:analyze|list|discuss|outline|examine)\\s+(?:the\\s+)?pros\\s+(?:and|&)\\s+cons\\s+(?:of|about|of)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "explanation",
+        "weight": 0.95
+    },
+    {
+        "id": "compare_contrast_dimensions",
+        "patterns": [
+            "(?:compare|contrast)\\s+(?P<topic>.+?)\\s+(?:and|vs|versus|with)\\s+(?P<other>.+?)\\s+(?:across|along|on|in\\s+terms\\s+of)\\s+(?P<dimensions>.+?)\\s*(?:dimensions|aspects|criteria|factors)?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "other": "other", "dimensions": "dimensions"},
+        "response_type": "explanation",
+        "weight": 0.95
+    },
+    {
+        "id": "trace_evolution",
+        "patterns": [
+            "(?:trace|track|outline|describe)\\s+(?:the\\s+)?evolution\\s+(?:of|of\\s+the)\\s+(?P<topic>.+?)\\s+(?:from|since)\\s+(?P<start>.+?)\\s+(?:to|until|through)\\s+(?P<end>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "start": "start", "end": "end"},
+        "response_type": "explanation",
+        "weight": 0.95
+    },
+    {
+        "id": "causes_and_effects",
+        "patterns": [
+            "(?:explain|analyze|discuss|describe)\\s+(?:the\\s+)?(?:causes|cause)\\s+(?:and|&)\\s+(?:effects?|consequences?|impacts?|results?)\\s+(?:of|for)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "explanation",
+        "weight": 0.9
+    },
+    {
+        "id": "evaluate_strengths_weaknesses",
+        "patterns": [
+            "(?:evaluate|assess|analyze|examine)\\s+(?:the\\s+)?(?:strengths?|advantages?|benefits?)\\s+(?:and|&)\\s+(?:weaknesses?|disadvantages?|limitations?|drawbacks?)\\s+(?:of|for)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "explanation",
+        "weight": 0.9
+    },
+    {
+        "id": "summarize_arguments",
+        "patterns": [
+            "(?:summarize|outline|list|discuss)\\s+(?:the\\s+)?key\\s+arguments\\s+(?:for\\s+and\\s+against|pro\\s+and\\s+con|supporting\\s+and\\s+opposing)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "explanation",
+        "weight": 0.9
+    },
+    {
+        "id": "create_timeline",
+        "patterns": [
+            "(?:create|make|build|write|construct)\\s+(?:a|an|the)?\\s*timeline\\s+(?:of|for|showing)\\s+(?P<topic>.+?)\\s+(?:from|starting)\\s+(?P<start>.+?)\\s+(?:to|until|through)\\s+(?P<end>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "start": "start", "end": "end"},
+        "response_type": "explanation",
+        "weight": 0.85
+    },
+    {
+        "id": "analyze_impact",
+        "patterns": [
+            "(?:analyze|examine|assess|evaluate|discuss)\\s+(?:the\\s+)?impact\\s+(?:of|that)\\s+(?P<topic>.+?)\\s+(?:has\\s+had|had|has)?\\s*(?:on|upon)\\s+(?P<target>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "target": "target"},
+        "response_type": "explanation",
+        "weight": 0.9
+    },
+    {
+        "id": "discuss_implications",
+        "patterns": [
+            "(?:discuss|analyze|examine|consider)\\s+(?:the\\s+)?implications\\s+(?:of|that)\\s+(?P<topic>.+?)\\s+(?:for|on|regarding)\\s+(?P<target>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "target": "target"},
+        "response_type": "explanation",
+        "weight": 0.85
+    },
+    {
+        "id": "break_down_components",
+        "patterns": [
+            "(?:break\\s*down|deconstruct|dissect|analyze)\\s+(?:the\\s+)?(?:components?|parts?|elements?|pieces?|structure)\\s+(?:of|in|for)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "explanation",
+        "weight": 0.85
+    },
+    {
+        "id": "categorize_types",
+        "patterns": [
+            "(?:categorize|classify|organize|group|list)\\s+(?:the\\s+)?(?:different|various|main|primary|common)?\\s*types?\\s+(?:of|for)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "explanation",
+        "weight": 0.85
+    },
+    {
+        "id": "rank_top",
+        "patterns": [
+            "(?:rank|list|name|identify)\\s+(?:the\\s+)?top\\s+(?P<count>\\d+)\\s+(?P<category>.+?)\\s+(?:with|including|along\\s+with)\\s+(?:reasons?|explanations?|justifications?)",
+            "(?:rank|list|name|identify)\\s+(?:the\\s+)?top\\s+(?P<count>\\d+)\\s+(?P<category>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"count": "count", "category": "category"},
+        "response_type": "explanation",
+        "weight": 0.8
+    },
+    {
+        "id": "analyze_correlation",
+        "patterns": [
+            "(?:analyze|examine|study|investigate)\\s+(?:the\\s+)?(?:correlation|relationship|connection|link)\\s+(?:between|among)\\s+(?P<topic>.+?)\\s+(?:and|&)\\s+(?P<other>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "other": "other"},
+        "response_type": "explanation",
+        "weight": 0.85
+    },
+    {
+        "id": "deconstruct_argument",
+        "patterns": [
+            "(?:deconstruct|critique|analyze|examine|challenge)\\s+(?:the\\s+)?argument\\s+(?:that|for|supporting)\\s+(?P<topic>.+?)\\s+(?:showing|revealing|highlighting|identifying)\\s+(?P<flaws>.+?)\\s*(?:flaws|weaknesses|fallacies|gaps)?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "flaws": "flaws"},
+        "response_type": "explanation",
+        "weight": 0.85
+    },
+    {
+        "id": "synthesize_findings",
+        "patterns": [
+            "(?:synthesize|summarize|compile|combine|integrate)\\s+(?:the\\s+)?(?:key\\s+)?findings\\s+(?:from|of)\\s+(?P<source>.+?)\\s*(?:research|studies|data|articles|papers)?\\s+(?:on|about|regarding)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"source": "source", "topic": "topic"},
+        "response_type": "explanation",
+        "weight": 0.85
+    },
+    {
+        "id": "predict_future_trends",
+        "patterns": [
+            "(?:predict|forecast|project|anticipate)\\s+(?:the\\s+)?(?:future\\s+)?trends?\\s+(?:of|in|for|regarding)\\s+(?P<topic>.+?)\\s+(?:based\\s+on|using|from)\\s+(?P<evidence>.+?)\\s*(?:evidence|data|research|analysis|trends)?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "evidence": "evidence"},
+        "response_type": "explanation",
+        "weight": 0.85
+    },
+    {
+        "id": "map_relationships",
+        "patterns": [
+            "(?:map\\s*(?:out)?|diagram|chart|illustrate|describe)\\s+(?:the\\s+)?(?:relationships?|connections?|links?|interactions?)\\s+(?:between|among)\\s+(?P<topic>.+?)\\s*,\\s*(?P<other>.+?)\\s*(?:and|&)\\s*(?P<third>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "other": "other", "third": "third"},
+        "response_type": "explanation",
+        "weight": 0.8
+    }
+]
