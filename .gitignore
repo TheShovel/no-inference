@@ -36,3 +36,6 @@ data/.template_tracking.json
 
 # Generated evaluation results
 data/eval_results.json
+
+# GitHub Pages site (on gh-pages branch only)
+/index.html
