@@ -226,6 +226,7 @@ def reload_aliases():
 # ── Wikipedia search (fallback) ───────────────────────────────────────────────
 
 _WIKI_CACHE = {}  # query_lower -> (summary, source_url)
+_WIKI_CACHE_HITS = 0  # debug: count cache hits vs misses
 
 # Persistent disk cache for Wikipedia results
 _WIKI_CACHE_FILE = Path(__file__).parent.parent.parent / 'data' / 'cache' / 'wikipedia_cache.json'
@@ -245,8 +246,8 @@ def _save_wiki_cache():
     try:
         _WIKI_CACHE_FILE.parent.mkdir(parents=True, exist_ok=True)
         import json as _json
-        data = {'summary': dict(list(_WIKI_CACHE.items())[-500:]),  # keep last 500
-                'full': dict(list(_WIKI_FULL_CACHE.items())[-200:])}  # keep last 200
+        data = {'summary': dict(list(_WIKI_CACHE.items())[-2000:]),  # keep last 2000
+                'full': dict(list(_WIKI_FULL_CACHE.items())[-500:])}  # keep last 500
         _WIKI_CACHE_FILE.write_text(_json.dumps(data, indent=2))
     except Exception:
         pass
@@ -1203,15 +1204,19 @@ def _search_wikipedia_best(query: str) -> tuple:
     best_full = None
     best_score = -1
 
-    for term in search_terms[:5]:
+    # Limit to at most 3 search terms to reduce API calls
+    for term in search_terms[:3]:
         if len(term) < 5:
             continue
         try:
-            # Get both summary and full article
+            # Get summary
             summary, _ = _search_wikipedia(term)
             if not summary:
                 continue
-            full, _ = _search_wikipedia_full(term)
+            # Only fetch full article if summary is short
+            full = None
+            if len(summary) < 300:
+                full, _ = _search_wikipedia_full(term)
 
             # Score by keyword overlap with query
             q_words = set(re.findall(r'\b\w{4,}\b', query.lower()))
@@ -1252,31 +1257,7 @@ def _wiki_search_variants(term):
     if wiki:
         return wiki, url
 
-    # Try direct REST API with the term as a page title (case-insensitive)
-    # This handles cases where opensearch fails but the article exists
-    try:
-        import urllib.parse as _up
-        title_url = (
-            'https://en.wikipedia.org/api/rest_v1/page/summary/' +
-            _up.quote(term.replace(' ', '_'))
-        )
-        req = urllib.request.Request(title_url, headers={
-            'User-Agent': 'COS/1.0 (educational; no-inference)'
-        })
-        with urllib.request.urlopen(req, timeout=8) as resp:
-            data = json.loads(resp.read().decode())
-        extract = data.get('extract', '')
-        if extract and len(extract) > 50:
-            extract_lower = extract.lower()
-            if not any(m in extract_lower[:300] for m in [
-                'may refer to', 'may also refer', 'disambiguation',
-                'does not have an article', 'not found',
-            ]):
-                return extract.strip(), data.get('content_urls', {}).get('desktop', {}).get('page')
-    except Exception:
-        pass
-
-    # Try variations
+    # Try variations (skip direct REST API call - _search_wikipedia handles this)
     variations = []
     t = term.lower().strip()
 
@@ -1517,29 +1498,28 @@ def _retrieve_multi_content(query: str, max_sources: int = 3) -> str:
     if wiki_summary:
         _add(wiki_summary)
 
-    # Full Wikipedia article for rich content, but only use first 3 paragraphs
-    # (the lead section that summarizes the topic). Full articles can be too long
-    # and contain irrelevant sections that overwhelm the NLG pipeline.
-    wiki_full, _ = _search_wikipedia_full(resolved_topic)
-    if wiki_full:
-        # Extract only the lead section (first ~3 paragraphs) which contains
-        # the most important facts about the topic.
-        paras = [p.strip() for p in wiki_full.split('\n\n') if p.strip()]
-        if paras:
-            lead = '\n\n'.join(paras[:3])
-            _add(lead)
-        else:
-            _add(wiki_full)
+    # Full Wikipedia article for rich content — only fetch if summary is short
+    # (skipped if summary already provides enough detail)
+    wiki_summary_len = len(wiki_summary) if wiki_summary else 0
+    if wiki_summary_len < 400:
+        wiki_full, _ = _search_wikipedia_full(resolved_topic)
+        if wiki_full:
+            paras = [p.strip() for p in wiki_full.split('\n\n') if p.strip()]
+            if paras:
+                lead = '\n\n'.join(paras[:3])
+                _add(lead)
+            else:
+                _add(wiki_full)
 
     # Secondary content from keyword expansion (must be relevant to query)
-    # Filter out garbage keywords (single words, stop words, fragments)
     _STOP_WORDS = {'what', 'how', 'why', 'when', 'where', 'who', 'which',
                    'does', 'this', 'that', 'with', 'from', 'they', 'have',
                    'about', 'actually', 'instantly', 'basically', 'really',
                    'just', 'also', 'still', 'even', 'only', 'more', 'some',
                    'like', 'into', 'over', 'such', 'than', 'then', 'very'}
     if keywords:
-        for kw in keywords[:max_sources]:
+        # Limit to at most 2 keyword expansions to reduce API calls
+        for kw in keywords[:min(max_sources, 2)]:
             kw_lower = kw.lower().strip()
             kw_words = kw_lower.split()
             # Skip if it's just a stop word, too short, or a long phrase fragment
@@ -1565,11 +1545,12 @@ def _retrieve_multi_content(query: str, max_sources: int = 3) -> str:
 
     # Additional: try noun candidates from the query for secondary content
     # This catches cases where keyword extraction gives bad results
-    if len(parts) < 3:
+    # Only runs if no primary content was found (avoids unnecessary API calls)
+    if not parts:
         noun_candidates = _extract_noun_candidates(query)
-        for phrase, priority in noun_candidates[:4]:
+        for phrase, priority in noun_candidates[:2]:
             if phrase.lower() == topic.lower():
-                continue  # Already searched this
+                continue
             if len(phrase) < 4:
                 continue
             kw_wiki, _ = _search_wikipedia(phrase)
@@ -1589,7 +1570,13 @@ def _resolve_topic(query, conversation_history):
         'that', 'it', 'this', 'them', 'those', 'these', 'they', 'he', 'she'
     ))
 
-    if is_vague or _query_is_context_dependent(query):
+    # Also treat short questions (< 5 words) as potentially context-dependent
+    # even if they don't have explicit pronouns
+    words = query.lower().split()
+    question_words = {'who', 'what', 'when', 'where', 'how', 'why', 'which'}
+    is_short_question = (len(words) <= 6 and words and words[0].rstrip('.,;:!?') in question_words)
+
+    if is_vague or _query_is_context_dependent(query) or is_short_question:
         try:
             from cos.context_extraction import extract_context_topic
             ctx_topic = extract_context_topic(
@@ -1672,6 +1659,28 @@ def _query_is_context_dependent(query):
     if not q:
         return False
 
+    # Short follow-up questions (< 40 chars) starting with question words
+    # often refer to previous context even without explicit pronouns.
+    # E.g., "Who were the key pioneers?" after discussing jazz means
+    # "jazz pioneers". "What instruments are used?" means "instruments in <previous topic>".
+    if len(q) < 40 and not q.startswith(('what is', 'what are', 'what was', 'define', 'explain', 'describe')):
+        # Check if query starts with a question word and is short
+        question_words = ['who', 'what', 'when', 'where', 'how', 'why', 'which', 'whose']
+        first_word = q.split()[0].rstrip('.,;:!?') if q.split() else ''
+        if first_word in question_words:
+            # Count substantive words (not counting the question word, articles, prepositions)
+            words = q.split()
+            stop = {'the', 'a', 'an', 'is', 'are', 'was', 'were', 'do', 'does', 'did',
+                    'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'from', 'and', 'or',
+                    'typically', 'usually', 'often', 'commonly', 'generally', 'sometimes',
+                    'also', 'too', 'as', 'be', 'been', 'being', 'have', 'has', 'had',
+                    'its', 'their', 'our', 'your', 'his', 'her', 'their', 'them'}
+            content_words = [w for w in words[1:] if w not in stop]
+            # If the query has very few content words (< 4), it's likely context-dependent
+            # E.g., "Who were the key pioneers?" -> content words: [key, pioneers] = 2
+            if len(content_words) <= 3:
+                return True
+
     # Long queries (>30 chars) with enough content words are self-contained
     if len(q) > 30:
         words = q.split()
@@ -1747,6 +1756,8 @@ def _search_wikipedia(query):
 
     cache_key = topic.lower().strip()
     if cache_key in _WIKI_CACHE:
+        global _WIKI_CACHE_HITS
+        _WIKI_CACHE_HITS += 1
         return _WIKI_CACHE[cache_key]
 
     try:
@@ -1756,12 +1767,12 @@ def _search_wikipedia(query):
             'https://en.wikipedia.org/w/api.php?'
             'action=query&list=search&srwhat=text'
             '&srsearch=' + urllib.parse.quote(topic) +
-            '&srlimit=3&format=json'
+            '&srlimit=1&format=json'
         )
         req = urllib.request.Request(search_url, headers={
             'User-Agent': 'COS/1.0 (conversational AI; no-inference)'
         })
-        with urllib.request.urlopen(req, timeout=8) as resp:
+        with urllib.request.urlopen(req, timeout=4) as resp:
             result = json.loads(resp.read().decode())
 
         search_results = result.get('query', {}).get('search', [])
@@ -1780,7 +1791,7 @@ def _search_wikipedia(query):
         req = urllib.request.Request(summary_url, headers={
             'User-Agent': 'COS/1.0 (conversational AI; no-inference)'
         })
-        with urllib.request.urlopen(req, timeout=8) as resp:
+        with urllib.request.urlopen(req, timeout=4) as resp:
             data = json.loads(resp.read().decode())
 
         extract = data.get('extract', '')
@@ -1841,6 +1852,8 @@ def _search_wikipedia_full(query):
 
     cache_key = topic.lower().strip()
     if cache_key in _WIKI_FULL_CACHE:
+        global _WIKI_CACHE_HITS
+        _WIKI_CACHE_HITS += 1
         return _WIKI_FULL_CACHE[cache_key]
 
     try:
@@ -1849,12 +1862,12 @@ def _search_wikipedia_full(query):
             'https://en.wikipedia.org/w/api.php?'
             'action=query&list=search&srwhat=text'
             '&srsearch=' + urllib.parse.quote(topic) +
-            '&srlimit=3&format=json'
+            '&srlimit=1&format=json'
         )
         req = urllib.request.Request(search_url, headers={
             'User-Agent': 'COS/1.0 (conversational AI; no-inference)'
         })
-        with urllib.request.urlopen(req, timeout=8) as resp:
+        with urllib.request.urlopen(req, timeout=4) as resp:
             result = json.loads(resp.read().decode())
 
         search_results = result.get('query', {}).get('search', [])
@@ -1874,7 +1887,7 @@ def _search_wikipedia_full(query):
         req = urllib.request.Request(extract_url, headers={
             'User-Agent': 'COS/1.0 (conversational AI; no-inference)'
         })
-        with urllib.request.urlopen(req, timeout=8) as resp:
+        with urllib.request.urlopen(req, timeout=4) as resp:
             data = json.loads(resp.read().decode())
 
         pages = data.get('query', {}).get('pages', {})
@@ -2255,14 +2268,29 @@ def process_query(query, use_cos=True):
     # Standalone queries like "what is the capital of france" should go
     # through intent routing so KB/Wikipedia can answer first.
     current_topic = _resolve_topic(q_clean, conversation_history)
+    # If a context-dependent query was resolved to a different topic,
+    # rewrite the query to include the resolved topic for better KB/Wikipedia matching
     is_contextual_ref = (_query_is_context_dependent(q_clean)
                          or current_topic is None
                          or current_topic.lower() in ('that', 'it', 'this', 'them', 'those'))
+    if is_contextual_ref and current_topic and current_topic.lower() not in ('that', 'it', 'this', q_clean.lower()):
+        q_clean = f"{q_clean} ({current_topic})"
+    # Skip template for "tell me more about X" where X is a specific named entity
+    # (e.g. "Miles Davis") — these should be handled by the factual handler
+    # which can search Wikipedia for the named entity.
+    _is_tell_me_about_named = re.search(
+        r'tell\s+me\s+more\s+about\s+[A-Z][a-z]+\s+[A-Z]', q_clean)
+    # Broader check: any "tell me about X" or "tell me more about X"
+    # should bypass templates and go directly to factual routing.
+    _is_tell_me_about_any = re.search(
+        r'tell\s+me\s+(?:more\s+)?about\s+(.+)', q_clean, re.IGNORECASE)
     if (tmpl_result
             and is_contextual_ref
             and tmpl_result.get('template_info', {}).get('requires_context')
             and not tmpl_result.get('template_info', {}).get('used_fallback')
-            and ctx is not None):
+            and ctx is not None
+            and not _is_tell_me_about_named
+            and not _is_tell_me_about_any):
         conversation_history.append((q_clean, tmpl_result['response']))
         return tmpl_result['response']
 
@@ -2291,7 +2319,18 @@ def process_query(query, use_cos=True):
     except Exception:
         pass
 
-    # 3. Check for false premises / pseudoscience / non-existent concepts
+    # 3. Check for external API queries (weather, time, definitions, etc.)
+    try:
+        from cos.external_apis import handle_api_query, is_api_query
+        if is_api_query(q_clean):
+            api_response = handle_api_query(q_clean)
+            if api_response:
+                conversation_history.append((q_clean, api_response))
+                return api_response
+    except Exception:
+        pass
+
+    # 4. Check for false premises / pseudoscience / non-existent concepts
     false_premise_response = _detect_false_premise(q_clean)
     if false_premise_response:
         conversation_history.append((q_clean, false_premise_response))
@@ -2638,8 +2677,9 @@ def _handle_follow_up(query):
 
     # ── Expansion requests (longer, more, elaborate, further) ──────────
     refinement_words = {'refine', 'refine further', 'rewrite', 'improve', 'make better', 'polish'}
-    expansion_words = {'longer', 'more', 'further', 'elaborate', 'details', 'make it longer', 'expand', 'expand on this', 'tell me more', 'continue'}
-    if q.lower() in expansion_words:
+    shortening_words = {'shorter', 'make it shorter', 'summarize', 'summary', 'tl;dr', 'condense', 'brief', 'too long', 'tldr'}
+    expansion_words = {'longer', 'more', 'further', 'elaborate', 'details', 'make it longer', 'expand', 'expand on this', 'tell me more', 'continue', 'expanded'}
+    if any(w in q.lower() for w in expansion_words):
         # Find the previous substantive query and re-generate with more content
         for q_hist, r_hist in reversed(conversation_history):
             if r_hist and len(r_hist) > 20:
@@ -2669,6 +2709,35 @@ def _handle_follow_up(query):
                 return f"Here is the previous content refined and improved:\n\n{r_hist}"
         return "I need some previous content to refine. Could you ask something first?"
 
+    # ── Shortening requests (shorter, summarize, tl;dr) ───────────────
+    if any(s in q.lower() for s in shortening_words):
+        for q_hist, r_hist in reversed(conversation_history):
+            if r_hist and len(r_hist) > 20:
+                # Take just the first few sentences as a summary
+                sentences = r_hist.split('. ')
+                summary = '. '.join(sentences[:3]) + '.'
+                if len(summary) < 50:
+                    summary = r_hist[:200] + '...'
+                return f"Here is a concise summary:\n\n{summary}"
+        return "I need some previous content to summarize. Could you ask something first?"
+
+    # ── "Tell me more about X" / "expand on X" handler ─────────────────
+    # Extract a specific topic from the query and search Wikipedia for it
+    tell_me_match = re.search(r'(?:tell\s+me\s+more\s+about|expand\s+(?:on|upon)|more\s+(?:about|on|regarding)|elaborate\s+(?:on|about))\s+(.+)', q, re.IGNORECASE)
+    if tell_me_match:
+        topic = tell_me_match.group(1).strip().rstrip('.!?')
+        if topic and len(topic) > 2:
+            # Search KB/Wikipedia for this specific topic
+            content = _retrieve_multi_content(topic, max_sources=3)
+            if content and len(content) > 80:
+                return _make_conversational(content)
+            kb = knowledge_lookup(topic)
+            if kb and len(kb) > 80:
+                return _make_conversational(kb)
+            wiki, _ = _search_wikipedia(topic)
+            if wiki and len(wiki) > 50:
+                return _make_conversational(wiki)
+    
     # Get the last response for context
     last_response = None
     for q_hist, r_hist in reversed(conversation_history):
@@ -2775,6 +2844,14 @@ def _handle_factual(query, use_cos):
 
     # For context-dependent queries, resolve topic from conversation history
     search_query = q
+
+    # Handle "tell me more about X" / "tell me about X" queries by extracting X as the topic
+    tell_me_match = re.search(r'tell\s+me\s+(?:more\s+)?about\s+(.+)', q, re.IGNORECASE)
+    if tell_me_match:
+        extracted = tell_me_match.group(1).strip().rstrip('.!?')
+        if extracted and len(extracted) > 2:
+            search_query = extracted
+
     if _query_is_context_dependent(q):
         resolved = _resolve_topic(q, conversation_history)
         if resolved and len(resolved) > 2:
