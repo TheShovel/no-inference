@@ -11,7 +11,7 @@
     {
         "id": "history_question",
         "patterns": [
-            "(?:tell\\s+me\\s+about\\s+the\\s+history|what\\s+is\\s+the\\s+history|history\\s+of)\\s+(?:the|a|an)?\\s*(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+            "(?:tell\\s+me\\s+about\\s+the\\s+history|what\\s+is\\s+the\\s+history|history\\s+of)\\s+\\b(?:the|a|an)?\\s*(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
         ],
         "slots": {"topic": "topic"},
         "response_type": "explanation",

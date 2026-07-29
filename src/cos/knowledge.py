@@ -345,30 +345,43 @@ def lookup(query):
                 'well', 'even', 'much', 'may', 'now', 'than', 'then', 'very',
                 'just', 'over', 'such', 'take', 'used', 'using', 'based', 'called',
                 'html', 'css', 'page', 'site', 'web', 'use', 'using', 'need',
+                'guide', 'basic', 'simple', 'quick', 'easy', 'hard', 'start',
+                'best', 'good', 'great', 'top', 'high', 'low', 'big', 'small',
+                'long', 'short', 'full', 'free', 'open', 'close', 'left', 'right',
+                'name', 'type', 'form', 'line', 'set', 'run', 'end',
             }
             q_words = set(w.lower() for w in re.findall(r'\b[a-zA-Z]{3,}\b', q)
                          if w.lower() not in _STOP_WORDS_FUZZY)
             if q_words:
-                best_fuzzy_score = 0
+                best_fuzzy_score = -999999  # Can be negative (with penalty)
                 best_fuzzy_answer = None
+                best_fuzzy_pattern = ''
                 for pattern, answer in entries:
                     pattern_str = pattern.pattern.lower()
                     # Count how many query words appear in the pattern
                     word_hits = sum(1 for w in q_words if w in pattern_str)
-                    if word_hits > best_fuzzy_score:
-                        best_fuzzy_score = word_hits
+                    # PENALTY: Count pattern words NOT in query (prevents false matches)
+                    p_words = set(w for w in re.findall(r'\b[a-zA-Z]{3,}\b', pattern_str)
+                                  if w not in _STOP_WORDS_FUZZY)
+                    extraneous = len(p_words - q_words)
+                    score = word_hits - extraneous * 3  # -3 per extraneous word
+                    if score > best_fuzzy_score:
+                        best_fuzzy_score = score
                         best_fuzzy_answer = answer
-                # Only use fuzzy match if at least 4 key words overlap
+                        best_fuzzy_pattern = pattern_str
+                # Only use fuzzy match if at least 2 key words overlap
                 # AND the overlap covers at least 40% of query key words
-                # AND the overlap covers at least 30% of pattern key words
+                # AND the overlap covers at least 40% of pattern key words
                 # Bidirectional check prevents false matches between unrelated topics
-                if q_words and best_fuzzy_score >= 4 and best_fuzzy_answer:
-                    q_ratio = best_fuzzy_score / len(q_words)
+                # Compute the raw word_hits (without penalty) for ratio checks
+                raw_hits = sum(1 for w in q_words if w in best_fuzzy_pattern)
+                if q_words and raw_hits >= 2 and best_fuzzy_answer:
+                    q_ratio = raw_hits / len(q_words)
                     # Count pattern words too for bidirectional check
-                    pattern_words = set(w for w in re.findall(r'\b[a-zA-Z]{3,}\b', pattern_str)
+                    pattern_words = set(w for w in re.findall(r'\b[a-zA-Z]{3,}\b', best_fuzzy_pattern)
                                        if w not in _STOP_WORDS_FUZZY)
-                    p_ratio = best_fuzzy_score / max(len(pattern_words), 1)
-                    if q_ratio >= 0.4 and p_ratio >= 0.3:
+                    p_ratio = raw_hits / max(len(pattern_words), 1)
+                    if q_ratio >= 0.4 and p_ratio >= 0.4:
                         best_answer = best_fuzzy_answer
         except Exception:
             pass

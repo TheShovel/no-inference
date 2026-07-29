@@ -3,21 +3,23 @@
         "id": "detailed_explanation",
         "patterns": [
             "(?:give|provide|write)?\\s*(?:me|us)?\\s*(?:a|an)?\\s*(?:detailed|comprehensive|thorough|in-depth)?\\s*explanation\\s+(?:of|about|on|regarding)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)",
-            "(?:explain|describe)\\s+(?P<topic>.+?)(?:\\s+in\\s+detail|\\s+thoroughly|\\s+comprehensively)?(?:\\.\\s*|\\?\\s*|$)"
+            "(?:explain|describe)\\s+(?P<topic>.+?)(?:\\s+in\\s+detail|\\s+thoroughly|\\s+comprehensively)?(?:\\.\\s*|\\?\\s*|$)",
+            "(?:explain|describe)\\s+(?:the\\s+)?(?:concept\\s+of\\s+|idea\\s+of\\s+|process\\s+of\\s+|science\\s+behind\\s+)?(?P<topic>.+?)(?:\\s+in\\s+(?:simple|plain|easy)\\s+terms)?(?:\\.\\s*|\\?\\s*|$)"
         ],
         "slots": {"topic": "topic"},
         "response_type": "explanation",
-        "weight": 0.8
+        "weight": 0.85
     },
     {
         "id": "how_things_work",
         "patterns": [
             "(?:how\\s+(?:does|do|would|can))\\s+(?P<topic>.+?)\\s+work(?:\\s+in\\s+(?:practice|detail|simple|real))?(?:\\.\\s*|\\?\\s*|$)",
-            "(?:how\\s+does\\s+the\\s+process\\s+of)\\s+(?P<topic>.+?)(?:\\s+work)?(?:\\.\\s*|\\?\\s*|$)"
+            "(?:how\\s+does\\s+the\\s+process\\s+of)\\s+(?P<topic>.+?)(?:\\s+work)?(?:\\.\\s*|\\?\\s*|$)",
+            "(?:how\\s+(?:is|are))\\s+(?P<topic>.+?)\\s+(?:made|done|accomplished|created|produced)(?:\\.\\s*|\\?\\s*|$)"
         ],
         "slots": {"topic": "topic"},
         "response_type": "explanation",
-        "weight": 0.7
+        "weight": 0.8
     },
     {
         "id": "guide_tutorial",
@@ -26,6 +28,59 @@
         ],
         "slots": {"topic": "topic"},
         "response_type": "explanation",
-        "weight": 0.7
+        "weight": 0.75
+    },
+    {
+        "id": "what_is_concept",
+        "patterns": [
+            "what\\s+(?:is|are|was|were)\\s+(?P<topic>.+?)(?:\\?\\s*|$)",
+            "what\\s+do\\s+(?:you\\s+)?(?:mean\\s+by|call)\\s+(?P<topic>.+?)(?:\\?\\s*|$)",
+            "what\\s+is\\s+(?:the\\s+)?(?:definition\\s+of|meaning\\s+of|concept\\s+of|idea\\s+behind)\\s+(?P<topic>.+?)(?:\\?\\s*|$)",
+            "define\\s+(?P<topic>.+?)(?:\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "explanation",
+        "weight": 0.6
+    },
+    {
+        "id": "why_questions",
+        "patterns": [
+            "why\\s+(?:is|are|does|do|did|can|would)\\s+(?:the\\s+|a\\s+|an\\s+|it\\s+|we\\s+|they\\s+|you\\s+)?(?P<topic>.+?)(?:\\?\\s*|$)",
+            "what\\s+(?:makes|causes|triggers|creates|leads\\s+to)\\s+(?P<topic>.+?)(?:\\?\\s*|$)",
+            "what\\s+is\\s+(?:the\\s+)?(?:reason\\s+for|purpose\\s+of|cause\\s+of|explanation\\s+for)\\s+(?P<topic>.+?)(?:\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "explanation",
+        "weight": 0.5
+    },
+    {
+        "id": "tell_me_about",
+        "patterns": [
+            "tell\\s+(?:me|us)\\s+(?:more\\s+)?(?:about|of|regarding)\\s+(?P<topic>.+?)(?:\\?\\s*|$)",
+            "tell\\s+(?:me|us)\\s+(?:all\\s+)?(?:about|of|regarding)\\s+(?P<topic>.+?)(?:\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "explanation",
+        "weight": 0.5
+    },
+    {
+        "id": "compare_concepts",
+        "patterns": [
+            "(?:compare|contrast|differentiate)\\s+(?P<topic>.+?)(?:\\s+and|\\s+vs|\\s+vs\\.|\\s+versus|\\s+with)\\s+(?P<other>.+?)(?:\\?\\s*|$)",
+            "what\\s+(?:is\\s+the\\s+)?(?:difference|differences)\\s+(?:between)\\s+(?P<topic>.+?)(?:\\s+and|\\s+vs|\\s+vs\\.)\\s+(?P<other>.+?)(?:\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "other": "other"},
+        "response_type": "explanation",
+        "weight": 0.6
+    },
+    {
+        "id": "list_topics",
+        "patterns": [
+            "(?:list|name|enumerate|list\\s+down|give\\s+me|tell\\s+me)\\s+(?:the\\s+)?(?:top|most\\s+important|main|key|major|famous|best|common)?\\s*(?P<topic>.+?)(?:\\?\\s*|$)",
+            "(?:what\\s+are|name\\s+some|list\\s+some)\\s+(?:the\\s+)?(?:different|various|common|famous|known|important)?\\s*(?P<topic>.+?)(?:\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic"},
+        "response_type": "explanation",
+        "weight": 0.4
     }
 ]

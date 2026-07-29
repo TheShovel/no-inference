@@ -79,7 +79,7 @@ def _word_wrap(text, width=None, indent=2):
 class COSTUI:
     def __init__(self):
         self.conversation_history = []
-        self.debug_mode = True
+        self.debug_mode = False
         self.verbose_mode = False
 
         # Import COS orchestrator handlers from the new modular structure
@@ -244,13 +244,11 @@ class COSTUI:
 
     def run(self):
         self.clear_screen()
-        self.print_banner()
-        self.print_system_status()
 
         while True:
             try:
                 # Get user input with prompt
-                prompt = f"\n{Colors.BOLD}{Colors.GREEN}❯{Colors.RESET} "
+                prompt = f"{Colors.BOLD}{Colors.GREEN}❯{Colors.RESET} "
                 user_input = input(prompt).strip()
 
                 if not user_input:

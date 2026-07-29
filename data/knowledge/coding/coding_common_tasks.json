@@ -1,0 +1,49 @@
+[
+    {
+        "q": [
+            "python function takes list strings returns only palindromes sorted by length",
+            "filter palindromes from list python and sort by length",
+            "python function filter palindrome strings sort by length",
+            "list strings filter palindromes return sorted python",
+            "python return palindromes from list sorted",
+            "only palindromes from list python",
+            "python function returns palindromes sorted",
+            "function filter palindromes and sort python",
+            "palindrome filter sort python function",
+            "write python function filter palindromes sort"
+        ],
+        "a": "Here's a Python function that filters palindromes from a list of strings and returns them sorted by length:\n\n```python\ndef filter_palindromes_sorted(strings):\n    \"\"\"Filter palindromes from a list and return sorted by length.\n    \n    Args:\n        strings: List of strings to filter\n    \n    Returns:\n        List of palindrome strings sorted by length (shortest first)\n    \"\"\"\n    # Filter for palindromes only (strings that read same forwards and backwards)\n    palindromes = [s for s in strings if s == s[::-1]]\n    \n    # Sort by length (ascending), then alphabetically for ties\n    palindromes.sort(key=lambda s: (len(s), s.lower()))\n    \n    return palindromes\n\n# Example:\nwords = ['racecar', 'hello', 'level', 'python', 'radar', 'madam', 'noon', 'world', 'a', 'bb']\nresult = filter_palindromes_sorted(words)\nprint(result)  # ['a', 'bb', 'noon', 'radar', 'level', 'madam', 'racecar']\n```",
+        "lang": "python"
+    },
+    {
+        "q": [
+            "binary search algorithm in java",
+            "java binary search implementation",
+            "implement binary search in java",
+            "java function binary search",
+            "binary search java code",
+            "how to implement binary search in java",
+            "write binary search java",
+            "java binary search algorithm",
+            "binary search program in java",
+            "java binary search function"
+        ],
+        "a": "Here's a complete implementation of binary search in Java:\n\n```java\npublic class BinarySearch {\n    \n    /**\n     * Performs binary search on a sorted array.\n     * \n     * @param arr The sorted array to search in\n     * @param target The value to search for\n     * @return The index of the target if found, -1 otherwise\n     */\n    public static int binarySearch(int[] arr, int target) {\n        int left = 0;\n        int right = arr.length - 1;\n        \n        while (left <= right) {\n            int mid = left + (right - left) / 2;  // Prevents overflow\n            \n            if (arr[mid] == target) {\n                return mid;\n            } else if (arr[mid] < target) {\n                left = mid + 1;  // Search right half\n            } else {\n                right = mid - 1;  // Search left half\n            }\n        }\n        \n        return -1;  // Target not found\n    }\n}\n\n// Example usage:\n// int[] numbers = {2, 5, 8, 12, 16, 23, 38, 45, 56, 72};\n// int index = BinarySearch.binarySearch(numbers, 23);\n// System.out.println(index);  // Output: 5\n```",
+        "lang": "java"
+    },
+    {
+        "q": [
+            "validate password with regex javascript",
+            "javascript function validate password regex",
+            "password validation javascript function",
+            "javascript regex password validation",
+            "validate password strength javascript",
+            "javascript function check password regex",
+            "js password validation function",
+            "javascript password regex function",
+            "validate user password javascript regex"
+        ],
+        "a": "Here's a JavaScript function that validates a password using regex:\n\n```javascript\n/**\n * Validates a password against requirements.\n * Requirements: min 8 chars, at least 1 uppercase, 1 lowercase, 1 digit, 1 special char\n * \n * @param {string} password - The password to validate\n * @returns {{valid: boolean, message: string}} Validation result\n */\nfunction validatePassword(password) {\n    const requirements = [\n        { regex: /.{8,}/, message: 'Password must be at least 8 characters long' },\n        { regex: /[a-z]/, message: 'Password must contain at least one lowercase letter' },\n        { regex: /[A-Z]/, message: 'Password must contain at least one uppercase letter' },\n        { regex: /[0-9]/, message: 'Password must contain at least one digit' },\n        { regex: /[^a-zA-Z0-9]/, message: 'Password must contain at least one special character' },\n    ];\n    \n    for (const req of requirements) {\n        if (!req.regex.test(password)) {\n            return { valid: false, message: req.message };\n        }\n    }\n    \n    return { valid: true, message: 'Password meets all requirements' };\n}\n\n// Example:\n// console.log(validatePassword('Pass123!'));  // { valid: true, message: 'Password meets all requirements' }\n// console.log(validatePassword('weak'));     // { valid: false, message: 'Password must be at least 8 characters long' }\n```",
+        "lang": "javascript"
+    }
+]

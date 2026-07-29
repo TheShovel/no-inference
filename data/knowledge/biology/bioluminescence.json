@@ -1,0 +1,32 @@
+[
+    {
+        "q": [
+            "how does bioluminescence work",
+            "bioluminescence explained",
+            "how bioluminescence works in deep sea",
+            "bioluminescent process",
+            "what causes bioluminescence",
+            "how do fireflies glow",
+            "how do deep sea creatures produce light",
+            "bioluminescence chemical reaction",
+            "luciferin luciferase reaction",
+            "how do jellyfish glow"
+        ],
+        "a": "Bioluminescence is the production and emission of light by living organisms through a chemical reaction. It is produced when the enzyme luciferase catalyzes the oxidation of a light-emitting molecule called luciferin in the presence of oxygen and energy (ATP). This reaction produces an excited-state oxyluciferin molecule, which releases energy as visible light when it returns to its ground state. The process is highly efficient, converting over 90% of the chemical energy into light (compared to about 10% for an incandescent light bulb). Different organisms use different luciferin-luciferase combinations, producing light of different colors (blue-green is most common in marine environments). In the deep ocean, where sunlight does not penetrate, bioluminescence is used by organisms for communication, camouflage (counter-illumination), attracting prey (luring with dangling light organs), defense (blinding predators or releasing glowing ink), and finding mates. Fireflies use bioluminescence on land for mate attraction through species-specific flash patterns. Some fungi also bioluminesce (foxfire), attracting insects to help disperse spores. Bioluminescence has evolved independently at least 40 times across different evolutionary lineages."
+    },
+    {
+        "q": [
+            "how do large language models work",
+            "large language model explained",
+            "how llm works",
+            "what is a large language model",
+            "llm architecture",
+            "how do language models generate text",
+            "transformer model explained",
+            "llm training process",
+            "gpt how it works",
+            "large language models explained simply"
+        ],
+        "a": "Large Language Models (LLMs) are artificial neural networks trained on vast amounts of text data to understand and generate human-like text. They are based on the transformer architecture, introduced in the 2017 paper Attention Is All You Need. The core mechanism is self-attention, which allows the model to weigh the importance of different words in the input when generating each output word. LLMs are trained through next-token prediction: given a sequence of words, the model learns to predict the next most likely word. Through this process on billions of text examples, the model develops a statistical understanding of language patterns, grammar, facts, and reasoning. The training process has two main stages: pretraining on large public text corpora (books, websites, articles), followed by fine-tuning on curated datasets with human feedback (RLHF - Reinforcement Learning from Human Feedback). Key architectural components include: tokenization (splitting text into tokens), embedding layers (converting tokens to vectors), multiple transformer layers with self-attention and feed-forward networks, and an output layer that predicts the next token probability distribution. The model size ranges from billions to trillions of parameters (the weights learned during training). Prominent examples include GPT-4, Claude, Gemini, and Llama. Despite their capabilities, LLMs have limitations: they can produce incorrect information (hallucination), have no true understanding or consciousness, can reflect biases in their training data, and require substantial computational resources."
+    }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "q": [
+      "who invented the first working telescope",
+      "who invented the telescope",
+      "first telescope inventor",
+      "history of the telescope invention",
+      "who made the first telescope"
+    ],
+    "a": "The invention of the first working telescope is credited to Hans Lippershey, a German-Dutch lensmaker, in 1608. Lippershey applied for a patent for his 'device for seeing things far away as if they were nearby' — a design that used a convex objective lens and a concave eyepiece lens (now called a refracting telescope). The story goes that Lippershey's children discovered the principle by holding up two lenses and noticing that a distant weather vane appeared larger. However, Lippershey was denied a patent because the principle was already known to other opticians, and other makers (including Jacob Metius) had independently created similar devices. Word of the invention reached Galileo Galilei in Italy in 1609. Galileo immediately built his own improved versions (achieving 20x magnification) and was the first to use the telescope for astronomical observations. He discovered the four largest moons of Jupiter, craters on the Moon, sunspots, and the phases of Venus. Because of his astronomical discoveries, Galileo is often mistakenly credited as the inventor, but the actual invention predates his improvements by about a year. The telescope rapidly evolved in the following decades: Johannes Kepler proposed the Keplerian telescope (with two convex lenses) in 1611, and Isaac Newton built the first reflecting telescope (using a mirror instead of a lens) in 1668 to avoid chromatic aberration."
+  },
+  {
+    "q": [
+      "comprehensive guide to starting a vegetable garden",
+      "how to start a vegetable garden guide",
+      "beginner vegetable garden guide comprehensive",
+      "complete guide starting vegetable garden",
+      "step by step vegetable garden guide"
+    ],
+    "a": "Starting a vegetable garden is a rewarding endeavor. Here is a comprehensive guide for beginners.\n\nFirst, choose the right location. Most vegetables need 6-8 hours of direct sunlight daily. Pick a spot with good drainage and access to water. If you lack yard space, use containers on a balcony or patio.\n\nPrepare the soil by removing grass and weeds, loosening the soil to 12 inches deep, and mixing in 2-3 inches of compost or aged manure. For containers, use a high-quality potting mix.\n\nStart small with 3-5 easy vegetables. Great beginner choices include: tomatoes (especially cherry tomatoes), lettuce and leafy greens (quick growing), radishes (ready in 25-30 days), bush beans (no trellis needed), cucumbers, zucchini, bell peppers, and herbs like basil, mint, chives, and parsley.\n\nPlant at the right time. Learn your local frost dates. Warm-season crops (tomatoes, peppers, cucumbers) should be planted after the last spring frost. Cool-season crops (lettuce, peas, carrots) can be planted earlier.\n\nWater consistently — most vegetables need about 1-2 inches of water per week. Water deeply and less frequently to encourage deep root growth. Water at the base of plants in the morning to prevent fungal diseases.\n\nUse organic fertilizer. Too much nitrogen produces leaves but few fruits. Compost tea or fish emulsion are excellent natural options.\n\nWatch for pests. Common garden pests include aphids, caterpillars, and slugs. Use insecticidal soap, neem oil, or introduce beneficial insects like ladybugs. Companion planting (marigolds near tomatoes) naturally deters many pests.\n\nHarvest regularly — most vegetables produce more when harvested frequently. Pick lettuce leaves from the outside, harvest beans when young and tender, and pick tomatoes when fully colored."
+  },
+  {
+    "q": [
+      "react routing system using map",
+      "implement basic routing system in react",
+      "react map based navigation routing",
+      "react page routing with map component",
+      "react router map based navigation"
+    ],
+    "a": "Here's how to implement a basic routing system in React using React Router:\n\n```jsx\nimport React from 'react';\nimport { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';\n\n// Pages\nfunction Home() {\n    return (\n        <div>\n            <h1>Home Page</h1>\n            <nav>\n                <Link to=\"/about\">About</Link>\n                <Link to=\"/contact\">Contact</Link>\n                <Link to=\"/users\">Users</Link>\n            </nav>\n        </div>\n    );\n}\n\nfunction About() { return <h1>About Us</h1>; }\nfunction Contact() { return <h1>Contact Us</h1>; }\n\nfunction Users() {\n    const navigate = useNavigate();\n    const users = ['Alice', 'Bob', 'Charlie'];\n    \n    return (\n        <div>\n            <h1>Users</h1>\n            <ul>\n                {users.map((user, index) => (\n                    <li key={index}>\n                        <Link to={`/users/${user.toLowerCase()}`}>{user}</Link>\n                    </li>\n                ))}\n            </ul>\n            <button onClick={() => navigate('/')}>Back to Home</button>\n        </div>\n    );\n}\n\nfunction UserProfile() {\n    const { userId } = useParams();\n    return <h1>User Profile: {userId}</h1>;\n}\n\n// Main App with routing\nfunction App() {\n    return (\n        <BrowserRouter>\n            <Routes>\n                <Route path=\"/\" element={<Home />} />\n                <Route path=\"/about\" element={<About />} />\n                <Route path=\"/contact\" element={<Contact />} />\n                <Route path=\"/users\" element={<Users />} />\n                <Route path=\"/users/:userId\" element={<UserProfile />} />\n                <Route path=\"*\" element={<h1>404: Page Not Found</h1>} />\n            </Routes>\n        </BrowserRouter>\n    );\n}\n\nexport default App;\n```\n\nFor a map with markers and routing, combine React Router with a map library like `react-leaflet` or `@react-google-maps/api`. The `<Routes>` component matches URL patterns to components, `<Link>` creates navigation links, and `useNavigate()` provides programmatic navigation.",
+    "lang": "jsx"
+  }
+]

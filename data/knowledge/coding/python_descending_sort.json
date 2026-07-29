@@ -1,0 +1,21 @@
+[
+    {
+        "q": [
+            "python list descending order",
+            "sort list descending python",
+            "python sort descending",
+            "python reverse sort list",
+            "python list sort reverse",
+            "python sorted reverse true",
+            "python sort by length descending",
+            "python longest first sort",
+            "sort strings descending python",
+            "python function sort descending",
+            "python list sort from largest to smallest",
+            "python sorted list longest to shortest",
+            "python sort in reverse order"
+        ],
+        "a": "Here's how to sort in descending order in Python:\n\n```python\ndef sort_descending(items):\n    \"\"\"Sort a list in descending order (largest/longest first).\"\"\"\n    return sorted(items, reverse=True)\n\n# Example:\nnumbers = [3, 1, 4, 1, 5, 9, 2, 6]\nprint(sort_descending(numbers))  # [9, 6, 5, 4, 3, 2, 1, 1]\n\n# Sort strings by length (longest first):\ndef sort_by_length_desc(strings):\n    \"\"\"Sort strings by length, longest first.\"\"\"\n    return sorted(strings, key=len, reverse=True)\n\nwords = ['apple', 'hi', 'banana', 'cherry', 'date']\nprint(sort_by_length_desc(words))  # ['banana', 'cherry', 'apple', 'date', 'hi']\n```\n\nTo sort in-place (modifying the original list), use `list.sort(reverse=True)`:\n```python\nnumbers = [3, 1, 4, 1, 5, 9]\nnumbers.sort(reverse=True)\nprint(numbers)  # [9, 5, 4, 3, 1, 1]\n```",
+        "lang": "python"
+    }
+]

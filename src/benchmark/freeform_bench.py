@@ -183,7 +183,7 @@ class Judgment:
 
 @dataclass
 class EvalCase:
-    """One question + response + evaluation."""
+    """A single query-response-evaluation case."""
     query: str
     response: str
     judgment: Optional[Judgment] = None
@@ -192,7 +192,7 @@ class EvalCase:
     def to_dict(self) -> dict:
         d = {
             "query": self.query,
-            "response": self.response[:2000],
+            "response": self.response[:8000],
             "time": round(self.time_taken, 2),
         }
         if self.judgment:
@@ -211,7 +211,7 @@ class EvalCase:
 
 @dataclass
 class MultiTurnTurn:
-    """A single turn in a multi-turn conversation."""
+    """A single turn within a multi-turn conversation."""
     query: str
     response: str
     judgment: Optional[Judgment] = None
@@ -220,7 +220,7 @@ class MultiTurnTurn:
     def to_dict(self) -> dict:
         d = {
             "query": self.query,
-            "response": self.response[:2000],
+            "response": self.response[:8000],
             "time": round(self.time_taken, 2),
         }
         if self.judgment:
@@ -568,6 +568,9 @@ def generate_responses(questions: List[str]) -> List[EvalCase]:
     for i, q in enumerate(questions):
         start = time.time()
         try:
+            # Reset conversation before each question to prevent cross-query
+            # contamination (conversation_history accumulating across questions)
+            reset_conversation()
             response = process_query(q, use_cos=True)
         except Exception as e:
             response = f"[Error: {e}]"
@@ -668,11 +671,11 @@ def evaluate_response(case: EvalCase, dry_run: bool = False) -> Judgment:
         return Judgment(parse_error=True, raw_feedback="[Response too short to evaluate]")
 
     prompt = _EVAL_PROMPT.format(
-        query=case.query[:200],
-        response=case.response[:2000],
+        query=case.query[:300],
+        response=case.response[:8000],
     )
 
-    raw = _ollama(prompt, temperature=0.2, num_predict=800)
+    raw = _ollama(prompt, temperature=0.2, num_predict=1500)
     if not raw:
         return Judgment(parse_error=True, raw_feedback="[No response from judge]")
 

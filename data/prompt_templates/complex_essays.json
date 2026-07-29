@@ -41,8 +41,46 @@
             "(?:write|compose|draft|create)\\s+(?:a|an|the)?\\s*comparative\\s*(?:essay|analysis|study)\\s+(?:about|on|comparing|between|contrasting)\\s+(?P<topic>.+?)(?:,\\s*(?:focusing|with\\s+emphasis)\\s+(?:on|upon)\\s+(?P<emphasis>.+?))?(?:\\.\\s*|\\?\\s*|$)"
         ],
         "slots": {"topic": "topic", "emphasis": "emphasis"},
+        "response_type": "comparing_essay",
+        "weight": 0.95
+    },
+    {
+        "id": "essay_comparing_x_with_y",
+        "patterns": [
+            "(?:write|compose|draft|create)\\s+(?:me|us)?\\s*(?:a|an|the)?\\s*(?:short|long|detailed|brief|comprehensive)?\\s*(?:essay|comparison|comparative\\s*(?:essay|analysis|study))\\s+(?:comparing|compare|contrasting|contrast)\\s+(?P<topic1>.+?)\\s+(?:with|and|versus|vs|vs\\.|to)\\s+(?P<topic2>.+?)(?:,\\s*(?:focusing|highlighting|emphasizing)\\s+(?:on|upon|the\\s+differences|the\\s+similarities)\\s*(?P<emphasis>.+?))?(?:\\.\\s*|\\?\\s*|$)",
+            "(?:write|compose|draft|create)\\s+(?:me|us)?\\s*(?:a|an|the)?\\s*(?:short|long|detailed|brief|comprehensive)?\\s*(?:essay|analysis|comparison)\\s+(?:about|on|of)\\s+(?:the\\s+)?(?:similarities|differences|comparison)\\s+(?:between|among)\\s+(?P<topic1>.+?)\\s+(?:and|versus|vs)\\s+(?P<topic2>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic1": "topic1", "topic2": "topic2", "emphasis": "emphasis"},
+        "response_type": "comparing_essay",
+        "weight": 1.0
+    },
+    {
+        "id": "essay_comparing_x_and_y",
+        "patterns": [
+            "compare\\s+(?:and\\s+)?(?:contrast\\s+)?(?P<topic1>.+?)\\s+(?:with|and|versus|vs|vs\\.|to)\\s+(?P<topic2>.+?)(?:\\.\\s*|\\?\\s*|$)",
+            "(?:what|how)\\s+(?:are\\s+the|is\\s+the)\\s*(?:differences|similarities)\\s+(?:between)\\s+(?P<topic1>.+?)\\s+(?:and|versus|vs)\\s+(?P<topic2>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic1": "topic1", "topic2": "topic2"},
+        "response_type": "comparing_essay",
+        "weight": 1.0
+    },
+    {
+        "id": "essay_detailed_multi_clause",
+        "patterns": [
+            "(?:write|compose|draft|create)\\s+(?:me|us)?\\s*(?:a|an|the)?\\s*(?:detailed|comprehensive|in-depth|thorough)?\\s*(?:essay|analysis|explanation|guide|overview)\\s+(?:of|about|on|regarding|covering)\\s+(?P<topic>.+?)(?:\\s+(?:that\\s+)?(?:includes?|covers?|explains?|discusses?|examines?|explores?)\\s+(?P<requirement1>.+?))?(?:\\s+(?:and\\s+also|covers?|includes?|discusses?)\\s+(?P<requirement2>.+?))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "requirement1": "requirement1", "requirement2": "requirement2"},
         "response_type": "essay",
-        "weight": 0.9
+        "weight": 1.0
+    },
+    {
+        "id": "essay_make_sure",
+        "patterns": [
+            "(?:write|compose|create)\\s+(?:me|us)?\\s*(?:a|an|the)?\\s*(?:essay|article|report|paper|piece|text|explanation)\\s+(?:about|on|regarding|covering|concerning)\\s+(?P<topic>.+?)\\s+(?:make|ensuring|make\\s+sure)\\s+(?:sure|that|it)\\s+(?:it\\s+)?(?:includes?|covers?|contains?|has|explains?|discusses?)\\s+(?P<requirement1>.+?)(?:\\s+(?:and|also|as\\s+well\\s+as)\\s+(?P<requirement2>.+?))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "requirement1": "requirement1", "requirement2": "requirement2"},
+        "response_type": "essay",
+        "weight": 1.0
     },
     {
         "id": "essay_analysis",
@@ -51,7 +89,7 @@
         ],
         "slots": {"topic": "topic", "focus": "focus"},
         "response_type": "essay",
-        "weight": 0.9
+        "weight": 0.95
     },
     {
         "id": "essay_intro_body_conclusion",
@@ -60,7 +98,7 @@
         ],
         "slots": {"topic": "topic"},
         "response_type": "essay",
-        "weight": 0.85
+        "weight": 0.9
     },
     {
         "id": "essay_format_spec",
@@ -69,7 +107,7 @@
         ],
         "slots": {"topic": "topic", "format": "format"},
         "response_type": "essay",
-        "weight": 0.8
+        "weight": 0.85
     },
     {
         "id": "write_story_with_elements",
@@ -97,5 +135,14 @@
         "slots": {"author": "author", "recipient": "recipient", "topic": "topic"},
         "response_type": "explanation",
         "weight": 0.85
+    },
+    {
+        "id": "explain_detailed_with",
+        "patterns": [
+            "(?:provide|give|write)\\s+(?:me|us)?\\s*(?:a|an|the)?\\s*(?:detailed|comprehensive|thorough|in-depth|complete)?\\s*(?:explanation|description|overview|account)\\s+(?:of|about|on|regarding)\\s+(?P<topic>.+?)(?:,\\s*(?:explaining|detailing|covering|including|specifically)\\s+(?P<requirement1>.+?))?(?:\\s+(?:and|as\\s+well\\s+as)\\s+(?P<requirement2>.+?))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {"topic": "topic", "requirement1": "requirement1", "requirement2": "requirement2"},
+        "response_type": "essay",
+        "weight": 1.0
     }
 ]

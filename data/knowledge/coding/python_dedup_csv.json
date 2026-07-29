@@ -1,0 +1,23 @@
+[
+    {
+        "q": [
+            "takes a list of strings removes duplicates and returns them as a comma separated string",
+            "returns them as a comma separated string",
+            "returns them as a comma-separated string",
+            "python remove duplicates return comma separated string",
+            "python function remove duplicates return csv string",
+            "remove duplicates from list comma separated python",
+            "python deduplicate list comma string",
+            "remove duplicates return joined comma",
+            "python list unique comma separated",
+            "python return comma separated unique strings",
+            "function removes duplicates returns comma separated",
+            "python comma separated list remove duplicates",
+            "python unique values comma separated string",
+            "returns them as a single comma separated string",
+            "return result as a comma separated string"
+        ],
+        "a": "Here's a Python function that takes a list of strings, removes duplicates, and returns them as a comma-separated string in alphabetical order:\n\n```python\ndef deduplicate_to_csv(strings):\n    \"\"\"Remove duplicates from a list and return as a comma-separated string.\n    \n    Args:\n        strings: A list of strings to deduplicate\n    \n    Returns:\n        A comma-separated string with duplicates removed, sorted alphabetically\n    \"\"\"\n    # Remove duplicates by converting to set, then sort alphabetically\n    unique_sorted = sorted(set(strings))\n    # Join into a comma-separated string\n    return ', '.join(unique_sorted)\n\n# Example usage:\nwords = ['banana', 'apple', 'cherry', 'apple', 'banana', 'date']\nresult = deduplicate_to_csv(words)\nprint(result)  # Output: apple, banana, cherry, date\n```\n\nIf you need to preserve the original order of first occurrences instead of sorting alphabetically, you can use this version:\n\n```python\ndef deduplicate_preserve_order(strings):\n    \"\"\"Remove duplicates preserving first occurrence order.\"\"\"\n    seen = set()\n    unique = []\n    for s in strings:\n        if s not in seen:\n            seen.add(s)\n            unique.append(s)\n    return ', '.join(unique)\n```",
+        "lang": "python"
+    }
+]

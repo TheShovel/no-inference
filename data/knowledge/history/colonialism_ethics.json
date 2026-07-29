@@ -1,0 +1,29 @@
+[
+    {
+        "q": [
+            "persuasive essay ethical implications colonialism 21st century",
+            "colonialism 21st century ethics",
+            "ethical implications of colonialism",
+            "modern colonialism ethics",
+            "colonialism today ethical issues",
+            "neocolonialism ethics",
+            "ethical issues colonialism",
+            "colonialism moral implications",
+            "legacy of colonialism ethics"
+        ],
+        "a": "The ethical implications of colonialism in the 21st century remain deeply significant and continue to shape global power dynamics. Colonialism, the practice of acquiring and maintaining control over foreign territories and peoples, has left enduring legacies that demand ethical examination. First, economic inequality: colonial powers extracted vast resources from colonized regions, creating structural economic disadvantages that persist today. Many former colonies continue to struggle with underdevelopment, debt, and dependency on former colonial powers. The ethical question is whether reparations or debt forgiveness are owed. Second, cultural erasure: colonial policies deliberately suppressed indigenous languages, religions, and cultural practices, causing intergenerational trauma and loss of heritage. Cultural preservation and revitalization efforts are ongoing ethical responsibilities. Third, political boundaries: colonial powers drew arbitrary borders that divided ethnic groups and combined rival communities, creating conflicts that persist in many post-colonial states. Fourth, environmental exploitation: colonial resource extraction established patterns of environmental degradation that continue. Fifth, ongoing neocolonialism: modern economic practices, including corporate exploitation of labor and resources in developing nations, unequal trade agreements, and debt structures, raise questions about whether colonialism has truly ended or merely transformed. Addressing these ethical implications requires acknowledging historical wrongs, supporting restorative justice, promoting equitable economic relationships, and respecting the sovereignty and self-determination of formerly colonized peoples."
+    },
+    {
+        "q": [
+            "duck typing vs nominal typing python",
+            "duck typing python",
+            "what is duck typing",
+            "python duck typing explained",
+            "duck typing vs static typing",
+            "difference between duck typing and nominal typing",
+            "python typing system explained",
+            "duck typing philosophy"
+        ],
+        "a": "Duck typing is a programming concept associated with dynamic typing, where the type of an object is determined by its behavior (methods and properties) rather than its explicit class or type declaration. The name comes from the saying: If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck. In Python, duck typing means you can call methods on an object without checking its type - if the object has the required method, it works. For example, if you write a function that calls .quack() on an argument, it will work with any object that has a .quack() method, regardless of its class. This is in contrast to nominal typing (used in languages like Java and C++), where compatibility is determined by explicit type declarations and inheritance hierarchies. Duck typing makes Python code more flexible and promotes polymorphism, but can lead to runtime errors if an object doesn't have the expected method."
+    }
+]

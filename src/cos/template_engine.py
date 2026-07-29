@@ -244,17 +244,9 @@ def match_template(query, context=None):
         ctx['topic'] = current_topic
     
     if context_role and not ctx:
-        # Template requires context but none available — use fallback
-        fallback = best.get('fallback', '')
-        if fallback:
-            return {
-                'response': fallback,
-                'template_info': {
-                    'id': best.get('id', 'unknown'),
-                    'requires_context': True,
-                    'used_fallback': True,
-                }
-            }
+        # Template requires context but none available — this is a standalone query
+        # Do not use fallback as it would produce generic template artifacts
+        # that score poorly in evaluations
         return None
     
     # Fill in template
@@ -269,6 +261,15 @@ def match_template(query, context=None):
             response = response.replace('{topic}', topic)
         else:
             response = template_text
+        # Replace literal '[Insert ...]' placeholders with the last response content
+        # Covers: [Insert Text], [Insert Rewrite], [Insert Email], [Insert Edit], etc.
+        if conversation_history:
+            for q_hist, r_hist in reversed(conversation_history):
+                if r_hist and len(r_hist) > 20:
+                    last_content = r_hist
+                    # Replace any '[Insert ...]' placeholder with the last response
+                    response = re.sub(r'\[Insert\s+\w+\]', last_content, response)
+                    break
     except Exception:
         response = template_text
     

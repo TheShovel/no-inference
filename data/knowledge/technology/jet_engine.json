@@ -1,14 +1,33 @@
 [
-  {
-    "q": [
-      "jet engine works",
-      "how does a jet engine work",
-      "jet engine explained",
-      "how jet engines work",
-      "jet engine working principle",
-      "detailed explanation of how a jet engine works",
-      "how does a jet engine work step by step"
-    ],
-    "a": "A jet engine works on the principle of Newton's third law (for every action, there is an equal and opposite reaction) using a four-step process called the Brayton cycle: intake, compression, combustion, and exhaust. Step 1 \u2014 Intake: Air enters the engine through the front fan (the large fan visible at the front of the engine). This fan pulls in large volumes of air. About 80% of this air bypasses the core of the engine and flows around it, creating most of the thrust in modern turbofan engines (the type used on commercial airliners). The remaining 20% enters the engine core. Step 2 \u2014 Compression: The incoming air passes through a series of compressor stages made up of rotating blades (rotors) and stationary vanes (stators). Each stage compresses the air further, increasing its pressure by up to 40 times (40:1 pressure ratio). This compression heats the air to around 500\u00b0C. Step 3 \u2014 Combustion: The compressed air enters the combustion chamber where fuel (kerosene) is injected and ignited. The burning fuel-air mixture reaches temperatures of up to 2000\u00b0C. This hot, expanding gas wants to rush out of the engine. Step 4 \u2014 Exhaust: The hot gases pass through a turbine section, which extracts energy to drive the front compressor and fan. The remaining high-velocity gas exits through the nozzle at the back, creating thrust. The key difference between a turbojet and a turbofan is the bypass ratio \u2014 modern high-bypass turbofans move a large volume of air around the core, making them more efficient and quieter than pure turbojets. Jet engines are most efficient at high altitudes and high speeds, which is why planes cruise at 35,000+ feet."
-  }
+    {
+        "q": [
+            "how does a jet engine work",
+            "jet engine thrust",
+            "how jet engines produce thrust",
+            "jet engine explained",
+            "how does a jet engine produce thrust",
+            "jet propulsion explained",
+            "turbojet engine how it works",
+            "jet engine工作原理",
+            "jet engine mechanism",
+            "how do jet engines work"
+        ],
+        "a": "A jet engine produces thrust through the principle of Newton's third law (for every action, there is an equal and opposite reaction). A turbojet engine works in four stages: (1) Intake: air enters the engine through the front intake. The shape of the intake slows the incoming air (compression from ram effect) and directs it toward the compressor. (2) Compression: the compressor consists of many rotating blades (rotors) and stationary blades (stators) that progressively compress the air, increasing its pressure by 30-40 times. This is necessary because higher pressure allows more fuel to be burned efficiently. (3) Combustion: the compressed air enters the combustion chamber, where fuel (typically kerosene) is injected and ignited. The burning fuel-air mixture expands rapidly and heats up to about 2000 degrees Celsius (3600 degrees Fahrenheit). (4) Exhaust: the hot, high-pressure gas rushes out through the turbine, which extracts some energy to spin the compressor via a connecting shaft. The remaining gas exits through the exhaust nozzle at very high speed. The high-speed exhaust creates thrust that pushes the aircraft forward. The thrust is proportional to the mass of air expelled times its acceleration. Modern turbofan engines are more efficient because a large fan at the front pushes a massive amount of air around the core (bypass air), which provides most of the thrust while the core drives the fan. Other types include turboprop (powers a propeller), ramjet (no moving parts, uses forward speed for compression), and scramjet (supersonic combustion)."
+    },
+    {
+        "q": [
+            "ethics of colonizing mars",
+            "terraforming mars ethics",
+            "ethics of terraforming mars",
+            "colonizing mars ethical issues",
+            "martian colonization ethics",
+            "should we colonize mars",
+            "ethics space colonization",
+            "terraforming ethical debate",
+            "ethics of mars colonization",
+            "martian life rights ethics",
+            "extraterrestrial life ethics terraforming"
+        ],
+        "a": "The ethics of colonizing and terraforming Mars involves complex moral questions that span environmental ethics, intergenerational justice, and the value of extraterrestrial life. Key ethical considerations include: (1) Rights of potential native life: if Mars has or had microbial life (even extinct), do we have a moral obligation to preserve it? The principle of precaution suggests we should study Mars extensively before introducing Earth life that could contaminate or destroy native ecosystems. (2) Environmental ethics: terraforming Mars would fundamentally transform an entire planet's environment. Is it ethical to deliberately alter a planetary ecosystem, even one without complex life? Some argue we have a duty not to destroy pristine natural environments. (3) Resource extraction: who owns Martian resources? The Outer Space Treaty of 1967 prohibits national sovereignty in space, but private resource extraction raises questions about equitable distribution and the prevention of exploitation. (4) Risk to humans: colonizing Mars involves significant physical risks, including radiation exposure, low gravity effects, and psychological isolation. Is it ethical to send people on a one-way mission with high mortality risk? (5) Intergenerational justice: decisions made now about terraforming will affect countless future generations. Do we have the right to make irreversible changes to another world? (6) The moral status of potential Martian life: even simple microbial life could be considered to have intrinsic value. The precautionary principle would argue for extensive study before any potentially harmful intervention. (7) Comparative ethics: should we prioritize solving Earth's environmental problems before investing in Mars colonization?"
+    }
 ]

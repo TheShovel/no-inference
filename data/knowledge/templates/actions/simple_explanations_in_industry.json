@@ -17,9 +17,9 @@
   {
     "id": "industry-explainer-002",
     "triggers": [
-      "what is",
-      "define",
-      "meaning of"
+      "what is this industry term",
+      "define this industry term",
+      "meaning of this industry term"
     ],
     "context_role": "industry_term",
     "template": "At its core, {context} is basically a way for companies to track their progress using specific markers so they know if they are hitting their goals.",

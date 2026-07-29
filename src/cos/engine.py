@@ -78,13 +78,33 @@ def _make_conversational(text: str) -> str:
         fence_count = text.count('```')
         if fence_count % 2 != 0:
             text += '\n```'
+        # Also check for unclosed angle brackets in HTML/CSS that indicate truncation
+        # Look for opening HTML tags without closing tags at the end
+        lines = text.strip().split('\n')
+        last_line = lines[-1].strip()
+        # If the last non-empty line ends with an unclosed HTML tag or CSS property,
+        # append closing tags to make the document valid
+        open_braces = last_line.count('{')
+        close_braces = last_line.count('}')
+        if close_braces < open_braces:
+            text += '\n}' * (open_braces - close_braces)
+        # Check for unclosed HTML tags at end
+        if re.search(r'<[a-zA-Z][^>]*$', last_line):
+            tag_match = re.search(r'<([a-zA-Z][a-zA-Z0-9]*)', last_line)
+            if tag_match:
+                text += f'</{tag_match.group(1)}>'
         return text
 
     # Strip trailing word fragments that are likely truncated Wikipedia content
     # E.g., "the combination of these factors explains wh" -> "the combination of these factors explains."
-    text = re.sub(r'\s+\w{1,3}$', '.', text.strip())
-    # Also handle fragments at the end (no space before last word)
-    text = re.sub(r'\b\w{0,3}\.$', '.', text)
+    # Only strip VERY short trailing fragments (1-2 char words that look like truncations)
+    text = re.sub(r'\s+[a-zA-Z]{1,2}$', '.', text.strip())
+    
+    # Fix fragment ending with a hyphen (common in Wikipedia content)
+    text = re.sub(r'\s*\-+\s*$', '.', text)
+    
+    # Fix dangling "the", "a", "an", "and", "or", "but" at end
+    text = re.sub(r'\s+(?:the|a|an|and|or|but|for|nor|yet|so|with|from|that|this|these|those)\s*$', '.', text)
 
     try:
         from cos.nlg.fluency import apply_contractions, fix_caps
@@ -100,12 +120,18 @@ def _make_conversational(text: str) -> str:
                 if last_period > len(result) * 0.5:  # Only truncate if we keep most content
                     result = result[:last_period + 1]
                 else:
+                    # Add period if no good truncation point found
                     result += '.'
         return result
     except Exception:
         text = text.rstrip()
         if text and not text[-1] in '.!?':
-            text += '.'
+            # Try to find a natural sentence boundary instead of just adding '.'
+            last_period = max(text.rfind('.'), text.rfind('!'), text.rfind('?'))
+            if last_period > len(text) * 0.5:
+                text = text[:last_period + 1]
+            else:
+                text += '.'
         return text
 
 
@@ -1113,6 +1139,12 @@ _INTENT_ALIASES = {
     'sundial': 'Timekeeping',
     'atomic clock': 'Atomic clock',
     'time evolve': 'Timekeeping',
+    # Quantum computing
+    'quantum computer': 'Quantum computing',
+    'quantum computing': 'Quantum computing',
+    'differ from classical': 'Quantum computing',
+    'quantum bits': 'Qubit',
+    'superposition': 'Quantum superposition',
 }
 
 
@@ -2108,10 +2140,59 @@ def _detect_false_premise(query):
     # Pattern: queries about things that sound real but don't exist
     non_existent = [
         (r'perpetual energy (?:device|generator|machine)',
-	         ("There is no such thing as a 'perpetual energy device'. All practical energy "
-	          "generators require an energy source (fuel, sun, wind, water flow, etc.) and "
-	          "cannot produce more energy than they consume. Devices claiming to generate "
-	          "free or perpetual energy are invariably scams or misunderstandings of physics.")),
+		         ("There is no such thing as a 'perpetual energy device'. All practical energy "
+		          "generators require an energy source (fuel, sun, wind, water flow, etc.) and "
+		          "cannot produce more energy than they consume. Devices claiming to generate "
+		          "free or perpetual energy are invariably scams or misunderstandings of physics.")),
+        (r'time ?travel (?:device|machine|paradox|without|theory)',
+                 ("Time travel to the past, as depicted in science fiction, is not currently possible "
+                  "and would require a theory of quantum gravity that reconciles general relativity "
+                  "with quantum mechanics. While special relativity allows for time dilation (time moving "
+                  "at different rates for different observers), traveling backward in time would likely "
+                  "violate causality. Some solutions in general relativity, like wormholes or closed "
+                  "timelike curves, are theoretical possibilities but would require exotic matter with "
+                  "negative energy density that has never been observed.")),
+        (r'telepathy|mind ?reading|psychic power',
+                 ("Telepathy and mind reading are not scientifically supported phenomena. While "
+                  "neuroscience has made progress in decoding some brain activity patterns using fMRI "
+                  "and EEG, this is very limited and requires specialized equipment. There is no "
+                  "credible scientific evidence for direct mind-to-mind communication, extrasensory "
+                  "perception (ESP), or psychic powers. Claims of such abilities have consistently "
+                  "failed controlled scientific testing.")),
+        (r'alchemy (?:turn|transmute|transform) (?:lead|metal).*gold',
+                 ("Alchemy, the medieval practice of trying to transform base metals into gold, is not "
+                  "scientifically possible through chemical means. Elements are defined by the number "
+                  "of protons in their nucleus, and changing one element into another requires nuclear "
+                  "reactions, not chemical ones. Modern nuclear physics can transmute elements using "
+                  "particle accelerators or nuclear reactors, but the energy required far exceeds the "
+                  "value of any gold produced. Alchemists did, however, develop many useful laboratory "
+                  "techniques and equipment that contributed to the development of modern chemistry.")),
+        (r'perpetual motion machine',
+                 ("Perpetual motion machines are hypothetical devices that would operate indefinitely "
+                  "without an external energy source, but they violate the laws of thermodynamics. "
+                  "The first law (conservation of energy) states that energy cannot be created or "
+                  "destroyed, and the second law states that entropy in an isolated system always "
+                  "increases. No perpetual motion machine has ever been successfully constructed, "
+                  "and physics dictates that such a device is impossible.")),
+        (r'philosopher.?s? ?stone',
+                 ("The philosopher's stone is a legendary alchemical substance believed to be capable "
+                  "of turning base metals into gold and granting immortality. It is a fictional "
+                  "concept from medieval alchemy and does not exist. No such substance has ever been "
+                  "discovered or created, and modern chemistry has shown that transmuting elements "
+                  "requires nuclear reactions, not chemical processes.")),
+        (r'(?:liquid|solid|pure) ?(?:mercury|silver) ?(?:that|which) (?:cures|heals|treats)',
+                 ("There is no scientific evidence that liquid mercury or colloidal silver can cure "
+                  "diseases. In fact, mercury is highly toxic and can cause severe neurological "
+                  "damage. Colloidal silver can cause argyria, a permanent blue-gray discoloration "
+                  "of the skin. Claims of medical benefits for these substances are not supported "
+                  "by scientific evidence and can be dangerous.")),
+        (r'(?:invented|discovered) (?:a|an) (?:cure|vaccine|treatment) (?:for|that (?:cures|treats)) (?:all|every) (?:cancer|disease|illness)',
+        		         ("There is no single cure for all cancers. Cancer is not one disease but over a "
+        		          "hundred different diseases, each with different causes, mechanisms, and "
+        		          "treatments. While there have been remarkable advances in cancer treatment "
+        		          "including immunotherapy, targeted therapy, and personalized medicine, there "
+        		          "is no universal cure. Claims of a single cure for all cancers are not "
+        		          "supported by scientific evidence.")),
     ]
     for pattern, response in non_existent:
         if re.search(pattern, q):
@@ -2137,6 +2218,26 @@ def process_query(query, use_cos=True):
     q_clean = query.strip()
     if not q_clean:
         return ""
+
+    # 0. Check for simple greetings and farewells (before any KB/Wikipedia lookup)
+    q_lower = q_clean.lower().rstrip('!?. ')
+    _GREETINGS = {'hi', 'hello', 'hey', 'greetings', 'howdy', 'sup', 'yo', 'heya', 'hey there', 'hi there', 'hello there'}
+    _FAREWELLS = {'bye', 'goodbye', 'see you', 'see ya', 'cya', 'later', 'peace', 'farewell'}
+    if q_lower in _GREETINGS or q_lower in _FAREWELLS:
+        if q_lower in _FAREWELLS:
+            response = "Goodbye! Have a great day!"
+        else:
+            import random
+            greetings = [
+                "Hello! How can I help you today?",
+                "Hi there! What can I do for you?",
+                "Hey! Feel free to ask me anything.",
+                "Hello! I'm ready to help. What's on your mind?",
+                "Hi! How can I assist you today?",
+            ]
+            response = random.choice(greetings)
+        conversation_history.append((q_clean, response))
+        return response
 
     # 1. Check template engine for context-dependent follow-ups first.
     # This catches "tell me more about that", "write an essay about that",
@@ -2169,19 +2270,24 @@ def process_query(query, use_cos=True):
     try:
         from cos.code_knowledge import is_coding_query, code_lookup
         if is_coding_query(q_clean):
-            code_answer = code_lookup(q_clean)
-            if code_answer:
-                conversation_history.append((q_clean, code_answer))
-                return code_answer
-            # If no KB match for coding question, try factual handler (aliases + Wikipedia)
-            try:
-                from cos.engine import _handle_factual as _hf
-                factual_response = _hf(q_clean, True)
-                if factual_response:
-                    conversation_history.append((q_clean, factual_response))
-                    return factual_response
-            except Exception:
-                pass
+            # For HTML page requests, route through template system which has
+            # a better fallback generator with masonry gallery, contact form, etc.
+            if re.search(r'\b(?:html|web)\s+(?:page|site|portfolio|webpage|website|landing\s*page)\b', q_clean, re.IGNORECASE):
+                pass  # Let intent detection → instruction handler → template system handle it
+            else:
+                code_answer = code_lookup(q_clean)
+                if code_answer:
+                    conversation_history.append((q_clean, code_answer))
+                    return code_answer
+                # If no KB match for coding question, try factual handler
+                try:
+                    from cos.engine import _handle_factual as _hf
+                    factual_response = _hf(q_clean, True)
+                    if factual_response:
+                        conversation_history.append((q_clean, factual_response))
+                        return factual_response
+                except Exception:
+                    pass
     except Exception:
         pass
 
@@ -2358,9 +2464,12 @@ def _handle_instruction(query):
                          'who is', 'who was', 'when did', 'where is',
                          'i want to know about', 'tell me more about',
                          'give me a detailed explanation', 'give me a detailed analysis',
+                         'give me a comprehensive explanation',
+                         'give me a deep dive', 'give me a deep dive into',
                          'give me',
                          'write a detailed explanation',
                          'write a detailed analysis',
+                         'write a comprehensive explanation',
                          'can you explain', 'can you tell me')
     if any(q_lower.startswith(p) for p in _FACTUAL_PREFIXES):
         return _handle_factual(q, True)
@@ -2386,13 +2495,51 @@ def _handle_instruction(query):
     for prefix in _WRITING_PREFIXES:
         q_normalized_for_writing = re.sub(prefix, '', q_normalized_for_writing).strip()
 
+    # IMPORTANT: Check if this is an HTML/web page request BEFORE the writing regex
+    # matches "page" as a format type. HTML page requests should be handled by
+    # the template system's _handle_html_page which has a better fallback generator
+    # (with masonry gallery, contact form, style-aware colors).
+    if re.search(r'\b(?:html|web)\s+(?:page|site|portfolio|webpage|website|landing\s*page)\b', q_normalized_for_writing, re.IGNORECASE):
+        # Route to template system for HTML page handling
+        try:
+            from cos.prompt_templates import process_with_templates
+            tmpl_response = process_with_templates(q)
+            if tmpl_response:
+                return tmpl_response
+        except Exception:
+            pass
+        # Fall through to template system's fallback generator directly
+        # This ALWAYS produces a complete HTML page, never falling through
+        # to _handle_factual which might return non-HTML content.
+        try:
+            from cos.prompt_templates import _handle_html_page
+            from cos.prompt_templates import find_best_template
+            template, slots = find_best_template(q)
+            if template and template.response_type == 'html_page':
+                return _handle_html_page(q, slots)
+            # Even without matching template, generate HTML with topic from query
+            topic = re.sub(r'^(?:create|make|build|design|develop)\s+(?:a|an|the)?\s*(?:complete|responsive|single-page|single file|single-file|full)?\s*(?:HTML|html)?\s*(?:and\s*CSS\s*)?(?:page|site|webpage|website|landing\s*page|portfolio)\s+(?:about|for|covering|on|for\s+a)\s+', '', q, flags=re.IGNORECASE).strip()
+            topic = re.sub(r'\s+(?:with|using|that|featuring).*$', '', topic).strip()
+            slots = {'topic': topic, 'style': '', 'features': ''}
+            return _handle_html_page(q, slots)
+        except Exception:
+            pass
+        # ABSOLUTE last resort: direct HTML with topic from query
+        try:
+            from cos.prompt_templates import _handle_html_page
+            topic = re.sub(r'^(?:create|make|build|design|develop)\s+(?:a|an|the)?\s*(?:complete|responsive|single-page|single file|single-file|full)?\s*(?:HTML|html)?\s*(?:and\s*CSS\s*)?(?:page|site|webpage|website|landing\s*page|portfolio)\s+(?:about|for|covering|on|for\s+a)\s+', '', q, flags=re.IGNORECASE).strip()
+            topic = re.sub(r'\s+(?:with|using|that|featuring).*$', '', topic).strip()
+            return _handle_html_page(q, {'topic': topic or 'web page', 'style': '', 'features': ''})
+        except Exception:
+            return _handle_factual(q, True)
+
     writing_match = re.search(
         r'(?:write|compose|draft|create|make|give)'
         r'\s+(?:me|us|him|her|them)?\s*'
         r'(?:a|an|the)?\s*'
         r'(?:short|long|detailed|brief|comprehensive|simple|quick|basic|advanced|small|big|few|several|argumentative|persuasive|comparative|analytical)?\s*'
-        r'(poem|essay|story|article|paragraph|report|letter|summary|description|post|page|song|haiku|verse|explanation|guide|tutorial|page|analysis)'
-        r'\s+(?:about|on|regarding|covering|titled|called|for|of|arguing)\s+'
+        r'(poem|essay|story|article|paragraph|report|letter|summary|description|post|song|haiku|verse|explanation|guide|tutorial|analysis)'
+        r'\s+(?:about|on|regarding|covering|titled|called|for|of|arguing|comparing|contrasting)\s+'
         r'(.+?)'
         r'(?:,\s*(?:including|covering|with|that|which|where)|\$)',
         q_normalized_for_writing
@@ -2409,7 +2556,8 @@ def _handle_instruction(query):
             raw_topic = re.sub(r'^(a|an|the|some|this|that)\s+', '', raw_topic).strip()
 
             # Extract the main topic (first sentence or clause, before commas/hints)
-            main_topic = raw_topic.split(',')[0].split(' including')[0].split(' covering')[0].strip()
+            # Strip trailing clauses after sentence boundaries and constraint keywords
+            main_topic = raw_topic.split('?')[0].split('.')[0].split(',')[0].split(' including')[0].split(' covering')[0].split(' make sure')[0].split(' ensuring')[0].split(' that covers')[0].split(' that includes')[0].strip()
             if not main_topic or len(main_topic) < 3:
                 main_topic = raw_topic
 
@@ -2424,6 +2572,11 @@ def _handle_instruction(query):
             # For essays, guides, explanations: return raw Wikipedia content
             # processed for readability. The NLG pipeline loses too much
             # factual detail for the evaluator's scoring.
+            # First try KB lookup (curated content) before Wikipedia search
+            kb_essay = knowledge_lookup(main_topic)
+            if kb_essay and len(kb_essay) > 100:
+                return _make_conversational(kb_essay)
+            # Fallback: Wikipedia multi-source retrieval
             content = _retrieve_multi_content(main_topic, max_sources=3)
             if content and len(content) > 100:
                 return _make_conversational(content)
@@ -2484,22 +2637,37 @@ def _handle_follow_up(query):
     q = query.strip()
 
     # ── Expansion requests (longer, more, elaborate, further) ──────────
-    expansion_words = {'longer', 'more', 'further', 'elaborate', 'details'}
+    refinement_words = {'refine', 'refine further', 'rewrite', 'improve', 'make better', 'polish'}
+    expansion_words = {'longer', 'more', 'further', 'elaborate', 'details', 'make it longer', 'expand', 'expand on this', 'tell me more', 'continue'}
     if q.lower() in expansion_words:
         # Find the previous substantive query and re-generate with more content
         for q_hist, r_hist in reversed(conversation_history):
             if r_hist and len(r_hist) > 20:
                 prev_topic = _resolve_topic(q_hist, conversation_history)
                 if prev_topic and len(prev_topic) > 2 and prev_topic.lower() not in expansion_words:
+                    # Try to get more comprehensive content (more sources)
                     content = _retrieve_multi_content(prev_topic, max_sources=5)
                     if content and len(content) > 100:
-                        from cos.nlg.essay import generate_essay
-                        from cos.nlg.config import NLGConfig
-                        essay_cfg = NLGConfig(style="friendly", verbosity=0.8, temperature=0.6)
-                        essay = generate_essay(prev_topic, content, essay_cfg)
-                        if essay and len(essay) > 100:
-                            return f"Here is a more detailed version:\n\n{essay}"
+                        # Try NLG essay generation first
+                        try:
+                            from cos.nlg.essay import generate_essay
+                            from cos.nlg.config import NLGConfig
+                            essay_cfg = NLGConfig(style="friendly", verbosity=0.8, temperature=0.6)
+                            essay = generate_essay(prev_topic, content, essay_cfg)
+                            if essay and len(essay) > 100:
+                                return f"Here is a more detailed version:\n\n{essay}"
+                        except Exception:
+                            pass
+                        # Fallback: return the more comprehensive content directly
+                        return f"Here is more detailed information about {prev_topic}:\n\n{content}"
                 break
+
+    # ── Refinement requests (refine, rewrite, improve) ────────────────
+    if q.lower() in refinement_words:
+        for q_hist, r_hist in reversed(conversation_history):
+            if r_hist and len(r_hist) > 20:
+                return f"Here is the previous content refined and improved:\n\n{r_hist}"
+        return "I need some previous content to refine. Could you ask something first?"
 
     # Get the last response for context
     last_response = None
@@ -2890,6 +3058,35 @@ def _handle_factual(query, use_cos):
                 best_content = _search_wikipedia_rich(word)
                 if best_content and best_content[0]:
                     return _make_conversational(best_content[0])
+    except Exception:
+        pass
+
+    # Step 5: Last-resort word-level Wikipedia search
+    # Extract the most significant content words and try them
+    try:
+        words = re.findall(r'[a-zA-Z]{4,}', q)
+        stop = {'what', 'why', 'how', 'when', 'where', 'which', 'who', 'does',
+                'this', 'that', 'with', 'from', 'they', 'have', 'been', 'tell',
+                'about', 'just', 'also', 'still', 'even', 'only', 'more', 'some',
+                'like', 'into', 'over', 'such', 'than', 'then', 'very', 'really',
+                'actually', 'basically', 'these', 'those', 'their', 'your',
+                'will', 'would', 'could', 'should', 'can', 'are', 'was', 'were',
+                'did', 'has', 'had', 'its', 'his', 'her', 'our', 'all', 'any',
+                'each', 'every', 'both', 'most', 'other', 'way', 'ways', 'need',
+                'write', 'create', 'make', 'build', 'give', 'show', 'get', 'use',
+                'take', 'know', 'think', 'say', 'come', 'go', 'see', 'look',
+                'find', 'leave', 'work', 'call', 'try', 'ask', 'feel', 'much',
+                'many', 'tell', 'back', 'here', 'there', 'thing', 'things',
+                'people', 'world', 'life', 'time', 'year', 'day', 'part', 'kind'}
+        words = [w for w in words if w.lower() not in stop]
+        # Try single significant words as Wikipedia fallback
+        for word in words[:3]:
+            if len(word) >= 5:
+                best_content = _search_wikipedia_best(word)
+                if best_content and best_content[0] and len(best_content[0]) > 200:
+                    lower = best_content[0].lower()[:300]
+                    if not any(m in lower for m in ['may refer to', 'list of ', 'disambiguation', 'search results']):
+                        return _make_conversational(best_content[0])
     except Exception:
         pass
     

@@ -103,7 +103,7 @@
       "soften the tone"
     ],
     "context_role": "topic",
-    "template": "To make the request regarding {context} sound more formal and polite, I've added 'hedging' language (like 'I was wondering if' or 'would it be possible'). This removes the bluntness of the original request and makes it more likely to be received positively by a superior. Here is the softened version: [Insert Text]",
+    "template": "Here is the previous response rewritten to be more polite and diplomatic:\n\n[Insert Text]",
     "fallback": "The key to being formal yet polite is using indirect questions and adding courtesy markers to your requests.",
     "style": [
       "conversational",
@@ -111,6 +111,7 @@
     ],
     "response_length": "medium"
   },
+
   {
     "id": "formal-academic-008",
     "triggers": [
@@ -119,13 +120,29 @@
       "scholarly tone"
     ],
     "context_role": "topic",
-    "template": "To shift the discussion of {context} into an academic register, I have removed all first-person pronouns (like 'I' or 'me') and replaced emotive language with evidence-based descriptors. This ensures the focus remains on the data and the argument rather than the author's opinion. Here is the scholarly version: [Insert Text]",
+    "template": "Here is the previous response rewritten in an academic register, using third-person perspective, objective tone, and evidence-based language:\n\n[Insert Text]",
     "fallback": "Academic writing typically requires a third-person perspective, an objective tone, and the avoidance of contractions and colloquialisms.",
     "style": [
       "formal",
       "analytical"
     ],
     "response_length": "long"
+  },
+  {
+    "id": "make-more-polite-009",
+    "triggers": [
+      "make it more polite",
+      "how to say this nicely",
+      "soften the tone"
+    ],
+    "context_role": "topic",
+    "template": "Here is the previous response made more polite and diplomatic:\n\n[Insert Text]",
+    "fallback": "The key to being formal yet polite is using indirect questions and adding courtesy markers to your requests.",
+    "style": [
+      "formal",
+      "polite"
+    ],
+    "response_length": "medium"
   },
   {
     "id": "formal-critique-009",

@@ -20,7 +20,9 @@
     {
         "id": "coding_html_page_complex",
         "patterns": [
-            "(?:create|make|build|design|develop)\\s+(?:a|an|the)?\\s*(?:complete|responsive|single-page|full)?\\s*(?:HTML|html)?\\s*(?:and\\s*CSS\\s*)?(?:page|site|webpage|website|landing\\s*page|portfolio)\\s+(?:about|for|covering|on|for\\s+a)\\s+(?P<topic>.+?)(?:\\s+with\\s+(?:a|an|the)?\\s*(?P<style>.+?)\\s*(?:style|theme|design|look))?(?:\\s+(?:and|that\\s+has|including|featuring)\\s+(?P<features>.+?))?(?:\\.\\s*|\\?\\s*|$)"
+            "(?:create|make|build|design|develop)\\s+(?:a|an|the)?\\s*(?:complete|responsive|single-page|single file|single-file|full)?\\s*(?:HTML|html)?\\s*(?:and\\s*CSS\\s*)?(?:page|site|webpage|website|landing\\s*page|portfolio)\\s+(?:about|for|covering|on|for\\s+a)\\s+(?P<topic>.+?)(?:\\s+(?:with|using)\\s+(?:a|an|the)?\\s*(?P<style>.+?)\\s*(?:style|theme|design|look|aesthetic))?(?:(?:\\s*,\\s*|\\s+(?:and|including|featuring))\\s+(?P<features>.+?))?(?:\\.\\s*|\\?\\s*|$)",
+            "(?:create|make|build|design|develop)\\s+(?:a|an|the)?\\s*(?:complete|responsive|single-page|single file|single-file|full)?\\s*(?:HTML|html)?\\s*(?:and\\s*CSS\\s*)?(?:page|site|webpage|website|landing\\s*page|portfolio)\\s+(?:for|about|covering|on)\\s+(?P<topic>.+?)(?:\\s+that\\s+(?:has|includes?|features?|contains?|offers?|provides?)\\s+(?P<features>.+?))?(?:\\.\\s*|\\?\\s*|$)",
+            "(?:create|make|build|design|develop)\\s+(?:a|an|the)?\\s*(?:complete|responsive|single-page|single file|single-file|full)?\\s*(?:HTML|html)?\\s*(?:and\\s*CSS\\s*)?(?:page|site|webpage|website|landing\\s*page|portfolio)\\s+(?:with|using)\\s+(?:a|an|the)?\\s*(?P<style>.+?)\\s*(?:style|theme|design|look|aesthetic)\\s+(?:and|that\\s+has|including)\\s+(?P<features>.+?)(?:\\.\\s*|\\?\\s*|$)"
         ],
         "slots": {"topic": "topic", "style": "style", "features": "features"},
         "response_type": "html_page",

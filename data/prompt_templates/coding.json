@@ -2,8 +2,8 @@
     {
         "id": "html_page",
         "patterns": [
-            "(?:create|make|build|design|develop)\\s+(?:a|an|the)?\\s*(?:complete|responsive|single-page|single page)?\\s*(?:html|web)?\\s*page\\s+(?:about|for|covering|on)\\s+(?P<topic>.+?)(?:\\s+with\\s+(?:a|an|the)?\\s*(?P<theme>.+?)\\s*(?:theme|style|design))?(?:\\.\\s*|\\?\\s*|$)",
-            "(?:create|make|build|design)\\s+(?:a|an|the)?\\s*(?:complete|responsive|single-page|single page)?\\s*(?:HTML|html)\\s*(?:and\\s*CSS\\s*)?(?:page|site|portfolio)\\s+(?:for|about|covering)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+            "(?:create|make|build|design|develop)\\s+(?:a|an|the)?\\s*(?:complete|responsive|single-page|single page|single file|single-file)?\\s*(?:html|web)?\\s*page\\s+(?:about|for|covering|on)\\s+(?P<topic>.+?)(?:\\s+with\\s+(?:a|an|the)?\\s*(?P<theme>.+?)\\s*(?:theme|style|design))?(?:\\.\\s*|\\?\\s*|$)",
+            "(?:create|make|build|design)\\s+(?:a|an|the)?\\s*(?:complete|responsive|single-page|single page|single file|single-file)?\\s*(?:HTML|html)\\s*(?:and\\s*CSS\\s*)?(?:page|site|portfolio)\\s+(?:for|about|covering)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
         ],
         "slots": {"topic": "topic", "theme": "theme"},
         "response_type": "html_page",

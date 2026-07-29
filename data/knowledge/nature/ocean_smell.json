@@ -1,0 +1,50 @@
+[
+    {
+        "q": [
+            "ocean smell",
+            "what causes ocean smell",
+            "why does the ocean smell",
+            "ocean smell beach",
+            "what causes the smell of the ocean",
+            "ocean scent explained",
+            "sea smell science",
+            "why does the beach smell",
+            "ocean smell chemical",
+            "what makes the ocean smell salty",
+            "beach smell explained",
+            "seaside scent"
+        ],
+        "a": "The distinctive smell of the ocean, often described as salty, fresh, and slightly fishy, is caused by a combination of chemical compounds produced by marine organisms. The primary contributor is dimethyl sulfide (DMS), a sulfur-containing compound produced by phytoplankton (microscopic marine algae) as a metabolic byproduct. When phytoplankton are stressed or die, they release a compound called dimethylsulfoniopropionate (DMSP), which breaks down into DMS. DMS has a characteristic seaside aroma and is also a key component in cloud formation over oceans. Sea salt spray contributes to the fresh, salty aspect of the ocean smell. Waves breaking on the shore create aerosol particles containing salt, water, and organic matter. The salt itself is odorless, but it carries other aromatic compounds. Additional contributors include: seaweed and algae that release bromophenols (compounds that give a marine, iodine-like scent); bacteria that break down organic matter in tidal zones, producing geosmin and other earthy compounds; and the overall humidity and negative ions created by crashing waves, which enhance our perception of the scent. The human nose is highly sensitive to DMS, detecting it at concentrations as low as parts per trillion, which explains why the ocean smell can be detected from miles away."
+    },
+    {
+        "q": [
+            "palindromes sorted descending python",
+            "python palindrome descending order",
+            "palindromes sorted longest first python",
+            "python function palindromes descending",
+            "return palindromes sorted descending python",
+            "filter palindromes sort descending length python",
+            "python list palindromes reverse sorted",
+            "palindromes sorted by length descending",
+            "python function returns palindromes longest first"
+        ],
+        "a": "Here's a Python function that filters palindromes from a list and returns them sorted in descending order (longest first):\n\n```python\ndef filter_palindromes_descending(strings):\n    \"\"\"Filter palindromes and return sorted by length descending.\n    \n    Args:\n        strings: A list of strings to filter\n    \n    Returns:\n        List of palindromes sorted from longest to shortest\n    \"\"\"\n    # Filter for palindromes\n    palindromes = [s for s in strings if s == s[::-1]]\n    \n    # Sort by length descending (longest first)\n    palindromes.sort(key=lambda s: len(s), reverse=True)\n    \n    return palindromes\n\n# Example:\nwords = ['racecar', 'hello', 'level', 'python', 'radar', 'madam', 'noon', 'a', 'bb']\nresult = filter_palindromes_descending(words)\nprint(result)  # ['racecar', 'level', 'madam', 'radar', 'noon', 'bb', 'a']\n# racecar (7) first, then level/madam/radar (5), then noon (4), bb (2), a (1)\n```",
+        "lang": "python"
+    },
+    {
+        "q": [
+            "binary search tree java implementation",
+            "java binary search tree",
+            "implement bst in java",
+            "java bst implementation",
+            "binary search tree java code",
+            "how to implement bst in java",
+            "java binary search tree insert",
+            "binary search tree java methods",
+            "java bst insert search delete",
+            "binary search tree node java"
+        ],
+        "a": "Here's a complete Binary Search Tree implementation in Java:\n\n```java\nclass Node {\n    int data;\n    Node left, right;\n    \n    public Node(int data) {\n        this.data = data;\n        left = right = null;\n    }\n}\n\npublic class BinarySearchTree {\n    Node root;\n    \n    public BinarySearchTree() {\n        root = null;\n    }\n    \n    // Insert a value\n    public void insert(int data) {\n        root = insertRec(root, data);\n    }\n    \n    private Node insertRec(Node root, int data) {\n        if (root == null) {\n            root = new Node(data);\n            return root;\n        }\n        if (data < root.data)\n            root.left = insertRec(root.left, data);\n        else if (data > root.data)\n            root.right = insertRec(root.right, data);\n        return root;\n    }\n    \n    // Search for a value\n    public boolean search(int data) {\n        return searchRec(root, data);\n    }\n    \n    private boolean searchRec(Node root, int data) {\n        if (root == null) return false;\n        if (root.data == data) return true;\n        return data < root.data ? \n            searchRec(root.left, data) : \n            searchRec(root.right, data);\n    }\n    \n    // Inorder traversal (sorted output)\n    public void inorder() {\n        inorderRec(root);\n    }\n    \n    private void inorderRec(Node root) {\n        if (root != null) {\n            inorderRec(root.left);\n            System.out.print(root.data + \" \");\n            inorderRec(root.right);\n        }\n    }\n}\n\n// Example usage:\n// BinarySearchTree bst = new BinarySearchTree();\n// bst.insert(50); bst.insert(30); bst.insert(70);\n// bst.inorder();  // Output: 30 50 70\n// System.out.println(bst.search(30));  // true\n```",
+        "lang": "java"
+    }
+]

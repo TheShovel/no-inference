@@ -43,7 +43,7 @@ def _search_stack(query: str, max_files: int = 2) -> List[dict]:
             req = urllib.request.Request(search_url, headers={
                 'User-Agent': 'COS/1.0'
             })
-            with urllib.request.urlopen(req, timeout=30) as resp:
+            with urllib.request.urlopen(req, timeout=60) as resp:
                 data = json.loads(resp.read().decode())
 
             for row_wrapper in data.get('rows', []):
@@ -483,12 +483,22 @@ def code_lookup(query: str) -> Optional[str]:
                 # Count how many query words appear in the PATTERN
                 pattern_overlap = sum(1 for w in q_words if w in pattern_str)
                 
+                # PENALTY: Count how many PATTERN-specific words (not found in query)
+                # appear in the pattern. This prevents entries about unrelated topics
+                # (e.g., 'palindromes') from matching queries that don't mention them
+                # just because they share common words like 'list', 'string', etc.
+                pattern_words = set(w for w in re.findall(r'\b[a-zA-Z]{3,}\b', pattern_str)
+                                   if w not in _STOP_WORDS)
+                extraneous_words = pattern_words - q_words
+                penalty = len(extraneous_words) * 5  # -5 per extraneous word
+                
                 # Count answer overlap (weighted lower)
                 answer_lower = answer.lower()[:300]
                 answer_overlap = sum(1 for w in q_words if w in answer_lower)
                 
                 # Combined: pattern match is paramount, answer match is tiebreaker
-                combined = pattern_overlap * 10 + answer_overlap
+                # Penalty: subtract for extraneous pattern words not in query
+                combined = pattern_overlap * 10 + answer_overlap - penalty
                 
                 # Language bonus: if query asks for a specific language, prefer
                 # entries whose pattern mentions that language. This prevents
