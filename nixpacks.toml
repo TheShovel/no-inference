@@ -1,0 +1,15 @@
+[phases.setup]
+nixPackages = ["python311", "python311.pkgs.pip"]
+
+[phases.install]
+commands = [
+  "echo 'No dependencies to install -- using Python standard library only'"
+]
+
+[phases.build]
+commands = [
+  "echo 'No build step required'"
+]
+
+[start]
+cmd = "python3 src/api/server.py"

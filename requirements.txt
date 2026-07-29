@@ -1,0 +1,2 @@
+# No dependencies needed -- the API server uses only the Python standard library.
+# This file exists so Railway detects this as a Python project.
