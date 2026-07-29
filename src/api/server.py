@@ -263,7 +263,7 @@ class COSAPIHandler(BaseHTTPRequestHandler):
             return
 
         # API endpoints
-        if path == '/api/query' and method == 'POST':
+        if path in ('/api/query', '/query') and method == 'POST':
             return self._handle_single_query()
         if path == '/api/conversations' and method == 'POST':
             return self._handle_create_conversation()
@@ -468,7 +468,7 @@ class COSAPIHandler(BaseHTTPRequestHandler):
 
 def main():
     """Run the API server using stdlib http.server."""
-    port = int(os.environ.get("COS_API_PORT", "8000"))
+    port = int(os.environ.get("COS_API_PORT", os.environ.get("PORT", "8000")))
     host = os.environ.get("COS_API_HOST", "0.0.0.0")
 
     _load_kb_size()
