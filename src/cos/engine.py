@@ -2037,8 +2037,9 @@ def _extract_math_expression(text):
     t = re.sub(r'\bdivided by\b', '/', t)
     t = re.sub(r'\bover\b', '/', t)
     patterns = [
-        r'(?:what is|what\'s|calculate|compute|solve|find)\s+([\d\s\+\-\*/\^\(\)\.%]+)',
+        r"(?:what is|what's|whats|calculate|compute|solve|find)\s+([\d\s\+\-\*/\^\(\)\.%]+)",
         r'([\d\s\+\-\*/\^\(\)\.%]+)\s*(?:equals\?|=\s*\?)',
+        r'^([\d]+\s*[\+\-\*/]\s*[\d]+(?:\s*[\+\-\*/]\s*[\d]+)*)$',
     ]
     for pat in patterns:
         m = re.search(pat, t)
@@ -2534,7 +2535,7 @@ def process_query(query, use_cos=True):
             has_artifact = True
         # Check for very short or generic responses (extreme cases only)
         word_count = len(response.split())
-        is_garbled = word_count < 5  # Only discard if < 5 words (pure garbage)
+        is_garbled = word_count < 3  # Only discard if < 3 words (pure garbage)
         # Check for excessive "refers to" definitions (sign of generic definition)
         refers_count = r_lower.count('refers to')
         has_excessive_refers = refers_count > 3  # Allow up to 3 "refers to" (legit Wikipedia can use it)
