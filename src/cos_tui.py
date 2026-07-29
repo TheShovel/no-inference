@@ -191,6 +191,7 @@ class COSTUI:
   {Colors.GREEN}/status{Colors.RESET}        Show benchmark scores
   {Colors.GREEN}/history{Colors.RESET}       Show conversation history
   {Colors.GREEN}/reset{Colors.RESET}         Reset conversation memory
+  {Colors.GREEN}/reload{Colors.RESET}        Reload patterns/aliases/templates from disk
 
 {Colors.BOLD}{Colors.CYAN}  Examples{Colors.RESET}
 {Colors.DIM}  {sep}{Colors.RESET}
@@ -306,6 +307,16 @@ class COSTUI:
                         self.conversation_history = []
                         self.reset_conversation()
                         print(f"  {Colors.GREEN}Conversation memory reset.{Colors.RESET}")
+                        continue
+
+                    elif cmd == 'reload':
+                        from cos.pattern_matcher import reload as reload_patterns
+                        from cos.engine import reload_aliases
+                        from cos.template_engine import reload as reload_templates
+                        reload_patterns()
+                        reload_aliases()
+                        reload_templates()
+                        print(f"  {Colors.GREEN}Patterns, aliases, and templates reloaded from disk.{Colors.RESET}")
                         continue
 
                     else:

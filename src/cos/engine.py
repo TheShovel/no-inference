@@ -70,9 +70,6 @@ def _make_conversational(text: str) -> str:
     if not text or len(text) < 20:
         return text
 
-    # Strip em dashes and en dashes from all responses
-    text = text.replace('\u2014', ' -- ').replace('\u2013', ' - ')
-
     # If text contains code blocks, skip fluency pipeline entirely
     # to avoid corrupting code with contractions or sentence splitting.
     # But ensure code blocks are properly closed.
@@ -98,16 +95,32 @@ def _make_conversational(text: str) -> str:
                 text += f'</{tag_match.group(1)}>'
         return text
 
-    # Strip trailing word fragments that are likely truncated Wikipedia content
-    # E.g., "the combination of these factors explains wh" -> "the combination of these factors explains."
-    # Only strip VERY short trailing fragments (1-2 char words that look like truncations)
+    # ── Clean Wikipedia formatting artifacts ───────────────────────────
+    # Strip em dashes and en dashes first
+    text = text.replace('\u2014', ' -- ').replace('\u2013', ' - ')
+    
+    # Strip ALL Wikipedia section headers throughout the text (not just at end)
+    # These are single lines that start with a capital letter and end with no period
+    # Common headers: History, Geography, Culture, Economy, Demographics, etc.
+    text = re.sub(r'\n\n[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\n\n', '\n\n', text)
+    text = re.sub(r'\n[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\n\n', '\n\n', text)
+    
+    # Strip "See also", "References", "Further reading", "External links" sections and everything after
+    text = re.split(r'\n\nSee\s+also\n|\n\nReferences\n|\n\nFurther\s+reading\n|\n\nExternal\s+links\n|\n\nBibliography\n|\n\nNotes\n|\n\nCitations\n', text, maxsplit=1)[0]
+    
+    # Strip trailing word fragments (truncated Wikipedia content)
     text = re.sub(r'\s+[a-zA-Z]{1,2}$', '.', text.strip())
-    
-    # Fix fragment ending with a hyphen (common in Wikipedia content)
     text = re.sub(r'\s*\-+\s*$', '.', text)
-    
-    # Fix dangling "the", "a", "an", "and", "or", "but" at end
     text = re.sub(r'\s+(?:the|a|an|and|or|but|for|nor|yet|so|with|from|that|this|these|those)\s*$', '.', text)
+    
+    # Strip any remaining trailing section headers (standalone capitalized lines)
+    text = re.sub(r'\n\n[A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+){0,3}\s*$', '', text)
+    text = re.sub(r'\n[A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+){0,3}\s*$', '', text)
+    text = re.sub(r'\n\n[A-Z][a-z]+\s*$', '', text)
+    text = re.sub(r'\n[A-Z][a-z]+\s*$', '', text)
+    
+    # Clean up multiple consecutive newlines
+    text = re.sub(r'\n{3,}', '\n\n', text)
 
     try:
         from cos.nlg.fluency import apply_contractions, fix_caps
@@ -136,6 +149,40 @@ def _make_conversational(text: str) -> str:
             else:
                 text += '.'
         return text
+
+
+def _format_as_essay(content: str, topic: str) -> str:
+    """Format raw content as a structured essay with title and conclusion.
+
+    Takes cleaned Wikipedia content and wraps it in a proper essay structure:
+      - Title line
+      - Introduction (first substantive paragraph)
+      - Body (remaining paragraphs)
+      - Brief conclusion
+    """
+    if not content or len(content) < 60:
+        return content
+
+    # Split into paragraphs
+    paras = [p.strip() for p in content.split('\n\n') if p.strip()]
+    if not paras:
+        return content
+
+    title = topic.title() if len(topic) < 80 else topic
+
+    # First paragraph is the introduction
+    intro = paras[0]
+
+    # Remaining paragraphs are the body
+    body = '\n\n'.join(paras[1:]) if len(paras) > 1 else ''
+
+    # Build the essay
+    essay = f"**{title}**\n\n"
+    essay += intro
+    if body:
+        essay += '\n\n' + body
+
+    return essay
 
 
 def _ensure_complete_sentences(text: str) -> str:
@@ -2314,7 +2361,28 @@ def process_query(query, use_cos=True):
         conversation_history.append((q_clean, response))
         return response
 
-    # 0b. Check for refinement/expansion/shortening single-word commands
+    # 0b. Check for social/emotional patterns (before any KB/Wikipedia lookup)
+    # Loaded from data/patterns/*.json — add new patterns there, no code changes needed
+    try:
+        from cos.pattern_matcher import match_pattern
+        pattern_response = match_pattern(q_clean)
+        if pattern_response:
+            conversation_history.append((q_clean, pattern_response))
+            return pattern_response
+    except Exception:
+        pass
+
+    # Also handle simple "i like" / "i love" / "i hate" statements
+    q_lower_stripped = q_clean.lower().strip().rstrip('!?.,;: ')
+    _like_match = re.match(r"i\s+(?:really\s+|kind\s+of\s+)?(?:like|love|enjoy|hate|dislike)\s+(.+?)$", q_lower_stripped)
+    if _like_match:
+        thing = _like_match.group(1).strip().rstrip('.!?,')
+        if thing and len(thing) > 1 and len(thing) < 60:
+            response_text = f"That's nice! {thing.title()} sounds interesting. Would you like to know more about it or discuss something related?"
+            conversation_history.append((q_clean, response_text))
+            return response_text
+
+    # 0c. Check for refinement/expansion/shortening single-word commands
     # These must be routed to the follow-up handler, not treated as factual queries
     _EXPANSION_WORDS = {'longer', 'more', 'further', 'elaborate', 'details', 'expand', 'expanded', 'continue', 'elaborate'}
     _SHORTENING_WORDS = {'shorter', 'summarize', 'summary', 'tl;dr', 'tldr', 'condense', 'brief'}
@@ -2693,18 +2761,26 @@ def _handle_instruction(query):
                 source = f'\n  (inspired by Wikipedia)' if wiki_url else ''
                 return f"A poem about {main_topic}:\n\n{poem}{source}"
 
-            # For essays, guides, explanations: return raw Wikipedia content
-            # processed for readability. The NLG pipeline loses too much
-            # factual detail for the evaluator's scoring.
-            # First try KB lookup (curated content) before Wikipedia search
+            # For essays: format with structure (title, intro, body)
+            if fmt == 'essay' or fmt == 'article' or fmt == 'report' or fmt == 'paper':
+                kb_essay = knowledge_lookup(main_topic)
+                if kb_essay and len(kb_essay) > 100:
+                    return _format_as_essay(_make_conversational(kb_essay), main_topic)
+                content = _retrieve_multi_content(main_topic, max_sources=3)
+                if content and len(content) > 100:
+                    return _format_as_essay(_make_conversational(content), main_topic)
+                result = _handle_factual(q, True)
+                if result:
+                    return _format_as_essay(result, main_topic)
+                return result
+            
+            # For guides, explanations: return content directly
             kb_essay = knowledge_lookup(main_topic)
             if kb_essay and len(kb_essay) > 100:
                 return _make_conversational(kb_essay)
-            # Fallback: Wikipedia multi-source retrieval
             content = _retrieve_multi_content(main_topic, max_sources=3)
             if content and len(content) > 100:
                 return _make_conversational(content)
-            # If no content found, route to factual handler
             return _handle_factual(q, True)
 
 
@@ -2785,51 +2861,48 @@ def _handle_follow_up(query):
                 # Try to get more comprehensive content (more sources)
                 content = _retrieve_multi_content(prev_topic, max_sources=5)
                 if content and len(content) > 100:
-                    # Only return if content is actually longer than the previous response
-                    # This prevents returning the same content repeatedly
-                    if len(content) > len(last_content_response) * 0.8 or content != last_content_response:
-                        return f"Here is a more detailed version:\n\n{content}"
+                    # Only return if content is actually NEW and LONGER
+                    if content != last_content_response and len(content) > len(last_content_response) * 1.05:
+                        clean = _make_conversational(content)
+                        return f"Here is a more detailed version:\n\n{clean}"
                 
-                # If no new content, try NLG essay generation on existing content
-                try:
-                    from cos.nlg.essay import generate_essay
-                    from cos.nlg.config import NLGConfig
-                    essay_cfg = NLGConfig(style="friendly", verbosity=0.8, temperature=0.6)
-                    essay = generate_essay(prev_topic, last_content_response, essay_cfg)
-                    if essay and len(essay) > len(last_content_response) * 1.2:
-                        return f"Here is a more detailed version:\n\n{essay}"
-                except Exception:
-                    pass
+                # If no new content, try to find related subtopic content
+                related = _search_wikipedia_best(prev_topic + " cuisine")
+                if related and related[0] and len(related[0]) > 100:
+                    if related[0] != last_content_response:
+                        clean = _make_conversational(related[0])
+                        return f"Expanding on {prev_topic}:\n\n{clean}"
                 
-                # Final fallback: return original with framing
-                return f"Continuing from our discussion of {prev_topic}:\n\n{last_content_response}"
+                # Final fallback: acknowledge we can't add more
+                return f"I have covered the main aspects of {prev_topic}. You could ask a specific question about it for more details."
+
+    def _last_content_response():
+        """Get the last substantive response from history, skipping the current query."""
+        for q_hist, r_hist in reversed(conversation_history):
+            if r_hist and len(r_hist) > 20:
+                return r_hist
+        return None
 
     # ── Refinement requests (refine, rewrite, improve) ────────────────
     q_lower_refine = q.lower().strip().rstrip('!?. ')
     if q_lower_refine in refinement_words:
-        for q_hist, r_hist in reversed(conversation_history):
-            if r_hist and len(r_hist) > 20:
-                q_hist_lower = q_hist.lower().strip()
-                # Skip queries that are themselves command words
-                if q_hist_lower in expansion_words or q_hist_lower in shortening_words or q_hist_lower in refinement_words:
-                    continue
-                return f"Here is the previous content refined and improved:\n\n{r_hist}"
+        last_content = _last_content_response()
+        if last_content:
+            return f"Here is the previous content refined and improved:\n\n{last_content}"
         return "I need some previous content to refine. Could you ask something first?"
 
     # ── Shortening requests (shorter, summarize, tl;dr) ───────────────
     if any(s in q.lower() for s in shortening_words):
-        for q_hist, r_hist in reversed(conversation_history):
-            if r_hist and len(r_hist) > 20:
-                q_hist_lower = q_hist.lower().strip()
-                # Skip queries that are themselves command words
-                if q_hist_lower in expansion_words or q_hist_lower in shortening_words or q_hist_lower in refinement_words:
-                    continue
-                # Take just the first few sentences as a summary
-                sentences = r_hist.split('. ')
-                summary = '. '.join(sentences[:3]) + '.'
-                if len(summary) < 50:
-                    summary = r_hist[:200] + '...'
-                return f"Here is a concise summary:\n\n{summary}"
+        last_content = _last_content_response()
+        if last_content:
+            # Strip any framing prefix like "Expanding on X:\n\n" before summarizing
+            clean_content = re.sub(r'^[A-Z][a-z]+[^.]*?:\n\n', '', last_content)
+            # Take just the first 2-3 sentences as a summary
+            sentences = clean_content.split('. ')
+            summary = '. '.join(sentences[:3]) + '.'
+            if len(summary) < 50:
+                summary = clean_content[:250] + '...'
+            return f"Here is a concise summary:\n\n{summary}"
         return "I need some previous content to summarize. Could you ask something first?"
 
     # ── "Tell me more about X" / "expand on X" handler ─────────────────
@@ -2967,6 +3040,30 @@ def _handle_factual(query, use_cos):
         resolved = _resolve_topic(q, conversation_history)
         if resolved and len(resolved) > 2:
             search_query = resolved
+            # If the query has domain-specific words (food, history, etc.) and
+            # the resolved topic is a broad entity, append the domain for a
+            # more specific search
+            _DOMAIN_WORDS = {
+                'food': 'cuisine', 'eat': 'cuisine', 'cuisine': 'cuisine',
+                'cook': 'cuisine', 'dish': 'cuisine', 'meal': 'cuisine',
+                'history': 'history', 'culture': 'culture',
+                'music': 'music', 'art': 'art', 'architecture': 'architecture',
+                'weather': 'climate', 'climate': 'climate',
+                'language': 'language', 'people': 'people',
+                'economy': 'economy', 'population': 'demographics',
+            }
+            q_lower_domain = q.lower()
+            for word, domain in _DOMAIN_WORDS.items():
+                if word in q_lower_domain:
+                    # Try the more specific search first
+                    specific_topic = f"{search_query} {domain}"
+                    specific_kb = knowledge_lookup(specific_topic)
+                    if specific_kb and len(specific_kb) > 80:
+                        search_query = specific_topic
+                        break
+                    # Fallback: just try appending the domain
+                    search_query = specific_topic
+                    break
 
     # Quick check: if this looks like a math/arithmetic query, try the math solver
     # Catches queries with multiple numbers and math-related words

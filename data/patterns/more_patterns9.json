@@ -1,0 +1,262 @@
+{
+  "_note": "Batch 9 — holidays, celebrations, life events, congratulations, condolences, and social interaction patterns.",
+  "birthday": {
+    "patterns": [
+      "^(?:happy birthday|happy bday|happy b day|hbday|hbd|happy birthday to you|happy birthday to me|happy birthday to me|it'?s my birthday|today is my birthday|my birthday is today|i'?m turning|it'?s my bday|it'?s my birthday today|birthday (?:girl|boy|person|human|twin|buddy|pal|friend|bestie|baby))$",
+      "my birthday (?:is |is coming up |is in |is on |is this |is next |was |was on )(?:\\w+ \\d+",
+      "i'?m turning (?:\\d+|\\d+ years old|the big \\d+|the dirty \\d+ \\d+|sweet \\d+|\\d+ years young)",
+      "i (?:just |recently )(?:turned |had my )(?:\\d+|\\d+th |\\d+st |\\d+nd |\\d+rd )?(?:birthday|bday)",
+      "i (?:had |celebrated |enjoyed |survived )(?:my |a |the )(?:\\d+|\\d+th |\\d+st |\\d+nd |\\d+rd )?(?:birthday|bday|birthday celebration|birthday party|birthday dinner|birthday lunch|birthday brunch|birthday cake|birthday weekend|birthday week|birthday month)",
+      "i (?:don'?t |do not )(?:like |enjoy |care for )(?:my birthday|birthdays|celebrating my birthday|making a big deal out of my birthday|getting older|aging|turning another year older)",
+      "i (?:love |adore |look forward to |can'?t wait for )(?:my birthday|birthdays|birthday celebrations|celebrating my birthday)",
+      "birthday (?:wish|wishes|greetings|greeting|message|blessing|vibe|mood)",
+      "it'?s (?:someone'?s|my best friend'?s|my mom'?s|my dad'?s|my sister'?s|my brother'?s|my partner'?s|my spouse'?s|my husband'?s|my wife'?s|my boyfriend'?s|my girlfriend'?s|my son'?s|my daughter'?s|my kid'?s|my child'?s|my parent'?s|my parent'?s|my friend'?s)(?:birthday|bday)",
+      "i need (?:a |the perfect |a good |a great |an amazing )?(?:birthday gift|birthday present|birthday surprise|birthday idea|birthday theme|birthday decoration|birthday cake|birthday dessert|birthday activity|birthday experience|birthday adventure|birthday trip|birthday getaway)",
+      "what (?:should i |do you |can i )(?:get |buy |give )(?:my |for my |for the )(?:friend|mom|dad|sister|brother|partner|spouse|husband|wife|boyfriend|girlfriend|son|daughter|kid|child|parent|mother|father|aunt|uncle|cousin|nephew|niece|grandma|grandpa|grandmother|grandfather|relative|in law|mother in law|father in law|sister in law|brother in law)(?:for|on)(?:their|his|her)(?:birthday|bday)"
+    ],
+    "response": [
+      "Happy birthday! 🎉 I hope your day is filled with joy, surprises, and everything that makes you smile!",
+      "Happy birthday! Wishing you the best year yet! 🎂🎈",
+      "Happy birthday! Hope it's as amazing as you are! 🎉🎊",
+      "Happy birthday! May your day be filled with laughter, love, and cake! 🎂🎉"
+    ]
+  },
+
+  "new_year": {
+    "patterns": [
+      "^(?:happy new year|happy new years|happy new year'?s|hny|new year|new years|new year'?s|new year'?s eve|new year'?s day|nyd|nye)$",
+      "happy new year (?:everyone|everybody|all|friends|family|my loves|my loves|my dears|yous? guys|yous? all|my people|my homies|my squad|my crew|my tribe|my fam|my family|my loved ones)",
+      "new year (?:resolution|resolutions|goals|intentions|wishes|hopes|dreams|aspirations|ambitions|plans|ideas|thoughts|vibes|energy|mood)",
+      "my (?:new year|this year|this coming year) (?:resolution|resolutions|goal|goals|intention|intentions|plan|plans|focus|aim|objective|target|wish|hope|dream|aspiration|ambition)(?:is|are)(?:to |for |about )",
+      "i (?:want |hope |plan |intend |aim |resolve |am going )(?:to |this year |in the new year )(?:be |become |get |do |make |create |build |start |begin |continue |finish |complete |achieve |accomplish |reach |attain |improve |change |transform |grow |develop |evolve |learn |study |read |write |draw |paint |sing |dance |run |walk |swim |travel |explore |try |attempt |experience |live |love |laugh |smile |enjoy |appreciate |value |cherish |treasure |hold dear |keep close |nurture |foster |cultivate |grow |bloom |blossom |flourish |thrive |prosper |succeed |win |achieve |accomplish |fulfill |complete |finish |master |learn |study)(?:more|less|better|healthier|happier|stronger|wiser|kinder|gentler|calmer|braver|bolder|brighter|clearer|focused|balanced|grounded|centered|peaceful|joyful|grateful|thankful|fulfilled|satisfied|content|present|mindful|alive|awake|aware|conscious|awake|enlightened|evolved|elevated|ascended|transformed|changed|renewed|refreshed|revived|reborn)",
+      "i (?:don'?t |do not )(?:make |believe in |do )(?:new year resolutions|new years resolutions|new year'?s resolutions)",
+      "i (?:didn'?t |never )(?:keep |stick to |follow through on |accomplish |achieve |fulfill )(?:my |any of my |any of the )(?:new year resolution|new years resolution|new year'?s resolution|new year resolutions|new years resolutions|new year'?s resolutions|goals|intentions|plans)",
+      "how was your (?:new year|new year'?s|new year'?s eve|new year'?s celebration|new years|start to the new year|beginning of the new year)",
+      "what are your (?:new year|new year'?s|new years) (?:resolution|resolutions|goals|plans|intentions|hopes|wishes|dreams|aspirations)"
+    ],
+    "response": [
+      "Happy New Year! 🎉 Wishing you an amazing year ahead filled with joy, growth, and everything you're hoping for!",
+      "Happy New Year! May this year bring you closer to your dreams! 🎊",
+      "New year, new energy! Hope it's your best year yet! 🥳",
+      "Cheers to a new year! Hope it brings you wonderful surprises and beautiful moments. 🎆"
+    ]
+  },
+
+  "christmas_holidays": {
+    "patterns": [
+      "^(?:merry christmas|happy christmas|merry xmas|merry christmas|happy holidays|season'?s greetings|happy hanukkah|happy chanukah|happy kwanzaa|happy diwali|happy ramadan|eid mubarak|ramadan mubarak|happy easter|happy thanksgiving|happy halloween|happy valentine'?s day|happy st patrick'?s day|happy st patty'?s day|happy st paddy'?s day|happy mother'?s day|happy father'?s day|happy earth day|happy arbor day|happy independence day|happy 4th of july|happy fourth of july|happy labor day|happy memorial day|happy veterans day|happy mlk day|mlk day|presidents day|inauguration day|groundhog day|pi day|april fools|april fools day|earth day|may day|cindo de mayo|juneteenth|pride|pride month|pride day|thanksgiving|halloween|valentines|valentine'?s|st patrick'?s|easter)$",
+      "i (?:love |enjoy |look forward to |can'?t wait for |am excited for |am ready for )(?:christmas|the holidays|the holiday season|hanukkah|kwanzaa|diwali|ramadan|eid|thanksgiving|halloween|valentine'?s day|new year'?s|new years|easter|the fourth of july|independence day|memorial day|labor day|the long weekend|the break|the time off|the time with family|the time with friends|the festivities|the celebration|the traditions|the food|the decorations|the lights|the music|the movies|the spirit|the magic|the joy|the cheer|the warmth|the coziness|the comfort|the togetherness|the giving|the receiving|the sharing|the caring|the loving|the kindness|the generosity|the gratitude|the appreciation)",
+      "i (?:hate |dislike |dread |don'?t like |am not a fan of |am not looking forward to |am not excited for )(?:christmas|the holidays|the holiday season|thanksgiving|halloween|valentine'?s day|new year'?s|new years|the holiday madness|the holiday rush|the holiday crowds|the holiday traffic|the holiday shopping|the holiday spending|the holiday stress|the holiday pressure|the holiday expectations|the family drama|the family gatherings|the family time|the forced cheer|the fake smiles|the superficial pleasantries|the small talk|the awkward conversations|the awkward silences|the political debates|the arguments|the tension|the conflict|the drama)",
+      "i (?:need to |should |gotta |have to )(?:get |buy |shop for |find |pick out |choose |select |wrap |package |send |mail |ship |deliver |hand deliver |give |present)(?:christmas gifts|christmas presents|holiday gifts|holiday presents|gifts|presents|stocking stuffers|things for my loved ones|something special for everyone|something for everyone on my list|presents for my family|gifts for my friends|gifts for my coworkers|gifts for my colleagues|gifts for my team|gifts for my boss|gifts for my neighbors|gifts for my mail carrier|gifts for my delivery driver|gifts for my kids teachers|gifts for my children'?s teachers|gifts for everyone)",
+      "i (?:need to |should |gotta |have to )(?:decorate|put up|set up|hang|arrange|prepare|get ready for)(?:the christmas tree|the tree|the lights|the decorations|the ornaments|the tinsel|the garland|the wreath|the nativity scene|the menorah|the kinara|the easter eggs|the pumpkins|the halloween decorations|the spooky decorations|the thanksgiving centerpiece|the holiday decorations|the festive decorations|the holiday lights|the outdoor lights|the indoor lights|the inflatables|the blow ups|the animated decorations)",
+      "i (?:need to |should |gotta |have to )(?:cook|bake|prepare|make|whip up|throw together|put together|plan)(?:the |my |some |for )(?:christmas dinner|christmas lunch|christmas brunch|christmas breakfast|christmas eve dinner|christmas day dinner|thanksgiving dinner|thanksgiving lunch|thanksgiving feast|easter brunch|easter dinner|easter lunch|hanukkah dinner|kwanzaa feast|diwali feast|ramadan iftar|eid feast|holiday meal|holiday feast|festive meal|special meal|traditional dishes|family recipes|holiday treats|cookies|gingerbread|fruitcake|eggnog|hot chocolate|mulled wine|cider|pumpkin pie|pecan pie|apple pie|candy canes|peppermint bark|sugar cookies|shortbread|butter cookies|snowball cookies|thumbprint cookies)",
+      "i (?:spend |will spend |am spending |am going to spend )(?:christmas|the holidays|the holiday season|new year'?s|new years|easter|thanksgiving|halloween)(?:with|at|in|near)(?:my family|my friends|my loved ones|my partner|my spouse|my husband|my wife|my boyfriend|my girlfriend|my parents|my mom|my dad|my mother|my father|my sister|my brother|my siblings|my children|my kids|my son|my daughter|my grandmother|my grandfather|my grandparents|my aunt|my uncle|my cousin|my cousins|my relatives|my in laws|my partner'?s family|my friend'?s family|my chosen family|my tribe|my community|home|my hometown|my childhood home|my parents'? house|a cabin|a cottage|a beach house|a mountain cabin|a ski resort|a tropical resort|a hotel|a rental|a vacation rental|an airbnb|a vrbo|
+      "merry (?:christmas|xmas|mas)",
+      "happy (?:holidays|hanukkah|chanukah|kwanzaa|diwali|ramadan|eid|easter|thanksgiving|halloween|valentine'?s|valentines|st patrick'?s|mother'?s day|father'?s day|earth day|independence day|4th of july|fourth of july|labor day|memorial day|veterans day|new year|new years|new year'?s|belated|birthday|anniversary|weekend|friday)",
+      "eid (?:mubarak|said|kareem|mubarak)",
+      "ramadan (?:mubarak|kareem|mubarak)"
+    ],
+    "response": [
+      "Happy holidays! 🎄✨ Whether you celebrate or not, I hope this season brings you warmth and joy!",
+      "Season's greetings! Hope your holidays are filled with love, laughter, and good food! 🎉",
+      "Happy holidays! However you celebrate, I hope it's wonderful! 🎊",
+      "Wishing you a beautiful holiday season filled with peace, joy, and cherished moments! 🌟"
+    ]
+  },
+
+  "congratulations": {
+    "patterns": [
+      "^(?:congratulations|congrats|congradulations|congratz|congratulation|grats|gratz|way to go|well done|good job|great job|awesome job|nice work|good work|great work|awesome work|nice one|good one|atta boy|atta girl|attaboy|attagirl|bravo|brava|bravissimo|encore|kudos|props|mad props|respect|big ups|shout out|shoutout|cheers|hats off|hat off|tip of the hat|standing ovation|round of applause|my hat goes off to you|i salute you|you deserve a medal|you deserve a trophy|you deserve a award|you deserve recognition|you deserve a round of applause|you deserve a standing ovation)$",
+      "congratulations (?:on|for|with|my friend|my guy|my dude|my man|my girl|my love|my dear|my friend|everyone|all|team|everybody|folks|people)",
+      "i (?:want to |wanted to |would like to )(?:congratulate|say congrats|say congratulations|extend my congratulations)(?:you|everyone|the team|the winner|the champion|the graduate|the newlyweds|the happy couple|the proud parents|the new parents|the parents to be|the mom to be|the dad to be|the mom|the dad|the graduate|the valedictorian|the salutatorian|the winner|the champion|the medalist|the award winner|the recipient|the nominee|the honoree|the inductee|the leader|the pioneer|the trailblazer|the innovator|the creator|the artist|the performer|the musician|the athlete|the player|the competitor|the contestant|the participant|the volunteer|the organizer)(?:for|on|about)(?:your|the|their|her|his)(?:achievement|accomplishment|success|win|victory|triumph|milestone|landmark|breakthrough|progress|growth|development|improvement|advancement|graduation|promotion|award|honor|recognition|prize|scholarship|fellowship|grant|acceptance|admission|selection|nomination|appointment|election|induction|certification|license|degree|diploma|completion|finish|mastery|excellence|performance|effort|dedication|commitment|perseverance|persistence|determination|grit|resilience|strength|courage|bravery|achievement)",
+      "i (?:just |recently)(?:got |was |have been |was just )(?:accepted|admitted|selected|chosen|picked|chosen|nominated|appointed|elected|inducted|invited|offered|awarded|granted|given|presented|honored|recognized|celebrated)(?:to|into|for|as|with)(?:college|university|grad school|graduate school|medical school|law school|business school|nursing school|pharmacy school|dental school|veterinary school|the program|the course|the class|the academy|the institute|the fellowship|the scholarship|the grant|the award|the honor|the recognition|the prize|the position|the role|the job|the promotion|the transfer|the relocation|the opportunity|the chance)",
+      "i (?:just |recently )(?:graduated|finished|completed|passed|aced|nailed|crushed|killed|dominated)(?:high school|college|university|grad school|graduate school|medical school|law school|business school|nursing school|pharmacy school|dental school|veterinary school|my program|my course|my class|my training|my apprenticeship|my internship|my residency|my fellowship|my certification|my license|my degree|my diploma|my thesis|my dissertation|my project|my assignment|my exam|my test|my finals|my boards|my bar exam|my mcat|my lsat|my gmat|my gre|my sat|my act|my ap exam|my ib exam)",
+      "i (?:just |recently )(?:got |landed |was offered |accepted |started |began )(?:a |my |the |my dream |my first |a new )(?:job|career|position|role|promotion|raise|transfer|relocation|assignment|posting|placement|gig|contract|project|opportunity|chance)",
+      "i (?:just |recently )(?:got engaged|got married|got hitched|tied the knot|got wed|said i do|eloped|got civil unioned|got partnered|got joined|got united|got coupled|got paired|got matched",
+      "i (?:just |recently )(?:bought|purchased|got|closed on|moved into|moved to|relocated to)(?:a |my |our |a new |my first |our first |a brand new |a beautiful |a lovely |a charming )(?:house|home|apartment|condo|flat|loft|studio|townhouse|bungalow|cabin|cottage|villa|place|residence|dwelling|land|property|real estate)"
+    ],
+    "response": [
+      "Congratulations! 🎉 That's amazing news! I'm so happy for you!",
+      "Way to go! That's incredible! 🎊 All your hard work paid off!",
+      "That's fantastic! Congrats! 🎉 You should be really proud of yourself!",
+      "Amazing news! Congratulations! 🥳 Keep celebrating — you've earned it!"
+    ]
+  },
+
+  "condolences": {
+    "patterns": [
+      "^(?:my condolences|condolences|deepest condolences|sincere condolences|heartfelt condolences|my sympathies|my deepest sympathies|my sincere sympathies|my heart goes out to you|my thoughts are with you|my prayers are with you|i'?m sorry for your loss|so sorry for your loss|very sorry for your loss|so sorry to hear|sorry to hear that|sorry to hear the news|sorry for your loss|rest in peace|rip|rip|r i p|may they rest in peace|may their soul rest in peace|may their memory be a blessing|may their memory be eternal|memory eternal|gone but not forgotten|never forgotten|always in our hearts|forever in our hearts)$",
+      "i (?:just |recently )(?:lost|lost my|had my|experienced the loss of my|had the passing of my|had the death of my|had to say goodbye to)(?:grandparent|grandmother|grandfather|grandma|grandpa|nana|papa|grammy|grampy|omi|opi|oma|opa|mom|mother|dad|father|sister|brother|sibling|aunt|uncle|cousin|nephew|niece|friend|best friend|dear friend|close friend|child|son|daughter|baby|pet|dog|cat|friend|relative|family member|loved one|partner|spouse|husband|wife|boyfriend|girlfriend)",
+      "i'?m (?:going through |dealing with |coping with |processing |grieving |mourning )(?:a |the |my |the loss of my |the passing of my |the death of my )(?:loss|grief|bereavement|mourning period|sadness|heartache|heartbreak|pain|suffering|hurt|sorrow|melancholy|sadness|heaviness|emptiness|numbness|heaviness|weight)",
+      "i (?:lost |had to put down |had to say goodbye to |had to let go of |had to release |had to set free |lost my beloved |lost my precious |lost my dear |lost my sweet |lost my best friend)(?:pet|dog|puppy|cat|kitten|bird|fish|hamster|guinea pig|rabbit|bunny|horse|pony|turtle|tortoise|snake|lizard|ferret|rat|mouse|gerbil|chinchilla|hedgehog|parrot|parakeet|budgie|cockatiel|friend|companion|baby|fur baby|fur child|furry friend|furry family member|four legged friend)",
+      "my (?:grandparent|grandmother|grandfather|grandma|grandpa|nana|nanna|papa|pop pop|grammy|grampy|omi|opi|oma|opa|mom|mother|dad|father|sister|brother|aunt|uncle|cousin|friend|neighbor|colleague|coworker|classmate|teacher|mentor|role model)(?:passed away|died|is no longer with us|is gone|left us|departed|was called home|went home|went to heaven|went to a better place|is resting|is at peace|is at rest|is in a better place)(?:recently|yesterday|last week|last month|earlier this year|unexpectedly|suddenly|peacefully|quietly|after a long illness|after a long battle|after a short illness|after a courageous battle|after a valiant fight|after a brave struggle|after a hard fought battle)",
+      "i'?m (?:so |really |very )?(?:sorry to hear|sorry about|sorry for|saddened by|devastated by|heartbroken by|shocked by|surprised by|numb from|overwhelmed by|overcome with)(?:your loss|the news|what happened|the situation|the circumstances|the tragedy|the accident|the event|the circumstances)",
+      "that'?s (?:so |really |very |absolutely |truly |genuinely )(?:sad|terrible|awful|horrible|dreadful|heartbreaking|devastating|tragic|unfortunate|difficult|hard|tough|rough|painful|sorrowful|mournful|grievous)",
+      "my heart (?:is |is so |is really )?(?:breaking|heavy|heavy with sadness|heavy with grief|heavy with loss|full|overflowing|aching|hurting|pained|saddened|wrenched|torn|crushed|broken|shattered)",
+      "i'?m (?:here |here for you |thinking of you |thinking about you |praying for you |holding you in my heart |sending you love |sending you strength |sending you peace |sending you comfort |sending you light |sending you warmth |sending you healing |sending you blessings |keeping you in my thoughts |keeping you in my prayers)",
+      "i (?:can'?t |cannot )(?:imagine|begin to imagine|fathom|comprehend|understand|process|believe|accept)(?:what you'?re going through|how you must feel|how you'?re feeling|what you must be feeling|how hard this must be|how difficult this must be|how tough this must be|how painful this must be|how much this hurts|how much pain you'?re in|how much you'?re hurting|how much you'?re suffering|how much you'?re grieving|how you'?re coping|how you'?re managing|how you'?re getting through this|how strong you are|how you do it|how you manage|how you cope|how you get through|how you keep going)",
+      "i (?:lost |am losing |am going to lose)(?:my |a )(?:loved one|family member|relative|friend|pet|companion)(?:and i|and i'?m|and i am)(?:devastated|heartbroken|shattered|crushed|gutted|broken|numb|empty|lost|sad|grieving|mourning|hurting|in pain|struggling|having a hard time|having a tough time|finding it hard|finding it difficult|not okay|not alright|not fine|not good)"
+    ],
+    "response": [
+      "I'm so sorry for your loss. That's incredibly hard. I'm here for you if you need someone to talk to or just someone to listen.",
+      "My deepest condolences. Losing someone we love is never easy. Be gentle with yourself during this difficult time.",
+      "I'm so sorry. Grief is a heavy burden to carry. Please take all the time you need to heal, and know that I'm here for you.",
+      "That's heartbreaking. I'm sending you warmth and strength. Take it one moment at a time, and be kind to yourself."
+    ]
+  },
+
+  "ice_breakers": {
+    "patterns": [
+      "^(?:so|so,|anyway|hey|okay|alright|right|well|listen|look|tell me|tell me about|ask me|ask me anything|ama|so tell me|so what|so how|so why|so where|so when|so who|so what'?s|so how'?s|so what are|so what do|so what is)$",
+      "let'?s (?:play a game|play a game together|do something fun|do something interesting|do something different|have some fun|have a conversation|talk|chat|discuss something|explore something|learn something|discover something|try something|start|begin|get started|get going)",
+      "i (?:want to |would like to |'?d like to )(?:get to know you|get to know you better|learn more about you|find out more about you|discover more about you|understand you better)",
+      "tell me (?:something |something interesting |something fun |something random |something about yourself |about yourself |a bit about yourself |a little about yourself |about you |about your day |about your week |about your weekend |about your life |about your story |about your journey |about your experience |about your adventure |about your travel |about your work |about your studies |about your hobbies |about your interests |about your passions |about your dreams |about your goals |about your aspirations |about your ambitions |about your plans |about your ideas |about your thoughts |about your feelings |about your opinions |about your perspective |about your view |about your take |about your stance |about your position)",
+      "ask me (?:anything|a question|something|something interesting|something fun|something random|a few questions|some questions|whatever you want|whatever comes to mind|anything you'?re curious about|anything you want to know|anything at all)",
+      "what do you (?:want to know|wish to know|hope to know|need to know|ask|wonder|wonder about|think about|feel about|believe about|know about|think of|make of|have to say|have to add|have to contribute)",
+      "i (?:don'?t |do not )?(?:know what to say|know how to start|know how to begin|know where to start|know where to begin|know what to talk about|know what to discuss|have anything to say|have anything to add|have anything interesting to say|have anything exciting to share|have anything new|have anything fun|have anything cool|have anything interesting|have anything to report|have anything to update|have anything to share)",
+      "this is (?:awkward|awkward lol|uncomfortable|weird|strange|odd|funny|kinda funny|kind of funny|sort of funny|a bit awkward|a little awkward|slightly awkward)",
+      "awkward (?:silence|pause|moment|conversation|situation|encounter)",
+      "so (?:what'?s |what is |what are |how'?s |how is |how are |where are |where is |why are |why is |tell me |tell us |tell everyone )",
+      "conversation starter",
+      "ice breaker",
+      "icebreaker",
+      "breaking the ice",
+      "break the ice",
+      "i'?m (?:not good at|bad at|terrible at|awful at|horrible at|not great at|not the best at|not very good at)(?:small talk|starting conversations|breaking the ice|making conversation|keeping a conversation going|carrying a conversation|maintaining a conversation|chatting|talking to people|meeting new people|socializing|networking|making small talk)"
+    ],
+    "response": [
+      "I'm great at conversation starters! Ask me anything — facts, questions, hypotheticals. Or I can ask you something! What kind of conversation are you in the mood for?",
+      "Let's break the ice! I can ask you a fun question, share an interesting fact, or we can just chat. What sounds good?",
+      "Small talk can be awkward, but don't worry! I'm easy to talk to. What's on your mind? Or I can suggest a topic!",
+      "No need to be formal with me! Just say whatever comes to mind. Want a conversation starter? I've got plenty!"
+    ]
+  },
+
+  "catching_up": {
+    "patterns": [
+      "long time no (?:see|talk|chat|hear from|speak|hear|connect)",
+      "it'?s been (?:a while|a long time|too long|ages|ages since we talked|a minute|a hot minute|a minute since we chatted|awhile|a minute since we caught up|a minute since we spoke|a minute since we connected|a while since we last talked|a while since we last chatted|a while since we last spoke|a while since we last connected|a long time since we talked|a long time since we chatted|a long time since we spoke|a long time since we connected)",
+      "i (?:haven'?t |have not )(?:talked to you|chatted with you|spoken to you|connected with you|caught up with you|heard from you|seen you)(?:in |for |since )(?:a while|a long time|too long|ages|months|weeks|years|forever|so long|way too long|much too long)",
+      "what have i (?:missed|missed out on|not caught up on|not been caught up on|not kept up with|not stayed up to date with|not stayed current with|not stayed informed about|not stayed in the loop about)",
+      "what'?s (?:new|been going on|been happening|been up|been new|been exciting|been interesting|been fun|been good|been great|been wonderful|been fantastic|been amazing|been incredible|crazy|wild|insane|different|changed|the same|up with you|new with you|new in your world|new in your life|new in your story|new in your journey|new in your adventure)",
+      "catch me up",
+      "fill me in",
+      "bring me up to speed",
+      "update me",
+      "give me the (?:latest|update|rundown|lowdown|scoop|411|info|details|highlights|key points|summary|gist|essence|main points)",
+      "how have you (?:been|been doing|been feeling|been keeping|been staying|been managing|been coping|been getting on|been getting by|been getting through|been doing lately|been doing these days|been doing recently|been doing since we last talked|been doing since we last connected)",
+      "how'?s (?:life|everything|the family|work|school|your studies|your project|your business|your side hustle|your journey|your adventure|life been|everything been|it going|it been)",
+      "what have you (?:been up to|been doing|been working on|been focusing on|been busy with|been dealing with|been handling|been managing|been coping with|going through|experiencing|working through|processing|thinking about|considering)",
+      "i (?:missed |miss |missed connecting with |miss chatting with |miss talking to )(?:you|our chats|our conversations|our talks|our connection|our time together|our back and forth|our banter|our exchanges)",
+      "i'?m (?:so |really |very )?(?:happy|glad|pleased|delighted|thrilled|excited|grateful|thankful)(?:to talk to you|to chat with you|to connect with you|to see you|to hear from you|to be talking to you|to have this conversation|to catch up|to reconnect|to be back in touch)",
+      "i (?:fell off|dropped off|went off|went away|disappeared|vanished|went silent|went quiet|went dark|went offline|checked out|zoned out|signed off|logged off)(?:the grid|the face of the earth|the map|the radar|the network|the chat|the conversation|the group|the server|the community|the platform|the app|the site|the forum|the thread)",
+      "i (?:needed |needed a |took |took a |just needed |just needed a )(?:break|pause|timeout|rest|breather|step back|moment|minute|second|day|week|month|hiatus|sabbatical|retreat|reset|reboot|recharge|renewal|refresh|revival)",
+      "i (?:got |was )(?:busy|swamped|snowed under|buried|overloaded|overbooked|overcommitted|stretched thin|pulled in different directions|pulled in many directions|juggling a lot|juggling too many things|juggling many things|distracted|sidetracked|derailed|thrown off|knocked off course)(?:and couldn'?t|and didn'?t have time to|and didn'?t get a chance to|so i couldn'?t|so i didn'?t)(?:reach out|check in|connect|respond|reply|answer|get back to you|touch base|stay in touch|keep in touch)",
+      "i (?:missed |haven'?t )(?:chat|chatted|talk|talked|connect|connected|catch up|caught up)(?:with|in)(?:a while|so long|too long|ages|months|weeks|years|forever)"
+    ],
+    "response": [
+      "It's so good to connect again! I'm always here, ready whenever you want to chat. What's been going on in your world?",
+      "Welcome back! I've missed our chats. What's new? Anything exciting happening?",
+      "Great to hear from you! I'm glad you reached out. How have you been?",
+      "It's been a while! I hope you've been doing well. What's been keeping you busy?"
+    ]
+  },
+
+  "bathroom_breaks": {
+    "patterns": [
+      "i (?:need to |have to |gotta |must |'?ve got to )(?:go to the bathroom|use the bathroom|use the restroom|use the washroom|use the toilet|use the loo|use the lavatory|use the powder room|use the little boys room|use the little girls room|use the facilities|use the john|use the head|go potty|pee|urinate|use the urinal|use the stall|take a leak|take a piss|spend a penny|answer the call of nature|powder my nose|freshen up|wash my hands|splash water on my face|splash my face|go",
+      "brb",
+      "be right back",
+      "i'?ll be right back",
+      "one sec",
+      "one moment",
+      "hold on",
+      "hold that thought",
+      "don'?t go anywhere",
+      "stay right there",
+      "back in a sec",
+      "back in a moment",
+      "back in a minute",
+      "back in a bit",
+      "back shortly",
+      "back soon",
+      "i'?m back",
+      "i'?m back",
+      "i'?ve returned",
+      "i'?m here again",
+      "i'?m back again",
+      "i'?m back now",
+      "back again",
+      "and i'?m back",
+      "okay i'?m back",
+      "right i'?m back",
+      "so i'?m back",
+      "i returned",
+      "i have returned",
+      "i am returned",
+      "the (?:wanderer|traveler|explorer|adventurer|journeyer|wayfarer|pilgrim|sojourner|voyager|rover|roamer|rambler|straggler|truant|absentee) (?:returns|has returned|hath returned|is back|has come back|hath come back)"
+    ],
+    "response": [
+      "Take your time! I'll be right here.",
+      "No rush! I'll be waiting right here for you.",
+      "Got it! I'll hold that thought. 😄",
+      "Welcome back! Ready when you are."
+    ]
+  },
+
+  "food_delivery": {
+    "patterns": [
+      "i (?:want |need |should |gotta |have to |am going to )(?:order|get|buy|pick up|grab)(?:food|takeout|take out|delivery|something to eat|dinner|lunch|breakfast|brunch|a meal|a snack|a bite|a midnight snack|a late night snack)(?:from|through|using)(?:uber eats|ubereats|doordash|grubhub|postmates|seamless|caviar|deliveroo|just eat|takeaway|skip the dishes|skipthedishes|foodora|foodpanda|zomato|swiggy|talabat|hungryhouse|deliveroo|uber eats|doordash|grubhub|postmates|seamless|caviar|deliveroo|just eat|takeaway|eat24|menulog|mrfood|taste|tastes|local|my favorite spot|that place|the usual|a new place|somewhere new|somewhere different|somewhere i'?ve been meaning to try|somewhere i'?ve been wanting to try|somewhere i'?ve heard about|somewhere i saw online|somewhere that was recommended|somewhere that has good reviews|somewhere that'?s popular|somewhere that'?s trendy|somewhere that'?s hyped)",
+      "what should i (?:order|get|eat|have|pick up|grab)(?:for|later|tonight|for dinner|for lunch|for breakfast|for brunch|for a snack|right now)",
+      "i'?m (?:thinking about |considering |debating between |choosing between |deciding between |weighing up |trying to decide between |trying to pick between )(?:getting|ordering|having)(?:pizza|sushi|chinese|mexican|italian|indian|thai|japanese|korean|vietnamese|mediterranean|greek|middle eastern|american|comfort food|fast food|junk food|healthy food|salad|sandwich|burger|tacos|burritos|ramen|pho|curry|pad thai|dumplings|fried rice|lo mein|chow mein|wings|pasta|pizza|subs|wraps|bento|bibimbap|hot pot|bbq|korean bbq|japanese bbq|brazilian bbq|steakhouse|seafood|cajun|creole|soul food|southern|bbq|barbeque|grill|pub food|bar food|gastropub|tapas|small plates|share plates|meze|antipasto|charcuterie|cheese board|flatbread|naan|roti|paratha|naan bread|garlic naan|garlic bread|bread sticks|bread basket|salad bar|soup bar|hot bar|cold bar|salad|soup|chili|stew|gumbo|jambalaya|etouffee|crawfish|boiled shrimp|fried shrimp|shrimp scampi|shrimp cocktail|oysters|clams|mussels|crab|lobster|scallops|fish and chips|fish tacos|crab cakes|cakes|pancakes|waffles|crepes|french toast|omelette|egg|breakfast|brunch|avocado toast|toast|bagel|muffin|scone|croissant|danishes|pastries|cinnamon roll|donuts|cookies|cake|pie|ice cream|gelato|sorbet|frozen yogurt|yogurt|pudding|mousse|panna cotta|creme brulee|flan|crème caramel|custard|trifle|tiramisu|cheesecake|brownie|blondie|chocolate lava cake|molten chocolate cake|chocolate cake|carrot cake|red velvet|red velvet cake|coconut cake|banana bread|banana cake|lemon cake|lemon bar|fruit tart|key lime pie|pecan pie|pumpkin pie|apple pie|cherry pie|peach cobbler|crisp|crumble|cobbler)",
+      "i'?m (?:so |really |very )?(?:hungry|starving|famished|ravenous)(?:but|and)(?:i don'?t know|can'?t decide|not sure|not certain)(?:what|what to|what i) (?:to get|to order|to eat|to have|for food|for dinner|for lunch|for a snack)",
+      "i (?:just |finally )(?:ordered|got|received|ate|had)(?:food|takeout|take out|delivery|my order|my food|my meal|my dinner|my lunch|my breakfast|my brunch|my snack)(?:and it was |and it'?s )(?:delicious|amazing|fantastic|incredible|wonderful|great|good|okay|ok|alright|mediocre|average|underwhelming|disappointing|terrible|awful|horrible|disgusting|gross|nasty|bad|not good|not great|not what i expected|not what i ordered|the wrong order|missing items|incomplete|cold|soggy|greasy|dry|overcooked|undercooked|burnt|raw|underwhelming|disappointing|not worth it|overpriced|expensive|cheap|worth it|a good value|a great deal)",
+      "i need to (?:decide |figure out |choose |pick |select )(?:what |where |what to |where to )(?:order|eat|get|pick|choose|try)",
+      "food (?:sounds|would be|is) (?:so |really |very )?(?:good|great|amazing|wonderful|fantastic|incredible|delicious|tasty|yummy|mouthwatering|appetizing|tempting|enticing|appealing|inviting|promising|perfect|ideal|exactly what i need|exactly what i want|what i'?m craving|what i'?m in the mood for)",
+      "i'?m (?:so |really )?(?:full|stuffed|satisfied|content|happy|pleased)(?:after|from|with|after eating|from eating|with my meal|after that meal|from that meal)(?:my|that|the|this|the whole|the entire)(?:meal|dinner|lunch|breakfast|brunch|feast|spread|buffet|food|order|delivery|takeout|take out)",
+      "i (?:ate |had )(?:way too much|too much|a lot|a ton|a ton of food|so much food|so much|far too much|more than i should have|more than i needed|more than i planned|more than i intended|more than i wanted|more than i could handle|more than i could manage|more than i could stomach|until i was stuffed|until i was full|until i was satisfied|until i couldn'?t eat another bite|until i was ready to burst|until i was bursting)",
+      "i (?:need |want |should get |could go for |would love |would kill |would die )(?:a |some )(?:drink|water|coffee|tea|soda|pop|juice|smoothie|milkshake|beer|wine|cocktail|mixed drink|alcohol|booze|liquor|spirits|something cold|cold drink|cold beverage|cold water|ice water|cold water|something warm|warm drink|hot drink|hot beverage|hot coffee|hot tea|hot chocolate|cocoa|cider|mulled wine|eggnog|something refreshing|something to quench my thirst|something to cool me down|something to warm me up|something to wake me up|something to calm me down|something to settle my stomach)"
+    ],
+    "response": [
+      "Food decisions are always tough! But you really can't go wrong — just follow your cravings!",
+      "Ooh, food time! I hope it's delicious. I can share fun food facts or the history of different cuisines if you want!",
+      "Tough choices! I'd say go with what you're craving most. Your taste buds usually know what they want!",
+      "Nothing beats good food! Hope you enjoy it. I know a ton about different cuisines if you want to learn something while you eat."
+    ]
+  },
+
+  "sleep_talk": {
+    "patterns": [
+      "i (?:need to |should |gotta |have to |am going to )(?:go to sleep|go to bed|get some sleep|get some rest|hit the hay|hit the sack|crash|turn in|call it a night|call it a day|head to bed|head off to bed|make my way to bed|retire for the evening|retire for the night|get some shut eye|catch some zzz|catch some z'?s|catch some sleep|catch some shut eye|sleep|rest|nap|doze|snooze|slumber)",
+      "i'?m (?:so |really |very |getting )(?:sleepy|tired|exhausted|drowsy|fatigued|weary|wiped|beat|bushed|drained|spent|worn out|dead tired|knackered|pooped|wiped out|beyond tired|beyond exhausted|bone tired|dead on my feet|ready to drop|ready to crash|ready to hit the hay|ready to hit the sack|ready for bed|ready for sleep|ready for a nap|ready to sleep|ready to pass out|ready to collapse|fading|fading fast|crashing|starting to crash|starting to fade|getting sleepy|getting tired|getting drowsy)",
+      "i (?:should |need to |gotta |have to )?(?:go to bed earlier|sleep earlier|wake up earlier|get up earlier|get more sleep|get better sleep|sleep more|sleep better|sleep through the night|not stay up so late|not stay up all night|not pull an all nighter|not binge watch until 3am|not scroll through my phone until 2am|not be on my phone before bed|be better about my sleep schedule|fix my sleep schedule|fix my sleep routine|fix my sleep hygiene|improve my sleep|improve my sleep quality|get my sleep back on track|get my sleep schedule back on track)",
+      "i (?:stayed up |was up |woke up |got up )(?:late|early|too late|too early|way too late|way too early|until|at|at around|at about|at like)(?:\\d+|midnight|1am|2am|3am|4am|5am|6am|the crack of dawn|the butt crack of dawn|the break of dawn|daybreak|sunrise|sunset|the middle of the night|the wee hours|the wee hours of the morning|the small hours|the early hours|the early morning|late at night|late into the night|until the wee hours|until the early morning|all night|all night long|the entire night|through the night)",
+      "i (?:couldn'?t |could not |can'?t |cannot |didn'?t |did not )(?:sleep|fall asleep|get to sleep|stay asleep|sleep through the night|sleep well|sleep soundly|sleep peacefully|sleep comfortably|sleep at all|sleep a wink|get any sleep|get enough sleep)",
+      "i (?:had |had a |had the |had the most |had the strangest |had the weirdest |had the craziest |had the wildest |had the most vivid |had a lucid |had a recurring )(?:dream|nightmare|sleep paralysis|night terror|lucid dream|vivid dream|strange dream|weird dream|crazy dream|wild dream|intense dream|frightening dream|scary dream|terrifying dream|horrible dream|awful dream|sad dream|emotional dream|confusing dream|bizarre dream|surreal dream|realistic dream|lifelike dream|prophetic dream|predictive dream|premonition|vision)(?:about|last night|recently|again)",
+      "i (?:tossed and turned|couldn'?t get comfortable|kept waking up|kept waking up in the middle of the night|woke up multiple times|woke up in the middle of the night|woke up several times|woke up frequently|woke up often|woke up every few hours|woke up on and off|slept restlessly|slept poorly|slept badly|slept like crap|slept like garbage|slept terribly|slept horribly|slept awfully|slept terribly|didn'?t sleep well|didn'?t sleep soundly|didn'?t sleep peacefully|didn'?t sleep through the night|slept like a log|slept like a baby|slept like a rock|slept like the dead|slept soundly|slept peacefully|slept well|slept great|slept amazing|slept fantastic|slept wonderfully|slept beautifully|slept deeply|slept through the night|slept through|slept in|slept late|slept until noon|slept until the afternoon|slept the whole day|slept the day away|slept like there was no tomorrow)",
+      "i (?:got |had |managed |barely got )(?:a |some |enough |decent |good |great |amazing |wonderful |fantastic |incredible )(?:sleep|rest|night'?s sleep|night'?s rest|shut eye|sleep last night|rest last night|sleep in|lie in|lay in)",
+      "i (?:need |could use |need to take |would love )(?:a nap|a quick nap|a power nap|a short nap|a cat nap|a snooze|a nap to recharge|a nap to reset|a nap to refresh|a nap to revive me|a nap to energize me|a nap to rejuvenate me|a nap to restore me|a nap to help me recover|a nap to help me make it through the day|a nap to help me survive the rest of the day)",
+      "good night",
+      "night night",
+      "sweet dreams",
+      "sleep well",
+      "sleep tight",
+      "sleep tight don'?t let the bed bugs bite",
+      "night",
+      "goodnight",
+      "gn",
+      "sweet dreams",
+      "sleep well",
+      "sleep tight",
+      "sleep peacefully",
+      "rest well",
+      "rest easy"
+    ],
+    "response": [
+      "Sleep is so important! Hope you get some good rest and wake up feeling refreshed. Sweet dreams! 🌙",
+      "Get some good rest! Your body and mind will thank you. Sleep well! 😴",
+      "Rest up! Tomorrow is a new day with new possibilities. Good night! 🌟",
+      "I hope you sleep well and have wonderful dreams. See you on the other side! 😴🌙"
+    ]
+  }
+}

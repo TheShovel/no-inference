@@ -101,7 +101,8 @@ def _handle_essay(query: str, slots: Dict[str, str]) -> str:
     requirement and combining them into a comprehensive response.
     """
     from cos.engine import (_retrieve_multi_content, _make_conversational,
-                            _handle_factual, _search_wikipedia, _extract_search_topic)
+                            _handle_factual, _search_wikipedia, _extract_search_topic,
+                            _format_as_essay)
     
     topic = slots.get('topic', '')
     if not topic:
@@ -169,9 +170,13 @@ def _handle_essay(query: str, slots: Dict[str, str]) -> str:
     # Combine all content
     if content_parts:
         combined = '\n\n'.join(content_parts)
-        return _make_conversational(combined)
+        cleaned = _make_conversational(combined)
+        return _format_as_essay(cleaned, topic)
     
-    return _handle_factual(query, True)
+    result = _handle_factual(query, True)
+    if result:
+        return _format_as_essay(result, topic)
+    return result
 
 
 def _handle_html_page(query: str, slots: Dict[str, str]) -> str:

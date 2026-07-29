@@ -148,6 +148,10 @@ _EMPTY_TOPICS: frozenset = frozenset({
     'something', 'anything', 'nothing', 'everything',
     'things', 'stuff', 'someone', 'somebody', 'anyone', 'anybody',
     'more', 'some', 'any', 'all', 'such',
+    # Command words that should never be treated as conversation topics
+    'longer', 'shorter', 'refine', 'rewrite', 'improve', 'polish',
+    'summarize', 'summary', 'detail', 'elaborate', 'expand',
+    'further', 'continue', 'tl;dr', 'tldr', 'condense', 'brief',
 })
 
 # ═════════════════════════════════════════════════════════════════════════════
