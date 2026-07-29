@@ -1223,3 +1223,54 @@ def get_known_compounds() -> frozenset:
 def get_empty_topics() -> frozenset:
     """Return the empty topics set (for inspection/testing)."""
     return _EMPTY_TOPICS
+
+
+def extract_search_terms(query: str) -> List[str]:
+    """Extract search keywords from a query using symbolic extraction.
+
+    Uses the multi-strategy context_extraction system.
+    Returns a list of keyword strings, or [query] on failure.
+    """
+    if not query or not query.strip():
+        return [query] if query else []
+
+    keywords = extract_keywords(query, max_keywords=5)
+    result = [phrase for phrase, score in keywords if score > 0.20]
+
+    if result:
+        return result
+
+    # Fallback: extract the main noun phrase from the query
+    m = re.search(
+        r'(?:what|how|who|why)\s+(?:(?:is|are|was|were|does|do|can|to)\s+)?(.+)',
+        query.lower(),
+    )
+    if m:
+        return [m.group(1).strip().rstrip('?')]
+    return [query]
+
+
+# Re-export with topic extraction with regex fallback
+# This function is a wrapper around extract_topic that adds a regex fallback.
+# It's kept as a separate function rather than modifying extract_topic directly
+# to avoid changing its return signature (tuple vs string).
+def extract_topic_with_fallback(query: str) -> Optional[str]:
+    """Extract the main topic from a query, with regex fallback."""
+    # Avoid import loop -- direct call to the module-level function
+    from .context_extraction import extract_topic as _core_extract_topic
+    topic, confidence = _core_extract_topic(query)
+    if topic and confidence > 0.15:
+        return topic
+
+    # Fallback: regex extraction
+    m = re.search(
+        r'(?:what|how|who|why)\s+(?:(?:is|are|was|were|does|do|can|to)\s+)?'
+        r'(?:i|we|you|they|he|she|it|one\s+)?(?:to\s+)?'
+        r'(?:make|bake|cook|create|build|write|find|get|know)?\s*(.+)',
+        query.lower(),
+    )
+    if m:
+        topic = m.group(1).strip().rstrip('?')
+        if topic:
+            return topic
+    return query.strip()

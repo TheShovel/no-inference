@@ -5,7 +5,7 @@
             "(?:write|compose|draft|create)\\s+(?:me|us)?\\s*(?:a|an|the)?\\s*(?:short|long|beautiful)?\\s*(?:poem|verse|rhyme|sonnet|haiku|limerick|ode)\\s+(?:about|on|for|dedicated\\s+to)\\s+(?P<topic>.+?)(?:,\\s*(?:with|having|in)\\s+(?:a|an|the)?\\s*(?P<theme>.+?)\\s*(?:theme|mood|tone|feeling))?(?:,\\s*(?:and|with|using)\\s+(?:a|an|the)?\\s*(?P<style>.+?)\\s*(?:style|form|structure|rhyme\\s* scheme))?(?:\\.\\s*|\\?\\s*|$)"
         ],
         "slots": {"topic": "topic", "theme": "theme", "style": "style"},
-        "response_type": "explanation",
+        "response_type": "poem",
         "weight": 0.95
     },
     {

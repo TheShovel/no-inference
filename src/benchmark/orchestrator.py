@@ -31,7 +31,7 @@ from cos.memory import extract_and_store, recall as memory_recall, get_all_facts
 from cos.knowledge import lookup as knowledge_lookup
 from cos.templates import match_instruction
 from cos.roleplay import match_roleplay, generate_followup as roleplay_followup
-from cos.llm_fallback import extract_search_terms
+from cos.context_extraction import extract_search_terms
 from cos.followup import rewrite_previous_response
 from cos.template_engine import match_template, get_context_topic, reload as reload_templates
 
@@ -70,8 +70,8 @@ def _extract_search_topic(query):
     """Extract a clean search topic using symbolic extraction."""
     # Try symbolic extraction first
     try:
-        from cos.llm_fallback import extract_topic
-        topic = extract_topic(query)
+        from cos.context_extraction import extract_topic_with_fallback
+        topic = extract_topic_with_fallback(query)
         if topic and len(topic) > 2:
             return topic
     except Exception:
@@ -472,7 +472,7 @@ def _handle_instruction(query):
             # For poems, use the poem generator with Wikipedia content
             if fmt == 'poem' or fmt == 'haiku' or fmt == 'verse' or fmt == 'song':
                 wiki_summary, wiki_url = _search_wikipedia(topic)
-                from cos.llm_fallback import generate_poem
+                from cos.poem import generate_poem
                 poem = generate_poem(topic, wiki_summary or '')
                 source = f'\n  (inspired by Wikipedia)' if wiki_url else ''
                 return f"A poem about {topic}:\n\n{poem}{source}"

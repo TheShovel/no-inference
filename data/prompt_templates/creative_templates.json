@@ -5,7 +5,7 @@
             "(?:write|compose|draft|create)\\s+(?:a|an|the)?\\s*haiku\\s+(?:about|on|for)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
         ],
         "slots": {"topic": "topic"},
-        "response_type": "explanation",
+        "response_type": "poem",
         "weight": 0.9
     },
     {
@@ -23,7 +23,7 @@
             "(?:write|compose|draft|create)\\s+(?:a|an|the)?\\s*limerick\\s+(?:about|on|for)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
         ],
         "slots": {"topic": "topic"},
-        "response_type": "explanation",
+        "response_type": "poem",
         "weight": 0.85
     },
     {

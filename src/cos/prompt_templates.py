@@ -532,12 +532,32 @@ def _handle_comparing_essay(query: str, slots: Dict[str, str]) -> str:
     return _handle_factual(query, True)
 
 
+def _handle_poem(query: str, slots: Dict[str, str]) -> str:
+    """Generate a poem about a topic."""
+    from cos.engine import _search_wikipedia
+    from cos.poem import generate_poem
+
+    topic = slots.get('topic', '')
+    if not topic:
+        m = re.search(r'(?:about|on|for|covering|titled|called)\s+(.+?)(?:\.\s*|\?\s*|$)', query, re.IGNORECASE)
+        if m:
+            topic = m.group(1).strip()
+    if not topic:
+        topic = query.strip()
+
+    wiki_summary, wiki_url = _search_wikipedia(topic)
+    poem = generate_poem(topic, wiki_summary or '')
+    source = f'\n  (inspired by Wikipedia)' if wiki_url else ''
+    return f"A poem about {topic}:\n\n{poem}{source}"
+
+
 _RESPONSE_HANDLERS = {
     'essay': _handle_essay,
     'html_page': _handle_html_page,
     'explanation': _handle_explanation,
     'code_function': _handle_code_function,
     'comparing_essay': _handle_comparing_essay,
+    'poem': _handle_poem,
 }
 
 
