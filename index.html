@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>no-inference</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --fg: #c9d1d9;
+    --accent: #58a6ff;
+    --green: #3fb950;
+    --yellow: #d29922;
+    --orange: #d4760a;
+    --border: #30363d;
+    --card: #161b22;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.6;
+  }
+  .container { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+  .hero { text-align: center; padding: 4rem 0 2rem; }
+  .hero h1 { font-size: 3rem; font-weight: 800; color: #fff; }
+  .hero h1 span { color: var(--accent); }
+  .hero .subtitle {
+    font-size: 1.1rem; color: #8b949e; margin-top: 0.5rem;
+    max-width: 600px; margin-left: auto; margin-right: auto;
+  }
+  .cat-art {
+    font-family: monospace; font-size: 1rem; color: var(--yellow);
+    margin: 1.5rem 0; line-height: 1.3;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 6px; padding: 0.25rem 0.75rem;
+    font-size: 0.85rem; color: #8b949e;
+  }
+  .badge.warn { border-color: var(--orange); color: var(--orange); }
+
+  section { margin: 3rem 0; }
+  h2 {
+    font-size: 1.5rem; font-weight: 700; color: #fff;
+    padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+  }
+  h3 { font-size: 1.1rem; font-weight: 600; color: #fff; margin: 1.5rem 0 0.5rem; }
+
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 1.25rem; margin-bottom: 1rem;
+  }
+  .card h3 { margin-top: 0; }
+  .card .tag {
+    display: inline-block; font-size: 0.75rem; font-weight: 600;
+    padding: 0.15rem 0.5rem; border-radius: 12px;
+    background: rgba(88,166,255,0.15); color: var(--accent);
+    margin-right: 0.4rem;
+  }
+
+  .warning {
+    background: rgba(212,118,10,0.1); border: 1px solid var(--orange);
+    border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0;
+  }
+  .warning strong { color: var(--orange); }
+
+  .poem {
+    font-style: italic; color: #8b949e;
+    border-left: 3px solid var(--border);
+    padding-left: 1.25rem; margin: 1rem 0;
+  }
+  .poem .caption { font-style: normal; font-size: 0.85rem; margin-top: 0.5rem; color: #484f58; }
+
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  th, td { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); }
+  th { color: #8b949e; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .score { font-weight: 700; color: var(--green); }
+  .score.mid { color: var(--yellow); }
+  .bar {
+    display: inline-block; height: 8px; border-radius: 4px;
+    background: var(--green); margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+  .bar.mid { background: var(--yellow); }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.75rem; margin: 1rem 0;
+  }
+  .grid .card { margin-bottom: 0; }
+
+  blockquote {
+    border-left: 3px solid var(--border);
+    padding-left: 1rem; margin: 1rem 0;
+    color: #8b949e;
+  }
+  blockquote em { color: #484f58; }
+
+  .contribute-cat { font-family: monospace; color: var(--yellow); margin: 1rem 0; line-height: 1.3; }
+
+  ul { margin: 1rem 0; padding-left: 1.5rem; color: #8b949e; }
+  li { margin: 0.3rem 0; }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 2rem; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="hero">
+    <div class="cat-art">
+      /\_/\<br>
+     ( o.o )<br>
+      > ^ &lt;
+    </div>
+    <h1>no-<span>inference</span></h1>
+    <p class="subtitle">A purely symbolic conversational engine that answers questions, writes essays, solves math problems, roleplays characters, and holds conversations. No neural networks involved.</p>
+    <p style="margin-top: 1rem;">
+      <span class="badge warn">Proof of concept</span>
+      <span class="badge">Research project</span>
+      <span class="badge">Python</span>
+    </p>
+  </div>
+
+  <div class="warning">
+    <strong>Warning.</strong> This is not the best this system could be. We know where the gaps are. The pattern matcher could cover more ground, the knowledge base could be thousands of entries deep, the NLG pipeline could produce more natural prose, and the math solver could handle calculus. But building that takes data, testing, and server time we do not have. If this project had the resources to run continuous evaluation and iterate on the knowledge base at scale, it would compete with chatbot services that cost millions to run. As it stands, it is a demonstration that the approach works. We think that is worth something.
+  </div>
+
+  <section>
+    <h2>How it works</h2>
+    <p style="margin-bottom: 1rem;">no-inference classifies every query by intent, then routes it to a specialized handler. No neural networks, no GPUs, no model downloads, no API fees.</p>
+    <div class="card">
+      <code style="color: var(--accent);">query</code> &rarr; intent detection &rarr; handler &rarr; knowledge retrieval &rarr; <code style="color: var(--green);">response</code>
+    </div>
+    <p style="margin-top: 0.75rem; color: #8b949e; font-size: 0.9rem;">The best way to have a good conversation is to not use a neural network. -- Ancient proverb, probably</p>
+  </section>
+
+  <section>
+    <h2>What it does</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="tag">intent</span>
+        <h3>Intent detection</h3>
+        <p style="font-size: 0.9rem; color: #8b949e;">Regex-based routing that classifies queries into math, roleplay, instruction, factual, and more.</p>
+      </div>
+      <div class="card">
+        <span class="tag">knowledge</span>
+        <h3>Knowledge base</h3>
+        <p style="font-size: 0.9rem; color: #8b949e;">Curated JSON files with question-answer pairs across science, history, technology, coding, and everyday life.</p>
+      </div>
+      <div class="card">
+        <span class="tag">wiki</span>
+        <h3>Wikipedia integration</h3>
+        <p style="font-size: 0.9rem; color: #8b949e;">On-the-fly Wikipedia retrieval with an NLG pipeline that strips formatting artifacts.</p>
+      </div>
+      <div class="card">
+        <span class="tag">templates</span>
+        <h3>Template engine</h3>
+        <p style="font-size: 0.9rem; color: #8b949e;">Context-aware templates with topic extraction from conversation history.</p>
+      </div>
+      <div class="card">
+        <span class="tag">patterns</span>
+        <h3>Pattern matcher</h3>
+        <p style="font-size: 0.9rem; color: #8b949e;">Social and emotional response patterns for greetings, feelings, and chit-chat.</p>
+      </div>
+      <div class="card">
+        <span class="tag">memory</span>
+        <h3>Fact memory</h3>
+        <p style="font-size: 0.9rem; color: #8b949e;">Extracts and stores user-stated facts ("I like pizza") for later recall ("What do I like?").</p>
+      </div>
+      <div class="card">
+        <span class="tag">math</span>
+        <h3>Math solver</h3>
+        <p style="font-size: 0.9rem; color: #8b949e;">Multi-strategy solver for arithmetic, distance-rate-time, percentages, and probability.</p>
+      </div>
+      <div class="card">
+        <span class="tag">roleplay</span>
+        <h3>Roleplay engine</h3>
+        <p style="font-size: 0.9rem; color: #8b949e;">Character personas with in-character responses. Einstein, pirate, Shakespeare, and more.</p>
+      </div>
+      <div class="card">
+        <span class="tag">nlg</span>
+        <h3>NLG pipeline</h3>
+        <p style="font-size: 0.9rem; color: #8b949e;">Five-pass natural language generation: clean, parse, discourse, realize, fluency.</p>
+      </div>
+      <div class="card">
+        <span class="tag">apis</span>
+        <h3>External API layer</h3>
+        <p style="font-size: 0.9rem; color: #8b949e;">Free public API integrations for weather, time, dictionary, exchange rates, and jokes.</p>
+      </div>
+      <div class="card">
+        <span class="tag">poem</span>
+        <h3>Poem generator</h3>
+        <p style="font-size: 0.9rem; color: #8b949e;">Template-based poem generation. Results range from charming to baffling.</p>
+      </div>
+      <div class="card">
+        <span class="tag">guard</span>
+        <h3>False premise detection</h3>
+        <p style="font-size: 0.9rem; color: #8b949e;">Identifies pseudoscience and non-existent concepts before they reach the knowledge base.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Honest output</h2>
+    <p style="margin-bottom: 0.5rem;">The poem generator produced this during a production run. We are not proud. We are also not fixing it yet.</p>
+    <div class="poem">
+      Oh cats, so domestic and retractable,<br>
+      A mammals for me and you.
+      <div class="caption">-- the poem generator, on cats</div>
+    </div>
+    <blockquote>
+      We are not entirely sure what happened here either. The cat seems to have retractable claws and also retractable domestication. Pull requests that fix the poem templates are welcome.
+    </blockquote>
+  </section>
+
+  <section>
+    <h2>Quick start</h2>
+    <div class="card">
+      <code style="color: var(--green);">git clone https://github.com/no-inference/no-inference</code><br>
+      <code style="color: var(--green);">cd no-inference/src && python3 cos_tui.py</code>
+    </div>
+    <p style="margin-top: 0.5rem; color: #8b949e; font-size: 0.9rem;">Works with the Python standard library. No pip install required for the TUI.</p>
+  </section>
+
+  <section>
+    <h2>Benchmarks</h2>
+
+    <h3>NLG Quality (deterministic)</h3>
+    <table>
+      <tr><th>Metric</th><th>Score</th><th></th></tr>
+      <tr>
+        <td>Fact Preservation</td>
+        <td class="score">99.1%</td>
+        <td><span class="bar" style="width: 99%;"></span></td>
+      </tr>
+      <tr>
+        <td>Coherence</td>
+        <td class="score">90.0%</td>
+        <td><span class="bar" style="width: 90%;"></span></td>
+      </tr>
+      <tr>
+        <td>Numerical Precision</td>
+        <td class="score">97.4%</td>
+        <td><span class="bar" style="width: 97%;"></span></td>
+      </tr>
+      <tr>
+        <td>Temperature Variety</td>
+        <td class="score mid">70.0%</td>
+        <td><span class="bar mid" style="width: 70%;"></span></td>
+      </tr>
+      <tr>
+        <td><strong>Overall</strong></td>
+        <td class="score"><strong>97.4%</strong></td>
+        <td><span class="bar" style="width: 97%;"></span></td>
+      </tr>
+    </table>
+
+    <h3>LLM Judge (gemma4:31b, 22 cases)</h3>
+    <table>
+      <tr><th>Metric</th><th>Score</th><th></th></tr>
+      <tr>
+        <td>Naturalness</td>
+        <td class="score mid">4.2 / 10</td>
+        <td><span class="bar mid" style="width: 42%;"></span></td>
+      </tr>
+      <tr>
+        <td>Informativeness</td>
+        <td class="score">6.1 / 10</td>
+        <td><span class="bar" style="width: 61%;"></span></td>
+      </tr>
+      <tr>
+        <td>Coherence</td>
+        <td class="score">6.1 / 10</td>
+        <td><span class="bar" style="width: 61%;"></span></td>
+      </tr>
+      <tr>
+        <td>Correctness</td>
+        <td class="score">9.3 / 10</td>
+        <td><span class="bar" style="width: 93%;"></span></td>
+      </tr>
+      <tr>
+        <td><strong>Overall</strong></td>
+        <td class="score"><strong>6.8 / 10</strong></td>
+        <td><span class="bar" style="width: 68%;"></span></td>
+      </tr>
+    </table>
+    <p style="font-size: 0.85rem; color: #484f58; margin-top: 0.5rem;">We prefer a robot that tells the truth awkwardly over one that lies fluently.</p>
+  </section>
+
+  <section>
+    <h2>Contributing</h2>
+    <p>This project lives on community effort. Ways to help:</p>
+    <ul>
+      <li>Add knowledge base entries in JSON format</li>
+      <li>Write conversation patterns for things the system does not handle well</li>
+      <li>Improve the NLG pipeline to produce more natural sentences</li>
+      <li>Generate more Wikipedia-backed entries</li>
+      <li>Fix bugs and write tests</li>
+    </ul>
+    <p>We welcome pull requests. We especially welcome pull requests that add data. The code is simple. The data is what makes it smart.</p>
+    <div class="contribute-cat">
+      /\_/\<br>
+     ( o.o )<br>
+      > ^ &lt;<br>
+      "pls send pr"
+    </div>
+  </section>
+
+  <section>
+    <h2>Research</h2>
+    <p style="font-size: 0.9rem; color: #8b949e;">This project builds on ideas from:</p>
+    <ul>
+      <li><strong>ELIZA</strong> (Weizenbaum, 1966) -- Pattern-matching conversational AI</li>
+      <li><strong>DrQA</strong> (Chen et al., 2017) -- Wikipedia as a knowledge source</li>
+      <li><strong>MT-Bench</strong> (Zheng et al., 2023) -- Multi-turn evaluation framework</li>
+      <li><strong>SPUD</strong> (Stone et al., 2003) -- Discourse-driven NLG</li>
+      <li><strong>Cyc</strong> (Lenat, 1995) -- Curated symbolic knowledge bases</li>
+      <li><strong>AIML/ALICE</strong> (Wallace, 2003) -- Pattern-template chatbot architecture</li>
+      <li><strong>Chat-80</strong> (Warren &amp; Pereira, 1982) -- Symbolic NL query processing</li>
+    </ul>
+  </section>
+
+  <footer style="margin: 3rem 0 1rem; padding-top: 1.5rem; border-top: 1px solid var(--border); text-align: center; font-size: 0.85rem; color: #484f58;">
+    <p>AGPL-3.0 -- Proof of concept -- Not production-ready</p>
+    <p style="margin-top: 0.25rem;">
+      /\_/\  ( o.o )  &gt; ^ &lt;  "u dun with teh site?"
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
