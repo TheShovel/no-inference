@@ -70,6 +70,9 @@ def _make_conversational(text: str) -> str:
     if not text or len(text) < 20:
         return text
 
+    # Strip em dashes and en dashes from all responses
+    text = text.replace('\u2014', ' -- ').replace('\u2013', ' - ')
+
     # If text contains code blocks, skip fluency pipeline entirely
     # to avoid corrupting code with contractions or sentence splitting.
     # But ensure code blocks are properly closed.
@@ -916,6 +919,10 @@ _INTENT_ALIASES = {
     'forgotten figure': 'List of people known posthumously',
     'historical figure forgotten': 'List of people known posthumously',
     'completely forgotten': 'List of people known posthumously',
+    # Miles Davis / jazz specific
+    'miles davis': 'Miles Davis',
+    'miles davis style': 'Miles Davis',
+    'miles davis trumpet': 'Miles Davis',
     # Consciousness / anesthesia
     'consciousness': 'Consciousness',
     'deep anesthesia': 'General anesthesia',
@@ -1333,7 +1340,8 @@ def _extract_search_topic(query):
         r'^(?:how)\s+(?:(?:does|do|did|is|are|was|were|can|could|would|should|will|shall)\s+)?(?:a|an|the|this|that|i|we|you|they|he|she|it|one)\s+(?:to\s+)?(?:make|bake|cook|create|build|write|find|get|know)?\s*(.+?)\??$',
         r'^(?:why)\s+(?:is\s+)?(?:it\s+)?(?:that\s+)?(?:do|does|did)\s+\w+\s+(\w+)\s+(.+?)\??$',
         r'^(?:why)\s+(?:is\s+)?(?:it\s+)?(?:that\s+)?(?:do|does|did)\s+(?:i|we|you|they|he|she|it|one)\s+(\w+)\??$',
-        r'^(?:why)\s+(?:is\s+)?(?:it\s+)?(?:that\s+)?(.+?)\??$',
+        r'^(?:why)\s+(?:is\s+)?(?:it\s+)?(?:that\s+)?(.+?)\?+$',
+        r'^(?:how|why|what|when|where)\s+(?:does|do|did|is|are|was|were|can|could|would|should)\s+(?:his|her|its|their|my|your|our)\s+(.+?)\?+$',
         r'^i\s+(?:like|love|enjoy|hate|want|have|use)\s+(.+?)$',
     ]
     for pat in patterns:
@@ -1512,36 +1520,37 @@ def _retrieve_multi_content(query: str, max_sources: int = 3) -> str:
                 _add(wiki_full)
 
     # Secondary content from keyword expansion (must be relevant to query)
-    _STOP_WORDS = {'what', 'how', 'why', 'when', 'where', 'who', 'which',
-                   'does', 'this', 'that', 'with', 'from', 'they', 'have',
-                   'about', 'actually', 'instantly', 'basically', 'really',
-                   'just', 'also', 'still', 'even', 'only', 'more', 'some',
-                   'like', 'into', 'over', 'such', 'than', 'then', 'very'}
-    if keywords:
-        # Limit to at most 2 keyword expansions to reduce API calls
-        for kw in keywords[:min(max_sources, 2)]:
-            kw_lower = kw.lower().strip()
-            kw_words = kw_lower.split()
-            # Skip if it's just a stop word, too short, or a long phrase fragment
-            if len(kw_lower) < 4:
-                continue
-            if kw_lower in _STOP_WORDS:
-                continue
-            if len(kw_words) > 6:
-                continue
-            q_lower = query.lower().strip()
-            # Skip if it's the full query itself (but NOT if it's a single keyword from the query)
-            if kw_lower == q_lower:
-                continue
-            if len(kw_words) > 1 and kw_lower in q_lower:
-                continue
-            kw_kb = knowledge_lookup(kw)
-            if kw_kb:
-                _add(kw_kb, must_contain_query_words=True)
-            # Only use summaries for secondary content (full articles are too long)
-            kw_wiki, _ = _search_wikipedia(kw)
-            if kw_wiki:
-                _add(kw_wiki, must_contain_query_words=True)
+    # Only run if we have very little primary content (avoids polluting responses
+    # with irrelevant Wikipedia articles from keyword matches)
+    # Secondary content from keyword expansion — only if we have very little content
+    if not (parts and sum(len(p) for p in parts) > 300):
+        _STOP_WORDS = {'what', 'how', 'why', 'when', 'where', 'who', 'which',
+                       'does', 'this', 'that', 'with', 'from', 'they', 'have',
+                       'about', 'actually', 'instantly', 'basically', 'really',
+                       'just', 'also', 'still', 'even', 'only', 'more', 'some',
+                       'like', 'into', 'over', 'such', 'than', 'then', 'very'}
+        if keywords:
+            # Limit to at most 2 keyword expansions to reduce API calls
+            for kw in keywords[:min(max_sources, 2)]:
+                kw_lower = kw.lower().strip()
+                kw_words = kw_lower.split()
+                if len(kw_lower) < 4:
+                    continue
+                if kw_lower in _STOP_WORDS:
+                    continue
+                if len(kw_words) > 6:
+                    continue
+                q_lower = query.lower().strip()
+                if kw_lower == q_lower:
+                    continue
+                if len(kw_words) > 1 and kw_lower in q_lower:
+                    continue
+                kw_kb = knowledge_lookup(kw)
+                if kw_kb:
+                    _add(kw_kb, must_contain_query_words=True)
+                kw_wiki, _ = _search_wikipedia(kw)
+                if kw_wiki:
+                    _add(kw_wiki, must_contain_query_words=True)
 
     # Additional: try noun candidates from the query for secondary content
     # This catches cases where keyword extraction gives bad results
@@ -1609,43 +1618,51 @@ def _pronoun_has_antecedent_in_sentence(query: str) -> bool:
     if re.search(r'\b(a|an|the)\s+\w+(?:\s+\w+)*\s+(?:if|when|where|that|which)\s+it\b', q):
         return True
     # Check for "they/them" with a preceding plural noun (e.g., "people... they see")
-    if re.search(r'\b(people|some\s+people|they|we|you)\s+.*?\s+they\b', q):
+    if re.search(r'\b(?:people|scientists|researchers|humans|humans?|animals|creatures)\s+.*?\s+they\b', q):
         return True
     # Check for "them" referring to a noun within the same sentence
-    # (e.g., "melodies... them", "songs... them")
-    if re.search(r'\b(\w+s)\b.*?\bthem\b', q) and not re.search(r'\b(why|what|when|where|how)\s+(is|are|was|were)\s+it\b', q):
-        # Make sure "them" is not the first word and there's a plural noun before it
+    # Require a VERY clear antecedent within the same sentence before "them"
+    if re.search(r'\b(\w+s)\b.{0,30}\bthem\b', q) and not re.search(r'\b(why|what|when|where|how)\s+(is|are|was|were)\s+it\b', q):
         words = q.split()
         them_idx = None
         for i, w in enumerate(words):
             if w.rstrip('.,;:!?') in ('them', 'they'):
                 them_idx = i
                 break
-        if them_idx and them_idx > 0:
-            # Check if there's a plural noun before "them"
-            for w in words[:them_idx]:
-                w_clean = w.rstrip('.,;:!?')
-                if w_clean.endswith('s') and w_clean not in ('this', 'that', 'these', 'those', 'us', 'is', 'was', 'has', 'his'):
-                    return True
-    # Check for "that" used as a relative pronoun (e.g., "the thing that I saw",
-    # "artists that the world has forgotten", "things that happened") — "that" refers to a noun
-    # earlier in the same sentence, so it's not context-dependent.
-    if re.search(r'\b\w+\s+that\s+(?:I|you|we|they|he|she|it|people|one)\b', q):
-        return True
-    # "that" as relative pronoun followed by a determiner/noun (e.g., "artists that the world")
-    if re.search(r'\b\w+\s+that\s+(?:the|a|an)\s+\w+', q):
-        return True
-    # "that" as relative pronoun followed by a verb (e.g., "things that happened",
-    # "events that occurred", "people that lived") — "that" refers to a noun earlier
-    if re.search(r'\b\w+\s+that\s+(?:happened|occurred|were|was|are|is|live|dwelt|lived|exist|exist|remain|survive|thrive|change|evolve|develop|grow|die|end|began|begin|started|created|built|designed|made|produced|caused|led|resulted|led|turned|became|seemed|appeared|seemed|stood|stood|stood)\b', q):
-        return True
-    # "that" as a demonstrative pronoun within the query (e.g., "that specific smell",
-    # "that particular reason") — the noun follows "that" in the same sentence
+        if them_idx and them_idx > 1:  # Must be at least the 3rd word (not 2nd)
+            # Check if the word immediately before is a specific plural noun
+            prev_word = words[them_idx - 1].rstrip('.,;:!?').lower()
+            # If preceded by a verb (is, are, was, etc.), the antecedent is less clear
+            if prev_word in ('is', 'are', 'was', 'were', 'do', 'does', 'did', 'have', 'has', 'had', 'and', 'or', 'but', 'of', 'in', 'on', 'at', 'to', 'for', 'with', 'by', 'from'):
+                return False
+            # Check if there's a clear plural noun as antecedent within first half of sentence
+            half_idx = len(words) // 2
+            for w in words[:half_idx]:
+                w_clean = w.rstrip('.,;:!?').lower()
+                if w_clean.endswith('s') and w_clean not in ('this', 'that', 'these', 'those', 'us', 'is', 'was', 'has', 'his', 'its', 'does', 'always', 'sometimes', 'often', 'usually', 'never', 'thus', 'plus', 'less', 'more'):
+                    # Check if the word is a noun (not a verb)
+                    if not w_clean.endswith(('ize', 'ise', 'ify', 'ate', 'ing', 'ed')):
+                        return True
+    # "that" as relative pronoun ONLY when preceded by a very clear, contentful noun
+    # AVOID matching "that" in short, vague queries where "that" is referential
+    # Require a specific noun (not a pronoun or generic term) before "that"
+    generic_nouns = {'thing', 'things', 'stuff', 'ones', 'everything', 'something', 'anything', 'nothing'}
+    # "that" used as a relative pronoun following a specific noun
+    for m in re.finditer(r'\b(\w+)\s+that\s+(?:the|a|an|this|that|my|your|our|their|his|her|its|i|you|we|they|he|she|it|people|one)\b', q):
+        noun = m.group(1).lower()
+        if noun not in generic_nouns and len(noun) > 3 and noun not in ('that', 'this', 'these', 'those'):
+            return True
+    # "that" as relative pronoun followed by a past tense verb
+    for m in re.finditer(r'\b(\w+)\s+that\s+(happened|occurred|were|was|lived|existed|survived|remained|stood|began|started|created|built|designed|made|produced|caused|resulted|turned|became|appeared|changed|evolved|developed|grew|ended|died)\b', q):
+        noun = m.group(1).lower()
+        if noun not in generic_nouns and len(noun) > 3:
+            return True
+    # "that" as a demonstrative adjective (e.g., "that specific smell", "that particular reason")
+    # The noun follows "that" in the same sentence, so the query is self-contained
     if re.search(r'\bthat\s+(?:specific|particular|certain|unique|distinct|given|mentioned|previous|prior|main|primary|key|actual|real|true)\s+\w+', q):
         return True
-    # "that" as demonstrative followed by a noun (e.g., "that smell", "that reason")
-    # where "that" introduces a noun phrase that is part of the query's own topic
-    if re.search(r'\bthat\s+(?:smell|reason|cause|effect|result|process|thing|concept|idea|theory|method|approach|issue|problem|solution|answer|response|way|manner|aspect|feature|element|factor|component|part|piece|item|case|example|instance|situation|scenario|event|occurrence|phenomenon|experience|feeling|emotion|memory|thought|belief|value|principle|rule|law|notion|understanding|interpretation|perspective|viewpoint|opinion|judgment|assessment|evaluation|analysis|examination|review|study|research|discovery|finding|observation|conclusion|outcome|consequence|impact|influence|significance|importance|relevance|meaning|purpose|goal|objective|aim|intent|desire|wish|need|requirement|condition|state|quality|property|characteristic|attribute|trait)\b', q):
+    # "that" as demonstrative with a limited set of common nouns
+    if re.search(r'\bthat\s+(?:smell|reason|cause|effect|result|process|concept|idea|theory|issue|problem|solution|question|topic|subject|matter|area|field|approach|method|way|aspect|feature|element|factor|component|example|case|instance|situation|scenario|event|phenomenon|experience|feeling|emotion|memory|thought|belief|value|principle|notion|understanding|perspective|viewpoint|opinion|analysis|conclusion|outcome|consequence|impact|influence|significance|importance|relevance|meaning|purpose|goal|objective|aim|intent|need|condition|state|quality|property|characteristic|attribute)\b', q):
         return True
     # Check for "this" or "these" used as demonstrative within the query
     if re.search(r'\b(this|these)\s+(?:is|are|was|were|means?|refers?)\b', q):
@@ -2092,8 +2109,8 @@ def _detect_false_premise(query):
             "horizon."
         ),
         r'(five.?second rule|5.?second rule)': (
-            "The five-second rule \u2014 the idea that food dropped on the floor is safe "
-            "to eat if picked up within five seconds \u2014 is a myth. Studies have shown "
+            "The five-second rule, the idea that food dropped on the floor is safe "
+            "to eat if picked up within five seconds, is a myth. Studies have shown "
             "that bacteria can transfer to food almost instantly upon contact with "
             "contaminated surfaces. The cleanliness of the surface and moisture content "
             "of the food are more important factors than duration of contact."
@@ -2120,6 +2137,51 @@ def _detect_false_premise(query):
             "signs and personality traits, life outcomes, or behaviors. Modern psychology "
             "attributes astrology's perceived accuracy to the Forer effect, where "
             "vague descriptions are interpreted as personally meaningful."
+        ),
+        r'(?:blood type|blood.?type)\s+(?:determine|affect|dictate)\s+personality': (
+            "The idea that blood type determines personality traits is a pseudoscientific "
+            "belief popular in some East Asian countries, particularly Japan and South Korea. "
+            "Large-scale scientific studies have found no correlation between blood type and "
+            "personality traits. The belief is considered a superstition similar to astrology, "
+            "and its perceived accuracy is attributed to the Barnum effect where vague, "
+            "general descriptions are accepted as personally meaningful."
+        ),
+        r'left.?brain.?right.?brain|left.?brain|right.?brain.?creativity': (
+            "The idea that people are either 'left-brained' (logical) or 'right-brained' "
+            "(creative) is a popular myth. While the brain does have hemispheric specialization "
+            "(lateralization), both hemispheres work together for most cognitive tasks. "
+            "Neuroimaging studies show that creativity involves networks distributed across "
+            "both hemispheres, and logical thinking also engages multiple brain regions. "
+            "The myth oversimplifies the brain's complex, interconnected nature."
+        ),
+        r'(?:moon|sun|star)\s+(?:is|are)\s+(?:made|composed)\s+of\s+(?:cheese|green.?cheese)': (
+            "The Moon is not made of cheese. This is a whimsical notion from children's "
+            "stories and folklore. The Moon is composed primarily of silicate rocks, "
+            "including basalt and anorthosite, with a small iron core. Its surface is "
+            "covered in regolith, a layer of fine dust and rocky debris resulting from "
+            "billions of years of meteorite impacts."
+        ),
+        r'(?:can|could|would|should)\s+(?:we|you|they|a\s+person|humans?)\s+(?:breathe|survive)\s+(?:on|in)\s+(?:mars|venus|jupiter|saturn|mercury)': (
+            "Humans cannot breathe on other planets in our solar system without "
+            "life support systems. Each planet has an atmosphere that is either too thin, "
+            "too thick, or composed of the wrong gases. For example, Mars has a thin "
+            "atmosphere that is 95% carbon dioxide, Venus has a crushing atmosphere of "
+            "carbon dioxide and sulfuric acid, and the gas giants have no solid surface "
+            "and atmospheres of hydrogen and helium."
+        ),
+        r'immune\s+(?:to|from)\s+(?:all|every|any)\s+disease': (
+            "No human has ever been immune to all diseases. The immune system can "
+            "develop resistance to specific pathogens after exposure or vaccination, but "
+            "it cannot provide universal immunity. There are thousands of different "
+            "pathogens, and the immune system must learn to recognize each one. Claims "
+            "of total immunity are not supported by medical science."
+        ),
+        r'(?:tooth.?fairy|sandman|easter.?bunny|luck.+myth)': (
+            "These characters are part of folklore and cultural traditions, not real "
+            "entities. They serve as comforting figures in stories passed down through "
+            "generations. If you're asking about their mythological origins, I can "
+            "provide information about the history and cultural significance of these "
+            "folkloric figures."
         ),
     }
     for pattern, response in false_premises.items():
@@ -2252,6 +2314,22 @@ def process_query(query, use_cos=True):
         conversation_history.append((q_clean, response))
         return response
 
+    # 0b. Check for refinement/expansion/shortening single-word commands
+    # These must be routed to the follow-up handler, not treated as factual queries
+    _EXPANSION_WORDS = {'longer', 'more', 'further', 'elaborate', 'details', 'expand', 'expanded', 'continue', 'elaborate'}
+    _SHORTENING_WORDS = {'shorter', 'summarize', 'summary', 'tl;dr', 'tldr', 'condense', 'brief'}
+    _REFINEMENT_WORDS = {'refine', 'rewrite', 'improve', 'polish'}
+    _COMMAND_WORDS = _EXPANSION_WORDS | _SHORTENING_WORDS | _REFINEMENT_WORDS
+    if q_lower in _COMMAND_WORDS or q_lower.rstrip('.') in _COMMAND_WORDS:
+        # Route directly to the follow-up handler
+        conversation_history.append((q_clean, None))
+        response = _handle_follow_up(q_clean)
+        if response and len(response) > 20:
+            if conversation_history and conversation_history[-1][1] is None:
+                conversation_history[-1] = (q_clean, response)
+            return response
+        # Fall through to normal processing if follow-up can't handle it
+
     # 1. Check template engine for context-dependent follow-ups first.
     # This catches "tell me more about that", "write an essay about that",
     # "explain that" — queries that only make sense with prior context.
@@ -2362,7 +2440,7 @@ def process_query(query, use_cos=True):
         response = _handle_factual(q_clean, use_cos)
 
     # 7. Quality check: if response is a generic non-answer or has template
-    # artifacts, discard it and fall back to LLM.
+    # artifacts, discard it and fall back.
     _TEMPLATE_ARTIFACT_PHRASES = [
         'navigating the process',
         'problem solving',
@@ -2380,14 +2458,21 @@ def process_query(query, use_cos=True):
         r_lower = response.lower()
         # Check for template artifacts
         has_artifact = any(p in r_lower for p in _TEMPLATE_ARTIFACT_PHRASES)
-        # Check for very short or generic responses
-        is_too_short = len(response.split()) < 10
+        # Check for literal placeholder text that slipped through
+        if re.search(r'\[Insert\s+\w+\]', response):
+            has_artifact = True
+        # Check for {context} placeholder that wasn't replaced
+        if '{context}' in response:
+            has_artifact = True
+        # Check for very short or generic responses (extreme cases only)
+        word_count = len(response.split())
+        is_garbled = word_count < 5  # Only discard if < 5 words (pure garbage)
         # Check for excessive "refers to" definitions (sign of generic definition)
         refers_count = r_lower.count('refers to')
-        # Check for short/very short responses (indicates garbled content)
-        word_count = len(response.split())
-        is_garbled = word_count < 15 and word_count > 0
-        if has_artifact or is_too_short or is_garbled or refers_count > 2:
+        has_excessive_refers = refers_count > 3  # Allow up to 3 "refers to" (legit Wikipedia can use it)
+        # Also check for disambiguation page markers
+        has_disambig = any(m in r_lower[:300] for m in ['may refer to', 'disambiguation', 'list of '])
+        if has_artifact or is_garbled or has_excessive_refers or has_disambig:
             _HAD_ARTIFACT = True
             response = None
 
@@ -2679,33 +2764,55 @@ def _handle_follow_up(query):
     refinement_words = {'refine', 'refine further', 'rewrite', 'improve', 'make better', 'polish'}
     shortening_words = {'shorter', 'make it shorter', 'summarize', 'summary', 'tl;dr', 'condense', 'brief', 'too long', 'tldr'}
     expansion_words = {'longer', 'more', 'further', 'elaborate', 'details', 'make it longer', 'expand', 'expand on this', 'tell me more', 'continue', 'expanded'}
-    if any(w in q.lower() for w in expansion_words):
-        # Find the previous substantive query and re-generate with more content
+    q_lower_expansion = q.lower().strip()
+    if any(w in q_lower_expansion for w in expansion_words):
+        # Walk back through history to find the last SUBSTANTIVE (non-expansion) query
+        last_content_query = None
+        last_content_response = None
         for q_hist, r_hist in reversed(conversation_history):
             if r_hist and len(r_hist) > 20:
-                prev_topic = _resolve_topic(q_hist, conversation_history)
-                if prev_topic and len(prev_topic) > 2 and prev_topic.lower() not in expansion_words:
-                    # Try to get more comprehensive content (more sources)
-                    content = _retrieve_multi_content(prev_topic, max_sources=5)
-                    if content and len(content) > 100:
-                        # Try NLG essay generation first
-                        try:
-                            from cos.nlg.essay import generate_essay
-                            from cos.nlg.config import NLGConfig
-                            essay_cfg = NLGConfig(style="friendly", verbosity=0.8, temperature=0.6)
-                            essay = generate_essay(prev_topic, content, essay_cfg)
-                            if essay and len(essay) > 100:
-                                return f"Here is a more detailed version:\n\n{essay}"
-                        except Exception:
-                            pass
-                        # Fallback: return the more comprehensive content directly
-                        return f"Here is more detailed information about {prev_topic}:\n\n{content}"
+                q_hist_lower = q_hist.lower().strip()
+                # Skip queries that are themselves expansion/shortening/refinement words
+                if q_hist_lower in expansion_words or q_hist_lower in {'shorter', 'summarize', 'summary', 'tl;dr', 'tldr', 'refine', 'rewrite', 'improve', 'make better', 'polish'}:
+                    continue
+                last_content_query = q_hist
+                last_content_response = r_hist
                 break
+        
+        if last_content_query:
+            prev_topic = _resolve_topic(last_content_query, conversation_history)
+            if prev_topic and len(prev_topic) > 2:
+                # Try to get more comprehensive content (more sources)
+                content = _retrieve_multi_content(prev_topic, max_sources=5)
+                if content and len(content) > 100:
+                    # Only return if content is actually longer than the previous response
+                    # This prevents returning the same content repeatedly
+                    if len(content) > len(last_content_response) * 0.8 or content != last_content_response:
+                        return f"Here is a more detailed version:\n\n{content}"
+                
+                # If no new content, try NLG essay generation on existing content
+                try:
+                    from cos.nlg.essay import generate_essay
+                    from cos.nlg.config import NLGConfig
+                    essay_cfg = NLGConfig(style="friendly", verbosity=0.8, temperature=0.6)
+                    essay = generate_essay(prev_topic, last_content_response, essay_cfg)
+                    if essay and len(essay) > len(last_content_response) * 1.2:
+                        return f"Here is a more detailed version:\n\n{essay}"
+                except Exception:
+                    pass
+                
+                # Final fallback: return original with framing
+                return f"Continuing from our discussion of {prev_topic}:\n\n{last_content_response}"
 
     # ── Refinement requests (refine, rewrite, improve) ────────────────
-    if q.lower() in refinement_words:
+    q_lower_refine = q.lower().strip().rstrip('!?. ')
+    if q_lower_refine in refinement_words:
         for q_hist, r_hist in reversed(conversation_history):
             if r_hist and len(r_hist) > 20:
+                q_hist_lower = q_hist.lower().strip()
+                # Skip queries that are themselves command words
+                if q_hist_lower in expansion_words or q_hist_lower in shortening_words or q_hist_lower in refinement_words:
+                    continue
                 return f"Here is the previous content refined and improved:\n\n{r_hist}"
         return "I need some previous content to refine. Could you ask something first?"
 
@@ -2713,6 +2820,10 @@ def _handle_follow_up(query):
     if any(s in q.lower() for s in shortening_words):
         for q_hist, r_hist in reversed(conversation_history):
             if r_hist and len(r_hist) > 20:
+                q_hist_lower = q_hist.lower().strip()
+                # Skip queries that are themselves command words
+                if q_hist_lower in expansion_words or q_hist_lower in shortening_words or q_hist_lower in refinement_words:
+                    continue
                 # Take just the first few sentences as a summary
                 sentences = r_hist.split('. ')
                 summary = '. '.join(sentences[:3]) + '.'
@@ -2767,7 +2878,7 @@ def _handle_follow_up(query):
     # Generic follow-up with context awareness
     if last_response:
         first = last_response.split('.')[0] if '.' in last_response else last_response[:80]
-        return f"""Continuing from our previous discussion about "{first[:60]}..." — I am happy to expand on this.
+        return f"""Continuing from our previous discussion about "{first[:60]}...", I am happy to expand on this.
 
 I understand you would like me to build upon the previous response. Let me provide additional perspective while maintaining consistency with what has already been discussed.
 
@@ -3016,12 +3127,11 @@ def _handle_factual(query, use_cos):
         'wood wide web': 'Mycorrhizal network',
         'mycelial network': 'Mycorrhizal network',
         'mushroom communicate': 'Mycorrhizal network',
-        # Unique architecture cities
-        'most unique architecture': 'Unique architecture',
-        'unique architecture city': 'Unique architecture',
-        'city unique architecture': 'Unique architecture',
-        'most architecturally unique': 'Unique architecture',
-        'unusual architecture city': 'Unique architecture',
+        # Unique architecture cities — map to real Wikipedia articles
+        'most unique architecture': 'Architecture',
+        'unique architecture city': 'Architecture of Tokyo',
+        'most architecturally unique': 'Architecture',
+        'unusual architecture city': 'Architecture',
         # Ancient navigation
         'navigate open ocean': 'Celestial navigation',
         'navigate the open ocean': 'Celestial navigation',

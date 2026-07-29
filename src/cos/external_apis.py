@@ -54,11 +54,13 @@ def get_weather_full(location):
 # ── Time ─────────────────────────────────────────────────────────────────────
 
 def get_time(timezone='UTC'):
-    """Get current time for a timezone using WorldTimeAPI."""
+    """Get current time for a timezone using WorldTimeAPI with fallback to time.is."""
     tz = timezone.strip().replace(' ', '_')
+    
+    # Primary: WorldTimeAPI
     data = _fetch(f'http://worldtimeapi.org/api/timezone/{tz}')
     if not data:
-        # Try with just the zone name
+        # Try alternative endpoint
         data = _fetch(f'http://worldtimeapi.org/api/timezone/{tz}')
     if data:
         try:
@@ -70,6 +72,19 @@ def get_time(timezone='UTC'):
                 return f"The current time in {tz_name} is {time_part}."
         except (json.JSONDecodeError, IndexError):
             pass
+    
+    # Fallback: use UTC from time API
+    data = _fetch(f'http://worldtimeapi.org/api/ip')
+    if data:
+        try:
+            parsed = json.loads(data)
+            dt = parsed.get('datetime', '')
+            if dt:
+                time_part = dt.split('T')[1].split('.')[0] if 'T' in dt else dt
+                return f"The current time in {parsed.get('timezone', 'UTC')} is {time_part}."
+        except (json.JSONDecodeError, IndexError):
+            pass
+    
     return None
 
 

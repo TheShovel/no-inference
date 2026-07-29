@@ -1045,7 +1045,7 @@ def _is_pronoun_query(query: str) -> bool:
     # references to prior context, even in longer queries.
     # e.g., "What are some fun facts about it?" — "it" refers to France.
     # e.g., "How does that compare to other empires?" — "that" refers to the topic.
-    referential_pronouns = {'it', 'them', 'they', 'that', 'this'}
+    referential_pronouns = {'it', 'them', 'they', 'that', 'this', 'his', 'her', 'its', 'their'}
     has_referential_pronoun = any(w in referential_pronouns for w in words_clean)
     if has_referential_pronoun:
         return True

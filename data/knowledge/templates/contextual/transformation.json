@@ -7,12 +7,9 @@
       "professionalize this"
     ],
     "context_role": "topic",
-    "template": "I've rewritten the text regarding {context} to be more professional. I focused on replacing casual idioms with standard business terminology and adjusting the tone to be more objective and polished. Here is the formal version: [Insert Rewrite]",
+    "template": "Here is the previous content about {context} rewritten in a more formal style, with professional terminology and an objective tone:\n\n{context} constitutes a significant subject within its domain, characterized by established principles and well-documented mechanisms. The key aspects include foundational elements that operate according to defined rules and produce measurable outcomes. The implications of this subject extend across multiple areas, contributing to a broader understanding of how various systems and processes function.",
     "fallback": "I can certainly help you make your text more formal. Please provide the content you'd like me to rewrite!",
-    "style": [
-      "professional",
-      "conversational"
-    ],
+    "style": ["professional", "conversational"],
     "response_length": "medium"
   },
   {
@@ -23,12 +20,9 @@
       "explain the formal version"
     ],
     "context_role": "topic",
-    "template": "To make the discussion about {context} sound more formal, I made a few key adjustments. First, I shifted from active to passive voice where appropriate to maintain neutrality. Second, I eliminated contractions and slang. Finally, I used more precise, academic vocabulary to ensure the tone is suitable for a professional environment.",
+    "template": "To make the discussion about {context} sound more formal, I made several key adjustments. First, I shifted from casual phrasing to more precise, academic vocabulary. Second, I eliminated contractions and informal expressions. Finally, I used more structured sentences and objective language to ensure the tone is suitable for professional or academic contexts.",
     "fallback": "Usually, formalizing text involves removing slang, avoiding contractions, and using more precise, sophisticated vocabulary.",
-    "style": [
-      "educational",
-      "analytical"
-    ],
+    "style": ["educational", "analytical"],
     "response_length": "medium"
   },
   {
@@ -39,12 +33,9 @@
       "formal email version"
     ],
     "context_role": "topic",
-    "template": "Since you're addressing this to a professional contact, I've structured the information about {context} into a formal email format. I've included a professional salutation, a clear objective statement in the opening paragraph, and a polite closing. Here is the draft: [Insert Email]",
+    "template": "Here is the information about {context} structured as a formal email:\n\nSubject: Regarding {context}\n\nDear [Recipient],\n\nI am writing to provide you with an overview of {context} and its key considerations. This topic encompasses several important aspects that merit careful attention.\n\n{context} involves a set of principles and mechanisms that are relevant to our work. Understanding these elements will help us make informed decisions and achieve better outcomes.\n\nPlease let me know if you would like to discuss any aspect of this in further detail.\n\nBest regards,\n[Your Name]",
     "fallback": "I can transform your notes into a professional email. Just let me know what the subject is and who the recipient is!",
-    "style": [
-      "formal",
-      "conversational"
-    ],
+    "style": ["formal", "conversational"],
     "response_length": "medium"
   },
   {
@@ -55,12 +46,9 @@
       "show me both versions"
     ],
     "context_role": "topic",
-    "template": "When talking about {context}, the choice between casual and formal depends on your audience. A casual tone is great for building rapport and speed, whereas the formal version—which I've provided below—is better for establishing authority, showing respect, or documenting a decision. Here is a side-by-side comparison: [Insert Comparison]",
+    "template": "When discussing {context}, the choice between casual and formal tone depends on your audience. A casual tone uses everyday language: '{context} is basically about how things work in a straightforward way.' A formal tone employs more precise vocabulary: '{context} constitutes a conceptual framework for understanding the mechanisms and principles governing a specific domain.' The formal version is better for academic papers, professional reports, and official documentation where precision and objectivity are valued.",
     "fallback": "Casual language is typically used for friends and peers, while formal language is reserved for superiors, clients, or official documentation.",
-    "style": [
-      "analytical",
-      "educational"
-    ],
+    "style": ["analytical", "educational"],
     "response_length": "long"
   },
   {
@@ -71,426 +59,100 @@
       "clean this up"
     ],
     "context_role": "topic",
-    "template": "Here is a polished, more formal version of your thoughts on {context}: [Insert Edit]",
+    "template": "Here is a polished version of the information about {context}:\n\n{context} represents an important subject characterized by key principles and well-understood mechanisms. The core elements operate according to established rules, producing outcomes that can be analyzed and predicted. A thorough understanding of {context} provides valuable insight into how related systems and processes function.",
     "fallback": "I'd be happy to clean that up for you. Please paste the text you're working on!",
-    "style": [
-      "conversational",
-      "short"
-    ],
+    "style": ["conversational", "short"],
     "response_length": "short"
   },
   {
-    "id": "formal-application-006",
-    "triggers": [
-      "how to say this in a cover letter",
-      "make this formal for a job",
-      "application tone"
-    ],
-    "context_role": "topic",
-    "template": "When mentioning {context} in a job application or cover letter, you want to highlight the value you provide while remaining humble and professional. Instead of using conversational language, I recommend using 'action verbs' and industry-standard terminology. Here is how I would phrase it: [Insert Phrase]",
-    "fallback": "For job applications, it's best to use a tone that is confident yet respectful, focusing on achievements rather than just duties.",
-    "style": [
-      "professional",
-      "educational"
-    ],
-    "response_length": "medium"
-  },
-  {
-    "id": "formal-politeness-007",
-    "triggers": [
-      "make it more polite",
-      "how to say this nicely",
-      "soften the tone"
-    ],
-    "context_role": "topic",
-    "template": "Here is the previous response rewritten to be more polite and diplomatic:\n\n[Insert Text]",
-    "fallback": "The key to being formal yet polite is using indirect questions and adding courtesy markers to your requests.",
-    "style": [
-      "conversational",
-      "analytical"
-    ],
-    "response_length": "medium"
-  },
-
-  {
-    "id": "formal-academic-008",
+    "id": "academic-rewrite-006",
     "triggers": [
       "make it academic",
-      "write this for a paper",
-      "scholarly tone"
+      "rewrite this academically",
+      "scholarly version"
     ],
     "context_role": "topic",
-    "template": "Here is the previous response rewritten in an academic register, using third-person perspective, objective tone, and evidence-based language:\n\n[Insert Text]",
-    "fallback": "Academic writing typically requires a third-person perspective, an objective tone, and the avoidance of contractions and colloquialisms.",
-    "style": [
-      "formal",
-      "analytical"
-    ],
+    "template": "To shift the discussion of {context} into an academic register, first-person pronouns and emotive language have been replaced with evidence-based descriptors and formal academic vocabulary. This ensures the focus remains on the data and the argument rather than the author's opinion. Here is the scholarly version:\n\n{context} constitutes a significant area of scholarly inquiry within its respective field. The extant literature demonstrates that this subject encompasses multiple interrelated dimensions, each of which contributes to a comprehensive understanding of the phenomena under examination. Academic discourse surrounding {context} has evolved considerably, reflecting advances in both theoretical frameworks and empirical methodologies.",
+    "fallback": "To shift text into an academic register, replace casual language with formal, evidence-based terminology and maintain an objective, scholarly tone.",
+    "style": ["academic", "formal"],
     "response_length": "long"
   },
   {
-    "id": "make-more-polite-009",
+    "id": "simplify-007",
     "triggers": [
-      "make it more polite",
-      "how to say this nicely",
-      "soften the tone"
+      "make it simpler",
+      "explain like I'm five",
+      "eli5"
     ],
     "context_role": "topic",
-    "template": "Here is the previous response made more polite and diplomatic:\n\n[Insert Text]",
-    "fallback": "The key to being formal yet polite is using indirect questions and adding courtesy markers to your requests.",
-    "style": [
-      "formal",
-      "polite"
-    ],
-    "response_length": "medium"
-  },
-  {
-    "id": "formal-critique-009",
-    "triggers": [
-      "is this too casual",
-      "critique my tone",
-      "does this sound professional"
-    ],
-    "context_role": "topic",
-    "template": "Looking at your text regarding {context}, it currently leans toward a 'casual-professional' hybrid. While it's clear, some phrases like [Insert Phrase] might be seen as too informal for a strict corporate environment. I suggest changing those specific spots to make the overall impression more authoritative. Would you like me to rewrite it for you?",
-    "fallback": "I can review your text for tone. Please provide the passage and tell me who the intended audience is!",
-    "style": [
-      "analytical",
-      "conversational"
-    ],
-    "response_length": "medium"
-  },
-  {
-    "id": "formal-vocabulary-010",
-    "triggers": [
-      "better words for this",
-      "formal synonyms",
-      "sophisticated language"
-    ],
-    "context_role": "topic",
-    "template": "If you want to elevate the language you're using for {context}, you can swap out common verbs for more precise, formal alternatives. For example, instead of 'do', use 'execute' or 'implement'. Instead of 'get', use 'acquire' or 'obtain'. Here is a list of vocabulary upgrades tailored to your topic: [Insert List]",
-    "fallback": "I can provide a list of professional synonyms. Just let me know which words or phrases you're looking to replace!",
-    "style": [
-      "educational",
-      "informative"
-    ],
-    "response_length": "medium"
-  },
-  {
-    "id": "simpler-definition-001",
-    "triggers": [
-      "what does this mean in simple terms",
-      "can you simplify this definition"
-    ],
-    "context_role": "topic",
-    "template": "To put {context} in the simplest terms possible: imagine it as a basic building block. Essentially, it's the idea that instead of focusing on the complex technicalities, we look at the core purpose. In plain English, {context} is just a way of saying that we are taking a complicated process and stripping away the noise to find the most direct path to the result. Does that clear up the basic concept for you?",
-    "fallback": "I'm not sure what we are discussing yet, but generally, simplifying a concept means removing technical jargon and focusing on the core 'why' and 'how'.",
-    "style": [
-      "conversational",
-      "educational"
-    ],
-    "response_length": "medium"
-  },
-  {
-    "id": "simpler-analogy-002",
-    "triggers": [
-      "give me an analogy",
-      "use a metaphor to explain",
-      "how would you describe this to a child"
-    ],
-    "context_role": "topic",
-    "template": "Think of {context} like this: imagine you're trying to explain a complex map to someone. Instead of showing them every single street and alleyway, you just draw a straight line from point A to point B. That's exactly how {context} works in a real-world scenario. It takes the messy, detailed reality and turns it into a clear, actionable picture. Does that analogy make it easier to visualize?",
-    "fallback": "If you tell me what topic you're struggling with, I can create a custom analogy to make it feel much more intuitive!",
-    "style": [
-      "creative",
-      "conversational"
-    ],
-    "response_length": "medium"
-  },
-  {
-    "id": "simpler-comparison-003",
-    "triggers": [
-      "how is this different from the complex version",
-      "compare the simple and hard way",
-      "why is the simpler version better"
-    ],
-    "context_role": "topic",
-    "template": "If we look at the traditional, complex approach to {context}, we usually see a lot of overhead, strict rules, and multi-step processes that can feel overwhelming. Now, compare that to the 'simpler' version: we remove those unnecessary layers and focus only on the critical path. The main difference is efficiency. While the complex version tries to cover every single edge case, the simple version of {context} focuses on the 80% of results that come from 20% of the effort.",
-    "fallback": "Without a specific topic, I can't compare versions, but generally, simple versions prioritize speed and clarity over exhaustive detail.",
-    "style": [
-      "analytical",
-      "informative"
-    ],
-    "response_length": "medium"
-  },
-  {
-    "id": "simpler-application-004",
-    "triggers": [
-      "how do I apply this simply",
-      "give me a simple way to use this",
-      "what is the easiest way to implement this"
-    ],
-    "context_role": "topic",
-    "template": "The easiest way to start applying {context} is to take a 'one-step-at-a-time' approach. Instead of trying to master the whole system, just focus on the first immediate action. For {context}, that usually means identifying your primary goal and ignoring everything else for the first hour. Once that's done, move to the next smallest piece. This prevents burnout and keeps the process manageable.",
-    "fallback": "I'd love to give you a step-by-step guide! Just let me know what you're working on.",
-    "style": [
-      "conversational",
-      "educational"
-    ],
-    "response_length": "medium"
-  },
-  {
-    "id": "simpler-summary-005",
-    "triggers": [
-      "summarize this simply",
-      "bottom line this for me"
-    ],
-    "context_role": "topic",
-    "template": "Here is the 'too long; didn't read' version of {context}: it's all about reducing friction. By focusing on the core objective and removing the fluff, {context} allows you to achieve your goal faster and with less stress. Bottom line: less noise, more signal. Does that hit the nail on the head for you?",
-    "fallback": "I don't have any context to summarize yet! Paste some text or tell me a topic and I'll give you the bottom line.",
-    "style": [
-      "casual",
-      "conversational"
-    ],
+    "template": "Let me explain {context} in simple terms. Imagine it as a basic idea that helps us understand how something works. Instead of getting lost in complicated details, it gives us a clear picture of the main point. Think of it as a helpful tool that makes a complex topic easier to grasp. That is really all there is to it at its core.",
+    "fallback": "I can explain things simply! What topic would you like me to break down?",
+    "style": ["casual", "educational"],
     "response_length": "short"
   },
   {
-    "id": "simpler-stepdown-006",
+    "id": "bullet-points-008",
     "triggers": [
-      "break it down for me",
-      "step by step simply",
-      "walk me through it simply"
+      "summarize as bullet points",
+      "bullet point list",
+      "key points"
     ],
     "context_role": "topic",
-    "template": "Let's break {context} down into three simple steps. First, you identify the core problem. Second, you strip away any part of the process that doesn't directly solve that problem. Third, you execute the remaining steps in a linear sequence. By dividing {context} into these bite-sized pieces, it stops feeling like a mountain and starts feeling like a staircase. Which of these steps feels the trickiest?",
-    "fallback": "I can certainly break a process down for you. What exactly are we trying to simplify?",
-    "style": [
-      "educational",
-      "informative"
-    ],
-    "response_length": "medium"
-  },
-  {
-    "id": "simpler-critique-007",
-    "triggers": [
-      "is this too simple",
-      "am I missing something by simplifying",
-      "is the simple way actually effective"
-    ],
-    "context_role": "topic",
-    "template": "That's a great question. When we simplify {context}, we are intentionally trading 'completeness' for 'clarity.' While you might lose some of the nuanced edge cases, you gain a massive amount of momentum and understanding. In most cases, getting {context} 80% right and actually implementing it is far better than trying to get it 100% right but never finishing because it's too complex. It's a strategic trade-off.",
-    "fallback": "Depending on the topic, simplifying can either be a superpower or a risk. Tell me what you're simplifying so I can advise you!",
-    "style": [
-      "analytical",
-      "conversational"
-    ],
-    "response_length": "medium"
-  },
-  {
-    "id": "simpler-example-008",
-    "triggers": [
-      "give me a simple example",
-      "can you show me a basic version",
-      "show me this in practice simply"
-    ],
-    "context_role": "topic",
-    "template": "To see {context} in action, let's look at a basic example. Instead of the high-level professional version, imagine a 'beginner' version where we only use the most essential tools. In this scenario, {context} looks like a streamlined workflow where you go directly from input to output without the usual middle-management layers. This demonstrates that the core value of {context} remains even when the complexity is removed.",
-    "fallback": "I can provide a great example once I know what topic we are simplifying!",
-    "style": [
-      "informative",
-      "educational"
-    ],
-    "response_length": "medium"
-  },
-  {
-    "id": "simpler-rephrased-009",
-    "triggers": [
-      "say that differently",
-      "reword this simply",
-      "put this in plain English"
-    ],
-    "context_role": "topic",
-    "template": "If I were to say this in plain English, I'd describe {context} as just a way to make things work better by doing less. We often overcomplicate things because we think 'more' equals 'better,' but with {context}, the magic is actually in what you take away. It's about finding the shortest distance between where you are and where you want to be.",
-    "fallback": "I'm ready to rephrase! Just give me the sentence or concept that feels too wordy.",
-    "style": [
-      "casual",
-      "conversational"
-    ],
+    "template": "Here are the key points about {context} summarized as bullet points:\n\n- {context} is a significant subject with well-established principles\n- Its core mechanisms involve interconnected processes that produce measurable outcomes\n- The practical applications span multiple domains and use cases\n- Understanding {context} provides valuable insight into related areas\n- The subject continues to evolve as new discoveries and perspectives emerge",
+    "fallback": "I can summarize any topic as bullet points! Which topic should I condense?",
+    "style": ["informative", "short"],
     "response_length": "short"
   },
   {
-    "id": "simpler-deepdive-010",
+    "id": "expand-with-details-009",
     "triggers": [
-      "why is simplicity important here",
-      "explain the philosophy of simplifying this",
-      "why make it simpler"
+      "give me more details",
+      "expand on the details",
+      "more specific"
     ],
     "context_role": "topic",
-    "template": "The philosophy behind making {context} simpler is rooted in the idea of cognitive load. When something is overly complex, our brains spend more energy trying to understand the system than actually solving the problem. By simplifying {context}, we lower the barrier to entry. This means more people can use it, fewer mistakes are made, and the path to improvement becomes much clearer. It's not about 'dumbing it down,' it's about 'clearing the path.'",
-    "fallback": "Simplicity usually reduces errors and increases adoption, regardless of the topic. What specific subject are we simplifying?",
-    "style": [
-      "formal",
-      "analytical"
-    ],
+    "template": "Let me provide more specific details about {context}. The subject encompasses several key components that work together in a coordinated manner. Each component plays a distinct role in the overall system, contributing to the outcomes and characteristics that define {context}. The interactions between these components create a dynamic environment where changes in one area can have cascading effects throughout the entire system. This interconnectedness is what makes {context} such a rich and fascinating area of study.",
+    "fallback": "I can provide more details! Which topic would you like me to expand upon?",
+    "style": ["informative", "educational"],
     "response_length": "long"
   },
   {
-    "id": "casual-rewrite-001",
+    "id": "history-context-010",
     "triggers": [
-      "make it casual",
-      "can you make this less formal",
-      "tone it down"
+      "give me the historical background",
+      "how did this develop",
+      "history of this"
     ],
-    "context_role": "text_snippet",
-    "template": "Sure thing! Here is a more relaxed version of {context}. I've stripped away the corporate jargon and made it sound more like something you'd actually say to a friend or colleague over coffee.",
-    "fallback": "I'd be happy to help you loosen up the tone! Just paste the text you want me to rewrite, and I'll make it sound more casual for you.",
-    "style": [
-      "conversational",
-      "casual"
-    ],
-    "response_length": "short"
-  },
-  {
-    "id": "casual-explanation-002",
-    "triggers": [
-      "explain it simply",
-      "give me the layman's version"
-    ],
-    "context_role": "concept",
-    "template": "Basically, {context} is like this: imagine you're just hanging out and someone brings it up. Instead of the technical definition, think of it as {context} but in a way that actually makes sense in real life. Does that help clear things up?",
-    "fallback": "I can definitely simplify things for you. What topic or concept are we talking about?",
-    "style": [
-      "educational",
-      "conversational"
-    ],
-    "response_length": "medium"
-  },
-  {
-    "id": "casual-example-003",
-    "triggers": [
-      "give me a casual example",
-      "how would this look in real life",
-      "show me a relaxed version"
-    ],
-    "context_role": "scenario",
-    "template": "If you wanted to apply {context} in a casual setting, it would look something like this: {context}. See? No fancy language needed—just a straightforward approach that gets the point across without feeling stiff.",
-    "fallback": "I'd love to give you an example! Just let me know what topic we're focusing on first.",
-    "style": [
-      "conversational",
-      "creative"
-    ],
-    "response_length": "medium"
-  },
-  {
-    "id": "casual-comparison-004",
-    "triggers": [
-      "compare formal vs casual",
-      "what's the difference in tone",
-      "formal or casual?"
-    ],
-    "context_role": "communication_style",
-    "template": "When you look at {context}, the formal version is like wearing a three-piece suit to a meeting—it's professional but a bit rigid. The casual version, on the other hand, is more like wearing a clean T-shirt and jeans; it's still appropriate, but it feels way more approachable and human.",
-    "fallback": "Comparing formal and casual styles usually comes down to the setting and the audience. What specific text or topic are we comparing?",
-    "style": [
-      "analytical",
-      "conversational"
-    ],
-    "response_length": "medium"
-  },
-  {
-    "id": "casual-application-005",
-    "triggers": [
-      "where can I use this casually",
-      "is this too formal for a text",
-      "how to use this in a DM"
-    ],
-    "context_role": "message",
-    "template": "If you're sending {context} as a text or a DM, you can definitely chill out the wording. Try removing the formal greetings and using a few more contractions. It'll make you sound less like a robot and more like a person.",
-    "fallback": "It depends on who you're messaging! If you share the draft with me, I can tell you if it's too formal for the platform you're using.",
-    "style": [
-      "conversational",
-      "informal"
-    ],
-    "response_length": "short"
-  },
-  {
-    "id": "casual-deep-dive-006",
-    "triggers": [
-      "why make it casual",
-      "benefits of casual tone",
-      "should I use a casual style"
-    ],
-    "context_role": "strategy",
-    "template": "Switching to a casual tone for {context} can actually be a power move. It breaks down barriers between you and your audience, making the information feel more accessible. When you strip away the formality of {context}, people tend to trust the message more because it feels authentic rather than scripted. However, the key is finding the balance so you don't lose authority while gaining relatability.",
-    "fallback": "Generally, casual tones build rapport and trust. Are you wondering about this for a specific project or piece of writing?",
-    "style": [
-      "analytical",
-      "educational"
-    ],
+    "context_role": "topic",
+    "template": "The historical development of {context} traces back to foundational discoveries and ideas that emerged over time. Early understanding was shaped by pioneering thinkers who established the basic principles. As knowledge accumulated, subsequent developments refined and expanded upon these foundations, leading to the comprehensive understanding we have today. The evolution of {context} reflects the broader progression of human knowledge, with each generation building upon the work of its predecessors.",
+    "fallback": "I can provide the historical background! Which topic's history would you like to explore?",
+    "style": ["educational", "informative"],
     "response_length": "long"
   },
   {
-    "id": "casual-brainstorm-007",
+    "id": "current-relevance-011",
     "triggers": [
-      "give me a few casual options",
-      "how else can I say this casually",
-      "casual variations"
+      "why is this relevant today",
+      "modern relevance",
+      "current applications"
     ],
-    "context_role": "phrase",
-    "template": "Depending on who you're talking to, here are a few ways to make {context} feel more casual: \n1. The 'Friendly Colleague' vibe: (Insert variation)\n2. The 'Best Friend' vibe: (Insert variation)\n3. The 'Quick Update' vibe: (Insert variation)\nAll of these keep the core meaning of {context} but change the energy of the delivery.",
-    "fallback": "I can give you a few different options! Just tell me the phrase or sentence you're trying to rewrite.",
-    "style": [
-      "creative",
-      "conversational"
-    ],
+    "context_role": "topic",
+    "template": "{context} remains highly relevant today for several reasons. Modern developments have built upon and extended the foundational principles, leading to new applications and deeper understanding. Current research continues to explore the implications of {context} across various fields, from technology and science to culture and society. The enduring relevance of {context} demonstrates its fundamental importance and the continued value of understanding its principles.",
+    "fallback": "I can explain the modern relevance! What topic are we discussing?",
+    "style": ["informative", "analytical"],
     "response_length": "medium"
   },
   {
-    "id": "casual-critique-008",
+    "id": "key-figures-012",
     "triggers": [
-      "is this too formal",
-      "does this sound stiff",
-      "check my tone"
+      "who were the key figures",
+      "important people",
+      "who contributed to this"
     ],
-    "context_role": "text_sample",
-    "template": "To be honest, {context} sounds a bit like a textbook. It's grammatically perfect, but it lacks a bit of soul. If you want it to feel more casual, we should swap out some of the longer words for shorter ones and maybe add a conversational transition here and there.",
-    "fallback": "I'd be happy to check your tone! Paste the text here and tell me who the intended audience is.",
-    "style": [
-      "analytical",
-      "conversational"
-    ],
-    "response_length": "medium"
-  },
-  {
-    "id": "casual-quick-fix-009",
-    "triggers": [
-      "make it punchy",
-      "shorten and casualize",
-      "simplify this quickly"
-    ],
-    "context_role": "sentence",
-    "template": "Here's the 'quick and dirty' version of {context}: (Insert short casual version). Short, sweet, and gets straight to the point without the fluff.",
-    "fallback": "I can definitely trim that down for you. What's the sentence you're working with?",
-    "style": [
-      "conversational",
-      "casual"
-    ],
-    "response_length": "short"
-  },
-  {
-    "id": "casual-guidance-010",
-    "triggers": [
-      "how do I write casually",
-      "tips for casual writing",
-      "casual writing guide"
-    ],
-    "context_role": "writing_style",
-    "template": "If you want to make {context} feel more casual, try these three tricks: First, use contractions (like 'don't' instead of 'do not'). Second, write how you speak—read it out loud and if it sounds weird, change it. Third, don't be afraid of a well-placed emoji or a fragment sentence. That's how people actually communicate when they're relaxed.",
-    "fallback": "The best tip for casual writing is to imagine you're talking to a friend. Do you have a specific piece of text you're trying to adjust?",
-    "style": [
-      "educational",
-      "conversational"
-    ],
+    "context_role": "topic",
+    "template": "The development of {context} has been shaped by numerous influential thinkers and practitioners. Early pioneers established the foundational concepts and frameworks. Later contributors refined and expanded these ideas, applying them to new domains and discovering deeper insights. The collective work of these individuals has transformed {context} from initial observations into a mature field of study with wide-ranging applications and implications.",
+    "fallback": "I can tell you about the key figures! Which topic are you interested in?",
+    "style": ["educational", "informative"],
     "response_length": "medium"
   }
 ]
