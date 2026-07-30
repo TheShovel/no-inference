@@ -4,12 +4,6 @@
 
 > **Warning** This is not the best this system could be. We know where the gaps are. The pattern matcher could cover more ground, the knowledge base could be thousands of entries deep, the NLG pipeline could produce more natural prose, and the math solver could handle calculus. But building that takes data, testing, and server time we do not have. If this project had the resources to run continuous evaluation and iterate on the knowledge base at scale, it would compete with chatbot services that cost millions to run. As it stands, it is a demonstration that the approach works. We think that is worth something.
 
-```
-  /\_/\
- ( o.o )
-  > ^ <
-```
-
 A purely symbolic conversational engine that answers questions, writes essays, solves math problems, roleplays characters, and holds conversations.
 
 ## How it works in one sentence
@@ -234,12 +228,9 @@ This project builds on ideas from the following research papers and systems:
 
 ---
 
-```
-  /\_/\
- ( o.o )
-  > ^ <
+![no-inference rat](https://raw.githubusercontent.com/TheShovel/no-inference/gh-pages/logo.png)
+
 "u dun with teh docs?"
-```
 
 Yes. Yes we are.
 
@@ -257,9 +248,6 @@ We welcome pull requests. We especially welcome pull requests that add data. The
 
 Please contribute. This project needs you more than it needs another architecture diagram.
 
-```
-  /\_/\
- ( o.o )
-  > ^ <
+![no-inference rat](https://raw.githubusercontent.com/TheShovel/no-inference/gh-pages/logo.png)
+
   "pls send pr"
-```
