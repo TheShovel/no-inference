@@ -1,4 +1,4 @@
-# no-inference
+# ![no-inference logo](https://raw.githubusercontent.com/TheShovel/no-inference/gh-pages/logo.png) no-inference
 
 **Proof of concept / research project.** Not production-ready software.
 
