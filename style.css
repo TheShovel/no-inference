@@ -175,6 +175,12 @@ body {
 .hero-main { flex: 1; }
 .hero h1 { font-size: 30px; font-weight: 800; color: var(--win-text); margin-bottom: 4px; }
 .hero h1 span { color: var(--win-title); }
+.hero h1 .logo {
+  height: 1.1em;
+  vertical-align: middle;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
 .hero .subtitle { font-size: 12px; margin-top: 0; color: var(--win-text); }
 
 /* ===== Clippy-style Cat Assistant ===== */
