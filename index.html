@@ -50,11 +50,12 @@
       <div class="hero">
         <div class="hero-main">
           <h1>no-<span></span>inference</span></h1>
-          <p class="subtitle">A purely symbolic conversational engine that answers questions, writes essays, solves math problems, roleplays characters, and holds conversations. No neural networks involved.</p>
+          <p class="subtitle">A purely symbolic conversational engine that answers questions, writes essays, solves math problems, roleplays characters, and holds conversations. No neural networks involved. This system cannot hallucinate or lie. It only returns real, factual information, a huge safety improvement over classic LLMs.</p>
           <p style="margin-top: 8px;">
             <span class="badge warn">Proof of concept</span>
             <span class="badge">Research project</span>
             <span class="badge">Python</span>
+            <span class="badge">Safe</span>
           </p>
         </div>
         <div class="clippy">
@@ -142,6 +143,25 @@
           <code style="color: var(--win-title);">query</code> &rarr; intent detection &rarr; handler &rarr; knowledge retrieval &rarr; <code style="color: var(--win-green);">response</code>
         </div>
         <p style="margin-top: 6px;">The best way to have a good conversation is to not use a neural network. -- Ancient proverb, probably</p>
+      </section>
+    </div>
+  </div>
+
+  <div class="window">
+    <div class="window-titlebar">
+      <span class="window-titlebar-text">&#9654; Safety</span>
+      <div class="window-controls">
+        <button onclick="toggleMinimize(this)">_</button>
+        <button>&#9633;</button>
+        <button>&#10005;</button>
+      </div>
+    </div>
+    <div class="window-body">
+      <section>
+        <h2>Safety first</h2>
+        <p>Classic LLMs are trained to predict the next token. When they do not know an answer, they guess, and they guess with full confidence. This is how hallucinations happen. They can lie, make up facts, cite nonexistent sources, and present false information as truth.</p>
+        <p>No inference engine does not guess. It does not predict. It does not hallucinate. Every response is retrieved or assembled from a known source: a curated knowledge base, a Wikipedia article, a template, or a deterministic handler. If the system does not have the information, it tells you it does not know.</p>
+        <p>This makes no inference fundamentally safer for applications where accuracy matters. No fake court cases. No invented citations. No confident lies. Just real, factual information from traceable sources.</p>
       </section>
     </div>
   </div>
