@@ -87,13 +87,10 @@ When detected, the system returns a gentle correction explaining why the premise
 
 > Fun fact: this whole knowledge base takes up less space than one single LLM checkpoint. And it does not need a datacenter to run.
 
-```
-  /\_/\
- ( o.o )
-  > ^ <
+![no-inference rat](https://raw.githubusercontent.com/TheShovel/no-inference/gh-pages/logo.png)
+
   "i contains multitudes"
   "(about 2 MB of them)"
-```
 
 ### Add curated knowledge entries
 

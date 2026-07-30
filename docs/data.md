@@ -242,11 +242,8 @@ To add a new persona, add a `_register()` call in `cos/roleplay.py`.
 
 In the TUI, type `/reload` to reload all patterns, aliases, templates, and knowledge base files from disk without restarting. This allows you to edit data files and see changes immediately.
 
-```
-  /\_/\
- ( o.o )
-  > ^ <
+![no-inference rat](https://raw.githubusercontent.com/TheShovel/no-inference/gh-pages/logo.png)
+
   "i can haz new persona?"
-```
 
 Yes. Yes you can.

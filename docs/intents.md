@@ -113,11 +113,8 @@ elif intent == 'factual':
 
 After routing, the response goes through a quality check that rejects template artifacts, placeholder text, garbled output, excessive "refers to" repetition, and disambiguation page markers. If rejected, the system falls back to Wikipedia retrieval with the NLG pipeline.
 
-```
-  /\_/\
- ( o.o )
-  > ^ <
+![no-inference rat](https://raw.githubusercontent.com/TheShovel/no-inference/gh-pages/logo.png)
+
   "intent confirmed: pet the cat"
-```
 
 This intent is not yet implemented but we are accepting pull requests.

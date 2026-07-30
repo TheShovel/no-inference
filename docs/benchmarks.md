@@ -107,12 +107,9 @@ The 9.3 correctness score confirms that the system's responses are factually acc
 
 > We prefer a robot that tells the truth awkwardly over one that lies fluently.
 
-```
-  /\_/\
- ( o.o )
-  > ^ <
+![no-inference rat](https://raw.githubusercontent.com/TheShovel/no-inference/gh-pages/logo.png)
+
   "at least i don't hallucinate"
-```
 
 ## Shell runner
 

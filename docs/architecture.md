@@ -43,12 +43,9 @@ All mutable state lives in `cos/state.py`:
 
 Every module imports what it needs from state. There are no circular dependencies. This is more than some LLM projects can say about their codebase.
 
-```
-  /\_/\
- ( o.o )
-  > ^ <
+![no-inference rat](https://raw.githubusercontent.com/TheShovel/no-inference/gh-pages/logo.png)
+
   "the state is fine"
-```
 
 ## Module overview
 
