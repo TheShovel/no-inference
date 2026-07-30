@@ -129,6 +129,8 @@ The system maintains:
 
 ## Why does it work well?
 
+**Safe.** This system cannot hallucinate or lie. Every response comes from a known source, a knowledge base entry, a Wikipedia page, a template file, or a handler. It only returns real, factual information. This is a huge safety improvement compared to classic LLMs that can generate false or misleading content with full confidence.
+
 **Traceable.** Every response comes from a known source. A knowledge base entry, a Wikipedia page, a template file, or a handler. What it retrieves is what you get.
 
 **Deterministic.** The same query always produces the same response (when temperature is 0). This makes debugging, testing, and auditing straightforward.
