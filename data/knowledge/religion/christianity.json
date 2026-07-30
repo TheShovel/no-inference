@@ -1,0 +1,57 @@
+[
+  {
+    "q": [
+      "What is the history of Christianity?",
+      "How did Christianity spread across the world?",
+      "When did Christianity begin?",
+      "What were the key events in early Christian history?",
+      "How did the Roman Empire affect Christianity?",
+      "Who were the early Church Fathers?"
+    ],
+    "a": "Christianity began as a Jewish sect in 1st-century Roman Judea, spreading rapidly through the Roman Empire despite periodic persecution until Emperor Constantine legalized it with the Edict of Milan in 313 CE. The faith became the official religion of the Roman Empire under Theodosius I in 380 CE, leading to the consolidation of doctrine through ecumenical councils like Nicaea (325 CE) that defined orthodox beliefs about the Trinity and Christ's nature. Christianity's subsequent spread through Europe, the Great Schism of 1054 (dividing Western Catholicism from Eastern Orthodoxy), the Protestant Reformation of the 16th century, and European colonialism globally shaped it into the world's largest religion."
+  },
+  {
+    "q": [
+      "What are the major denominations of Christianity?",
+      "What is the difference between Catholic, Orthodox, and Protestant Christianity?",
+      "How do Christian denominations differ?",
+      "What is Roman Catholicism?",
+      "What is Eastern Orthodoxy?",
+      "What are the main Protestant traditions?"
+    ],
+    "a": "Roman Catholicism, the largest Christian denomination with over 1.3 billion members, is centered in Vatican City under the Pope's authority and emphasizes sacraments, apostolic succession, and Church tradition alongside Scripture. Eastern Orthodoxy (approximately 260 million members) split from Catholicism in the Great Schism of 1054, differing primarily over papal supremacy and theological nuances while maintaining ancient liturgical traditions and a decentralized structure of autocephalous churches. Protestantism, emerging from the 16th-century Reformation led by figures like Martin Luther and John Calvin, encompasses numerous traditions—Lutheran, Reformed, Anglican, Baptist, Methodist, Pentecostal—that emphasize sola scriptura (Scripture alone) and justification by faith."
+  },
+  {
+    "q": [
+      "What is the Bible?",
+      "How is the Bible organized?",
+      "What is the Old Testament?",
+      "What is the New Testament?",
+      "Who wrote the Bible?",
+      "How was the Bible compiled?"
+    ],
+    "a": "The Bible is the sacred scripture of Christianity, consisting of the Old Testament (shared with Judaism) and the New Testament (uniquely Christian). The Old Testament contains 39 books (in the Protestant canon) including the Torah/Pentateuch, historical books, wisdom literature like Psalms and Proverbs, and prophetic writings. The New Testament comprises 27 books—the four Gospels (Matthew, Mark, Luke, John), Acts of the Apostles, Epistles (letters) by Paul and other apostles, and Revelation—written in the 1st century CE and canonized by the 4th century through church councils that recognized texts considered apostolic and orthodox."
+  },
+  {
+    "q": [
+      "Who was Jesus Christ?",
+      "What does Christianity teach about Jesus?",
+      "What is the significance of Jesus's crucifixion?",
+      "Why is the resurrection important in Christianity?",
+      "What are the teachings of Jesus?",
+      "Who was the Apostle Paul and why is he important?"
+    ],
+    "a": "Christians believe Jesus of Nazareth is the Son of God, the Messiah prophesied in the Old Testament, fully divine and fully human, whose crucifixion and resurrection are the central events of salvation history. His teachings, recorded in the Gospels, emphasize love of God and neighbor, forgiveness, humility, and the coming Kingdom of God—summarized in the Sermon on the Mount and parables like the Good Samaritan and Prodigal Son. The Apostle Paul, once a persecutor of Christians who became Christianity's most influential missionary, wrote much of the New Testament and established Gentile Christianity as distinct from its Jewish roots."
+  },
+  {
+    "q": [
+      "What are the sacraments in Christianity?",
+      "What are Christian holidays?",
+      "What is baptism in Christianity?",
+      "What is the Eucharist?",
+      "When do Christians celebrate Christmas and Easter?",
+      "What is Lent in Christianity?"
+    ],
+    "a": "Sacraments are sacred rituals instituted by Christ that convey divine grace, with most traditions recognizing baptism (initiation into the faith through water) and the Eucharist or Communion (commemorating Jesus's Last Supper through bread and wine) as primary. Major Christian holidays include Christmas (December 25, celebrating Jesus's birth), Easter (the most important feast, celebrating the resurrection, dated by the paschal full moon), and Pentecost (marking the Holy Spirit's descent upon the apostles). The liturgical year includes preparatory seasons like Advent (before Christmas) and Lent (40 days before Easter), with practices like fasting, prayer, and almsgiving varying by denomination."
+  }
+]

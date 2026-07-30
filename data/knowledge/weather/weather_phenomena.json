@@ -1,0 +1,55 @@
+[
+  {
+    "q": [
+      "How do thunderstorms form?",
+      "What causes a thunderstorm to develop?",
+      "What are the three stages of a thunderstorm?",
+      "What conditions are needed for thunderstorm formation?",
+      "What is the difference between air-mass and severe thunderstorms?"
+    ],
+    "a": "Thunderstorms form when warm, moist air rises rapidly in an unstable atmosphere, cooling and condensing into cumulonimbus clouds. They develop through three stages: the cumulus stage (updrafts), the mature stage (downdrafts, heavy rain, lightning), and the dissipating stage (when downdrafts cut off the updraft). Severe thunderstorms can produce large hail, damaging winds, and tornadoes when strong wind shear organizes the storm into a supercell."
+  },
+  {
+    "q": [
+      "How does lightning form?",
+      "What causes lightning in a thunderstorm?",
+      "What is the difference between cloud-to-ground and intracloud lightning?",
+      "How does a lightning strike happen?",
+      "What determines the distance of a lightning strike?"
+    ],
+    "a": "Lightning is a massive electrostatic discharge caused by the separation of positive and negative charges within a thunderstorm. Collisions between ice particles (graupel and hail) and smaller crystals create charge separation, with positive charges accumulating at the top and negative charges at the bottom of the cloud. When the electrical potential difference becomes great enough, a stepped leader descends and connects with an upward streamer, creating a return stroke that produces the visible flash and thunder."
+  },
+  {
+    "q": [
+      "How do tornadoes form?",
+      "What conditions create a tornado?",
+      "What is a supercell and how does it produce tornadoes?",
+      "What is the Enhanced Fujita Scale for tornadoes?",
+      "How are tornadoes rated by intensity?",
+      "what causes a tornado",
+      "how do tornadoes form",
+      "tornado formation"
+    ],
+    "a": "Tornadoes typically form within supercell thunderstorms where strong vertical wind shear causes the updraft to rotate, creating a mesocyclone. A downdraft wraps around the mesocyclone, tightening the rotation and forming a funnel cloud that extends toward the ground. The Enhanced Fujita (EF) Scale rates tornadoes from EF0 (weak, 65-85 mph winds) to EF5 (incredible, over 200 mph), based on damage indicators rather than direct wind measurement."
+  },
+  {
+    "q": [
+      "What is the difference between a hurricane, cyclone, and typhoon?",
+      "How do hurricanes form?",
+      "What conditions are needed for tropical cyclone development?",
+      "How are hurricanes categorized?",
+      "What is the structure of a mature hurricane?"
+    ],
+    "a": "Hurricanes, cyclones, and typhoons are all the same phenomenon tropical cyclones differentiated only by location: hurricanes in the Atlantic and Northeast Pacific, typhoons in the Northwest Pacific, and cyclones in the Indian Ocean and South Pacific. They form over warm ocean waters (at least 26.5°C) through evaporation and condensation that releases latent heat, powering the storm. A mature hurricane features a central eye, an eyewall with the most intense winds and rain, and spiral rainbands extending outward."
+  },
+  {
+    "q": [
+      "What are El Niño and La Niña?",
+      "How does El Niño affect global weather patterns?",
+      "What is the El Niño-Southern Oscillation (ENSO)?",
+      "How do El Niño and La Niña differ?",
+      "What is a La Niña event and its typical impacts?"
+    ],
+    "a": "El Niño and La Niña are opposite phases of the El Niño-Southern Oscillation (ENSO), a climate pattern in the tropical Pacific. El Niño features warmer-than-average sea surface temperatures in the central and eastern Pacific, leading to increased rainfall in the southern US and Peru, and drought in Australia and Indonesia. La Niña brings cooler-than-average waters, typically causing wetter conditions in Southeast Asia and Australia, and drier conditions in the southwestern United States. These phases typically last 9-12 months and recur every 2-7 years."
+  }
+]

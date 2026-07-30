@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is scanning electron microscopy (SEM)?",
+      "How does SEM work?",
+      "What is the difference between SEM and TEM?",
+      "How does transmission electron microscopy (TEM) work?",
+      "What can SEM and TEM measure?",
+      "What is electron microscopy used for in nanotechnology?",
+      "What resolution can TEM achieve?"
+    ],
+    "a": "Scanning electron microscopy (SEM) images surfaces by scanning a focused electron beam across the sample and detecting secondary electrons, backscattered electrons, and X-rays emitted from the surface, providing topographical information with resolution down to about 1 nanometer and depth of field that produces detailed 3D-like images of nanostructures. Transmission electron microscopy (TEM) passes electrons through an ultra-thin sample (typically less than 100 nm thick) and images the transmitted electrons to reveal internal structure at atomic resolution (below 0.1 nm), making it indispensable for visualizing crystal lattices, individual atoms, nanoparticles, and defects. High-resolution TEM (HRTEM) can directly image atomic columns in crystalline materials, while scanning TEM (STEM) combines SEM-style raster scanning with thin-sample transmission for additional analytical capabilities including elemental mapping through energy-dispersive X-ray spectroscopy (EDS) and electron energy loss spectroscopy (EELS)."
+  },
+  {
+    "q": [
+      "What is scanning tunneling microscopy (STM)?",
+      "How does STM work?",
+      "What is atomic force microscopy (AFM)?",
+      "How does AFM differ from STM?",
+      "What can AFM measure?",
+      "How is AFM used in nanoscale characterization?",
+      "What is the difference between contact mode and tapping mode AFM?"
+    ],
+    "a": "Scanning tunneling microscopy (STM) uses a sharp conductive tip brought within a nanometer of the sample surface, measuring quantum tunneling current that flows between tip and sample when voltage is applied; this current is exponentially sensitive to tip-sample distance, allowing atomic-scale topographic imaging with resolution sufficient to visualize individual atoms and even manipulate them. Atomic force microscopy (AFM) measures forces (van der Waals, electrostatic, magnetic, mechanical) between a nanoscale probe tip and the sample surface, operating in contact mode (tip drags across surface), tapping mode (tip oscillates and intermittently contacts surface to reduce damage), and non-contact mode (tip oscillates above surface sensing attractive forces). Unlike STM, AFM does not require conductive samples, making it suitable for imaging biological molecules, polymers, and insulators, and it can map mechanical properties such as stiffness, adhesion, and friction at the nanoscale in addition to topography."
+  },
+  {
+    "q": [
+      "What is X-ray diffraction (XRD) used for in nanotechnology?",
+      "What is X-ray photoelectron spectroscopy (XPS)?",
+      "What is Raman spectroscopy in nanomaterial characterization?",
+      "How is XPS used to analyze nanomaterials?",
+      "What can Raman spectroscopy tell us about nanomaterials?",
+      "How does XRD determine nanoparticle size?",
+      "What surface information does XPS provide?"
+    ],
+    "a": "X-ray diffraction (XRD) identifies crystalline phases, measures lattice parameters, and determines crystallite size (using the Scherrer equation from peak broadening) in nanomaterials by analyzing the diffraction pattern produced when X-rays interact with the periodic atomic planes in the sample, with peak positions indicating phase and peak widths indicating grain size down to about 1-2 nm. X-ray photoelectron spectroscopy (XPS), also called ESCA (Electron Spectroscopy for Chemical Analysis), measures the kinetic energy of electrons emitted from a sample when irradiated with X-rays, providing elemental composition (except hydrogen and helium), chemical state information (oxidation states, bonding environments), and surface sensitivity (top 1-10 nm) critical for understanding nanomaterial surfaces and coatings. Raman spectroscopy probes molecular vibrations by measuring inelastic scattering of monochromatic laser light, providing fingerprint spectra that identify materials, detect structural defects in carbon nanomaterials (D-band and G-band in graphene and carbon nanotubes), measure strain, and characterize crystallinity and doping at the microscale."
+  },
+  {
+    "q": [
+      "What is dynamic light scattering (DLS)?",
+      "How does DLS measure nanoparticle size?",
+      "What is BET surface area analysis?",
+      "How is BET used for nanomaterials?",
+      "What is nanoparticle tracking analysis (NTA)?",
+      "What are the challenges of characterizing nanomaterials?",
+      "Why is nanocharacterization difficult?"
+    ],
+    "a": "Dynamic light scattering (DLS) measures the size distribution of nanoparticles suspended in a liquid by analyzing fluctuations in scattered laser light intensity caused by Brownian motion, using the Stokes-Einstein equation to convert diffusion coefficients to hydrodynamic diameter, with effective measurement range from about 1 nm to several micrometers. BET (Brunauer-Emmett-Teller) surface area analysis measures the specific surface area of powdered nanomaterials by quantifying nitrogen gas adsorption across the sample surface at liquid nitrogen temperature, with higher surface area to volume ratios in smaller particles producing proportionally larger BET values critical for catalyst and drug delivery applications. Characterization challenges at the nanoscale include sample preparation artifacts (drying, charging under electron beams, contamination), the inherent difficulty of measuring properties that vary with particle size, shape, and agglomeration state, the need for multiple complementary techniques (since no single method provides complete characterization), and the statistical representativeness of measurements on samples with high polydispersity."
+  }
+]

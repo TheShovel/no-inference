@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is sign language?",
+      "Explain sign language.",
+      "Are all sign languages the same?",
+      "How does sign language work?",
+      "What is the difference between sign language and spoken language?",
+      "Is sign language universal?",
+      "How many sign languages are there?"
+    ],
+    "a": "Sign language is a complete, natural language that uses visual-manual modality — hand shapes, movements, facial expressions, and body postures — to convey meaning, with its own grammar, syntax, and vocabulary distinct from spoken languages. There is no universal sign language; different countries and communities have developed their own distinct sign languages, such as American Sign Language (ASL), British Sign Language (BSL), Chinese Sign Language (CSL), and over 300 others worldwide. Sign languages are not manual representations of spoken languages — ASL is grammatically unrelated to English, and BSL is completely different from ASL despite both being used in English-speaking countries. Sign languages are fully capable of expressing abstract, technical, and literary concepts, and they arise naturally wherever Deaf communities form."
+  },
+  {
+    "q": [
+      "What is American Sign Language?",
+      "Explain ASL.",
+      "How is ASL different from English?",
+      "What is the grammar of ASL?",
+      "How many people use ASL?",
+      "Is ASL related to French Sign Language?",
+      "What is the history of ASL?"
+    ],
+    "a": "American Sign Language (ASL) is the primary sign language used by the Deaf community in the United States and most of Canada, with an estimated 500,000 to 2 million native or fluent users. ASL is descended from Old French Sign Language, brought to the US by Thomas Gallaudet and Laurent Clerc in 1817 when they founded the American School for the Deaf in Hartford, Connecticut. ASL grammar is fundamentally different from English: it uses topic-comment structure, spatial grammar to indicate relationships, classifier constructions for describing shapes and movements, and non-manual markers (raised eyebrows, head tilts) for grammatical functions like questions and relative clauses. ASL is a complete language with regional dialects, distinct literary traditions including ASL poetry and storytelling, and continuous evolution through community use."
+  },
+  {
+    "q": [
+      "What is Deaf culture?",
+      "Explain Deaf culture.",
+      "What are the values of Deaf culture?",
+      "How is Deaf culture different from hearing culture?",
+      "What is the difference between deaf and Deaf?",
+      "What are traditions in Deaf culture?",
+      "What distinguishes the Deaf community?"
+    ],
+    "a": "Deaf culture (with capital D) refers to the social beliefs, behaviors, art, literary traditions, history, and values shared by sign language users who identify as a linguistic minority rather than as disabled. Key values include a positive attitude toward deafness (not viewing it as a deficit), emphasis on visual communication and shared experience, and pride in sign language as the core of cultural identity. Important cultural traditions include storytelling in sign language, name signs (unique signs given to individuals based on personal characteristics), and gatherings at Deaf schools, clubs, and events. The lowercase 'deaf' refers to the audiological condition of hearing loss, while capitalized 'Deaf' denotes cultural identity and community membership. Deaf culture also has specific norms for attention-getting (tapping shoulders, waving), direct communication, and frank discussions about hearing status."
+  },
+  {
+    "q": [
+      "How does sign language linguistics work?",
+      "What is phonology in sign language?",
+      "Explain the phonology, morphology, and syntax of sign languages.",
+      "What are the parameters of sign language?",
+      "What is the linguistic structure of sign language?",
+      "How do signs combine to form sentences?",
+      "What are the building blocks of sign language?"
+    ],
+    "a": "Sign language linguistics analyzes the structure of sign languages using the same levels of analysis as spoken language linguistics, but with modality-specific features. Phonology in sign language studies the minimal meaningless units — handshape, movement, location, palm orientation, and non-manual signals — that combine to form lexical signs, analogous to phonemes in spoken language. Morphology includes processes like classifier constructions (handshapes representing categories of objects), aspectual modulations (altering sign movement to indicate frequency or duration), and compound formation. Syntax in sign languages uses word order and spatial grammar: signers establish referents in specific points in signing space and can convey complex grammatical relationships through directed movements between those points, a unique feature of visual-spatial language. Non-manual markers such as facial expressions, head movements, and eye gaze serve grammatical functions including marking questions, conditionals, and relative clauses."
+  }
+]

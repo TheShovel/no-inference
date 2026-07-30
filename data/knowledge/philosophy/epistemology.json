@@ -1,0 +1,59 @@
+[
+  {
+    "q": [
+      "what is epistemology",
+      "epistemology definition",
+      "theory of knowledge",
+      "epistemology philosophy",
+      "what is knowledge",
+      "JTB justified true belief",
+      "tripartite theory of knowledge",
+      "definition of knowledge philosophy"
+    ],
+    "a": "Epistemology is the branch of philosophy that studies the nature, origin, limits, and justification of knowledge. It addresses fundamental questions about what knowledge is, how it is acquired, and what distinguishes belief from genuine knowledge. The traditional definition of knowledge, dating back to Plato's Theaetetus, is justified true belief (JTB): for a person to know something, they must believe it, it must be true, and they must have justification for that belief. This tripartite definition was the standard account of knowledge for centuries until Edmund Gettier famously challenged it in 1963 with counterexamples where a person has a justified true belief but intuitively does not have knowledge, sparking ongoing debates about how to properly define knowledge."
+  },
+  {
+    "q": [
+      "rationalism vs empiricism",
+      "rationalism philosophy",
+      "empiricism philosophy",
+      "descartes rationalism",
+      "locke empiricism",
+      "hume empiricism",
+      "skepticism",
+      "philosophical skepticism",
+      "descartes cartesian skepticism",
+      "method of doubt"
+    ],
+    "a": "Rationalism and empiricism are two major theories about the source of knowledge. Rationalism, associated with philosophers like Descartes, Spinoza, and Leibniz, holds that reason and innate ideas are the primary source of knowledge, and that some truths can be known independently of sensory experience. Descartes employed radical skepticism through his method of doubt, doubting everything that could possibly be doubted, arriving at his famous conclusion Cogito, ergo sum (I think, therefore I am) as indubitable foundational knowledge. Empiricism, championed by John Locke, George Berkeley, and David Hume, asserts that all knowledge comes from sensory experience and that the mind at birth is a tabula rasa (blank slate). Hume pushed empiricism to its skeptical conclusions, arguing that we cannot rationally justify causation, induction, or the existence of the external world beyond constant experience."
+  },
+  {
+    "q": [
+      "a priori knowledge",
+      "a posteriori knowledge",
+      "a priori vs a posteriori",
+      "synthetic a priori kant",
+      "justified belief",
+      "what is justification",
+      "sources of knowledge",
+      "perception knowledge",
+      "memory knowledge",
+      "testimony knowledge"
+    ],
+    "a": "A priori knowledge is knowledge that can be gained independently of sensory experience, typically through reasoning alone, such as mathematical truths (2+2=4) and logical principles (the law of non-contradiction). A posteriori knowledge depends on empirical evidence and sensory experience, such as scientific observations about the natural world. Immanuel Kant revolutionized epistemology by introducing synthetic a priori knowledge, propositions that are both necessarily true (a priori) and informative about the world (synthetic), such as the truths of geometry and the principle of causality. Epistemology also examines the sources and justification of knowledge, including perception (direct sensory experience), introspection (knowledge of one's own mental states), memory (preservation of past knowledge), reason (logical deduction and induction), and testimony (knowledge gained from others). Each source has its own strengths and limitations."
+  },
+  {
+    "q": [
+      "gettier problem",
+      "edmund gettier",
+      "gettier counterexamples",
+      "response to gettier",
+      "constructivism epistemology",
+      "social constructivism",
+      "constructivist theory of knowledge",
+      "reliabilism epistemology",
+      "no false lemmas"
+    ],
+    "a": "The Gettier problem, posed by Edmund Gettier in his 1963 paper Is Justified True Belief Knowledge?, demonstrated that justified true belief is not sufficient for knowledge through counterexamples where a person has a justified true belief but the justification is based on false premises or accidental circumstances. For instance, if someone sees a clock that is stopped but happens to show the correct time, their belief about the time is true and justified but intuitively not knowledge. Responses to Gettier include adding a fourth condition to the JTB definition, such as the no-false-lemmas condition (requiring that the justification not rely on any false premises), reliabilism (requiring that the belief be produced by a reliable cognitive process), and virtue epistemology (requiring that the belief result from intellectual virtues). Constructivism in epistemology argues that knowledge is actively constructed by the knower rather than passively received from the world."
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "q": [
+      "What is speedrunning?",
+      "What is game modding?",
+      "What is cosplay in gaming culture?",
+      "What are the major gaming conventions?",
+      "What is E3?",
+      "What is Gamescom?",
+      "What is PAX?"
+    ],
+    "a": "Speedrunning is the practice of completing a video game as quickly as possible, often exploiting glitches, sequence breaks, and precise techniques to shave seconds off records — major communities form around specific games, with events like Games Done Quick raising millions for charity. Game modding refers to players modifying game files to create custom content, from simple texture swaps to total conversions that create entirely new games (like Counter-Strike originating as a Half-Life mod, or DOTA emerging from Warcraft III). Gaming conventions like E3 (formerly the Electronic Entertainment Expo, now largely defunct), Gamescom (the largest European gaming event in Cologne, Germany), and PAX (Penny Arcade Expo with events across North America) serve as major industry showcases where publishers announce new titles, developers connect with fans, and communities gather to celebrate gaming culture through tournaments, panels, and hands-on demos."
+  },
+  {
+    "q": [
+      "What is game journalism?",
+      "How has game journalism evolved?",
+      "What are the major game review sites?",
+      "How is game criticism different from game reviews?",
+      "What is Metacritic and how does it work?",
+      "Who are influential game journalists?"
+    ],
+    "a": "Game journalism covers the video game industry through news reporting, previews, reviews, features, and investigative pieces from outlets like IGN, GameSpot, Kotaku, Eurogamer, and Polygon. The field has evolved from print magazines like Nintendo Power and Electronic Gaming Monthly to digital-first coverage, with the rise of video game YouTube and Twitch streamers creating a parallel influencer economy where personalities like Dunkey, Skill Up, and videogamedunkey often have more reach than traditional outlets. Game criticism is distinct from reviewing — critics analyze games as cultural artifacts, examining themes, narrative techniques, and social implications in the tradition of film and literary criticism, with notable critics including Anita Sarkeesian (feminist analysis of games) and channels like Joseph Anderson and Jacob Geller producing long-form analytical essays."
+  },
+  {
+    "q": [
+      "What is Twitch and how has it changed gaming?",
+      "What is game streaming culture?",
+      "Who are the biggest streamers?",
+      "How has YouTube changed gaming culture?",
+      "What is the difference between Twitch and YouTube for gaming?",
+      "How do streamers make money?"
+    ],
+    "a": "Game streaming on platforms like Twitch and YouTube Gaming has transformed gaming from a private activity into a shared spectator experience, with millions watching live broadcasts of gameplay, esports tournaments, and creative sessions. Twitch, acquired by Amazon in 2014 for $970 million, pioneered the live-streaming model with features like subscriptions, bits (virtual tipping), and emotes that create deep community engagement, while YouTube offers on-demand VOD content with a broader recommendation algorithm and better discovery for edited content. Top streamers like Ninja, PewDiePie, xQc, and Pokimane have built entertainment careers by combining skilled gameplay with engaging personalities, earning revenue through subscriptions, donations, sponsorships, merchandise, and advertising — the medium has created a new category of celebrity where audience interaction and streaming consistency are as important as gaming ability."
+  },
+  {
+    "q": [
+      "What is retro gaming?",
+      "How does gaming affect mental health?",
+      "What is the relationship between gaming and mental health?",
+      "How important is representation in video games?",
+      "What is diversity in gaming?",
+      "How has gaming culture addressed inclusivity?"
+    ],
+    "a": "Retro gaming encompasses the preservation and celebration of classic video games from earlier generations (1970s-1990s), driven by nostalgia, appreciation for game design history, and the desire to preserve gaming heritage through emulation, ROMs, re-releases, and dedicated hardware like the NES and SNES Classic Editions. Research on gaming and mental health shows a nuanced picture: moderate gaming can provide stress relief, social connection, and cognitive benefits (problem-solving, hand-eye coordination), while excessive or compulsive gaming, particularly in vulnerable individuals, is associated with negative outcomes including social isolation, sleep disruption, and gaming disorder (recognized by the WHO). Representation in games has become increasingly important as the medium matures — movements for diverse protagonists, inclusive character creation options, authentic LGBTQ+ representation, and culturally sensitive portrayals reflect growing awareness that games reach a global, diverse audience and have cultural influence comparable to film and television."
+  }
+]

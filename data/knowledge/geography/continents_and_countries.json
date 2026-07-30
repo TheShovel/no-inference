@@ -1,0 +1,90 @@
+[
+  {
+    "q": [
+      "What are the seven continents of the world?",
+      "How many continents are there?",
+      "List the continents by size.",
+      "What are the different continent models?",
+      "Which is the largest and smallest continent?",
+      "How are continents defined?"
+    ],
+    "a": "The seven-continent model (most commonly used in English-speaking countries) includes Asia, Africa, North America, South America, Antarctica, Europe, and Australia (Oceania). Asia is the largest continent (about 44.6 million km²) and Australia the smallest (about 8.5 million km²). Some models combine Europe and Asia into Eurasia, or North and South America into America. Continents are defined by convention rather than strict criteria, combining geological (tectonic plates), geographical (landmass separation), and cultural/historical factors. Antarctica is unique as the only continent without a permanent native population, covered by an ice sheet averaging 2 km thick."
+  },
+  {
+    "q": [
+      "What are some important country facts?",
+      "Which country has the largest population?",
+      "Which country is the largest by area?",
+      "What is the smallest country in the world?",
+      "Which country has the most time zones?",
+      "What is the most populous country in Africa?"
+    ],
+    "a": "Russia is the largest country by area (about 17.1 million km²), while Vatican City is the smallest (0.44 km²). India recently surpassed China as the world's most populous country, both exceeding 1.4 billion people. France has the most time zones (13, due to its overseas territories). Canada has the longest coastline (over 200,000 km). Nigeria is the most populous African country (over 220 million). Nauru is the smallest island nation. The most densely populated country is Monaco, and the least densely populated is Greenland. There are 195 UN-recognized sovereign states, though total country counts vary depending on recognition disputes."
+  },
+  {
+    "q": [
+      "How is the world's population distributed?",
+      "What are the most densely populated regions?",
+      "Where do most people on Earth live?",
+      "What percentage of people live in Asia?",
+      "What are population density patterns?",
+      "Why do more people live in certain areas?"
+    ],
+    "a": "Over 60% of the world's population lives in Asia, with China and India alone accounting for about 35% of humanity. Population density is highest in South Asia (Bangladesh has the highest density among large countries), East Asia (Japan, South Korea), and Western Europe. Most people live near coastlines or rivers, in low-lying areas with fertile soil and temperate climates. About 55% of the world's population now lives in urban areas, projected to reach 68% by 2050. Africa has the fastest-growing population, while Europe and East Asia have aging populations. Population distribution is shaped by history, geography, climate, economic opportunities, and migration patterns."
+  },
+  {
+    "q": [
+      "What are cultural regions of the world?",
+      "How is the world divided into cultural regions?",
+      "What are the major cultural spheres?",
+      "What is the difference between Western and Eastern cultural regions?",
+      "What defines a cultural region?",
+      "What are examples of cultural regions?"
+    ],
+    "a": "Cultural regions are geographic areas defined by shared cultural traits including language, religion, customs, cuisine, art, and social norms. Major cultural regions include Western (Europe, North America, Australia — influenced by Greco-Roman and Judeo-Christian traditions), East Asian (China, Japan, Korea, Vietnam — influenced by Confucianism and Buddhism), South Asian (India, Pakistan, Bangladesh, Sri Lanka — influenced by Hinduism, Buddhism, and Islam), Middle Eastern/North African (Islamic culture, Arabic language), Sub-Saharan African (diverse ethnic groups and traditions), and Latin American (blend of Indigenous, European, and African influences). Cultural regions often overlap and blur at boundaries due to globalization and migration."
+  },
+  {
+    "q": [
+      "What are disputed territories?",
+      "What are some examples of disputed territories?",
+      "What is the difference between a disputed territory and a region?",
+      "How are territorial disputes resolved?",
+      "What are the most significant ongoing territorial disputes?",
+      "What is the status of Western Sahara?"
+    ],
+    "a": "Disputed territories are geographic areas whose sovereignty is contested between two or more states or entities. Major disputes include Kashmir (claimed by both India and Pakistan), the Israeli-Palestinian territories (West Bank, Gaza Strip, Golan Heights), Taiwan (claimed by China but self-governed), Western Sahara (claimed by Morocco and the Sahrawi Arab Democratic Republic), Crimea (annexed by Russia but recognized as Ukrainian by most countries), the South China Sea islands (contested between China, Vietnam, Philippines, Malaysia, and Brunei), and the Falkland Islands (claimed by both the UK and Argentina). Disputes can arise from historical claims, ethnic boundaries, resource access, or strategic importance. Resolution mechanisms include diplomacy, international courts (ICJ, PCA), and occasionally referendums."
+  },
+  {
+    "q": [
+      "What are landlocked countries?",
+      "How many landlocked countries are there?",
+      "What are the challenges faced by landlocked countries?",
+      "Which is the largest landlocked country?",
+      "What are doubly landlocked countries?",
+      "Which continents have no landlocked countries?"
+    ],
+    "a": "There are 44 landlocked countries — nations with no coastline on any ocean or sea. Kazakhstan is the largest landlocked country (2.7 million km²), and Vatican City is the smallest. Two countries are doubly landlocked (surrounded only by other landlocked countries): Uzbekistan (bordered by five landlocked countries) and Liechtenstein (bordered by Switzerland and Austria, both landlocked). Ethiopia is the most populous landlocked country. Landlocked countries face unique economic challenges — they depend on neighboring countries for access to maritime trade, resulting in higher transportation costs and reduced economic competitiveness. All continents except North America and Australia have landlocked countries; Europe has the most, including 14 landlocked nations."
+  },
+  {
+    "q": [
+      "What are island nations?",
+      "What is an island country?",
+      "Which are the largest island nations?",
+      "Which island country has the largest population?",
+      "What are the smallest island nations?",
+      "What unique challenges do island nations face?"
+    ],
+    "a": "An island nation is a sovereign state whose territory consists entirely of one or more islands. Indonesia is the largest island nation by area and population (over 280 million people across 17,000+ islands), followed by Japan, the Philippines, and Madagascar. The smallest island nations include Nauru (21 km²), Tuvalu (26 km²), and the Maldives (300 km²). Archipelagic states like Indonesia and the Philippines face challenges of national unity, infrastructure distribution, and disaster response across thousands of scattered islands. Many island nations — especially low-lying ones like the Maldives, Tuvalu, and Kiribati — face existential threats from rising sea levels due to climate change, with some predicted to become uninhabitable within this century."
+  },
+  {
+    "q": [
+      "What are transcontinental countries?",
+      "Which countries span two continents?",
+      "Which countries are in both Europe and Asia?",
+      "What is the difference between contiguous and non-contiguous transcontinental countries?",
+      "How are transcontinental countries defined?",
+      "Is Turkey in Europe or Asia?"
+    ],
+    "a": "Transcontinental (or transcontinental) countries have territory on more than one continent. Russia spans Europe and Asia, with the Ural Mountains as the conventional boundary — it's the largest transcontinental country and the largest country overall. Turkey straddles Europe (East Thrace) and Asia (Anatolia), separated by the Bosporus Strait. Egypt spans Africa (mainland) and Asia (Sinai Peninsula). Kazakhstan spans Europe and Asia. Non-contiguous transcontinental countries have separated territories: France has territories in Europe, South America (French Guiana), and several islands across the Indian, Pacific, and Atlantic Oceans. The United States spans North America and Oceania (Hawaii). The definition depends on whether continental boundaries follow political borders or physical geography."
+  }
+]

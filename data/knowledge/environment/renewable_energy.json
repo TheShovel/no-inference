@@ -1,0 +1,68 @@
+[
+  {
+    "q": [
+      "How does solar power work?",
+      "Explain how solar energy is captured and converted.",
+      "What are the different types of solar power technologies?",
+      "How do photovoltaic cells generate electricity?",
+      "What is the difference between photovoltaic and concentrated solar power?",
+      "How efficient are modern solar panels?"
+    ],
+    "a": "Solar power captures energy from sunlight using two primary technologies: photovoltaic (PV) cells, which directly convert sunlight into electricity via the photovoltaic effect in semiconductor materials (usually silicon), and concentrated solar power (CSP), which uses mirrors to focus sunlight onto a receiver to generate heat that drives a turbine. Modern commercial PV panels typically convert 18-23% of sunlight into electricity, with laboratory records exceeding 47% using multi-junction cells. Solar energy is the most abundant renewable resource on Earth, with enough sunlight hitting the planet in one hour to meet global energy demand for an entire year."
+  },
+  {
+    "q": [
+      "How does wind energy work?",
+      "Explain the mechanics of wind turbines.",
+      "What factors affect the efficiency of wind power?",
+      "How is wind energy converted into electricity?",
+      "What are the main components of a wind turbine?",
+      "Where are the best locations for wind farms?"
+    ],
+    "a": "Wind energy harnesses the kinetic energy of moving air using turbines that convert rotational motion into electricity. When wind blows across the blades, lift forces cause them to rotate, spinning a shaft connected to a generator inside the nacelle. Key factors affecting wind power output include wind speed (power increases with the cube of wind speed), air density, and turbine height (taller turbines access stronger, less turbulent winds). Modern offshore wind turbines can exceed 15 MW capacity and have blades longer than a football field, making wind one of the most cost-effective renewable energy sources in favorable locations."
+  },
+  {
+    "q": [
+      "How does hydroelectric power generate electricity?",
+      "Explain how hydroelectric dams work.",
+      "What are the environmental impacts of hydroelectric power?",
+      "What is run-of-river hydroelectricity?",
+      "How efficient is hydroelectric power compared to other renewables?",
+      "What are the main types of hydroelectric facilities?"
+    ],
+    "a": "Hydroelectric power generates electricity by using flowing or falling water to spin turbines connected to generators. Most large-scale hydroelectric facilities use dams to create reservoirs, allowing controlled water release through penstocks to drive turbines. Hydroelectric power is the world's largest source of renewable electricity and offers very high efficiency rates (80-90%), along with the valuable ability to adjust output quickly to meet demand. However, large dams can have significant environmental and social impacts, including habitat disruption, methane emissions from flooded biomass, and displacement of communities, which is driving interest in lower-impact run-of-river and pumped storage hydro projects."
+  },
+  {
+    "q": [
+      "What is geothermal energy and how is it used?",
+      "How does geothermal power generation work?",
+      "What are the advantages and disadvantages of geothermal energy?",
+      "Where is geothermal energy most viable?",
+      "Explain how geothermal heat pumps work.",
+      "What is the difference between deep and shallow geothermal systems?"
+    ],
+    "a": "Geothermal energy taps into heat stored beneath Earth's surface, originating from radioactive decay and residual planetary formation heat. Conventional geothermal power plants — found in geologically active regions — use steam or hot water from deep reservoirs (typically 150-400°C) to drive turbines. Enhanced geothermal systems (EGS) are an emerging technology that can access heat in areas without natural hydrothermal resources by fracturing hot rock and circulating water through it. Geothermal provides consistent baseload power (unlike intermittent solar and wind) with a tiny land footprint, but is limited to tectonically active regions unless expensive deep drilling is employed."
+  },
+  {
+    "q": [
+      "How do tidal and wave energy work?",
+      "What is the difference between tidal and wave energy?",
+      "How does biomass energy convert organic matter into power?",
+      "What are the main types of biomass feedstocks?",
+      "What are first and second generation biofuels?",
+      "Is biomass a truly carbon-neutral energy source?"
+    ],
+    "a": "Tidal and wave energy harness ocean movements — tidal energy uses barrages or underwater turbines driven by gravitational tidal flows, while wave energy captures surface motion using oscillating water columns, point absorbers, or attenuators. Biomass energy derives from organic materials (wood, agricultural residues, energy crops, organic waste) that are burned directly or converted into biofuels (ethanol, biodiesel) and biogas through fermentation, gasification, or anaerobic digestion. Although biomass is often described as carbon-neutral because the CO2 released was recently absorbed by plants, the reality is more nuanced: land-use changes, processing energy, and the time lag between emission and re-growth mean it is not carbon-neutral on relevant timescales unless sustainably sourced."
+  },
+  {
+    "q": [
+      "Why is energy storage important for renewable energy?",
+      "How do lithium-ion batteries support grid integration?",
+      "What are the main types of grid-scale energy storage?",
+      "What is levelized cost of energy and why does it matter?",
+      "How do renewable energy costs compare to fossil fuels?",
+      "What factors influence the levelized cost of energy?"
+    ],
+    "a": "Energy storage is essential for integrating variable renewables like solar and wind into the power grid by capturing excess generation and releasing it when demand is high. Pumped hydro storage dominates globally (>90%), but lithium-ion batteries are growing fast due to plunging costs and suitability for rapid response. Emerging long-duration options include flow batteries, compressed air, and green hydrogen. The levelized cost of energy (LCOE) measures the average lifetime cost per megawatt-hour of electricity, accounting for capital, fuel, operations, and financing. Utility-scale solar and onshore wind now have LCOE values lower than the marginal cost of operating existing coal and gas plants in many regions, though LCOE does not capture full system-level costs of backup capacity and transmission infrastructure."
+  }
+]

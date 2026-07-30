@@ -18,5 +18,93 @@
       "salt craving evolutionary explanation"
     ],
     "a": "The craving for salty foods has a deep biological basis rooted in human evolution. Sodium (salt) is an essential electrolyte that the body cannot produce on its own — it must be obtained from food. Sodium plays critical roles in maintaining fluid balance, nerve signal transmission, and muscle function. Throughout most of human evolution, salt was scarce and difficult to obtain. The human body evolved powerful salt-craving mechanisms because salt was essential for survival and often lacking in natural diets. The hormone aldosterone regulates sodium balance by signaling the kidneys to retain salt when levels are low. The brain's salt appetite is controlled by specific neural circuits in the hypothalamus, particularly neurons that detect sodium deficiency and trigger cravings. Modern diets are very high in salt (processed foods, restaurant meals), but our craving mechanisms remain calibrated for the scarcity conditions of our evolutionary past. This mismatch contributes to excessive salt consumption, which can lead to high blood pressure and cardiovascular disease. Other factors can trigger salt cravings: dehydration (the body needs sodium to retain water), adrenal insufficiency (Addison's disease reduces aldosterone production), excessive sweating (from exercise or heat), and certain medications. Stress can also increase salt cravings because cortisol affects the body's salt balance. Pregnant women often experience salt cravings due to hormonal changes and increased blood volume."
+  },
+  {
+    "q": [
+      "phonetics vs phonology difference",
+      "what is phonetics",
+      "what is phonology",
+      "phonetics and phonology explained",
+      "difference between phonetics and phonology",
+      "phonology vs phonetics examples"
+    ],
+    "a": "Phonetics is the study of the physical sounds of human speech — how they are produced (articulatory phonetics), transmitted (acoustic phonetics), and perceived (auditory phonetics). Phonology, in contrast, studies how sounds function systematically within a particular language — the patterns, rules, and mental representations of sounds. For example, phonetics describes that the 'p' in 'pin' is aspirated (with a puff of air) while the 'p' in 'spin' is not, but phonology explains why English speakers treat both as the same phoneme /p/ and why aspirating the 'p' in 'spin' sounds foreign. Phonology is about the abstract sound system of a language; phonetics is about the concrete physical reality."
+  },
+  {
+    "q": [
+      "what is morphology in linguistics",
+      "morphology definition linguistics",
+      "morphemes explained",
+      "types of morphemes",
+      "free vs bound morpheme",
+      "inflectional vs derivational morphology"
+    ],
+    "a": "Morphology is the study of the structure and formation of words — the smallest meaningful units called morphemes. Morphemes can be free (able to stand alone as words, like 'cat' or 'run') or bound (must attach to other morphemes, like the plural '-s' or the past tense '-ed'). Languages differ widely in morphological complexity: isolating languages like Mandarin use mostly free morphemes with little word structure, while agglutinative languages like Turkish string many morphemes together in long words (e.g., 'evlerinizden' = 'ev-ler-iniz-den' = house-plural-your-from = 'from your houses'). Inflectional morphology adds grammatical information (tense, number, case) without changing the core meaning, while derivational morphology creates new words (e.g., 'teach' to 'teacher')."
+  },
+  {
+    "q": [
+      "what is syntax in linguistics",
+      "syntax definition and examples",
+      "syntactic structure explained",
+      "sentence structure grammar",
+      "constituency and dependency syntax",
+      "what is a parse tree"
+    ],
+    "a": "Syntax is the study of how words combine to form phrases, clauses, and sentences — essentially, the rules governing sentence structure. Every language has syntactic rules for word order: English typically follows Subject-Verb-Object order ('The cat chased the mouse'), while Japanese follows Subject-Object-Verb, and Irish uses Verb-Subject-Object. Syntactic analysis identifies constituents — groups of words that function as a unit, like noun phrases ('the big red ball') and verb phrases. Noam Chomsky's theory of generative grammar proposes that humans have an innate Universal Grammar that constrains possible syntactic structures across all languages. Understanding syntax helps explain why 'Colorless green ideas sleep furiously' is grammatically well-formed (though semantically nonsense) while a string like 'Furiously sleep ideas green colorless' violates syntactic rules."
+  },
+  {
+    "q": [
+      "what is semantics in linguistics",
+      "semantics definition and examples",
+      "semantics vs pragmatics",
+      "lexical semantics",
+      "compositional semantics",
+      "semantic roles and relations"
+    ],
+    "a": "Semantics is the study of meaning in language — what words and sentences mean independent of context. Lexical semantics examines word meanings and relationships like synonymy (big/large), antonymy (hot/cold), hyponymy (dog is a hyponym of animal), and polysemy (a single word with multiple related meanings, like 'bright' for light or intelligence). Compositional semantics studies how larger meanings are built from smaller parts — how the meaning of 'the big dog chased the small cat' follows from its words and structure. Semantic roles (or theta roles) describe the functions entities play in events: agent (the doer), patient (the thing affected), instrument (the tool used), etc. Semantics operates at a deeper level than syntax — two sentences with different syntax can have the same meaning ('The cat chased the mouse' / 'The mouse was chased by the cat'), and the same syntax can have two meanings ('I saw the man with the telescope')."
+  },
+  {
+    "q": [
+      "what is pragmatics in linguistics",
+      "pragmatics definition and examples",
+      "pragmatics vs semantics",
+      "speech act theory",
+      "implicature gricean maxims",
+      "context in language understanding"
+    ],
+    "a": "Pragmatics is the study of how context influences the interpretation of meaning in communication. It goes beyond the literal meaning of words (semantics) to consider speaker intent, shared knowledge, social relationships, and situational context. For example, if someone at a dinner table says 'Can you pass the salt?' the literal meaning is a question about ability, but the pragmatic meaning is a polite request. Key concepts include speech acts (assertions, requests, promises have performative force), implicature (what is implied but not stated), and presupposition (background assumptions taken for granted). The philosopher H.P. Grice proposed the Cooperative Principle and conversational maxims (quantity, quality, relevance, manner) that explain how people infer meaning beyond what is literally said. Pragmatics helps explain irony, sarcasm, indirectness, and why the same words can have different meanings in different contexts."
+  },
+  {
+    "q": [
+      "what are language families",
+      "language family tree",
+      "Indo-European language family",
+      "major language families of the world",
+      "how are languages classified into families",
+      "language relatedness and genetic classification"
+    ],
+    "a": "Language families are groups of languages that descend from a common ancestral language, called a proto-language. The Indo-European family is the most widely studied, with over 3 billion speakers across branches including Germanic (English, German, Swedish), Romance (French, Spanish, Italian), Slavic (Russian, Polish), Indo-Iranian (Hindi, Persian, Bengali), and many others, all descending from Proto-Indo-European (spoken around 4500-2500 BCE). Other major families include Sino-Tibetan (Mandarin, Cantonese, Tibetan), Niger-Congo (Swahili, Yoruba, Zulu), Afro-Asiatic (Arabic, Hebrew, Amharic), Austronesian (Malay, Tagalog, Hawaiian), and Turkic (Turkish, Uzbek). Languages in the same family share systematic correspondences in vocabulary and grammar — for example, English 'father,' German 'Vater,' and Latin 'pater' all come from the same Proto-Indo-European word. Language families are established using the comparative method, which identifies regular sound correspondences across related languages."
+  },
+  {
+    "q": [
+      "what is bilingualism",
+      "types of bilingualism",
+      "bilingual brain benefits",
+      "simultaneous vs sequential bilingualism",
+      "what is code-switching",
+      "why do bilinguals mix languages"
+    ],
+    "a": "Bilingualism is the ability to use two languages proficiently, though proficiency levels can vary across speaking, listening, reading, and writing (known as the four skills). Simultaneous bilinguals acquire two languages from birth, while sequential bilinguals learn a second language after establishing their first. Code-switching is the practice of alternating between languages within a single conversation or even a single sentence, often seen negatively but actually reflecting sophisticated linguistic competence and social awareness. Bilingualism offers cognitive benefits including enhanced executive function (better attention control, task switching, and cognitive flexibility), delayed onset of dementia symptoms, and improved metalinguistic awareness. However, frequency of use matters — a bilingual person who uses both languages regularly maintains stronger skills than a passive bilingual who primarily uses only one."
+  },
+  {
+    "q": [
+      "what are pidgins and creoles",
+      "pidgin vs creole",
+      "how do creole languages form",
+      "examples of pidgin languages",
+      "creole language examples",
+      "pidgin development stages"
+    ],
+    "a": "Pidgins are simplified contact languages that develop when groups speaking different languages need to communicate for trade, labor, or colonial administration. They have limited vocabulary, reduced grammar, and no native speakers. When a pidgin becomes the first language of a community (typically for the next generation), it expands into a full-fledged creole with complex grammar and complete vocabulary. For example, Tok Pisin in Papua New Guinea began as an English-based pidgin and is now a creole with over 4 million speakers. Creoles draw vocabulary primarily from the dominant (lexifier) language but develop independent grammatical structures, often combining features from substrate languages. Evidence suggests that creole languages share certain grammatical similarities worldwide (e.g., using the same word for past tense and distancing, like 'bin' from 'been'), which some linguists attribute to a universal 'bioprogram' for language."
   }
 ]

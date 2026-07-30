@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is the First Amendment and how does it protect the press?",
+      "What is freedom of the press?",
+      "How is press freedom protected in the United States?",
+      "What is Reporters Without Borders?",
+      "What is the Committee to Protect Journalists?",
+      "How is press freedom measured worldwide?",
+      "What organizations track press freedom globally?"
+    ],
+    "a": "The First Amendment to the U.S. Constitution prohibits Congress from making any law abridging the freedom of the press, establishing a constitutional foundation for press independence that has been interpreted through centuries of case law. Reporters Without Borders (RSF) and the Committee to Protect Journalists (CPJ) are international nonprofit organizations that monitor press freedom worldwide, document attacks on journalists, advocate for imprisoned reporters, and publish annual rankings and reports on the state of media freedom globally. These organizations have documented a troubling global trend of declining press freedom, with journalists facing increasing threats from governments, non-state actors, and digital surveillance."
+  },
+  {
+    "q": [
+      "What is censorship in journalism?",
+      "How does media ownership concentration affect journalism?",
+      "What is media consolidation?",
+      "How does censorship affect press freedom?",
+      "What are different types of media censorship?",
+      "Why is media ownership concentration a concern?",
+      "What is the impact of media monopolies on news?"
+    ],
+    "a": "Censorship is the suppression or prohibition of speech, writing, or other forms of expression by government authorities, which can take many forms including prior restraint (blocking publication before it occurs), content removal, licensing restrictions, and intimidation of journalists. Media ownership concentration refers to the consolidation of news outlets under a small number of large corporations, reducing the diversity of voices and perspectives available to the public and creating potential conflicts of interest in coverage of corporate and political affairs. In many countries, governments exert control through direct ownership of media outlets, licensing regulations, and economic pressure such as withdrawing advertising revenue from critical publications."
+  },
+  {
+    "q": [
+      "What are shield laws?",
+      "What is prior restraint?",
+      "What were the Pentagon Papers?",
+      "What is the legal significance of the Pentagon Papers case?",
+      "What is WikiLeaks and how did it affect journalism?",
+      "How does prior restraint differ from other censorship?",
+      "What legal protections do journalists have for confidential sources?"
+    ],
+    "a": "Shield laws are statutes that protect journalists from being compelled to reveal confidential sources or unpublished material in legal proceedings, though their scope varies widely by jurisdiction and there is no federal shield law in the United States. Prior restraint is government action that prevents publication of material before it reaches the public, considered the most serious form of censorship under U.S. law and presumptively unconstitutional since the landmark 1971 Pentagon Papers case, in which the Supreme Court allowed the New York Times to publish classified documents about U.S. involvement in Vietnam. WikiLeaks' publication of classified diplomatic cables and military documents in 2010 triggered intense debate about the boundaries of press freedom, national security, and the role of whistleblowers and platform intermediaries in the digital age."
+  },
+  {
+    "q": [
+      "How safe are journalists around the world?",
+      "What is the state of journalist safety?",
+      "Which countries are most dangerous for journalists?",
+      "What are press freedom rankings?",
+      "What are the most and least press-free countries?",
+      "What is the World Press Freedom Index?",
+      "How is press freedom ranked by country?"
+    ],
+    "a": "Journalist safety remains a critical global concern, with dozens of journalists killed each year for their work and many more imprisoned, assaulted, or harassed — with the deadliest countries for journalists including Mexico, Syria, Afghanistan, and India, where reporters covering corruption, organized crime, and conflict face extreme danger. Press freedom rankings published by Reporters Without Borders (World Press Freedom Index) and Freedom House assess countries based on legal protections, political pressures, economic factors, and violence against journalists, consistently placing Nordic countries like Norway, Finland, and Denmark at the top while countries like North Korea, China, Iran, and Eritrea rank at the bottom. Libel and defamation laws, particularly in countries like the United Kingdom, can be used as tools to intimidate journalists through costly legal battles, even when the underlying reporting is accurate and in the public interest."
+  }
+]

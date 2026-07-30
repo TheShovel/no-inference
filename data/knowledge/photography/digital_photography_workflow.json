@@ -1,0 +1,58 @@
+[
+  {
+    "q": [
+      "What are the different image file formats in photography?",
+      "What is RAW vs JPEG?",
+      "What is TIFF format?",
+      "What is DNG format?",
+      "What is the best file format for photography?",
+      "RAW vs JPEG vs TIFF vs DNG",
+      "image file formats explained",
+      "should I shoot RAW or JPEG"
+    ],
+    "a": "RAW files contain unprocessed sensor data with the highest dynamic range (12-16 bits), color depth, and editing flexibility, but require specialized software and significant storage space — they are the professional standard for serious photography. JPEG files are processed in-camera with baked-in white balance, sharpening, and compression, offering smaller file sizes and immediate usability, but discard significant image data due to 8-bit depth and lossy compression. TIFF is a lossless format preserving full image quality with 16-bit depth, used primarily for printing and archiving but producing very large files, while DNG (Digital Negative) is Adobe's open-source RAW format that standardizes proprietary RAW files and often includes embedded previews and metadata."
+  },
+  {
+    "q": [
+      "What are color spaces in photography?",
+      "What is sRGB vs Adobe RGB?",
+      "What is ProPhoto RGB?",
+      "Which color space should I use?",
+      "How do I adjust white balance?",
+      "What is white balance in photography?",
+      "How do I correct exposure?",
+      "color management photography",
+      "white balance explained"
+    ],
+    "a": "Color spaces define the range (gamut) of reproducible colors in an image: sRGB is the standard for web and social media with the narrowest gamut, Adobe RGB offers a wider gamut covering more CMYK printable colors ideal for print workflows, and ProPhoto RGB encompasses the widest gamut including colors beyond human vision suitable for high-end editing. White balance adjustment removes color casts caused by different light sources (daylight, tungsten, fluorescent, shade) by setting the color temperature (in Kelvin) and tint, ensuring neutral whites and accurate colors throughout the image. Exposure correction involves adjusting brightness in post-processing using histogram analysis, lifting shadows without introducing noise, recovering highlights to preserve detail, and applying targeted adjustments with exposure brushes or gradient filters."
+  },
+  {
+    "q": [
+      "How do I reduce noise in photos?",
+      "What is noise reduction in photography?",
+      "What is sharpening in post-processing?",
+      "How do I use tone curves?",
+      "What is color grading?",
+      "How do I retouch skin in Photoshop?",
+      "What are layers and masks in photo editing?",
+      "What is batch processing in Lightroom?",
+      "digital photo editing workflow",
+      "noise reduction sharpening techniques"
+    ],
+    "a": "Noise reduction in digital photography targets luminance noise (grain-like texture) and chrominance noise (color speckles), with modern AI-based tools like Adobe Denoise and Topaz DeNoise producing significantly better results than traditional smoothing filters by preserving detail while removing noise. Sharpening works best when applied as a multi-step process: capture sharpening to counteract the anti-aliasing filter, creative sharpening to emphasize key subjects using masks, and output sharpening tailored to the final medium (screen vs. print) with appropriate radius and amount settings. Layers and masks are the foundation of non-destructive editing — layers stack adjustments, text, and image elements independently, while masks use black (hidden), white (visible), and gray (partial transparency) to control where each layer's effects appear, enabling precise local adjustments without permanently altering the original image."
+  },
+  {
+    "q": [
+      "What is digital asset management for photographers?",
+      "What is the best photo management software?",
+      "How should I back up my photos?",
+      "How do I organize my photo library?",
+      "What is the 3-2-1 backup strategy?",
+      "How do I calibrate my monitor for photo editing?",
+      "What is monitor calibration?",
+      "photo backup strategy",
+      "DAM digital asset management"
+    ],
+    "a": "Digital Asset Management (DAM) for photographers involves a systematic workflow using software like Adobe Lightroom Classic, Capture One, or Photo Mechanic to import, catalog, keyword, rate, and search images, with consistent folder structures (by date, project, or client) and embedded metadata (IPTC keywords, captions, copyright) ensuring files remain findable years later. The 3-2-1 backup strategy is the industry standard: three copies of every file (one primary, two backups), on two different media types (e.g., internal drive plus external drive), with one copy stored off-site (cloud backup like Backblaze or Amazon S3) to protect against theft, fire, flood, or ransomware. Monitor calibration using a hardware colorimeter (X-Rite i1Display Pro or Datacolor Spyder) measures and adjusts your display's brightness, contrast, gamma, and color accuracy to a standardized profile (e.g., D65 white point, 120 cd/m² luminance, gamma 2.2), ensuring that prints match what you see on screen and that images appear consistent across calibrated devices."
+  }
+]

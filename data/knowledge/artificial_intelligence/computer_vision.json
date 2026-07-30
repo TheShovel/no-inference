@@ -1,0 +1,45 @@
+[
+  {
+    "q": [
+      "What is computer vision?",
+      "Define computer vision in AI",
+      "How does computer vision work?",
+      "What are the main applications of computer vision?",
+      "Explain computer vision and how it's used",
+      "How do computers understand images?"
+    ],
+    "a": "Computer vision is a field of AI that enables machines to interpret and make decisions based on visual data from the world, including images, videos, and live camera feeds. It works by converting pixel data into meaningful information through techniques like feature extraction, pattern recognition, and deep learning with convolutional neural networks (CNNs). Applications span autonomous vehicles (detecting pedestrians and road signs), medical imaging (analyzing X-rays and MRIs), manufacturing quality inspection, facial recognition, augmented reality, and agricultural monitoring."
+  },
+  {
+    "q": [
+      "What is image classification in computer vision?",
+      "What is object detection?",
+      "What is image segmentation?",
+      "How does facial recognition work?",
+      "What is the difference between classification, detection, and segmentation?",
+      "How do CNNs perform image classification?"
+    ],
+    "a": "Image classification assigns a single label to an entire image, answering 'what is in this picture?' — for example, classifying a photo as a cat, dog, or car. Object detection goes further by both identifying objects and localizing them with bounding boxes, enabling systems to detect multiple objects of different types in a single image using architectures like YOLO (You Only Look Once) and Faster R-CNN. Segmentation provides pixel-level understanding: semantic segmentation classifies each pixel into a category (road, sky, pedestrian), while instance segmentation distinguishes individual objects of the same class (pedestrian 1 vs. pedestrian 2), using models like Mask R-CNN and U-Net for medical and autonomous driving applications."
+  },
+  {
+    "q": [
+      "How do GANs generate images?",
+      "What are generative adversarial networks?",
+      "What are diffusion models in image generation?",
+      "How does image generation with AI work?",
+      "What is the difference between GANs and diffusion models?",
+      "How does DALL-E and Stable Diffusion work?"
+    ],
+    "a": "Generative Adversarial Networks (GANs), introduced by Ian Goodfellow in 2014, consist of two neural networks — a generator that creates fake images and a discriminator that tries to distinguish real from fake — competing against each other in a game that drives the generator to produce increasingly realistic outputs. Diffusion models, which power systems like DALL-E, Stable Diffusion, and Midjourney, take a different approach by gradually adding noise to training images and then learning to reverse this process, starting from random noise and iteratively denoising it into a coherent image guided by a text prompt. Diffusion models have largely surpassed GANs for text-to-image generation due to their training stability, better mode coverage, and superior image quality, though GANs remain faster at inference time."
+  },
+  {
+    "q": [
+      "What is optical character recognition?",
+      "How does OCR technology work?",
+      "What is computer vision used for in autonomous vehicles?",
+      "How is AI used in medical imaging?",
+      "What are the main real-world applications of computer vision?"
+    ],
+    "a": "Optical Character Recognition (OCR) converts images of handwritten, typed, or printed text into machine-readable text data, using a pipeline of image preprocessing, text detection, and character recognition — modern OCR systems like Tesseract and cloud-based APIs leverage deep learning for robust performance across fonts and languages. In autonomous vehicles, computer vision systems process data from cameras, LiDAR, and radar to detect lane markings, traffic signs, pedestrians, other vehicles, and obstacles, making real-time driving decisions. Medical imaging applications of computer vision include analyzing X-rays, CT scans, MRIs, and pathology slides for disease detection (tumors, fractures, hemorrhages), organ segmentation, and treatment planning, often matching or exceeding human radiologist accuracy for specific diagnostic tasks."
+  }
+]

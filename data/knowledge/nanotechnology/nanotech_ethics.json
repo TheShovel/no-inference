@@ -1,0 +1,42 @@
+[
+  {
+    "q": [
+      "What are the risks of nanotechnology?",
+      "Are nanoparticles toxic?",
+      "How do nanomaterials impact the environment?",
+      "What are the health risks of nanomaterials?",
+      "What is nanotoxicity?",
+      "nanotechnology risks",
+      "nanoparticle toxicity",
+      "environmental impact of nanomaterials"
+    ],
+    "a": "Nanotoxicity concerns arise from the ability of nanoparticles to cross biological barriers (cell membranes, blood-brain barrier, placenta), potentially causing oxidative stress, inflammation, and DNA damage at the cellular level. The high surface reactivity that makes nanoparticles useful also means they can interact unpredictably with biological systems; for example, carbon nanotubes have shown asbestos-like pathogenicity in lung tissue under certain conditions. Environmental risks include the bioaccumulation of engineered nanoparticles in ecosystems and their potential disruption of microbial communities in soil and water. Occupational exposure in manufacturing facilities and consumer exposure through products (sunscreens, cosmetics, food packaging) remain areas of active study, with regulations still catching up to the pace of nanotechnology commercialization."
+  },
+  {
+    "q": [
+      "How are nanomaterials regulated?",
+      "What regulations exist for nanotechnology?",
+      "What are the ethical concerns with nanotech?",
+      "How does nanotech affect privacy?",
+      "What is the public perception of nanotechnology?",
+      "What is responsible innovation in nanotech?",
+      "nanotechnology regulation",
+      "nanotech ethics",
+      "nanosensors and privacy"
+    ],
+    "a": "Nanomaterial regulation varies globally: the EU requires registration and safety data under REACH with specific nano-provisions, the US FDA treats nanomaterial-based drugs and devices on a case-by-case basis, and the EPA regulates nano-pesticides and nanomaterials under TSCA. Privacy concerns center on ubiquitous nanosensors—tiny, cheap, networked sensors capable of continuous environmental and biological monitoring—which could enable unprecedented surveillance, data collection, and behavioral tracking without individuals' knowledge or consent. Responsible innovation frameworks emphasize early and ongoing engagement with stakeholders, transparency about risks and benefits, adaptive governance, and inclusion of public perspectives in research directions and product development to build trust and maximize societal benefit from nanotechnology."
+  },
+  {
+    "q": [
+      "How is nanotechnology used in warfare?",
+      "What are the military applications of nanotech?",
+      "What are the societal implications of nanotechnology?",
+      "What ethical frameworks apply to emerging technologies?",
+      "How might nanotechnology change society?",
+      "nanotechnology in military",
+      "societal impact of nanotech",
+      "ethical frameworks for emerging technology"
+    ],
+    "a": "Military applications of nanotechnology include nanosensors for chemical and biological agent detection, nanomaterials for lightweight body armor and vehicle armor, nanoenergetics for more powerful and safer explosives and propellants, and nanotechnology-enabled stealth coatings and camouflage. The dual-use nature of nanotechnology—where the same fundamental research can enable beneficial medicines and targeted weapons—presents a persistent governance challenge similar to that of nuclear technology and synthetic biology. On a societal level, nanotechnology could exacerbate economic inequality if advanced manufacturing and medical benefits are accessible only to wealthy nations and individuals, while transformative applications like molecular manufacturing and artificial photosynthesis raise broader questions about the relationship between technology, labor, environment, and human enhancement that demand proactive ethical deliberation."
+  }
+]

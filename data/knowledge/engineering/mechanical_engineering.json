@@ -1,0 +1,122 @@
+[
+  {
+    "q": [
+      "What is mechanical engineering?",
+      "Define mechanical engineering.",
+      "What does a mechanical engineer do?",
+      "Explain the field of mechanical engineering.",
+      "What are the main branches of mechanical engineering?",
+      "Mechanical engineering overview",
+      "What do mechanical engineers study?"
+    ],
+    "a": "Mechanical engineering is one of the oldest and broadest engineering disciplines, applying principles of physics, materials science, and mathematics to design, analyze, manufacture, and maintain mechanical systems. It encompasses core areas such as mechanics, thermodynamics, fluid dynamics, heat transfer, materials science, and structural analysis. Mechanical engineers work across virtually every industry — from automotive and aerospace to robotics, energy, HVAC, and biomedical devices — designing everything from tiny microelectromechanical systems to large power plant turbines."
+  },
+  {
+    "q": [
+      "What are the fundamentals of mechanics in engineering?",
+      "Explain engineering mechanics.",
+      "What is statics and dynamics in mechanical engineering?",
+      "How do forces affect structures in mechanical engineering?",
+      "What is the difference between statics and dynamics?",
+      "Engineering mechanics basics",
+      "What topics are covered in engineering mechanics?"
+    ],
+    "a": "Engineering mechanics is the branch of physics that deals with forces and their effects on bodies, divided into statics (study of bodies at rest or in constant motion) and dynamics (study of accelerated motion under forces). Statics involves analyzing forces in equilibrium using free-body diagrams and equations like ΣF = 0 and ΣM = 0, which are critical for designing stable structures. Dynamics covers kinematics (motion geometry) and kinetics (forces causing motion), including Newton's laws, work-energy principles, impulse-momentum, and vibration analysis for rotating machinery and moving components."
+  },
+  {
+    "q": [
+      "What is thermodynamics in engineering?",
+      "Explain engineering thermodynamics.",
+      "How is thermodynamics applied in mechanical engineering?",
+      "What are the laws of thermodynamics used in engineering?",
+      "Why is thermodynamics important for engineers?",
+      "Thermodynamics in mechanical engineering",
+      "What do engineers use thermodynamics for?"
+    ],
+    "a": "Thermodynamics in engineering is the study of energy conversion, heat transfer, and the relationships between heat, work, temperature, and energy in mechanical systems. Engineers apply the zeroth, first, second, and third laws of thermodynamics to analyze power cycles (Rankine, Otto, Diesel, Brayton), refrigeration cycles, heat engines, and heat pumps. Practical applications include designing internal combustion engines, gas turbines, steam power plants, HVAC systems, and cryogenic equipment, where maximizing thermal efficiency and minimizing entropy generation are key objectives."
+  },
+  {
+    "q": [
+      "What is fluid dynamics in engineering?",
+      "Explain fluid mechanics for engineers.",
+      "How is fluid dynamics applied in mechanical engineering?",
+      "What is the difference between laminar and turbulent flow?",
+      "What are the fundamental equations of fluid dynamics?",
+      "Fluid dynamics in mechanical engineering",
+      "How do engineers analyze fluid flow?"
+    ],
+    "a": "Fluid dynamics is the study of fluids (liquids and gases) in motion and the forces acting on them, governed by conservation of mass, momentum, and energy — expressed mathematically through the continuity equation, Navier-Stokes equations, and Bernoulli's equation. Engineers use fluid dynamics to design pipelines, pumps, turbines, aircraft wings, propellers, wind turbines, hydraulic systems, and cooling systems. Key concepts include Reynolds number (predicting laminar vs. turbulent flow), boundary layers, drag and lift forces, and compressible flow for high-speed gas applications."
+  },
+  {
+    "q": [
+      "What is materials science in engineering?",
+      "Explain materials science for mechanical engineers.",
+      "What are the main classes of engineering materials?",
+      "How do material properties affect mechanical design?",
+      "What is the difference between stress and strain?",
+      "Materials science in mechanical engineering",
+      "What material properties matter in engineering?"
+    ],
+    "a": "Materials science for engineers is the study of material properties — mechanical, thermal, electrical, and chemical — and how they relate to material structure at atomic and microscopic scales. The main classes are metals, ceramics, polymers, composites, and semiconductors. Key mechanical properties include strength, hardness, toughness, ductility, elasticity, and fatigue resistance, with stress-strain curves used to characterize material behavior under load. Engineers select materials based on performance requirements, manufacturing constraints, cost, and environmental factors, using heat treatment, alloying, and composite layering to tailor properties."
+  },
+  {
+    "q": [
+      "What is CAD and CAM in engineering?",
+      "Explain CAD CAM in mechanical engineering.",
+      "What is computer-aided design?",
+      "How is computer-aided manufacturing used?",
+      "What is the difference between CAD and CAM?",
+      "CAD CAM explained for engineers",
+      "How do engineers use CAD software?"
+    ],
+    "a": "CAD (Computer-Aided Design) is the use of specialized software to create precise 2D drawings and 3D solid models of parts and assemblies, enabling engineers to visualize, simulate, and iterate designs before manufacturing. CAM (Computer-Aided Manufacturing) uses software and computer-controlled machinery, such as CNC mills, lathes, and 3D printers, to automate and control the manufacturing process based on CAD models. Together, CAD/CAM integration streamlines the design-to-production workflow, reducing errors, shortening lead times, and enabling complex geometries that would be impossible to produce manually."
+  },
+  {
+    "q": [
+      "What is HVAC in engineering?",
+      "Explain HVAC systems.",
+      "How does an HVAC system work?",
+      "What does HVAC stand for?",
+      "What are the main components of an HVAC system?",
+      "HVAC engineering explained",
+      "How do mechanical engineers design HVAC systems?"
+    ],
+    "a": "HVAC stands for Heating, Ventilation, and Air Conditioning — the technology of indoor environmental comfort and air quality control in buildings, vehicles, and industrial settings. Mechanical engineers design HVAC systems by applying thermodynamics, fluid mechanics, and heat transfer to select and size components like furnaces, heat pumps, chillers, boilers, air handlers, ductwork, and thermostats. Key design considerations include heat load calculations, air distribution, filtration, humidity control, energy efficiency (SEER, EER ratings), and compliance with building codes and ASHRAE standards."
+  },
+  {
+    "q": [
+      "What are the main manufacturing processes in engineering?",
+      "Explain manufacturing processes in mechanical engineering.",
+      "What are the different types of manufacturing processes?",
+      "How does casting work as a manufacturing process?",
+      "What is subtractive vs additive manufacturing?",
+      "Manufacturing processes overview",
+      "What are forming, machining, and joining processes?"
+    ],
+    "a": "Manufacturing processes are methods used to convert raw materials into finished products, broadly categorized into forming (forging, rolling, extrusion, casting), machining (turning, milling, drilling, grinding), joining (welding, brazing, adhesive bonding), and additive manufacturing (3D printing, fused deposition modeling, selective laser sintering). Each process has distinct capabilities, tolerances, production rates, and cost profiles — casting is ideal for complex shapes in high volumes, machining offers high precision but generates waste, and additive manufacturing enables rapid prototyping and complex geometries. Process selection depends on material, part geometry, required tolerances, production volume, and cost constraints."
+  },
+  {
+    "q": [
+      "What are the fundamentals of robotics in engineering?",
+      "Explain robotics in mechanical engineering.",
+      "What are the main components of a robot?",
+      "How are robots used in manufacturing?",
+      "What is kinematics in robotics?",
+      "Robotics fundamentals for engineers",
+      "What do mechanical engineers do in robotics?"
+    ],
+    "a": "Robotics is the interdisciplinary field combining mechanical engineering, electrical engineering, and computer science to design, build, and program machines that can perform tasks autonomously or semi-autonomously. Mechanical engineers focus on robot structure including linkages, joints, actuators (motors, hydraulics, pneumatics), transmissions, and end-effectors, applying kinematics and dynamics for motion planning and control. Key concepts include degrees of freedom (DOF), forward and inverse kinematics, workspace analysis, and manipulator design. Robots are widely used in manufacturing for welding, painting, assembly, pick-and-place, and material handling, as well as in medical surgery, exploration, and service applications."
+  },
+  {
+    "q": [
+      "What is machine design in mechanical engineering?",
+      "Explain the machine design process.",
+      "What are the key considerations in machine design?",
+      "How do engineers design machine components?",
+      "What is the difference between machine design and machine theory?",
+      "Machine design fundamentals",
+      "What factors are considered in mechanical design?"
+    ],
+    "a": "Machine design is the process of creating and sizing mechanical components and systems to perform specific functions safely, reliably, and efficiently under expected loads and operating conditions. Engineers follow a systematic process: define requirements, conceptualize solutions, perform stress and failure analysis, select materials, determine dimensions, create detailed drawings, and prototype. Core topics include failure theories (maximum distortion energy, maximum shear stress), fatigue analysis (S-N curves, endurance limit), shaft design, bearing selection, gear design, spring design, and fastener analysis using standards like ASME and ISO."
+  }
+]

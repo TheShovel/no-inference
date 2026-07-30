@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What are the main steps in the beer brewing process?",
+      "How does the brewing process work from start to finish?",
+      "What is malting in beer brewing?",
+      "What happens during the mashing process?",
+      "What is lautering in brewing?",
+      "What is the boil in brewing beer?",
+      "How does fermentation work in beer making?"
+    ],
+    "a": "Beer brewing is a multi-step process that converts grain starches into alcohol. Malting involves germinating and drying barley to develop enzymes and create fermentable sugars. Mashing mixes the crushed malt with hot water (typically 148-158°F) to activate beta-amylase and alpha-amylase enzymes that convert starches into fermentable and unfermentable sugars — the temperature determines the beer's body and sweetness. Lautering separates the liquid wort from the spent grain husks through a filter bed. The wort is then boiled for 60-90 minutes, during which hops are added for bitterness, flavor, and aroma. After rapid chilling, yeast is pitched and fermentation converts sugars into alcohol and carbon dioxide over one to several weeks."
+  },
+  {
+    "q": [
+      "What types of malt are used in brewing?",
+      "What is the difference between base malt and specialty malt?",
+      "What are the most common base malts?",
+      "What do crystal and caramel malts add to beer?",
+      "What is roasted malt used for?",
+      "What speciality malts can I use in brewing?",
+      "How does malt choice affect beer flavor?"
+    ],
+    "a": "Malt is the foundational ingredient that provides fermentable sugars, color, and flavor to beer. Base malts make up the majority of the grain bill and include 2-row barley (neutral, high enzyme), pale ale malt (slightly more character), pilsner malt (light and delicate), Vienna malt (toasty and golden), Munich malt (rich and malty), wheat malt (for head retention and haze), and rye malt (spicy and complex). Specialty malts are used in smaller quantities for color and flavor: crystal/caramel malts add sweetness, body, and caramel notes; roasted malts (chocolate, black, roasted barley) contribute dark color and coffee, chocolate, and toast flavors; while biscuit, Victory, honey, and smoked malts provide specific accents. The kilning temperature and duration determine the malt's color measured in degrees Lovibond (SRM)."
+  },
+  {
+    "q": [
+      "What are the main types of hops used in brewing?",
+      "What are bittering hops and when are they added?",
+      "What are aroma hops used for?",
+      "What are dual-purpose hops?",
+      "Which hops are best for IPAs?",
+      "What are noble hops?",
+      "How do hops affect beer flavor and aroma?"
+    ],
+    "a": "Hops provide bitterness, flavor, and aroma to beer while also acting as a natural preservative. Bittering hops (Magnum, Warrior, Nugget) have high alpha acid content and are added early in the boil to provide bitterness without much flavor or aroma. Aroma hops (Cascade, Citra, Mosaic, Simcoe, Centennial, Amarillo, Saaz, Hallertau, Tettnang, East Kent Goldings, Fuggles) are added late in the boil or during dry-hopping to contribute volatile oils that create citrus, floral, pine, herbal, or stone fruit notes. Dual-purpose hops (Chinook, Columbus, Northern Brewer) have moderate alpha acids and good aroma characteristics, working well throughout the boil. The timing and quantity of hop additions determine the beer's International Bitterness Units (IBU) and aromatic profile."
+  },
+  {
+    "q": [
+      "What types of yeast are used in brewing?",
+      "What is the difference between ale and lager yeast?",
+      "What are common ale yeast strains?",
+      "What are common lager yeast strains?",
+      "What is Kveik yeast?",
+      "What is wild fermentation in brewing?",
+      "What are Brettanomyces and bacteria used for in beer?"
+    ],
+    "a": "Brewing yeast is divided into two main categories: ale yeasts (Saccharomyces cerevisiae) are top-fermenting and work at warmer temperatures (60-75°F), producing fruity esters and phenols in styles like pale ales, stouts, and Belgian beers. Lager yeasts (Saccharomyces pastorianus) are bottom-fermenting and work at colder temperatures (45-55°F), producing clean, crisp profiles with minimal esters for styles like pilsners, helles, and bocks. Specialty strains include Kveik (a warm-fermenting Norwegian farmhouse yeast that produces clean beer at up to 100°F with high flocculation), and wild cultures such as Brettanomyces (funky, horse-blanket character), Lactobacillus (tartness), and Pediococcus (complex sourness) used in lambics, gueuzes, and sour ales."
+  },
+  {
+    "q": [
+      "How does water chemistry affect beer brewing?",
+      "What are the best water profiles for different beer styles?",
+      "What is the Burton water profile?",
+      "How do I adjust brewing water with salts?",
+      "What is gypsum used for in brewing?",
+      "What is the Pilsen water profile?",
+      "How does water pH affect the mash?"
+    ],
+    "a": "Water chemistry dramatically affects beer flavor, mash efficiency, and hop perception due to the mineral content. Different beer styles evolved around regional water profiles — Burton water (high calcium, high sulfate) is ideal for pale ales and IPAs as sulfate accentuates hop bitterness; Pilsen water (very soft, low minerals) produces delicate lagers; Dublin water (high carbonate) suits stouts. Brewers adjust their water by adding brewing salts such as calcium sulfate/gypsum (enhances hop character), calcium chloride (rounds maltiness and body), magnesium sulfate/Epsom salt (mildly enhances hop flavor), and sodium chloride/table salt (rounds flavor). Mash pH should ideally be 5.2-5.6 for optimal enzyme activity, efficiency, and clarity."
+  }
+]

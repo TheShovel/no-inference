@@ -1,0 +1,67 @@
+[
+    {
+        "q": [
+            "What are the fundamental principles of interior design?",
+            "What are the seven elements of interior design?",
+            "How do balance and proportion work in interior design?",
+            "What is the difference between symmetrical and asymmetrical balance?",
+            "How do I use scale and proportion in a room?",
+            "What is rhythm in interior design?",
+            "How do I create focal points in a room?",
+            "What are the basic rules of interior design?"
+        ],
+        "a": "Interior design is built on seven elements: space, line, form, light, color, texture, and pattern. Space refers to the physical dimensions and arrangement of a room, divided into positive space (occupied by furniture) and negative space (open areas). Line guides the eye through a room — horizontal lines create stability, vertical lines add height, and dynamic lines add movement. Form encompasses the shape and silhouette of objects, ranging from geometric (structured) to natural (organic). Texture adds visual and tactile richness through combinations of smooth, rough, soft, and hard surfaces, while pattern creates visual interest through repetition and scale of motifs."
+    },
+    {
+        "q": [
+            "How do I choose a color scheme for a room?",
+            "What is the color wheel and how is it used in design?",
+            "What are the different types of color schemes?",
+            "How do I use complementary colors in a room?",
+            "What is the difference between warm and cool colors?",
+            "How do I create a monochromatic color scheme?",
+            "What is an analogous color scheme?",
+            "How do I use a triadic color scheme?"
+        ],
+        "a": "The color wheel is the foundation for creating harmonious color schemes: complementary colors (opposite on the wheel, like blue and orange) create high contrast and energy, while analogous colors (adjacent on the wheel, like blue, blue-green, and green) create serene, cohesive spaces. Monochromatic schemes use variations in saturation and value of a single hue, providing sophistication and calm. A triadic scheme uses three evenly spaced colors on the wheel (such as red, yellow, and blue) for vibrant, balanced rooms. Warm colors (reds, oranges, yellows) advance visually and energize a space, while cool colors (blues, greens, purples) recede and promote relaxation."
+    },
+    {
+        "q": [
+            "How does lighting affect interior design?",
+            "What are the different layers of lighting?",
+            "What is the difference between ambient, task, and accent lighting?",
+            "How do I choose light fixtures for a room?",
+            "What is the best lighting for a living room?",
+            "How do I layer lighting in a kitchen?",
+            "What color temperature should I use for different rooms?",
+            "How do I use natural light in interior design?"
+        ],
+        "a": "Effective lighting design uses three layers: ambient (general illumination from ceiling fixtures or recessed lights), task (focused light for activities like reading or cooking), and accent (directional light to highlight art, architectural features, or plants). Ambient lighting provides the base illumination level, typically using dimmable overhead fixtures or track lighting. Task lighting should be brighter and directed — under-cabinet lights for kitchen counters, reading lamps for living areas, and vanity lights for bathrooms. Accent lighting uses fixtures like picture lights, wall washers, or track heads to create drama and depth. Color temperature matters: warm white (2700-3000K) for living rooms and bedrooms, cool white (3500-4100K) for kitchens and bathrooms, and daylight (5000-6500K) for home offices or task lighting."
+    },
+    {
+        "q": [
+            "What is the role of texture in interior design?",
+            "How do I mix textures in a room?",
+            "What are different types of texture in design?",
+            "How do I use tactile and visual texture?",
+            "How do I balance smooth and rough textures?",
+            "What materials add texture to a space?",
+            "How many textures should I use in one room?",
+            "How do I use texture without adding clutter?"
+        ],
+        "a": "Texture is a critical element that adds depth, warmth, and visual interest to a space through the interplay of surface qualities. Tactile textures are physically felt — the smoothness of polished marble, the softness of velvet, the roughness of exposed brick, or the nubby feel of a linen weave. Visual texture is perceived through sight, such as a photographic wallpaper or a patterned tile that simulates natural material. Aim to incorporate at least three different textures in a room — for example, pair a smooth leather sofa with a chunky wool throw and a sleek glass coffee table. Natural materials like wood, stone, jute, and cotton inherently provide textural variety."
+    },
+    {
+        "q": [
+            "What are the principles of space planning in interior design?",
+            "How do I arrange furniture for good traffic flow?",
+            "What is the rule for furniture spacing in a living room?",
+            "How do I create conversation areas?",
+            "What is the ideal distance between sofa and coffee table?",
+            "How do I plan a room layout?",
+            "What is the 60-30-10 rule in interior design?",
+            "How do I balance furniture sizes in a room?"
+        ],
+        "a": "Good space planning begins with measuring the room and creating a floor plan that accounts for traffic flow — walkways should be at least 36 inches wide in main pathways and 24 inches in secondary areas. The 60-30-10 rule applies to color distribution: 60% dominant color (walls and large furniture), 30% secondary color (upholstery and curtains), and 10% accent color (accessories and art). For conversation areas, arrange seating pieces within 4-8 feet of each other to facilitate comfortable dialogue. Leave 14-18 inches between a sofa and coffee table for easy reach. Every room needs a focal point — a fireplace, a large window, a feature wall, or a statement piece of furniture."
+    }
+]

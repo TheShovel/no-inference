@@ -1,0 +1,67 @@
+[
+  {
+    "q": [
+      "what is decompression sickness",
+      "what is the bends in scuba diving",
+      "what causes decompression sickness",
+      "what are the symptoms of decompression sickness",
+      "how is decompression sickness treated",
+      "what is a decompression chamber",
+      "what is the difference between Type I and Type II DCS",
+      "how do I avoid decompression sickness"
+    ],
+    "a": "Decompression sickness (DCS), commonly called the bends, occurs when nitrogen that has dissolved in body tissues during a dive comes out of solution as bubbles during ascent, causing symptoms ranging from joint pain and skin rashes to paralysis and unconsciousness. Type I DCS involves musculoskeletal pain (often in the shoulders, elbows, or knees), skin mottling (cutis marmorata), and lymphatic swelling, while Type II DCS affects the nervous system (spinal cord, brain) and can cause numbness, weakness, difficulty breathing (chokes), or collapse. Prevention relies on following dive computer no-decompression limits, making slow ascents (30 feet per minute or slower), performing a safety stop at 15 feet for 3-5 minutes on every dive (mandatory on dives deeper than 30 feet), avoiding strenuous exercise before and after diving, maintaining proper hydration, and avoiding alcohol. Treatment for DCS is 100% oxygen (immediately, at the highest concentration possible) and hyperbaric chamber recompression, where the patient is pressurized to increase pressure, shrink bubbles, and then slowly decompressed to allow safe off-gassing. The Divers Alert Network (DAN) 24-hour emergency hotline (+1-919-684-9111) should be contacted immediately if DCS is suspected. Risk factors include cold water, dehydration, obesity, patent foramen ovale (PFO), fatigue, and repetitive deep dives with short surface intervals."
+  },
+  {
+    "q": [
+      "what is a safety stop in scuba diving",
+      "what is a decompression stop",
+      "what is the difference between safety stop and decompression stop",
+      "why do divers do safety stops",
+      "how long should a safety stop be",
+      "what happens if you skip a safety stop",
+      "what is a mandatory decompression stop",
+      "how do dive computers track decompression"
+    ],
+    "a": "A safety stop is a voluntary 3-5 minute pause at 15-20 feet (typically 15 feet) at the end of every dive to allow additional nitrogen off-gassing before surfacing, reducing the risk of decompression sickness even on dives well within no-decompression limits. A decompression stop, in contrast, is mandatory when a diver exceeds the no-decompression limit (NDL) for their depth — the diver must perform stops at specific depths (usually at 20 feet, 10 feet, or as directed by the dive computer) for specified durations to allow excess nitrogen to safely leave the tissues before surfacing. Dive computers continuously calculate the diver's nitrogen load using depth and time data, updating the NDL remaining in real time, and if the diver exceeds NDL, the computer enters decompression mode and displays required decompression stop depths and times. Skipping a safety stop increases DCS risk but most divers can do so with low probability of injury; skipping a required decompression stop makes DCS highly probable. All divers should make safety stops standard practice, and divers conducting decompression diving must carry redundant gas supplies, follow conservative ascent rates, and be trained in advanced decompression procedures through technical diving programs."
+  },
+  {
+    "q": [
+      "what is a dive computer",
+      "how does a dive computer work",
+      "what is the best dive computer for beginners",
+      "what is an air-integrated dive computer",
+      "what is the difference between a watch-style and console dive computer",
+      "how do dive computers calculate no-deco limits",
+      "what is nitrox compatibility in dive computers",
+      "can I dive with more than one dive computer"
+    ],
+    "a": "A dive computer is an essential safety device that uses a microprocessor and pressure sensor to continuously track depth, time, and calculate nitrogen absorption and elimination using a decompression algorithm (such as Bühlmann ZH-L16 or RGBM), displaying remaining no-decompression limits, current depth, dive time, ascent rate, and surface interval. Dive computers come in wristwatch form factors (like the Garmin Descent, Suunto D5, or Shearwater Teric) that can be worn daily, or console-mounted units for those who prefer a larger display and hose connection to the tank. Air-integrated computers communicate wirelessly with a transmitter on the first stage to display cylinder pressure, remaining air time, and air consumption rate (SAC/RMV). Entry-level computers like the Cressi Leonardo or Suunto Zoop Novo are simple and affordable, while advanced computers like the Shearwater Perdix offer full technical diving support (multiple gases, trimix, CCR modes). Most modern computers are user-replaceable battery and nitrox-compatible (programmable for oxygen percentages up to 100%). Many divers dive with two computers (primary and backup) for redundancy, especially during decompression or technical dives. Dive computers log dives for later review and can sync wirelessly to smartphones for dive log management."
+  },
+  {
+    "q": [
+      "what is equalization in scuba diving",
+      "how do I equalize my ears when diving",
+      "what is the Valsalva maneuver for diving",
+      "what is the Frenzel maneuver",
+      "what happens if you can't equalize",
+      "what is a reverse block in scuba diving",
+      "what are common equalization problems in diving",
+      "how do I equalize my mask while diving"
+    ],
+    "a": "Equalization is the technique of adding air to air spaces in the body (primarily the middle ears and sinuses) to balance internal and external pressure during descent, preventing pain and potential eardrum rupture. The most common technique is the Valsalva maneuver: pinching the nose and gently blowing through it to force air into the eustachian tubes. The Frenzel maneuver — using the back of the tongue like a piston to push air into the eustachian tubes with less force — is preferred by experienced divers because it's gentler and uses less effort. Equalization should begin early and often in the descent before pressure builds, and divers should not force equalization — if it doesn't work, ascend slightly and try again. Reverse block occurs during ascent when air expands in the sinuses or ears and can't escape due to tissue swelling or mucus, causing pain and pressure; it can be treated by decongestants (if taken before the dive), slow ascent, and equalizing the other direction. Mask squeeze happens when the diver fails to exhale a small amount of air into the mask during descent, causing the mask to press painfully against the face — fixed by exhaling slightly through the nose into the mask. Anyone with a cold, allergies, or sinus congestion should avoid diving until cleared, as equalization difficulties significantly increase the risk of barotrauma."
+  },
+  {
+    "q": [
+      "what are the risks of scuba diving",
+      "is scuba diving dangerous",
+      "what is nitrogen narcosis",
+      "what is oxygen toxicity in scuba diving",
+      "what is barotrauma in diving",
+      "what is air embolism in scuba",
+      "what is panic underwater",
+      "how do I stay safe while scuba diving"
+    ],
+    "a": "Scuba diving carries inherent risks that are managed through proper training, equipment, procedures, and conservative decision-making. The primary risks include: decompression sickness (the bends) from ascending too fast or exceeding time limits; barotrauma (physical pressure damage to ears, sinuses, lungs) from failing to equalize or breath-holding while ascending; nitrogen narcosis (euphoria, impaired judgment at depths below 100 feet/30 meters); oxygen toxicity (convulsions at high partial pressures, primarily a concern for technical divers using enriched mixes beyond recreational limits); arterial gas embolism (a lung overexpansion injury that forces air bubbles into the arterial bloodstream, causing stroke-like symptoms — an immediate emergency); and environmental hazards (marine life injuries, currents, cold water, entanglement). The most common cause of dive accidents is panic, often triggered by a problem that escalated due to inadequate training, poor buoyancy control, or insufficient air management. Safe diving practices include: never holding your breath while ascending, diving within your training and experience limits, checking and maintaining equipment, diving with a buddy, planning the dive and diving the plan, monitoring air supply and depth continuously, maintaining physical fitness, staying hydrated, avoiding alcohol and sedatives, and — crucially — being willing to call a dive at any point. Proper training and conservative practices make diving statistically very safe, with risk levels comparable to recreational horseback riding."
+  }
+]

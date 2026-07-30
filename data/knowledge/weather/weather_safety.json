@@ -1,0 +1,51 @@
+[
+  {
+    "q": [
+      "What should you do during a tornado warning?",
+      "Where is the safest place in a tornado?",
+      "How do you prepare for a tornado?",
+      "What is the difference between a tornado watch and a tornado warning?",
+      "What should be in a tornado emergency kit?",
+      "What is a tornado safe room?",
+      "How do you stay safe if you are in a vehicle during a tornado?"
+    ],
+    "a": "During a tornado warning, immediately seek shelter in a basement, storm cellar, or an interior room on the lowest floor of a sturdy building (such as a bathroom, closet, or hallway) away from windows and exterior walls — cover your head and neck with your arms, a mattress, or a helmet to protect against falling debris. If you are in a vehicle, do not try to outrun a tornado; instead, get out and seek shelter in a nearby sturdy building, or if none is available, lie flat in a low-lying area (like a ditch) covering your head — never shelter under an overpass, as the wind can be accelerated underneath. A tornado watch means conditions are favorable for tornadoes to develop in your area (be prepared to act), while a warning means a tornado has been spotted or indicated by weather radar and is imminent or occurring — you must take shelter immediately when a warning is issued."
+  },
+  {
+    "q": [
+      "How do you prepare for a hurricane?",
+      "What should you do during a hurricane?",
+      "What is the difference between a hurricane watch and a hurricane warning?",
+      "What should be in a hurricane emergency kit?",
+      "How do you prepare your home for a hurricane?",
+      "What is a hurricane evacuation zone?",
+      "What should you do if you cannot evacuate from a hurricane?"
+    ],
+    "a": "Hurricane preparedness includes knowing your evacuation zone and route, assembling an emergency kit with at least 7 days of non-perishable food, water (1 gallon per person per day), medications, batteries, flashlights, first aid supplies, and important documents in a waterproof container. Protect your home by installing storm shutters or boarding up windows, securing loose outdoor items, trimming trees, and reinforcing garage doors — if evacuating, turn off utilities at the main switches and valves and follow local evacuation orders immediately. During the hurricane, stay inside away from windows and doors, take shelter in a small interior room or closet on the lowest floor, and listen to NOAA Weather Radio or local news for updates — be especially cautious of the eye of the storm (a brief period of calm followed by the return of dangerous winds from the opposite direction) and of post-storm hazards like flooding, downed power lines, and carbon monoxide poisoning from generators."
+  },
+  {
+    "q": [
+      "What is lightning safety?",
+      "What should you do during a lightning storm?",
+      "What is the 30-30 rule for lightning safety?",
+      "Where is the safest place during a lightning storm?",
+      "What should you not do during lightning?",
+      "How far away can lightning strike from a thunderstorm?",
+      "What is a lightning safety plan?"
+    ],
+    "a": "The safest place during a lightning storm is inside a substantial building with plumbing and electrical wiring (which act as grounding paths) or in a hard-topped metal vehicle with windows closed — once inside, avoid using corded electronics, plumbing (showers, sinks, faucets), and anything connected to electrical outlets, as lightning can travel through wiring and pipes. The 30-30 rule is a widely taught safety guideline: if the time between seeing lightning and hearing thunder is 30 seconds or less (lightning is within 6 miles), immediately seek shelter, and remain sheltered for 30 minutes after the last observed lightning or thunder. Lightning can strike up to 10–15 miles from the parent thunderstorm, known as a 'bolt from the blue' — so if you can hear thunder, you are close enough to be struck, and outdoor activities (especially open water, hilltops, open fields, and isolated trees) should be avoided as soon as thunderstorms are forecast."
+  },
+  {
+    "q": [
+      "What should you do during a flood?",
+      "How do you stay safe in a winter storm?",
+      "What is a winter storm warning?",
+      "How do you prepare for extreme cold and snow?",
+      "What is hypothermia and how do you prevent it?",
+      "What should you do during a heat wave?",
+      "What is heat stroke and how do you recognize it?",
+      "What are the dangers of flooding?"
+    ],
+    "a": "Flood safety: never drive or walk through floodwater — just 6 inches of fast-moving water can knock an adult over, and 12 inches can sweep away a vehicle; turn around, don't drown. If flooding threatens your home, turn off utilities at the main switches, move valuables to upper floors, and evacuate when directed, avoiding contact with floodwater which may be contaminated with sewage, chemicals, and hidden debris. During heat waves, stay in air-conditioned spaces (even a few hours daily reduces heat risk), drink plenty of water, avoid strenuous outdoor activity during peak heat (10 AM to 4 PM), and never leave people or pets in parked vehicles — recognize heat stroke symptoms (hot red skin, rapid pulse, high body temperature above 103°F, confusion, unconsciousness) as a medical emergency requiring immediate cooling and 911. During winter storms, stay indoors, dress in layers if you must go out, keep your home heated to at least 65°F, prevent pipes from freezing by dripping faucets, and avoid carbon monoxide poisoning by never using generators, grills, or camp stoves indoors."
+  }
+]

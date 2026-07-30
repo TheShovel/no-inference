@@ -266,7 +266,7 @@ def is_coding_query(query: str) -> bool:
     # English word that is also a coding keyword — requires a second
     # coding indicator (another keyword match or code punctuation) to avoid
     # false positives on queries like "working-class families".
-    _AMBIGUOUS = {'class'}
+    _AMBIGUOUS = {'class', 'method'}
 
     # Check for code-specific punctuation (braces, parens, semicolons, etc.)
     has_code_punct = bool(re.search(r'[{}\(\)]|->|::|;', q))

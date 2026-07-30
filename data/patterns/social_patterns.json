@@ -1312,7 +1312,7 @@
       "time to exercise",
       "leg day",
       "arm day",
-      "cardio",
+      "\\bcardio\\b",
       "i'?m sore from (?:working out|the gym|yesterday'?s workout|exercise)",
       "i'?m going for a run",
       "i'?m hitting the gym"

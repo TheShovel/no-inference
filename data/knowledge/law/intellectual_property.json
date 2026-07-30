@@ -1,0 +1,56 @@
+[
+  {
+    "q": [
+      "What is a patent?",
+      "What are the types of patents?",
+      "What is a utility patent?",
+      "What is a design patent?",
+      "What is a plant patent?",
+      "What can be patented?",
+      "How long does patent protection last?",
+      "What are the requirements for patentability?",
+      "what is a patent",
+      "patent",
+      "how to get a patent"
+    ],
+    "a": "A patent is an exclusive right granted by the government to an inventor that allows them to exclude others from making, using, selling, or importing their invention for a limited period, in exchange for public disclosure of the invention. There are three main types in the United States: utility patents (the most common, covering processes, machines, articles of manufacture, and compositions of matter, lasting 20 years from filing), design patents (covering ornamental designs for manufactured items, lasting 15 years from grant), and plant patents (covering new and distinct plant varieties, lasting 20 years from filing). To be patentable, an invention must meet three criteria: novelty (not previously known or used), utility (having a useful purpose), and non-obviousness (not obvious to a person of ordinary skill in the field at the time of invention). Patent rights are territorial — a U.S. patent provides protection only within the United States, requiring separate filings in other countries."
+  },
+  {
+    "q": [
+      "What is copyright law?",
+      "What does copyright protect?",
+      "How long does copyright protection last?",
+      "What is the difference between copyright and patent?",
+      "What is the fair use doctrine?",
+      "What is the DMCA?",
+      "What is copyright infringement?",
+      "What is the difference between copyright and trademark?"
+    ],
+    "a": "Copyright is a form of intellectual property protection that grants creators of original works of authorship exclusive rights to reproduce, distribute, perform, display, and create derivative works from their creations, covering literary works, music, art, films, software, and architectural designs. Copyright protection arises automatically upon creation of an original work fixed in a tangible medium of expression, though registration with the U.S. Copyright Office provides additional benefits including the ability to sue for infringement and recover statutory damages. Fair use is a legal doctrine that permits limited use of copyrighted material without permission for purposes such as criticism, commentary, news reporting, teaching, scholarship, and research, determined by factors including the purpose of use, nature of the copyrighted work, amount used, and effect on the potential market. The Digital Millennium Copyright Act (DMCA) implements copyright protection in the digital age, including safe harbor provisions that protect online service providers from liability for user infringement if they promptly respond to takedown notices."
+  },
+  {
+    "q": [
+      "What is a trademark?",
+      "What is the difference between a trademark and a service mark?",
+      "What is a trade secret?",
+      "How are trade secrets protected?",
+      "What is the difference between a patent and a trade secret?",
+      "What is intellectual property licensing?",
+      "What is the difference between a license and an assignment?"
+    ],
+    "a": "A trademark is a word, phrase, symbol, design, or combination that identifies and distinguishes the source of goods from those of others, while a service mark serves the same function for services — examples include company names, logos, slogans, and even distinctive packaging (trade dress). Trademark rights are acquired through use in commerce and can be strengthened through federal registration with the USPTO, lasting indefinitely as long as the mark continues to be used and defended against infringement. Trade secrets are confidential business information that derives economic value from not being generally known, including formulas (like Coca-Cola's recipe), manufacturing processes, customer lists, and business strategies — protection lasts indefinitely but only as long as secrecy is maintained through reasonable measures like non-disclosure agreements and restricted access. Intellectual property licensing grants permission to another party to use IP rights under specified terms while the owner retains ownership, whereas an assignment transfers ownership entirely — licensing is common in software, pharmaceuticals, franchising, and technology transfer."
+  },
+  {
+    "q": [
+      "What is intellectual property infringement?",
+      "How is intellectual property protected internationally?",
+      "What is the difference between direct and contributory infringement?",
+      "What are the defenses to copyright infringement?",
+      "What is the Berne Convention?",
+      "What is the Paris Convention for industrial property?",
+      "What is the TRIPS Agreement?",
+      "What is WIPO?"
+    ],
+    "a": "Intellectual property infringement occurs when someone uses protected IP without authorization — copyright infringement (unauthorized copying or distribution), patent infringement (making, using, or selling a patented invention), trademark infringement (using a confusingly similar mark that creates consumer confusion), and trade secret misappropriation (acquisition or disclosure through improper means). International IP protection is governed by several treaties administered by the World Intellectual Property Organization (WIPO): the Berne Convention (requiring member countries to protect copyrights from other member states as they protect their own, with automatic protection and minimum 50-year terms), the Paris Convention (covering patents, trademarks, and industrial designs, establishing priority rights for filing in multiple countries), and the TRIPS Agreement (Trade-Related Aspects of Intellectual Property Rights, administered by the WTO, establishing minimum IP protection standards and enforcement mechanisms that all WTO members must implement). Defenses to infringement claims include fair use (copyright), independent creation (trade secret), invalidity (patent challenging the patent's validity), laches (unreasonable delay in bringing suit), and the first sale doctrine (which allows reselling lawfully purchased copyrighted goods)."
+  }
+]

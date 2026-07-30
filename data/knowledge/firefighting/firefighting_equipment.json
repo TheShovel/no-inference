@@ -1,0 +1,66 @@
+[
+  {
+    "q": [
+      "What is personal protective equipment (PPE) for firefighters?",
+      "What is bunker gear or turnout gear?",
+      "What materials are used in firefighter turnout gear?",
+      "What is a thermal imaging camera?",
+      "What does a firefighter's helmet protect them from?",
+      "firefighter PPE bunker gear turnout gear coat pants helmet gloves boots hood",
+      "Nomex PBI thermal imaging camera TIC"
+    ],
+    "a": "Firefighter personal protective equipment (PPE), also called bunker gear or turnout gear, is a multi-layer ensemble designed to protect against extreme heat, steam, and physical hazards. The coat and pants consist of three layers: a durable outer shell (typically Nomex, a meta-aramid fiber that resists heat and flame, or PBI a high-performance polybenzimidazole fiber blended with Kevlar for strength), a moisture barrier that prevents steam burns, and a thermal liner that traps insulating air. The helmet features a brim, shield, and ear/neck cover, protecting against falling debris, heat, and water; modern helmets are made from impact-resistant polycarbonate or fiberglass composites. Firefighter gloves must provide thermal protection while maintaining dexterity for tasks like operating hose valves and tools. Protective hoods (Nomex or PBI knit) cover the neck and face exposed between the coat collar and helmet. Self-contained breathing apparatus (SCBA) facepieces include thermal imaging cameras (TICs) integrated into the mask or handheld, allowing firefighters to see through thick smoke by detecting infrared heat signatures, essential for locating victims and hidden fire. Steel-toed, slip-resistant, and heat-resistant firefighting boots complete the ensemble."
+  },
+  {
+    "q": [
+      "What is SCBA in firefighting?",
+      "What is a self-contained breathing apparatus?",
+      "What are the parts of an SCBA?",
+      "What is an air cylinder on SCBA?",
+      "What is a PASS device?",
+      "What is a RIT pack?",
+      "SCBA self-contained breathing apparatus air cylinder facepiece regulator PASS device",
+      "RIT pack rapid intervention team"
+    ],
+    "a": "A self-contained breathing apparatus (SCBA) provides breathable air from a compressed air cylinder, protecting firefighters from smoke, toxic gases (carbon monoxide, hydrogen cyanide, hydrogen chloride, acrolein), and oxygen-deficient atmospheres. The SCBA consists of a facepiece (with a sealed lens, speaking diaphragm, and exhalation valve), a regulator that delivers air on demand at positive pressure (maintaining slight positive pressure inside the mask to prevent inward leakage), and an air cylinder typically rated at 4,500 psi (300 bar) holding 30 to 60 minutes of air depending on the user's work rate and lung capacity. The PASS (Personal Alert Safety System) device is integrated into the SCBA harness—if a firefighter remains motionless for 30 seconds, it emits a loud audible alarm (95 dB+) to alert other firefighters of a downed member; it can also be manually activated in an emergency. A RIT (Rapid Intervention Team) pack is a spare SCBA air cylinder, regulator, and facepiece carried by the rapid intervention crew (RIT/RIC) specifically to provide emergency air to a trapped or disoriented firefighter whose own air supply is depleted or damaged."
+  },
+  {
+    "q": [
+      "What types of fire hoses are used?",
+      "What are the different fire hose diameters?",
+      "What are fire hose couplings?",
+      "What types of fire hose nozzles are used?",
+      "What are different hose loads for firefighting?",
+      "fire hose types attack hose supply hose booster hose",
+      "hose couplings nozzles smooth bore fog"
+    ],
+    "a": "Fire hose is categorized by diameter and application. Attack hose (1½ to 2½ inch diameter) is used for applying water directly to fires—1¾-inch is the standard size for interior attack in residential fires, providing a good balance of flow (150-200 GPM) and maneuverability. Supply hose (3 to 5 inch diameter, called large diameter hose or LDH) moves large volumes of water from hydrants or water sources to the attack engine or portable hydrant. Booster hose (¾ or 1 inch) is a rubber hose stored on a reel for small outdoor fires and car fires. Hose couplings (brass, aluminum, or lightweight alloys) use standardized threading systems: National Standard Thread (NST) in most of the US, with NH, NPT, and NPSH variations. Nozzles come in two main types: smooth bore (solid stream, higher reach, better penetration, lower nozzle reaction) and fog/adjustable (variable pattern from straight stream to wide fog, which absorbs more heat and provides better firefighter protection through water curtain effect). Hose loads (the way hose is packed on the apparatus) include the flat load, minuteman load (triple-layer folded for shoulder carry), skid load (hose lays flat on the bed for fast deployment), and bumper load (for trench cuts and exposures)."
+  },
+  {
+    "q": [
+      "What types of ladders are used in firefighting?",
+      "What are ground ladders in firefighting?",
+      "What are aerial ladders?",
+      "What is a quint fire truck?",
+      "What is a tower ladder?",
+      "What are extension, roof, attic, folding, pompier ladders?",
+      "fire ladders ground aerial quint tower ladder",
+      "ladder types aluminum fiberglass truss construction"
+    ],
+    "a": "Fire service ladders are classified as ground ladders (carried and raised by firefighters manually) or aerial ladders (mounted on apparatus with power-operated elevation and extension). Ground ladders include extension ladders (2-3 sections that extend via halyard and pawls), roof ladders (with hinged hooks at the top for securing on pitched roofs), attic ladders (narrow folding ladders for accessing attic spaces), folding ladders (compact 10-foot ladders for interior use), and pompier ladders (single-beam scaling ladders with a large hook at the top, historically used for climbing building exteriors). Aerial apparatus includes aerial ladders (a large, power-elevated ladder with a tip up to 100 feet or more, used for rescue, ventilation, and elevated master streams), tower ladders (aerial ladders with a platform/basket at the tip that can carry firefighters and equipment, providing a stable working platform with up to 1,000 lb capacity), and quints (apparatus combining pump, water tank, hose, ground ladders, and an aerial device—five functions in one, widely used in suburban departments where staffing may not support separate engine and truck companies). Ladder construction materials are aluminum (lightweight, good strength-to-weight, conducts electricity) and fiberglass (heavier, non-conductive, preferred for work near electrical hazards), with truss construction providing strength while reducing weight."
+  },
+  {
+    "q": [
+      "What hand tools do firefighters use?",
+      "What is a Halligan bar?",
+      "What is a flathead axe and pickhead axe?",
+      "What is a K-tool used for?",
+      "What is a hydraulic forcible entry tool?",
+      "What are pike poles and ceiling hooks used for?",
+      "What is a battering ram?",
+      "Halligan bar flathead axe pickhead axe K-tool sledgehammer",
+      "forcible entry tools pike pole ceiling hook"
+    ],
+    "a": "Firefighter hand tools are carried on apparatus for forcible entry, ventilation, overhaul, and rescue. The Halligan bar is the most versatile forcible entry tool, combining a claw, fork, and adze end—it is used for prying doors, opening padlocks, breaching walls, and operating with a flathead axe as the classic irons set (the axe striking the Halligan's adze to drive it into door frames). The flathead axe is used for striking and chopping, while the pickhead axe has a pointed pick for penetrating roofs, drywall, and padlocks. The K-tool (or K-bar) is specifically designed for pulling cylinder locks from commercial doors by fitting over the lock cylinder and using a slide hammer or fork to yank it out. Hydraulic forcible entry tools (spreaders, cutters, combination tools—often called the Jaws of Life when including rescue rams) use hydraulic power from a pump or battery-operated power unit to spread, cut, or push structural components during vehicle extrication and heavy rescue. For overhaul operations, pike poles (6 to 16 feet with a pointed hook and flat blade) and ceiling hooks (with a right-angle hook) are used to pull down ceiling, pull apart burned materials, and search for hidden fire in attic spaces and void spaces."
+  }
+]

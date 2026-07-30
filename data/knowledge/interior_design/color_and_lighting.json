@@ -1,0 +1,67 @@
+[
+    {
+        "q": [
+            "How do I choose colors for a small room?",
+            "What colors make a room look larger?",
+            "How do I use light colors to expand a space?",
+            "What wall colors work best for low-light rooms?",
+            "How do I choose paint colors for an open floor plan?",
+            "What colors make a room feel cozy?",
+            "How do I create a color palette for my home?",
+            "How do I use accent walls effectively?"
+        ],
+        "a": "Light, cool colors like pale blue, soft gray, and white make a small room feel more spacious by reflecting light rather than absorbing it. For open floor plans, choose a cohesive neutral palette that flows between spaces, then introduce variation through furniture and accessories rather than changing wall colors dramatically. Low-light rooms benefit from warm whites, creamy yellows, or light peaches that add warmth without feeling dark. To make a large room feel cozier, use deeper, warmer colors like terracotta, navy, or forest green on the walls, which visually advance and reduce perceived scale. An accent wall can add depth and focus, but it works best when it highlights an architectural feature like a fireplace wall or the wall behind a bed."
+    },
+    {
+        "q": [
+            "What is the psychology of color in interior design?",
+            "How do different colors affect mood in a room?",
+            "What colors are best for a bedroom?",
+            "What colors promote productivity in a home office?",
+            "How do warm colors affect perception of space?",
+            "What is the best color for a dining room?",
+            "How do I use color psychology in my home?",
+            "What colors should I avoid in a kitchen?"
+        ],
+        "a": "Color psychology significantly impacts how a room feels: blue tones promote calm and focus, making them excellent for bedrooms and home offices. Green evokes nature and balance, working well in living areas and bedrooms. Yellow stimulates energy and creativity, ideal for kitchens and dining rooms. Red increases heart rate and appetite, making it a powerful accent color for dining rooms but potentially overwhelming in large doses. Neutrals like beige, gray, and white provide flexibility and timelessness, allowing furniture and art to take center stage. For a bedroom, choose muted, cool tones like lavender, soft blue, or warm gray to promote relaxation and sleep quality."
+    },
+    {
+        "q": [
+            "How do I choose the right light fixture for each room?",
+            "What chandelier size do I need for my dining room?",
+            "How high should a pendant light hang over an island?",
+            "How do I choose bathroom lighting?",
+            "What is the best kitchen lighting layout?",
+            "How do I choose the right size ceiling fan?",
+            "How do I layer lighting in a living room?",
+            "What is the difference between flush mount and semi-flush mount lights?"
+        ],
+        "a": "Fixture sizing follows guidelines: a dining room chandelier should be half to three-quarters the width of the table and hang 30-36 inches above the tabletop. Pendant lights over a kitchen island should be 30-36 inches apart and hang 30-36 inches above the counter. In bathrooms, vanity lights should be placed 75-80 inches from the floor or flanking the mirror at eye level (66 inches) for even, shadow-free facial lighting. A flush-mount light sits directly against the ceiling (good for low ceilings under 8 feet), while semi-flush mounts drop 4-8 inches (suitable for standard 8-9 foot ceilings). In living rooms, combine overhead ambient lighting with floor lamps, table lamps, and possibly wall sconces for a layered, flexible lighting scheme."
+    },
+    {
+        "q": [
+            "What is color temperature and how do I choose it?",
+            "What is the difference between 2700K and 5000K light bulbs?",
+            "What Kelvin temperature should I use for different rooms?",
+            "How does color temperature affect the feel of a room?",
+            "What is CRI and why does it matter?",
+            "What light color is best for a bathroom?",
+            "What is the best light bulb color for a bedroom?",
+            "Can I mix different color temperatures in one room?"
+        ],
+        "a": "Color temperature, measured in Kelvin (K), describes the warmth or coolness of light — lower numbers (2700-3000K) produce warm, yellowish light similar to incandescent bulbs, ideal for living rooms and bedrooms where relaxation is key. Mid-range (3000-4100K) creates a neutral white light suitable for kitchens, bathrooms, and offices, while higher temperatures (5000-6500K) simulate daylight and are best for task-oriented spaces like workshops or reading areas. CRI (Color Rendering Index) measures how accurately a light source reveals true colors, with a CRI of 90 or higher recommended for spaces where color accuracy matters, such as art studios, makeup areas, and kitchens. Mixing color temperatures in the same room can create a disjointed look — stick to one temperature or use warmer accent lighting against cooler ambient light."
+    },
+    {
+        "q": [
+            "How do I use natural light in interior design?",
+            "How do I choose window treatments for privacy and light?",
+            "What are the best window coverings for different rooms?",
+            "How do I maximize natural light in a dark room?",
+            "How do mirrors enhance natural light?",
+            "What are sheer curtains vs blackout curtains?",
+            "How do I use skylights and solar tubes?",
+            "How do window orientation and treatments affect lighting?"
+        ],
+        "a": "Natural light impacts every aspect of interior design — south-facing windows receive the most consistent, bright light throughout the day (ideal for plants and living spaces), while north-facing windows provide soft, diffuse light (perfect for home offices). Mirrors placed opposite windows effectively double the natural light by reflecting it deeper into the room. Window treatment selection balances light control and privacy: sheer curtains filter light while maintaining views, Roman shades offer a clean look with adjustable light, and blackout curtains block all light for bedrooms and media rooms. Solar tubes and skylights can dramatically increase natural light in dark interior rooms, kitchen pantries, and hallways without the structural changes needed for new windows."
+    }
+]

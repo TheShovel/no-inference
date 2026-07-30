@@ -1,0 +1,66 @@
+[
+  {
+    "q": [
+      "How do I taste tea professionally (tea cupping)?",
+      "What is the standard tea cupping evaluation process?",
+      "What are the key attributes evaluated in tea tasting?",
+      "What is tea liquor and how is it evaluated?",
+      "What is the aroma of tea and how do I describe it?",
+      "What is the difference between dry leaf, wet leaf, and liquor evaluation?",
+      "What is the SLU (Slurp, Sip, Spit) method for tea tasting?",
+      "How do professional tea tasters evaluate quality?"
+    ],
+    "a": "Professional tea cupping (also called tea tasting or evaluation) follows a standardized process similar to coffee cupping. The standard method uses 3 grams of tea steeped in 150 ml of freshly boiled water (adjusted for tea type: 175°F/80°C for green tea, 195°F/90°C for oolong, 205°F/96°C for black tea) in a covered white porcelain cup for a precise time (typically 3-5 minutes depending on tea type). The evaluation covers three stages: (1) dry leaf appearance (shape, twist, color, uniformity, presence of tips/buds, and aroma), (2) wet leaf/liquor (the infused leaf's color, texture, and aroma, plus the liquor's color—clear and bright indicates quality, while dull or muddy indicates processing flaws), and (3) flavor attributes including body/mouthfeel (thin, medium, full, creamy, buttery, astringent), sweetness (natural, honey-like, added), aftertaste (length, character, pleasantness), and specific flavor notes (floral, fruity, grassy, nutty, woody, spicy, earthy, savory/umami). Professional tasters use a specialized tasting spoon (typically silver or porcelain) to loudly slurp the tea—the slurping aerates the tea and spreads it across the entire palate, maximizing flavor detection. Tasters also evaluate the infused leaves (called the 'leaf infusion' or 'opened leaf') for uniformity of color, texture, and the presence of stems or stalks (indicators of processing quality and leaf grade). Commercial tea tasters may evaluate 100-300 samples per day, expectorating (spitting) between samples and cleansing the palate with room-temperature water and plain crackers."
+  },
+  {
+    "q": [
+      "What is the flavor wheel for tea tasting?",
+      "What are the primary flavor categories in tea?",
+      "How do I describe the taste of tea accurately?",
+      "What are common flavor descriptors for green tea?",
+      "How do I identify floral notes in tea?",
+      "What are fruity and vegetal notes in tea?",
+      "How do I describe the mouthfeel of tea?",
+      "What is the tea taster's vocabulary for astringency and body?"
+    ],
+    "a": "A tea flavor wheel is a visual guide that organizes tea flavors from broad categories at the center (vegetal, floral, fruity, nutty, woody, spicy, earthy, sweet) to specific descriptors at the outer edge (for vegetal: steamed greens, seaweed, grass, spinach, artichoke, asparagus). The standard tea flavor wheel, developed by tea sensory scientists and organizations like the Tea Research Institute of China and the Specialty Tea Institute, provides a shared vocabulary for describing tea across cultural and linguistic boundaries. Green teas are commonly described with vegetal/green notes (steamed greens for Japanese sencha, roasted/nutty notes for Chinese longjing/Dragon Well, grassy, seaweed/umami for gyokuro), floral notes (orchid, jasmine, lilac for lighter oolongs and green teas), and fruity notes (melon, citrus, stone fruit for certain green and oolong teas). Mouthfeel descriptors are equally important: body/weight ranges from thin/light (delicate white teas) to medium (most green and oolong teas) to full/heavy (ripe pu-erh, strong Assam); astringency ranges from none/smooth to puckering/drying; and texture descriptors include creamy, buttery, silky, crisp, sharp, and round. Learning to taste tea systematically involves practicing with known reference points—compare two similar teas side by side (same style, different producers), use the flavor wheel to identify specific notes, and keep a tea journal recording the dry leaf, liquor color, aroma, flavor, mouthfeel, aftertaste, and the evolution across multiple steeps to build a personal sensory library."
+  },
+  {
+    "q": [
+      "How do I identify high-quality tea by appearance?",
+      "What do whole tea leaves look like vs broken grades?",
+      "What are tea tips (golden tips) and what do they indicate?",
+      "What is the leaf grading system for black tea?",
+      "What are OP, BOP, and CTC in tea grading?",
+      "How does the appearance of oolong tea indicate quality?",
+      "What are the different shapes of Chinese tea?",
+      "How do I evaluate the color and uniformity of tea leaves?"
+    ],
+    "a": "Whole-leaf tea (as opposed to broken grades, fannings, or dust) is the highest quality across all tea types—whole leaves maintain better flavor and can be re-steeped multiple times. Black tea grading uses a letter system: OP (Orange Pekoe) denotes large, whole leaves; BOP (Broken Orange Pekoe) indicates broken but still substantial pieces; CTC (Crush-Tear-Curl) is an industrial machine-cut granulated production for tea bags; and F (Fannings) and D (Dust) are the smallest grades for commercial tea bags. Golden tips (also called gold buds or golden needles) are the unopened leaf buds covered in fine trichomes that appear golden or silvery when processed—their presence in black tea (like in Yunnan gold needle) and white tea (silver needle) indicates high-quality, early-harvest, tender leaf plucking. Oolong tea quality is evaluated by the leaf's shape and rolling—high-quality Taiwanese high-mountain oolongs are tightly rolled into small balls that unfurl fully during steeping, while Wuyi rock oolongs are twisted into strips with visible 'tricky' (small, even, tight strips indicating careful hand-processing). Chinese green teas come in characteristic shapes (Longjing is flat and sword-shaped, Bi Luo Chun is tightly curled into spirals, and Chunmee/Hyson is eyebrow-shaped), and uniformity of leaf size, shape, and color within a batch indicates careful sorting and grading. In general, look for leaves that are whole, uniform, and intact (not broken or powdery), with fresh, vibrant color characteristic of the tea type—dull, faded, or unevenly colored leaves indicate poor processing, improper storage, or age degradation."
+  },
+  {
+    "q": [
+      "What is the water temperature for different types of tea?",
+      "What is the proper steeping time for different teas?",
+      "How does water quality affect tea flavor?",
+      "What is the best water for brewing tea?",
+      "What is the tea-to-water ratio for optimal brewing?",
+      "How many times can I re-steep different teas?",
+      "What is the western vs gongfu-style brewing difference?",
+      "How do I adjust brewing parameters for my taste?"
+    ],
+    "a": "Water temperature and steeping time are critical variables that dramatically affect tea flavor—too hot or too long extracts excessive bitterness and astringency (especially for green teas), while too cool or too short fails to extract full flavor and body. Recommended temperature ranges by tea type: white tea 160-175°F (70-80°C), green tea 160-180°F (70-82°C), oolong 185-205°F (85-96°C, lighter oolongs at lower end, darker/roasted at higher), black tea 195-205°F (90-96°C), pu-erh 205-212°F (96-100°C), and tisanes/herbals 212°F (100°C). Steeping times vary by leaf grade: whole-leaf teas need 3-5 minutes, broken-leaf teas 2-3 minutes, and CTC tea bags 1-2 minutes—over-steeping doubles extraction of tannins and catechins, producing bitter, harsh flavors regardless of tea quality. Water quality matters immensely: filtered or spring water with moderate mineral content (50-150 ppm TDS) produces the best-tasting tea, while distilled water (flat, lifeless) and hard water (minerals can react with tea compounds creating off-flavors and surface films) both compromise the cup. The general leaf-to-water ratio for western-style brewing is 1 teaspoon (2-3 grams) per 8 oz (250 ml) cup, while gongfu-style uses 5-8 grams per 100 ml vessel with very short steeps (10-30 seconds) and 8-15+ infusions. The best brewing parameter for your personal taste is discovered through systematic experimentation: try adjusting only one variable at a time (temperature, time, leaf amount) and note the effects on flavor until you find the sweet spot that produces the cup you enjoy most."
+  },
+  {
+    "q": [
+      "What is the difference between orthodox and CTC (Crush-Tear-Curl) tea processing?",
+      "What are fannings and dust in tea grading?",
+      "What is broken-grade tea vs whole-leaf tea?",
+      "How does processing method affect the final cup quality?",
+      "What teas are typically CTC-processed?",
+      "Why is whole-leaf tea considered higher quality than broken-leaf?",
+      "What is the standard tea grading hierarchy from whole leaf to dust?"
+    ],
+    "a": "Orthodox tea processing involves traditional methods (plucking, withering, rolling/pressing, oxidizing, firing) that preserve the whole leaf structure, allowing for complex flavor development, multiple infusions, and the best sensory experience. CTC (Crush-Tear-Curl) is a mechanized processing method invented in the 1930s where withered tea leaves are passed through rotating serrated rollers that crush, tear, and curl them into small, uniform granules—this maximizes surface area for rapid extraction (making it ideal for tea bags and strong, quick-brewing tea, especially for iced tea, chai, and milk tea). The standard orthodox black tea grading hierarchy from highest to lowest quality is: SFTGFOP (Super Fine Tippy Golden Flowery Orange Pekoe—the highest grade with abundant golden tips), FTGFOP (Fine Tippy Golden Flowery Orange Pekoe), TGFOP (Tippy Golden Flowery Orange Pekoe), GFOP (Golden Flowery Orange Pekoe), FOP (Flowery Orange Pekoe), OP (Orange Pekoe—whole-leaf, no tips), BOP (Broken Orange Pekoe), BOPF (Broken Orange Pekoe Fannings), F (Fannings—small particles for tea bags), and D (Dust—the smallest particles). Whole-leaf teas (grades OP and above) provide more complex, subtle, layered flavors with sweetness and aromatic notes, while broken grades and CTC produce stronger, more astringent, darker-colored brews with less complexity but more immediate impact. Fannings and dust, despite being the lowest grades, are the standard for commercial tea bags and provide the quick, strong, dark brew that many consumers expect for black tea with milk and sugar—they extract almost instantly but have no capacity for re-steeping and lack the flavor development of whole-leaf teas."
+  }
+]

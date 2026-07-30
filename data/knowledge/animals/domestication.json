@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is the history of animal domestication?",
+      "When did humans first domesticate animals?",
+      "Which animals were domesticated first?",
+      "How did domestication of animals begin?",
+      "What is the timeline of animal domestication?",
+      "Where did animal domestication first occur?",
+      "Why did humans start domesticating animals?"
+    ],
+    "a": "Animal domestication began around 15,000-10,000 years ago during the Neolithic Revolution, when hunter-gatherer societies transitioned to agriculture and settled living. The first domesticated animal was the dog, descended from gray wolves, domesticated between 20,000 and 40,000 years ago, predating agriculture. Major livestock followed: sheep and goats (10,000-12,000 years ago in Southwest Asia), cattle (around 10,000 years ago in the Fertile Crescent and later separately in Africa and Asia), pigs (9,000 years ago in China and the Near East), and horses (around 5,500 years ago on the Eurasian steppes), each providing food, labor, fiber, and transportation that transformed human civilization."
+  },
+  {
+    "q": [
+      "What is the difference between domestic and wild animals?",
+      "How are domestic animals different from their wild ancestors?",
+      "What defines a domesticated animal?",
+      "Can wild animals become pets?",
+      "What is the difference between taming and domestication?",
+      "Why can't all wild animals be domesticated?",
+      "What are the criteria for domestication?"
+    ],
+    "a": "Domestication is a multi-generational genetic process in which a population of animals becomes adapted to humans and the captive environment through selective breeding, resulting in inherited changes in behavior, physiology, and morphology that distinguish them from their wild ancestors. This differs from taming, which is an individual behavioral change in a wild animal that does not affect its offspring. Successful domestication requires species with appropriate social structures, calm temperaments, flexible diets, reasonable growth rates, and the ability to breed in captivity, which is why only about 20 animal species have been domesticated worldwide."
+  },
+  {
+    "q": [
+      "What is selective breeding?",
+      "How does selective breeding work in animals?",
+      "What is the difference between selective breeding and natural selection?",
+      "What are examples of selective breeding in domestic animals?",
+      "How have humans changed animals through selective breeding?",
+      "What is artificial selection in animals?",
+      "What are the negative effects of selective breeding?"
+    ],
+    "a": "Selective breeding, also called artificial selection, is the process by which humans intentionally breed animals to perpetuate and enhance specific desirable traits such as increased milk production in dairy cattle, docile temperament in dogs, or wool quality in sheep. This practice has produced remarkable diversity within domesticated species—from the over 350 recognized dog breeds descended from wolves to specialized cattle breeds for meat, milk, or draft purposes. However, intensive selective breeding can also lead to unintended health problems, such as hip dysplasia in German Shepherds, breathing difficulties in flat-faced dog breeds, and reduced genetic diversity that increases susceptibility to diseases."
+  },
+  {
+    "q": [
+      "What is domestication syndrome?",
+      "What physical changes occur with domestication?",
+      "How does domestication affect animal appearance and behavior?",
+      "What are the common traits of domesticated animals?",
+      "Why do domesticated animals have floppy ears and white patches?",
+      "What is the neural crest cell hypothesis of domestication?",
+      "What behavioral changes are associated with domestication?"
+    ],
+    "a": "Domestication syndrome refers to the suite of physical and behavioral traits that commonly appear across domesticated mammal species, including reduced brain size, floppy ears, shorter snouts, smaller teeth, white coat patches, more frequent estrus cycles, and tameness. The leading explanation, the neural crest cell hypothesis proposed by Adam Wilkins and Richard Wrangham, suggests that selection for tameness affects neural crest cells during embryonic development, which in turn influence both adrenal glands (reducing fear responses) and melanocytes, cartilage, and bone development (causing pigmentation and morphological changes). The famous Russian silver fox experiment by Dmitry Belyaev demonstrated that selecting solely for tameness over generations produces many of these syndrome traits without deliberate selection for them."
+  }
+]

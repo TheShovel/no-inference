@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is biodiversity?",
+      "What are the three types of biodiversity?",
+      "What is species diversity, genetic diversity, and ecosystem diversity?",
+      "Why is biodiversity important?",
+      "How is biodiversity measured?",
+      "What does biodiversity mean for ecosystem health?",
+      "biodiversity definition types"
+    ],
+    "a": "Biodiversity—short for biological diversity—refers to the variety of all life on Earth, encompassing three interconnected levels: species diversity (the number and abundance of different species), genetic diversity (the total genetic variation within populations of a species, enabling adaptation to environmental change), and ecosystem diversity (the variety of habitats, communities, and ecological processes). High biodiversity enhances ecosystem resilience—more diverse systems are better able to withstand disturbances like disease outbreaks, droughts, or fires and continue providing essential services such as pollination, water purification, nutrient cycling, and climate regulation. Estimates of total global biodiversity range from 5 million to over 50 million species, of which only about 2 million have been formally described, with insects accounting for the largest share of described species and tropical rainforests, coral reefs, and deep-ocean ecosystems harboring the greatest concentrations of unknown life."
+  },
+  {
+    "q": [
+      "What are biodiversity hotspots?",
+      "Which countries are considered megadiverse?",
+      "What makes a region a biodiversity hotspot?",
+      "How many biodiversity hotspots are there?",
+      "Which countries have the most biodiversity?",
+      "What are the criteria for being a biodiversity hotspot?",
+      "biodiversity hotspots megadiverse countries"
+    ],
+    "a": "Biodiversity hotspots are regions that contain at least 1,500 endemic vascular plant species (species found nowhere else) and have lost at least 70% of their original habitat, with Conservation International currently recognizing 36 hotspots that cover just 2.4% of Earth's land surface but harbor more than 50% of the world's endemic plant species and 43% of endemic bird, mammal, reptile, and amphibian species. Megadiverse countries—17 nations identified by Conservation International—collectively host over 70% of Earth's species diversity, led by Brazil (Amazon rainforest and Cerrado), Indonesia (archipelago with Wallacea and Sundaland), Colombia (the most bird species of any country), and Mexico, followed by Australia, Madagascar, China, India, Peru, Ecuador, and the Democratic Republic of Congo. These regions face intense development pressure from deforestation, mining, agriculture expansion, and urbanization, making them top priorities for conservation funding and protected area establishment."
+  },
+  {
+    "q": [
+      "What is biodiversity loss and what causes it?",
+      "What is habitat destruction and how does it affect species?",
+      "How do invasive species threaten biodiversity?",
+      "What are the main drivers of extinction?",
+      "How does deforestation cause biodiversity loss?",
+      "What is the current rate of species extinction?",
+      "biodiversity loss habitat destruction invasive species extinction"
+    ],
+    "a": "Biodiversity loss is occurring at an estimated 100-1,000 times the natural background extinction rate, with the IPBES 2019 Global Assessment reporting that around 1 million animal and plant species face extinction within decades due primarily to five direct drivers: land and sea use change (habitat destruction from agriculture, logging, mining, and urban development), direct exploitation of organisms (overfishing, hunting, poaching), climate change, pollution, and invasive alien species. Habitat destruction is the single greatest threat—over 85% of wetlands have been lost globally, only 15% of forests remain intact, and agricultural expansion has converted 40% of Earth's ice-free land surface—with tropical deforestation alone eliminating an estimated 150 species per day. Invasive species introduced through global trade and travel have contributed to 60% of recorded extinctions on islands, with examples like the brown tree snake in Guam (wiping out 9 of 12 native bird species), rats on Pacific islands, and lionfish in the Caribbean threatening native reef fish populations through predation and competition."
+  },
+  {
+    "q": [
+      "What is CITES and how does it protect endangered species?",
+      "What is the Convention on Biological Diversity?",
+      "How do international treaties protect biodiversity?",
+      "What are the Aichi Biodiversity Targets?",
+      "How does the UN address biodiversity loss?",
+      "What is the difference between CITES and CBD?",
+      "CITES Convention on Biological Diversity international conservation"
+    ],
+    "a": "CITES (Convention on International Trade in Endangered Species of Wild Fauna and Flora, 1973, with 184 member countries) regulates international trade in over 38,000 listed species—from elephants and rhinoceroses to rare orchids and tropical timber—through a permit system with three appendix categories, from Appendix I (species threatened with extinction, commercial trade prohibited) to Appendix III (species protected in at least one country that requests trade assistance). The Convention on Biological Diversity (CBD, 1992, ratified by 196 nations) is the broader international treaty with three main objectives: conserving biological diversity, ensuring sustainable use of its components, and fair and equitable sharing of benefits from genetic resources, with the 2022 Kunming-Montreal Global Biodiversity Framework establishing 23 targets including protecting 30% of land and oceans by 2030 (the 30x30 target), reducing harmful subsidies by $500 billion annually, and restoring 30% of degraded ecosystems. While CITES focuses specifically on trade controls with measurable enforcement mechanisms, the CBD operates through national biodiversity strategies and reporting frameworks, and both face challenges in compliance monitoring, enforcement capacity, and balancing conservation with development needs in resource-dependent nations."
+  }
+]

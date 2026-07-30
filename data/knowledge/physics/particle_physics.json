@@ -1,0 +1,63 @@
+[
+  {
+    "q": [
+      "What is the Standard Model of particle physics?",
+      "Explain the Standard Model.",
+      "What are the fundamental particles in the Standard Model?",
+      "How does the Standard Model work?",
+      "What particles make up matter?",
+      "What are the limitations of the Standard Model?",
+      "What forces does the Standard Model describe?"
+    ],
+    "a": "The Standard Model is the theoretical framework describing all known fundamental particles and three of the four fundamental forces (electromagnetism, the weak nuclear force, and the strong nuclear force). It classifies particles into fermions (matter particles: quarks and leptons) and bosons (force-carrying particles: photons, W and Z bosons, gluons, and the Higgs boson). Quarks come in six flavors (up, down, charm, strange, top, bottom) and combine to form hadrons like protons and neutrons. Despite its tremendous experimental success, the Standard Model does not include gravity, dark matter, or neutrino masses, indicating it is an incomplete theory."
+  },
+  {
+    "q": [
+      "What is the Higgs boson?",
+      "Explain the Higgs boson.",
+      "What is the Higgs field?",
+      "How does the Higgs mechanism give mass?",
+      "Why is the Higgs boson important?",
+      "Where was the Higgs boson discovered?",
+      "What is the God particle?"
+    ],
+    "a": "The Higgs boson is an elementary particle associated with the Higgs field, a quantum field that permeates all of space and gives mass to other fundamental particles through the Higgs mechanism. As particles move through the Higgs field, they interact with it and acquire mass — the stronger the interaction, the more massive the particle. The Higgs boson was discovered in 2012 at CERN's Large Hadron Collider (LHC) by the ATLAS and CMS experiments, confirming a prediction made nearly 50 years earlier by Peter Higgs and others. Its discovery completed the Standard Model and earned the 2013 Nobel Prize in Physics."
+  },
+  {
+    "q": [
+      "What is antimatter?",
+      "Explain antimatter.",
+      "What is the difference between matter and antimatter?",
+      "What happens when matter and antimatter meet?",
+      "Where is antimatter found?",
+      "Can antimatter be created?",
+      "Why is there more matter than antimatter in the universe?"
+    ],
+    "a": "Antimatter consists of particles that have the same mass as their corresponding matter counterparts but opposite charge and other quantum numbers. For example, the positron is the antimatter equivalent of the electron, with positive charge instead of negative. When matter and antimatter particles meet, they annihilate in a burst of energy according to E=mc², releasing photons or other particle-antiparticle pairs. Antimatter is produced naturally in some radioactive decays and cosmic ray interactions, and can be created artificially in particle accelerators, but it is extremely rare in the observable universe. The matter-antimatter asymmetry — why the universe is dominated by matter — remains one of the greatest unanswered questions in physics."
+  },
+  {
+    "q": [
+      "What is the Large Hadron Collider?",
+      "How does the LHC work?",
+      "What is the purpose of the Large Hadron Collider?",
+      "Where is the LHC located?",
+      "What has the LHC discovered?",
+      "How fast do particles go in the LHC?",
+      "What is CERN?"
+    ],
+    "a": "The Large Hadron Collider (LHC) at CERN near Geneva, Switzerland, is the world's largest and most powerful particle accelerator, consisting of a 27-kilometer ring of superconducting magnets. It accelerates protons to nearly the speed of light and collides them at energies up to 13.6 TeV, recreating conditions similar to those just after the Big Bang. The LHC's most famous discovery was the Higgs boson in 2012, but it continues to search for new particles, study the properties of known particles, investigate dark matter candidates, and explore the nature of antimatter asymmetry. The enormous amounts of collision data are analyzed by thousands of physicists worldwide using massive computing grids."
+  },
+  {
+    "q": [
+      "What are neutrinos?",
+      "Explain neutrinos.",
+      "What are the types of neutrinos?",
+      "Why are neutrinos important?",
+      "How are neutrinos detected?",
+      "Do neutrinos have mass?",
+      "What is neutrino oscillation?",
+      "Where do neutrinos come from?"
+    ],
+    "a": "Neutrinos are extremely light, nearly massless subatomic particles that interact so weakly with matter that trillions pass through your body every second without any effect. They come in three flavors: electron neutrinos, muon neutrinos, and tau neutrinos, corresponding to their charged lepton counterparts. Neutrinos are produced in vast quantities by nuclear reactions in stars, supernovae, and radioactive decay, as well as in particle accelerators and nuclear reactors. The discovery that neutrinos oscillate between flavors as they travel proved they have a tiny but non-zero mass, which was recognized with the 2015 Nobel Prize and represents the first experimental evidence of physics beyond the Standard Model."
+  }
+]

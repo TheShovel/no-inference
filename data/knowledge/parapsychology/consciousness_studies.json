@@ -1,0 +1,57 @@
+[
+  {
+    "q": [
+      "What is consciousness studies?",
+      "What is the hard problem of consciousness?",
+      "Who coined the hard problem of consciousness?",
+      "What are qualia?",
+      "What are the neural correlates of consciousness?",
+      "What is the difference between the easy and hard problems of consciousness?",
+      "How do scientists study consciousness?",
+      "Why is consciousness difficult to study scientifically?"
+    ],
+    "a": "Consciousness studies is an interdisciplinary field spanning philosophy of mind, neuroscience, psychology, cognitive science, and even quantum physics, investigating the nature of subjective experience (phenomenal consciousness), how physical brain processes give rise to awareness, and why any experience feels like something at all. The hard problem of consciousness, coined by philosopher David Chalmers in 1995, distinguishes the 'easy problems' (explaining cognitive functions like attention, memory, and behavior—which are tractable to neuroscience) from the truly hard problem: why and how physical processes in the brain are accompanied by subjective, qualitative experience, making consciousness what Chalmers calls 'the most perplexing and fundamental mystery about the nature of mind.' Qualia are the individual instances of subjective, qualitative experience—the redness of red, the taste of chocolate, the feeling of pain—that constitute the raw 'what it's like' of consciousness, and the question of how physical brain states produce these irreducible first-person experiences is the central puzzle that no purely third-person scientific account has yet resolved. The neural correlates of consciousness (NCC) represent the current scientific frontier: the minimal set of neural mechanisms jointly sufficient for any one conscious percept, identified through techniques like fMRI, EEG, intracranial recording, and brain stimulation, with leading candidate theories pointing to recurrent thalamocortical loops in the default mode network and frontoparietal association areas."
+  },
+  {
+    "q": [
+      "What is Global Workspace Theory?",
+      "Who proposed Global Workspace Theory?",
+      "What is Integrated Information Theory?",
+      "What is Phi in Integrated Information Theory?",
+      "Who proposed Integrated Information Theory?",
+      "What is higher-order thought theory?",
+      "What is panpsychism?",
+      "What is the difference between dualism, materialism, and idealism?"
+    ],
+    "a": "Global Workspace Theory (GWT), proposed by Bernard Baars in 1988, likens consciousness to a global workspace or 'theater of the mind'—a central arena where specialized unconscious processors compete for access, and when a piece of information gains access to the global workspace, it becomes 'broadcast' to all cognitive systems, enabling flexible behavior, verbal report, and long-term memory, elegantly explaining why only some mental contents become conscious. Integrated Information Theory (IIT), developed by neuroscientist Giulio Tononi, measures consciousness through a mathematical quantity called phi (Φ)—the degree to which a system's information is integrated, irreducible, and causally interconnected—proposing that any system with sufficiently high phi, from a human brain to potentially a computer with the right architecture, has conscious experience, and moreover that consciousness comes in degrees, with more integrated systems having richer experience. Panpsychism is the metaphysical view that consciousness is a fundamental, ubiquitous feature of the universe rather than an emergent property of complex computation or biology, proposing that even elementary particles possess some rudimentary form of subjective experience—this position has gained renewed philosophical interest from figures like David Chalmers, Galen Strawson, and Philip Goff as an alternative to both reductive materialism (which struggles to explain subjective experience) and dualism (which struggles to explain mind-brain interaction). The foundational metaphysical divide is between dualism (mind and matter are separate substances that interact), materialism/physicalism (only matter exists and consciousness is either identical to or emerges from physical processes), and idealism (consciousness is fundamental and the physical world is a manifestation of mind), with most contemporary philosophers of mind favoring some form of non-reductive physicalism or property dualism that acknowledges the reality of subjective experience while maintaining a broadly naturalistic framework."
+  },
+  {
+    "q": [
+      "Do animals have consciousness?",
+      "What is the Cambridge Declaration on Consciousness?",
+      "Are plants conscious?",
+      "What is plant neurobiology?",
+      "What is artificial consciousness?",
+      "Can AI be conscious?",
+      "What is the Turing test for consciousness?",
+      "How do we study animal consciousness?"
+    ],
+    "a": "The question of animal consciousness has been dramatically reframed by the 2012 Cambridge Declaration on Consciousness, signed by leading cognitive neuroscientists, which states that non-human animals including all mammals, birds, and cephalopods possess the neurological substrates sufficient for conscious experience—this has spurred new research into pain perception, self-awareness, and decision-making across the animal kingdom, challenging traditional anthropocentric assumptions about consciousness. The plant consciousness controversy, championed by researchers in the controversial field of plant neurobiology, claims that plants exhibit behaviors analogous to cognition (signaling, memory, problem-solving, communication through chemical and electrical signals) that some interpret as evidence of a primitive form of awareness, though the overwhelming scientific consensus rejects plant consciousness as lacking the necessary neural architecture (no brain, central nervous system, or nociceptors) and considers plant signaling a sophisticated but entirely non-conscious biochemical response system. Artificial consciousness, the hypothesis that machines could possess subjective experience, moves beyond the Turing test's behavioral imitation to ask whether silicon-based information processing could generate phenomenal consciousness—the answer depends largely on which theory of consciousness one adopts, with functionalists being most optimistic, IIT supporters being conditionally optimistic (if machines achieve high phi), and biological naturalists (like John Searle) arguing that consciousness requires specific biological substrates like carbon-based neurons."
+  },
+  {
+    "q": [
+      "What does EEG show about meditators' brains?",
+      "What happens to the brain during meditation?",
+      "What is the default mode network?",
+      "How do psychedelics affect consciousness?",
+      "What is the psilocybin research at Johns Hopkins?",
+      "What are near-death experiences?",
+      "What is the AWARE study?",
+      "What did Sam Parnia's research show about NDEs?",
+      "What are out-of-body experiences?",
+      "What is terminal lucidity?",
+      "What is déjà vu?"
+    ],
+    "a": "EEG studies of long-term meditators show increased gamma-band synchronization, enhanced alpha rhythms, and structural changes (increased cortical thickness, gray matter density in prefrontal cortex and hippocampus) associated with improved attention regulation, emotional stability, and reduced default mode network activity, suggesting that meditation systematically alters the neural correlates of consciousness through sustained neuroplasticity. Psychedelic research—particularly the landmark Johns Hopkins psilocybin studies led by Roland Griffiths—has demonstrated that high-dose psilocybin sessions produce profound mystical-type experiences rated by participants among the most personally meaningful and spiritually significant events of their lives, with fMRI showing dramatic desynchronization of the default mode network and increased global brain connectivity that correlates with the intensity of the mystical experience and lasting improvements in well-being and personality openness. Near-death experience (NDE) research, including the AWARE studies led by Sam Parnia, has systematically investigated cardiac arrest survivors who report veridical perceptions from periods of flat EEG and no cardiac output—some cases report detailed observations of resuscitation events from an elevated perspective that appear to correspond to real events, generating significant debate about the relationship between brain activity and consciousness during clinical death. Terminal lucidity, the unexpected return of mental clarity and memory in dementia patients or comatose individuals shortly before death, presents a profound challenge for conventional neurocognitive models of consciousness, as it occurs in brains severely compromised by Alzheimer's, tumors, or stroke, with no adequate neurobiological explanation for the temporary restoration of apparently normal cognitive function."
+  }
+]

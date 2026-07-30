@@ -1,0 +1,57 @@
+[
+  {
+    "q": [
+      "How are stamps designed?",
+      "Who designs postage stamps?",
+      "What is the stamp design process?",
+      "What are the elements of a stamp design?",
+      "What is the vignette on a stamp?",
+      "What is the frame on a stamp?",
+      "How are stamp subjects chosen?",
+      "What is stamp typography?"
+    ],
+    "a": "The stamp design process typically begins with a national postal authority selecting a theme or subject (often through committees, public suggestions, or commemorative calendars), then commissioning a professional artist or designer to create original artwork that conveys the subject effectively within the tiny canvas of a stamp—designers often submit multiple proposals, and the final design is approved by postal officials, subject matter experts, and sometimes government representatives for commemorative issues. The key design elements of a stamp are the vignette (the central pictorial design—a portrait, landscape, or subject illustration), the frame (the decorative border that surrounds the vignette and provides structural context), the denomination (the postal value, which must be clearly legible for postal processing and customer recognition), the country name (usually in the national language or Latin script for international recognition), and typography (the lettering style used for inscriptions, which must be legible at very small sizes and compatible with the printing method). Modern stamp design is increasingly sophisticated, incorporating microtext (security text readable only under magnification), latent images (hidden images that appear when the stamp is tilted), color-shifting ink, holographic elements, and computer-generated artwork that integrates photography, typography, and illustration into seamless composite designs optimized for digital printing processes."
+  },
+  {
+    "q": [
+      "What is engraving printing for stamps?",
+      "What is intaglio printing?",
+      "What is lithographic stamp printing?",
+      "What is photogravure in stamp printing?",
+      "What is rotogravure?",
+      "What is silkscreen stamp printing?",
+      "What is digital stamp printing?",
+      "What is the difference between engraving and lithography on stamps?"
+    ],
+    "a": "Engraving or intaglio printing is the oldest and most prestigious stamp printing method, where the design is hand-engraved or machine-engraved into a metal plate, ink is forced into the recessed lines under extreme pressure, and the stamp paper is pressed into the plate to create a raised, tactile impression—these stamps are exceptionally difficult to counterfeit and prized by collectors for their crisp detail, rich color saturation, and distinctive embossed feel. Lithography (planographic printing) uses a flat plate chemically treated so that the design areas attract ink while non-design areas repel it, enabling multicolor designs with excellent detail at lower cost than intaglio—offset lithography is the most common method for modern stamps, printing multiple colors in precise registration on high-speed presses. Photogravure and rotogravure use acid-etched cells of varying depth on a copper cylinder, producing continuous-tone images that are ideal for photographic reproductions and painterly effects, while silkscreen printing applies ink through a mesh stencil for bold, opaque colors on dark or specialty papers, and digital printing (including inkjet and electrophotographic printing) offers short-run flexibility and variable data capabilities for personalized stamps, custom issues, and test printings that would be uneconomical with traditional plate-based methods."
+  },
+  {
+    "q": [
+      "What types of paper are used for stamps?",
+      "What is watermarked paper in stamps?",
+      "What is phosphor paper on stamps?",
+      "What is self-adhesive stamp paper?",
+      "What are stamp perforations?",
+      "How are stamps perforated?",
+      "What are the perforation gauge measurements?",
+      "What is stamp gum?",
+      "What are the different types of stamp gum?"
+    ],
+    "a": "Stamp paper is specially manufactured for security, durability, and print quality, with types including wove paper (uniform texture, most common), laid paper (with visible translucent lines), coated paper (with a surface treatment for sharper printing), phosphor paper (treated with phosphorescent chemicals for automatic mail sorting—phosphor bands on the stamp surface are detected by UV sensors to cancel stamps during processing), fluorescent paper (glows under UV light as a security marker), self-adhesive paper (with peelable backing increasingly used for modern definitive and commemorative issues), and security paper containing watermarks, chemical sensitizers, or embedded fibers to prevent reuse. Stamp perforations are the rows of small holes that separate stamps in a sheet, created by line perforation (single row of pins applied one row at a time, resulting in irregular intersections), comb perforation (multiple rows applied simultaneously, giving more uniform corners), or harrow perforation (the entire sheet perforated at once, producing consistent results)—perforations are measured by the number of holes per 2 centimeters (perf gauge), and the gauge is a critical identification feature for distinguishing stamps of identical design but different printings or values. Stamp gum—the adhesive applied to the back of traditional lickable stamps—has evolved from natural dextrin gum (brownish, sticky, and prone to curling) to synthetic PVA (polyvinyl alcohol) gum (white, smooth, and more stable), self-adhesive backing (requiring no moisture but posing long-term conservation challenges due to adhesive breakdown), and specialized gum patterns like gum skips (areas deliberately left ungummed to prevent curling) and breakaway gum that forms ridges to prevent over-application, with older gums posing significant preservation challenges for collectors who must carefully manage humidity and hinging."
+  },
+  {
+    "q": [
+      "What are the most famous stamp printing errors?",
+      "What is the Inverted Jenny?",
+      "What are inverts in stamp printing?",
+      "What are color shift errors?",
+      "What are imperforate errors?",
+      "What are souvenir sheets in stamp collecting?",
+      "What are miniature sheets?",
+      "What are stamp series?",
+      "What are stamp booklets?",
+      "What is printer's waste in stamp production?"
+    ],
+    "a": "Stamp printing errors are among the most dramatic and valuable philatelic items, with the most famous being the 1918 US 24-cent Inverted Jenny (the biplane center design accidentally printed upside-down relative to the frame due to a sheet fed incorrectly through the press), the 1855 Sweden 3-skilling Banco color error (printed on yellow paper instead of olive-green—the only surviving unused copy is one of the world's most valuable stamps), and the 1841 UK Penny Red plate number errors where the wrong plate number was applied to the stamp design. Major error categories include inverts (central design inverted relative to frame), missing colors or wrong colors (one or more colors omitted from a multicolor design, such as the 1917 US 5-cent error missing the blue color resulting in a rare carmine stamp), color shifts (design elements printed out of alignment, creating ghostly off-register images), perforation errors (imperforate stamps—stamps without perforations that should have them—guide line pairs, and misperforations where perforations cut through the design), paper errors (stamps printed on wrong paper type), and plate varieties (differences between apparently identical stamps from different printing plates). Souvenir sheets and miniature sheets are specially issued sheets containing one or more stamps, often with decorative borders and explanatory text, issued for commemorative purposes at stamp exhibitions or for special events—they are distinct from the regular stamp issue in format and are collected as a distinct philatelic category, with some countries producing excessive souvenir sheets primarily for the collector market rather than postal use."
+  }
+]

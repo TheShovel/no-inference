@@ -1,0 +1,42 @@
+[
+  {
+    "q": [
+      "What are the major climate zones of the world?",
+      "How are climate zones classified?",
+      "What is the Köppen climate classification system?",
+      "What are tropical, arid, temperate, continental, and polar climates?",
+      "How do climate zones vary across latitudes?"
+    ],
+    "a": "Climate zones are broad categories defined by temperature, precipitation, and seasonal patterns. The Köppen classification divides climates into five main groups: tropical (hot year-round, heavy rainfall), arid (dry with low precipitation), temperate (moderate temperatures with distinct seasons), continental (cold winters, warm summers, found in interior regions), and polar (very cold year-round, with ice and tundra). These zones correlate strongly with latitude, but are modified by altitude, ocean currents, and continental position."
+  },
+  {
+    "q": [
+      "What is the jet stream and how does it affect weather?",
+      "What are the polar jet stream and subtropical jet stream?",
+      "How does the jet stream influence storm tracks?",
+      "What causes the jet stream to meander?",
+      "How does a strong versus weak jet stream affect weather?"
+    ],
+    "a": "The jet stream is a narrow band of fast-moving air in the upper atmosphere (about 8-12 km high), driven by temperature differences between polar and tropical air masses. The polar jet stream separates cold polar air from warmer mid-latitude air, and its position and strength determine storm tracks and weather patterns. Rossby waves (meanders) in the jet stream can bring cold Arctic air southward or warm tropical air northward, causing extreme weather events such as cold snaps, heat waves, and prolonged wet or dry periods."
+  },
+  {
+    "q": [
+      "How do ocean currents influence climate?",
+      "What is the Gulf Stream and how does it affect climate?",
+      "How do cold and warm ocean currents differ in their climate effects?",
+      "What is the global ocean conveyor belt?",
+      "How does El Niño affect ocean currents and climate?"
+    ],
+    "a": "Ocean currents act as a planetary heat transport system, moving warm water from the equator toward the poles and cold water from the poles toward the equator. The Gulf Stream carries warm tropical water to the North Atlantic, giving Western Europe a milder climate than expected at its latitude. The global thermohaline circulation (ocean conveyor belt) drives deep-ocean currents based on temperature and salinity differences. Changes in ocean currents, such as during El Niño events, can disrupt weather patterns worldwide through altered heat and moisture distribution."
+  },
+  {
+    "q": [
+      "What are Milankovitch cycles and how do they affect ice ages?",
+      "What causes ice ages to occur?",
+      "How do orbital changes affect Earth's climate?",
+      "What is the role of eccentricity, obliquity, and precession in climate?",
+      "How do Milankovitch cycles explain glacial and interglacial periods?"
+    ],
+    "a": "Milankovitch cycles are long-term variations in Earth's orbit and axial orientation that affect the distribution and intensity of solar radiation reaching the planet. They include eccentricity (shape of orbit, 100,000-year cycle), obliquity (axial tilt, 41,000-year cycle), and precession (axial wobble, 26,000-year cycle). These cycles trigger the timing of glacial (ice age) and interglacial periods, though the actual magnitude of cooling depends on feedback mechanisms involving greenhouse gases, ice albedo, and ocean circulation."
+  }
+]

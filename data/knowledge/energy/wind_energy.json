@@ -1,0 +1,57 @@
+[
+  {
+    "q": [
+      "How do wind turbines work?",
+      "What is the difference between horizontal and vertical axis wind turbines?",
+      "What are the main types of wind turbines?",
+      "How does a horizontal axis wind turbine work?",
+      "What is a vertical axis wind turbine?",
+      "wind turbine technology",
+      "horizontal vs vertical axis wind turbine",
+      "how wind turbines generate electricity"
+    ],
+    "a": "Horizontal axis wind turbines (HAWTs), the most common design, have rotor blades mounted on a horizontal shaft atop a tower, with yaw mechanisms that turn the nacelle to face the wind, and operate at variable speeds to optimize energy capture across wind speeds from about 3 m/s (cut-in) to 25 m/s (cut-out). Vertical axis wind turbines (VAWTs) have blades that rotate around a vertical axis, accepting wind from any direction without yaw mechanisms, making them suitable for turbulent urban environments, though they generally have lower efficiency and have not achieved the commercial scale of HAWTs. Modern wind turbines use pitch control systems that rotate the blades to adjust aerodynamic efficiency and prevent overspeed, gearboxes (or direct-drive permanent magnet generators) that convert rotor rotation to electrical frequency, and power electronics that condition the output for grid compatibility."
+  },
+  {
+    "q": [
+      "What is the difference between onshore and offshore wind?",
+      "How is wind resource assessed?",
+      "How are wind farms developed?",
+      "What is wind resource assessment?",
+      "How do developers plan wind farms?",
+      "onshore vs offshore wind",
+      "wind resource assessment",
+      "wind farm development process"
+    ],
+    "a": "Onshore wind is the most mature renewable energy technology with over 700 GW installed globally, offering LCOE as low as $20-40/MWh, while offshore wind benefits from stronger, more consistent winds and allows larger turbines (12-15 MW vs 3-5 MW onshore) but requires significantly higher capital investment for foundations, subsea cables, and marine logistics. Wind resource assessment uses anemometer masts, SODAR/LIDAR remote sensing, and meteorological modeling to measure wind speed, direction, turbulence, and shear at potential turbine hub heights, with at least one full year of data required for bankable energy yield estimates. Wind farm development involves site selection (wind resource, land use, grid proximity, environmental constraints), securing permits and environmental impact assessments, turbine procurement and micro-siting to minimize wake losses, construction of access roads and foundations, grid interconnection, and ongoing operations and maintenance."
+  },
+  {
+    "q": [
+      "What are the main components of a wind turbine?",
+      "What are wind turbine blades made of?",
+      "What is inside a wind turbine nacelle?",
+      "What are the different types of offshore wind foundations?",
+      "What is a monopile foundation?",
+      "What is a floating offshore wind foundation?",
+      "wind turbine components",
+      "offshore wind foundations",
+      "wind turbine blades and tower"
+    ],
+    "a": "The main components of a wind turbine include the rotor blades (typically 45-100 meters long, made of fiberglass-reinforced epoxy or carbon fiber composites), the hub connecting blades to the main shaft, the nacelle housing the gearbox (or direct-drive generator), generator, power converter, yaw system, and control electronics, and the tower (steel or concrete, 80-160 meters tall). Offshore wind foundations vary by water depth: monopiles (large steel tubes driven into the seabed) are used in shallow waters up to 30m, jacket foundations (lattice steel structures anchored with piles) suit depths of 20-60m, and floating platforms (semi-submersible, spar buoy, or tension-leg designs) moored to the seabed are required for depths exceeding 60m. Floating offshore wind, still in early commercial stages, opens vast deep-water resources — particularly off the US West Coast, Japan, and the Mediterranean — with several demonstration projects proving the technology before expected large-scale deployment in the 2030s."
+  },
+  {
+    "q": [
+      "What is the cost of wind energy?",
+      "How is wind power integrated into the grid?",
+      "What are the environmental impacts of wind turbines?",
+      "How do wind turbines affect birds and bats?",
+      "What is community wind energy?",
+      "What is wind energy forecasting?",
+      "What is repowering in wind energy?",
+      "wind energy economics",
+      "environmental impacts of wind power",
+      "wind energy grid integration"
+    ],
+    "a": "Wind energy economics have improved dramatically, with onshore wind LCOE of $20-50/MWh and offshore wind declining from $150+ to $40-70/MWh through larger turbines, serial production, and reduced financing costs, though grid integration costs for transmission expansion and balancing services add 10-30% to total system costs. Grid integration of wind power requires forecasting systems that predict wind farm output hours to days ahead using weather models and machine learning, enabling grid operators to schedule complementary generation and storage to maintain stability as wind penetration increases. Environmental impacts include bird and bat collisions (estimated at 0.01-1.4 birds per turbine per year for modern turbines, far less than buildings, cats, and vehicles), noise concerns (modern turbines at 500m produce 35-45 dB, comparable to a quiet rural area), visual impacts that drive community opposition, and marine ecosystem effects during offshore construction. Community wind projects, owned by local cooperatives or municipalities, retain economic benefits locally and often face less opposition than developer-led projects, while repowering — replacing older, smaller turbines with fewer, larger, more efficient ones — can triple energy output while reducing turbine numbers."
+  }
+]

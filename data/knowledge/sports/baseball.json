@@ -1,0 +1,47 @@
+[
+  {
+    "q": [
+      "What are the basic rules of baseball?",
+      "How does baseball work?",
+      "What are the positions in baseball?",
+      "How is a baseball game scored?",
+      "What is an inning in baseball?",
+      "Explain the basics of baseball"
+    ],
+    "a": "Baseball is played between two teams of nine players on a diamond-shaped field, with the goal of scoring more runs than the opponent over nine innings (each inning split into a top and bottom half where each team bats once). The pitcher throws the ball toward the catcher, and the batter attempts to hit it into fair territory and run counterclockwise around four bases — first, second, third, and home plate — to score a run. Batters can be retired by strikeouts (three strikes), flyouts (ball caught in the air), or groundouts (ball fielded and thrown to a base before the runner arrives), and each team gets three outs per half-inning before switching between offense and defense."
+  },
+  {
+    "q": [
+      "What is Major League Baseball?",
+      "What are the MLB divisions?",
+      "What is the World Series?",
+      "How does the MLB postseason work?",
+      "What is the history of the World Series?",
+      "Which teams have won the most World Series?"
+    ],
+    "a": "Major League Baseball (MLB) is the oldest professional sports league in the United States, consisting of 30 teams divided into two leagues (American League and National League), each with three divisions (East, Central, West). The World Series is the championship series played between the winners of the AL and NL playoffs each October, a best-of-seven format that began in 1903. The New York Yankees hold the record for the most World Series titles with 27 championships, followed by the St. Louis Cardinals (11) and the Boston Red Sox (9), with the Yankees' dynasty teams of the 1920s-1950s and late 1990s representing some of the greatest sustained success in all of professional sports."
+  },
+  {
+    "q": [
+      "What are the most important baseball batting stats?",
+      "What is a batting average?",
+      "What is an ERA in baseball?",
+      "What are the key pitching statistics?",
+      "What is OPS in baseball?",
+      "How is WAR calculated in baseball?"
+    ],
+    "a": "Key batting statistics include batting average (AVG, hits divided by at-bats), on-base percentage (OBP, how often a batter reaches base), slugging percentage (SLG, total bases per at-bat), and OPS (on-base plus slugging, which combines OBP and SLG into a single measure of offensive production). Key pitching statistics include earned run average (ERA, runs allowed per nine innings), walks plus hits per inning pitched (WHIP, a measure of baserunners allowed), strikeout-to-walk ratio (K/BB), and wins above replacement (WAR), a comprehensive sabermetric stat that estimates a player's total contributions in runs relative to a replacement-level player. Sabermetrics, popularized by Michael Lewis's Moneyball, has revolutionized baseball analysis by emphasizing undervalued statistics like on-base percentage and defensive range over traditional stats like batting average and RBIs."
+  },
+  {
+    "q": [
+      "Who are the greatest baseball players of all time?",
+      "What is Babe Ruth famous for?",
+      "Who is Hank Aaron?",
+      "What did Willie Mays achieve?",
+      "What is Barry Bonds' home run record?",
+      "Who is Derek Jeter?",
+      "What was the Negro Leagues?"
+    ],
+    "a": "Babe Ruth, widely considered the greatest baseball player ever, transformed the game with his unprecedented power hitting, hitting 714 home runs (a record that stood for 39 years) and winning seven World Series with the Red Sox and Yankees. Hank Aaron broke Ruth's record with 755 career home runs while maintaining remarkable consistency over 23 seasons, and Willie Mays excelled in all facets of the game — hitting, fielding, running, and throwing — epitomized by 'The Catch' in the 1954 World Series. Barry Bonds holds MLB's single-season (73) and career (762) home run records, though his career is shadowed by performance-enhancing drug allegations. Derek Jeter, the iconic Yankees shortstop, amassed 3,465 hits and five World Series titles with a reputation for postseason clutch performance. The Negro Leagues, established during segregation, showcased legendary talents like Satchel Paige and Josh Gibson, and MLB officially recognized them as major leagues in 2020."
+  }
+]

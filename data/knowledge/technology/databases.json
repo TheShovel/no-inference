@@ -1,0 +1,112 @@
+[
+  {
+    "q": [
+      "What is a relational database?",
+      "Explain relational databases and how they work.",
+      "What are tables, rows, and columns in a database?",
+      "What is a primary key in a database?",
+      "What is a foreign key?",
+      "What are relationships in relational databases?"
+    ],
+    "a": "A relational database organizes data into tables (relations), each consisting of rows (records) and columns (attributes). Each table represents an entity, and relationships between tables are established through keys. A primary key uniquely identifies each row in a table, while foreign keys reference primary keys in other tables to create associations. Relational databases use Structured Query Language (SQL) for defining, querying, and manipulating data. They enforce ACID properties (Atomicity, Consistency, Isolation, Durability) to ensure reliable transactions. Popular relational database systems include PostgreSQL, MySQL, Microsoft SQL Server, and SQLite."
+  },
+  {
+    "q": [
+      "What is SQL?",
+      "Explain Structured Query Language.",
+      "What are the basic SQL commands?",
+      "What is the difference between SELECT, INSERT, UPDATE, and DELETE?",
+      "What is a JOIN in SQL?",
+      "What is the difference between INNER JOIN and LEFT JOIN?"
+    ],
+    "a": "SQL (Structured Query Language) is the standard language for managing and querying relational databases. DML statements include SELECT (retrieve data), INSERT (add new rows), UPDATE (modify existing rows), and DELETE (remove rows). DDL statements include CREATE, ALTER, and DROP for managing database structure. JOINs combine rows from two or more tables based on related columns: INNER JOIN returns only matching rows, LEFT JOIN returns all rows from the left table with matches from the right (NULL where no match), and FULL OUTER JOIN returns all rows from both tables. SELECT queries can also use WHERE (filtering), GROUP BY (aggregation), HAVING (filter groups), and ORDER BY (sorting)."
+  },
+  {
+    "q": [
+      "What is a NoSQL database?",
+      "Explain NoSQL and its types.",
+      "What is the difference between SQL and NoSQL databases?",
+      "When would you use NoSQL over SQL?",
+      "What are document, key-value, column-family, and graph databases?",
+      "What are the advantages and disadvantages of NoSQL?"
+    ],
+    "a": "NoSQL databases are non-relational data stores designed for flexibility, scalability, and handling unstructured or semi-structured data. Main types include document stores (MongoDB — JSON-like documents), key-value stores (Redis — simple key-value pairs), column-family stores (Cassandra — wide columns optimized for analytics), and graph databases (Neo4j — nodes and edges for connected data). NoSQL databases typically follow BASE (Basically Available, Soft state, Eventual consistency) rather than ACID, trading strict consistency for availability and partition tolerance. They excel at horizontal scaling, handling large volumes of data, and flexible schemas, while relational databases are better for complex queries and strong consistency requirements."
+  },
+  {
+    "q": [
+      "What is database indexing?",
+      "How do database indexes work?",
+      "What are the different types of indexes?",
+      "Why do indexes improve query performance?",
+      "What is the trade-off of using indexes?",
+      "What is a B-tree index?"
+    ],
+    "a": "A database index is a data structure (like a B-tree or hash table) that improves the speed of data retrieval operations on a table at the cost of additional storage and slower writes. Indexes work similarly to a book's index — they provide a quick lookup mechanism that avoids full table scans. Common types include primary indexes (automatically created on primary keys), unique indexes (enforce uniqueness), composite indexes (on multiple columns), and full-text indexes (for text search). B-tree indexes are the most common, enabling efficient range queries and sorted access. Proper indexing is critical for database performance but over-indexing can degrade INSERT/UPDATE/DELETE performance."
+  },
+  {
+    "q": [
+      "What is normalization in databases?",
+      "Explain database normalization forms.",
+      "What are 1NF, 2NF, and 3NF?",
+      "Why is normalization important?",
+      "What is denormalization and when would you use it?",
+      "What is the difference between normalization and denormalization?"
+    ],
+    "a": "Normalization is the process of organizing database tables to reduce redundancy and improve data integrity. First Normal Form (1NF) requires atomic columns and unique rows. Second Normal Form (2NF) removes partial dependencies (non-key columns depending on only part of a composite key). Third Normal Form (3NF) removes transitive dependencies (non-key columns depending on other non-key columns). Higher forms (BCNF, 4NF, 5NF) exist but are less commonly applied. Normalization typically increases the number of tables and JOIN operations. Denormalization — intentionally adding redundancy — is used to optimize read performance in high-throughput systems by reducing JOINs."
+  },
+  {
+    "q": [
+      "What is the difference between ACID and BASE?",
+      "Explain ACID properties in databases.",
+      "What does ACID stand for?",
+      "What does BASE stand for?",
+      "When would you choose ACID over BASE?",
+      "What is eventual consistency?"
+    ],
+    "a": "ACID and BASE represent two approaches to database transactions. ACID (Atomicity, Consistency, Isolation, Durability) guarantees that transactions are processed reliably: Atomicity means all-or-nothing execution; Consistency ensures valid state transitions; Isolation prevents concurrent transactions from interfering; Durability makes committed changes permanent. ACID is preferred for financial systems and applications requiring strict data integrity. BASE (Basically Available, Soft state, Eventual consistency) is a looser model used in distributed systems: availability is prioritized, the system state may change over time without input, and consistency is achieved eventually once updates propagate. BASE systems like Cassandra and DynamoDB scale horizontally better than ACID systems."
+  },
+  {
+    "q": [
+      "What are transactions in databases?",
+      "Explain database transactions.",
+      "What is a transaction in SQL?",
+      "What is COMMIT and ROLLBACK?",
+      "What is a deadlock in databases?",
+      "What are transaction isolation levels?"
+    ],
+    "a": "A database transaction is a logical unit of work containing one or more SQL statements that should be executed as an atomic unit. Transactions begin with BEGIN or START TRANSACTION and end with COMMIT (making changes permanent) or ROLLBACK (undoing all changes). Isolation levels control how transactions interact: READ UNCOMMITTED (dirty reads possible), READ COMMITTED (prevents dirty reads), REPEATABLE READ (prevents non-repeatable reads), and SERIALIZABLE (highest isolation, prevents phantom reads). Deadlocks occur when two transactions each hold locks that the other needs — database systems detect and resolve them by rolling back one transaction."
+  },
+  {
+    "q": [
+      "What are the differences between PostgreSQL, MySQL, MongoDB, and Redis?",
+      "Compare popular database systems.",
+      "When should I use PostgreSQL vs MySQL?",
+      "What is MongoDB best used for?",
+      "What is Redis and how is it different from other databases?",
+      "Which database should I choose for my application?"
+    ],
+    "a": "PostgreSQL is a powerful open-source relational database with advanced features like JSON support, full-text search, custom extensions, and strong ACID compliance — ideal for complex applications and data warehousing. MySQL is a widely used relational database known for simplicity, speed, and reliability, commonly paired with PHP and LAMP stacks. MongoDB is a NoSQL document database that stores flexible JSON-like documents, suited for rapid prototyping, unstructured data, and horizontal scaling. Redis is an in-memory key-value store used for caching, session management, real-time analytics, and message brokering — extremely fast but with data persistence limitations. The choice depends on data structure, consistency needs, scalability requirements, and query patterns."
+  },
+  {
+    "q": [
+      "What is database design?",
+      "What are best practices for designing a database?",
+      "What is an ER diagram?",
+      "What is cardinality in database design?",
+      "What is data modeling?",
+      "How do you design a normalized database schema?"
+    ],
+    "a": "Database design is the process of structuring data to meet application requirements efficiently. It begins with requirements analysis and conceptual modeling using Entity-Relationship (ER) diagrams, which define entities (tables), attributes (columns), and relationships. Cardinality defines relationship types: one-to-one (1:1), one-to-many (1:N), and many-to-many (M:N, typically requiring a junction table). Best practices include normalization to reduce redundancy, choosing appropriate primary keys (preferably surrogate keys), using foreign keys for referential integrity, defining appropriate indexes, and considering query patterns. Good design balances normalization with performance needs, enforces data integrity, and accommodates future growth."
+  },
+  {
+    "q": [
+      "What is data warehousing?",
+      "Explain data warehousing and how it differs from a regular database.",
+      "What is an OLAP vs OLTP?",
+      "What is a star schema?",
+      "What is ETL?",
+      "What is a data warehouse used for?"
+    ],
+    "a": "A data warehouse is a large, centralized repository designed for storing, analyzing, and reporting on historical data from multiple sources. Unlike OLTP (Online Transaction Processing) databases optimized for frequent reads/writes, data warehouses are optimized for OLAP (Online Analytical Processing) — complex queries and aggregations over large datasets. They typically use a star schema (a central fact table with dimension tables) or snowflake schema for efficient querying. ETL (Extract, Transform, Load) processes extract data from source systems, transform it (cleaning, aggregating, formatting), and load it into the warehouse. Popular data warehouse solutions include Snowflake, Amazon Redshift, Google BigQuery, and traditional systems like Teradata."
+  }
+]

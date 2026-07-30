@@ -1,0 +1,68 @@
+[
+  {
+    "q": [
+      "What is Christianity and what do Christians believe?",
+      "What are the core beliefs of Christianity?",
+      "How many Christians are there worldwide?",
+      "What are the major branches of Christianity?",
+      "What is the Bible?",
+      "Who is Jesus Christ in Christianity?"
+    ],
+    "a": "Christianity is the world's largest religion with approximately 2.4 billion adherents, centered on the life and teachings of Jesus Christ as described in the Bible. Core beliefs include the Trinity (God as Father, Son, and Holy Spirit), Jesus's crucifixion and resurrection for humanity's salvation, and salvation through faith. Christianity branched into three major traditions—Roman Catholicism, Eastern Orthodoxy, and Protestantism—each with distinct practices, governance, and theological emphases yet united by their foundation in Christ."
+  },
+  {
+    "q": [
+      "What is Islam and what do Muslims believe?",
+      "What are the Five Pillars of Islam?",
+      "How many Muslims are there in the world?",
+      "What is the Quran?",
+      "What is the Sunni-Shia split in Islam?",
+      "Who was the Prophet Muhammad?"
+    ],
+    "a": "Islam is the world's second-largest religion with roughly 1.9 billion adherents, founded on the teachings of the Prophet Muhammad in 7th-century Arabia and the divine revelations compiled in the Quran. The Five Pillars—Shahada (faith declaration), Salat (prayer), Zakat (charity), Sawm (fasting during Ramadan), and Hajj (pilgrimage to Mecca)—form the framework of Muslim practice. The Sunni-Shia division, originating from a dispute over Muhammad's successor, represents the major sectarian split, with Sunnis comprising about 85% of Muslims."
+  },
+  {
+    "q": [
+      "What is Hinduism?",
+      "What are the core beliefs of Hinduism?",
+      "What are the major Hindu deities?",
+      "What is karma and reincarnation in Hinduism?",
+      "How many Hindus are there worldwide?",
+      "What are the Vedas in Hinduism?"
+    ],
+    "a": "Hinduism is the world's oldest major religion, with approximately 1.2 billion adherents, originating in the Indian subcontinent without a single founder or central text. Core concepts include dharma (duty/righteousness), karma (cause and effect), samsara (cycle of rebirth), and moksha (liberation from the cycle), with major deities including Brahma (creator), Vishnu (preserver), Shiva (destroyer), and the Goddess Devi. Hindus revere numerous sacred texts, principally the Vedas, Upanishads, Bhagavad Gita, and Ramayana, while worship practices range from elaborate temple rituals to personal meditation."
+  },
+  {
+    "q": [
+      "What is Buddhism and what do Buddhists believe?",
+      "Who was the Buddha?",
+      "What are the Four Noble Truths?",
+      "What is the Eightfold Path?",
+      "What is the difference between Theravada and Mahayana Buddhism?",
+      "What is nirvana in Buddhism?"
+    ],
+    "a": "Buddhism, founded by Siddhartha Gautama (the Buddha) in 5th-century BCE India, centers on the path to enlightenment through understanding suffering and its cessation. The Four Noble Truths diagnose that suffering exists, arises from craving, can end, and ceases through the Eightfold Path—a framework of ethical conduct, mental discipline, and wisdom. The tradition split into Theravada (Way of the Elders), emphasizing monastic practice and individual enlightenment, and Mahayana (Great Vehicle), which emphasizes compassion and the Bodhisattva ideal of postponing nirvana to help all beings."
+  },
+  {
+    "q": [
+      "What is Judaism?",
+      "What do Jewish people believe?",
+      "What is the Torah?",
+      "How many Jewish people are there in the world?",
+      "What are the major branches of Judaism?",
+      "What are Jewish holidays and traditions?"
+    ],
+    "a": "Judaism is the oldest of the three Abrahamic religions, with approximately 15 million adherents, originating with the covenant between God and Abraham around 2000 BCE. Its foundational text is the Torah (the first five books of the Hebrew Bible), complemented by the Talmud's rabbinic interpretations that guide daily practice and law. Major branches include Orthodox Judaism (traditional observance), Conservative Judaism (moderate adaptation), and Reform Judaism (liberal interpretation), with key holidays like Yom Kippur (Day of Atonement), Passover (commemorating the exodus from Egypt), and Hanukkah (rededication of the Temple)."
+  },
+  {
+    "q": [
+      "What is Sikhism?",
+      "What do Sikhs believe?",
+      "Who was Guru Nanak?",
+      "What is the Guru Granth Sahib?",
+      "How many Sikhs are there in the world?",
+      "What are the Five Ks of Sikhism?"
+    ],
+    "a": "Sikhism, founded by Guru Nanak in 15th-century Punjab (modern-day India/Pakistan), is a monotheistic religion with approximately 25-30 million followers that emphasizes devotion to one God, equality of all humans, and community service. Its scripture, the Guru Granth Sahib, is considered the living Guru—a collection of hymns and teachings from Sikh gurus and other saints that guides worship and daily life. Sikhs practice the Five Ks (Kesh, Kara, Kanga, Kachera, Kirpan) as articles of faith symbolizing devotion and identity, and gather at gurdwaras for communal worship and langar (free kitchen serving all visitors regardless of background)."
+  }
+]

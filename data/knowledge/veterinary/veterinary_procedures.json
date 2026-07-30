@@ -1,0 +1,35 @@
+[
+  {
+    "q": [
+      "What happens during a veterinary physical examination?",
+      "What does a vet check during a wellness exam?",
+      "What is included in a routine veterinary checkup?",
+      "How often should pets have a veterinary exam?",
+      "What is a physical exam in veterinary medicine?",
+      "veterinary physical examination"
+    ],
+    "a": "A veterinary physical examination is a systematic head-to-tail assessment of an animal's health, beginning with observation of demeanor, body condition, and gait, followed by hands-on evaluation of temperature, pulse, respiration, mucous membrane color, capillary refill time, and hydration status. The veterinarian then systematically examines the eyes, ears, mouth, teeth, skin, coat, lymph nodes, heart, lungs, abdomen, musculoskeletal system, and urogenital area. Wellness exams are recommended at least annually for healthy adult pets and semi-annually for senior pets or those with chronic conditions, as they enable early detection of disease before clinical signs are apparent."
+  },
+  {
+    "q": [
+      "What diagnostic imaging is used in veterinary medicine?",
+      "What is veterinary radiology?",
+      "Do vets use ultrasound and CT scans?",
+      "What is MRI used for in animals?",
+      "What is the difference between X-ray and ultrasound in veterinary care?",
+      "veterinary diagnostic imaging X-ray ultrasound CT MRI"
+    ],
+    "a": "Veterinary diagnostic imaging includes radiography (X-rays) for evaluating bones, chest, and abdomen; ultrasonography for examining soft tissues, abdominal organs, heart (echocardiography), and pregnancy; computed tomography (CT) for detailed 3D imaging of complex anatomy such as the skull, spine, and thorax; and magnetic resonance imaging (MRI) for superior soft tissue contrast, particularly for brain and spinal cord conditions. Advanced imaging (CT and MRI) typically requires general anesthesia to ensure the animal remains perfectly still during image acquisition. These modalities are often used in combination to achieve a definitive diagnosis for conditions not apparent on routine examination or radiographs."
+  },
+  {
+    "q": [
+      "What types of surgery do veterinarians perform?",
+      "What is soft tissue surgery in veterinary medicine?",
+      "What is orthopedic surgery in animals?",
+      "What are common veterinary surgical procedures?",
+      "How is anesthesia managed in veterinary surgery?",
+      "veterinary surgery soft tissue orthopedic anesthesia"
+    ],
+    "a": "Veterinary surgery encompasses soft tissue procedures (such as spay/neuter, mass removals, cesarean sections, gastrointestinal surgery, and bladder stone removal) and orthopedic procedures (including fracture repair, cruciate ligament stabilization, hip replacement, and patellar luxation correction). Anesthesia in veterinary patients requires careful preoperative assessment, species-appropriate drug protocols, and continuous intraoperative monitoring of heart rate, blood pressure, oxygen saturation, and body temperature. Modern veterinary anesthesia incorporates multimodal analgesia (using multiple pain medications with different mechanisms) to optimize pain control while minimizing side effects and anesthetic risk."
+  }
+]

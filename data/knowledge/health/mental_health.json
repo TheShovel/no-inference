@@ -1,0 +1,74 @@
+[
+  {
+    "q": [
+      "What are common mental health conditions?",
+      "What is anxiety disorder?",
+      "What is depression?",
+      "What is the difference between sadness and depression?",
+      "What is PTSD?",
+      "What is OCD?",
+      "What is bipolar disorder?",
+      "What are the symptoms of common mental illnesses?"
+    ],
+    "a": "Mental health conditions encompass a wide range of disorders that affect mood, thinking, and behavior. Anxiety disorders, the most common mental health conditions affecting about 30% of adults at some point in their lives, involve excessive fear, worry, and physical symptoms that interfere with daily functioning. Depression is characterized by persistent sadness, loss of interest in activities, changes in appetite and sleep, and feelings of worthlessness lasting more than two weeks, affecting approximately 280 million people worldwide. PTSD (Post-Traumatic Stress Disorder) can develop after exposure to traumatic events and involves intrusive memories, avoidance behaviors, negative changes in mood and cognition, and heightened arousal. OCD (Obsessive-Compulsive Disorder) involves recurrent, unwanted thoughts (obsessions) and repetitive behaviors (compulsions), while bipolar disorder involves alternating episodes of mania or hypomania and depression that disrupt normal functioning."
+  },
+  {
+    "q": [
+      "What are the main therapy approaches for mental health?",
+      "What is CBT?",
+      "What is cognitive behavioral therapy?",
+      "What is DBT?",
+      "What is dialectical behavior therapy?",
+      "What is psychodynamic therapy?",
+      "What is the difference between CBT and DBT?",
+      "Which type of therapy is best for anxiety?"
+    ],
+    "a": "Cognitive Behavioral Therapy (CBT) is a structured, evidence-based approach that focuses on identifying and changing negative thought patterns and behaviors, typically lasting 12-20 sessions, and is highly effective for anxiety, depression, and many other conditions. Dialectical Behavior Therapy (DBT), developed by Marsha Linehan for borderline personality disorder, combines CBT techniques with mindfulness and acceptance strategies, teaching skills in emotion regulation, distress tolerance, interpersonal effectiveness, and mindfulness. Psychodynamic therapy, rooted in Freudian and post-Freudian theory, explores unconscious patterns, early childhood experiences, and defense mechanisms through longer-term, less structured therapy. Other major approaches include humanistic therapy (emphasizing self-actualization and unconditional positive regard), acceptance and commitment therapy (ACT, using acceptance and mindfulness with commitment to value-directed behavior), and exposure therapy (specifically for phobias and PTSD)."
+  },
+  {
+    "q": [
+      "How does brain chemistry affect mental health?",
+      "What is the role of neurotransmitters in mental health?",
+      "What is the chemical imbalance theory of depression?",
+      "How do antidepressants work?",
+      "What is serotonin's role in mood?",
+      "What is dopamine's role in mental health?"
+    ],
+    "a": "Brain chemistry, particularly the function of neurotransmitters — chemical messengers that transmit signals between neurons — plays a crucial role in mental health and is the target of most psychiatric medications. Serotonin is involved in mood regulation, sleep, appetite, and impulse control, and low serotonin activity is associated with depression, anxiety, and OCD — which is why SSRI antidepressants like fluoxetine (Prozac) work by increasing serotonin availability in the synapse. Dopamine is central to reward, motivation, and pleasure, with dysregulation linked to depression (low dopamine), addiction (dopamine surge from substances or behaviors), and psychosis in schizophrenia (excess dopamine activity in certain brain pathways). Norepinephrine affects alertness and energy, GABA reduces neural excitability (reduced in anxiety), and glutamate is the primary excitatory neurotransmitter involved in learning and memory. The chemical imbalance model is a simplification, as mental health conditions involve complex interactions between genetics, brain structure, neural circuits, inflammation, and environmental factors rather than simple single-neurotransmitter deficiencies."
+  },
+  {
+    "q": [
+      "What is mental health stigma?",
+      "How does stigma affect people with mental illness?",
+      "Why is there stigma around mental health?",
+      "How can we reduce mental health stigma?",
+      "What is self-stigma in mental health?",
+      "How does stigma prevent people from seeking help?"
+    ],
+    "a": "Mental health stigma refers to negative attitudes, beliefs, and stereotypes that lead to discrimination and social exclusion of people with mental health conditions, creating a significant barrier to seeking treatment. Public stigma involves the general population endorsing stereotypes (such as that people with mental illness are dangerous or incompetent) and acting on them through discrimination in employment, housing, and social relationships. Self-stigma occurs when individuals internalize these negative stereotypes, leading to shame, reduced self-esteem, and reluctance to seek help — about 60% of people with mental illness do not seek treatment due to stigma-related concerns. Reducing stigma requires a multi-pronged approach: public education campaigns correcting myths about mental illness, contact-based interventions where people interact with individuals who have lived experience with mental health conditions, advocacy for anti-discrimination policies, and promoting open conversations about mental health in workplaces, schools, and communities."
+  },
+  {
+    "q": [
+      "What are mental wellness practices?",
+      "How can I maintain good mental health?",
+      "What are daily habits for mental wellness?",
+      "What is mindfulness?",
+      "How does exercise affect mental health?",
+      "What is self-care for mental health?",
+      "What are evidence-based mental wellness strategies?"
+    ],
+    "a": "Mental wellness practices are evidence-based activities and habits that support psychological well-being, resilience, and emotional regulation, and they complement professional treatment for mental health conditions. Regular physical exercise is one of the most effective wellness practices, releasing endorphins, reducing stress hormones, improving sleep, and showing comparable efficacy to medication for mild to moderate depression in some studies. Mindfulness and meditation practices involve non-judgmental attention to the present moment, with research showing they can reduce anxiety, prevent depression relapse, decrease emotional reactivity, and even produce measurable changes in brain structure over time. Other key practices include maintaining consistent sleep schedules (sleep deprivation is a major risk factor for mental health deterioration), building and maintaining social connections (loneliness is a significant risk factor for depression and anxiety), practicing gratitude and savoring positive experiences, setting boundaries around work and technology use, and engaging in meaningful activities that provide a sense of purpose."
+  },
+  {
+    "q": [
+      "What are the different types of anxiety disorders?",
+      "What is generalized anxiety disorder?",
+      "What is social anxiety?",
+      "What is a panic attack?",
+      "What is panic disorder?",
+      "What are phobias?",
+      "What is agoraphobia?"
+    ],
+    "a": "Anxiety disorders encompass several related conditions, each with distinct features. Generalized Anxiety Disorder (GAD) involves chronic, excessive worry about multiple areas of life lasting at least six months, accompanied by physical symptoms like muscle tension, fatigue, and sleep disturbance. Panic disorder is characterized by recurrent, unexpected panic attacks — sudden surges of intense fear reaching a peak within minutes, with physical symptoms including heart palpitations, chest pain, shortness of breath, dizziness, and fear of dying or losing control — and often leads to avoidance behaviors. Social Anxiety Disorder involves intense fear of being judged, negatively evaluated, or rejected in social situations, leading to avoidance that can significantly impair work, school, and relationships. Specific phobias are intense, irrational fears of particular objects or situations (spiders, heights, flying, enclosed spaces) that trigger immediate anxiety responses and avoidance, affecting approximately 10% of the population."
+  }
+]

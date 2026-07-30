@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "what is podcasting",
+      "how do podcasts work",
+      "what is a podcast",
+      "what are the different podcast formats",
+      "how are podcasts distributed",
+      "what makes a podcast different from radio",
+      "what is an RSS feed for podcasts",
+      "how do people listen to podcasts"
+    ],
+    "a": "Podcasting is a digital medium where episodic audio (or video) content is distributed over the internet, typically via RSS feeds, allowing subscribers to automatically download or stream new episodes. Unlike traditional radio, podcasts are on-demand — listeners choose when and where to listen, and they can subscribe to shows that match their interests. Podcast formats cover an enormous range: interview shows, solo monologues, co-hosted banter, panel discussions, roundtables, narrative storytelling, documentary series, fiction and audio dramas, educational courses, true crime investigations, news analysis, comedy and improv, sports commentary, business and technology deep dives, and countless niche topics. Most podcasts are recorded in studios or home setups, edited with tools like Audacity or Adobe Audition, and hosted on platforms like Libsyn, Buzzsprout, or Anchor, which generate the RSS feed that distributes episodes to directories like Apple Podcasts, Spotify, and Google Podcasts."
+  },
+  {
+    "q": [
+      "what equipment do I need to start a podcast",
+      "what microphones are best for podcasting",
+      "what is the difference between dynamic and condenser microphones for podcasting",
+      "what is a USB microphone vs XLR microphone",
+      "do I need an audio interface for podcasting",
+      "what headphones are good for podcast recording",
+      "what accessories do I need for podcast recording",
+      "how do I set up a home podcast studio"
+    ],
+    "a": "A basic podcasting setup starts with a good microphone, headphones, and recording software. Dynamic microphones like the Shure SM7B, Electro-Voice RE20, or Rode PodMic are popular for podcasting because they reject background noise and handle plosives well, while condenser microphones like the Rode NT1 or Audio-Technica AT2020 offer greater sensitivity and detail but pick up more room noise. USB microphones like the Blue Yeti or Audio-Technica ATR2100x plug directly into a computer and are the simplest option, while XLR microphones require an audio interface like the Focusrite Scarlett 2i2, Audient iD4, or an all-in-one recorder like the Rodecaster Pro or Zoom PodTrak P4. Closed-back headphones such as the Sony MDR-7506 or Beyerdynamic DT 770 Pro are recommended for monitoring because they prevent sound leakage into the microphone. Essential accessories include a pop filter or windscreen to reduce plosives, a shock mount to isolate vibration, a sturdy boom arm or mic stand, and acoustic treatment such as foam panels, bass traps, or a portable vocal booth to improve room sound."
+  },
+  {
+    "q": [
+      "what are the best podcast formats for beginners",
+      "what is an interview podcast",
+      "what is a solo podcast",
+      "what is a co-hosted podcast",
+      "what is a narrative podcast",
+      "what is an audio drama",
+      "what is a panel discussion podcast",
+      "what is a roundtable podcast"
+    ],
+    "a": "Podcast formats fall along a spectrum from simple to complex. The solo or monologue format is the simplest technically — one person speaks directly to the audience, requiring only one microphone and minimal editing, but it demands strong scripting or extemporaneous speaking skills. The co-hosted or conversational format features two or more regular hosts discussing topics, which creates natural chemistry and reduces the pressure on any single speaker but requires careful mic technique to avoid crosstalk. Interview podcasts involve a host bringing on guests, leveraging their expertise or story to drive content, which outsources much of the preparation but requires good research and interviewing skills. More complex formats include narrative storytelling or documentary podcasts, which involve scripting, field recording, sound design, and extensive editing; panel or roundtable discussions with multiple participants; and audio dramas or fiction podcasts, which require actors, scripts, sound effects, and post-production akin to radio plays. Most podcasters start with interview or co-hosted formats before graduating to more produced styles."
+  },
+  {
+    "q": [
+      "what is podcast editing software",
+      "what is the best software for editing podcasts",
+      "is Audacity good for podcast editing",
+      "what is Descript and how does it work",
+      "what is Adobe Audition used for in podcasting",
+      "what is Hindenburg Journalist",
+      "what is Alitu",
+      "how do I edit a podcast episode"
+    ],
+    "a": "Podcast editing software ranges from free, beginner-friendly tools to professional digital audio workstations (DAWs). Audacity is a free, open-source editor that handles basic cutting, volume adjustment, noise reduction, and compression, making it the most accessible starting point. GarageBand (free on Mac) offers a more intuitive interface with multitrack capabilities. For professional podcast production, Adobe Audition provides spectral editing, advanced noise reduction, multitrack mixing, and automation; Hindenburg Journalist is designed specifically for spoken-word content with features like automatic leveling, voice profiling, and easy editing of interviews; and Descript offers a revolutionary text-based editing approach where you edit the transcript and the audio follows, along with AI-powered filler word removal and overdub capabilities. Alitu is an automated web-based tool that handles recording, editing, and publishing with minimal manual intervention. The typical editing workflow involves importing and organizing tracks, trimming silences and verbal fillers (um, ah, like), removing mistakes and retakes, normalizing volume levels, applying compression and EQ, adding intro/outro music, and exporting as an MP3 file."
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "q": [
+      "What are the layers of the Earth?",
+      "Describe the Earth's internal structure",
+      "What is the crust, mantle, outer core, and inner core?",
+      "How thick is each layer of the Earth?",
+      "What are the Earth's compositional layers?",
+      "Tell me about Earth's layers",
+      "earth layers",
+      "what is inside the earth"
+    ],
+    "a": "The Earth is composed of four main layers: the crust (5-70 km thick, the thin outermost solid layer), the mantle (about 2,900 km thick, composed of silicate rocks that flow slowly over geological time), the outer core (about 2,200 km thick, composed of liquid iron and nickel that generates Earth's magnetic field), and the inner core (about 1,200 km radius, a solid sphere of iron and nickel at temperatures exceeding 5,000°C). The crust and uppermost mantle form the lithosphere, a rigid layer broken into tectonic plates, while the underlying asthenosphere is partially molten and allows plate movement."
+  },
+  {
+    "q": [
+      "What is plate tectonics?",
+      "How do tectonic plates move?",
+      "What are the types of plate boundaries?",
+      "Explain plate tectonics theory",
+      "How do plates interact at convergent boundaries?",
+      "What happens at divergent boundaries?",
+      "tectonic plates",
+      "plate tectonics"
+    ],
+    "a": "Plate tectonics is the scientific theory that Earth's lithosphere is divided into several large and small plates that move slowly over the underlying asthenosphere, driven by mantle convection, slab pull, and ridge push. There are three types of plate boundaries: divergent boundaries where plates move apart (creating mid-ocean ridges and rift valleys), convergent boundaries where plates collide (producing mountain ranges, subduction zones, and volcanic arcs), and transform boundaries where plates slide past each other horizontally (causing earthquakes along faults like the San Andreas Fault). Plate tectonics explains the distribution of earthquakes, volcanoes, mountain ranges, and oceanic trenches across the globe."
+  },
+  {
+    "q": [
+      "What is continental drift?",
+      "Who proposed continental drift?",
+      "What evidence supports continental drift?",
+      "How is continental drift different from plate tectonics?",
+      "What is Pangaea?",
+      "How did the continents separate?",
+      "continental drift",
+      "alfred wegener theory"
+    ],
+    "a": "Continental drift was the pioneering theory proposed by Alfred Wegener in 1912, suggesting that continents have moved across Earth's surface over geological time, having once been joined together in a supercontinent called Pangaea. Wegener's evidence included the jigsaw-like fit of continental coastlines, matching fossil distributions (such as Mesosaurus in South America and Africa), identical rock sequences and mountain belts across separate continents, and paleoclimatic evidence like glacial deposits found in now-tropical regions. While Wegener's theory was initially rejected because he could not explain the driving mechanism, it was later vindicated and incorporated into the modern theory of plate tectonics."
+  },
+  {
+    "q": [
+      "What is seafloor spreading?",
+      "How does seafloor spreading work?",
+      "What is the evidence for seafloor spreading?",
+      "What role do mid-ocean ridges play?",
+      "How did Harry Hess discover seafloor spreading?",
+      "What is magnetic striping on the ocean floor?"
+    ],
+    "a": "Seafloor spreading is the process by which new oceanic crust is formed at mid-ocean ridges as magma rises from the mantle, cools, and solidifies, then is gradually pushed away from the ridge as more magma emerges. Harry Hess proposed this mechanism in the 1960s, providing the missing engine for continental drift. Evidence for seafloor spreading includes the symmetrical magnetic striping of basalt on either side of mid-ocean ridges, the increasing age of oceanic crust with distance from ridges, and the relatively young age of the ocean floor (none older than about 200 million years)."
+  },
+  {
+    "q": [
+      "How do earthquakes occur?",
+      "What causes volcanoes?",
+      "How are mountains formed?",
+      "What is the relationship between plate tectonics and earthquakes?",
+      "How do volcanic arcs form?",
+      "What is orogeny?",
+      "mountain building",
+      "how do volcanoes form"
+    ],
+    "a": "Earthquakes occur when stress accumulated along faults in Earth's crust is suddenly released as seismic waves, most commonly at plate boundaries where plates grind past, collide, or pull apart. Volcanoes typically form at convergent boundaries where subducting plates melt to produce magma that rises to the surface, or at divergent boundaries and hot spots where mantle material wells up. Mountain building, or orogeny, occurs primarily at convergent boundaries where tectonic plates collide, causing the crust to thicken, fold, fault, and uplift — the Himalayas, for example, formed from the ongoing collision of the Indian and Eurasian plates starting about 50 million years ago."
+  }
+]

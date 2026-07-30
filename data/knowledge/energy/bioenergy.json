@@ -1,0 +1,58 @@
+[
+  {
+    "q": [
+      "What is bioenergy?",
+      "How does bioenergy work?",
+      "What are biomass feedstocks?",
+      "What is wood biomass energy?",
+      "What are agricultural residues used for bioenergy?",
+      "What are energy crops?",
+      "How is algae used for bioenergy?",
+      "bioenergy definition",
+      "biomass feedstocks"
+    ],
+    "a": "Bioenergy is energy derived from organic materials — biomass — including purpose-grown energy crops, agricultural and forestry residues, organic waste from municipalities and industry, and algae, which can be converted into heat, electricity, or transportation fuels through various processes. Biomass feedstocks are categorized into first-generation (food crops like corn, sugarcane, and vegetable oils), second-generation (non-food feedstocks like wood chips, crop residues — corn stover, wheat straw — and perennial grasses like switchgrass and miscanthus), and third-generation (algae and aquatic biomass with high oil content and rapid growth rates). The global bioenergy sector provides approximately 10% of world primary energy supply, making it the largest renewable energy source by share, though traditional biomass (wood and charcoal for cooking and heating) still accounts for the majority in developing countries, while modern bioenergy includes industrial power generation, district heating, and advanced biofuels."
+  },
+  {
+    "q": [
+      "What are biofuels?",
+      "What is ethanol fuel?",
+      "What is biodiesel?",
+      "What is renewable diesel?",
+      "What is sustainable aviation fuel (SAF)?",
+      "biofuels types",
+      "ethanol vs biodiesel",
+      "sustainable aviation fuel"
+    ],
+    "a": "Ethanol is the most widely produced biofuel globally, made by fermenting sugars from corn (United States) or sugarcane (Brazil) into alcohol that is blended with gasoline — typically as E10 (10% ethanol, 90% gasoline) or higher blends like E85 for flex-fuel vehicles. Biodiesel is produced through transesterification of vegetable oils (soybean, palm, rapeseed) or animal fats with methanol, creating a fuel chemically similar to petroleum diesel that can be blended at any ratio, while renewable diesel (hydrotreated vegetable oil or HVO) is processed through hydroprocessing at oil refineries, producing a drop-in fuel chemically identical to petroleum diesel with superior cold-weather performance and higher blend compatibility. Sustainable aviation fuel (SAF) is made from renewable feedstocks including used cooking oil, agricultural residues, and municipal waste through processes like hydrogenated esters and fatty acids (HEFA), alcohol-to-jet (ATJ), and Fischer-Tropsch synthesis, providing up to 80% lifecycle carbon reduction compared to fossil jet fuel, though SAF currently supplies less than 0.1% of global aviation fuel demand due to limited production capacity and high costs."
+  },
+  {
+    "q": [
+      "What is biogas?",
+      "What is biomethane?",
+      "How does anaerobic digestion work?",
+      "What is landfill gas?",
+      "How do biomass power plants generate electricity?",
+      "What is biomass gasification?",
+      "What is biomass pyrolysis?",
+      "biogas production",
+      "anaerobic digestion",
+      "biomass power plants"
+    ],
+    "a": "Biogas is produced through anaerobic digestion — the breakdown of organic matter by microorganisms in oxygen-free environments — in digesters that process agricultural manure, food waste, sewage sludge, or energy crops, yielding a mixture of methane (50-70%) and carbon dioxide that can be burned for heat and power or upgraded to biomethane (95%+ methane) for injection into natural gas pipelines or use as vehicle fuel. Landfill gas captures methane produced naturally as municipal solid waste decomposes in landfills, with collection wells and vacuum systems extracting the gas for electricity generation via internal combustion engines or gas turbines, turning a potent greenhouse gas into a useful energy resource. Biomass power plants generate electricity through direct combustion (burning wood chips, pellets, or agricultural residues in a boiler to produce steam for a turbine), gasification (heating biomass with limited oxygen to produce syngas that can be burned in a turbine or engine), or pyrolysis (heating biomass in the absence of oxygen to produce bio-oil, biochar, and syngas), with overall electrical efficiencies typically ranging from 20-35%."
+  },
+  {
+    "q": [
+      "What is BECCS?",
+      "What is bioenergy with carbon capture and storage?",
+      "Is bioenergy sustainable?",
+      "What is the food vs fuel debate?",
+      "How is bioenergy regulated?",
+      "What is bioheat?",
+      "BECCS technology",
+      "bioenergy sustainability",
+      "food vs fuel debate"
+    ],
+    "a": "Bioenergy with carbon capture and storage (BECCS) combines biomass power generation with capturing the CO₂ emissions and storing them underground in geological formations, creating negative emissions — removing CO₂ from the atmosphere because the biomass absorbed carbon during growth — making BECCS a critical but controversial technology in most IPCC scenarios for limiting global warming to 1.5°C. The food vs fuel debate highlights the ethical and economic tension of using agricultural land, water, and crops for bioenergy when over 800 million people face food insecurity, with first-generation biofuels from corn and edible oils being the most contentious while second-generation biofuels from non-food feedstocks and waste materials largely avoid direct competition with food production. Bioenergy sustainability frameworks address greenhouse gas lifecycle accounting (including indirect land-use change emissions), biodiversity impacts, water use, soil health, and social criteria such as land rights and labor conditions, with certification schemes like the EU Renewable Energy Directive (RED II) and the Roundtable on Sustainable Biomaterials (RSB) establishing sustainability criteria that bioenergy must meet to qualify for policy support or renewable fuel mandates."
+  }
+]

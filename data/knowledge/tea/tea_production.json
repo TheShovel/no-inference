@@ -1,0 +1,48 @@
+[
+  {
+    "q": [
+      "What are the two main varieties of Camellia sinensis?",
+      "What is the difference between sinensis and assamica?",
+      "What are the major tea-growing regions of the world?",
+      "What conditions are needed to grow tea?",
+      "How does altitude affect tea flavor?",
+      "What is terroir in tea?",
+      "How is tea harvested?"
+    ],
+    "a": "All true tea comes from Camellia sinensis, which has two main varieties: sinensis (China bush, small leaves, cold-hardy, produces complex, nuanced flavors) and assamica (Assam bush, large leaves, high-yielding, thrives in tropical climates, produces bold, malty flavors). Major tea-growing regions include China (the world's largest producer), India (Assam, Darjeeling, Nilgiri), Kenya, Sri Lanka, Taiwan, Japan, Vietnam, Indonesia, Turkey, Nepal, and lesser-known regions like Iran, Georgia, Argentina, Brazil, Hawaii, and even Scotland and the UK. Tea plants thrive in tropical and subtropical climates with ample rainfall (1500-3000 mm annually), acidic soil (pH 4.5-5.5), temperatures between 18-30°C, and high humidity. Altitude significantly affects flavor: high-grown tea (above 1200m) develops slowly, yielding more complex, floral, and sweet flavors due to cooler temperatures and cloud cover; medium-grown (600-1200m) produces balanced teas; low-grown (below 600m) yields bolder, more astringent teas. Terroir—the combination of soil, climate, microclimate, altitude, and local growing practices—gives each tea region its distinctive character. Tea is harvested by plucking (hand or machine): fine plucking takes two leaves and a bud (orthodox tea), while coarse plucking removes more mature leaves."
+  },
+  {
+    "q": [
+      "How is tea processed?",
+      "What is the difference between orthodox and CTC tea?",
+      "What are the steps of tea processing?",
+      "What is withering in tea production?",
+      "What is oxidation in tea processing?",
+      "How is green tea processed differently from black tea?",
+      "What is the kill-green step?"
+    ],
+    "a": "Tea processing transforms fresh leaves into finished tea through several key steps: withering (reducing moisture content by 60-70% over 12-24 hours, softening leaves and activating enzymes), rolling or shaping (rupturing cell walls to release enzymes and begin shaping), oxidation/fermentation (exposing enzymes to oxygen to develop color and flavor), fixing/kill-green (applying heat to stop oxidation), and drying (reducing moisture to 3-5% for shelf stability). Orthodox processing produces whole-leaf teas with nuanced, complex flavors by gently rolling the leaves, while CTC (Crush, Tear, Curl) processes leaves into small, uniform granules that brew quickly into strong, brisk, consistent cups—CTC is standard for tea bags and masala chai. The key difference between tea types lies in oxidation: green tea is fixed immediately after withering (0% oxidation), oolong is partially oxidized (10-80%), black tea is fully oxidized before fixing (100%), white tea is simply withered and dried with minimal handling (5-10% natural oxidation), and pu-erh undergoes microbial fermentation after initial processing."
+  },
+  {
+    "q": [
+      "How is oolong tea processed?",
+      "What makes oolong tea semi-oxidized?",
+      "How is white tea produced?",
+      "How is black tea made?",
+      "What is the difference between pan-fired and steamed green tea?",
+      "How is yellow tea processed?"
+    ],
+    "a": "Oolong tea processing involves withering under strong sun, then tossing and shaking the leaves in bamboo baskets to bruise the edges—this controlled bruising initiates oxidation only at the leaf edges, creating oolong's characteristic 'green leaf with red edges' appearance. The oxidation is stopped by firing (pan-firing for Chinese oolongs, baking for Taiwanese) at the desired level, followed by rolling (into twisted strips for rock teas or ball form for high-mountain oolongs) and final drying. White tea is the simplest to produce: fresh buds and leaves are withered naturally indoors (or under shade) for 1-3 days, then gently dried at low temperatures—no rolling, no fixing, no active oxidation—preserving the highest antioxidant content. Black tea processing begins with full withering (18+ hours), then rolling to rupture cells completely, followed by full oxidation in humid, oxygen-rich rooms for 2-4 hours until leaves turn copper-brown, and finally drying at high heat. Green tea differs by fixing method: Chinese green teas are pan-fired in woks at high temperatures (producing toasty, nutty flavors), while Japanese green teas are steamed for 30-60 seconds (producing grassy, vegetal, umami flavors) before rolling and drying."
+  },
+  {
+    "q": [
+      "How is pu-erh tea made?",
+      "What is the difference between sheng and shou pu-erh?",
+      "What is maocha?",
+      "How is pu-erh compressed into cakes?",
+      "How does aging affect pu-erh tea?",
+      "What is the wo dui process?"
+    ],
+    "a": "Pu-erh tea production begins with maocha ('raw tea'): sun-dried leaves from large-leaf assamica bushes in Yunnan, China, that are withered, pan-fired to kill enzymes, and rolled—this green base is the starting point for both sheng and shou pu-erh. Sheng (raw) pu-erh is the traditional style: maocha is steamed, compressed into cakes or bricks (weighing 100g to several kg), and aged naturally for years or decades in controlled humidity—the aging process involves slow microbial fermentation that transforms the flavor from bitter and astringent to smooth, complex, woody, and medicinal. Shou (ripe) pu-erh was invented in 1973 to accelerate aging through the wo dui (wet piling) process: maocha is piled in a humid, warm room and turned regularly, allowing thermophilic bacteria and fungi to ferment the leaves in 45-60 days, producing the dark, earthy, smooth, mushroom-like character of ripe pu-erh in months instead of years. Pu-erh teas are pressed into various shapes: bing (round cakes), zhuan (bricks), tuo (bird's nests), and jin (mushroom shapes)—each shape affects aging surface area. Aged sheng pu-erh is highly prized, with decades-old cakes selling for thousands of dollars at auction."
+  }
+]

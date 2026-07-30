@@ -1,0 +1,61 @@
+[
+  {
+    "q": [
+      "What are the main drug classes used in veterinary medicine?",
+      "What antibiotics are commonly used in animals?",
+      "How are NSAIDs used in veterinary practice?",
+      "What anesthetics are used in veterinary surgery?",
+      "What are the common parasiticides for dogs and cats?",
+      "veterinary antibiotic classes",
+      "veterinary NSAIDs safety",
+      "veterinary anesthetic protocols",
+      "parasiticides heartworm flea tick",
+      "veterinary drug classes explained"
+    ],
+    "a": "Veterinary antibiotics include beta-lactams (amoxicillin, amoxicillin-clavulanate, cephalexin), fluoroquinolones (enrofloxacin, marbofloxacin), tetracyclines (doxycycline), aminoglycosides, metronidazole, and chloramphenicol, selected based on culture and sensitivity testing, infection site, species-specific safety (cats are sensitive to certain drugs like enrofloxacin causing retinal toxicity), and increasingly guided by antibiotic stewardship principles to combat antimicrobial resistance. NSAIDs (non-steroidal anti-inflammatory drugs) are essential for pain management and inflammation control in animals, with veterinary-specific options including carprofen, meloxicam, deracoxib, firocoxib, and grapiprant, but require careful monitoring of hepatic and renal function, gastrointestinal health, and avoidance in patients with dehydration, renal disease, or concurrent corticosteroid use. Veterinary anesthetics include premedications (acepromazine, dexmedetomidine, midazolam), induction agents (propofol, alfaxalone, ketamine combinations), inhalant anesthetics (isoflurane, sevoflurane), and local anesthetics (lidocaine, bupivacaine), with anesthetic protocols tailored to species (cats require dose adjustments, horses need specialized volatile anesthesia), patient health status, and procedure requirements."
+  },
+  {
+    "q": [
+      "How are drug dosages calculated in veterinary medicine?",
+      "What is off-label drug use in veterinary practice?",
+      "How are adverse drug reactions recognized in animals?",
+      "What is antibiotic stewardship in veterinary medicine?",
+      "veterinary drug dosage calculation",
+      "extra-label drug use animals",
+      "adverse drug reactions veterinary",
+      "antibiotic stewardship veterinary",
+      "veterinary prescription labels",
+      "compounding veterinary patients"
+    ],
+    "a": "Veterinary drug dosage calculation requires converting weight from pounds to kilograms (most important source of error in practice), applying species-specific dose ranges, and adjusting for individual patient factors such as age, hepatic and renal function, and concurrent medications, with published dosages in veterinary formularies (Plumb's Veterinary Drug Handbook is the standard reference) and package inserts. Off-label (or extra-label) drug use—prescribing drugs approved for humans or other species, or at doses not stated on the label—is legal and common in veterinary medicine under the Animal Medicinal Drug Use Clarification Act (AMDUCA) when no approved veterinary drug exists, provided a valid veterinarian-client-patient relationship exists, withdrawal times for food animals are extended, and dispensing meets record-keeping requirements. Antibiotic stewardship in veterinary practice implements judicious use principles: confirming bacterial infection before prescribing, selecting narrow-spectrum antibiotics when possible, culturing and sensitivity testing for recurrent or serious infections, avoiding prophylactic use except where evidence-based (e.g., surgical prophylaxis), and educating pet owners about proper dosing and completion of antibiotic courses."
+  },
+  {
+    "q": [
+      "How is pain managed in animals?",
+      "What are the chronic disease management drugs used in veterinary medicine?",
+      "What types of vaccines are used in animals?",
+      "veterinary pain management multimodal",
+      "chronic disease drugs dogs cats",
+      "veterinary vaccine types modified live killed",
+      "recombinant vaccines veterinary",
+      "mRNA vaccines animals",
+      "chronic kidney disease management dogs cats",
+      "veterinary palliative care"
+    ],
+    "a": "Multimodal pain management in animals combines opioids (morphine, hydromorphone, buprenorphine, fentanyl patches), NSAIDs, local anesthetics (nerve blocks, epidurals, intra-articular injections), alpha-2 agonists (dexmedetomidine), NMDA antagonists (ketamine low-dose infusions), gabapentinoids (gabapentin, pregabalin for neuropathic pain), amantadine, and adjunctive therapies (physical rehabilitation, acupuncture, laser therapy) to address pain through multiple mechanisms while minimizing individual drug doses and side effects. Chronic disease management drugs include ACE inhibitors (enalapril, benazepril) and pimobendan for congestive heart failure, insulin types (glargine, detemir, porcine lente, NPH) for diabetes mellitus with careful blood glucose curve monitoring, methimazole for feline hyperthyroidism, trilostane for canine hyperadrenocorticism, phenobarbital and levetiracetam for epilepsy, and cholestyramine or ursodeoxycholic acid for hepatobiliary disease. Veterinary vaccines include modified-live (attenuated) vaccines providing strong immunity with fewer doses, killed (inactivated) vaccines that are safer for immunocompromised animals, recombinant vaccines (such as the canarypox-vectored distemper vaccine and recombinant Lyme vaccine), and mRNA-based vaccines being developed for infectious diseases and cancer immunotherapy, with protocols timed according to species (dogs, cats, horses), lifestyle risk, and local disease prevalence."
+  },
+  {
+    "q": [
+      "What are controlled substances in veterinary practice?",
+      "How does veterinary compounding work?",
+      "What are the roles of FDA CVM and USDA in veterinary medicine?",
+      "controlled substances regulations veterinary",
+      "DEA schedule drugs veterinarians",
+      "veterinary compounding pharmacy",
+      "FDA Center for Veterinary Medicine",
+      "USDA veterinary biologics",
+      "veterinary regulatory affairs"
+    ],
+    "a": "Controlled substances in veterinary practice regulated by the DEA include Schedule II substances (morphine, fentanyl, ketamine, pentobarbital) requiring secure storage, detailed inventory logs, and triplicate prescription forms, and Schedule III-IV substances (buprenorphine, butorphanol, tramadol, alprazolam, phenobarbital) with less stringent but still regulated record-keeping, and veterinarians must register with the DEA, comply with state controlled substance boards, and conduct biennial inventories. Veterinary compounding involves a licensed pharmacist preparing customized medications by combining, altering, or reformulating approved drugs to meet specific patient needs (changing flavor, adjusting dose strength for small animals, creating transdermal formulations for cats, or combining multiple drugs into a single formulation), regulated by the FDA with guidance distinguishing legitimate compounding from illegal manufacturing. The FDA Center for Veterinary Medicine (CVM) approves and regulates animal drugs, vaccines (in conjunction with the USDA's Center for Veterinary Biologics for biologics), and feed additives, monitoring adverse drug events through the Veterinary Adverse Event Reporting System (VAERS portal), establishing withdrawal times for food animals, and enforcing Good Manufacturing Practices, while the USDA's National Veterinary Services Laboratories (NVSL) provides diagnostic reference services and regulates veterinary biological products."
+  }
+]

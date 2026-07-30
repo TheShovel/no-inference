@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "How does coal form?",
+      "What are the types of coal?",
+      "What is coal mining?",
+      "How is coal used for energy?",
+      "What are the different ranks of coal?",
+      "coal formation",
+      "coal types"
+    ],
+    "a": "Coal forms from ancient plant matter that accumulated in swampy environments millions of years ago, undergoing peatification followed by coalification under heat and pressure. Coal ranks from lowest to highest are peat, lignite (brown coal), sub-bituminous, bituminous, and anthracite, with higher ranks having greater carbon content and energy density. Coal is extracted through surface mining (strip mining and mountaintop removal) for shallow deposits and underground mining (room-and-pillar and longwall) for deeper seams, and it is primarily burned for electricity generation and industrial processes like steel manufacturing via coke production."
+  },
+  {
+    "q": [
+      "How is oil and petroleum formed?",
+      "How is crude oil extracted?",
+      "What is oil refining?",
+      "What products come from crude oil?",
+      "How does petroleum formation work?",
+      "oil formation",
+      "petroleum extraction",
+      "oil refining process"
+    ],
+    "a": "Petroleum forms from ancient marine organisms (plankton and algae) buried in sedimentary basins and transformed by heat and pressure over millions of years into crude oil and natural gas. Extraction involves drilling wells through cap rock into porous reservoir rock, often using secondary recovery methods like water flooding or enhanced oil recovery (EOR) with CO₂ or steam. Refining separates crude oil into fractions by fractional distillation based on boiling points, yielding products including gasoline, diesel, jet fuel, heating oil, lubricants, asphalt, and petrochemical feedstocks for plastics manufacturing."
+  },
+  {
+    "q": [
+      "What is natural gas and how does it form?",
+      "What is hydraulic fracturing (fracking)?",
+      "What is LNG?",
+      "How is natural gas extracted and transported?",
+      "What is shale gas?",
+      "natural gas formation",
+      "fracking",
+      "liquefied natural gas"
+    ],
+    "a": "Natural gas forms similarly to petroleum from organic matter under heat and pressure, consisting primarily of methane (CH₄) with smaller amounts of ethane, propane, and other hydrocarbons. Hydraulic fracturing (fracking) involves injecting high-pressure fluid into shale formations to create fractures and release trapped gas, dramatically expanding recoverable reserves but raising environmental concerns about water contamination and induced seismicity. Liquefied natural gas (LNG) is natural gas cooled to −162°C (−260°F) for efficient long-distance transport by specialized tankers, enabling global gas trade between regions not connected by pipelines."
+  },
+  {
+    "q": [
+      "What is peak oil theory?",
+      "Are fossil fuels running out?",
+      "What are fossil fuel reserves?",
+      "How do fossil fuels impact the environment?",
+      "What is the connection between fossil fuels and climate change?",
+      "What is the energy transition?",
+      "peak oil",
+      "fossil fuel reserves",
+      "fossil fuels and climate change"
+    ],
+    "a": "Peak oil theory, proposed by M. King Hubbert, posits that global oil production follows a bell-shaped curve, reaching a maximum when half the recoverable reserves have been extracted, followed by terminal decline. Proven fossil fuel reserves—quantities recoverable under current economic and technological conditions—are concentrated in a few regions: the Middle East holds the largest oil reserves, while the US, Russia, and China have major coal deposits. The burning of fossil fuels is the primary driver of anthropogenic climate change, releasing CO₂ and other greenhouse gases, which has spurred the global energy transition toward low-carbon sources including renewables, nuclear, and energy efficiency measures to achieve net-zero emissions targets."
+  }
+]

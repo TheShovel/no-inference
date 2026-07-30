@@ -1,0 +1,158 @@
+[
+  {
+    "id": "int-quiz-001",
+    "triggers": [
+      "test me on {context}",
+      "quiz me on {context}",
+      "give me a quiz about {context}"
+    ],
+    "context_role": "topic",
+    "template": "Alright, let's test your knowledge of {context}! Here's your first question: Can you explain the core idea behind {context} in your own words? Think about what makes it distinct from related concepts. Once you answer, I'll give you feedback and we can go deeper with more challenging questions. Ready to give it a shot?",
+    "fallback": "I'd love to quiz you on a topic! Just tell me what subject you'd like to be tested on — or if you prefer, I can quiz you on something we've discussed recently.",
+    "style": ["interactive", "educational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "int-trivia-002",
+    "triggers": [
+      "tell me a fun fact about {context}",
+      "interesting trivia about {context}",
+      "give me a surprising fact about {context}"
+    ],
+    "context_role": "topic",
+    "template": "Here's a fascinating tidbit about {context} that often surprises people. The way we commonly think about {context} today is actually the result of decades of refinement and debate — the original versions looked very different from what we use now. One especially interesting detail is that some of the most influential developments in {context} came from unexpected places, like people working in completely unrelated fields who stumbled onto principles that later became central to {context}. It's a great reminder that innovation often happens at the intersection of different disciplines!",
+    "fallback": "I can share an interesting fact! What topic are we exploring?",
+    "style": ["conversational", "informative"],
+    "response_length": "short"
+  },
+  {
+    "id": "int-practice-003",
+    "triggers": [
+      "let me practice {context}",
+      "I want to practice {context}",
+      "give me exercises for {context}"
+    ],
+    "context_role": "topic",
+    "template": "Great idea! Practice is essential for getting comfortable with {context}. Here's what I suggest: try to explain {context} to someone who knows nothing about it — this reveals gaps in your understanding. Next, work through a problem or scenario that requires you to apply the principles of {context} step by step. Finally, challenge yourself with a variation that forces you to adapt what you know about {context} to a slightly different situation. Would you like me to give you a specific exercise to work through right now?",
+    "fallback": "Practice makes progress! What skill or topic would you like to practice?",
+    "style": ["interactive", "educational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "int-opinion-004",
+    "triggers": [
+      "what do you think about {context}",
+      "what is your take on {context}",
+      "how do you feel about {context}"
+    ],
+    "context_role": "topic",
+    "template": "That's an interesting question! Rather than just giving you my own perspective, I'm curious — what do you find most compelling or puzzling about {context} so far? From what I know, {context} offers a really useful framework for thinking about its domain, but like any tool, its value depends on how you use it. I think the most interesting aspect of {context} is how it connects to so many other areas. But I'd really love to hear your thoughts first — what's been your experience with {context}?",
+    "fallback": "I'm curious what you think! What topic are we discussing?",
+    "style": ["conversational", "interactive"],
+    "response_length": "medium"
+  },
+  {
+    "id": "int-guess-005",
+    "triggers": [
+      "guess what {context} means",
+      "can you guess what {context} is",
+      "take a guess about {context}"
+    ],
+    "context_role": "topic",
+    "template": "Ooh, I love a guessing game! Based on the name and common patterns, I'd guess that {context} has something to do with understanding how things work together or how to approach a specific type of problem. The structure of the term suggests it might involve principles or methods for achieving certain outcomes. How close am I? Give me some hints and I can refine my guess, or tell me if I'm on the right track!",
+    "fallback": "I'm game for a guessing game! Give me a term or concept and I'll take a guess at what it means.",
+    "style": ["casual", "interactive"],
+    "response_length": "short"
+  },
+  {
+    "id": "int-game-006",
+    "triggers": [
+      "make {context} into a game",
+      "turn {context} into a learning game",
+      "gamify {context}"
+    ],
+    "context_role": "topic",
+    "template": "Let's turn {context} into a game! Here's one idea: create a challenge where you have to apply the principles of {context} to solve progressively harder scenarios, earning points for each successful application. Or try a version where you and a friend take turns proposing solutions using {context}, and the other person has to identify which principle or technique is being used. You could also do a timed challenge — give yourself five minutes to explain {context} using only the most essential concepts. Making {context} into a game helps you practice in a low-pressure, engaging way!",
+    "fallback": "I'd love to gamify a topic! What subject should we turn into a game?",
+    "style": ["creative", "interactive"],
+    "response_length": "medium"
+  },
+  {
+    "id": "int-challenge-007",
+    "triggers": [
+      "challenge me on {context}",
+      "give me a hard question about {context}",
+      "stump me with something about {context}"
+    ],
+    "context_role": "topic",
+    "template": "Challenge accepted! Let's see how you handle this: Imagine you're explaining {context} to someone and they ask you a question that seems to contradict one of the core principles. How would you reconcile that contradiction? What assumptions might they be making that are different from the ones {context} relies on? This is a tough question because it requires you to think about {context} from the outside, not just apply it. Take your time — there's no single right answer, but the quality of your reasoning is what matters!",
+    "fallback": "I'm ready to challenge you! What topic would you like a tough question on?",
+    "style": ["interactive", "analytical"],
+    "response_length": "medium"
+  },
+  {
+    "id": "int-discuss-008",
+    "triggers": [
+      "let's talk about {context}",
+      "discuss {context} with me",
+      "I want to chat about {context}"
+    ],
+    "context_role": "topic",
+    "template": "I'd love to have a conversation about {context}! There's so much to explore. Let me start with a question: what aspect of {context} interests you the most right now? Are you curious about how it works, what you can do with it, or how it connects to other things you already know? I'll follow your lead and we can go in whatever direction feels most engaging. The best discussions about {context} come from following the thread of genuine curiosity!",
+    "fallback": "I'd be happy to have a discussion! What topic should we chat about?",
+    "style": ["conversational", "interactive"],
+    "response_length": "medium"
+  },
+  {
+    "id": "int-story-009",
+    "triggers": [
+      "tell me a story about {context}",
+      "give me a narrative about {context}",
+      "storytime with {context}"
+    ],
+    "context_role": "topic",
+    "template": "Let me tell you a story about {context}. Imagine someone who had been working on a difficult problem for weeks, trying every conventional approach without success. Then they came across {context} almost by accident — a colleague mentioned it in passing. Skeptical but desperate, they decided to try applying the principles of {context} to their problem. At first nothing seemed different, but gradually they started seeing patterns they'd missed before. The breakthrough came when they realized that {context} wasn't just a tool, but a different way of thinking about the entire situation. And that's the real power of {context} — it doesn't just give you answers, it changes how you see the questions.",
+    "fallback": "I can tell a story! What topic should the story be about?",
+    "style": ["creative", "conversational"],
+    "response_length": "long"
+  },
+  {
+    "id": "int-debate-010",
+    "triggers": [
+      "convince me about {context}",
+      "make a case for {context}",
+      "sell me on {context}"
+    ],
+    "context_role": "topic",
+    "template": "Okay, let me make the case for {context}. Imagine having a reliable way to approach problems and understand complex situations with clarity. That's what {context} offers. It gives you a structured framework that has been refined over time, saving you from reinventing the wheel. People who invest in understanding {context} often find that it transforms how they think about their work, their projects, and even everyday challenges. The upfront effort of learning {context} pays dividends in the form of better decisions, fewer mistakes, and deeper insight. What do you think — am I convincing you yet?",
+    "fallback": "I can make a case for a topic! What should I try to convince you about?",
+    "style": ["conversational", "persuasive"],
+    "response_length": "medium"
+  },
+  {
+    "id": "int-misconception-011",
+    "triggers": [
+      "what do most people get wrong about {context}",
+      "surprise me about {context}",
+      "what is counterintuitive about {context}"
+    ],
+    "context_role": "topic",
+    "template": "Here's something about {context} that catches most people off guard. The intuitive way to think about {context} is often the opposite of what actually works best. Many beginners assume that mastering {context} means memorizing all the details, but the real skill is knowing which principles to apply and when. Another counterintuitive aspect is that the more you learn about {context}, the more you realize how much you don't know — the experts are usually the ones most aware of its limitations. This paradox is what makes {context} such a fascinating subject to explore!",
+    "fallback": "I can share something surprising! What topic would you like a fresh perspective on?",
+    "style": ["conversational", "educational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "int-draw-012",
+    "triggers": [
+      "describe {context} without words",
+      "visualize {context} for me",
+      "what analogy works for {context}"
+    ],
+    "context_role": "topic",
+    "template": "Let me give you an analogy for {context}. Think of it like learning to cook. At first, you follow recipes exactly — that's like learning the rules. As you get more experienced, you start understanding why certain ingredients work together, and you can improvise. That deeper understanding of cooking principles is like {context} at its best. Just as a chef doesn't need a recipe for every dish, once you internalize {context}, you can approach new situations with confidence because you understand the underlying principles, not just the surface instructions. How does that analogy land with you?",
+    "fallback": "I can come up with an analogy! What topic should I compare something to?",
+    "style": ["creative", "educational"],
+    "response_length": "medium"
+  }
+]

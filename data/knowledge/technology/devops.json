@@ -1,0 +1,101 @@
+[
+  {
+    "q": [
+      "What is DevOps?",
+      "Explain the DevOps methodology.",
+      "What are the core principles of DevOps?",
+      "How does DevOps improve software delivery?",
+      "What is the difference between DevOps and traditional IT?",
+      "What is the DevOps lifecycle?"
+    ],
+    "a": "DevOps is a set of practices, tools, and cultural philosophies that combines software development (Dev) and IT operations (Ops) to shorten the development lifecycle and deliver high-quality software continuously. Core principles include collaboration, automation, continuous improvement, and monitoring. The DevOps lifecycle encompasses Plan, Code, Build, Test, Release, Deploy, Operate, and Monitor — forming a continuous feedback loop. DevOps breaks down traditional silos between development and operations teams, promoting shared responsibility and faster feedback. Key benefits include faster time to market, reduced deployment failures, shorter recovery times, and improved collaboration across teams."
+  },
+  {
+    "q": [
+      "What is CI/CD?",
+      "Explain Continuous Integration and Continuous Delivery.",
+      "What is the difference between Continuous Delivery and Continuous Deployment?",
+      "What are the benefits of CI/CD pipelines?",
+      "What tools are used for CI/CD?",
+      "What is a CI/CD pipeline?"
+    ],
+    "a": "CI/CD stands for Continuous Integration and Continuous Delivery (or Continuous Deployment). Continuous Integration is the practice of automatically building and testing code changes whenever developers merge to a shared repository, catching integration issues early. Continuous Delivery extends CI by automatically deploying all code changes to a staging or testing environment after the build stage, ensuring the software is always in a deployable state. Continuous Deployment goes further by automatically deploying every change that passes all tests directly to production. Popular CI/CD tools include Jenkins, GitHub Actions, GitLab CI, CircleCI, Travis CI, and Azure DevOps. A typical pipeline includes stages for code checkout, dependency installation, linting, testing, building, security scanning, and deployment."
+  },
+  {
+    "q": [
+      "What is Docker?",
+      "Explain containerization with Docker.",
+      "What is the difference between Docker and a virtual machine?",
+      "What are Docker images and containers?",
+      "What is a Dockerfile?",
+      "What is Docker Compose?"
+    ],
+    "a": "Docker is a platform for developing, shipping, and running applications in lightweight, portable containers. A container packages application code with its dependencies, libraries, and configuration into a single executable unit that runs consistently across any environment. Unlike virtual machines, containers share the host OS kernel and do not require a separate guest OS, making them much more resource-efficient (start in seconds, use less memory). A Dockerfile is a script defining how to build a Docker image (the read-only template). A container is a running instance of an image. Docker Compose orchestrates multi-container applications, defining services, networks, and volumes in a YAML file. Containers revolutionized software deployment by eliminating 'it works on my machine' problems."
+  },
+  {
+    "q": [
+      "What is Kubernetes?",
+      "Explain Kubernetes orchestration.",
+      "What are Kubernetes pods and nodes?",
+      "What is the difference between Kubernetes and Docker Swarm?",
+      "What are Kubernetes deployments and services?",
+      "How does Kubernetes manage containerized applications?"
+    ],
+    "a": "Kubernetes (K8s) is an open-source container orchestration platform that automates deploying, scaling, managing, and operating containerized applications across clusters of machines. A Kubernetes cluster consists of master nodes (control plane — managing the cluster) and worker nodes (running application workloads in pods). A pod is the smallest deployable unit, containing one or more containers. Deployments manage desired state and rolling updates, while Services provide stable networking and load balancing. Key features include auto-scaling (Horizontal Pod Autoscaler), self-healing (restarting failed containers), service discovery, secrets management, and storage orchestration. Kubernetes has become the industry standard for container orchestration, supported by all major cloud providers."
+  },
+  {
+    "q": [
+      "What is Infrastructure as Code (IaC)?",
+      "Explain Infrastructure as Code.",
+      "What are Terraform and Ansible?",
+      "What is the difference between declarative and imperative IaC?",
+      "What are the benefits of Infrastructure as Code?",
+      "How does IaC differ from manual infrastructure management?"
+    ],
+    "a": "Infrastructure as Code (IaC) is the practice of managing and provisioning infrastructure (servers, networks, databases, etc.) through machine-readable configuration files rather than manual processes. IaC enables version control, reproducibility, automation, and consistency across environments. Tools fall into two categories: declarative (Terraform, AWS CloudFormation — you specify the desired state, the tool figures out how to achieve it) and imperative (Ansible, Chef, Puppet — you specify step-by-step commands). Terraform is infrastructure-provisioning focused (managing cloud resources), while Ansible excels at configuration management (installing software, setting up services). IaC is fundamental to modern DevOps practices, enabling immutable infrastructure and reducing configuration drift."
+  },
+  {
+    "q": [
+      "What are monitoring and logging in DevOps?",
+      "Explain observability in software systems.",
+      "What is the difference between monitoring, logging, and tracing?",
+      "What are Prometheus and Grafana?",
+      "What is the ELK stack?",
+      "What are SLIs, SLOs, and SLAs?"
+    ],
+    "a": "Monitoring and logging are essential DevOps practices for maintaining system health. Monitoring collects metrics (CPU, memory, request latency, error rates) and alerts when thresholds are breached — Prometheus paired with Grafana is a popular open-source stack for metrics visualization and alerting. Logging captures detailed event records — the ELK stack (Elasticsearch, Logstash, Kibana) or Loki enables centralized log aggregation, search, and analysis. Distributed tracing (Jaeger, Zipkin) tracks requests across microservices. Observability combines metrics, logs, and traces to provide comprehensive system insight. SLIs (Service Level Indicators) measure performance, SLOs (Service Level Objectives) set targets, and SLAs (Service Level Agreements) are contractual commitments to reliability."
+  },
+  {
+    "q": [
+      "What are version control workflows in DevOps?",
+      "Explain Git workflows like GitFlow and trunk-based development.",
+      "What is the difference between GitFlow and trunk-based development?",
+      "What are feature branches?",
+      "What is pull request workflow?",
+      "How does version control integrate with CI/CD?"
+    ],
+    "a": "Version control workflows define how teams collaborate using Git. GitFlow uses separate branches for features, releases, and hotfixes branching off develop and main — suitable for projects with scheduled releases. Trunk-based development keeps a single main branch with short-lived feature branches, merging frequently (multiple times daily) — commonly used with CI/CD for continuous deployment. GitHub Flow is a simpler model: create a branch, commit changes, open a pull request, discuss and review, merge to main, and deploy. Feature flags (toggles) allow merging incomplete features to production without exposing them. Pull request workflows enforce code review, automated testing, and quality gates before merging, integrating tightly with CI/CD pipelines."
+  },
+  {
+    "q": [
+      "What are deployment strategies?",
+      "Explain blue-green, canary, and rolling deployments.",
+      "What is the difference between blue-green and canary deployment?",
+      "What is a rolling update?",
+      "What is a rollback strategy?",
+      "Which deployment strategy is safest?"
+    ],
+    "a": "Deployment strategies control how new software versions are released to minimize risk and downtime. Blue-green deployment maintains two identical environments: live (blue) serves production while the new version deploys to green; traffic switches instantly after validation, enabling immediate rollback. Canary deployment gradually shifts a small percentage of traffic to the new version, monitoring for issues before expanding — minimizes blast radius. Rolling deployment incrementally replaces instances of the old version with the new one across the cluster, common in Kubernetes. A/B testing (routing specific user segments to different versions) is often paired with canary releases. Feature flags allow toggling features on/off without deployment, providing fine-grained release control and instant rollback."
+  },
+  {
+    "q": [
+      "What is the difference between microservices and monoliths?",
+      "Compare microservices architecture and monolithic architecture.",
+      "What are the advantages of microservices?",
+      "What are the challenges of microservices?",
+      "When should you choose a monolith over microservices?",
+      "What is a service mesh?"
+    ],
+    "a": "A monolithic architecture builds an application as a single, unified unit where all components are tightly coupled and deployed together — simpler to develop and test initially but becomes harder to scale and maintain as it grows. Microservices architecture decomposes an application into small, independent services, each with its own domain, data store, and deployment lifecycle. Services communicate via APIs (usually HTTP/REST or message queues). Benefits include independent deployability, technology diversity, fault isolation, and easier scaling. Challenges include distributed system complexity (network latency, data consistency, service discovery), operational overhead, and debugging difficulty. A service mesh (like Istio or Linkerd) manages microservice communication, providing traffic management, security, and observability. Many teams start with a monolith and gradually split into microservices as needed."
+  }
+]

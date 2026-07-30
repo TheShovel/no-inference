@@ -1,0 +1,63 @@
+[
+  {
+    "q": [
+      "What are intervals in music theory?",
+      "What is the difference between major, minor, perfect, augmented, and diminished intervals?",
+      "How are musical intervals measured?",
+      "What is a semitone and whole tone?",
+      "What are compound intervals?",
+      "How do intervals function in melody and harmony?",
+      "What is the interval quality (major, minor, perfect)?"
+    ],
+    "a": "An interval is the distance in pitch between two notes, measured in half steps (semitones), and classified by both quantity (the number of letter names spanned, e.g., a third spans three letter names) and quality (major, minor, perfect, augmented, diminished). Perfect intervals (unison, fourth, fifth, octave) are based on the most consonant acoustic ratios in the overtone series, while major and minor intervals apply to seconds, thirds, sixths, and sevenths — for example, C to E is a major third (4 half steps) and C to E♭ is a minor third (3 half steps). Augmented intervals are one half step larger than perfect or major intervals (e.g., C to F♯ is an augmented fourth), while diminished intervals are one half step smaller than perfect or minor intervals (e.g., C to G♭ is a diminished fifth). Interval recognition and construction form the foundation of all melody writing, chord building, and harmonic analysis."
+  },
+  {
+    "q": [
+      "What are chord progressions and cadences?",
+      "How do chord progressions create harmonic motion?",
+      "What are authentic, plagal, half, and deceptive cadences?",
+      "What is modulation in music?",
+      "How do composers modulate between keys?",
+      "What is the role of cadences in musical phrasing?",
+      "What is a perfect authentic cadence?"
+    ],
+    "a": "A chord progression is a sequence of chords that creates the harmonic foundation of a piece, with typical progressions like I-IV-V-I establishing tonal centers. Cadences are harmonic punctuation marks that end phrases: an authentic cadence (V-I) provides strong resolution, the most conclusive being the perfect authentic cadence where both chords are in root position and the tonic is the highest note; a plagal cadence (IV-I, the \"amen\" cadence) offers gentle resolution; a half cadence (ending on V) creates forward momentum; and a deceptive cadence (V-vi) surprises the listener by resolving to the relative minor instead of the tonic. Modulation is the process of changing from one key to another within a piece, achieved through pivot chords (chords common to both keys), direct modulation (abrupt shift), or sequential modulation (moving stepwise through a pattern), and is a primary tool for creating structural contrast and emotional journey in compositions spanning classical sonatas to pop songs."
+  },
+  {
+    "q": [
+      "What is counterpoint and voice leading?",
+      "How does counterpoint work in music?",
+      "What are the rules of voice leading?",
+      "What is the difference between counterpoint and harmony?",
+      "What are the species of counterpoint?",
+      "Who was Johann Joseph Fux and what is Gradus ad Parnassum?",
+      "How does voice leading apply to modern music?"
+    ],
+    "a": "Counterpoint is the art of combining two or more independent melodic lines that are harmonically interdependent yet rhythmically and contour-wise distinct, creating a rich contrapuntal texture where each voice maintains its own melodic identity. Voice leading refers to the smooth, logical movement of individual voices from chord to chord, guided by principles such as avoiding parallel fifths and octaves, resolving tendency tones (like the leading tone resolving upward by half step), moving voices by the smallest possible intervals, and maintaining proper spacing between voices. Fux's Gradus ad Parnassum (1725) codified five species of counterpoint — note against note, two notes against one, four notes against one, syncopation, and florid counterpoint — which remain the standard pedagogical method. These principles, developed most fully in Bach's fugues, continue to inform jazz arranging, pop harmony, and film scoring."
+  },
+  {
+    "q": [
+      "What is functional harmony?",
+      "What is chromatic harmony?",
+      "What are the diatonic functions (tonic, subdominant, dominant)?",
+      "What are secondary dominants and borrowed chords?",
+      "What is the Neapolitan chord?",
+      "What are augmented sixth chords?",
+      "How does chromatic harmony expand the tonal palette?"
+    ],
+    "a": "Functional harmony is the system of organizing chords around their harmonic functions within a key: tonic (I, stable home), subdominant (IV, moving away from tonic), and dominant (V, creating strong pull back to tonic). Chromatic harmony introduces notes outside the key to expand expressive possibilities, including secondary dominants (V/V, or dominant of the dominant, which temporarily tonicizes a non-tonic chord), borrowed chords (chords from the parallel minor key used in major, like the iv chord in a major key), the Neapolitan chord (a major triad built on the lowered second scale degree, N⁶), and augmented sixth chords (chords containing an augmented sixth interval that resolve outward to the dominant). These chromatic techniques, central to Romantic-era composers like Wagner and Chopin, create heightened emotional tension, unexpected harmonic color, and expanded tonal range while still ultimately operating within the framework of functional tonality."
+  },
+  {
+    "q": [
+      "What are musical modes?",
+      "What are the seven diatonic modes?",
+      "What is the difference between Ionian, Dorian, Phrygian, Lydian, Mixolydian, Aeolian, and Locrian?",
+      "What is the circle of fifths?",
+      "What is musical form in composition?",
+      "What is sonata form?",
+      "What is a fugue?",
+      "What is theme and variations?"
+    ],
+    "a": "The seven diatonic modes are scales derived from the major scale by starting on different scale degrees: Ionian (major), Dorian (minor with raised sixth), Phrygian (minor with lowered second), Lydian (major with raised fourth), Mixolydian (major with lowered seventh), Aeolian (natural minor), and Locrian (diminished with lowered second and fifth). Each mode has a distinct tonal character — for example, Lydian sounds bright and ethereal due to the raised fourth creating a tritone with the tonic, while Phrygian has a dark, Spanish-inflected quality from its minor second interval. The circle of fifths organizes the twelve major keys in ascending perfect fifths, showing key signatures and relative minors, and enabling rapid modulation analysis. Musical form describes the overall structure of a composition: sonata form (exposition-development-recapitulation) dominated the Classical era; a fugue introduces a subject that is imitated by multiple voices; rondo form alternates a recurring theme with contrasting episodes (ABACA); and theme and variations presents a melody followed by successive variations altering harmony, rhythm, texture, or ornamentation while retaining the theme's essential structure."
+  }
+]

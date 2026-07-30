@@ -1,0 +1,48 @@
+[
+  {
+    "q": [
+      "What are the main game engines?",
+      "What is Unity game engine?",
+      "What is Unreal Engine?",
+      "What is Godot engine?",
+      "Which game engine should I use?",
+      "What is the difference between Unity and Unreal Engine?",
+      "How do game engines work?"
+    ],
+    "a": "Unity is one of the most popular game engines, known for its versatility across 2D and 3D games, massive asset store, C# scripting, and extensive platform support including mobile, console, PC, and web — it powers games like Hollow Knight, Hearthstone, and Genshin Impact. Unreal Engine by Epic Games excels in high-fidelity 3D graphics with its Blueprint visual scripting system and C++ performance, used for blockbuster titles like Fortnite, Gears of War, and The Matrix Awakens demo, as well as increasingly in film and television virtual production. Godot is a free and open-source engine with its own scripting language (GDScript), a lightweight design, and a strong focus on node-based scene organization, making it popular for indie developers who prefer complete control without licensing fees or revenue sharing."
+  },
+  {
+    "q": [
+      "What programming languages are used for game development?",
+      "How is C++ used in game development?",
+      "What is C# used for in games?",
+      "What scripting languages are used in games?",
+      "What skills do game programmers need?",
+      "What is game programming?"
+    ],
+    "a": "Game development relies on several programming languages depending on the engine and platform: C++ is the industry standard for performance-critical AAA game development and is used natively in Unreal Engine, offering direct hardware access and maximum control over memory and rendering. C# is Unity's primary scripting language, balancing performance with developer productivity through managed memory and a rich standard library. Other languages include Python for game tools and prototyping, JavaScript/TypeScript for web games, Lua for embedded scripting in engines like LÖVE and Defold, and Rust gaining traction for performance-oriented indie projects. Game programmers need strong skills in data structures, algorithms, linear algebra, and optimization, along with expertise in specific areas like rendering, physics simulation, networking, audio programming, or gameplay systems."
+  },
+  {
+    "q": [
+      "How does game QA testing work?",
+      "What is the difference between indie and AAA games?",
+      "What are the roles on a game development team?",
+      "How is Agile methodology used in game development?",
+      "What is a game producer?",
+      "What does a game designer do?",
+      "What does an environment artist do?"
+    ],
+    "a": "Game QA (quality assurance) testing involves systematically playing the game to find bugs, glitches, and usability issues, documenting each issue with reproduction steps, expected vs. actual results, and severity ratings — testers often work through test plans covering specific features, regression testing after fixes, and compatibility testing across hardware configurations. Indie games are developed by small teams or individuals with limited budgets and creative freedom, often distributing digitally through platforms like Steam and itch.io, while AAA games are blockbuster titles developed by large studios (sometimes hundreds of people) with multimillion-dollar budgets, extensive marketing campaigns, and retail and digital distribution. Game development teams typically include producers (project management and scheduling), game designers (mechanics, systems, and content design), programmers (engineering features and tools), artists (2D/3D art, animation, UI), sound designers (audio effects and music), QA testers, and writers — modern teams often work in Agile sprints to iterate quickly on feedback and adapt to creative changes throughout development."
+  },
+  {
+    "q": [
+      "How is art created for games?",
+      "What is 3D modeling for games?",
+      "What is texturing in game art?",
+      "What is animation in games?",
+      "What is sound design for video games?",
+      "How does game publishing work?"
+    ],
+    "a": "Game art production involves creating all visual elements: 3D modeling (using tools like Blender, Maya, and 3ds Max) builds characters, environments, and props from polygon meshes; texturing applies surface details through hand-painted or physically-based rendering (PBR) materials; and animation brings characters to life through skeletal rigging and techniques like keyframe animation, motion capture, and procedural animation. Sound design for games encompasses sound effects (footsteps, weapons, ambient environments), foley, voice acting, and adaptive music systems that dynamically respond to gameplay events using middleware like FMOD and Wwise — unlike film, game audio must be interactive and non-linear. Game publishing involves financing development, handling manufacturing (or digital distribution), marketing, localization, platform certification (Sony, Microsoft, Nintendo requirements), and public relations — some developers self-publish digitally, while others partner with publishers who provide funding and expertise in exchange for a share of revenue and often intellectual property rights."
+  }
+]

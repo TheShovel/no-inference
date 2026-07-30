@@ -1,0 +1,81 @@
+[
+  {
+    "q": [
+      "What was the Asch conformity experiment?",
+      "How did Asch study conformity?",
+      "What did the Asch experiment show about human behavior?",
+      "What is the Asch paradigm?",
+      "How many people conformed in Asch's experiment?",
+      "What factors influence conformity according to Asch?"
+    ],
+    "a": "Solomon Asch's classic 1951 conformity experiment demonstrated that people often conform to group pressure even when the group is clearly wrong. Participants were asked to match line lengths in a simple visual task while confederates deliberately gave incorrect answers, resulting in about 75% of participants conforming to the majority at least once. Asch found that conformity increased with group size up to about four or five people, but decreased dramatically when even one other person dissented from the majority. The experiment revealed the powerful influence of social pressure on individual judgment and has been foundational in understanding why people go along with incorrect group opinions in real-world situations."
+  },
+  {
+    "q": [
+      "What was the Milgram experiment?",
+      "What did Milgram's obedience study show?",
+      "How far did people go in the Milgram experiment?",
+      "What was the shock experiment in psychology?",
+      "What percentage of participants went to the highest voltage in Milgram's study?",
+      "What factors influenced obedience in the Milgram experiment?"
+    ],
+    "a": "Stanley Milgram's controversial 1961 experiment at Yale University investigated how far ordinary people would go in obeying an authority figure when instructed to harm another person. Participants were told to administer electric shocks to a learner (actually a confederate) for incorrect answers, with shock levels increasing up to a dangerous 450 volts, and about 65% of participants obeyed fully and administered the maximum shock despite hearing simulated cries of pain. The experiment was inspired by the trial of Adolf Eichmann and aimed to understand how ordinary people could participate in atrocities like the Holocaust. Milgram identified key factors that increased obedience, including the physical proximity of the authority figure, the legitimacy of the institution, and the gradual escalation of demands that made it difficult for participants to withdraw."
+  },
+  {
+    "q": [
+      "What is the bystander effect?",
+      "Why do people not help in emergencies?",
+      "What was the Kitty Genovese case?",
+      "What is diffusion of responsibility?",
+      "What factors reduce the bystander effect?",
+      "How does the number of witnesses affect helping behavior?",
+      "What is pluralistic ignorance in the bystander effect?"
+    ],
+    "a": "The bystander effect is a social psychological phenomenon where individuals are less likely to help a victim in an emergency when other people are present, famously highlighted by the 1964 murder of Kitty Genovese where 38 witnesses allegedly failed to intervene. The effect is primarily driven by two mechanisms: diffusion of responsibility, where individuals feel less personal accountability when others are present, and pluralistic ignorance, where bystanders look to others for how to react and misinterpret their inaction as indicating that help is not needed. The likelihood of help increases when the situation is clearly an emergency, when the victim is perceived as similar to the bystander, and when a single individual takes personal responsibility. The classic studies by Latané and Darley demonstrated that the presence of even one other person significantly reduces an individual's likelihood of intervening."
+  },
+  {
+    "q": [
+      "What is cognitive dissonance?",
+      "How does cognitive dissonance affect behavior?",
+      "What is an example of cognitive dissonance?",
+      "Who developed cognitive dissonance theory?",
+      "How do people resolve cognitive dissonance?",
+      "What is the relationship between cognitive dissonance and attitude change?"
+    ],
+    "a": "Cognitive dissonance is an uncomfortable psychological state that occurs when a person holds two conflicting beliefs, or when their behavior contradicts their beliefs, first systematically studied by Leon Festinger in 1957. People are motivated to reduce this discomfort by changing their attitudes, beliefs, or behaviors to achieve consistency, often through rationalization or attitude adjustment. Classic experiments demonstrated this effect, such as Festinger and Carlsmith's 1959 study where participants paid $1 to lie about a boring task later rated it more favorably than those paid $20, because those receiving only $1 experienced greater dissonance and had to convince themselves the task was enjoyable. Cognitive dissonance explains many everyday phenomena, including buyer's remorse, post-decision rationalization, and the tendency to justify effort or suffering through increased commitment."
+  },
+  {
+    "q": [
+      "What is groupthink?",
+      "How does groupthink affect decision making?",
+      "What are the symptoms of groupthink?",
+      "What is an example of groupthink?",
+      "Who coined the term groupthink?",
+      "How can groupthink be prevented?"
+    ],
+    "a": "Groupthink is a psychological phenomenon where group members prioritize harmony and consensus over critical evaluation of alternative viewpoints, leading to flawed decision-making. Irving Janis coined the term and analyzed historical disasters like the Bay of Pigs invasion, the Challenger space shuttle explosion, and Pearl Harbor as examples of groupthink in action. Symptoms include the illusion of invulnerability, collective rationalization of warnings, belief in the group's inherent morality, stereotyping of outsiders, direct pressure on dissenters, self-censorship, the illusion of unanimity, and mindguards who protect the group from contradictory information. To prevent groupthink, leaders should encourage open criticism, assign a devil's advocate role, bring in outside experts, and establish anonymous feedback channels."
+  },
+  {
+    "q": [
+      "What is the fundamental attribution error?",
+      "How does the fundamental attribution error affect our judgments?",
+      "What is the difference between dispositional and situational attribution?",
+      "What is an example of the fundamental attribution error?",
+      "How does culture influence the fundamental attribution error?",
+      "Who discovered the fundamental attribution error?"
+    ],
+    "a": "The fundamental attribution error (FAE) is the tendency to overemphasize personality-based explanations for others' behaviors while underestimating situational factors, a concept extensively studied by Lee Ross. For example, if someone cuts us off in traffic, we tend to assume they are a rude person (dispositional attribution) rather than considering they might be rushing to an emergency (situational attribution). People are significantly more likely to make the fundamental attribution error when judging others than when explaining their own behavior, a discrepancy known as the actor-observer bias. The FAE is more prevalent in individualistic Western cultures than in collectivist East Asian cultures, which tend to place greater emphasis on situational context and social roles."
+  },
+  {
+    "q": [
+      "What was the Stanford prison experiment?",
+      "What happened in the Stanford prison experiment?",
+      "Who conducted the Stanford prison experiment?",
+      "Why was the Stanford prison experiment stopped?",
+      "What did the Stanford prison experiment teach us?",
+      "What are the ethical concerns with the Stanford prison experiment?",
+      "What is the significance of Zimbardo's prison study?"
+    ],
+    "a": "The Stanford prison experiment was a 1971 psychological study conducted by Philip Zimbardo in which college students were randomly assigned to play the roles of prisoners and guards in a simulated prison in the Stanford University basement. The experiment spiraled out of control within days as guards became increasingly abusive and sadistic, while prisoners showed signs of extreme stress, depression, and passivity, forcing Zimbardo to terminate the study after only six days instead of the planned two weeks. The experiment demonstrated how situational forces and assigned social roles could dramatically transform ordinary people's behavior, with guards internalizing their power and prisoners internalizing their subservience. The study has been heavily criticized for ethical violations, lack of scientific rigor, and demand characteristics, and later analyses suggested that Zimbardo actively encouraged the guards' abusive behavior, undermining the claim that roles alone produced the results."
+  }
+]

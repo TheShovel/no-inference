@@ -1,0 +1,158 @@
+[
+  {
+    "id": "prob-solving-001",
+    "triggers": [
+      "how do I solve problems involving {context}",
+      "how do I approach problems with {context}",
+      "what is the problem solving method for {context}"
+    ],
+    "context_role": "topic",
+    "template": "When solving problems involving {context}, a structured approach works best. Start by clearly defining what you're trying to achieve and identifying the key elements of {context} that are relevant to your situation. Then break the problem down into smaller, manageable parts — each one should be something you can address independently. Apply the principles of {context} to each part, checking your assumptions as you go. Finally, integrate your solutions and verify that the whole thing works together. The most common pitfall is trying to tackle everything at once, so remember to take it step by step.",
+    "fallback": "I can help with problem-solving approaches! What topic or type of problem are we dealing with?",
+    "style": ["educational", "informative"],
+    "response_length": "medium"
+  },
+  {
+    "id": "prob-mistakes-002",
+    "triggers": [
+      "what are common mistakes with {context}",
+      "what pitfalls should I avoid with {context}",
+      "what do beginners mess up with {context}"
+    ],
+    "context_role": "topic",
+    "template": "There are a few common mistakes people make when working with {context}. The first is jumping into advanced territory before mastering the fundamentals — it's tempting, but the basics of {context} are essential for everything that follows. Another frequent error is applying {context} mechanically without understanding the reasoning behind it, which leads to trouble when situations don't match textbook examples. People also tend to underestimate the importance of context itself, forgetting that {context} doesn't exist in a vacuum and external factors matter. The good news is that being aware of these mistakes is half the battle in avoiding them.",
+    "fallback": "I can point out common mistakes! What topic are we looking at?",
+    "style": ["educational", "conversational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "prob-debug-003",
+    "triggers": [
+      "how do I debug issues with {context}",
+      "how do I troubleshoot {context}",
+      "what do I do when {context} is not working"
+    ],
+    "context_role": "topic",
+    "template": "Debugging issues with {context} requires a systematic approach. Start by isolating the problem — can you reproduce it consistently? If not, focus on understanding the conditions under which it occurs. Next, check your fundamentals: are you applying the core principles of {context} correctly? Often the issue is a subtle misunderstanding of a basic concept. Then test one variable at a time rather than changing everything at once, so you can identify the specific cause. Keep a log of what you've tried and what happened — this is invaluable for both solving the current issue and avoiding similar problems in the future.",
+    "fallback": "I can help troubleshoot! What topic are you having issues with?",
+    "style": ["analytical", "informative"],
+    "response_length": "medium"
+  },
+  {
+    "id": "prob-getting-started-004",
+    "triggers": [
+      "how do I get started with {context}",
+      "where do I begin with {context}",
+      "first steps for {context}"
+    ],
+    "context_role": "topic",
+    "template": "Getting started with {context} is simpler than you might think. The first step is to understand the core idea — what {context} is fundamentally about and why it exists. Spend just enough time on this to have a clear mental model, then immediately move to hands-on exploration. Find a simple, beginner-friendly project or exercise that uses {context} and work through it, even if you don't understand everything. The key is to build momentum early. As you go, note the questions that come up and use them as your guide for what to learn next. This keeps your learning of {context} driven by genuine curiosity rather than abstract theory.",
+    "fallback": "I can help you get started! What topic are you beginning to explore?",
+    "style": ["educational", "conversational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "prob-first-step-005",
+    "triggers": [
+      "what is the first step in {context}",
+      "how do I start approaching {context}",
+      "what should I do first with {context}"
+    ],
+    "context_role": "topic",
+    "template": "The first step in {context} is always to establish a clear understanding of the situation you're dealing with. Before you can apply the principles of {context} effectively, you need to know what you're working with and what you're trying to achieve. Take time to gather relevant information, identify the key factors at play, and define what success looks like. This upfront investment pays off because it prevents you from going in the wrong direction and having to backtrack later. Think of it as setting the foundation — everything else in {context} builds on this initial clarity.",
+    "fallback": "I can guide you through the first steps! What topic are we starting?",
+    "style": ["informative", "educational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "prob-improve-006",
+    "triggers": [
+      "how do I improve at {context}",
+      "how can I get better at {context}",
+      "what is the best way to improve in {context}"
+    ],
+    "context_role": "topic",
+    "template": "Improving at {context} is about deliberate practice, not just repetition. Start by identifying the specific areas within {context} where you feel least confident — those are your highest-leverage improvement opportunities. Seek out challenges that are just beyond your current ability level; if something feels comfortably easy, it's probably not helping you grow. Get feedback on your work from people who are more experienced with {context}, and pay attention to where they focus their critiques. Finally, reflect regularly on what you've learned and how your understanding of {context} has evolved. Improvement comes from the cycle of trying, failing, learning, and trying again.",
+    "fallback": "I can suggest ways to improve! What skill or topic do you want to get better at?",
+    "style": ["educational", "conversational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "prob-workflow-007",
+    "triggers": [
+      "what is the workflow for {context}",
+      "how do professionals approach {context}",
+      "what does a typical process for {context} look like"
+    ],
+    "context_role": "topic",
+    "template": "A typical workflow for {context} follows a pattern that experienced practitioners use to get consistent results. It starts with preparation — understanding the requirements and gathering what you need. Then comes the analysis phase, where you apply the core principles of {context} to break down the problem or situation. After analysis comes execution, where you implement your approach step by step. Finally, there's a review phase where you evaluate the outcomes and identify lessons for next time. This workflow isn't rigid — you'll often loop back to earlier steps as you learn more — but it provides a reliable structure for applying {context} effectively.",
+    "fallback": "I can describe a typical workflow! What topic's process are we discussing?",
+    "style": ["informative", "formal"],
+    "response_length": "medium"
+  },
+  {
+    "id": "prob-optimize-008",
+    "triggers": [
+      "how do I optimize {context}",
+      "how can I make {context} more efficient",
+      "what are the best practices for optimizing {context}"
+    ],
+    "context_role": "topic",
+    "template": "Optimizing {context} is about making it work better for your specific situation. Start by measuring your current results — you can't optimize what you don't measure. Identify the bottlenecks or areas where {context} isn't delivering the results you expect. Look for opportunities to streamline your approach: are there steps you're taking out of habit rather than necessity? Are there newer techniques or tools within {context} that could replace outdated ones? Consider the trade-offs involved in any optimization — making {context} faster might reduce accuracy, and simplifying it might lose important nuance. The goal is to find the sweet spot that works for your particular needs.",
+    "fallback": "I can offer optimization advice! What topic are we looking to improve?",
+    "style": ["analytical", "informative"],
+    "response_length": "medium"
+  },
+  {
+    "id": "prob-planning-009",
+    "triggers": [
+      "how do I plan for {context}",
+      "what should I consider before starting {context}",
+      "how do I prepare for working with {context}"
+    ],
+    "context_role": "topic",
+    "template": "Good planning is essential for successful work with {context}. Start by clarifying your goals — what specifically do you want to achieve? Then assess your current resources and constraints; what do you already have that's relevant to {context}, and what limitations are you working with? Map out the key milestones you'll need to reach, and be realistic about the time and effort each will require. Also plan for contingencies — what will you do if something unexpected comes up? The best plans for {context} are flexible enough to adapt to new information while providing enough structure to keep you moving forward.",
+    "fallback": "I can help with planning! What topic or project are we preparing for?",
+    "style": ["informative", "educational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "prob-collaboration-010",
+    "triggers": [
+      "how do I work with others on {context}",
+      "how to collaborate on {context} projects",
+      "what is the best way to team up for {context}"
+    ],
+    "context_role": "topic",
+    "template": "Collaborating on {context} projects brings its own set of considerations. The first step is establishing a shared understanding of {context} — make sure everyone on the team has a common foundation even if their expertise levels vary. Clear communication is crucial: define terminology, agree on goals, and establish how decisions about {context} will be made. Divide work according to people's strengths, but create opportunities for cross-learning so the team's collective knowledge of {context} grows. Regular check-ins help catch misunderstandings early. The best collaborations around {context} leverage diverse perspectives while maintaining alignment on the core approach.",
+    "fallback": "I can share collaboration tips! What topic are we working on together?",
+    "style": ["conversational", "informative"],
+    "response_length": "medium"
+  },
+  {
+    "id": "prob-scaling-011",
+    "triggers": [
+      "how do I scale {context}",
+      "how does {context} work at a larger scale",
+      "what changes when {context} is scaled up"
+    ],
+    "context_role": "topic",
+    "template": "Scaling {context} introduces challenges that don't exist at smaller scales. What worked perfectly for a small project or simple scenario often breaks down when applied more broadly. The first thing to watch for is that the assumptions underlying {context} may not hold at scale — for instance, what was manageable manually may require automation, or what was obvious in a small team may need formal processes in a larger one. You'll likely need to invest more in documentation, consistency checks, and coordination as you scale {context}. The key insight is that scaling isn't just doing more of the same — it requires adapting how you apply {context} to fit the new context of larger scope and complexity.",
+    "fallback": "I can discuss scaling considerations! What topic are we scaling up?",
+    "style": ["analytical", "informative"],
+    "response_length": "medium"
+  },
+  {
+    "id": "prob-evaluate-012",
+    "triggers": [
+      "how do I know if {context} worked",
+      "how do I measure success with {context}",
+      "what metrics matter for {context}"
+    ],
+    "context_role": "topic",
+    "template": "Evaluating whether your application of {context} was successful depends on what you set out to achieve. Start by revisiting your original goals — what specific outcomes were you hoping for? Look for concrete evidence that {context} made a difference, whether that's improved results, better understanding, or more efficient processes. Be honest about what didn't work as well; failures and unexpected outcomes are valuable data for refining your approach to {context}. It's also worth considering secondary effects — sometimes {context} creates benefits (or problems) you didn't anticipate. Regular evaluation helps you build a clearer picture of when and how {context} is most valuable for you.",
+    "fallback": "I can discuss evaluation methods! What topic's outcomes are we assessing?",
+    "style": ["analytical", "educational"],
+    "response_length": "medium"
+  }
+]

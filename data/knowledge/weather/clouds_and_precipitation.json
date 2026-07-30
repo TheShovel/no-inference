@@ -1,0 +1,42 @@
+[
+  {
+    "q": [
+      "What are the main types of clouds?",
+      "How are clouds classified?",
+      "What are cirrus, cumulus, and stratus clouds?",
+      "What is the difference between low, middle, and high clouds?",
+      "How can you identify different cloud types?"
+    ],
+    "a": "Clouds are classified by altitude and appearance into ten main genera. High clouds (5-13 km) include cirrus (wispy, ice crystals), cirrocumulus, and cirrostratus. Middle clouds (2-7 km) include altocumulus and altostratus. Low clouds (0-2 km) include stratocumulus, stratus (layered, gray), and nimbostratus (rain-bearing). Vertically developed clouds span multiple levels and include cumulus (puffy, fair-weather) and cumulonimbus (towering thunderstorm clouds with anvil tops)."
+  },
+  {
+    "q": [
+      "How do clouds form?",
+      "What is the process of cloud formation?",
+      "What role does condensation play in cloud formation?",
+      "Why do clouds form when air rises?",
+      "What happens at the lifting condensation level?"
+    ],
+    "a": "Clouds form when moist air rises, expands, and cools adiabatically to its dew point, causing water vapor to condense onto tiny particles called cloud condensation nuclei (CCN) such as dust, salt, or pollutants. The altitude at which condensation begins is the lifting condensation level (LCL). Rising can occur through convection (surface heating), orographic lift (air forced over mountains), frontal lift (warm air rising over cold air), or convergence."
+  },
+  {
+    "q": [
+      "What are the different types of precipitation?",
+      "How does rain, snow, sleet, and hail form?",
+      "What determines whether precipitation falls as rain or snow?",
+      "How does hail form in thunderstorms?",
+      "What is freezing rain and how does it differ from sleet?"
+    ],
+    "a": "Precipitation forms when cloud droplets or ice crystals grow large enough to fall. Rain occurs when temperatures remain above freezing throughout the column. Snow forms when ice crystals remain frozen to the ground. Sleet (ice pellets) happens when snow partially melts then refreezes before reaching the ground. Freezing rain occurs when snow melts into rain, then freezes on contact with cold surfaces. Hail forms in strong updrafts within thunderstorms where ice particles accumulate layers of rime as they cycle through supercooled water."
+  },
+  {
+    "q": [
+      "What are the different types of fog?",
+      "How does fog form?",
+      "What is the difference between radiation fog and advection fog?",
+      "What causes fog in different weather conditions?",
+      "How does fog affect visibility and travel?"
+    ],
+    "a": "Fog is a cloud that forms at ground level when the air temperature drops to the dew point. Radiation fog forms on clear, calm nights when the ground cools rapidly by radiation, cooling the air above it. Advection fog forms when warm, moist air moves horizontally over a colder surface (land or water), such as coastal fog from ocean currents. Upslope fog forms when moist air flows upward over terrain and cools adiabatically. Fog significantly reduces visibility and is a major hazard for aviation, shipping, and road travel."
+  }
+]

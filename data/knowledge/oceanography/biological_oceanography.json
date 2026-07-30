@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is a marine food web?",
+      "How do marine food webs work?",
+      "What are the trophic levels in the ocean?",
+      "Who are the producers and consumers in the ocean?",
+      "What is the difference between a marine food chain and food web?",
+      "How does energy flow through marine ecosystems?",
+      "What role do phytoplankton play in ocean food webs?"
+    ],
+    "a": "Marine food webs describe the complex network of feeding relationships among organisms in the ocean, beginning with phytoplankton and other primary producers that convert sunlight and nutrients into organic matter through photosynthesis. Phytoplankton, mainly diatoms and dinoflagellates, form the base of most marine food webs and are consumed by zooplankton (tiny grazers like copepods and krill), which in turn are eaten by small fish, then larger fish, seabirds, marine mammals, and apex predators like sharks and orcas. Unlike simple linear food chains, real marine food webs are highly interconnected, with many species at multiple trophic levels and energy flowing through multiple pathways, making them more resilient to disturbances."
+  },
+  {
+    "q": [
+      "What is primary production in the ocean?",
+      "How do phytoplankton produce energy in the ocean?",
+      "What factors limit primary productivity in the sea?",
+      "What is the difference between gross and net primary production?",
+      "Where is ocean productivity highest?",
+      "Why are coastal waters more productive than the open ocean?",
+      "What is the euphotic zone?"
+    ],
+    "a": "Primary production in the ocean is the rate at which phytoplankton and other photosynthetic organisms convert inorganic carbon into organic matter through photosynthesis, forming the energy base for nearly all marine life. The euphotic zone, the sunlit upper layer of the ocean (typically 0–200 m depth), is where sufficient light penetrates for photosynthesis to occur, but productivity is often limited by nutrient availability — especially nitrogen, phosphorus, and iron — rather than light alone. High-nutrient regions such as upwelling zones (off the coasts of Peru, California, and West Africa), continental shelves, and polar seas exhibit the highest primary productivity, supporting abundant fisheries, while the oligotrophic central gyres are the ocean's biological deserts."
+  },
+  {
+    "q": [
+      "What is a harmful algal bloom?",
+      "What causes red tides?",
+      "How do algal blooms affect marine life?",
+      "What are the health effects of harmful algal blooms?",
+      "What is eutrophication and how does it relate to algal blooms?",
+      "What are dead zones in the ocean?",
+      "How do nutrient pollution and algal blooms create hypoxia?"
+    ],
+    "a": "Harmful algal blooms (HABs), often called red tides when caused by dinoflagellates, are rapid proliferations of algae that produce potent toxins or cause other harmful effects on marine ecosystems, human health, and coastal economies. These blooms are frequently triggered by nutrient pollution from agricultural runoff, sewage, and industrial discharge that introduces excess nitrogen and phosphorus into coastal waters, a process called eutrophication. When the bloom dies and decomposes, microbial respiration consumes dissolved oxygen, creating hypoxic (low-oxygen) or anoxic (no-oxygen) dead zones where most marine life cannot survive — the Gulf of Mexico dead zone at the Mississippi River outlet is one of the largest, covering up to 6,000–7,000 square miles annually."
+  },
+  {
+    "q": [
+      "What is marine biogeography?",
+      "How are marine organisms distributed across the ocean?",
+      "What factors control species distribution in the ocean?",
+      "What are the major marine biogeographic realms?",
+      "What is the difference between pelagic and benthic biogeography?",
+      "How do ocean currents affect marine species distribution?",
+      "What are biogeographic provinces in the ocean?"
+    ],
+    "a": "Marine biogeography is the study of the spatial distribution of marine organisms and the ecological and evolutionary processes that shape these patterns across ocean basins, depth zones, and latitudinal gradients. Species distributions are controlled by physical factors (temperature, salinity, light, currents), biological interactions (competition, predation, symbiosis), historical factors (continental drift, sea-level changes, past climate), and dispersal capabilities. Major biogeographic breaks often correspond to currents and temperature gradients, such as the boundary between tropical and temperate waters, while the deep sea shows distinct zonation patterns with depth, with many species restricted to specific depth ranges by pressure, temperature, and food availability."
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What are prime numbers?",
+      "Define prime numbers in mathematics",
+      "How do you identify a prime number?",
+      "Why are prime numbers important?",
+      "What is the difference between prime and composite numbers?"
+    ],
+    "a": "A prime number is a natural number greater than 1 that has exactly two distinct positive divisors: 1 and itself (e.g., 2, 3, 5, 7, 11). Composite numbers have more than two divisors (e.g., 4 has divisors 1, 2, 4). Primes are the building blocks of all integers because of the Fundamental Theorem of Arithmetic, which states every integer greater than 1 can be uniquely factored into a product of primes. They are critical in number theory and form the backbone of modern cryptography, including RSA encryption."
+  },
+  {
+    "q": [
+      "What is the Fibonacci sequence?",
+      "How does the Fibonacci sequence work?",
+      "What are the first numbers in the Fibonacci sequence?",
+      "Where does the Fibonacci sequence appear in nature?",
+      "What is the rule for generating Fibonacci numbers?"
+    ],
+    "a": "The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, typically starting with 0 and 1: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ... This sequence appears remarkably often in nature, from the arrangement of leaves on a stem and the spirals of sunflowers to the branching patterns of trees and the shell chambers of nautiluses. The ratio of consecutive Fibonacci numbers approaches the golden ratio (approximately 1.618) as the sequence progresses."
+  },
+  {
+    "q": [
+      "What is the golden ratio?",
+      "How is the golden ratio defined?",
+      "What is the value of the golden ratio?",
+      "Why is the golden ratio considered aesthetically pleasing?",
+      "Where is the golden ratio found in nature and art?"
+    ],
+    "a": "The golden ratio (φ, phi) is the irrational number approximately equal to 1.6180339887, defined as the ratio where the whole divided by the larger part equals the larger part divided by the smaller part. Mathematically, φ satisfies φ² = φ + 1 and can be expressed as (1 + √5) / 2. The golden ratio has been observed in the proportions of the Parthenon, Leonardo da Vinci's Vitruvian Man, and modern design, though many claimed occurrences are exaggerated; its genuine appearances in nature include the branching of phyllotaxis and certain spiral formations."
+  },
+  {
+    "q": [
+      "What is infinity in mathematics?",
+      "How is infinity defined mathematically?",
+      "What are the different sizes of infinity?",
+      "Can infinity be compared or counted?",
+      "What is the difference between countable and uncountable infinity?"
+    ],
+    "a": "Infinity (∞) is not a number in the usual sense but a concept describing something unbounded, limitless, or larger than any finite number. Georg Cantor revolutionized mathematics by showing that infinities come in different sizes: countable infinity (the size of natural numbers, ℵ₀) is smaller than uncountable infinity (the size of real numbers, continuum), and there are infinitely many transfinite cardinal numbers. The integers are countably infinite, while the real numbers form a larger, uncountable infinity that cannot be put into a one-to-one correspondence with the natural numbers, a result proven via Cantor's diagonal argument."
+  },
+  {
+    "q": [
+      "What are the different types of numbers?",
+      "Explain rational and irrational numbers",
+      "What is the difference between real and imaginary numbers?",
+      "What are complex numbers?",
+      "How are different number systems related?"
+    ],
+    "a": "Number systems form a hierarchy: natural numbers (1, 2, 3, ...) are contained in integers (..., -2, -1, 0, 1, 2, ...), which are contained in rational numbers (fractions), which are contained in real numbers (rationals + irrationals like π and √2). Imaginary numbers, based on i (the square root of -1), extend the real numbers to complex numbers of the form a + bi, where a and b are real. Irrational numbers cannot be expressed as fractions of integers and have non-repeating, non-terminating decimal expansions, while complex numbers are essential in electrical engineering, quantum mechanics, and signal processing."
+  },
+  {
+    "q": [
+      "What are some unsolved problems in mathematics?",
+      "What is the Riemann Hypothesis?",
+      "What is the P vs NP problem?",
+      "What are the Millennium Prize Problems?",
+      "What is the Collatz conjecture?"
+    ],
+    "a": "Mathematics contains many famous unsolved problems, including the seven Millennium Prize Problems designated by the Clay Mathematics Institute (each carrying a $1 million prize). The Riemann Hypothesis concerns the distribution of prime numbers and zeros of the zeta function; the P vs NP problem asks whether every problem whose solution can be quickly verified can also be solved quickly; and the Collatz conjecture (3n+1 problem) posits that repeating a simple iterative process always reaches 1, yet remains unproven. Other major open problems include the Birch and Swinnerton-Dyer conjecture, the Hodge conjecture, the Navier-Stokes existence and smoothness problem, and the Yang-Mills mass gap problem."
+  }
+]

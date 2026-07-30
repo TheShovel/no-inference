@@ -1,0 +1,47 @@
+[
+  {
+    "q": [
+      "What is education policy?",
+      "How are public schools funded?",
+      "What determines school funding?",
+      "What is the role of government in education?",
+      "How does education policy affect schools?",
+      "What is the difference between federal and state education policy?"
+    ],
+    "a": "Education policy encompasses the laws, regulations, and decisions that govern educational systems, including curriculum standards, funding mechanisms, teacher qualifications, school accountability, student assessment, and civil rights protections. In the United States, most education policy is determined at the state and local levels, with the federal government playing a supporting role through funding, civil rights enforcement, and initiatives like the Elementary and Secondary Education Act. School funding primarily comes from local property taxes, state allocations, and some federal aid, leading to significant inequities between wealthy and poor districts — a disparity critics argue perpetuates achievement gaps along socioeconomic and racial lines."
+  },
+  {
+    "q": [
+      "What is the No Child Left Behind Act?",
+      "What is the Every Student Succeeds Act?",
+      "What is standardized testing policy?",
+      "What is high-stakes testing?",
+      "How does education policy affect testing?",
+      "No Child Left Behind vs ESSA"
+    ],
+    "a": "No Child Left Behind (NCLB), enacted in 2002, was a landmark federal law that required annual standardized testing in reading and math for grades 3-8 and once in high school, holding schools accountable for meeting proficiency targets with consequences for underperformance. The Every Student Succeeds Act (ESSA), signed in 2015, replaced NCLB and returned significant authority to states while maintaining annual testing requirements, but allowing states to design their own accountability systems, choose their own interventions for struggling schools, and use multiple measures beyond test scores. The shift reflected growing bipartisan recognition that NCLB's rigid approach had unintended consequences, including narrowed curricula, teaching to the test, and labeling large numbers of schools as failing."
+  },
+  {
+    "q": [
+      "What is school choice?",
+      "What are vouchers in education?",
+      "What are charter schools?",
+      "What is the Common Core?",
+      "What are the arguments for and against school choice?",
+      "school choice policies"
+    ],
+    "a": "School choice policies allow families to select educational options beyond their assigned neighborhood public schools, including charter schools, magnet schools, private schools (via vouchers or tax-credit scholarships), homeschooling, and inter-district transfer programs. Charter schools are publicly funded but independently operated, with flexibility in curriculum and operations in exchange for accountability for student outcomes. Vouchers provide public funds for students to attend private schools, including religious institutions. The Common Core State Standards (adopted by most states beginning in 2010, though some later repealed or replaced them) defined grade-by-grade expectations for English/language arts and mathematics, aiming to ensure college and career readiness through shared standards across states. Supporters argue choice promotes innovation, competition, and parental empowerment, while critics contend it diverts resources from public schools, increases segregation, and lacks evidence of consistent academic improvement."
+  },
+  {
+    "q": [
+      "What is equity in education?",
+      "What is the achievement gap?",
+      "How does education policy address inequality?",
+      "What is Title I funding?",
+      "What is special education law?",
+      "What is IDEA?",
+      "equity in education"
+    ],
+    "a": "Equity in education means that all students, regardless of race, socioeconomic status, gender, disability, or background, have access to high-quality educational opportunities and resources needed to reach their full potential. The achievement gap refers to persistent disparities in academic performance between groups, particularly between students from low-income and wealthy families and between students of different racial and ethnic backgrounds. Key equity-focused policies include Title I (federal funding for schools serving high-poverty populations), the Individuals with Disabilities Education Act (IDEA, guaranteeing free appropriate public education for students with disabilities in the least restrictive environment), and civil rights enforcement prohibiting discrimination. Despite decades of policy efforts, significant inequities persist and have been exacerbated by school funding tied to local property taxes and the disproportionate impact of the COVID-19 pandemic on disadvantaged students."
+  }
+]

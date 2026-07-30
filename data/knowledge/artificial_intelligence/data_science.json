@@ -1,0 +1,59 @@
+[
+  {
+    "q": [
+      "What is data science?",
+      "Define data science and what data scientists do",
+      "What is the difference between data science, machine learning, and statistics?",
+      "What does a data scientist do?",
+      "Explain the field of data science",
+      "What are the key skills needed for data science?",
+      "what is data science",
+      "data science"
+    ],
+    "a": "Data science is an interdisciplinary field that combines statistics, computer science, and domain expertise to extract insights and knowledge from structured and unstructured data. A data scientist collects, cleans, and explores data, builds predictive models, and communicates findings to drive decision-making. The field encompasses the entire data lifecycle, from data collection and storage through analysis and visualization to deployment of data products, and differs from statistics in its emphasis on large-scale computational approaches and from machine learning in its broader focus on data-driven decision-making rather than just algorithmic prediction."
+  },
+  {
+    "q": [
+      "What is the data science pipeline?",
+      "What is data collection in data science?",
+      "What is data cleaning and why is it important?",
+      "What is exploratory data analysis?",
+      "What is feature engineering?",
+      "Explain the stages of a data science project"
+    ],
+    "a": "The data science pipeline is a systematic process that guides a project from raw data to actionable insights, typically progressing through data collection, data cleaning and preprocessing, exploratory data analysis (EDA), feature engineering, model building, evaluation, and deployment. Data cleaning is often the most time-consuming step, involving handling missing values, correcting inconsistencies, removing duplicates, and standardizing formats — poor data quality directly undermines any downstream analysis or modeling. Exploratory data analysis uses summary statistics and visualizations to understand data distributions, detect patterns, spot anomalies, and formulate hypotheses before formal modeling begins."
+  },
+  {
+    "q": [
+      "What is statistical modeling in data science?",
+      "What is data visualization and why is it important?",
+      "What tools are used for data visualization?",
+      "How is Tableau used for data visualization?",
+      "What is matplotlib in Python?",
+      "What is the role of data storytelling?"
+    ],
+    "a": "Statistical modeling uses mathematical formulations to describe relationships between variables, make predictions, and test hypotheses, with common techniques including linear and logistic regression, time series analysis, Bayesian methods, and hypothesis testing. Data visualization tools like Tableau provide interactive dashboards that enable non-technical stakeholders to explore data and discover insights, while Python libraries like matplotlib, seaborn, and plotly offer programmatic control for creating publication-quality charts and custom visualizations. Data storytelling combines visualizations with narrative context to communicate findings effectively, transforming raw analytical results into compelling, actionable recommendations for decision-makers."
+  },
+  {
+    "q": [
+      "What is big data?",
+      "What is Hadoop and how does it work?",
+      "What is Apache Spark?",
+      "What are big data tools and technologies?",
+      "What is the difference between Hadoop and Spark?",
+      "How is SQL used in data science?"
+    ],
+    "a": "Big data refers to datasets too large, fast-moving, or complex for traditional data processing tools to handle, often defined by the four Vs: volume (scale of data), velocity (speed of data generation), variety (different data types and sources), and veracity (data quality and trustworthiness). Hadoop provides distributed storage and processing through the Hadoop Distributed File System (HDFS) and MapReduce programming model, enabling batch processing of massive datasets across clusters of commodity hardware. Apache Spark improves on Hadoop by offering in-memory processing speeds up to 100 times faster for certain workloads, along with built-in libraries for SQL, streaming, machine learning (MLlib), and graph processing. SQL remains fundamental for data exploration and manipulation, with modern tools like Hive and Presto enabling SQL queries on big data infrastructure."
+  },
+  {
+    "q": [
+      "What is A/B testing in data science?",
+      "How do you design an A/B test?",
+      "What is statistical significance in A/B testing?",
+      "What is the difference between A/B testing and multivariate testing?",
+      "How do data scientists measure experiment results?",
+      "What are common pitfalls in A/B testing?"
+    ],
+    "a": "A/B testing is a controlled experiment methodology where two versions (A and B) of a product, feature, or webpage are compared to determine which performs better on a predefined metric, such as conversion rate or user engagement. The process involves randomly splitting users into control and treatment groups, ensuring statistical significance through adequate sample sizes determined by power analysis, and running the experiment for sufficient duration to account for temporal effects. Common pitfalls include peeking at results too early (which inflates false positive rates), failing to account for multiple comparisons, and Simpson's paradox where aggregated results reverse when data is segmented by confounding variables."
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "q": [
+      "What is materials science?",
+      "What does materials science study?",
+      "What are the main types of materials?",
+      "Why is materials science important?",
+      "What are material properties?",
+      "How are materials classified in materials science?"
+    ],
+    "a": "Materials science is an interdisciplinary field that studies the properties, structure, and performance of materials to understand and improve their behavior for specific applications. The field sits at the intersection of physics, chemistry, and engineering, and classifies materials into five major categories: metals, ceramics, polymers, composites, and semiconductors. Materials scientists study how the atomic and molecular structure of a material determines its macroscopic properties like strength, conductivity, transparency, and corrosion resistance. Understanding the structure-property-processing-performance relationship allows scientists to design new materials with tailored properties for everything from aerospace components and medical implants to electronic devices and sustainable packaging."
+  },
+  {
+    "q": [
+      "What are the properties of metals?",
+      "What are examples of metals in materials science?",
+      "What are the characteristics of metallic materials?",
+      "What is the difference between ferrous and non-ferrous metals?",
+      "Why are metals good conductors?",
+      "What is an alloy?"
+    ],
+    "a": "Metals are characterized by their metallic bonding, where electrons are delocalized in a 'sea of electrons' that gives them their distinctive properties: high electrical and thermal conductivity, malleability (ability to be hammered into thin sheets), ductility (ability to be drawn into wires), and luster. Ferrous metals contain iron and include steels with varying carbon content, while non-ferrous metals like aluminum, copper, titanium, and nickel offer specific advantages such as low density (aluminum), high conductivity (copper), or corrosion resistance (titanium). Alloys are mixtures of two or more elements where at least one is a metal, designed to achieve properties superior to pure metals — steel alloys with chromium produce stainless steel, and adding copper to gold produces stronger jewelry alloys. Metals are essential to modern infrastructure, transportation, electronics, and medicine, with global steel production alone exceeding 1.8 billion tons annually."
+  },
+  {
+    "q": [
+      "What are polymers?",
+      "What are examples of polymers?",
+      "What are the properties of polymers?",
+      "What is the difference between thermoplastics and thermosets?",
+      "How are polymers made?",
+      "What are natural polymers?"
+    ],
+    "a": "Polymers are large molecules composed of repeating structural units called monomers linked together in long chains, forming materials ranging from synthetic plastics to natural biopolymers like DNA, proteins, and cellulose. Thermoplastics like polyethylene, polypropylene, and polystyrene can be repeatedly melted and reshaped because their polymer chains are not cross-linked, making them recyclable and versatile for packaging, containers, and fibers. Thermosets like epoxy, vulcanized rubber, and Bakelite undergo an irreversible chemical curing process that forms permanent cross-links between chains, giving them superior heat resistance and structural rigidity but making them non-recyclable. Synthetic polymers have revolutionized nearly every aspect of modern life through their low cost, lightweight, versatility, and resistance to degradation, but their environmental persistence has created a global plastic pollution crisis that drives research into biodegradable and recyclable alternatives."
+  },
+  {
+    "q": [
+      "What are ceramics in materials science?",
+      "What are the properties of ceramics?",
+      "What are examples of ceramic materials?",
+      "What is the difference between traditional and advanced ceramics?",
+      "Why are ceramics brittle?",
+      "What are the applications of ceramics?"
+    ],
+    "a": "Ceramics are inorganic, non-metallic materials made from compounds of metallic and non-metallic elements, typically processed at high temperatures, and characterized by their hardness, brittleness, high melting points, and excellent chemical and thermal stability. Traditional ceramics include clay products like bricks, tiles, and pottery, as well as glass, cement, and porcelain. Advanced or technical ceramics, such as silicon carbide, aluminum oxide, and zirconia, are engineered for specific high-performance applications including cutting tools, biomedical implants, ballistic armor, electronic components, and heat shields for spacecraft. The brittleness of ceramics stems from their strong ionic or covalent bonding combined with a lack of slip systems for plastic deformation, which means they fail catastrophically under tension rather than deforming — though modern ceramic matrix composites are addressing this limitation."
+  },
+  {
+    "q": [
+      "What are composite materials?",
+      "What are examples of composites?",
+      "What is fiberglass?",
+      "What is carbon fiber?",
+      "Why are composites used in aerospace?",
+      "What are the advantages of composite materials?"
+    ],
+    "a": "Composites are engineered materials made from two or more constituent materials with significantly different physical or chemical properties that, when combined, produce a material with enhanced characteristics superior to any individual component. The most common structural composites consist of reinforcing fibers (such as glass, carbon, or Kevlar) embedded in a matrix material (such as epoxy polymer or metal), where the fibers provide strength and stiffness while the matrix transfers loads between fibers and protects them. Carbon fiber reinforced polymers are up to five times stronger than steel at a fraction of the weight, making them essential in aerospace, high-end automotive, wind turbine blades, and sporting goods. Natural composites like wood (cellulose fibers in a lignin matrix) and bone (collagen fibers reinforced with hydroxyapatite mineral) have inspired biomimetic composite design for centuries."
+  },
+  {
+    "q": [
+      "What are nanomaterials?",
+      "What is nanotechnology in materials science?",
+      "What are the unique properties of nanomaterials?",
+      "What are examples of nanomaterials?",
+      "What are carbon nanotubes?",
+      "How are nanomaterials used in medicine?"
+    ],
+    "a": "Nanomaterials are materials with structural features at the nanoscale (1-100 nanometers) that exhibit unique physical, chemical, and biological properties that differ significantly from their bulk counterparts due to quantum effects and high surface-to-volume ratios. Carbon nanotubes are cylindrical molecules of carbon atoms arranged in hexagonal lattices, possessing extraordinary tensile strength (100 times stronger than steel at one-sixth the weight), remarkable electrical conductivity, and exceptional thermal properties. Other important nanomaterials include graphene (a single atomic layer of carbon with unprecedented strength and conductivity), quantum dots (semiconductor nanoparticles with tunable optical properties for displays and imaging), and metal nanoparticles used in catalysis and antibacterial applications. Nanomaterials are increasingly used in medicine for targeted drug delivery, medical imaging contrast agents, and biosensors, though concerns about their environmental and health impacts remain an active area of research."
+  },
+  {
+    "q": [
+      "What are biomaterials?",
+      "How are materials used in medicine?",
+      "What are examples of biomaterials?",
+      "What are the requirements for a biomaterial?",
+      "What is biocompatibility?",
+      "What are bioresorbable materials?"
+    ],
+    "a": "Biomaterials are natural or synthetic materials designed to interact with biological systems for medical purposes, including implants, prosthetics, drug delivery systems, and tissue engineering scaffolds. Key requirements for biomaterials include biocompatibility (not eliciting an adverse immune response), appropriate mechanical properties matching the tissue being replaced, and resistance to degradation in the body's chemical environment unless bioresorption is intended. Examples include titanium alloys for hip replacements and dental implants, medical-grade silicones for breast implants and catheters, biodegradable polymers like polylactic acid (PLA) for dissolvable sutures and drug delivery, and synthetic hydroxyapatite for bone graft substitutes. The field of biomaterials has evolved from simply bioinert materials that avoid rejection to bioactive and bioresponsive materials that actively promote healing, integrate with surrounding tissue, and in some cases, mimic the hierarchical structure of natural tissues."
+  },
+  {
+    "q": [
+      "What are smart materials?",
+      "What are examples of smart materials?",
+      "What are shape memory alloys?",
+      "What is a piezoelectric material?",
+      "What are self-healing materials?",
+      "How do smart materials respond to stimuli?"
+    ],
+    "a": "Smart materials, also called responsive or adaptive materials, are designed to change one or more of their properties in a controlled, reversible way in response to external stimuli such as temperature, pressure, electric or magnetic fields, light, or pH changes. Shape memory alloys (SMAs) like Nitinol (nickel-titanium) can be deformed at one temperature and then recover their original shape when heated above their transformation temperature, used in medical stents, actuators, and eyeglass frames. Piezoelectric materials generate an electrical charge when mechanically stressed and conversely deform when an electric field is applied, used in sensors, ultrasound transducers, and precision positioning devices. Other smart materials include electrochromic materials that change color with applied voltage (smart windows), magnetostrictive materials that change shape in magnetic fields, and self-healing polymers that incorporate microcapsules of healing agent that rupture and repair cracks when damage occurs."
+  }
+]

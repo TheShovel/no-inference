@@ -1,0 +1,55 @@
+[
+  {
+    "q": [
+      "What are the different types of mortgages?",
+      "What is a fixed-rate mortgage?",
+      "What is an adjustable-rate mortgage (ARM)?",
+      "What is an FHA loan and who qualifies?",
+      "What is a VA loan?",
+      "What is a jumbo loan?",
+      "types of home loans explained",
+      "fixed-rate vs adjustable-rate mortgage"
+    ],
+    "a": "Fixed-rate mortgages lock in an interest rate for the entire loan term (commonly 15, 20, or 30 years), providing predictable monthly payments preferred by conservative buyers planning long-term ownership. Adjustable-rate mortgages (ARMs) offer lower initial rates that reset periodically based on market indices, making them attractive for short-term owners but risky if rates rise significantly before the borrower sells or refinances. Government-backed options include FHA loans (3.5% down, flexible credit — ideal for first-time buyers), VA loans (zero down, no PMI — exclusive to military service members and veterans), and USDA loans (zero down for qualifying rural and suburban buyers), while jumbo loans exceed conforming loan limits (typically $766,550 in 2024, varying by county) and require stronger credit and larger down payments."
+  },
+  {
+    "q": [
+      "What is the mortgage process from start to finish?",
+      "What is mortgage pre-approval?",
+      "What happens during mortgage underwriting?",
+      "What is the difference between pre-qualification and pre-approval?",
+      "mortgage application process",
+      "mortgage pre-approval vs pre-qualification",
+      "what is mortgage underwriting",
+      "closing process for a mortgage"
+    ],
+    "a": "The mortgage process begins with pre-approval, where the lender reviews the buyer's income, assets, credit score, and debts to determine how much they can borrow and issues a pre-approval letter that strengthens an offer on a home — this is more rigorous than simple pre-qualification, which relies on self-reported information. After a purchase agreement is accepted, the buyer submits a full loan application, and the lender orders an appraisal and title search while the underwriting department verifies all documentation, assesses risk, and ensures the loan meets lending guidelines. The process concludes at closing, where the buyer signs final documents (including the promissory note and deed of trust), pays closing costs typically totaling 2-5% of the loan amount, and receives the keys to the property."
+  },
+  {
+    "q": [
+      "How do interest rates affect the housing market?",
+      "What is the secondary mortgage market?",
+      "What are Fannie Mae and Freddie Mac?",
+      "How do mortgage-backed securities work?",
+      "What is private mortgage insurance (PMI)?",
+      "interest rates housing market impact",
+      "Fannie Mae Freddie Mac explained",
+      "mortgage-backed securities explained",
+      "PMI private mortgage insurance"
+    ],
+    "a": "Interest rates directly affect housing affordability: lower rates reduce monthly payments and increase buying power, typically driving up home prices and sales volume, while higher rates squeeze buyers' budgets, cool demand, and often lead to price stagnation or declines. Fannie Mae and Freddie Mac are government-sponsored enterprises that purchase conforming mortgages from lenders, package them into mortgage-backed securities (MBS), and sell them to investors — this secondary market provides liquidity that allows lenders to issue more home loans. Private mortgage insurance (PMI) is required on conventional loans with down payments under 20%, protecting the lender if the borrower defaults, and typically costs 0.3% to 1.5% of the loan amount annually until the borrower reaches 20% equity and can request cancellation."
+  },
+  {
+    "q": [
+      "What is refinancing and how does it work?",
+      "What is the difference between rate-and-term and cash-out refinancing?",
+      "What is a home equity loan?",
+      "What is a HELOC?",
+      "How does a foreclosure work?",
+      "what is a short sale in real estate",
+      "refinancing mortgage options",
+      "home equity loan vs HELOC"
+    ],
+    "a": "Rate-and-term refinancing replaces your existing mortgage with a new loan at a lower interest rate or different term length without taking additional cash out, reducing monthly payments or accelerating payoff — ideal when rates drop significantly or when switching from an ARM to a fixed rate. Cash-out refinancing replaces your mortgage with a larger loan, allowing you to pocket the difference as cash (up to 80% of the home's value), commonly used for home improvements, debt consolidation, or major purchases, though it increases your loan balance and monthly payment. A home equity loan provides a lump sum at a fixed rate using your home as collateral (essentially a second mortgage), while a HELOC (home equity line of credit) offers a revolving credit line at a variable rate that you can draw from as needed, making it more flexible but potentially riskier if rates rise."
+  }
+]

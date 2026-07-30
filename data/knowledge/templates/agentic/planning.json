@@ -1,0 +1,132 @@
+[
+  {
+    "id": "plan-project-001",
+    "triggers": [
+      "plan a project involving",
+      "create a project plan for",
+      "help me plan a project around"
+    ],
+    "context_role": "topic",
+    "template": "Let's build a project plan for {context}. We'll use a phased framework to keep things organized and adaptable:\n\n**Phase 1: Discovery & Definition**\n- Clarify the scope and objectives of {context}\n- Identify stakeholders and success criteria\n- Conduct initial research and gather requirements\n\n**Phase 2: Design & Architecture**\n- Map out the structure and workflow for {context}\n- Define deliverables, milestones, and dependencies\n- Choose tools, platforms, and methodologies\n\n**Phase 3: Execution & Development**\n- Break work into sprints or workstreams\n- Assign ownership and set check-in cadence\n- Build, test, and iterate on {context}\n\n**Phase 4: Launch & Review**\n- Deploy or deliver {context} to stakeholders\n- Gather feedback and document lessons learned\n- Plan for ongoing maintenance or iteration\n\nWould you like me to drill into any specific phase of this plan for {context}?",
+    "fallback": "A project plan typically includes discovery, design, execution, and review phases. I can help tailor one if you tell me more about the topic.",
+    "style": ["analytical", "practical", "structured"],
+    "response_length": "long"
+  },
+  {
+    "id": "learning-roadmap-002",
+    "triggers": [
+      "create a roadmap for learning",
+      "learning roadmap for",
+      "roadmap to learn"
+    ],
+    "context_role": "topic",
+    "template": "Here is a structured learning roadmap for mastering {context}, organized by progressive stages:\n\n**Stage 1: Foundations (Weeks 1-2)**\n- Understand the core vocabulary and key concepts of {context}\n- Read introductory materials and follow beginner tutorials\n- Set up your learning environment and practice space\n\n**Stage 2: Core Skills (Weeks 3-5)**\n- Build practical competence in the essential techniques of {context}\n- Complete guided projects that apply {context} to real problems\n- Join communities or forums focused on {context}\n\n**Stage 3: Intermediate Application (Weeks 6-8)**\n- Tackle more complex challenges involving {context}\n- Start a small independent project using {context}\n- Seek feedback from experienced practitioners\n\n**Stage 4: Advanced Mastery (Weeks 9-12)**\n- Explore specialized subtopics within {context}\n- Contribute to open-source or collaborative work\n- Teach or mentor someone else learning {context}\n\n**Continuous:** Review, reflect, and revisit fundamentals regularly. The key to {context} is consistent practice over intensity.",
+    "fallback": "A learning roadmap typically progresses from foundations to core skills, then intermediate application, and finally advanced mastery over several weeks.",
+    "style": ["analytical", "practical", "educational"],
+    "response_length": "long"
+  },
+  {
+    "id": "organize-thoughts-003",
+    "triggers": [
+      "help me organize my thoughts on",
+      "organize my thinking about",
+      "structure my thoughts around"
+    ],
+    "context_role": "topic",
+    "template": "Let's bring clarity to your thinking about {context}. Use this structured framework to untangle and organize your ideas:\n\n**1. What I Know About {context}**\nList facts, experiences, and assumptions you're confident about.\n\n**2. What I'm Uncertain About**\nIdentify the gray areas, open questions, and areas where {context} feels fuzzy.\n\n**3. What Matters Most**\nPrioritize the aspects of {context} that have the highest importance or urgency.\n\n**4. What I Want To Do Next**\nDefine concrete actions, decisions, or explorations regarding {context}.\n\n**5. Connections & Patterns**\nMap how different pieces of {context} relate to each other and to other areas you care about.\n\nTry writing a few sentences in each bucket. Often the act of categorization itself reveals what was previously tangled. Would you like me to help you explore any of these sections for {context} in more detail?",
+    "fallback": "Organizing thoughts often means separating what you know from what you're unsure about, then prioritizing what matters most.",
+    "style": ["analytical", "practical", "reflective"],
+    "response_length": "medium"
+  },
+  {
+    "id": "break-down-steps-004",
+    "triggers": [
+      "break down into manageable steps",
+      "break down the process of",
+      "step by step breakdown of"
+    ],
+    "context_role": "topic",
+    "template": "Let's break {context} down into clear, actionable steps that won't feel overwhelming:\n\n**Step 1: Define the Outcome**\nWhat does 'done' look like for {context}? Be specific and concrete.\n\n**Step 2: Identify the Key Sub-Tasks**\nList every logical chunk involved in {context}. Don't worry about order yet.\n\n**Step 3: Sequence the Work**\nArrange the sub-tasks in dependency order—what must happen before what.\n\n**Step 4: Estimate Effort Per Step**\nFor each piece of {context}, give a rough time or energy estimate. Adjust scope if needed.\n\n**Step 5: Start With the First Actionable Micro-Step**\nThe first step should take no more than 15-30 minutes. Momentum beats planning paralysis.\n\n**Step 6: Review and Adjust Regularly**\nAfter each completed phase of {context}, pause to see if the plan still fits.\n\nBy focusing on the very next action rather than the entire mountain of {context}, you reduce resistance and make consistent progress. What would Step 1 look like for your specific situation?",
+    "fallback": "Breaking a topic into steps means defining the desired outcome, listing sub-tasks, sequencing them, and starting with a small first action.",
+    "style": ["practical", "actionable", "structured"],
+    "response_length": "medium"
+  },
+  {
+    "id": "resource-planning-005",
+    "triggers": [
+      "what resources do I need for",
+      "resources required for",
+      "what tools do I need for"
+    ],
+    "context_role": "topic",
+    "template": "Here is a resource checklist tailored to getting started with {context}. Resources generally fall into four categories:\n\n**1. Knowledge & Information**\n- Books, courses, or documentation about {context}\n- Expert mentors, communities, or forums\n- Reference materials (cheatsheets, wikis, guides)\n\n**2. Tools & Technology**\n- Software, platforms, or frameworks relevant to {context}\n- Hardware or equipment requirements\n- Templates, starter kits, or boilerplates\n\n**3. People & Support**\n- Collaborators, teammates, or advisors familiar with {context}\n- Communities of practice or meetups\n- Coaching or consulting if {context} is unfamiliar territory\n\n**4. Time & Budget**\n- Estimated hours needed to make meaningful progress in {context}\n- Financial investment for tools, courses, or personnel\n- Buffer for unexpected learning curves or setbacks\n\nWhich category of {context} would you like to explore first? I can help you find specific recommendations for each.",
+    "fallback": "Resources for any topic typically fall into knowledge, tools, people, and budget categories. Tell me the topic and I can help identify specifics.",
+    "style": ["analytical", "practical", "informative"],
+    "response_length": "medium"
+  },
+  {
+    "id": "scheduling-006",
+    "triggers": [
+      "create a schedule for",
+      "build a timeline for",
+      "schedule my work on"
+    ],
+    "context_role": "topic",
+    "template": "Let's create a realistic schedule for tackling {context}. Here is a template you can adapt to your own timeline and availability:\n\n**Weekly Rhythm for {context}**\n\n| Day | Focus Area | Time Block | Deliverable |\n|-----|-----------|------------|-------------|\n| Monday | Foundation work on {context} | 60 min | Notes, reading, or setup |\n| Tuesday | Hands-on practice | 45 min | Small exercise or experiment |\n| Wednesday | Deep work session | 90 min | Core piece of {context} |\n| Thursday | Review & connect | 30 min | Reflect and link ideas |\n| Friday | Apply & build | 60 min | Real-world application of {context} |\n| Weekend | Rest or optional exploration | Flexible | Creative play with {context} |\n\n**Time Estimation Guidelines**\n- **Simple tasks** in {context}: 1-3 sessions\n- **Moderate milestones**: 1-2 weeks of consistent work\n- **Major deliverables**: 1-3 months depending on depth\n\nBlock your calendar for {context} just like a meeting—protected time is the biggest predictor of follow-through. Does this cadence fit your lifestyle, or would you like me to adjust it?",
+    "fallback": "A good schedule blocks regular, protected time for focused work, with clear deliverables for each session. Let me know the topic and your availability.",
+    "style": ["practical", "actionable", "structured"],
+    "response_length": "medium"
+  },
+  {
+    "id": "milestone-planning-007",
+    "triggers": [
+      "what are the milestones for",
+      "define milestones for",
+      "key milestones in"
+    ],
+    "context_role": "topic",
+    "template": "Here is a milestone framework for tracking meaningful progress in {context}. Each milestone represents a clear, verifiable achievement:\n\n**Milestone 1: Foundation Established**\n- Criteria: You can explain the core principles of {context} to someone else\n- Evidence: Completed introductory materials, defined key terms\n- Confidence builder: First small win with {context}\n\n**Milestone 2: First Functional Output**\n- Criteria: You have produced something tangible related to {context}\n- Evidence: A working prototype, first draft, or completed exercise\n- Validation: It works or communicates the intended idea\n\n**Milestone 3: Independent Application**\n- Criteria: You can apply {context} to a novel problem without guidance\n- Evidence: A self-directed project or solution\n- Review: Peer or mentor feedback confirms solid understanding\n\n**Milestone 4: Integration & Teaching**\n- Criteria: You can adapt {context} across different contexts and teach it\n- Evidence: You've helped someone else learn {context}\n- Mastery signal: You identify gaps and improvements in existing approaches\n\nEach milestone for {context} should have a clear 'done' signal so you know you're progressing. Where are you starting from?",
+    "fallback": "Milestones are checkpoints that mark verifiable progress. For any topic, milestones typically move from foundation to independent application.",
+    "style": ["analytical", "practical", "structured"],
+    "response_length": "medium"
+  },
+  {
+    "id": "time-estimation-008",
+    "triggers": [
+      "estimate the time needed for",
+      "how long will it take to",
+      "time required for"
+    ],
+    "context_role": "topic",
+    "template": "Estimating time for {context} depends on scope, prior experience, and available commitment. Here's a general framework:\n\n**Level 1: Basic Familiarity with {context}**\n- Time: 5-15 hours\n- What you'll achieve: Understand key concepts and vocabulary; can follow discussions about {context}\n- Best for: Getting oriented without deep mastery\n\n**Level 2: Practical Competence in {context}**\n- Time: 40-100 hours\n- What you'll achieve: Can independently work with {context} on routine tasks; can troubleshoot common issues\n- Best for: Using {context} professionally or in projects\n\n**Level 3: Deep Proficiency in {context}**\n- Time: 200-500 hours\n- What you'll achieve: Can handle complex, novel challenges; can optimize and teach {context}\n- Best for: Becoming a go-to person or specialist\n\n**Level 4: Mastery of {context}**\n- Time: 1000+ hours\n- What you'll achieve: Pushes boundaries of {context}; creates new methods or knowledge\n- Best for: Leadership, innovation, and thought leadership\n\n**Adjustment Factors**\n- Prior related experience: Subtract 20-40%\n- Available practice time: Consistency matters more than hours\n- Quality of resources: Good guidance can cut time significantly\n\nWhat level of proficiency in {context} are you aiming for?",
+    "fallback": "Time estimates depend on the depth of mastery you're seeking—from a few hours for basic familiarity to hundreds for deep proficiency.",
+    "style": ["analytical", "practical", "informative"],
+    "response_length": "medium"
+  },
+  {
+    "id": "team-planning-009",
+    "triggers": [
+      "what team do I need for",
+      "team structure for",
+      "who do I need for"
+    ],
+    "context_role": "topic",
+    "template": "Building the right team for {context} means identifying both the roles needed and the qualities that make a team effective. Here is a template:\n\n**Core Roles for {context}**\n\n1. **Strategic Lead / Owner**\n   - Sets vision and direction for {context}\n   - Makes prioritization decisions\n   - Keeps the team aligned on goals\n\n2. **Subject Matter Expert**\n   - Deep knowledge of {context} specifics\n   - Guides technical or domain decisions\n   - Reviews outputs for accuracy and quality\n\n3. **Executor / Builder**\n   - Does the hands-on work related to {context}\n   - Implements plans and creates deliverables\n   - Reports progress and surfaces blockers\n\n4. **Quality / Review**\n   - Tests and validates work on {context}\n   - Provides constructive feedback\n   - Ensures standards are met\n\n5. **Coordinator / Facilitator**\n   - Manages schedules, communication, and logistics\n   - Removes obstacles for the {context} team\n   - Keeps documentation and decisions organized\n\n**Small Team Adaptation**\nFor a smaller effort around {context}, one person can wear multiple hats—just be explicit about which hat they're wearing at any given time.\n\nWhat size of effort is your {context} project? I can refine this to fit.",
+    "fallback": "An effective team typically includes a strategic lead, subject expert, executor, reviewer, and coordinator. Let me know the topic to tailor this.",
+    "style": ["analytical", "practical", "structured"],
+    "response_length": "medium"
+  },
+  {
+    "id": "budget-planning-010",
+    "triggers": [
+      "plan a budget for",
+      "budget planning for",
+      "cost estimate for"
+    ],
+    "context_role": "topic",
+    "template": "Let's build a budget framework for {context}. A thoughtful budget accounts for these categories:\n\n**1. Research & Learning**\n- Courses, books, or training materials about {context}\n- Conferences, workshops, or certifications\n- Expert consultations or advisory fees\n\n**2. Tools & Infrastructure**\n- Software licenses or subscriptions needed for {context}\n- Hardware, hosting, or equipment costs\n- Maintenance and upgrade contingencies\n\n**3. Personnel (if applicable)**\n- Time allocation (your own hours valued at your rate)\n- Contractors, freelancers, or part-time help\n- Training time for team members new to {context}\n\n**4. Operations & Buffer**\n- Ongoing costs to sustain work on {context}\n- Unexpected expenses (recommend 15-20% buffer)\n- Marketing, distribution, or stakeholder communication\n\n**Sample Budget Breakdown for {context}**\n| Category | Estimated % | Notes |\n|----------|------------|-------|\n| Research & Learning | 10-15% | Upfront investment |\n| Tools & Infrastructure | 20-30% | Recurring or one-time |\n| Personnel | 40-50% | Largest variable |\n| Buffer & Ops | 10-20% | Safety net |\n\nWould you like help estimating specific line items for your {context} budget?",
+    "fallback": "A budget for any topic should account for learning, tools, personnel, and a buffer for unexpected costs. Tell me the topic for a tailored estimate.",
+    "style": ["analytical", "practical", "structured"],
+    "response_length": "medium"
+  }
+]

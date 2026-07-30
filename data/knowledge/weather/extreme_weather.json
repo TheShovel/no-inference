@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What are the deadliest hurricanes in history?",
+      "Which hurricanes caused the most deaths?",
+      "What was the Great Hurricane of 1780?",
+      "How did Hurricane Katrina compare to other deadly storms?",
+      "What is the deadliest tropical cyclone ever recorded?",
+      "What caused so many deaths in Cyclone Bhola?",
+      "deadliest hurricanes worst tropical cyclones"
+    ],
+    "a": "The deadliest tropical cyclone in recorded history is the 1970 Bhola cyclone, which struck the Ganges Delta region of East Pakistan (now Bangladesh) on November 12, killing an estimated 300,000-500,000 people through a massive storm surge that inundated low-lying islands and coastal areas. The Great Hurricane of 1780 in the Lesser Antilles remains the deadliest Atlantic hurricane with approximately 22,000-27,000 deaths, while more recent devastating storms include Hurricane Mitch (1998, over 11,000 deaths in Central America), Cyclone Nargis (2008, 138,000 deaths in Myanmar), and Hurricane Katrina (2005, about 1,800 deaths, but $125 billion in damage—the costliest U.S. natural disaster). High death tolls in developing nations are primarily due to inadequate warning systems, low-lying geography, dense coastal populations, and insufficient infrastructure to withstand extreme storm surges."
+  },
+  {
+    "q": [
+      "What are the strongest tornadoes ever recorded?",
+      "How are tornadoes measured on the Enhanced Fujita scale?",
+      "What was the deadliest tornado outbreak?",
+      "What is a multiple-vortex tornado?",
+      "What tornado had the highest wind speeds?",
+      "Describe the 2011 Joplin tornado and the Tri-State Tornado.",
+      "strongest tornadoes EF5 rating"
+    ],
+    "a": "The Enhanced Fujita (EF) scale rates tornadoes from EF0 (weak, 65-85 mph winds) to EF5 (violent, over 200 mph winds), with EF5 tornadoes capable of leveling well-built homes, throwing cars like projectiles, and stripping bark from trees. The deadliest single tornado in U.S. history was the Tri-State Tornado of March 18, 1925, which tracked 219 miles across Missouri, Illinois, and Indiana, killing 695 people, while the 2011 Joplin, Missouri EF5 tornado caused $2.8 billion in damage and 158 deaths. Tornado outbreaks such as the April 2011 Super Outbreak produced 360 confirmed tornadoes across 21 states, including four EF5s, killing 348 people, with scientists using mobile Doppler radars to document peak wind speeds exceeding 300 mph in the 2013 El Reno, Oklahoma tornado (the widest ever recorded at 2.6 miles across)."
+  },
+  {
+    "q": [
+      "What are the worst floods in history?",
+      "Which floods caused the most damage and loss of life?",
+      "How did the 1931 China floods happen?",
+      "What was the 1887 Yellow River flood?",
+      "What are the deadliest floods of the modern era?",
+      "How do floods become such deadly disasters?",
+      "worst floods deadliest flooding events"
+    ],
+    "a": "The deadliest floods in history occurred in China along the Yellow River (Huang He), which has earned the nickname 'China's Sorrow' due to catastrophic floods: the 1887 flood killed an estimated 900,000-2,000,000 people, and the 1931 Central China floods (affecting the Yangtze, Yellow, and Huai rivers) caused an estimated 1-4 million deaths through drowning, starvation, and disease. More recent catastrophic floods include the 2010 Pakistan floods (2,000 deaths, 20 million affected), Hurricane Katrina's storm surge flooding in New Orleans (2005), the 2022 Pakistan floods ($30 billion in damage, submerged one-third of the country), and the 2021 European floods that killed over 240 people in Germany and Belgium. Flood-related deaths are increasing globally due to climate change—warmer air holds more moisture, intensifying rainfall events—combined with continued population growth and development in flood-prone coastal and riverine areas."
+  },
+  {
+    "q": [
+      "What are the worst heatwaves in history?",
+      "How do heatwaves cause so many deaths?",
+      "What was the 2003 European heatwave?",
+      "What was the 2021 Pacific Northwest heatwave?",
+      "How does urban heat island effect worsen heatwaves?",
+      "What are cold snaps and how do they compare to heatwaves?",
+      "heatwaves cold snaps extreme temperature events"
+    ],
+    "a": "The 2003 European heatwave killed an estimated 70,000 people across Europe, with France alone reporting 14,800 excess deaths concentrated among elderly people in urban areas lacking air conditioning, marking it as the deadliest natural disaster to affect Western Europe in modern history. The 2021 Pacific Northwest heatwave broke records by an astonishing margin—Lytton, British Columbia reached 49.6°C (121.3°F), temperatures normally associated with the Sahara Desert, killing over 1,400 people and causing massive shellfish die-offs along the coast. Cold snaps can be equally deadly: the February 2021 Texas winter storm caused a catastrophic power grid failure that killed 246 people, while the 2008 Afghanistan cold snap killed over 900 people, demonstrating how extreme temperatures—both hot and cold—pose fatal risks when infrastructure, housing, and public health systems are unprepared for conditions outside normal climate ranges."
+  }
+]

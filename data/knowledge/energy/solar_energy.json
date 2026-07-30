@@ -1,0 +1,55 @@
+[
+  {
+    "q": [
+      "What are the different types of solar PV technology?",
+      "What is monocrystalline vs polycrystalline solar?",
+      "What is thin-film solar?",
+      "What are perovskite solar cells?",
+      "What are bifacial solar panels?",
+      "solar photovoltaic types",
+      "monocrystalline solar panels",
+      "perovskite solar technology"
+    ],
+    "a": "Monocrystalline silicon panels, made from single-crystal silicon ingots, offer the highest commercial efficiency (20-23%) and longest lifespan (25-30 years), while polycrystalline panels from melted silicon fragments are slightly less efficient (15-18%) but more affordable and popular for residential installations. Thin-film solar technologies (CdTe, CIGS, amorphous silicon) deposit photovoltaic material onto glass, metal, or plastic substrates, producing lightweight, flexible panels with lower efficiencies (10-13%) but better performance in high temperatures and partial shade conditions. Perovskite solar cells are an emerging technology using a crystal structure of hybrid organic-inorganic lead halide materials, achieving lab efficiencies exceeding 26% with potential for low-cost, printable manufacturing, though commercial deployment is limited by stability, durability, and lead toxicity concerns. Bifacial solar panels capture sunlight on both sides, increasing energy yield by 5-30% depending on ground reflectivity (albedo) and mounting configuration."
+  },
+  {
+    "q": [
+      "What is solar panel efficiency?",
+      "How is solar irradiation measured?",
+      "What is a solar site assessment?",
+      "What is the difference between rooftop and utility-scale solar?",
+      "What is floating solar?",
+      "solar panel efficiency",
+      "solar irradiation assessment",
+      "rooftop vs utility solar"
+    ],
+    "a": "Solar panel efficiency measures the percentage of sunlight converted into electricity, with commercial panels ranging from 15-23% and research cells exceeding 47% under concentrated light, though real-world performance depends on temperature, shading, orientation, and soiling. Solar irradiation is measured in kilowatt-hours per square meter per day (kWh/m²/day) or peak sun hours, with site assessments using pyranometers, satellite data, and software modeling (PVsyst, Helioscope) to evaluate a location's solar resource and optimize panel tilt and azimuth for maximum annual energy production. Rooftop solar is installed on residential or commercial buildings, typically 5-20 kW in size, with net metering allowing excess generation to be credited, while utility-scale solar farms range from 1 MW to over 1 GW and benefit from economies of scale with LCOE as low as $20-40/MWh. Floating solar (floatovoltaics) installs panels on bodies of water, reducing land use and water evaporation while benefiting from natural cooling that improves efficiency."
+  },
+  {
+    "q": [
+      "What is concentrated solar power?",
+      "How does a parabolic trough CSP system work?",
+      "How does a power tower CSP system work?",
+      "What is a Stirling dish in CSP?",
+      "How is solar energy stored?",
+      "concentrated solar power CSP",
+      "parabolic trough solar",
+      "solar thermal energy storage"
+    ],
+    "a": "Concentrated solar power (CSP) uses mirrors to focus sunlight onto a receiver, heating a working fluid (thermal oil, molten salt, or steam) that drives a turbine to generate electricity, with the key advantage over PV being the ability to incorporate thermal energy storage for dispatchable power generation after sunset. Parabolic trough systems use long, curved mirrors arranged in parallel rows that focus sunlight onto tubes filled with heat transfer fluid, operating at around 400°C and representing the most mature CSP technology with over 80% of global CSP capacity. Power tower (central receiver) systems use thousands of heliostats (tracking mirrors) that concentrate sunlight onto a central receiver atop a tower, achieving higher temperatures (over 600°C) and greater efficiency, with molten salt storage enabling 8-15 hours of power generation. Stirling dish systems use a parabolic dish to concentrate sunlight onto a Stirling engine at the focal point, achieving the highest efficiency of any CSP technology (up to 31%) but with higher costs and limited commercial deployment."
+  },
+  {
+    "q": [
+      "What is the LCOE of solar energy?",
+      "What incentives are available for solar?",
+      "What is net metering for solar?",
+      "What are solar tax credits?",
+      "How has solar energy grown globally?",
+      "How are solar panels installed and maintained?",
+      "solar energy economics",
+      "solar policy and incentives",
+      "solar installation and maintenance"
+    ],
+    "a": "The levelized cost of energy (LCOE) for utility-scale solar PV has fallen by over 90% since 2010 to $20-40/MWh, making it the cheapest source of new electricity generation in most regions, driven by manufacturing scale, technology improvements, and increased module efficiency. Solar incentives include the federal Investment Tax Credit (ITC) in the US (30% of system cost), feed-in tariffs that guarantee fixed payments for solar power, net metering that credits solar owners for excess generation exported to the grid, renewable portfolio standards (RPS) that require utilities to source a percentage of power from renewables, and various state and local rebates and property tax exemptions. Solar panel installation involves structural assessment of roofs or ground mounts, electrical design including inverters (string, microinverters, or power optimizers), and interconnection with the utility grid, while maintenance is minimal — primarily periodic cleaning of panels (rain suffices in most climates), monitoring system performance through online platforms, and occasional inverter replacement after 10-15 years."
+  }
+]

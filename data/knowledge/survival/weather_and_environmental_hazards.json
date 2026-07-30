@@ -1,0 +1,58 @@
+[
+  {
+    "q": [
+      "How do I predict weather using clouds?",
+      "What are the different cloud types and what do they mean?",
+      "How do I read the sky for weather signs?",
+      "What do red and orange sunrises and sunsets mean?",
+      "How do I use wind direction to predict weather?",
+      "What is a barometer and how do I use it without instruments?",
+      "How do I predict weather from animal behavior?",
+      "What are natural weather signs I can observe?",
+      "How do I know if a storm is coming?"
+    ],
+    "a": "Basic weather observation can keep you safe and dry. High cirrus clouds (thin, wispy 'mare's tails') often precede a warm front and rain within 24-48 hours—the old rhyme 'mares' tails and mackerel scales make tall ships take in their sails' warns of approaching wet weather. Cumulonimbus clouds (tall, towering, anvil-shaped) indicate thunderstorms, heavy rain, hail, and lightning—seek shelter immediately if they develop. Altocumulus clouds in the morning (flattened 'mackerel scales') often precede afternoon thunderstorms in summer. Pressure reading without a barometer: dropping pressure (worsening weather) makes smoke hang low near the ground and campfires burn poorly; rising pressure (improving weather) makes smoke rise and disperse quickly. Red sky at night (sunset red, clear sky to the west) means fair weather approaching (sailor's delight); red sky in morning (sunrise red, clouds or dust to the east) means weather is arriving (sailor's warning). Wind: backing wind (shifting counter-clockwise) typically indicates approaching low pressure; veering wind (clockwise shift) indicates clearing weather. Animal cues: birds flying low indicates falling pressure (ear discomfort makes them fly lower); cows gathering and lying down in fields can precede rain; increased spider web building in fair weather often means a clear day ahead (spiders are sensitive to humidity changes). Falling leaves, pine cones opening (dry weather approaching), and increased scent of flowers and pine also indicate dropping pressure and potential precipitation."
+  },
+  {
+    "q": [
+      "How do I stay safe during a lightning storm?",
+      "What is the safest place during a thunderstorm?",
+      "How far away is lightning if I hear thunder?",
+      "What is the 30-30 rule for lightning safety?",
+      "How do I protect myself from lightning when caught outside?",
+      "What should I NOT do during a lightning storm?",
+      "What is a lightning crouch?",
+      "How do I treat someone struck by lightning?"
+    ],
+    "a": "Lightning kills approximately 20-40 people annually in the US alone. The 30-30 rule: if the time between seeing lightning and hearing thunder is 30 seconds or less (lightning within 6 miles), seek shelter immediately; wait 30 minutes after the last thunderclap before resuming outdoor activities. The safest place is inside a substantial building with plumbing and electrical wiring (which act as a Faraday cage—lightning current bypasses the interior through the grounding system) or an enclosed metal vehicle (the metal roof and sides direct current around occupants—convertibles and soft-tops do NOT count). If caught outside: avoid ridge tops, open fields, isolated trees, water bodies, and metal objects (fences, poles, golf clubs, umbrellas). The lightning crouch: squat down on the balls of your feet with feet together, keep your head down, cover your ears with your hands, and minimize contact with the ground—this reduces your height and minimizes ground current path through your body. Do NOT lie flat (increases ground current exposure) or seek shelter in shallow caves, overhangs, or rock crevices (ground current arcs through rock). Spread your group at least 50 feet apart so if one is struck, others can provide first aid. Swimming, boating, or wading during a storm is extremely dangerous—water conducts lightning current efficiently. For a lightning strike victim: they carry no electrical charge—treat immediately for cardiac arrest (CPR) and respiratory arrest; lightning survivors often need treatment for burns, neurological damage, and blunt trauma from being thrown. Call for emergency evacuation immediately."
+  },
+  {
+    "q": [
+      "How do I survive a flash flood?",
+      "What are the warning signs of a flash flood?",
+      "Where is the safest place during a flood?",
+      "How do I escape a flash flood in a canyon?",
+      "How do I survive an avalanche?",
+      "What are the signs of avalanche danger?",
+      "What is avalanche terrain and how do I avoid it?",
+      "How do I survive if caught in an avalanche?",
+      "How do I survive a landslide or mudslide?"
+    ],
+    "a": "Flash floods are the leading weather-related cause of death in the US—NEVER camp in a dry creek bed, wash, canyon, or arroyo, even if no rain is visible (rain may be falling miles upstream). Warning signs: sudden rise in water level, change in water color (clear to muddy), increased flow speed, floating debris, and a roaring sound from upstream. If caught in a flash flood: abandon your pack and gear—they turn into anchors—and move perpendicular to the flow toward high ground immediately. Just 6 inches of fast-moving water can knock you off your feet, and 12-18 inches can sweep away most vehicles. In canyons, climb straight up the sides to at least 30-50 feet above the stream bed. Avalanche safety: 90% of avalanche fatalities are triggered by the victim or someone in their party. Signs of danger include recent heavy snowfall (more than 12 inches in 24 hours), wind loading (blowing snow forming cornices and slabs), warming temperatures (increasing slab instability), shooting cracks in the snow, and a 'whumphing' sound (collapsing snowpack layers). Avoid slopes of 25-45 degrees during high danger conditions and always carry avalanche safety equipment: transceiver, probe, and shovel. If caught in an avalanche: try to move to the side, shed equipment, swim vigorously (backstroke motion) to stay near the surface, create an air pocket in front of your face when you feel the snow slowing, and remain calm—assess which way is up by dropping saliva or checking for light. If buried, try to extend one hand above the snow. Landslide/mudslide warning signs: bulging ground, new cracks in pavement or structures, tilting trees, unusual water flow, and doors/windows that stick or jam. Move to high ground away from the path, and if escape is impossible, curl into a ball protecting your head."
+  },
+  {
+    "q": [
+      "How do I treat and prevent hypothermia?",
+      "What are the stages of hypothermia?",
+      "How do I recognize hypothermia in myself and others?",
+      "What is the difference between hypothermia and frostbite?",
+      "How do I treat frostbite?",
+      "How do I prevent heat-related illness?",
+      "What are the signs of heat exhaustion vs heat stroke?",
+      "How do I treat heat stroke in the wilderness?",
+      "How do I stay hydrated in extreme heat?",
+      "What is hyponatremia and how do I prevent it?"
+    ],
+    "a": "Hypothermia (core temperature below 95°F) progresses from mild (shivering, loss of fine motor control, apathy) to moderate (violent shivering stops—paradoxical undressing, confusion, slurred speech) to severe (unconsciousness, no reflexes, apparent death—'you're not dead until you're warm and dead'). Treat by stopping heat loss: get out of wind and wet, remove wet clothing, insulate with dry layers and a vapor barrier, give warm sweet drinks (hot water, sugar), apply heat to core areas (chest, armpits, groin—NOT extremities, which pulls cold blood to core). Handle severely hypothermic patients with extreme gentleness—rough movements can trigger cardiac arrest. Frostbite: frozen tissue (ice crystals form in cells), appears white, waxy, and numb—rewarm in 104-108°F water (never rub or use direct heat, which causes tissue damage), take ibuprofen for pain, and protect from refreezing (refreeze causes worse damage than slow thawing). Heat exhaustion: heavy sweating, pale cool skin, nausea, dizziness, headache—move to shade, remove excess clothing, drink cool water, rest. Heat stroke: medical emergency—hot red dry skin (sweating mechanism fails), altered consciousness, core temperature above 104°F—requires immediate aggressive cooling (immerse in cold water if available, apply ice packs to neck, armpits, groin) and evacuation. Prevent by maintaining hydration (drink before thirsty—thirst lags behind actual need), replacing electrolytes (not just water—add electrolyte powder or salty snacks), wearing sun protection, and avoiding activity during peak heat (10 AM-4 PM). Hyponatremia (low blood sodium from drinking too much water without electrolytes) mimics dehydration but requires opposite treatment: stop water intake, consume salty foods or electrolyte drinks. Prevention: 0.5-1 quart per hour of water during moderate activity in heat, with adequate salt intake."
+  }
+]

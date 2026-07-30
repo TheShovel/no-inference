@@ -1,0 +1,58 @@
+[
+  {
+    "q": [
+      "How is the music industry structured?",
+      "What are the three major record labels?",
+      "What is the role of a record label?",
+      "How do record labels work?",
+      "What is the difference between a major label and an independent label?",
+      "How has the music industry changed?",
+      "What are the main sectors of the music industry?",
+      "What is the role of a music publisher?"
+    ],
+    "a": "The music industry is traditionally structured around three major record labels (Universal Music Group, Sony Music Entertainment, and Warner Music Group) which handle artist development, recording, manufacturing, distribution, marketing, and promotion — alongside thousands of independent labels ranging from small boutique operations to significant players like Beggars Group and Domino Recording Company. The industry has transformed dramatically since the 2000s due to digital disruption: physical album sales collapsed with the rise of digital downloads (led by iTunes) and then streaming (led by Spotify), fundamentally changing revenue models, distribution, and how artists reach audiences. Beyond labels, the industry includes music publishing (managing song copyrights and licensing), live events and touring (now the primary income source for many artists), merchandise, synchronization licensing (placing music in film, TV, and advertising), and artist management. The modern music industry increasingly operates in a direct-to-fan model where artists build independent careers through streaming platforms, social media, crowdfunding, and self-distribution services, bypassing traditional label gatekeepers."
+  },
+  {
+    "q": [
+      "What is music publishing?",
+      "How do music royalties work?",
+      "What are the different types of music royalties?",
+      "What is mechanical royalty in music?",
+      "What is performance royalty?",
+      "What is synchronization license in music?",
+      "What is a master recording in music?",
+      "What is the difference between composition and master royalties?",
+      "How do streaming royalties work?"
+    ],
+    "a": "Music publishing involves managing the copyrights of musical compositions (the underlying song, lyrics, and melody written by songwriters) and collecting royalties when those compositions are used. Royalties come in several forms: mechanical royalties (earned from the reproduction of compositions on physical formats, downloads, and interactive streams), performance royalties (earned when songs are played on radio, TV, in public venues, or on streaming services — collected by performance rights organizations like ASCAP, BMI, and SOCAN), synchronization royalties (earned when music is paired with visual media like film, TV, advertisements, or video games), and print music royalties (from sheet music sales). The distinction between the composition copyright (owned by songwriters and publishers) and the master recording copyright (owned by the artist or label that recorded the song) is crucial: streaming services pay both the composition rights holder and the master rights holder separately. Streaming economics have been controversial, with typical per-stream payouts ranging from $0.003 to $0.005 on major services, meaning independent artists need hundreds of thousands of streams to generate meaningful income — though the cumulative reach and discoverability benefits can offset low per-play rates."
+  },
+  {
+    "q": [
+      "How does streaming affect the music industry?",
+      "What is the economics of music streaming?",
+      "How do artists make money from streaming?",
+      "What is the best streaming service for artists?",
+      "How does Spotify pay artists?",
+      "How important is touring for musicians?",
+      "How do concert tours make money?",
+      "What is the live music economy?",
+      "How has the concert industry changed?"
+    ],
+    "a": "Streaming — led by Spotify, Apple Music, Amazon Music, and YouTube Music — has become the dominant mode of music consumption, accounting for over 80% of recorded music revenue in most major markets, with the global streaming market generating over $15 billion annually. However, the economics remain challenging for all but the most-streamed artists: streaming services operate on a pro-rata payment model where subscription and advertising revenues are pooled and distributed based on each artist's share of total streams, resulting in fractions of a cent per stream for most musicians. Concert touring has become the primary income source for the vast majority of professional musicians — with ticket sales, merchandise, VIP experiences, and artist fees driving a live music industry worth over $30 billion globally. Major tours involve complex logistics including booking agents securing venues, tour managers coordinating travel and accommodations, production managers handling sound, lighting, and staging, and business managers tracking expenses and revenue, with the artist typically receiving a guaranteed fee plus a percentage of ticket sales after expenses."
+  },
+  {
+    "q": [
+      "What does an artist manager do?",
+      "How do you get signed to a record label?",
+      "What is music marketing?",
+      "How do you promote music effectively?",
+      "What is music copyright law?",
+      "What are music contracts?",
+      "What should be in a recording contract?",
+      "How does DIY music work?",
+      "Can you succeed as an independent musician?",
+      "What is the 360 deal in music?"
+    ],
+    "a": "Artist managers oversee an artist's career strategy, business dealings, and daily operations — handling everything from negotiating contracts and booking studio time to coordinating with record labels, publishers, booking agents, and publicists — typically earning 15-20% of the artist's gross income. Music marketing in the digital age relies on a mix of social media engagement (TikTok, Instagram, YouTube), playlist pitching (Spotify's editorial and algorithmic playlists are crucial for discovery), email newsletters, press coverage, content creation (music videos, behind-the-scenes, live sessions), and targeted advertising. Music copyright gives creators exclusive rights to reproduce, distribute, publicly perform, and create derivative works from their music — copyright in the US lasts for the life of the author plus 70 years, and infringement can result in statutory damages of up to $150,000 per work. The DIY (do-it-yourself) music movement has been empowered by digital distribution services like DistroKid, TuneCore, and CD Baby that allow independent artists to release music on all major streaming platforms without a label, while maintaining full ownership of their masters and rights — though success as an independent artist still requires significant investment in marketing, production quality, and consistent content output."
+  }
+]

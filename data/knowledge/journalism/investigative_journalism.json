@@ -1,0 +1,134 @@
+[
+  {
+    "q": [
+      "What is investigative journalism?",
+      "How does investigative journalism differ from daily news reporting?",
+      "What is the role of investigative journalism in democracy?",
+      "What defines investigative journalism?",
+      "What are the characteristics of investigative journalism?",
+      "Why is investigative journalism important?",
+      "How do investigative journalists approach a story?"
+    ],
+    "a": "Investigative journalism is a specialized form of journalism that involves in-depth, systematic, and original research to uncover hidden information, expose wrongdoing, and hold powerful institutions — governments, corporations, and individuals — accountable for their actions. Unlike daily news reporting that covers events as they happen, investigative journalism often takes weeks or months of research, involves analyzing documents and data, cultivating confidential sources, and following evidence trails to reveal matters of significant public interest that would otherwise remain concealed. The core mission of investigative journalism is to act as a public watchdog, uncovering corruption, human rights abuses, financial fraud, environmental violations, and abuses of power that affect society, often leading to policy changes, legal reforms, resignations, and criminal prosecutions."
+  },
+  {
+    "q": [
+      "What are the key research techniques in investigative journalism?",
+      "How do journalists use public records in investigations?",
+      "What is the FOIA and how do journalists use it?",
+      "How do investigative journalists analyze data?",
+      "What databases do investigative journalists use?",
+      "What is computer-assisted reporting?",
+      "How do you conduct background research for an investigation?"
+    ],
+    "a": "Investigative journalists rely on public records research including property records, court filings, corporate registrations, campaign finance disclosures, government contracts, and regulatory filings to establish facts and connect dots between people and organizations. The Freedom of Information Act (FOIA) and similar state and international transparency laws allow journalists to request access to government documents that would otherwise remain confidential, though these requests often require persistence, appeals, and sometimes litigation when agencies improperly withhold information. Data analysis techniques — including spreadsheet analysis, database querying, data visualization, and statistical analysis — allow investigative journalists to detect patterns, anomalies, and relationships in datasets ranging from government spending to police misconduct records, with specialized tools like DocumentCloud, Overview, and relational databases enabling the processing of millions of documents."
+  },
+  {
+    "q": [
+      "How do investigative journalists cultivate and protect sources?",
+      "What are confidential sources in investigative journalism?",
+      "How do you protect whistleblowers in journalism?",
+      "What is source protection in investigative reporting?",
+      "How do journalists verify anonymous sources?",
+      "What is the difference between on-the-record and off-the-record in investigations?",
+      "How do whistleblowers work with journalists?"
+    ],
+    "a": "Source cultivation in investigative journalism involves building trust with insiders, whistleblowers, and experts who have access to information that is not publicly available, requiring journalists to demonstrate reliability, protect source confidentiality, and verify information through multiple independent sources before publication. Protecting sources is paramount and involves using encrypted communication tools (Signal, ProtonMail, encrypted file transfers), secure meeting practices, and legal protections such as shield laws that in many jurisdictions protect journalists from being compelled to reveal confidential sources. Journalists must carefully negotiate the terms of sourcing with each source — on-the-record (full attribution), on background (information used without naming the source), off-the-record (not for publication, for context only), or deep background (information can be published but not attributed in any way) — and maintain meticulous documentation of these agreements and the steps taken to verify information."
+  },
+  {
+    "q": [
+      "What is undercover reporting in investigative journalism?",
+      "How do journalists conduct undercover investigations?",
+      "What are the ethics of undercover reporting?",
+      "When is undercover reporting justified?",
+      "What are examples of undercover journalism?",
+      "What are the risks of undercover investigative reporting?",
+      "What techniques are used in undercover journalism?"
+    ],
+    "a": "Undercover reporting involves journalists concealing their identity or profession to gain access to information that would otherwise be unavailable, using techniques such as hidden cameras, false identities, and employment at target organizations to observe and document wrongdoing firsthand. Undercover reporting is ethically controversial and is generally only justified when the information is of overwhelming public interest, all other reporting methods have been exhausted, the deception is minimal and does not entrap subjects, and the potential harm from the practice is outweighed by the public benefit of the revelations. Landmark undercover investigations include the Chicago Tribune's investigation of unsafe practices at nursing homes, the Guardian's investigation of phone hacking at the News of the World, and BBC's investigations of everything from ticket touting to police misconduct, with each case requiring extensive legal review and editorial oversight before publication."
+  },
+  {
+    "q": [
+      "What is document analysis in investigative journalism?",
+      "How do journalists analyze leaked documents?",
+      "What is the Panama Papers investigation?",
+      "What are the Paradise Papers?",
+      "How do investigative journalists work with large document caches?",
+      "What is document-driven investigative journalism?",
+      "How do journalists verify leaked documents?"
+    ],
+    "a": "Document analysis is a core investigative technique that involves examining primary source documents — contracts, emails, financial records, internal memos, government reports, and databases — to extract evidence of wrongdoing, conflicts of interest, or systemic problems, often requiring skills in forensic accounting, legal analysis, and cross-referencing information across multiple sources. Major cross-border investigative collaborations like the Panama Papers (2016, 11.5 million leaked documents from the law firm Mossack Fonseca revealing offshore tax havens) and the Paradise Papers (2017, 13.4 million documents from offshore law firms Appleby and corporate registries) demonstrated the power of structured document analysis conducted by hundreds of journalists working together across dozens of countries. These investigations require sophisticated document processing workflows — scanning, OCR, indexing, keyword searching, and relational database analysis — using platforms like the International Consortium of Investigative Journalists' (ICIJ) Datashare platform that enables secure collaborative analysis of millions of documents across news organizations worldwide."
+  },
+  {
+    "q": [
+      "How do you interview investigative subjects?",
+      "What are techniques for interviewing investigative subjects?",
+      "How do you confront a subject with evidence in an interview?",
+      "What is the difference between interviewing sources and subjects?",
+      "How do investigative journalists prepare for difficult interviews?",
+      "What is accountability interviewing?",
+      "How do you handle hostile interview subjects?"
+    ],
+    "a": "Interviewing investigative subjects — those who may be implicated in wrongdoing — requires extensive preparation, including compiling all available evidence, anticipating deflections and denials, preparing specific document-based questions, and developing a strategic sequence that builds toward key confrontations. The accountability interview is a distinct form where journalists present evidence to subjects and give them an opportunity to respond, explain, or provide alternative interpretations before publication, which is both ethically essential for fairness and legally important for avoiding defamation claims. Skilled investigative interviewers use techniques such as asking open-ended questions first to gather the subject's narrative, then progressively narrowing to specific document-based questions, presenting evidence methodically to prevent deflection, and maintaining professionalism and control even when subjects become hostile or attempt to divert the conversation."
+  },
+  {
+    "q": [
+      "What is cross-border investigative journalism?",
+      "What is the role of ICIJ in investigative journalism?",
+      "How do journalists collaborate across countries?",
+      "What are major cross-border journalism collaborations?",
+      "How do international investigative journalism projects work?",
+      "What is the Panama Papers collaboration?",
+      "What are the challenges of cross-border investigative reporting?"
+    ],
+    "a": "Cross-border investigative journalism involves collaborative reporting across multiple countries, coordinated by organizations like the International Consortium of Investigative Journalists (ICIJ), which brings together hundreds of journalists from dozens of countries to share data, documents, and reporting resources on investigations of transnational significance. Major cross-border investigations include the Panama Papers (2016, involving 400+ journalists from 100+ media organizations across 80 countries), the Paradise Papers (2017), the Swiss Leaks (2015, HSBC client data), the FinCEN Files (2020, suspicious banking activity reports), and the Pandora Papers (2021, the largest-ever leak of offshore financial documents). These collaborations require secure digital infrastructure for document sharing (ICIJ's Datashare), standardized data formats, multilingual communication, synchronized publication embargoes, and legal risk assessment coordinated across multiple jurisdictions with different defamation, privacy, and national security laws."
+  },
+  {
+    "q": [
+      "What are the ethics of investigative journalism?",
+      "What ethical issues arise in investigative reporting?",
+      "How do investigative journalists balance public interest and privacy?",
+      "What is the ethical framework for investigative journalism?",
+      "How do journalists minimize harm in investigations?",
+      "What are ethical dilemmas in investigative journalism?",
+      "How do investigative journalists ensure accuracy and fairness?"
+    ],
+    "a": "Investigative journalism ethics require careful balancing of the public's right to know against potential harms to individuals, including invasion of privacy, reputational damage, and safety risks, with the guiding principle that the greater the public interest in the information, the more intrusive methods may be ethically justified. Core ethical practices include giving subjects adequate opportunity to respond to allegations before publication, verifying information through multiple independent sources, being transparent about reporting methods and any limitations in the evidence, carefully considering whether publication could endanger vulnerable individuals, and ensuring that the focus of investigations remains on systemic issues and institutional accountability rather than gratuitous personal detail. Ethical investigative journalism organizations like ProPublica and the Center for Public Integrity have detailed ethics codes that address source relationships, fact-checking procedures, corrections policies, conflicts of interest, and the use of controversial methods such as hidden cameras, undercover reporting, and accessing private data."
+  },
+  {
+    "q": [
+      "What is the impact of investigative journalism?",
+      "How do investigative journalists follow up on their stories?",
+      "What happens after an investigative story is published?",
+      "How do you measure the impact of investigative journalism?",
+      "What is solutions-oriented investigative journalism?",
+      "How do investigations lead to change?",
+      "What is the life cycle of an investigative story?"
+    ],
+    "a": "Impact from investigative journalism can take many forms including legal consequences (criminal investigations, indictments, legislation), policy changes (regulatory reforms, institutional policy updates, government investigations), financial consequences (stock drops, corporate restructuring, loss of contracts), social impact (public awareness, protest movements, behavioral changes), and journalistic impact (other media following the story, awards, industry recognition). Post-publication follow-up is essential and involves monitoring responses from authorities, tracking promised reforms, pursuing new leads generated by the initial story, and producing follow-up pieces that document whether promised changes have been implemented. Organizations like ProPublica have formal impact tracking systems that document changes resulting from their investigations, while the concept of solutions journalism — reporting on how individuals and institutions are responding to problems uncovered by investigations — provides a constructive framework for follow-up coverage that moves beyond exposing problems to exploring potential remedies."
+  },
+  {
+    "q": [
+      "What are the major investigative journalism organizations?",
+      "What is ProPublica and what do they investigate?",
+      "What is Investigative Reporters and Editors (IRE)?",
+      "What is the Center for Public Integrity?",
+      "What are the leading investigative journalism nonprofits?",
+      "What investigative journalism organizations support reporters?",
+      "What resources are available for investigative journalists?"
+    ],
+    "a": "ProPublica is a Pulitzer Prize-winning nonprofit newsroom founded in 2007 that produces investigative journalism in the public interest, known for investigations on healthcare, finance, political influence, criminal justice, and the environment, and pioneering the model of offering stories for republication by partner news organizations to maximize impact. Investigative Reporters and Editors (IRE) is a membership organization founded in 1975 that provides training, resources, and a network for investigative journalists, best known for its annual conference, data journalism boot camps, fellowship programs, and extensive resource library of investigative tipsheets and story databases. Other major organizations include the Center for Public Integrity (investigating inequality and the influence of money in politics), the International Consortium of Investigative Journalists (coordinating cross-border investigations), The Marshall Project (criminal justice), the Reuters Institute, and Global Investigative Journalism Network (GIJN) which provides resources and connections for investigative reporters worldwide."
+  },
+  {
+    "q": [
+      "What are the challenges facing investigative journalism?",
+      "What legal threats do investigative journalists face?",
+      "How do funding challenges affect investigative reporting?",
+      "What safety risks do investigative journalists confront?",
+      "What is SLAPP litigation against journalists?",
+      "How do digital threats affect investigative journalism?",
+      "What is the future of investigative journalism?"
+    ],
+    "a": "Investigative journalism faces significant legal threats including defamation lawsuits, SLAPP suits (Strategic Lawsuits Against Public Participation) designed to intimidate and exhaust news organizations with litigation costs, prior restraint attempts through gag orders and injunctions, subpoenas seeking to reveal confidential sources, and in many countries outright government censorship and criminal charges against journalists. Funding is a persistent challenge as traditional advertising revenue models have declined, leading to the growth of nonprofit investigative journalism funded by foundations, individual donors, and reader contributions, though this creates its own sustainability questions and potential conflicts of interest with funding sources. Physical and digital safety threats have intensified, with investigative journalists facing surveillance (including through spyware like Pegasus), hacking of communications and data, physical attacks and assassination in many parts of the world, and the psychological toll of covering traumatic subjects and living under constant threat, making digital security training and mental health support essential for investigative journalism organizations."
+  }
+]

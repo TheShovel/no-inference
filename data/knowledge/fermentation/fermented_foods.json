@@ -1,0 +1,67 @@
+[
+    {
+        "q": [
+            "How do you make sauerkraut from scratch?",
+            "What is the process for fermenting cabbage into sauerkraut?",
+            "What ingredients do you need for sauerkraut?",
+            "How long does sauerkraut take to ferment?",
+            "What equipment is needed for making sauerkraut?",
+            "How do you know when sauerkraut is done fermenting?",
+            "What is the correct salt ratio for sauerkraut?",
+            "How do you prevent mold on sauerkraut?"
+        ],
+        "a": "Sauerkraut is made by shredding cabbage, mixing it with salt at a ratio of about 2-3% salt by weight, then massaging and packing the mixture tightly into a fermentation vessel such as a crock or mason jar. The salt draws water out of the cabbage, creating a brine that submerges the vegetables and creates an anaerobic environment favorable to lactic acid bacteria. The fermentation typically takes 1-4 weeks at cool room temperature (65-72°F), with the cabbage gradually becoming more sour and translucent as Lactobacillus produces lactic acid. An airlock or weight system is essential to keep the cabbage fully submerged under the brine, preventing mold and ensuring a successful ferment."
+    },
+    {
+        "q": [
+            "What are the different types of kimchi?",
+            "How do you make baechu kimchi?",
+            "What ingredients are essential for kimchi?",
+            "What is gochugaru and how is it used in kimchi?",
+            "What is the difference between baechu kimchi and kkakdugi?",
+            "How long does kimchi need to ferment?",
+            "Can you explain the process of making traditional kimchi?",
+            "What are the regional variations of kimchi in Korea?"
+        ],
+        "a": "Kimchi is a traditional Korean fermented vegetable dish, with baechu kimchi (napa cabbage kimchi) being the most iconic variety. The process involves salting napa cabbage, rinsing it, then coating each leaf with a paste made from gochugaru (Korean chili flakes), garlic, ginger, scallions, fish sauce or jeotgal (salted seafood), and sometimes rice paste. Other major varieties include kkakdugi (cubed radish kimchi), chonggak kimchi (whole ponytail radish), oi sobagi (cucumber kimchi), and baek kimchi (white kimchi without chili). Kimchi ferments at room temperature for 1-3 days then is refrigerated to slow fermentation, developing increasingly tangy and complex flavors over weeks."
+    },
+    {
+        "q": [
+            "How is yogurt made?",
+            "What temperature is needed to incubate yogurt?",
+            "What is the difference between Greek yogurt and regular yogurt?",
+            "How do you make yogurt at home?",
+            "What starter culture is used for yogurt?",
+            "How long should yogurt incubate?",
+            "What milk types can be used for yogurt?",
+            "What is skyr and how is it different from yogurt?"
+        ],
+        "a": "Yogurt is made by heating milk to 180°F (82°C) to denature proteins, cooling it to around 110-115°F (43-46°C), then inoculating it with a starter culture containing Lactobacillus delbrueckii subsp. bulgaricus and Streptococcus thermophilus. The milk is held at that temperature for 4-12 hours until it thickens into a custard-like consistency as the bacteria convert lactose into lactic acid. Greek yogurt is strained through a cloth or filter to remove whey, resulting in a thicker, higher-protein product. Icelandic skyr is similar to Greek yogurt but traditionally uses a different starter culture and is made from skim milk, giving it an even thicker consistency and milder flavor."
+    },
+    {
+        "q": [
+            "What is kefir and how is it made?",
+            "What are kefir grains made of?",
+            "What is the difference between milk kefir and water kefir?",
+            "How do you care for kefir grains?",
+            "What does kefir taste like?",
+            "How long does kefir take to ferment?",
+            "What are the health benefits of kefir?",
+            "Can you make kefir from coconut milk?"
+        ],
+        "a": "Kefir is a fermented dairy beverage made by culturing milk with kefir grains — gelatinous polysaccharide matrices (kefiran) that host a complex symbiotic community of lactic acid bacteria, acetic acid bacteria, and yeast. The grains are added to milk and left to ferment for 12-48 hours at room temperature, after which the liquid is strained and consumed. Kefir is naturally carbonated, tangy, and contains a broader microbial diversity than yogurt, including beneficial yeast species. Water kefir uses different grains (tibicos) that feed on sugar water rather than milk, producing a fizzy, probiotic drink, while coconut milk kefir offers a dairy-free alternative with similar fermentation dynamics."
+    },
+    {
+        "q": [
+            "How is miso made?",
+            "What are the different types of miso?",
+            "What is koji and how is it used in miso?",
+            "How long does miso need to ferment?",
+            "What is the difference between white miso and red miso?",
+            "Can you make miso at home?",
+            "What ingredients are in traditional miso?",
+            "How is hatcho miso different from other misos?"
+        ],
+        "a": "Miso is a fermented soybean paste made by combining cooked soybeans with koji (a culture of Aspergillus oryzae grown on rice or barley) and salt, then allowing the mixture to ferment for months or years. White miso (shiro miso) uses a higher proportion of rice koji and ferments for a shorter period (weeks to months), resulting in a mild, sweet flavor and light color. Red miso (aka miso) contains more soybeans and less koji, ferments longer (one to three years), and develops a deep, savory umami character. Hatcho miso is made exclusively from soybeans with no grain, fermented for over two years, producing an intensely rich, earthy paste. Miso is used in soups, marinades, glazes, and dressings."
+    }
+]

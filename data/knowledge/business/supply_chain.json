@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is supply chain management?",
+      "What are the key components of a supply chain?",
+      "How does supply chain management work?",
+      "What is the difference between supply chain and logistics?",
+      "What are the stages of a supply chain?",
+      "Why is supply chain management important?",
+      "supply chain management definition"
+    ],
+    "a": "Supply chain management (SCM) is the coordination of all activities involved in sourcing, procurement, conversion, and logistics—from raw material extraction through component manufacturing, assembly, warehousing, distribution, and finally delivery to the end customer. Effective SCM integrates supply and demand management across all participants in the chain, balancing efficiency (reducing costs, minimizing inventory, optimizing transportation) with responsiveness (meeting customer expectations for speed, customization, and reliability). The five key components are: planning (demand forecasting, inventory planning), sourcing (supplier selection, contracts, procurement), manufacturing (production scheduling, quality control), delivery (warehousing, order fulfillment, transportation), and returns (reverse logistics for repairs, recycling, or disposal)."
+  },
+  {
+    "q": [
+      "What is logistics and transportation in supply chains?",
+      "How does warehousing and inventory management work?",
+      "What is just-in-time (JIT) inventory?",
+      "What is procurement in supply chain?",
+      "How do companies manage inventory efficiently?",
+      "What are the different modes of transportation in logistics?",
+      "logistics procurement inventory management warehousing transportation JIT"
+    ],
+    "a": "Logistics manages the flow of goods from origin to consumption, selecting among transportation modes—ocean freight (cheapest for bulk, 90% of global trade volume), air freight (fastest but most expensive, used for high-value or time-sensitive goods), rail (efficient for land-based bulk), trucking (flexible for last-mile delivery), and pipeline (for oil and gas)—each with different cost, speed, capacity, and environmental impact trade-offs. Inventory management balances holding costs (warehousing, insurance, obsolescence) against stockout risks, with Just-in-Time (JIT), pioneered by Toyota, minimizing inventory by receiving materials exactly when needed in production, reducing waste but requiring flawless supplier reliability. Warehousing has evolved from static storage to dynamic distribution centers using automated storage and retrieval systems (ASRS), robotics, warehouse management systems (WMS), and increasingly dark warehouses that operate nearly autonomously to fulfill e-commerce orders with greater speed and accuracy."
+  },
+  {
+    "q": [
+      "What is supply chain optimization?",
+      "How do companies optimize their supply chains?",
+      "What causes supply chain disruptions?",
+      "How did COVID-19 disrupt global supply chains?",
+      "What strategies help manage supply chain risks?",
+      "How do global supply chains differ from domestic ones?",
+      "supply chain optimization global supply chains disruptions"
+    ],
+    "a": "Supply chain optimization uses data analytics, modeling, and technologies like blockchain, AI, and IoT sensors to improve efficiency, reduce costs, enhance visibility, and manage risks across the network. Major disruptions such as the COVID-19 pandemic, the 2021 Suez Canal blockage, and the Russia-Ukraine war exposed the fragility of highly optimized, lean global supply chains—the semiconductor shortage alone cost the global automotive industry an estimated $210 billion in lost revenue. Key risk mitigation strategies include near-shoring and friend-shoring (moving production closer to end markets or to geopolitically aligned countries), dual-sourcing and multi-sourcing (avoiding single-supplier dependencies), safety stock buffers (holding additional inventory at strategic points), supply chain mapping (documenting multi-tier suppliers), and digital twin simulation to model disruption scenarios and test contingency plans."
+  },
+  {
+    "q": [
+      "How does sustainability apply to supply chains?",
+      "What is sustainable supply chain management?",
+      "How do companies reduce carbon footprint in their supply chains?",
+      "What is circular supply chain?",
+      "How does ethical sourcing work?",
+      "What are Scope 1, 2, and 3 emissions in supply chains?",
+      "sustainable supply chain ethical sourcing circular economy"
+    ],
+    "a": "Sustainable supply chain management integrates environmental, social, and governance (ESG) criteria into sourcing, production, and logistics decisions, addressing Scope 3 emissions (indirect emissions in the value chain, which account for 80-90% of most companies' carbon footprint), ethical labor practices, and circular economy principles. Key practices include sustainable sourcing (certified raw materials like FSC paper, Rainforest Alliance cocoa, or Fair Trade coffee), green logistics (electric delivery vehicles, route optimization to reduce fuel consumption, intermodal transport, carbon offsetting), and supplier codes of conduct that enforce environmental standards and labor rights. The circular supply chain moves beyond the traditional linear 'take-make-dispose' model by designing for durability, repairability, and recyclability; implementing take-back programs where manufacturers recover used products for refurbishment or material recycling; and using reverse logistics networks to capture value from returned or end-of-life goods."
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What causes earthquakes?",
+      "What are seismic waves?",
+      "What is the difference between magnitude and intensity?",
+      "What is the Richter scale?",
+      "What is the moment magnitude scale?",
+      "What are the types of faults?",
+      "How are earthquakes measured?"
+    ],
+    "a": "Earthquakes are caused by the sudden release of accumulated stress along faults in Earth's crust, generating seismic waves that radiate outward. There are three main fault types: normal faults (extension, where hanging wall drops down), reverse or thrust faults (compression, where hanging wall moves up), and strike-slip faults (horizontal motion, like the San Andreas). Seismic waves include body waves (P-waves and S-waves) traveling through Earth's interior and surface waves (Love and Rayleigh waves) that cause the most damage. Earthquake magnitude is measured using the moment magnitude scale (replacing the older Richter scale), which quantifies the energy released, while intensity scales like Mercalli measure observed effects at specific locations."
+  },
+  {
+    "q": [
+      "What are the different types of volcanoes?",
+      "What are the types of volcanic eruptions?",
+      "What is lava?",
+      "What is the difference between shield and stratovolcanoes?",
+      "What is a cinder cone?",
+      "How do volcanic eruptions happen?",
+      "volcano types",
+      "types of eruptions"
+    ],
+    "a": "The three main types of volcanoes are shield volcanoes (broad, gently sloping, formed by low-viscosity basaltic lava, e.g., Mauna Loa in Hawaii), stratovolcanoes (or composite volcanoes, steep-sided with alternating lava and ash layers, producing explosive eruptions, e.g., Mount St. Helens and Mount Fuji), and cinder cones (small, steep-sided piles of volcanic debris from mild eruptions). Eruption styles range from effusive (lava flows) to explosive (pyroclastic flows, ash plumes) depending on magma viscosity and gas content. Lava is molten rock that reaches Earth's surface, ranging from fluid basalt to viscous rhyolite that forms domes and produces deadly pyroclastic flows."
+  },
+  {
+    "q": [
+      "What causes tsunamis?",
+      "How do tsunamis differ from regular waves?",
+      "What causes landslides?",
+      "What is subsidence?",
+      "What is liquefaction?",
+      "Can volcanic eruptions cause tsunamis?"
+    ],
+    "a": "Tsunamis are large ocean waves generated primarily by underwater earthquakes (especially along subduction zones), but also by volcanic eruptions, submarine landslides, and meteorite impacts. Unlike wind-driven waves that affect only the ocean surface, tsunamis involve the entire water column and can travel at speeds over 700 km/h with wavelengths exceeding 200 km. Landslides occur when rock, soil, or debris moves down a slope due to gravity, often triggered by heavy rain, earthquakes, or volcanic activity. Liquefaction happens when water-saturated soil temporarily loses strength during seismic shaking, behaving like a liquid and causing ground failure, while subsidence is the gradual sinking of Earth's surface due to groundwater withdrawal, mining, or tectonic processes."
+  },
+  {
+    "q": [
+      "Can we predict earthquakes?",
+      "How are volcanic eruptions predicted?",
+      "What are earthquake early warning systems?",
+      "What is hazard vs risk in geology?",
+      "How do scientists forecast volcanic activity?",
+      "hazard prediction",
+      "earthquake prediction"
+    ],
+    "a": "Short-term earthquake prediction remains elusive since no reliable precursors have been identified, but scientists can estimate long-term probabilities based on fault history and stress accumulation, and early warning systems detect P-waves to provide seconds of alert before destructive S-waves arrive. Volcanic eruption prediction is more advanced, using seismometers to detect magma movement, gas emissions (SO2 spikes), ground deformation (measured by GPS and InSAR), and thermal anomalies. Geologic hazard mapping identifies areas prone to earthquakes, landslides, tsunamis, and volcanic activity, allowing communities to implement building codes, land-use planning, and evacuation procedures to mitigate risk."
+  }
+]

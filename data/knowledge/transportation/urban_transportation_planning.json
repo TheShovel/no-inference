@@ -1,0 +1,60 @@
+[
+  {
+    "q": [
+      "What is transportation planning?",
+      "How does the transportation planning process work?",
+      "What is travel demand modeling?",
+      "What is mode choice in transportation planning?",
+      "What factors influence travel behavior?",
+      "transportation planning process steps",
+      "travel demand modeling four-step model",
+      "mode choice analysis transportation",
+      "trip generation trip distribution",
+      "how transportation systems are planned"
+    ],
+    "a": "Transportation planning is a systematic process that evaluates current transportation conditions, forecasts future travel demand, identifies infrastructure and service needs, and develops projects and policies to achieve community goals for mobility, accessibility, safety, equity, and environmental sustainability. The traditional four-step travel demand model includes trip generation (estimating how many trips each zone produces and attracts based on land use and demographics), trip distribution (where trips go, typically using a gravity model that accounts for trip purpose and travel time), mode choice (predicting whether travelers use car, transit, bike, walk, or other modes based on relative costs, times, and user characteristics), and traffic assignment (loading trips onto specific routes in the network to identify congestion and infrastructure needs). Modern planning increasingly incorporates activity-based models that simulate individual travel decisions throughout the day, as well as scenario planning that tests multiple possible futures against different policy choices and investment strategies."
+  },
+  {
+    "q": [
+      "What is transit-oriented development (TOD)?",
+      "What is the complete streets concept?",
+      "What is traffic calming?",
+      "How does congestion pricing work?",
+      "What is parking management?",
+      "What are bike-share programs?",
+      "transit-oriented development principles",
+      "complete streets policy",
+      "traffic calming measures",
+      "congestion pricing examples"
+    ],
+    "a": "Transit-oriented development (TOD) concentrates dense, mixed-use, walkable development within a half-mile radius of transit stations (especially rail), designing communities where residents can live, work, shop, and access services without relying on cars, pioneered in cities like Hong Kong, Tokyo, and Portland, Oregon. Complete streets policies mandate that roadways be designed and operated for all users—pedestrians, cyclists, transit riders, and motorists of all ages and abilities—through features like sidewalks, bike lanes, accessible curb ramps, median islands, and pedestrian signals. Traffic calming uses physical design measures (speed humps, chicanes, raised crosswalks, narrowed lanes, roundabouts) to reduce vehicle speeds and discourage cut-through traffic in residential neighborhoods, with studies showing a 20-40% reduction in crashes and injuries on treated streets. Congestion pricing, implemented in London, Stockholm, Singapore, and New York City, charges vehicles entering designated zones during peak periods, reducing traffic by 15-30% while generating revenue for transit investments, though political and equity challenges often accompany implementation."
+  },
+  {
+    "q": [
+      "What is pedestrian infrastructure in transportation planning?",
+      "What is universal design in transportation?",
+      "What is transportation equity?",
+      "What is environmental justice in transportation?",
+      "How does public transit funding work?",
+      "How are transportation and land use integrated?",
+      "What is Vision Zero?",
+      "pedestrian infrastructure design",
+      "universal design accessible transportation",
+      "transportation equity underserved communities"
+    ],
+    "a": "Pedestrian infrastructure includes sidewalks of adequate width, safe crosswalks with appropriate signal timing, curb extensions, pedestrian refuge islands, pedestrian-scale lighting, and wayfinding signage, with the Pedestrian Environment Factor (PEF) and Walk Score metrics used to evaluate walkability and its relationship to physical activity, community interaction, and local economic vitality. Universal design in transportation ensures that systems are usable by all people regardless of age, ability, or circumstance, incorporating ADA compliance (Americans with Disabilities Act), low-floor vehicles, audible signals, tactile paving for visually impaired pedestrians, and paratransit services for those who cannot use fixed-route transit. Transportation equity addresses disparities in access to mobility and transportation benefits across income levels, racial groups, and neighborhoods, examining how transit service levels, infrastructure quality, safety, and transportation costs (including the high cost of car ownership for low-income households) are distributed. Vision Zero is a traffic safety philosophy adopted by over 50 US cities and multiple countries that takes the ethical stance that no loss of life on roads is acceptable, replacing the traditional 'tolerable crash rate' approach with a systemic focus on safe road design, vehicle technology, enforcement, and post-crash care to eliminate traffic fatalities."
+  },
+  {
+    "q": [
+      "What are the main funding sources for public transit?",
+      "How does transportation planning integrate with land use?",
+      "What are the principles of sustainable transportation?",
+      "How can cities reduce car dependency?",
+      "public transit funding federal state local",
+      "transportation and land use connection",
+      "sustainable transportation principles",
+      "reducing car dependency strategies"
+    ],
+    "a": "Public transit funding in the US derives from federal sources (the Federal Transit Administration's formula grants and capital investment programs, funded by the federal gas tax), state sources (dedicated sales taxes, gas taxes, or general fund appropriations), and local sources (property taxes, sales taxes, fare revenue, and value capture mechanisms like tax increment financing around transit stations). Transportation and land use integration recognizes that travel demand is derived from the spatial arrangement of activities, making land use policies—zoning for density, mixed-use development, parking minimums versus maximums, and urban growth boundaries—powerful transportation tools that shape whether people can walk, bike, or take transit for daily needs. The sustainable transportation paradigm shifts investment priorities from roadway expansion toward maintaining existing infrastructure, improving transit service, building bike and pedestrian networks, implementing demand management (congestion pricing, parking pricing, employer-based commute programs), and adopting new mobility services (shared micromobility, mobility-as-a-service, autonomous vehicles) that can reduce car ownership and vehicle miles traveled while improving accessibility for all residents."
+  }
+]

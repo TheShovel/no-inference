@@ -1,0 +1,61 @@
+[
+  {
+    "q": [
+      "What is special relativity?",
+      "Explain special relativity.",
+      "What are the postulates of special relativity?",
+      "What is Einstein's theory of special relativity?",
+      "How does special relativity differ from general relativity?",
+      "What is the principle of relativity?",
+      "What is the speed of light limit?"
+    ],
+    "a": "Special relativity, published by Albert Einstein in 1905, is a theory of space and time based on two postulates: the laws of physics are the same in all inertial reference frames, and the speed of light in a vacuum is constant for all observers regardless of their relative motion or the motion of the light source. The theory leads to startling consequences including time dilation (moving clocks run slower), length contraction (moving objects are shortened in the direction of motion), and the relativity of simultaneity (events that appear simultaneous to one observer may not be to another). These effects become significant only at speeds approaching the speed of light and have been confirmed by countless experiments."
+  },
+  {
+    "q": [
+      "What is time dilation?",
+      "Explain time dilation.",
+      "How does time dilation work?",
+      "What is the twin paradox?",
+      "Does time move slower at high speeds?",
+      "What is gravitational time dilation?",
+      "How is time dilation proven?"
+    ],
+    "a": "Time dilation is the difference in elapsed time measured by two observers due to relative velocity (special relativistic time dilation) or differences in gravitational potential (gravitational time dilation). Moving clocks tick slower relative to a stationary observer, as described by the Lorentz factor γ = 1/√(1-v²/c²), meaning that at 99% of light speed, time slows by a factor of about 7. The twin paradox illustrates this: one twin travels at near-light speed in space while the other stays on Earth; when the traveling twin returns, they have aged less than the Earth-bound twin. Time dilation has been experimentally verified using atomic clocks on airplanes (the Hafele-Keating experiment) and particles in accelerators, where muons traveling near light speed survive far longer than their normal half-life of 2.2 microseconds."
+  },
+  {
+    "q": [
+      "What does E=mc² mean?",
+      "Explain E=mc².",
+      "How does E=mc² work?",
+      "What is mass-energy equivalence?",
+      "Why is E=mc² important?",
+      "How is E=mc² used?",
+      "What does each symbol in E=mc² stand for?"
+    ],
+    "a": "E=mc² is Einstein's mass-energy equivalence formula, which states that energy (E) and mass (m) are interchangeable, with the speed of light squared (c²) as the conversion factor. This means that a tiny amount of mass can be converted into an enormous amount of energy — the energy released by splitting the uranium atom in a nuclear bomb comes from converting about 0.1% of its mass into energy. The formula applies to all processes where mass and energy transform, from nuclear reactions in stars to particle-antimatter annihilation, and it explains why nuclear power plants and atomic weapons release such vast amounts of energy from relatively small amounts of fuel."
+  },
+  {
+    "q": [
+      "What is general relativity?",
+      "Explain general relativity.",
+      "What is spacetime curvature?",
+      "How does gravity work in general relativity?",
+      "What is the equivalence principle?",
+      "What are gravitational waves?",
+      "How does general relativity describe black holes?"
+    ],
+    "a": "General relativity, published by Einstein in 1915, describes gravity as the curvature of spacetime caused by the presence of mass and energy rather than as a force acting at a distance. Massive objects like stars and planets warp the fabric of spacetime around them, and this curvature dictates how other objects move — essentially, matter tells spacetime how to curve, and curved spacetime tells matter how to move. The theory predicts phenomena such as gravitational time dilation (clocks run slower in stronger gravity), the bending of light around massive objects (gravitational lensing), the precession of Mercury's orbit, and the existence of black holes. Gravitational waves, ripples in spacetime produced by accelerating massive objects such as merging black holes, were directly detected by LIGO in 2015, a century after Einstein's prediction."
+  },
+  {
+    "q": [
+      "What is the twin paradox?",
+      "Explain the twin paradox in relativity.",
+      "How is the twin paradox resolved?",
+      "Why does one twin age less?",
+      "Is the twin paradox real?",
+      "What causes the asymmetry in the twin paradox?"
+    ],
+    "a": "The twin paradox is a thought experiment involving one twin who travels at high speed to a distant star and returns, while the other remains on Earth. According to special relativity, time dilation predicts the traveling twin will have aged less upon return. The paradox arises because from the traveling twin's perspective, it appears the Earth is moving and should experience the same time dilation. The resolution lies in the asymmetry: the traveling twin must accelerate and decelerate (change reference frames) to turn around and return, while the Earth-bound twin remains in a single inertial frame. The traveling twin's worldline is shorter in spacetime, making less proper time elapse, so the asymmetry is real and has been confirmed experimentally with atomic clocks on airplanes and with subatomic particles."
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "q": [
+      "what is music theory",
+      "why is music theory important",
+      "what does music theory cover",
+      "music theory definition",
+      "what do you learn in music theory",
+      "what is the purpose of music theory",
+      "explain music theory"
+    ],
+    "a": "Music theory is the study of the practices, structures, and principles that govern how music is created, notated, and understood. It encompasses the analysis of elements such as pitch, rhythm, harmony, melody, form, and texture, providing a framework for composers and performers to communicate musical ideas. Far from being a rigid set of rules, music theory describes common patterns found in music across cultures and eras, helping musicians analyze existing works and make informed creative decisions. It includes practical skills like reading notation, understanding chord progressions, and recognizing scales, as well as more abstract topics like set theory and serialism used in contemporary classical music."
+  },
+  {
+    "q": [
+      "what are scales in music",
+      "what is a musical scale",
+      "how do scales work in music",
+      "what are major and minor scales",
+      "why are scales important in music",
+      "types of musical scales",
+      "what is a pentatonic scale",
+      "explain music scales"
+    ],
+    "a": "A scale is an ordered sequence of pitches arranged in ascending or descending order that forms the foundation of melody and harmony in a piece of music. The most common scales in Western music are major and minor scales, each consisting of seven notes with a specific pattern of whole and half steps between them — for example, a major scale follows the pattern W-W-H-W-W-W-H. Other important scale types include the pentatonic scale (five notes per octave, widely used in folk, blues, and rock music), chromatic scale (all twelve half steps), whole-tone scale (six whole steps), and various modal scales like Dorian and Mixolydian that originated in ancient Greek music and medieval church modes. Different musical traditions around the world use distinct scale systems, such as the raga system in Indian classical music or the maqam system in Arabic music, which often include microtonal intervals smaller than a semitone."
+  },
+  {
+    "q": [
+      "what are chords and harmony in music",
+      "what is harmony in music",
+      "how do chords work",
+      "what is a chord progression",
+      "what is the difference between consonance and dissonance",
+      "types of chords in music",
+      "what are major and minor chords",
+      "explain musical harmony"
+    ],
+    "a": "A chord is a set of three or more notes played simultaneously, and harmony is the study of how these chords interact and progress over time. The simplest chord is a triad, consisting of a root note, a third (which determines whether the chord is major or minor), and a fifth. Chord progressions — sequences of chords — create the harmonic foundation of a piece, with common patterns like the I-IV-V-I progression forming the backbone of much Western music. Consonance refers to stable, pleasing harmonic combinations, while dissonance creates tension and a desire for resolution, which composers use to shape emotional arcs. Extended chords (sevenths, ninths, elevenths, thirteenths) add color and complexity beyond the basic triad, and harmonic analysis often uses Roman numeral notation (I, ii, iii, IV, V, vi, vii°) to describe the function of each chord within a key."
+  },
+  {
+    "q": [
+      "what is melody in music",
+      "how is melody different from harmony",
+      "what makes a good melody",
+      "what is a melodic phrase",
+      "what is the difference between melody and rhythm",
+      "define melody in music",
+      "what are the elements of a melody"
+    ],
+    "a": "Melody is a linear sequence of single pitches that the listener perceives as a coherent, memorable unit — the part of a song you might hum or sing. It is defined by its contour (the shape of its rise and fall), its interval structure (the distances between successive notes), and its rhythmic patterning within a phrase structure typically spanning two to eight bars. While harmony provides the vertical dimension of music (notes sounding together), melody provides the horizontal dimension (notes sounding in succession). Effective melodies often feature a balance of stepwise motion (adjacent scale degrees) for smoothness and leaps for interest, climactic high points, and phrasing that follows natural breath patterns, all of which contribute to a melody that feels both surprising and inevitable to the listener."
+  },
+  {
+    "q": [
+      "what is rhythm in music",
+      "what is the difference between beat and rhythm",
+      "what is a time signature",
+      "what is syncopation",
+      "how does rhythm work in music",
+      "what is tempo in music",
+      "define musical rhythm",
+      "what are note values in music"
+    ],
+    "a": "Rhythm is the pattern of sounds and silences in time, organized around a regular pulse called the beat. Time signatures, written as two numbers at the start of a piece (like 4/4 or 3/4), indicate how many beats are in each measure and which note value receives one beat — 4/4 time has four quarter-note beats per measure and is the most common in popular music. Tempo, measured in beats per minute (BPM), determines the speed of the underlying pulse. Syncopation occurs when accents fall on weak beats or offbeats, creating rhythmic tension and groove that is especially characteristic of jazz, funk, and African diaspora musics. Note values (whole, half, quarter, eighth, sixteenth notes and their corresponding rests) define the relative duration of each sound or silence, while meters can be simple (beats divisible by two), compound (beats divisible by three), or irregular (like 5/4 or 7/8) for more complex rhythmic feels."
+  },
+  {
+    "q": [
+      "what is a key signature in music",
+      "how do key signatures work",
+      "what is the circle of fifths",
+      "what are sharps and flats in key signatures",
+      "how to read key signatures",
+      "what is the difference between major and minor keys",
+      "explain key signatures"
+    ],
+    "a": "A key signature is a set of sharps or flats placed at the beginning of a staff that indicates which notes are to be consistently raised or lowered throughout a piece, defining the underlying scale and tonality. Each key signature corresponds to a specific major key and its relative minor (which shares the same notes but starts on a different tonic). The circle of fifths is a visual diagram that organizes the twelve major keys in ascending fifths, showing how key signatures gain or lose one sharp or flat as you move around the circle — C major has no sharps or flats, G major has one sharp (F♯), D major has two (F♯, C♯), and so on. Parallel keys (like C major and C minor) share the same tonic but use different key signatures and scale patterns, with the minor key typically featuring a flatted third, sixth, and seventh scale degrees compared to its major counterpart."
+  }
+]

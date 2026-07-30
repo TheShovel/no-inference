@@ -1,0 +1,57 @@
+[
+  {
+    "q": [
+      "What is agricultural economics?",
+      "What does agricultural economics study?",
+      "How does supply and demand work in agriculture?",
+      "What is farm economics?",
+      "What are the principles of agricultural economics?",
+      "Define agricultural economics.",
+      "agricultural supply and demand",
+      "farm economics basics"
+    ],
+    "a": "Agricultural economics applies economic principles to the production, distribution, and consumption of food and fiber, addressing how farmers allocate scarce resources (land, labor, capital) to maximize profit while feeding a growing population. Supply in agriculture is uniquely influenced by biological lag times (crops take months to grow), weather variability, and the fact that individual farmers are typically price takers in highly competitive markets, while demand for most staple foods is relatively inelastic — people need to eat, so price changes have limited effect on quantity demanded. Key topics include farm management and decision-making under risk, market structures from local farmers' markets to global commodity exchanges, agricultural finance and credit, natural resource economics, and the economic analysis of food systems from farm to fork."
+  },
+  {
+    "q": [
+      "What are commodity markets in agriculture?",
+      "How do commodity futures work for farmers?",
+      "What are agricultural subsidies?",
+      "What is the US Farm Bill?",
+      "How do farm bills affect agriculture?",
+      "What are agricultural commodity prices?",
+      "commodity markets agriculture",
+      "farm bill US",
+      "agricultural subsidies explained"
+    ],
+    "a": "Commodity markets are organized exchanges where agricultural products like corn, wheat, soybeans, coffee, cotton, and livestock are traded through spot contracts (immediate delivery) and futures contracts (agreed price for future delivery), allowing farmers to hedge against price volatility by locking in prices months before harvest. Agricultural subsidies are government payments to farmers intended to stabilize incomes, ensure food security, and manage supply, taking forms such as direct payments, price supports, crop insurance subsidies, and conservation payments — these are often controversial for distorting trade and encouraging overproduction. The US Farm Bill, renewed roughly every five years, is comprehensive legislation governing agricultural and food policy, encompassing commodity subsidies, crop insurance, conservation programs, nutrition assistance (SNAP), international food aid, and rural development, with the nutrition title accounting for approximately 75-80% of total spending."
+  },
+  {
+    "q": [
+      "What is international agricultural trade?",
+      "How does the WTO affect agriculture?",
+      "What are agricultural trade disputes?",
+      "What is food price volatility?",
+      "Why do food prices fluctuate so much?",
+      "What causes volatility in agricultural markets?",
+      "WTO agriculture agreements",
+      "international food trade",
+      "food price spikes"
+    ],
+    "a": "International agricultural trade involves the cross-border exchange of food, feed, fiber, and agricultural inputs, governed by WTO agreements including the Agreement on Agriculture (AoA) which aims to reduce trade-distorting subsidies, improve market access, and eliminate export subsidies — though progress has been slow, with developing countries often arguing that rich nations' subsidies disadvantage their farmers. Food price volatility, characterized by sharp and unpredictable swings in agricultural commodity prices, is driven by factors including weather shocks (droughts, floods), energy prices (which affect fertilizer and transport costs), biofuel mandates linking food and fuel markets, speculative trading in commodity futures, export restrictions by producing countries, and exchange rate fluctuations. The 2007-2008 global food crisis, when prices of staples like rice and wheat more than doubled, triggered food riots in over 30 countries and led to renewed focus on agricultural investment, safety nets, and market transparency through initiatives like the Agricultural Market Information System (AMIS)."
+  },
+  {
+    "q": [
+      "What is rural development?",
+      "How do farmers earn income?",
+      "What is farm income and how is it measured?",
+      "What is agricultural policy?",
+      "Why is rural development important?",
+      "What factors affect farm profitability?",
+      "rural development economics",
+      "farm income sources",
+      "agricultural policy goals"
+    ],
+    "a": "Rural development encompasses economic and social strategies to improve the quality of life in rural areas — including agricultural modernization, infrastructure investment (roads, electricity, broadband), access to credit and markets, education and healthcare services, and support for non-farm enterprises that diversify rural economies beyond agriculture alone. Farm income measures the net return to farm operators from agricultural production, calculated as gross cash income minus cash expenses, and is notoriously variable due to weather, pests, price fluctuations, and input cost changes — many farm households in developed countries rely significantly on off-farm income for financial stability. Agricultural policy aims to balance multiple often-competing objectives: ensuring a stable and affordable food supply, supporting farm livelihoods, promoting environmental stewardship, fostering rural communities, and maintaining the competitiveness of domestic agriculture in global markets, with policy instruments ranging from subsidies and trade protection to research funding and conservation incentives."
+  }
+]

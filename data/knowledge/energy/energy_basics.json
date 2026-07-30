@@ -1,0 +1,64 @@
+[
+  {
+    "q": [
+      "What is energy in physics?",
+      "Define the concept of energy.",
+      "What does energy mean scientifically?",
+      "How is energy defined in physics?",
+      "What is the scientific definition of energy?",
+      "energy definition",
+      "what is energy"
+    ],
+    "a": "Energy is a fundamental physical quantity defined as the capacity to do work or produce heat. It exists in multiple forms including kinetic (motion), potential (stored), thermal (heat), chemical (bonds), electrical (charge flow), nuclear (nucleus), and electromagnetic (radiation). The total energy in an isolated system is conserved, meaning it can neither be created nor destroyed—only converted from one form to another—as formalized by the first law of thermodynamics."
+  },
+  {
+    "q": [
+      "What are the main forms of energy?",
+      "List different types of energy.",
+      "Describe kinetic and potential energy.",
+      "What is thermal energy?",
+      "What is chemical energy?",
+      "What is electrical energy?",
+      "forms of energy",
+      "types of energy"
+    ],
+    "a": "Kinetic energy is the energy of motion, given by ½mv², while potential energy is stored energy due to position or configuration, such as gravitational (mgh) or elastic (½kx²). Thermal energy arises from the random motion of atoms and molecules, chemical energy is stored in molecular bonds, electrical energy involves the movement of charged particles, nuclear energy is released from atomic nucleus transformations, and electromagnetic energy travels as waves (light, radio, X-rays). All these forms are interconvertible, with conversion efficiencies varying by process."
+  },
+  {
+    "q": [
+      "What is the law of conservation of energy?",
+      "Explain the conservation of energy principle.",
+      "What does the first law of thermodynamics state?",
+      "Can energy be created or destroyed?",
+      "What are the laws of thermodynamics?",
+      "conservation of energy",
+      "thermodynamics laws"
+    ],
+    "a": "The law of conservation of energy states that the total energy of an isolated system remains constant over time; energy cannot be created or destroyed, only transformed from one form to another. This principle is formalized as the first law of thermodynamics: ΔU = Q − W, where the change in a system's internal energy equals heat added minus work done. The second law introduces entropy, stating that spontaneous processes increase total entropy, and the third law states that absolute zero is unattainable. These laws govern all energy conversions and set fundamental limits on efficiency."
+  },
+  {
+    "q": [
+      "How is energy measured?",
+      "What are the units of energy?",
+      "What is a joule?",
+      "What is a kilowatt-hour?",
+      "What is a calorie in energy terms?",
+      "What is a BTU?",
+      "energy units",
+      "units of energy"
+    ],
+    "a": "The SI unit of energy is the joule (J), defined as the work done when a force of one newton acts over a distance of one meter. The kilowatt-hour (kWh) is commonly used for electricity billing, with 1 kWh = 3.6 × 10⁶ J. The calorie (cal) is the energy needed to raise one gram of water by one degree Celsius (1 cal = 4.184 J), while the British thermal unit (BTU) is used in heating and cooling (1 BTU ≈ 1055 J). In nuclear physics, the electronvolt (eV) is common, and in food energy, the dietary Calorie (capital C) equals 1000 cal (1 kcal)."
+  },
+  {
+    "q": [
+      "What is the difference between primary and secondary energy?",
+      "Define primary energy sources.",
+      "Define secondary energy sources.",
+      "What are examples of primary and secondary energy?",
+      "How do primary and secondary energy differ?",
+      "primary vs secondary energy",
+      "primary energy sources"
+    ],
+    "a": "Primary energy is energy found in nature that has not been converted or transformed, including fossil fuels (coal, oil, natural gas), nuclear fuel (uranium), and renewable sources (sunlight, wind, water, geothermal heat). Secondary energy is energy that has been converted from primary sources into a more convenient form, most commonly electricity, but also hydrogen, refined petroleum products (gasoline, diesel), and district heating. The distinction matters for energy accounting: when you plug a device into a wall outlet, you are using secondary energy (electricity), which was generated from a primary source such as coal, natural gas, nuclear fission, or solar radiation."
+  }
+]

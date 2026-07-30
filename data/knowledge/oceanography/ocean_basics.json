@@ -1,0 +1,63 @@
+[
+  {
+    "q": [
+      "What is oceanography?",
+      "What are the branches of oceanography?",
+      "What do oceanographers study?",
+      "Why is oceanography important?",
+      "What are the four main disciplines of oceanography?",
+      "What is the study of the ocean called?"
+    ],
+    "a": "Oceanography is the scientific study of the world's oceans, integrating multiple disciplines to understand ocean processes and their interactions with the atmosphere, geosphere, and biosphere. The four main branches are biological oceanography (marine life and ecosystems), physical oceanography (currents, waves, tides, and ocean-atmosphere interactions), chemical oceanography (ocean composition, cycles, and chemistry), and geological oceanography (seafloor structure, plate tectonics, and marine sediments). Oceanography is crucial for understanding climate change, ocean circulation, marine resources, and coastal hazards."
+  },
+  {
+    "q": [
+      "What are the ocean zones?",
+      "What is the epipelagic zone?",
+      "What is the mesopelagic zone?",
+      "What is the bathypelagic zone?",
+      "What is the abyssopelagic zone?",
+      "What is the hadal zone?",
+      "What are the layers of the ocean?",
+      "what are the ocean zones",
+      "ocean zones",
+      "layers of the ocean"
+    ],
+    "a": "The ocean is divided into vertical zones based on depth and light penetration. The epipelagic zone (0-200 m, the sunlight zone) receives enough light for photosynthesis and contains most marine life. The mesopelagic zone (200-1,000 m, the twilight zone) has very dim light and organisms with adaptations like bioluminescence. The bathypelagic zone (1,000-4,000 m, the midnight zone) is completely dark with high pressure and cold temperatures. The abyssopelagic zone (4,000-6,000 m) covers vast deep ocean plains, and the hadal zone (6,000-11,000 m) comprises ocean trenches, including the Mariana Trench, the deepest place on Earth."
+  },
+  {
+    "q": [
+      "What is the composition of seawater?",
+      "What is the salinity of the ocean?",
+      "Why is the ocean salty?",
+      "What is the average ocean temperature?",
+      "How does pressure change with depth?",
+      "Seawater composition"
+    ],
+    "a": "Seawater is composed of about 96.5% water and 3.5% dissolved salts, with the major dissolved ions being chloride (55%), sodium (30.6%), sulfate (7.7%), magnesium (3.7%), calcium (1.2%), and potassium (1.1%). Average ocean salinity is about 35 parts per thousand (ppt), though it varies regionally due to evaporation, precipitation, river runoff, and sea ice formation. Ocean temperature decreases with depth, with the surface layer typically at 15-30°C in the tropics and near freezing in polar regions. Pressure increases by about 1 atmosphere (1 atm) for every 10 meters of depth, reaching over 1,000 atm in the deepest trenches."
+  },
+  {
+    "q": [
+      "What are the major ocean basins?",
+      "How many oceans are there?",
+      "What is the deepest ocean?",
+      "What is the largest ocean?",
+      "What are the five oceans of the world?",
+      "What is the difference between a sea and an ocean?",
+      "ocean basins"
+    ],
+    "a": "The five major ocean basins from largest to smallest are the Pacific Ocean (largest and deepest, covering about 30% of Earth's surface and containing the Mariana Trench), the Atlantic Ocean (second largest, with the Mid-Atlantic Ridge running down its center), the Indian Ocean (warmest ocean, bounded by Africa, Asia, and Australia), the Southern Ocean (surrounding Antarctica, characterized by the Antarctic Circumpolar Current), and the Arctic Ocean (smallest and shallowest, mostly covered by sea ice). Seas are smaller, partially enclosed bodies of water that lie on the margins of oceans, such as the Mediterranean Sea, Caribbean Sea, and South China Sea."
+  },
+  {
+    "q": [
+      "How is ocean temperature measured?",
+      "What factors affect ocean salinity?",
+      "How does ocean density vary?",
+      "What is the thermocline?",
+      "What is the halocline?",
+      "What is the pycnocline?",
+      "ocean properties"
+    ],
+    "a": "Ocean temperature, salinity, and density together determine water mass properties and ocean circulation. The thermocline is a layer where temperature changes rapidly with depth, separating warm surface waters from cold deep waters, most pronounced in tropical and subtropical regions. The halocline is a zone of rapid salinity change, and the pycnocline is where density increases quickly with depth, which acts as a barrier preventing vertical mixing. Denser water (colder and/or saltier) sinks while less dense water rises, driving deep ocean circulation. Temperature and salinity profiles are measured using CTD (conductivity, temperature, depth) instruments deployed from research vessels."
+  }
+]

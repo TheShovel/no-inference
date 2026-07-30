@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is seawater chemistry?",
+      "What is the chemical composition of seawater?",
+      "What is salinity and how is it measured?",
+      "Why is the ocean salty?",
+      "What are the major ions in seawater?",
+      "What factors affect ocean salinity?",
+      "How does salinity vary across the ocean?"
+    ],
+    "a": "Seawater chemistry is dominated by six major ions that make up over 99% of dissolved salts: chloride (Cl⁻, 55%), sodium (Na⁺, 30.6%), sulfate (SO₄²⁻, 7.7%), magnesium (Mg²⁺, 3.7%), calcium (Ca²⁺, 1.2%), and potassium (K⁺, 1.1%), with average salinity of about 35 parts per thousand (35 g of dissolved salts per kg of seawater). Salinity varies geographically and seasonally due to evaporation (which increases salinity in subtropical gyres and marginal seas like the Mediterranean and Red Sea), precipitation and river runoff (which freshen waters near the equator, high latitudes, and coastal areas), and sea ice formation (which excludes salt, increasing salinity of surrounding waters). The principle of constant proportions means the relative ratios of major ions remain nearly constant throughout the ocean, so measuring one ion, typically chloride via titration, allows calculation of total salinity."
+  },
+  {
+    "q": [
+      "What is ocean acidification?",
+      "How does CO2 affect ocean pH?",
+      "Why is ocean acidification a problem?",
+      "What is the chemical process of ocean acidification?",
+      "How does increased atmospheric CO2 affect seawater chemistry?",
+      "What are the effects of ocean acidification on marine life?",
+      "How does acidification affect coral reefs and shellfish?"
+    ],
+    "a": "Ocean acidification is the ongoing decrease in seawater pH caused by the ocean's absorption of about 25–30% of anthropogenic carbon dioxide from the atmosphere, which reacts with water to form carbonic acid (H₂CO₃), which dissociates into bicarbonate (HCO₃⁻) and hydrogen ions (H⁺), increasing acidity and reducing the availability of carbonate ions (CO₃²⁻). Since the Industrial Revolution, surface ocean pH has dropped by about 0.1 units (a 30% increase in hydrogen ion concentration), and by 2100 it is projected to decline by another 0.3–0.4 units under high-emission scenarios, a rate of change unprecedented in the last 300 million years. This acidification impairs the ability of calcifying organisms such as corals, mollusks, pteropods, and certain plankton to build and maintain their calcium carbonate shells and skeletons, threatening the foundation of marine food webs and the billions of people who depend on reef fish and shellfish for protein."
+  },
+  {
+    "q": [
+      "What are dissolved gases in the ocean?",
+      "How does oxygen dissolve in seawater?",
+      "What controls the distribution of dissolved oxygen in the ocean?",
+      "What is the ocean carbon cycle?",
+      "How does the ocean absorb carbon dioxide?",
+      "What is the biological carbon pump?",
+      "What is ocean deoxygenation?"
+    ],
+    "a": "The ocean contains dissolved gases including oxygen (O₂), carbon dioxide (CO₂), nitrogen (N₂), and argon, with oxygen being most critical for marine life — its solubility increases in cold water, so polar oceans and deep waters are well-oxygenated, while warm surface waters hold less oxygen. The ocean carbon cycle involves the exchange of CO₂ across the air-sea interface, the solubility pump (where CO₂ dissolves more readily in cold, high-latitude waters that sink into the deep ocean), and the biological carbon pump (where phytoplankton fix CO₂ through photosynthesis, and some organic carbon sinks to depth as marine snow, sequestering carbon for centuries to millennia). Ocean deoxygenation refers to the decline in dissolved oxygen content driven by global warming (warmer water holds less oxygen and increases stratification, reducing ventilation of deep waters) and nutrient pollution (which fuels algal blooms that create dead zones when they decompose), with oxygen minimum zones expanding and threatening fisheries and ecosystem health."
+  },
+  {
+    "q": [
+      "What are the main nutrients in the ocean?",
+      "Why are nitrogen and phosphorus important in seawater?",
+      "What is the role of iron in marine ecosystems?",
+      "What is the limiting nutrient in the ocean?",
+      "How do nutrients cycle in the marine environment?",
+      "What are the major reservoirs in the marine nitrogen cycle?",
+      "What is the marine silicon cycle and why is it important?"
+    ],
+    "a": "The major marine nutrients are nitrogen (primarily as nitrate NO₃⁻, nitrite NO₂⁻, and ammonium NH₄⁺), phosphorus (as phosphate PO₄³⁻), silicon (as silicic acid Si(OH)₄, essential for diatoms that construct silica frustules), and iron (a micronutrient critical for photosynthesis and nitrogen fixation). Nitrogen is the primary limiting nutrient in most of the surface ocean, but in high-nutrient, low-chlorophyll (HNLC) regions such as the Southern Ocean and equatorial Pacific, iron is the limiting factor — Martin's iron hypothesis led to controversial ocean iron fertilization experiments that demonstrated adding iron triggers massive phytoplankton blooms. The marine nitrogen cycle involves nitrogen fixation (converting N₂ gas to bioavailable forms by cyanobacteria), nitrification, assimilation by phytoplankton, denitrification (converting nitrate back to N₂ gas under low-oxygen conditions), and anaerobic ammonium oxidation (anammox), with human activities now doubling the amount of fixed nitrogen entering the ocean through fertilizer runoff and atmospheric deposition."
+  }
+]

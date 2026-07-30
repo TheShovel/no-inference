@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "What is typography?",
+      "What's the difference between a typeface and a font?",
+      "What is the difference between serif and sans serif typefaces?",
+      "What are the main type categories?",
+      "What is type anatomy?",
+      "What is an ascender and descender in typography?",
+      "What is x-height?",
+      "What is a counter in typography?"
+    ],
+    "a": "Typography is the art and technique of arranging type to make written language legible, readable, and visually appealing, encompassing everything from typeface selection to spacing, layout, and hierarchy. The terms typeface and font are often used interchangeably, but strictly speaking, a typeface is the design of the letterforms (like Helvetica), while a font is a specific weight, width, and style within that typeface family (like Helvetica Bold Italic at 12pt). Serif typefaces have small decorative strokes at the ends of letterforms and are traditionally used for body text in print, while sans serif typefaces lack these strokes and are prized for their clean, modern appearance particularly on digital screens. Type anatomy describes the structural parts of letterforms including the ascender (the part of a lowercase letter extending above the x-height), descender (the part extending below the baseline), x-height (the height of lowercase letters like x), counter (the enclosed space within letters like o or b), bowl (the curved stroke enclosing a counter), stem (the main vertical stroke), and serif (the small finishing stroke at the end of a stem)."
+  },
+  {
+    "q": [
+      "What is a type family?",
+      "What is kerning in typography?",
+      "What is tracking in typography?",
+      "What is leading in typography?",
+      "What is typographic hierarchy?",
+      "How do you create good typographic hierarchy?",
+      "What is the difference between kerning and tracking?",
+      "How is leading measured in typography?"
+    ],
+    "a": "A type family is the complete collection of all weight, width, and style variations within a single typeface design, such as Light, Regular, Bold, Black, Condensed, Extended, and their corresponding italic versions. Kerning refers to the adjustment of space between specific pairs of letters to achieve visually uniform spacing, as certain combinations like AV, To, or WA require tighter fit than their standard bounding boxes would provide. Tracking (or letter-spacing) adjusts spacing uniformly across a range of characters, affecting the overall density and color of a text block, while leading (pronounced ledding) is the vertical space between lines of type, measured from baseline to baseline. Typographic hierarchy uses variations in size, weight, color, spacing, and alignment to guide the reader's eye through content, establishing clear relationships between headings, subheadings, body text, and captions to communicate the relative importance of information."
+  },
+  {
+    "q": [
+      "What is readability vs legibility in typography?",
+      "What is legibility?",
+      "What is readability?",
+      "How are readability and legibility different?",
+      "What makes a typeface legible?",
+      "How do you improve text readability?",
+      "What factors affect legibility?",
+      "What is the most readable font?"
+    ],
+    "a": "Legibility refers to how easily individual letterforms can be distinguished from one another at a given size, determined by typeface design characteristics such as open counters, distinct letter shapes, adequate x-height, and clear differentiation between similar characters like lowercase l and uppercase I. Readability is a broader concept concerning how easily blocks of text can be read and understood, influenced by factors like line length (optimal 45-75 characters per line), line spacing (leading), alignment, contrast, and the overall typographic layout. A highly legible typeface can still produce poor readability if it is set too small, with insufficient leading, or on excessively long lines, while even a moderately legible typeface can be readable when carefully arranged. Good typography balances both qualities: selecting a legible typeface appropriate for the medium and purpose, then setting it with optimal spacing, measure, and contrast for comfortable sustained reading."
+  },
+  {
+    "q": [
+      "Who are the most influential type designers in history?",
+      "Who designed the first movable type?",
+      "What did Claude Garamond contribute to typography?",
+      "Who was William Caslon?",
+      "What is John Baskerville known for?",
+      "Who was Giambattista Bodoni?",
+      "What did Adrian Frutiger design?",
+      "Who was Hermann Zapf?"
+    ],
+    "a": "The history of type design is marked by influential figures including Johannes Gutenberg, who invented movable type in Europe around 1450, and Claude Garamond, a 16th-century French punchcutter whose roman and italic types defined the old-style serif category and remain popular today. William Caslon established the English typographic tradition with his sturdy, practical typefaces in the 18th century, while John Baskerville pushed boundaries with his crisp, high-contrast transitional designs and smoother paper finishes. Giambattista Bodoni created the modern serif style with extreme thin-thick contrast in the late 18th century, and in the modern era, Adrian Frutiger designed the influential Univers and Frutiger families, while Hermann Zapf created Palatino, Optima, and Zapf Dingbats, contributing significantly to both metal and digital type design. Modern type foundries like Hoefler&Co., Frere-Jones Type, TypeTogether, and Production Type continue this legacy, releasing original typeface families and reviving historical designs for contemporary use."
+  }
+]

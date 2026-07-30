@@ -1,0 +1,67 @@
+[
+    {
+        "q": [
+            "What genealogy software is best for building a family tree?",
+            "What is the difference between desktop and online genealogy software?",
+            "What are the best free genealogy programs?",
+            "How do I choose genealogy software?",
+            "What genealogy software supports GEDCOM files?",
+            "What is the best genealogy program for Mac?",
+            "What genealogy software integrates with Ancestry and FamilySearch?",
+            "What genealogy programs have mobile apps?"
+        ],
+        "a": "Leading genealogy software options include RootsMagic, Family Tree Maker, Legacy Family Tree, Gramps (free and open-source), and MacFamilyTree for macOS. Desktop software stores your tree locally and typically offers more robust reporting, source citation tools, and charting capabilities. Online platforms like Ancestry.com, MyHeritage, and FamilySearch offer cloud-based trees with automatic record hints, collaborative features, and mobile apps. GEDCOM (Genealogical Data Communication) is the universal file format for exchanging family tree data between programs. Gramps is the most powerful free option with advanced features like relationship calculators and custom reports, while RootsMagic offers direct integration with Ancestry.com and FamilySearch for record searching."
+    },
+    {
+        "q": [
+            "What are the best online genealogy databases?",
+            "What free genealogy websites are available?",
+            "What is the difference between FamilySearch and Ancestry?",
+            "How do I access historical records online for genealogy?",
+            "What genealogy websites have the largest record collections?",
+            "What is FamilySearch and how is it free?",
+            "What records are available on the National Archives website?",
+            "How do genealogy aggregator websites work?"
+        ],
+        "a": "FamilySearch.org is a completely free genealogy platform run by the Church of Jesus Christ of Latter-day Saints, offering billions of historical records, a collaborative family tree, and research wiki guidance. Ancestry.com requires a subscription but has the largest collection of digitized records including census, vital, military, and immigration documents alongside its DNA database. MyHeritage offers strong international record collections, especially for European and Scandinavian research. The National Archives website provides free access to US Federal records including census, military, and naturalization documents. Cyndi's List is a comprehensive catalog of genealogy websites organized by category, while the USGenWeb Project provides free county-level resources maintained by volunteers."
+    },
+    {
+        "q": [
+            "How do I cite sources properly in genealogy?",
+            "What is Evidence Explained and how is it used?",
+            "What are the standard citation formats for genealogical sources?",
+            "How do I cite a census record correctly?",
+            "Why is source citation important in genealogy?",
+            "What elements should a genealogy source citation include?",
+            "How do I create source citations in genealogy software?",
+            "What is the difference between source citations and source lists?"
+        ],
+        "a": "Proper source citation in genealogy follows standards developed by Elizabeth Shown Mills in Evidence Explained, which is the authoritative guide for genealogical citation. A complete citation should include the informant (who created the record), the record type (what it is), the date (when it was created), the location (where it was created or found), and the repository (where the record is held). Most genealogy software programs like RootsMagic and Family Tree Maker have built-in citation templates that make it easy to enter and format citations consistently. Efficient Source Citation System (ESCS) and simplified citation methods are also used, but all citations should be complete enough that another researcher could locate the exact same record."
+    },
+    {
+        "q": [
+            "What are the best tools for creating genealogy charts?",
+            "How do I create a family tree chart for display?",
+            "What is a fan chart in genealogy?",
+            "What genealogy chart types are available?",
+            "How do I make a descendant chart?",
+            "What software generates the best genealogy charts?",
+            "Can I create a family tree chart for free?",
+            "What is the difference between pedigree chart and family group sheet?"
+        ],
+        "a": "Common genealogy chart types include the pedigree chart (ancestor chart showing direct line ancestors), family group sheet (detailed record of one family unit with parents and children), descendant chart (all descendants of one person), hourglass chart (both ancestors and descendants of an individual), and fan chart (semi-circular ancestor display). Charting programs like Lucidchart, Canva, and specialized genealogy software generate professional-quality displays. RootsMagic and Family Tree Maker offer built-in chart creation with customizable templates. Gramps can produce detailed graphical reports, while online tools like FamilySearch Family Tree and Ancestry.com automatically generate interactive pedigree views and fan charts."
+    },
+    {
+        "q": [
+            "What are genealogy societies and how can they help?",
+            "How do I find a local genealogy society?",
+            "What resources do historical societies offer for genealogy?",
+            "Should I join a genealogy society?",
+            "What are the benefits of genealogy society membership?",
+            "How do genealogy societies preserve records?",
+            "What is the National Genealogical Society?",
+            "How can local historical societies help with family research?"
+        ],
+        "a": "Genealogy and historical societies are invaluable resources for family history research, often maintaining local records, book collections, and expert volunteers who can provide guidance on regional research. The National Genealogical Society (NGS) offers educational webinars, a scholarly journal (the NGS Quarterly), and annual conferences with workshops on advanced research methods. Local societies often have exclusive access to county-level records, cemetery transcriptions, and surname indexes not available online. Many societies offer free lookup services for members, publish quarterly journals featuring transcribed records, and maintain research libraries with unique local history materials."
+    }
+]

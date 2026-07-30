@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is nanofabrication?",
+      "What is top-down fabrication in nanotechnology?",
+      "How does photolithography work in nanofabrication?",
+      "What is electron beam lithography?",
+      "What is nanoimprint lithography?",
+      "What are the main top-down nanofabrication techniques?",
+      "What is the difference between photolithography and e-beam lithography?"
+    ],
+    "a": "Nanofabrication encompasses the processes used to create structures with nanometer-scale dimensions, broadly divided into top-down approaches that carve features from larger materials and bottom-up approaches that assemble structures atom by atom or molecule by molecule. Top-down fabrication relies primarily on photolithography, which uses ultraviolet light to transfer patterns from a photomask onto a photosensitive chemical (photoresist) on a substrate, followed by etching to remove material — a technique that powers the semiconductor industry and has achieved feature sizes below 10 nanometers using extreme ultraviolet (EUV) lithography. Electron beam lithography (e-beam lithography) writes patterns directly using a focused beam of electrons, achieving higher resolution than photolithography (below 5 nm) but with much slower throughput, making it suitable for prototyping, mask making, and research applications, while nanoimprint lithography physically stamps or molds patterns into a resist material for high-throughput nanoscale patterning at lower cost."
+  },
+  {
+    "q": [
+      "What is bottom-up fabrication in nanotechnology?",
+      "How does self-assembly work in nanofabrication?",
+      "What is molecular beam epitaxy?",
+      "What is chemical vapor deposition in nanofabrication?",
+      "How are nanomaterials synthesized from the bottom up?",
+      "What is the difference between top-down and bottom-up nanofabrication?",
+      "How does atomic layer deposition differ from CVD?"
+    ],
+    "a": "Bottom-up fabrication builds nanostructures by arranging individual atoms, molecules, or nanoparticles into desired configurations, leveraging natural forces like chemical bonding, hydrogen bonding, hydrophobic interactions, and van der Waals forces through processes such as self-assembly, molecular beam epitaxy (MBE), and chemical vapor deposition (CVD). Self-assembly is the spontaneous organization of molecular components into ordered structures without external direction, observed in nature (lipid bilayers, DNA double helices) and engineered for nanofabrication using block copolymers to create periodic patterns with sub-10 nm features, or DNA origami to program complex 2D and 3D shapes at the nanoscale. Molecular beam epitaxy (MBE) deposits ultra-thin crystalline layers atom by atom in ultra-high vacuum, enabling precise control over composition and thickness at the atomic level for quantum well and superlattice structures, while chemical vapor deposition (CVD) decomposes precursor gases on a heated substrate to grow thin films, carbon nanotubes, graphene, and other nanomaterials with scalable throughput."
+  },
+  {
+    "q": [
+      "What is a cleanroom in nanofabrication?",
+      "What are cleanroom classifications?",
+      "What is atomic layer deposition (ALD)?",
+      "What is a focused ion beam (FIB) used for?",
+      "What is scanning probe lithography?",
+      "How does atomic layer deposition work?",
+      "Why are cleanrooms necessary for nanofabrication?"
+    ],
+    "a": "Cleanrooms are controlled environments where airborne particle counts, temperature, humidity, and static electricity are strictly regulated to prevent contamination during nanofabrication, classified by ISO standards (ISO 5, ISO 4, etc.) based on maximum particles per cubic meter, with nanofabrication typically requiring ISO 4 or better, where personnel wear full bunny suits and enter through air showers. Atomic layer deposition (ALD) is a thin-film deposition technique that cycles alternating precursor gas pulses with purge steps to grow films one atomic layer at a time through self-limiting surface reactions, offering unparalleled thickness control (sub-nanometer), conformal coating of high-aspect-ratio structures, and precise composition tuning for applications in microelectronics, catalyst supports, and protective coatings. Focused ion beam (FIB) systems use a focused beam of gallium or other ions to mill (remove material), deposit material, or image samples at the nanoscale, functioning as a nanoscale machining tool for cross-sectioning, TEM sample preparation, circuit editing, and prototype device fabrication."
+  },
+  {
+    "q": [
+      "What is DNA origami in nanofabrication?",
+      "How is DNA used in nanotechnology?",
+      "What are the challenges of nanofabrication?",
+      "How scalable is nanofabrication for manufacturing?",
+      "What limits nanofabrication resolution?",
+      "What is the cost challenge of nanofabrication?",
+      "What are the main obstacles in scaling nanofabrication?"
+    ],
+    "a": "DNA origami is a bottom-up nanofabrication technique that uses a long single strand of viral DNA folded into a desired shape by hundreds of short complementary staple strands, enabling the creation of precisely designed 2D and 3D nanostructures with addressable features at the nanoscale for applications in drug delivery, nanorobotics, plasmonics, and molecular computing. Key challenges in nanofabrication include the diffraction limit of light for optical lithography (pushing to shorter wavelengths like EUV and techniques like multiple patterning requires enormous capital investment), the etch resistance and resolution limits of photoresists, the difficulty of achieving atomic-scale uniformity across large wafer areas, and defect control at production volumes. Scalability and cost remain critical barriers — while top-down semiconductor fabrication has achieved remarkable economies of scale through massive fabs costing billions of dollars, many bottom-up and emerging nanofabrication techniques (such as DNA origami or block copolymer self-assembly) remain confined to research laboratories with limited throughput and high per-unit costs."
+  }
+]

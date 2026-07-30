@@ -1,0 +1,59 @@
+[
+  {
+    "q": [
+      "What are the main navigational hazards at sea?",
+      "What hazards do shallow water and rocks pose to navigation?",
+      "How do reefs, ice, and currents affect navigation?",
+      "What are traffic separation schemes?",
+      "How does fog affect navigation?",
+      "How does restricted visibility affect safe navigation?",
+      "What are tide-related navigational hazards?",
+      "navigational hazards shallow water rocks reefs ice currents",
+      "traffic separation schemes fog restricted visibility tides"
+    ],
+    "a": "Navigational hazards include shallow water and groundings (the most common cause of maritime accidents, occurring when a vessel's draft exceeds the available water depth due to incorrect chart datum, tidal prediction errors, or chart inaccuracies), submerged rocks and reefs that can cause hull breaches, and sea ice (pack ice, growlers, and icebergs) that can damage propellers, rudders, and hulls even in modern steel vessels. Strong currents (tidal streams, ocean currents like the Gulf Stream, and river outflow currents) can set a vessel off its planned course, causing dangerous proximity to hazards even when the vessel appears to be steering correctly — the Agulhas Current off South Africa is particularly dangerous, known for extreme seas that have damaged many vessels. Traffic separation schemes (TSS) are designated shipping lanes in congested areas (like the Dover Strait, the Singapore Strait, and the Bosporus) that organize vessel traffic in opposing directions, reducing collision risk, while fog and restricted visibility (from heavy rain, snow, dust storms, or smoke) eliminate visual navigation, forcing reliance on radar, AIS, sound signals, and reduced speed in accordance with COLREGS Rule 19."
+  },
+  {
+    "q": [
+      "What are COLREGS?",
+      "What are the international collision regulations for vessels?",
+      "What are the rules of the road at sea?",
+      "What is stand-on vs give-way vessel?",
+      "What are navigation lights and shapes?",
+      "What are sound signals in navigation?",
+      "What are distress signals at sea?",
+      "COLREGS collision regulations rules of the road",
+      "stand-on give-way lights shapes sound signals distress"
+    ],
+    "a": "The International Regulations for Preventing Collisions at Sea (COLREGS, also known as 72 COLREGS) are the universally adopted rules governing vessel conduct to prevent collisions — they define responsibilities between vessels (a stand-on vessel maintains course and speed while a give-way vessel takes early and substantial action to avoid collision), with specific rules for sailing vessels vs power-driven vessels, overtaking situations, head-on meetings, and crossing situations. Navigation lights and shapes indicate a vessel's status and activity: red (port) and green (starboard) sidelights, white masthead lights, stern lights, and specialized lights for vessels constrained by draft, engaged in fishing, towing, or not under command — these must be displayed from sunset to sunrise and in restricted visibility. Sound signals (short and prolonged blasts on a whistle or foghorn) communicate maneuvering intentions (one short blast = I am altering course to starboard, two short blasts = I am altering course to port, five short blasts = doubt or danger signal) while distress signals include continuous sounding of foghorn, raising and lowering arms, flares (red parachute flare, orange smoke), EPIRB activation, and MAYDAY on VHF Channel 16."
+  },
+  {
+    "q": [
+      "What are navigation warnings?",
+      "What are Notices to Mariners?",
+      "What are NAVAREA warnings?",
+      "What are Local Notices to Mariners?",
+      "How do mariners receive navigation warnings?",
+      "What types of navigation warnings exist?",
+      "How are nautical charts updated via warnings?",
+      "navigation warnings Notice to Mariners NAVAREA",
+      "Local Notices to Mariners chart updates safety information"
+    ],
+    "a": "Navigation warnings are official communications alerting mariners to hazards or changes affecting safe navigation, categorized by urgency and coverage area: NAVAREA warnings (the highest level, covering one of 21 global NAVAREA regions, broadcast via SafetyNET on Inmarsat C, warning about major navigation aids failures, military operations, new wrecks, and pirate activity). Local Notices to Mariners (LNMs) are issued weekly by national hydrographic offices, containing corrections to official charts and publications covering that nation's waters, and all commercial vessels are legally required under SOLAS to maintain corrected charts by applying these updates. Temporary and Preliminary Notices (T&P) announce changes expected to be short-lived or pending further information, while broadcast navigational warnings (BNW) are time-critical alerts transmitted via NAVTEX (518 kHz, within 200-400 nautical miles of coast) or SafetyNET (satellite, worldwide) — the Worldwide Navigational Warning Service (WWNWS) coordinates this system, and mariners must log receipt of these warnings and apply relevant information to their charts and voyage planning."
+  },
+  {
+    "q": [
+      "What is emergency navigation?",
+      "How do you navigate after GPS loss?",
+      "What is the procedure for steering failure at sea?",
+      "What is the man overboard procedure?",
+      "What is EPIRB, SART, and PLB?",
+      "How do you fix position without electronics?",
+      "How do you navigate with paper charts as backup?",
+      "What is the procedure for loss of power at sea?",
+      "emergency navigation GPS loss steering failure man overboard",
+      "EPIRB SART PLB distress communications paper chart backup"
+    ],
+    "a": "Emergency navigation procedures prepare for the loss of primary systems: if GPS is lost (due to satellite failure, jamming, spoofing, or receiver malfunction), the navigator must revert to radar fixes (range and bearing from identifiable landmarks or buoys), visual bearings (using a hand-bearing compass to take bearings on charted objects), depth contour matching (comparing echo sounder readings with charted depths to identify position), and as a last resort, celestial navigation using a sextant and chronometer. Steering failure requires immediately switching to emergency steering (tiller-arm or emergency rudder) if available, reducing speed, assessing available sea room, and posting a lookout, with the engine used for steering if the rudder is immovable — the vessel must display appropriate shapes (two black balls in a vertical line for not under command) and broadcast a safety message. Man overboard procedures follow the Williamson Turn or Anderson Turn to return to the casualty, with immediate actions including throwing a lifebuoy, marking the position on GPS, posting lookouts, preparing the rescue boat, and broadcasting a MAYDAY — EPIRB (Emergency Position Indicating Radio Beacon, 406 MHz, satellite-alerted to SAR authorities), SART (Search and Rescue Transponder, 9 GHz, responds to radar), and PLB (Personal Locator Beacon, 406 MHz, for individual use) provide emergency position alerting, while a well-prepared vessel maintains paper chart backups, hand-bearing compass, sextant, and backup GPS receiver independent of the primary system."
+  }
+]

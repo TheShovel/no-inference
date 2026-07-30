@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is nanoparticle drug delivery?",
+      "How do liposomes work as drug carriers?",
+      "What are polymeric nanoparticles in drug delivery?",
+      "What are dendrimers used for in nanomedicine?",
+      "How are gold nanoparticles used in drug delivery?",
+      "What nanoparticles are used for drug delivery?",
+      "How do nanocarriers improve drug delivery?"
+    ],
+    "a": "Nanoparticle drug delivery systems use nanoscale carriers — typically 1-200 nm — to encapsulate therapeutic agents and improve their pharmacokinetics, bioavailability, and targeting, overcoming limitations of conventional drugs such as poor solubility, rapid degradation, non-specific distribution, and systemic toxicity. Liposomes are spherical lipid bilayer vesicles (first approved nanodrug delivery system) that can encapsulate both hydrophilic drugs in their aqueous core and hydrophobic drugs in the lipid bilayer, with surface PEGylation (coating with polyethylene glycol) providing stealth properties that evade immune clearance and extend circulation time. Polymeric nanoparticles made from biodegradable polymers like PLGA (poly(lactic-co-glycolic acid)) offer controlled drug release through polymer degradation, while dendrimers are highly branched, monodisperse macromolecules with precisely controlled surface functionality for multi-drug loading and targeted delivery, and gold nanoparticles provide tunable surface plasmon properties useful for both drug delivery and photothermal therapy."
+  },
+  {
+    "q": [
+      "What is targeted drug delivery in nanomedicine?",
+      "How does controlled release work in nanomedicine?",
+      "What is cancer nanomedicine?",
+      "What are theranostics in nanomedicine?",
+      "What is photothermal therapy for cancer?",
+      "How do nanoparticles target cancer cells?",
+      "What is the EPR effect in nanomedicine?"
+    ],
+    "a": "Targeted drug delivery uses surface-functionalized nanoparticles with targeting ligands (antibodies, peptides, aptamers, or small molecules) that bind specifically to receptors overexpressed on diseased cells, enabling active targeting, while passive targeting exploits the enhanced permeability and retention (EPR) effect where nanoparticles preferentially accumulate in tumor tissue through leaky vasculature and poor lymphatic drainage. Cancer nanomedicine leverages these targeting strategies alongside controlled release mechanisms — pH-responsive nanoparticles that release drugs in the acidic tumor microenvironment, temperature-sensitive liposomes that release at sites of mild hyperthermia, and enzyme-responsive systems activated by tumor-specific proteases — to concentrate chemotherapy at tumor sites while reducing systemic side effects. Theranostics combines therapy and diagnostics in a single nanoplatform, using imaging agents (quantum dots, iron oxide nanoparticles for MRI, or radionuclides for PET) co-loaded with therapeutic payloads to simultaneously visualize tumors, monitor drug distribution, track treatment response in real time, and guide subsequent therapy decisions."
+  },
+  {
+    "q": [
+      "What are nanodiagnostics?",
+      "How are quantum dots used in medical diagnostics?",
+      "How are gold nanoparticles used for detection in medicine?",
+      "What are nanobiosensors?",
+      "How do nanoparticles improve disease detection?",
+      "What is the role of nanotechnology in diagnostics?",
+      "How sensitive are nanoparticle-based diagnostic tests?"
+    ],
+    "a": "Nanodiagnostics use nanomaterials and nanodevices for medical diagnostics at the molecular and cellular level, offering dramatically enhanced sensitivity, multiplexing capability, and speed compared to conventional diagnostic methods, enabling earlier disease detection and more precise monitoring. Quantum dots are semiconductor nanocrystals with size-tunable fluorescent properties — narrow emission spectra, broad absorption, and high photostability — that enable simultaneous detection of multiple biomarkers with different color quantum dots in a single sample, widely used in immunoassays, cellular imaging, and in vivo tracking. Gold nanoparticles exhibit localized surface plasmon resonance (LSPR) that shifts color in response to binding events, forming the basis for rapid diagnostic tests (lateral flow assays like pregnancy tests), while surface-enhanced Raman scattering (SERS) using gold or silver nanoparticles can detect single molecules and is being developed for ultrasensitive detection of cancer biomarkers, infectious diseases, and genetic mutations."
+  },
+  {
+    "q": [
+      "What is regenerative nanomedicine?",
+      "How are nanoscaffolds used in tissue engineering?",
+      "What are the regulatory challenges for nanomedicine?",
+      "How does nanomedicine get approved by the FDA?",
+      "What are the barriers to clinical translation of nanomedicine?",
+      "How are nanomedicines regulated?",
+      "What challenges face nanomedicine commercialization?"
+    ],
+    "a": "Regenerative nanomedicine applies nanomaterials as scaffolds, growth factor delivery systems, and cellular probes for tissue engineering and wound healing, with nanoscaffolds made from electrospun nanofibers, self-assembling peptides, or nanomaterials like carbon nanotubes and graphene providing biomimetic environments that support cell attachment, proliferation, and differentiation into functional tissue. Regulatory challenges for nanomedicine include the difficulty of characterizing complex nanoparticle formulations with batch-to-batch consistency, establishing appropriate physicochemical characterization standards (size, shape, surface charge, drug loading, release kinetics) that regulatory agencies like the FDA and EMA accept, and addressing safety concerns about nanoparticle toxicity, biodistribution, long-term accumulation in organs, and potential immunogenicity that differ from conventional drugs. Clinical translation barriers include the substantial cost of nanoparticle manufacturing under good manufacturing practices (GMP), the scalability of synthesis methods from laboratory to industrial production, the limited number of approved nanocarrier platforms (liposomal doxorubicin, albumin-bound paclitaxel, iron oxide nanoparticles), and the complexity of designing clinical trials that appropriately evaluate both the drug and the delivery system's safety and efficacy."
+  }
+]

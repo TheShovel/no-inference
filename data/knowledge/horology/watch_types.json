@@ -1,0 +1,55 @@
+[
+  {
+    "q": [
+      "What are the main types of watches?",
+      "What are mechanical watches?",
+      "What is the difference between manual wind and automatic watches?",
+      "What are quartz watches?",
+      "What are digital watches?",
+      "What are smartwatches?",
+      "mechanical vs quartz watches",
+      "watch types manual automatic quartz digital smartwatch"
+    ],
+    "a": "Watches fall into two broad categories based on their power source: mechanical (powered by a mainspring, either hand-wound or self-winding via an automatic rotor) and quartz (powered by a battery and regulated by a quartz crystal oscillator for superior accuracy). Mechanical watches are prized for their craftsmanship, sweeping seconds hand, and traditional horological artistry, while quartz watches offer greater precision (within ±15 seconds per month vs ±10 seconds per day for mechanicals). Digital and smartwatches represent a further evolution, with smartwatches integrating fitness tracking, notifications, and apps while often retaining analog-style displays for traditional aesthetics."
+  },
+  {
+    "q": [
+      "What are the different styles of watches?",
+      "What is a chronograph watch?",
+      "What is a dive watch?",
+      "What is a pilot watch?",
+      "What is a field watch?",
+      "What is a dress watch?",
+      "What is a luxury watch?",
+      "what is a pocket watch",
+      "watch styles chronograph dive pilot field dress luxury sports"
+    ],
+    "a": "Watch styles are defined by their intended use and design language. Dive watches feature high water resistance (200m+), unidirectional rotating bezels, and luminous markers for underwater legibility. Pilot watches have large, highly legible dials with prominent crowns for use with gloves. Field watches originated as military-issue timepieces, characterized by ruggedness, simple dials, and 24-hour markings. Dress watches are slim, elegant, and minimal, designed to fit under a shirt cuff. Chronograph watches include built-in stopwatch functionality via subsidiary dials and pushers. Luxury watches combine high-quality materials (precious metals, sapphire crystal), fine finishing (Geneva stripes, perlage, beveling), and prestigious brand heritage with movements often crafted in-house."
+  },
+  {
+    "q": [
+      "What are watch complications?",
+      "What is a date complication on a watch?",
+      "What is a GMT watch?",
+      "What is a moon phase watch?",
+      "What is a tourbillon?",
+      "What is a minute repeater?",
+      "What is a perpetual calendar watch?",
+      "watch complications date GMT moon phase tourbillon minute repeater perpetual calendar chronograph"
+    ],
+    "a": "Watch complications are any function on a watch beyond basic time display (hours, minutes, seconds). Common complications include: date windows and day-date displays, GMT (additional 24-hour hand for tracking a second time zone), chronograph (stopwatch), moon phase (depicting the lunar cycle), power reserve indicator (showing remaining mainspring energy), and annual or perpetual calendars (automatically accounting for month lengths and leap years). High-end complications include the tourbillon (a rotating cage that averages out positional errors in the escapement for improved accuracy), the minute repeater (chiming the time on demand via tiny hammers and gongs), and the split-seconds chronograph (timing multiple concurrent events)."
+  },
+  {
+    "q": [
+      "What is the difference between Swiss Japanese and German watchmaking?",
+      "What is an in-house movement?",
+      "What are ETA Sellita and Miyota movements?",
+      "What makes Swiss watchmaking special?",
+      "What is Japanese watchmaking known for?",
+      "What is German watchmaking known for?",
+      "Swiss vs Japanese vs German watches",
+      "in-house movements vs ETA Sellita Miyota"
+    ],
+    "a": "Swiss watchmaking, centered in the Jura region, is renowned for its finishing standards, innovation (the coaxial escapement, silicon components), and prestigious brands like Patek Philippe, Rolex, and Omega; the 'Swiss Made' label requires at least 60% of production costs to be Swiss. Japanese watchmaking, led by Seiko, Citizen, and Casio, emphasizes reliability, value, and technological innovation—Seiko created the first quartz watch (Astron, 1969), the Spring Drive (a hybrid mechanical-quartz movement), and the kinetic movement. German watchmaking, primarily from Glashütte, is distinguished by its signature design elements (three-quarter plate, swan-neck regulator, Glashütte ribbing) and brands like A. Lange & Söhne, Glashütte Original, and Nomos. In-house movements are designed and manufactured by the watch brand itself, while third-party suppliers like ETA (Swatch Group), Sellita, and Miyota (Citizen) provide reliable, cost-effective movements used by many brands across all price segments."
+  }
+]

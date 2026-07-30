@@ -1,0 +1,52 @@
+[
+  {
+    "q": [
+      "What are common livestock diseases?",
+      "What is BVD in cattle?",
+      "What is foot and mouth disease?",
+      "What is PRRS in pigs?",
+      "What is avian influenza?",
+      "What is BSE (mad cow disease)?",
+      "What is mastitis in dairy cattle?",
+      "livestock diseases common"
+    ],
+    "a": "Common livestock diseases include bovine viral diarrhea (BVD, a immunosuppressive disease in cattle affecting reproduction and growth), foot and mouth disease (a highly contagious viral disease affecting cloven-hoofed animals worldwide), porcine reproductive and respiratory syndrome (PRRS, causing reproductive failure in sows and respiratory disease in young pigs), avian influenza (bird flu, with highly pathogenic strains causing severe mortality in poultry), bovine spongiform encephalopathy (BSE or mad cow disease, a fatal neurodegenerative disease in cattle linked to prion contamination), and mastitis (inflammation of the udder, the most costly disease in dairy cattle). Effective control requires vaccination where available, biosecurity measures, surveillance programs, and good husbandry practices."
+  },
+  {
+    "q": [
+      "What is herd health management?",
+      "What is a herd health program?",
+      "How do farmers manage livestock health?",
+      "What is preventive medicine in livestock?",
+      "What is biosecurity in farming?",
+      "What are vaccination programs for livestock?",
+      "herd health management biosecurity"
+    ],
+    "a": "Herd health management is a preventive approach to livestock medicine that focuses on maintaining the health of entire groups of animals through systematic monitoring, vaccination protocols, nutrition management, biosecurity measures, and environmental optimization rather than treating individual sick animals. Biosecurity encompasses practices that prevent the introduction and spread of infectious diseases onto farms, including quarantine of new animals, disinfection protocols, visitor controls, and isolation of sick animals. Vaccination programs are tailored to the specific disease risks of each farm and region, targeting diseases such as bovine respiratory disease complex in cattle, clostridial diseases in sheep, and circovirus in pigs."
+  },
+  {
+    "q": [
+      "What are zoonotic diseases?",
+      "What diseases can be transmitted from animals to humans?",
+      "What is the connection between animal health and human health?",
+      "What are examples of zoonotic diseases in livestock?",
+      "How do livestock diseases spread to humans?",
+      "What is rabies?",
+      "What is brucellosis?",
+      "zoonotic diseases livestock"
+    ],
+    "a": "Zoonotic diseases are infectious diseases that can be transmitted between animals and humans, representing a major public health concern and a critical intersection of veterinary and human medicine. Important zoonotic diseases associated with livestock include brucellosis (causing undulant fever in humans, transmitted through unpasteurized dairy products), leptospirosis (spread through urine-contaminated water), Q fever (Coxiella burnetii, transmitted via aerosols from infected sheep, goats, and cattle), salmonellosis, campylobacteriosis, and highly pathogenic avian influenza. Veterinarians and livestock handlers face elevated occupational risk and must follow strict hygiene and personal protective equipment protocols to minimize exposure."
+  },
+  {
+    "q": [
+      "How is antibiotic use regulated in livestock?",
+      "What is antimicrobial resistance in agriculture?",
+      "What is responsible antibiotic use in animals?",
+      "Why is antibiotic use in livestock controversial?",
+      "What is the impact of agricultural antibiotics on human health?",
+      "What are alternatives to antibiotics in livestock?",
+      "antibiotic use livestock food safety"
+    ],
+    "a": "Antibiotic use in livestock is increasingly regulated worldwide to combat antimicrobial resistance (AMR), a global health crisis where bacteria evolve to survive antibiotics, making infections harder to treat in both animals and humans. Many countries now prohibit the use of medically important antibiotics for growth promotion and require veterinary prescriptions for therapeutic use. Responsible antibiotic stewardship in livestock emphasizes prevention through good husbandry and vaccination, accurate diagnosis before treatment, adherence to appropriate dosage and duration, and observance of withdrawal periods to prevent drug residues in meat and milk. Alternatives such as probiotics, prebiotics, bacteriophages, and improved biosecurity are being actively researched and adopted to reduce reliance on antibiotics."
+  }
+]

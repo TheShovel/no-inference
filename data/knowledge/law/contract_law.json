@@ -1,0 +1,55 @@
+[
+  {
+    "q": [
+      "What is a contract?",
+      "What are the essential elements of a valid contract?",
+      "What makes a contract legally binding?",
+      "What is offer and acceptance in contract law?",
+      "What is consideration in a contract?",
+      "What is the difference between a bilateral and unilateral contract?",
+      "What are the types of contracts?",
+      "How is a contract formed?",
+      "what is a contract",
+      "contract",
+      "contract law"
+    ],
+    "a": "A contract is a legally enforceable agreement between two or more parties that creates mutual obligations, governed by either common law (primarily for services, employment, and real estate) or the Uniform Commercial Code (UCC, for the sale of goods). The essential elements of a valid contract include offer (one party proposes specific terms), acceptance (the other party agrees to those exact terms without material changes, per the mirror image rule), consideration (something of value exchanged between the parties), capacity (parties must have legal competence, meaning they are of legal age and sound mind), legality (the purpose must not violate law or public policy), and mutual assent (both parties understand and agree to the terms). Contracts can be express (terms stated orally or in writing), implied (created by the parties' conduct), or quasi-contracts (imposed by courts to prevent unjust enrichment when no actual contract exists)."
+  },
+  {
+    "q": [
+      "What happens when a contract is breached?",
+      "What is breach of contract?",
+      "What are the types of breach of contract?",
+      "What are the remedies for breach of contract?",
+      "What is the difference between material and minor breach?",
+      "What are damages in contract law?",
+      "What is specific performance?",
+      "What is the difference between compensatory and consequential damages?"
+    ],
+    "a": "A breach of contract occurs when a party fails to perform any of their contractual obligations, whether by not performing at all, performing late, or performing inadequately — breaches are classified as material (so significant that it defeats the purpose of the contract, allowing the non-breaching party to terminate and sue for damages) or minor/partial (less severe, where the contract remains in effect but the harmed party may still seek damages). Remedies for breach include compensatory damages (aimed at putting the injured party in the position they would have been in had the contract been performed, measured by the loss directly caused by the breach), consequential damages (indirect losses that were reasonably foreseeable at contract formation), liquidated damages (predetermined amounts specified in the contract), and specific performance (a court order requiring the breaching party to perform their obligations, only granted when monetary damages are inadequate, typically for unique property like real estate or rare goods). Punitive damages are generally not available in contract law, unlike in tort law."
+  },
+  {
+    "q": [
+      "What is the statute of frauds?",
+      "What is the parol evidence rule?",
+      "What types of contracts must be in writing?",
+      "What is contract interpretation?",
+      "How do courts interpret ambiguous contract terms?",
+      "What is the plain meaning rule?",
+      "What is the difference between UCC and common law for contracts?"
+    ],
+    "a": "The statute of frauds requires certain types of contracts to be in writing and signed by the party to be charged to be enforceable, originally established by the English Statute of Frauds of 1677 and codified in various forms across U.S. jurisdictions — contracts that typically require writing include those for the sale of land, contracts that cannot be performed within one year, promises to pay someone else's debt (suretyship), contracts made in consideration of marriage, and under the UCC, sales of goods over $500. The parol evidence rule generally prohibits parties from introducing evidence of prior oral or written agreements that would contradict or add to the terms of a fully integrated written contract, though exceptions allow evidence to clarify ambiguities, establish fraud or mistake, or show conditions precedent. Contract interpretation follows rules including the plain meaning rule (courts interpret unambiguous terms according to their ordinary meaning), contra proferentem (ambiguous terms are construed against the party who drafted them), and the course of dealing or trade usage to establish context for specialized terms."
+  },
+  {
+    "q": [
+      "What is capacity in contract law?",
+      "Who lacks contractual capacity?",
+      "What happens when a minor signs a contract?",
+      "What is the difference between void and voidable contracts?",
+      "What makes a contract unenforceable?",
+      "What is illegality in contracts?",
+      "What is unconscionability?"
+    ],
+    "a": "Contractual capacity refers to the legal ability to enter into a binding agreement — individuals who lack capacity include minors (under 18 in most states, whose contracts are voidable at their option), persons with mental incapacities (cognitive impairments that prevent understanding the contract's nature and consequences), and intoxicated persons (if sufficiently impaired to lack understanding). Void contracts have no legal effect from the outset (such as agreements to commit a crime), while voidable contracts are initially valid but can be rescinded by one party (such as contracts with minors or contracts induced by fraud or duress). An unenforceable contract is valid but cannot be enforced in court due to a legal defense like the statute of frauds or expiration of the statute of limitations. Unconscionability is a defense against contract enforcement when the terms are so one-sided and procedurally unfair (unequal bargaining power, hidden terms) or substantively oppressive (exorbitant prices, unfair waivers) that enforcement would shock the judicial conscience."
+  }
+]

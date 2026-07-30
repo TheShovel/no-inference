@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "How do fire departments communicate during emergencies?",
+      "What is the role of a fire dispatcher?",
+      "How does a 911 call become a fire response?",
+      "What radio frequencies do firefighters use?",
+      "What is the National Fire Incident Reporting System?",
+      "How do fire communications systems work?",
+      "fire communications dispatch 911 radio NFIRS CAD"
+    ],
+    "a": "Fire department communications begin when a 911 call is received at a Public Safety Answering Point (PSAP), where a trained telecommunicator gathers the nature of the emergency, location details, and call-back number, then initiates the appropriate response using a Computer-Aided Dispatch (CAD) system that recommends apparatus based on the incident type, location, and available units. Fire dispatchers continue to gather critical information (building occupancy, fire size, people trapped, hazardous materials present) and relay it to responding units via radio, managing the assignment of additional resources and coordinating with law enforcement and EMS throughout the incident. The National Fire Incident Reporting System (NFIRS) is the world's largest database of fire incident information, maintained by the US Fire Administration, through which fire departments report every response including incident type, casualties, property loss, and response times—this data drives everything from fire code development to apparatus purchasing decisions and firefighter safety standards."
+  },
+  {
+    "q": [
+      "What is the Incident Command System?",
+      "What is ICS?",
+      "How does the Incident Command System work at fires?",
+      "What are the five major ICS functions?",
+      "What is NIMS?",
+      "What is unified command in ICS?",
+      "Incident Command System ICS NIMS unified command sections operations planning logistics"
+    ],
+    "a": "The Incident Command System (ICS) is a standardized, scalable emergency management structure developed after destructive California wildfires in the 1970s revealed the chaos and inefficiency of uncoordinated multi-agency responses, now mandated nationwide through the National Incident Management System (NIMS) for all emergency responses. ICS organizes response around five major functional sections: Command (overall incident leadership and decision-making), Operations (tactical execution of suppression, rescue, and mitigation tasks), Planning (information collection, documentation, and developing the incident action plan), Logistics (resource procurement, facilities, transportation, and supplies), and Finance and Administration (cost tracking, procurement, and time accounting). Unified command is used when multiple agencies (fire, police, EMS, public works) have jurisdictional or functional responsibility for a single incident, establishing a single command post with representatives from each agency who jointly develop objectives and approve the incident action plan through consensus."
+  },
+  {
+    "q": [
+      "What is mutual aid in firefighting?",
+      "What is automatic aid?",
+      "How do fire departments share resources across jurisdictions?",
+      "What is a strike team in firefighting?",
+      "What is a task force in firefighting?",
+      "How does mutual aid work for large incidents?",
+      "mutual aid automatic aid strike team task force resource sharing"
+    ],
+    "a": "Mutual aid is a formal agreement between fire departments to respond to each other's emergencies when local resources are insufficient, activated through dispatch protocols that automatically request neighboring stations for structure fires, working fires, and major incidents requiring more personnel and apparatus than any single response area can provide. Automatic aid goes a step further, pre-arranging that the closest available unit responds regardless of jurisdictional boundaries, so that a fire engine from Station A (in Town A) may be automatically dispatched to a fire in Town B because it is two minutes closer than Town B's own station across town. For major disasters (wildfires, hurricanes, earthquakes), state and federal mutual aid systems like the Emergency Management Assistance Compact (EMAC) and the National Wildfire Coordinating Group's resource ordering system mobilize strike teams (five similarly configured apparatus like five Type 1 fire engines with a leader) and task forces (combinations of different apparatus types like engines, tenders, and a battalion chief) from across the country to support the affected region through standardized ordering, mobilization, and reimbursement processes."
+  },
+  {
+    "q": [
+      "How do fire officers make decisions at emergencies?",
+      "What is the fireground decision-making process?",
+      "What is size-up in firefighting?",
+      "What is the incident action plan?",
+      "What factors influence fireground strategy?",
+      "What is risk management in firefighting?",
+      "fireground decision-making size-up strategy risk management incident action plan"
+    ],
+    "a": "Fireground decision-making begins with size-up, a continuous process of observation and evaluation that starts en route (using pre-incident plans, building information, and hydrant locations from CAD data) and continues upon arrival (reading smoke conditions, building construction features, fire location and extent, life hazard, and access issues) to form the basis of the initial incident action plan. The incident commander uses the risk management model to guide decisions: activities that present significant risk to firefighters shall be limited to situations where there is potential to save endangered lives (offensive, interior operations); activities that present moderate risk are used for saving savable property (transitional attack or defensive exterior operations); and activities that present extreme risk without life-saving potential are not justified. Tactical priorities for all structure fires remain fixed: Rescue (remove endangered occupants from the hazard), Exposure protection (prevent fire spread to adjacent structures), Confinement (keep fire from extending beyond its current area), Extinguishment (apply agent directly to the fuel), and Overhaul (find and extinguish hidden fire in void spaces and concealed areas)."
+  },
+  {
+    "q": [
+      "What is the post-incident analysis process?",
+      "What is a post-incident review?",
+      "What is a fire after-action review?",
+      "How do fire departments learn from major incidents?",
+      "What is a critical incident stress debriefing?",
+      "What is the NIOSH firefighter fatality investigation program?",
+      "post-incident analysis after-action review NIOSH firefighter fatality investigation"
+    ],
+    "a": "Post-incident analysis (PIA), also called after-action review (AAR) or post-incident critique, is a structured process conducted after significant incidents where all responding personnel gather—ideally within 24 to 72 hours—to review the timeline of events, discuss what went well and what could be improved, and develop action items to improve future responses. The NIOSH Fire Fighter Fatality Investigation and Prevention Program (FFFIPP) investigates every firefighter line-of-duty death in the United States, producing detailed reports that identify the root causes of the fatality and issuing recommendations to prevent similar deaths, making this data freely available as a critical resource for fire service training and safety standards. Critical Incident Stress Debriefing (CISD) is a separate but essential post-incident process conducted by trained peer support and mental health professionals within 24 to 72 hours of a particularly traumatic event (firefighter death, mass casualty incident, or pediatric death) to help responders process the event, normalize stress reactions, and connect those in need with ongoing behavioral health support before acute stress becomes chronic PTSD."
+  }
+]

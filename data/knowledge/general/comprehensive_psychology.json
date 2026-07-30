@@ -4,35 +4,44 @@
       "confirmation bias",
       "what is confirmation bias",
       "confirmation bias example",
-      "cognitive bias confirmation"
+      "cognitive bias confirmation",
+      "explain confirmation bias",
+      "define confirmation bias"
     ],
-    "a": "Information about confirmation bias."
+    "a": "Confirmation bias is the tendency to search for, interpret, favor, and recall information that confirms or supports one's pre-existing beliefs or hypotheses. It is one of the most well-documented cognitive biases in psychology, first identified by Peter Wason through his 2-4-6 task experiment in 1960. Confirmation bias affects decision-making in numerous domains including finance, medicine, law, and politics, where people selectively gather evidence and interpret ambiguous information to support their existing positions. It operates through several mechanisms: biased search for information (looking only for confirming evidence), biased interpretation (interpreting ambiguous information as supporting existing beliefs), and biased memory (better recalling information that confirms existing views)."
   },
   {
     "q": [
       "dunning kruger effect",
       "dunning kruger",
       "what is the dunning kruger effect",
-      "overconfidence effect"
+      "overconfidence effect",
+      "explain dunning kruger",
+      "define dunning kruger effect"
     ],
-    "a": "Information about dunning kruger."
+    "a": "The Dunning-Kruger effect is a cognitive bias in which people with low ability at a task overestimate their ability, while people with high ability underestimate their competence. The effect was first described by psychologists David Dunning and Justin Kruger in 1999, based on studies of humor, logical reasoning, and grammar. The underlying cause is a metacognitive deficit: unskilled individuals lack the very expertise needed to recognize their own incompetence, making them unable to accurately assess their performance. Conversely, highly skilled individuals tend to underestimate their relative ability because they assume tasks that are easy for them are also easy for others. As people gain genuine competence, they typically go through a phase of recognizing how much they don't know before their confidence accurately aligns with their ability."
   },
   {
     "q": [
       "classical conditioning",
       "pavlov classical conditioning",
       "conditioned response",
-      "classical conditioning explained"
+      "classical conditioning explained",
+      "explain classical conditioning",
+      "what is classical conditioning",
+      "pavlovs dog experiment"
     ],
-    "a": "Information about classical conditioning."
+    "a": "Classical conditioning is a learning process discovered by Ivan Pavlov in which a neutral stimulus becomes associated with a reflexive response through repeated pairing with an unconditioned stimulus. In Pavlov's famous experiment, dogs naturally salivated (unconditioned response) when presented with food (unconditioned stimulus), and after repeatedly pairing the food with a bell (neutral stimulus), the dogs began salivating at the sound of the bell alone, now a conditioned stimulus producing a conditioned response. Key principles include acquisition (the initial learning phase), extinction (the gradual weakening of the conditioned response when the conditioned stimulus is presented without the unconditioned stimulus), and spontaneous recovery (the reappearance of the conditioned response after a rest period). Classical conditioning explains many human phenomena including phobias, taste aversions, emotional responses, and some aspects of drug tolerance and addiction."
   },
   {
     "q": [
       "operant conditioning",
       "skinner operant conditioning",
       "reinforcement and punishment",
-      "operant conditioning explained"
+      "operant conditioning explained",
+      "what is operant conditioning",
+      "bf skinner conditioning"
     ],
-    "a": "Information about operant conditioning."
+    "a": "Operant conditioning, developed primarily by B.F. Skinner, is a learning process where behavior is modified by its consequences. Behaviors followed by reinforcement are strengthened and more likely to recur, while behaviors followed by punishment are weakened. Skinner studied this using the operant conditioning chamber (Skinner box), where rats and pigeons learned to press levers or peck keys to receive food rewards or avoid electric shocks. The law of effect, proposed by Edward Thorndike, underlies operant conditioning: responses that produce a satisfying effect in a particular situation become more likely to occur again. Unlike classical conditioning which deals with involuntary reflexive behaviors, operant conditioning involves voluntary behaviors that operate on the environment to produce consequences. Reinforcement can be positive (adding a pleasant stimulus) or negative (removing an unpleasant stimulus), while punishment can be positive (adding an unpleasant stimulus) or negative (removing a pleasant stimulus)."
   }
 ]

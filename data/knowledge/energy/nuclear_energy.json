@@ -1,0 +1,59 @@
+[
+  {
+    "q": [
+      "What is nuclear fission?",
+      "How do nuclear reactors work?",
+      "What are the main types of nuclear reactors?",
+      "What is a PWR?",
+      "What is a BWR?",
+      "What is a CANDU reactor?",
+      "What is a fast breeder reactor?",
+      "nuclear fission explained",
+      "types of nuclear reactors"
+    ],
+    "a": "Nuclear fission is the process of splitting heavy atomic nuclei (typically uranium-235 or plutonium-239) into lighter nuclei, releasing substantial energy plus additional neutrons that sustain a chain reaction. Pressurized water reactors (PWRs) are the most common type, using high-pressure water as both coolant and moderator, while boiling water reactors (BWRs) allow water to boil in the core to produce steam directly. CANDU reactors use natural uranium fuel and heavy water (deuterium oxide) as moderator, offering fuel flexibility, and fast breeder reactors use fast neutrons to convert fertile material (U-238) into fissile plutonium, producing more fuel than they consume."
+  },
+  {
+    "q": [
+      "What is the nuclear fuel cycle?",
+      "How is uranium mined and processed?",
+      "What is uranium enrichment?",
+      "How is nuclear fuel manufactured?",
+      "What happens to spent nuclear fuel?",
+      "nuclear fuel cycle",
+      "uranium mining",
+      "uranium enrichment"
+    ],
+    "a": "The nuclear fuel cycle encompasses all stages from uranium mining (open-pit, underground, or in-situ leaching) through milling, conversion to UF₆ gas, enrichment (increasing U-235 concentration from 0.7% to 3-5% via centrifuges or diffusion), and fuel fabrication into ceramic UO₂ pellets loaded into fuel rods. After use in a reactor (typically 3-6 years), spent fuel is highly radioactive and stored on-site in cooling pools or dry casks, pending permanent disposal in deep geological repositories like Finland's Onkalo facility. A closed fuel cycle involves reprocessing spent fuel to recover plutonium and uranium for reuse in mixed oxide (MOX) fuel, reducing waste volume but raising proliferation concerns."
+  },
+  {
+    "q": [
+      "What are the major nuclear accidents?",
+      "What happened at Chernobyl?",
+      "What happened at Fukushima?",
+      "What happened at Three Mile Island?",
+      "How do nuclear safety systems work?",
+      "How is nuclear waste managed?",
+      "What are the risks of nuclear power?",
+      "Chernobyl disaster",
+      "Fukushima Daiichi",
+      "Three Mile Island"
+    ],
+    "a": "Three Mile Island (1979, USA) involved a partial core meltdown due to a stuck valve and operator error, with minimal radiation release but severe psychological and regulatory impacts. Chernobyl (1986, Ukraine) was a catastrophic explosion and fire in an RBMK reactor caused by a flawed design and safety-violating experiment, releasing massive radiation, killing dozens directly, and contaminating large areas of Europe. Fukushima Daiichi (2011, Japan) experienced meltdowns and hydrogen explosions after a tsunami overwhelmed backup cooling systems, leading to radioactive releases and the evacuation of over 150,000 people. Modern reactor designs incorporate defense-in-depth, passive safety systems (cooling without active pumps), and multiple containment barriers to prevent and mitigate accidents."
+  },
+  {
+    "q": [
+      "What is nuclear fusion research?",
+      "What is ITER?",
+      "What is a tokamak?",
+      "What is a stellarator?",
+      "What are small modular reactors (SMRs)?",
+      "What is nuclear proliferation?",
+      "nuclear fusion",
+      "ITER project",
+      "fusion energy",
+      "small modular reactors"
+    ],
+    "a": "Nuclear fusion—the process powering the Sun by fusing light nuclei like deuterium and tritium into helium—promises virtually limitless clean energy but has proven extraordinarily difficult to sustain on Earth. ITER, the international fusion megaproject in France, is building the world's largest tokamak (a doughnut-shaped magnetic confinement device) to achieve a burning plasma with 500 MW of fusion power by the 2030s. Small modular reactors (SMRs) are advanced fission reactors with capacities below 300 MW that can be factory-built and deployed incrementally, offering lower upfront costs, enhanced safety features, and siting flexibility. Nuclear proliferation concerns involve the spread of enrichment and reprocessing technologies capable of producing weapons-grade material, governed internationally by the Non-Proliferation Treaty (NPT) and IAEA safeguards."
+  }
+]

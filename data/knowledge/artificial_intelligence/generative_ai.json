@@ -1,0 +1,51 @@
+[
+  {
+    "q": [
+      "What is generative AI and how does it work?",
+      "What are the main types of generative AI models?",
+      "How do generative models create new content?",
+      "What is the difference between generative AI and discriminative AI?",
+      "What is generative AI?",
+      "generative AI explained",
+      "types of generative AI models"
+    ],
+    "a": "Generative AI refers to artificial intelligence systems that can create new content — including text, images, music, code, and video — by learning the underlying patterns, distributions, and structures of their training data. Unlike discriminative models that classify or predict labels, generative models learn the joint probability distribution of the data, enabling them to produce novel samples that resemble the training data. Major categories of generative models include large language models (LLMs) for text, generative adversarial networks (GANs) and diffusion models for images, and variational autoencoders (VAEs) for various data types."
+  },
+  {
+    "q": [
+      "What are large language models like GPT, Claude, and Gemini?",
+      "How do large language models work?",
+      "What is the difference between GPT, Claude, and Gemini?",
+      "What are LLMs capable of?",
+      "large language models",
+      "GPT Claude Gemini",
+      "How do LLMs work?"
+    ],
+    "a": "Large language models (LLMs) are deep learning models trained on vast text corpora using the transformer architecture, enabling them to generate human-like text, answer questions, summarize documents, write code, and engage in conversation. GPT (OpenAI), Claude (Anthropic), and Gemini (Google) are among the most advanced LLMs, all built on the transformer's self-attention mechanism that processes entire sequences in parallel to capture long-range dependencies. These models are trained with autoregressive language modeling — predicting the next token given previous tokens — and are further refined through techniques like reinforcement learning from human feedback (RLHF) to improve helpfulness, safety, and alignment with user intent."
+  },
+  {
+    "q": [
+      "What are GANs, VAEs, and diffusion models?",
+      "How do generative adversarial networks (GANs) work?",
+      "What are variational autoencoders (VAEs)?",
+      "How do diffusion models like DALL-E, Stable Diffusion, and Midjourney generate images?",
+      "GANs VAEs diffusion models",
+      "DALL-E Stable Diffusion Midjourney",
+      "how do diffusion models work"
+    ],
+    "a": "Generative Adversarial Networks (GANs) consist of two neural networks — a generator creating fake data and a discriminator trying to distinguish real from fake — competing in a game that drives the generator to produce increasingly realistic outputs. Variational Autoencoders (VAEs) learn a compressed latent representation of input data and then decode samples from this latent space to generate new data, producing smooth interpolations between existing samples. Diffusion models, which power DALL-E, Stable Diffusion, and Midjourney, work by gradually adding noise to training images until they become pure noise, then learning the reverse process to denoise random noise into coherent images conditioned on text prompts, producing state-of-the-art visual results."
+  },
+  {
+    "q": [
+      "What is prompt engineering and fine-tuning in generative AI?",
+      "What is RAG (retrieval-augmented generation)?",
+      "How do you evaluate generative AI models?",
+      "What are the ethical concerns with generative AI?",
+      "prompt engineering",
+      "fine-tuning LLMs",
+      "RAG retrieval augmented generation",
+      "ethical concerns generative AI"
+    ],
+    "a": "Prompt engineering is the practice of carefully designing input prompts to guide generative AI models toward desired outputs, using techniques like chain-of-thought reasoning, few-shot examples, and system instructions. Fine-tuning adapts a pre-trained model to a specific task or domain by continuing training on specialized datasets, while Retrieval-Augmented Generation (RAG) enhances model responses by retrieving relevant information from external knowledge bases and feeding it into the prompt context. Ethical concerns include hallucinations (models generating false information confidently), bias amplification from training data, misuse for deepfakes and disinformation, copyright and plagiarism issues, environmental impact of training, and the potential for job displacement across creative and knowledge-work industries."
+  }
+]

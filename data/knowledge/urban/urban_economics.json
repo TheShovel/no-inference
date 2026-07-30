@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is urban economics?",
+      "What do urban economists study?",
+      "Why do cities exist economically?",
+      "What are agglomeration economies?",
+      "What is the difference between urbanization economies and localization economies?",
+      "How do agglomeration effects benefit firms and workers?",
+      "What are the costs of urban agglomeration?"
+    ],
+    "a": "Urban economics is the branch of economics that studies the spatial organization of economic activity within cities and metropolitan areas, applying microeconomic theory to explain why cities form, how they grow, and how markets for land, housing, labor, and transportation interact across space. Agglomeration economies are the productivity benefits that firms and workers gain by clustering together in cities — they arise from labor market pooling (a deep, diverse labor force that matches skills to jobs), knowledge spillovers (ideas flow more freely through face-to-face contact, driving innovation and productivity), and input sharing (specialized suppliers and services emerge to serve dense clusters of firms). Localization economies are benefits from clustering within the same industry (like Silicon Valley's tech sector or New York's financial district), while urbanization economies are benefits from the overall size and diversity of a large city — but agglomeration also brings congestion costs (traffic, high rents, pollution, crime) that create a trade-off limiting optimal city size."
+  },
+  {
+    "q": [
+      "What is the bid-rent curve?",
+      "What is land rent theory in urban economics?",
+      "How is urban land valued?",
+      "Why are city centers more expensive than suburbs?",
+      "What determines land prices in cities?",
+      "How does distance from the city center affect land prices?",
+      "What is the Alonso-Muth-Mills model?"
+    ],
+    "a": "The bid-rent curve (developed by William Alonso, Richard Muth, and Edwin Mills) describes how land prices and land use vary with distance from the city center — different land users (commercial, industrial, residential) bid different amounts for locations based on their willingness to pay for accessibility. Commercial and retail activities that benefit most from centrality (face-to-face contact, customer access) bid the highest for central locations, resulting in a steep bid-rent gradient with peak land values in the central business district (CBD), while manufacturing and then residential users locate further out where land is cheaper. The Alonso-Muth-Mills model predicts a negative exponential relationship between distance from the center and land rent/population density — as transportation costs (measured in time and money) fall with improvements like highways and cars, the bid-rent curve flattens and cities spread outward (urban sprawl), while cities with strong public transit and scarce land (like Manhattan or Hong Kong) maintain steep rent gradients and high densities at the center."
+  },
+  {
+    "q": [
+      "What is gentrification?",
+      "What causes gentrification in urban neighborhoods?",
+      "What are the economic effects of gentrification?",
+      "Who benefits and who loses from gentrification?",
+      "What is the difference between gentrification and neighborhood revitalization?",
+      "How does gentrification affect housing affordability?",
+      "What is displacement in the context of gentrification?"
+    ],
+    "a": "Gentrification is the process by which higher-income households move into historically low-income urban neighborhoods, leading to rising property values, rents, and living costs, along with changes in the neighborhood's commercial fabric, culture, and demographic composition. The economic drivers include the rent gap (the disparity between current land values under low-income use and potential values under higher-income use, as theorized by Neil Smith), changing preferences for urban living among educated professionals, and public and private investment in transit, parks, and infrastructure that makes certain neighborhoods more attractive. The economic outcomes are deeply contested: gentrification can bring increased property tax revenue, new businesses, reduced crime, and improved public services, but it often displaces long-term low-income residents and minority communities who can no longer afford rising rents, destroys existing social networks and cultural institutions, and may contribute to racial and economic segregation rather than creating truly mixed-income neighborhoods."
+  },
+  {
+    "q": [
+      "What is the informal economy in cities?",
+      "What is urban poverty?",
+      "How does urban poverty differ from rural poverty?",
+      "What is the creative class theory?",
+      "What is Richard Florida's creative class thesis?",
+      "How do cities attract talent and economic growth?",
+      "What are the criticisms of creative class theory?"
+    ],
+    "a": "The informal economy refers to economic activities that occur outside formal legal and regulatory frameworks — in cities, this includes street vending, informal taxi services (like motorcycle taxis in African cities), domestic work, unregistered small-scale manufacturing, and waste picking, which can account for 30–60% of economic activity in developing-world cities and provides crucial livelihoods for low-income residents without formal-sector access. Creative class theory, developed by Richard Florida in his 2002 book 'The Rise of the Creative Class,' argues that economic growth in post-industrial cities depends on attracting knowledge workers, artists, technologists, and innovators — the creative class — who prioritize quality of place (vibrant street life, cultural amenities, diversity, tolerance, and authenticity) over traditional economic incentives. The theory has been widely influential in urban policy, leading cities to invest in bike lanes, arts districts, cultural venues, and mixed-use neighborhoods to attract talent, but critics argue it largely benefits affluent professionals while ignoring the needs of working-class residents, can lead to displacement and inequality, and that Florida himself later acknowledged his policy prescriptions inadvertently contributed to the housing affordability crisis and urban inequality he now studies."
+  }
+]

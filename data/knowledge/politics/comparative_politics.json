@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is comparative politics?",
+      "What do comparative political scientists study?",
+      "How do political scientists compare political systems?",
+      "What is the difference between democracies and authoritarian regimes?",
+      "What are the types of political systems?",
+      "What are the key features of a democracy?",
+      "What are the characteristics of an authoritarian regime?"
+    ],
+    "a": "Comparative politics is a subfield of political science that systematically examines and compares political systems, institutions, processes, and outcomes across countries to identify patterns, explain differences, and develop general theories about political behavior and governance. Democracies are characterized by free and fair elections, protection of civil liberties, rule of law, political pluralism, accountability of leaders, and citizen participation in decision-making — they range from direct democracy to representative models with varying institutional designs (presidential vs parliamentary, federal vs unitary). Authoritarian regimes concentrate power in a single leader or small group, lack meaningful political competition and civil liberties, suppress dissent through coercion or co-optation, and include subtypes like absolute monarchy, one-party rule, military junta, personalist dictatorship, and theocratic regimes. Modern comparative politics also studies hybrid regimes that combine democratic and authoritarian elements, such as electoral authoritarianism where elections exist but are neither free nor fair."
+  },
+  {
+    "q": [
+      "What are the different electoral systems?",
+      "How does first-past-the-post voting work?",
+      "What is proportional representation?",
+      "What is the difference between a single-member district and proportional representation?",
+      "What is a party system?",
+      "What is the difference between a two-party system and a multi-party system?",
+      "How do electoral systems affect party systems?"
+    ],
+    "a": "Electoral systems are the rules by which votes are translated into seats in representative bodies, with major types including plurality/majority systems (like first-past-the-post where the candidate with the most votes wins a single-member district), proportional representation (PR) systems where parties receive seats proportional to their vote share, and mixed systems combining elements of both. First-past-the-post (FPTP) tends to produce two-party systems through Duverger's Law — the mechanical effect of wasted votes for third parties and the psychological effect of strategic voting. Proportional representation systems, by contrast, produce multi-party systems that better reflect diverse voter preferences but can lead to coalition governments that may be unstable or slow to form. Party systems are classified by the number and size of parties: one-party systems (authoritarian), dominant-party systems (one party wins repeatedly but elections exist), two-party systems (alternating between two major parties), and multi-party systems (three or more parties with regular coalition governments)."
+  },
+  {
+    "q": [
+      "What are interest groups?",
+      "How do interest groups influence politics?",
+      "What is political culture?",
+      "How does political culture affect a political system?",
+      "What is modernization theory?",
+      "How does modernization relate to democracy?",
+      "What are the criticisms of modernization theory?"
+    ],
+    "a": "Interest groups are organizations that seek to influence public policy on behalf of their members or causes without directly running candidates for office, using strategies including lobbying (directly contacting policymakers), grassroots mobilization (encouraging members to contact officials), litigation (strategic lawsuits), campaign contributions through PACs, and public relations campaigns. Political culture refers to the set of attitudes, beliefs, and values that shape a society's orientation toward politics and government, as conceptualized by Gabriel Almond and Sidney Verba's three types: parochial (citizens are unaware or indifferent), subject (citizens are aware but passive), and participant (citizens actively engage). Modernization theory, developed by Seymour Martin Lipset and others, argues that economic development — industrialization, urbanization, education, and rising income — creates conditions favorable for democracy by fostering a larger middle class, higher education levels, and increased civic participation, though critics point to authoritarian regimes with strong economic growth (Singapore, China) and democratic failures in developing countries as counterexamples."
+  },
+  {
+    "q": [
+      "What is democratic backsliding?",
+      "What causes democratic backsliding?",
+      "What are the signs of democratic erosion?",
+      "What is a hybrid regime?",
+      "What is the difference between a hybrid regime and a full democracy?",
+      "What are examples of hybrid regimes?",
+      "How do democracies become authoritarian?"
+    ],
+    "a": "Democratic backsliding is the gradual deterioration of democratic institutions, practices, and norms over time, often through incremental, legal means rather than sudden military coups — it involves executive aggrandizement (leaders concentrating power), attacks on the judiciary and media, erosion of checks and balances, restrictions on civil society, and manipulation of electoral rules to entrench incumbents. Hybrid regimes (also called competitive authoritarianism or electoral authoritarianism) occupy a gray zone between democracy and authoritarianism, maintaining the formal institutions of democracy (elections, legislatures, courts) while systematically biasing the playing field in favor of incumbents through media control, selective prosecution of opponents, restricted civil liberties, and state resource abuse. Key warning signs include declining trust in electoral integrity, politicization of independent institutions, narrowing civic space, hate speech and polarization, and the normalization of anti-democratic discourse, tracked by research organizations like V-Dem, Freedom House, and the Economist Intelligence Unit."
+  }
+]

@@ -1,0 +1,64 @@
+[
+  {
+    "q": [
+      "What is the Mediterranean diet?",
+      "Explain the Mediterranean diet.",
+      "What foods are in the Mediterranean diet?",
+      "Why is the Mediterranean diet healthy?",
+      "What are the benefits of the Mediterranean diet?",
+      "What is the Mediterranean diet pyramid?"
+    ],
+    "a": "The Mediterranean diet is a dietary pattern inspired by the traditional eating habits of countries bordering the Mediterranean Sea, particularly Greece, Italy, and Spain. It emphasizes high consumption of olive oil, fruits, vegetables, whole grains, legumes, nuts, and seeds; moderate consumption of fish, seafood, poultry, and dairy (especially cheese and yogurt); and limited consumption of red meat, processed foods, and sweets. Extensively studied for its health benefits, the Mediterranean diet is associated with reduced risk of cardiovascular disease, type 2 diabetes, cognitive decline, and certain cancers, largely due to its anti-inflammatory and antioxidant-rich components. It is consistently ranked as one of the best overall diets by nutrition experts."
+  },
+  {
+    "q": [
+      "What is the ketogenic diet?",
+      "Explain the keto diet.",
+      "How does the ketogenic diet work?",
+      "What is ketosis?",
+      "What foods can you eat on keto?",
+      "What are the benefits and risks of the keto diet?",
+      "Is the ketogenic diet safe?",
+      "what is the keto diet",
+      "keto diet",
+      "explain the keto diet"
+    ],
+    "a": "The ketogenic (keto) diet is a very low-carbohydrate, high-fat diet designed to shift the body's metabolism from burning glucose to burning ketones — a state called ketosis. Typically, the diet restricts carbohydrates to 20-50 grams per day (roughly 5-10% of calories), with about 70-80% of calories from fat and 15-20% from protein. While the diet can produce rapid weight loss and has therapeutic applications for drug-resistant epilepsy, it remains controversial for long-term use due to concerns about elevated LDL cholesterol, nutrient deficiencies, and its highly restrictive nature. Adherence is challenging for many people, and the initial 'keto flu' period (fatigue, headaches, brain fog) can be difficult to navigate."
+  },
+  {
+    "q": [
+      "What is a vegan diet?",
+      "Explain the vegan diet.",
+      "What do vegans eat?",
+      "Is a vegan diet healthy?",
+      "What are the benefits of a vegan diet?",
+      "Can you get enough protein on a vegan diet?",
+      "What nutrients do vegans need to supplement?"
+    ],
+    "a": "A vegan diet excludes all animal products, including meat, poultry, fish, dairy, eggs, and honey, relying entirely on plant-based foods such as fruits, vegetables, grains, legumes, nuts, and seeds. Well-planned vegan diets are associated with lower risks of heart disease, high blood pressure, type 2 diabetes, and certain cancers due to their typically higher fiber and antioxidant content and lower levels of saturated fat. However, vegans must be careful to obtain sufficient vitamin B12 (which requires supplementation), as well as iron, calcium, iodine, zinc, and omega-3 fatty acids, which can be obtained from fortified foods or careful food choices. A whole-food, plant-based vegan diet is distinct from a diet heavy in processed vegan alternatives and mock meats, which may not offer the same health benefits."
+  },
+  {
+    "q": [
+      "What is intermittent fasting?",
+      "Explain intermittent fasting.",
+      "How does intermittent fasting work?",
+      "What are the different types of intermittent fasting?",
+      "Is intermittent fasting effective for weight loss?",
+      "What are the health benefits of intermittent fasting?",
+      "What is the 16:8 method?"
+    ],
+    "a": "Intermittent fasting is an eating pattern that cycles between periods of eating and fasting, focusing on when you eat rather than what you eat. Common protocols include the 16:8 method (daily 16-hour fast with an 8-hour eating window), the 5:2 diet (normal eating five days a week with calorie restriction to 500-600 calories on two non-consecutive days), and alternate-day fasting. Studies suggest intermittent fasting can aid weight loss, improve insulin sensitivity, reduce inflammation, and potentially promote cellular repair processes like autophagy. While effective for some people, intermittent fasting is not superior to traditional calorie restriction for weight loss in most controlled trials, and it may not suit everyone — particularly people with certain medical conditions, pregnant or nursing women, and those with a history of eating disorders."
+  },
+  {
+    "q": [
+      "What are sports nutrition guidelines?",
+      "Explain sports nutrition.",
+      "What should athletes eat?",
+      "What is carb loading?",
+      "How does nutrition affect athletic performance?",
+      "What should I eat before exercise?",
+      "What is protein timing for athletes?"
+    ],
+    "a": "Sports nutrition is the science of fueling the body for optimal athletic performance, recovery, and adaptation. Key principles include adequate carbohydrate intake to fuel workouts and replenish glycogen stores (adjusted by training intensity, with endurance athletes needing 6-10 g/kg of body weight daily), sufficient protein to support muscle repair and growth (1.2-2.0 g/kg per day depending on sport and goals), and appropriate hydration before, during, and after exercise. Timing matters: a carb-rich meal 3-4 hours before exercise, easily digestible carbs within 30-60 minutes before, and a combination of protein and carbs within 2 hours after exercise optimize performance and recovery. Sports nutrition varies significantly by sport type — endurance athletes have different needs than strength or power athletes — and individual responses to different fueling strategies can vary widely."
+  }
+]

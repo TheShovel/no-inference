@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What are the veterinary surgical specialties?",
+      "What is orthopedic surgery in animals?",
+      "What is soft tissue surgery in veterinary medicine?",
+      "What is veterinary neurosurgery?",
+      "What is veterinary ophthalmic surgery?",
+      "veterinary surgery specialties",
+      "orthopedic surgery dogs cats",
+      "soft tissue surgery veterinary",
+      "veterinary neurosurgery spinal",
+      "ACVS board-certified surgeon"
+    ],
+    "a": "Veterinary surgery encompasses multiple specialties requiring board certification through the American College of Veterinary Surgeons (ACVS) or European equivalent. Orthopedic surgery addresses musculoskeletal conditions including fracture repair (using bone plates, screws, intramedullary pins, and external fixators), cruciate ligament rupture (TPLO, TTA, extracapsular repair techniques), hip dysplasia (total hip replacement, femoral head ostectomy, juvenile pubic symphysiodesis), and elbow dysplasia. Soft tissue surgery covers the respiratory, gastrointestinal, urogenital, and cardiovascular systems, performing procedures from routine ovariohysterectomy (spay) and gastrotomy to complex operations like portosystemic shunt attenuation, patent ductus arteriosus ligation, and perineal hernia repair. Veterinary neurosurgery involves spinal cord decompression (hemilaminectomy for intervertebral disc disease in chondrodystrophic breeds), vertebral stabilization, and intracranial surgery for brain tumors or congenital hydrocephalus, while veterinary ophthalmic surgery treats cataracts (phacoemulsification with intraocular lens implantation), glaucoma (drainage implants), corneal ulcers (grafts), and entropion correction."
+  },
+  {
+    "q": [
+      "What is veterinary internal medicine?",
+      "What is veterinary dermatology?",
+      "What is veterinary cardiology?",
+      "What is veterinary oncology?",
+      "What is veterinary neurology?",
+      "What are the internal medicine specialties in veterinary?",
+      "veterinary internal medicine specialist",
+      "veterinary dermatology allergies",
+      "veterinary cardiology heart disease",
+      "veterinary oncology cancer treatment"
+    ],
+    "a": "Veterinary internal medicine (board-certified through the American College of Veterinary Internal Medicine) manages complex medical diseases across body systems, including gastroenterology (chronic enteropathies, pancreatitis, hepatic disease), endocrinology (diabetes mellitus, hyperadrenocorticism/Cushing's disease, hypothyroidism, Addison's disease), nephrology/urology (chronic kidney disease, glomerulonephritis, urinary incontinence, ureteral obstruction), and respiratory medicine. Veterinary dermatology, recognized through the American College of Veterinary Dermatology, diagnoses and manages allergic skin disease (atopic dermatitis, food allergy, flea allergy), bacterial and fungal skin infections (pyoderma, Malassezia, dermatophytosis), autoimmune skin diseases, otitis externa and media, and advances treatments including allergen-specific immunotherapy, oclacitinib (Apoquel), and lokivetmab (Cytopoint). Veterinary cardiology uses echocardiography, electrocardiography, and thoracic radiography to diagnose congenital heart defects (patent ductus arteriosus, pulmonic stenosis, ventricular septal defect), acquired diseases (myxomatous mitral valve degeneration in small dogs, dilated cardiomyopathy in Dobermans and large breeds, hypertrophic cardiomyopathy in cats), and arrhythmias, offering treatments ranging from ACE inhibitors and diuretics to interventional procedures like balloon valvuloplasty and pacemaker implantation."
+  },
+  {
+    "q": [
+      "What is veterinary emergency and critical care?",
+      "What is zoo and wildlife medicine?",
+      "What is exotic animal medicine?",
+      "What is shelter medicine?",
+      "What is veterinary public health?",
+      "veterinary emergency critical care specialist",
+      "zoo veterinarian career",
+      "exotic pet veterinary care",
+      "shelter medicine population health",
+      "wildlife rehabilitation veterinary"
+    ],
+    "a": "Veterinary emergency and critical care (board-certified through the American College of Veterinary Emergency and Critical Care) provides 24/7 management of life-threatening conditions including trauma (hit-by-car, bite wounds, fractures), toxin exposures (chocolate, xylitol, lilies, anticoagulant rodenticides, marijuana), septic shock, respiratory distress, cardiac arrest, and gastric dilatation-volvulus, using advanced monitoring (ECG, blood gas analysis, coagulation testing) and interventions (mechanical ventilation, continuous rate infusions, blood transfusions, peritoneal dialysis). Zoo and wildlife medicine involves preventive and clinical care for diverse species including mammals, birds, reptiles, and amphibians in zoological collections, wildlife rehabilitation centers, and free-ranging populations, requiring knowledge of species-specific physiology, nutrition, restraint techniques, and conservation medicine that integrates ecosystem health with animal and human health. Shelter medicine focuses on health management within animal shelters, emphasizing population-level preventive care (vaccination protocols, parasite control, spay/neuter programs), infectious disease outbreak management (canine distemper, feline upper respiratory infection, ringworm), behavioral assessment and enrichment, and evidence-based protocols to maximize live-release rates and animal welfare in resource-limited environments."
+  },
+  {
+    "q": [
+      "What is veterinary dentistry?",
+      "What is veterinary radiology and diagnostic imaging?",
+      "What are the imaging modalities used in veterinary medicine?",
+      "What is the role of diagnostic imaging in veterinary care?",
+      "veterinary dentistry dental cleaning",
+      "veterinary radiology X-ray CT MRI",
+      "veterinary ultrasound diagnostic imaging",
+      "board-certified veterinary radiologist",
+      "veterinary nuclear scintigraphy",
+      "dental radiography veterinary"
+    ],
+    "a": "Veterinary dentistry (board-certified through the American Veterinary Dental College) addresses oral health beyond routine dental cleanings, treating periodontal disease (the most common clinical condition in dogs and cats), endodontic disease (fractured teeth requiring root canal therapy), feline odontoclastic resorptive lesions (FORLs), oral tumors, orthodontic malocclusions, and maxillofacial trauma surgery. Veterinary diagnostic imaging (board-certified through the American College of Veterinary Radiology) encompasses radiology (X-rays for thoracic, abdominal, and musculoskeletal evaluation), ultrasonography (abdominal organ assessment, echocardiography, ocular ultrasound), computed tomography (CT for detailed bone evaluation, nasal disease, pulmonary metastases, and surgical planning), and magnetic resonance imaging (MRI for brain and spinal cord disease, joint pathology). Advanced imaging has revolutionized veterinary diagnostics by enabling non-invasive detection and characterization of conditions like intervertebral disc disease, intracranial neoplasia, portosystemic shunts (via CT angiography), and elbow dysplasia (via CT), with nuclear scintigraphy providing functional bone and thyroid imaging for cases like lameness localization and hyperthyroidism staging."
+  }
+]

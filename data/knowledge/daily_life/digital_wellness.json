@@ -1,0 +1,79 @@
+[
+  {
+    "q": [
+      "how to reduce screen time",
+      "screen time management tips",
+      "how to limit phone usage",
+      "reduce digital distraction",
+      "screen time tracking and reduction",
+      "how to spend less time on phone"
+    ],
+    "a": "Reducing screen time starts with awareness: use your phone's built-in screen time tracking to understand your baseline habits, then set specific limits for distracting apps. Practical strategies include turning off all non-essential notifications (each ping is a designed dopamine trigger), keeping your phone in grayscale mode (which makes it less visually stimulating), and establishing phone-free zones like the bedroom and dining table. The most effective technique is to place physical barriers between you and your phone — charge it in another room overnight, use a separate alarm clock, and keep it out of reach during work hours."
+  },
+  {
+    "q": [
+      "what is digital minimalism",
+      "digital minimalism explained",
+      "how to practice digital minimalism",
+      "cal Newport digital minimalism",
+      "minimalist approach to technology",
+      "declutter digital life"
+    ],
+    "a": "Digital minimalism is a philosophy of technology use popularized by Cal Newport that advocates focusing your online time on a small number of intentionally chosen activities that strongly support things you value, and happily missing out on everything else. The approach involves a 30-day digital declutter where you take a break from optional technologies, then selectively reintroduce only those that serve your core values. The key insight is that many digital tools are designed to be addictive, and the solution isn't willpower alone but fundamentally restructuring your relationship with technology — treating it as a tool to be used for specific purposes rather than a source of passive entertainment."
+  },
+  {
+    "q": [
+      "how to have a healthy relationship with social media",
+      "social media balance tips",
+      "how to stop doomscrolling",
+      "social media detox benefits",
+      "healthy social media habits",
+      "curate your social media feed"
+    ],
+    "a": "A healthy social media relationship starts with intentionality: unfollow accounts that trigger envy, anxiety, or outrage, and curate your feed to include content that educates, inspires, or genuinely connects you with people you care about. Set specific time blocks for social media rather than checking it habitually throughout the day. The 'doomscrolling' cycle — compulsively consuming negative news — can be broken by setting app timers, using text-only RSS readers instead of algorithmically curated feeds, and scheduling one brief news check per day. Consider a periodic social media detox of 1-7 days to reset your dopamine sensitivity and reassess which platforms genuinely add value to your life."
+  },
+  {
+    "q": [
+      "online privacy basics",
+      "how to protect privacy online",
+      "internet privacy tips",
+      "what is a VPN",
+      "how to stop data tracking",
+      "browser privacy settings"
+    ],
+    "a": "Online privacy starts with the basics: use a password manager to generate and store unique, strong passwords for every site, enable two-factor authentication wherever possible, and use browser privacy extensions like uBlock Origin and Privacy Badger to block trackers. A VPN (Virtual Private Network) encrypts your internet traffic and hides your IP address from websites, which is useful on public Wi-Fi and for preventing your ISP from tracking your browsing. Regularly review app permissions on your phone (many apps request access to your camera, microphone, and contacts for no functional reason), and use search engines like DuckDuckGo that don't track your searches."
+  },
+  {
+    "q": [
+      "how to manage information overload",
+      "information overload solutions",
+      "too much information anxiety",
+      "how to filter information",
+      "digital information management",
+      "news consumption burnout"
+    ],
+    "a": "Information overload occurs when the volume of available information exceeds your ability to process it, leading to decision fatigue, anxiety, and reduced productivity. Combat it by establishing 'information diets' — consciously choose a few high-quality sources for news and professional knowledge rather than trying to consume everything. Use RSS readers to curate content on your terms instead of relying on algorithmic feeds. Schedule specific times for information consumption (e.g., 30 minutes in the morning and evening) rather than checking continuously. Practice the 'rule of three': before opening an article or email, identify the three most important things you want to learn or accomplish, and stop when you've found them."
+  },
+  {
+    "q": [
+      "healthy tech habits for daily life",
+      "how to use technology mindfully",
+      "tech life balance",
+      "digital hygiene practices",
+      "mindful technology use",
+      "habits for better digital life"
+    ],
+    "a": "Healthy tech habits are routines that help you use technology intentionally rather than reactively. Key practices include starting your day screen-free for the first 30-60 minutes (no phone until after breakfast and morning reflection), following the 'one tab rule' (close all browser tabs except the one you're actively using), and using the 'phone stacking' technique when socializing — first person to check their phone pays the bill. Set app-specific timers and a device-wide wind-down that activates a warmer screen color temperature at night. The most impactful habit is creating friction for unwanted behaviors: delete social media apps from your phone and only access them via browser, or use text-expander tools for repetitive email replies to reduce context switching."
+  },
+  {
+    "q": [
+      "what is password management",
+      "how to manage passwords securely",
+      "best password manager practices",
+      "why is password reuse dangerous",
+      "how to create strong passwords",
+      "multi-factor authentication explained"
+    ],
+    "a": "Password management is the practice of generating, storing, and using unique credentials for every online account without needing to memorize them all. A password manager (like Bitwarden, 1Password, or Apple's iCloud Keychain) stores your passwords in an encrypted vault accessed by a single strong master password. The most critical rule is never reuse passwords across different sites — if one site is breached, attackers will try those credentials on other services (credential stuffing). Enable multi-factor authentication (MFA) on all accounts that support it, preferably using an authenticator app rather than SMS (SIM swap attacks can bypass SMS-based codes). A good password is at least 12-16 characters, randomly generated, and unique per site."
+  }
+]

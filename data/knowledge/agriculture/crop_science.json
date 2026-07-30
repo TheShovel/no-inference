@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is plant breeding?",
+      "How are new crop varieties developed?",
+      "What is hybridization in crops?",
+      "What are GMOs?",
+      "What is the difference between hybridization and genetic modification?",
+      "How does genetic modification work in crops?",
+      "What are the benefits and risks of GMOs?"
+    ],
+    "a": "Plant breeding is the science of improving crop varieties through selection and cross-breeding of plants with desirable traits such as higher yield, disease resistance, drought tolerance, and improved nutritional content, a practice that has been fundamental to agriculture for thousands of years. Hybridization involves cross-pollinating two genetically distinct parent plants to produce hybrid offspring with hybrid vigor, exhibiting superior characteristics compared to either parent through carefully controlled breeding programs. Genetically modified organisms (GMOs) are created by directly inserting or modifying specific genes in a plant's DNA using biotechnology, allowing traits like herbicide resistance (Roundup Ready soybeans), pest resistance (Bt corn), and enhanced nutrition (Golden Rice with beta-carotene), though GMOs remain controversial regarding environmental impact, food safety, corporate patenting, and consumer acceptance."
+  },
+  {
+    "q": [
+      "What is crop rotation?",
+      "Why is crop rotation important?",
+      "What are irrigation methods?",
+      "What is drip irrigation?",
+      "What is flood irrigation?",
+      "What is IPM in agriculture?",
+      "What is integrated pest management?"
+    ],
+    "a": "Crop rotation is the practice of growing different types of crops in succession on the same land across seasons, which breaks pest and disease cycles, improves soil structure, balances nutrient demands, and can fix nitrogen through legume cultivation — a technique that has been recognized since Roman times. Irrigation methods range from surface irrigation (flooding or furrows) and sprinkler systems (center pivot, overhead) to drip irrigation that delivers water directly to plant roots through tubing, reducing water waste by up to 60% compared to conventional methods. Integrated Pest Management (IPM) is a sustainable approach to pest control that combines biological controls (natural predators), cultural practices (crop rotation, resistant varieties), mechanical methods (traps, barriers), and chemical pesticides as a last resort, minimizing environmental impact while maintaining effective pest suppression."
+  },
+  {
+    "q": [
+      "What are fertilizers?",
+      "What is the difference between organic and synthetic fertilizers?",
+      "What are the main nutrients in fertilizer?",
+      "What is NPK in fertilizer?",
+      "What is crop yield?",
+      "How is crop yield measured?",
+      "What factors affect crop yields?"
+    ],
+    "a": "Fertilizers are materials applied to soil or plants to supply essential nutrients for growth, primarily nitrogen (N), phosphorus (P), and potassium (K) — the three numbers on fertilizer labels (NPK ratio) indicate the percentage of each nutrient. Synthetic fertilizers are manufactured through chemical processes and provide nutrients in immediately available forms, enabling precise application and rapid crop response, while organic fertilizers (compost, manure, bone meal) release nutrients more slowly and improve soil structure and microbial activity. Crop yield, measured in bushels per acre, metric tons per hectare, or other units, is influenced by genetics, soil fertility, water availability, pest pressure, temperature, sunlight, and management practices — the Green Revolution dramatically increased yields through high-yielding varieties combined with synthetic fertilizers, irrigation, and pesticides."
+  },
+  {
+    "q": [
+      "What was the Green Revolution?",
+      "Who was Norman Borlaug?",
+      "What are staple crops?",
+      "What are the main staple crops in the world?",
+      "What are cash crops?",
+      "What are common crop diseases?",
+      "How are crops harvested and stored?"
+    ],
+    "a": "The Green Revolution was a period of transformative agricultural innovation from the 1940s to 1960s, led by Norman Borlaug's development of high-yielding, disease-resistant wheat varieties that dramatically increased food production in Mexico, India, Pakistan, and other developing countries, saving over a billion people from starvation. Staple crops are the foundation of human diets worldwide, with wheat, rice, and maize providing more than half of global caloric intake, followed by soybeans, potatoes, cassava, and sorghum — while cash crops like coffee, cocoa, cotton, sugarcane, and tobacco are grown primarily for export and processing rather than direct consumption. Post-harvest management is critical to preventing the 30-40% of crops lost to spoilage, pests, and improper storage, with techniques including controlled atmosphere storage, drying, refrigeration, and fumigation extending shelf life and maintaining quality from field to market."
+  }
+]

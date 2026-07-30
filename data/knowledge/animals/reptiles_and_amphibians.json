@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What are the main characteristics of reptiles?",
+      "How do reptiles differ from amphibians?",
+      "What defines a reptile?",
+      "What are the key features of reptilian physiology?",
+      "How do reptiles regulate their body temperature?",
+      "What is the difference between reptiles and mammals?",
+      "What adaptations allow reptiles to live on land?"
+    ],
+    "a": "Reptiles are ectothermic (cold-blooded) vertebrates covered in scales or scutes that breathe air through lungs, lay amniotic eggs with leathery or hard shells on land, and have a three-chambered heart (except crocodilians which have four chambers). They include four main orders: Squamata (snakes and lizards), Testudines (turtles and tortoises), Crocodilia (crocodiles, alligators, and caimans), and Rhynchocephalia (tuatara). Unlike amphibians, reptiles have dry, waterproof skin that prevents desiccation, allowing them to inhabit a wide range of terrestrial environments from deserts to rainforests."
+  },
+  {
+    "q": [
+      "What are the different types of amphibians?",
+      "What are the characteristics of amphibians?",
+      "How do amphibians differ from reptiles?",
+      "What is metamorphosis in amphibians?",
+      "What are frogs, salamanders, and caecilians?",
+      "Why do amphibians need water to reproduce?",
+      "What is unique about amphibian skin?"
+    ],
+    "a": "Amphibians are ectothermic vertebrates that undergo metamorphosis from an aquatic larval stage to a terrestrial or semi-aquatic adult form, with most species requiring water for reproduction. They are divided into three orders: Anura (frogs and toads, the most diverse group with over 7,000 species), Caudata (salamanders and newts, which retain tails as adults), and Gymnophiona (caecilians, legless burrowing or aquatic amphibians). Amphibians have highly permeable, glandular skin that plays a crucial role in respiration and water absorption, making them extremely sensitive to environmental changes and pollution."
+  },
+  {
+    "q": [
+      "What is metamorphosis in amphibians?",
+      "How does a tadpole become a frog?",
+      "What are the stages of amphibian metamorphosis?",
+      "What triggers metamorphosis in amphibians?",
+      "How does metamorphosis differ in frogs vs salamanders?",
+      "What physical changes occur during amphibian metamorphosis?",
+      "Why is metamorphosis important for amphibians?"
+    ],
+    "a": "Amphibian metamorphosis is a dramatic developmental process in which aquatic larvae transform into terrestrial or semi-aquatic adults through profound physiological and morphological changes. In frogs, this includes the development of limbs, resorption of the tail, replacement of gills with lungs, restructuring of the digestive system from herbivorous to carnivorous, and changes in skin, vision, and sensory systems. The process is primarily driven by thyroid hormones (thyroxine), and the timing varies from a few weeks in some frog species to several years in certain salamanders, with some species like the axolotl exhibiting neoteny by retaining larval features throughout adulthood."
+  },
+  {
+    "q": [
+      "What is cold-blooded physiology?",
+      "How do ectothermic animals regulate body temperature?",
+      "What does cold-blooded mean?",
+      "How do reptiles and amphibians maintain their body temperature?",
+      "What are the advantages of being ectothermic?",
+      "What are the disadvantages of being cold-blooded?",
+      "How do ectotherms survive cold climates?"
+    ],
+    "a": "Ectotherms ('cold-blooded' animals) rely on external environmental heat sources such as the sun, warm surfaces, or water to regulate their body temperature rather than generating significant metabolic heat internally. They exhibit behaviors like basking in the sun to warm up, seeking shade or burrowing to cool down, and brumation (reptilian hibernation) during cold periods. Ectothermy offers significant energetic advantages—reptiles require only about 10% of the food energy of a similarly sized mammal—but also limits activity in cold conditions and generally results in slower growth and lower activity levels compared to endotherms."
+  },
+  {
+    "q": [
+      "Why are amphibian populations declining?",
+      "What are the main threats to reptiles?",
+      "What is amphibian decline?",
+      "What is chytrid fungus?",
+      "How does habitat loss affect reptiles and amphibians?",
+      "What is being done to conserve reptiles and amphibians?",
+      "What is the global status of reptile and amphibian conservation?"
+    ],
+    "a": "Amphibians are experiencing a global decline crisis, with over 40% of species threatened with extinction, making them the most endangered vertebrate class on Earth. The primary causes include habitat destruction, climate change, pollution, invasive species, and the chytrid fungus (Batrachochytrium dendrobatidis), a devastating pathogen that has caused catastrophic population declines and extinctions worldwide. Reptile conservation faces similar threats, with approximately 20% of reptile species threatened, and conservation efforts focus on habitat protection, captive breeding programs, disease management, wildlife trade regulation through CITES, and community-based conservation initiatives."
+  }
+]

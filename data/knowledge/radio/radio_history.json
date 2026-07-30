@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "who invented radio",
+      "what is the history of radio",
+      "who was Guglielmo Marconi",
+      "who was Nikola Tesla and did he invent radio",
+      "when was the first radio transmission",
+      "who sent the first wireless message",
+      "what was the first radio broadcast",
+      "how did radio develop in the early 20th century"
+    ],
+    "a": "The invention of radio resulted from the work of several scientists and inventors in the late 19th century. James Clerk Maxwell theoretically predicted electromagnetic waves in 1865, Heinrich Hertz experimentally demonstrated them in 1887, and Guglielmo Marconi built the first practical wireless telegraphy system, sending the first transatlantic wireless signal from Cornwall, England to Newfoundland in 1901 — an achievement that earned him the Nobel Prize in Physics in 1909. Nikola Tesla had also demonstrated wireless communication and held key patents, and the U.S. Supreme Court recognized Tesla's priority in 1943, though Marconi is widely credited with the commercial implementation. Reginald Fessenden made the first voice and music broadcast on Christmas Eve 1906 from Brant Rock, Massachusetts, using an alternator-transmitter that transmitted continuous waves rather than spark-gap signals. Early radio was dominated by Morse code telegraphy for ship-to-shore and point-to-point communication until vacuum tube technology enabled practical voice transmission during World War I. The first commercial broadcast stations (KDKA in Pittsburgh, WWJ in Detroit) began regular programming in 1920, sparking the explosion of broadcast radio that would dominate mass communication for the next 30 years."
+  },
+  {
+    "q": [
+      "what was the golden age of radio",
+      "when was radio most popular",
+      "what were radio dramas",
+      "what was the War of the Worlds broadcast",
+      "what were the most famous old-time radio shows",
+      "how did radio change in the 1950s",
+      "what was the transition from radio to television",
+      "what was the importance of radio in the 1930s and 1940s"
+    ],
+    "a": "The Golden Age of Radio spanned roughly from the late 1920s through the 1950s, when radio was the dominant home entertainment medium before television. Families gathered around large console radios to listen to comedy shows (Jack Benny, Burns and Allen), dramas (The Lux Radio Theatre, Suspense), soap operas (The Guiding Light), variety shows (The Fred Allen Show), and thrilling serials (The Lone Ranger, The Shadow, Superman). The most famous radio broadcast in history was Orson Welles's 1938 adaptation of H.G. Wells's War of the Worlds, which used simulated news bulletins and caused widespread panic among listeners who believed a real Martian invasion was underway. Radio networks — NBC (founded 1926), CBS (1927), ABC (1943 split from NBC), and Mutual — dominated the airwaves with coast-to-coast programming carried by affiliated local stations. By the mid-1950s, television had supplanted radio as the primary home entertainment medium, forcing radio to reinvent itself with the Top 40 format, disc jockeys, and locally focused programming. Despite losing its primetime audience, radio remained essential for news, music discovery, weather, emergency alerts, and drive-time listening, a role it continues to hold in the streaming era."
+  },
+  {
+    "q": [
+      "what is the history of FM radio",
+      "who invented FM radio",
+      "how did Edwin Armstrong invent FM",
+      "what is the difference between AM and FM history",
+      "when did FM radio become popular",
+      "what was the FM broadcast band originally used for",
+      "why did AM radio dominate before FM",
+      "what was the battle between AM and FM radio"
+    ],
+    "a": "FM (Frequency Modulation) radio was invented by Edwin Howard Armstrong, a prolific radio engineer who also developed the regenerative, superheterodyne, and super-regenerative circuits that made modern radio possible. Armstrong demonstrated FM's superior noise immunity and audio fidelity in 1933 at RCA's laboratories, but RCA's leadership — particularly David Sarnoff — saw FM as a threat to their investment in AM broadcasting and television and worked aggressively to suppress it, leading to a bitter legal and corporate battle that contributed to Armstrong's financial ruin and eventual suicide in 1954. FM broadcasting was originally allocated to the 42-50 MHz band (42-50 MHz) until 1945, when the FCC moved it to the current 88-108 MHz band, rendering all pre-war FM receivers and transmitters obsolete. FM's superior sound quality slowly gained adoption for classical music and high-fidelity broadcasting, but AM stations continued to dominate news, talk, and popular music through the 1960s. FM finally surpassed AM in total listenership in the late 1970s, driven by the growth of album-oriented rock (AOR), FM's stereo capability, and the FCC's relaxation of ownership rules that had previously limited FM's economic viability. Today, FM carries the vast majority of music broadcast listening, while AM persists for talk radio, news, sports, and emergency broadcasting."
+  },
+  {
+    "q": [
+      "how did radio technology evolve",
+      "what is the history of radio receivers",
+      "what was a crystal radio set",
+      "what was a vacuum tube radio",
+      "what was a transistor radio",
+      "when were transistor radios invented",
+      "what is the history of the car radio",
+      "how did radios change from tubes to transistors"
+    ],
+    "a": "Radio receiver technology evolved dramatically from the early 20th century. The crystal radio set, common in the 1910s-1920s, used a simple diode detector (a piece of galena crystal with a cat-whisker wire) and required no external power, providing weak audio directly to headphones — it was often built by hobbyists and introduced millions to radio. The vacuum tube era (1920s-1950s) brought amplification, loudspeakers, and dramatically improved sensitivity and selectivity, with superheterodyne circuit design becoming the standard architecture still used today. Console radios became furniture pieces in living rooms, while portable tube radios were bulky and fragile. The invention of the transistor at Bell Labs in 1947 and the introduction of the Regency TR-1 transistor radio in 1954 revolutionized personal listening — suddenly radios could fit in a pocket, run on small batteries, and be taken anywhere. The Sony TR-63 (1957) drove a global boom in portable radios that transformed youth culture and music consumption. The car radio, introduced by Motorola in 1930, became standard equipment in automobiles through the mid-20th century, evolving from AM-only vacuum tube units to AM/FM stereo, cassette, CD, and today's digital and satellite radio receivers integrated with infotainment systems."
+  }
+]

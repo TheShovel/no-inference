@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What is planetary geology?",
+      "What does planetary geology study?",
+      "How do geologists study other planets?",
+      "What is astrogeology?",
+      "What is the geology of the Moon?",
+      "What is the geology of Mars?",
+      "What is planetary geoscience?",
+      "planetary geology definition",
+      "astrogeology field",
+      "comparative planetology"
+    ],
+    "a": "Planetary geology — also called astrogeology or planetary geoscience — is the study of the solid surfaces, interiors, and geological processes of planets, moons, asteroids, and comets, applying the principles of Earth geology to understand the formation, evolution, and current state of other celestial bodies through remote sensing, lander/rover data, and analysis of meteorites and returned samples. Key techniques include orbital imaging at multiple wavelengths (visible, infrared, radar) to map surface features and mineralogy, spectrometers to determine elemental and mineral composition, laser altimeters to create topographic maps, seismometers to probe internal structure (as deployed on the Moon by Apollo and on Mars by InSight), and geochemical analysis of rocks by landers and rovers. By comparing geological features across different bodies — volcanic constructs on Mars (Olympus Mons, the largest volcano in the solar system), impact basins on Mercury (Caloris Basin), cryovolcanism on Europa and Enceladus (icy moon eruptions), and methane lakes on Titan — planetary geology reveals the diversity of geological processes operating under different gravity, temperature, atmospheric pressure, and compositional conditions throughout the solar system."
+  },
+  {
+    "q": [
+      "What is the geology of the Moon?",
+      "What are the Moon's geological features?",
+      "How did the Moon form?",
+      "What is the lunar surface made of?",
+      "What are lunar maria?",
+      "What are lunar highlands?",
+      "What are Moon rocks made of?",
+      "lunar geology",
+      "moon formation giant impact hypothesis",
+      "moon rock composition"
+    ],
+    "a": "The Moon's geology is dominated by two primary terrain types: the light-colored, heavily cratered lunar highlands (composed primarily of anorthosite, a calcium-rich feldspar rock that crystallized from the lunar magma ocean about 4.4-4.5 billion years ago) and the darker, smoother lunar maria (vast plains of flood basalt formed by volcanic eruptions between 3.1-3.8 billion years ago, filling large impact basins on the near side). The leading theory for the Moon's formation is the giant impact hypothesis: a Mars-sized protoplanet (Theia) collided with the early Earth about 4.5 billion years ago, ejecting a disk of debris that coalesced to form the Moon — explaining the Moon's relatively small iron core, similar oxygen isotope ratios to Earth's mantle, and the depletion of volatile elements. The lunar surface is covered by regolith (a layer of fine, pulverized rock and dust up to 15 meters thick, created by billions of years of meteorite impacts), and lacks plate tectonics, a significant atmosphere, liquid water, or a global magnetic field, resulting in the preservation of impact craters spanning billions of years — the South Pole-Aitken Basin on the far side is the largest confirmed impact structure in the solar system at 2,500 km in diameter."
+  },
+  {
+    "q": [
+      "What is the geology of Mars?",
+      "What are the geological features of Mars?",
+      "How does Martian geology differ from Earth's?",
+      "What is Olympus Mons on Mars?",
+      "What is Valles Marineris?",
+      "Does Mars have volcanoes?",
+      "What is the Martian surface like?",
+      "geology of Mars",
+      "Olympus Mons volcano",
+      "Valles Marineris canyon"
+    ],
+    "a": "Mars has a diverse geological history evidenced by the largest volcano in the solar system (Olympus Mons, 21.9 km high and 600 km across, a shield volcano formed by numerous lava flows over billions of years due to the lack of plate tectonics allowing stationary hotspot volcanism), the largest canyon system (Valles Marineris, over 4,000 km long and up to 7 km deep, likely formed by rifting and crustal extension related to the Tharsis volcanic bulge), and widespread evidence of past water flow including valley networks, outflow channels (catastrophic flood features), deltas, and lake deposits studied by the Curiosity and Perseverance rovers. Mars shows strong evidence for a hemispheric dichotomy — the southern highlands are ancient, heavily cratered crust (3.8-4.1 billion years old), while the northern lowlands are younger, smoother plains at lower elevation, possibly underlain by a former ocean — and the planet has been geologically active into the recent past, with volcanic eruptions as recently as a few million years ago and recurring slope lineae suggesting possible transient liquid water. Mars lacks plate tectonics, so its crust is a single, stationary plate with volcanic activity driven by mantle plumes, and its thin atmosphere (95% CO₂, less than 1% of Earth's pressure) means surface conditions are cold and dry today, though the Curiosity, Perseverance, and Zhurong rovers continue to reveal evidence of ancient habitable environments through mineralogical and geochemical analysis of sedimentary rocks."
+  },
+  {
+    "q": [
+      "What is the geology of Venus?",
+      "What is the geology of Mercury?",
+      "What are asteroids and meteorites?",
+      "What is impact cratering?",
+      "What are planetary surfaces made of?",
+      "What is exoplanet geology?",
+      "How do we study the geology of other planets?",
+      "Venus surface geology",
+      "Mercury planet geology",
+      "impact cratering process"
+    ],
+    "a": "Venus has a geologically young surface (average age 300-500 million years) dominated by volcanic features — over 1,600 major volcanoes, vast lava plains covering 80% of the surface, unique pancake domes formed by viscous lava, and coronae (large, circular tectonic features formed by mantle upwelling) — with no evidence of plate tectonics but instead a 'stagnant lid' regime where heat escapes through widespread volcanism and mantle plume activity, all shrouded by a dense CO₂ atmosphere producing a runaway greenhouse effect. Mercury is a dense, iron-rich planet with a massive metallic core (about 75% of its radius), a thin crust of silicate rock scarred by extensive impact cratering including the Caloris Basin (1,550 km diameter), extensive volcanic plains (smooth plains similar to lunar maria), and distinctive lobate scarps formed by global contraction as the planet cooled and its core solidified, shrinking the radius by up to 7 km. Impact cratering is the dominant surface-modifying process on most solid bodies without atmospheres — when a meteoroid strikes at cosmic velocities (10-70 km/s), it produces a transient cavity, ejecta blanket, central peak (in larger craters), and often melt sheets and shocked minerals (such as shatter cones and high-pressure polymorphs like coesite and stishovite), and the density and size-frequency distribution of craters is used to date planetary surfaces (older surfaces have more craters). Exoplanet geology is an emerging field inferring the composition, internal structure, and geological processes of planets orbiting other stars through measurements of their radius, mass, density (distinguishing rocky, water, and gas worlds), atmospheric spectroscopy (detecting gases like water vapor, CO₂, methane, and potential biosignatures), and tidal heating models — the James Webb Space Telescope has begun to characterize the atmospheres of rocky exoplanets like TRAPPIST-1, offering the first glimpses into the geological diversity of worlds far beyond our solar system."
+  }
+]

@@ -1,0 +1,60 @@
+[
+  {
+    "q": [
+      "What is biomedical engineering?",
+      "What does a biomedical engineer do?",
+      "What are the main fields of biomedical engineering?",
+      "How is biomedical engineering different from medicine?",
+      "What skills do biomedical engineers need?",
+      "What are the applications of biomedical engineering?",
+      "What is the scope of biomedical engineering?",
+      "How does biomedical engineering combine biology and engineering?"
+    ],
+    "a": "Biomedical engineering (BME) is the application of engineering principles and design concepts to medicine and biology for healthcare purposes — spanning the development of medical devices, diagnostic equipment, prosthetics, imaging systems, and therapeutic technologies that improve patient care and quality of life. Biomedical engineers work at the intersection of engineering, biology, and medicine, requiring knowledge of anatomy and physiology alongside traditional engineering disciplines like mechanics, electronics, materials science, and computer science. Key subfields include biomechanics (mechanics of the human body and medical implants), biomaterials (materials compatible with living tissue), medical imaging (X-ray, MRI, CT, ultrasound, PET), neural engineering (brain-computer interfaces, neural prosthetics), tissue engineering (growing replacement tissues and organs), and clinical engineering (managing hospital equipment and technology). Biomedical engineering has produced transformative innovations including pacemakers, MRI machines, artificial joints, insulin pumps, prosthetic limbs, dialysis machines, and the pulse oximeter — each requiring deep understanding of both engineering constraints and biological systems."
+  },
+  {
+    "q": [
+      "What are medical devices?",
+      "How are medical devices regulated?",
+      "What are examples of medical devices?",
+      "What is prosthetics?",
+      "How do modern prosthetics work?",
+      "What is tissue engineering?",
+      "How is tissue engineering used in medicine?",
+      "What are biomaterials?",
+      "What types of biomaterials are used in medicine?",
+      "What are the requirements for biomaterials?"
+    ],
+    "a": "Medical devices range from simple tongue depressors and bandages to sophisticated implantable pacemakers, artificial hearts, robotic surgical systems, and diagnostic imaging equipment — all regulated based on risk classification (Class I, II, or III in the US by the FDA) requiring varying levels of clinical testing and quality system compliance. Prosthetics have advanced dramatically from simple wooden replacements to modern bionic limbs using myoelectric sensors that detect muscle signals to control motors, microprocessors that adapt gait in real time, and osseointegrated implants that connect directly to bone. Tissue engineering combines cells, engineering, and biomaterials to repair or replace damaged biological tissues — pioneered by the 'tissue engineering triad' of scaffold (biodegradable structure for cell growth), cells (often patient-derived to avoid immune rejection), and growth factors (signaling molecules that guide development). Biomaterials are materials designed to interface with biological systems, classified by composition: metals (titanium for joint replacements, stainless steel for stents), ceramics (hydroxyapatite for bone grafts), polymers (silicone for implants, PLGA for drug delivery), and composites — all must meet stringent requirements for biocompatibility, mechanical properties, degradation behavior, and sterilizability."
+  },
+  {
+    "q": [
+      "What is biomedical imaging?",
+      "How does MRI work?",
+      "What is the difference between CT and MRI?",
+      "What is ultrasound imaging?",
+      "What is X-ray imaging?",
+      "What is PET scan?",
+      "What are the different types of medical imaging?",
+      "What is neural engineering?",
+      "What is a brain-computer interface?",
+      "How do neural implants work?"
+    ],
+    "a": "Biomedical imaging encompasses technologies that visualize the internal structure and function of the body for diagnosis and treatment guidance: X-ray (using ionizing radiation to image bone and dense tissue), computed tomography (CT — multiple X-ray angles reconstructed into 3D cross-sections), magnetic resonance imaging (MRI — using powerful magnetic fields and radio waves to image soft tissues with exceptional contrast without ionizing radiation), ultrasound (high-frequency sound waves for real-time imaging, especially in obstetrics and cardiology), and positron emission tomography (PET — tracking radioactive tracers to image metabolic activity and cellular function). Neural engineering is a rapidly growing BME subfield focused on understanding and interfacing with the nervous system. Brain-computer interfaces (BCIs) create direct communication pathways between the brain and external devices: invasive BCIs (like the Utah array implanted in motor cortex) record neural signals to control prosthetic limbs or computer cursors with remarkable precision, while non-invasive BCIs using EEG enable simpler applications like spelling devices and neurofeedback therapy for conditions like ADHD and stroke rehabilitation."
+  },
+  {
+    "q": [
+      "What are drug delivery systems?",
+      "How are drugs delivered in the body?",
+      "What are novel drug delivery technologies?",
+      "What is clinical engineering?",
+      "What does a clinical engineer do?",
+      "What is regulatory affairs in biomedical engineering?",
+      "How are medical devices approved by the FDA?",
+      "What is the FDA 510(k) clearance?",
+      "What is PMA in medical devices?",
+      "What is ISO 13485?"
+    ],
+    "a": "Drug delivery systems are engineered technologies that control the release and targeting of pharmaceutical compounds in the body — from basic oral tablets and transdermal patches to advanced nanoparticle carriers, implantable pumps, and stimuli-responsive hydrogels that release drugs at specific sites in response to pH, temperature, or biochemical signals. Controlled release systems maintain therapeutic drug levels over extended periods, reducing dosing frequency and side effects compared to conventional administration. Clinical engineering is the branch of biomedical engineering that manages medical technology in healthcare settings — clinical engineers oversee equipment procurement, maintenance, safety testing, training, technology assessment, and integration of complex systems like hospital networks and electronic health records. Regulatory affairs is essential to bringing medical devices to market: in the US, the FDA classifies devices by risk, requiring either 510(k) premarket notification (demonstrating substantial equivalence to an already marketed device) or the more rigorous Premarket Approval (PMA) process requiring clinical trials for high-risk Class III devices — compliance with standards like ISO 13485 (quality management for medical devices) and Good Manufacturing Practices (GMP) is mandatory throughout the product lifecycle."
+  }
+]

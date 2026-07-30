@@ -1,0 +1,68 @@
+[
+  {
+    "q": [
+      "What is the structure of an atom?",
+      "Explain atomic structure.",
+      "What are protons, neutrons, and electrons?",
+      "How is the nucleus of an atom structured?",
+      "What holds the nucleus together?",
+      "What is the strong nuclear force?",
+      "Describe the components of an atom.",
+      "What is atomic number and mass number?"
+    ],
+    "a": "Atoms consist of a dense central nucleus surrounded by a cloud of electrons. The nucleus contains protons (positively charged) and neutrons (neutral), collectively called nucleons, held together by the strong nuclear force, which overcomes the electrostatic repulsion between protons. The atomic number (Z) equals the number of protons and determines the element, while the mass number (A) is the total number of protons and neutrons. Electrons occupy quantized energy levels or orbitals around the nucleus and are responsible for chemical bonding."
+  },
+  {
+    "q": [
+      "What is nuclear fission?",
+      "Explain nuclear fission.",
+      "How does nuclear fission work?",
+      "What is an example of nuclear fission?",
+      "How is nuclear fission used in power plants?",
+      "What is a chain reaction in fission?",
+      "Who discovered nuclear fission?",
+      "What is the difference between fission and fusion?"
+    ],
+    "a": "Nuclear fission is the process in which a heavy atomic nucleus, such as uranium-235 or plutonium-239, splits into two or more smaller nuclei, releasing a large amount of energy and typically several free neutrons. These released neutrons can then trigger further fissions, creating a self-sustaining chain reaction. In nuclear reactors, this chain reaction is carefully controlled using neutron-absorbing control rods to maintain a steady rate of energy production. Fission is also the principle behind atomic bombs, where an uncontrolled chain reaction releases an enormous burst of energy almost instantaneously."
+  },
+  {
+    "q": [
+      "What is nuclear fusion?",
+      "Explain nuclear fusion.",
+      "How does nuclear fusion work?",
+      "What is an example of nuclear fusion?",
+      "Why is fusion difficult to achieve on Earth?",
+      "What is the difference between fusion and fission?",
+      "How does fusion power the Sun?",
+      "What is ITER?"
+    ],
+    "a": "Nuclear fusion is the process in which two light atomic nuclei combine to form a heavier nucleus, releasing immense amounts of energy. This process powers stars like the Sun, where hydrogen nuclei fuse into helium under extreme temperatures and pressures. On Earth, achieving controlled fusion is extremely challenging because it requires temperatures exceeding 100 million degrees Celsius to overcome the electrostatic repulsion between positively charged nuclei (the Coulomb barrier). Research into practical fusion reactors, such as tokamaks and stellarators (including ITER), aims to produce clean, near-limitless energy, but sustained, net-positive fusion remains a major engineering goal."
+  },
+  {
+    "q": [
+      "What is radioactive decay?",
+      "Explain radioactive decay.",
+      "What are the types of radioactive decay?",
+      "What is half-life?",
+      "How does half-life work?",
+      "What is alpha decay?",
+      "What is beta decay?",
+      "What is gamma decay?",
+      "What is the difference between alpha, beta, and gamma radiation?"
+    ],
+    "a": "Radioactive decay is the spontaneous process by which an unstable atomic nucleus loses energy by emitting radiation in the form of alpha particles, beta particles, or gamma rays. Alpha decay involves the emission of a helium nucleus (2 protons, 2 neutrons) and occurs primarily in heavy elements; alpha particles are easily stopped but dangerous if ingested. Beta decay involves the emission of an electron or positron when a neutron converts to a proton or vice versa. Gamma decay releases high-energy electromagnetic radiation as the nucleus transitions from an excited to a lower energy state; gamma rays are highly penetrating and require dense shielding such as lead or concrete. Each radioactive isotope has a characteristic half-life, which is the time required for half of the atoms in a sample to decay."
+  },
+  {
+    "q": [
+      "What is nuclear medicine?",
+      "How is radiation used in medicine?",
+      "What is radiotherapy?",
+      "What is a PET scan?",
+      "What is a gamma knife?",
+      "How are radioisotopes used in medicine?",
+      "What is nuclear waste?",
+      "How is nuclear waste stored?"
+    ],
+    "a": "Nuclear medicine uses radioactive isotopes (radioisotopes) for diagnosis, treatment, and research. For diagnosis, tracers such as technetium-99m are injected into patients and detected by gamma cameras to image organs and detect abnormalities, while PET scans use positron-emitting isotopes to visualize metabolic activity in tissues. Radiotherapy uses targeted radiation, such as from cobalt-60 or linear accelerators, to destroy cancer cells, with techniques like brachytherapy placing radioactive sources directly inside or near tumors. Nuclear waste is the radioactive byproduct of nuclear reactors, weapons production, and medical procedures; it is classified as low-level, intermediate-level, or high-level waste and must be isolated from the environment for periods ranging from decades to hundreds of thousands of years, typically through deep geological repositories."
+  }
+]

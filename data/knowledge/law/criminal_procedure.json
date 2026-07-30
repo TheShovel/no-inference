@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "What is criminal procedure?",
+      "How does the criminal procedure process work?",
+      "What are the steps in a criminal case?",
+      "What is an arrest warrant?",
+      "What is probable cause?",
+      "What is the difference between an arrest and a detention?",
+      "What are the Fourth Amendment protections in criminal procedure?",
+      "what is the fourth amendment",
+      "fourth amendment",
+      "4th amendment"
+    ],
+    "a": "Criminal procedure is the body of law governing the processes by which the state investigates, prosecutes, and adjudicates criminal offenses, balancing the government's interest in public safety against individual constitutional rights. The Fourth Amendment protects against unreasonable searches and seizures, generally requiring law enforcement to obtain a warrant based on probable cause before searching a person's property or making an arrest, though exceptions exist for exigent circumstances, plain view, searches incident to arrest, and consent. Key stages of criminal procedure include investigation and arrest, initial appearance (arraignment), pretrial hearings (including bail determinations and motions to suppress evidence), trial, sentencing, and appeals — each stage has specific procedural rules designed to ensure due process and fair treatment of the accused."
+  },
+  {
+    "q": [
+      "What are Miranda rights?",
+      "What is the Miranda warning?",
+      "When must Miranda rights be read?",
+      "What happens if Miranda rights are not read?",
+      "What is the right to counsel?",
+      "What is the Sixth Amendment right to counsel?",
+      "What does the right to remain silent mean?"
+    ],
+    "a": "Miranda rights, established in the 1966 Supreme Court case Miranda v. Arizona, require law enforcement to inform criminal suspects in custody of their Fifth Amendment right against self-incrimination and Sixth Amendment right to counsel before conducting a custodial interrogation. The standard warning includes the right to remain silent, that anything said can be used against the suspect in court, the right to an attorney, and that an attorney will be appointed if the suspect cannot afford one. If the police fail to administer the Miranda warning before interrogation, any statements obtained are generally inadmissible in the prosecution's case-in-chief, though physical evidence discovered as a result of such statements may still be admitted under some circumstances. The right to counsel (Sixth Amendment) guarantees criminal defendants legal representation at all critical stages of prosecution, from initial appearance through appeal, and the landmark Gideon v. Wainwright (1963) established that states must provide attorneys for indigent defendants facing felony charges."
+  },
+  {
+    "q": [
+      "What is bail?",
+      "How does the bail system work?",
+      "What is plea bargaining?",
+      "How does the plea bargain process work?",
+      "What are the pros and cons of plea bargaining?",
+      "What is a trial in criminal court?",
+      "What is the difference between a bench trial and a jury trial?",
+      "What happens during a criminal trial?"
+    ],
+    "a": "Bail is a process by which a criminal defendant is released from custody before trial in exchange for money or a promise to appear in court, intended to ensure the defendant's return rather than as punishment — the Eighth Amendment prohibits excessive bail, and bail reform movements have sought to reduce reliance on cash bail that disproportionately impacts low-income defendants. Plea bargaining is the negotiation between prosecution and defense where the defendant agrees to plead guilty (often to a lesser charge or for a reduced sentence) in exchange for concessions, resolving approximately 90-95% of criminal cases in the United States without trial, significantly reducing court caseloads but raising concerns about defendants pleading guilty under coercion. The criminal trial process includes jury selection (voir dire), opening statements, presentation of evidence (witness examination and cross-examination), closing arguments, jury instructions, jury deliberation, and verdict — the prosecution bears the burden of proving guilt beyond a reasonable doubt, the highest evidentiary standard in American law."
+  },
+  {
+    "q": [
+      "What is sentencing in criminal law?",
+      "What are the types of criminal sentences?",
+      "What is the difference between concurrent and consecutive sentences?",
+      "What is an appeal in criminal procedure?",
+      "What is habeas corpus?",
+      "What is double jeopardy?",
+      "What does the Fifth Amendment prohibition on double jeopardy mean?"
+    ],
+    "a": "Sentencing is the phase of criminal procedure where the court imposes a penalty on a convicted defendant, ranging from probation (community supervision with conditions) to fines, community service, house arrest, imprisonment, and in capital cases, death — sentencing guidelines and mandatory minimums structure judicial discretion but have faced criticism for contributing to mass incarceration. An appeal allows a convicted defendant to challenge their conviction or sentence in a higher court on grounds of legal error, procedural mistakes, ineffective assistance of counsel, or newly discovered evidence, with appellate courts reviewing the trial record for errors rather than conducting a new trial. Habeas corpus (Latin for 'you shall have the body') is a legal remedy allowing prisoners to challenge the legality of their detention before a court, serving as a fundamental check on executive and judicial power. Double jeopardy, protected by the Fifth Amendment, prevents a person from being tried twice for the same offense after acquittal or conviction, though it does not bar separate federal and state prosecutions for the same act (dual sovereignty doctrine) or civil lawsuits arising from the same conduct."
+  }
+]

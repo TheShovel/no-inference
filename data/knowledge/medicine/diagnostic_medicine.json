@@ -1,0 +1,57 @@
+[
+  {
+    "q": [
+      "What happens during a physical examination?",
+      "What does a doctor check during a physical exam?",
+      "What are the components of a physical examination?",
+      "What is inspection, palpation, percussion, and auscultation?",
+      "How does a physical exam help diagnose illness?",
+      "What tools does a doctor use during a physical exam?"
+    ],
+    "a": "The physical examination is a systematic assessment where a healthcare provider evaluates the body for signs of disease using four techniques: inspection (visual observation), palpation (feeling with hands), percussion (tapping to assess underlying structures), and auscultation (listening with a stethoscope). A comprehensive exam typically includes vital signs measurement (blood pressure, heart rate, temperature, respiratory rate), examination of major organ systems, and assessment of the head, neck, chest, abdomen, extremities, and neurological function. The physical exam works alongside patient history and diagnostic testing to form a complete clinical picture."
+  },
+  {
+    "q": [
+      "What is medical imaging?",
+      "How do X-rays work?",
+      "What is the difference between CT and MRI?",
+      "What is an ultrasound used for?",
+      "What is a PET scan?",
+      "What are the risks of medical imaging?"
+    ],
+    "a": "Medical imaging encompasses various technologies for visualizing the interior of the body for diagnosis and treatment monitoring. X-rays use ionizing radiation to produce 2D images, ideal for bone fractures and chest evaluation, while CT (computed tomography) combines multiple X-ray views to create detailed cross-sectional images. MRI (magnetic resonance imaging) uses strong magnetic fields and radio waves to generate high-resolution soft tissue images without radiation, making it ideal for brain, spinal cord, and joint evaluation, while ultrasound uses sound waves for real-time imaging particularly in obstetrics and cardiac assessment."
+  },
+  {
+    "q": [
+      "What are laboratory diagnostic tests?",
+      "What do blood tests detect?",
+      "What is a complete blood count (CBC)?",
+      "What are metabolic panels in lab testing?",
+      "How do lab tests help diagnose diseases?",
+      "What is urinalysis used for?"
+    ],
+    "a": "Laboratory tests analyze samples of blood, urine, tissue, or other bodily fluids to detect abnormalities indicative of disease or assess organ function. Common blood tests include the complete blood count (measuring red cells, white cells, hemoglobin, and platelets), comprehensive metabolic panel (evaluating kidney and liver function, electrolytes, and blood sugar), and cardiac biomarkers (troponin for heart attack detection). Advances in laboratory medicine include point-of-care testing for rapid results, specialized biomarkers for early disease detection, and increasingly sophisticated molecular diagnostics for genetic conditions and infectious diseases."
+  },
+  {
+    "q": [
+      "What is a biopsy?",
+      "How does a biopsy work?",
+      "What types of biopsies are there?",
+      "Why is a biopsy performed?",
+      "What happens after a biopsy?",
+      "What can a biopsy diagnose?"
+    ],
+    "a": "A biopsy is a medical procedure that removes a small sample of tissue from the body for microscopic examination by a pathologist to establish a definitive diagnosis, most commonly for cancer. Types include needle biopsy (fine-needle aspiration or core needle), endoscopic biopsy (via flexible tube with camera), excisional biopsy (removing an entire abnormal area), and surgical biopsy (during open surgery). The tissue sample undergoes processing, sectioning, staining, and microscopic analysis, with results typically available within days and often including molecular testing that guides treatment decisions."
+  },
+  {
+    "q": [
+      "What is genetic testing in medicine?",
+      "How does genetic testing work?",
+      "What conditions can genetic testing detect?",
+      "What is the difference between diagnostic and predictive genetic testing?",
+      "What are the ethical concerns with genetic testing?",
+      "How is genetic testing used in cancer treatment?"
+    ],
+    "a": "Genetic testing analyzes DNA, RNA, or chromosomes to identify inherited mutations, predispositions to disease, or genetic markers that guide medical decisions. Tests range from single-gene analysis for conditions like cystic fibrosis or Huntington's disease to comprehensive genome sequencing that examines all genes. In oncology, tumor genetic profiling now guides targeted therapy selection by identifying specific mutations driving cancer growth, while pharmacogenomic testing predicts drug response based on individual genetic variations. Ethical considerations include privacy, potential discrimination, psychological impact of predictive results, and management of incidental findings."
+  }
+]

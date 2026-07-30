@@ -1,0 +1,47 @@
+[
+  {
+    "q": [
+      "What is cinematography?",
+      "What does a cinematographer do?",
+      "What are the key elements of cinematography?",
+      "How does cinematography affect storytelling in film?",
+      "What is the role of the director of photography?",
+      "What techniques do cinematographers use?"
+    ],
+    "a": "Cinematography is the art and science of capturing moving images on film or digitally, encompassing camera techniques, lighting, composition, and visual aesthetics to serve the story and emotional tone of a film. The cinematographer, also called the director of photography (DP), collaborates with the director to determine the visual look and feel of the film, making decisions about camera placement, lens choice, lighting setups, color palette, and camera movement. Great cinematography enhances narrative by guiding the viewer's attention, establishing mood, revealing character, and creating visual rhythm that can elevate even a simple scene into something memorable."
+  },
+  {
+    "q": [
+      "What are the different types of camera shots?",
+      "What is a close-up shot?",
+      "What is a long shot or wide shot?",
+      "What is a tracking shot?",
+      "What is a dolly shot?",
+      "What is a Steadicam shot?",
+      "How does camera movement affect film?"
+    ],
+    "a": "Camera shots vary by distance and angle: close-ups capture facial expressions and emotional detail, medium shots frame characters from the waist up for dialogue, and wide (long) shots establish environments and show scale. Camera movements include pans (horizontal rotation), tilts (vertical rotation), dolly shots (camera physically moving toward or away from the subject on tracks), tracking shots (camera moving parallel to the action), and Steadicam shots (smooth, flowing movement achieved with a body-mounted stabilization rig that isolates the camera from the operator's footsteps). The Steadicam, invented by Garrett Brown, revolutionized filmmaking by enabling fluid, kinetic camera movement through spaces where tracks cannot go — famously used in the extended tracking shots of The Shining's hallways and Rocky's training montage."
+  },
+  {
+    "q": [
+      "What is lighting in cinematography?",
+      "What is three-point lighting?",
+      "What is high-key vs low-key lighting?",
+      "What is color grading in film?",
+      "How does color affect film mood?",
+      "What is the difference between color grading and color correction?"
+    ],
+    "a": "Three-point lighting is the fundamental lighting setup in cinematography, consisting of a key light (the main light source), fill light (softens shadows created by the key), and backlight (separates the subject from the background by creating rim light). High-key lighting uses bright, even illumination with minimal shadows, common in comedies and musicals, while low-key lighting creates dramatic contrast with deep shadows and pools of light, characteristic of film noir and thrillers. Color grading is the post-production process of adjusting colors and tones to create a specific aesthetic or emotional palette — for example, teal-and-orange grading for blockbusters, desaturated tones for dystopian films, or warm sepia for period pieces — distinct from color correction, which focuses on achieving accurate, neutral color balance."
+  },
+  {
+    "q": [
+      "What are aspect ratios in film?",
+      "What is depth of field in cinematography?",
+      "What is the difference between CGI and practical effects?",
+      "What lenses do cinematographers use?",
+      "How does lens choice affect a film's look?",
+      "What is anamorphic vs spherical lenses?"
+    ],
+    "a": "Aspect ratios describe the proportional relationship between a frame's width and height, with common formats including the standard 1.85:1 (Academy flat), the wider 2.39:1 (CinemaScope/anamorphic), and 4:3 (1.33:1) used in classic films and now revived for certain artistic purposes. Depth of field refers to the range of distance within a shot that appears acceptably sharp — shallow depth of field (achieved with wide apertures like f/1.4) isolates subjects by blurring the background, while deep focus keeps everything from foreground to background crisp. CGI (computer-generated imagery) creates visual effects digitally, enabling impossible creatures, environments, and physics, while practical effects are created physically on set through animatronics, miniatures, pyrotechnics, and makeup — the best modern films often blend both, using practical effects as a tangible reference that CGI artists enhance in post-production."
+  }
+]

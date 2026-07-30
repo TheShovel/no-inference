@@ -1,0 +1,53 @@
+[
+  {
+    "q": [
+      "How do fossils form?",
+      "What are the different types of fossils?",
+      "What is permineralization?",
+      "What are body fossils and trace fossils?",
+      "How are molds and casts formed?",
+      "What is carbonization?",
+      "fossil formation",
+      "how are fossils formed",
+      "fossil formation",
+      "fossils"
+    ],
+    "a": "Fossils form when organisms are rapidly buried by sediment after death, protecting their remains from scavengers, decay, and weathering. Common fossilization types include permineralization (minerals from groundwater fill pore spaces in bone or wood, creating petrified fossils), molds and casts (the organism dissolves leaving a cavity that may be filled with minerals), carbonization (organic material is compressed, leaving only a carbon film), and trace fossils (preserved footprints, burrows, or feces). The fossil record provides our primary window into ancient life, though it is inherently incomplete because only organisms with hard parts in depositional environments have high preservation potential."
+  },
+  {
+    "q": [
+      "What is the geologic time scale?",
+      "What are the major divisions of geologic time?",
+      "What are eons, eras, periods, and epochs?",
+      "What is the difference between the Precambrian and Phanerozoic?",
+      "How is the geologic time scale organized?",
+      "geologic time",
+      "geological timeline"
+    ],
+    "a": "The geologic time scale divides Earth's 4.6-billion-year history into hierarchical intervals: eons (largest), eras, periods, and epochs. The Precambrian eon (about 88% of Earth's history) includes the Hadean, Archean, and Proterozoic and witnessed the formation of Earth, origin of life, and development of simple multicellular organisms. The Phanerozoic eon (the last 541 million years) comprises three eras: the Paleozoic ('ancient life,' marked by the Cambrian explosion of complex life and ending with the Permian mass extinction), the Mesozoic ('middle life,' the age of dinosaurs), and the Cenozoic ('recent life,' the age of mammals including humans)."
+  },
+  {
+    "q": [
+      "What are the major mass extinction events?",
+      "What caused the Permian-Triassic extinction?",
+      "What killed the dinosaurs?",
+      "What is the K-Pg extinction event?",
+      "How many mass extinctions have there been?",
+      "What is the end-Cretaceous extinction?",
+      "mass extinctions"
+    ],
+    "a": "Earth has experienced five major mass extinction events. The largest was the Permian-Triassic extinction (252 million years ago, 'The Great Dying'), which wiped out about 96% of marine species, likely due to massive volcanic eruptions in Siberia causing global warming and ocean anoxia. The most famous is the Cretaceous-Paleogene (K-Pg) extinction (66 million years ago), which eliminated all non-avian dinosaurs, caused by a 10-km-wide asteroid impact at Chicxulub that triggered global wildfires, a 'nuclear winter,' and ocean acidification. Other major extinctions occurred at the end of the Ordovician, Devonian, and Triassic periods, each involving different combinations of volcanic activity, climate change, and impact events."
+  },
+  {
+    "q": [
+      "What are index fossils?",
+      "How does radiometric dating work?",
+      "What is carbon dating?",
+      "How do scientists determine the age of fossils?",
+      "What is the principle of superposition?",
+      "How are fossils used to date rock layers?",
+      "fossil dating"
+    ],
+    "a": "Index fossils are the remains of organisms that lived during a relatively short, well-defined time interval and were geographically widespread, allowing geologists to correlate rock layers across different regions. Radiometric dating determines the absolute age of rocks and fossils by measuring the decay of radioactive isotopes (such as uranium-238 to lead-206 or carbon-14 to nitrogen-14) at known half-lives. Carbon-14 dating is useful for organic materials up to about 50,000 years old, while uranium-lead dating can date rocks billions of years old. Together, index fossils and radiometric dating provide the framework for the geologic time scale and our understanding of the timing of evolution and extinction."
+  }
+]

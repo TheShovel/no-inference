@@ -1,0 +1,68 @@
+[
+  {
+    "q": [
+      "What equipment is used in different sports?",
+      "Sports equipment explained",
+      "What gear do you need for common sports?",
+      "Sports equipment list by sport",
+      "Essential equipment for soccer, basketball, tennis, and more",
+      "How does sports equipment vary between sports?"
+    ],
+    "a": "Sports equipment varies widely depending on the activity. In soccer, the basic equipment includes a ball, shin guards, cleats, and a jersey. Basketball requires a ball, hoop, and court shoes with good ankle support. Tennis needs a racket, tennis balls, and appropriate footwear for the surface (clay, grass, or hard court). American football involves extensive protective gear including helmets, shoulder pads, thigh and knee pads, and cleats. Baseball and cricket use bats, balls, gloves, and helmets. Swimming requires goggles, swim caps, and swimsuits designed for performance. Protective equipment is crucial in contact sports — mouthguards are recommended in many sports, and helmets are mandatory in cycling, skiing, and ice hockey. The quality and specifications of equipment are often regulated by sports governing bodies to ensure fair play and safety."
+  },
+  {
+    "q": [
+      "What are the typical field and court dimensions for major sports?",
+      "Sports field and court sizes explained",
+      "How big is a soccer field vs basketball court vs tennis court?",
+      "Dimensions of sports playing surfaces",
+      "Standard sizes for sports fields and courts",
+      "Field/court measurements for common sports"
+    ],
+    "a": "Playing field dimensions vary significantly between sports. A soccer field (football pitch) is 100-110 meters long and 64-75 meters wide for international matches. An NBA basketball court is 28.65 meters by 15.24 meters, with the hoop 3.05 meters high. A tennis court is 23.77 meters long and 8.23 meters wide for singles (10.97 meters for doubles), with a net 0.914 meters high at the center. An American football field (including end zones) is 120 yards (109.7 meters) long and 53.3 yards (48.8 meters) wide. A baseball diamond has 90-foot (27.4 meters) base paths. An Olympic swimming pool is 50 meters long and 25 meters wide with 10 lanes. A volleyball court is 18 meters long and 9 meters wide, with a net height of 2.43 meters for men and 2.24 meters for women. A standard ice hockey rink is 60.96 meters by 25.9 meters in the NHL."
+  },
+  {
+    "q": [
+      "How many players are on each team in different sports?",
+      "Team sizes in sports explained",
+      "How many players in soccer vs basketball vs football vs baseball?",
+      "Squad sizes for major team sports",
+      "Team sport player counts",
+      "Number of players on the field for common sports"
+    ],
+    "a": "Team sizes differ greatly across sports. Soccer has 11 players per side on the field, with 3-5 substitutes allowed depending on the competition. Basketball has 5 players on the court per team, with unlimited substitutions. American football has 11 players on the field per side, but teams have 53 active players on the roster (NFL) with specialized offensive and defensive units. Baseball features 9 players per team on the field, with a larger roster of active players. Volleyball has 6 players on the court per team. Ice hockey has 6 players (including the goaltender) on the ice per side. Rugby union has 15 players per team, while rugby sevens has 7. Cricket has 11 players per side. Field hockey has 11 players per side. Water polo has 7 players (including the goalkeeper). Handball has 7 players per side. These numbers reflect the starting players — most sports allow substitutions throughout the game."
+  },
+  {
+    "q": [
+      "How does scoring work across different sports?",
+      "Sports scoring systems explained",
+      "How is scoring different in soccer, basketball, football, and tennis?",
+      "Points and goals in sports",
+      "Comparing scoring across team sports",
+      "How do you score points in different sports?"
+    ],
+    "a": "Scoring systems vary fundamentally across sports. In soccer and hockey, a goal counts as 1 point, making games typically low-scoring. Basketball has a tiered scoring system: 2 points for field goals inside the arc, 3 points beyond the arc, and 1 point for free throws. American football has multiple scoring methods: touchdowns (6 points), extra point kicks (1) or two-point conversions (2), field goals (3), and safeties (2). Baseball awards runs when a player touches all four bases; typically several runs per game. Tennis uses a distinctive 15-30-40-game-set-match system. Volleyball uses rally scoring where every point is scored regardless of who serves. Cricket can be high-scoring with runs accumulating throughout an innings. Boxing and MMA use 10-point must system where judges score each round. Golf uses stroke play (fewest strokes wins) or match play."
+  },
+  {
+    "q": [
+      "What is the role of officials and referees in sports?",
+      "Sports officiating explained",
+      "How do referees work in different sports?",
+      "Role of umpires and officials in sports",
+      "Sports refereeing systems",
+      "How are sports officials organized?"
+    ],
+    "a": "Sports officials ensure fair play, enforce rules, and maintain safety. Soccer has one main referee with two assistant referees (linesmen) and VAR (Video Assistant Referee) in major competitions. Basketball uses 3 referees in the NBA who call fouls and violations across the court. American football has 7-8 officials on the field, each with specific responsibilities — referee (white hat) oversees the game, umpire watches for illegal blocks, head linesman marks ball position, and others watch different zones. Tennis uses a chair umpire who overrules line calls, with 9-11 line judges for major matches. Baseball has 4 umpires (expanded to 6 in postseason) calling balls, strikes, and outs. Boxing and MMA have a referee in the ring/cage and 3 judges scoring rounds. Technology like VAR (soccer), Hawkeye (tennis), and instant replay (NFL) has become increasingly important in modern sports officiating."
+  },
+  {
+    "q": [
+      "What are the basic rules of baseball?",
+      "How does baseball work?",
+      "Baseball rules explained for beginners",
+      "How is baseball played?",
+      "Baseball innings and scoring explained",
+      "Basic baseball rules"
+    ],
+    "a": "Baseball is played between two teams of 9 players on a diamond-shaped field with four bases. The objective is to score more runs than the opponent. The game consists of 9 innings, with each team alternating between batting and fielding. The pitcher throws the ball toward the batter, who attempts to hit it into fair territory and then run around the bases. A batter is out after three strikes (swinging and missing, fouling with less than two strikes, or not swinging at a pitch in the strike zone) or if the ball is caught in the air or thrown to first base before they arrive. Three outs end a half-inning. A home run occurs when a batter hits the ball over the outfield fence, allowing them and any runners on base to score automatically. Games are played on grass or artificial turf, and the field includes an infield (dirt) and outfield (grass)."
+  }
+]

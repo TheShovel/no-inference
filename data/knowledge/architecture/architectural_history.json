@@ -1,0 +1,74 @@
+[
+  {
+    "q": [
+      "What are the characteristics of ancient Egyptian architecture?",
+      "What defines ancient Greek architecture?",
+      "What are the three Greek architectural orders?",
+      "What is Roman architecture known for?",
+      "What architectural innovations did the Romans develop?",
+      "What is the difference between Greek and Roman architecture?",
+      "What is a Roman aqueduct?"
+    ],
+    "a": "Ancient Egyptian architecture is characterized by monumental stone construction, massive scale, precise alignment with celestial bodies, and iconic forms like pyramids, obelisks, and temples with columned halls and pylons. Ancient Greek architecture established the classical orders — Doric (sturdy, fluted columns with simple capitals), Ionic (slender columns with scroll-like volutes), and Corinthian (elaborate capitals with acanthus leaves) — and emphasized proportion, symmetry, and the optical refinements visible in the Parthenon. Roman architecture adopted Greek elements but innovated dramatically with the widespread use of the arch, vault, and dome using concrete (opus caementicium), enabling vast interior spaces like the Pantheon's 142-foot dome and large-scale infrastructure including aqueducts, roads, and amphitheaters such as the Colosseum. Roman aqueducts carried water over long distances using gravity through precisely graded channels, with the combined aqueducts of ancient Rome supplying over 300 million gallons of water daily."
+  },
+  {
+    "q": [
+      "What is Romanesque architecture?",
+      "What defines Gothic architecture?",
+      "What is the difference between Romanesque and Gothic cathedrals?",
+      "What are flying buttresses?",
+      "What is a rib vault?",
+      "What were the key innovations of Gothic architecture?",
+      "What is the tallest Gothic cathedral?"
+    ],
+    "a": "Romanesque architecture (roughly 1000-1200 CE) is defined by thick walls, rounded arches, massive piers, barrel vaults, small windows, and a fortress-like appearance, designed for stability and durability in the post-Roman period. Gothic architecture emerged in 12th-century France and revolutionized building design with three key innovations: the pointed arch (which directed weight more efficiently downward), the rib vault (a lightweight stone vault framework), and the flying buttress (external supports transferring roof thrust away from walls). These innovations allowed Gothic cathedrals to soar to unprecedented heights with enormous stained glass windows filling interiors with colored light, exemplified by Notre-Dame de Paris, Chartres, and Cologne Cathedral. Gothic architecture is also known for its elaborate stone tracery, rose windows, sculptural decoration including gargoyles and grotesques, and the skeletal structure that reduced wall mass to a minimum, creating what contemporaries described as 'walls of glass.'"
+  },
+  {
+    "q": [
+      "What defines Renaissance architecture?",
+      "What are the key features of Renaissance buildings?",
+      "Who were the major Renaissance architects?",
+      "What is Baroque architecture?",
+      "What is the difference between Renaissance and Baroque architecture?",
+      "What is Neoclassical architecture?",
+      "What is the most famous Renaissance building?"
+    ],
+    "a": "Renaissance architecture (15th-16th centuries) revived classical Roman principles of symmetry, proportion, geometry, and the use of columns, pediments, and domes, rejecting the verticality and complexity of Gothic style. Pioneered by Filippo Brunelleschi (who engineered the dome of Florence Cathedral), Leon Battista Alberti, Donato Bramante, and Andrea Palladio, Renaissance buildings emphasize clear mathematical relationships and harmonious proportions based on the golden ratio and human scale. Baroque architecture (17th-18th centuries) evolved from the Renaissance, adding dramatic movement, bold curves, elaborate ornamentation, illusionistic ceiling paintings, and theatrical effects of light and shadow designed to awe and inspire, with masterpieces including St. Peter's Basilica (Rome) and the Palace of Versailles. Neoclassical architecture (mid-18th to 19th centuries) represented a return to the purity of Greek and Roman forms in reaction to Baroque excess, inspiring buildings like the US Capitol, the British Museum, and Paris's Panthéon, characterized by grand porticos, domes, and restrained ornament."
+  },
+  {
+    "q": [
+      "What is Art Nouveau architecture?",
+      "What characterizes Art Deco style?",
+      "What is the difference between Art Nouveau and Art Deco?",
+      "What are examples of Art Nouveau buildings?",
+      "What are examples of Art Deco architecture?",
+      "What is the most famous Art Nouveau architect?",
+      "When was the Art Deco period?"
+    ],
+    "a": "Art Nouveau (1890-1910) was a decorative style that rejected historical revivalism in favor of organic, flowing lines inspired by natural forms — flowers, vines, insects, and the female figure — integrated into architecture through wrought iron, stained glass, and ceramic work, with Antoni Gaudí's Sagrada Família and Casa Batlló in Barcelona, and Hector Guimard's Paris Métro entrances as iconic examples. Art Deco (1920-1940) emerged after World War I as a celebration of modernity, technology, and luxury, characterized by geometric patterns, symmetrical designs, bold colors, lavish materials (chrome, glass, marble, exotic woods), and stepped or ziggurat forms. The Chrysler Building in New York, with its stainless steel sunburst spire, is the quintessential Art Deco skyscraper. While both styles rejected historical revivalism, Art Nouveau embraced organic, curvilinear nature-inspired forms, whereas Art Deco celebrated the machine age through sharp geometry, streamlined aerodynamic shapes, and symmetrical patterns influenced by Cubism and Egyptian motifs."
+  },
+  {
+    "q": [
+      "What is Modernist architecture?",
+      "What are the principles of Modernism in architecture?",
+      "Who were the key Modernist architects?",
+      "What is the Bauhaus school?",
+      "What is Postmodern architecture?",
+      "What is Deconstructivism in architecture?",
+      "What is the difference between Modern and Postmodern architecture?"
+    ],
+    "a": "Modernist architecture (early 20th century) embraced the principle that 'form follows function,' rejecting ornamentation in favor of clean lines, honest expression of materials (concrete, steel, glass), open floor plans, and the integration of new construction technologies. Pioneered by Le Corbusier, Frank Lloyd Wright, Ludwig Mies van der Rohe, and Walter Gropius (founder of the Bauhaus), Modernism sought to create a universal, rational architecture suited to the industrial age. Postmodern architecture (1970s-1990s) reacted against Modernism's perceived sterility by reintroducing ornament, historical references, playful forms, and contextual design, exemplified by Michael Graves's Portland Building, Philip Johnson's AT&T Building with its Chippendale top, and Charles Moore's Piazza d'Italia. Deconstructivism, emerging in the 1980s, took Postmodern fragmentation further, creating buildings that appear to break apart or distort traditional structures, with Frank Gehry's Guggenheim Museum Bilbao and Zaha Hadid's swooping, dynamic forms pushing architecture toward sculptural expression through advanced digital design and fabrication tools."
+  },
+  {
+    "q": [
+      "What is parametric architecture?",
+      "How is parametric design changing architecture?",
+      "What are examples of parametric architecture?",
+      "Who are famous parametric architects?",
+      "What is the difference between parametric and traditional architecture?",
+      "What digital tools are used in parametric architecture?",
+      "What is the most famous parametric building?"
+    ],
+    "a": "Parametric architecture uses computational algorithms to generate architectural forms based on a set of defined parameters and rules, allowing architects to create complex, organic shapes that would be nearly impossible to design or construct manually. Pioneered by architects like Zaha Hadid, Patrik Schumacher, and firms like UNStudio and OMA, parametric design uses tools like Grasshopper (a Rhino 3D plugin), Dynamo, and custom scripting to create responsive designs where changing one parameter automatically updates the entire model. Notable examples include Zaha Hadid's Heydar Aliyev Center in Baku (flowing, continuous surfaces uniting interior and exterior), the Beijing National Stadium ('Bird's Nest') by Herzog & de Meuron, and the twisting CCTV Headquarters in Beijing by Rem Koolhaas/OMA. Parametric architecture enables new possibilities in environmental performance (optimizing building orientation, shading, and ventilation through algorithmic analysis), structural efficiency (generating minimal-weight forms), and mass customization where each component in a facade can be individually optimized and fabricated using CNC milling and 3D printing."
+  }
+]

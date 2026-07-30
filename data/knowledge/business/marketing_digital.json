@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What are the main digital marketing channels?",
+      "What is SEO vs SEM?",
+      "How does social media marketing work?",
+      "What is content marketing?",
+      "What are the different types of digital marketing?",
+      "How do email marketing and affiliate marketing work?",
+      "digital marketing channels SEO SEM social media email content"
+    ],
+    "a": "Digital marketing encompasses a range of channels used to connect with audiences online: Search Engine Optimization (SEO) improves organic search rankings through technical optimization, content relevance, and backlinks; Search Engine Marketing (SEM) uses paid ads (Google Ads, Bing Ads) to appear at the top of search results; Social Media Marketing leverages platforms like Instagram, TikTok, LinkedIn, Facebook, and YouTube for brand awareness and community engagement; Email Marketing sends targeted communications to subscriber lists for nurturing leads and driving conversions; and Content Marketing creates valuable blog posts, videos, podcasts, infographics, and whitepapers to attract and retain audiences. An effective digital marketing strategy integrates multiple channels in a cohesive funnel—using content marketing and SEO for top-of-funnel awareness, social media for engagement and community building, email for mid-funnel nurturing, and paid advertising for conversion-focused campaigns. The average consumer encounters 4,000-10,000 ads daily, making personalization, relevance, and strategic omnichannel presence critical for standing out."
+  },
+  {
+    "q": [
+      "What is marketing analytics and how is it used?",
+      "How do you measure digital marketing ROI?",
+      "What are key performance indicators (KPIs) in marketing?",
+      "What is conversion rate optimization (CRO)?",
+      "How do you track marketing performance?",
+      "What tools are used for marketing analytics?",
+      "marketing analytics conversion optimization ROI measurement"
+    ],
+    "a": "Marketing analytics involves collecting, analyzing, and interpreting data from marketing campaigns to measure performance, optimize spending, and improve decision-making, using tools like Google Analytics, Adobe Analytics, Mixpanel, and HubSpot to track metrics across the customer journey. Key performance indicators (KPIs) include website traffic (sessions, unique visitors), engagement metrics (bounce rate, time on page, pages per session), conversion metrics (conversion rate, cost per acquisition, return on ad spend), and retention metrics (customer lifetime value, churn rate, repeat purchase rate). Conversion Rate Optimization (CRO) applies A/B testing, multivariate testing, heatmaps, session recordings, and user experience research to systematically improve the percentage of visitors who complete desired actions—such as making a purchase, filling out a form, or subscribing—with top-performing companies achieving conversion rates 2-5 times higher than industry averages through data-driven iterative testing."
+  },
+  {
+    "q": [
+      "What is marketing automation?",
+      "How does marketing automation work?",
+      "What are the best marketing automation tools?",
+      "How do you build a marketing automation workflow?",
+      "What is lead scoring in marketing automation?",
+      "How does automation improve customer journeys?",
+      "marketing automation customer journey"
+    ],
+    "a": "Marketing automation uses software platforms (MarketEngage, HubSpot, Salesforce Marketing Cloud, ActiveCampaign) to automate repetitive marketing tasks—email sequences, social media posting, lead scoring, audience segmentation, and personalized content delivery—enabling companies to engage leads at scale while maintaining relevance. A well-designed customer journey maps the stages from awareness (blog posts, social content) through consideration (case studies, webinars, email nurture sequences) to decision (free trials, demos, discount offers) and advocacy (loyalty programs, referral campaigns), with automation triggered by user behaviors like page visits, email opens, content downloads, or cart abandonment. Automation can improve marketing productivity by 20-30%, reduce response times from hours to seconds, and increase qualified lead volume through lead scoring models that rank prospects based on engagement signals, demographic fit, and behavioral triggers."
+  },
+  {
+    "q": [
+      "What is influencer marketing?",
+      "How does affiliate marketing work?",
+      "What is the difference between an influencer and an affiliate?",
+      "How do brands work with influencers?",
+      "What is programmatic advertising?",
+      "How does influencer marketing ROI compare to traditional advertising?",
+      "influencer marketing affiliate marketing programmatic advertising"
+    ],
+    "a": "Influencer marketing involves partnering with individuals who have engaged social media followings (nano-influencers with 1K-10K followers for high engagement rates, macro-influencers with 100K-1M for broad reach, and celebrity influencers over 1M for massive awareness) to promote products through authentic content, with Instagram, YouTube, and TikTok being the dominant platforms. Affiliate marketing pays publishers (affiliates) a commission—typically 5-30% of sales—for conversions driven through unique tracking links or coupon codes, with Amazon Associates being the largest program, while programmatic advertising uses automated algorithms and real-time bidding to purchase digital ad inventory across websites and apps, targeting specific audiences based on demographics, browsing behavior, and contextual relevance. The global influencer marketing industry grew to an estimated $21 billion in 2023, with brands earning an average of $5.78 for every dollar spent on influencer campaigns, while programmatic display advertising now accounts for over 85% of all digital display ad spending due to its efficiency, scale, and precise audience targeting capabilities."
+  },
+  {
+    "q": [
+      "How is the customer journey mapped in digital marketing?",
+      "What is the marketing funnel?",
+      "What is the customer acquisition cost (CAC) and lifetime value (LTV)?",
+      "How do you optimize the customer journey?",
+      "What is the difference between B2B and B2C customer journeys?",
+      "How do touchpoints affect the customer experience?",
+      "customer journey marketing funnel touchpoints"
+    ],
+    "a": "The customer journey maps every interaction (touchpoint) a potential customer has with a brand, from initial awareness through research, evaluation, purchase, and post-purchase loyalty or advocacy, with modern journeys being nonlinear and spanning multiple devices, platforms, and timeframes. Key metrics include Customer Acquisition Cost (CAC—total marketing and sales spend divided by new customers acquired), Customer Lifetime Value (CLV or LTV—the total predicted revenue from a customer over their relationship with the business), and the LTV:CAC ratio, with a healthy SaaS business typically targeting 3:1 or higher. Journey optimization involves identifying friction points (slow page load, confusing checkout, poor mobile experience), implementing personalized content through dynamic website content and email segmentation, and using attribution modeling (first-touch, last-touch, linear, or data-driven) to understand which channels and touchpoints most effectively drive conversions and allocate budget accordingly."
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "What are the different types of assessment in education?",
+      "What is formative assessment?",
+      "What is summative assessment?",
+      "What is diagnostic assessment?",
+      "What is the difference between formative and summative assessment?",
+      "What are examples of formative assessment?",
+      "What are examples of summative assessment?",
+      "How are assessments used to improve learning?"
+    ],
+    "a": "Educational assessments are categorized by purpose and timing into formative, summative, and diagnostic assessments. Formative assessment occurs during the learning process and is designed to monitor student progress and provide ongoing feedback to improve teaching and learning — examples include quizzes, exit tickets, classroom discussions, and think-alouds, with the key characteristic that results are used to adjust instruction rather than assign final grades. Summative assessment evaluates student learning at the end of an instructional unit by measuring what students have learned against a standard or benchmark — common examples are final exams, standardized tests, end-of-term projects, and state assessments. Diagnostic assessment takes place at the beginning of a course or unit to identify students' existing knowledge, skills, and misconceptions, helping teachers tailor instruction to address gaps before new learning begins — examples include pre-tests, concept maps, and skills inventories."
+  },
+  {
+    "q": [
+      "What is the difference between norm-referenced and criterion-referenced assessment?",
+      "What is norm-referenced grading?",
+      "What is criterion-referenced grading?",
+      "How does grading on a curve work?",
+      "What are examples of criterion-referenced assessments?",
+      "What are examples of norm-referenced assessments?",
+      "What are the advantages and disadvantages of norm-referenced assessment?",
+      "When would you use criterion-referenced versus norm-referenced assessment?"
+    ],
+    "a": "Norm-referenced assessment compares a student's performance to that of a larger group (the norm group), ranking students relative to each other — standardized tests like the SAT, IQ tests, and graduate school entrance exams are norm-referenced, designed to spread scores across a bell curve to differentiate among test takers. Criterion-referenced assessment measures student performance against a fixed set of predetermined criteria or learning standards, regardless of how other students perform — driving tests, AP exams, professional certification tests, and most classroom unit tests are criterion-referenced, where all students can theoretically achieve a perfect score. Norm-referenced assessment is useful for selection purposes (college admissions, scholarships) and identifying students who need additional support, while criterion-referenced assessment better supports mastery learning, competency-based education, and ensuring all students meet minimum competency standards."
+  },
+  {
+    "q": [
+      "What is a rubric in education?",
+      "How are rubrics used for grading?",
+      "What is the difference between holistic and analytic rubrics?",
+      "How do rubrics improve assessment?",
+      "What are the components of a rubric?",
+      "How do you create an effective rubric?",
+      "What is a scoring rubric?",
+      "Why are rubrics helpful for student learning?"
+    ],
+    "a": "A rubric is a scoring guide that articulates the expectations for an assignment by listing the criteria for evaluating student work and describing levels of quality from excellent to poor, using specific, observable descriptors. Holistic rubrics assign a single overall score based on an overall impression of the work, making them faster to use but providing less detailed feedback — suitable for quick assessments or when the task is simple. Analytic rubrics break the task into multiple dimensions (such as argument quality, evidence, organization, and mechanics in an essay) and score each dimension separately, providing more detailed feedback to students and more reliable scoring across graders. Well-designed rubrics benefit both instructors (by making grading more consistent, transparent, and efficient) and students (by clarifying expectations, guiding self-assessment, and providing specific, actionable feedback for improvement)."
+  },
+  {
+    "q": [
+      "What is authentic assessment?",
+      "What is the difference between authentic and traditional assessment?",
+      "What is portfolio assessment?",
+      "How does portfolio assessment work?",
+      "What is peer assessment?",
+      "What is competency-based assessment?",
+      "What are examples of authentic assessment?",
+      "How does performance-based assessment differ from traditional tests?"
+    ],
+    "a": "Authentic assessment evaluates students' ability to apply knowledge and skills in real-world contexts through tasks that mirror professional or life challenges, such as conducting scientific experiments, writing business proposals, creating portfolios, or performing public presentations. Portfolio assessment is a type of authentic assessment where students collect evidence of their learning over time — including drafts, reflections, and final products — to demonstrate growth, achievement, and self-regulation, often used in writing classes, art programs, and professional licensure. Competency-based assessment focuses on whether students can demonstrate mastery of specific, measurable competencies at their own pace rather than after a fixed amount of instructional time, allowing students to advance upon demonstration of proficiency rather than through seat time — this approach is increasingly adopted in medical education, vocational training, and competency-based degree programs."
+  }
+]

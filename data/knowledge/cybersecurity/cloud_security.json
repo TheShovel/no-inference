@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "What is the shared responsibility model in cloud security?",
+      "How does the shared responsibility model work?",
+      "What is the difference between security OF the cloud and security IN the cloud?",
+      "Who is responsible for security in IaaS, PaaS, and SaaS?",
+      "What does the customer manage in the shared responsibility model?",
+      "What does the cloud provider manage in the shared responsibility model?",
+      "Why is understanding the shared responsibility model important?",
+      "How does shared responsibility differ between AWS, Azure, and GCP?"
+    ],
+    "a": "The shared responsibility model is a cloud security framework that delineates which security tasks are managed by the cloud service provider and which are managed by the customer, and it varies by service model. In Infrastructure as a Service (IaaS), the provider secures the physical infrastructure, network, and hypervisor, while the customer is responsible for securing everything above that — operating systems, applications, data, network configurations, and access controls. In Platform as a Service (PaaS), the provider handles more of the stack (including the runtime environment and middleware), with the customer responsible mainly for their applications and data. In Software as a Service (SaaS), the provider manages most security layers, though the customer remains responsible for data classification, user access management, and compliance with regulations. Misunderstanding this division is a leading cause of cloud security breaches, as customers often assume the provider handles security tasks that are actually their responsibility."
+  },
+  {
+    "q": [
+      "What is IAM in cloud security?",
+      "What is identity and access management in the cloud?",
+      "How does IAM work in AWS, Azure, and GCP?",
+      "What are IAM policies and roles?",
+      "What is the principle of least privilege in IAM?",
+      "What is multi-factor authentication in cloud IAM?",
+      "What is single sign-on in cloud environments?",
+      "How do IAM best practices improve cloud security?"
+    ],
+    "a": "Identity and Access Management (IAM) is the cloud security framework for managing digital identities and controlling access to cloud resources through policies, roles, and permissions. IAM follows the principle of least privilege — granting users and services only the minimum permissions necessary to perform their functions — enforced through fine-grained policies that specify allowed or denied actions on specific resources. Cloud IAM supports features like multi-factor authentication (MFA), single sign-on (SSO) via federation with identity providers (Okta, Azure AD), temporary security credentials (via AWS STS or Azure Managed Identities), and resource-based policies that control cross-account access. Best practices include regularly auditing permissions, rotating credentials, using IAM roles instead of long-term access keys for applications, implementing strong password policies, and never using root or administrator accounts for routine operations."
+  },
+  {
+    "q": [
+      "How is data encrypted in the cloud?",
+      "What are the types of cloud data encryption?",
+      "What is encryption at rest in the cloud?",
+      "What is encryption in transit in the cloud?",
+      "How does key management work in cloud encryption?",
+      "What is client-side vs server-side encryption?",
+      "What is envelope encryption?",
+      "How do cloud providers manage encryption keys?"
+    ],
+    "a": "Cloud data encryption protects data in two states: encryption at rest (data stored in cloud databases, storage buckets, and backup archives) and encryption in transit (data moving between users and the cloud or between cloud services). Encryption at rest typically uses AES-256 encryption with keys managed either by the cloud provider (server-side encryption with S3-Managed Keys or Azure SSE) or by the customer using their own keys (SSE-C) or a key management service (AWS KMS, Azure Key Vault, GCP Cloud KMS). Envelope encryption is a common pattern where a data encryption key (DEK) encrypts the actual data, and a key encryption key (KEK) encrypts the DEK, allowing efficient re-encryption of large datasets by rotating only the KEK. Encryption in transit is enforced through TLS/SSL protocols for all API calls and data transfers, and many providers also offer confidential computing (hardware-based trusted execution environments) that encrypts data while it is being processed in memory."
+  },
+  {
+    "q": [
+      "What is container security?",
+      "How do you secure Docker containers?",
+      "What is Kubernetes security?",
+      "What are container security best practices?",
+      "What is image scanning in container security?",
+      "What is the principle of least privilege for containers?",
+      "How does network security work in Kubernetes?",
+      "What are common container security vulnerabilities?"
+    ],
+    "a": "Container security encompasses the practices and tools used to secure containerized applications across the entire lifecycle — from secure image creation and registry storage to runtime protection and orchestration security in platforms like Kubernetes. Key practices include scanning container images for known vulnerabilities (using tools like Trivy, Clair, or Anchore) before deployment, signing images to ensure integrity, running containers with the least privileges necessary (avoiding root users, using read-only root filesystems where possible), and isolating containers using Linux namespaces and control groups (cgroups). Kubernetes security adds additional layers: securing the API server with RBAC and network policies, using Pod Security Standards to enforce pod-level security contexts, encrypting secrets at rest, and implementing service mesh technologies (like Istio or Linkerd) for encrypted service-to-service communication and fine-grained access control."
+  }
+]

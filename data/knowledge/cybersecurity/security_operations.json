@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "What is a Security Operations Center (SOC)?",
+      "What does a SOC do?",
+      "What is SIEM?",
+      "How does SIEM work?",
+      "What is the difference between SOC and SIEM?",
+      "What tools are used in a SOC?",
+      "What are SOC tiers?",
+      "What is SOAR?"
+    ],
+    "a": "A Security Operations Center (SOC) is a centralized team within an organization responsible for continuously monitoring, detecting, analyzing, and responding to cybersecurity incidents, typically operating 24/7 with analysts working in tiers based on expertise. Security Information and Event Management (SIEM) systems aggregate and analyze log data from across an organization's IT infrastructure, correlating events from firewalls, servers, endpoints, and applications to detect suspicious patterns and generate alerts. Modern SOCs also use SOAR (Security Orchestration, Automation, and Response) platforms to automate repetitive incident response tasks, threat intelligence platforms (TIPs) to contextualize alerts with current threat data, and endpoint detection and response (EDR) tools for visibility into endpoint activity. A well-functioning SOC reduces the mean time to detect (MTTD) and mean time to respond (MTTR) to security incidents, which is critical because attackers often compromise systems within minutes while defenders traditionally take days or weeks to identify breaches."
+  },
+  {
+    "q": [
+      "What is incident response?",
+      "What are the phases of incident response?",
+      "What is the incident response lifecycle?",
+      "What is computer forensics?",
+      "How does digital forensics work?",
+      "What is the difference between incident response and forensics?",
+      "What is chain of custody in forensics?",
+      "What are common incident response frameworks?"
+    ],
+    "a": "Incident response is a structured approach to handling cybersecurity incidents following a predefined plan, typically organized into phases: preparation (developing policies, tools, and training), detection and analysis (identifying and validating threats through monitoring and alerting), containment, eradication, and recovery (stopping the attack, removing threats, and restoring normal operations), and post-incident activity (conducting a lessons-learned review and updating defenses). Digital forensics involves the systematic collection, preservation, analysis, and documentation of digital evidence from computers, networks, mobile devices, and storage media using scientifically validated methods to support legal proceedings or internal investigations. Key forensic principles include maintaining a proper chain of custody (documenting every person who handled evidence), creating forensic images (bit-for-bit copies) rather than working on original media, and using write-blockers to prevent accidental modification of evidence. Major incident response frameworks include NIST SP 800-61, SANS PICERL, and ISO 27035."
+  },
+  {
+    "q": [
+      "What is vulnerability management?",
+      "How does vulnerability management work?",
+      "What is the difference between vulnerability assessment and penetration testing?",
+      "What is security auditing?",
+      "What is compliance in cybersecurity?",
+      "What is GDPR?",
+      "What is HIPAA?",
+      "What is PCI-DSS?"
+    ],
+    "a": "Vulnerability management is the continuous process of identifying, classifying, prioritizing, remediating, and mitigating security vulnerabilities in an organization's IT environment, typically using automated vulnerability scanners (like Nessus, Qualys, or OpenVAS) combined with manual validation. It follows a cyclical workflow: discovering assets, scanning for vulnerabilities, assessing risk based on CVSS scores and exploitability, implementing patches or compensating controls, and verifying remediation. Security auditing evaluates an organization's security controls, policies, and procedures against established standards or regulations. Major compliance frameworks include GDPR (General Data Protection Regulation, governing personal data of EU residents with fines up to 4% of global revenue), HIPAA (Health Insurance Portability and Accountability Act, protecting US healthcare data), and PCI-DSS (Payment Card Industry Data Security Standard, required for organizations handling credit card data). These regulations mandate specific security controls including encryption, access controls, audit logging, incident response plans, and regular security testing."
+  },
+  {
+    "q": [
+      "What is a red team and blue team?",
+      "What is the difference between red team and blue team?",
+      "What is purple teaming?",
+      "What is threat intelligence?",
+      "How is threat intelligence used in cybersecurity?",
+      "What are the types of threat intelligence?",
+      "What is the cyber kill chain?",
+      "What is the MITRE ATT&CK framework?"
+    ],
+    "a": "In cybersecurity, red teams simulate real-world attackers by attempting to breach an organization's defenses through any means necessary, including social engineering, physical intrusion, network exploitation, and application attacks, providing an objective assessment of security effectiveness. Blue teams defend against these attacks by monitoring, detecting, and responding to threats using the organization's actual security tools and processes. Purple teaming bridges this gap by facilitating collaboration between red and blue teams, ensuring that attack findings translate into improved detection and defense capabilities, rather than the adversarial relationship that can develop in purely red-vs-blue exercises. Threat intelligence is evidence-based knowledge about existing and emerging cyber threats, including indicators of compromise (IoCs), attacker tactics and techniques (mapped to frameworks like MITRE ATT&CK), and strategic analysis of threat actor motivations and capabilities — it enables organizations to prioritize defenses against the most relevant threats rather than attempting to defend against everything."
+  }
+]

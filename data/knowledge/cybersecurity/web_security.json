@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "What is the OWASP Top 10?",
+      "What are the most critical web application security risks?",
+      "What is the OWASP Top 10 list?",
+      "How often is the OWASP Top 10 updated?",
+      "What were the main entries in the 2021 OWASP Top 10?",
+      "Why is the OWASP Top 10 important for developers?",
+      "What is broken access control in OWASP?",
+      "How should organizations use the OWASP Top 10?"
+    ],
+    "a": "The OWASP Top 10 is a widely recognized awareness document published by the Open Web Application Security Project (OWASP) that lists the ten most critical security risks to web applications, updated approximately every three to four years based on community data and expert analysis. The 2021 edition ranks Broken Access Control as the top risk, followed by Cryptographic Failures, Injection (including SQL, OS, and LDAP injection), Insecure Design, Security Misconfiguration, Vulnerable and Outdated Components, Identification and Authentication Failures, Software and Data Integrity Failures, Security Logging and Monitoring Failures, and Server-Side Request Forgery (SSRF). The OWASP Top 10 serves as a baseline for secure development practices, security testing, and regulatory compliance, and organizations are encouraged to use it as a starting point for building more comprehensive application security programs."
+  },
+  {
+    "q": [
+      "What is cross-site scripting?",
+      "What is XSS and how does it work?",
+      "What are the types of XSS attacks?",
+      "What is reflected XSS?",
+      "What is stored XSS?",
+      "What is DOM-based XSS?",
+      "How can XSS be prevented?",
+      "What is the impact of a successful XSS attack?"
+    ],
+    "a": "Cross-site scripting (XSS) is an injection vulnerability where an attacker injects malicious scripts (typically JavaScript) into web pages viewed by other users, bypassing the browser's same-origin policy to execute code in the context of a trusted website. Stored XSS occurs when the malicious script is permanently stored on the server (in a comment, forum post, or user profile) and served to every visitor, while reflected XSS involves the script being reflected off the web server in error messages or search results via a crafted link. DOM-based XSS exploits client-side JavaScript that dynamically manipulates the DOM using untrusted input without involving the server directly. Prevention requires proper output encoding (escaping HTML, JavaScript, and URL contexts), using Content Security Policy (CSP) headers to restrict script execution, validating and sanitizing user input on both client and server sides, and setting HTTP-only flags on cookies to prevent script access."
+  },
+  {
+    "q": [
+      "What is SQL injection?",
+      "How does SQL injection work?",
+      "What are the types of SQL injection attacks?",
+      "How can SQL injection be prevented?",
+      "What is the impact of SQL injection?",
+      "What is blind SQL injection?",
+      "How do prepared statements prevent SQL injection?",
+      "What tools are used to detect SQL injection?"
+    ],
+    "a": "SQL injection (SQLi) is a code injection technique where an attacker inserts malicious SQL statements into input fields or URL parameters that are then executed by the backend database, potentially allowing unauthorized access to, modification, or deletion of database contents. Attackers can exploit SQL injection to bypass authentication, retrieve sensitive data (usernames, passwords, credit card numbers), create or modify database records, and in some cases execute operating system commands. The most effective prevention is using parameterized queries (prepared statements) with bound parameters, which ensure that user input is always treated as data rather than executable SQL code — input validation and stored procedures provide additional layers of defense, while ORM frameworks (like Hibernate, Entity Framework, and SQLAlchemy) typically handle parameterization automatically when used correctly."
+  },
+  {
+    "q": [
+      "What is CSRF?",
+      "What is cross-site request forgery?",
+      "How does a CSRF attack work?",
+      "What is the difference between XSS and CSRF?",
+      "How can CSRF be prevented?",
+      "What is a CSRF token?",
+      "What is SameSite cookie attribute?",
+      "How does CSRF exploit session cookies?"
+    ],
+    "a": "Cross-site request forgery (CSRF, also called XSRF or session riding) is an attack that tricks an authenticated user into executing unwanted actions on a web application in which they are currently logged in, by embedding crafted requests in malicious links, images, or forms on another site. Unlike XSS (which exploits trust in content), CSRF exploits trust in authentication — the browser automatically includes session cookies with requests to the target site, so the server cannot distinguish between a legitimate user action and the forged request. Effective defenses include CSRF tokens (random values embedded in forms and validated server-side), SameSite cookie attributes (restricting when cookies are sent cross-origin), and requiring re-authentication or CAPTCHA for sensitive operations like password changes or financial transactions."
+  }
+]

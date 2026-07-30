@@ -1,0 +1,60 @@
+[
+  {
+    "q": [
+      "How is a fire department structured?",
+      "What is a fire company?",
+      "What is a fire battalion?",
+      "What are fire divisions and bureaus?",
+      "What is the difference between career and volunteer firefighters?",
+      "What is a combination fire department?",
+      "fire department structure companies battalions divisions bureaus",
+      "career vs volunteer firefighter combination department"
+    ],
+    "a": "Fire departments are typically organized hierarchically. A company is the smallest operational unit, consisting of a crew and an apparatus (engine, ladder, or rescue squad) under a company officer. Multiple companies are grouped into battalions, each commanded by a battalion chief who serves as the first-level incident commander on larger emergencies. Above battalions, divisions handle geographic regions and bureaus manage specialized functions like training, fire prevention, fire investigation, and EMS administration. The distinction between career and volunteer departments is fundamental: career firefighters work full-time for a salary, while volunteers serve part-time without pay—many suburban and rural departments use a combination model where paid staff cover peak hours and volunteers fill in for major incidents."
+  },
+  {
+    "q": [
+      "What are firefighter ranks?",
+      "What is a probationary firefighter?",
+      "What is a driver/engineer?",
+      "What is a lieutenant?",
+      "What is a captain?",
+      "What is a battalion chief?",
+      "What is a fire chief?",
+      "What are firefighter shifts?",
+      "What is the 24/48 shift schedule?",
+      "firefighter ranks probie driver engineer lieutenant captain battalion chief fire chief shifts 24/48"
+    ],
+    "a": "Fire department rank structure typically progresses from probationary firefighter (or recruit) through firefighter, driver/engineer (apparatus operator), lieutenant, captain, battalion chief, deputy chief, and fire chief—though exact titles vary by department. The driver/engineer operates the apparatus and pumps, maintaining vehicle readiness and water supply operations. Company officers (lieutenants and captains) lead their crew on scene and manage daily station duties, while chief officers coordinate multi-company operations and oversee administrative functions. Firefighter shift schedules vary widely: the 24/48 schedule works 24 hours on followed by 48 hours off; the Kelly schedule alternates days and nights in a rotating pattern; and the 10/14 schedule splits the day into day and night shifts with rotation. These long shifts are necessary because fire stations must be staffed 24/7/365, and the intense nature of the job makes frequent shift changes impractical."
+  },
+  {
+    "q": [
+      "What is firefighter training like?",
+      "What is the fire academy?",
+      "What EMT and paramedic certification do firefighters need?",
+      "What is continued education in the fire service?",
+      "What is officer training for firefighters?",
+      "What is firefighter physical fitness?",
+      "How do firefighters maintain fitness?",
+      "What is the CPAT test?",
+      "firefighter training fire academy EMT paramedic continued education officer training",
+      "firefighter physical fitness CPAT"
+    ],
+    "a": "Initial firefighter training begins at a fire academy, which typically runs 12–24 weeks and covers fire behavior, search and rescue, hazardous materials, vehicle extrication, ladder operations, hose evolutions, and live fire training. Most firefighters are required to obtain at minimum EMT-B (Emergency Medical Technician Basic) certification, and many departments require or strongly encourage paramedic certification since medical calls account for 60–80% of responses. Continued education is mandatory for maintaining certifications, including annual live fire training, hazardous materials refreshers, and medical recertification. Officer training programs like the National Fire Academy's Managing Officer Program and state-level command and control courses prepare firefighters for leadership roles. Physical fitness is critical—the Candidate Physical Ability Test (CPAT) is the industry standard for measuring job-related fitness, and most departments require annual fitness assessments and offer on-duty workout time to ensure firefighters can perform strenuous tasks like carrying 150-pound victims down ladders and advancing charged hose lines."
+  },
+  {
+    "q": [
+      "What is the IAFF?",
+      "What fire department apparatus types exist?",
+      "What is fire station life like?",
+      "What is firefighter culture?",
+      "What is firefighter mental health?",
+      "What is PTSD in firefighters?",
+      "What is critical incident stress?",
+      "What is peer support in firefighting?",
+      "IAFF fire apparatus station life firefighter culture",
+      "firefighter mental health PTSD CISM peer support"
+    ],
+    "a": "The International Association of Fire Fighters (IAFF) is the largest firefighter union in North America, representing over 340,000 career firefighters and paramedics across the United States and Canada, advocating for wages, safety standards, staffing levels, and health benefits. Fire department apparatus includes pumpers/engines (the primary attack vehicle with pump, hose, and water tank), aerials/ladder trucks (equipped with ground ladders and elevated platforms for ventilation and rescue), quint trucks (combining pump, water, and aerial capabilities), heavy rescues (carrying extrication and specialized rescue tools), tankers/tenders (water shuttles for rural areas), and brush trucks (for wildland response). Station life revolves around a daily routine of apparatus checks, training, station maintenance, and fitness, punctuated by emergency calls—firefighters often cook meals together, sleep in shared bunk rooms, and develop deep camaraderie from living and working together for 24 hours at a time. Firefighter mental health is a growing concern: the job exposes personnel to traumatic events (fatalities, child victims, line-of-duty deaths) that lead to elevated rates of PTSD, depression, and substance abuse. Peer support programs train firefighters to provide immediate emotional support to colleagues after traumatic incidents, and the Firefighter Behavioral Health Alliance works to track and prevent firefighter suicides, which tragically outnumber line-of-duty deaths in most years."
+  }
+]

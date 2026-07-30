@@ -1,0 +1,92 @@
+[
+  {
+    "id": "comparison-similar",
+    "triggers": ["compare {context} to something similar", "what is similar to {context}", "how does {context} relate to"],
+    "context_role": "topic",
+    "template": "Let's compare {context} to similar concepts. While they share common ground, each has distinct characteristics that set it apart. The key similarities include shared principles and overlapping applications, but the differences lie in scope, methodology, and typical use cases.",
+    "fallback": "I'd be happy to compare that topic to something similar. Could you specify what you'd like me to compare it with?",
+    "style": ["educational", "comparative"],
+    "response_length": "medium"
+  },
+  {
+    "id": "comparison-opposite",
+    "triggers": ["what is the opposite of {context}", "what contrasts with {context}", "inverse of {context}"],
+    "context_role": "topic",
+    "template": "The opposite or contrasting concept to {context} would be something that stands in direct opposition in terms of principles, goals, or methodology. Where {context} emphasizes one approach, its opposite prioritizes the inverse — creating a useful spectrum for understanding both more deeply.",
+    "fallback": "The opposite of a concept depends on which dimension you're looking at. Could you share more about what aspect you're exploring?",
+    "style": ["educational", "comparative"],
+    "response_length": "medium"
+  },
+  {
+    "id": "comparison-historical",
+    "triggers": ["how is {context} different from before", "how has {context} changed", "what is different about {context} now"],
+    "context_role": "topic",
+    "template": "{context} has evolved significantly over time. Earlier iterations were typically more limited in scope, less accessible, and built on foundational principles that have since been refined. Modern approaches benefit from accumulated knowledge, improved tools, and a deeper understanding of underlying mechanics — though some timeless core principles remain unchanged.",
+    "fallback": "That topic has likely changed over time. Could you specify which time period or version you're comparing to the present?",
+    "style": ["educational", "historical"],
+    "response_length": "medium"
+  },
+  {
+    "id": "comparison-alternatives",
+    "triggers": ["what are alternatives to {context}", "alternatives for {context}", "what else can I use instead of {context}"],
+    "context_role": "topic",
+    "template": "There are several notable alternatives to {context}, each with their own trade-offs. Some prioritize ease of use, others focus on performance, flexibility, or community support. The best choice depends on your specific goals, constraints, and preferences — what works well in one scenario may be suboptimal in another.",
+    "fallback": "I can suggest alternatives! Could you tell me a bit more about what you're trying to achieve so I can tailor the recommendations?",
+    "style": ["educational", "comparative"],
+    "response_length": "medium"
+  },
+  {
+    "id": "comparison-better",
+    "triggers": ["which is better, {context} or", "is {context} better than", "should I choose {context} or"],
+    "context_role": "topic",
+    "template": "Whether {context} is 'better' depends entirely on your priorities. If you value X, one option pulls ahead; if Y matters more, the other shines. Let's break it down across key dimensions: learning curve, long-term viability, ecosystem support, and alignment with your specific goals. There's rarely a universal winner — only the right tool for your particular context.",
+    "fallback": "I'd be happy to help compare options! What specific alternatives are you considering alongside this topic?",
+    "style": ["educational", "comparative", "balanced"],
+    "response_length": "long"
+  },
+  {
+    "id": "comparison-structured",
+    "triggers": ["how does {context} compare to X", "compare {context} with", "{context} versus"],
+    "context_role": "topic",
+    "template": "Let's compare {context} to its counterpart across several dimensions. In terms of **complexity**, {context} tends to be more approachable for beginners while the alternative offers deeper control. Regarding **ecosystem**, {context} has a mature set of supporting tools. For **community and support**, both have active followings. Ultimately, the choice hinges on your specific requirements and long-term goals.",
+    "fallback": "I can provide a structured comparison. What specific topic or alternative would you like me to compare it with?",
+    "style": ["educational", "comparative", "structured"],
+    "response_length": "long"
+  },
+  {
+    "id": "comparison-predecessors",
+    "triggers": ["what came before {context}", "predecessors of {context}", "what was before {context}"],
+    "context_role": "topic",
+    "template": "Before {context}, there were earlier approaches that laid the groundwork. These predecessors may seem primitive by today's standards, but they were crucial steps in the evolution of the field. They established foundational principles, revealed limitations that needed addressing, and created the demand for the innovations that {context} represents today.",
+    "fallback": "That's an interesting historical question! Could you narrow down which aspect or era you're most curious about?",
+    "style": ["educational", "historical"],
+    "response_length": "medium"
+  },
+  {
+    "id": "comparison-descendants",
+    "triggers": ["what evolved from {context}", "descendants of {context}", "what came after {context}", "what is derived from {context}"],
+    "context_role": "topic",
+    "template": "{context} has directly or indirectly influenced several descendants and derived concepts. These successors have taken the core ideas and extended them in new directions — some by specialization, others by generalization, and a few by challenging fundamental assumptions. Each descendant reflects a different response to the limitations or untapped potential of the original.",
+    "fallback": "Great question about lineage! Let me know which field or aspect you're most interested in tracing forward.",
+    "style": ["educational", "historical"],
+    "response_length": "medium"
+  },
+  {
+    "id": "comparison-ranking",
+    "triggers": ["rank {context} against", "how does {context} rank among", "where does {context} stand compared to"],
+    "context_role": "topic",
+    "template": "When ranking {context} against its peers, several factors come into play: performance, adoption rate, community strength, learning curve, and long-term viability. On most metrics, {context} holds a solid position — excelling particularly in ease of integration and documentation quality, while facing more competition in raw performance and cutting-edge features.",
+    "fallback": "I can help rank that! What group or category would you like it compared against?",
+    "style": ["educational", "comparative", "analytical"],
+    "response_length": "medium"
+  },
+  {
+    "id": "comparison-unique",
+    "triggers": ["what makes {context} unique", "what is special about {context}", "unique features of {context}", "what sets {context} apart"],
+    "context_role": "topic",
+    "template": "What makes {context} truly unique is its distinctive combination of characteristics that you won't find together elsewhere. Its approach to solving core problems, the philosophy behind its design, and the specific trade-offs it makes all contribute to a unique identity. Understanding these distinguishing features helps clarify not only what {context} is, but why it exists and when it's the right choice.",
+    "fallback": "I'd love to highlight what makes that topic special! Could you clarify which domain or aspect you're most interested in?",
+    "style": ["educational", "insightful"],
+    "response_length": "medium"
+  }
+]

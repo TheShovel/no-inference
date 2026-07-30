@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is urban sociology?",
+      "What do urban sociologists study?",
+      "How did cities grow and develop?",
+      "What is urbanization?",
+      "What is the difference between urbanization and suburbanization?",
+      "Why do people move to cities?",
+      "What are the social effects of urbanization?"
+    ],
+    "a": "Urban sociology is the sociological study of city life, urban spaces, social relations in urban settings, and the processes of urbanization and suburbanization that shape metropolitan regions. The Chicago School of urban sociology, led by Robert Park, Ernest Burgess, and Louis Wirth in the early 20th century, developed foundational theories including the concentric zone model (cities expand outward in rings from the central business district), and Wirth's argument that urbanism produces distinct social characteristics — secondary rather than primary relationships, greater tolerance and diversity, but also anonymity, social isolation, and impersonal interactions. Contemporary urban sociology examines issues of gentrification, segregation, global cities, urban inequality, community formation, public space, suburbanization, and the relationship between urban form and social life, drawing on the work of scholars like Saskia Sassen (global cities), William Julius Wilson (urban poverty and race), and Jane Jacobs (neighborhood vitality and mixed-use development)."
+  },
+  {
+    "q": [
+      "What is gentrification?",
+      "How does gentrification change neighborhoods?",
+      "What are the sociological effects of gentrification?",
+      "What is residential segregation?",
+      "How does segregation persist in cities?",
+      "What is redlining?",
+      "What is the difference between de jure and de facto segregation?"
+    ],
+    "a": "Gentrification is the process by which wealthier residents move into previously low-income urban neighborhoods, driving up property values, rents, and cost of living, which often displaces long-term, lower-income residents and transforms the neighborhood's character, culture, and commercial landscape. From a sociological perspective, gentrification raises questions about class and racial inequality, community identity, belonging, and the right to the city — while proponents point to reduced crime, increased investment, and improved services, critics emphasize displacement, loss of affordable housing, erosion of community networks, and cultural erasure. Residential segregation — the physical separation of racial and ethnic groups into different neighborhoods — persists in American cities despite the Fair Housing Act of 1968, maintained through continuing practices like racial steering by real estate agents, discriminatory lending, exclusionary zoning (minimum lot sizes, bans on multifamily housing), and economic inequality, compounding the legacy of historic redlining where the federal government refused to insure mortgages in predominantly Black neighborhoods."
+  },
+  {
+    "q": [
+      "What is community in urban sociology?",
+      "How do communities form in cities?",
+      "What is the role of public space in cities?",
+      "How does urban design affect social interaction?",
+      "What are global cities?",
+      "What makes a city a global city?",
+      "What are slums and informal settlements?"
+    ],
+    "a": "Community in urban sociology refers to networks of social relationships, shared identity, and mutual support among people living in proximity or sharing common interests — contrary to early fears that urban life destroys community, research shows that cities foster diverse forms of community including neighborhood ties, ethnic enclaves, subcultures, and 'communities without propinquity' based on shared interests or identities rather than geographic proximity (what Claude Fischer called 'subcultural theory of urbanism'). Public space — streets, parks, plazas, and markets — serves vital social functions in cities as sites of encounter, exchange, political expression, and everyday interaction among diverse groups, with scholars like Jane Jacobs emphasizing the importance of vibrant, well-used public space for neighborhood safety and social cohesion, and William Whyte's observational research identifying physical design features that make public spaces successful (comfortable seating, sun access, food, street interaction). Global cities (Saskia Sassen's concept) are key nodes in the global economy that concentrate command-and-control functions of global capital — including financial services, corporate headquarters, advanced business services, and global media — with leading examples being New York, London, Tokyo, and increasingly Shanghai, Singapore, and Dubai."
+  },
+  {
+    "q": [
+      "What is the relationship between cities and inequality?",
+      "How does urban poverty differ from rural poverty?",
+      "What are smart cities?",
+      "How does technology affect urban life?",
+      "What is the right to the city?",
+      "What is new urbanism?",
+      "How can cities be more equitable?"
+    ],
+    "a": "Cities concentrate both immense wealth and deep poverty in close proximity, making urban inequality particularly visible and consequential — scholars like William Julius Wilson have documented how deindustrialization, suburbanization of jobs, and racial discrimination created concentrated urban poverty and joblessness that differs qualitatively from rural poverty in its density of disadvantage, isolation from mainstream institutions, and intergenerational transmission. Smart cities use digital technology, sensors, data analytics, and Internet of Things (IoT) systems to improve urban services, efficiency, and sustainability — in areas like traffic management, energy use, waste collection, and public safety — but critical sociologists and geographers warn of surveillance risks, digital divides, corporate control of urban data, and technology-driven solutions that avoid addressing underlying political and economic inequalities. Henri Lefebvre's concept of 'the right to the city' frames urban space not as a commodity but as a collective good and a site of democratic participation, arguing that urban residents — especially marginalized groups — have a right to shape the production of urban space, access the resources and opportunities cities offer, and resist displacement and exclusion."
+  }
+]

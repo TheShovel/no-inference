@@ -1,0 +1,58 @@
+[
+  {
+    "q": [
+      "What is typography in graphic design?",
+      "How do you choose typefaces for design projects?",
+      "What is type pairing?",
+      "How do you combine typefaces effectively?",
+      "What is hierarchy and layout with type?",
+      "How do you create effective typographic hierarchy?",
+      "choosing typefaces for design projects",
+      "type pairing combinations design"
+    ],
+    "a": "Typography in graphic design is the art and technique of arranging type to make written language legible, readable, and visually appealing, serving as a fundamental element that can convey mood, establish hierarchy, and reinforce brand identity. Choosing typefaces for design projects involves considering the project's tone (serif for tradition and authority, sans-serif for modernity and clarity, script for elegance or informality), readability at intended sizes, and the technical requirements of the medium (print vs screen). Type pairing is the skill of combining two or more typefaces harmoniously, with classic strategies including pairing a serif with a sans-serif (like Garamond with Helvetica), using different weights of the same typeface family, or contrasting a neutral typeface with a more expressive display face while maintaining consistent x-heights and similar proportions."
+  },
+  {
+    "q": [
+      "How is typography used in branding?",
+      "What is typography in web design?",
+      "What are web fonts and @font-face?",
+      "What are variable fonts?",
+      "What is the difference between web fonts and system fonts?",
+      "typography in branding identity design",
+      "typography web design fonts @font-face",
+      "variable fonts benefits responsive design"
+    ],
+    "a": "Typography in branding is perhaps the most critical application of type—a well-chosen brand typeface becomes as recognizable as a logo, with companies like Apple (San Francisco), Google (Product Sans), and Coca-Cola (Spencerian script) demonstrating how custom or carefully selected typefaces create instant brand recognition across all touchpoints. In web design, typography has evolved from system-font limitations to rich typographic control through web fonts and the @font-face CSS rule, which allows designers to embed custom typefaces that download and render in the browser. Variable fonts represent a major innovation in digital typography, allowing a single font file to contain multiple design axes (weight, width, slant, optical size) that can be interpolated continuously, enabling responsive typography that adjusts to viewport size, user preferences, or reading distance without loading multiple font files."
+  },
+  {
+    "q": [
+      "What is kinetic typography?",
+      "How do you animate text?",
+      "What is typography in advertising?",
+      "How is typography used in editorial design?",
+      "What is typography in packaging design?",
+      "How is typography used in UX and UI design?",
+      "kinetic typography animated text motion graphics",
+      "typography in advertising editorial packaging design",
+      "typography in UX UI design interfaces"
+    ],
+    "a": "Kinetic typography is the art of moving text through animation, used extensively in motion graphics, film titles (like the iconic opening credits of 'Catch Me If You Can' or 'Seven'), music videos, and explainer videos to convey emotion, emphasize key messages, or guide viewer attention through temporal sequencing. In advertising, typography must capture attention instantly while communicating the message clearly, often using bold display typefaces, creative letter spacing, and dynamic layouts that work across billboards, print ads, and digital banners. Editorial design (magazines, newspapers, books) relies on sophisticated typographic systems with consistent grids, hierarchy of headlines, subheads, body text, captions, and pull quotes, while packaging typography must remain legible at small sizes on curved surfaces, comply with legal requirements for ingredients and warnings, and stand out on crowded retail shelves."
+  },
+  {
+    "q": [
+      "What is micro-typography?",
+      "What are ligatures in typography?",
+      "What is kerning and why is it important?",
+      "What is hyphenation in typesetting?",
+      "What are orphans and widows?",
+      "How do you handle orphans and widows in layout?",
+      "What is type and accessibility?",
+      "How do you make typography accessible for all users?",
+      "micro-typography ligatures kerning hyphenation",
+      "orphans and widows typesetting guidelines",
+      "accessible typography readability legibility"
+    ],
+    "a": "Micro-typography focuses on the fine details of type rendering that significantly impact readability: ligatures are specialized character combinations (like 'fi', 'fl', 'ae') that replace individual letters with a single glyph to resolve collision or improve flow; kerning adjusts the space between specific letter pairs (like 'AV', 'To', 'Wa') to create visually even spacing; and hyphenation determines how words break across lines, with good hyphenation avoiding awkward breaks that disrupt reading. Orphans (single words or short lines at the top of a page or column) and widows (single words or short lines at the bottom of a paragraph) are considered poor typography that creates visual distraction, typically resolved by adjusting tracking, soft returns, or rewriting to pull lines together. Type and accessibility ensures that typography serves all readers, including those with visual impairments, dyslexia, or other reading challenges—guidelines include using sufficient font sizes (at least 16px for body text on screens), adequate line-height (1.5× font size), sufficient color contrast (WCAG AA or AAA ratios), clear typefaces with distinguishable characters (especially '1', 'l', and 'I'), and avoiding justified text that creates uneven word spacing (rivers) that hinder reading."
+  }
+]

@@ -1,0 +1,63 @@
+[
+  {
+    "q": [
+      "What is triage in emergency medicine?",
+      "How does the triage system work in ERs?",
+      "What are the different triage categories?",
+      "How do emergency departments prioritize patients?",
+      "What is the START triage system?",
+      "Describe how triage is used in mass casualty incidents.",
+      "triage emergency medicine",
+      "what is triage",
+      "triage",
+      "triage system"
+    ],
+    "a": "Triage is the process of prioritizing patients based on the severity of their condition to ensure that limited medical resources are allocated where they can do the most good. The most common hospital triage system is the Emergency Severity Index (ESI), which categorizes patients on a scale of 1 (most urgent, requiring immediate life-saving intervention) to 5 (least urgent, non-emergency care). In mass casualty or disaster settings, responders use field triage systems like START (Simple Triage and Rapid Treatment), which sorts patients into color-coded categories: red (immediate, life-threatening but survivable), yellow (delayed, serious but stable), green (minor, walking wounded), and black (deceased or expectant, unlikely to survive even with care)."
+  },
+  {
+    "q": [
+      "What is CPR and how does it work?",
+      "How do you perform CPR correctly?",
+      "What are the steps of cardiopulmonary resuscitation?",
+      "When should CPR be administered?",
+      "What is the difference between CPR with and without defibrillation?",
+      "How does defibrillation restore heart rhythm?",
+      "CPR defibrillation emergency procedures"
+    ],
+    "a": "CPR (cardiopulmonary resuscitation) is an emergency procedure that combines chest compressions with rescue breaths to manually maintain blood circulation and oxygenation when a person's heart has stopped beating (cardiac arrest). The American Heart Association recommends hands-only CPR for untrained bystanders—pushing hard and fast in the center of the chest at a rate of 100–120 compressions per minute to a depth of at least 2 inches, allowing full chest recoil between compressions. Defibrillation using an AED (automated external defibrillator) is the definitive treatment for ventricular fibrillation and pulseless ventricular tachycardia, delivering an electrical shock to depolarize the heart muscle and allow the natural pacemaker to re-establish a normal rhythm, with survival rates decreasing by 7–10% for every minute defibrillation is delayed."
+  },
+  {
+    "q": [
+      "What is airway management in emergency medicine?",
+      "How do EMS providers manage a patient's airway?",
+      "What techniques are used for emergency airway management?",
+      "What is the difference between a laryngeal mask and endotracheal intubation?",
+      "How do you secure an airway in a trauma patient?",
+      "airway management emergency procedures"
+    ],
+    "a": "Airway management is the priority in any emergency situation, guided by the ABCDE approach (Airway, Breathing, Circulation, Disability, Exposure), beginning with basic maneuvers like head-tilt chin-lift or jaw-thrust to open the airway and suctioning to clear obstructions. If basic measures fail, providers advance to supraglottic airway devices such as laryngeal mask airways (LMA) or oropharyngeal/nasopharyngeal airways, and ultimately to endotracheal intubation—placing a tube directly into the trachea to establish a definitive, protected airway. Rapid sequence intubation (RSI) is the standard technique for emergency intubation, using a sedative and a paralytic agent simultaneously to facilitate tube placement while minimizing the risk of aspiration, though newer video laryngoscopy has improved first-pass success rates compared to traditional direct laryngoscopy."
+  },
+  {
+    "q": [
+      "What are the protocols for stroke and heart attack?",
+      "How is a stroke treated in the emergency department?",
+      "What is the golden hour for heart attack treatment?",
+      "What is the FAST mnemonic for stroke?",
+      "How do paramedics recognize and treat heart attacks?",
+      "What emergency medications are used for stroke and MI?",
+      "stroke protocol heart attack emergency treatment"
+    ],
+    "a": "Stroke care begins with rapid recognition using the FAST mnemonic (Face drooping, Arm weakness, Speech difficulty, Time to call 911) and immediate transport to a stroke center, where CT imaging determines if the stroke is ischemic (clot) or hemorrhagic (bleed). Ischemic stroke patients may receive IV thrombolysis (tissue plasminogen activator, tPA) within 3-4.5 hours of symptom onset or endovascular mechanical thrombectomy within 6-24 hours for large vessel occlusions. For heart attacks (acute myocardial infarction), the protocol centers on the golden hour—rapid ECG diagnosis, administration of aspirin, nitroglycerin, and oxygen, and immediate reperfusion through either percutaneous coronary intervention (primary PCI, the gold standard within 90 minutes of arrival) or fibrinolytic therapy if PCI is not promptly available."
+  },
+  {
+    "q": [
+      "What is disaster medicine and how does it differ from regular ER care?",
+      "How do medical systems prepare for mass casualty events?",
+      "What is the role of EMS and paramedicine in disasters?",
+      "How does emergency response change during a disaster?",
+      "What is incident command in disaster medicine?",
+      "disaster medicine mass casualty EMS paramedicine"
+    ],
+    "a": "Disaster medicine focuses on providing medical care during events that overwhelm normal healthcare capacity, such as earthquakes, terrorist attacks, pandemics, or large-scale accidents, requiring a shift from providing the best possible care for each individual to providing the most good for the greatest number. Key principles include the Hospital Incident Command System (HICS) for organizational structure, surge capacity planning (expanding bed capacity, canceling elective procedures, activating additional staff), and the use of Personal Protective Equipment (PPE) and decontamination protocols for chemical, biological, or radiological events. Paramedicine and EMS systems serve as the critical link between the field and hospitals, with community paramedicine programs extending care through home visits, telemedicine, and preventive outreach to reduce unnecessary ER visits."
+  }
+]

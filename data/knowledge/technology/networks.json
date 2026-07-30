@@ -1,0 +1,101 @@
+[
+  {
+    "q": [
+      "What is the TCP/IP model?",
+      "Explain the TCP/IP protocol suite.",
+      "How does TCP/IP differ from the OSI model?",
+      "What are the layers of the TCP/IP model?",
+      "What is TCP and how does it work?",
+      "What is IP and how does it route packets?"
+    ],
+    "a": "TCP/IP is the fundamental networking protocol suite that powers the internet, consisting of four layers: Application (HTTP, FTP, DNS), Transport (TCP, UDP), Internet (IP, ICMP), and Network Access (Ethernet, WiFi). TCP (Transmission Control Protocol) provides reliable, connection-oriented data delivery with error checking, retransmission, and ordering of packets. IP (Internet Protocol) handles addressing and routing, ensuring packets travel from source to destination across interconnected networks by using IP addresses to identify devices and routing protocols to determine paths."
+  },
+  {
+    "q": [
+      "How does DNS work?",
+      "What is the Domain Name System?",
+      "Explain the process of DNS resolution.",
+      "What are DNS records?",
+      "What happens when you type a URL into a browser?",
+      "What are the different types of DNS servers?"
+    ],
+    "a": "DNS (Domain Name System) translates human-readable domain names (like example.com) into numerical IP addresses that computers use to communicate. When a user enters a URL, the browser first checks its local cache, then queries a recursive resolver, which follows the chain: root name servers, top-level domain (TLD) servers (like .com), and authoritative name servers for the specific domain. DNS records include A (IPv4 address), AAAA (IPv6 address), CNAME (canonical name/alias), MX (mail exchange), and TXT (text data). The entire process typically completes in milliseconds, enabling seamless web browsing."
+  },
+  {
+    "q": [
+      "What are the different network topologies?",
+      "Compare star, bus, ring, and mesh topologies.",
+      "What is a star topology?",
+      "What is a mesh network?",
+      "What are the advantages and disadvantages of different network topologies?",
+      "Which network topology is most commonly used?"
+    ],
+    "a": "Network topology refers to the physical or logical arrangement of devices in a network. In a star topology, all devices connect to a central hub or switch — it's the most common in modern LANs due to ease of management and fault isolation. A bus topology uses a single backbone cable with all devices connected along it, which is cheap but a single break can disable the entire network. A ring topology connects each device to two neighbors in a closed loop. A mesh topology connects each device to many others, providing redundancy and reliability at higher cost. Hybrid topologies combining these are common in large enterprise networks."
+  },
+  {
+    "q": [
+      "What is the difference between LAN and WAN?",
+      "Compare Local Area Network and Wide Area Network.",
+      "What is a LAN?",
+      "What is a WAN?",
+      "What are examples of LAN and WAN?",
+      "How do LAN and WAN differ in scale and technology?"
+    ],
+    "a": "A Local Area Network (LAN) covers a limited geographic area such as a home, office, or campus, offering high data transfer speeds (1-10 Gbps) and low latency. LANs are typically owned and managed by a single organization and use technologies like Ethernet and WiFi. A Wide Area Network (WAN) spans large geographic distances — cities, countries, or continents — and is composed of multiple interconnected LANs. The internet is the largest example of a WAN. WANs typically have higher latency and lower bandwidth than LANs, relying on leased lines, satellite links, or fiber optic cables. A Metropolitan Area Network (MAN) is intermediate in scale."
+  },
+  {
+    "q": [
+      "What is the OSI model?",
+      "Explain the seven layers of the OSI model.",
+      "What does each layer of the OSI model do?",
+      "Why is the OSI model important?",
+      "How does data flow through the OSI layers?",
+      "What are the functions of the transport layer in OSI?"
+    ],
+    "a": "The OSI (Open Systems Interconnection) model is a seven-layer conceptual framework for network communication: Physical (cables, bits), Data Link (frames, MAC addresses, switching), Network (packets, IP addressing, routing), Transport (segments, TCP/UDP, reliability), Session (dialog management, synchronization), Presentation (data formatting, encryption, compression), and Application (user-facing protocols like HTTP and SMTP). It standardizes networking so different vendors' equipment can interoperate. Each layer provides services to the layer above while abstracting lower-layer details. Though TCP/IP is more practically implemented, the OSI model remains essential for teaching and troubleshooting."
+  },
+  {
+    "q": [
+      "What is the difference between a switch and a router?",
+      "How do switches and routers work?",
+      "When would you use a switch vs a router?",
+      "What is a network switch?",
+      "What is a network router?",
+      "Do I need a switch or a router for my home network?"
+    ],
+    "a": "A switch operates at Layer 2 (Data Link) of the OSI model, connecting devices within the same local network. It uses MAC addresses to forward frames to the correct device, learning which devices are on which ports. A router operates at Layer 3 (Network), connecting different networks together — such as your home LAN to the internet. Routers use IP addresses to determine the best path for packets across networks and perform Network Address Translation (NAT). Most home 'routers' are actually combination devices containing a router, switch, wireless access point, and firewall in one unit."
+  },
+  {
+    "q": [
+      "What are common network protocols?",
+      "Explain HTTP, FTP, SMTP, and other network protocols.",
+      "What is HTTP and how does it work?",
+      "What is the difference between TCP and UDP?",
+      "What is DHCP?",
+      "What is SSH used for?"
+    ],
+    "a": "Network protocols are standardized rules governing data exchange. HTTP/HTTPS (port 80/443) serves web pages; HTTPS adds TLS encryption for security. FTP (port 21) transfers files. SMTP (port 25) sends email, while IMAP and POP3 receive it. DHCP automatically assigns IP addresses to devices on a network. SSH (port 22) provides encrypted remote terminal access. SNMP manages network devices. TCP is connection-oriented with guaranteed delivery (used by HTTP, SMTP, FTP), while UDP is connectionless and faster but unreliable (used by DNS queries, video streaming, VoIP). Each protocol operates at specific OSI layers and uses well-known port numbers."
+  },
+  {
+    "q": [
+      "What is network security?",
+      "What are common network security threats?",
+      "How do firewalls work?",
+      "What is the difference between a firewall and an antivirus?",
+      "What is encryption in networking?",
+      "What are some best practices for network security?"
+    ],
+    "a": "Network security encompasses practices and technologies that protect network infrastructure and data from unauthorized access, misuse, and attacks. Firewalls monitor and control incoming and outgoing traffic based on security rules — they can be hardware-based, software-based, or both. Common threats include malware, phishing, DDoS (Distributed Denial of Service) attacks, man-in-the-middle attacks, and packet sniffing. Best practices include using strong encryption (TLS/SSL, VPNs), implementing network segmentation, keeping software updated, using intrusion detection/prevention systems (IDS/IPS), enforcing strong authentication, and regularly auditing network activity. Defense-in-depth — layering multiple security measures — is the standard approach."
+  },
+  {
+    "q": [
+      "What are WiFi standards?",
+      "Explain IEEE 802.11 standards.",
+      "What is the difference between WiFi 5, WiFi 6, and WiFi 6E?",
+      "What are the different WiFi frequency bands?",
+      "How has WiFi evolved over time?",
+      "What is the maximum speed of WiFi 6?"
+    ],
+    "a": "WiFi is based on IEEE 802.11 standards. Major generations include 802.11b (11 Mbps, 2.4 GHz), 802.11a/g (54 Mbps, 5/2.4 GHz), 802.11n/WiFi 4 (up to 600 Mbps, MIMO), 802.11ac/WiFi 5 (up to several Gbps, 5 GHz, beamforming), and 802.11ax/WiFi 6 (up to 9.6 Gbps, 2.4/5/6 GHz, better efficiency in dense environments). WiFi 6E extends into the 6 GHz band for additional capacity and less interference. Newer standards improve speed, range, capacity, and power efficiency. WiFi operates in unlicensed spectrum bands (2.4 GHz — better range, more congestion; 5 GHz — faster, shorter range; 6 GHz — fastest, least congestion)."
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "career-advice",
+    "triggers": ["can I make a career in {context}", "career in {context}", "work professionally with {context}", "job opportunities in {context}"],
+    "context_role": "topic",
+    "template": "A career in {context} is definitely viable, with opportunities spanning multiple roles and industries. Success depends on building a strong foundation, staying current with developments, and developing a portfolio that demonstrates your capabilities. The key is to identify which niche aligns with your interests and strengths, then pursue it with focused effort.",
+    "fallback": "Career questions are important! Could you tell me a bit about your background and what aspects of this topic interest you most?",
+    "style": ["educational", "career-oriented"],
+    "response_length": "medium"
+  },
+  {
+    "id": "career-degrees",
+    "triggers": ["what degrees do I need for {context}", "education required for {context}", "what should I study for {context}", "academic path for {context}"],
+    "context_role": "topic",
+    "template": "While formal degrees in {context} or related fields can open doors, they aren't always strictly necessary. Many successful professionals combine a relevant degree (in a complementary field) with self-study, certifications, and practical experience. The most important thing is demonstrated competence rather than the specific credential — though some roles do have formal educational requirements.",
+    "fallback": "Educational paths vary. What's your current educational background and how much flexibility do you have to pursue further study?",
+    "style": ["educational", "career-oriented", "balanced"],
+    "response_length": "medium"
+  },
+  {
+    "id": "career-learning-time",
+    "triggers": ["how long does it take to learn {context}", "learning time for {context}", "how quickly can I learn {context}", "time to master {context}"],
+    "context_role": "topic",
+    "template": "Learning {context} to a functional level typically takes 3–6 months of consistent effort. Reaching a professional competency where you can work independently usually requires 1–2 years of regular practice and real-world application. Mastery — where you can innovate and mentor others — is a journey of 5+ years. The timeline varies with prior experience, learning methods, and the intensity of your practice.",
+    "fallback": "Learning timelines depend heavily on your starting point. What's your current experience level with this topic?",
+    "style": ["educational", "realistic"],
+    "response_length": "medium"
+  },
+  {
+    "id": "career-job-market",
+    "triggers": ["what are the job prospects for {context}", "job market for {context}", "demand for {context} professionals", "is {context} in demand"],
+    "context_role": "topic",
+    "template": "The job market for {context} is currently strong and showing continued growth. Demand is driven by digital transformation, increasing specialization, and the need for expertise in navigating complexity. Geographic hubs offer concentrated opportunities, but remote work has expanded access significantly. Competition exists at the entry level, while experienced professionals remain highly sought after.",
+    "fallback": "Job market trends shift frequently. Which geographic region or industry sector are you most interested in?",
+    "style": ["educational", "career-oriented", "analytical"],
+    "response_length": "medium"
+  },
+  {
+    "id": "career-skills",
+    "triggers": ["what skills are needed for {context}", "skills required for {context}", "competencies for {context}", "what do I need to know for {context}"],
+    "context_role": "topic",
+    "template": "The key skills for {context} span both technical and soft competencies. Technical foundations include core knowledge, practical application, and familiarity with standard tools. Equally important are problem-solving, communication, collaboration, and adaptability — these transferable skills often distinguish successful professionals from merely competent ones.",
+    "fallback": "Skills requirements depend on the specific role. Are you looking at a particular position or level within this field?",
+    "style": ["educational", "career-oriented"],
+    "response_length": "medium"
+  },
+  {
+    "id": "career-evaluation",
+    "triggers": ["is {context} a good career choice", "should I pursue {context} as a career", "pros and cons of {context} career", "{context} as a profession"],
+    "context_role": "topic",
+    "template": "As a career, {context} offers strong advantages: intellectual challenge, growing demand, competitive compensation, and the satisfaction of meaningful work. Considerations include the need for continuous learning, periods of intense pressure, and the reality that not all roles are equally fulfilling. For those genuinely interested in the field, it can be an excellent long-term career.",
+    "fallback": "That's an important decision. What attracts you to this field, and what are your main concerns about pursuing it?",
+    "style": ["educational", "career-oriented", "balanced"],
+    "response_length": "medium"
+  },
+  {
+    "id": "career-courses",
+    "triggers": ["what courses should I take for {context}", "recommended courses for {context}", "best classes for {context}", "coursework for {context}"],
+    "context_role": "topic",
+    "template": "The best courses for {context} start with fundamentals that build a solid conceptual foundation, then progress to intermediate topics that bridge theory and practice, and finally to advanced specializations aligned with your career goals. Look for courses that balance conceptual depth with hands-on projects, and prioritize those with strong reviews and up-to-date content.",
+    "fallback": "Course recommendations depend on your current level and learning style. What's your background and preferred format (online, in-person, self-paced)?",
+    "style": ["educational", "curated"],
+    "response_length": "medium"
+  },
+  {
+    "id": "career-certifications",
+    "triggers": ["what certifications exist for {context}", "certifications for {context}", "credentials in {context}", "professional certification {context}"],
+    "context_role": "topic",
+    "template": "Several certifications exist for {context}, ranging from entry-level credentials that validate foundational knowledge to advanced certifications that demonstrate expert-level mastery. While certifications can boost your resume and provide structured learning, they are most valuable when combined with practical experience. Research which certifications employers in your target roles actually recognize and value.",
+    "fallback": "Certifications vary by region and specialty. Which area of this topic are you looking to get certified in?",
+    "style": ["educational", "career-oriented"],
+    "response_length": "medium"
+  },
+  {
+    "id": "career-entry-jobs",
+    "triggers": ["what entry level jobs exist in {context}", "entry level positions in {context}", "jobs for beginners in {context}", "starting roles in {context}"],
+    "context_role": "topic",
+    "template": "Entry-level roles in {context} typically include positions like junior practitioner, assistant, analyst, or trainee. These roles focus on executing well-defined tasks under supervision, building practical experience, and learning organizational workflows. The key to landing these roles is demonstrating foundational knowledge, a willingness to learn, and relevant projects or internships.",
+    "fallback": "Entry-level roles vary by industry. What aspect of this topic are you most passionate about pursuing?",
+    "style": ["educational", "career-oriented", "actionable"],
+    "response_length": "medium"
+  },
+  {
+    "id": "career-transition",
+    "triggers": ["how to transition into {context}", "switch careers to {context}", "move into {context} from", "career change to {context}"],
+    "context_role": "topic",
+    "template": "Transitioning into {context} from another field is challenging but achievable. Start by identifying transferable skills from your current career that apply to {context}. Build missing knowledge through structured learning and personal projects. Network with professionals already in the field, seek mentorship, and consider starting with a transitional role that leverages your existing experience while building new competencies.",
+    "fallback": "Career transitions are exciting steps. What field are you transitioning from, and what draws you to this new direction?",
+    "style": ["educational", "career-oriented", "actionable", "motivational"],
+    "response_length": "long"
+  }
+]

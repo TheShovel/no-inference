@@ -1,0 +1,48 @@
+[
+  {
+    "q": [
+      "What is the fashion design process?",
+      "How do fashion designers create a collection?",
+      "What steps are involved in designing clothing?",
+      "Describe the fashion design workflow from sketch to garment.",
+      "How does a fashion collection come together?",
+      "What is the process of creating a fashion line?",
+      "fashion design process"
+    ],
+    "a": "The fashion design process begins with research and inspiration gathering—studying trends, art, culture, and historical references—followed by creating mood boards and concept sketches that establish the collection's theme, color palette, and silhouette direction. Designers then develop technical sketches (flats) with detailed specifications, select fabrics and materials from suppliers, and create initial samples through draping fabric on dress forms or drafting paper patterns. The process culminates in fitting sessions where garments are refined on live models, followed by final sample production, quality control, and preparation for fashion shows, lookbooks, or wholesale presentations to buyers."
+  },
+  {
+    "q": [
+      "What is the difference between sketching and draping in fashion design?",
+      "How do fashion designers use sketching and draping techniques?",
+      "Tell me about pattern making and garment construction.",
+      "What is the role of draping in fashion design?",
+      "How are patterns made for clothing?",
+      "Describe the technical side of fashion design.",
+      "pattern making draping garment construction"
+    ],
+    "a": "Fashion sketching—also called illustration—involves drawing garments on croquis (stylized fashion figure templates) to visualize design ideas, proportions, and silhouettes before construction begins, often using markers, colored pencils, or digital tools like Adobe Illustrator and CLO 3D. Draping is a three-dimensional technique where designers manipulate muslin or actual fabric directly on a dress form to create and refine shapes, which is especially useful for complex, sculptural, or bias-cut garments. Pattern making converts these designs into two-dimensional templates—either drafted mathematically from body measurements or developed from draped pieces—that serve as the blueprint for cutting fabric and assembling the final garment through sewing, pressing, and finishing techniques."
+  },
+  {
+    "q": [
+      "How do designers select fabrics for a collection?",
+      "What factors influence fabric selection in fashion design?",
+      "Tell me about fabric selection and textile choice.",
+      "How does fabric choice affect garment design?",
+      "What do designers consider when choosing materials?",
+      "fabric selection fashion design textiles"
+    ],
+    "a": "Fabric selection is one of the most critical decisions in fashion design, as a garment's drape, weight, texture, breathability, and durability fundamentally determine how it will look and perform. Designers must balance aesthetic qualities (color, sheen, hand feel, pattern) with technical properties (stretch, recovery, shrinkage, opacity, care requirements) and practical considerations (cost, lead time, minimum order quantities, sustainability certifications). Material sourcing has evolved to include not only traditional textiles like silk, wool, cotton, and linen but also innovative options such as recycled polyester, Tencel lyocell, Piñatex (pineapple leather), mushroom leather, 3D-printed fabrics, and smart textiles that incorporate heating elements, LED lights, or moisture-wicking technology."
+  },
+  {
+    "q": [
+      "What is sustainable fashion design?",
+      "How can fashion design be more sustainable?",
+      "Tell me about sustainable design practices in fashion.",
+      "What is circular fashion and eco-friendly design?",
+      "How are designers addressing fashion's environmental impact?",
+      "sustainable fashion design practices"
+    ],
+    "a": "Sustainable fashion design encompasses a range of practices aimed at reducing the industry's significant environmental footprint, including zero-waste pattern cutting (arranging pattern pieces to eliminate fabric scraps), upcycling existing garments or deadstock materials, and designing for durability and timelessness rather than fast-fashion trends. Circular design principles ensure that garments can be easily repaired, reused, or biodegradable at end of life—avoiding material blends that complicate recycling, using mono-fibers, and designing modular pieces with replaceable components. Leading sustainable designers also prioritize ethical supply chains with fair wages, local production to reduce transport emissions, and digital sampling to minimize physical prototypes, while innovations in fabric dyeing (waterless dyeing, natural dyes) and finishing (laser distressing instead of chemical washing) further reduce environmental harm."
+  }
+]

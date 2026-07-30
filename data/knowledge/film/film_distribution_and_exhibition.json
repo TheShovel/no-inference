@@ -1,0 +1,46 @@
+[
+  {
+    "q": [
+      "What are film distribution windows?",
+      "How does the theatrical release window work?",
+      "What is the difference between theatrical, VOD, and streaming releases?",
+      "How long after a movie's theatrical release does it go to streaming?",
+      "What is the traditional film distribution model?",
+      "How have streaming services changed film distribution windows?"
+    ],
+    "a": "Film distribution windows are the sequential periods during which a movie is released across different platforms: traditionally, films would play exclusively in theaters for 90 days, then release on DVD/Blu-ray and video-on-demand (VOD) after about 3-4 months, followed by premium cable and streaming services after 6-9 months, and finally free-to-air television after 12-18 months. Streaming platforms like Netflix, Disney+, and HBO have dramatically disrupted this model by releasing films simultaneously in theaters and on streaming (day-and-date releases) or bypassing theaters entirely, shrinking or eliminating traditional windows. The pandemic accelerated this shift, with many studios experimenting with shortened 17-45 day theatrical windows or releasing directly to streaming, fundamentally altering the economics of both theatrical exhibition and home entertainment."
+  },
+  {
+    "q": [
+      "How do film marketing campaigns work?",
+      "What makes a movie trailer effective?",
+      "How do movie posters and marketing materials promote films?",
+      "What is the role of a film marketing campaign?",
+      "How do studios build buzz for upcoming movies?",
+      "Tell me about film advertising and promotional strategies."
+    ],
+    "a": "Film marketing campaigns typically begin 6-12 months before a film's release with teaser materials and build through a series of trailers, posters, social media content, press junkets, and promotional partnerships that target specific audience demographics. A trailer typically follows a three-act structure in miniature: establishing the world and characters, introducing the central conflict, and delivering a climactic montage with the film's title and release date — all set to carefully chosen music that evokes the film's tone. Modern campaigns leverage data-driven digital advertising, influencer partnerships, and viral marketing strategies, with franchise films often generating massive early engagement through fan events, merchandise tie-ins, and carefully orchestrated reveals at Comic-Con and other pop culture events."
+  },
+  {
+    "q": [
+      "What are film ratings and how does the MPAA system work?",
+      "What do G, PG, PG-13, R, and NC-17 ratings mean?",
+      "How does the MPAA rate movies in the United States?",
+      "What is the difference between PG-13 and R ratings?",
+      "How do film ratings affect box office performance?",
+      "What is the controversy around the MPAA rating system?"
+    ],
+    "a": "The MPAA (Motion Picture Association) film rating system assigns ratings based on content including language, violence, sexual content, and drug use: G (General Audiences — all ages), PG (Parental Guidance Suggested — some material may not be suitable for children), PG-13 (Parents Strongly Cautioned — some material may be inappropriate for children under 13), R (Restricted — under 17 requires accompanying parent or adult guardian), and NC-17 (No One 17 and Under Admitted). The rating is determined by a board of parents who review each film and vote on the rating, which studios can appeal if they disagree. Ratings significantly impact a film's commercial prospects: PG-13 is often considered the most commercially desirable rating because it allows broad audience access without the parental-guardian restriction of R, while an NC-17 rating can severely limit theatrical exhibition and marketing options."
+  },
+  {
+    "q": [
+      "How is box office tracked and reported?",
+      "What is the difference between domestic and international box office?",
+      "What is a film's opening weekend and why does it matter?",
+      "How do box office results determine a film's success?",
+      "What are the highest-grossing films of all time?",
+      "How does international distribution work for Hollywood films?"
+    ],
+    "a": "Box office revenue is tracked by companies like Comscore and Rentrak, which collect daily ticket sales data from theater chains and report weekly grosses, with the opening weekend (Friday through Sunday) serving as the most critical indicator of a film's commercial trajectory and determining its theatrical longevity. Domestic box office refers to ticket sales within the film's home country (typically the United States and Canada for Hollywood films), while international box office covers all other territories, with many Hollywood films now earning 60-70% of their total revenue overseas. International distribution involves dubbing or subtitling films for local markets, navigating different cultural sensitivities and censorship standards, and releasing through local distributors who understand regional audience preferences — China has become the largest international market for Hollywood, though complex import quotas and revenue-sharing rules create significant barriers."
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What is the difference between extract and all-grain brewing?",
+      "How do I start homebrewing with malt extract?",
+      "What is all-grain brewing?",
+      "What equipment do I need for extract brewing?",
+      "What is steeping grains in extract brewing?",
+      "What is partial mash brewing?",
+      "How do I transition from extract to all-grain?"
+    ],
+    "a": "Extract brewing uses pre-concentrated malt extract syrup or dried malt extract (DME) as the primary sugar source, allowing beginners to make beer without a full mash — you simply dissolve the extract in water, add hops, and boil. All-grain brewing involves mashing crushed grains yourself, requiring additional equipment like a mash tun, hot liquor tank, and wort chiller, but gives complete control over the recipe. Partial mash brewing sits between the two: you mash a small amount of base grains while supplementing with extract for the remainder. Extract brewing is the most accessible starting point, producing excellent beer with minimal equipment investment, while all-grain offers greater flexibility and cost savings for experienced homebrewers."
+  },
+  {
+    "q": [
+      "What equipment do I need for all-grain homebrewing?",
+      "What is a mash tun and how does it work?",
+      "What is a hot liquor tank in homebrewing?",
+      "What is a wort chiller and why do I need one?",
+      "What is BIAB or brew-in-a-bag?",
+      "What types of fermenters are available for homebrewing?",
+      "What equipment is needed for kegging beer?"
+    ],
+    "a": "All-grain homebrewing requires a mash tun (insulated vessel with a false bottom, bazooka screen, or manifold to separate wort from grain), a hot liquor tank (HLT) for heating sparge water, and a boil kettle large enough for the full volume. Wort chilling equipment such as an immersion chiller, counterflow chiller, or plate chiller rapidly drops the temperature after boiling to prevent off-flavors. Fermenters range from basic plastic buckets and glass carboys to advanced stainless steel conical fermenters with temperature control via glycol chillers. BIAB (Brew In A Bag) simplifies all-grain by using a large mesh bag in the boil kettle as both mash tun and lauter tun, eliminating the need for a separate vessel and sparging setup."
+  },
+  {
+    "q": [
+      "What cleaning and sanitizing products are used in homebrewing?",
+      "What is Star San and how do I use it?",
+      "What is PBW used for in homebrewing?",
+      "What is the difference between cleaning and sanitizing in brewing?",
+      "How do I clean homebrew equipment properly?",
+      "What is iodophor for homebrewing?",
+      "How do I clean a carboy or fermenter?"
+    ],
+    "a": "Cleaning and sanitizing are the two most critical steps in homebrewing — cleaning removes organic residue and soils, while sanitizing kills microorganisms that can spoil beer. PBW (Powdered Brewery Wash) is an oxygen-based alkaline cleaner that removes protein, hop residue, and beer stone without harsh scrubbing. Star San is a no-rinse phosphoric acid sanitizer that's highly effective against bacteria and wild yeast — simply spray or soak equipment, let it foam, then drain without rinsing. Other options include iodophor (iodine-based, no-rinse at proper dilution), and dilute bleach (must be thoroughly rinsed afterward). Always clean equipment first with PBW or a similar cleaner before sanitizing, especially bottles, carboys, kegs, and any surface that touches cooled wort."
+  },
+  {
+    "q": [
+      "What software and tools are used for homebrew recipe formulation?",
+      "What is BeerSmith for homebrewing?",
+      "How do I calculate IBU for my homebrew recipe?",
+      "What is Brewfather and how does it help?",
+      "How do I calculate ABV for homebrew?",
+      "What is BJCP in homebrewing?",
+      "How is homebrew judged in competitions?"
+    ],
+    "a": "Recipe formulation software helps homebrewers design recipes, calculate bitterness, color, gravity, and alcohol content, and scale batches. BeerSmith is the most comprehensive brewing software, offering water chemistry adjustment, mash profiles, equipment profiles, and a large ingredient database. Brewfather and Brewer's Friend are popular web-based alternatives with cloud syncing and brew day logging. Key calculations include IBU (International Bitterness Units, typically measured by the Tinseth or Rager formula), SRM (color), and ABV (alcohol by volume from original and final gravity). The BJCP (Beer Judge Certification Program) provides standardized style guidelines used in homebrew competitions, where beers are evaluated on aroma, appearance, flavor, mouthfeel, and adherence to style characteristics."
+  },
+  {
+    "q": [
+      "What is fly sparging vs batch sparging?",
+      "What is the difference between batch sparge and fly sparge?",
+      "What is no-sparge brewing?",
+      "How do I sparge in all-grain brewing?",
+      "What is mash efficiency in homebrewing?",
+      "How do I improve my brewing efficiency?",
+      "What is the difference between lauter efficiency and mash efficiency?"
+    ],
+    "a": "Sparging is rinsing the grain bed after mashing to extract remaining sugars. Fly sparging slowly sprinkles hot water across the grain bed while continuously draining from below, requiring a manifold or false bottom and careful flow rate control to avoid channeling — it can achieve high efficiency (80-85%) but takes 45-60 minutes. Batch sparging adds the full sparge water volume at once, stirs thoroughly, recirculates, and drains — it's simpler, faster, and less prone to stuck sparges, typically yielding 75-80% efficiency. No-sparge brewing uses all the water in the mash from the start and drains without rinsing, sacrificing efficiency (60-65%) for simplicity and preventing any tannin extraction. Efficiency depends on grain crush, water volume, mash temperature, sparge technique, and equipment design."
+  }
+]

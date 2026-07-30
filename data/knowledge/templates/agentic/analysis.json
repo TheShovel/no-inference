@@ -1,0 +1,132 @@
+[
+  {
+    "id": "multi-perspective-001",
+    "triggers": [
+      "analyze from different perspectives",
+      "multi-perspective analysis of",
+      "examine from multiple angles"
+    ],
+    "context_role": "topic",
+    "template": "A multi-perspective analysis reveals that {context} looks different depending on where you stand. Here are four key lenses:\n\n**1. The Analytical Lens**\nThrough this lens, {context} is broken into components: inputs, processes, outputs, and feedback loops. We ask: What are the measurable parts of {context}? How do they interact? What data supports or challenges each assumption?\n\n**2. The Human Lens**\nHere we examine how {context} affects people—their behaviors, motivations, emotions, and relationships. Who benefits from {context}? Who might be burdened by it? What are the unspoken needs or fears tied to {context}?\n\n**3. The Systemic Lens**\n{context} does not exist in isolation. This lens looks at the broader environment: economic forces, cultural norms, institutional structures, and historical trends that shape and are shaped by {context}.\n\n**4. The Temporal Lens**\nHow does {context} change over time? What is its trajectory—emerging, peaking, declining, or transforming? What past patterns inform our understanding of {context}, and what future scenarios are plausible?\n\nBy rotating through these perspectives, we avoid the blind spots of a single viewpoint and build a richer, more honest picture of {context}. Which lens would you like to explore further?",
+    "fallback": "Analyzing from different perspectives means examining a topic through analytical, human, systemic, and temporal lenses to avoid blind spots.",
+    "style": ["analytical", "structured", "educational"],
+    "response_length": "long"
+  },
+  {
+    "id": "research-methodology-002",
+    "triggers": [
+      "research thoroughly",
+      "how to research",
+      "thorough research on"
+    ],
+    "context_role": "topic",
+    "template": "To research {context} thoroughly, follow this systematic methodology that balances breadth and depth:\n\n**Phase 1: Map the Territory**\n- Start with broad, accessible sources (overviews, encyclopedia entries, review articles) to identify the major sub-topics, debates, and key figures in {context}\n- Create a concept map showing how ideas within {context} relate to each other\n- Identify 3-5 core questions you want your research to answer\n\n**Phase 2: Deep Dive Into Primary Sources**\n- Seek out original research, foundational texts, or authoritative data about {context}\n- Prioritize peer-reviewed, cited, or professionally vetted materials\n- Take structured notes with source citations—capture quotes, data points, and contradictory findings\n\n**Phase 3: Cross-Reference and Validate**\n- Compare findings across multiple sources about {context}\n- Note areas of consensus and disagreement among experts\n- Check the date of sources—{context} may have evolved significantly\n\n**Phase 4: Synthesize and Identify Gaps**\n- Connect the dots: what patterns or themes emerge across your research on {context}?\n- What is still unknown or contested about {context}?\n- Formulate your own informed perspective based on evidence\n\n**Phase 5: Document and Share**\n- Write a structured summary of findings on {context}\n- Include citations and reasoning for your conclusions\n- Identify next questions or avenues for deeper exploration\n\nWould you like help starting with any specific phase of researching {context}?",
+    "fallback": "Thorough research involves mapping the topic, diving into primary sources, cross-referencing, synthesizing findings, and documenting conclusions.",
+    "style": ["analytical", "methodical", "educational"],
+    "response_length": "long"
+  },
+  {
+    "id": "comparison-analysis-003",
+    "triggers": [
+      "compare different approaches to",
+      "comparison of methods for",
+      "compare and contrast approaches to"
+    ],
+    "context_role": "topic",
+    "template": "Here is a structured comparison of different approaches to {context}, evaluated across key dimensions:\n\n**Dimension 1: Philosophy & Assumptions**\nWhat does each approach to {context} believe about how things work? Some may prioritize efficiency, others creativity, others rigor. Understanding the 'why' behind each method reveals their strengths and limitations.\n\n**Dimension 2: Process & Workflow**\nHow does each approach actually work in practice? What are the steps, tools, and typical timelines involved in applying it to {context}?\n\n**Dimension 3: Success Metrics**\nHow does each approach define success for {context}? Different methods may optimize for different outcomes—speed, quality, depth, scalability.\n\n**Dimension 4: Resource Requirements**\nWhat level of expertise, time, budget, or infrastructure does each approach to {context} demand?\n\n**Dimension 5: Best Use Cases**\nWhen does each approach to {context} shine? And when might it struggle?\n\n| Approach | Philosophy | Process | Best For | Limitations |\n|----------|-----------|---------|----------|-------------|\n| Approach A | {context} as system | Step-by-step | Predictable outcomes | Rigid in novel situations |\n| Approach B | {context} as craft | Iterative experimentation | Creative solutions | Less consistent at scale |\n| Approach C | {context} as science | Hypothesis testing | Evidence-based results | Slower, resource-heavy |\n\nWhich approaches to {context} are you comparing? I can fill in the specifics.",
+    "fallback": "Comparing approaches involves examining their philosophy, process, success metrics, resource needs, and best use cases side by side.",
+    "style": ["analytical", "structured", "comparative"],
+    "response_length": "long"
+  },
+  {
+    "id": "evaluation-004",
+    "triggers": [
+      "evaluate the effectiveness of",
+      "how effective is",
+      "assess the impact of"
+    ],
+    "context_role": "topic",
+    "template": "To evaluate the effectiveness of {context}, we need clear criteria and evidence. Here is an evaluation framework:\n\n**Criteria 1: Goal Alignment**\n- What was {context} intended to achieve?\n- How well does the actual outcome match the intended purpose?\n- Are there unintended consequences—positive or negative?\n\n**Criteria 2: Efficiency**\n- What resources (time, money, effort) were invested in {context}?\n- Is the return on that investment reasonable?\n- Could the same results be achieved with fewer resources?\n\n**Criteria 3: Quality & Reliability**\n- How consistent are the results produced by {context}?\n- Does {context} hold up under different conditions or stress?\n- What do users, beneficiaries, or experts say about its quality?\n\n**Criteria 4: Scalability & Sustainability**\n- Can {context} grow or be maintained over time?\n- Does it adapt to changing circumstances?\n- What are the long-term trade-offs?\n\n**Overall Assessment Matrix for {context}**\n| Criterion | Score (1-5) | Evidence | Gap |\n|-----------|------------|----------|-----|\n| Goal Alignment | | | |\n| Efficiency | | | |\n| Quality | | | |\n| Scalability | | | |\n\nWhat specific aspect of {context} would you like to evaluate first?",
+    "fallback": "Evaluating effectiveness means assessing goal alignment, efficiency, quality, and scalability against clear criteria and evidence.",
+    "style": ["analytical", "structured", "evaluative"],
+    "response_length": "long"
+  },
+  {
+    "id": "key-metrics-005",
+    "triggers": [
+      "what are the key metrics for",
+      "how do I measure",
+      "metrics to track for"
+    ],
+    "context_role": "topic",
+    "template": "Identifying the right metrics for {context} means distinguishing between what is easy to measure and what actually matters. Here is a framework:\n\n**Leading Indicators (Predictive)**\nThese metrics foretell future performance of {context} before the final outcome is known:\n- Engagement rate or participation level related to {context}\n- Early-stage quality checks or milestone completion\n- Velocity or throughput of work on {context}\n\n**Lagging Indicators (Outcome)**\nThese confirm what has already happened with {context}:\n- Final output quality or satisfaction scores\n- Time-to-completion or delivery accuracy\n- Return on investment or impact measurement for {context}\n\n**Qualitative vs. Quantitative**\n- **Quantitative:** Numbers related to {context}—counts, percentages, frequencies, revenue, time\n- **Qualitative:** Stories, feedback, observations, and case studies about {context}\n\n**Metric Selection Checklist for {context}**\n- Is this metric tied directly to a goal for {context}?\n- Can we collect this data reliably and repeatedly?\n- Will this metric help us make better decisions about {context}?\n- Is it resistant to gaming or misinterpretation?\n\n**Sample Metrics Dashboard for {context}**\n| Metric | Type | Target | Current | Trend |\n|--------|------|--------|---------|-------|\n| Metric A | Leading | X | Y | Improving |\n| Metric B | Lagging | X | Y | Needs attention |\n\nWhich aspects of {context} are most important to you to measure?",
+    "fallback": "Key metrics include leading indicators that predict outcomes and lagging indicators that confirm results, both quantitative and qualitative.",
+    "style": ["analytical", "quantitative", "structured"],
+    "response_length": "medium"
+  },
+  {
+    "id": "pattern-identification-006",
+    "triggers": [
+      "identify patterns in",
+      "what patterns exist in",
+      "find trends and patterns in"
+    ],
+    "context_role": "topic",
+    "template": "Identifying patterns in {context} requires stepping back from individual details to see recurring structures. Here is how to approach pattern recognition:\n\n**Step 1: Collect and Immerse**\nGather a broad set of examples, instances, or data points related to {context}. Look at both successes and failures—patterns often hide in the exceptions.\n\n**Step 2: Look for Repetition**\nAsk yourself about {context}:\n- What elements appear again and again?\n- What sequences or orders repeat across different instances?\n- Who or what plays similar roles in different scenarios?\n\n**Step 3: Identify Relationships**\nPatterns in {context} often emerge from relationships:\n- **Causal patterns:** A always leads to B in {context}\n- **Correlational patterns:** When X increases, Y changes in {context}\n- **Cyclical patterns:** Certain aspects of {context} recur on a schedule\n- **Structural patterns:** Similar arrangements appear across different parts of {context}\n\n**Step 4: Abstract and Name**\nGive each pattern a descriptive name. This makes it easier to recognize and communicate about {context}. For example: \"The Snowball Effect in {context}\" or \"The Plateau-Then-Spike pattern in {context}.\"\n\n**Common Pattern Types Found in {context}**\n| Pattern Type | Description | Example from {context} |\n|-------------|-------------|----------------------|\n| Feedback loop | Output reinforces input | X leads to more X |\n| S-curve | Slow start, rapid growth, plateau | Adoption of {context} |\n| Bimodal distribution | Two distinct clusters | Experts vs. novices in {context} |\n\nWhat kind of data or examples of {context} are you working with?",
+    "fallback": "Pattern identification involves collecting data, looking for repetitions and relationships, and naming the recurring structures you find.",
+    "style": ["analytical", "observational", "structured"],
+    "response_length": "long"
+  },
+  {
+    "id": "root-cause-007",
+    "triggers": [
+      "what are the root causes of",
+      "root cause analysis for",
+      "why does this happen"
+    ],
+    "context_role": "topic",
+    "template": "Let's conduct a root cause analysis of {context} using the 'Five Whys' method. The goal is to move beyond symptoms to the underlying mechanisms.\n\n**Starting Problem Statement:**\n{context} is occurring or presenting challenges.\n\n**Why #1:** Why does {context} happen?\n- Surface-level answer: Observable triggers or immediate causes\n- These are the symptoms, not the root\n\n**Why #2:** Why do those triggers exist?\n- Deeper answer: Systemic conditions that enable the first-level causes\n- Look at processes, incentives, or environmental factors\n\n**Why #3:** Why are those conditions in place?\n- Structural answer: Policies, norms, or resource allocations that sustain the conditions\n- Ask: Who benefits from things staying this way?\n\n**Why #4:** Why haven't these structures changed?\n- Historical or cultural answer: Inertia, legacy decisions, or conflicting priorities\n- Consider: What would need to shift for {context} to change?\n\n**Why #5:** What is the fundamental driver?\n- Root cause: The deepest level that, if addressed, would prevent {context} from recurring\n- This is where intervention would have the most leverage\n\n**Root Cause Map for {context}**\n```\nSymptom → Trigger → Condition → Structure → Root Cause\n   ↓           ↓           ↓           ↓            ↓\nWhat we see  What starts  What enables  What keeps   What drives\n             it           it            it           it all\n```\n\nWould you like to work through this framework together for a specific instance of {context}?",
+    "fallback": "Root cause analysis digs past symptoms by asking 'why' repeatedly—typically five times—to uncover the fundamental driver of a problem.",
+    "style": ["analytical", "investigative", "structured"],
+    "response_length": "long"
+  },
+  {
+    "id": "swot-analysis-008",
+    "triggers": [
+      "swot analysis of",
+      "strengths weaknesses opportunities threats",
+      "conduct a swot on"
+    ],
+    "context_role": "topic",
+    "template": "Here is a SWOT analysis framework applied to {context}. SWOT stands for Strengths, Weaknesses, Opportunities, and Threats—four quadrants that reveal the strategic position of {context}.\n\n**Strengths (Internal, Positive)**\nWhat advantages does {context} have?\n- Unique attributes or capabilities inherent to {context}\n- Resources, expertise, or momentum already present\n- What do people praise most about {context}?\n\n**Weaknesses (Internal, Negative)**\nWhere does {context} fall short?\n- Gaps, limitations, or vulnerabilities in {context}\n- Resources or capabilities that are lacking\n- What criticisms or frustrations are commonly voiced about {context}?\n\n**Opportunities (External, Positive)**\nWhat favorable conditions exist for {context}?\n- Emerging trends, technologies, or cultural shifts that {context} can leverage\n- Unmet needs or underserved areas related to {context}\n- Partnerships, funding, or timing advantages\n\n**Threats (External, Negative)**\nWhat risks face {context}?\n- Competition, alternatives, or substitutes for {context}\n- Regulatory, economic, or environmental challenges\n- Shifting public opinion or technological disruption\n\n| SWOT Matrix for {context} | Positive | Negative |\n|--------------------------|----------|----------|\n| **Internal** | Strengths | Weaknesses |\n| **External** | Opportunities | Threats |\n\n**Strategic Insights**\n- How can strengths of {context} be used to seize opportunities?\n- How can weaknesses be shored up before they become critical?\n- What threats to {context} are imminent versus long-term?\n\nWould you like me to help fill in specific details for each quadrant of {context}?",
+    "fallback": "A SWOT analysis examines Strengths, Weaknesses (internal), Opportunities, and Threats (external) to assess the strategic position of a topic.",
+    "style": ["analytical", "strategic", "structured"],
+    "response_length": "long"
+  },
+  {
+    "id": "trend-analysis-009",
+    "triggers": [
+      "what are the trends in",
+      "trend analysis of",
+      "emerging trends in"
+    ],
+    "context_role": "topic",
+    "template": "Identifying and understanding trends in {context} requires looking at data patterns over time and distinguishing signal from noise. Here is a trend analysis framework:\n\n**1. Historical Baseline**\nWhere has {context} been over the past 3-5 years?\n- What were the dominant approaches, technologies, or ideas?\n- What has remained stable versus what has changed?\n- Look for inflection points where {context} shifted direction\n\n**2. Current Landscape**\nWhat is happening with {context} right now?\n- What innovations or developments are gaining traction?\n- What is being debated or questioned about {context}?\n- Who are the current leaders, innovators, or disruptors?\n\n**3. Emerging Signals**\nWhat early indicators suggest where {context} is heading?\n- Early-stage research, pilot projects, or experiments\n- Grassroots movements or niche communities exploring new angles of {context}\n- Investment flowing into specific areas related to {context}\n\n**4. Drivers of Change**\nWhat forces are shaping the trajectory of {context}?\n- Technological advances (automation, AI, materials science)\n- Demographic shifts (aging populations, digital natives)\n- Regulatory or policy changes\n- Cultural or behavioral shifts\n\n**Trend Matrix for {context}**\n| Trend | Strength | Direction | Impact | Timeline |\n|-------|----------|-----------|--------|----------|\n| Trend A | Strong | Accelerating | High | 1-2 years |\n| Trend B | Moderate | Emerging | Medium | 3-5 years |\n| Trend C | Weak | Declining | Low | N/A |\n\nWhich timeframe of {context} are you most interested in exploring?",
+    "fallback": "Trend analysis examines historical baselines, current signals, and emerging drivers to understand where a topic is heading.",
+    "style": ["analytical", "forward-looking", "structured"],
+    "response_length": "long"
+  },
+  {
+    "id": "future-prediction-010",
+    "triggers": [
+      "predict the future of",
+      "what will happen to",
+      "future outlook for"
+    ],
+    "context_role": "topic",
+    "template": "Predicting the future of {context} requires mapping possible trajectories rather than betting on a single outcome. Here are three plausible scenarios:\n\n**Scenario 1: Linear Progression (Most Likely)**\n{context} continues on its current trajectory with incremental improvements.\n- Key assumption: Existing trends hold steady\n- What this looks like: Steady adoption, gradual refinement, established players lead\n- Watch for: Slowdown in innovation, commoditization of {context}\n\n**Scenario 2: Disruptive Breakthrough (Optimistic)**\nA major innovation or shift fundamentally transforms {context}.\n- Key assumption: A catalyst emerges—technology, regulation, or cultural shift\n- What this looks like: Rapid reorganization, new entrants, exponential growth in {context}\n- Watch for: Breakthrough research, unexpected convergence, shifting user behavior\n\n**Scenario 3: Contraction or Fragmentation (Pessimistic)**\nChallenges cause {context} to shrink, stall, or splinter.\n- Key assumption: Headwinds outweigh tailwinds\n- What this looks like: Reduced investment, competing standards, public backlash\n- Watch for: Resource constraints, negative externalities, loss of trust\n\n**Scenario Planning Matrix for {context}**\n| Scenario | Probability | Key Indicators | Preparation |\n|----------|------------|----------------|-------------|\n| Linear progression | 60% | Steady growth | Optimize for stability |\n| Disruptive breakthrough | 25% | Acceleration signals | Build flexibility |\n| Contraction | 15% | Warning signs | Create contingency |\n\nThe most robust strategy for {context} prepares for all three by building adaptability into your approach. Which scenario resonates most with your sense of {context}?",
+    "fallback": "Future prediction involves mapping multiple plausible scenarios—linear progression, disruptive breakthrough, and contraction—rather than a single forecast.",
+    "style": ["analytical", "forward-looking", "strategic"],
+    "response_length": "long"
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "q": [
+      "What are the different cooking methods?",
+      "What is the difference between roasting and baking?",
+      "How does grilling work?",
+      "What is frying?",
+      "What is the difference between sautéing and pan-frying?",
+      "What is steaming?",
+      "What is braising?"
+    ],
+    "a": "Cooking methods fall into two categories: dry heat (roasting, baking, grilling, broiling, sautéing, frying) and moist heat (steaming, poaching, simmering, boiling, braising, stewing). Roasting and baking both use dry, indirect heat in an oven, but roasting typically applies to meat and vegetables at higher temperatures to achieve browning, while baking usually refers to foods like bread, cakes, and pastries that have a structured batter or dough. Grilling cooks food from below with high direct heat, creating distinctive char marks and smoky flavors through fat dripping onto hot coals or burners. Frying involves cooking food in hot fat: shallow-frying (sautéing, pan-frying) uses minimal oil, while deep-frying fully submerges food in oil heated to 325-375°F to create a crisp exterior through rapid moisture evaporation and browning. Steaming cooks food with vaporized water, preserving nutrients and texture without added fat, making it ideal for vegetables and seafood."
+  },
+  {
+    "q": [
+      "What is poaching?",
+      "What is sous-vide cooking?",
+      "How does sous-vide work?",
+      "What are the benefits of sous-vide?",
+      "What is the difference between poaching and simmering?",
+      "What temperature is used for poaching?",
+      "What foods are best for poaching?"
+    ],
+    "a": "Poaching is a gentle moist-heat cooking method where food is submerged in liquid at relatively low temperatures (160-180°F), well below the boiling point, producing tender, delicate results ideal for eggs, fish, chicken, and fruit. Sous-vide (French for 'under vacuum') is a precise cooking technique where food is vacuum-sealed in a plastic bag and cooked in a water bath maintained at a very specific temperature, often for extended periods ranging from an hour to several days. Sous-vide offers unparalleled temperature control — cooking a steak precisely to 130°F for medium-rare throughout without any overcooked edges — and allows tough cuts of meat to become tender at their ideal serving temperature through prolonged cooking. After sous-vide cooking, food is typically finished with a quick sear or torch blast to develop flavor through the Maillard reaction on the surface."
+  },
+  {
+    "q": [
+      "What are essential knife skills?",
+      "How do I hold a chef's knife properly?",
+      "What are the basic knife cuts?",
+      "What is the difference between dice, julienne, and chiffonade?",
+      "What knives do I need in my kitchen?",
+      "How do I sharpen a knife?",
+      "What is a mise en place?"
+    ],
+    "a": "Proper knife skills begin with the grip: pinch the blade between your thumb and forefinger just above the handle while wrapping the remaining fingers around the handle for control, and use a claw grip with your non-dominant hand to guide food, keeping fingertips tucked back. Basic cuts include the julienne (2-inch matchsticks about 1/8 inch thick), dice (brunoise at 1/8-inch cubes, small dice at 1/4-inch, medium at 1/2-inch, large at 3/4-inch), chiffonade (rolling leafy herbs or greens and slicing into thin ribbons), and bias cuts for elongated presentation. A well-equipped kitchen typically requires a chef's knife (8-10 inches) for most tasks, a paring knife for detailed work, a serrated bread knife, and optionally a utility knife and boning knife. Honing with a steel realigns the blade edge between sharpenings, while true sharpening removes metal using whetstones or mechanical sharpeners, and a sharp knife is actually safer than a dull one since it requires less force and provides better control."
+  },
+  {
+    "q": [
+      "How does heat transfer work in cooking?",
+      "What are the different types of heat transfer in cooking?",
+      "What is conduction in cooking?",
+      "What is convection?",
+      "What is radiant heat cooking?",
+      "How does the Maillard reaction work?",
+      "What is caramelization?",
+      "maillard reaction",
+      "what is the maillard reaction",
+      "explain the maillard reaction"
+    ],
+    "a": "Heat transfer in cooking occurs through three mechanisms: conduction (direct contact between food and a hot surface like a pan), convection (transfer through fluid movement of air or liquid, as in an oven or pot of simmering water), and radiation (energy waves from a heat source like a broiler or grill). The Maillard reaction is a complex chemical reaction between amino acids and reducing sugars that occurs when food is heated above about 285°F, creating hundreds of flavor compounds responsible for the browned, savory crust on seared meat, toasted bread, and roasted coffee. Caramelization is the browning of sugars alone when heated above about 320°F, producing sweet, nutty, and slightly bitter notes distinct from Maillard browning. Understanding these processes allows cooks to control texture and flavor development: low, slow cooking breaks down collagen in tough meats, while high-heat searing creates flavorful crusts through Maillard browning."
+  },
+  {
+    "q": [
+      "What are essential kitchen tools?",
+      "What cookware should every kitchen have?",
+      "What is the difference between cast iron and stainless steel?",
+      "What kitchen tools do professional chefs use?",
+      "What is a mise en place?",
+      "What are the most important small kitchen appliances?",
+      "How do I choose a good chef's knife?"
+    ],
+    "a": "Essential kitchen tools include a chef's knife, cutting board, cast-iron skillet, stainless steel sauté pan, saucepan, stockpot, sheet pans, mixing bowls, measuring cups and spoons, tongs, spatula, and a thermometer. Cast iron provides excellent heat retention and even heating, develops a natural non-stick seasoning over time, and can go from stovetop to oven, while stainless steel offers precise temperature response and is dishwasher-safe but requires technique to prevent sticking. Professional kitchens rely on mise en place — a French term meaning 'everything in its place' — which involves preparing and organizing all ingredients before cooking begins, including measuring, chopping, and portioning everything needed for a recipe. Key small appliances that expand cooking capabilities include an immersion blender for soups and sauces, a food processor for chopping and pureeing, and an instant-read thermometer for ensuring food safety and ideal doneness in meat and baked goods."
+  }
+]

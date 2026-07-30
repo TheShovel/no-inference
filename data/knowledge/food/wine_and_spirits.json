@@ -1,0 +1,74 @@
+[
+  {
+    "q": [
+      "What are the different types of wine?",
+      "What is the difference between red and white wine?",
+      "What is rosé wine?",
+      "How is sparkling wine made?",
+      "What are dessert wines?",
+      "What is fortified wine?",
+      "What is the difference between champagne and prosecco?",
+      "What is port wine?",
+      "What is sherry?"
+    ],
+    "a": "Wine is broadly categorized into still wines (red, white, rosé), sparkling wines, dessert wines, and fortified wines. Red wine is made from dark-skinned grapes fermented with the skins intact, which impart color, tannins, and body, producing styles from light-bodied Pinot Noir to full-bodied Cabernet Sauvignon. White wine is made from green or golden grapes fermented without skins, yielding crisp, bright flavors ranging from dry Sauvignon Blanc to oaky Chardonnay. Rosé is made by briefly macerating red grape juice with skins to achieve its characteristic pink hue. Sparkling wines like Champagne undergo a secondary fermentation in the bottle to create carbonation, while dessert wines like Sauternes are made from grapes concentrated by noble rot or late harvest, and fortified wines like Port, Sherry, and Madeira have neutral grape spirit added to halt fermentation, raising alcohol content and preserving natural sweetness."
+  },
+  {
+    "q": [
+      "What are the major wine regions of the world?",
+      "What is Bordeaux known for?",
+      "What wines come from Burgundy?",
+      "What is Tuscany famous for?",
+      "What is Napa Valley known for?",
+      "What is Rioja wine like?",
+      "What are the best wine regions in France?",
+      "What is Barolo wine?",
+      "What is the difference between Burgundy and Bordeaux?",
+      "What wines come from Italy?"
+    ],
+    "a": "Bordeaux in France produces some of the world's most celebrated red wines, primarily from Cabernet Sauvignon and Merlot blends, categorized by the Left Bank (gravelly soils favoring Cabernet) and Right Bank (clay-limestone favoring Merlot), with prestigious appellations like Pauillac, Margaux, and Saint-Émilion. Burgundy (Bourgogne) is the benchmark for Pinot Noir (red) and Chardonnay (white), with a complex hierarchy of appellations from generic Bourgogne through village-level and premier cru to grand cru vineyards. Tuscany is Italy's iconic wine region, home to Sangiovese-based Chianti, Brunello di Montalcino, and Vino Nobile di Montepulciano, as well as the 'Super Tuscan' movement that introduced international varieties. Napa Valley in California is renowned for powerful, fruit-forward Cabernet Sauvignon and unoaked Chardonnay, while Rioja in northern Spain produces Tempranillo-based reds classified by aging — Crianza, Reserva, and Gran Reserva."
+  },
+  {
+    "q": [
+      "How do you taste wine properly?",
+      "What are the steps to wine tasting?",
+      "What does wine tasting involve?",
+      "How do you evaluate wine?",
+      "What are wine aromas?",
+      "How do you describe wine?",
+      "What is the difference between nose and palate in wine?",
+      "What is a wine's finish?"
+    ],
+    "a": "Wine tasting follows a structured sequence: Look (observe clarity, color intensity, and viscosity — 'legs' or 'tears' indicate alcohol and sugar content), Swirl (aerates the wine to release aromatic compounds), Smell (identify primary fruit aromas, secondary fermentation notes like vanilla or toast from oak, and tertiary aged notes like leather or dried fruit), Taste (assess sweetness, acidity, tannins, alcohol, body, and flavor intensity across the palate), and Savor (evaluate the finish — how long flavors linger after swallowing). The 'nose' refers to the wine's aroma profile before tasting, which can reveal grape variety, terroir, winemaking techniques, and age. Acidity makes wine taste crisp and refreshing (essential for food pairing), tannins create drying, bitter sensations in red wines (contributing to structure and aging potential), and balance among these components — no single element dominating — is the hallmark of a well-made wine."
+  },
+  {
+    "q": [
+      "What are the main types of beer?",
+      "What is lager beer?",
+      "What is ale beer?",
+      "What is IPA beer?",
+      "What is stout beer?",
+      "What is porter beer?",
+      "What are wheat beers?",
+      "What is sour beer?",
+      "What is the difference between lager and ale?",
+      "What is pilsner?"
+    ],
+    "a": "Beer is broadly divided into ales and lagers based on yeast type and fermentation temperature: ales use top-fermenting Saccharomyces cerevisiae at warmer temperatures (60-75°F), producing faster fermentation and fruitier, more complex flavors, while lagers use bottom-fermenting Saccharomyces pastorianus at cooler temperatures (45-55°F), yielding cleaner, crisper profiles. IPA (India Pale Ale) originated as a heavily hopped ale designed to survive the sea voyage from England to India; modern IPAs span from bitter West Coast styles to hazy, juicy New England IPAs with intense hop aroma and low bitterness. Stouts and porters are dark ales using roasted malts or barley: porters are historically lighter-bodied with chocolatey notes, while stouts (including the famous Irish dry stout and imperial stouts) are richer, blacker, and often feature coffee and dark chocolate flavors. Wheat beers like German Hefeweizen and Belgian Witbier use significant proportions of wheat malt for light body, high carbonation, and distinctive spicy or fruity yeast character."
+  },
+  {
+    "q": [
+      "What are the main types of distilled spirits?",
+      "What is the difference between whiskey and bourbon?",
+      "What is scotch whisky?",
+      "How is vodka made?",
+      "What is gin made from?",
+      "How is rum produced?",
+      "What is tequila made from?",
+      "What is cognac?",
+      "How does distillation work for spirits?",
+      "What is the difference between bourbon and whiskey?"
+    ],
+    "a": "Distilled spirits are produced by fermenting a base ingredient into alcohol and then concentrating it through distillation, which separates alcohol from water by boiling point. Whiskey (or whisky) is distilled from fermented grain mash and aged in wooden casks — Scotch whisky is made primarily from malted barley in Scotland and aged at least three years, while bourbon is an American whiskey made from at least 51% corn, aged in new charred oak barrels, and produced in the United States. Vodka is distilled from fermented grains or potatoes to high proof, then filtered and diluted for a neutral, clean character, while gin redistills neutral spirits with juniper berries and botanicals for its piney, herbal profile. Rum is made from sugarcane products (molasses or juice) and aged in oak barrels, tequila is produced from the blue agave plant in specific Mexican regions, and cognac is a double-distilled French brandy from the Cognac region made primarily from Ugni Blanc grapes, aged in Limousin oak for a minimum of two years."
+  }
+]

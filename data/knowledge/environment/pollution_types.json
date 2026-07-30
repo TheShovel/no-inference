@@ -1,0 +1,61 @@
+[
+  {
+    "q": [
+      "What are the main types of air pollution?",
+      "How does air pollution affect human health?",
+      "What are the primary sources of air pollutants?",
+      "What is the difference between PM2.5 and PM10?",
+      "How does ground-level ozone form?",
+      "What are the global health impacts of air pollution?"
+    ],
+    "a": "Air pollution consists of harmful substances in the atmosphere, including particulate matter (PM2.5 and PM10), nitrogen oxides, sulfur dioxide, carbon monoxide, volatile organic compounds, and ground-level ozone. Major sources include vehicle emissions, industrial processes, power plants burning fossil fuels, agricultural activities, and residential heating. Air pollution is the leading environmental cause of death worldwide, responsible for an estimated 7 million premature deaths annually according to the WHO, primarily from stroke, heart disease, lung cancer, and chronic respiratory diseases. Fine particulate matter (PM2.5) is especially dangerous as it can penetrate deep into the lungs and enter the bloodstream."
+  },
+  {
+    "q": [
+      "What causes water pollution and what are its effects?",
+      "What are the main sources of water contamination?",
+      "How does agricultural runoff affect water quality?",
+      "What is eutrophication and what causes it?",
+      "What are the health effects of drinking contaminated water?",
+      "How do industrial chemicals pollute water sources?"
+    ],
+    "a": "Water pollution occurs when harmful substances — such as pathogens, chemicals, nutrients, plastics, and heavy metals — contaminate rivers, lakes, oceans, and groundwater. Key sources include agricultural runoff (fertilizers, pesticides, and animal waste), untreated sewage, industrial discharge, oil spills, and plastic waste. Excess nutrients like nitrogen and phosphorus from fertilizers cause eutrophication — explosive algal growth that depletes oxygen and creates dead zones, such as the annual hypoxia zone in the Gulf of Mexico. An estimated 2 billion people worldwide lack access to safely managed drinking water, and waterborne diseases remain a leading cause of death in developing nations."
+  },
+  {
+    "q": [
+      "What is soil contamination and how does it happen?",
+      "What are the main causes of soil pollution?",
+      "How does soil contamination affect food safety?",
+      "What are heavy metals and why are they dangerous in soil?",
+      "How can contaminated soil be remediated?",
+      "What are the long-term effects of soil pollution on ecosystems?"
+    ],
+    "a": "Soil contamination is the presence of hazardous substances — including heavy metals (lead, cadmium, mercury, arsenic), industrial chemicals, pesticides, petroleum hydrocarbons, and microplastics — in the soil at concentrations that pose risks to human health and ecosystems. Major sources include industrial activities, mining, improper waste disposal, intensive agriculture, and atmospheric deposition from air pollution. Contaminated soil directly affects food safety when crops absorb toxins, and it can leach into groundwater, creating long-term environmental hazards. Remediation approaches include bioremediation (using microorganisms to break down pollutants), phytoremediation (using plants to absorb contaminants), and physical soil removal or washing."
+  },
+  {
+    "q": [
+      "What is noise pollution and how does it affect health?",
+      "What are the main sources of noise pollution?",
+      "How does chronic noise exposure impact human well-being?",
+      "What is light pollution and its environmental effects?",
+      "How does artificial light at night affect wildlife?",
+      "What are the different types of light pollution?"
+    ],
+    "a": "Noise pollution refers to unwanted or harmful environmental sound, primarily from traffic, aircraft, industrial operations, and construction, that disrupts human and animal life. Chronic exposure to elevated noise levels is linked to cardiovascular diseases, sleep disturbance, cognitive impairment in children, and increased stress hormone levels. Light pollution is the excessive or misdirected artificial light at night, categorized as skyglow (brightening of the night sky over populated areas), glare (excessive brightness causing discomfort), light trespass (unwanted light crossing property boundaries), and clutter (excessive groupings of lights). Both forms of pollution disrupt natural rhythms: artificial light interferes with circadian rhythms in humans and with navigation, reproduction, and feeding in wildlife — particularly nocturnal species like sea turtles, migrating birds, and insects."
+  },
+  {
+    "q": [
+      "What is plastic pollution and why is it a major concern?",
+      "How does plastic waste accumulate in the environment?",
+      "What are microplastics and where do they come from?",
+      "How does plastic pollution affect marine life?",
+      "What is the Great Pacific Garbage Patch?",
+      "What are the solutions to plastic pollution?",
+      "what are microplastics",
+      "microplastics",
+      "plastic pollution",
+      "microplastic pollution"
+    ],
+    "a": "Plastic pollution is the accumulation of synthetic plastic products and particles in the environment, with an estimated 8-11 million metric tons entering the oceans annually. Plastics persist for hundreds of years, fragmenting into microplastics (particles under 5 mm) through UV radiation and physical abrasion. Microplastics come from primary sources (intentionally manufactured small particles like microbeads) and secondary sources (breakdown of larger items), and have been found everywhere from Arctic ice to human bloodstreams. The Great Pacific Garbage Patch is a massive accumulation zone of floating plastic debris in the North Pacific Gyre, spanning an estimated 1.6 million square kilometers. Solutions include reducing single-use plastic production, improving waste management and recycling, developing biodegradable alternatives, and international agreements to curb plastic pollution."
+  }
+]

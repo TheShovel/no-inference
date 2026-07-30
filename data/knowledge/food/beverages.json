@@ -1,0 +1,67 @@
+[
+  {
+    "q": [
+      "What are the different types of coffee?",
+      "How is coffee brewed?",
+      "What is the difference between Arabica and Robusta coffee?",
+      "What are the main coffee brewing methods?",
+      "What is espresso?",
+      "What is pour-over coffee?",
+      "What is cold brew coffee?",
+      "How does the roasting process affect coffee flavor?"
+    ],
+    "a": "Coffee varieties are primarily divided into two commercial species: Arabica (sweeter, more complex, with notes of fruit and chocolate, grown at higher altitudes) and Robusta (stronger, more bitter, with higher caffeine content, more disease-resistant). Brewing methods extract flavor differently: espresso forces hot water through finely ground coffee under pressure, producing a concentrated shot with crema; pour-over allows water to drip through a filter cone for a clean, bright cup; French press uses immersion with a metal mesh filter for full-bodied brew with oils; and cold brew steeps coarse grounds in cold water for 12-24 hours, resulting in low-acidity coffee. The roasting process significantly affects flavor: light roasts preserve origin characteristics and acidity, medium roasts balance acidity and body with more developed sweetness, and dark roasts produce bold, smoky flavors with lower acidity but less origin character. Key coffee-producing regions include Ethiopia (floral, fruity), Colombia (well-balanced with caramel sweetness), Brazil (nutty, chocolatey), and Sumatra (earthy, full-bodied)."
+  },
+  {
+    "q": [
+      "What are the different types of tea?",
+      "What is the difference between green, black, and oolong tea?",
+      "What is white tea?",
+      "What are herbal teas?",
+      "How is tea processed?",
+      "What is matcha?",
+      "What is pu-erh tea?",
+      "Does tea have caffeine?"
+    ],
+    "a": "All true teas (green, black, oolong, white, pu-erh, and yellow) come from the same plant, Camellia sinensis, with differences arising from processing methods. Green tea is minimally oxidized (heated quickly to prevent oxidation), retaining a light, grassy flavor and high antioxidant content. Black tea is fully oxidized, producing a bold, robust flavor with higher caffeine. Oolong tea falls between green and black, with partial oxidation ranging from 10-80% for an enormous flavor spectrum from floral to toasty. White tea is the least processed, made from young buds and leaves simply dried, yielding a delicate, subtly sweet flavor. Herbal teas (tisanes) are not true teas but infusions of herbs, flowers, fruits, or spices like chamomile, peppermint, and rooibos, and are naturally caffeine-free. Matcha is a powdered Japanese green tea where the whole leaf is consumed, providing more concentrated nutrients and caffeine, traditionally prepared in Japanese tea ceremonies."
+  },
+  {
+    "q": [
+      "What are the major wine regions?",
+      "What are the different varieties of wine?",
+      "What is the difference between red and white wine?",
+      "What are the most popular wine grape varieties?",
+      "What is terroir in wine?",
+      "What are the wine regions of France?",
+      "What is the difference between Old World and New World wines?",
+      "How is sparkling wine made?"
+    ],
+    "a": "Wine is produced worldwide but historically significant regions include France (Bordeaux, Burgundy, Champagne, Rhône, Loire), Italy (Tuscany, Piedmont, Veneto), Spain (Rioja, Ribera del Duero, Priorat), and Germany (Mosel, Rheingau for Riesling). Major red grape varieties include Cabernet Sauvignon, Pinot Noir, Merlot, Syrah/Shiraz, and Tempranillo, while major white varieties include Chardonnay, Sauvignon Blanc, Riesling, and Pinot Grigio. Terroir — the concept that a wine's character is shaped by its specific environment including soil, climate, topography, and local traditions — is fundamental to wine appreciation, explaining why the same grape variety tastes different when grown in different regions. Old World wines (Europe) tend to be named after their region and are generally more restrained with higher acidity and earthy flavors, while New World wines (Americas, Australia, New Zealand, South Africa) are typically labeled by grape variety and are often fruitier, fuller-bodied, and more approachable young. Sparkling wine like Champagne is made through méthode champenoise where secondary fermentation occurs in the bottle, producing carbonation through trapped CO2."
+  },
+  {
+    "q": [
+      "What are the different styles of beer?",
+      "What is the difference between lager and ale?",
+      "What is a stout?",
+      "What is an IPA?",
+      "What are the main beer ingredients?",
+      "What is the difference between a porter and a stout?",
+      "What are sour beers?",
+      "How is beer brewed?"
+    ],
+    "a": "Beer is broadly divided into ales and lagers based on yeast type and fermentation temperature: ales use Saccharomyces cerevisiae yeast fermenting at warmer temperatures (60-75°F) for fruity, complex flavors, while lagers use Saccharomyces pastorianus fermenting at cooler temperatures (45-55°F) for clean, crisp profiles. India Pale Ales (IPAs) originated as heavily hopped beers that survived the sea voyage from England to India, and modern variations range from hazy New England IPAs (juicy, low bitterness) to West Coast IPAs (piney, high bitterness) and double/triple IPAs with higher alcohol content. Stouts and porters are dark beers using roasted malts or barley; stouts tend to be stronger with more roasted character, featuring notes of coffee, chocolate, and sometimes oatmeal or milk sugar for sweetness. The four essential beer ingredients are water, malted barley (providing fermentable sugars and color), hops (contributing bitterness, flavor, and preservation), and yeast (responsible for fermentation and a significant portion of the flavor profile)."
+  },
+  {
+    "q": [
+      "What are the different types of spirits?",
+      "How is whiskey made?",
+      "What is the difference between bourbon and scotch?",
+      "How is vodka made?",
+      "What is gin?",
+      "How is rum produced?",
+      "What is tequila made from?",
+      "What is the difference between fermented and distilled beverages?"
+    ],
+    "a": "Distilled spirits are produced by fermenting a base ingredient and then concentrating alcohol through distillation. Whiskey is made from fermented grain mash and aged in wooden casks; bourbon (primarily corn, aged in new charred oak barrels) is distinctly American and sweeter, while scotch (made from malted barley, typically aged at least three years in oak casks) can be single malt or blended. Vodka can be made from any fermentable ingredient (grains, potatoes, grapes) and is distilled to high purity for a neutral flavor. Gin is flavored primarily with juniper berries along with other botanicals through distillation or maceration. Rum is produced from sugarcane byproducts (molasses or fresh juice), with styles ranging from light (unaged, clean) to dark (long-aged, rich) to agricole (made from fresh cane juice). Tequila is made specifically from blue agave in designated Mexican regions, with categories based on aging: blanco (unaged), reposado (2-12 months), añejo (1-3 years), and extra añejo (3+ years). Fermented beverages like beer and wine reach about 5-20% ABV naturally, while distillation concentrates alcohol to 40-60% ABV for spirits."
+  }
+]

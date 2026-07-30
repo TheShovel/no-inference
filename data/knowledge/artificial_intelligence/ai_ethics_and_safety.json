@@ -1,0 +1,46 @@
+[
+  {
+    "q": [
+      "What is AI ethics?",
+      "Why is AI ethics important?",
+      "What are the main ethical concerns with AI?",
+      "What is fairness in AI?",
+      "What is algorithmic bias?",
+      "How does bias enter AI systems?",
+      "What is transparency in artificial intelligence?"
+    ],
+    "a": "AI ethics is a branch of ethics focused on the responsible development, deployment, and governance of artificial intelligence systems, addressing concerns around fairness, accountability, transparency, privacy, and societal impact. Algorithmic bias occurs when AI systems produce systematically unfair outcomes due to biased training data, flawed model design, or misaligned objectives — for example, facial recognition systems that perform poorly on darker skin tones or hiring algorithms that discriminate against women. Transparency and explainability require that AI systems' decisions can be understood and audited by humans, which is challenging for complex deep learning models and has led to the growth of the XAI (Explainable AI) research field."
+  },
+  {
+    "q": [
+      "What is AI safety?",
+      "What is the alignment problem in AI?",
+      "Why is AI alignment difficult?",
+      "What are the risks of advanced AI?",
+      "What is the control problem in AI?",
+      "How do we ensure AI systems are safe?"
+    ],
+    "a": "AI safety is the research field concerned with ensuring that AI systems, particularly advanced and potentially superintelligent systems, are designed to operate reliably and in alignment with human values and intentions. The alignment problem addresses the fundamental challenge of ensuring that an AI system's objectives perfectly match what humans actually want, accounting for the difficulty of specifying human values precisely and the risk that a highly capable AI pursuing a misaligned goal could cause catastrophic harm. The control problem (or value-loading problem) asks how to design AI systems that remain under meaningful human control while becoming increasingly autonomous and capable, with proposed approaches including value learning, corrigibility, interpretability research, and cautious development practices."
+  },
+  {
+    "q": [
+      "How is AI regulated around the world?",
+      "What is the EU AI Act?",
+      "What are AI regulations?",
+      "How should governments regulate AI?",
+      "What is GDPR and how does it affect AI?",
+      "What are the main approaches to AI governance?"
+    ],
+    "a": "AI regulation is rapidly evolving worldwide, with the European Union leading comprehensive legislation through the AI Act, which categorizes AI systems by risk level (unacceptable, high, limited, and minimal) and imposes corresponding requirements for transparency, risk management, and human oversight. The United States takes a sector-based approach with executive orders and agency guidance rather than comprehensive federal legislation, while China has enacted specific regulations targeting algorithmic recommendations, deepfakes, and recommendation systems. Key regulatory issues include data privacy (impacting AI training and deployment), liability for AI-caused harm, transparency and explainability requirements, anti-discrimination protections, and frameworks for testing and certifying high-risk AI systems before market release."
+  },
+  {
+    "q": [
+      "What is accountability in AI?",
+      "How can AI be used for social good?",
+      "What is privacy-preserving machine learning?",
+      "What are the biggest risks of AGI?",
+      "How do we ensure responsible AI development?"
+    ],
+    "a": "Accountability in AI requires that clear responsibility be assigned for AI systems' outcomes — including who is liable when an autonomous vehicle causes an accident, when a medical AI misdiagnoses a patient, or when an algorithmic decision unfairly denies a loan — raising legal and ethical questions that current frameworks are still adapting to address. AI for social good applies AI technologies to address societal challenges like climate change modeling, wildlife conservation (tracking endangered species with computer vision), disaster response (predicting natural disasters and optimizing aid distribution), and healthcare access (diagnosing diseases in underserved regions). Privacy-preserving techniques, including federated learning (training models across distributed data without centralizing it), differential privacy (adding calibrated noise to prevent individual identification), and homomorphic encryption, aim to enable powerful AI while protecting individuals' sensitive data."
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "q": [
+      "What is a CTD in oceanography?",
+      "What does CTD stand for?",
+      "How does a CTD measure ocean properties?",
+      "What is a rosette sampler?",
+      "What are Niskin bottles?",
+      "What is conductivity temperature and depth?",
+      "CTD oceanography instrument",
+      "how do oceanographers measure water properties"
+    ],
+    "a": "A CTD (Conductivity, Temperature, Depth) profiler is the fundamental oceanographic instrument for measuring water column properties, using a conductivity cell to determine salinity, a precision thermometer for temperature, and a pressure sensor for depth. CTDs are typically mounted on a rosette frame with 12 to 36 Niskin bottles — cylindrical sampling bottles that are triggered at specific depths to collect water samples for laboratory analysis of dissolved oxygen, nutrients, carbon chemistry, and trace elements. Modern CTDs sample at 24 Hz as they are lowered through the water column, producing continuous vertical profiles of ocean properties from the surface to the seafloor."
+  },
+  {
+    "q": [
+      "What is an ADCP?",
+      "What does ADCP stand for?",
+      "How does an ADCP measure currents?",
+      "What is an acoustic Doppler current profiler?",
+      "What are current meters?",
+      "How are ocean currents measured?",
+      "What are wave buoys?",
+      "What is a tide gauge?",
+      "How are waves and tides measured?",
+      "ocean current measurement instruments"
+    ],
+    "a": "Acoustic Doppler Current Profilers (ADCPs) measure water current velocity at multiple depths simultaneously by emitting sound pulses and measuring the Doppler shift of echoes scattered back from particles in the water, providing high-resolution vertical profiles of current speed and direction. Wave buoys are floating platforms equipped with accelerometers and GPS that measure wave height, period, direction, and wave spectra, transmitting data via satellite for weather forecasting and marine safety. Tide gauges, traditionally using stilling wells and float mechanisms but now primarily acoustic or pressure-based, continuously record water level changes at coastal stations to track tidal patterns, storm surges, and long-term sea level rise."
+  },
+  {
+    "q": [
+      "What are oceanographic moorings?",
+      "What are sediment traps?",
+      "What are plankton nets?",
+      "What is an Argo float?",
+      "What are ocean gliders?",
+      "What are ocean drifters?",
+      "What is a cabled observatory?",
+      "What is a ocean observing system?",
+      "how do oceanographers deploy instruments",
+      "long term ocean monitoring"
+    ],
+    "a": "Oceanographic moorings are anchored arrays of instruments deployed at fixed locations for months to years, measuring currents, temperature, salinity, and other properties throughout the water column, with surface buoys transmitting data via satellite in real time. Argo floats are autonomous profiling floats that drift at 1,000 meters depth and periodically ascend to the surface measuring temperature, salinity, and pressure, with over 3,800 active floats providing global ocean coverage every 10 days. Ocean gliders are buoyancy-driven autonomous underwater vehicles that fly through the water in a sawtooth pattern, collecting data over long missions lasting weeks to months, while cabled observatories like NEPTUNE and VENUS provide continuous power and high-bandwidth data transmission from seafloor instruments to shore via fiber-optic cables."
+  },
+  {
+    "q": [
+      "What is side-scan sonar?",
+      "What is multibeam sonar?",
+      "What is single-beam sonar?",
+      "What is ocean color radiometry?",
+      "How is sonar used in oceanography?",
+      "What is the difference between side-scan and multibeam sonar?",
+      "how do scientists map the seafloor",
+      "remote sensing of the ocean"
+    ],
+    "a": "Side-scan sonar is towed behind a vessel and emits fan-shaped acoustic pulses to the sides, producing detailed images of seafloor texture and features such as shipwrecks, pipelines, and sediment patterns, but does not directly measure water depth. Multibeam sonar systems emit a wide swath of acoustic beams (typically 120-512 beams) across the ship's track, measuring both depth and backscatter intensity to create high-resolution 3D bathymetric maps of the seafloor. Ocean color radiometry uses satellite sensors like NASA's MODIS and ESA's Sentinel-3 to measure the color of the ocean surface, from which scientists derive chlorophyll concentration (phytoplankton biomass), suspended sediment loads, dissolved organic matter, and water clarity across entire ocean basins on daily to weekly timescales."
+  }
+]

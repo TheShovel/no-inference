@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "what equipment is essential for scuba diving",
+      "what is a scuba tank made of",
+      "what is the difference between aluminum and steel scuba tanks",
+      "what is a high-pressure vs low-pressure scuba tank",
+      "what tank size is best for scuba diving",
+      "what is the standard scuba tank pressure",
+      "how long does a scuba tank last",
+      "how is a scuba tank maintained and inspected"
+    ],
+    "a": "Scuba tanks are high-pressure cylinders made from either aluminum (alloy 6061 or 6351) or chromium-molybdenum steel. Aluminum tanks (typically 80 cubic feet at 3,000 psi in the U.S.) are the most common recreational tank — they're corrosion-resistant, lighter when full, but become buoyant as they empty. Steel tanks (often 100 cubic feet or larger at 3,000-3,500 psi) are negatively buoyant throughout the dive, requiring less lead weight, and their thinner walls allow higher pressures in the same external size. Tank sizes are measured in cubic feet of internal volume at rated pressure: AL80 is the standard recreational aluminum 80 (11 liters), while steel tanks range from 85-120+ cubic feet. A standard AL80 provides roughly 45-60 minutes of dive time at recreational depths, depending on individual air consumption rate (SAC rate). All scuba tanks require periodic visual inspection (VIP/VCI, annually in the U.S.) and hydrostatic testing (every 5 years for steel, every 5 years for aluminum in the U.S., though some jurisdictions require 3 years for aluminum). Tank valves come in yoke (K-valve) and DIN configurations, with DIN being the more secure connection preferred for high-pressure and technical diving. Tanks must be stored with a positive pressure (minimum 200 psi) to prevent moisture entry, kept upright and secured, and never exceeding their rated working pressure."
+  },
+  {
+    "q": [
+      "what is a submersible pressure gauge",
+      "what is a SPG in scuba diving",
+      "what is a dive console",
+      "what is a wrist-mounted computer vs console",
+      "what is air integration in dive computers",
+      "how do I read a submersible pressure gauge",
+      "what is a button-style SPG",
+      "what is the difference between analog and digital SPG"
+    ],
+    "a": "A Submersible Pressure Gauge (SPG) displays the remaining pressure in the scuba cylinder, typically a high-pressure hose connected to the regulator first stage that feeds a mechanical or digital pressure readout. Analog SPGs are mechanical bourdon-tube gauges with a needle and face, displaying pressure in psi and/or bar — they're simple, reliable, and require no batteries but are bulky and can break if dropped. A console mount groups the SPG with the dive computer (and optionally a compass) in a single plastic housing that clips to the diver's BCD, keeping instruments organized but creating drag. Button-style SPGs (or mini SPGs) are smaller, lightweight gauges that attach directly to a short HP hose or to the first stage turret, popular in streamlined setups. Air-integrated dive computers use a wireless transmitter on the first stage to send pressure data to the wrist computer, displaying remaining air, estimated remaining bottom time (RBT), and air consumption rate (SAC) calculated in real time — this is the premium configuration for modern diving. A typical AL80 tank at 3,000 psi reading on the SPG, a diver consumes air at about 0.5-0.7 cubic feet per minute at the surface (SAC rate), varying with depth, workload, and experience — at 60 feet (3 atmospheres), consumption triples to about 1.5-2.1 cubic feet per minute."
+  },
+  {
+    "q": [
+      "what is a dive light",
+      "what is a dive torch",
+      "what types of dive lights are there",
+      "what is a primary dive light",
+      "what is a backup dive light",
+      "what are the best dive lights",
+      "what is the difference between LED and HID dive lights",
+      "what is a Goodman handle for dive lights"
+    ],
+    "a": "Dive lights (torches) are essential for night diving, wreck penetration, and improving color visibility at depth (water absorbs red light, so a light restores natural colors below 15-20 feet). Primary dive lights are high-output, long-burn-time lights with rechargeable lithium-ion batteries and LED emitters producing 1,000-10,000+ lumens, using a Goodman handle (a hand strap that allows the diver to use the light without gripping, freeing the hand for other tasks) or a pistol grip. Backup lights are smaller, battery-powered (AA or 18650) lights producing 100-1,000 lumens, carried as a redundancy primary during night or overhead dives. LED dive lights have largely replaced HID (high-intensity discharge) lights due to better efficiency, longer burn times, smaller size, and no warm-up time. Dive lights are rated by lumens (brightness), beam angle (narrow spot for penetrating murky water, wide flood for illumination), burn time, and depth rating (most are rated to 100-150 meters). Color temperature (cool white vs warm white) affects how natural colors appear underwater. Good dive lights have magnetic switches (to avoid O-ring failure from mechanical switches), double O-ring seals, and anodized aluminum bodies for corrosion resistance. Cave and wreck divers typically carry at least three lights: one primary and two backups, each independently powered and readily accessible in case of primary failure."
+  },
+  {
+    "q": [
+      "what is a dive knife",
+      "what is a dive tool",
+      "what cutting tools do divers need",
+      "what is a dive shears or trauma shears",
+      "what is a line cutter for diving",
+      "do I need a knife for scuba diving",
+      "what is a Z-knife for diving",
+      "what is a trilobite line cutter"
+    ],
+    "a": "Cutting tools are essential safety equipment for scuba diving, used primarily to free the diver from entanglement in fishing line, monofilament net, kelp, rope, or cable. The traditional dive knife is a stainless steel or titanium blade (usually 3-5 inches) with a serrated edge and a blunt tip for prying, worn strapped to the calf or BCD — useful for heavy cutting but bulky and prone to corrosion with inadequate maintenance. Line cutters have largely replaced knives as the primary entanglement tool for many divers: the Trilobite (a ceramic hook blade in a plastic body) cuts monofilament and fishing line instantly and safely; the Z-Knife (a small replaceable-blade cutter) and EMT shears (trauma shears with a blunt tip) are also popular. Cave and wreck divers typically carry two or more cutting tools in different locations, often a line cutter on the harness shoulder strap (accessible with either hand) and a knife on the hip or waist. Titanium knives resist corrosion better than stainless steel and are non-magnetic, important for divers who use compasses or carry sensitive electronics. All cutting tools should be rinsed with fresh water and lubricated after saltwater dives. While a knife is not strictly required for recreational diving, most dive professionals recommend carrying at least one cutting tool for entanglement emergencies."
+  }
+]

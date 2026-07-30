@@ -1,0 +1,41 @@
+[
+  {
+    "q": [
+      "What are mechanical puzzles?",
+      "What is the Rubik's Cube?",
+      "What are disentanglement puzzles?",
+      "What are burr puzzles?",
+      "What are jigsaw puzzles?",
+      "What are the different types of mechanical puzzles?",
+      "What is a puzzle box?",
+      "What is a packing puzzle?"
+    ],
+    "a": "Mechanical puzzles are puzzles that involve physical manipulation of objects to achieve a specific goal, classified into several major categories: Rubik's Cube and twisty puzzles (rotating puzzles that require aligning colored faces, invented by Ernő Rubik in 1974 with over 400 million units sold), disentanglement puzzles (metal rings and wires that must be separated without force, including the classic Chinese rings puzzle), burr puzzles (interlocking notched sticks that must be assembled into a solid shape, often requiring 6, 12, or more pieces), packing puzzles (fitting shapes into a container, like pentominoes or Tangram), folding puzzles (like those folding maps or irregular shapes into a target silhouette), trick locks and puzzle boxes (containers that require secret sequences or manipulations to open), and jigsaw puzzles (cut-out picture reassembly, dating to the 1760s when John Spilsbury mounted maps on wood and cut them along country borders). Mechanical puzzles appeal to the tactile sense and often require spatial reasoning, manual dexterity, and understanding of geometric constraints that computational puzzles do not."
+  },
+  {
+    "q": [
+      "What are recreational mathematics puzzles?",
+      "Who was Martin Gardner?",
+      "What are mathematical puzzles?",
+      "What are number puzzles and brain teasers?",
+      "What are famous math puzzles?",
+      "What is the Monty Hall problem?",
+      "What are paradoxes in recreational mathematics?",
+      "What is the birthday paradox?"
+    ],
+    "a": "Recreational mathematics encompasses puzzles and problems that are fun, engaging, and require mathematical thinking without necessarily demanding formal mathematical training, spanning number theory puzzles, probability puzzles, geometric dissection puzzles, combinatorial puzzles, and logical paradoxes. Martin Gardner (1914–2010) was the single most influential figure in recreational mathematics through his Mathematical Games column in Scientific American (1956–1981), which introduced millions of readers to a vast range of mathematical topics—from flexagons and hexaflexagons to Conway's Game of Life, polyominoes, Möbius strips, the Monty Hall problem, and the works of figures like John Conway, Roger Penrose, and M.C. Escher. Famous math puzzles include the Monty Hall problem (a counterintuitive probability puzzle about switching doors in a game show), the birthday paradox (how few people are needed in a room for a 50% chance of two sharing a birthday—just 23), the seven bridges of Königsberg (foundation of graph theory), the Towers of Hanoi, the paradoxical unexpected hanging paradox, and the missing dollar riddle, each revealing deep mathematical truths through deceptively simple framing."
+  },
+  {
+    "q": [
+      "What is puzzle design?",
+      "How do you design a logic puzzle?",
+      "What makes a good puzzle?",
+      "What are the principles of puzzle design?",
+      "What is clue writing in puzzle design?",
+      "What is the aha moment in puzzles?",
+      "What is fair play in puzzle design?",
+      "How do you create a puzzle?"
+    ],
+    "a": "Puzzle design is the art and craft of creating puzzles that are engaging, solvable, and satisfying, governed by principles of fairness (all necessary information must be present in the clues without requiring arbitrary outside knowledge), progressive difficulty (easing solvers in with accessible entry and escalating challenge), and the aha moment (a sudden insight where separate pieces click together into a coherent solution). Good puzzle design requires understanding the solver's perspective: anticipating where they may get stuck, ensuring the path to solution is logical rather than arbitrary, and building in feedback mechanisms that let solvers know they're on the right track without making the puzzle too easy. In competition puzzle hunts, designers also consider answer encoding (ensuring the answer phrase can be verified unambiguously), thematic coherence (puzzles should fit the hunt's story or theme), and meta-puzzle mechanisms (where individual puzzle answers serve as clues to a larger overarching puzzle), all while avoiding red herrings that waste solvers' time without providing useful constraints."
+  }
+]

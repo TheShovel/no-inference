@@ -1,0 +1,67 @@
+[
+  {
+    "q": [
+      "What is weaving?",
+      "How does weaving work?",
+      "What is the process of weaving?",
+      "What is the definition of weaving?",
+      "What are the basics of weaving?",
+      "How is fabric woven?",
+      "What is the interlacement of threads in weaving?",
+      "What is the difference between warp and weft?"
+    ],
+    "a": "Weaving is the textile process of interlacing two sets of threads or yarns at right angles — the warp (lengthwise threads held taut on the loom) and the weft (crosswise threads woven over and under the warp) — to create fabric, cloth, or textile. The warp threads run the full length of the fabric and must be strong and evenly tensioned, while the weft threads are carried back and forth across the warp by a shuttle or other tool. The pattern of how the weft interlaces with the warp determines the weave structure, and the resulting fabric's characteristics — drape, strength, texture, and appearance — depend on the fiber choice, thread density, and weave pattern used."
+  },
+  {
+    "q": [
+      "What is a rigid heddle loom?",
+      "What are the types of looms?",
+      "What is a floor loom?",
+      "What is a table loom?",
+      "What is a backstrap loom?",
+      "What is an inkle loom?",
+      "What is a frame loom?",
+      "What is the best loom for beginners?"
+    ],
+    "a": "A rigid heddle loom is the most common beginner loom, using a single heddle (a rigid frame with slots and holes) that separates warp threads and creates the shed (the opening through which the weft passes), making it portable, simple to understand, and capable of producing a wide range of fabric from scarves to blankets. Floor looms are larger, more complex looms with multiple shafts (4, 8, 12, or more) that allow intricate patterns like twills and satins through foot-operated treadles that raise different combinations of warp threads. Other popular loom types include table looms (similar to floor looms but operated by hand levers), backstrap looms (the simplest and most ancient, with tension provided by the weaver's body), inkle looms for narrow bands and belts, and frame looms for tapestry and wall hangings."
+  },
+  {
+    "q": [
+      "What is plain weave?",
+      "What is tabby weave?",
+      "What is balanced plain weave?",
+      "What is warp-faced weave?",
+      "What is weft-faced weave?",
+      "What is basket weave?",
+      "What is hopsack weave?",
+      "What is ribbed weave in plain weave?"
+    ],
+    "a": "Plain weave (also called tabby) is the simplest and most common weave structure, where each weft thread passes alternately over one warp thread and under the next, creating a simple checkerboard pattern that produces strong, stable fabric with maximum thread density. Variations on plain weave include balanced plain weave (equal warp and weft spacing and thickness), warp-faced (warp threads dominate the surface, as in rep weave), weft-faced (weft threads completely cover the warp, as in tapestry), basket weave (two or more warp and weft threads woven as groups for a checkerboard effect), and ribbed weave (thicker weft or warp creates horizontal or vertical ribs in the fabric). Plain weave fabrics include muslin, calico, chiffon, organza, gingam, and broadcloth."
+  },
+  {
+    "q": [
+      "What is twill weave?",
+      "What is the characteristic of twill fabric?",
+      "What is 2/2 twill?",
+      "What is herringbone weave?",
+      "What is chevron twill?",
+      "What is diamond twill?",
+      "What is satin twill?",
+      "What is the difference between twill and plain weave?"
+    ],
+    "a": "Twill weave is characterized by a diagonal pattern created when the weft passes over two or more warp threads before going under one or more, with each successive row shifting the pattern over by one thread, producing the distinctive diagonal ridges on the fabric surface. Common twill structures include 2/1 twill (weft over two warp threads, under one), 2/2 twill (over two, under two — the most common, used for denim), 3/1 twill (over three, under one), and 3/3 twill (over three, under three). Pattern variations include herringbone (the diagonal direction reverses at intervals), chevron (broken V-shaped patterns), diamond twill (interlocking diamonds), and pointed twill (the diagonal reverses symmetrically to create a mirror-image effect)."
+  },
+  {
+    "q": [
+      "What is satin weave?",
+      "What is the characteristic of satin fabric?",
+      "What is the difference between satin weave and satin fabric?",
+      "What is a floating yarn in satin?",
+      "What is 5-harness satin?",
+      "What is 8-harness satin?",
+      "What is the difference between satin and sateen?",
+      "What are the uses of satin weave?"
+    ],
+    "a": "Satin weave uses long floating yarns — weft threads passing over many warp threads (typically 4 or more) before interlacing — to create a smooth, lustrous surface with no visible diagonal pattern, producing the highest thread count and the most light-reflective fabric surface. In a true satin weave, the interlacing points are staggered so they never touch each other, maximizing the length of uninterrupted floating yarns on the fabric surface; 5-harness satin (weft over 4 warp threads, under 1) and 8-harness satin (over 7, under 1) are the most common structures. Satin weave produces shiny, slippery fabric traditionally made from silk but now commonly found in rayon, polyester, and blends, while sateen is the weft-faced version of satin weave typically made from cotton yarns."
+  }
+]

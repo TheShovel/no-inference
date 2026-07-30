@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is incident response?",
+      "What is the incident response lifecycle?",
+      "What are the phases of incident response?",
+      "What is the NIST incident response framework?",
+      "What are the six steps of incident response?",
+      "How do organizations respond to security incidents?",
+      "What happens during incident response preparation?"
+    ],
+    "a": "Incident response is the systematic approach organizations use to detect, contain, and recover from cybersecurity incidents while minimizing damage, reducing recovery time, and preventing future occurrences. The incident response lifecycle, as defined by NIST and SANS frameworks, consists of six phases: preparation (developing policies, tools, and training before incidents occur), detection and analysis (identifying anomalies and confirming incidents), containment (isolating affected systems to prevent spread), eradication (removing threats from the environment), recovery (restoring systems and returning to normal operations), and lessons learned (conducting post-incident reviews to improve future response). A well-structured incident response plan with clearly defined roles, communication protocols, and technical playbooks is essential for organizations to respond effectively under the pressure of an active security breach."
+  },
+  {
+    "q": [
+      "What is a SOC (Security Operations Center)?",
+      "What does a SOC team do?",
+      "What is forensic analysis in cybersecurity?",
+      "What is chain of custody?",
+      "Why is chain of custody important in digital forensics?",
+      "How does forensic analysis support incident response?",
+      "What is the role of a SOC analyst?"
+    ],
+    "a": "A Security Operations Center (SOC) is a centralized team that monitors, detects, analyzes, and responds to security incidents around the clock, using security information and event management (SIEM) systems, endpoint detection and response (EDR) tools, and threat intelligence feeds to identify potential threats. Forensic analysis in incident response involves collecting, preserving, and analyzing digital evidence from compromised systems to determine the root cause, scope, and impact of an incident, supporting both remediation and potential legal action. Chain of custody is the documented process of tracking evidence from collection through analysis to presentation in legal proceedings, maintaining a verifiable record of who handled evidence, when, and what changes were made, which is critical for ensuring evidence admissibility in court."
+  },
+  {
+    "q": [
+      "What is malware analysis?",
+      "How is malware analyzed?",
+      "What is memory forensics?",
+      "What is disk forensics?",
+      "What is network forensics?",
+      "How do forensic investigators examine compromised systems?",
+      "What are the types of digital forensics?"
+    ],
+    "a": "Malware analysis examines suspicious software to understand its functionality, origin, and impact through static analysis (examining code without execution) and dynamic analysis (running malware in a sandboxed environment to observe behavior). Memory forensics analyzes the contents of a computer's RAM to uncover running processes, network connections, encryption keys, and injected code that may not be visible on disk, making it essential for detecting sophisticated fileless malware and rootkits. Disk forensics involves examining storage media for deleted files, hidden partitions, registry artifacts, and file system metadata to reconstruct user activity and identify evidence of compromise, while network forensics captures and analyzes network traffic to trace attacker communications, command-and-control channels, and data exfiltration."
+  },
+  {
+    "q": [
+      "What is threat hunting?",
+      "How does threat hunting differ from incident response?",
+      "What are tabletop exercises?",
+      "What is CSIRT?",
+      "What is a Computer Security Incident Response Team?",
+      "How do incident response teams report incidents?",
+      "What is a post-mortem in incident response?"
+    ],
+    "a": "Threat hunting is a proactive security practice where analysts search for hidden threats that evaded existing security controls, using hypotheses based on threat intelligence, anomalous patterns, and behavioral analytics rather than waiting for automated alerts to trigger. Tabletop exercises are scenario-based discussions where incident response teams walk through simulated security incidents to test plans, identify gaps, practice decision-making under pressure, and improve coordination without the cost and disruption of live-fire exercises. Post-incident post-mortems are structured reviews that analyze what happened during an incident, what worked well, what failed, and what improvements should be implemented, producing actionable recommendations that strengthen security posture, update incident response plans, and reduce the likelihood of similar incidents recurring."
+  }
+]

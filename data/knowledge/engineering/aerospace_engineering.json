@@ -1,0 +1,122 @@
+[
+  {
+    "q": [
+      "What is aerospace engineering?",
+      "Define aerospace engineering.",
+      "What does an aerospace engineer do?",
+      "Explain the field of aerospace engineering.",
+      "What are the main branches of aerospace engineering?",
+      "Aerospace engineering overview",
+      "What is the difference between aeronautical and astronautical engineering?"
+    ],
+    "a": "Aerospace engineering is the primary field of engineering concerned with the design, development, testing, and production of aircraft, spacecraft, and related systems. It is traditionally divided into aeronautical engineering (atmospheric flight vehicles like airplanes, helicopters, and drones) and astronautical engineering (space vehicles like satellites, launch vehicles, and space stations). Aerospace engineers work across aerodynamics, propulsion, structures, materials, avionics, flight mechanics, and systems integration for vehicles that operate in demanding environments from sea level to deep space."
+  },
+  {
+    "q": [
+      "What is aerodynamics?",
+      "Explain aerodynamics in aerospace engineering.",
+      "How do wings generate lift?",
+      "What is drag and how is it reduced?",
+      "What is the difference between lift, drag, thrust, and weight?",
+      "Aerodynamics fundamentals",
+      "What are the key principles of aerodynamics?"
+    ],
+    "a": "Aerodynamics is the study of the motion of air and the forces it exerts on solid bodies moving through it, forming the foundation for aircraft and spacecraft design. Lift is generated primarily by wings according to Bernoulli's principle (faster airflow over the curved upper surface creates lower pressure) and Newton's third law (air deflected downward produces an upward reaction force). Drag — the aerodynamic resistance opposing motion — is composed of skin friction drag, form (pressure) drag, induced drag from lift generation, and wave drag at supersonic speeds. The lift-to-drag ratio (L/D) is a key efficiency metric, and engineers use computational fluid dynamics (CFD) and wind tunnel testing to optimize aerodynamic performance."
+  },
+  {
+    "q": [
+      "What is propulsion in aerospace engineering?",
+      "Explain aircraft and spacecraft propulsion.",
+      "How do jet engines work?",
+      "What is the difference between turbojet, turbofan, and turboprop?",
+      "How do rocket engines work?",
+      "Propulsion systems explained",
+      "What are the main types of aerospace propulsion?"
+    ],
+    "a": "Propulsion is the generation of thrust to move aircraft and spacecraft through air or space. Jet engines — turbojet, turbofan, turboprop, and ramjet — operate on the Brayton cycle: air is compressed, mixed with fuel and combusted, then expanded through a turbine (which drives the compressor) and a nozzle to produce high-velocity exhaust. Turbofans, with a large fan at the front, are the most common commercial aviation engine, offering better fuel efficiency and lower noise. Rocket engines carry both fuel and oxidizer, operating on the principle of action-reaction (Newton's third law), and include liquid rockets (cryogenic or storable propellants) and solid rockets, with specific impulse (Isp) as the key efficiency measure."
+  },
+  {
+    "q": [
+      "What is orbital mechanics?",
+      "Explain orbital mechanics in aerospace engineering.",
+      "How do satellites stay in orbit?",
+      "What are Kepler's laws of planetary motion?",
+      "How are spacecraft trajectories calculated?",
+      "Orbital mechanics fundamentals",
+      "What determines the orbit of a satellite?"
+    ],
+    "a": "Orbital mechanics (astrodynamics) is the study of the motion of spacecraft under gravitational forces, applying Newton's law of universal gravitation and Kepler's laws of planetary motion. An orbit is achieved when a spacecraft's tangential velocity balances gravitational pull — too slow and it falls back to Earth, too fast and it escapes. Key orbital parameters include altitude, inclination, eccentricity, and period, with common orbit types being Low Earth Orbit (LEO, ~200-2000 km), Geostationary Orbit (GEO, ~35,786 km), and Molniya and polar orbits. Orbital maneuvers (Hohmann transfer, plane changes, gravitational assists) are planned using the vis-viva equation and Lambert's problem for interplanetary trajectories."
+  },
+  {
+    "q": [
+      "How are aircraft designed?",
+      "Explain aircraft design process.",
+      "What are the main components of an aircraft?",
+      "What factors drive aircraft design?",
+      "How is an aircraft conceptualized and built?",
+      "Aircraft design fundamentals",
+      "What are the stages of aircraft design?"
+    ],
+    "a": "Aircraft design is a multidisciplinary process that balances aerodynamics, structures, propulsion, avionics, and systems to meet requirements for payload, range, speed, efficiency, and safety. The process follows three phases: conceptual design (configuration layout, initial sizing, weight estimation), preliminary design (detailed aerodynamic analysis, structural layout, control system design), and detailed design (component drawings, production specifications, certification documentation). Key design parameters include wing loading, thrust-to-weight ratio, aspect ratio, sweep angle, and structural load factors, with trade-offs between performance, cost, and regulatory compliance (FAA/EASA certification standards like 14 CFR Part 25 for transport aircraft)."
+  },
+  {
+    "q": [
+      "How are spacecraft designed?",
+      "Explain spacecraft design and engineering.",
+      "What are the main subsystems of a spacecraft?",
+      "What factors must be considered in spacecraft design?",
+      "How do spacecraft survive the space environment?",
+      "Spacecraft design fundamentals",
+      "What are the key challenges in designing a spacecraft?"
+    ],
+    "a": "Spacecraft design involves integrating multiple subsystems — structure, thermal control, power (solar panels, batteries, radioisotope generators), propulsion, attitude determination and control (reaction wheels, thrusters, star trackers), communication (antennas, transponders), command and data handling (onboard computers), and payload (science instruments, communication transponders, navigation signals). Design must account for the harsh space environment: vacuum, extreme temperature cycling (from -150°C in eclipse to +120°C in sunlight), radiation (trapped particles, cosmic rays, solar flares), micrometeoroid impacts, and launch vibration/acceleration. Spacecraft are rigorously tested in thermal-vacuum chambers, vibration tables, and acoustic chambers before launch."
+  },
+  {
+    "q": [
+      "What is avionics in aerospace engineering?",
+      "Explain avionics systems in aircraft and spacecraft.",
+      "What does an avionics system include?",
+      "What is a flight control system?",
+      "How do autopilots and navigation systems work?",
+      "Avionics engineering explained",
+      "What are the main avionics subsystems?"
+    ],
+    "a": "Avionics (aviation electronics) encompasses the electronic systems used on aircraft and spacecraft, including flight control, navigation, communication, instrumentation, and mission management. Flight control systems range from mechanical linkages and hydraulically boosted controls to fly-by-wire (FBW) systems where pilot inputs are interpreted by computers that command actuators. Navigation systems include GPS, inertial navigation systems (INS using ring laser gyros or fiber-optic gyros), VOR/ILS, and air data/inertial reference systems (ADIRS). Cockpit displays have evolved from analog gauges to glass cockpits with multifunction displays (MFD), head-up displays (HUD), and integrated modular avionics (IMA) architectures."
+  },
+  {
+    "q": [
+      "What materials are used in aerospace engineering?",
+      "Explain aerospace materials.",
+      "What are the key material properties for aerospace applications?",
+      "How are composites used in aircraft?",
+      "What is the difference between aluminum, titanium, and composites in aerospace?",
+      "Aerospace materials overview",
+      "What materials are used in modern aircraft and spacecraft?"
+    ],
+    "a": "Aerospace materials must meet demanding requirements for high strength-to-weight ratio, fatigue resistance, temperature tolerance, and corrosion resistance. Aluminum alloys (2024, 7075, 7050) remain widely used for airframes due to their good strength, light weight, and low cost. Titanium alloys (Ti-6Al-4V) are used in high-temperature areas like engine components and supersonic airframes. Advanced composites — carbon fiber reinforced polymer (CFRP) — now constitute over 50% of structural weight in modern aircraft like the Boeing 787 and Airbus A350, offering superior stiffness, fatigue resistance, and weight savings. Other specialized materials include nickel-based superalloys for turbine blades, ceramics for thermal protection (Space Shuttle tiles), and high-temperature steel for landing gear."
+  },
+  {
+    "q": [
+      "What is flight dynamics?",
+      "Explain flight dynamics and stability.",
+      "What are the three axes of aircraft motion?",
+      "What is longitudinal, lateral, and directional stability?",
+      "How does an aircraft's center of gravity affect flight?",
+      "Flight dynamics fundamentals",
+      "What makes an aircraft stable or unstable?"
+    ],
+    "a": "Flight dynamics is the study of aircraft motion and stability about three axes: longitudinal (pitch — rotation about the lateral axis controlled by elevators), lateral (roll — rotation about the longitudinal axis controlled by ailerons), and directional (yaw — rotation about the vertical axis controlled by the rudder). Static stability refers to a vehicle's initial tendency to return to equilibrium after a disturbance, while dynamic stability describes how the motion evolves over time. Aircraft are designed with positive static stability for safe handling, controlled by proper sizing of tail surfaces (horizontal stabilizer for pitch, vertical fin for yaw) and the relationship between center of gravity and aerodynamic center. Modern fly-by-wire aircraft can be designed with relaxed static stability for improved performance, relying on computers to maintain control."
+  },
+  {
+    "q": [
+      "What is satellite technology?",
+      "Explain satellite systems and technology.",
+      "How do satellites communicate with Earth?",
+      "What are the main types of satellites?",
+      "How are satellites powered?",
+      "Satellite technology overview",
+      "What are the key components of a satellite?"
+    ],
+    "a": "Satellites are spacecraft that orbit Earth or other celestial bodies, serving communications (television, internet, telephone), Earth observation (weather, mapping, environmental monitoring), navigation (GPS, Galileo, GLONASS), scientific research, and military purposes. Key subsystems include the bus (power system using solar arrays and batteries, thermal control, attitude control, propulsion) and payload (antennas and transponders for communications, sensors and cameras for observation). Satellite size varies widely from large geostationary communications satellites (several tons) to small CubeSats (1-10 kg). Orbits are selected by mission requirements: geostationary (GEO) satellites appear fixed over one point on Earth for continuous coverage, while low Earth orbit (LEO) constellations like Starlink provide low-latency broadband internet."
+  }
+]

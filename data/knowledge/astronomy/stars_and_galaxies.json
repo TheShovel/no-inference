@@ -1,0 +1,75 @@
+[
+  {
+    "q": [
+      "How do stars form?",
+      "Explain star formation.",
+      "What is stellar formation?",
+      "Where are stars born?",
+      "What is a protostar?",
+      "What triggers star formation?",
+      "How long does it take for a star to form?"
+    ],
+    "a": "Stars form within giant molecular clouds — vast, cold regions of space containing mostly molecular hydrogen and dust. When a region of the cloud becomes dense enough, gravity overcomes internal pressure, causing it to collapse into a rotating protostar surrounded by a protoplanetary disk. As the protostar continues to contract, its core temperature rises until it reaches about 10 million Kelvin, at which point hydrogen fusion ignites and the star enters the main sequence phase. This process takes tens of millions of years for Sun-like stars, and the initial mass of the collapsing core largely determines the star's eventual size, temperature, and lifespan."
+  },
+  {
+    "q": [
+      "What is stellar classification?",
+      "Explain the stellar classification system.",
+      "What are the spectral types of stars?",
+      "What is the OBAFGKM classification?",
+      "What type of star is the Sun?",
+      "How are stars classified by temperature?",
+      "What is the Harvard spectral classification?"
+    ],
+    "a": "Stars are classified by spectral type using the OBAFGKM sequence, ordered from hottest to coolest: O-type (over 30,000 K, blue), B-type (blue-white), A-type (white), F-type (yellow-white), G-type (yellow, like our Sun at about 5,800 K), K-type (orange), and M-type (red, under 3,500 K). Each class is further subdivided into 10 subclasses (e.g., G2 for the Sun). This classification correlates with mass, temperature, color, and luminosity, and is extended with luminosity classes (I for supergiants, III for giants, V for main-sequence dwarfs). The Hertzsprung-Russell diagram plots stars by their luminosity and temperature, revealing distinct sequences that correspond to different stages of stellar evolution."
+  },
+  {
+    "q": [
+      "What happens when a star dies?",
+      "How do stars die?",
+      "What is a supernova?",
+      "What is a white dwarf?",
+      "What is a neutron star?",
+      "What is a red giant?",
+      "How does the Sun die?",
+      "What is a planetary nebula?"
+    ],
+    "a": "A star's death depends on its mass. Stars like the Sun, after exhausting their hydrogen fuel, expand into red giants and eventually shed their outer layers as a planetary nebula, leaving behind a dense white dwarf that slowly cools over billions of years. Stars more than about 8 times the Sun's mass end their lives in a cataclysmic supernova explosion, which outshines entire galaxies briefly and synthesizes heavy elements that seed the universe. The collapsed core becomes either a neutron star, a city-sized sphere of neutrons with immense density (a teaspoon weighs billions of tons), or if the core exceeds about 3 solar masses, a black hole from which nothing can escape."
+  },
+  {
+    "q": [
+      "What are the different types of galaxies?",
+      "Explain galaxy types.",
+      "What is a spiral galaxy?",
+      "What is an elliptical galaxy?",
+      "What is an irregular galaxy?",
+      "What type of galaxy is the Milky Way?",
+      "How are galaxies classified?"
+    ],
+    "a": "Galaxies are classified by their morphology, primarily using the Hubble sequence (the tuning fork diagram). Spiral galaxies like the Milky Way and Andromeda have a central bulge of old stars surrounded by a flat, rotating disk with spiral arms of young stars, gas, and dust, often with a central supermassive black hole. Elliptical galaxies range from nearly spherical to highly elongated, contain mostly old stars, have little gas or dust, and range in size from dwarf ellipticals to giant ellipticals that can be trillions of solar masses. Irregular galaxies lack a defined shape, often the result of gravitational interactions or mergers, and include the Large and Small Magellanic Clouds."
+  },
+  {
+    "q": [
+      "What are galaxy clusters?",
+      "Explain galaxy clusters.",
+      "What is the Local Group?",
+      "What is the Virgo Cluster?",
+      "How large are galaxy clusters?",
+      "What is dark matter in galaxy clusters?",
+      "How do galaxy clusters form?"
+    ],
+    "a": "Galaxy clusters are the largest gravitationally bound structures in the universe, containing hundreds to thousands of galaxies bound together by gravity along with vast amounts of hot gas (the intracluster medium) and dark matter. The Local Group is the galaxy cluster that contains the Milky Way, Andromeda, the Triangulum Galaxy, and about 50 smaller galaxies, spanning roughly 10 million light-years. The nearby Virgo Cluster, about 54 million light-years away, contains over 1,300 galaxies and is the dominant mass center of the Local Supercluster (Laniakea). Galaxy clusters are important cosmological probes: their mass distribution reveals dark matter, their hot gas emits X-rays, and they trace the large-scale structure of the universe."
+  },
+  {
+    "q": [
+      "What is the Milky Way?",
+      "Describe the Milky Way galaxy.",
+      "What type of galaxy is the Milky Way?",
+      "How big is the Milky Way?",
+      "How many stars are in the Milky Way?",
+      "What is at the center of the Milky Way?",
+      "What are the spiral arms of the Milky Way?"
+    ],
+    "a": "The Milky Way is a barred spiral galaxy containing an estimated 100 to 400 billion stars, spanning about 100,000 light-years in diameter. It has a flat, rotating disk with prominent spiral arms (including the Orion Arm where our Solar System resides), a central bar-shaped bulge of older stars, and a spherical halo of globular clusters and dark matter. At its center lies Sagittarius A*, a supermassive black hole with a mass of about 4.3 million Suns. The Solar System orbits the galactic center at about 230 km/s, completing one revolution roughly every 230 million years, and the Milky Way is on a collision course with the Andromeda Galaxy, expected to merge in about 4.5 billion years."
+  }
+]

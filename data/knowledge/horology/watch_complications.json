@@ -1,0 +1,58 @@
+[
+  {
+    "q": [
+      "What are watch complications?",
+      "What is a complication in horology?",
+      "What are the main types of watch complications?",
+      "What functions beyond time display do watches offer?",
+      "What are calendar complications in watches?",
+      "What is the difference between annual and perpetual calendars?",
+      "watch complications date perpetual calendar moon phase equation of time",
+      "calendar complications day-date triple calendar annual calendar perpetual calendar"
+    ],
+    "a": "Watch complications are any function on a watch beyond basic time display (hours, minutes, and seconds). Calendar complications are among the most common: a simple date shows the day of the month via a window, pointer, or subdial, while day-date displays add the day of the week. A triple calendar adds the month, an annual calendar automatically adjusts for months of varying lengths but requires manual correction once per year (for February to March), and a perpetual calendar is a highly complex mechanism that accounts for leap years and requires correction only once every 100 years (or even 400 years in the most advanced versions). The moon phase complication depicts the lunar cycle through a rotating disc visible from a window on the dial, with varying accuracy levels from simple approximations (requiring a day's adjustment every 2-3 years) to astronomical versions accurate for over a century."
+  },
+  {
+    "q": [
+      "What is a chronograph complication?",
+      "How does a chronograph work?",
+      "What is a flyback or retour en vol chronograph?",
+      "What is a rattrapante or split-seconds chronograph?",
+      "What is a monopusher chronograph?",
+      "What is the difference between column wheel and cam actuated chronographs?",
+      "What is the difference between vertical clutch and horizontal clutch chronographs?",
+      "chronograph complications flyback rattrapante split-seconds monopusher",
+      "column wheel vs cam actuated vertical clutch vs horizontal clutch"
+    ],
+    "a": "A chronograph is a stopwatch complication that measures elapsed time via start, stop, and reset pushers. A flyback (retour en vol) chronograph allows the chronograph hand to instantly reset and restart with a single pusher press while running, useful for timing consecutive intervals. A rattrapante (split-seconds) chronograph features two superimposed chronograph hands, one of which can be independently stopped to record an intermediate time (lap time), then instantly catches up to the other by jumping forward. Chronograph mechanisms use either a column wheel (a toothed rotating system considered more prestigious for its smooth action and historic craftsmanship) or a cam system (simpler, cheaper, and more robust, used widely in mass-production chronographs). The clutch system engages the chronograph: vertical clutch uses friction plates for smooth start, no hand jump, and allows the watch to remain running; horizontal clutch uses a lateral sliding pinion which can cause a slight seconds hand jump at start."
+  },
+  {
+    "q": [
+      "What are striking complications in watches?",
+      "What is a minute repeater?",
+      "What is a quarter repeater?",
+      "What is a grande sonnerie?",
+      "What is a petite sonnerie?",
+      "How do repeater mechanisms work?",
+      "What are hammers and gongs in a repeater?",
+      "striking complications minute repeater quarter repeater grande sonnerie petite sonnerie",
+      "repeater mechanism hammers gongs rack snail centrifugal governor"
+    ],
+    "a": "Striking complications are among the most complex and prestigious mechanisms in watchmaking, using hammers and gongs to audibly indicate the time. A minute repeater chimes the hours, quarters, and minutes on demand when a slide or pusher is activated, while a quarter repeater chimes only hours and quarters, and a five-minute repeater chimes hours and five-minute intervals. A grande sonnerie automatically chimes both the hour and quarter on each quarter hour, then can also repeat on demand, whereas a petite sonnerie chimes only the hour on each hour plus the quarters. The repeater mechanism operates through a rack and snail system (snails are stepped cams that determine the correct number of strikes), hammers of varying mass, and gongs (hardened steel wires wrapped around the movement), with a centrifugal governor regulating the striking speed to ensure the chimes are audible and evenly spaced."
+  },
+  {
+    "q": [
+      "What are astronomical complications in watches?",
+      "What is a moon phase complication and how accurate can it be?",
+      "What is the equation of time in watchmaking?",
+      "What are star charts and planetarium watches?",
+      "What is a tide indication complication?",
+      "What is a power reserve indicator?",
+      "What is a tourbillon and how does it work?",
+      "What is the history of the tourbillon?",
+      "What are multi-axis tourbillons?",
+      "astronomical complications moon phase equation of time star chart planetarium"
+    ],
+    "a": "Astronomical complications bring celestial mechanics to the wrist. A moon phase complication displays the lunar cycle through a rotating disc; standard versions require a day's adjustment every 2-3 years, while astronomical moon phases (like Patek Philippe's) remain accurate for over 100 years. The equation of time shows the difference between mean solar time (the time we use) and true solar time (actual sun position), which varies by up to ±16 minutes throughout the year. A power reserve indicator shows the remaining energy in the mainspring, typically displayed via a graduated arc on the dial. The tourbillon, invented by Abraham-Louis Breguet in 1801, places the balance wheel, balance spring, and escapement in a rotating cage that averages out positional errors caused by gravity. Multi-axis tourbillons (double-axis, triple-axis) rotate the cage in multiple planes simultaneously for theoretical accuracy improvements, though modern debates question whether the tourbillon's practical accuracy benefit justifies its immense cost and complexity."
+  }
+]

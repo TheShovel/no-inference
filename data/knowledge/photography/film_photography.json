@@ -1,0 +1,59 @@
+[
+  {
+    "q": [
+      "What are the different types of film?",
+      "What is color negative film?",
+      "What is slide film?",
+      "What is reversal film?",
+      "What is black and white film?",
+      "What is the difference between color negative and slide film?",
+      "film types: color negative slide black and white",
+      "what type of film should I use"
+    ],
+    "a": "Color negative film (C-41 process) produces orange-masked negatives with wide exposure latitude and forgiving contrast, making it the most popular choice for everyday film photography, portraits, and scanning. Slide/reversal film (E-6 process) produces positive, high-contrast, richly saturated transparencies directly on the film, offering finer grain and greater archival stability but with significantly less exposure latitude (about ±0.5 stops) than negative film. Black and white film can be developed at home with simple chemistry (D-76, HC-110, Rodinal) and offers tremendous creative control through variable contrast papers, different developer combinations, and push/pull processing, with classic emulsions like Kodak Tri-X 400 and Ilford HP5+ remaining popular for their distinctive grain structure and tonal rendering."
+  },
+  {
+    "q": [
+      "What are film formats?",
+      "What is 35mm film?",
+      "What is medium format film?",
+      "What is large format film?",
+      "What is the difference between 35mm and medium format?",
+      "What is film ISO?",
+      "What are film speeds?",
+      "film format comparison: 35mm medium format large format"
+    ],
+    "a": "35mm film (135 format) is the most widely used film format, measuring 36x24mm per frame, offering 24 or 36 exposures per roll, compact camera bodies, and the widest variety of camera systems and emulsions. Medium format film uses 120 or 220 roll film producing larger negatives between 6x4.5cm, 6x6cm, 6x7cm, and 6x9cm, delivering significantly higher resolution, shallower depth of field, and smoother tonal transitions than 35mm, favored by portrait and landscape photographers. Large format film (4x5, 5x7, 8x10 inches) uses individual sheet film loaded into holders, providing enormous negatives for extreme detail, perspective and focus control through camera movements (rise, fall, tilt, shift), and is used for fine art, architectural, and technical photography where resolution and image control are paramount."
+  },
+  {
+    "q": [
+      "What is the C-41 development process?",
+      "What is the E-6 development process?",
+      "How is black and white film developed?",
+      "What is push processing?",
+      "What is pull processing?",
+      "How is film developed?",
+      "What is darkroom printing?",
+      "What is an enlarger in photography?",
+      "film development C-41 E-6 black and white",
+      "push pull film processing"
+    ],
+    "a": "C-41 is the standard color negative development process using precise temperature control (37.8°C / 100°F) through four chemical steps: developer (forming the image), bleach (converting metallic silver to silver halide), fixer (removing silver halide), and stabilizer (preserving the dye image), with the entire process taking about 20 minutes. E-6 slide film processing involves a first developer (black and white developing all layers), reversal bath, color developer, conditioner, bleach, fixer, and stabilizer — a more complex procedure requiring even tighter temperature tolerance (±0.3°C). Darkroom printing uses an enlarger to project the negative image onto photosensitive paper, exposing it for a controlled duration and then developing it in trays of developer, stop bath, and fixer, with techniques like dodging (reducing exposure in specific areas) and burning (adding extra exposure) to control local contrast and density."
+  },
+  {
+    "q": [
+      "What is the zone system?",
+      "Who created the zone system?",
+      "How does Ansel Adams' zone system work?",
+      "How do I scan film?",
+      "What is the best film scanner?",
+      "What is the difference between film and digital?",
+      "What is instant film?",
+      "What is Polaroid photography?",
+      "What is Fuji Instax?",
+      "Why is film photography making a comeback?",
+      "film vs digital photography"
+    ],
+    "a": "The Zone System, developed by Ansel Adams and Fred Archer, divides the tonal range of a photograph into 11 zones from pure black (Zone 0) to pure white (Zone X), with Zone V as middle gray, enabling photographers to pre-visualize how scene brightness values translate into print densities and to precisely control exposure and development for optimal negative density. Film scanning using dedicated scanners (Plustek, Nikon Coolscan, Hasselblad Flextight) or mirrorless camera scanning setups captures the film image as a digital file, with resolution, dynamic range, and color accuracy varying significantly between scanners — DSLR scanning with a macro lens, light table, and copy stand offers a cost-effective high-quality alternative to dedicated film scanners. Film photography has seen a major resurgence driven by desire for tangible, tactile creative experiences, distinctive film aesthetics (grain, color rendering, dynamic range characteristics) that differ from digital, deliberate shooting discipline encouraged by limited exposures, and appreciation for the craft and chemistry involved in the analog process."
+  }
+]

@@ -1,0 +1,64 @@
+[
+  {
+    "q": [
+      "What is the Big Bang theory?",
+      "Explain the Big Bang theory.",
+      "How did the universe begin?",
+      "What happened during the Big Bang?",
+      "What is the evidence for the Big Bang?",
+      "What was before the Big Bang?",
+      "How old is the universe?",
+      "How did the universe expand from the Big Bang?"
+    ],
+    "a": "The Big Bang theory describes the origin of the universe from an extremely hot, dense state approximately 13.8 billion years ago, from which it has been expanding and cooling ever since. It is not an explosion in space but rather the expansion of space itself — all points in the universe were originally concentrated at a singularity. Key evidence includes the cosmic microwave background radiation (CMB), the observed redshift of distant galaxies (Hubble's law), and the relative abundances of light elements (primordial nucleosynthesis). The earliest moments involved rapid inflation, followed by the formation of fundamental particles, then atoms, and eventually stars and galaxies as the universe cooled."
+  },
+  {
+    "q": [
+      "What is the cosmic microwave background?",
+      "Explain the cosmic microwave background.",
+      "What is the CMB?",
+      "What does the CMB tell us?",
+      "How was the CMB discovered?",
+      "What are CMB anisotropies?",
+      "Why is the CMB important for cosmology?"
+    ],
+    "a": "The cosmic microwave background (CMB) is the afterglow of the Big Bang, a faint bath of microwave radiation that uniformly fills the entire universe. It was emitted about 380,000 years after the Big Bang when the universe cooled enough for protons and electrons to combine into neutral hydrogen, allowing photons to travel freely. Discovered accidentally by Penzias and Wilson in 1965, the CMB has a nearly perfect blackbody spectrum at 2.725 K, with tiny temperature fluctuations (anisotropies) of about one part in 100,000 that correspond to the seeds of all later large-scale structure. Detailed measurements from satellites like COBE, WMAP, and Planck have provided precise cosmological parameters, confirming the Big Bang model and revealing evidence for inflation, dark matter, and dark energy."
+  },
+  {
+    "q": [
+      "What is dark matter?",
+      "Explain dark matter.",
+      "What evidence is there for dark matter?",
+      "What is dark matter made of?",
+      "Does dark matter interact with normal matter?",
+      "How is dark matter different from dark energy?",
+      "Why do we think dark matter exists?"
+    ],
+    "a": "Dark matter is a form of matter that does not emit, absorb, or reflect electromagnetic radiation, making it invisible to telescopes, yet its gravitational effects are observed throughout the universe. Evidence includes galactic rotation curves (stars orbiting galaxies faster than visible mass can account for), gravitational lensing by galaxy clusters that exceeds predictions from visible matter, and the CMB's structure matching simulations that include dark matter. It constitutes about 27% of the universe's mass-energy content, compared to only 5% ordinary matter, but its exact composition remains unknown — leading candidates include weakly interacting massive particles (WIMPs), axions, or sterile neutrinos, though direct detection experiments have yet to find them."
+  },
+  {
+    "q": [
+      "What is dark energy?",
+      "Explain dark energy.",
+      "What is the evidence for dark energy?",
+      "How does dark energy affect the universe?",
+      "What is the cosmological constant?",
+      "How is dark energy different from dark matter?",
+      "What is the accelerating expansion of the universe?"
+    ],
+    "a": "Dark energy is a mysterious, repulsive force that is causing the expansion of the universe to accelerate, contrary to earlier expectations that gravity would slow it down. Discovered in 1998 through observations of distant Type Ia supernovae, which appeared dimmer than expected and thus farther away than a decelerating universe would predict, dark energy is now understood to constitute about 68% of the total energy budget of the universe. The leading explanation is Einstein's cosmological constant (Λ), a constant energy density of empty space, though alternatives include quintessence (a dynamic scalar field) or modifications to general relativity. Dark energy's nature is one of the most profound unsolved problems in physics."
+  },
+  {
+    "q": [
+      "What is cosmic inflation?",
+      "Explain cosmic inflation.",
+      "What happened during inflation?",
+      "Why is inflation theory important?",
+      "What caused cosmic inflation?",
+      "What is the inflaton field?",
+      "How does inflation solve the horizon problem?",
+      "What is the flatness problem in cosmology?"
+    ],
+    "a": "Cosmic inflation is a theory proposing that within the first 10⁻³² seconds after the Big Bang, the universe underwent an exponential expansion, increasing in size by a factor of at least 10²⁶ in an extremely brief period. Proposed by Alan Guth in 1981, inflation solves several problems with the original Big Bang model: the horizon problem (why distant regions have the same temperature), the flatness problem (why the universe is geometrically flat), and the monopole problem (why no magnetic monopoles are observed). Quantum fluctuations during inflation were stretched to cosmic scales, seeding the density variations that later grew into galaxies and large-scale structure, and leaving a signature in the CMB polarization patterns that experiments like BICEP continue to search for."
+  }
+]

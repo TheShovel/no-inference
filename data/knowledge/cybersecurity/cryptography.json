@@ -1,0 +1,64 @@
+[
+  {
+    "q": [
+      "What is symmetric encryption?",
+      "How does symmetric encryption work?",
+      "What is AES encryption?",
+      "What is DES encryption?",
+      "What is the difference between AES and DES?",
+      "What are common symmetric encryption algorithms?",
+      "How are symmetric keys exchanged securely?",
+      "What are the advantages and disadvantages of symmetric encryption?"
+    ],
+    "a": "Symmetric encryption uses a single shared key for both encrypting and decrypting data, requiring the sender and recipient to securely exchange the key before communication can begin. The Advanced Encryption Standard (AES) is the most widely used symmetric algorithm, established by the U.S. National Institute of Standards and Technology (NIST) in 2001, supporting key sizes of 128, 192, and 256 bits and providing strong security with efficient performance in both hardware and software. Data Encryption Standard (DES), with its 56-bit key, was the precursor to AES but is now considered insecure due to advances in computing power that allow brute-force attacks — Triple DES (3DES) extended its life but was formally deprecated in 2023. Symmetric encryption excels at bulk data encryption due to its speed, but the key distribution problem — securely sharing the key between parties — is its main limitation, typically solved by combining it with asymmetric encryption for key exchange."
+  },
+  {
+    "q": [
+      "What is asymmetric encryption?",
+      "How does public-key cryptography work?",
+      "What is RSA encryption?",
+      "What is ECC (elliptic curve cryptography)?",
+      "What is the difference between symmetric and asymmetric encryption?",
+      "How do public and private keys work?",
+      "What are the uses of asymmetric encryption?"
+    ],
+    "a": "Asymmetric encryption, also called public-key cryptography, uses a mathematically related pair of keys — a public key that can be freely shared and a private key that must be kept secret — to enable secure communication without prior key exchange. RSA, named after Rivest, Shamir, and Adleman, is the most widely implemented asymmetric algorithm, relying on the computational difficulty of factoring large prime numbers, with typical key sizes of 2048 or 4096 bits. Elliptic curve cryptography (ECC) achieves equivalent security to RSA with significantly smaller key sizes (256-bit ECC provides comparable security to 3072-bit RSA), making it ideal for resource-constrained environments like mobile devices and IoT. Asymmetric encryption is computationally slower than symmetric encryption and is therefore typically used for secure key exchange, digital signatures, and encrypting small amounts of data, while the actual bulk data encryption is handled by symmetric algorithms."
+  },
+  {
+    "q": [
+      "What is hashing in cryptography?",
+      "What is SHA?",
+      "What is MD5?",
+      "What is the difference between hashing and encryption?",
+      "What are cryptographic hash functions used for?",
+      "What makes a hash function secure?",
+      "What is a hash collision?"
+    ],
+    "a": "Cryptographic hash functions are one-way mathematical algorithms that take an input of any size and produce a fixed-length output (hash or digest) with three critical properties: preimage resistance (cannot reverse the hash to find the original input), second preimage resistance (cannot find a different input producing the same hash), and collision resistance (extremely unlikely for two inputs to produce the same hash). The Secure Hash Algorithm (SHA) family includes SHA-1 (now considered weak and deprecated), SHA-2 (SHA-224, SHA-256, SHA-384, SHA-512 which remain secure and widely used), and SHA-3 (the newest NIST standard based on the Keccak algorithm). MD5 was once popular but is now considered cryptographically broken due to collision vulnerabilities and should not be used for security purposes. Unlike encryption, hashing is not reversible — it is used for password storage (often with salting to prevent rainbow table attacks), data integrity verification, digital signatures, and file fingerprinting."
+  },
+  {
+    "q": [
+      "What are digital signatures?",
+      "How do digital signatures work?",
+      "What is a digital certificate?",
+      "What is SSL/TLS?",
+      "How does HTTPS work?",
+      "What is a certificate authority (CA)?",
+      "What is PKI (public key infrastructure)?",
+      "What is the difference between SSL and TLS?"
+    ],
+    "a": "A digital signature is a cryptographic mechanism that provides authentication, non-repudiation, and integrity for digital messages or documents, created by hashing the message and then encrypting the hash with the sender's private key — anyone can verify the signature by decrypting it with the sender's public key and comparing the hash. Digital certificates, issued by trusted Certificate Authorities (CAs), bind a public key to an identity (person, organization, or device) and are structured according to the X.509 standard. Public Key Infrastructure (PKI) is the complete system of policies, procedures, hardware, and software for managing digital certificates and encryption keys. SSL (Secure Sockets Layer) and its successor TLS (Transport Layer Security) are cryptographic protocols that provide encrypted communication over networks, with TLS 1.3 being the current standard — they authenticate servers (and optionally clients) using digital certificates and establish a secure session using a combination of asymmetric encryption for key exchange and symmetric encryption for bulk data."
+  },
+  {
+    "q": [
+      "What is homomorphic encryption?",
+      "How does homomorphic encryption work?",
+      "What are the types of homomorphic encryption?",
+      "What is quantum-resistant cryptography?",
+      "How does quantum computing threaten current cryptography?",
+      "What are post-quantum cryptographic algorithms?",
+      "Why do we need quantum-resistant encryption?"
+    ],
+    "a": "Homomorphic encryption allows computation to be performed directly on encrypted data without decrypting it first, producing encrypted results that, when decrypted, match the output of the same operations performed on the plaintext. While fully homomorphic encryption (FHE) supports arbitrary computations, it remains computationally intensive and impractical for most real-world applications, though partially homomorphic schemes (supporting either addition or multiplication) are used in applications like encrypted database queries and privacy-preserving machine learning. Quantum-resistant (post-quantum) cryptography refers to algorithms designed to withstand attacks from both classical and quantum computers, as Shor's algorithm running on a sufficiently powerful quantum computer could break widely-used public-key systems like RSA and ECC. NIST has been standardizing post-quantum algorithms, with CRYSTALS-Kyber (for key encapsulation) and CRYSTALS-Dilithium (for digital signatures) selected in 2022, based on lattice-based cryptography problems believed to be difficult even for quantum computers."
+  }
+]

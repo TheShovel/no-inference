@@ -1,0 +1,48 @@
+[
+  {
+    "q": [
+      "What are ocean currents?",
+      "What are surface currents?",
+      "What drives surface ocean currents?",
+      "What is the Gulf Stream?",
+      "What is the Kuroshio Current?",
+      "How do wind patterns affect ocean currents?",
+      "surface currents"
+    ],
+    "a": "Surface ocean currents are large-scale horizontal movements of water driven primarily by global wind patterns, Earth's rotation (the Coriolis effect), and the distribution of continents. The Gulf Stream is a warm, powerful Atlantic current that originates in the Gulf of Mexico and flows along the U.S. East Coast before crossing to Europe, transporting more water than all the world's rivers combined. The Kuroshio Current is the Pacific equivalent, carrying warm water northward along the coast of Japan, comparable to the Gulf Stream in volume and influence. These wind-driven currents form large gyres that redistribute heat from the equator toward the poles, significantly moderating regional climates."
+  },
+  {
+    "q": [
+      "What is thermohaline circulation?",
+      "What is the global conveyor belt?",
+      "How does deep ocean circulation work?",
+      "What drives deep ocean currents?",
+      "What is the role of density in ocean circulation?",
+      "How does deep water form?"
+    ],
+    "a": "Thermohaline circulation (THC), also known as the global conveyor belt, is a slow, deep-ocean circulation system driven by differences in water density caused by temperature and salinity variations. Cold, salty water sinks in the North Atlantic near Greenland and the Nordic Seas, forming North Atlantic Deep Water, which flows southward through the Atlantic, around Africa, and into the Indian and Pacific Oceans, where it gradually warms, rises, and returns as surface currents. This circulation transports enormous amounts of heat, carbon, and nutrients around the globe, and plays a critical role in regulating Earth's climate — some evidence suggests it could slow or weaken due to increased freshwater input from melting ice."
+  },
+  {
+    "q": [
+      "What is upwelling?",
+      "What is downwelling?",
+      "How does upwelling affect marine life?",
+      "What causes coastal upwelling?",
+      "What is Ekman transport?",
+      "upwelling and downwelling"
+    ],
+    "a": "Upwelling is the process where deep, cold, nutrient-rich water rises to the surface, typically along coastlines where winds push surface water offshore, allowing deeper water to replace it (coastal upwelling), or in equatorial regions where diverging currents create upward flow. Upwelling zones, such as those off California, Peru, and Namibia, are among the most biologically productive regions in the ocean because they bring nutrients that fuel phytoplankton blooms, supporting abundant fisheries. Downwelling occurs where surface water converges and sinks, carrying oxygen-rich water to the deep ocean and driving thermohaline circulation, but creating regions of lower surface productivity."
+  },
+  {
+    "q": [
+      "What is El Niño?",
+      "What is La Niña?",
+      "How does El Niño affect global weather?",
+      "What is ENSO?",
+      "How do ocean currents influence climate?",
+      "What is the Walker circulation?",
+      "El Niño Southern Oscillation"
+    ],
+    "a": "The El Niño-Southern Oscillation (ENSO) is a periodic climate pattern involving changes in ocean temperatures and atmospheric pressure across the equatorial Pacific Ocean. El Niño occurs when trade winds weaken, allowing warm water to spread eastward toward South America, which disrupts weather patterns globally — causing heavy rains in the Americas and droughts in Southeast Asia and Australia. La Niña is the opposite phase with stronger trade winds and cooler-than-average Pacific temperatures, often intensifying monsoons in Asia and increasing hurricane activity in the Atlantic. Ocean currents are fundamental to climate because they redistribute about 30% of the equator-to-pole heat transport, influencing everything from regional rainfall patterns to the intensity of storms."
+  }
+]

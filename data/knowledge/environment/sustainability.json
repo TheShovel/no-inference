@@ -1,0 +1,57 @@
+[
+  {
+    "q": [
+      "What is sustainable development?",
+      "What are the three pillars of sustainable development?",
+      "How does sustainable development differ from traditional economic growth?",
+      "What are the UN Sustainable Development Goals (SDGs)?",
+      "Why is intergenerational equity important in sustainability?",
+      "What is the Brundtland definition of sustainable development?"
+    ],
+    "a": "Sustainable development is defined by the 1987 Brundtland Commission as 'development that meets the needs of the present without compromising the ability of future generations to meet their own needs.' It rests on three interconnected pillars: environmental protection (ecological integrity), social equity (fair distribution of resources and opportunities), and economic viability (prosperity that does not degrade natural capital). The 17 UN Sustainable Development Goals (SDGs), adopted in 2015, provide a global framework to address challenges like poverty, inequality, climate change, and biodiversity loss by 2030, integrating all three pillars into measurable targets for every nation."
+  },
+  {
+    "q": [
+      "What is a circular economy?",
+      "How does the circular economy differ from a linear economy?",
+      "What are the principles of a circular economy?",
+      "What are examples of circular economy practices?",
+      "How does the circular economy reduce waste?",
+      "What is the difference between reuse, repair, remanufacturing, and recycling?"
+    ],
+    "a": "A circular economy is an economic system designed to eliminate waste and keep resources in use for as long as possible through sharing, leasing, reusing, repairing, refurbishing, and recycling materials and products. It contrasts with the traditional linear 'take-make-dispose' economy by designing out waste and pollution, keeping products and materials in use, and regenerating natural systems. Key strategies include designing for durability and repairability, implementing product-as-a-service models, industrial symbiosis (where one company's waste becomes another's input), and closed-loop recycling that maintains material quality. Transitioning to a circular economy could reduce global resource extraction by 28% and cut greenhouse gas emissions by 39% according to the Ellen MacArthur Foundation."
+  },
+  {
+    "q": [
+      "What does reduce, reuse, recycle mean?",
+      "What is the waste hierarchy?",
+      "Why is reducing consumption better than recycling?",
+      "How does composting fit into the reduce-reuse-recycle framework?",
+      "What are the limitations of recycling?",
+      "What is the difference between upcycling and downcycling?"
+    ],
+    "a": "Reduce, reuse, recycle (the '3Rs') is a waste management hierarchy that prioritizes actions by their environmental benefit. Reducing consumption is the most effective strategy because it avoids resource extraction, manufacturing emissions, and waste generation entirely. Reuse extends the life of products through practices like refillable containers, second-hand markets, and repair, keeping materials in their original form. Recycling converts waste materials into new products, but it has limitations: many materials degrade in quality during recycling (downcycling), recycling processes themselves consume energy and water, and contamination can render batches unrecyclable. Upcycling is a form of creative reuse that transforms waste materials into products of equal or higher value, while composting is a biological process that turns organic waste into nutrient-rich soil amendment."
+  },
+  {
+    "q": [
+      "What is sustainable agriculture?",
+      "What practices make agriculture more sustainable?",
+      "How does regenerative agriculture differ from conventional farming?",
+      "What is agroecology?",
+      "How does organic farming contribute to sustainability?",
+      "What is precision agriculture and how does it reduce environmental impact?"
+    ],
+    "a": "Sustainable agriculture encompasses farming practices that meet current food needs while protecting soil, water, biodiversity, and climate for future generations. Key practices include crop rotation and diversification, cover cropping, reduced or no-till farming, integrated pest management (minimizing chemical pesticides), efficient irrigation systems, agroforestry (integrating trees with crops or livestock), and organic farming (avoiding synthetic inputs). Regenerative agriculture goes further by aiming to actively improve soil health, sequester carbon, and enhance ecosystem functions through practices like holistic grazing, composting, and minimal soil disturbance. Precision agriculture uses GPS, sensors, and data analytics to optimize inputs like water, fertilizer, and pesticides, reducing waste and environmental runoff while maintaining yields."
+  },
+  {
+    "q": [
+      "What is a carbon footprint and how is it measured?",
+      "How can individuals reduce their carbon footprint?",
+      "What are scope 1, 2, and 3 emissions?",
+      "What is a life cycle assessment (LCA)?",
+      "How does LCA help evaluate environmental impacts?",
+      "What are the stages of a life cycle assessment?"
+    ],
+    "a": "A carbon footprint is the total amount of greenhouse gas emissions (expressed in CO2-equivalent) caused directly or indirectly by an individual, organization, product, or activity. For organizations, emissions are categorized into three scopes: Scope 1 (direct emissions from owned sources), Scope 2 (indirect emissions from purchased electricity), and Scope 3 (all other indirect emissions in the value chain, including suppliers and product use). Life Cycle Assessment (LCA) is a systematic method for evaluating the environmental impacts of a product or service across all stages of its life — from raw material extraction through manufacturing, distribution, use, and end-of-life disposal or recycling. LCA helps identify the most impactful stages in a product's life cycle and prevents burden-shifting where improving one stage worsens another."
+  }
+]

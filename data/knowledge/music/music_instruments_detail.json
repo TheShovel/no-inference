@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What are the different families of musical instruments?",
+      "How are musical instruments classified?",
+      "What are the four main instrument families in an orchestra?",
+      "What is the Hornbostel-Sachs classification system?",
+      "How do instrument families differ from each other?",
+      "What determines which family an instrument belongs to?"
+    ],
+    "a": "Musical instruments are traditionally grouped into families based on how they produce sound: strings (vibrating strings), woodwinds (vibrating air column with a reed or edge), brass (vibrating lips in a mouthpiece), and percussion (struck or shaken). The Hornbostel-Sachs system, the standard academic classification, categorizes instruments as idiophones (material vibrates — xylophone, cymbals), membranophones (stretched membrane — drums), chordophones (vibrating strings — violin, guitar), aerophones (vibrating air — flute, trumpet), and electrophones (electronic — synthesizer). Understanding instrument families is essential for orchestration, the art of assigning musical parts to different instruments to achieve specific timbres, textures, and dynamic balances in compositions."
+  },
+  {
+    "q": [
+      "How do string instruments work?",
+      "What are the members of the violin family?",
+      "How does a piano produce sound?",
+      "What are the differences between violin, viola, cello, and double bass?",
+      "What is the mechanism of a harp?",
+      "How does a guitar produce sound?",
+      "What are bowed versus plucked string instruments?"
+    ],
+    "a": "String instruments produce sound through vibrating strings stretched between two points, with pitch determined by string length, tension, and mass per unit length. The violin family — violin, viola, cello, and double bass — are all bowed instruments, differing primarily in size and pitch range from highest (violin) to lowest (double bass), each played with a horsehair bow that draws across the strings to sustain continuous sound. The piano is unique among string instruments because its strings are struck by felt-covered hammers activated by a keyboard mechanism, making it both a string instrument and a percussion instrument, with over 200 strings tensioned across a cast-iron frame and a soundboard that amplifies vibrations. The harp uses fingers to pluck strings of varying lengths, with pedals that alter pitch by shortening string length through a mechanical linkage."
+  },
+  {
+    "q": [
+      "How do woodwind instruments work?",
+      "What are the main woodwind instruments?",
+      "How does a flute produce sound?",
+      "How do single-reed and double-reed instruments differ?",
+      "What are the differences between clarinet, oboe, bassoon, and saxophone?",
+      "Why is the saxophone classified as a woodwind despite being made of brass?",
+      "How does air column length affect pitch in woodwinds?"
+    ],
+    "a": "Woodwind instruments produce sound by splitting an air column through a mouthpiece, with pitch controlled by opening and closing tone holes along the body to change the effective vibrating air column length. Flutes produce sound by directing air across a sharp edge (like blowing across a bottle top), while clarinets and saxophones use a single reed that vibrates against a mouthpiece, and oboes and bassoons use a double reed of two bound cane pieces vibrating against each other. Despite being made of brass, the saxophone is classified as a woodwind because it uses a single reed mouthpiece and produces sound through the same mechanism as clarinets. Each woodwind has a distinct timbre: the clarinet has a rich, dark lower register, the oboe has a piercing, nasal quality, and the bassoon provides a deep, reedy bass voice, making them individually valuable in orchestration."
+  },
+  {
+    "q": [
+      "How do brass instruments work?",
+      "What are the main brass instruments?",
+      "How does a trumpet produce sound?",
+      "What is the difference between a trumpet and a French horn?",
+      "How does a trombone change pitch without valves?",
+      "What is the role of the tuba in an orchestra?",
+      "How do valves work on brass instruments?"
+    ],
+    "a": "Brass instruments produce sound when the player's lips vibrate against a cup-shaped or funnel-shaped mouthpiece, creating standing waves in the metal tubing, with pitch controlled by embouchure (lip tension), air speed, and the length of the tubing engaged. Trumpets and cornets use piston valves to redirect air through additional tubing lengths, lowering the pitch with each valve engaged. French horns have a distinctive coiled shape and a flared bell, with rotary valves and a mellow, warm tone used extensively for hunting calls and romantic melodies. The trombone is unique among brass in using a sliding tube to continuously vary the length of the instrument, allowing glissandos between notes. The tuba is the largest and lowest-pitched brass instrument, providing the harmonic foundation in orchestras, concert bands, and brass ensembles."
+  },
+  {
+    "q": [
+      "How do percussion instruments produce sound?",
+      "What are the categories of percussion instruments?",
+      "What is the difference between pitched and unpitched percussion?",
+      "What are timpani and how do they change pitch?",
+      "How does a snare drum work?",
+      "How does a xylophone produce different pitches?",
+      "What are keyboard instruments and how do they differ?",
+      "What are electronic instruments and how do they synthesize sound?"
+    ],
+    "a": "Percussion instruments produce sound when struck, shaken, or scraped, and are divided into pitched (capable of producing definite notes) and unpitched (producing indefinite pitch). Pitched percussion includes timpani (kettledrums) with a pedal mechanism that changes membrane tension to produce specific pitches, the xylophone and marimba with tuned wooden bars arranged like a piano keyboard, and the glockenspiel with metal bars producing bright, bell-like tones. Unpitched percussion includes the snare drum with snare wires stretched across the bottom head for a crisp rattling sound, cymbals of various sizes and thicknesses, and bass drums. Keyboard instruments include the organ (pipes or electronic), harpsichord (plucked strings), accordion, and celesta, each with distinct sound production mechanisms. Electronic instruments generate sound through electronic circuits or digital signal processing: the synthesizer creates and shapes sounds via oscillators, filters, and envelopes; the theremin is played without physical contact by the performer's hands moving in electromagnetic fields; and drum machines use sampled or synthesized percussion sounds programmed into sequencers."
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What is translation theory?",
+      "Explain translation theory.",
+      "What are the main approaches to translation?",
+      "What is equivalence in translation?",
+      "What is the difference between formal and dynamic equivalence?",
+      "What is Skopos theory in translation?",
+      "What are the challenges of translation?"
+    ],
+    "a": "Translation theory encompasses the principles, methods, and frameworks for transferring meaning between languages. Key approaches include formal equivalence (word-for-word translation preserving the source language structure), dynamic or functional equivalence (meaning-for-meaning translation prioritizing naturalness in the target language), and Skopos theory (emphasizing the purpose of the translation as the guiding principle). Major challenges include handling cultural concepts with no direct equivalent, preserving tone and register, translating idioms and humor, and navigating the tension between fidelity to the source and readability in the target. Contemporary translation studies also address issues of power dynamics, ideology, the translator's visibility, and the ethics of representing marginalized voices across languages."
+  },
+  {
+    "q": [
+      "What is machine translation?",
+      "How does machine translation work?",
+      "What are the types of machine translation?",
+      "What is neural machine translation?",
+      "How does Google Translate work?",
+      "Is machine translation replacing human translators?",
+      "What are the limitations of machine translation?"
+    ],
+    "a": "Machine translation (MT) is the use of computer software to automatically translate text or speech between languages. Early approaches included rule-based MT (using grammatical rules and dictionaries) and statistical MT (learning from parallel corpora), but modern systems use neural machine translation (NMT) based on deep learning transformer architectures. NMT models like Google Translate, DeepL, and ChatGPT process entire sentences as context and generate fluent, often remarkably accurate translations. However, MT struggles with cultural nuances, ambiguous phrasing, domain-specific jargon, creative or literary texts, and low-resource languages, and it can produce confident-sounding but incorrect translations (hallucinations). Human translators remain essential for high-stakes, creative, and culturally sensitive content."
+  },
+  {
+    "q": [
+      "What is sociolinguistics?",
+      "Explain sociolinguistics.",
+      "How does language vary by social group?",
+      "What is the relationship between language and society?",
+      "What are dialects and sociolects?",
+      "What is code-switching?",
+      "How does social class affect language use?"
+    ],
+    "a": "Sociolinguistics is the study of how language functions in society, examining variation and change in relation to social factors such as class, gender, ethnicity, age, and region. Key concepts include dialects (regional language varieties), sociolects (social group varieties), idiolects (individual speech patterns), and registers (styles varying by context). Code-switching refers to alternating between languages or varieties within a conversation, often signaling identity or social positioning. Pioneering studies by William Labov in New York and Martha's Vineyard showed that linguistic variables carry social meaning and that non-standard forms can persist or even gain prestige within communities as markers of group identity. Sociolinguistics also investigates language policy, language attitudes, and the dynamics of multilingual societies."
+  },
+  {
+    "q": [
+      "What is first language acquisition?",
+      "How do children learn language?",
+      "Explain language acquisition.",
+      "What are the stages of language development?",
+      "What is the critical period hypothesis?",
+      "How does Chomsky's theory explain language acquisition?",
+      "What is the nature vs nurture debate in language acquisition?"
+    ],
+    "a": "First language acquisition is the process by which infants naturally and effortlessly acquire their native language through exposure and interaction without formal instruction. Children progress through predictable stages: cooing (0-6 months), babbling (6-12 months), one-word stage (12-18 months), two-word stage (18-24 months), and telegraphic speech followed by complex sentences. Noam Chomsky's Universal Grammar theory posits that humans are biologically equipped with an innate language faculty (a language acquisition device), explaining why all children master complex grammar rules despite limited input. The critical period hypothesis suggests that language must be acquired during childhood (roughly before puberty) for full native-like mastery, as evidenced by cases of feral children and deaf children learning sign language later in life."
+  },
+  {
+    "q": [
+      "What is the Sapir-Whorf hypothesis?",
+      "Explain linguistic relativity.",
+      "Does language affect thought?",
+      "What is the strong and weak Sapir-Whorf hypothesis?",
+      "How does language shape perception?",
+      "What is the relationship between language and thought?",
+      "Do speakers of different languages think differently?"
+    ],
+    "a": "The Sapir-Whorf hypothesis, also known as linguistic relativity, proposes that the language we speak influences or determines our perception of reality and patterns of thought. The strong version (linguistic determinism) holds that language entirely constrains thought — a position now largely abandoned as unsupported by evidence. The weak version (linguistic relativity) suggests that language influences habitual patterns of attention, categorization, and memory without completely determining them. Some evidence supports this: speakers of languages with different color terms show subtle differences in color discrimination, and the Guugu Yimithirr people of Australia use absolute cardinal directions instead of relative terms like left/right, showing remarkable spatial orientation skills. However, the universal aspects of human cognition remain powerful, and thought clearly operates independently of language in many domains."
+  }
+]

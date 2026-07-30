@@ -1,0 +1,67 @@
+[
+  {
+    "q": [
+      "What is counterintelligence?",
+      "How does defensive counterintelligence work?",
+      "What is security awareness in counterintelligence?",
+      "What is classification in intelligence?",
+      "What is need-to-know in security?",
+      "What are security clearances?",
+      "What is physical security in intelligence?",
+      "What is OPSEC?",
+      "counterintelligence definition defensive measures",
+      "security awareness classification clearances",
+      "need-to-know principle physical security OPSEC"
+    ],
+    "a": "Counterintelligence (CI) is the practice of preventing hostile intelligence services from successfully collecting information against one's own government, military, or private organizations, encompassing both defensive measures (protecting secrets) and offensive operations (disrupting enemy intelligence activities through active means). Defensive counterintelligence includes the classification system that marks sensitive information at levels (Confidential, Secret, Top Secret) requiring corresponding clearances for access, the need-to-know principle that restricts information even among cleared individuals, and OPSEC (Operations Security) which analyzes routine activities from an adversary's perspective to identify and protect critical information that could be pieced together from open sources. Physical security measures include secure facilities with access control systems, mandatory escort policies, secure destruction of classified waste, and Tempest shielding that prevents electronic emissions from being intercepted and decoded by hostile monitoring."
+  },
+  {
+    "q": [
+      "What is offensive counterintelligence?",
+      "What are double agents?",
+      "What are dangle operations?",
+      "How is disinformation used in counterintelligence?",
+      "What is deception in intelligence operations?",
+      "offensive counterintelligence double agents",
+      "dangle operations intelligence",
+      "disinformation deception counterintelligence"
+    ],
+    "a": "Offensive counterintelligence actively targets enemy intelligence services by identifying their officers, disrupting their operations, and turning their agents against them. Double agents are recruited spies who, while appearing to work for a hostile intelligence service, are actually reporting back to their home service—they may be genuine agents who were 'doubled' after detection, or 'dangles' dispatched to volunteer false information to the enemy. Dangle operations involve deliberately offering an agent to the enemy to gain insight into their tradecraft, priorities, and methods, or to feed them carefully crafted misinformation. Disinformation campaigns spread false information through enemy intelligence channels to mislead their leadership about capabilities, intentions, or political situations, while deception operations create false patterns of activity (fake military units, fabricated diplomatic communications, deceptive media coverage) to shape enemy perceptions and decision-making."
+  },
+  {
+    "q": [
+      "What is mole hunting?",
+      "How are defectors handled?",
+      "What are loyalty investigations?",
+      "What is the polygraph used for in intelligence?",
+      "What is vetting in security?",
+      "What is insider threat detection?",
+      "How do agencies detect moles and insider threats?",
+      "mole hunting counterintelligence",
+      "defector handling debriefing",
+      "loyalty investigations polygraph vetting",
+      "insider threat detection monitoring"
+    ],
+    "a": "Mole hunting is the process of identifying a hostile agent who has penetrated an organization, often triggered by unexplained intelligence failures (operations being compromised, information appearing in enemy hands) and involving intense investigations that review access logs, financial records, travel patterns, and personal behavior for anomalies. Defector handling is a specialized CI function involving debriefing, authentication (confirming the defector is genuine, not a provocation), and providing for the defector's security and welfare through relocation and new identity programs. Insider threat detection combines behavioral analysis (financial stress, unexplained lifestyle changes, unusual work hours, unauthorized data access), technical monitoring (flagging large downloads, unusual database queries, after-hours system access), and reporting mechanisms for coworkers to report suspicious behavior, with the recognition that most damaging insider threats—like Robert Hanssen and Aldrich Ames—operated for years without detection precisely because they maintained outwardly normal professional personas while concealing their espionage activities."
+  },
+  {
+    "q": [
+      "What were major counterintelligence operations?",
+      "What was Operation Ghost Stories?",
+      "What was the Farewell Dossier?",
+      "What were major CI failures?",
+      "How did Robert Hanssen betray the FBI?",
+      "How did Aldrich Ames betray the CIA?",
+      "What are examples of double agent betrayals?",
+      "How is counterintelligence used in business?",
+      "What is competitive intelligence?",
+      "What is trade secret protection?",
+      "Operation Ghost Stories Russian illegals",
+      "Farewell Dossier French CI success",
+      "Robert Hanssen FBI mole Aldrich Ames CIA mole",
+      "counterintelligence in business competitive intelligence",
+      "trade secret protection economic espionage"
+    ],
+    "a": "Two of the most significant counterintelligence successes are Operation Ghost Stories (the FBI's decade-long investigation and eventual arrest of ten Russian illegals in 2010, including the famous Anna Chapman, who were deep-cover agents living as ordinary Americans) and the Farewell Dossier (a French operation in the early 1980s that recruited a Soviet intelligence officer, Vladimir Vetrov, who revealed extensive Soviet technical espionage against the West, leading to the expulsion of hundreds of Soviet intelligence officers and the supply-chain sabotage of stolen technologies). The most damaging CI failures include FBI Special Agent Robert Hanssen (who spied for Russia from 1979–2001, compromising double agents, technical operations, and continuity-of-government plans) and CIA officer Aldrich Ames (who betrayed CIA assets working for US intelligence in the Soviet Union from 1985–1994, leading to the execution of at least ten of them). In business, counterintelligence involves protecting trade secrets through employee exit procedures, non-disclosure agreements, network monitoring, competitive intelligence (ethical information gathering about competitors through public sources and market research), and investigating suspected economic espionage by foreign competitors or state-sponsored industrial spies."
+  }
+]

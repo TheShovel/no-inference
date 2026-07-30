@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "How is origami used in engineering?",
+      "What are deployable structures in origami?",
+      "How are origami principles used in solar arrays?",
+      "What is an origami airbag?",
+      "How are stents inspired by origami?",
+      "What is self-folding technology?",
+      "What engineering problems does origami solve?",
+      "What is the Miura fold used for in engineering?"
+    ],
+    "a": "Origami principles have revolutionized engineering by enabling structures that can be compactly stored and then deployed to much larger configurations. The Miura-ori fold pattern is used in space solar arrays, maps, and emergency shelters because it can fold and unfold in a single synchronized motion. Airbag manufacturers use origami-inspired folding algorithms to ensure that airbags deploy reliably and symmetrically in milliseconds, while foldable stents for cardiovascular procedures use origami patterns to collapse into a small catheter and expand to structural size inside the artery. These applications rely on the mathematical analysis of crease patterns, material properties at fold lines, and the rigid origami assumption that panels remain rigid while hinges fold along straight creases."
+  },
+  {
+    "q": [
+      "How is origami used in architecture?",
+      "What are foldable structures in architecture?",
+      "What are origami facades?",
+      "How do origami principles apply to building design?",
+      "What are kinetic architectural structures?",
+      "What is folding architecture?",
+      "How are origami roofs designed?",
+      "What temporary structures use origami?"
+    ],
+    "a": "Origami in architecture explores foldable and transformable structures inspired by folded paper, from temporary emergency shelters that deploy from flat panels to kinetic building facades that adjust their geometry for solar shading and ventilation. The foldable roof of the Munich Olympic Stadium and the deployable domes by architect Buckminster Fuller draw on origami principles of structural rigidity achieved through folding. Emerging architectural applications include self-deploying habitats for space exploration, pop-up bridges for disaster relief, and adjustable building skins that change shape in response to environmental conditions, all leveraging the origami insight that folded sheets can achieve remarkable strength-to-weight ratios."
+  },
+  {
+    "q": [
+      "How is origami used in product design?",
+      "What furniture uses origami design?",
+      "How is origami used in packaging?",
+      "What are origami maps?",
+      "How does origami inspire consumer products?",
+      "What foldable products use origami?",
+      "How are folding chairs and tables designed with origami?",
+      "What is origami-inspired packaging?"
+    ],
+    "a": "Product design has embraced origami for its ability to create strong, lightweight, and collapsible items from flat materials. Furniture designers create foldable chairs and tables that ship flat and pop into three-dimensional form without fasteners, reducing shipping volume and assembly time. Packaging engineers use origami principles to design boxes, protective inserts, and containers that use minimal material while maximizing strength, with self-locking tabs eliminating the need for glue or tape. Foldable maps, lampshades, phone stands, and even collapsible bicycle helmets all use origami patterns to create functional objects that can be flat-packed when not in use, demonstrating the commercial viability of folding-based design across consumer markets."
+  },
+  {
+    "q": [
+      "How is origami used in medicine?",
+      "What are origami microrobots?",
+      "How are origami stents used in medicine?",
+      "Can origami deliver drugs?",
+      "What is a self-folding origami robot in medicine?",
+      "How are surgical tools inspired by origami?",
+      "What medical devices use origami folding?",
+      "How does origami help in minimally invasive surgery?"
+    ],
+    "a": "Origami has found transformative applications in medicine, particularly in minimally invasive procedures and micro-scale devices. Origami stents fold flat for catheter insertion and then self-expand to scaffold blocked arteries or other hollow organs, while origami-inspired microrobots can swim through bodily fluids, unfold at target locations, and perform tasks like targeted drug delivery or clearing blocked passages. In surgery, foldable grippers based on the Miura-ori pattern can manipulate delicate tissues through tiny incisions, and laboratory researchers are developing self-folding capsules for oral drug delivery that unfold in the stomach to release medication over extended periods. These medical applications exploit origami's ability to create complex, functional three-dimensional structures from compact flat starting configurations."
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "What is the Clean Air Act?",
+      "What is the Clean Water Act?",
+      "What is the Endangered Species Act?",
+      "What is the National Environmental Policy Act?",
+      "What are the major US environmental laws?",
+      "How does the Clean Air Act regulate air pollution?",
+      "What does the Endangered Species Act protect?",
+      "What is NEPA and what does it require?"
+    ],
+    "a": "The United States has several cornerstone environmental laws that form the foundation of federal environmental regulation. The Clean Air Act (1970) authorizes the EPA to set National Ambient Air Quality Standards (NAAQS) for pollutants harmful to public health and the environment, regulating emissions from stationary sources (factories, power plants) and mobile sources (vehicles, aircraft). The Clean Water Act (1972) regulates discharges of pollutants into U.S. waters and sets water quality standards for surface waters, requiring permits for any point-source discharge. The Endangered Species Act (1973) provides for the conservation of threatened and endangered species and their critical habitats, prohibiting any action that jeopardizes listed species or damages designated critical habitat. The National Environmental Policy Act (1970) requires federal agencies to assess the environmental impacts of proposed major actions through Environmental Impact Statements (EIS) and Environmental Assessments (EA), ensuring public disclosure and consideration of alternatives before decisions are made."
+  },
+  {
+    "q": [
+      "What is the Paris Agreement?",
+      "What is the Kyoto Protocol?",
+      "What is the Montreal Protocol?",
+      "What are the major international environmental agreements?",
+      "How does the Paris Agreement work?",
+      "What is the difference between the Kyoto Protocol and the Paris Agreement?",
+      "What did the Montreal Protocol achieve?",
+      "What countries participate in the Paris Agreement?"
+    ],
+    "a": "The Montreal Protocol (1987) is widely considered the most successful international environmental treaty — it phased out ozone-depleting substances like chlorofluorocarbons (CFCs), leading to the gradual recovery of the stratospheric ozone layer, with universal ratification by all 198 UN member states. The Kyoto Protocol (1997) set legally binding emission reduction targets for developed countries, establishing emissions trading, clean development mechanisms, and joint implementation; however, its impact was limited by the exclusion of developing countries and the non-participation of the United States. The Paris Agreement (2015) represents a global consensus on climate action, with 194 parties committing to hold global warming to well below 2°C above pre-industrial levels, pursuing efforts to limit it to 1.5°C — unlike Kyoto, it uses nationally determined contributions (NDCs) that each country sets and updates voluntarily, with a transparency framework to track progress, representing a bottom-up approach designed to achieve universal participation."
+  },
+  {
+    "q": [
+      "What is carbon pricing?",
+      "What is the difference between a carbon tax and cap-and-trade?",
+      "How does emissions trading work?",
+      "What is cap-and-trade?",
+      "What is a carbon tax?",
+      "Which countries have carbon pricing?",
+      "What is the European Union Emissions Trading System?",
+      "How effective is carbon pricing in reducing emissions?"
+    ],
+    "a": "Carbon pricing is an economic policy tool that puts a monetary cost on greenhouse gas emissions to incentivize polluters to reduce their carbon footprint, operating through two main mechanisms: carbon taxes and cap-and-trade (emissions trading) systems. A carbon tax sets a fixed price per ton of CO2 emitted, providing price certainty but no guarantee of a specific emissions reduction level, and is administratively simpler to implement — currently used in countries like Sweden (the highest at over $130/ton), Canada, and Switzerland. Cap-and-trade systems set a declining cap on total emissions — the European Union Emissions Trading System (EU ETS) is the world's largest — and issue tradeable allowances that emitters must hold for each ton of CO2 they emit, creating a market price for carbon that fluctuates based on supply and demand, providing certainty about total emissions while letting the market determine the price."
+  },
+  {
+    "q": [
+      "What is environmental justice?",
+      "How does environmental racism affect communities?",
+      "What is the environmental justice movement?",
+      "What are examples of environmental injustice?",
+      "What is the EPA's role in environmental justice?",
+      "What is Executive Order 12898 on environmental justice?",
+      "How do low-income communities face disproportionate environmental burdens?",
+      "What is the connection between environmental justice and civil rights?"
+    ],
+    "a": "Environmental justice is the fair treatment and meaningful involvement of all people regardless of race, color, national origin, or income in the development, implementation, and enforcement of environmental laws, regulations, and policies. The environmental justice movement emerged from grassroots community organizing in the 1980s, notably the 1982 protests against a PCB landfill in Warren County, North Carolina — a predominantly Black community — and the 1987 United Church of Christ report 'Toxic Wastes and Race,' which first documented that race was the strongest predictor of proximity to hazardous waste facilities. Key issues include the disproportionate siting of polluting facilities (incinerators, landfills, chemical plants) in communities of color, unequal enforcement of environmental regulations, exclusion of marginalized communities from environmental decision-making, and the unequal impacts of climate change — federal efforts include Executive Order 12898 (1994) directing agencies to address environmental justice and the EPA's Office of Environmental Justice."
+  }
+]

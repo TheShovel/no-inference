@@ -1,0 +1,57 @@
+[
+  {
+    "q": [
+      "What is nanotechnology?",
+      "Define nanotechnology and the nanoscale.",
+      "What is the nanoscale?",
+      "How small is a nanometer?",
+      "What makes nanotechnology different from conventional technology?",
+      "nanotechnology definition",
+      "what is nanoscience",
+      "nanoscale explained"
+    ],
+    "a": "Nanotechnology is the manipulation of matter at the nanoscale—typically between 1 and 100 nanometers—where materials exhibit novel physical, chemical, and biological properties not seen at larger scales. A nanometer is one billionth of a meter; for reference, a DNA strand is about 2.5 nm wide, and a human hair is roughly 80,000 nm in diameter. At the nanoscale, quantum effects become significant, surface area to volume ratios increase dramatically, and material properties like color, melting point, electrical conductivity, and chemical reactivity can change fundamentally, enabling applications across medicine, electronics, energy, and materials science."
+  },
+  {
+    "q": [
+      "What are quantum effects at the nanoscale?",
+      "How does quantum confinement work?",
+      "Why do nanoparticles behave differently?",
+      "What happens to materials at the nanoscale?",
+      "quantum effects in nanotechnology",
+      "quantum confinement",
+      "nanoscale properties"
+    ],
+    "a": "Quantum confinement occurs when electrons are confined in a nanoscale region smaller than their de Broglie wavelength, causing their energy levels to become discrete rather than continuous; this changes the optical and electronic properties of materials, as seen in quantum dots whose emission color depends on particle size. The dramatically increased surface area to volume ratio at the nanoscale means a larger fraction of atoms are on the surface, making nanomaterials exceptionally reactive and useful as catalysts. Additional nanoscale effects include enhanced plasmonic properties (localized surface plasmon resonance in gold and silver nanoparticles), superparamagnetism in magnetic nanoparticles, and changes in melting point depression where nanoparticles melt at significantly lower temperatures than bulk materials."
+  },
+  {
+    "q": [
+      "What is the difference between bottom-up and top-down fabrication?",
+      "What is self-assembly in nanotechnology?",
+      "How are nanomaterials fabricated?",
+      "What are top-down approaches in nanotech?",
+      "What are bottom-up approaches in nanotech?",
+      "bottom-up vs top-down nanotechnology",
+      "nanofabrication methods",
+      "self-assembly"
+    ],
+    "a": "Top-down fabrication starts with bulk material and carves away material to create nanoscale structures, using techniques like photolithography (used in semiconductor manufacturing), electron beam lithography, and focused ion beam milling. Bottom-up fabrication builds nanostructures atom by atom or molecule by molecule through processes like chemical vapor deposition, molecular beam epitaxy, sol-gel synthesis, and self-assembly, where molecules spontaneously organize into ordered structures via hydrogen bonding, van der Waals forces, or hydrophobic interactions. Self-assembly is particularly powerful in nature (protein folding, lipid bilayers) and is increasingly harnessed for creating advanced nanomaterials like DNA origami structures, block copolymer patterns, and nanoparticle superlattices."
+  },
+  {
+    "q": [
+      "What tools are used in nanotechnology?",
+      "What is a scanning tunneling microscope?",
+      "What is an atomic force microscope?",
+      "What is the difference between SEM and TEM?",
+      "How do we see atoms?",
+      "What was Feynman's vision for nanotechnology?",
+      "What is the history of nanotechnology?",
+      "STM",
+      "AFM",
+      "scanning electron microscope",
+      "transmission electron microscope",
+      "Feynman nanotechnology"
+    ],
+    "a": "The scanning tunneling microscope (STM, invented 1981 by Binnig and Rohrer) uses a sharp conductive tip to image surfaces at atomic resolution by measuring quantum tunneling current, and can even manipulate individual atoms. The atomic force microscope (AFM) maps surface topography by measuring forces between a probe tip and the sample, working on both conductive and insulating surfaces. Scanning electron microscopes (SEM) use focused electron beams to produce high-resolution 3D surface images, while transmission electron microscopes (TEM) pass electrons through ultra-thin samples for atomic-scale internal imaging. The field's conceptual foundation was laid by Richard Feynman in his 1959 lecture \"There's Plenty of Room at the Bottom,\" and modern nanotechnology was catalyzed by invention of the STM, discovery of fullerenes (1985) and carbon nanotubes (1991), and the launch of the US National Nanotechnology Initiative (2000)."
+  }
+]

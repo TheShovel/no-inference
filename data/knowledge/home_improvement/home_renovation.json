@@ -1,0 +1,67 @@
+[
+    {
+        "q": [
+            "How do I properly prepare a wall for painting?",
+            "What is the correct way to patch holes in drywall?",
+            "How do I spackle and sand walls before painting?",
+            "When do I need to use primer before painting?",
+            "What type of primer should I use for different surfaces?",
+            "How do I clean walls before painting?",
+            "What is the difference between primer and paint?",
+            "How do I repair damaged drywall before painting?"
+        ],
+        "a": "Proper wall preparation begins with cleaning the surface with mild soap and water to remove grease and dirt, especially in kitchens and bathrooms. Patch holes and cracks with spackling compound or joint compound, applying it with a putty knife and allowing it to dry completely before sanding smooth with fine-grit sandpaper (120-150 grit). Sand glossy surfaces to degloss them for better adhesion, and vacuum all dust before priming. Primer selection is crucial — use drywall primer for new drywall, stain-blocking primer for water stains or smoke damage, bonding primer for slick surfaces, and self-priming paint only when the manufacturer explicitly recommends it for the surface."
+    },
+    {
+        "q": [
+            "What type of paint should I use for different rooms?",
+            "What is the difference between flat, eggshell, satin, and gloss paint?",
+            "What sheen is best for bathrooms?",
+            "What sheen is best for trim and doors?",
+            "What is the difference between latex and oil-based paint?",
+            "What paint finish is best for high-traffic areas?",
+            "What is the best paint for kitchen walls?",
+            "What is the difference between acrylic and latex paint?"
+        ],
+        "a": "Paint sheen determines durability and washability — flat/matte hides imperfections but is hard to clean, suitable for low-traffic ceilings and adult bedrooms. Eggshell and satin are ideal for living rooms, dining rooms, and hallways, offering a balance of appearance and cleanability. Semi-gloss and gloss are best for bathrooms, kitchens, trim, and doors because they withstand moisture and frequent cleaning. Latex (water-based) paint is the standard for most interior walls, drying quickly with low odor and easy soap-and-water cleanup. Oil-based (alkyd) paint is more durable and self-leveling, preferred for trim and cabinets despite longer dry times and requiring mineral spirits for cleanup."
+    },
+    {
+        "q": [
+            "What painting tools do I need for a room?",
+            "How do I choose the right roller nap for my wall texture?",
+            "What paintbrush should I use for cutting trim?",
+            "What is the best type of painter's tape?",
+            "How do I use a paint sprayer?",
+            "What is the difference between HVLP and airless paint sprayers?",
+            "How do I clean paint rollers and brushes?",
+            "What drop cloth material is best for painting?"
+        ],
+        "a": "Essential painting tools include a roller frame and covers, an angled sash brush for cutting in edges and trim, a roller tray with a screen, painter's tape, and drop cloths. Roller nap (fabric thickness) should match your surface texture — 1/4-inch nap for smooth walls, 3/8-inch for slightly textured, 1/2-inch for medium texture, and 3/4-inch for rough surfaces like stucco. Use synthetic bristle brushes for latex paint and natural bristle (usually China bristle) for oil-based paints. Blue painter's tape is suitable for most surfaces with 14-day removal, while green tape offers cleaner lines on delicate surfaces. Canvas drop cloths are preferable to plastic as they don't slip and absorb spills."
+    },
+    {
+        "q": [
+            "How do I paint a room efficiently?",
+            "What is the correct order for painting a room?",
+            "How do I cut in edges when painting a room?",
+            "How do I avoid roller marks when painting?",
+            "How many coats of paint do I need?",
+            "How long should I wait between coats of paint?",
+            "How do I paint a ceiling without drips?",
+            "What is the best technique for rolling paint on walls?"
+        ],
+        "a": "Paint a room in this order: ceiling first, then walls, then trim last. Cut in (paint edges) with an angled brush by loading it about halfway and pressing gently to create a thin bead along corners and trim. For walls, roll in a W or M pattern to distribute paint evenly, then fill in with parallel strokes without lifting the roller mid-stroke. Most quality paints require two coats for full coverage and uniform sheen, with dry times of 1-4 hours between coats depending on temperature and humidity. Use a high-quality 3/8-inch or 1/2-inch nap roller and avoid overloading it to prevent drips and roller marks, maintaining a wet edge by working from wet areas into dry ones."
+    },
+    {
+        "q": [
+            "How do I install a backsplash in a kitchen?",
+            "What materials are best for a DIY backsplash?",
+            "How do I tile a backsplash?",
+            "How do I cut tiles for a backsplash?",
+            "What adhesive should I use for backsplash tile?",
+            "How do I grout a backsplash?",
+            "What is peel-and-stick backsplash and is it durable?",
+            "How do I finish backsplash edges at corners and outlets?"
+        ],
+        "a": "Installing a backsplash starts with preparing the wall surface — clean it thoroughly, fill any holes, and ensure it's smooth and dry. For subway tile or ceramic tiles, apply thin-set mortar with a notched trowel, press tiles into place with spacers for consistent gaps, and allow the adhesive to cure for 24 hours before grouting. Cut tiles using a manual snap cutter for straight cuts, an angle grinder with a diamond blade for L-cuts around outlets, and tile nippers for small irregular shapes. Grout is applied with a rubber float, wiped diagonally across the joints, then cleaned with a damp sponge. Peel-and-stick tile backsplashes are a beginner-friendly alternative that can be cut with a utility knife and installed directly over smooth, clean drywall."
+    }
+]

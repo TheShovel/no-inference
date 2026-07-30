@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is IAM?",
+      "What is identity and access management?",
+      "Why is IAM important for security?",
+      "What are the core components of IAM?",
+      "What does identity and access management do?",
+      "How does IAM work in an organization?",
+      "What problems does IAM solve?"
+    ],
+    "a": "Identity and Access Management (IAM) is a framework of policies, technologies, and processes that ensure the right individuals access the right resources at the right times for the right reasons, governing digital identity creation, authentication, authorization, and access lifecycle management. IAM systems manage user identities across on-premises and cloud environments, enforce access policies, and provide audit trails for compliance, reducing the risk of data breaches caused by excessive or orphaned privileges. Core IAM capabilities include user provisioning and deprovisioning, role management, access certification, single sign-on, multi-factor authentication, and privileged account management that together form the foundation of organizational security."
+  },
+  {
+    "q": [
+      "What are the different authentication methods?",
+      "How do passwords work for authentication?",
+      "What is biometric authentication?",
+      "What is multi-factor authentication (MFA)?",
+      "How does MFA improve security?",
+      "What are the factors of authentication?",
+      "What is two-factor authentication?"
+    ],
+    "a": "Authentication methods verify user identity through three categories: something you know (passwords, PINs, security questions), something you have (smartphones, hardware tokens, smart cards), and something you are (biometrics like fingerprints, facial recognition, iris scans, voice patterns). Multi-factor authentication (MFA) combines two or more of these factors, significantly reducing the risk of account compromise because an attacker would need to breach multiple independent authentication mechanisms simultaneously. Passwords remain the most common but weakest authentication method, vulnerable to phishing, credential stuffing, brute-force attacks, and reuse across services, which is why modern security increasingly emphasizes MFA, passwordless methods, and biometrics to mitigate these risks."
+  },
+  {
+    "q": [
+      "What is OAuth 2.0?",
+      "How does OAuth 2.0 work?",
+      "What is the difference between OAuth and OpenID Connect?",
+      "What is OpenID Connect (OIDC)?",
+      "What is SAML?",
+      "How does SAML authentication work?",
+      "What is the difference between OAuth and SAML?"
+    ],
+    "a": "OAuth 2.0 is an authorization framework that enables applications to obtain limited access to user accounts on an HTTP service without exposing user credentials, commonly used for delegating access — such as allowing a website to access your Google or Facebook contacts. OpenID Connect (OIDC) is an authentication layer built on top of OAuth 2.0 that adds identity verification by issuing an ID token in JWT format containing claims about the authenticated user, enabling single sign-on across applications. SAML (Security Assertion Markup Language) is an XML-based single sign-on protocol primarily used in enterprise environments to exchange authentication and authorization data between identity providers and service providers, enabling users to authenticate once and access multiple applications."
+  },
+  {
+    "q": [
+      "What is LDAP?",
+      "What is Active Directory?",
+      "How does Active Directory work?",
+      "What is single sign-on (SSO)?",
+      "What is privileged access management (PAM)?",
+      "What is zero trust architecture?",
+      "What is role-based access control (RBAC)?"
+    ],
+    "a": "Active Directory (AD) is Microsoft's directory service for Windows domain networks that stores identity and access information, authenticates users and computers, enforces security policies, and manages organizational resources through a hierarchical database accessible via LDAP (Lightweight Directory Access Protocol). Single sign-on (SSO) allows users to authenticate once and gain access to multiple applications without re-entering credentials, improving user experience and reducing password fatigue while centralizing authentication control. Zero trust architecture is a security model based on 'never trust, always verify' that requires continuous authentication and authorization of every access request regardless of network location, implementing least-privilege access, micro-segmentation, and real-time monitoring to defend against modern threats that bypass traditional perimeter defenses."
+  }
+]

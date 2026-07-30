@@ -1,0 +1,91 @@
+[
+  {
+    "q": [
+      "What are the four laws of thermodynamics?",
+      "Explain the laws of thermodynamics.",
+      "What does the zeroth law of thermodynamics state?",
+      "What is the first law of thermodynamics?",
+      "Explain the second law of thermodynamics.",
+      "What is the third law of thermodynamics?",
+      "Summary of thermodynamic laws"
+    ],
+    "a": "The zeroth law establishes thermal equilibrium: if two systems are each in thermal equilibrium with a third system, they are in thermal equilibrium with each other — which is why thermometers work. The first law is the conservation of energy: the change in a system's internal energy equals heat added minus work done (ΔU = Q - W). The second law states that the entropy of an isolated system always increases or stays the same, never decreases; it also establishes that heat cannot spontaneously flow from a colder body to a hotter body. The third law states that as temperature approaches absolute zero (0 K), the entropy of a perfect crystal approaches zero, meaning it's impossible to reach absolute zero in a finite number of steps."
+  },
+  {
+    "q": [
+      "What are the three methods of heat transfer?",
+      "Explain conduction, convection, and radiation.",
+      "How does heat move through solids?",
+      "How does convection transfer heat?",
+      "What is thermal radiation?",
+      "Compare conduction convection and radiation."
+    ],
+    "a": "Conduction is the transfer of heat through direct molecular collisions, occurring primarily in solids where atoms vibrate and pass energy to neighboring atoms; metals conduct well because free electrons also carry energy. Convection involves the bulk movement of fluids (liquids or gases) where warmer, less dense material rises and cooler, denser material sinks, creating circulation currents. Radiation is the emission of electromagnetic waves (primarily infrared) from any object above absolute zero; it does not require a medium and is how the Sun's energy reaches Earth. Most real-world heat transfer involves combinations of all three."
+  },
+  {
+    "q": [
+      "What is entropy?",
+      "Explain entropy in thermodynamics.",
+      "How does entropy relate to disorder?",
+      "What does increasing entropy mean?",
+      "Is entropy a measure of randomness?",
+      "What is the statistical interpretation of entropy?"
+    ],
+    "a": "Entropy is a measure of the number of microscopic configurations (microstates) corresponding to a system's macroscopic state — essentially, it quantifies disorder or randomness. The second law of thermodynamics states that the total entropy of an isolated system never decreases over time, meaning systems naturally evolve toward equilibrium, the most probable state. In statistical mechanics, entropy S = k_B · ln(Ω), where k_B is Boltzmann's constant and Ω is the number of microstates. A practical example: when ice melts into water, its entropy increases because the water molecules have more freedom of motion than in the rigid crystal lattice."
+  },
+  {
+    "q": [
+      "What is enthalpy?",
+      "Define enthalpy in thermodynamics.",
+      "How is enthalpy different from internal energy?",
+      "What does enthalpy change mean?",
+      "Why is enthalpy useful in chemistry?",
+      "Enthalpy definition and formula"
+    ],
+    "a": "Enthalpy (H) is a thermodynamic property defined as H = U + PV, where U is internal energy, P is pressure, and V is volume. It represents the total heat content of a system at constant pressure, which is why enthalpy changes (ΔH) are commonly used in chemistry to quantify heat absorbed or released during reactions at constant pressure — such as in an open beaker. Exothermic reactions have negative ΔH (heat released), while endothermic reactions have positive ΔH (heat absorbed). Enthalpy is a state function, meaning its value depends only on the current state of the system, not the path taken to reach it."
+  },
+  {
+    "q": [
+      "What is a heat engine?",
+      "How do heat engines work?",
+      "Explain the working principle of a heat engine.",
+      "What are examples of heat engines?",
+      "What is the efficiency of a heat engine?",
+      "How does a heat engine relate to the Carnot cycle?"
+    ],
+    "a": "A heat engine is a device that converts thermal energy into mechanical work by operating in a cycle between a hot reservoir and a cold reservoir. It absorbs heat Q_H from the hot reservoir, performs useful work W on the surroundings, and rejects waste heat Q_C to the cold reservoir — with Q_H = W + Q_C by energy conservation. The thermal efficiency η = W/Q_H = 1 - Q_C/Q_H is always less than 100% due to the second law of thermodynamics. Examples include car engines (internal combustion), steam turbines in power plants, and jet engines. No heat engine can exceed the Carnot efficiency."
+  },
+  {
+    "q": [
+      "What is the Carnot cycle?",
+      "Explain the Carnot cycle.",
+      "What are the four stages of the Carnot cycle?",
+      "Why is the Carnot cycle important?",
+      "What is Carnot efficiency?",
+      "Carnot cycle explained simply"
+    ],
+    "a": "The Carnot cycle is an ideal reversible thermodynamic cycle consisting of four processes: isothermal expansion (heat absorbed at constant high temperature), adiabatic expansion (working fluid cools without heat exchange), isothermal compression (heat rejected at constant low temperature), and adiabatic compression (working fluid heats back to starting temperature). It represents the most efficient possible heat engine operating between two temperatures, with efficiency η = 1 - T_C/T_H, where temperatures are in Kelvin. No real engine can exceed Carnot efficiency; it serves as the theoretical upper bound. The Carnot cycle demonstrates that efficiency increases with a larger temperature difference between hot and cold reservoirs."
+  },
+  {
+    "q": [
+      "What happens during a phase change?",
+      "Explain phase transitions in thermodynamics.",
+      "What are the different types of phase changes?",
+      "What is latent heat?",
+      "How does melting differ from evaporation?",
+      "What happens to temperature during a phase change?"
+    ],
+    "a": "A phase change is the transformation of matter from one state (solid, liquid, gas, or plasma) to another, driven by changes in temperature or pressure. During a phase change, energy is absorbed or released as latent heat without changing the substance's temperature — the energy goes into breaking or forming molecular bonds. Key phase transitions include melting (solid to liquid), freezing (liquid to solid), vaporization (liquid to gas), condensation (gas to liquid), sublimation (solid to gas), and deposition (gas to solid). For water, the latent heat of fusion is 334 J/g and the latent heat of vaporization is 2260 J/g, which is why steam burns are so dangerous."
+  },
+  {
+    "q": [
+      "What is absolute zero?",
+      "Explain absolute zero temperature.",
+      "Can absolute zero be reached?",
+      "What happens near absolute zero?",
+      "Why is 0 Kelvin significant?",
+      "Absolute zero in Kelvin Celsius Fahrenheit"
+    ],
+    "a": "Absolute zero is the theoretical lowest possible temperature, defined as 0 Kelvin (-273.15°C or -459.67°F), where the particles of a substance have minimal vibrational motion — the lowest possible energy state. According to the third law of thermodynamics, it is impossible to reach absolute zero in a finite number of steps, as removing energy becomes progressively harder as temperature drops. Near absolute zero, matter exhibits exotic quantum phenomena such as superconductivity (zero electrical resistance) and superfluidity (zero viscosity flow). Scientists have reached temperatures within billionths of a degree above absolute zero using laser cooling and magnetic trapping techniques in laboratory conditions."
+  }
+]

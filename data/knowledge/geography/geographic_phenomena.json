@@ -1,0 +1,120 @@
+[
+  {
+    "q": [
+      "What is plate tectonics?",
+      "Explain the theory of plate tectonics.",
+      "What are tectonic plates?",
+      "How do tectonic plates move?",
+      "What are the different types of plate boundaries?",
+      "What evidence supports plate tectonics?",
+      "How does plate tectonics explain continental drift?"
+    ],
+    "a": "Plate tectonics is the scientific theory that Earth's lithosphere is divided into several large and small plates that move over the underlying asthenosphere. These plates interact at three types of boundaries: divergent (plates move apart, creating new crust — mid-ocean ridges), convergent (plates collide, forming mountains or subduction zones — the Himalayas, Mariana Trench), and transform (plates slide past each other — the San Andreas Fault). The movement is driven by mantle convection, slab pull, and ridge push. The theory explains continental drift (first proposed by Alfred Wegener in 1912), the distribution of earthquakes and volcanoes, mountain formation, and the changing positions of continents over geological time (millions of years)."
+  },
+  {
+    "q": [
+      "How do volcanoes form and erupt?",
+      "What causes volcanic eruptions?",
+      "What are the different types of volcanoes?",
+      "What is magma and lava?",
+      "Where are volcanoes most commonly found?",
+      "What is the Ring of Fire?",
+      "What are shield volcanoes and stratovolcanoes?"
+    ],
+    "a": "Volcanoes form when magma (molten rock) from beneath Earth's crust rises to the surface due to lower density than surrounding rock. Eruptions occur when pressure from dissolved gases in the magma exceeds the strength of the overlying rock. Shield volcanoes (like Mauna Loa in Hawaii) have gentle slopes and produce fluid basaltic lava flows. Stratovolcanoes (like Mount Fuji or Mount Vesuvius) have steep profiles and produce more explosive eruptions from viscous andesitic or rhyolitic magma. The Pacific Ring of Fire — a 40,000 km horseshoe-shaped zone — contains about 75% of the world's active volcanoes, located at convergent plate boundaries. Volcanic activity also occurs at hotspots (like Hawaii and Yellowstone) from mantle plumes."
+  },
+  {
+    "q": [
+      "What causes earthquakes?",
+      "Explain how earthquakes occur.",
+      "What are seismic waves?",
+      "How are earthquakes measured?",
+      "What is the Richter scale?",
+      "What is the difference between magnitude and intensity?",
+      "What are aftershocks and foreshocks?"
+    ],
+    "a": "Earthquakes are caused by the sudden release of energy along geological faults, usually at plate boundaries, when accumulated stress exceeds the frictional strength of rocks. The point of initial rupture is the hypocenter (focus), directly above which on the surface is the epicenter. Seismic waves include P-waves (primary, compressional, fastest) and S-waves (secondary, shear, through solids only), plus surface waves that cause the most damage. Magnitude measures energy released on a logarithmic scale — each whole number increase represents about 32 times more energy. The moment magnitude scale (Mw) is now preferred over the older Richter scale. Intensity (Mercalli scale) measures observed effects. The largest recorded earthquake was the 1960 Chile earthquake (Mw 9.5)."
+  },
+  {
+    "q": [
+      "What is erosion and how does it shape the landscape?",
+      "What are the types of erosion?",
+      "How does water erosion work?",
+      "What is wind erosion?",
+      "What is glacial erosion?",
+      "How is erosion different from weathering?",
+      "What landforms are created by erosion?"
+    ],
+    "a": "Erosion is the process by which natural forces (water, wind, ice, or gravity) wear away and transport surface materials. Water erosion includes rainfall splash, sheet erosion, rill and gully formation, and river erosion — creating features like canyons (Grand Canyon), valleys, and deltas. Wind erosion creates desert arches, hoodoos, and loess deposits. Glacial erosion through plucking and abrasion produces U-shaped valleys, fjords, cirques, and moraines. Weathering differs from erosion — weathering breaks down rock in place, while erosion transports the material. Human activities like deforestation and agriculture accelerate erosion rates significantly. Coastal erosion from waves and currents shapes cliffs, sea stacks, and beaches. The rate depends on climate, rock type, vegetation cover, and slope angle."
+  },
+  {
+    "q": [
+      "What are ocean currents?",
+      "How do ocean currents work?",
+      "What is the difference between surface and deep ocean currents?",
+      "What drives ocean currents?",
+      "What is the Gulf Stream?",
+      "What is the thermohaline circulation?",
+      "How do ocean currents affect climate?"
+    ],
+    "a": "Ocean currents are continuous, directed movements of seawater driven by wind, temperature and salinity differences (thermohaline circulation), the Coriolis effect, and tides. Surface currents (like the Gulf Stream) are primarily wind-driven and affect the upper few hundred meters; they redistribute heat from the equator toward the poles, moderating global climate — the Gulf Stream keeps Western Europe significantly warmer than comparable latitudes. Deep ocean currents (the global conveyor belt) are driven by density differences from temperature and salinity, carrying cold, dense water from polar regions along the ocean floor. This circulation takes about 1,000 years to complete a full cycle and plays a crucial role in carbon storage. El Niño and La Niña are periodic disruptions of the Pacific current system that affect weather worldwide."
+  },
+  {
+    "q": [
+      "How are mountains formed?",
+      "What are the different types of mountains?",
+      "What is orogeny?",
+      "How do fold mountains form?",
+      "How do fault-block mountains form?",
+      "What are volcanic mountains?",
+      "How do dome mountains form?"
+    ],
+    "a": "Mountains form through tectonic processes — primarily at convergent plate boundaries. Fold mountains (like the Himalayas, Alps, and Andes) form when two continental plates collide, compressing and folding sedimentary rock layers upward. Fault-block mountains (like the Sierra Nevada) form when extensional forces create fractures (faults), causing large blocks to tilt or uplift. Volcanic mountains (like Mount Fuji or Mount Rainier) build up from accumulated lava and volcanic debris. Dome mountains (like the Black Hills) form when magma pushes up overlying rock without erupting, creating a rounded uplift that erodes over time. The age of mountain ranges varies greatly — the Himalayas are relatively young (about 50 million years), while the Appalachians (over 480 million years) are much older and more eroded."
+  },
+  {
+    "q": [
+      "What are the major river systems of the world?",
+      "How do rivers shape the landscape?",
+      "What is a river basin?",
+      "What are the longest rivers in the world?",
+      "What is the difference between a river and a stream?",
+      "What are river deltas and how do they form?"
+    ],
+    "a": "Rivers are natural watercourses that drain water from higher elevations to oceans, lakes, or other rivers, creating drainage basins (watersheds). The Nile (about 6,650 km) and the Amazon (about 6,400 km, but by far the largest by discharge) are the world's longest rivers. Other major systems include the Mississippi-Missouri, Yangtze, Yellow, Mekong, Ganges-Brahmaputra, and Danube rivers. Rivers erode their channels, transport sediment, and deposit it downstream — forming features like meanders, oxbow lakes, floodplains, and deltas. Deltas (like the Nile Delta or Mississippi Delta) form where rivers enter still water, depositing sediment in fan-shaped patterns. Rivers are vital for human civilization — providing water, transportation, agriculture (floodplain fertility), and hydroelectric power."
+  },
+  {
+    "q": [
+      "What is glaciation and how do glaciers move?",
+      "Explain glacial movement and landforms.",
+      "What are the different types of glaciers?",
+      "What is an ice age?",
+      "How do glaciers erode the landscape?",
+      "What is the difference between alpine and continental glaciation?",
+      "What landforms are created by glaciation?"
+    ],
+    "a": "Glaciers are large, persistent masses of ice that move under their own weight, flowing like very slow rivers. Alpine glaciers form in mountain valleys, while continental ice sheets (like Greenland and Antarctica) cover vast areas. Glaciers move through internal deformation (ice crystals sliding past each other) and basal sliding (meltwater lubricating the base). Glacial erosion produces U-shaped valleys, arêtes, horns (like the Matterhorn), cirques, and fjords. Depositional features include moraines (piles of debris), drumlins, and erratics (boulders carried far from their source). The last Ice Age peaked about 20,000 years ago, with glaciers covering about 30% of Earth's land. Currently, glaciers are retreating rapidly worldwide due to climate change, which contributes to sea level rise."
+  },
+  {
+    "q": [
+      "What is desertification?",
+      "How does desertification occur?",
+      "What are the causes of desertification?",
+      "What are the effects of desertification?",
+      "What regions are most affected by desertification?",
+      "Can desertification be reversed?"
+    ],
+    "a": "Desertification is the process by which fertile land becomes increasingly arid, losing its biological productivity and eventually becoming desert-like. It is caused by a combination of factors: climate change (reduced rainfall, increased temperatures), overgrazing, deforestation, poor agricultural practices (over-cultivation, insufficient irrigation), and urbanization. The Sahel region in Africa (south of the Sahara) is one of the most severely affected areas. Desertification affects about one-sixth of the world's population and threatens about one-third of Earth's land surface. Consequences include food insecurity, loss of biodiversity, displacement of populations, and economic hardship. Prevention and reversal strategies include sustainable land management, reforestation (like the Great Green Wall in Africa), improved irrigation, terracing, and reducing overgrazing through managed grazing systems."
+  },
+  {
+    "q": [
+      "How do weather patterns form?",
+      "What causes weather?",
+      "What is the difference between weather and climate?",
+      "What are high and low pressure systems?",
+      "How do global wind patterns work?",
+      "What causes seasons?",
+      "What is the jet stream?"
+    ],
+    "a": "Weather patterns are driven by the unequal heating of Earth's surface by the Sun, combined with the planet's rotation and atmospheric circulation. High-pressure systems (anticyclones) bring clear, stable weather as sinking air suppresses cloud formation. Low-pressure systems (cyclones) bring clouds, precipitation, and storms as rising air cools and condenses moisture. Global wind patterns include the trade winds (easterlies near the equator), westerlies (mid-latitudes), and polar easterlies. The jet stream — fast-moving air currents at high altitudes — steers weather systems and separates cold polar air from warmer subtropical air. Seasons result from Earth's axial tilt of 23.5° as it orbits the Sun. Weather refers to short-term atmospheric conditions, while climate describes long-term averages over decades or centuries."
+  }
+]

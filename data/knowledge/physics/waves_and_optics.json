@@ -1,0 +1,114 @@
+[
+  {
+    "q": [
+      "What are the basic properties of waves?",
+      "Explain frequency, wavelength, and amplitude of waves.",
+      "What is wave frequency?",
+      "What is the relationship between wavelength and frequency?",
+      "What is wave amplitude?",
+      "How do you calculate wave speed?",
+      "What is a wave period?"
+    ],
+    "a": "Waves are disturbances that transfer energy through a medium or space without transferring matter. The wavelength (λ) is the distance between successive identical points on the wave (e.g., crest to crest). Frequency (f) is the number of complete wave cycles passing a point per second, measured in hertz (Hz). Amplitude is the maximum displacement from the equilibrium position, determining the wave's energy. These properties are related by the wave equation v = fλ, where v is wave speed. The period (T = 1/f) is the time for one complete cycle. For electromagnetic waves in vacuum, v = c ≈ 3 × 10⁸ m/s."
+  },
+  {
+    "q": [
+      "What is wave interference?",
+      "Explain constructive and destructive interference.",
+      "How do waves combine through interference?",
+      "What is the principle of superposition?",
+      "What are interference patterns?",
+      "How does Young's double-slit experiment demonstrate interference?"
+    ],
+    "a": "Interference occurs when two or more waves overlap and combine according to the superposition principle: the resultant displacement is the sum of individual displacements. Constructive interference happens when waves are in phase (crests align with crests), producing larger amplitude. Destructive interference occurs when waves are out of phase by half a wavelength (crests align with troughs), canceling each other partially or completely. Young's double-slit experiment provided early evidence for the wave nature of light by projecting an interference pattern of alternating bright and dark fringes. Interference is observed with all types of waves — light, sound, and water waves — and is the basis for technologies like interferometers and noise-canceling headphones."
+  },
+  {
+    "q": [
+      "What is refraction of light?",
+      "Explain how refraction works.",
+      "What is Snell's law?",
+      "Why does a straw look bent in water?",
+      "What is the index of refraction?",
+      "How does refraction cause rainbows?"
+    ],
+    "a": "Refraction is the bending of waves as they pass from one medium to another due to a change in wave speed. The amount of bending depends on the indices of refraction of the two media and is described by Snell's law: n₁sin(θ₁) = n₂sin(θ₂), where n is the refractive index and θ is the angle from the normal. When light passes into a denser medium (higher n), it slows down and bends toward the normal. A straw appearing bent in water is a common example. Rainbows form when sunlight refracts and reflects inside raindrops, dispersing into its component colors because different wavelengths refract by slightly different amounts (dispersion)."
+  },
+  {
+    "q": [
+      "What is the difference between reflection and refraction?",
+      "Explain reflection of light.",
+      "What are the laws of reflection?",
+      "How do mirrors work?",
+      "What is the difference between concave and convex mirrors?",
+      "What is total internal reflection?"
+    ],
+    "a": "Reflection occurs when waves bounce off a surface, following the law of reflection: the angle of incidence equals the angle of reflection, measured from the normal to the surface. Plane mirrors produce virtual images at the same distance behind the mirror as the object is in front. Concave mirrors converge light and can form real or virtual images depending on object distance, used in telescopes and shaving mirrors. Convex mirrors diverge light, producing smaller, wider-angle virtual images, used in vehicle side mirrors. Total internal reflection occurs when light traveling from a denser to a rarer medium exceeds the critical angle, reflecting all light back — the principle behind optical fibers."
+  },
+  {
+    "q": [
+      "How do lenses work?",
+      "Explain converging and diverging lenses.",
+      "What is the difference between convex and concave lenses?",
+      "What is the lens formula?",
+      "How do eyeglasses correct vision?",
+      "What is the focal length of a lens?"
+    ],
+    "a": "Lenses work by refracting light to form images. Convex (converging) lenses are thicker in the center and bring parallel light rays to a focal point; they can form real images (on a screen) or virtual images (magnifying glass). Concave (diverging) lenses are thinner in the center and spread parallel rays outward, always producing virtual, reduced images. The thin lens equation is 1/f = 1/do + 1/di, where f is focal length, do is object distance, and di is image distance. Eyeglasses use converging lenses for farsightedness (hyperopia) and diverging lenses for nearsightedness (myopia) to properly focus light on the retina."
+  },
+  {
+    "q": [
+      "What is the electromagnetic spectrum?",
+      "List the types of electromagnetic radiation.",
+      "What are the different regions of the EM spectrum?",
+      "How is the electromagnetic spectrum organized?",
+      "What are the uses of different EM waves?",
+      "What is the range of visible light?"
+    ],
+    "a": "The electromagnetic spectrum encompasses all types of electromagnetic radiation, arranged by wavelength and frequency. From longest wavelength to shortest: radio waves (communication, broadcasting), microwaves (radar, cooking, WiFi), infrared (thermal imaging, remote controls), visible light (400-700 nm, what human eyes detect), ultraviolet (sterilization, causing sunburn), X-rays (medical imaging, security scanning), and gamma rays (nuclear reactions, cancer treatment). All EM waves travel at the speed of light in vacuum and differ only in frequency and wavelength. Higher frequency equals shorter wavelength and higher energy per photon."
+  },
+  {
+    "q": [
+      "What is polarization of light?",
+      "Explain polarization in wave optics.",
+      "How do polarized sunglasses work?",
+      "What is the difference between polarized and unpolarized light?",
+      "What are polarizing filters?",
+      "How does polarization by reflection work?"
+    ],
+    "a": "Polarization refers to the orientation of oscillations in a transverse wave. Unpolarized light (like sunlight) has electric field vectors oscillating in all directions perpendicular to propagation. Polarization filters transmit only waves oscillating in a specific direction while absorbing others. Polarized sunglasses reduce glare by blocking horizontally polarized light reflected from flat surfaces like water or roads. Polarization can also occur through reflection (Brewster's angle), scattering (why the sky is polarized), and birefringent crystals. Applications include 3D movie glasses, LCD displays, stress analysis in materials, and optical communication."
+  },
+  {
+    "q": [
+      "What is the Doppler effect?",
+      "Explain the Doppler effect for sound and light.",
+      "Why does a siren change pitch as it passes?",
+      "What is redshift in astronomy?",
+      "How does the Doppler effect work?",
+      "What is the difference between redshift and blueshift?"
+    ],
+    "a": "The Doppler effect is the change in observed frequency (and wavelength) of a wave due to relative motion between source and observer. When a source moves toward an observer, waves are compressed — higher frequency (blueshift for light, higher pitch for sound). When moving away, waves stretch — lower frequency (redshift for light, lower pitch for sound). For sound, the classic example is a siren changing pitch as an ambulance passes. For light, astronomers use redshift to determine that distant galaxies are moving away from us, providing key evidence for the expanding universe and the Big Bang. The Doppler effect is also used in radar speed guns and medical ultrasound imaging."
+  },
+  {
+    "q": [
+      "What is diffraction?",
+      "Explain diffraction of waves.",
+      "How does diffraction occur?",
+      "What are diffraction patterns?",
+      "What is the difference between diffraction and interference?",
+      "How does the size of an aperture affect diffraction?"
+    ],
+    "a": "Diffraction is the spreading or bending of waves around obstacles or through openings comparable in size to the wavelength. The amount of diffraction increases as the size of the opening or obstacle decreases relative to the wavelength — which is why you can hear sound around corners (long wavelength) but cannot see around them (short wavelength). When waves pass through a narrow slit, they produce a diffraction pattern of alternating bright and dark regions due to interference between wavefronts from different parts of the slit. Diffraction limits the resolution of optical instruments like microscopes and telescopes and is the reason why X-ray crystallography can reveal atomic structures (X-rays have wavelengths comparable to atomic spacing)."
+  },
+  {
+    "q": [
+      "What are sound waves?",
+      "How does sound travel?",
+      "What is the speed of sound?",
+      "Explain frequency and pitch of sound.",
+      "What is the difference between longitudinal and transverse waves?",
+      "What is an echo?",
+      "How does the speed of sound vary with temperature?"
+    ],
+    "a": "Sound waves are longitudinal mechanical waves that travel through a medium (solid, liquid, or gas) by compressing and rarefying particles. Unlike transverse waves (like light), the particle displacement is parallel to the direction of wave propagation. The speed of sound in air at 20°C is about 343 m/s, varying with temperature (faster in warmer air) and medium (faster in water and even faster in solids). Frequency determines pitch — higher frequencies produce higher pitches, with human hearing typically ranging from 20 Hz to 20,000 Hz. Amplitude determines loudness, measured in decibels. Echoes occur when sound reflects off surfaces, and sonar uses sound waves for underwater navigation and detection."
+  }
+]

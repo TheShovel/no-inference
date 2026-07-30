@@ -1,0 +1,74 @@
+[
+  {
+    "q": [
+      "What is wave-particle duality?",
+      "Explain wave-particle duality.",
+      "What is the double-slit experiment?",
+      "How can something be both a wave and a particle?",
+      "What does wave-particle duality mean?",
+      "Who discovered wave-particle duality?",
+      "What is the De Broglie wavelength?"
+    ],
+    "a": "Wave-particle duality is the concept that every quantum entity exhibits both wave-like and particle-like properties depending on how it is measured. The double-slit experiment famously demonstrates this: electrons fired one at a time at a barrier with two slits produce an interference pattern characteristic of waves, yet each electron arrives at the detector as a discrete particle. This duality is formalized by the De Broglie relation λ = h/p, where every particle has an associated wavelength inversely proportional to its momentum. The act of measurement determines which aspect is observed — a core feature of quantum mechanics."
+  },
+  {
+    "q": [
+      "What is the Schrödinger equation?",
+      "Explain the Schrödinger equation.",
+      "How does the Schrödinger equation work?",
+      "What is the wave function?",
+      "What does the Schrödinger equation describe?",
+      "What is the time-dependent Schrödinger equation?",
+      "What is the time-independent Schrödinger equation?"
+    ],
+    "a": "The Schrödinger equation is the fundamental equation of quantum mechanics that describes how quantum systems evolve over time. It is a wave equation whose solutions are wave functions (ψ), which contain all the information about a quantum system. The square of the wave function's magnitude (|ψ|²) gives the probability density of finding a particle at a particular location. The time-dependent form, iĤψ = iℏ∂ψ/∂t, describes how the wave function evolves, while the time-independent form, Ĥψ = Eψ, yields the allowed energy states (eigenvalues) of a system. The equation was formulated by Erwin Schrödinger in 1926 and is central to non-relativistic quantum mechanics."
+  },
+  {
+    "q": [
+      "What is the uncertainty principle?",
+      "Explain Heisenberg's uncertainty principle.",
+      "What is the uncertainty principle in quantum mechanics?",
+      "Can we know both position and momentum exactly?",
+      "How does the uncertainty principle work?",
+      "What is the energy-time uncertainty?",
+      "Why is the uncertainty principle important?"
+    ],
+    "a": "Heisenberg's uncertainty principle states that there is a fundamental limit to how precisely certain pairs of complementary properties (such as position and momentum) can be known simultaneously. Mathematically, Δx · Δp ≥ ℏ/2, meaning the more precisely you measure a particle's position (Δx small), the less precisely you can know its momentum (Δp large), and vice versa. This is not a limitation of measurement technology but a fundamental feature of quantum nature. A similar relation exists for energy and time: ΔE · Δt ≥ ℏ/2, allowing temporary violations of energy conservation within very short time intervals, which explains phenomena like quantum tunneling."
+  },
+  {
+    "q": [
+      "What is quantum superposition?",
+      "Explain quantum superposition.",
+      "What is Schrödinger's cat?",
+      "Is Schrödinger's cat alive or dead?",
+      "What does superposition mean in quantum mechanics?",
+      "How does quantum superposition work?",
+      "What is the Copenhagen interpretation?"
+    ],
+    "a": "Quantum superposition is the principle that any two or more quantum states can be added together (superposed) to produce a valid quantum state, meaning a quantum system exists in all its possible states simultaneously until measured. Schrödinger's cat is a thought experiment illustrating the paradox: a cat in a sealed box with a radioactive source that may trigger poison is considered both alive and dead at the same time until the box is opened. The Copenhagen interpretation resolves this by stating that superposition collapses into a definite state upon measurement, while the many-worlds interpretation says all possibilities branch into separate realities. Superposition is the basis for quantum computing, where qubits can represent 0 and 1 simultaneously."
+  },
+  {
+    "q": [
+      "What is quantum tunneling?",
+      "Explain quantum tunneling.",
+      "How does quantum tunneling work?",
+      "Can particles pass through barriers?",
+      "What are examples of quantum tunneling?",
+      "Why is quantum tunneling important?",
+      "How does quantum tunneling relate to the uncertainty principle?"
+    ],
+    "a": "Quantum tunneling is a phenomenon where a particle passes through a potential barrier that it classically could not surmount because it lacks sufficient energy. This is possible because the particle's wave function does not drop to zero at the barrier but decays exponentially through it, and if the barrier is thin enough, a non-zero probability exists for the particle to emerge on the other side. Tunneling is essential in many physical processes: it enables nuclear fusion in stars (protons tunnel through their Coulomb repulsion), powers electronic devices like tunnel diodes and flash memory, and is the basis for scanning tunneling microscopes that can image individual atoms. The effect is explained by the wave nature of particles and the uncertainty principle, which allows temporary energy uncertainty."
+  },
+  {
+    "q": [
+      "What is the Pauli exclusion principle?",
+      "Explain the Pauli exclusion principle.",
+      "Why can't two electrons occupy the same state?",
+      "What is the Pauli exclusion principle in atoms?",
+      "How does the exclusion principle affect matter?",
+      "What particles obey the Pauli exclusion principle?",
+      "What are fermions and bosons?"
+    ],
+    "a": "The Pauli exclusion principle states that no two fermions (particles with half-integer spin, such as electrons, protons, and neutrons) can occupy the same quantum state simultaneously within a system. For electrons in an atom, this means each orbital can hold at most two electrons with opposite spins, which dictates the entire structure of the periodic table and the variety of chemical elements. Bosons (particles with integer spin, such as photons), by contrast, do not obey the exclusion principle and can occupy the same state, which enables phenomena like lasers and Bose-Einstein condensates. The principle explains why matter has volume and does not collapse: electron degeneracy pressure from the exclusion principle supports white dwarf stars against gravitational collapse."
+  }
+]

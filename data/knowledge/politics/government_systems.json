@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What is the difference between presidential and parliamentary systems?",
+      "How do presidential and parliamentary governments compare?",
+      "What are the key features of a presidential system?",
+      "What are the key features of a parliamentary system?",
+      "How are heads of government chosen in presidential vs parliamentary systems?",
+      "Which countries use presidential systems and which use parliamentary?",
+      "What are the advantages of presidential vs parliamentary systems?"
+    ],
+    "a": "In a presidential system, the president serves as both head of state and head of government, is elected separately from the legislature, and cannot be removed by the legislature except through impeachment. In a parliamentary system, the head of government (prime minister) is chosen from the legislative majority and can be removed by a vote of no confidence. Presidential systems like that of the United States offer more separation of powers and fixed terms, while parliamentary systems like those of the United Kingdom and India allow for more flexible governance and stronger party discipline."
+  },
+  {
+    "q": [
+      "What is the difference between federal and unitary systems?",
+      "How do federal and unitary governments differ?",
+      "What is a federal system of government?",
+      "What is a unitary system of government?",
+      "Which countries have federal vs unitary systems?",
+      "How is power distributed in federal vs unitary states?",
+      "What are the advantages of federalism over a unitary system?"
+    ],
+    "a": "A federal system divides power between a central national government and regional state or provincial governments, each with constitutionally defined authorities that cannot be unilaterally altered by the central government. In a unitary system, the central government holds ultimate authority and can create, modify, or abolish regional subdivisions as it sees fit. Federal systems like those of the United States, Germany, and India accommodate regional diversity and create multiple centers of power, while unitary systems like France and Japan provide more uniform policy and administrative efficiency."
+  },
+  {
+    "q": [
+      "What is a monarchy?",
+      "How does a monarchy function as a system of government?",
+      "What are the different types of monarchy?",
+      "What is the difference between absolute and constitutional monarchy?",
+      "Which countries still have monarchies?",
+      "What powers do modern monarchs typically have?",
+      "How is succession determined in a monarchy?"
+    ],
+    "a": "Monarchy is a system of government where a single person, the monarch, serves as head of state for life or until abdication, with succession typically determined by hereditary lineage. In absolute monarchies like Saudi Arabia and Oman, the monarch exercises near-total control over governance, while constitutional monarchies like the United Kingdom, Japan, and Sweden limit the monarch's role to ceremonial and symbolic functions with real political power resting in elected bodies. Modern constitutional monarchies often serve as important national symbols and unifying figures above partisan politics."
+  },
+  {
+    "q": [
+      "What is a republic?",
+      "How does a republic differ from a monarchy?",
+      "What are the defining features of a republic?",
+      "Define a republic as a form of government",
+      "Which countries are considered republics?",
+      "What is the difference between a republic and a democracy?",
+      "How do republics select their heads of state?"
+    ],
+    "a": "A republic is a form of government in which the country is considered a 'public matter' and the head of state is an elected or appointed official rather than a hereditary monarch. The key principle is that political authority derives from the consent of the governed, typically exercised through elected representatives. While closely related to democracy, a republic specifically emphasizes the rule of law, protection of minority rights, and a constitution that limits governmental power, as exemplified by the United States, France, India, and Germany."
+  },
+  {
+    "q": [
+      "What is the separation of powers?",
+      "How does the system of checks and balances work?",
+      "What are the three branches of government in separation of powers?",
+      "Why is separation of powers important?",
+      "Who proposed the separation of powers?",
+      "How do checks and balances prevent government overreach?",
+      "What is the difference between separation of powers and checks and balances?"
+    ],
+    "a": "Separation of powers is a model of governance that divides governmental responsibilities into three distinct branches: legislative (making laws), executive (implementing laws), and judicial (interpreting laws), each with separate and independent powers and areas of responsibility. Checks and balances is the complementary system where each branch has some measure of influence over the other branches and can constrain their actions, such as executive veto power over legislation or judicial review of executive actions. This system, most famously articulated by Montesquieu and implemented in the U.S. Constitution, prevents any single branch from becoming too powerful and protects against tyranny."
+  }
+]

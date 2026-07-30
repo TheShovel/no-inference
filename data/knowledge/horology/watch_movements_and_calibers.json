@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "What are the main types of watch movements?",
+      "What is the difference between in-house and ébauche movements?",
+      "What is a manufacture movement?",
+      "What is an ébauche movement?",
+      "What are base calibers in watchmaking?",
+      "What defines an in-house caliber vs a generic movement?",
+      "watch movement types in-house manufacture ebauche base caliber generic movement",
+      "movement architecture hand-wound automatic micro-rotor peripheral rotor"
+    ],
+    "a": "Watch movements fall into two main categories: quartz (battery-powered, regulated by a quartz crystal for superior accuracy of ±15 seconds per month) and mechanical (spring-powered, either hand-wound or self-winding via a rotor). An in-house (or manufacture) movement is designed, developed, and produced entirely by a single watch brand within its own facilities, representing the highest level of horological capability and prestige. An ébauche is a basic, unfinished movement blank supplied by specialist manufacturers (like ETA, Sellita, or Soprod) that is then finished, decorated, and adjusted by the watch brand, which may modify components to create their own caliber. Many brands use base calibers as platforms for complications, adding modules atop the base movement for chronograph, calendar, or GMT functions."
+  },
+  {
+    "q": [
+      "What is COSC certification?",
+      "What is a chronometer-certified watch?",
+      "What is the Geneva Seal or Poincon de Geneve?",
+      "What is Qualite Fleurier certification?",
+      "What is METAS certification?",
+      "What are the different watch certification standards?",
+      "COSC certification chronometer chronometre Geneva Seal Poincon de Geneve",
+      "Qualite Fleurier METAS certification Master Chronometer certification standards"
+    ],
+    "a": "COSC (Contrôle Officiel Suisse des Chronomètres) is Switzerland's official chronometer testing institute, certifying movements that meet strict accuracy standards (-4 to +6 seconds per day for mechanical watches) over 15 days of testing in five positions and three temperatures. The Poinçon de Genève (Geneva Seal) is both an accuracy and quality standard, requiring that movements be made in the Canton of Geneva and meet stringent finishing criteria including beveled edges, polished screw heads, and engraved bridges. Qualité Fleurier (established 2003) combines COSC chronometer certification with additional testing using the Chronofiable system for durability, and requires that at least 90% of the movement's finishing be done by hand. METAS (Swiss Federal Institute of Metrology) certification, launched by Omega in 2015, tests fully assembled watches for accuracy (-0 to +5 seconds per day), water resistance, power reserve, and magnetic resistance up to 15,000 gauss."
+  },
+  {
+    "q": [
+      "What is movement decoration and finishing in watchmaking?",
+      "What are Cotes de Geneve or Geneva stripes?",
+      "What is perlage finishing?",
+      "What is anglage or beveling in watch movements?",
+      "What is black polish in watch finishing?",
+      "What are the different levels of movement finishing?",
+      "movement finishing Geneva stripes Cotes de Geneve perlage anglage beveling",
+      "black polish mirror polish sunburst circular graining snailing frosted brushing"
+    ],
+    "a": "Movement decoration is both aesthetic and traditional, with different techniques indicating the level of craftsmanship. Côtes de Genève (Geneva stripes) are parallel wavy lines cut across the surface of bridges and rotors, typically in contrasting directions for visual depth. Perlage consists of overlapping circular patterns (like fish scales) applied to the main plate and other flat surfaces. Anglage (beveling) is the art of filing and polishing the edges of bridges, plates, and levers at precise 45-degree angles, creating light-catching facets. Black polish is an ultra-flat, mirror-like finish applied to steel components (typically on the visible surfaces of pallet forks, escape wheels, and screw heads) that appears perfectly black when viewed from an angle because there is no light scatter. Lower-grade movements show only basic machine finishing or stamping, while haute horlogerie movements combine anglage, black polish, Geneva stripes, perlage, circular graining, and hand-engraving across every visible surface."
+  },
+  {
+    "q": [
+      "What are the different types of winding rotors in automatic watches?",
+      "What is a micro-rotor movement?",
+      "What is a peripheral rotor movement?",
+      "What is a central rotor in automatic watches?",
+      "What is a bi-directional winding rotor?",
+      "How do different rotor designs affect watch thickness?",
+      "automatic winding rotor design micro-rotor peripheral rotor central rotor",
+      "bi-directional winding unidirectional winding rotor thickness movement architecture"
+    ],
+    "a": "Automatic watch movements use a rotor (a weighted semicircular metal piece) that rotates with wrist motion to wind the mainspring. The central rotor (full-size rotor mounted on the movement's center) is the most common design, used by ETA 2824, Rolex 3135, and most Swiss automatic calibers, but contributes significantly to movement thickness. The micro-rotor, made possible by integrating the rotor into the same plane as the movement bridges (using an edge-mounted or recessed design), allows for much thinner watches and is a hallmark of haute horlogerie brands like Patek Philippe (Caliber 240), F.P. Journe, and Vacheron Constantin. The peripheral rotor surrounds the entire movement on its outer edge, winding through a gear train without covering the movement at all, enabling full view of decorative finishing while maintaining a slim profile; this design is used by Piaget (910P), Vacheron Constantin, and a few other high-end brands. Bi-directional winding mechanisms (like Seiko's Magic Lever or ETA's reversing wheel system) wind the mainspring whether the rotor turns clockwise or counterclockwise, while unidirectional systems wind only in one direction."
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What do horses eat and what is a balanced diet?",
+      "What types of hay are best for horses?",
+      "What is the difference between grass hay and legume hay?",
+      "What grains can horses eat?",
+      "What supplements do horses need?",
+      "How much water does a horse need daily?",
+      "What plants are toxic to horses?"
+    ],
+    "a": "A horse's diet should consist primarily of high-quality forage (hay or pasture), supplemented with grain or concentrates based on workload and condition. Grass hays (timothy, orchard grass, brome, fescue, Bermuda, coastal) are lower in protein and calories, suitable for most adult horses, while legume hays (alfalfa, clover) are richer in protein, calcium, and energy — often fed to growing horses, lactating mares, or hard keepers in moderation. Common grains include oats, barley, corn, and formulated textured or pelleted feeds, often balanced with beet pulp, soybean meal, or rice bran. Supplements address specific needs: vitamins and minerals (especially balanced calcium:phosphorus ratio), electrolytes (during heavy work or heat), joint supplements (glucosamine, chondroitin, MSM), hoof supplements (biotin, methionine), and coat conditioners (flaxseed, rice bran). Horses need 5-15 gallons of clean, unfrozen water daily, and access to a salt block. Toxic plants include ragwort, yew, red maple leaves, bracken fern, and certain ornamental plants — good pasture management is essential."
+  },
+  {
+    "q": [
+      "What types of horse stables and bedding are best?",
+      "What are the different stall types for horses?",
+      "What is the best bedding for horses?",
+      "How do I muck out a horse stall?",
+      "How often should a horse stall be cleaned?",
+      "What is deep litter bedding?",
+      "How do I manage manure in a stable?"
+    ],
+    "a": "Stable management directly affects horse health and respiratory function. Common stall types include box stalls (individual, enclosed, allowing freedom of movement) and tie stalls/straight stalls (where horses are tied, used in some working barns). Bedding materials include straw (wheat straw is most common, provides good drainage and comfort), wood shavings (highly absorbent, dust-extracted options available for respiratory health), pelleted bedding (expands when wet, excellent absorbency, easier mucking), and hemp or flax bedding (highly absorbent, compostable alternatives). Daily mucking involves removing wet spots and manure, picking droppings, and adding fresh bedding to dry areas. Deep litter bedding management allows bedding to compost in place under a top layer, reducing labor but requiring good ventilation. Manure management includes regular removal to a compost pile or manure pit, with proper composting reaching temperatures that kill parasite eggs and weed seeds before field application."
+  },
+  {
+    "q": [
+      "What grooming tools and routine do horses need?",
+      "How do I groom a horse properly?",
+      "What is a curry comb used for?",
+      "How often should a horse be groomed?",
+      "What is the difference between a dandy brush and a body brush?",
+      "How do I pick a horse's hooves?",
+      "What is mane pulling in horses?"
+    ],
+    "a": "Regular grooming keeps a horse's coat, skin, and hooves healthy while building trust between horse and handler. The standard grooming kit includes a curry comb (circular rubber tool used in circular motions to loosen dirt, shed hair, and stimulate skin oils), dandy brush (stiff bristles for removing mud and loose hair from the body), body brush (soft bristles for sensitive areas and bringing out coat shine), mane and tail brush (wide-toothed to detangle without breaking hair), and hoof pick (essential for cleaning each hoof daily to prevent thrush and check for stones, bruises, or heat). Grooming before riding removes dirt that could cause tack sores, and grooming after riding removes sweat. Clipping removes the winter coat for show or heavy work — common clips include trace clip, hunter clip, full body clip, and blanket clip. Hoof care involves regular visits from a farrier every 6-8 weeks for trimming or shoeing, with daily hoof picking as part of the grooming routine."
+  },
+  {
+    "q": [
+      "What are the essential horse vaccinations?",
+      "How often should horses be dewormed?",
+      "What is equine dental floating?",
+      "What is colic in horses and what are the symptoms?",
+      "What are common health issues in horses?",
+      "How do I know if my horse has colic?",
+      "What is equine influenza or West Nile virus?"
+    ],
+    "a": "Preventive health care is vital for horse longevity. Core vaccinations include tetanus, equine influenza, West Nile virus, Eastern and Western equine encephalomyelitis (EEE/WEE), rabies, and often strangles and Potomac horse fever — schedules vary by region and risk factors. Deworming has shifted from rotational paste dewormers to fecal egg count-based targeted treatment to slow parasite resistance, using effective products like ivermectin, moxidectin, fenbendazole, and pyrantel pamoate as needed. Dental care requires annual or biannual floating (filing sharp enamel points, correcting hooks, ramps, and wave mouth) to prevent pain, quidding, and poor feed efficiency. Colic is the leading cause of emergency veterinary calls — symptoms include rolling, pawing, looking at the flank, kicking at the belly, repeated lying down and getting up, lack of appetite, reduced manure output, and excessive sweating. Impaction colic (from dehydration or poor-quality feed) and gas colic are most common, but torsion (twisted gut) requires immediate surgical intervention."
+  },
+  {
+    "q": [
+      "What are the signs of a healthy horse?",
+      "How do I take a horse's vital signs?",
+      "What is a normal temperature for a horse?",
+      "What is a horse's normal heart rate?",
+      "How do I check a horse's capillary refill time?",
+      "What are normal gut sounds in horses?",
+      "How do I assess a horse's body condition score?"
+    ],
+    "a": "Monitoring vital signs and body condition helps detect health problems early. A healthy adult horse at rest has a temperature of 99-101.5°F, a heart rate of 28-44 beats per minute (take by feeling the facial artery under the jaw or the digital artery on the pastern), and a respiratory rate of 10-24 breaths per minute. Capillary refill time (CRT) should be 1-2 seconds — press the gum above a tooth until it blanches and count seconds until color returns. Gut sounds (borborygmi) should be audible on all four quadrants of the abdomen via stethoscope; silent or pinging sounds can indicate colic risk. Body condition scoring (BCS) uses a 1-9 scale (1 emaciated, 5 moderate, 9 obese) based on fat coverage over the ribs, loin, tailhead, withers, neck, and shoulders. Healthy horses have bright eyes, a glossy coat, clean nostrils, moist gums, and pass well-formed manure every few hours."
+  }
+]

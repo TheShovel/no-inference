@@ -1,0 +1,51 @@
+[
+  {
+    "q": [
+      "What are the health benefits of tea?",
+      "What are catechins and EGCG in tea?",
+      "What is L-theanine and how does it affect the brain?",
+      "How much caffeine is in tea compared to coffee?",
+      "What are theaflavins and thearubigins?",
+      "Is tea good for heart health?",
+      "Can tea prevent cancer?"
+    ],
+    "a": "Tea contains a unique combination of bioactive compounds that support health, most notably catechins (especially EGCG—epigallocatechin gallate, the most abundant and active antioxidant in green tea), theaflavins (antioxidants formed during black tea oxidation), and thearubigins (complex polyphenols that give black tea its color and contribute to cardiovascular benefits). L-theanine, an amino acid found almost exclusively in tea (particularly shade-grown green teas like Gyokuro and Matcha), promotes alpha brain wave activity—producing a state of calm, focused alertness without drowsiness—and synergizes with caffeine to smooth out energy without the jitters or crash of coffee. Tea contains 20-60mg of caffeine per cup (versus 80-120mg in coffee), with white tea generally lowest and black tea highest, though brewing parameters significantly affect final content. Research suggests regular tea consumption reduces the risk of cardiovascular disease (by improving endothelial function, lowering blood pressure, and reducing LDL cholesterol), and epidemiological studies associate tea drinking with reduced risk of certain cancers (breast, prostate, colon, lung), stroke, and all-cause mortality."
+  },
+  {
+    "q": [
+      "What is the best temperature for brewing green tea?",
+      "How long should I steep black tea?",
+      "What is the correct water temperature for oolong tea?",
+      "How do I brew white tea?",
+      "How long to steep pu-erh tea?",
+      "What is the best tea-to-water ratio?",
+      "Should I cover my tea while steeping?"
+    ],
+    "a": "Different tea types require specific brewing temperatures and times to extract optimal flavor without bitterness. Green tea should be brewed at 70-80°C (160-175°F) for 1-3 minutes—too hot or too long causes bitterness from over-extraction of catechins. Black tea requires 95-100°C (205-212°F) for 3-5 minutes, with smaller leaves (broken grades) steeping faster than whole-leaf teas. Oolong tea varies: lighter, greener oolongs (Tieguanyin, high-mountain Taiwanese) brew at 85-90°C for 2-4 minutes, while darker, roasted oolongs (Wuyi rock teas) handle near-boiling water and longer steeps of 3-6 minutes. White tea is delicate: 70-80°C for 2-5 minutes (longer for aged whites), while pu-erh requires near-boiling water with a quick rinse (5-10 seconds) before the first infusion, then steeped for 10-30 seconds, increasing with each infusion. A general rule is 2-3 grams of tea per 200ml of water (about one heaping teaspoon per 8oz cup), and covering the vessel during steeping retains heat and aroma—particularly important for oolong and black tea."
+  },
+  {
+    "q": [
+      "How does tea affect weight loss?",
+      "Can green tea boost metabolism?",
+      "Is tea good for brain health?",
+      "Does tea prevent Alzheimer's and Parkinson's?",
+      "How does tea affect digestion and gut health?",
+      "Is tea good for bone health?",
+      "Can tea improve dental health?",
+      "Does tea count towards daily fluid intake?"
+    ],
+    "a": "Tea supports weight management through the synergistic action of caffeine and catechins (primarily EGCG), which increase thermogenesis (heat production) and fat oxidation—studies show green tea extract can increase energy expenditure by 4-5% and increase fat burning by 10-17% during exercise. For brain health, the combination of L-theanine and caffeine improves reaction time, attention, and memory in the short term, while long-term regular consumption is associated with reduced risk of neurodegenerative conditions like Alzheimer's, Parkinson's, and age-related cognitive decline due to tea polyphenols' neuroprotective and anti-inflammatory effects. Tea polyphenols positively modulate the gut microbiome, promoting beneficial bacteria and inhibiting pathogenic ones, which supports digestive health, immune function, and even mood through the gut-brain axis. Despite tea's caffeine content having a mild diuretic effect, the fluid volume of tea more than compensates, making it a hydrating beverage that counts toward daily fluid intake—studies confirm no significant difference in hydration between tea and water at typical consumption levels."
+  },
+  {
+    "q": [
+      "Is tea good for diabetes?",
+      "How does tea affect blood sugar?",
+      "Can tea help with stress and anxiety?",
+      "What is the best tea for immune health?",
+      "How does tea affect oral health?",
+      "Does tea stain teeth?",
+      "What is the role of tea in traditional Chinese medicine and Ayurveda?"
+    ],
+    "a": "Tea consumption is associated with improved insulin sensitivity, better glucose metabolism, and reduced risk of developing type 2 diabetes—meta-analyses show that drinking 3-4 cups of tea daily reduces diabetes risk by 15-20%, with both green and oolong tea showing the strongest effects. L-theanine in tea significantly reduces stress and anxiety by increasing alpha brain wave activity and modulating neurotransmitters like GABA and serotonin, promoting relaxation without sedation—this calming effect is enhanced by the ritual of preparing and drinking tea mindfully. For immune function, tea catechins and theaflavins demonstrate antimicrobial, antiviral, and antibacterial activity against common pathogens, and some studies suggest gargling with green tea reduces flu incidence. Tea tannins and fluoride content support oral health by inhibiting streptococcus bacteria growth and reducing plaque and cavities, though frequent consumption can stain teeth—rinsing with water after drinking or using a straw minimizes staining. In traditional Chinese medicine, tea is considered cooling (yin), promotes digestion, removes toxins, and sharpens the mind, while in Ayurveda, tea is used variably based on constitution (dosha) and preparation, with black tea considered heating and green tea cooling to the body."
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "q": [
+      "What is demography?",
+      "What do demographers study?",
+      "How do populations change over time?",
+      "What are the key components of population change?",
+      "What are birth rate, death rate, and migration rate?",
+      "What is the difference between a population's size, composition, and distribution?"
+    ],
+    "a": "Demography is the scientific study of human populations — their size, composition, distribution, and the processes that shape them: fertility (births), mortality (deaths), and migration. The fundamental demographic equation states that a population's change equals births minus deaths plus net migration. Key metrics include the crude birth rate (live births per 1,000 population per year), crude death rate, total fertility rate (average children per woman), life expectancy at birth, and net migration rate. Population composition is often represented using population pyramids — graphs showing the distribution of a population by age and sex — which reveal a society's demographic history and forecast future challenges related to education, healthcare, pensions, and labor supply."
+  },
+  {
+    "q": [
+      "What is the demographic transition model?",
+      "What are the stages of the demographic transition?",
+      "How does the demographic transition explain population growth?",
+      "Why have some countries not completed the demographic transition?",
+      "What is the relationship between economic development and population change?",
+      "What criticisms exist of the demographic transition model?"
+    ],
+    "a": "The demographic transition model (DTM) describes the historical shift from high birth and death rates to low birth and death rates as a country industrializes and develops. Stage 1 (pre-industrial) has high birth and death rates with stable, low population growth. Stage 2 (industrializing) sees death rates drop due to improved nutrition, sanitation, and medicine while birth rates remain high, causing rapid population growth. Stage 3 (mature industrial) sees birth rates begin to decline as urbanization, education (especially for women), contraception access, and changing economic incentives reduce desired family size. Stage 4 (post-industrial) has low birth and death rates with stable or slow growth. A proposed Stage 5 describes populations that are declining due to birth rates falling below death rates (as in Japan, Italy, and South Korea). Critics note the model is based on Western European experience and does not always apply to developing countries, which have undergone different patterns of change due to globalization and technology transfer."
+  },
+  {
+    "q": [
+      "What is urbanization?",
+      "What causes urbanization?",
+      "What are the effects of rapid urbanization?",
+      "What is the difference between urbanization and urban growth?",
+      "How has global urbanization changed over time?",
+      "What are megacities and why are they important?"
+    ],
+    "a": "Urbanization is the process by which an increasing proportion of a population lives in cities and towns, driven by rural-to-urban migration and natural population increase in urban areas. In 1800, only about 3% of the world's population lived in cities; today, over 56% do, with the figure projected to reach 68% by 2050. Urbanization is propelled by industrialization (jobs in manufacturing and services), economic opportunities, and the perception of better access to education, healthcare, and cultural amenities. Rapid urbanization in developing countries often creates challenges including inadequate housing (slums and informal settlements), overburdened infrastructure, air and water pollution, traffic congestion, and social inequality. Megacities — urban areas with over 10 million residents — have grown from just two in 1950 (Tokyo and New York) to over 30 today, mostly in Asia, Africa, and Latin America."
+  },
+  {
+    "q": [
+      "What is a census and why is it important?",
+      "How is census data used in policy and planning?",
+      "What is life expectancy and how is it calculated?",
+      "What factors influence life expectancy?",
+      "What are fertility rates and why do they matter?",
+      "What is the replacement level fertility rate?"
+    ],
+    "a": "A census is an official, periodic (usually every 10 years) count of a country's population, collecting demographic, social, and economic data from every individual. Census data is fundamental for apportioning political representation, allocating government funding, planning public services (schools, hospitals, transportation), and providing the sampling frame for surveys. Life expectancy at birth is a statistical measure of the average number of years a newborn is expected to live, assuming current mortality rates remain constant — it is a powerful summary of a population's overall health. The total fertility rate (TFR), meaning the average number of children born per woman, determines generational replacement: the replacement-level fertility rate is approximately 2.1 children per woman (accounting for infant mortality and sex ratio), meaning a TFR consistently below 2.1 leads to population decline without immigration. Many developed and middle-income countries now have TFRs well below replacement, raising concerns about aging populations, labor shortages, and pension system sustainability."
+  }
+]

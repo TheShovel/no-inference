@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "How are museums governed and funded?",
+      "Who works in a museum?",
+      "What does a museum curator do?",
+      "What does a conservator do in a museum?",
+      "What is a museum registrar?",
+      "What does a museum educator do?",
+      "What is an exhibition designer?",
+      "What does a collections manager do?"
+    ],
+    "a": "Museums operate under diverse governance models including government agencies (like the Smithsonian Institution, federally chartered and partially funded by the US government), non-profit boards of trustees, university administrations, or private foundations. Funding typically combines earned revenue (admissions, gift shop sales, facility rentals, membership fees) with contributed income (donations, grants from government agencies like the National Endowment for the Humanities, corporate sponsorships, and endowments). Key professional roles include the curator (responsible for research, collection interpretation, and exhibition development), conservator (preserving and treating objects using scientific analysis), registrar (tracking object locations, managing loans, and maintaining legal documentation), educator (developing programs for diverse audiences), exhibition designer (translating curatorial concepts into physical spaces), and collections manager (overseeing storage, handling, and database management). These roles must collaborate closely, as a single exhibition requires curatorial research, conservation assessment, design planning, educational programming, and marketing coordination."
+  },
+  {
+    "q": [
+      "What is collections management in museums?",
+      "How do museums acquire objects?",
+      "What is accessioning in a museum?",
+      "What is provenance research in museums?",
+      "What is deaccessioning in museums?",
+      "How do museums loan objects?",
+      "What is a museum's collection policy?",
+      "How do museums manage their collections database?"
+    ],
+    "a": "Collections management encompasses the entire lifecycle of museum objects, governed by a formal collections management policy that guides acquisition, care, documentation, and disposal. Acquisition occurs through purchase, donation, bequest, or field collection, with each object undergoing accessioning (the formal process of accepting it into the permanent collection, assigning a unique accession number, and recording its provenance history). Provenance research traces the ownership history of objects, which is critical for establishing authenticity, legal title, and ethical acquisition, particularly for objects with potential Nazi-era looting or colonial removal histories. Deaccessioning (permanently removing objects from the collection) is a controversial practice generally only permitted to refine collections or raise funds specifically for new acquisitions, governed by strict ethical guidelines from professional organizations like the American Alliance of Museums. Loans between institutions require rigorous contracts specifying condition reports, environmental requirements, insurance values, and handling restrictions."
+  },
+  {
+    "q": [
+      "What is exhibition development in museums?",
+      "How are museum exhibitions created?",
+      "What is the exhibition design process?",
+      "How are museum exhibits fabricated and installed?",
+      "What is exhibition evaluation in museums?",
+      "What is museum education?",
+      "What types of programs do museums offer?",
+      "What is interpretation in museums?"
+    ],
+    "a": "Exhibition development follows a structured process from concept to installation: it begins with a curatorial concept and research phase, moves through design development (floor plans, lighting design, label text, interactive elements), proceeds to fabrication (building cases, mounting objects, producing graphics), and culminates in installation (placing objects, adjusting lighting, calibrating interactives). Evaluation is integral throughout, with front-end evaluation testing audience knowledge before development, formative evaluation testing prototypes during design, and summative evaluation measuring learning outcomes after opening. Museum education departments complement exhibitions with guided tours, school programs aligned with educational standards, public lectures, workshops, family activities, and digital interpretation through apps and audio guides, ensuring that exhibitions are accessible to visitors with diverse backgrounds, ages, and learning styles."
+  },
+  {
+    "q": [
+      "What is museum marketing?",
+      "How do museums get members?",
+      "What are museum ethics?",
+      "What is the ICOM code of ethics for museums?",
+      "What is repatriation in museums?",
+      "What is the restitution debate in museums?",
+      "Should museums return artifacts to their countries of origin?",
+      "What are the ethical challenges facing museums today?"
+    ],
+    "a": "Museum ethics are codified by organizations like the International Council of Museums (ICOM), whose Code of Ethics establishes principles of professional conduct including fiduciary responsibility, conflict of interest avoidance, and the public trust obligation. Marketing and membership programs are essential for building audiences and sustainable revenue, using strategies including social media engagement, blockbuster exhibition campaigns, tiered membership systems with exclusive previews and discounts, and corporate sponsorship packages that fund programs while providing brand visibility. The most ethically contentious issue in contemporary museums is the repatriation and restitution of cultural property, with debates over artifacts like the Parthenon Marbles (held by the British Museum, claimed by Greece), Benin Bronzes (held by multiple Western museums, claimed by Nigeria), and Native American ceremonial objects (governed in the US by the Native American Graves Protection and Repatriation Act). These debates force museums to weigh their role as global custodians against the rights of source communities and descendants, increasingly resulting in repatriations and shared stewardship agreements."
+  }
+]

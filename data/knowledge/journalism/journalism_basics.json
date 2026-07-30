@@ -1,0 +1,86 @@
+[
+  {
+    "q": [
+      "What is journalism?",
+      "Define journalism and its purpose in society.",
+      "What does a journalist do?",
+      "Why is journalism important for democracy?",
+      "What are the core principles of journalism?",
+      "Explain the role of journalism in modern society.",
+      "How does journalism serve the public interest?"
+    ],
+    "a": "Journalism is the activity of gathering, assessing, creating, and presenting news and information to the public, serving as a vital pillar of democratic societies by providing citizens with the information they need to make informed decisions. It operates on core principles including truthfulness, accuracy, fairness, independence, and accountability. Journalists act as watchdogs over powerful institutions, give voice to the voiceless, and help create a shared understanding of events that shape communities and nations."
+  },
+  {
+    "q": [
+      "What are news values?",
+      "What makes a story newsworthy?",
+      "What criteria determine whether something is news?",
+      "What are the key news values journalists use?",
+      "Why is timeliness important in news?",
+      "What is the difference between prominence and proximity in news?",
+      "How do journalists decide what to cover?"
+    ],
+    "a": "News values, also called news criteria or news factors, are the qualities that determine whether a story is newsworthy and how much coverage it deserves. Common news values include timeliness (recent events are more newsworthy), proximity (local stories matter more to local audiences), prominence (events involving famous people or institutions), impact (how many people are affected), conflict and controversy, human interest (emotional angles), and novelty or oddity. Journalists weigh these factors when deciding which stories to pursue and how prominently to feature them."
+  },
+  {
+    "q": [
+      "What are the five Ws in journalism?",
+      "What is the five Ws and H framework?",
+      "What is the inverted pyramid structure?",
+      "How do journalists use the five Ws?",
+      "What does the inverted pyramid mean in news writing?",
+      "Why is the inverted pyramid important?",
+      "How should a news article be structured?"
+    ],
+    "a": "The five Ws (who, what, when, where, why) and H (how) form the foundational framework journalists use to ensure a story is complete and answers every essential question a reader might have. The inverted pyramid is a writing structure where the most important information — typically answering the five Ws — appears in the lead paragraph (lede), with progressively less crucial details following in descending order of importance. This structure allows readers to get the key facts immediately and editors to trim articles from the bottom without losing essential content, a practice that originated in the telegraph era."
+  },
+  {
+    "q": [
+      "What is objectivity in journalism?",
+      "What is the difference between objectivity and advocacy journalism?",
+      "Is true objectivity possible in journalism?",
+      "What is advocacy journalism?",
+      "How does partisan journalism differ from objective reporting?",
+      "What are the criticisms of journalistic objectivity?",
+      "Can journalists be truly neutral?"
+    ],
+    "a": "Objectivity in journalism is the principle of reporting facts without personal bias, presenting multiple viewpoints fairly, and letting readers draw their own conclusions. Advocacy journalism, by contrast, takes a clear stance on issues and aims to promote a particular cause or perspective, often used in opinion pieces, investigative reporting on social justice, or partisan media. While traditional journalism has long valued objectivity as an ideal, critics argue that true neutrality is impossible and that the pursuit of false balance can mislead audiences, leading many modern journalists to embrace transparency about their methods and sources rather than claiming pure objectivity."
+  },
+  {
+    "q": [
+      "What is fact-checking in journalism?",
+      "How do journalists verify information?",
+      "What are sourcing and attribution in journalism?",
+      "What is the difference between on-the-record and off-the-record sources?",
+      "Why is attribution important in news reporting?",
+      "What are anonymous sources and when are they used?",
+      "How do journalists ensure accuracy in their reporting?"
+    ],
+    "a": "Fact-checking is the process of verifying information before publication through multiple independent sources, primary documents, data analysis, and expert consultation to ensure accuracy and prevent the spread of misinformation. Sourcing refers to how journalists gather information from various types of sources — on-the-record (named and attributable), off-the-record (not for publication), on background (for context without direct attribution), and deep background (not attributable at all). Attribution is the practice of clearly identifying where information came from, allowing readers to evaluate the credibility of sources and journalists to maintain accountability for their reporting."
+  },
+  {
+    "q": [
+      "What are journalism ethics?",
+      "What ethical principles guide journalists?",
+      "What is the Society of Professional Journalists code of ethics?",
+      "What is a conflict of interest in journalism?",
+      "Why are ethics important in journalism?",
+      "How do journalists handle ethical dilemmas?",
+      "What is the watchdog role of the press?"
+    ],
+    "a": "Journalism ethics are the professional principles and standards that guide journalists in their work, typically centered on truthfulness, accuracy, fairness, independence, accountability, and minimizing harm. The Society of Professional Journalists (SPJ) Code of Ethics is a widely adopted framework that calls on journalists to seek truth and report it, act independently, be accountable and transparent, and minimize harm. The watchdog role of the press refers to journalism's function of monitoring powerful institutions — government, corporations, and other authorities — for corruption, abuse, or misconduct, serving as a check on power that is essential to democratic accountability."
+  },
+  {
+    "q": [
+      "What is press freedom?",
+      "Why is freedom of the press important?",
+      "What does press freedom mean in a democracy?",
+      "How is press freedom protected?",
+      "What threats does press freedom face worldwide?",
+      "What is the difference between press freedom and media freedom?",
+      "How does press freedom affect journalism?"
+    ],
+    "a": "Press freedom is the right to publish news and information without government censorship, prior restraint, or intimidation, protected in many countries by constitutional guarantees such as the First Amendment in the United States. A free press is essential for democracy because it enables journalists to investigate and report on government actions, informs citizens, and facilitates public debate on important issues. Press freedom faces ongoing threats worldwide including government censorship, violence against journalists, legal harassment, surveillance, media ownership concentration, and the economic pressures of declining advertising revenue and newsroom consolidation."
+  }
+]

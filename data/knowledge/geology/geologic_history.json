@@ -1,0 +1,46 @@
+[
+  {
+    "q": [
+      "What is the Precambrian?",
+      "What happened during the Paleozoic Era?",
+      "What happened during the Mesozoic Era?",
+      "What happened during the Cenozoic Era?",
+      "What are the four major eras of Earth's history?",
+      "What was the Cambrian explosion?"
+    ],
+    "a": "Earth's history is divided into four major eras. The Precambrian (4.6 billion to 541 million years ago) spans the formation of Earth, the origin of life, the rise of oxygen-producing cyanobacteria, and the evolution of simple multicellular organisms. The Paleozoic Era (541-252 million years ago) witnessed the Cambrian explosion of complex animal life, colonization of land by plants and animals, and ended with the Permian mass extinction. The Mesozoic Era (252-66 million years ago) was the age of dinosaurs, the breakup of Pangaea, and the rise of flowering plants, ending with the K-Pg extinction. The Cenozoic Era (66 million years ago to present) is the age of mammals, including the evolution of primates and humans, and is marked by significant climatic cooling."
+  },
+  {
+    "q": [
+      "What were the supercontinents?",
+      "What was Rodinia?",
+      "What was Pangaea?",
+      "What were the ice ages?",
+      "When did the continents form?",
+      "How have continents moved over time?"
+    ],
+    "a": "Supercontinents are massive landmasses formed when most of Earth's continental crust is assembled together. The earliest known supercontinent was Rodinia, assembled about 1.1 billion years ago and breaking up around 750 million years ago. The most recent was Pangaea, which formed about 335 million years ago and began fragmenting around 175 million years ago, splitting into Laurasia (northern) and Gondwana (southern), which further broke apart into today's continents. Ice ages are periods of widespread glaciation; the most significant occurred during the late Precambrian (Snowball Earth glaciations), the late Paleozoic (Permo-Carboniferous glaciation), and the Quaternary (the current ice age beginning about 2.6 million years ago)."
+  },
+  {
+    "q": [
+      "What were the major mass extinctions?",
+      "How many mass extinctions have occurred?",
+      "What caused the Ordovician mass extinction?",
+      "What caused the Devonian mass extinction?",
+      "What caused the Triassic mass extinction?",
+      "What are the Big Five extinctions?"
+    ],
+    "a": "The 'Big Five' mass extinctions include the end-Ordovician (443 million years ago, 85% species lost, caused by rapid glaciation and sea-level drop), the late Devonian (372 million years ago, 75% species lost, linked to ocean anoxia from plant proliferation), the end-Permian (252 million years ago, 96% species lost, due to Siberian Traps volcanism and runaway greenhouse), the end-Triassic (201 million years ago, 80% species lost, associated with Central Atlantic Magmatic Province volcanism as Pangaea broke up), and the end-Cretaceous (66 million years ago, 76% species lost, from the Chicxulub asteroid impact). Each extinction reshaped life's evolutionary trajectory by eliminating dominant groups and opening ecological niches for survivors."
+  },
+  {
+    "q": [
+      "What was the Precambrian like?",
+      "What was Snowball Earth?",
+      "How did the continents form?",
+      "When did plate tectonics start?",
+      "What happened during the Archean?",
+      "What is the Hadean eon?"
+    ],
+    "a": "The Precambrian is the longest interval of Earth's history, spanning the Hadean (formation of Earth, magma ocean, formation of the Moon), Archean (first life, earliest continents, onset of plate tectonics), and Proterozoic (rise of oxygen, Snowball Earth glaciations, evolution of eukaryotes). During the Archean, the first continental nuclei (cratons) formed as granitic crust differentiated from basaltic crust above subduction zones. The Snowball Earth episodes of the Proterozoic were among the most extreme climate events in history, when glaciers may have covered the entire planet, and their end is linked to volcanic CO2 buildup and the subsequent explosion of multicellular life in the Ediacaran period."
+  }
+]

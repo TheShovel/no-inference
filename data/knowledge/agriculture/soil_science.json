@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is soil?",
+      "How is soil formed?",
+      "What are soil horizons?",
+      "What are the layers of soil?",
+      "What is the O horizon in soil?",
+      "How long does it take for soil to form?",
+      "What factors influence soil formation?"
+    ],
+    "a": "Soil is the upper layer of Earth's surface composed of mineral particles, organic matter, water, air, and living organisms, formed over centuries through the weathering of parent rock material and the decomposition of plant and animal remains. Soil formation is driven by five factors: parent material (the underlying geological substrate), climate (temperature and precipitation that influence weathering rates), organisms (plants, microbes, animals that contribute organic matter and affect soil structure), topography (slope and aspect that affect drainage and erosion), and time. Soil profiles are organized into distinct horizontal layers called horizons — O (organic matter on the surface), A (topsoil rich in organic material and biological activity), B (subsoil accumulating minerals leached from above), C (weathered parent material), and R (bedrock) — each with unique physical, chemical, and biological characteristics."
+  },
+  {
+    "q": [
+      "What are the different soil types?",
+      "What is clay soil?",
+      "What is sandy soil?",
+      "What is silty soil?",
+      "What is loam soil?",
+      "Which soil type is best for farming?",
+      "What is soil texture?"
+    ],
+    "a": "Soil is classified by texture based on the proportions of sand, silt, and clay particles: sandy soil feels gritty and drains quickly but holds few nutrients; clay soil feels sticky when wet, holds nutrients well but has poor drainage and aeration; silty soil feels smooth and retains moisture better than sand but compacts easily. Loam is considered the ideal agricultural soil type because it contains a balanced mixture of sand, silt, and clay, providing good drainage, adequate nutrient retention, proper aeration, and workable structure that supports healthy root development. Soil texture cannot be easily changed and fundamentally determines how water moves through soil, how nutrients are retained, and which crops will grow best in a given location."
+  },
+  {
+    "q": [
+      "What is soil pH?",
+      "What are soil nutrients?",
+      "What is CEC in soil science?",
+      "What is cation exchange capacity?",
+      "Why is soil pH important for farming?",
+      "What are macronutrients and micronutrients in soil?",
+      "What is soil organic matter?"
+    ],
+    "a": "Soil pH measures the acidity or alkalinity of soil on a scale of 0 to 14, with most crops thriving in the slightly acidic to neutral range (pH 6.0-7.0) where essential nutrients like nitrogen, phosphorus, and potassium are most available for plant uptake. Cation exchange capacity (CEC) is the soil's ability to hold and exchange positively charged nutrient ions (cations) such as calcium, magnesium, and potassium, with higher CEC soils having greater nutrient-holding capacity and requiring less frequent fertilization. Soil organic matter (SOM) is the decomposed plant and animal material in soil that improves structure, water-holding capacity, nutrient cycling, and biological activity, making it one of the most important indicators of soil health and fertility."
+  },
+  {
+    "q": [
+      "What is soil erosion?",
+      "How does soil erosion happen?",
+      "What are soil conservation methods?",
+      "What is no-till farming?",
+      "What are cover crops?",
+      "How can farmers prevent soil erosion?",
+      "What is the impact of soil erosion on agriculture?"
+    ],
+    "a": "Soil erosion is the removal of topsoil by wind, water, or tillage, occurring at rates far exceeding natural soil formation and posing a serious threat to global food production by degrading fertile agricultural land. Soil conservation practices include contour plowing, terracing, strip cropping, windbreaks, and retaining crop residue on fields to slow water runoff and reduce wind exposure. No-till farming leaves soil undisturbed between seasons, preserving soil structure and organic matter while reducing erosion, and cover crops like clover, rye, and vetch are planted during fallow periods to protect soil, suppress weeds, fix nitrogen, and improve soil health through their root systems and biomass decomposition."
+  }
+]

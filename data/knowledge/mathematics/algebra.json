@@ -1,0 +1,72 @@
+[
+  {
+    "q": [
+      "What is algebra?",
+      "Can you explain the definition of algebra?",
+      "What does algebra study in mathematics?",
+      "Tell me about algebra as a branch of math",
+      "What is the basic idea behind algebra?"
+    ],
+    "a": "Algebra is a branch of mathematics that uses symbols, typically letters, to represent numbers and quantities in equations and expressions. It generalizes arithmetic by allowing unknown values to be manipulated through rules of operations, enabling the solving of problems where some information is missing. Algebra forms the foundation for nearly all advanced mathematics, including calculus, linear algebra, and abstract algebra."
+  },
+  {
+    "q": [
+      "What are variables in algebra?",
+      "Explain what a variable is in math",
+      "How are variables used in algebra?",
+      "What does a variable represent in an equation?",
+      "Why do we use variables in algebraic expressions?"
+    ],
+    "a": "A variable is a symbol, most often a letter like x, y, or z, that represents an unknown or changeable quantity in mathematical expressions and equations. Variables allow us to write general rules (like y = mx + b for a line) and solve problems where exact values are not initially known. They are fundamental to algebra because they enable the formulation of equations that model real-world relationships."
+  },
+  {
+    "q": [
+      "What is an equation in algebra?",
+      "How do equations work in mathematics?",
+      "Explain what it means to solve an equation",
+      "What is the difference between an expression and an equation?",
+      "Can you give examples of algebraic equations?"
+    ],
+    "a": "An equation is a mathematical statement asserting that two expressions are equal, indicated by the equals sign (=). Solving an equation involves finding the value(s) of the variable(s) that make the statement true, such as x = 5 in the equation 2x + 3 = 13. Equations are central to algebra because they translate real-world constraints into forms that can be manipulated to discover unknown quantities."
+  },
+  {
+    "q": [
+      "What are polynomials?",
+      "Define polynomial in algebra",
+      "How do you classify polynomials by degree?",
+      "What is the standard form of a polynomial?",
+      "Give examples of monomials, binomials, and trinomials"
+    ],
+    "a": "A polynomial is an algebraic expression consisting of variables and coefficients combined using only addition, subtraction, multiplication, and non-negative integer exponents. Examples include 3x² + 2x - 5 (a quadratic trinomial) and 7x³ (a monomial). Polynomials are classified by degree (the highest exponent) and number of terms, and they are foundational in modeling curves, solving equations, and calculus."
+  },
+  {
+    "q": [
+      "What is factoring in algebra?",
+      "How do you factor a polynomial?",
+      "Why is factoring important in mathematics?",
+      "What are common factoring techniques?",
+      "Can you explain factoring quadratic expressions?"
+    ],
+    "a": "Factoring is the process of breaking down an algebraic expression into a product of simpler expressions, much like finding the prime factors of a number. For example, x² - 9 factors into (x + 3)(x - 3), which reveals its roots more directly. Factoring is essential for solving equations, simplifying expressions, and analyzing polynomial behavior, with common techniques including greatest common factor, difference of squares, and grouping."
+  },
+  {
+    "q": [
+      "What is the quadratic formula?",
+      "How do you solve quadratic equations?",
+      "What is the quadratic formula used for?",
+      "Write out the quadratic formula and explain it",
+      "When should you use the quadratic formula?"
+    ],
+    "a": "The quadratic formula, x = (-b ± √(b² - 4ac)) / (2a), provides the solutions to any quadratic equation of the form ax² + bx + c = 0. The discriminant (b² - 4ac) determines the nature of the solutions: positive means two distinct real roots, zero means exactly one real root, and negative means two complex roots. It is a reliable method when factoring is difficult or impossible, making it one of the most essential tools in algebra."
+  },
+  {
+    "q": [
+      "What are systems of equations?",
+      "How do you solve a system of linear equations?",
+      "What methods can be used to solve systems of equations?",
+      "What is the graphical interpretation of a system of equations?",
+      "Can a system have no solution or infinite solutions?"
+    ],
+    "a": "A system of equations is a set of two or more equations with the same variables, where the goal is to find values satisfying all equations simultaneously. Common solution methods include substitution (isolating a variable and plugging into another equation) and elimination (adding or subtracting equations to cancel a variable). Graphically, the solution is the intersection point of the lines or curves; systems may have one solution, no solution (parallel lines), or infinitely many solutions (coincident lines)."
+  }
+]

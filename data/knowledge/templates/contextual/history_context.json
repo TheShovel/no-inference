@@ -1,0 +1,92 @@
+[
+  {
+    "id": "history-discovery",
+    "triggers": ["when was {context} discovered", "discovery of {context}", "who found {context}", "when did {context} first appear"],
+    "context_role": "topic",
+    "template": "{context} was first discovered/identified in a specific historical context where the conditions, knowledge, and need converged. The discovery didn't happen in isolation — it built upon earlier work and was made possible by advances in related fields. Understanding the circumstances of its discovery sheds light on both its nature and its original significance.",
+    "fallback": "I'd be happy to look into the history of that topic! Could you tell me which field or discipline it belongs to?",
+    "style": ["educational", "historical"],
+    "response_length": "medium"
+  },
+  {
+    "id": "history-inventor",
+    "triggers": ["who invented {context}", "who created {context}", "origin of {context}", "who developed {context}"],
+    "context_role": "topic",
+    "template": "{context} was invented/developed by individuals or teams who identified a gap or problem that existing approaches couldn't address. Their background, perspective, and the constraints they worked under all shaped the form {context} took. Often, multiple contributors across different times and places each added crucial pieces before it became what we recognize today.",
+    "fallback": "That's a great historical question! Do you mean the modern form of this topic or its earliest origins?",
+    "style": ["educational", "historical"],
+    "response_length": "medium"
+  },
+  {
+    "id": "history-evolution",
+    "triggers": ["how has {context} changed over time", "evolution of {context}", "how did {context} develop", "timeline of {context}"],
+    "context_role": "topic",
+    "template": "{context} has undergone significant evolution since its inception. Early stages were characterized by foundational exploration and establishing basic principles. A middle period saw refinement, standardization, and broader adoption. The modern era brings increased specialization, integration with other fields, and ongoing debates about future directions.",
+    "fallback": "The evolution of most topics is fascinating. Which era or aspect of change are you most curious about?",
+    "style": ["educational", "historical", "narrative"],
+    "response_length": "long"
+  },
+  {
+    "id": "history-original-purpose",
+    "triggers": ["what was the original purpose of {context}", "why was {context} created", "original goal of {context}", "what was {context} meant for"],
+    "context_role": "topic",
+    "template": "The original purpose of {context} was solving a specific problem or addressing a particular need that arose in its historical context. Interestingly, its original intended use often differs from how it is applied today — a testament to how adaptable and broadly useful the underlying concept turned out to be.",
+    "fallback": "Good question about intent! Could you clarify which version or branch of this topic you're most interested in?",
+    "style": ["educational", "historical", "reflective"],
+    "response_length": "medium"
+  },
+  {
+    "id": "history-early-forms",
+    "triggers": ["what were early forms of {context}", "early versions of {context}", "first examples of {context}", "primitive {context}"],
+    "context_role": "topic",
+    "template": "Early forms of {context} were considerably simpler and more limited than what we have today. They focused on core functionality, often required specialized knowledge to use, and had rough edges that later iterations smoothed out. Recognizing these early forms helps us appreciate how far {context} has come and understand the design decisions that shaped its current form.",
+    "fallback": "Early forms of most things are quite revealing. What aspect of this topic's early history interests you?",
+    "style": ["educational", "historical"],
+    "response_length": "medium"
+  },
+  {
+    "id": "history-pioneers",
+    "triggers": ["who were the pioneers of {context}", "key figures in {context}", "founding fathers of {context}", "early contributors to {context}"],
+    "context_role": "topic",
+    "template": "The pioneers of {context} were visionaries who saw possibilities that others didn't. They combined deep knowledge of existing work with creative leaps, often facing skepticism before their ideas gained acceptance. Their contributions — whether theoretical breakthroughs, practical implementations, or institutional frameworks — laid the foundation upon which all subsequent work is built.",
+    "fallback": "Pioneers are always inspiring to learn about. Which time period or school of thought within this topic are you referring to?",
+    "style": ["educational", "historical", "inspirational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "history-key-events",
+    "triggers": ["what major events shaped {context}", "key milestones in {context}", "important events in {context} history", "turning points for {context}"],
+    "context_role": "topic",
+    "template": "Several major events have shaped {context} into what it is today. Foundational discoveries provided the initial spark. Periods of rapid advancement — often driven by competing approaches or external pressures — accelerated development. Critical challenges or failures forced reassessment and led to stronger approaches. Each of these events redirected the course of {context} in meaningful ways.",
+    "fallback": "Key events provide great context. Could you let me know which era or dimension of this topic you'd like to explore?",
+    "style": ["educational", "historical", "narrative"],
+    "response_length": "long"
+  },
+  {
+    "id": "history-historical-views",
+    "triggers": ["how did people think about {context} in the past", "historical views on {context}", "past attitudes toward {context}", "what did people used to believe about {context}"],
+    "context_role": "topic",
+    "template": "Historical views on {context} were shaped by the knowledge, tools, and cultural context of the time. What seems obvious to us today was often hotly debated or simply unimaginable to earlier generations. Some historical perspectives were remarkably prescient, while others seem almost comical in hindsight — but each reflects the genuine understanding available at the time.",
+    "fallback": "Historical perspectives are fascinating. Which time period or culture's view are you most curious about?",
+    "style": ["educational", "historical", "reflective"],
+    "response_length": "medium"
+  },
+  {
+    "id": "history-oldest",
+    "triggers": ["what is the oldest known {context}", "oldest example of {context}", "earliest known {context}", "first recorded {context}"],
+    "context_role": "topic",
+    "template": "The oldest known examples of {context} date back to a time when the underlying knowledge was still nascent. These early specimens are often simpler, more practical in orientation, and reveal the core concerns of their creators. Studying the oldest known examples gives us a direct window into the origins of {context} and the fundamental needs it addressed.",
+    "fallback": "The oldest examples of any topic are treasures of history. Which region or tradition are you most interested in?",
+    "style": ["educational", "historical"],
+    "response_length": "medium"
+  },
+  {
+    "id": "history-future",
+    "triggers": ["what is the future of {context}", "future trends in {context}", "where is {context} heading", "what's next for {context}"],
+    "context_role": "topic",
+    "template": "The future of {context} is likely to be shaped by several emerging trends. Integration with adjacent fields, increasing automation of routine aspects, greater accessibility, and a shift toward more ethical and sustainable practices are all on the horizon. While predicting specifics is impossible, the direction points toward more powerful, accessible, and responsible forms of {context}.",
+    "fallback": "The future is always exciting to think about! Which aspect of this topic's future are you most interested in exploring?",
+    "style": ["educational", "speculative", "forward-looking"],
+    "response_length": "medium"
+  }
+]

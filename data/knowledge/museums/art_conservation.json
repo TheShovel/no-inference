@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "What is art conservation?",
+      "What is conservation science?",
+      "What is preventive conservation?",
+      "How is climate controlled in museums?",
+      "How is light managed in museums?",
+      "What is pest control in museums?",
+      "What are the main risks to artworks in museums?",
+      "How do museums protect objects from damage?"
+    ],
+    "a": "Art conservation is the professional field devoted to preserving cultural heritage for future generations through scientific analysis, preventive care, and treatment interventions. Conservation science applies analytical chemistry, materials science, and imaging technologies to understand how artworks are made and how they deteriorate, using techniques like x-ray fluorescence (XRF), infrared reflectography, and cross-section analysis to identify pigments, binders, and degradation products. Preventive conservation is the most important branch, focusing on controlling environmental factors: temperature (typically 18-22°C), relative humidity (40-55%, with minimal fluctuations), light exposure (limiting UV and visible light to 50-200 lux depending on material sensitivity), and integrated pest management using traps and monitoring rather than chemical fumigation. By stabilizing the environment, museums can prevent most deterioration without the ethical complications of interventive treatment."
+  },
+  {
+    "q": [
+      "What are conservation treatments?",
+      "How is cleaning done in art conservation?",
+      "What is consolidation in conservation?",
+      "What is restoration in art?",
+      "What are the ethics of art conservation?",
+      "What is reversibility in conservation?",
+      "What is minimal intervention in conservation?",
+      "Why is documentation important in conservation?"
+    ],
+    "a": "Conservation treatments range from minimal intervention (stabilizing an artwork without altering its appearance) to full restoration (returning an artwork to a known earlier state, often by reconstructing missing elements). The core ethical principles governing treatment are reversibility (any treatment should be removable without damaging the original, so future conservators with better methods can undo it), minimal intervention (treat only what is necessary for stability and legibility), and documentation (every treatment must be thoroughly recorded with photographs, written reports, and analysis results). Cleaning is particularly complex, as removing aged varnish or surface grime can reveal an artwork's original colors but also risks removing original glazes, patinas, or transparent layers. Consolidation involves applying adhesives to stabilize flaking paint or crumbling stone, while structural treatments address issues like canvas tears, panel splits, or detached elements."
+  },
+  {
+    "q": [
+      "How is painting conservation done?",
+      "What are the challenges in conserving oil paintings?",
+      "How are wall paintings conserved?",
+      "What is panel painting conservation?",
+      "What is easel painting conservation?",
+      "How are paper and books conserved?",
+      "What is textile conservation?",
+      "What are the special challenges in conserving textiles?"
+    ],
+    "a": "Each artistic medium presents unique conservation challenges. Painting conservation addresses canvas (tears, deformations, flaking paint), panel (wood warping, insect damage, paint loss), and wall paintings (detachment from support, salt crystallization, environmental exposure), with treatments ranging from strip-lining canvases with new fabric to consolidating fresco layers. Paper and book conservation focuses on acidity (the primary cause of paper embrittlement), mold, insect damage, and water damage, using deacidification sprays, tear repairs with Japanese tissue and wheat starch paste, and encapsulation in mylar. Textile conservation must account for fiber fragility (silk being particularly vulnerable to light damage), dyes that may bleed or fade, and the structural challenge of supporting heavy garments for display, often using custom-shaped padded mannequins and stitched supports that distribute weight without stressing the original fabric."
+  },
+  {
+    "q": [
+      "How are sculptures conserved?",
+      "What is stone sculpture conservation?",
+      "What is metal sculpture conservation?",
+      "What is wood sculpture conservation?",
+      "What is ceramics conservation?",
+      "What are conservation labs?",
+      "What was controversial about the Sistine Chapel restoration?",
+      "What are notable conservation controversies?"
+    ],
+    "a": "Sculpture conservation varies dramatically by material: stone conservators address weathering, biological growth, and cracking using consolidants and careful cleaning with lasers or micro-abrasives; metal conservators deal with corrosion (bronze disease on copper alloys, active rust on iron) and often apply protective coatings or controlled patination; wood conservators face insect infestation, splitting, and polychromy loss requiring consolidation and environmental stabilization. The most controversial conservation project in history was the Sistine Chapel ceiling restoration (1980-1994), which removed centuries of soot and candle smoke to reveal Michelangelo's brilliant original colors but drew criticism from those who believed the darkened surface was the artist's intended effect. Other notable controversies include the overly aggressive cleaning of paintings in the 19th and early 20th centuries (like the removal of glazes from Rembrandt's Night Watch), and the ongoing debate over whether Parthenon Marbles should be cleaned of their original surface color."
+  }
+]

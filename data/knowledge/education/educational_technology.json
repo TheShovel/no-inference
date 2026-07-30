@@ -1,0 +1,48 @@
+[
+  {
+    "q": [
+      "What is educational technology?",
+      "What is EdTech?",
+      "What are examples of educational technology?",
+      "How is technology used in education?",
+      "What is the purpose of educational technology?",
+      "What are the benefits of EdTech?"
+    ],
+    "a": "Educational technology (EdTech) refers to the use of digital tools, software, hardware, and technological processes to enhance teaching, learning, and educational administration. EdTech encompasses a broad range of applications including interactive whiteboards, educational apps, online assessment platforms, learning analytics, virtual classrooms, and administrative systems. The field draws on instructional design, cognitive science, and computer science to create more effective, accessible, and engaging learning experiences. Benefits include personalized pacing, immediate feedback, expanded access to education, data-driven instruction, and preparation of students for a technology-driven workforce."
+  },
+  {
+    "q": [
+      "What are MOOCs?",
+      "What are online learning platforms?",
+      "What is the difference between synchronous and asynchronous learning?",
+      "What is blended learning?",
+      "How do online courses work?",
+      "What are the best online learning platforms?",
+      "online learning"
+    ],
+    "a": "Massive Open Online Courses (MOOCs) are free or low-cost online courses available to unlimited participants, offered by platforms like Coursera, edX, and Udacity in partnership with major universities, covering thousands of subjects from computer science to humanities. Online learning can be synchronous (real-time instruction via video conferencing like Zoom or Microsoft Teams) or asynchronous (self-paced study with pre-recorded lectures, discussion boards, and digital assignments). Blended or hybrid learning combines online digital media with traditional face-to-face classroom methods, offering flexibility while maintaining personal interaction. The shift to online learning has accelerated dramatically, with the global e-learning market projected to exceed $350 billion by 2025."
+  },
+  {
+    "q": [
+      "What is adaptive learning?",
+      "What is gamification in education?",
+      "What are learning management systems?",
+      "What is the best LMS?",
+      "What is personalized learning?",
+      "How does adaptive learning technology work?"
+    ],
+    "a": "Adaptive learning uses artificial intelligence and algorithms to adjust instructional content, pacing, and difficulty in real-time based on individual student performance and learning needs, providing personalized pathways through material. Gamification applies game-design elements (points, badges, leaderboards, levels, narratives) to non-game educational contexts to increase motivation, engagement, and persistence. Learning management systems (LMS) such as Canvas, Blackboard, Moodle, and Google Classroom are software platforms that organize, deliver, and track educational content, assignments, grading, and communication. These technologies collectively enable personalized learning, where instruction is tailored to each student's strengths, weaknesses, interests, and preferred learning pace, moving beyond the one-size-fits-all model."
+  },
+  {
+    "q": [
+      "How is AI used in education?",
+      "What is AI in education?",
+      "What are AI tutoring systems?",
+      "How is virtual reality used in education?",
+      "What is VR in education?",
+      "What is the future of educational technology?",
+      "AI in education"
+    ],
+    "a": "Artificial intelligence is transforming education through intelligent tutoring systems that provide personalized instruction and feedback, automated essay scoring, chatbots that answer student questions, predictive analytics that identify at-risk students, and content recommendation engines. Virtual reality (VR) and augmented reality (AR) create immersive learning experiences, allowing students to explore historical sites, conduct virtual science experiments, practice surgical procedures, or visualize complex molecular and astronomical structures in three dimensions. Emerging technologies like blockchain for credential verification, natural language processing for language learning, and learning analytics dashboards are further expanding EdTech's capabilities, though challenges remain regarding equity of access, data privacy, teacher training, and ensuring technology enhances rather than replaces human instruction."
+  }
+]

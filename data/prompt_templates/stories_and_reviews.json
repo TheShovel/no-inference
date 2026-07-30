@@ -1,0 +1,159 @@
+[
+    {
+        "id": "short_story",
+        "patterns": [
+            "(?:write|tell|draft|create)\\s+(?:me|us)?\\s*(?:a|an|the)?\\s*(?:short|creative)?\\s*story\\s+(?:about|on|set\\s+in|involving)\\s+(?P<topic>.+?)(?:\\s+with\\s+(?:a|an)?\\s*(?P<tone>.+?)\\s*(?:tone|mood|atmosphere))?(?:\\.\\s*|\\?\\s*|$)",
+            "tell\\s+(?:me|us)\\s+a\\s+story\\s+(?:about|where|set\\s+in|involving)\\s+(?P<topic>.+?)(?:\\s+with\\s+(?:a|an)?\\s*(?P<tone>.+?)\\s*(?:tone|mood|atmosphere))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {
+            "topic": "topic",
+            "tone": "tone"
+        },
+        "response_type": "story",
+        "weight": 0.9
+    },
+    {
+        "id": "fairy_tale",
+        "patterns": [
+            "(?:write|tell|draft|create)\\s+(?:me|us)?\\s*(?:a|an)?\\s*fairy\\s+tale\\s+(?:about|set\\s+in|involving|with)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)",
+            "tell\\s+(?:me|us)\\s+a\\s+fairy\\s+tale\\s+(?:about|set\\s+in|with)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {
+            "topic": "topic"
+        },
+        "response_type": "story",
+        "weight": 0.85
+    },
+    {
+        "id": "blog_post",
+        "patterns": [
+            "(?:write|create|draft|compose)\\s+(?:a|an|the)?\\s*blog\\s+post\\s+(?:about|on|covering)\\s+(?P<topic>.+?)(?:\\s+in\\s+(?:a|an)?\\s*(?P<style>.+?)\\s*style)?(?:\\.\\s*|\\?\\s*|$)",
+            "(?:write|create)\\s+(?:a|an|the)?\\s*blog\\s+entry\\s+(?:about|on|covering)\\s+(?P<topic>.+?)(?:\\s+in\\s+(?:a|an)?\\s*(?P<style>.+?)\\s*style)?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {
+            "topic": "topic",
+            "style": "style"
+        },
+        "response_type": "blog",
+        "weight": 0.85
+    },
+    {
+        "id": "email_formal",
+        "patterns": [
+            "(?:write|compose|draft|send)\\s+(?:a|an|the)?\\s*(?:formal|business|professional)?\\s*email\\s+(?:to|about|regarding)\\s+(?P<topic>.+?)(?:\\s+from\\s+(?P<sender>.+?)\\s+to\\s+(?P<recipient>.+?))?(?:\\.\\s*|\\?\\s*|$)",
+            "(?:write|compose|draft)\\s+(?:a|an|the)?\\s*(?:formal|business|professional)?\\s*email\\s+(?:regarding|concerning)\\s+(?P<topic>.+?)(?:\\s+from\\s+(?P<sender>.+?)\\s+to\\s+(?P<recipient>.+?))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {
+            "topic": "topic",
+            "sender": "sender",
+            "recipient": "recipient"
+        },
+        "response_type": "email",
+        "weight": 0.9
+    },
+    {
+        "id": "email_informal",
+        "patterns": [
+            "(?:write|compose|draft|send)\\s+(?:a|an)?\\s*(?:informal|casual|personal|friendly)\\s*email\\s+(?:to|about)\\s+(?P<topic>.+?)(?:\\s+from\\s+(?P<sender>.+?)\\s+to\\s+(?P<recipient>.+?))?(?:\\.\\s*|\\?\\s*|$)",
+            "(?:write|compose|draft)\\s+(?:a|an)?\\s*(?:informal|casual|personal|friendly)\\s*email\\s+to\\s+(?P<recipient>.+?)\\s+(?:about|regarding)\\s+(?P<topic>.+?)(?:\\s+from\\s+(?P<sender>.+?))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {
+            "topic": "topic",
+            "sender": "sender",
+            "recipient": "recipient"
+        },
+        "response_type": "email",
+        "weight": 0.85
+    },
+    {
+        "id": "list_format",
+        "patterns": [
+            "list\\s+(?:the|some|a\\s+few)?\\s*(?P<topic>.+?)(?:\\s+\\((?P<format>.+?)\\))?(?:\\.\\s*|\\?\\s*|$)",
+            "give\\s+me\\s+a\\s+list\\s+of\\s+(?P<topic>.+?)(?:\\s+\\((?P<format>.+?)\\))?(?:\\.\\s*|\\?\\s*|$)",
+            "create\\s+(?:a|an|the)?\\s*list\\s+of\\s+(?P<topic>.+?)(?:\\s+\\((?P<format>.+?)\\))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {
+            "topic": "topic",
+            "format": "format"
+        },
+        "response_type": "list",
+        "weight": 0.9
+    },
+    {
+        "id": "comparison_analysis",
+        "patterns": [
+            "(?:compare|contrast)\\s+and\\s+(?:contrast|compare)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)",
+            "what\\s+(?:are|is)\\s+the\\s+differences\\s+between\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)",
+            "similarities\\s+and\\s+differences\\s+between\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {
+            "topic": "topic"
+        },
+        "response_type": "essay",
+        "weight": 0.85
+    },
+    {
+        "id": "argumentative_essay",
+        "patterns": [
+            "(?:write|compose|draft|create)\\s+(?:a|an|the)?\\s*argumentative\\s+essay\\s+(?:about|on|for|against)\\s+(?P<topic>.+?)(?:\\s+arguing\\s+(?P<position>.+?))?(?:\\.\\s*|\\?\\s*|$)",
+            "(?:write|compose|draft|create)\\s+(?:a|an|the)?\\s*persuasive\\s+essay\\s+(?:about|on)\\s+(?P<topic>.+?)(?:\\s+arguing\\s+(?P<position>.+?))?(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {
+            "topic": "topic",
+            "position": "position"
+        },
+        "response_type": "essay",
+        "weight": 0.85
+    },
+    {
+        "id": "recipe",
+        "patterns": [
+            "recipe\\s+for\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)",
+            "how\\s+to\\s+make\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)",
+            "cooking\\s+instructions\\s+for\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {
+            "topic": "topic"
+        },
+        "response_type": "blog",
+        "weight": 0.8
+    },
+    {
+        "id": "tutorial",
+        "patterns": [
+            "tutorial\\s+on\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)",
+            "step\\s+by\\s+step\\s+guide\\s+to\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)",
+            "learn\\s+how\\s+to\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {
+            "topic": "topic"
+        },
+        "response_type": "explanation",
+        "weight": 0.85
+    },
+    {
+        "id": "review_critical",
+        "patterns": [
+            "review\\s+(?:of|on)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)",
+            "(?:write|compose|draft|create)\\s+a\\s+review\\s+of\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)",
+            "critique\\s+(?:of|on)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {
+            "topic": "topic"
+        },
+        "response_type": "essay",
+        "weight": 0.8
+    },
+    {
+        "id": "research_summary",
+        "patterns": [
+            "summarize\\s+(?:the|this|that)?\\s*research\\s+(?:on|about|regarding|paper|article)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)",
+            "what\\s+does\\s+the\\s+research\\s+say\\s+about\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+        ],
+        "slots": {
+            "topic": "topic"
+        },
+        "response_type": "blog",
+        "weight": 0.8
+    }
+]

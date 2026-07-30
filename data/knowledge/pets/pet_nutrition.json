@@ -1,0 +1,63 @@
+[
+  {
+    "q": [
+      "What are the essential nutrients dogs and cats need?",
+      "What is the role of protein in pet nutrition?",
+      "What are essential fatty acids for pets?",
+      "What vitamins and minerals do pets need?",
+      "What is taurine and why is it critical for cats?",
+      "What are the six essential nutrient classes for pets?",
+      "How do nutritional needs differ between dogs and cats?"
+    ],
+    "a": "Dogs and cats require six essential nutrient classes: water, proteins, fats, carbohydrates, vitamins, and minerals. Protein provides essential amino acids (like taurine for cats and arginine for both species) that are building blocks for tissues, enzymes, and hormones—cats have a higher protein requirement than dogs and cannot synthesize taurine, making it an essential dietary amino acid that must come from animal tissues. Fats supply essential fatty acids (omega-3 and omega-6, including EPA, DHA, and linoleic acid) that support skin health, coat quality, brain function, and inflammation regulation. Vitamins (A, D, E, K, B-complex) and minerals (calcium, phosphorus, potassium, sodium, magnesium, zinc, iron, copper, selenium) play roles in bone health, nerve function, immune support, and enzyme activity—cats uniquely require preformed vitamin A and arachidonic acid from animal sources since they cannot synthesize them from plant precursors."
+  },
+  {
+    "q": [
+      "What are AAFCO standards for pet food?",
+      "What does 'complete and balanced' mean on pet food labels?",
+      "What is the AAFCO nutritional adequacy statement?",
+      "What are the different AAFCO life stage categories?",
+      "How do I read a pet food label correctly?",
+      "What is guaranteed analysis on pet food?",
+      "What is the difference between 'natural' and 'organic' pet food?"
+    ],
+    "a": "AAFCO (Association of American Feed Control Officials) establishes nutritional standards for pet foods in the United States, and a 'complete and balanced' statement indicates the food meets AAFCO's nutrient profiles for a specific life stage or has passed feeding trials. AAFCO recognizes life stages including growth (puppy/kitten), adult maintenance, all life stages, and gestation/lactation—each with specific minimum nutrient requirements. The guaranteed analysis on pet food labels lists minimum percentages of crude protein and crude fat and maximum percentages of crude fiber and moisture, though it does not indicate ingredient quality or digestibility. A 'natural' claim means no chemically synthesized ingredients (with specific exceptions for vitamins and minerals), while 'organic' requires USDA organic certification with strict standards for ingredient sourcing and processing."
+  },
+  {
+    "q": [
+      "What is raw feeding (BARF) for dogs and cats?",
+      "What are the benefits of a raw food diet for pets?",
+      "What are the risks of raw feeding?",
+      "What is the Biologically Appropriate Raw Food (BARF) diet?",
+      "How do I safely prepare and handle raw pet food?",
+      "What is a balanced raw diet for dogs?",
+      "Can cats eat a raw food diet?"
+    ],
+    "a": "Raw feeding, including the BARF (Biologically Appropriate Raw Food or Bones And Raw Food) diet, consists of raw muscle meat, organ meats, bones, vegetables, and supplements formulated to mimic what dogs and wolves would eat in the wild. Proponents cite benefits such as improved dental health (from chewing raw meaty bones), shinier coats, better digestion, higher energy, and reduced stool volume. However, raw feeding carries significant risks: bacterial contamination (Salmonella, E. coli, Listeria) that can infect both pets and household members, nutritional imbalances if not properly formulated (especially calcium-phosphorus ratios and taurine for cats), and the danger of cooked or splintering bones causing gastrointestinal perforation or obstruction. Pet owners choosing raw feeding should work with a veterinary nutritionist, follow strict hygiene protocols (freezing meat for 3 weeks to kill parasites, sanitizing surfaces and bowls), and choose commercially prepared raw diets that meet AAFCO standards to reduce risks of nutritional deficiencies."
+  },
+  {
+    "q": [
+      "What human foods are safe for dogs and cats?",
+      "What fruits and vegetables can dogs eat?",
+      "What human foods are toxic to pets?",
+      "Are grapes and raisins toxic to dogs?",
+      "Is chocolate toxic to dogs?",
+      "What foods should cats never eat?",
+      "Can dogs eat peanut butter?",
+      "Is xylitol dangerous for dogs?"
+    ],
+    "a": "Safe human foods for dogs include plain cooked chicken, turkey, and lean beef, certain fruits (apples without seeds, blueberries, bananas, watermelon without rind, strawberries), and vegetables (carrots, green beans, sweet potatoes, pumpkin, broccoli, spinach). Dogs can eat plain peanut butter in moderation (xylitol-free only, as this artificial sweetener is extremely toxic to dogs even in small amounts). Toxic foods for dogs include chocolate (theobromine and caffeine cause seizures and cardiac issues), grapes and raisins (cause acute kidney failure), onions and garlic (damage red blood cells causing hemolytic anemia), macadamia nuts (cause weakness, vomiting, and hyperthermia), xylitol (causes rapid insulin release, hypoglycemia, and liver failure), and alcohol (can cause severe intoxication and respiratory failure). Cats share many of the same toxicities but are additionally sensitive to lilies (even pollen can cause kidney failure), and due to their strict carnivore physiology cannot thrive on vegetarian or vegan diets without careful supplementation—they also should not consume onions, garlic, grapes, raisins, chocolate, or xylitol."
+  },
+  {
+    "q": [
+      "What is the difference between wet and dry pet food?",
+      "Is dry food or wet food better for my dog?",
+      "Is wet food better for cats with urinary issues?",
+      "What are the pros and cons of dry kibble?",
+      "What are the benefits of wet or canned pet food?",
+      "Can I mix wet and dry pet food?",
+      "How should I store dry and wet pet food?"
+    ],
+    "a": "Wet food (canned, pouched, or fresh) contains 70-85% moisture, making it beneficial for urinary tract health (especially for cats prone to urinary crystals), increasing water intake, and providing higher palatability for picky eaters or pets with dental pain. Dry kibble is more economical, convenient with longer shelf life, and provides dental benefits through mechanical abrasion (though this is limited and not a substitute for brushing), but contains only 6-10% moisture which can contribute to chronic dehydration in cats who naturally have a low thirst drive. Many owners successfully mix wet and dry food to combine benefits—using dry food as the base for nutritional completeness and wet food to increase moisture and palatability. Both wet and dry foods should be AAFCO-approved for the appropriate life stage, and whichever form is chosen should be stored properly: dry food in a sealed container in a cool, dry place (use within 4-6 weeks of opening), and wet food refrigerated after opening and used within 2-3 days."
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "q": [
+      "What is the sociology of education?",
+      "How does sociology study education?",
+      "What is the relationship between education and society?",
+      "What are the functions of education in society?",
+      "How does schooling shape social outcomes?",
+      "What are the manifest and latent functions of education?"
+    ],
+    "a": "The sociology of education examines how educational institutions and processes are shaped by and in turn shape social structures, inequalities, culture, and individual life outcomes — it analyzes schooling not merely as a neutral knowledge-transmission system but as a social institution deeply embedded in broader societal power relations. Functionalist theorists (Durkheim, Parsons) emphasize education's role in socializing children into shared values, sorting individuals into roles based on merit (through credentialing and standardized testing), and transmitting necessary skills for the economy. Conflict theorists (Bowles and Gintis, Bourdieu) argue that education primarily serves to reproduce existing class inequalities — Bowles and Gintis's correspondence principle contends that schools mirror the workplace hierarchy (obedience, punctuality, discipline for working-class students, creativity and leadership for elite students), while credential inflation means higher education becomes necessary for middle-class jobs but does not guarantee upward mobility."
+  },
+  {
+    "q": [
+      "What is the hidden curriculum in education?",
+      "What is school tracking?",
+      "What is educational inequality?",
+      "How does socioeconomic status affect educational outcomes?",
+      "What is the achievement gap in education?",
+      "How do schools reproduce social inequality?",
+      "What is cultural capital and how does it affect education?"
+    ],
+    "a": "The hidden curriculum refers to the implicit norms, values, and dispositions taught in schools through the structure and routines of schooling rather than through formal lesson content — including obedience to authority, punctuality, competition, conformity, and respect for hierarchy — which sociologists argue prepares students for their expected roles in the workforce and society. School tracking (or streaming) is the practice of grouping students by perceived academic ability into different curricular paths (college-preparatory, vocational, general), and research consistently shows that tracking reinforces social class and racial inequalities — lower-track students receive less engaging instruction, lower teacher expectations, and fewer resources, while higher-track students enjoy enriched curricula, experienced teachers, and peer advantages, with track placement often reflecting socioeconomic background more than actual ability. Educational inequality refers to the systematic disparities in access, resources, outcomes, and experiences between social groups — in the US, the achievement gap (differences in test scores and graduation rates between white and Asian students compared to Black and Hispanic students, and between affluent and low-income students) is driven by factors including unequal school funding (based on local property taxes), residential segregation, differential access to early childhood education, and differences in family resources and cultural capital as theorized by Pierre Bourdieu."
+  },
+  {
+    "q": [
+      "What is the school choice debate?",
+      "What are charter schools?",
+      "What is school vouchers?",
+      "What is the difference between public, charter, and private schools?",
+      "Do school choice programs improve educational outcomes?",
+      "What is the evidence on charter school effectiveness?",
+      "How does school choice affect racial and economic segregation?"
+    ],
+    "a": "The school choice debate centers on whether giving parents the ability to choose their children's schools — through charter schools, voucher programs, education savings accounts, and magnet schools — improves educational quality through market competition or exacerbates inequality and segregation. Proponents (drawing on economist Milton Friedman's arguments) contend that competition from charter schools forces traditional public schools to improve, that choice empowers low-income families who otherwise lack options, and that charter schools can innovate more freely, with some high-quality charter networks (such as KIPP and Success Academy) showing significant achievement gains for disadvantaged students. Critics argue that the evidence for systemic improvement is mixed — many charter schools perform no better or worse than public schools, they often enroll fewer special-needs and English-learner students, they may increase racial and socioeconomic segregation as families sort by preference and information, and they drain resources and political support from the traditional public school system, with studies like the CREDO National Charter School Study finding wide variation in quality across different charter operators and regions."
+  },
+  {
+    "q": [
+      "What is the Pygmalion effect in education?",
+      "What are teacher expectations and how do they affect students?",
+      "What is the Rosenthal effect?",
+      "How do peer effects influence educational outcomes?",
+      "How do peers affect student achievement?",
+      "What is the Coleman Report?",
+      "What factors most influence student achievement according to sociological research?"
+    ],
+    "a": "The Pygmalion effect (also called the Rosenthal effect, after Rosenthal and Jacobson's 1968 landmark study 'Pygmalion in the Classroom') describes how teacher expectations can become self-fulfilling prophecies — when teachers expect certain students to perform well, they unconsciously provide more attention, encouragement, challenging material, and positive feedback, leading those students to indeed perform better, while low expectations lead to diminished support and poorer outcomes. Peer effects are the influence that classmates and friends have on each other's academic achievement, aspirations, and behaviors — research consistently shows that students surrounded by high-achieving, motivated peers perform better themselves, while disadvantaged peer environments can drag down performance, an effect that is particularly important in debates about school desegregation, tracking, and the optimal mix of students in classrooms. The landmark Coleman Report (1966), one of the largest educational studies in history, found that family background and socioeconomic status were far stronger predictors of student achievement than school resources (class size, spending per pupil, facilities), challenging the assumption that merely equalizing school inputs would close achievement gaps and shifting research toward understanding the role of family, community, and peer environments in educational outcomes."
+  }
+]

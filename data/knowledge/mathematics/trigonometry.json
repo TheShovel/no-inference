@@ -1,0 +1,52 @@
+[
+  {
+    "q": [
+      "What is trigonometry?",
+      "Define trigonometry as a branch of mathematics",
+      "What does trigonometry study?",
+      "Why is trigonometry important?",
+      "What are the basic concepts in trigonometry?",
+      "How is trigonometry used in real life?",
+      "What problems does trigonometry solve?"
+    ],
+    "a": "Trigonometry is the branch of mathematics that studies relationships between angles and side lengths in triangles, particularly right triangles, and extends these relationships to periodic functions through the unit circle. The word comes from Greek trigonon (triangle) and metron (measure). Trigonometry is essential in navigation, astronomy, physics, engineering, computer graphics, and music theory. Its core functions — sine, cosine, and tangent — describe the ratios of sides in a right triangle relative to an acute angle, and these functions generalize to model any periodic phenomenon such as sound waves, tides, and seasonal cycles."
+  },
+  {
+    "q": [
+      "What are sine, cosine, and tangent?",
+      "How do sine, cosine, and tangent work?",
+      "What are the trigonometric ratios?",
+      "What is SOH CAH TOA?",
+      "How are sine, cosine, and tangent defined on the unit circle?",
+      "What is the relationship between sine and cosine?",
+      "What is the unit circle and why is it important?"
+    ],
+    "a": "Sine, cosine, and tangent are the three primary trigonometric functions. In a right triangle, sine of an angle equals the opposite side divided by the hypotenuse (SOH), cosine equals adjacent divided by the hypotenuse (CAH), and tangent equals opposite divided by adjacent (TOA). On the unit circle (a circle with radius 1 centered at the origin), the x-coordinate of a point at angle θ is cos(θ) and the y-coordinate is sin(θ), allowing these functions to be defined for all real angles, not just acute ones. The unit circle also reveals the fundamental identity sin²θ + cos²θ = 1 and shows how sine and cosine are phase-shifted versions of each other — specifically, sin(θ) = cos(θ − 90°)."
+  },
+  {
+    "q": [
+      "What are trigonometric identities?",
+      "What are the most important trigonometric identities?",
+      "What is the Pythagorean identity?",
+      "What are sum and difference formulas?",
+      "What are double-angle formulas?",
+      "How are trigonometric identities used?",
+      "What is the law of sines?",
+      "What is the law of cosines?"
+    ],
+    "a": "Trigonometric identities are equations that are true for all values of the variables involved, establishing relationships between different trigonometric functions. The most fundamental are the Pythagorean identities (sin²θ + cos²θ = 1, tan²θ + 1 = sec²θ), which follow directly from the unit circle. Other essential identities include sum and difference formulas (sin(A±B) = sin A cos B ± cos A sin B), double-angle formulas (sin 2θ = 2 sin θ cos θ), and the law of sines (a/sin A = b/sin B = c/sin C) and law of cosines (c² = a² + b² − 2ab cos C), which are used to solve non-right triangles. These identities are fundamental tools for simplifying complex trigonometric expressions, solving equations, and evaluating integrals in calculus."
+  },
+  {
+    "q": [
+      "What are inverse trigonometric functions?",
+      "How do inverse trig functions work?",
+      "What is arcsine?",
+      "What is arccosine?",
+      "What is arctangent?",
+      "How do you graph trigonometric functions?",
+      "What are periodic functions?",
+      "What is the amplitude, period, and phase shift of a trig function?"
+    ],
+    "a": "Inverse trigonometric functions (arcsin, arccos, arctan) reverse the action of the standard trig functions, returning the angle whose sine, cosine, or tangent is a given value. For example, arcsin(1/2) = 30° (or π/6 radians). Graphing trigonometric functions reveals their periodic nature: sine and cosine have a period of 360° (2π radians) and range from −1 to 1, while tangent has a period of 180° (π radians) with vertical asymptotes where cosine equals zero. Key parameters in graphing include amplitude (the vertical stretch, given by the coefficient A in y = A sin x), period (the horizontal length of one cycle, modified by B in y = sin Bx), and phase shift (horizontal translation). These functions appear throughout physics and engineering, modeling everything from alternating current electricity to harmonic oscillators, sound waves, and tidal patterns."
+  }
+]

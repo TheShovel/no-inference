@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "What are the rules of sudoku?",
+      "How do you play sudoku?",
+      "What is the history of sudoku?",
+      "Who created modern sudoku?",
+      "What is Number Place?",
+      "Who was Wayne Gould?",
+      "When did sudoku become popular worldwide?",
+      "What is the basic logic behind sudoku?"
+    ],
+    "a": "Sudoku is a logic-based number placement puzzle played on a 9x9 grid divided into nine 3x3 boxes, where the objective is to fill every row, column, and box with the digits 1 through 9 exactly once each. The modern version of sudoku originated in the United States as 'Number Place' in Dell Magazines in 1979, designed by retired architect Howard Garns, but the worldwide explosion began in 2004 when New Zealander Wayne Gould—a retired Hong Kong judge—developed a computer program to generate puzzles and convinced The Times of London to publish them daily, sparking a global craze that spread through newspapers, books, apps, and competitive sudoku championships. Unlike crossword puzzles, sudoku requires no language skills or general knowledge—only pure logic, pattern recognition, and patience, making it universally accessible across languages and cultures."
+  },
+  {
+    "q": [
+      "What are basic sudoku solving techniques?",
+      "What is scanning in sudoku?",
+      "What is cross-hatching in sudoku?",
+      "What are pointing pairs and claiming pairs?",
+      "What are naked pairs and hidden pairs in sudoku?",
+      "What are the easiest sudoku strategies?",
+      "How do you solve a beginner sudoku puzzle?",
+      "What is the first step in solving sudoku?"
+    ],
+    "a": "The most fundamental sudoku solving technique is scanning or cross-hatching: systematically checking how numbers already placed in rows, columns, and boxes restrict where remaining numbers can go, using the process of elimination to narrow down each empty cell's candidates to a single possibility. Pointing pairs and claiming pairs are the first intermediate strategies—a pointing pair occurs when a candidate number appears in only two cells within a box that share a row or column, meaning that candidate can be eliminated from other cells in that row or column; a claiming pair (or row/box reduction) occurs when a candidate appears in only two cells within a row that share a box, allowing elimination from the rest of that box. Naked pairs involve two cells in the same row, column, or box that both share the exact same two candidates, allowing those candidates to be eliminated from all other cells in that unit, while hidden pairs are the inverse—two specific candidates that appear in exactly two cells of a unit, allowing elimination of all other candidates from those two cells."
+  },
+  {
+    "q": [
+      "What are advanced sudoku solving techniques?",
+      "What is X-Wing in sudoku?",
+      "What is Swordfish in sudoku?",
+      "What is XY-Wing in sudoku?",
+      "What is coloring in sudoku?",
+      "What are forcing chains in sudoku?",
+      "What is the hardest sudoku technique?",
+      "What is Nishio in sudoku?"
+    ],
+    "a": "Advanced sudoku techniques extend the logic of candidate elimination across multiple rows, columns, and boxes simultaneously. The X-Wing pattern identifies a candidate number that appears in exactly two rows and two columns, forming four cells in a rectangular pattern where the candidate can be eliminated from other cells in those columns or rows. Swordfish and Jellyfish extend the same principle to three or four rows and columns respectively, using the same binary-alternative logic. XY-Wing (and its variant XYZ-Wing) uses three interconnected cells with different pairs of candidates to eliminate a shared candidate from cells visible to all three. For the most difficult puzzles, solvers may use forcing chains (following the implications of choosing a candidate for one cell to see if it leads to a contradiction), Nishio (a single-candidate form of trial and error where picking one placement leads to a conflict), or backtracking with bifurcation. True sudoku purists consider guessing (trial and error without logical deduction) invalid, and competition sudoku is solved entirely through logical inference without assumption."
+  },
+  {
+    "q": [
+      "What are sudoku variants?",
+      "What is Killer Sudoku?",
+      "What is Samurai Sudoku?",
+      "What are cage sums in Killer Sudoku?",
+      "What is diagonal sudoku?",
+      "What are the different types of sudoku puzzles?",
+      "What is Hyper Sudoku?",
+      "What is Sudoku X?"
+    ],
+    "a": "Sudoku variants modify the standard rules to create new challenges: Killer Sudoku replaces some given digits with 'cage sums'—dashed-line regions with a total number that the digits inside must sum to, with the additional constraint that no digit can repeat within a cage, requiring combinatorial reasoning alongside standard sudoku logic. Samurai Sudoku presents five overlapping 9x9 grids arranged in a cross pattern, where the center grid is shared by all four corner grids, requiring the solver to maintain consistency across all five simultaneously. Other popular variants include Diagonal Sudoku (the two main diagonals must also contain 1-9), Odd-Even Sudoku (cells are color-coded for odd or even placement), Jigsaw Sudoku (irregular regions replace the 3x3 boxes), Inequality Sudoku (adjacent cells have greater-than or less-than signs), Anti-King and Anti-Knight Sudoku (king- or knight-move adjacency restrictions from chess), and Consecutive Sudoku (adjacent cells with consecutive values are marked with a bar). Each variant introduces new constraints that demand different solving strategies, keeping the sudoku genre fresh even for experienced solvers."
+  }
+]

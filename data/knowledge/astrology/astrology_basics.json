@@ -1,0 +1,51 @@
+[
+  {
+    "q": [
+      "What is a natal chart in astrology?",
+      "How do I read a birth chart?",
+      "What are the main components of a natal chart?",
+      "What does a birth chart tell you?",
+      "How is a natal chart calculated?",
+      "What information do I need for a birth chart?",
+      "What are planets, houses, and aspects in a chart?"
+    ],
+    "a": "A natal or birth chart is a snapshot of the sky at the exact moment and location of a person's birth, mapping the positions of the Sun, Moon, and planets against the zodiac and houses. The chart is divided into twelve houses, each governing specific life areas such as identity (1st house), values and money (2nd house), communication (3rd house), home and family (4th house), creativity (5th house), health and daily routine (6th house), relationships (7th house), transformation (8th house), philosophy and travel (9th house), career (10th house), friendships (11th house), and spirituality (12th house). Interpreting a chart involves analyzing which signs and houses the planets occupy, the aspects (angular relationships) between planets, and the four key angles: the Ascendant (rising sign), Descendant (DSC), Midheaven (MC), and Imum Coeli (IC)."
+  },
+  {
+    "q": [
+      "What are the major aspects in astrology?",
+      "What does a conjunction mean in a birth chart?",
+      "What is a sextile aspect?",
+      "What does a square aspect indicate?",
+      "What is a trine in astrology?",
+      "What does an opposition mean?",
+      "How do aspects affect chart interpretation?",
+      "What are the orbs for planetary aspects?"
+    ],
+    "a": "Aspects are the angular distances between planets that describe how their energies interact. The five major aspects are conjunction (0°, planets merge and amplify each other), sextile (60°, harmonious opportunity and flow), square (90°, friction, tension, and growth through challenge), trine (120°, natural talent and ease), and opposition (180°, polarity, balance, and awareness through relationship). Minor aspects include the quincunx (150°), semi-sextile (30°), and sesquiquadrate (135°). Orbs (the allowable degree range for an aspect to be considered active) are typically 8-10° for conjunctions, 6-8° for squares and oppositions, and 4-6° for sextiles and trines, though some astrologers use tighter orbs for the personal planets."
+  },
+  {
+    "q": [
+      "What is the rising sign or ascendant?",
+      "How do I find my rising sign?",
+      "What is the difference between sun sign and rising sign?",
+      "What does the ascendant represent in astrology?",
+      "Why is the rising sign important?",
+      "What is the Descendant in a birth chart?",
+      "What are the four angles in a natal chart?"
+    ],
+    "a": "The rising sign, or ascendant, is the zodiac sign that was rising on the eastern horizon at the moment of birth and is the most personal point in the chart. It represents the persona, outward expression, physical appearance, and how others first perceive you, while the sun sign reveals your core identity and ego. The opposite point is the Descendant (DSC), governing relationships and partnerships. The Midheaven (MC) sits at the top of the chart and relates to career, public image, and life direction, while the Imum Coeli (IC) at the bottom represents home, roots, and private foundations — together these four angles form the backbone of chart interpretation."
+  },
+  {
+    "q": [
+      "What house systems are used in astrology?",
+      "What is the Placidus house system?",
+      "How does Whole Sign houses work?",
+      "What is the Equal House system?",
+      "Which house system is most accurate?",
+      "What is the Koch house system?",
+      "How do different house systems affect chart interpretation?"
+    ],
+    "a": "House systems divide the birth chart into twelve segments that determine which life areas each planet influences. Placidus, the most widely used system in Western astrology, calculates houses based on time intervals — it works well for most latitudes but can produce extremely skewed houses near the Arctic Circle. Whole Sign houses (an ancient Hellenistic method) assigns each sign to one complete house starting from the ascendant, making it simple and consistent. Equal House divides the ecliptic into twelve 30° segments starting from the ascendant. Other systems include Koch (popular in Germany), Regiomontanus, and Campanus. The choice of system can shift house cusps by several degrees, which may change which house a planet falls in, but most astrologers agree that no single system is universally correct."
+  }
+]

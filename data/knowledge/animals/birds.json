@@ -1,0 +1,74 @@
+[
+  {
+    "q": [
+      "What defines a bird?",
+      "What are the key characteristics of birds?",
+      "What makes an animal a bird?",
+      "Do all birds fly?",
+      "Are birds descended from dinosaurs?",
+      "What are the unique features of bird anatomy?",
+      "How is a bird's skeleton adapted for flight?"
+    ],
+    "a": "Birds are feathered, warm-blooded vertebrates that evolved from theropod dinosaurs during the Jurassic period, making them the only living dinosaurs. All birds lay hard-shelled eggs, have beaks or bills rather than teeth, a four-chambered heart, and a lightweight skeleton where many bones are fused and hollow with internal struts for strength without weight. Key flight adaptations include a keeled sternum (breastbone) anchoring powerful flight muscles, feathers providing lift and control, an efficient respiratory system with air sacs allowing unidirectional airflow for continuous oxygen extraction, and a high metabolic rate to sustain the energy demands of flight. Bird feathers are made of keratin and serve multiple functions beyond flight: insulation, waterproofing, camouflage, and elaborate displays for courtship, with molting occurring periodically to replace worn feathers."
+  },
+  {
+    "q": [
+      "What are the different types of birds?",
+      "What are songbirds?",
+      "What defines a raptor?",
+      "What are the different types of waterfowl?",
+      "What are flightless birds?",
+      "What are examples of flightless birds?",
+      "What is the largest bird species?"
+    ],
+    "a": "Songbirds, or passerines, make up over half of all bird species — about 6,500 species — and are defined by their specialized vocal organ called the syrinx, which allows them to produce complex songs for communication and mating. Raptors (birds of prey) including eagles, hawks, falcons, and owls possess keen eyesight several times sharper than humans, sharp talons for catching prey, and hooked beaks for tearing flesh, with the peregrine falcon being the fastest animal on Earth at over 240 mph during stoop dives. Waterfowl such as ducks, geese, and swans have webbed feet for swimming and waterproof feathers maintained by preening oil from the uropygial gland. Flightless birds including ostriches, emus, rheas, kiwis, and penguins have evolved from flying ancestors, with the ostrich standing up to 9 feet tall as the largest living bird. Penguins have adapted their wings into flippers for swimming, with the emperor penguin capable of diving over 1,800 feet and holding its breath for more than 20 minutes."
+  },
+  {
+    "q": [
+      "How do birds migrate?",
+      "Why do birds migrate?",
+      "How far do birds migrate?",
+      "How do birds navigate during migration?",
+      "What is the longest bird migration?",
+      "Do all birds migrate?",
+      "How do birds prepare for migration?"
+    ],
+    "a": "Bird migration is the seasonal movement of birds between breeding and wintering grounds, driven primarily by food availability and breeding success rather than cold temperatures directly. Birds navigate using multiple cues including the Earth's magnetic field (detected through cryptochrome proteins in their eyes), the position of the sun and stars, polarized light patterns, and learned landmarks. The Arctic tern holds the record for the longest migration of any animal, traveling from Greenland to Antarctica and back annually, covering about 44,000 miles in a zigzag route. Many migratory birds undergo remarkable physiological changes before migration, including hyperphagia (intense feeding to double their body fat as fuel), and some species shrink their digestive organs to reduce weight while enlarging their flight muscles. Not all birds migrate; some are resident species that remain in their territory year-round, adapting their diet and behavior to changing seasons."
+  },
+  {
+    "q": [
+      "How do birds build nests?",
+      "What are the different types of bird nests?",
+      "How do birds raise their young?",
+      "Do all birds build nests?",
+      "What are brood parasites?",
+      "How long do baby birds stay in the nest?",
+      "What is a clutch size?"
+    ],
+    "a": "Birds construct a remarkable variety of nests: orioles weave hanging pouches, woodpeckers excavate tree cavities, eagles build massive stick platforms weighing over a ton, and weaver birds intricately knot grass into elaborate domed structures. Incubation periods vary widely from about 11 days in small passerines to nearly 80 days in kiwis and albatrosses, with parent birds maintaining precise egg temperatures through brood patches (bare, vascularized skin on their bellies). Altricial chicks (like robins and hawks) hatch naked, blind, and helpless, requiring intensive parental feeding and warmth, while precocial chicks (like ducks and chickens) hatch covered in down, with open eyes, and can leave the nest within hours to find their own food. The cuckoo is a brood parasite that lays its eggs in the nests of other bird species, with the hatchling often pushing out the host's own eggs or chicks to monopolize food from the unwitting foster parents."
+  },
+  {
+    "q": [
+      "How intelligent are crows and ravens?",
+      "How intelligent are parrots?",
+      "What is the smartest bird?",
+      "Can birds solve problems?",
+      "Do birds use tools?",
+      "Which birds are the most intelligent?",
+      "How do corvids compare to primates in intelligence?"
+    ],
+    "a": "Corvids — crows, ravens, jays, and magpies — are considered among the most intelligent animals on Earth, rivaling great apes in cognitive abilities including tool use, complex social reasoning, and mental time travel. New Caledonian crows manufacture hooked tools from twigs and leaves, and in laboratory tests they have solved multi-step puzzles requiring the use of one tool to obtain another, demonstrating analogical reasoning comparable to a 5-7-year-old human child. Parrots, particularly African greys, demonstrate remarkable linguistic abilities with some individuals like Alex the parrot learning over 100 words and understanding concepts of same/different, color, shape, and even zero. Both corvids and parrots have exceptionally large forebrains relative to body size, with a high density of neurons packed densely for efficient processing, and they engage in play behavior and show evidence of social bonding and grief."
+  },
+  {
+    "q": [
+      "What are the most endangered birds?",
+      "What bird species have gone extinct recently?",
+      "How can we protect endangered birds?",
+      "What is the rarest bird in the world?",
+      "How does habitat loss affect birds?",
+      "What is bird conservation?",
+      "What are the main threats to birds?"
+    ],
+    "a": "Birds face severe threats worldwide with nearly half of all bird species experiencing population declines, primarily driven by habitat destruction from agriculture and urbanization, predation by invasive species (particularly cats and rats on islands), collisions with buildings and wind turbines, and climate change disrupting migration timing and food availability. The dodo, passenger pigeon, and great auk are among the most famous birds driven to extinction by human activity, while critically endangered species today include the kakapo (a flightless New Zealand parrot with fewer than 250 individuals), the California condor (reduced to 27 birds in 1987, now recovered to over 300 through captive breeding), and the Spix's macaw (extinct in the wild, maintained in captivity). Bird conservation efforts include habitat protection and restoration, captive breeding and reintroduction programs, controlling invasive predators, reducing window collisions through bird-friendly glass, and international agreements like the Migratory Bird Treaty Act. Important Bird Areas (IBAs) designate over 13,000 critical sites worldwide identified by BirdLife International."
+  }
+]

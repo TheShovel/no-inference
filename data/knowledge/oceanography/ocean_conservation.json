@@ -1,0 +1,46 @@
+[
+  {
+    "q": [
+      "What is overfishing?",
+      "What are the effects of overfishing?",
+      "What is bycatch?",
+      "What are sustainable fisheries?",
+      "What fish populations are most threatened?",
+      "How does overfishing affect marine ecosystems?"
+    ],
+    "a": "Overfishing occurs when fish are caught faster than populations can reproduce, depleting stocks and disrupting marine ecosystems. Bycatch refers to the unintentional capture of non-target species (dolphins, sea turtles, sharks, seabirds) during commercial fishing, estimated at about 40% of global marine catch. Sustainable fisheries management uses science-based catch limits, monitoring, gear restrictions, and ecosystem-based approaches to maintain fish populations at productive levels. Major threats include industrial bottom trawling, which devastates seafloor habitats, and illegal, unreported, and unregulated (IUU) fishing that undermines conservation efforts worldwide."
+  },
+  {
+    "q": [
+      "What are marine protected areas?",
+      "How do marine protected areas help conservation?",
+      "What is a marine reserve?",
+      "What are no-take zones?",
+      "How much of the ocean is protected?",
+      "marine protected areas MPAs"
+    ],
+    "a": "Marine protected areas (MPAs) are designated ocean regions where human activities are restricted to protect biodiversity, habitats, and ecosystem services. Fully protected or 'no-take' marine reserves, where all extractive activities like fishing and mining are prohibited, have proven highly effective at restoring fish biomass, increasing species diversity, and providing spillover benefits to adjacent fisheries. Currently, about 8% of the global ocean is under some form of protection, though only about 3% is fully or highly protected. International targets aim to protect 30% of the ocean by 2030 (the '30x30' goal) under the Kunming-Montreal Global Biodiversity Framework."
+  },
+  {
+    "q": [
+      "What is ocean acidification?",
+      "What is coral bleaching?",
+      "How does climate change affect the ocean?",
+      "What causes ocean acidification?",
+      "Why is coral bleaching happening?",
+      "How does CO2 affect the ocean?"
+    ],
+    "a": "Ocean acidification is the ongoing decrease in ocean pH caused by the absorption of excess atmospheric CO2 from human activities, with the ocean having absorbed about 30% of human-emitted CO2 since the Industrial Revolution, causing a 30% increase in acidity. This chemical change reduces the availability of carbonate ions that marine organisms like corals, shellfish, and plankton need to build calcium carbonate shells and skeletons. Coral bleaching occurs when rising ocean temperatures (often combined with pollution and acidification) cause corals to expel their symbiotic zooxanthellae algae, turning white and becoming vulnerable to disease and death; mass bleaching events now occur at intervals too short for many reefs to recover."
+  },
+  {
+    "q": [
+      "What is plastic pollution in the ocean?",
+      "What are microplastics?",
+      "How does plastic affect marine life?",
+      "What is the Great Pacific Garbage Patch?",
+      "What is being done about ocean plastic?",
+      "How much plastic is in the ocean?"
+    ],
+    "a": "Plastic pollution is one of the most pervasive ocean threats, with an estimated 8-12 million metric tons entering the ocean annually — equivalent to a garbage truck emptied into the sea every minute. Microplastics (plastic fragments smaller than 5 mm) result from the breakdown of larger debris and from sources like synthetic clothing fibers and microbeads, and are ingested by organisms throughout the marine food web, from plankton to whales. The Great Pacific Garbage Patch is a massive accumulation zone of floating plastic debris in the North Pacific Gyre, spanning an estimated 1.6 million square kilometers. Ocean governance efforts include international treaties, national bans on single-use plastics, cleanup technologies, and extended producer responsibility schemes."
+  }
+]

@@ -1,0 +1,67 @@
+[
+    {
+        "q": [
+            "What home maintenance tasks should be done seasonally?",
+            "How do I prepare my home for winter?",
+            "What should I include in a spring home maintenance checklist?",
+            "How do I maintain my home's HVAC system?",
+            "When should I change my furnace filter?",
+            "How do I winterize my home?",
+            "What fall maintenance tasks are essential?",
+            "How do I prevent frozen pipes in winter?"
+        ],
+        "a": "Seasonal home maintenance prevents costly repairs and extends the life of your systems. In spring, inspect the roof for winter damage, clean gutters, service the air conditioner, and check exterior caulking and siding. Fall maintenance includes cleaning gutters after leaf drop, winterizing outdoor faucets, servicing the furnace, sealing drafts around windows and doors, and checking attic insulation. Change your HVAC filter every 1-3 months during peak usage seasons (more frequently with pets or allergies). To prevent frozen pipes, disconnect garden hoses, insulate exposed pipes in crawlspaces and attics, and allow faucets to drip during extreme cold snaps."
+    },
+    {
+        "q": [
+            "How do I maintain my home's plumbing system?",
+            "How do I prevent clogged drains?",
+            "How do I winterize outdoor plumbing?",
+            "How do I locate and use my main water shut-off valve?",
+            "How do I test my water pressure?",
+            "How do I maintain a water heater?",
+            "How often should I flush my water heater?",
+            "What temperature should my water heater be set to?"
+        ],
+        "a": "Regular plumbing maintenance includes knowing the location of your main water shut-off valve (typically near the water meter or where the main line enters the house), testing it annually to ensure it works. Flush your water heater at least once a year by attaching a garden hose to the drain valve and running several gallons until the water runs clear, removing sediment that reduces efficiency. Set your water heater temperature to 120°F (49°C) — hot enough to prevent bacterial growth and provide comfortable water, but not so hot as to risk scalding or waste energy. Use drain strainers in all sinks and tubs to catch hair and debris, and never pour grease down kitchen drains."
+    },
+    {
+        "q": [
+            "How do I maintain my home's electrical system safely?",
+            "How do I test a GFCI outlet?",
+            "How often should I test smoke detectors?",
+            "How do I reset a tripped circuit breaker?",
+            "What is the difference between a GFCI and AFCI breaker?",
+            "How do I know if my electrical panel needs upgrading?",
+            "How do I replace a smoke detector battery?",
+            "What are signs of faulty electrical wiring?"
+        ],
+        "a": "Test GFCI outlets monthly by pressing the TEST button — the RESET button should pop out and the outlet should cut power; press RESET to restore it. Test smoke and carbon monoxide detectors monthly, replace batteries at least once a year (when clocks change is a good reminder), and replace the entire unit every 10 years. If a circuit breaker trips, unplug appliances on that circuit, flip the breaker fully to OFF then back to ON — if it trips again immediately, there may be a short circuit or overloaded circuit. Signs of faulty wiring include frequently tripping breakers, flickering or dimming lights, warm or discolored outlets, buzzing sounds from switches, and a burning smell."
+    },
+    {
+        "q": [
+            "How do I maintain my home's exterior and roof?",
+            "How often should I clean my gutters?",
+            "How do I inspect my roof for damage?",
+            "How do I maintain siding and exterior walls?",
+            "How do I seal cracks in my driveway?",
+            "How do I maintain a wooden deck?",
+            "How often should I power wash my house?",
+            "How do I prevent ice dams on my roof?"
+        ],
+        "a": "Clean gutters at least twice a year — in late spring after seed drop and in late fall after leaves fall — to prevent water damage to the foundation and roof edge. Inspect your roof from the ground using binoculars, looking for missing, curled, or cracked shingles and checking around vents, chimneys, and skylights for damaged flashing. Power wash siding annually on a low-pressure setting to remove mold, mildew, and dirt, being careful near windows and electrical fixtures to avoid forcing water behind them. Seal asphalt driveway cracks with a quality crack filler, and apply a sealant coating every 2-3 years to prevent winter freeze-thaw damage. Stain or seal wood decks every 1-3 years depending on sun and rain exposure."
+    },
+    {
+        "q": [
+            "How do I maintain windows and doors?",
+            "How do I fix a drafty window?",
+            "How do I lubricate door hinges?",
+            "How do I replace window weatherstripping?",
+            "How do I fix a sticking door?",
+            "How do I maintain sliding glass doors?",
+            "How do I clean and maintain window screens?",
+            "How do I replace a broken window pane?"
+        ],
+        "a": "Check windows and doors annually for drafts by holding a lit incense stick near the edges — if the smoke moves sideways, you have an air leak that needs weatherstripping or caulking. Replace worn weatherstripping around windows and doors with adhesive-backed foam tape, V-strip, or tubular gasket material appropriate for the gap size. Fix sticking doors by first checking if the hinge screws are tight — if the door still binds, sand or plane the high spot on the binding edge, or adjust the strike plate position. Clean sliding glass door tracks with a vacuum and toothbrush to remove debris, then apply silicone lubricant to the rollers. Clean window screens annually by gently vacuuming both sides and washing with mild soap and water."
+    }
+]

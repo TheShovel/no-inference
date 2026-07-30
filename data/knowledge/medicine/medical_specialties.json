@@ -1,0 +1,75 @@
+[
+  {
+    "q": [
+      "What is cardiology?",
+      "Cardiology explained",
+      "What does a cardiologist do?",
+      "What is the field of cardiology?",
+      "What are the main areas of cardiology?",
+      "cardiology",
+      "what is cardiology",
+      "define cardiology"
+    ],
+    "a": "Cardiology is a branch of internal medicine dealing with disorders of the heart and blood vessels — the cardiovascular system. Cardiologists diagnose and treat conditions including coronary artery disease, heart failure, arrhythmias, valvular heart disease, and congenital heart defects. The field encompasses preventive cardiology (managing risk factors like hypertension and high cholesterol), interventional cardiology (procedures like angioplasty and stenting), electrophysiology (studying the heart's electrical system and treating arrhythmias), and cardiac imaging (echocardiography, cardiac MRI, CT angiography). Cardiologists use tools such as electrocardiograms (ECG/EKG), stress tests, cardiac catheterization, and various imaging modalities to assess heart structure and function."
+  },
+  {
+    "q": [
+      "What is neurology?",
+      "Neurology explained",
+      "What does a neurologist do?",
+      "What is the field of neurology?",
+      "What conditions do neurologists treat?",
+      "neurology",
+      "what is neurology"
+    ],
+    "a": "Neurology is the branch of medicine concerned with disorders of the nervous system, which includes the brain, spinal cord, peripheral nerves, and muscles. Neurologists diagnose and treat conditions such as stroke, epilepsy, Parkinson's disease, multiple sclerosis, Alzheimer's disease, migraine headaches, neuropathy, and movement disorders. The diagnostic process typically involves a detailed neurological examination assessing mental status, cranial nerves, motor and sensory function, reflexes, and coordination, often supplemented by neuroimaging (CT, MRI), electroencephalography (EEG), nerve conduction studies, and lumbar puncture. Treatment approaches range from medications and lifestyle modifications to advanced interventions like deep brain stimulation for movement disorders."
+  },
+  {
+    "q": [
+      "What is oncology?",
+      "Oncology explained",
+      "What does an oncologist do?",
+      "What is the field of oncology?",
+      "What are the main types of cancer treatment?",
+      "oncology",
+      "what is oncology"
+    ],
+    "a": "Oncology is the branch of medicine that studies, diagnoses, and treats cancer. Oncologists manage patients across the cancer care continuum — from prevention and screening through diagnosis, treatment, survivorship, and palliative care. The main treatment modalities are surgery (removing tumors), radiation therapy (using high-energy beams to destroy cancer cells), systemic therapies (chemotherapy, targeted therapy, immunotherapy, hormone therapy), and increasingly, precision medicine approaches that tailor treatment to the genetic profile of individual tumors. Oncology is divided into clinical oncology (direct patient care), surgical oncology, radiation oncology, and medical oncology, as well as subspecialties like pediatric oncology, gynecologic oncology, and hematologic oncology."
+  },
+  {
+    "q": [
+      "What is pediatrics?",
+      "Pediatrics explained",
+      "What does a pediatrician do?",
+      "What is the field of pediatrics?",
+      "What age range does pediatrics cover?",
+      "pediatrics",
+      "what is pediatrics"
+    ],
+    "a": "Pediatrics is the branch of medicine that deals with the medical care of infants, children, and adolescents, typically from birth to age 18 (and sometimes up to age 21). Pediatricians focus on the physical, emotional, and social health of children, encompassing preventive care (well-child visits, vaccinations, developmental screening), diagnosis and treatment of acute and chronic illnesses, and management of growth and developmental issues. Pediatric subspecialties include pediatric cardiology, pediatric neurology, pediatric oncology, neonatology (care of newborns), pediatric emergency medicine, and adolescent medicine. A distinct aspect of pediatrics is that dosages and treatments must be carefully adjusted for age, weight, and developmental stage, and that children have unique physiological and psychological needs different from adults."
+  },
+  {
+    "q": [
+      "What is psychiatry?",
+      "Psychiatry explained",
+      "What does a psychiatrist do?",
+      "What is the difference between a psychiatrist and psychologist?",
+      "What conditions do psychiatrists treat?",
+      "psychiatry",
+      "what is psychiatry"
+    ],
+    "a": "Psychiatry is the branch of medicine focused on the diagnosis, treatment, and prevention of mental, emotional, and behavioral disorders. Unlike psychologists who primarily provide psychotherapy, psychiatrists are medical doctors who can prescribe medications, conduct medical tests, and utilize a broad range of treatment approaches including pharmacotherapy (antidepressants, antipsychotics, mood stabilizers, anxiolytics), psychotherapy (cognitive-behavioral therapy, psychodynamic therapy), and brain stimulation therapies (ECT, TMS). The field spans many subspecialties including child and adolescent psychiatry, addiction psychiatry, geriatric psychiatry, consultation-liaison psychiatry (working in medical hospitals), and forensic psychiatry. Modern psychiatry uses a biopsychosocial model that considers biological, psychological, and social factors in understanding and treating mental illness."
+  },
+  {
+    "q": [
+      "What is general surgery?",
+      "General surgery explained",
+      "What does a general surgeon do?",
+      "What procedures do general surgeons perform?",
+      "What is the field of general surgery?",
+      "general surgery",
+      "what is general surgery"
+    ],
+    "a": "General surgery is a surgical specialty that focuses on operations involving the abdominal organs (stomach, intestines, liver, gallbladder, pancreas, appendix), the skin and soft tissues, the breast, and the endocrine system (thyroid, parathyroid, adrenal glands). General surgeons perform common procedures such as appendectomy, cholecystectomy (gallbladder removal), hernia repair, colon resection, and breast surgery. In many settings, especially rural or trauma centers, general surgeons also handle emergency surgery, trauma surgery, and surgical critical care. The field has increasingly embraced minimally invasive techniques including laparoscopic surgery (using small incisions and cameras) and robotic-assisted surgery. General surgery residency training typically takes five years and provides the foundation for further specialization into fields like cardiothoracic, vascular, or colorectal surgery."
+  }
+]

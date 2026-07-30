@@ -1,0 +1,122 @@
+[
+  {
+    "q": [
+      "What is electrical engineering?",
+      "Define electrical engineering.",
+      "What does an electrical engineer do?",
+      "Explain the field of electrical engineering.",
+      "What are the main sub-disciplines of electrical engineering?",
+      "Electrical engineering overview",
+      "What do electrical engineers study and work on?"
+    ],
+    "a": "Electrical engineering is a broad engineering discipline concerned with the study, design, and application of electrical systems, electronics, and electromagnetism. It encompasses power generation and distribution, control systems, signal processing, telecommunications, microelectronics, and embedded systems. Electrical engineers work on everything from tiny integrated circuits in smartphones to massive power grids spanning continents, and the field continues to expand into emerging areas such as renewable energy, electric vehicles, the Internet of Things (IoT), and artificial intelligence hardware."
+  },
+  {
+    "q": [
+      "What is circuit analysis in electrical engineering?",
+      "Explain circuit analysis fundamentals.",
+      "What are the basic laws used in circuit analysis?",
+      "What is Ohm's law and Kirchhoff's laws?",
+      "How are electrical circuits analyzed?",
+      "Circuit analysis basics",
+      "What are the main techniques for analyzing circuits?"
+    ],
+    "a": "Circuit analysis is the mathematical study of electrical networks to determine voltages, currents, and power dissipation in circuit elements. Core laws include Ohm's law (V = IR), Kirchhoff's current law (KCL — sum of currents entering a node equals zero) and Kirchhoff's voltage law (KVL — sum of voltages around a closed loop equals zero). Advanced analysis methods include nodal analysis, mesh analysis, superposition theorem, Thevenin and Norton equivalent circuits, and AC circuit analysis using phasors and impedance concepts for circuits with capacitors and inductors."
+  },
+  {
+    "q": [
+      "What are power systems in electrical engineering?",
+      "Explain electric power systems.",
+      "How does the electrical power grid work?",
+      "What is power generation, transmission, and distribution?",
+      "What are the main components of a power system?",
+      "Power systems engineering explained",
+      "How is electricity delivered from power plants to homes?"
+    ],
+    "a": "Electrical power systems encompass the generation, transmission, and distribution of electrical energy from power plants to end users. Generation converts primary energy (fossil fuels, nuclear, hydro, solar, wind) into electricity at power plants. Transmission uses high-voltage lines (typically 69 kV to 765 kV) to transport electricity efficiently over long distances, stepping up voltage at substations to reduce resistive losses. Distribution systems step voltage down to lower levels (4 kV to 34 kV for primary, 120V-480V for secondary) and deliver it to residential, commercial, and industrial customers through transformers, feeders, and service lines."
+  },
+  {
+    "q": [
+      "What is electronics in electrical engineering?",
+      "Explain electronics engineering.",
+      "What is the difference between analog and digital electronics?",
+      "What are semiconductor devices?",
+      "How do transistors and diodes work?",
+      "Electronics fundamentals for engineers",
+      "What are the basic components of electronic circuits?"
+    ],
+    "a": "Electronics is the branch of electrical engineering dealing with devices that control electron flow in vacuum tubes or semiconductors. Semiconductor devices — diodes, transistors, and integrated circuits — form the foundation of modern electronics. Analog electronics processes continuous signals using components like operational amplifiers, oscillators, and filters, while digital electronics works with discrete binary signals using logic gates, flip-flops, counters, and microprocessors. Applications span audio amplifiers, radio receivers, digital computers, sensors, power supplies, and embedded control systems."
+  },
+  {
+    "q": [
+      "What is signal processing?",
+      "Explain signal processing in electrical engineering.",
+      "What is the difference between analog and digital signal processing?",
+      "What is the Fourier transform used for?",
+      "How are signals analyzed and manipulated?",
+      "Signal processing fundamentals",
+      "What are common signal processing techniques?"
+    ],
+    "a": "Signal processing is the analysis, modification, and synthesis of signals — such as sound, images, sensor data, and communications — using mathematical techniques. Analog signal processing uses continuous-time circuits like filters and amplifiers, while digital signal processing (DSP) uses discrete-time algorithms implemented on microprocessors or specialized DSP chips. The Fourier transform is a fundamental tool that decomposes signals into frequency components, enabling filtering, compression (JPEG, MP3), and modulation. Key applications include speech recognition, image enhancement, radar/sonar processing, biomedical signal analysis (ECG, EEG), and noise cancellation."
+  },
+  {
+    "q": [
+      "What are control systems in engineering?",
+      "Explain control systems in electrical engineering.",
+      "What is open-loop and closed-loop control?",
+      "How does a feedback control system work?",
+      "What is a PID controller?",
+      "Control systems fundamentals",
+      "How are control systems used in engineering?"
+    ],
+    "a": "Control systems engineering designs systems that regulate the behavior of dynamic processes using feedback to achieve desired outputs despite disturbances. Open-loop systems operate without feedback (e.g., a toaster on a timer), while closed-loop (feedback) systems continuously compare actual output to a setpoint and adjust accordingly. The PID (Proportional-Integral-Derivative) controller is the most widely used feedback controller, combining proportional response to error, integral action to eliminate steady-state error, and derivative action to anticipate future error. Control theory uses tools like transfer functions, block diagrams, root locus, Bode plots, and state-space representation, applied in robotics, process control, automotive cruise control, and aircraft autopilots."
+  },
+  {
+    "q": [
+      "What is telecommunications engineering?",
+      "Explain telecommunications in electrical engineering.",
+      "How do communication systems transmit information?",
+      "What are the key concepts in telecommunications?",
+      "What is modulation in communication?",
+      "Telecommunications fundamentals",
+      "How do wireless communication systems work?"
+    ],
+    "a": "Telecommunications engineering deals with the transmission of information over distances through wired or wireless channels. Core concepts include modulation (AM, FM, digital schemes like QAM and PSK) that encodes information onto carrier waves, multiplexing (FDMA, TDMA, CDMA, OFDM) that allows multiple users to share bandwidth, and coding theory for error detection and correction. The electromagnetic spectrum is the medium for wireless communications, with applications ranging from radio and television broadcasting to cellular networks (4G LTE, 5G NR), satellite communications, fiber optics, Wi-Fi, and Bluetooth systems."
+  },
+  {
+    "q": [
+      "What is instrumentation in electrical engineering?",
+      "Explain instrumentation and measurement.",
+      "How are sensors and transducers used in engineering?",
+      "What is the difference between a sensor and a transducer?",
+      "How are measurements made in industrial systems?",
+      "Instrumentation engineering explained",
+      "What are the main components of a measurement system?"
+    ],
+    "a": "Instrumentation engineering focuses on designing and using devices to measure, monitor, and control physical quantities such as temperature, pressure, flow, level, and displacement. A sensor detects a physical quantity and converts it into an electrical signal, while a transducer more broadly converts one form of energy to another. Measurement systems include sensors, signal conditioning circuits (amplification, filtering, isolation), analog-to-digital converters, and display/recording devices. Key considerations include accuracy, precision, resolution, sensitivity, linearity, response time, and calibration, with applications in industrial process control, laboratory testing, medical monitoring, and environmental monitoring."
+  },
+  {
+    "q": [
+      "What are renewable energy systems in engineering?",
+      "Explain renewable energy engineering.",
+      "How do solar panels generate electricity?",
+      "How do wind turbines produce power?",
+      "What are the main types of renewable energy?",
+      "Renewable energy systems overview",
+      "How is renewable energy integrated into the power grid?"
+    ],
+    "a": "Renewable energy systems convert naturally replenishing sources — sunlight, wind, water flow, geothermal heat, and biomass — into useful energy, primarily electricity. Photovoltaic (PV) systems use semiconductor solar cells to directly convert sunlight into electricity through the photovoltaic effect. Wind turbines capture kinetic energy of wind through rotor blades connected to a generator, with modern utility-scale turbines reaching capacities of 5-15 MW. Other systems include hydropower (using flowing water to turn turbines), geothermal (tapping underground heat for steam turbines or heat pumps), and biomass (burning organic matter or capturing biogas). Power electronics — inverters, converters, and energy storage (batteries, pumped hydro) — are essential for grid integration, managing intermittency through smart grid technologies and microgrids."
+  },
+  {
+    "q": [
+      "What are the main methods of power generation?",
+      "Explain power generation technologies.",
+      "How do thermal power plants generate electricity?",
+      "What is the difference between AC and DC power?",
+      "How does a generator produce electricity?",
+      "Power generation fundamentals",
+      "What are the different types of power plants?"
+    ],
+    "a": "Power generation is the process of converting primary energy sources into electrical energy, primarily using electromagnetic generators based on Faraday's law of induction — where a conductor moving through a magnetic field induces voltage. Thermal power plants (coal, natural gas, nuclear) heat water to produce steam that drives turbines coupled to generators. Gas turbines burn fuel directly to drive a compressor-turbine-generator train, often combined with steam cycles (combined cycle) for higher efficiency. Hydropower uses water flow through turbines, wind power uses aerodynamic rotor blades, and solar PV directly converts sunlight without moving parts. Power is generated as alternating current (AC) at frequencies of 50 or 60 Hz, with transformers stepping up voltage for efficient transmission."
+  }
+]

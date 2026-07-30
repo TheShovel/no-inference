@@ -1,0 +1,82 @@
+[
+  {
+    "q": [
+      "What is a rainforest biome?",
+      "What are the characteristics of tropical rainforests?",
+      "What plants and animals live in rainforests?",
+      "What is the climate like in a rainforest?",
+      "What are the layers of the rainforest?",
+      "Why are rainforests important for biodiversity?",
+      "Where are tropical rainforests located?"
+    ],
+    "a": "Rainforests are dense, warm, and wet forests characterized by high annual rainfall — typically 175 to 400 centimeters per year — and consistently warm temperatures averaging 20-25°C year-round. They are the most biodiverse terrestrial biomes on Earth, covering only about 6% of the planet's land surface but harboring more than half of all plant and animal species, with iconic inhabitants including jaguars, toucans, orangutans, tree frogs, and countless insect species. The forest is structured in distinct vertical layers: the emergent layer (tallest trees), canopy (the dense upper layer where most biodiversity resides), understory (shade-tolerant plants), and forest floor (dark, humid, with rapid decomposition). Rainforests play a critical role in global climate regulation by absorbing carbon dioxide and producing oxygen, and they are a source of many medicines, foods, and other resources."
+  },
+  {
+    "q": [
+      "What is a desert biome?",
+      "What are the characteristics of deserts?",
+      "What animals live in deserts?",
+      "How do plants survive in the desert?",
+      "What is the climate like in a desert?",
+      "Are all deserts hot?",
+      "What is a cold desert?"
+    ],
+    "a": "Deserts are extremely dry biomes defined by receiving less than 25 centimeters of annual precipitation, and contrary to popular belief, they are not always hot — cold deserts like the Gobi experience freezing winters. Desert plants have evolved remarkable adaptations: cacti store water in thick stems, have shallow but extensive root systems, and use CAM photosynthesis to reduce water loss by opening their stomata at night, while many desert animals are nocturnal, burrow to escape heat, or have specialized methods of conserving water. The four main types of deserts are hot and dry (Sahara, Arabian), semiarid (Great Basin), coastal (Atacama, Namib), and cold (Gobi, Patagonian). Desert ecosystems are fragile and slow to recover from disturbance because of their extreme conditions and low productivity."
+  },
+  {
+    "q": [
+      "What is the tundra biome?",
+      "What are the characteristics of tundra?",
+      "What animals live in the tundra?",
+      "What is permafrost?",
+      "What is the difference between Arctic and alpine tundra?",
+      "How do plants survive in the tundra?"
+    ],
+    "a": "The tundra is a cold, treeless biome characterized by permafrost — a permanently frozen layer of soil beneath the surface that prevents deep root growth and drainage. Arctic tundra surrounds the North Pole and experiences extremely cold temperatures, low precipitation (similar to a desert), and long, dark winters with brief summers where the top layer of soil thaws enough to support low-growing vegetation like mosses, lichens, grasses, and dwarf shrubs. Alpine tundra occurs at high elevations on mountains worldwide, where similar cold conditions and thin soils create analogous plant communities but without underlying permafrost. Tundra animals include caribou (reindeer), arctic foxes, musk oxen, snowy owls, and lemmings, many of which have adaptations like thick fur, fat layers, and seasonal camouflage."
+  },
+  {
+    "q": [
+      "What is the taiga biome?",
+      "What is a boreal forest?",
+      "What animals live in the taiga?",
+      "What are the characteristics of the taiga?",
+      "What trees grow in the taiga?",
+      "Where is the taiga located?"
+    ],
+    "a": "The taiga, also known as boreal forest, is the world's largest terrestrial biome, stretching in a broad belt across North America, Europe, and Asia just south of the Arctic tundra. It is characterized by long, extremely cold winters and short, cool summers, with coniferous trees like spruce, fir, and pine dominating the landscape — these needle-leaf trees are well-adapted to heavy snow and poor, acidic soils. The taiga has relatively low biodiversity compared to temperate or tropical forests, but it is home to moose, bears, wolves, lynx, snowshoe hares, and migratory birds that arrive for the brief insect-rich summer. The biome plays a critical role in global carbon storage, holding vast amounts of carbon in its trees, peatlands, and soils, which is increasingly threatened by climate change, insect outbreaks, and intensified wildfires."
+  },
+  {
+    "q": [
+      "What are grasslands?",
+      "What is the difference between savanna and temperate grasslands?",
+      "What animals live in grasslands?",
+      "What is the climate of grasslands?",
+      "What are prairies?",
+      "What is the African savanna?",
+      "What plants grow in grasslands?"
+    ],
+    "a": "Grasslands are biomes dominated by grasses rather than large trees, occurring in regions with moderate rainfall that supports extensive grass growth but is insufficient to sustain forests. Temperate grasslands, such as the North American prairies and Eurasian steppes, experience cold winters and hot summers with 25-75 centimeters of precipitation annually, featuring deep-rooted grasses and fertile soils that have made them prime agricultural lands. Tropical grasslands, or savannas, are warm year-round with distinct wet and dry seasons, supporting scattered trees like acacias alongside grasses and large herbivores including zebras, wildebeest, giraffes, and elephants. Fire and large herbivore grazing are natural and essential processes that maintain grassland ecosystems by preventing tree encroachment and recycling nutrients."
+  },
+  {
+    "q": [
+      "What is a temperate forest?",
+      "What are deciduous forests?",
+      "What animals live in temperate forests?",
+      "What is the climate of temperate forests?",
+      "What plants grow in temperate forests?"
+    ],
+    "a": "Temperate forests are characterized by moderate climates with distinct seasons, moderate rainfall (75-150 centimeters annually), and a mix of deciduous trees that lose their leaves in autumn and coniferous evergreens. These forests experience warm summers and cold winters, with the changing leaf colors in fall being a hallmark feature of deciduous tree species like oak, maple, beech, and birch. Temperate forests support a diverse understory of shrubs, ferns, and wildflowers, and host animals such as deer, black bears, foxes, squirrels, and numerous bird species. Eastern North America, Western and Central Europe, and Eastern Asia contain the largest temperate forest regions, and many of these areas have experienced extensive historical deforestation but have shown significant recovery in recent decades."
+  },
+  {
+    "q": [
+      "What are aquatic biomes?",
+      "What is the difference between freshwater and marine biomes?",
+      "What are the main aquatic biomes?",
+      "What are the zones of the ocean?",
+      "What is a coral reef?",
+      "What is a wetland?",
+      "What are the characteristics of marine ecosystems?"
+    ],
+    "a": "Aquatic biomes are divided into freshwater (lakes, rivers, ponds, streams, and wetlands) and marine (oceans, coral reefs, and estuaries) ecosystems, covering about 75% of Earth's surface. Marine biomes are characterized by their salinity (about 3.5% salt content) and include distinct zones based on depth and light penetration: the photic zone where photosynthesis occurs, the aphotic zone where light does not penetrate, and the benthic zone along the ocean floor. Coral reefs, often called the rainforests of the sea, are among the most biodiverse ecosystems on Earth, built by tiny coral animals and supporting an enormous variety of fish, invertebrates, and algae. Freshwater biomes, which contain only 3% of Earth's water and less than 1% of that is easily accessible, include standing water bodies like lakes and ponds as well as flowing water systems like rivers and streams."
+  }
+]

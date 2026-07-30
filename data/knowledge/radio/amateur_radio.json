@@ -1,0 +1,67 @@
+[
+  {
+    "q": [
+      "what is amateur radio",
+      "how do I get an amateur radio license",
+      "what are the FCC license classes for ham radio",
+      "what is the Technician license",
+      "what is the General license",
+      "what is the Amateur Extra license",
+      "what is the difference between ham radio license classes",
+      "what privileges does each amateur radio license grant"
+    ],
+    "a": "Amateur radio (ham radio) is a licensed service that allows individuals to operate radio transmitters for non-commercial purposes including experimentation, emergency communication, technical self-training, and international friendship. In the United States, the FCC issues three license classes with progressively greater frequency privileges. The Technician license (entry level) requires passing a 35-question written exam on regulations, operating practices, and basic electronics; it grants full VHF/UHF privileges (all amateur frequencies above 30 MHz) and limited HF privileges on 80m, 40m, 15m, and 10m bands using CW and digital modes, plus voice on 10m. The General license adds a second written exam and opens up substantial HF voice privileges across most amateur bands (160m through 10m), including access to the popular 20m and 40m phone band segments used for international communication. The Amateur Extra license requires a third, more advanced exam covering electronics, propagation, and antenna theory, and grants all amateur radio frequency privileges available in the U.S., including exclusive portions of the HF bands reserved for Extra class operators. All license classes are valid for 10 years, require no Morse code testing since February 2007, and allow access to the amateur satellite service and the International Space Station ham radio program."
+  },
+  {
+    "q": [
+      "what is a ham radio call sign",
+      "how are US amateur radio call signs structured",
+      "what do the letters in a call sign mean",
+      "what is a vanity call sign",
+      "how do I get a specific call sign",
+      "what is a 1x2 call sign",
+      "what is the difference between call sign formats",
+      "what does the number in a call sign mean"
+    ],
+    "a": "Amateur radio call signs are unique identifiers assigned by the FCC (or equivalent national authority) to each licensed operator. U.S. call signs follow a systematic format determined by license class: Technician licensees receive 2x3 format (two letters, a district number, and three letters, like KK4ABC), Generals receive 2x2 (like KK4AB), and Amateur Extra licensees are eligible for shorter 1x2 (like K4AB) or 2x1 (like KK4A) formats. The first letter is always K, W, N, or A (with prefixes like AA-AL, KA-KZ, WA-WZ, NA-NZ assigned sequentially). The number (0-9) indicates the geographic district where the licensee resides or originally applied, with 1 for New England through 9 for the Great Lakes and 0 for the central U.S. Vanity call signs allow licensees to request a specific available call sign for a fee, following the same format restrictions by license class. International call signs follow ITU allocations; for example, Canadian stations use prefix VE, VA, VO, or VY, and stations in the UK use G, M, or 2. Call signs are used for station identification at least every 10 minutes during a contact and at the end of a communication."
+  },
+  {
+    "q": [
+      "what is a QSO in ham radio",
+      "how do I make a ham radio contact",
+      "what is CQ in amateur radio",
+      "what is a signal report in ham radio",
+      "what is the RST system",
+      "what is QSL in amateur radio",
+      "what is Logbook of the World",
+      "what is the QRZ callsign database"
+    ],
+    "a": "A QSO is a contact or conversation between amateur radio operators, typically beginning with a CQ call — a general invitation to any station in range to respond. On HF, a typical calling procedure involves transmitting 'CQ CQ CQ [your call sign]' on a clear frequency, then listening for a response; the responding station gives their call sign, and the exchange progresses with signal reports and basic information. The RST (Readability, Strength, Tone) system provides standardized signal reports: readability (1-5), strength (1-9), and tone for CW (1-9). A report like '59' means perfectly readable and very strong signal. QSL refers to confirmation of a contact, traditionally via paper QSL cards mailed between operators (often through national bureaus for international mail), but increasingly through electronic systems like Logbook of the World (LotW), the ARRL's trusted digital log verification system that automatically confirms contacts when both parties upload matching logs. eQSL and Club Log are alternative electronic QSL systems. QRZ.com is a popular online callsign database providing operator information, photos, and log search. Contesters submit logs in Cabrillo format, which are processed by robot scoring systems for competitive events."
+  },
+  {
+    "q": [
+      "what are the HF amateur radio bands",
+      "what is the 40 meter band used for",
+      "what is the 20 meter band used for",
+      "what is the 10 meter band",
+      "what is DXing in amateur radio",
+      "what is the DXCC award",
+      "what is the IOTA program",
+      "what is SOTA and POTA in amateur radio"
+    ],
+    "a": "HF amateur bands (1.8-29.7 MHz) provide long-distance communication via ionospheric reflection, each with unique characteristics. The 80m band (3.5-4.0 MHz) is best for regional/nighttime contacts; 40m (7.0-7.3 MHz) is the most versatile band for both regional and DX day and night; 20m (14.0-14.35 MHz) is the most popular DX band, open to worldwide propagation during daylight hours; 15m (21.0-21.45 MHz) excels during solar maximum for long-skip DX; and 10m (28.0-29.7 MHz) opens unpredictably but offers spectacular worldwide contacts with low power during high solar activity. DXing is the pursuit of long-distance contacts with rare or distant countries, with the ultimate goal being the DXCC (DX Century Club) award, issued by the ARRL for confirming 100 or more countries on the ARRL DXCC list. IOTA (Islands On The Air) awards contacts with designated islands worldwide. SOTA (Summits On The Air) involves operating portable from mountain summits using lightweight equipment, and POTA (Parks On The Air) activates national and state parks, both popular for combining radio with outdoor activities. Other awards include Worked All States (WAS), Worked All Zones (WAZ), and the VHF/UHF Century Club (VUCC) for grid square activations."
+  },
+  {
+    "q": [
+      "what is a VHF UHF repeater",
+      "how do ham radio repeaters work",
+      "what is CTCSS or PL tone in amateur radio",
+      "what is a repeater offset",
+      "what is EchoLink in amateur radio",
+      "what is IRLP",
+      "what is DMR in amateur radio",
+      "what is APRS in amateur radio"
+    ],
+    "a": "A repeater is an automated station that receives a weak signal on one frequency (the input) and simultaneously retransmits it on another frequency (the output) with greater power and at a higher elevation, greatly extending the range of VHF and UHF signals that are normally limited to line of sight. Repeaters typically use a CTCSS (Continuous Tone-Coded Squelch System) tone, also called a PL (Private Line) tone, which acts as a filter so the repeater only responds to signals that include the correct sub-audible tone. The repeater offset is the frequency difference between input and output — for 2m (the 144 MHz band) the standard offset is ±600 kHz, and for 70cm (the 440 MHz band) it's ±5 MHz. EchoLink and IRLP (Internet Radio Linking Project) connect repeaters and simplex stations via the internet, allowing operators to communicate worldwide using their local VHF/UHF equipment. DMR (Digital Mobile Radio) uses Time Division Multiple Access to provide two talk paths per frequency pair, with talk groups and color codes organizing communication. APRS (Automatic Packet Reporting System) on 144.390 MHz (U.S.) transmits position, weather, and message data through a network of digipeaters and iGates connected to the internet, displayed on real-time maps."
+  }
+]

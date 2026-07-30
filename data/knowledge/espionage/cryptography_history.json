@@ -1,0 +1,81 @@
+[
+  {
+    "q": [
+      "What is cryptography?",
+      "What is the history of cryptography?",
+      "What are ancient ciphers?",
+      "What is the Caesar cipher?",
+      "What is the Atbash cipher?",
+      "What is the scytale cipher?",
+      "How did ancient cryptography work?",
+      "cryptography definition history overview",
+      "ancient ciphers Caesar Atbash scytale",
+      "what is cryptography",
+      "what is the caesar cipher"
+    ],
+    "a": "Cryptography is the practice and study of techniques for secure communication in the presence of adversaries, transforming readable information (plaintext) into an unreadable format (ciphertext) through encryption, and back again through decryption. Ancient ciphers include the Caesar cipher (used by Julius Caesar around 50 BCE, shifting each letter by a fixed number of positions in the alphabet, making it a simple substitution cipher easily broken by frequency analysis), the Atbash cipher (a Hebrew substitution cipher where the first letter is replaced by the last, the second by the second-last, and so on, used in the Bible), and the scytale (an ancient Spartan tool consisting of a leather strip wound around a rod of a specific diameter—when unwound, the letters appeared scrambled unless wound around a matching rod, making it one of the earliest transposition ciphers). These early methods established the fundamental cryptographic concepts of substitution (replacing letters with other letters or symbols) and transposition (rearranging the order of letters) that underpin all later encryption."
+  },
+  {
+    "q": [
+      "What are classical ciphers?",
+      "What is the Vigenère cipher?",
+      "What is the Playfair cipher?",
+      "What is the Enigma machine?",
+      "How did the Enigma machine work?",
+      "What is cryptanalysis?",
+      "What is frequency analysis?",
+      "What is the Kasiski examination?",
+      "What is the bombe?",
+      "How was Enigma broken?",
+      "classical ciphers Vigenere Playfair Enigma",
+      "Enigma machine how it worked",
+      "cryptanalysis frequency analysis Kasiski bombe",
+      "how was enigma broken",
+      "what is the vigenere cipher"
+    ],
+    "a": "Classical ciphers include the Vigenère cipher (invented in the 16th century but misattributed to Blaise de Vigenère, using a keyword to shift letters by varying amounts to defeat simple frequency analysis), the Playfair cipher (invented by Charles Wheatstone in 1854, encrypting pairs of letters using a 5x5 grid, used by the British in WWI and WWII), and the Enigma machine (a rotor-based electro-mechanical cipher device used by Nazi Germany during WWII, whose encryption changed with each keypress, making it seemingly unbreakable at the time). Cryptanalysis—the art of breaking codes—developed alongside these ciphers: frequency analysis exploits the fact that certain letters appear more often than others in any language, the Kasiski examination (published by Friedrich Kasiski in 1863) analyzes repeated patterns in ciphertext to determine keyword length for polyalphabetic ciphers, and the bombe (Alan Turing's electromechanical device at Bletchley Park) systematically tested Enigma rotor settings to find the daily key, dramatically shortening WWII and saving countless lives by deciphering German military communications."
+  },
+  {
+    "q": [
+      "What is the one-time pad?",
+      "What is perfect secrecy in cryptography?",
+      "What is modern cryptography?",
+      "What is DES?",
+      "What is AES?",
+      "What is RSA?",
+      "What is Diffie-Hellman key exchange?",
+      "What is elliptic curve cryptography?",
+      "What is public key infrastructure?",
+      "What are cryptographic protocols?",
+      "What is SSL/TLS?",
+      "What is SSH?",
+      "What is PGP?",
+      "What is the Signal Protocol?",
+      "one-time pad perfect secrecy",
+      "modern cryptography DES AES RSA",
+      "Diffie-Hellman elliptic curve cryptography",
+      "public key infrastructure PKI",
+      "cryptographic protocols SSL TLS SSH PGP Signal Protocol"
+    ],
+    "a": "The one-time pad (Vernam cipher) is the only cryptosystem proven to achieve perfect secrecy—if the key is truly random, as long as the message, never reused, and kept secret, the ciphertext provides absolutely no information about the plaintext, regardless of the attacker's computational power. Modern cryptography emerged from the convergence of computer science and mathematics: DES (Data Encryption Standard, 1977) was the first government-standardized block cipher using a 56-bit key, now considered obsolete; AES (Advanced Encryption Standard, 2001) replaced it with 128/192/256-bit keys and remains the global standard for symmetric encryption. RSA (Rivest-Shamir-Adleman, 1977) and Diffie-Hellman (1976) revolutionized cryptography with public-key systems, enabling secure key exchange over insecure channels and digital signatures without shared secrets. Elliptic curve cryptography (ECC) provides equivalent security to RSA with much smaller keys, making it ideal for mobile and IoT devices. Public key infrastructure (PKI) manages digital certificates and certificate authorities that verify identities online. Cryptographic protocols like SSL/TLS (securing web traffic), SSH (secure remote server access), PGP (email encryption), and the Signal Protocol (end-to-end encrypted messaging used by WhatsApp and Signal) apply these mathematical foundations to real-world secure communications."
+  },
+  {
+    "q": [
+      "What is quantum cryptography?",
+      "How is cryptology used in espionage?",
+      "What was the Venona project?",
+      "What was the Zimmermann Telegram?",
+      "What was the Purple cipher?",
+      "What was the Enigma cipher in espionage?",
+      "What is the NSA's role in cryptography?",
+      "What was the crypto wars?",
+      "What is post-quantum cryptography?",
+      "quantum cryptography principles QKD",
+      "cryptology in espionage Venona Zimmermann Purple Enigma",
+      "NSA cryptography history",
+      "crypto wars export controls encryption",
+      "post-quantum cryptography standards"
+    ],
+    "a": "Cryptology—the combined study of cryptography and cryptanalysis—has been central to espionage for centuries. The Zimmermann Telegram (1917) was a German diplomatic message intercepted and decrypted by British intelligence (Room 40) proposing a Mexican-German alliance against the US, which helped bring America into WWI. The Venona project was a decades-long US counterintelligence program (1943–1980) that decrypted Soviet diplomatic communications, revealing the extent of Soviet espionage in America, including the identities of Atomic spies like Klaus Fuchs and the Rosenberg ring. The Purple cipher was the Japanese diplomatic cipher broken by US cryptanalysts before WWII, providing critical intelligence throughout the war. The NSA (National Security Agency), the world's largest intelligence agency, is both the guardian of US government communications security and the premier signals intelligence organization, leading cryptographic research and standardization (it influenced DES development) while also breaking foreign encryption. The crypto wars of the 1990s centered on government attempts to restrict civilian cryptography through export controls and key escrow (the Clipper Chip), opposed by activists and technologists who argued that strong encryption was essential for privacy and security. Post-quantum cryptography is the urgent current frontier—quantum computers using Shor's algorithm will be able to break RSA and ECC, driving the NIST competition to standardize new quantum-resistant algorithms by 2024."
+  }
+]

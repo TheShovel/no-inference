@@ -1,0 +1,57 @@
+[
+  {
+    "q": [
+      "What are the types of commercial real estate?",
+      "What is office real estate?",
+      "What is retail real estate?",
+      "What is industrial real estate?",
+      "What is multifamily real estate?",
+      "What is hospitality real estate?",
+      "What is special purpose real estate?",
+      "CRE property types explained",
+      "commercial real estate categories"
+    ],
+    "a": "Office real estate is classified into Class A (premium, newer buildings in prime locations with top amenities), Class B (functional older buildings with competitive rents), and Class C (older, lower-amenity properties in less desirable areas). Retail real estate ranges from regional malls and shopping centers to strip malls, power centers, and standalone big-box stores, with performance increasingly influenced by e-commerce trends and omni-channel retail strategies. Industrial real estate includes warehouses, distribution centers, flex spaces (combining office and industrial), manufacturing facilities, and cold storage for perishable goods, driven by the growth of e-commerce and supply chain optimization. Multifamily includes garden-style apartments, mid-rise and high-rise apartment buildings, student housing, and senior living facilities, valued for their stable cash flow from multiple rental units under a single roof."
+  },
+  {
+    "q": [
+      "How is commercial real estate valued?",
+      "What is the income approach to CRE valuation?",
+      "What is the sales comparison approach?",
+      "What is the cost approach?",
+      "What is a cap rate in commercial real estate?",
+      "What is NOI in commercial real estate?",
+      "How do you calculate cap rate?",
+      "What is net operating income?",
+      "CRE valuation methods",
+      "cap rate NOI explained"
+    ],
+    "a": "The income approach is the primary valuation method for income-producing commercial properties, calculating value by dividing the Net Operating Income (NOI) by the capitalization rate (cap rate), where NOI equals gross income minus operating expenses (excluding debt service and income taxes). The sales comparison approach values a property by analyzing recent sales of comparable properties adjusted for differences in size, location, condition, and amenities, most reliable for properties with frequent market transactions like apartment buildings and small retail. Cap rates are a critical metric — a lower cap rate indicates higher value relative to income and typically reflects lower perceived risk, prime location, and stronger tenant credit, while a higher cap rate suggests higher risk or lower quality, with market cap rates varying by property type, market, and economic cycle."
+  },
+  {
+    "q": [
+      "What are lease types in commercial real estate?",
+      "What is a NNN lease?",
+      "What is a gross lease?",
+      "What is a modified gross lease?",
+      "What is CMBS financing?",
+      "What is a bridge loan in CRE?",
+      "What is mezzanine debt?",
+      "CRE lease types NNN gross modified gross",
+      "commercial real estate financing"
+    ],
+    "a": "A NNN (triple net) lease requires the tenant to pay property taxes, insurance, and maintenance costs in addition to base rent, shifting most operating expense risk to the tenant and making this lease type highly desirable for investors seeking predictable net income. A gross lease has the landlord covering all operating expenses including taxes, insurance, and maintenance within a single rent payment, common in multi-tenant office buildings, while a modified gross lease splits certain expenses between landlord and tenant (e.g., tenant pays utilities and janitorial, landlord covers taxes and insurance). Commercial real estate financing includes CMBS (Commercial Mortgage-Backed Securities) loans where mortgages are pooled and sold as bonds, bridge loans providing short-term capital (1-3 years) for acquisitions or repositioning at higher interest rates, and mezzanine debt as a hybrid financing layer between senior debt and equity that is secured by the borrower's ownership interest in the property entity."
+  },
+  {
+    "q": [
+      "What do CRE brokers do?",
+      "What is tenant representation in commercial real estate?",
+      "How is a CRE market analysis done?",
+      "What is a commercial real estate market analysis?",
+      "CRE broker role",
+      "commercial real estate market research",
+      "site selection commercial real estate"
+    ],
+    "a": "CRE brokers specialize either as landlord representation (marketing and leasing available space, negotiating lease terms, and maximizing property income) or tenant representation (searching suitable spaces, analyzing lease terms, negotiating rent concessions, and guiding clients through site selection and lease execution). A thorough CRE market analysis evaluates supply metrics (vacancy rates, new construction pipeline, sublease space availability), demand drivers (employment growth by industry, population trends, household formation), and absorption rates (net change in occupied space over time) to identify market trends and investment opportunities. Site selection for commercial properties involves analyzing demographics, traffic patterns, visibility, co-tenancy (surrounding complementary businesses), zoning, environmental conditions, lease comparables, and financial pro formas to determine whether a location can support the intended use and generate projected returns."
+  }
+]

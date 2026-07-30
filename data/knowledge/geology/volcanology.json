@@ -1,0 +1,46 @@
+[
+  {
+    "q": [
+      "What are the different types of volcanoes?",
+      "Tell me about shield volcanoes, stratovolcanoes, and cinder cones.",
+      "What is a caldera volcano and how does it form?",
+      "How do shield volcanoes differ from stratovolcanoes?",
+      "What are the main volcano shapes and structures?",
+      "Describe the different types of volcanic mountains."
+    ],
+    "a": "Volcanoes are classified by their shape, eruption style, and magma composition: shield volcanoes like Mauna Loa in Hawaii have broad, gently sloping profiles built by low-viscosity basaltic lava that flows long distances; stratovolcanoes (composite volcanoes) like Mount Fuji and Mount Vesuvius are steep, conical volcanoes built by alternating layers of lava flows, ash, and pyroclastic material from more viscous, explosive eruptions. Cinder cones are the smallest and simplest type, formed by ejected volcanic fragments (cinders) accumulating around a central vent, often with a single eruption event; calderas are large, basin-shaped depressions formed when a volcano's magma chamber empties during a massive eruption and the ground collapses inward, as seen at Crater Lake in Oregon and Yellowstone's supervolcano."
+  },
+  {
+    "q": [
+      "What are the different styles of volcanic eruptions?",
+      "Tell me about Hawaiian, Strombolian, Vulcanian, and Plinian eruptions.",
+      "What is the difference between effusive and explosive eruptions?",
+      "How do eruption styles affect volcanic hazards?",
+      "What is a Plinian eruption and why is it so dangerous?",
+      "Describe the various eruption types and their characteristics."
+    ],
+    "a": "Volcanic eruption styles are classified by their explosivity and magma characteristics: Hawaiian eruptions are effusive, producing fluid lava fountains and flows with little explosive activity; Strombolian eruptions feature mild, rhythmic bursts of incandescent cinders and lava fragments; Vulcanian eruptions are more violent, ejecting dense ash clouds and viscous lava bombs with moderate explosivity; and Plinian eruptions — named after Pliny the Younger who described the 79 AD Vesuvius eruption — are the most powerful, ejecting ash columns 10-50 kilometers high that can cause global climate effects. The Volcanic Explosivity Index (VEI) measures eruption magnitude on a scale from 0 (non-explosive) to 8 (mega-colossal), with VEI 5-6 eruptions occurring every few decades to centuries and VEI 8 supereruptions happening every 100,000 years or so. Eruption style is primarily determined by magma viscosity and gas content: high-silica magmas like rhyolite trap gases, leading to explosive eruptions, while low-silica basaltic magmas allow gases to escape easily, producing gentler lava flows."
+  },
+  {
+    "q": [
+      "What are the different types of lava?",
+      "What is the difference between pahoehoe and aa lava?",
+      "How do lava flows destroy property during eruptions?",
+      "What are pyroclastic flows and why are they so deadly?",
+      "What volcanic gases are released during eruptions?",
+      "What are the main volcanic hazards?"
+    ],
+    "a": "Pahoehoe is smooth, ropy lava that flows slowly with a continuous crust, while aa is rough, jagged, and clinkery lava that moves faster and forms when flowing lava cools and breaks apart — both are Hawaiian terms for the two main types of basaltic lava flow. Pyroclastic flows are the deadliest volcanic hazard: fast-moving currents of hot gas, ash, and volcanic rock that can travel at speeds over 700 km/h with temperatures exceeding 1000°C, incinerating everything in their path. Additional volcanic hazards include lava flows that destroy infrastructure but rarely cause direct fatalities due to their slow speed; volcanic ash fall that collapses buildings, disrupts aviation, and causes respiratory problems; volcanic gases like sulfur dioxide and carbon dioxide that can be lethal; and lahars — destructive volcanic mudflows triggered by heavy rain or melted snow mixing with volcanic debris."
+  },
+  {
+    "q": [
+      "What are the most famous volcanic eruptions in history?",
+      "Tell me about Mount Vesuvius, Krakatoa, and Mount St. Helens.",
+      "What happened during the 1991 eruption of Mount Pinatubo?",
+      "How did the Krakatoa eruption affect global climate?",
+      "What was the deadliest volcanic eruption in history?",
+      "Describe famous historical volcanic eruptions and their impacts."
+    ],
+    "a": "The 79 AD eruption of Mount Vesuvius buried the Roman cities of Pompeii and Herculaneum under ash and pyroclastic flows, preserving them in remarkable detail and killing an estimated 16,000 people. The 1883 eruption of Krakatoa in Indonesia was one of the most violent eruptions in recorded history, generating the loudest sound ever heard, tsunamis over 40 meters high that killed 36,000 people, and enough atmospheric ash to cause global temperatures to drop by over 1°C for several years. The 1991 eruption of Mount Pinatubo in the Philippines was the second-largest eruption of the 20th century (after Katmai 1912), ejecting 10 cubic kilometers of material and lowering global temperatures by 0.5°C for two years, while the 1980 eruption of Mount St. Helens demonstrated the devastating power of lateral blasts and sector collapses in volcanic events."
+  }
+]

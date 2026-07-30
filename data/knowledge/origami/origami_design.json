@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "What are the fundamental principles of origami design?",
+      "What is the tree method in origami design?",
+      "What is TreeMaker software?",
+      "How does circle packing work in origami design?",
+      "What is Robert Lang's contribution to origami design?",
+      "How do origami designers allocate paper for different parts of a model?",
+      "What is the mathematical basis of origami design?",
+      "How does the tree method determine crease patterns?"
+    ],
+    "a": "The tree method, developed by Robert J. Lang and implemented in his free software TreeMaker, represents an origami model as a stick figure (tree) where each branch corresponds to a flap or appendage, and the algorithm computes the optimal crease pattern that allocates paper area proportionally to each branch's length. Circle packing is the foundational mathematical technique where non-overlapping circles drawn on a square represent flaps, with each circle's radius determining the flap's maximum possible length—this ensures the paper can physically fold into the desired shape without tearing or overlapping. These methods, combined with concepts like flap allocation, river theory (space between flaps), and axial vs. non-axial design, form the mathematical backbone of modern complex origami design, transforming what was once a purely artistic intuition into a systematic, computationally solvable engineering problem."
+  },
+  {
+    "q": [
+      "What is box pleating in origami design?",
+      "How does box pleating differ from circle packing?",
+      "What is the 22.5-degree design system?",
+      "Who popularized 22.5-degree origami design?",
+      "What is grafting in origami design?",
+      "How do origami designers use reference points?",
+      "What are the advantages of box pleating?",
+      "How does the 22.5-degree system simplify folding?"
+    ],
+    "a": "Box pleating is a design technique that uses a grid of orthogonal folds (typically 90-degree mountain and valley creases) to create rectangular flaps arranged in precise rows and columns, offering symmetry and modularity that makes complex designs more tractable to plan by hand or by computer—Satoshi Kamiya is perhaps its most famous practitioner, using it extensively in his dragon and phoenix models. The 22.5-degree design system, longstanding in traditional origami, derives reference points and crease angles from diagonal and half-diagonal divisions of the square, producing natural proportions like 1:√2 and enabling elegant, well-proportioned designs without computer aid—masters like John Montroll and Robert Lang have codified these techniques in accessible books. Grafting is an advanced technique where a section of a crease pattern is replaced with a sub-pattern that adds extra length or detail to a specific flap, effectively 'splicing in' more paper where a model needs longer limbs or more complex features, and is essential for achieving the extreme proportions seen in super-complex insect and animal designs."
+  },
+  {
+    "q": [
+      "What are origami tessellations?",
+      "Who are the key origami tessellation artists?",
+      "What is wet folding in origami design?",
+      "How does wet folding change the design process?",
+      "What is modular origami design?",
+      "Who is Tomoko Fuse?",
+      "What are kusudama in origami?",
+      "How do tessellations differ from representational origami?"
+    ],
+    "a": "Origami tessellations are geometric repeating patterns folded from a single sheet of paper, creating intricate pleated landscapes of interlocking twists, folds, and collapsed structures—pioneered by artists like Eric Gjerde (who wrote the definitive Origami Tessellations book), Joel Cooper (known for figurative portrait tessellations), and Chris Palmer (mathematical tessellations), these designs blur the line between origami and textile-like geometric art. Wet folding, invented by Akira Yoshizawa and refined by practitioners like Michael LaFosse and Robert Lang, involves dampening the paper before folding so it dries into soft, rounded, three-dimensional forms with permanent sculptural curves—this technique is essential for organic, figurative models like animals, masks, and human figures where crisp geometric lines would look unnatural. Modular origami, championed by Tomoko Fuse and others, involves folding multiple identical or coordinated units that interlock without glue to form larger structures such as polyhedra, stars, boxes, and kusudama (decorative spherical assemblies), emphasizing symmetry, precision, and the geometric beauty of repetition rather than representational form."
+  },
+  {
+    "q": [
+      "What is origami diagramming?",
+      "What is the Yoshizawa-Randlett diagramming system?",
+      "What software is used for origami design?",
+      "What is Origami Studio?",
+      "What is Crease Pattern Viewer?",
+      "What are the Huzita-Hatori axioms?",
+      "What is Maekawa's theorem?",
+      "What is Kawasaki's theorem?"
+    ],
+    "a": "Origami diagramming uses the standardized Yoshizawa-Randlett system of symbols—including dashed lines for valley folds, dot-dashed lines for mountain folds, curved arrows for folding direction, and various geometric symbols for pleats, sinks, reverse folds, and crimps—to communicate folding sequences unambiguously across languages and cultures, making origami one of the most universally accessible instructional art forms. Specialized software like Robert Lang's Origami Studio (for computer-assisted design and crease pattern generation), BP Studio (focused on box-pleating design), and Crease Pattern Viewer (for visualizing and modifying existing crease patterns) give designers powerful tools to design, test, and iterate complex models digitally before folding them physically. The mathematical foundations of origami design rest on three key theorems: the Huzita-Hatori axioms (the seven fundamental single-crease folding operations that define the geometric power of origami, exceeding straightedge-and-compass construction), Maekawa's theorem (at any flat-foldable vertex, the number of mountain folds minus valley folds always equals 2, ensuring local flat-foldability), and Kawasaki's theorem (for a flat-foldable vertex, the sum of alternating angle measures around the vertex must be exactly 180 degrees, a necessary and sufficient condition for the crease pattern to collapse flat without distortion)."
+  }
+]

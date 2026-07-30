@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "what is broadcast radio",
+      "how does a radio station work",
+      "what is a radio format",
+      "what are the different radio station formats",
+      "what is Top 40 radio",
+      "what is talk radio",
+      "what is public radio",
+      "what is satellite radio"
+    ],
+    "a": "Broadcast radio refers to one-way radio transmission intended for reception by the general public, traditionally on the AM and FM bands. A radio station consists of a studio where content is produced (microphones, mixing consoles, playback equipment, computers running automation software), a transmitter that modulates the audio onto a carrier frequency, and an antenna that radiates the signal. Stations are organized by format — specific programming genres that target defined demographics: Top 40/CHR (Contemporary Hit Radio) plays current hits; Country, Rock, R&B, and Urban are music-format staples; Talk Radio features hosts discussing news, politics, and lifestyle topics with listener call-ins; News/Talk combines headlines with commentary; Public Radio (like NPR stations) offers news, classical music, and cultural programming funded by listeners and grants; Sports Radio provides live games and analysis; and Religious Radio carries worship services and teaching. Satellite radio (SiriusXM) offers hundreds of commercial-free channels via subscription, broadcast from geostationary satellites to specialized receivers in cars and homes. HD Radio is a digital broadcast standard that allows AM and FM stations to transmit additional channels and metadata within their existing frequency allocations. Internet radio stations stream over the web rather than via terrestrial transmitters, reaching global audiences without FCC broadcast licensing."
+  },
+  {
+    "q": [
+      "what is the FCC and how does it regulate radio",
+      "what is a broadcast license",
+      "how do radio station call letters work",
+      "what are the FCC rules for radio broadcasting",
+      "what is indecency regulation for radio",
+      "what is the ownership limit for radio stations",
+      "what is the public file requirement for radio stations",
+      "what is EAS in broadcasting"
+    ],
+    "a": "The Federal Communications Commission (FCC) regulates all non-federal radio spectrum use in the United States, issuing broadcast licenses that grant exclusive use of a specific frequency in a specific market for a renewable term (typically 8 years). Radio station call letters in the U.S. begin with K for stations west of the Mississippi River and W for stations east of it (with some historical exceptions). The FCC enforces rules on technical standards (frequency tolerance, power limits, interference prevention), content (indecency restrictions prohibiting obscene material and limiting profanity between 6 AM and 10 PM, when children may be listening), ownership (limiting the number of stations a single entity can own nationally and within a market), and public service obligations (maintaining a public inspection file, broadcasting Emergency Alert System tests and alerts, providing political candidate access, and airing station identification at the top of each hour). The Telecommunications Act of 1996 dramatically relaxed ownership limits, leading to massive consolidation in the industry dominated by companies like iHeartMedia and Cumulus Media. Stations must also maintain a Main Studio presence in or near their community of license, participate in EAS (Emergency Alert System) for presidential, weather, and AMBER alerts, and comply with children's television programming rules if they also hold a TV license."
+  },
+  {
+    "q": [
+      "what is a radio DJ",
+      "what is a radio personality",
+      "how do radio hosts create content",
+      "what is a radio talk show host",
+      "what is a radio producer's role",
+      "what is radio programming",
+      "how is a radio show structured",
+      "what is a radio hot clock"
+    ],
+    "a": "A radio show is structured around a programming clock (or hot clock) — a time-based template that maps content elements to specific minutes of each hour, ensuring consistency and listener retention. A typical music radio hour might follow this pattern: opening segment with intro music and station ID, current hit song, commercial break (typically 3-4 minutes), station promo, weather and traffic update, two-song music sweep, commercial break, jingle, contest or listener call-in, song, commercial break, news break at the :30 mark, and so on through the hour. The radio personality (DJ or host) is responsible for vocal content: between-song patter, reading ad scripts, conducting interviews, interacting with callers, and maintaining energy and pacing — often using a 'talk clock' template that shows exactly when each element occurs. The radio producer coordinates guests, vets callers, operates the board, selects music (in consultation with the music director), and ensures the show runs on time. In talk radio, the host drives the conversation, takes listener calls, and interviews guests, while the producer screens callers, books guests, and manages the show's social media presence. Drive-time shows (6-10 AM and 3-7 PM) are the most commercially valuable dayparts, attracting the largest audiences and highest advertising rates."
+  },
+  {
+    "q": [
+      "what is NPR",
+      "what is public radio",
+      "how is public radio funded",
+      "what are the differences between public and commercial radio",
+      "what is NPR's most popular show",
+      "what is the BBC World Service",
+      "what is community radio",
+      "what is college radio"
+    ],
+    "a": "Public radio is non-commercial broadcasting funded by a combination of listener donations, corporate underwriting (which differs from advertising in that it cannot include direct calls to action or comparative claims), government grants (primarily through the Corporation for Public Broadcasting), and foundation support. National Public Radio (NPR) is the largest public radio network in the U.S., producing flagship news programs like Morning Edition, All Things Considered, Fresh Air with Terry Gross, This American Life, and Wait Wait Don't Tell Me, distributed to hundreds of member stations nationwide. Public radio stations are owned by community organizations, universities (like WBEZ in Chicago or KQED in San Francisco), or state governments, and they operate under FCC non-commercial educational (NCE) licenses. The BBC World Service is the world's largest international broadcaster, funded by the UK government and broadcasting news and analysis in dozens of languages on shortwave, AM, FM, and digital platforms worldwide. Community radio stations are small, locally owned non-commercial stations run largely by volunteers that serve hyperlocal communities and under-represented voices. College radio stations, operated by universities and staffed by student volunteers, are training grounds for future broadcasters and often feature independently programmed music formats that commercial stations avoid, playing a vital role in music discovery and the development of new artists and genres."
+  }
+]

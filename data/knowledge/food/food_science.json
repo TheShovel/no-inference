@@ -1,0 +1,66 @@
+[
+  {
+    "q": [
+      "What is food chemistry?",
+      "Explain food chemistry.",
+      "What chemical reactions occur in cooking?",
+      "How does cooking change food chemically?",
+      "What is the Maillard reaction?",
+      "What is caramelization?",
+      "How do acids and bases affect food?"
+    ],
+    "a": "Food chemistry is the study of the chemical processes and interactions of the biological and non-biological components of foods, including carbohydrates, proteins, fats, vitamins, minerals, water, and additives. Key reactions include the Maillard reaction (amino acids and reducing sugars reacting at high heat to create browning and complex flavor compounds — responsible for the taste of seared meat, toasted bread, and coffee), caramelization (the thermal decomposition of sugars producing nutty, sweet flavors and brown colors at temperatures above 160°C), and enzymatic browning (cut fruits darkening when exposed to air due to polyphenol oxidase). Understanding these chemical principles allows chefs and food scientists to control texture, flavor, color, and nutritional properties in the development of foods and culinary techniques."
+  },
+  {
+    "q": [
+      "What is an emulsion in food?",
+      "Explain emulsions in cooking.",
+      "How do emulsions work?",
+      "What are examples of emulsions?",
+      "What is mayonnaise?",
+      "What is an emulsifier?",
+      "Why do oil and water not mix?",
+      "How do you stabilize an emulsion?"
+    ],
+    "a": "An emulsion is a mixture of two immiscible liquids, typically oil and water, where one is dispersed as fine droplets throughout the other, stabilized by an emulsifier. In food, common oil-in-water emulsions include mayonnaise (egg yolk lecithin emulsifies oil into vinegar or lemon juice), milk (fat droplets dispersed in water via casein proteins), and vinaigrettes (mustard acts as an emulsifier). Water-in-oil emulsions include butter and margarine, where water droplets are dispersed in fat. Emulsifiers like lecithin (found in egg yolks), mustard, and mono- and diglycerides work by having both hydrophilic (water-loving) and lipophilic (fat-loving) ends, bridging the interface between the two phases and reducing surface tension to prevent separation."
+  },
+  {
+    "q": [
+      "What is fermentation in food science?",
+      "Explain fermentation in food.",
+      "How does fermentation preserve food?",
+      "What are the types of fermentation?",
+      "What foods are made by fermentation?",
+      "What is the science behind fermentation?",
+      "What microorganisms are involved in fermentation?"
+    ],
+    "a": "Fermentation is a metabolic process in which microorganisms such as bacteria, yeasts, and molds convert carbohydrates into alcohols, acids, or gases under anaerobic conditions, producing preserved foods with distinctive flavors, textures, and nutritional properties. Lactic acid fermentation (by Lactobacillus species) produces yogurt, sauerkraut, kimchi, and pickles, creating an acidic environment that inhibits spoilage organisms. Alcoholic fermentation (by Saccharomyces yeasts) converts sugars into ethanol and carbon dioxide, creating beer, wine, and bread (where the CO₂ causes rising). Acetic acid fermentation produces vinegar, and mold fermentation yields cheeses like Roquefort and soy products like tempeh and miso. Beyond preservation, fermentation can enhance digestibility, increase vitamin content (especially B vitamins), and introduce beneficial probiotics."
+  },
+  {
+    "q": [
+      "What is flavor chemistry?",
+      "Explain flavor chemistry.",
+      "What is umami?",
+      "How do taste receptors work?",
+      "What are the five basic tastes?",
+      "What is the chemistry of flavor perception?",
+      "What makes food taste good?",
+      "what is umami",
+      "umami taste",
+      "define umami"
+    ],
+    "a": "Flavor chemistry studies the chemical compounds responsible for taste and aroma, which together create the perception of flavor. The five basic tastes detected by taste buds on the tongue are sweet (sugars, some amino acids), sour (acids like citric and acetic), salty (sodium ions), bitter (a wide range of compounds including alkaloids like caffeine, often a warning signal for toxins), and umami (savory taste from glutamate, inosinate, and guanylate, discovered by Kikunae Ikeda in 1908). Aroma, detected by olfactory receptors in the nose, accounts for the vast majority of flavor perception — this is why food tastes bland when you have a stuffy nose. The interplay of volatile compounds, non-volatile taste compounds, temperature, texture, and even sound creates the full multisensory experience of flavor, with individual genetic differences affecting sensitivity to certain tastes, particularly bitterness."
+  },
+  {
+    "q": [
+      "What is food microbiology?",
+      "Explain food microbiology.",
+      "How do microorganisms affect food?",
+      "What are foodborne pathogens?",
+      "How is food microbiology used in food safety?",
+      "What microorganisms are important in food?",
+      "How does pasteurization work?"
+    ],
+    "a": "Food microbiology is the study of microorganisms that inhabit, create, or contaminate food, encompassing both beneficial microbes used in fermentation and harmful pathogens that cause foodborne illness. Beneficial microorganisms include bacteria like Lactobacillus and yeasts like Saccharomyces, essential for producing cheese, yogurt, bread, beer, and fermented vegetables. Harmful pathogens include Salmonella, Escherichia coli O157:H7, Listeria monocytogenes, Campylobacter, and Clostridium botulinum, which can cause severe illness or death. Food microbiology informs safety practices such as pasteurization (heat-treating food to destroy pathogens without significantly affecting taste or nutrition, developed by Louis Pasteur), Hazard Analysis Critical Control Points (HACCP) systems, appropriate refrigeration temperatures, and the use of preservatives to inhibit microbial growth."
+  }
+]

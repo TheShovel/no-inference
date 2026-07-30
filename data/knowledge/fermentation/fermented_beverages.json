@@ -1,0 +1,67 @@
+[
+    {
+        "q": [
+            "How is kombucha made?",
+            "What is a SCOBY and how do you care for it?",
+            "What does kombucha taste like?",
+            "How long does kombucha take to ferment?",
+            "What is the difference between first and second fermentation for kombucha?",
+            "Can you flavor kombucha?",
+            "What ingredients are in kombucha?",
+            "How do you make kombucha at home?"
+        ],
+        "a": "Kombucha is made by brewing sweetened tea, cooling it to room temperature, then adding a SCOBY along with some starter liquid from a previous batch. The SCOBY contains acetic acid bacteria and yeast that work together during a 7-14 day first fermentation, with yeast consuming sugar and producing ethanol while bacteria convert ethanol into acetic acid. A second fermentation involves bottling the kombucha with added fruit, herbs, or juice for 2-4 days to build natural carbonation through trapped CO2. The finished beverage is tangy, slightly sweet, and effervescent, with a complex flavor profile influenced by tea type, sugar source, fermentation time, and flavor additions."
+    },
+    {
+        "q": [
+            "How is vinegar made through fermentation?",
+            "What is the difference between vinegar and acetic acid?",
+            "How do you make vinegar at home?",
+            "What is a vinegar mother?",
+            "What types of vinegar can be made by fermentation?",
+            "How long does it take to make vinegar?",
+            "What is the alcohol to vinegar conversion process?",
+            "How do you make apple cider vinegar?"
+        ],
+        "a": "Vinegar is produced through a two-stage fermentation process: first, yeast converts sugars into ethanol (alcoholic fermentation), then acetic acid bacteria, primarily Acetobacter and Gluconobacter, oxidize the ethanol into acetic acid. A vinegar mother is a gelatinous cellulose mat formed by the acetic acid bacteria on the surface of the liquid during the acetification process. Apple cider vinegar is made by fermenting apple juice into hard cider, then allowing Acetobacter to convert the alcohol to acetic acid over several weeks to months. Different base liquids produce distinct vinegars — wine vinegar from wine, rice vinegar from rice wine, malt vinegar from beer, and balsamic vinegar from concentrated grape must aged in wooden barrels."
+    },
+    {
+        "q": [
+            "How is mead made?",
+            "What yeast is used for mead fermentation?",
+            "What is the difference between mead and honey wine?",
+            "How long does mead take to ferment?",
+            "What ingredients are in traditional mead?",
+            "Can you make mead at home?",
+            "What are the different styles of mead?",
+            "How do you make sparkling mead?"
+        ],
+        "a": "Mead is one of the oldest alcoholic beverages, made by fermenting honey with water and yeast. Traditional mead uses only honey, water, and yeast, but variations include melomel (with fruit), metheglin (with spices and herbs), and cyser (with apples or apple juice). The fermentation process typically takes 2-6 weeks, followed by an aging period of several months to develop smoothness. The type of honey used has a profound impact on flavor — orange blossom honey yields a light, floral profile while buckwheat honey produces a dark, robust mead."
+    },
+    {
+        "q": [
+            "How is vinegar used in food preservation?",
+            "What is the role of acetic acid in pickling?",
+            "What is the difference between fermented pickles and vinegar pickles?",
+            "How do you make refrigerator pickles?",
+            "What is the minimum acidity for safe pickling?",
+            "Can you pickle vegetables without vinegar?",
+            "What are the different methods of pickling?",
+            "How long do homemade pickles last?"
+        ],
+        "a": "Vinegar-based pickling preserves vegetables by creating an acidic environment that inhibits spoilage microorganisms, requiring a minimum of 5% acidity in the pickling solution for safe shelf-stable preservation. Lacto-fermented pickles use lactic acid bacteria rather than added vinegar, producing a naturally tangy, probiotic-rich product stored under brine. Quick pickles or refrigerator pickles involve pouring a hot vinegar brine over vegetables and storing them in the refrigerator, where they keep for several weeks to months. The key difference between fermented and vinegar pickles is that fermented pickles develop their acidity through bacterial activity over time, while vinegar pickles rely on direct acidification."
+    },
+    {
+        "q": [
+            "What is tibicos and how do you use it?",
+            "What are water kefir grains?",
+            "How do you make water kefir?",
+            "What is the difference between milk kefir and water kefir?",
+            "How do you maintain water kefir grains?",
+            "What flavors work well with water kefir?",
+            "Can you use sugar substitutes with water kefir?",
+            "How long does water kefir take to ferment?"
+        ],
+        "a": "Tibicos, also known as water kefir grains, are translucent, crystalline granules composed of bacteria and yeast embedded in a polysaccharide matrix. They ferment sugar water into a lightly effervescent, tangy beverage over 24-48 hours at room temperature. Unlike milk kefir grains, tibicos feed on sugar rather than lactose and cannot survive in dairy environments. The grains require mineral nutrition from sources like molasses, dried fruit, or mineral water to thrive, and they are remarkably productive — a small amount of grains can double in volume every few days under ideal conditions."
+    }
+]

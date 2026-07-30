@@ -1,0 +1,59 @@
+[
+  {
+    "q": [
+      "Why is energy storage important?",
+      "Why do we need energy storage for renewables?",
+      "What is the role of energy storage in the grid?",
+      "How does energy storage help with renewable energy?",
+      "What are the main reasons for energy storage?",
+      "Why is grid-scale storage necessary?",
+      "importance of energy storage",
+      "energy storage renewables integration",
+      "grid energy storage benefits"
+    ],
+    "a": "Energy storage is critically important for integrating variable renewable energy sources like solar and wind into the electricity grid, because these sources generate electricity intermittently — solar only when the sun shines and wind only when the wind blows — creating a mismatch between supply and demand that storage can bridge by capturing excess generation and discharging when generation is low. Energy storage provides multiple grid services beyond renewable firming, including frequency regulation (instantaneous power to maintain grid stability at 50/60 Hz), load shifting (charging during low-demand, low-price periods and discharging during peak demand), transmission and distribution deferral (avoiding costly infrastructure upgrades by storing energy locally), and backup power for critical facilities during outages. The need for energy storage grows with higher renewable penetration — the IEA estimates that global energy storage capacity must increase from roughly 200 GW in 2023 to over 1,500 GW by 2030 to align with net-zero emissions scenarios, driving rapid innovation and cost reduction across multiple storage technologies."
+  },
+  {
+    "q": [
+      "What is pumped hydro storage?",
+      "How does pumped hydro storage work?",
+      "What are lithium-ion batteries for grid storage?",
+      "How do lithium-ion batteries work for energy storage?",
+      "What are the main battery types for grid storage?",
+      "pumped hydro storage explained",
+      "lithium ion battery grid storage",
+      "large scale battery storage"
+    ],
+    "a": "Pumped hydro storage (PHS) is the most mature and widely deployed grid-scale energy storage technology, accounting for over 90% of global installed storage capacity, operating by pumping water from a lower reservoir to an upper reservoir during periods of low electricity demand (charging) and releasing it through turbines to generate electricity during peak demand (discharging), with round-trip efficiencies of 70-85% and storage durations of 6-16 hours. Lithium-ion batteries dominate the rapidly growing battery storage market for grid applications, offering high round-trip efficiency (85-95%), fast response times (milliseconds), modular and scalable configurations, and rapidly falling costs — from over $1,100/kWh in 2010 to under $140/kWh in 2023. Grid-scale lithium-ion battery installations like the Hornsdale Power Reserve in South Australia (150 MW/194 MWh) have demonstrated the ability to provide frequency regulation, renewable smoothing, and emergency backup, with larger systems exceeding 1 GW capacity now under development in California, Texas, and the UK."
+  },
+  {
+    "q": [
+      "What are flow batteries?",
+      "What is a vanadium redox flow battery?",
+      "What is compressed air energy storage (CAES)?",
+      "What is flywheel energy storage?",
+      "What is thermal energy storage?",
+      "What is molten salt energy storage?",
+      "flow battery technology",
+      "compressed air energy storage CAES",
+      "flywheel storage system",
+      "thermal energy storage molten salt"
+    ],
+    "a": "Flow batteries store energy in liquid electrolytes contained in external tanks, with power output determined by the size of the electrochemical stack and energy capacity determined by the volume of electrolyte — vanadium redox flow batteries (VRFBs) use vanadium ions in different oxidation states in sulfuric acid solution and can achieve over 20,000 charge-discharge cycles with no degradation of the active material, offering 4-12 hour storage durations ideal for grid-scale applications despite higher upfront costs. Compressed air energy storage (CAES) uses excess electricity to compress air into underground caverns (salt domes, aquifers, or hard rock formations) or above-ground vessels; when electricity is needed, the compressed air is heated and expanded through turbines to generate power, with modern adiabatic CAES designs achieving 70%+ round-trip efficiency by capturing and storing the heat of compression. Flywheel storage stores kinetic energy in a rotating mass (rotor) spinning in a vacuum chamber on magnetic bearings at up to 50,000 RPM, providing rapid power delivery (response in milliseconds) for short-duration applications (15 seconds to 15 minutes) like grid frequency regulation and uninterruptible power supplies, with very high cycle life (millions of cycles) and minimal maintenance. Thermal energy storage includes molten salt systems (used in concentrated solar power plants, storing heat at 300-565°C for 6-15 hours of turbine operation) and ice storage (freezing water at night when electricity is cheap and using the ice for daytime cooling in commercial buildings), enabling significant demand shifting and energy cost savings."
+  },
+  {
+    "q": [
+      "What is hydrogen storage for energy?",
+      "How is hydrogen used as energy storage?",
+      "What are supercapacitors?",
+      "What is behind-the-meter storage?",
+      "What is grid-scale vs behind-the-meter storage?",
+      "How are batteries recycled?",
+      "hydrogen energy storage",
+      "green hydrogen storage",
+      "supercapacitor energy storage",
+      "behind the meter battery"
+    ],
+    "a": "Hydrogen energy storage involves using renewable electricity to split water into hydrogen and oxygen via electrolysis (producing green hydrogen), compressing or liquefying the hydrogen for storage in tanks or underground caverns, and then converting it back to electricity through fuel cells or combustion turbines when needed — this power-to-gas-to-power pathway has lower round-trip efficiency (30-40%) but offers unique advantages for seasonal storage (months-long duration), very large storage volumes, and decarbonization of hard-to-electrify sectors like steelmaking, shipping, and heavy industry. Supercapacitors store energy electrostatically through charge separation at the interface between electrodes and electrolyte, delivering extremely high power density (10-100 times batteries), million-cycle lifetimes, and rapid charge-discharge in seconds, making them ideal for short-duration high-power applications like regenerative braking in vehicles and grid power quality. Behind-the-meter storage refers to battery systems installed on the customer side of the utility meter (in homes, businesses, or industrial facilities), providing backup power, solar self-consumption optimization, demand charge reduction, and participation in grid services through aggregation — the Tesla Powerwall and similar systems have driven rapid residential storage adoption. Battery recycling recovers valuable materials (lithium, cobalt, nickel, manganese) from spent batteries through hydrometallurgical processes (leaching with acids) or pyrometallurgical processes (smelting), addressing supply chain constraints, reducing the environmental footprint of battery production, and meeting regulatory requirements like the EU Battery Directive mandating minimum recycled content in new batteries."
+  }
+]

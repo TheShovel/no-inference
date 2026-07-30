@@ -1,0 +1,65 @@
+[
+  {
+    "q": [
+      "What are the different types of malware?",
+      "What is a computer virus?",
+      "What is ransomware?",
+      "What is spyware?",
+      "What is a worm in computing?",
+      "What is a trojan horse?",
+      "How does malware infect systems?",
+      "What is the difference between a virus and a worm?"
+    ],
+    "a": "Malware (malicious software) encompasses various types of harmful programs designed to infiltrate, damage, or disrupt computer systems. Viruses attach themselves to legitimate programs and spread when the infected file is executed, while worms self-replicate and spread across networks without requiring a host file. Trojan horses disguise themselves as legitimate software to trick users into installing them, ransomware encrypts victims' files and demands payment for decryption, and spyware covertly collects user information and browsing habits without consent. Modern malware often combines multiple techniques and is distributed through phishing emails, malicious downloads, infected USB drives, drive-by downloads from compromised websites, and exploit kits targeting unpatched vulnerabilities."
+  },
+  {
+    "q": [
+      "What is phishing?",
+      "How does phishing work?",
+      "What is social engineering in cybersecurity?",
+      "What are the types of phishing attacks?",
+      "What is spear phishing?",
+      "What is whaling in cybersecurity?",
+      "How can you identify a phishing email?",
+      "What is smishing and vishing?"
+    ],
+    "a": "Phishing is a type of social engineering attack where cybercriminals send deceptive emails, messages, or create fake websites that appear to come from legitimate sources to trick victims into revealing sensitive information like passwords, credit card numbers, or personal data. Social engineering exploits human psychology rather than technical vulnerabilities, using tactics like urgency (threatening account closure), authority (impersonating executives or government officials), and familiarity (mimicking trusted brands or contacts). Variants include spear phishing (targeting specific individuals with personalized messages), whaling (targeting high-profile executives), smishing (SMS text phishing), and vishing (voice call phishing). Advanced phishing attacks may use cloned websites that look identical to legitimate sites and can bypass basic security awareness through careful research and professional presentation."
+  },
+  {
+    "q": [
+      "What is a DDoS attack?",
+      "How does a distributed denial-of-service attack work?",
+      "What is the difference between DoS and DDoS?",
+      "What are common DDoS attack types?",
+      "How are DDoS attacks mitigated?",
+      "What is a botnet?",
+      "Why are DDoS attacks dangerous?"
+    ],
+    "a": "A distributed denial-of-service (DDoS) attack overwhelms a target server, service, or network with a flood of internet traffic from many compromised devices (a botnet), rendering it unavailable to legitimate users. Unlike a simple DoS attack from a single source, DDoS attacks originate from hundreds or thousands of infected machines — often IoT devices, home routers, or computers — making them much harder to block. Common types include volumetric attacks (consuming bandwidth with massive traffic), protocol attacks (exploiting server resources with malformed packets like SYN floods), and application-layer attacks (targeting web server vulnerabilities with seemingly legitimate requests). Mitigation strategies include traffic filtering, rate limiting, anycast network distribution, cloud-based DDoS protection services like Cloudflare or AWS Shield, and maintaining redundant infrastructure across multiple data centers."
+  },
+  {
+    "q": [
+      "What is SQL injection?",
+      "How does SQL injection work?",
+      "What is cross-site scripting (XSS)?",
+      "What is the difference between SQL injection and XSS?",
+      "What is a man-in-the-middle attack?",
+      "How does a man-in-the-middle attack work?",
+      "What are common web application vulnerabilities?"
+    ],
+    "a": "SQL injection is a code injection technique where an attacker inserts malicious SQL statements into input fields (like login forms or search boxes) to manipulate a backend database, potentially accessing, modifying, or deleting data without authorization. Cross-site scripting (XSS) injects malicious client-side scripts into web pages viewed by others, allowing attackers to steal session cookies, redirect users, or deface websites — types include stored XSS (malicious script saved on the server), reflected XSS (script in a URL or request), and DOM-based XSS. A man-in-the-middle (MITM) attack occurs when an attacker secretly intercepts and potentially alters communication between two parties who believe they are directly communicating with each other, often executed through unsecured Wi-Fi networks, ARP spoofing, or DNS spoofing. These attacks are prevented through input validation and parameterized queries (SQL injection), output encoding and Content Security Policy headers (XSS), and encryption with certificate validation (MITM)."
+  },
+  {
+    "q": [
+      "What is a zero-day exploit?",
+      "What are zero-day vulnerabilities?",
+      "How are zero-day exploits discovered?",
+      "What are advanced persistent threats (APTs)?",
+      "What is an APT attack?",
+      "What are insider threats?",
+      "How do insider threats differ from external attacks?",
+      "What are examples of notable APT groups?"
+    ],
+    "a": "A zero-day exploit targets a software vulnerability that is unknown to the vendor and for which no patch exists, making it extremely dangerous as even well-secured systems are defenseless until the flaw is discovered and fixed. Zero-day vulnerabilities are highly valued by cybercriminals, nation-state actors, and security researchers alike, often trading for millions of dollars in underground markets. Advanced persistent threats (APTs) are sophisticated, long-term cyber attacks typically conducted by well-resourced nation-state groups or organized cybercriminal organizations, involving stealthy network infiltration, lateral movement, and data exfiltration over months or years. Insider threats originate from within an organization, whether from malicious employees who intentionally steal data or sabotage systems, negligent users who inadvertently cause breaches through poor security practices, or compromised accounts whose credentials have been stolen by external attackers."
+  }
+]

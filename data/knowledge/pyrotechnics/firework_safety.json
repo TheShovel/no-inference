@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "how do I safely use consumer fireworks",
+      "what are the most important fireworks safety rules",
+      "what is the safest way to light a firework",
+      "how do I dispose of used fireworks",
+      "what should I do if a firework doesn't ignite",
+      "what fireworks safety equipment should I have",
+      "how far away should I stand from fireworks",
+      "what are common fireworks injuries"
+    ],
+    "a": "Fireworks safety begins with preparation: always have a water source nearby (a bucket of water and a garden hose), light fireworks outdoors on a flat, stable surface away from buildings, vehicles, dry grass, and flammable materials. Never light fireworks indoors or in metal or glass containers, and never attempt to relight a firework that didn't fully ignite — wait 20 minutes, then submerge it in water to safely neutralize it. Spectators should maintain a minimum safe distance of at least 20 feet for ground-based devices and 50-100 feet for aerial fireworks. Only light one device at a time, and never hold a lit firework in your hand (except sparklers, which burn at 1,200-2,000°F and account for a significant portion of fireworks injuries). Common fireworks injuries include burns to the hands, face, and eyes from sparklers, malfunctioning devices, or premature explosions; hearing damage from close-proximity reports; and traumatic injuries from larger devices tipping over and firing horizontally. The National Fire Protection Association (NFPA) reports that thousands of fireworks-related injuries are treated in U.S. emergency rooms annually around July 4th and New Year's Eve."
+  },
+  {
+    "q": [
+      "what are the laws for professional pyrotechnicians",
+      "what is an ATF explosives license",
+      "how do I become a licensed pyrotechnician",
+      "what training is required for professional fireworks",
+      "what is a pyrotechnic display operator license",
+      "what insurance do pyrotechnicians need",
+      "what are the NFPA standards for fireworks displays",
+      "how do I get a fireworks display permit"
+    ],
+    "a": "Becoming a professional pyrotechnician requires ATF licensing, state permits, and often certification through trade organizations. The ATF issues Federal Explosives Licenses (FEL), with Type 54 being the most common for display operators; applicants must be 21 or older, pass a background check including fingerprinting, have no felony convictions, pay an annual fee, and meet storage and security requirements. The National Fire Protection Association (NFPA) standards govern professional displays: NFPA 1123 covers outdoor fireworks displays with specifications for safety distances (typically 70-840 feet depending on shell size), spectator separation, firing system requirements, and wind speed limits (usually 10 mph for aerial shells). Pyrotechnicians typically complete apprenticeships under an experienced operator, pass written exams on state and federal regulations, and maintain continuing education credits. Most states require a display permit issued by the local fire marshal or state fire marshal's office, which includes site inspection, proof of insurance (typically $1-5 million in liability coverage), and a detailed firing plan. Professional operators must also comply with OSHA regulations for site safety and crew protection, and many carry additional certifications through the National Council on Fireworks Safety or the Pyrotechnics Guild International."
+  },
+  {
+    "q": [
+      "what is the environmental impact of fireworks",
+      "do fireworks pollute the air",
+      "do fireworks harm wildlife",
+      "what are the environmental concerns with fireworks",
+      "are there eco-friendly fireworks",
+      "what chemicals in fireworks are harmful to the environment",
+      "how do fireworks affect air quality",
+      "what is the carbon footprint of a fireworks display"
+    ],
+    "a": "Fireworks have several environmental impacts that have drawn increasing concern. The combustion of gunpowder and color-producing metal compounds releases fine particulate matter (PM2.5), sulfur dioxide, nitrogen oxides, and heavy metals into the air, causing significant but short-lived spikes in air pollution near display sites, with concentrations that can rival or exceed wildfire smoke levels during major holidays like the Fourth of July. Perchlorate, an oxidizer used in many fireworks, is a water contaminant that can persist in soil and groundwater, affecting drinking water supplies and aquatic ecosystems; it accumulates in plants and can disrupt thyroid function in wildlife and humans. The loud noise from displays causes stress in domestic animals and wildlife, disorients birds (causing them to flee nests and collide with structures), and disturbs marine life. Eco-friendly fireworks alternatives are being developed using nitrogen-rich compounds instead of perchlorates, biodegradable casings, and reduced-smoke formulations, and some municipalities have replaced traditional aerial displays with quieter, lower-emission alternatives like drone light shows, laser displays, and cold-pyro ground effects. The long-term trend is toward stricter regulations on chemical content and increased adoption of environmentally sustainable pyrotechnic technologies."
+  },
+  {
+    "q": [
+      "what is pyrotechnic choreography",
+      "how are fireworks synchronized to music",
+      "what is computer firing in fireworks displays",
+      "what is electronic firing for fireworks",
+      "how do fireworks shows use timing",
+      "what is a firework finale",
+      "how are professional fireworks shows planned",
+      "what software do pyrotechnicians use"
+    ],
+    "a": "Modern professional fireworks displays are choreographed to music using computer firing systems that control individual mortars or firing modules with millisecond precision. A show designer creates a script in specialized software (such as FireOne, Cobra, or PyroDev) that maps each cue — a shell or effect — to a specific beat, measure, or moment in the selected music track, typically imported as a timecode reference. The firing system consists of a control computer connected to firing modules via wireless signals or long cables, each module controlling up to 24-36 individual igniters. During the show, the computer fires cues automatically according to the pre-programmed timeline, with safety interlocks that prevent firing if communication is lost. The finale is the most intense segment, often firing dozens or hundreds of shells in rapid succession over 60-90 seconds, creating a sustained barrage of color, sound, and light. A typical 20-minute musical show for a major event can involve 1,000-5,000+ individual cues, requiring days or weeks of planning, multiple rehearsals, and pre-show wiring of mortars. Shells are arranged in a firing plot — a map of which mortars hold which shells — ensuring that the choreography translates from the script to the actual physical layout of the firing site."
+  }
+]

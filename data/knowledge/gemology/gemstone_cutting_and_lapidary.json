@@ -1,0 +1,67 @@
+[
+  {
+    "q": [
+      "What is lapidary?",
+      "What is faceting in gemstones?",
+      "What are the parts of a faceted gemstone?",
+      "What are the crown and pavilion of a gemstone?",
+      "What is a faceting machine?",
+      "What equipment is used in faceting gemstones?",
+      "What are the components of a faceting machine?",
+      "lapidary faceting crown pavilion table girdle culet"
+    ],
+    "a": "Lapidary is the art of cutting, shaping, and polishing gemstones, encompassing two main branches: faceting (cutting flat polished planes on transparent stones to optimize light performance) and cabochon cutting (creating smooth, domed surfaces for opaque and translucent stones). A faceted gemstone has distinct structural parts: the crown (upper section above the girdle), the pavilion (lower section below the girdle), the table (the large flat top facet), the girdle (the thin band separating crown and pavilion), and the culet (a small facet at the tip of the pavilion, often omitted in modern cuts). The faceting machine is the specialized instrument for precision faceting, consisting of a faceting head (holding the stone at a fixed angle), a faceting arm (swinging the stone across the lap), an index wheel (rotating the stone to precise positions for facet alignment), and a protractor (measuring and setting the vertical cutting angle)."
+  },
+  {
+    "q": [
+      "What is the critical angle in faceting?",
+      "How does light perform in a faceted gemstone?",
+      "What are brilliance, fire, and scintillation?",
+      "What is dispersion in gemstones?",
+      "What is refractive index in gemstones?",
+      "What are standard faceting angles for quartz?",
+      "Why are faceting angles important for light performance?",
+      "critical angle light reflection refraction gemstone"
+    ],
+    "a": "The critical angle is the minimum pavilion angle at which light entering a gemstone through the crown reflects internally off the pavilion facets rather than leaking out — this angle differs for every gem species based on its refractive index (quartz RI ~1.54 has a critical angle of approximately 40.5 degrees, while diamond RI ~2.42 has a critical angle of approximately 24.4 degrees). Brilliance refers to the brightness from white light reflected back to the eye, fire (dispersion) is the separation of white light into spectral colors as it passes through the gem, and scintillation is the sparkle or flash of light seen when the gemstone, light source, or observer moves. Standard faceting angles for quartz are typically 40 to 42 degrees for the crown and 43 degrees for the pavilion, with the pavilion angle being particularly critical since it must exceed the critical angle to prevent light from leaking through the bottom of the stone."
+  },
+  {
+    "q": [
+      "What determines cut quality in gemstones?",
+      "What is depth percentage in gemstone cutting?",
+      "What is table percentage in faceting?",
+      "How does crown angle affect gemstone cut quality?",
+      "What is girdle thickness in gemstone grading?",
+      "What is culet size in gemstone grading?",
+      "What are polish and symmetry in gemstone quality?",
+      "cut quality grading excellent very good good fair poor"
+    ],
+    "a": "Cut quality grades (excellent, very good, good, fair, poor) evaluate how well a gemstone's proportions and finish optimize light performance, with excellent cuts having ideal proportions that maximize brilliance, fire, and scintillation while minimizing light leakage. Depth percentage (depth relative to width) and table percentage (table width relative to overall width) are critical measurements: a table that is too large reduces brilliance by allowing light to escape through the crown, while excessive depth can create a dark center or nail head effect. Girdle thickness affects both durability and appearance (too thin risks chipping, too thick wastes weight), culet size is evaluated (none or pointed is preferred, large culets are considered poor), and polish and symmetry grades assess the quality of facet surfaces and the precision of facet alignment."
+  },
+  {
+    "q": [
+      "What is cabochon cutting?",
+      "What shapes are cabochons cut into?",
+      "What is dome height in cabochon cutting?",
+      "What is a double cabochon?",
+      "What is a star cabochon?",
+      "What is chatoyancy in gemstones?",
+      "What gemstones are commonly cut as cabochons?",
+      "cabochon cutting oval round cushion freeform high dome"
+    ],
+    "a": "Cabochon cutting creates stones with a smooth, rounded, convex top and a flat or domed base, used primarily for opaque and translucent gemstones where the beauty comes from color, pattern, or optical phenomena such as asterism and chatoyancy. Dome height ranges from low dome (shallow profile for brooches) to medium dome (standard for most jewelry) to high dome (essential for dark stones and displaying asterism properly), with double cabochons being domed on both sides and hollow cabochons carved out underneath to lighten dark material. Stones commonly cut as cabochons include opal, turquoise, jade, malachite, lapis lazuli, chrysocolla, rhodochrosite, rhodonite, sodalite, unakite, howlite, sugilite, charoite, lepidolite, amazonite, moonstone, sunstone, labradorite, spectrolite, and gem silica."
+  },
+  {
+    "q": [
+      "What is gemstone carving?",
+      "What is intaglio and cameo carving?",
+      "What is Chinese jade carving?",
+      "What are netsuke and okimono?",
+      "What is gemstone tumbling?",
+      "What equipment is used for rock tumbling?",
+      "What are the stages of rock tumbling?",
+      "gemstone carving intaglio cameo Chinese jade carving"
+    ],
+    "a": "Gemstone carving encompasses intaglio (design carved into the surface for signet rings and seals), cameo (design carved in relief on layered materials for contrast), and hardstone carving including Chinese jade carving (a 5,000-year tradition with dragons, phoenixes, and auspicious animals), netsuke (miniature carved toggles from Japan), and larger works such as vessels, bowls, animal figures, and religious icons. Gemstone tumbling uses rock tumblers (rotary or vibrating) with progressively finer grits: coarse (60/90), medium (120/220), fine (400), pre-polish (600), and polish (1200 to 8000 using aluminum oxide, tin oxide, cerium oxide, or diamond paste). Each stage runs approximately 7 days with the barrel loaded to about two-thirds volume with rocks, grit, and water for optimal cutting action."
+  }
+]

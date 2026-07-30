@@ -1,0 +1,46 @@
+[
+  {
+    "q": [
+      "What are the main surgical specialties?",
+      "What types of surgery exist?",
+      "What is general surgery?",
+      "What is orthopedic surgery?",
+      "What is cardiothoracic surgery?",
+      "What is neurosurgery?"
+    ],
+    "a": "Surgical specialties encompass a wide range of operative disciplines, each focused on specific body systems. General surgery covers abdominal procedures, breast surgery, and trauma surgery. Orthopedic surgery addresses the musculoskeletal system—bones, joints, ligaments, and tendons (hip replacements, fracture repairs, spine surgery). Cardiothoracic surgery operates on the heart, lungs, and chest structures (coronary artery bypass, valve repair, lung resection), while neurosurgery involves the brain, spinal cord, and peripheral nerves (tumor removal, aneurysm clipping, spinal decompression). Other major specialties include vascular surgery, plastic and reconstructive surgery, urology, otolaryngology (ENT), and pediatric surgery."
+  },
+  {
+    "q": [
+      "What is minimally invasive surgery?",
+      "What is laparoscopic surgery?",
+      "What is robotic surgery?",
+      "How does robotic surgery work with systems like the da Vinci?",
+      "What are the benefits of minimally invasive surgery?",
+      "How does minimally invasive surgery differ from open surgery?"
+    ],
+    "a": "Minimally invasive surgery (MIS) uses small incisions and specialized instruments to perform operations that traditionally required large openings, reducing pain, blood loss, scarring, and recovery time. Laparoscopic surgery involves inserting a camera (laparoscope) and instruments through small ports in the abdomen, with the surgeon viewing a magnified video monitor. Robotic surgery, particularly the da Vinci Surgical System, enhances MIS by providing 3D high-definition visualization, tremor-filtered wristed instruments with greater range of motion, and improved ergonomics for the surgeon, allowing more precise dissection in confined spaces like the pelvis for prostate or gynecologic procedures."
+  },
+  {
+    "q": [
+      "What are the types of anesthesia?",
+      "What is general anesthesia?",
+      "What is regional anesthesia?",
+      "What is local anesthesia?",
+      "How does anesthesia work?",
+      "What does an anesthesiologist do?"
+    ],
+    "a": "Anesthesia is classified into three main types: general anesthesia (complete loss of consciousness and sensation, with airway management and physiological monitoring), regional anesthesia (blocking sensation to a specific body region, such as spinal or epidural anesthesia for childbirth or lower extremity surgery), and local anesthesia (numbing a small area with injected agents like lidocaine for minor procedures like wound repair). Anesthesiologists are medical doctors who administer anesthesia, monitor vital signs throughout surgery, manage pain, and ensure patient stability—their expertise is critical for safe surgical outcomes."
+  },
+  {
+    "q": [
+      "What is preoperative care?",
+      "What is postoperative care?",
+      "How should patients prepare for surgery?",
+      "What happens during recovery after surgery?",
+      "What are common surgical complications?",
+      "What is enhanced recovery after surgery (ERAS)?"
+    ],
+    "a": "Preoperative care involves medical evaluation, risk assessment, medication adjustments, fasting protocols, and patient education to optimize surgical outcomes and minimize complications. Postoperative care encompasses monitoring vital signs, managing pain with appropriate medications, preventing infections (antibiotics, wound care), promoting mobilization, and monitoring for complications like bleeding, blood clots, or surgical site infections. Enhanced Recovery After Surgery (ERAS) protocols—bundled evidence-based practices including optimized pain control, early feeding, and early mobilization—have significantly improved recovery times and reduced hospital stays across multiple surgical specialties."
+  }
+]

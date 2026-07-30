@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is industrial engineering?",
+      "What do industrial engineers do?",
+      "What are the main areas of industrial engineering?",
+      "How does industrial engineering improve efficiency?",
+      "What is the difference between industrial engineering and mechanical engineering?",
+      "Why is industrial engineering important?",
+      "industrial engineering definition"
+    ],
+    "a": "Industrial engineering focuses on optimizing complex systems, processes, and organizations by integrating people, materials, information, equipment, and energy to improve efficiency, quality, productivity, and safety. Unlike other engineering disciplines that focus on designing specific products or machines, industrial engineers design and improve the systems that produce goods and deliver services—reducing waste, streamlining workflows, balancing labor and automation, and ensuring quality output. Core areas include operations research (mathematical modeling and optimization), production systems design and management, quality control, supply chain and logistics, human factors engineering, facility layout and material handling, simulation modeling, and systems engineering."
+  },
+  {
+    "q": [
+      "What is operations research?",
+      "How is optimization used in industrial engineering?",
+      "What are production systems?",
+      "How are manufacturing systems designed?",
+      "What is the difference between job shop, batch, and continuous production?",
+      "How do factories optimize production flow?",
+      "operations research optimization production systems"
+    ],
+    "a": "Operations research (OR) applies advanced analytical methods—linear programming, integer programming, network flow optimization, queuing theory, dynamic programming, Monte Carlo simulation, and game theory—to support better decision-making in resource allocation, scheduling, routing, inventory management, and capacity planning. Production systems range from job shops (highly flexible, custom products, low volume) and batch production (medium volume, product families run in batches) to mass production (high volume, standardized products, assembly lines) and continuous flow (extremely high volume, single product, 24/7 operation like chemicals or paper). Optimization techniques such as linear programming help determine the optimal product mix given constrained resources, production scheduling algorithms minimize changeover times and meeting due dates, and facility layout optimization (product vs. process vs. cellular layout) reduces material handling distances and work-in-process inventory."
+  },
+  {
+    "q": [
+      "What is quality control in industrial engineering?",
+      "What is Six Sigma?",
+      "What is Total Quality Management (TQM)?",
+      "What are ISO standards?",
+      "What is the difference between Six Sigma and TQM?",
+      "What statistical methods are used in quality control?",
+      "quality control Six Sigma TQM ISO standards"
+    ],
+    "a": "Quality control ensures that products and services meet specified requirements through statistical process control (SPC—using control charts to monitor process variation), acceptance sampling (testing batches of incoming or outgoing products), and continuous improvement methodologies. Six Sigma, developed by Motorola in 1986 and popularized by General Electric, aims for 3.4 defects per million opportunities (six standard deviations from the mean) using the DMAIC framework (Define, Measure, Analyze, Improve, Control) with roles like Yellow, Green, Black, and Master Black Belts leading improvement projects. Total Quality Management (TQM) takes a broader organization-wide approach emphasizing customer focus, employee empowerment, continuous improvement (Kaizen), and leadership commitment, while ISO 9001 and industry-specific standards (ISO/TS 16949 for automotive, ISO 13485 for medical devices) provide certifiable quality management system frameworks that require documented processes, internal audits, management review, and corrective action systems."
+  },
+  {
+    "q": [
+      "What is ergonomics and human factors engineering?",
+      "How does facility layout affect productivity?",
+      "What is lean manufacturing?",
+      "What is the Toyota Production System?",
+      "What is systems engineering?",
+      "How do industrial engineers design workstations?",
+      "ergonomics human factors lean manufacturing facility layout systems engineering"
+    ],
+    "a": "Ergonomics (human factors engineering) designs work environments, tools, tasks, and interfaces to fit human capabilities and limitations, reducing physical strain (repetitive stress injuries, back pain), cognitive load (decision complexity, information overload), and errors while improving comfort, productivity, and safety through adjustable workstations, proper lighting, intuitive control layouts, and task rotation. Lean manufacturing, derived from the Toyota Production System, systematically eliminates waste (muda) defined in seven categories: overproduction, waiting, transportation, overprocessing, inventory, motion, and defects, using tools like value stream mapping, 5S workplace organization, Kanban pull systems, single-minute exchange of dies (SMED), and cellular manufacturing. Systems engineering takes a holistic lifecycle view of complex projects—including requirements analysis, system architecture design, integration, verification, validation, and risk management—applied to large-scale systems like aircraft design, healthcare delivery networks, defense systems, and IT infrastructure, ensuring that the interactions between subsystems work together to achieve overall system goals."
+  }
+]

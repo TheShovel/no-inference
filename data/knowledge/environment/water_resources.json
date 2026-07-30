@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is the water cycle?",
+      "How does the hydrologic cycle work?",
+      "What are the stages of the water cycle?",
+      "How does water move through the environment?",
+      "What processes drive the water cycle?",
+      "What is evaporation, condensation, and precipitation?",
+      "water cycle hydrologic cycle"
+    ],
+    "a": "The water cycle (hydrologic cycle) describes the continuous movement of water through Earth's atmosphere, surface, and underground, driven by solar energy and gravity through processes of evaporation (water turning from liquid to vapor from oceans, lakes, and soil), transpiration (water vapor released from plant leaves), condensation (vapor cooling into liquid droplets forming clouds), and precipitation (rain, snow, sleet, hail falling back to Earth). Once on the surface, water flows as runoff into rivers and lakes, infiltrates into groundwater aquifers, or returns to the atmosphere through further evaporation and transpiration (collectively, evapotranspiration). Climate change is intensifying the water cycle globally—warmer air holds more moisture, leading to more extreme precipitation events and prolonged droughts, as well as accelerated glacial melt that threatens water supplies for billions of people dependent on seasonal snowmelt."
+  },
+  {
+    "q": [
+      "What are the main sources of freshwater?",
+      "Where does the world's freshwater come from?",
+      "How much freshwater is available on Earth?",
+      "What are rivers, lakes, and groundwater?",
+      "What is the role of glaciers as freshwater sources?",
+      "How is freshwater distributed globally?",
+      "freshwater sources rivers lakes groundwater glaciers"
+    ],
+    "a": "Freshwater makes up only about 2.5% of Earth's total water, with the majority (roughly 68.7%) locked in glaciers and ice caps, about 30.1% stored as groundwater in underground aquifers, and a mere 0.3% in surface water bodies like rivers, lakes, and wetlands. Rivers and lakes provide most of the surface water used for drinking, irrigation, and industry, but their distribution is highly uneven—the Amazon River alone discharges about 20% of all freshwater entering the oceans, while vast regions like North Africa, the Middle East, and Central Asia face chronic water scarcity. Groundwater is the largest accessible freshwater source, supplying nearly 50% of global drinking water and 43% of irrigation water, but over-extraction is causing falling water tables in major agricultural regions such as northern India, California's Central Valley, and the North China Plain, where aquifers are being depleted far faster than they can naturally recharge."
+  },
+  {
+    "q": [
+      "What is water scarcity and which regions are most affected?",
+      "How does water treatment and desalination work?",
+      "What is wastewater management?",
+      "How can water be conserved?",
+      "What is the difference between water scarcity and water stress?",
+      "How do desalination plants produce fresh water?",
+      "water scarcity desalination water treatment conservation"
+    ],
+    "a": "Water scarcity affects over 2 billion people worldwide for at least one month each year, with the most severe impacts in arid and semi-arid regions including North Africa, the Middle East, Central Asia, India, and sub-Saharan Africa, driven by population growth, agricultural demand, pollution, and climate change. Desalination—removing salt from seawater or brackish water through reverse osmosis or thermal distillation—now provides over 95 million cubic meters of fresh water daily for countries like Saudi Arabia, UAE, Israel, and Singapore, though it remains energy-intensive and produces concentrated brine discharge that harms marine ecosystems. Water conservation strategies include fixing leaky infrastructure (some cities lose 30-50% of water through pipe leaks), adopting efficient irrigation methods like drip irrigation, implementing wastewater treatment and reuse systems (purple pipe systems for non-potable uses), rainwater harvesting, and greywater recycling, with Singapore's NEWater program treating wastewater to ultra-pure standards as a leading example of closed-loop water management."
+  },
+  {
+    "q": [
+      "What are dams and reservoir systems?",
+      "How do irrigation systems work?",
+      "What is the role of water rights in resource management?",
+      "How are global water issues addressed?",
+      "What are transboundary water conflicts?",
+      "How does agriculture use water resources?",
+      "dams reservoirs irrigation water rights global water issues"
+    ],
+    "a": "Dams and reservoirs provide water storage, flood control, hydropower generation, and irrigation supply, with over 58,000 large dams worldwide—China's Three Gorges Dam (22,500 MW) being the largest—though dams also disrupt river ecosystems, trap sediment, displace communities, and contribute to methane emissions from reservoir decomposition. Irrigation accounts for approximately 70% of global freshwater withdrawals, with surface irrigation (flood/furrow) being the most common but least efficient, while pressurized systems like center-pivot and drip irrigation achieve 85-95% efficiency by delivering water directly to plant roots. Water rights and governance remain highly contentious: the 1997 UN Watercourses Convention provides a framework for transboundary water sharing, yet 153 countries share rivers, lakes, and aquifers without comprehensive agreements, with potential flashpoints including the Nile River (Ethiopia's Grand Ethiopian Renaissance Dam), the Indus River (India-Pakistan), and the Mekong River (China's upstream dams affecting downstream Southeast Asian nations)."
+  }
+]

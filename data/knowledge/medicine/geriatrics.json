@@ -1,0 +1,49 @@
+[
+  {
+    "q": [
+      "What is geriatrics?",
+      "What does geriatric medicine focus on?",
+      "What is the difference between geriatrics and gerontology?",
+      "Why is geriatric medicine important?",
+      "What are the goals of geriatric care?",
+      "Who needs a geriatric specialist?",
+      "What age group does geriatrics cover?"
+    ],
+    "a": "Geriatrics is the branch of medicine dedicated to the health care of older adults, focusing on preventing and managing diseases and disabilities that commonly occur in later life. Unlike gerontology, which is the broader study of aging from social, psychological, and biological perspectives, geriatrics is specifically clinical and involves comprehensive assessment and coordinated care for patients with multiple chronic conditions. Geriatric medicine emphasizes maintaining functional independence, optimizing quality of life, managing polypharmacy (the use of multiple medications), and addressing the complex interplay between physical, cognitive, and social factors that affect aging individuals."
+  },
+  {
+    "q": [
+      "What are common geriatric syndromes?",
+      "What is the difference between delirium and dementia?",
+      "What causes falls in elderly patients?",
+      "What is incontinence and how is it managed in older adults?",
+      "What is frailty in geriatric medicine?",
+      "How are geriatric syndromes assessed?",
+      "What are the typical presentations of geriatric syndromes?"
+    ],
+    "a": "Geriatric syndromes are multifactorial health conditions that occur primarily in older adults and do not fit neatly into traditional disease categories, including falls, delirium, dementia, incontinence, frailty, and pressure ulcers. Delirium is an acute, fluctuating disturbance in attention and cognition often triggered by infection, medication, or surgery, and is potentially reversible, while dementia is a progressive, chronic decline in cognitive function most commonly caused by Alzheimer's disease. Falls are the leading cause of injury-related death in older adults, resulting from the interplay of muscle weakness, balance impairment, medication side effects, vision problems, and environmental hazards, with management requiring multifactorial risk assessment and targeted interventions like strength training, medication review, and home safety modifications."
+  },
+  {
+    "q": [
+      "What is Alzheimer's disease?",
+      "What is Parkinson's disease?",
+      "What is osteoporosis?",
+      "How do Alzheimer's and Parkinson's differ?",
+      "What are the early signs of Alzheimer's?",
+      "How are these age-related diseases managed?",
+      "What is polypharmacy and why is it dangerous in older adults?"
+    ],
+    "a": "Alzheimer's disease is a progressive neurodegenerative disorder accounting for 60-80% of dementia cases, characterized by the accumulation of amyloid-beta plaques and tau protein tangles in the brain, leading to memory loss, language impairment, and eventual loss of independent function. Parkinson's disease involves the progressive loss of dopamine-producing neurons in the substantia nigra, causing tremor, rigidity, bradykinesia (slowness of movement), and postural instability. Osteoporosis is a skeletal disorder marked by reduced bone density and increased fracture risk, particularly in postmenopausal women. Polypharmacy — typically defined as using five or more medications concurrently — is especially dangerous in older adults due to age-related changes in drug metabolism, increased risk of adverse drug interactions, and higher susceptibility to falls, cognitive impairment, and hospitalizations, making medication review and deprescribing central to geriatric practice."
+  },
+  {
+    "q": [
+      "What is palliative care and how does it differ from hospice?",
+      "What are advance directives?",
+      "What is elder abuse and how is it detected?",
+      "What is a comprehensive geriatric assessment?",
+      "What is the role of advance care planning in geriatrics?",
+      "How is elder abuse defined and recognized?"
+    ],
+    "a": "Palliative care is specialized medical care focused on relieving symptoms, pain, and stress of serious illness at any stage, provided alongside curative treatment, while hospice care is a subset of palliative care specifically for patients with a prognosis of six months or less who have elected to forgo curative treatment. Advance directives are legal documents — including living wills and healthcare power of attorney — that allow individuals to specify their medical treatment preferences in advance if they become unable to communicate. Elder abuse encompasses physical, emotional, sexual, financial exploitation, and neglect of older adults, affecting an estimated 10% of elders globally, requiring vigilance from healthcare providers as victims often cannot or will not report. A comprehensive geriatric assessment is a multidimensional evaluation covering medical, functional, cognitive, psychological, and social domains, forming the foundation of geriatric care by identifying problems not detected in standard exams and guiding coordinated care planning."
+  }
+]

@@ -1,0 +1,132 @@
+[
+  {
+    "id": "haiku-001",
+    "triggers": [
+      "write a haiku about",
+      "compose a haiku for",
+      "create a haiku about"
+    ],
+    "context_role": "topic",
+    "template": "A haiku captures a single moment in just three lines and seventeen syllables. Here is one about {context}:\n\nSilent {context} waits,\nBreathing softly in the hush,\nA world held in pause.\n\nThe seasonal word here paints the stillness of {context}, inviting the reader to observe without rush—the essence of haiku.",
+    "fallback": "A haiku is a traditional Japanese poem of three lines with a 5-7-5 syllable pattern, often focusing on nature and a single moment in time.",
+    "style": ["creative", "poetic", "minimalist"],
+    "response_length": "short"
+  },
+  {
+    "id": "sonnet-002",
+    "triggers": [
+      "write a sonnet about",
+      "compose a sonnet for",
+      "create a sonnet about"
+    ],
+    "context_role": "topic",
+    "template": "A sonnet follows a fourteen-line structure, traditionally in iambic pentameter, with a volta (turn) near the end. Here is a sonnet about {context}:\n\nShall I compare thee to a {context} fair?\nThou art more lovely and more temperate:\nRough winds do shake the darling buds of May,\nAnd {context}'s lease hath all too short a date;\nSometime too hot the eye of heaven shines,\nAnd often is his gold complexion dimm'd;\nAnd every fair from fair sometime declines,\nBy chance or nature's changing course untrimm'd;\nBut thy eternal {context} shall not fade,\nNor lose possession of that fair thou ow'st;\nNor shall death brag thou wander'st in his shade,\nWhen in eternal lines to time thou grow'st:\nSo long as men can breathe or eyes can see,\nSo long lives this, and this gives life to thee.\n\nThe volta arrives at line nine, shifting from seasonal change to the permanence of {context} captured in verse.",
+    "fallback": "A sonnet is a fourteen-line poem, usually in iambic pentameter, with a structured rhyme scheme and a thematic turn called a volta.",
+    "style": ["creative", "poetic", "formal"],
+    "response_length": "medium"
+  },
+  {
+    "id": "free-verse-003",
+    "triggers": [
+      "write a free verse poem about",
+      "compose free verse about",
+      "create a free verse poem for"
+    ],
+    "context_role": "topic",
+    "template": "Free verse abandons regular meter and rhyme but still shapes language through rhythm, line breaks, and imagery. Here is a free verse poem about {context}:\n\n{context} does not ask for permission.\nIt arrives like morning—\nunannounced,\nunstoppable,\nsettling into the hollows we forgot we had.\n\nWe carry {context} in the spaces between words,\nin the hesitation before a question,\nin the quiet exhale after news we were not ready to hear.\n\nIt is not a destination.\n{context} is the moving—\nthe slow, unbroken current beneath the frozen surface.\n\nAnd when we finally name it,\n{context} becomes lighter,\nless stone, more breath,\na thing we hold rather than a thing that holds us.",
+    "fallback": "Free verse poetry relies on natural rhythms and imagery rather than strict meter or rhyme schemes to create emotional impact.",
+    "style": ["creative", "poetic", "contemporary"],
+    "response_length": "medium"
+  },
+  {
+    "id": "limerick-004",
+    "triggers": [
+      "write a limerick about",
+      "compose a limerick for",
+      "create a limerick about"
+    ],
+    "context_role": "topic",
+    "template": "A limerick is a five-line humorous poem with an AABBA rhyme scheme and a distinctive anapestic meter. Here is a limerick about {context}:\n\nThere once was a {context} so grand,\nThat drew folks from across the land.\nThey'd laugh and they'd cheer,\nFor a full half a year,\nAnd leave with a sunburned hand.\n\nThe first, second, and fifth lines rhyme and share a three-beat rhythm, while the third and fourth are shorter two-beat lines—the hallmark snappy pace of a limerick about {context}.",
+    "fallback": "A limerick is a five-line humorous poem with an AABBA rhyme scheme and a strong rhythmic bounce.",
+    "style": ["creative", "humorous", "whimsical"],
+    "response_length": "short"
+  },
+  {
+    "id": "acrostic-005",
+    "triggers": [
+      "write an acrostic poem about",
+      "compose an acrostic for",
+      "create an acrostic poem about"
+    ],
+    "context_role": "topic",
+    "template": "An acrostic poem uses the letters of a word as the first letter of each line, spelling out the subject vertically. Here is an acrostic poem for {context}:\n\nC — Carries the weight of unspoken dreams,\nO — Opens doors where nothing is as it seems,\nN — Never rushing, yet always moving ahead,\nT — Tracing the path where all words are said,\nE — Every moment a story waiting to be read,\nX — Xenith of thought, in the spaces we tread,\nT — Time bends around {context}, steady and true.\n\nThe vertical axis spells the name of {context}, while each horizontal line explores a facet of its meaning. This form works beautifully for highlighting different dimensions of {context}.",
+    "fallback": "An acrostic poem uses the letters of a subject word to begin each line, spelling out the topic vertically.",
+    "style": ["creative", "poetic", "structured"],
+    "response_length": "medium"
+  },
+  {
+    "id": "rhyming-couplets-006",
+    "triggers": [
+      "write rhyming couplets about",
+      "compose rhyming couplets for",
+      "create couplets about"
+    ],
+    "context_role": "topic",
+    "template": "Rhyming couplets are pairs of lines that rhyme and share the same meter, often used to create a sense of completion and wit. Here are couplets celebrating {context}:\n\nUpon the field of {context}, bold and bright,\nWe chase the fading echoes of the light.\n\nEach step we take uncovers something new,\nA shift in {context}, a change in point of view.\n\nWhat once was hidden now begins to show,\nThe seeds of {context} helping us to grow.\n\nThe closing rhyme of each pair provides a satisfying pause, and together the couplets build a layered portrait of {context}. This structure works well for epigrams, narratives, or love poems.",
+    "fallback": "Rhyming couplets are pairs of rhymed lines in the same meter, creating a concise and memorable poetic unit.",
+    "style": ["creative", "poetic", "classical"],
+    "response_length": "medium"
+  },
+  {
+    "id": "elegy-007",
+    "triggers": [
+      "write an elegy about",
+      "compose an elegy for",
+      "create an elegy about"
+    ],
+    "context_role": "topic",
+    "template": "An elegy is a mournful, melancholic poem that reflects on loss, longing, or the passing of something cherished. Here is an elegy for {context}:\n\nSo now {context} slips beyond the veil of days,\nA quiet fading none can quite reverse.\nThe hollow where it stood still holds its shape,\nA silhouette of what once filled the space.\n\nNo bell was rung, no final word was spoken,\nBut still the world feels suddenly bereft.\nWe gather fragments—memories, tokens, tokens—\nOf all the lasting beauty {context} left.\n\nThe elegy does not demand we move on quickly; it asks us to sit with the absence, to honor {context} by remembering fully before letting go.",
+    "fallback": "An elegy is a poem of serious reflection, typically a lament for the dead or for something lost.",
+    "style": ["creative", "poetic", "melancholic", "formal"],
+    "response_length": "medium"
+  },
+  {
+    "id": "ode-008",
+    "triggers": [
+      "write an ode to",
+      "compose an ode for",
+      "create an ode about"
+    ],
+    "context_role": "topic",
+    "template": "An ode is a lyric poem in the form of an address to a particular subject, elevated in style and tone. Here is an ode to {context}:\n\nO {context}, unfurling like the dawn,\nYou ask for nothing yet you give so much.\nIn you, the ordinary is withdrawn,\nAnd even silence learns a softer touch.\n\nYou dwell in every glance and every gesture,\nThe thread that weaves the mundane into grace.\nNo temple holds a holier vesture\nThan the quiet truth inscribed upon your face.\n\nHow do we thank what cannot be contained?\nYou fill the hollow where the heart once ached.\nO {context}, in your presence we are trained\nTo see the world not broken, but remade.\n\nPraise, then, to {context}—steady, deep, and true,\nThe quiet revolution, born anew.",
+    "fallback": "An ode is a lyric poem in praise of something, written in an elevated style and usually addressing its subject directly.",
+    "style": ["creative", "poetic", "elevated", "classical"],
+    "response_length": "medium"
+  },
+  {
+    "id": "ballad-009",
+    "triggers": [
+      "write a ballad about",
+      "compose a ballad for",
+      "create a ballad about"
+    ],
+    "context_role": "topic",
+    "template": "A ballad tells a story through short stanzas, often with a repeated refrain, and a simple rhyme scheme of ABAB or ABCB. Here is a ballad about {context}:\n\nCome gather round and hear the tale\nOf {context}, both bold and bright,\nThat sailed through storm and bitter gale\nAnd carried us through night.\n\nThe road was long, the path unclear,\nBut {context} held the flame,\nAnd through the doubt and every fear,\nIt never changed its name.\n\nRefrain:\nO {context}, {context}, steady and true,\nWe'll sing your story through and through.\n\nNow years have passed and songs are sung,\nThe tale is old and worn,\nBut {context} stands forever young,\nA legend newly born.\n\nThe refrain invites the listener to join in, and the narrative arc gives {context} a heroic or mythic quality, perfect for storytelling.",
+    "fallback": "A ballad is a narrative poem set to a rhythmic, song-like meter, often telling a dramatic story with a refrain.",
+    "style": ["creative", "poetic", "narrative", "musical"],
+    "response_length": "medium"
+  },
+  {
+    "id": "tanka-010",
+    "triggers": [
+      "write a tanka about",
+      "compose a tanka for",
+      "create a tanka about"
+    ],
+    "context_role": "topic",
+    "template": "A tanka is a five-line Japanese poem with a 5-7-5-7-7 syllable structure, traditionally expressing a personal emotion or a moment of insight. Here is a tanka about {context}:\n\nThe weight of {context}\nSettles like dew on still grass—\nA quiet knowing.\nEven the moon holds its breath;\n{context} is here, softly whole.\n\nThe upper three lines (5-7-5) paint the scene or situation, while the final couplet (7-7) introduces a personal reflection or emotional shift—the pivot that gives tanka its depth. This form captures the fleeting yet profound presence of {context}.",
+    "fallback": "A tanka is a five-line Japanese poem with a 5-7-5-7-7 syllable pattern, traditionally conveying personal emotion or insight.",
+    "style": ["creative", "poetic", "reflective", "minimalist"],
+    "response_length": "short"
+  }
+]

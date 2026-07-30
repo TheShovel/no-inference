@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What is cybersecurity?",
+      "Define cybersecurity and its importance.",
+      "What does cybersecurity protect?",
+      "Why is cybersecurity important for organizations?",
+      "What are the main goals of cybersecurity?",
+      "Explain cybersecurity in simple terms.",
+      "How does cybersecurity work?"
+    ],
+    "a": "Cybersecurity is the practice of protecting computer systems, networks, devices, and data from digital attacks, unauthorized access, damage, or theft. It encompasses a broad range of technologies, processes, and practices designed to safeguard confidentiality, integrity, and availability of information — collectively known as the CIA triad. As organizations increasingly rely on digital infrastructure, cybersecurity has become critical for protecting sensitive data, maintaining business continuity, and preventing financial and reputational damage from cyber incidents."
+  },
+  {
+    "q": [
+      "What is the CIA triad in cybersecurity?",
+      "Explain confidentiality, integrity, and availability.",
+      "What are the three pillars of information security?",
+      "What is confidentiality in cybersecurity?",
+      "What is integrity in information security?",
+      "What is availability in cybersecurity?",
+      "Why is the CIA triad important?"
+    ],
+    "a": "The CIA triad is the foundational model in information security consisting of three core principles: confidentiality, integrity, and availability. Confidentiality ensures that sensitive information is accessible only to authorized individuals and protected from unauthorized disclosure through mechanisms like encryption, access controls, and authentication. Integrity guarantees that data remains accurate, complete, and unaltered during storage and transmission, using hashing, checksums, and version control to detect or prevent unauthorized modifications. Availability ensures that systems, networks, and data are accessible to authorized users when needed, achieved through redundancy, failover mechanisms, disaster recovery planning, and protection against denial-of-service attacks."
+  },
+  {
+    "q": [
+      "What is authentication in cybersecurity?",
+      "How does authentication differ from authorization?",
+      "What are the types of authentication?",
+      "What is multi-factor authentication?",
+      "What is the difference between authentication and authorization?",
+      "How do passwords work for authentication?",
+      "What is single sign-on (SSO)?"
+    ],
+    "a": "Authentication is the process of verifying the identity of a user, device, or system attempting to access a resource, typically using one or more factors: something you know (password, PIN), something you have (security token, smartphone, smart card), or something you are (biometrics like fingerprint, facial recognition, iris scan). Multi-factor authentication (MFA) combines two or more of these factors to provide stronger security than any single factor alone. Authorization, by contrast, determines what an authenticated user is permitted to do — while authentication answers \"who are you?\", authorization answers \"what are you allowed to access?\" — and is typically enforced through access control lists, role-based access control (RBAC), or attribute-based access control (ABAC)."
+  },
+  {
+    "q": [
+      "What is encryption?",
+      "How does encryption work?",
+      "What is the difference between symmetric and asymmetric encryption?",
+      "What are encryption keys?",
+      "Why is encryption important for security?",
+      "What is end-to-end encryption?",
+      "How do encryption algorithms protect data?"
+    ],
+    "a": "Encryption is the process of converting readable plaintext data into an unreadable encoded form (ciphertext) using an algorithm and a cryptographic key, ensuring that only authorized parties with the corresponding decryption key can access the original information. Symmetric encryption uses the same key for both encryption and decryption and is fast but requires secure key exchange, with algorithms including AES and DES. Asymmetric encryption uses a public-private key pair, where the public key encrypts data and the corresponding private key decrypts it, enabling secure communication without prior key sharing — RSA and ECC are common asymmetric algorithms. Encryption protects data at rest (stored files and databases), in transit (network communications via TLS/SSL), and increasingly end-to-end in messaging applications where only the communicating parties can read messages."
+  },
+  {
+    "q": [
+      "What is zero trust security?",
+      "How does zero trust architecture work?",
+      "What is the zero trust model?",
+      "What does 'never trust, always verify' mean?",
+      "What are the principles of zero trust?",
+      "How is zero trust different from traditional perimeter security?",
+      "Why is zero trust important for modern organizations?"
+    ],
+    "a": "Zero trust is a security model based on the principle of 'never trust, always verify,' which assumes that no user, device, or network should be inherently trusted regardless of whether they are inside or outside the corporate network perimeter. Unlike traditional perimeter-based security that trusts internal network traffic, zero trust requires continuous verification of every access request through micro-segmentation (dividing networks into isolated zones), least-privilege access controls, continuous monitoring, and multi-factor authentication. Zero trust architecture typically involves technologies like identity and access management (IAM), endpoint detection and response (EDR), software-defined perimeters, and encryption of all communications, and has become increasingly important with the rise of remote work, cloud computing, and sophisticated cyber threats that bypass traditional defenses."
+  }
+]

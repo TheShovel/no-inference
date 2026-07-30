@@ -1,0 +1,58 @@
+[
+  {
+    "q": [
+      "What are the different types of cameras?",
+      "What is the difference between DSLR and mirrorless?",
+      "What is a medium format camera?",
+      "What is a film camera?",
+      "What is an instant camera?",
+      "How do smartphone cameras work?",
+      "DSLR vs mirrorless vs medium format",
+      "camera types explained"
+    ],
+    "a": "DSLR (Digital Single-Lens Reflex) cameras use a mirror and pentaprism optical viewfinder, offering fast phase-detection autofocus, extensive lens compatibility, and excellent battery life, while mirrorless cameras eliminate the mirror mechanism for a smaller, lighter body with electronic viewfinders, faster burst rates, and superior video capabilities. Medium format cameras feature larger sensors (typically 44x33mm or larger) than full-frame, delivering exceptional resolution (50-150 megapixels), dynamic range, and color depth favored by commercial and fine art photographers. Smartphone cameras rely on computational photography — combining multiple exposures, AI-driven scene recognition, and sophisticated image processing — to produce high-quality images from tiny sensors in a device users carry everywhere."
+  },
+  {
+    "q": [
+      "What is the difference between prime and zoom lenses?",
+      "What is a wide-angle lens used for?",
+      "What is a telephoto lens used for?",
+      "What is a macro lens?",
+      "What is a tilt-shift lens?",
+      "What is a fisheye lens?",
+      "What are the types of camera lenses?",
+      "lens types photography",
+      "prime vs zoom lens"
+    ],
+    "a": "Prime lenses have a fixed focal length, generally offering wider maximum apertures (e.g., f/1.4, f/1.8), superior sharpness, lighter weight, and better low-light performance than zooms, while zoom lenses cover a range of focal lengths, providing compositional flexibility without changing lenses. Wide-angle lenses (14-35mm) capture expansive scenes and exaggerate perspective, making them essential for landscape, architectural, and interior photography. Telephoto lenses (70-600mm) magnify distant subjects and compress perspective, ideal for wildlife, sports, and portrait photography, while macro lenses offer 1:1 or greater magnification for extreme close-ups of small subjects. Tilt-shift lenses allow shifting (correcting perspective distortion in architecture) and tilting (controlling the plane of focus for selective sharpness), and fisheye lenses produce extreme 180-degree hemispherical views with strong barrel distortion."
+  },
+  {
+    "q": [
+      "What are tripods used for in photography?",
+      "What types of camera support are there?",
+      "What are camera filters used for?",
+      "What is a polarizing filter?",
+      "What is an ND filter?",
+      "What is a UV filter?",
+      "What is flash photography equipment?",
+      "What are light modifiers in photography?",
+      "What is a softbox?",
+      "What is a beauty dish?",
+      "camera accessories tripod filters lighting"
+    ],
+    "a": "Tripods provide stable camera support for long exposures, landscape photography, macro work, and studio shooting, with key features including load capacity, leg sections, center column design, and head types (ball heads for quick positioning, pan-tilt heads for precise control). Camera filters serve specific purposes: polarizing filters reduce reflections from non-metallic surfaces and deepen blue skies, neutral density (ND) filters reduce light entering the lens for longer exposures in bright conditions, and UV filters protect the front lens element. Flash/strobe lighting ranges from on-camera speedlights to studio monolights and pack-head systems, with light modifiers such as softboxes (creating soft, diffused light), umbrellas (broad, even light spread), beauty dishes (contrasty yet flattering light for portraits), and reflectors (bouncing light to fill shadows)."
+  },
+  {
+    "q": [
+      "How do I maintain my camera equipment?",
+      "How do I clean a camera sensor?",
+      "What camera maintenance is needed?",
+      "What type of memory card should I use?",
+      "What are the best camera bags?",
+      "How long do camera batteries last?",
+      "camera care and maintenance",
+      "sensor cleaning tips"
+    ],
+    "a": "Camera sensor cleaning should be performed carefully using a blower (rocket blower) first to remove loose dust, followed by a sensor swab and cleaning solution if stubborn spots remain, never using compressed air or canned air which can deposit moisture. Memory cards should be formatted in-camera rather than on a computer, and professionals should use high-endurance UHS-II SD or CFexpress cards with sufficient write speeds for their camera's burst rate and video resolution. Camera batteries (typically lithium-ion) degrade over time and with charge cycles — storing them at around 50% charge in a cool, dry place when not in use for extended periods extends their lifespan, and regular firmware updates from manufacturers fix bugs and sometimes add new features."
+  }
+]

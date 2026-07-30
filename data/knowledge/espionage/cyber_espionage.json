@@ -1,0 +1,77 @@
+[
+  {
+    "q": [
+      "What is cyber espionage?",
+      "How does cyber espionage differ from traditional espionage?",
+      "What are advanced persistent threats (APTs)?",
+      "What makes cyber espionage different from cyber crime?",
+      "cyber espionage definition and scope",
+      "advanced persistent threats APT meaning",
+      "cyber espionage vs traditional espionage"
+    ],
+    "a": "Cyber espionage is the use of computer networks and digital tools to gain unauthorized access to sensitive information—government secrets, intellectual property, diplomatic communications, or trade data—from target organizations or nations. Unlike traditional espionage, which requires physical presence, dead drops, and face-to-face meetings, cyber espionage can be conducted remotely from anywhere in the world, at massive scale, with relatively low risk of capture. Advanced Persistent Threats (APTs) are sophisticated, prolonged cyber espionage campaigns typically conducted by nation-state actors, characterized by stealthy infiltration, long-term network persistence, and methodical data extraction over months or years, as distinct from cyber crime which seeks rapid financial gain through ransomware or theft."
+  },
+  {
+    "q": [
+      "What are the major nation-state hacking groups?",
+      "Who is APT28 / Fancy Bear?",
+      "Who is APT29 / Cozy Bear?",
+      "What is the Lazarus Group?",
+      "What is the Equation Group?",
+      "Who is APT1 / Unit 61398?",
+      "Who is APT10?",
+      "nation-state hacking groups APT28 Fancy Bear APT29 Cozy Bear",
+      "Lazarus Group North Korea hackers",
+      "Equation Group NSA-linked hackers",
+      "APT1 Unit 61398 China PLA",
+      "state-sponsored cyber espionage groups",
+      "major nation-state hacking groups",
+      "who is apt28 fancy bear"
+    ],
+    "a": "Nation-state hacking groups are organized cyber units sponsored by governments for espionage, sabotage, and strategic advantage. APT28 (Fancy Bear) is a Russian GRU military intelligence unit responsible for the DNC email hacks (2016), the World Anti-Doping Agency breach, and targeting of Eastern European governments. APT29 (Cozy Bear), also Russian, linked to the SVR foreign intelligence service, gained notoriety for the SolarWinds supply chain attack (2020) that compromised thousands of organizations globally. The Lazarus Group is a North Korean state-sponsored hacking collective blamed for the Sony Pictures hack (2014), the Bangladesh Bank heist ($81 million stolen in 2016), and ransomware attacks funding the regime. The Equation Group is an NSA-linked group (likely Tailored Access Operations) whose advanced toolset—including the legendary EternalBlue exploit—was leaked by the Shadow Brokers in 2017. APT1 (Unit 61398) was a Chinese People's Liberation Army unit identified by Mandiant in 2013 for systematically stealing intellectual property from US technology companies, while APT10 operated out of China's Ministry of State Security targeting defense contractors and healthcare firms worldwide."
+  },
+  {
+    "q": [
+      "What techniques are used in cyber espionage?",
+      "What is spear phishing?",
+      "What are zero-day exploits?",
+      "What are watering hole attacks?",
+      "What are supply chain attacks?",
+      "What are backdoors in cyber espionage?",
+      "What is data exfiltration?",
+      "cyber espionage techniques spear phishing zero-days",
+      "watering hole attacks supply chain attacks",
+      "backdoors data exfiltration methods",
+      "techniques used in cyber espionage",
+      "what is spear phishing"
+    ],
+    "a": "Cyber espionage techniques span a wide range of increasingly sophisticated methods: spear phishing sends highly personalized emails to specific targets (often researched via social media) containing malicious attachments or links that install malware; zero-day exploits target previously unknown software vulnerabilities for which no patch exists, making them extremely valuable for initial access; watering hole attacks compromise websites that the target population is known to visit, infecting visitors through drive-by downloads; and supply chain attacks compromise trusted software vendors (like SolarWinds, Kaseya, or NotPetya's tainted accounting software) to distribute malware through legitimate update channels to thousands of downstream victims. Backdoors are secret methods of maintaining access to compromised systems, often hidden in firmware, kernel modules, or disguised as legitimate system processes, while data exfiltration involves compressing, encrypting, and slowly transferring stolen data—often during off-hours or hidden in normal-looking traffic—to command-and-control servers to avoid detection by network monitoring systems."
+  },
+  {
+    "q": [
+      "What are notable cyber espionage operations?",
+      "What was Stuxnet?",
+      "What was Operation Aurora?",
+      "What was the Sony hack?",
+      "What was the OPM breach?",
+      "What was the SolarWinds attack?",
+      "What was NotPetya?",
+      "How is cyber espionage attributed?",
+      "How do nations defend against cyber espionage?",
+      "What is the legal framework for cyber espionage?",
+      "What is industrial and economic espionage?",
+      "Stuxnet Iran nuclear centrifuges",
+      "Operation Aurora Google China",
+      "Sony hack North Korea",
+      "OPM breach background investigation data",
+      "SolarWinds supply chain attack",
+      "NotPetya destructive malware",
+      "cyber espionage attribution methods",
+      "international law cyber espionage",
+      "notable cyber espionage operations",
+      "what was stuxnet",
+      "what was the solarwinds attack"
+    ],
+    "a": "Notable cyber espionage operations include Stuxnet (2010, US-Israeli operation that used four zero-day exploits to sabotage Iranian nuclear centrifuges, widely considered the first digital weapon), Operation Aurora (2009–2010, Chinese hackers breached Google, Adobe, and over 30 other tech companies to steal source code), the Sony Pictures hack (2014, North Korean retaliation for 'The Interview' comedy film, destroying data and leaking corporate emails), the US Office of Personnel Management breach (2015, Chinese hackers stole background investigation records of 22 million current and former federal employees), the SolarWinds attack (2020, Russian hackers inserted a backdoor into a network management update affecting 18,000 customers including US government agencies), and NotPetya (2017, Russian wiper malware disguised as ransomware that caused $10 billion in damage globally). Cyber espionage attribution relies on technical indicators (malware code similarities, command-and-control infrastructure, encryption keys), operational security mistakes (using same tools across operations, reusing infrastructure), and intelligence clues (timing with geopolitical events, targeting patterns matching known interests). Defending against cyber espionage requires defense-in-depth strategies including network segmentation, multi-factor authentication, endpoint detection and response (EDR) tools, zero-trust architectures, air-gapped systems for the most sensitive data, and continuous security awareness training to prevent phishing. International law struggles to govern cyber espionage—while the Tallinn Manual attempts to apply existing laws of armed conflict to cyber operations, most peacetime cyber espionage falls into legal gray areas, with nations charging hackers under traditional computer fraud statutes while themselves conducting offensive operations."
+  }
+]

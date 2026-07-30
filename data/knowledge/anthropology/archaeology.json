@@ -1,0 +1,51 @@
+[
+  {
+    "q": [
+      "What are the main methods used in archaeology?",
+      "How do archaeologists discover and study past human activity?",
+      "What techniques are used in archaeological fieldwork?",
+      "Describe the methods archaeologists use to find sites.",
+      "What is the difference between survey and excavation in archaeology?"
+    ],
+    "a": "Archaeologists use a combination of survey methods (fieldwalking, remote sensing, LiDAR, ground-penetrating radar) to locate sites without digging, followed by systematic excavation to recover artifacts, features, and ecofacts. They employ stratigraphy to interpret the chronological sequence of deposits, and sieving/flotation to recover small finds like seeds and bones. Laboratory analyses such as radiocarbon dating, DNA analysis, and isotope studies help reconstruct past lifeways, diets, and migration patterns."
+  },
+  {
+    "q": [
+      "What is stratigraphy in archaeology?",
+      "How do archaeologists use stratigraphy to date sites?",
+      "Explain the law of superposition in archaeological context.",
+      "Why is stratigraphy important in excavation?",
+      "How does stratigraphy help establish chronology?"
+    ],
+    "a": "Stratigraphy is the study of soil layers (strata) deposited over time at an archaeological site, based on the law of superposition: lower layers are older than those above them. Archaeologists carefully excavate and document these layers to establish relative chronologies and understand site formation processes. Natural events like flooding or volcanic eruptions, along with human activity such as building or trash disposal, create distinct strata that reveal the sequence of occupation and abandonment."
+  },
+  {
+    "q": [
+      "How does radiocarbon dating work?",
+      "What is radiocarbon dating used for in archaeology?",
+      "Explain the principle behind carbon-14 dating.",
+      "What materials can be dated using radiocarbon?",
+      "What are the limitations of radiocarbon dating?"
+    ],
+    "a": "Radiocarbon dating measures the decay of carbon-14, a radioactive isotope absorbed by living organisms, to determine the age of organic materials up to about 50,000 years old. When an organism dies, it stops absorbing carbon-14, and the remaining isotope decays at a known half-life (5,730 years), allowing scientists to calculate time since death. Calibration curves using tree-ring data (dendrochronology) correct for fluctuations in atmospheric carbon-14, making radiocarbon one of the most important absolute dating methods in archaeology."
+  },
+  {
+    "q": [
+      "How is dendrochronology used in archaeology?",
+      "What is tree-ring dating and how does it work?",
+      "How do archaeologists use tree rings to date artifacts?",
+      "What is the principle behind dendrochronology?"
+    ],
+    "a": "Dendrochronology, or tree-ring dating, uses the annual growth rings of trees to establish precise calendar dates for wooden artifacts and structural timbers. Each year a tree adds one ring, and the width varies with climate conditions, producing distinctive patterns that can be matched across trees in a region. By building master chronologies spanning thousands of years, archaeologists can date wood samples by matching their ring sequences to the known record, achieving accuracy to the exact year."
+  },
+  {
+    "q": [
+      "What is remote sensing in archaeology?",
+      "How is LiDAR used in archaeological surveys?",
+      "What is ground-penetrating radar used for in archaeology?",
+      "How do satellite images help archaeologists find sites?",
+      "What are non-invasive techniques in archaeological prospection?"
+    ],
+    "a": "Remote sensing encompasses non-invasive techniques to detect subsurface features without excavation. LiDAR (Light Detection and Ranging) uses laser pulses from aircraft to create high-resolution digital elevation models, revealing ancient structures hidden beneath forest canopies. Ground-penetrating radar (GPR) sends radar pulses into the ground and detects reflections from buried walls, graves, or artifacts. Satellite imagery and aerial photography also help identify large-scale features like ancient roads, field systems, and settlement patterns that are invisible at ground level."
+  }
+]

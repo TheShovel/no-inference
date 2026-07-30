@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What are the different types of restaurants?",
+      "What is fine dining?",
+      "What is the difference between fast casual and fast food?",
+      "What is casual dining?",
+      "What are food trucks and pop-up restaurants?",
+      "What types of restaurant concepts exist?",
+      "Describe the spectrum of restaurant types."
+    ],
+    "a": "Restaurants range across a spectrum from fine dining establishments offering multi-course chef-driven menus, formal service, and extensive wine programs to fast food chains focused on speed, consistency, and low prices through standardized production. Casual dining restaurants like Applebee's or Chili's provide full table service in a relaxed atmosphere at moderate prices, while fast-casual concepts like Chipotle and Sweetgreen bridge the gap with higher-quality ingredients than fast food but faster service than casual dining. Food trucks and pop-up restaurants have grown in popularity as lower-barrier entry points for culinary entrepreneurs, offering specialized cuisine at lower overhead costs and creating buzz through temporary or mobile locations."
+  },
+  {
+    "q": [
+      "What is front of house in a restaurant?",
+      "What is back of house in a restaurant?",
+      "How is a restaurant kitchen organized?",
+      "What does a restaurant manager do?",
+      "What is brigade system in restaurant kitchens?",
+      "How are restaurant operations structured?",
+      "What roles exist in a restaurant?"
+    ],
+    "a": "Front of house (FOH) includes all staff who interact directly with guests, such as hosts, servers, bartenders, and sommeliers, who are responsible for greeting, seating, taking orders, serving food and beverages, and processing payments. Back of house (BOH) comprises the kitchen team including chefs, line cooks, dishwashers, and kitchen managers who handle food preparation, cooking, plating, and cleaning. The kitchen brigade system, formalized by Auguste Escoffier, organizes kitchen staff into a hierarchy of specialized stations (sauté, grill, pastry, etc.) led by the executive chef or head chef, ensuring efficient production and consistent quality during service."
+  },
+  {
+    "q": [
+      "What is menu planning in a restaurant?",
+      "How do restaurants design their menus?",
+      "What is wine service?",
+      "What is restaurant management?",
+      "How are restaurant menus structured?",
+      "What factors go into menu pricing?",
+      "What is menu engineering?"
+    ],
+    "a": "Menu planning is the strategic process of selecting dishes, setting prices, and designing the layout of a restaurant's menu to maximize profitability while satisfying customer preferences and operational capabilities, using techniques like menu engineering to highlight high-margin items. Wine service encompasses the selection, storage, presentation, and serving of wines, with trained sommeliers guiding guests through pairing recommendations and ensuring proper temperature, decanting, and glassware for each wine. Restaurant management involves overseeing all aspects of operations including staffing, inventory, cost control, customer service, marketing, and compliance with health and safety regulations, requiring both business acumen and hospitality skills."
+  },
+  {
+    "q": [
+      "What is HACCP?",
+      "What is ServSafe?",
+      "What food safety standards apply to restaurants?",
+      "How do restaurants ensure food safety?",
+      "What is the tipping culture in restaurants?",
+      "How does tipping work in different countries?",
+      "What is the debate around tipping?"
+    ],
+    "a": "HACCP (Hazard Analysis Critical Control Points) is a systematic preventive approach to food safety that identifies potential hazards in food production processes and establishes critical control points to monitor temperatures, prevent cross-contamination, and ensure safe food handling. ServSafe is a widely recognized food safety training and certification program developed by the National Restaurant Association that educates food service workers on proper hygiene, cooking temperatures, storage practices, and sanitation procedures. Tipping culture varies significantly by country, with the United States relying on tips as a primary income source for servers due to a lower minimum wage for tipped workers, while many European and Asian countries include service charges or have no-tipping norms, and the practice has become increasingly controversial regarding wage equity and customer expectations."
+  },
+  {
+    "q": [
+      "What is the Michelin Guide?",
+      "What are Michelin stars?",
+      "What is the James Beard Award?",
+      "How are restaurants reviewed?",
+      "What is the impact of restaurant reviews?",
+      "How do restaurant critics evaluate restaurants?",
+      "What are the most prestigious restaurant awards?"
+    ],
+    "a": "The Michelin Guide, originally published by the French tire company to encourage road travel, awards one to three stars to restaurants based on anonymous inspections evaluating the quality of ingredients, mastery of techniques, personality of the chef, consistency, and value for money — with three stars signifying 'exceptional cuisine worth a special journey.' The James Beard Awards are among the most prestigious honors in the American culinary industry, recognizing excellence across categories including Outstanding Restaurant, Best Chef, and Rising Star Chef. Restaurant ownership requires navigating complex challenges including high startup costs, thin profit margins (typically 3-5% for independent restaurants), labor shortages, and intense competition, with many new restaurants failing within the first year despite growing consumer demand for dining experiences."
+  }
+]

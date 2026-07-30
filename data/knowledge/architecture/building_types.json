@@ -1,0 +1,63 @@
+[
+  {
+    "q": [
+      "What are the different types of residential architecture?",
+      "What is the difference between a house and a villa?",
+      "What is an apartment building?",
+      "What is a townhouse?",
+      "What is a bungalow?",
+      "What is a condominium?",
+      "What is a duplex?",
+      "What are the different housing styles in residential architecture?"
+    ],
+    "a": "Residential architecture encompasses single-family detached homes (including ranch, Colonial, Victorian, Craftsman, and Modernist styles), multi-family buildings (duplexes, townhouses, apartment buildings, condominiums), and collective housing types with distinct design characteristics. A bungalow is typically a single-story house with a low-pitched roof and front porch, popularized by the Arts and Crafts movement. Townhouses (or row houses) are attached single-family homes sharing side walls, common in dense urban settings for efficient land use. Apartment buildings range from low-rise garden apartments to high-rise towers, often with shared amenities and circulation cores, while condominiums are individually owned units within a multi-unit building with shared common area ownership. Modern residential design increasingly emphasizes open floor plans, indoor-outdoor connections, sustainable materials, and flexible spaces that adapt to changing household needs over time."
+  },
+  {
+    "q": [
+      "What are the different types of religious architecture?",
+      "What are the key features of a church?",
+      "What defines a cathedral?",
+      "What are the architectural features of a mosque?",
+      "What are the elements of a Buddhist temple?",
+      "What is a Hindu temple architecture?",
+      "What is the difference between a church, a cathedral, and a basilica?"
+    ],
+    "a": "Religious architecture encompasses buildings designed for worship and spiritual practice, with each faith tradition developing distinctive forms reflecting its theology and cultural context. Christian churches typically feature a nave (central hall), altar, and often a bell tower or spire, with cathedrals being the principal church of a diocese containing a bishop's throne. Mosques are oriented toward Mecca with key features including the mihrab (prayer niche indicating direction), minbar (pulpit), courtyard, and one or more minarets used for the call to prayer. Hindu temples follow vastu-shastra principles with a central sanctum (garbhagriha) housing the deity, topped by a towering spire (shikhara or vimana), with elaborate carved exterior iconography. Buddhist temples vary widely across regions but typically include a main hall containing Buddha images, a stupa or pagoda housing relics, and meditation halls, with forms ranging from Japanese wooden structures to Tibetan monastic complexes and the massive Borobudur stone mandala in Indonesia."
+  },
+  {
+    "q": [
+      "What are the architectural features of government buildings?",
+      "What is the design of capitol buildings?",
+      "What is a courthouse architecture?",
+      "How are museums designed?",
+      "What makes a good museum architecture?",
+      "What is the role of a museum building in the urban context?",
+      "What are famous museum buildings?"
+    ],
+    "a": "Government buildings — including capitol buildings, courthouses, city halls, and embassies — traditionally employ Neoclassical architecture with domes, porticos, and colonnades to convey authority, stability, and democratic ideals, as seen in the US Capitol, the Palace of Westminster, and the Reichstag. Courthouse architecture typically includes a grand entrance, public corridors, courtrooms arranged around a central axis, and judges' chambers, with the design emphasizing transparency, accessibility, and the dignity of legal proceedings. Museum architecture has evolved dramatically from 19th-century Beaux-Arts temples of culture (the Louvre, the Metropolitan Museum of Art) to iconic destination buildings where the architecture itself becomes a major attraction, like Frank Gehry's Guggenheim Bilbao, I.M. Pei's Louvre Pyramid, and Renzo Piano's Centre Pompidou. Contemporary museum design prioritizes flexible, column-free gallery spaces, controlled natural lighting through sophisticated skylight and filter systems, and integration with public urban spaces through plazas, cafes, and educational facilities."
+  },
+  {
+    "q": [
+      "How are stadiums designed?",
+      "What are the different types of sports venues?",
+      "What is the largest stadium in the world?",
+      "What are the key design considerations for a stadium?",
+      "How do skyscrapers work?",
+      "What are the structural systems used in skyscrapers?",
+      "What is the tallest building in the world?"
+    ],
+    "a": "Stadium design focuses on maximizing sightlines, crowd flow, and atmosphere while ensuring structural safety for large crowds. Key elements include the seating bowl (increasingly steep for better views), the field or performance area, suites and premium seating, concourses with concessions, and advanced structural systems like cantilevered roofs that keep support columns away from sightlines. The Rungrado 1st of May Stadium in North Korea seats 114,000 as the world's largest stadium, while modern retractable-roof stadiums like AT&T Stadium and SoFi Stadium offer climate-controlled versatility for multiple event types. Skyscrapers use steel or concrete structural systems including rigid frames, tube structures, and diagrid systems to resist lateral wind and seismic forces, with the Burj Khalifa (828 meters, 163 floors) remaining the world's tallest building. Skyscraper design requires high-performance elevator systems, tuned mass dampers to reduce sway, advanced fire safety systems with pressurized stairwells, and increasingly, double-skin facades and green building technologies to improve energy efficiency."
+  },
+  {
+    "q": [
+      "What are the different types of bridges?",
+      "How are bridges designed?",
+      "What is the longest bridge in the world?",
+      "What is industrial architecture?",
+      "What is landscape architecture?",
+      "What is interior architecture?",
+      "What is the difference between interior design and interior architecture?"
+    ],
+    "a": "Bridges are classified by their structural system: beam bridges (simple spans supported at each end), arch bridges (compression forces transferred along a curved arch), suspension bridges (deck hung from cables suspended between towers), cable-stayed bridges (deck supported directly by cables from one or more towers), and truss bridges (triangular framework distributing loads). The longest bridge is China's Danyang-Kunshan Grand Bridge at 102 miles as part of the Beijing-Shanghai high-speed railway. Industrial architecture designs factories, warehouses, power plants, and distribution centers, prioritizing functionality, efficient workflow, structural clarity, and material honesty, with classic examples including the Fagus Factory by Walter Gropius and the AEG Turbine Factory by Peter Behrens. Landscape architecture integrates natural and built environments through site planning, garden design, park design, and ecological restoration. Interior architecture focuses on the structural modification of interior spaces including spatial planning, circulation, lighting, and materiality, distinct from interior decoration which concerns surface finishes, furnishings, and aesthetics applied to existing spaces."
+  }
+]

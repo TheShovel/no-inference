@@ -1,0 +1,46 @@
+[
+  {
+    "q": [
+      "What is a constitution and what does it do?",
+      "Tell me about constitutions and their purpose in government.",
+      "How do constitutions establish government structure?",
+      "What is the difference between written and unwritten constitutions?",
+      "Describe the key elements of a constitution.",
+      "Why are constitutions important for democracy?"
+    ],
+    "a": "A constitution is the fundamental law of a state that establishes the framework for government, defines the powers and limits of each branch, and protects the rights of citizens. Constitutions can be codified in a single document (as in the United States, India, and Germany) or uncodified and spread across statutes, conventions, and judicial decisions (as in the United Kingdom, New Zealand, and Israel). Most constitutions include provisions for amendment to allow adaptation over time, though amendment procedures are typically designed to require supermajorities or special processes to ensure stability and broad consensus for fundamental changes."
+  },
+  {
+    "q": [
+      "What is separation of powers in government?",
+      "Tell me about the separation of powers doctrine.",
+      "How do checks and balances work in constitutional systems?",
+      "What are the three branches of government and their roles?",
+      "Describe how separation of powers prevents tyranny.",
+      "Who created the concept of separation of powers?"
+    ],
+    "a": "Separation of powers divides government authority among three distinct branches — legislative (makes laws), executive (enforces laws), and judicial (interprets laws) — to prevent any single institution from becoming too powerful. The doctrine, articulated by Montesquieu in The Spirit of the Laws (1748), is implemented through a system of checks and balances where each branch has some measure of oversight over the others: the executive can veto legislation, the legislature confirms appointments and can impeach officials, and the judiciary can strike down unconstitutional actions. The United States Constitution is a paradigmatic example, with Articles I, II, and III vesting each type of power in a separate branch."
+  },
+  {
+    "q": [
+      "What is judicial review?",
+      "Tell me about judicial review and the Marbury v. Madison case.",
+      "How do courts determine if laws are constitutional?",
+      "What is the power of courts to strike down legislation?",
+      "Describe the origin and importance of judicial review.",
+      "Which countries have judicial review?"
+    ],
+    "a": "Judicial review is the power of courts to examine laws, executive actions, and government decisions for compliance with the constitution and to invalidate those found unconstitutional. In the United States, this power was established by the landmark Supreme Court case Marbury v. Madison (1803), where Chief Justice John Marshall reasoned that it is the duty of the judiciary to interpret the law and that any law repugnant to the constitution is void. Different countries implement judicial review differently — some use a decentralized model where any court can review constitutionality (US, Canada), while others use a centralized constitutional court (Germany, South Korea, South Africa) exclusively empowered to hear constitutional challenges."
+  },
+  {
+    "q": [
+      "What is the Bill of Rights?",
+      "Tell me about the US Bill of Rights and fundamental freedoms.",
+      "How do constitutional rights protect individuals?",
+      "What rights are protected in the first ten amendments?",
+      "Describe the difference between civil rights and civil liberties.",
+      "What landmark cases have shaped constitutional rights?"
+    ],
+    "a": "The Bill of Rights comprises the first ten amendments to the United States Constitution, ratified in 1791, which enumerate fundamental individual liberties and limits on government power. These amendments guarantee freedom of speech, religion, press, assembly, and petition (First Amendment); the right to bear arms (Second); protection against unreasonable searches and seizures (Fourth); due process, protection against self-incrimination, and double jeopardy (Fifth); the right to a fair and speedy trial (Sixth); and protection against cruel and unusual punishment (Eighth). The Bill of Rights initially applied only to the federal government, but the Fourteenth Amendment's Due Process Clause was later interpreted by the Supreme Court to \"incorporate\" most of these protections against state governments as well."
+  }
+]

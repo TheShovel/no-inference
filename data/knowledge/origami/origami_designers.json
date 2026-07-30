@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "Who was Akira Yoshizawa?",
+      "What is the Yoshizawa-Randlett notation system?",
+      "What is wet folding in origami?",
+      "How many origami models did Akira Yoshizawa create?",
+      "What is Akira Yoshizawa known for?",
+      "How did Akira Yoshizawa revolutionize origami?",
+      "What exhibitions featured Yoshizawa's origami?",
+      "What is the legacy of Akira Yoshizawa?"
+    ],
+    "a": "Akira Yoshizawa (1911–2005) is widely regarded as the grandmaster of modern origami, elevating paper folding from a children's pastime to a sophisticated art form. He created over 50,000 original models, though only a few hundred were diagrammed in his published books, and pioneered wet folding—dampening paper before folding to create soft, sculptural curves and durable three-dimensional forms. Alongside the Yoshizawa-Randlett notation system he co-developed with Samuel Randlett and Robert Harbin, which established the standardized diagramming symbols used worldwide today, his greatest contribution was demonstrating that origami could be a medium of artistic expression capable of conveying emotion, movement, and natural beauty, inspiring exhibitions across Japan, Europe, and the Americas and influencing generations of folder-designers."
+  },
+  {
+    "q": [
+      "Who is Satoshi Kamiya?",
+      "What origami models did Satoshi Kamiya design?",
+      "What is Ryu-zin 3.5?",
+      "What are Satoshi Kamiya's origami books?",
+      "What is box-pleating in origami?",
+      "What is the 22.5 degree system in origami design?",
+      "How does Satoshi Kamiya design complex origami?",
+      "What techniques does Satoshi Kamiya use?"
+    ],
+    "a": "Satoshi Kamiya (born 1981) is one of the most celebrated contemporary origami designers, renowned for his super-complex dragons, insects, and mythical creatures that push the limits of a single uncut square. His most famous designs—Ryu-zin 3.5, Ancient Dragon, Phoenix 3.5, and Wizard—require hundreds of precisely executed steps over dozens of hours and are considered among the most difficult origami models ever created. Kamiya's design approach relies heavily on box-pleating (a grid-based method that creates right-angle flaps for limbs and appendages), circle packing (arranging circles on the paper to allocate flap length for body parts), and the 22.5 degree system (using reference points derived from diagonal and half-diagonal divisions), techniques documented in his two-volume book series Works of Satoshi Kamiya, which serves as both a collection of diagrams and a masterclass in complex origami design theory."
+  },
+  {
+    "q": [
+      "Who is Robert J. Lang?",
+      "What is TreeMaker in origami?",
+      "How does Robert Lang apply origami to engineering?",
+      "What books did Robert Lang write about origami?",
+      "What is circle packing in origami design?",
+      "How has Robert Lang used origami for NASA?",
+      "What is the tree method in origami?",
+      "What scientific applications does origami have"
+    ],
+    "a": "Robert J. Lang (born 1961) is a physicist, mathematician, and one of the foremost origami artists in the world, known for bridging the gap between artistic paper folding and rigorous mathematical analysis. He developed the tree method and circle-packing algorithm for origami design, which he implemented in the freely available software TreeMaker—a program that computes an optimal crease pattern for any desired stick-figure shape. Lang's work has had real-world engineering applications: he collaborated with NASA on folding solar arrays for space telescopes, designed a folding telescope sunshield, contributed to medical stent deployment mechanisms and airbag folding patterns, and gave a widely viewed TED talk on the intersection of origami, mathematics, and technology. His book Origami Design Secrets is considered the definitive text on mathematical origami design, and his extensive catalog includes Origami Insects and their Kin, Origami Insects II, and numerous thematic collections spanning birds, animals, sea life, and action models."
+  },
+  {
+    "q": [
+      "Who are the major origami designers besides Yoshizawa and Kamiya?",
+      "Who is Eric Joisel?",
+      "Who is John Montroll?",
+      "Who is Tomoko Fuse?",
+      "Who is Toshikazu Kawasaki?",
+      "What is kusudama origami?",
+      "Who is Robert Lang known for?",
+      "What are the contributions of other origami masters?"
+    ],
+    "a": "Beyond the most famous names, origami has been shaped by many talented designers who have expanded the art in distinct directions. Eric Joisel (1956–2010) was a French master known for his highly expressive wet-folded human figures, dwarves, masks, and animals that captured personality and emotion. John Montroll has published over 30 books specializing in single-square animal models that span all difficulty levels, making complex subject matter accessible. Tomoko Fuse is the preeminent master of modular and kusudama origami, creating intricate geometric assemblies from multiple folded units that interlock without glue. Toshikazu Kawasaki revolutionized floral origami with his famous Kawasaki rose and contributed to twist-fold theory and the mathematical study of origami bases. Other notable figures include Yoshihide Momotani (insects), Makoto Yamaguchi (insects and masks), Kunihiko Kasahara (modular units and recreational origami), Michael LaFosse (Origamido Studio, handmade paper, biological realism), Nicolas Terry (Origami-Shop, Origami Pass app), and Jason Ku, Brian Chan, and Shuki Kato, who have each pushed super-complex origami into new territory with increasingly sophisticated designs."
+  }
+]

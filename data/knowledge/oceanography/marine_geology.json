@@ -1,0 +1,47 @@
+[
+  {
+    "q": [
+      "What are the features of the seafloor?",
+      "What are mid-ocean ridges?",
+      "What are ocean trenches?",
+      "What are abyssal plains?",
+      "What are seamounts?",
+      "What is the continental margin?",
+      "seafloor features"
+    ],
+    "a": "The seafloor features a diverse topography including mid-ocean ridges (underwater mountain ranges where new oceanic crust is formed by seafloor spreading, stretching over 65,000 km globally), ocean trenches (the deepest parts of the ocean where one plate subducts beneath another, such as the Mariana Trench at nearly 11 km deep), abyssal plains (vast, flat areas of the deep ocean floor covered by fine sediments, covering about 40% of the seafloor), and seamounts (underwater volcanoes that rise at least 1,000 meters above the seafloor without reaching the surface). Continental margins consist of the continental shelf (shallow, gently sloping submerged edge of a continent), slope (steeper descent to the deep ocean), and rise (accumulated sediment at the base of the slope)."
+  },
+  {
+    "q": [
+      "What are hydrothermal vents?",
+      "How do hydrothermal vents form?",
+      "What life lives near hydrothermal vents?",
+      "What are black smokers?",
+      "What is the ecosystem around deep-sea vents?",
+      "hydrothermal vents"
+    ],
+    "a": "Hydrothermal vents are fissures on the seafloor from which geothermally heated water rich in dissolved minerals erupts, typically found along mid-ocean ridges where magma heats seawater that has percolated through the crust. When the superheated (up to 400°C) mineral-laden water hits cold deep-ocean water, minerals precipitate out, forming tall chimney-like structures called black smokers (rich in iron and sulfides, producing black smoke) or white smokers (rich in calcium and silicon). These vents host unique chemosynthetic ecosystems where bacteria convert chemicals from the vent fluids into energy, supporting bizarre organisms like giant tube worms, yeti crabs, and blind shrimp that thrive in complete darkness and extreme conditions."
+  },
+  {
+    "q": [
+      "What are coral reefs?",
+      "How do coral reefs form?",
+      "What are the types of coral reefs?",
+      "What is the difference between fringing, barrier, and atoll reefs?",
+      "How long does it take for coral reefs to form?",
+      "coral reef formation"
+    ],
+    "a": "Coral reefs are underwater structures built over thousands to millions of years by colonies of tiny animals called coral polyps that secrete calcium carbonate skeletons. There are three main types: fringing reefs (directly attached to shorelines), barrier reefs (separated from land by a lagoon, like the Great Barrier Reef stretching over 2,300 km), and atolls (ring-shaped reefs enclosing a central lagoon, formed when volcanic islands subside and reefs grow upward). Coral reefs require warm, clear, shallow, sunlit water (typically 23-29°C) to thrive because they depend on a symbiotic relationship with zooxanthellae algae that perform photosynthesis and provide most of the coral's energy."
+  },
+  {
+    "q": [
+      "What is seafloor spreading?",
+      "How does seafloor spreading work?",
+      "What is the evidence for seafloor spreading?",
+      "What role do mid-ocean ridges play in plate tectonics?",
+      "How is new ocean crust formed?",
+      "seafloor spreading"
+    ],
+    "a": "Seafloor spreading is the continuous process by which new oceanic crust forms at mid-ocean ridges as magma rises from the mantle, cools, and solidifies, pushing older crust away from the ridge. As magma emerges, it records the current orientation of Earth's magnetic field, producing symmetrical magnetic stripes on either side of the ridge that provide compelling evidence for seafloor spreading. The rate of spreading varies from about 2 cm per year in the Atlantic (slow-spreading) to over 15 cm per year in the Pacific (fast-spreading), and the age of oceanic crust increases with distance from the ridge, with the oldest oceanic crust (about 200 million years old) found far from ridges near subduction zones."
+  }
+]

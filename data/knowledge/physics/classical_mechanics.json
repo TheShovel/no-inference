@@ -1,0 +1,92 @@
+[
+  {
+    "q": [
+      "What are Newton's three laws of motion?",
+      "Explain Newton's laws of motion.",
+      "Describe the three laws of motion formulated by Isaac Newton.",
+      "What is Newton's first law of motion?",
+      "What does Newton's second law state?",
+      "Explain Newton's third law with examples.",
+      "Newton's laws of motion summary"
+    ],
+    "a": "Newton's first law (the law of inertia) states that an object at rest stays at rest and an object in motion stays in motion at constant velocity unless acted upon by a net external force. The second law defines force as mass times acceleration (F = ma), establishing that the acceleration of an object is directly proportional to the net force acting on it and inversely proportional to its mass. The third law states that for every action there is an equal and opposite reaction — whenever one object exerts a force on a second object, the second object exerts a force of equal magnitude but opposite direction on the first."
+  },
+  {
+    "q": [
+      "What is kinematics in physics?",
+      "Explain the concepts of kinematics.",
+      "How do displacement, velocity, and acceleration relate?",
+      "What are the equations of motion?",
+      "Kinematics vs dynamics difference",
+      "What are the SUVAT equations?"
+    ],
+    "a": "Kinematics is the branch of classical mechanics that describes the motion of objects without considering the forces that cause the motion. Key quantities include displacement (change in position), velocity (rate of change of displacement), and acceleration (rate of change of velocity). The equations of motion — often called SUVAT equations — relate these quantities for objects moving with constant acceleration: v = u + at, s = ut + ½at², v² = u² + 2as, and s = ½(u + v)t, where u is initial velocity, v is final velocity, a is acceleration, t is time, and s is displacement."
+  },
+  {
+    "q": [
+      "What is the work-energy principle?",
+      "Explain the work-energy theorem.",
+      "How does work relate to kinetic energy?",
+      "What is the relationship between work and energy?",
+      "Define work in a physics context.",
+      "Work-energy principle explained"
+    ],
+    "a": "The work-energy principle states that the net work done on an object equals the change in its kinetic energy. Work is defined as force applied over a displacement, calculated as W = F·d·cos(θ), where θ is the angle between the force vector and the displacement vector. This principle provides a powerful alternative to Newton's laws for solving problems, especially when forces vary or when the path matters. It also connects to the conservation of mechanical energy: in the absence of non-conservative forces like friction, the sum of kinetic and potential energy remains constant."
+  },
+  {
+    "q": [
+      "What is the law of conservation of momentum?",
+      "Explain conservation of momentum.",
+      "How does momentum conservation apply to collisions?",
+      "What is the difference between elastic and inelastic collisions?",
+      "Conservation of linear momentum explained",
+      "Momentum in physics definition"
+    ],
+    "a": "The law of conservation of momentum states that the total momentum of a closed system remains constant before and after an interaction, provided no external forces act on it. Momentum is the product of mass and velocity (p = mv) and is a vector quantity. In elastic collisions, both momentum and kinetic energy are conserved; objects bounce off each other without lasting deformation. In inelastic collisions, momentum is conserved but kinetic energy is not — some energy is transformed into heat, sound, or deformation. In a perfectly inelastic collision, the objects stick together after impact."
+  },
+  {
+    "q": [
+      "How does friction work in physics?",
+      "What are the different types of friction?",
+      "Explain static and kinetic friction.",
+      "What factors affect the force of friction?",
+      "Friction force explained",
+      "What is the coefficient of friction?"
+    ],
+    "a": "Friction is a resistive force that opposes relative motion or the tendency toward motion between two surfaces in contact. Static friction acts when objects are stationary relative to each other and must be overcome to initiate motion; it ranges from zero up to a maximum value μₛN, where μₛ is the coefficient of static friction and N is the normal force. Kinetic (or sliding) friction acts when objects are sliding past each other and is typically slightly weaker than maximum static friction, given by μₖN. Friction arises from microscopic interactions between surface irregularities and electrostatic forces between atoms."
+  },
+  {
+    "q": [
+      "What is projectile motion?",
+      "How do you analyze projectile motion?",
+      "Explain the physics of a projectile.",
+      "What factors affect the range of a projectile?",
+      "Projectile motion formulas",
+      "How does gravity affect projectile motion?",
+      "What is the path of a projectile called?"
+    ],
+    "a": "Projectile motion describes the two-dimensional motion of an object launched into the air under the influence of gravity alone (ignoring air resistance). The horizontal motion has constant velocity because no horizontal force acts, while the vertical motion has constant downward acceleration g = 9.8 m/s². The trajectory is a parabola, with the range depending on initial speed and launch angle — maximum range occurs at 45° in ideal conditions. The time of flight and maximum height can be derived by analyzing the vertical component separately from the horizontal component."
+  },
+  {
+    "q": [
+      "What is circular motion?",
+      "Explain centripetal force and acceleration.",
+      "How does an object move in a circle?",
+      "What is centripetal acceleration?",
+      "Difference between centripetal and centrifugal force",
+      "What is uniform circular motion?"
+    ],
+    "a": "Circular motion occurs when an object moves along a circular path. For uniform circular motion (constant speed), the velocity vector changes direction continuously, meaning the object experiences centripetal acceleration always pointing toward the center of the circle, given by a_c = v²/r. The centripetal force required to sustain this motion is F_c = mv²/r, directed toward the center. Common examples include a car turning a corner, planets orbiting the Sun, and a ball on a string swung in a circle. The centrifugal 'force' is a fictitious or apparent force experienced in the rotating reference frame, not a real force in an inertial frame."
+  },
+  {
+    "q": [
+      "What is simple harmonic motion?",
+      "Explain simple harmonic motion SHM.",
+      "What are examples of simple harmonic motion?",
+      "How does a pendulum demonstrate SHM?",
+      "What is a spring-mass system?",
+      "Simple harmonic motion formulas"
+    ],
+    "a": "Simple harmonic motion (SHM) is a type of periodic oscillation where the restoring force is directly proportional to the displacement from equilibrium and acts in the opposite direction (F = -kx, Hooke's law). This produces sinusoidal motion described by x(t) = A·cos(ωt + φ), where A is amplitude, ω is angular frequency, and φ is the phase constant. Examples include a mass on an ideal spring, a simple pendulum for small angles, and molecules vibrating in a solid. The period of SHM depends only on the system's physical properties — for a spring it's T = 2π√(m/k), and for a pendulum T = 2π√(L/g)."
+  }
+]

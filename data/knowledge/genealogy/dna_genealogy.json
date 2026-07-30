@@ -1,0 +1,67 @@
+[
+    {
+        "q": [
+            "How does autosomal DNA testing work for genealogy?",
+            "What is atDNA and what can it tell me about my ancestry?",
+            "How many centimorgans do I share with different relatives?",
+            "What is a DNA match in genetic genealogy?",
+            "How far back does autosomal DNA testing go?",
+            "How do shared centimorgans determine relationships?",
+            "What is the difference between total centimorgans and longest block?",
+            "How accurate are predicted relationships from DNA matches?"
+        ],
+        "a": "Autosomal DNA (atDNA) is inherited from both parents across all 22 pairs of autosomes plus the X chromosome, with each parent contributing approximately 50% of a child's DNA. Shared centimorgans (cM) measure the amount of DNA shared between two individuals — for example, parent-child shares about 3400 cM, first cousins share about 850 cM, and third cousins share about 50 cM. DNA testing companies use these shared segments to predict relationships with ranges and confidence levels such as high, good, moderate, and speculative. Autosomal DNA is most useful for the last 5-6 generations since recombination dilutes segments beyond detection at about 6-8 generations."
+    },
+    {
+        "q": [
+            "What is Y-DNA testing and what does it reveal?",
+            "How does Y-DNA trace the paternal line?",
+            "What are Y-STR and Y-SNP markers?",
+            "What is a Y-haplogroup and how is it assigned?",
+            "What is the difference between Y-37, Y-111, and Big Y-700 tests?",
+            "How can Y-DNA help with surname research?",
+            "What is genetic distance in Y-DNA testing?",
+            "How far back does Y-DNA trace ancestry?"
+        ],
+        "a": "Y-DNA testing analyzes the Y chromosome passed from father to son along the direct paternal line, making it a powerful tool for surname research and deep ancestry tracing. Tests examine short tandem repeats (Y-STRs) for genetic distance comparisons and single nucleotide polymorphisms (Y-SNPs) for haplogroup assignment. The Big Y-700 test sequences the entire Y chromosome and provides the highest resolution, placing testers on a detailed phylogenetic tree. Y-haplogroups trace ancient migration paths — R1b is common in Western Europe, R1a in Eastern Europe and South Asia, I1 in Scandinavia, and J1 and J2 in the Middle East and Mediterranean. The patrilineal line can theoretically be traced back to Y-chromosomal Adam, who lived approximately 200,000-300,000 years ago."
+    },
+    {
+        "q": [
+            "What is mitochondrial DNA testing in genealogy?",
+            "How does mtDNA trace the maternal line?",
+            "What mtDNA haplogroups are most common?",
+            "What is the difference between HVR1, HVR2, and the full mitochondrial sequence?",
+            "How far back does mtDNA testing trace?",
+            "What is the rCRS and RSRS in mtDNA?",
+            "How does mtDNA testing differ from autosomal DNA testing?",
+            "What can mtDNA tell me about my deep ancestry?"
+        ],
+        "a": "Mitochondrial DNA (mtDNA) is passed from mothers to all of their children, but only females pass it on, making it a tool for tracing the direct maternal line. The test examines hypervariable regions (HVR1 and HVR2) and the full coding region, comparing them to the Revised Cambridge Reference Sequence (rCRS) or Reconstructed Sapiens Reference Sequence (RSRS). Common mtDNA haplogroups include H, V, HV, U, K, J, T (European), L0, L1, L2, L3 (African), M, N, and R (found worldwide). mtDNA mutates slowly, so it reveals deep ancestry spanning tens of thousands of years back to mitochondrial Eve, but it cannot distinguish between recent relatives in the same way autosomal DNA can."
+    },
+    {
+        "q": [
+            "Which DNA testing company is best for genealogy?",
+            "What is the difference between AncestryDNA, 23andMe, and FamilyTreeDNA?",
+            "Which DNA test has the largest database for cousin matches?",
+            "What is ThruLines on AncestryDNA?",
+            "Does 23andMe provide health reports?",
+            "What unique features does FamilyTreeDNA offer?",
+            "How does MyHeritage DNA compare to other testing services?",
+            "What is the Living DNA ethnicity breakdown known for?"
+        ],
+        "a": "AncestryDNA has the largest consumer DNA database, making it the best choice for finding cousin matches and using features like ThruLines — which connects your DNA matches to your family tree through shared ancestors. 23andMe offers both ancestry and health reports, with a chromosome browser and DNA relative finder. FamilyTreeDNA is unique in offering specialized Y-DNA and mtDNA tests alongside autosomal testing, with project features that allow group administrators to study specific surnames or haplogroups. MyHeritageDNA provides a chromosome browser, theory of family relativity, and extensive international records, while Living DNA offers detailed regional breakdowns particularly within the British Isles."
+    },
+    {
+        "q": [
+            "How do I interpret DNA match lists for genealogy?",
+            "What are the different confidence levels in DNA matches?",
+            "How do I use a chromosome browser?",
+            "What is a predicted relationship range in DNA matching?",
+            "How can I tell if a DNA match is a false positive?",
+            "What is triangulation in genetic genealogy?",
+            "How do I organize my DNA matches?",
+            "How do centimorgan thresholds affect match reliability?"
+        ],
+        "a": "DNA match lists display predicted relationships based on total shared centimorgans, typically categorized as high, good, moderate, or speculative confidence based on statistical likelihood. A chromosome browser allows you to see exactly which segments you share with a match, enabling triangulation — the process of finding shared DNA segments among multiple matches who all descend from a common ancestor. False positives can occur at lower centimorgan thresholds (below 8-10 cM), especially with imputed data from large databases. Organizing matches into color-coded groups (using the Leeds Method or similar) based on shared matches helps identify which ancestral line each match belongs to."
+    }
+]

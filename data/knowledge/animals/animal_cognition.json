@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What is animal cognition?",
+      "How do scientists study animal intelligence?",
+      "What does animal cognition research investigate?",
+      "How intelligent are animals compared to humans?",
+      "What cognitive abilities have been observed in animals?",
+      "What is the difference between instinct and learned behavior?",
+      "Which animals are considered the most intelligent?"
+    ],
+    "a": "Animal cognition is the scientific study of the mental processes of non-human animals, including perception, memory, learning, decision-making, problem-solving, and consciousness. Researchers use controlled experiments, observational studies, and neurobiological approaches to understand how animals process information and adapt their behavior. The field has revealed sophisticated cognitive abilities across many species, from tool use in crows and octopuses to episodic-like memory in scrub jays, numerical competence in monkeys, and social learning in whales and dolphins, challenging traditional assumptions about human uniqueness in the animal kingdom."
+  },
+  {
+    "q": [
+      "Which animals use tools?",
+      "What is tool use in animals?",
+      "Do animals make and use tools?",
+      "What are examples of tool use in birds?",
+      "What are examples of tool use in primates?",
+      "Do octopuses use tools?",
+      "Is tool use unique to humans?"
+    ],
+    "a": "Tool use in animals involves using an external object as a functional extension of the body to achieve a goal, and has been documented across many species. New Caledonian crows manufacture hooked twigs to extract insect larvae, chimpanzees use twigs to fish for termites and stones to crack nuts, sea otters use rocks as anvils to open shellfish, and dolphins use marine sponges to protect their snouts while foraging on the seafloor. The discovery that octopuses and some fish also use tools has expanded the understanding of cognitive convergence, showing that tool use has evolved independently across widely separated taxonomic groups."
+  },
+  {
+    "q": [
+      "Can animals recognize themselves in mirrors?",
+      "What is self-awareness in animals?",
+      "Which animals pass the mirror test?",
+      "What is the mirror self-recognition test?",
+      "Do animals have self-consciousness?",
+      "What does the mirror test measure?",
+      "Which animals fail the mirror test?"
+    ],
+    "a": "The mirror self-recognition test (MSR), developed by Gordon Gallup in 1970, places a mark on an animal's body in a location visible only through a mirror, and the animal is considered self-aware if it touches or investigates the mark while looking in the mirror. Species that consistently pass the MSR include great apes (chimpanzees, bonobos, orangutans, and gorillas), bottlenose dolphins, orcas, Asian elephants, and European magpies, though results have been mixed for other species. Critics argue that the MSR may be culturally biased toward visually dominant species and may not capture other forms of self-awareness, such as self-recognition through olfaction or vocalization."
+  },
+  {
+    "q": [
+      "Do animals have theory of mind?",
+      "What is theory of mind in animals?",
+      "Can animals understand what others are thinking?",
+      "Which animals demonstrate theory of mind?",
+      "How do scientists test for theory of mind in animals?",
+      "What is the difference between human and animal theory of mind?",
+      "Do dogs have theory of mind?"
+    ],
+    "a": "Theory of mind is the ability to attribute mental states—beliefs, intentions, desires, and knowledge—to oneself and others, recognizing that others have perspectives different from one's own. In animals, evidence for theory of mind is strongest in great apes, who can understand what a human experimenter can or cannot see, and who engage in intentional deception. Studies on corvids (ravens and crows) suggest they can hide food based on what another bird has seen, while dogs show some capacity for understanding human attentional states, though debate continues about whether non-human animals possess full human-like theory of mind or operate through simpler behavioral rules and associative learning."
+  },
+  {
+    "q": [
+      "Do animals experience emotions?",
+      "What evidence is there for animal emotions?",
+      "Which animals show emotional responses?",
+      "Can animals feel joy, grief, or fear?",
+      "How do scientists study animal emotions?",
+      "Do animals have feelings?",
+      "What is the difference between animal emotions and human emotions?"
+    ],
+    "a": "Evidence strongly indicates that many animals experience a range of emotions, from fear and anxiety to joy, grief, and empathy, supported by behavioral observations, physiological measurements (hormone levels, heart rate, brain activity), and neurobiological similarities to humans. Elephants display prolonged mourning behavior around deceased companions, rats emit ultrasonic vocalizations when playing or anticipating rewards, and primates exhibit consolation behavior after conflicts, suggesting empathic capacities. While it is difficult to directly measure subjective emotional experience in animals, the convergence of anatomical, physiological, and behavioral evidence leads most scientists to accept that many animals, particularly mammals and birds, experience emotional states that serve adaptive functions."
+  }
+]

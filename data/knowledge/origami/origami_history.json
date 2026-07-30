@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "What are the origins of origami?",
+      "Where did origami originate?",
+      "How did origami develop in Japan?",
+      "What is the history of paper folding in China?",
+      "Did origami originate in Europe too?",
+      "What is ceremonial origami?",
+      "What is noshi in Japanese culture?",
+      "What is the oldest known origami?"
+    ],
+    "a": "The origins of origami trace back to Japan shortly after paper was introduced from China via Korea around the 6th century CE, though paper folding also developed independently in China and Europe. In Japan, origami evolved from ceremonial and religious practices: noshi were decorative paper bundles attached to gifts to convey good fortune, and paper butterflies were used in Shinto wedding ceremonies to represent the bride and groom. The first known origami book, Hiden Senbazuru Orikata (Secret Folding of a Thousand Cranes), was published in 1797 and focused on folding connected cranes from a single sheet. European paper folding traditions developed separately, with early examples including the Spanish pajarita (a folded paper bird) and German napkin folding, which were eventually integrated into the global origami tradition."
+  },
+  {
+    "q": [
+      "How did Friedrich Froebel use origami?",
+      "What role did kindergarten play in origami history?",
+      "Who was Friedrich Froebel in relation to origami?",
+      "How did origami spread in education?",
+      "What is Akira Yoshizawa known for?",
+      "Who is the modern origami master?",
+      "How did Akira Yoshizawa revolutionize origami?",
+      "What is Yoshizawa's contribution to origami?"
+    ],
+    "a": "Friedrich Froebel, the German educator who founded the kindergarten system in the early 19th century, incorporated paper folding into his educational curriculum as a way to teach geometry, spatial reasoning, and fine motor skills through play. His approach spread paper folding throughout Europe and America, establishing origami as a valuable educational tool. Akira Yoshizawa (1911-2005) is widely recognized as the modern origami master who transformed the art from a children's pastime into a sophisticated creative medium, developing thousands of original designs and inventing the wet-folding technique that allows for softer, more sculptural forms. Yoshizawa's collaboration with Samuel Randlett and Robert Harbin on the standardized diagramming notation system made origami instructions accessible worldwide, and he served as a cultural ambassador for Japan, demonstrating the artistic depth that paper folding could achieve."
+  },
+  {
+    "q": [
+      "How did origami develop in the 20th century?",
+      "What is computer origami?",
+      "What is TreeMaker in origami?",
+      "What is the Origami Simulator?",
+      "Who is Robert Lang in origami?",
+      "Who is Erik Demaine in origami?",
+      "How has mathematics influenced modern origami?",
+      "What is computational origami?"
+    ],
+    "a": "The 20th century saw origami evolve from a craft into a field with deep mathematical and computational foundations. Computer origami tools like TreeMaker, developed by Robert Lang, use algorithms to generate crease patterns for complex figures from stick-figure representations of the desired form, solving geometric constraints that would be impossible to compute by hand. The Origami Simulator and similar software allow designers to test and refine crease patterns virtually before folding them in paper. Robert Lang, a former NASA physicist turned full-time origami artist, and Erik Demaine, a mathematician at MIT, have pioneered the theory of computational origami, proving that any polygonal shape can be folded from a square and developing optimization algorithms for practical applications ranging from airbag folding to telescope lens deployment."
+  },
+  {
+    "q": [
+      "What is mathematical origami?",
+      "How is origami used in science and technology?",
+      "What is the Huzita-Hatori axioms?",
+      "How does origami relate to geometry?",
+      "What is rigid origami?",
+      "How has origami influenced engineering?",
+      "What are the applications of origami in space technology?",
+      "What is Miura-ori pattern?"
+    ],
+    "a": "Mathematical origami includes the study of geometric folding, angle trisection, and cube doubling (problems proven solvable through origami but not with straightedge and compass alone), formalized in the Huzita-Hatori axioms that define all possible single-fold constructions. In science and technology, origami principles have inspired deployable structures like the Miura-ori pattern, a herringbone tessellation used for folding solar arrays in space satellites because it can open and close with a single continuous motion. Origami applications extend to self-assembling robots, medical stents that unfold inside arteries, airbag folding algorithms that ensure reliable deployment, and the James Webb Space Telescope's sunshield, which was folded origami-style to fit inside the rocket fairing and then deployed in space. These applications demonstrate that origami is not merely an art form but a source of practical engineering solutions."
+  }
+]

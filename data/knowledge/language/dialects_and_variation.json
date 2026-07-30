@@ -1,0 +1,56 @@
+[
+  {
+    "q": [
+      "What are dialects?",
+      "How is a dialect different from a language?",
+      "What is the difference between a dialect and an accent?",
+      "What is a dialect continuum?",
+      "What is the definition of a dialect?",
+      "What is an accent?",
+      "How does an accent differ from a dialect?",
+      "What is the difference between dialect and language?"
+    ],
+    "a": "A dialect is a variety of a language distinguished by features of vocabulary, grammar, and pronunciation that is characteristic of a particular group of speakers, typically defined by region or social class. The difference between a dialect and a language is often as much political as linguistic — the linguist's maxim 'a language is a dialect with an army and navy' highlights that mutually intelligible varieties are often classified as separate languages due to national boundaries (e.g., Serbian and Croatian). An accent refers specifically to differences in pronunciation only, not vocabulary or grammar; two speakers of Standard American English may have different accents (Southern, Boston, Californian) but use the same vocabulary and grammatical structures. A dialect continuum occurs when adjacent varieties are mutually intelligible but the distance between geographically distant varieties becomes great enough that speakers at opposite ends cannot understand each other — the Romance languages from Portugal to Romania form such a continuum."
+  },
+  {
+    "q": [
+      "What is regional variation in language?",
+      "How does language vary by region?",
+      "What is a social dialect?",
+      "What is a sociolect?",
+      "What is the difference between standard and non-standard dialects?",
+      "What makes a dialect standard?",
+      "What is Received Pronunciation?",
+      "What is Standard American English?",
+      "What defines a prestige dialect?"
+    ],
+    "a": "Regional variation refers to linguistic differences that correlate with geographic areas, producing regional dialects shaped by settlement history, physical geography, language contact, and cultural isolation — examples include the distinctive dialects of Appalachia, Newfoundland, and Louisiana Cajun English. Social dialects (or sociolects) are varieties associated with particular social groups based on class, education, age, ethnicity, or occupation, such as African American Vernacular English (AAVE) which has consistent grammatical rules distinct from Standard English. Standard dialects are typically the variety used in education, government, media, and formal writing — they are not linguistically superior but are the variety that has gained social prestige through historical processes of standardization, codification, and institutional backing. Non-standard dialects (like Cockney, Geordie, or Appalachian English) are equally systematic and rule-governed from a linguistic perspective but lack the same social prestige, and speakers of non-standard dialects often face prejudice despite the fact that all dialects are linguistically valid."
+  },
+  {
+    "q": [
+      "What is code-switching?",
+      "How does code-switching work in multilingual speakers?",
+      "What is diglossia?",
+      "What is an example of diglossia?",
+      "What is the difference between code-switching and diglossia?",
+      "Why do bilingual people code-switch?",
+      "What is the difference between high variety and low variety in diglossia?",
+      "How does code-switching relate to identity?"
+    ],
+    "a": "Code-switching is the practice of alternating between two or more languages or language varieties within a single conversation or even a single sentence, often used by bilingual and bidialectal speakers to signal identity, navigate social contexts, or express concepts more naturally. Code-switching follows systematic grammatical constraints — fluent bilinguals do not switch randomly but at specific syntactic boundaries where the grammars of both languages align. Diglossia is a specific sociolinguistic situation where two distinct varieties of a language coexist in a speech community, each with a different social function: a 'high' (H) variety used in formal, written, and prestigious contexts (like Classical Arabic for news and religious sermons) and a 'low' (L) variety used in everyday conversation (like Egyptian or Levantine Arabic at home and with friends). In diglossic communities, speakers acquire the L variety natively at home while the H variety is formally taught in school, and switching between them carries strong social meaning about education, formality, and group belonging."
+  },
+  {
+    "q": [
+      "What is dialect levelling?",
+      "How does dialect levelling occur?",
+      "What is language change?",
+      "How do languages change over time?",
+      "What is a prestige variety in language?",
+      "What factors drive language change?",
+      "How does social class affect language variation?",
+      "What is the role of prestige in language variation?",
+      "How do dialects disappear?"
+    ],
+    "a": "Dialect levelling is the process by which differences between regional dialects diminish over time, often driven by increased geographic mobility, mass media, urbanization, and assimilation into mainstream culture — resulting in the loss of distinctive local vocabulary, pronunciations, and grammatical features as communities blend into broader speech communities. Language change is constant and inevitable across all living languages, occurring at every linguistic level: sounds shift (the Great Vowel Shift in English), words are borrowed and lost, grammatical structures evolve (the loss of thou/thee in English), and meanings drift over generations. Prestige varieties are those associated with social power, education, wealth, and status — in most English-speaking countries, the standard dialect spoken by the educated middle class functions as the overt prestige variety, while non-standard dialects may carry covert prestige within local communities as markers of identity and solidarity. The ongoing tension between dialect levelling (pushing toward homogeneity) and dialect divergence (driven by identity, social boundaries, and innovation) shapes the constantly evolving linguistic landscape of any living language."
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "q": [
+      "What is the history of traffic safety?",
+      "How has road safety evolved over time?",
+      "What were early traffic safety measures?",
+      "Who started the traffic safety movement?",
+      "What is the history of seatbelt laws?",
+      "traffic safety history",
+      "road safety timeline",
+      "history of traffic laws"
+    ],
+    "a": "Traffic safety emerged as a public concern in the early 20th century as automobiles became widespread, with the first traffic fatality recorded in 1896 and the first traffic light installed in 1914. The modern traffic safety movement gained momentum in the 1960s when Ralph Nader's book \"Unsafe at Any Speed\" exposed automotive design flaws, leading to landmark US legislation including the National Traffic and Motor Vehicle Safety Act of 1966, which created the NHTSA and established federal safety standards for vehicles. Seatbelt laws were enacted in stages throughout the 1980s and 1990s, contributing to a dramatic decline in traffic fatalities per mile traveled, though road traffic crashes remain the leading cause of death for children and young adults worldwide."
+  },
+  {
+    "q": [
+      "What road design features improve safety?",
+      "How do roundabouts improve safety?",
+      "What are median barriers and rumble strips?",
+      "What is traffic calming?",
+      "How can roads be designed for safety?",
+      "road safety design",
+      "roundabout safety benefits",
+      "rumble strips purpose",
+      "median barriers"
+    ],
+    "a": "Road design for safety uses engineering countermeasures that reduce crash risk and severity, including roundabouts (which eliminate high-risk perpendicular collisions by forcing slower, angled entries and yield-controlled traffic flow, reducing injury crashes by about 75% compared to traditional intersections), median barriers (cable, concrete, or steel barriers that prevent cross-median head-on collisions on divided highways), and rumble strips (grooves or raised patterns on shoulders and centerlines that alert distracted or drowsy drivers with vibration and noise when they drift out of their lane). Traffic calming measures like speed humps, chicanes, raised crosswalks, and narrowed lanes are used on local streets to reduce vehicle speeds and prioritize pedestrian and cyclist safety."
+  },
+  {
+    "q": [
+      "What vehicle safety features reduce crashes?",
+      "How do airbags work?",
+      "What is ABS and ESC?",
+      "What is autonomous emergency braking?",
+      "What is lane departure warning?",
+      "What are the most important car safety features?",
+      "vehicle safety features",
+      "ABS ESC explained",
+      "autonomous emergency braking"
+    ],
+    "a": "Vehicle safety features fall into passive safety (protecting occupants during a crash) and active safety (preventing crashes from occurring). Passive features include seatbelts (the single most effective safety device, reducing fatality risk by about 45%), airbags (frontal, side, curtain, and knee airbags that deploy upon impact to cushion occupants), and crumple zones that absorb crash energy. Active safety systems include anti-lock braking systems (ABS) that prevent wheel lockup and maintain steering control during hard braking, electronic stability control (ESC) that automatically brakes individual wheels to prevent skids and rollovers, autonomous emergency braking (AEB) that detects imminent collisions and applies the brakes if the driver does not respond, and lane departure warning and keeping systems that alert or gently steer the vehicle back into its lane."
+  },
+  {
+    "q": [
+      "What are the leading causes of traffic crashes?",
+      "How does distracted driving cause accidents?",
+      "What are the effects of drunk driving?",
+      "How does speeding affect crash risk?",
+      "What is Vision Zero?",
+      "What organizations work on road safety?",
+      "distracted driving dangers",
+      "drunk driving statistics",
+      "Vision Zero initiative",
+      "NHTSA IIHS WHO road safety"
+    ],
+    "a": "The leading contributors to traffic crashes are distracted driving (especially cell phone use, which triples crash risk), impaired driving (alcohol and drugs, accounting for about 30% of traffic fatalities in the US), speeding (which increases both crash likelihood and severity by reducing reaction time and stopping distance), and aggressive driving behaviors. Vision Zero is a global road safety initiative originating in Sweden in 1997 that takes a systems-based approach, stating that no loss of life on roads is acceptable and that traffic systems should be designed to accommodate human error through forgiving infrastructure, lower speeds, and vehicle safety. Key road safety organizations include the National Highway Traffic Safety Administration (NHTSA) setting vehicle safety standards in the US, the Insurance Institute for Highway Safety (IIHS) conducting crashworthiness ratings, and the World Health Organization (WHO) coordinating global road safety efforts through the Global Plan for the Decade of Action for Road Safety."
+  }
+]

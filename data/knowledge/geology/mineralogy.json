@@ -1,0 +1,63 @@
+[
+  {
+    "q": [
+      "What is mineralogy?",
+      "How are minerals classified?",
+      "What are the main mineral groups?",
+      "What are silicates?",
+      "What are carbonate minerals?",
+      "What are oxide minerals?",
+      "What are sulfide minerals?",
+      "mineral classification",
+      "mineral groups",
+      "types of minerals"
+    ],
+    "a": "Mineralogy is the scientific study of minerals—their chemical composition, crystal structure, physical properties, formation, and geographic distribution. Minerals are classified into groups based on their dominant anion or anionic complex: silicates (based on SiO₄ tetrahedra, the largest and most abundant group, making up over 90% of Earth's crust), carbonates (CO₃, including calcite and dolomite), oxides (O²⁻, including hematite and magnetite), sulfides (S²⁻, including pyrite and galena), sulfates (SO₄²⁻, including gypsum and barite), halides (Cl⁻, F⁻, including halite and fluorite), and native elements (pure elements like gold, copper, diamond, and sulfur). Each group has characteristic chemical and physical properties that dictate where and how the minerals form and their economic significance."
+  },
+  {
+    "q": [
+      "What are the six crystal systems?",
+      "What is the isometric crystal system?",
+      "What is the tetragonal crystal system?",
+      "What is the orthorhombic crystal system?",
+      "What is the hexagonal crystal system?",
+      "What is the monoclinic crystal system?",
+      "What is the triclinic crystal system?",
+      "crystal systems",
+      "crystallography basics"
+    ],
+    "a": "The six crystal systems describe the symmetry of minerals' atomic arrangements based on three axes (a, b, c) and their angles (α, β, γ). Isometric (cubic) has three equal axes at 90° angles (garnet, halite, pyrite). Tetragonal has three axes at 90°, with two equal horizontal axes and one different vertical axis (zircon, rutile). Orthorhombic has three unequal axes all at 90° (topaz, olivine, barite). Hexagonal has four axes—three equal horizontal axes at 120° and one vertical axis at 90° (quartz, calcite, beryl). Monoclinic has three unequal axes, with two at 90° and one non-90° angle (gypsum, orthoclase, mica). Triclinic has three unequal axes with none at 90° (plagioclase feldspar, turquoise, kyanite)."
+  },
+  {
+    "q": [
+      "What is the Mohs hardness scale?",
+      "How is mineral hardness measured?",
+      "What are the minerals on the Mohs scale?",
+      "How do you identify minerals?",
+      "What are the physical properties of minerals used for identification?",
+      "What is mineral luster?",
+      "What is cleavage in minerals?",
+      "Mineral identification",
+      "Mohs hardness scale",
+      "mineral properties"
+    ],
+    "a": "The Mohs hardness scale, created by Friedrich Mohs in 1812, ranks minerals from 1 (softest, talc) to 10 (hardest, diamond) based on scratch resistance. The scale is ordinal: each mineral scratches those below it: 2 (gypsum), 3 (calcite), 4 (fluorite), 5 (apatite), 6 (orthoclase feldspar), 7 (quartz), 8 (topaz), 9 (corundum). Mineral identification combines hardness with other diagnostic properties: luster (metallic, vitreous/glassy, pearly, silky, dull/earthy), streak (color of powdered mineral on an unglazed porcelain plate), cleavage (tendency to break along flat planes, described by number of directions and angles), fracture (conchoidal, fibrous, irregular), color (often unreliable due to impurities), specific gravity, and reaction to acid (carbonates effervesce with dilute HCl)."
+  },
+  {
+    "q": [
+      "How do minerals form?",
+      "What is magmatic mineral formation?",
+      "What is hydrothermal mineral formation?",
+      "What is sedimentary mineral formation?",
+      "What is metamorphic mineral formation?",
+      "What is gemology?",
+      "What are economic minerals?",
+      "What are famous mineral localities?",
+      "mineral formation processes",
+      "gemology",
+      "economic minerals",
+      "famous mineral locations"
+    ],
+    "a": "Minerals form through four main processes: magmatic (crystallization from cooling magma, forming olivine, pyroxene, feldspar, and quartz in igneous rocks), hydrothermal (precipitation from hot, mineral-rich fluids circulating through fractures, creating veins of quartz, gold, silver, and base metals), sedimentary (precipitation from evaporating water bodies forming halite, gypsum, and calcite, or through organic accumulation), and metamorphic (recrystallization under heat and pressure, producing garnet, kyanite, and staurolite). Gemology is the specialized study of gem-quality minerals (diamond, ruby, sapphire, emerald, opal, etc.) including their identification, grading (the 4 Cs: cut, color, clarity, carat weight), treatments, and synthesis. Famous mineral localities include the pegmatites of Minas Gerais, Brazil (tourmaline, topaz, aquamarine), the Ural Mountains (emerald, demantoid garnet), the Tsumeb Mine in Namibia (dioptase, azurite, smithsonite), and the Elmwood Mine in Tennessee (fluorite, sphalerite, calcite)."
+  }
+]

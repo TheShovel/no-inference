@@ -1,0 +1,57 @@
+[
+  {
+    "q": [
+      "How do drugs work in the body?",
+      "What is pharmacokinetics?",
+      "What is pharmacodynamics?",
+      "How are drugs absorbed and metabolized?",
+      "What affects how a drug works in the body?",
+      "What is the difference between efficacy and potency of a drug?"
+    ],
+    "a": "Drugs produce their effects through pharmacodynamics (how the drug interacts with molecular targets like receptors, enzymes, or ion channels in the body) and pharmacokinetics (how the body handles the drug through absorption, distribution, metabolism, and excretion). Most drugs work by binding to specific receptors on cell surfaces, either activating them (agonists) or blocking them (antagonists), while others inhibit enzymes, block ion channels, or interfere with cellular processes like DNA replication. Factors including age, genetics, liver and kidney function, drug interactions, and diet can significantly affect how a drug is metabolized and how effectively it works."
+  },
+  {
+    "q": [
+      "What are the main classes of antibiotics?",
+      "How do antibiotics work?",
+      "What is antibiotic resistance?",
+      "When should antibiotics be used?",
+      "What are the side effects of antibiotics?",
+      "Why don't antibiotics work against viruses?"
+    ],
+    "a": "Antibiotics are drugs that kill or inhibit bacterial growth by targeting bacterial cell walls (penicillins, cephalosporins), protein synthesis (tetracyclines, macrolides), DNA replication (fluoroquinolones), or metabolic pathways (sulfonamides). The rise of antibiotic resistance—where bacteria evolve mechanisms to survive drug exposure—is a critical global health crisis driven by overuse and misuse of antibiotics, leading to infections that are increasingly difficult to treat. Antibiotics are ineffective against viral infections, and their inappropriate use for colds or flu contributes to resistance while offering no benefit."
+  },
+  {
+    "q": [
+      "What are analgesics and how do they work?",
+      "What is the difference between NSAIDs and acetaminophen?",
+      "How do opioid pain medications work?",
+      "What are the types of pain relievers?",
+      "What are the side effects of pain medications?",
+      "What is the difference between mild and strong analgesics?"
+    ],
+    "a": "Analgesics are pain-relieving drugs divided into non-opioid and opioid categories. Non-opioid analgesics include acetaminophen (paracetamol, mechanism not fully understood but reduces pain and fever) and NSAIDs like ibuprofen, aspirin, and naproxen, which reduce inflammation by blocking cyclooxygenase (COX) enzymes that produce prostaglandins. Opioid analgesics (morphine, oxycodone, fentanyl) work by binding to mu-opioid receptors in the brain and spinal cord to block pain signals, but carry significant risks of tolerance, physical dependence, and respiratory depression."
+  },
+  {
+    "q": [
+      "What are antihypertensives?",
+      "How do blood pressure medications work?",
+      "What are the main classes of antihypertensive drugs?",
+      "What are the side effects of blood pressure medication?",
+      "How do beta-blockers work?",
+      "What is the difference between ACE inhibitors and ARBs?"
+    ],
+    "a": "Antihypertensives are medications used to lower high blood pressure, a major risk factor for heart disease and stroke. Major drug classes include ACE inhibitors (lisinopril) and ARBs (losartan), which relax blood vessels by interfering with the renin-angiotensin system; calcium channel blockers (amlodipine), which relax blood vessels by preventing calcium entry into muscle cells; diuretics (hydrochlorothiazide), which reduce blood volume by increasing urine output; and beta-blockers (metoprolol), which reduce heart rate and cardiac output. Many patients require combination therapy from multiple classes to achieve target blood pressure."
+  },
+  {
+    "q": [
+      "How are drugs developed and tested?",
+      "What are the phases of clinical trials?",
+      "How long does drug development take?",
+      "What is FDA approval process for drugs?",
+      "What is the difference between generic and brand-name drugs?",
+      "How are drug safety and efficacy evaluated?"
+    ],
+    "a": "Drug development is a lengthy, expensive process typically spanning 10-15 years and billions of dollars, beginning with preclinical research (laboratory and animal studies) before advancing to human clinical trials. Clinical trials proceed through Phase I (safety and dosage in 20-100 healthy volunteers), Phase II (efficacy and side effects in hundreds of patients), and Phase III (large-scale efficacy and safety comparison against standard treatments in thousands of patients) before regulatory review. Generic drugs contain the same active ingredients as brand-name drugs and must demonstrate bioequivalence, making them significantly cheaper alternatives after patent expiration."
+  }
+]

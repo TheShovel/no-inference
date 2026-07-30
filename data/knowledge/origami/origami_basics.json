@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "What is origami?",
+      "What is the history of paper folding?",
+      "What types of paper are used for origami?",
+      "What is kami paper in origami?",
+      "What is foil paper used for in origami?",
+      "What is washi paper?",
+      "What is tant paper?",
+      "What is tissue foil in origami?"
+    ],
+    "a": "Origami is the Japanese art of paper folding, transforming a flat square sheet of paper into a finished sculpture through folding techniques without cutting or gluing. Paper selection is crucial to origami success: kami is the standard thin, crisp origami paper colored on one side; foil paper holds sharp creases and is ideal for complex models with many layers; washi is traditional Japanese handmade paper prized for its texture and durability; tant is a dense, colored paper with a smooth finish excellent for modular origami; and tissue foil is a composite of tissue paper bonded to aluminum foil, combining the foldability of paper with the memory of metal. Each paper type offers different properties in terms of thickness, crease memory, texture, and color penetration that suit different models and skill levels."
+  },
+  {
+    "q": [
+      "What are the basic folds in origami?",
+      "What is a valley fold?",
+      "What is a mountain fold?",
+      "What is a pleat fold in origami?",
+      "What is a reverse fold?",
+      "What is a squash fold?",
+      "What is a sink fold in origami?",
+      "What are the fundamental origami techniques?"
+    ],
+    "a": "Origami relies on a set of fundamental folds: the valley fold creates a crease that points toward you, forming a V-shape; the mountain fold is the opposite, folding the paper away from you to create an inverted V; the pleat consists of two parallel folds in opposite directions creating a raised ridge; the reverse fold flips a flap or point inside-out so the paper reverses direction; the squash fold opens a pocket and flattens it symmetrically; and the sink fold pushes a tip or layer downward into the interior of the model, often considered one of the more challenging basic techniques. These folds combine in sequence to transform a flat sheet into increasingly complex three-dimensional forms, and mastery of them is essential before attempting intermediate or advanced origami designs."
+  },
+  {
+    "q": [
+      "What are the origami base folds?",
+      "What is the square base in origami?",
+      "How do you make a bird base?",
+      "What is the frog base?",
+      "What is the fish base?",
+      "What is the waterbomb base?",
+      "What is the blintz base?",
+      "How many origami bases are there?"
+    ],
+    "a": "Origami bases are standardized starting points that serve as the foundation for many models, created by a specific sequence of folds that produce a common crease pattern. The square base (or preliminary base) is formed by folding a square into a triangle on both diagonals, then collapsing it into a smaller square; the bird base starts from the square base and adds petal folds on each side to create the traditional crane. Other essential bases include the frog base (which adds complex pleating to the bird base to create legs), the fish base (formed by folding edges to the center on both sides), the waterbomb base (similar to the square base but with mountain folds reversed to create an inflatable form), and the blintz base (where all four corners are folded to the center). Once these crease patterns are established, the folder follows specific instructions to shape the paper into the desired model."
+  },
+  {
+    "q": [
+      "What is the Yoshizawa-Randlett system?",
+      "How are origami diagrams read?",
+      "What do the symbols in origami diagrams mean?",
+      "What are the standard origami notation symbols?",
+      "Who developed the origami diagramming system?",
+      "How do you read origami crease patterns?",
+      "What tools do you need for origami?",
+      "What is a bone folder used for in origami?"
+    ],
+    "a": "The Yoshizawa-Randlett system, developed by Akira Yoshizawa and later standardized by Samuel Randlett and Robert Harbin, is the universally recognized notation system for origami diagrams. It uses dashed lines for valley folds, dot-dashed lines for mountain folds, arrows to indicate folding direction and rotation, and various symbols for specific actions like reverse folds, squash folds, and inflating the model. Beyond diagrams, crease patterns (CPs) have become popular among advanced folders as a compact representation showing all creases in the finished model, allowing experienced folders to understand the folding structure at a glance. Basic tools include a flat folding surface, a bone folder or crease tool for sharpening folds, tweezers for fine work on complex models, and paper clips to hold layers temporarily, though traditional origami philosophy emphasizes using nothing but paper and hands."
+  }
+]

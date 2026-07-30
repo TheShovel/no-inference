@@ -1,0 +1,68 @@
+[
+  {
+    "q": [
+      "What is cardiovascular disease?",
+      "What causes heart disease?",
+      "What are the types of cardiovascular disease?",
+      "How is heart disease prevented?",
+      "What are the risk factors for cardiovascular disease?",
+      "What are the symptoms of a heart attack?"
+    ],
+    "a": "Cardiovascular disease (CVD) refers to conditions affecting the heart and blood vessels, including coronary artery disease (blockage of arteries supplying the heart), heart failure, arrhythmias, valvular heart disease, and peripheral artery disease. Major risk factors include high blood pressure, high cholesterol, smoking, diabetes, obesity, physical inactivity, and family history. Prevention focuses on lifestyle modifications—healthy diet, regular exercise, smoking cessation, and weight management—along with medical management of blood pressure and cholesterol, as CVD remains the leading cause of death globally."
+  },
+  {
+    "q": [
+      "What is diabetes?",
+      "What causes diabetes?",
+      "What are the types of diabetes?",
+      "How is diabetes managed?",
+      "What are the complications of diabetes?",
+      "What is the difference between Type 1 and Type 2 diabetes?"
+    ],
+    "a": "Diabetes mellitus is a metabolic disorder characterized by elevated blood glucose levels resulting from defects in insulin production, insulin action, or both. Type 1 diabetes is an autoimmune condition where the pancreas produces little to no insulin, typically diagnosed in childhood, requiring lifelong insulin therapy. Type 2 diabetes, far more common (90-95% of cases), usually develops in adulthood from insulin resistance and is managed through lifestyle changes, oral medications, and sometimes insulin—though rising obesity rates have increased its occurrence in younger populations."
+  },
+  {
+    "q": [
+      "What is cancer?",
+      "How does cancer develop?",
+      "What are the most common types of cancer?",
+      "What causes cancer?",
+      "How is cancer treated?",
+      "What are the risk factors for cancer?"
+    ],
+    "a": "Cancer is a group of diseases characterized by uncontrolled cell division and the ability of abnormal cells to invade nearby tissues or spread to other parts of the body through metastasis. The most common cancers worldwide include lung, breast, colorectal, prostate, and skin cancers, with causes ranging from genetic mutations and inherited predisposition to environmental factors like tobacco smoke, UV radiation, certain infections, and dietary factors. Treatment has evolved from traditional surgery, chemotherapy, and radiation to include targeted therapies, immunotherapy, hormone therapy, and personalized medicine based on tumor genetic profiling."
+  },
+  {
+    "q": [
+      "What are respiratory diseases?",
+      "What causes chronic obstructive pulmonary disease (COPD)?",
+      "What is asthma?",
+      "What is pneumonia?",
+      "How are lung diseases diagnosed?",
+      "What are the most common respiratory conditions?"
+    ],
+    "a": "Respiratory diseases affect the airways and lungs, encompassing conditions from acute infections like pneumonia (lung inflammation from bacterial, viral, or fungal infection) to chronic disorders like asthma (reversible airway constriction from inflammation and triggers) and COPD (progressive lung damage most commonly from smoking). Other significant respiratory conditions include pulmonary fibrosis, pulmonary embolism, lung cancer, and tuberculosis. Diagnosis relies on pulmonary function tests, chest imaging (X-ray, CT), blood gas analysis, and sometimes bronchoscopy for direct visualization of the airways."
+  },
+  {
+    "q": [
+      "What are infectious diseases?",
+      "How do infectious diseases spread?",
+      "What are the most common infectious diseases?",
+      "How are infectious diseases treated?",
+      "What is the difference between bacterial and viral infections?",
+      "How do vaccines prevent infectious diseases?"
+    ],
+    "a": "Infectious diseases are caused by pathogenic microorganisms including bacteria, viruses, fungi, and parasites, which can be transmitted through direct contact, airborne droplets, contaminated food or water, vectors (like mosquitoes), or bodily fluids. Bacterial infections are treated with antibiotics, while viral infections often require antiviral drugs or resolve through the immune system, though the distinction is crucial because antibiotics are ineffective against viruses. Major global infectious diseases include HIV/AIDS, tuberculosis, malaria, influenza, COVID-19, and hepatitis, with vaccination remaining one of the most effective public health interventions for prevention."
+  },
+  {
+    "q": [
+      "What are autoimmune disorders?",
+      "How do autoimmune diseases work?",
+      "What are common autoimmune diseases?",
+      "What causes autoimmune diseases?",
+      "How are autoimmune disorders treated?",
+      "What is the immune system's role in autoimmune disease?"
+    ],
+    "a": "Autoimmune disorders occur when the immune system mistakenly attacks the body's own healthy tissues, failing to distinguish self from non-self. Common autoimmune diseases include rheumatoid arthritis (joints), Type 1 diabetes (pancreas), multiple sclerosis (nervous system), lupus (multiple organs), Hashimoto's thyroiditis (thyroid), and inflammatory bowel disease (digestive tract). Treatment typically involves immunosuppressive medications—corticosteroids, disease-modifying antirheumatic drugs (DMARDs), and biologics—that dampen the inappropriate immune response while attempting to maintain sufficient immune function against genuine threats."
+  }
+]

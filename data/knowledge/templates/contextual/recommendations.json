@@ -1,0 +1,158 @@
+[
+  {
+    "id": "rec-topic-001",
+    "triggers": [
+      "what do you recommend for {context}",
+      "what would you suggest for {context}",
+      "any recommendations on {context}"
+    ],
+    "context_role": "topic",
+    "template": "When it comes to {context}, my top recommendations would be to focus on the foundational aspects first. Building a solid understanding of the core principles will make everything else easier. From there, I'd suggest exploring related areas that complement {context}, as they often provide valuable context and alternative perspectives. Finally, find practical ways to apply what you're learning — hands-on experience with {context} is really where things start to click.",
+    "fallback": "I'd be happy to offer some recommendations! Could you tell me what topic or area you're interested in?",
+    "style": ["conversational", "informative"],
+    "response_length": "medium"
+  },
+  {
+    "id": "rec-suggest-002",
+    "triggers": [
+      "any suggestions for {context}",
+      "what do you suggest about {context}",
+      "give me some ideas for {context}"
+    ],
+    "context_role": "topic",
+    "template": "Great question! For {context}, I'd suggest starting by identifying what aspect interests you most. If you're looking to deepen your understanding, try breaking {context} down into smaller components and tackling them one at a time. If you're looking for practical applications, look for case studies or projects where {context} is used in the real world. Either way, consistency is key — a little bit of time spent on {context} each day goes a long way.",
+    "fallback": "I'd love to offer some suggestions! What topic are we thinking about?",
+    "style": ["educational", "conversational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "rec-know-003",
+    "triggers": [
+      "what should I know about {context}",
+      "give me the essentials of {context}",
+      "key things to know about {context}"
+    ],
+    "context_role": "topic",
+    "template": "Here are the key things you should know about {context}. First, understand why it matters — the core problem it solves or the insight it provides. Second, be aware of the basic principles and how they fit together — this is the mental model you'll use to reason about {context}. Third, know that {context} isn't isolated; it connects to other fields and ideas in interesting ways. And finally, remember that mastery of {context} comes through practice and iteration, not just reading about it.",
+    "fallback": "I can highlight the essentials! What topic are we discussing today?",
+    "style": ["informative", "educational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "rec-learn-004",
+    "triggers": [
+      "what is the best way to learn {context}",
+      "how should I go about learning {context}",
+      "what is the most effective way to study {context}"
+    ],
+    "context_role": "topic",
+    "template": "The best way to learn {context} depends on your learning style, but here's an approach that works well for most people. Start with a high-level overview to understand the landscape — a good book, introductory course, or overview video works well. Then get hands-on as quickly as possible by working through exercises or small projects that use {context}. Supplement this with community resources like forums, discussion groups, or meetups where people talk about {context}. Finally, teach what you've learned to someone else — it's the best test of whether you truly understand {context}.",
+    "fallback": "I can suggest learning approaches! Which topic are you looking to learn?",
+    "style": ["educational", "conversational"],
+    "response_length": "long"
+  },
+  {
+    "id": "rec-resources-005",
+    "triggers": [
+      "what resources exist for {context}",
+      "where can I find more about {context}",
+      "are there good references for {context}"
+    ],
+    "context_role": "topic",
+    "template": "There are several great types of resources for exploring {context} further. For a structured introduction, look for well-regarded books or online courses that cover {context} from the ground up. For deeper reference material, official documentation and academic papers can provide authoritative information. Community-driven resources like tutorials, blog posts, and forums are excellent for practical tips and real-world examples. And don't overlook video content — many complex topics within {context} are explained brilliantly through visual walkthroughs and lectures.",
+    "fallback": "I can point you to helpful resources! What topic are you researching?",
+    "style": ["informative", "formal"],
+    "response_length": "medium"
+  },
+  {
+    "id": "rec-tools-006",
+    "triggers": [
+      "what tools are used for {context}",
+      "what are the common tools for {context}",
+      "what tools do I need for {context}"
+    ],
+    "context_role": "topic",
+    "template": "The tools commonly used for {context} vary depending on the specific area you're focusing on. For getting started, you'll typically want something beginner-friendly that doesn't overwhelm you with features. As you advance, more specialized tools for {context} offer greater control and flexibility. The key is to choose tools that match your current skill level and the specific tasks you want to accomplish. Most practitioners of {context} recommend starting simple and upgrading as your needs grow.",
+    "fallback": "I can recommend tools! What topic are we talking about?",
+    "style": ["educational", "informative"],
+    "response_length": "medium"
+  },
+  {
+    "id": "rec-worth-007",
+    "triggers": [
+      "is {context} worth learning",
+      "should I invest time in {context}",
+      "is it worth studying {context}"
+    ],
+    "context_role": "topic",
+    "template": "That's a great question, and the honest answer is that it depends on your goals. {context} is definitely valuable if you're interested in its applications or if it aligns with your career or personal interests. The skills and ways of thinking you develop through {context} are broadly transferable and can open up new perspectives. However, like any field, it requires a genuine interest to sustain motivation through the challenging parts. If you're curious about {context}, I'd suggest starting with a small project to see if it clicks for you before committing deeply.",
+    "fallback": "Whether something is worth learning really depends on your goals and interests. What topic are you considering?",
+    "style": ["conversational", "analytical"],
+    "response_length": "medium"
+  },
+  {
+    "id": "rec-beginner-008",
+    "triggers": [
+      "how do I start with {context}",
+      "I am new to {context} where do I begin",
+      "what is a good starting point for {context}"
+    ],
+    "context_role": "topic",
+    "template": "Starting with {context} can feel overwhelming, but the key is to take it step by step. Begin with the absolute basics — what {context} is, why it exists, and what problem it solves. Look for beginner-friendly introductions that assume no prior knowledge. Once you have the big picture, pick one small, concrete aspect of {context} to focus on and learn it thoroughly before moving on. Most importantly, give yourself permission to not understand everything at once. Everyone learning {context} goes through this, and it gets easier with time.",
+    "fallback": "I can help you get started! What topic are you interested in?",
+    "style": ["educational", "conversational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "rec-advanced-009",
+    "triggers": [
+      "how can I get better at {context}",
+      "how do I level up in {context}",
+      "what is the next step after basics in {context}"
+    ],
+    "context_role": "topic",
+    "template": "Once you have the basics of {context} down, the next step is to challenge yourself with more complex problems and projects. Try building something that pushes the boundaries of what you know — this will expose gaps in your understanding and force you to learn deeper concepts. Engaging with the community around {context} is also valuable at this stage; reading others' code or work, participating in discussions, and contributing to open projects can accelerate your growth significantly. Finally, revisit the fundamentals periodically — you'll be surprised how much deeper your understanding of {context} becomes with experience.",
+    "fallback": "I can suggest ways to level up! What topic would you like to advance in?",
+    "style": ["informative", "educational"],
+    "response_length": "long"
+  },
+  {
+    "id": "rec-compare-010",
+    "triggers": [
+      "should I choose {context} over alternatives",
+      "why choose {context} over other options",
+      "how does {context} compare to similar things"
+    ],
+    "context_role": "topic",
+    "template": "When deciding between {context} and its alternatives, it helps to think about what matters most for your specific situation. {context} tends to excel in areas where structure and proven methodologies are important. It might have a steeper learning curve than some alternatives, but it often provides more depth and flexibility in the long run. The best approach is to evaluate {context} based on your actual needs rather than general reputation. If possible, try a small-scale experiment with {context} alongside an alternative to see which fits better for you.",
+    "fallback": "I can help compare options! What topic are we evaluating?",
+    "style": ["analytical", "conversational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "rec-community-011",
+    "triggers": [
+      "where can I find people interested in {context}",
+      "are there communities for {context}",
+      "how do I connect with others studying {context}"
+    ],
+    "context_role": "topic",
+    "template": "There are great communities around {context} where you can connect with others who share your interest. Online forums and discussion platforms often have active channels dedicated to {context} where people ask questions and share resources. Social media platforms host communities where practitioners of {context} share tips and discuss trends. For a more structured experience, look for local meetups, virtual study groups, or conferences focused on {context}. The community aspect is one of the best parts of diving into {context} — you'll find that most people are happy to help newcomers.",
+    "fallback": "I can point you to communities! What topic are you looking to connect with others about?",
+    "style": ["conversational", "informative"],
+    "response_length": "medium"
+  },
+  {
+    "id": "rec-trends-012",
+    "triggers": [
+      "what are the latest trends in {context}",
+      "what is new in {context}",
+      "what is the future of {context}"
+    ],
+    "context_role": "topic",
+    "template": "The field of {context} is constantly evolving, and there are several exciting developments worth watching. Currently, there's a strong trend toward integrating {context} with related disciplines, creating new hybrid approaches that are more powerful than either alone. There's also growing interest in making {context} more accessible to beginners, with better tools and learning resources emerging regularly. Looking ahead, the future of {context} seems to be moving toward more automation and broader applicability. Keeping an eye on these trends can help you stay ahead and find interesting directions to explore within {context}.",
+    "fallback": "I can discuss trends and developments! What topic are you curious about?",
+    "style": ["informative", "conversational"],
+    "response_length": "medium"
+  }
+]

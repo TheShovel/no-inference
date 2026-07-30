@@ -173,6 +173,9 @@ def lookup(query):
     q = query.lower().strip()
     q = re.sub(r'[\"\'\'\"\u201c\u201d\u2018\u2019]', '', q)
     q = re.sub(r'\s+', ' ', q).strip()
+    # Strip trailing sentence-ending punctuation (?, !, ., ;) that can prevent
+    # KB entries ending in "?" from matching user queries without trailing "?"
+    q = q.rstrip('?!.;,').strip()
 
     # Normalize common grammatical variations to increase matching.
     # E.g., "why is it that we dream" -> "why do we dream"

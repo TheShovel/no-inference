@@ -1,0 +1,158 @@
+[
+  {
+    "id": "crit-limitations-001",
+    "triggers": [
+      "what are the limitations of {context}",
+      "what are the weaknesses of {context}",
+      "where does {context} fall short"
+    ],
+    "context_role": "topic",
+    "template": "No concept is perfect, and {context} has its share of limitations. One key limitation is that it often relies on certain assumptions that don't always hold in real-world scenarios. When conditions change or edge cases arise, the standard approach to {context} may not apply as cleanly. Another limitation is that {context} can be difficult to scale — what works well in a small, controlled setting may not translate to larger, messier situations. Being aware of these limitations helps you use {context} more effectively by knowing when it's the right tool and when to look for alternatives.",
+    "fallback": "I can discuss the limitations of a topic! What subject are we analyzing?",
+    "style": ["analytical", "informative"],
+    "response_length": "medium"
+  },
+  {
+    "id": "crit-misconceptions-002",
+    "triggers": [
+      "what are common misconceptions about {context}",
+      "what do people often get wrong about {context}",
+      "myths about {context}"
+    ],
+    "context_role": "topic",
+    "template": "There are several common misconceptions about {context} that are worth clearing up. One of the most widespread is that {context} is only relevant in specialized scenarios, when in fact its principles apply much more broadly. Another frequent misunderstanding is that {context} is too difficult for beginners, which discourages people from even trying. People also tend to confuse {context} with related but distinct concepts, leading to confusion about what it actually entails. Understanding these misconceptions is important because they often create unnecessary barriers to learning and applying {context} effectively.",
+    "fallback": "I can address common misconceptions! What topic would you like to explore?",
+    "style": ["educational", "analytical"],
+    "response_length": "medium"
+  },
+  {
+    "id": "crit-ethics-003",
+    "triggers": [
+      "what are the ethical implications of {context}",
+      "what ethical concerns surround {context}",
+      "is {context} ethical"
+    ],
+    "context_role": "topic",
+    "template": "The ethical implications of {context} are important to consider and often more nuanced than they first appear. On one hand, {context} can enable positive outcomes like greater efficiency, deeper understanding, and new capabilities that benefit society. On the other hand, there are legitimate concerns about how {context} might be misused or applied in ways that create unintended harms. Questions around access, fairness, and transparency are central to the ethical discussion of {context}. The key is not to dismiss {context} as inherently good or bad, but to think critically about how it is applied and who it affects.",
+    "fallback": "I can discuss ethical implications! What topic are we examining from an ethical perspective?",
+    "style": ["analytical", "formal"],
+    "response_length": "medium"
+  },
+  {
+    "id": "crit-controversies-004",
+    "triggers": [
+      "what are the controversies surrounding {context}",
+      "why is {context} controversial",
+      "what debates exist about {context}"
+    ],
+    "context_role": "topic",
+    "template": "There are several areas of debate and controversy surrounding {context}. Some of the disagreement stems from differing foundational assumptions — people start from different premises and therefore reach different conclusions about {context}. Other controversies relate to how {context} is applied in practice, with some arguing that certain uses are appropriate while others cross ethical or practical boundaries. There's also debate about the direction {context} should develop in the future, with different schools of thought advocating for different priorities. Engaging with these controversies is valuable because it forces you to examine your own assumptions and develop a more nuanced understanding of {context}.",
+    "fallback": "I can discuss controversies! What topic is generating debate?",
+    "style": ["analytical", "educational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "crit-proscons-005",
+    "triggers": [
+      "what are the pros and cons of {context}",
+      "advantages and disadvantages of {context}",
+      "what is good and bad about {context}"
+    ],
+    "context_role": "topic",
+    "template": "Let's take a balanced look at {context}. On the positive side, the main advantages include its structured approach, proven effectiveness in many situations, and the depth of understanding it provides. It also tends to encourage rigorous thinking and can be applied across a wide range of scenarios. On the downside, {context} can be complex and time-consuming to learn properly. It may not always be the most efficient option for simpler problems, and there's a risk of over-applying it where simpler solutions would suffice. The key is to weigh these factors based on your specific needs rather than assuming {context} is universally the best or worst option.",
+    "fallback": "I can weigh the pros and cons! What topic are we evaluating?",
+    "style": ["analytical", "informative"],
+    "response_length": "medium"
+  },
+  {
+    "id": "crit-assumptions-006",
+    "triggers": [
+      "what are the assumptions behind {context}",
+      "what does {context} take for granted",
+      "what premises does {context} rely on"
+    ],
+    "context_role": "topic",
+    "template": "Every framework or concept rests on certain assumptions, and {context} is no exception. One key assumption is that the underlying principles are stable and predictable across different contexts — but this isn't always true. Another assumption is that the person applying {context} has sufficient information to make good decisions, which may not hold in situations with limited data. {context} also tends to assume a certain level of rationality and consistency that doesn't always reflect how things work in practice. Examining these assumptions is crucial because when they don't hold, the conclusions or outcomes from {context} may be unreliable.",
+    "fallback": "I can examine the underlying assumptions! What topic should we analyze?",
+    "style": ["analytical", "educational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "crit-alternatives-007",
+    "triggers": [
+      "what are alternative views to {context}",
+      "what are other perspectives on {context}",
+      "how else can we think about {context}"
+    ],
+    "context_role": "topic",
+    "template": "While {context} offers a valuable perspective, it's important to consider alternative viewpoints as well. Some critics argue that {context} overemphasizes certain aspects while neglecting others that are equally important. Alternative frameworks may prioritize different factors or take a completely different approach to the same problems that {context} addresses. There are also complementary perspectives that don't directly contradict {context} but approach it from a different angle, offering insights that {context} alone might miss. Exploring these alternatives doesn't diminish the value of {context} — it actually enriches your understanding by showing where {context} fits in a broader intellectual landscape.",
+    "fallback": "I can present alternative perspectives! What topic are we exploring?",
+    "style": ["analytical", "conversational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "crit-reliability-008",
+    "triggers": [
+      "how reliable is the information about {context}",
+      "can I trust what I read about {context}",
+      "is information about {context} trustworthy"
+    ],
+    "context_role": "topic",
+    "template": "The reliability of information about {context} varies considerably depending on the source and the specific claims being made. Peer-reviewed academic sources and established reference works are generally the most reliable, as they undergo scrutiny before publication. Popular sources and online content about {context} can be useful for getting an overview, but they may oversimplify or contain inaccuracies. A good practice when researching {context} is to triangulate — cross-reference information from multiple credible sources and be skeptical of claims that seem too neat or convenient. Also, be aware that {context} is an evolving field, so some information may become outdated as new understanding develops.",
+    "fallback": "I can help evaluate information reliability! What topic's information are we assessing?",
+    "style": ["analytical", "informative"],
+    "response_length": "medium"
+  },
+  {
+    "id": "crit-bias-009",
+    "triggers": [
+      "what biases exist in {context}",
+      "how is {context} biased",
+      "is there bias in how {context} is taught"
+    ],
+    "context_role": "topic",
+    "template": "Bias can creep into {context} in several ways. One source of bias is that the development of {context} has historically been shaped by a narrow group of perspectives, meaning certain viewpoints may be overrepresented while others are underplayed. There can also be a publication bias — successes and positive results related to {context} are more likely to be shared than failures or limitations. Even the way {context} is taught and popularized can introduce bias, as simplified explanations often omit important nuances. Being aware of these biases helps you approach {context} more critically and seek out diverse perspectives to get a fuller picture.",
+    "fallback": "I can discuss biases! What topic should we examine for bias?",
+    "style": ["analytical", "educational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "crit-evidence-010",
+    "triggers": [
+      "what evidence supports {context}",
+      "how do we know {context} works",
+      "is {context} backed by research"
+    ],
+    "context_role": "topic",
+    "template": "The evidence base for {context} comes from multiple sources. Theoretical foundations provide logical arguments for why {context} should work, while empirical studies test these predictions in controlled settings. Case studies and practical applications offer real-world evidence of {context} in action. However, the quality of evidence varies — some claims about {context} are well-supported by rigorous research, while others rely more on anecdote or tradition. When evaluating evidence for {context}, it's worth asking: was it tested in conditions similar to where you'd apply it? Has the evidence been replicated by independent researchers? Understanding the strength of the evidence helps you decide how much confidence to place in different aspects of {context}.",
+    "fallback": "I can discuss the evidence! What topic's evidence base are we examining?",
+    "style": ["analytical", "formal"],
+    "response_length": "medium"
+  },
+  {
+    "id": "crit-skepticism-011",
+    "triggers": [
+      "why do some people reject {context}",
+      "what are the arguments against {context}",
+      "criticism of {context}"
+    ],
+    "context_role": "topic",
+    "template": "There are several legitimate criticisms leveled against {context}. Some critics argue that it oversimplifies complex realities, reducing nuanced situations to a one-size-fits-all framework. Others point out that {context} can create an illusion of understanding — making people feel they know more than they actually do. There are also concerns about the practical applicability of {context} outside of idealized conditions. These criticisms don't necessarily invalidate {context}, but they highlight important caveats and limitations. Engaging with these critiques is a sign of mature understanding; it means you're thinking critically about {context} rather than accepting it uncritically.",
+    "fallback": "I can discuss criticisms and skepticism! What topic are we examining critically?",
+    "style": ["analytical", "conversational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "crit-nuance-012",
+    "triggers": [
+      "what are the gray areas in {context}",
+      "where is {context} not clear cut",
+      "what are the nuanced aspects of {context}"
+    ],
+    "context_role": "topic",
+    "template": "While {context} is often presented as straightforward, there are important gray areas that deserve attention. One gray area is the boundary between {context} and related concepts — where does one end and the other begin? Another is the tension between theoretical ideals and practical constraints; what {context} suggests in theory may not always be feasible in practice. There are also situations where applying {context} leads to trade-offs, where you have to choose between competing priorities. These gray areas are actually where the most interesting thinking about {context} happens, because they force you to engage with the subject on a deeper level rather than relying on simple formulas.",
+    "fallback": "I can explore the gray areas! What topic's nuances should we discuss?",
+    "style": ["analytical", "educational"],
+    "response_length": "medium"
+  }
+]

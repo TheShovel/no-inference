@@ -1,0 +1,46 @@
+[
+  {
+    "q": [
+      "What is environmental law?",
+      "What is the history of environmental regulation in the United States?",
+      "What is NEPA and how does it work?",
+      "What is the National Environmental Policy Act?",
+      "How did environmental law develop as a legal field?",
+      "What are the major federal environmental statutes?"
+    ],
+    "a": "Environmental law is the body of statutes, regulations, and common law principles that protect the natural environment and human health from pollution and environmental degradation, and it has expanded dramatically since the modern environmental movement of the 1960s and 1970s. The National Environmental Policy Act (NEPA) of 1969 was one of the first cornerstone environmental laws, requiring federal agencies to prepare Environmental Impact Statements (EIS) for major federal actions significantly affecting the environment — the EIS process mandates analysis of alternatives, public disclosure, and public comment periods that have become a central tool for environmental advocacy and litigation. The modern framework was largely established during the 1970s 'environmental decade,' when Congress passed the Clean Air Act (1970), Clean Water Act (1972), Endangered Species Act (1973), and Resource Conservation and Recovery Act (1976), creating the regulatory infrastructure administered by the Environmental Protection Agency (EPA), which was established in 1970."
+  },
+  {
+    "q": [
+      "What is the Clean Air Act?",
+      "How does the Clean Air Act regulate air pollution?",
+      "What are the National Ambient Air Quality Standards (NAAQS)?",
+      "What is the Clean Water Act and what does it regulate?",
+      "How does the Clean Water Act protect wetlands?",
+      "What is the difference between the Clean Air Act and Clean Water Act?"
+    ],
+    "a": "The Clean Air Act (CAA) authorizes the EPA to set National Ambient Air Quality Standards (NAAQS) for six criteria pollutants — particulate matter, ozone, sulfur dioxide, nitrogen dioxide, carbon monoxide, and lead — that pose threats to public health and the environment, with states required to develop implementation plans to achieve these standards. The Clean Water Act (CWA) makes it unlawful to discharge pollutants into navigable waters without a permit, establishes the National Pollutant Discharge Elimination System (NPDES) permitting program for point source discharges, and sets water quality standards for surface waters. Both statutes rely on a cooperative federalism model where the EPA sets national standards and states implement and enforce them, with citizen suit provisions that allow private individuals and organizations to sue violators and government agencies for failure to perform mandatory duties, making environmental organizations key enforcers when government action is insufficient."
+  },
+  {
+    "q": [
+      "What is the Endangered Species Act?",
+      "How does the ESA protect endangered plants and animals?",
+      "What does it mean when a species is listed as endangered?",
+      "What is the Endangered Species Act and how does it work?",
+      "What is critical habitat designation under the ESA?",
+      "How does the ESA interact with land development?"
+    ],
+    "a": "The Endangered Species Act (ESA) of 1973 provides a comprehensive framework for protecting species that are threatened or endangered and the ecosystems upon which they depend, administered by the U.S. Fish and Wildlife Service (terrestrial and freshwater species) and NOAA Fisheries (marine species). The ESA prohibits the 'take' of listed species — defined broadly to include harming, hunting, capturing, or collecting, as well as significant habitat modification that actually kills or injures wildlife — and requires federal agencies to consult with wildlife agencies to ensure their actions do not jeopardize listed species or destroy designated critical habitat. The ESA has been highly controversial due to its impact on land use and economic development, with high-profile conflicts involving the northern spotted owl and old-growth logging in the Pacific Northwest, the snail darter and dam construction, and more recently the greater sage-grouse and energy development."
+  },
+  {
+    "q": [
+      "What is CERCLA and the Superfund program?",
+      "How does Superfund clean up hazardous waste sites?",
+      "What is RCRA and how does it regulate hazardous waste?",
+      "What is the difference between CERCLA and RCRA?",
+      "What is strict, joint, and several liability under environmental law?",
+      "What is climate change litigation?"
+    ],
+    "a": "CERCLA (Comprehensive Environmental Response, Compensation, and Liability Act), commonly known as Superfund, created a federal program to clean up abandoned or uncontrolled hazardous waste sites and established strict, joint, and several liability that makes potentially responsible parties (including current and former owners, operators, transporters, and arrangers) liable for cleanup costs regardless of fault. The Resource Conservation and Recovery Act (RCRA) governs the management of hazardous waste from generation through transportation, treatment, storage, and disposal — the 'cradle to grave' system — requiring permits for treatment and disposal facilities and setting standards for waste characterization and handling. Climate change litigation has grown rapidly, with lawsuits against governments seeking stronger emissions regulations (including the landmark Massachusetts v. EPA case that established EPA's authority to regulate greenhouse gases) and lawsuits against fossil fuel companies alleging public nuisance, fraud, and failure to warn about climate risks, representing a significant new frontier in environmental law."
+  }
+]

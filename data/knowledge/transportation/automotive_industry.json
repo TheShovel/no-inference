@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "What are the major automakers in the world?",
+      "Who are the biggest car manufacturers?",
+      "What is the global automotive industry?",
+      "How is a car manufactured?",
+      "What is the automotive supply chain?",
+      "major car companies",
+      "automotive industry overview",
+      "car manufacturing process"
+    ],
+    "a": "The global automotive industry produces over 70 million vehicles annually, dominated by Toyota, Volkswagen Group, and Hyundai-Kia by volume, with Stellantis (formed from Fiat Chrysler and PSA), Ford, General Motors, Honda, BMW, and Mercedes-Benz also among the world's largest automakers. Car manufacturing is a highly complex process involving stamping body panels, welding the body-in-white, painting, assembling the powertrain (engine or motor and transmission), and final assembly of thousands of components sourced from a vast global supply chain spanning multiple tiers. Just-in-time manufacturing, pioneered by Toyota, minimizes inventory costs by delivering components precisely when needed on the assembly line, making supply chains efficient but vulnerable to disruptions from natural disasters, trade disputes, and pandemics."
+  },
+  {
+    "q": [
+      "How does an internal combustion engine work?",
+      "What is the difference between a BEV, PHEV, and HEV?",
+      "What are the types of electric vehicles?",
+      "How do electric cars work?",
+      "What is Tesla's role in the automotive industry?",
+      "internal combustion engine",
+      "electric vehicle types",
+      "BEV vs PHEV vs HEV"
+    ],
+    "a": "The internal combustion engine (ICE) burns a fuel-air mixture in cylinders to drive pistons connected to a crankshaft, operating on a four-stroke cycle (intake, compression, power, exhaust) for gasoline engines or a two-stroke cycle for some diesel and small engines. Battery electric vehicles (BEVs) run solely on electricity from rechargeable batteries with zero tailpipe emissions, plug-in hybrid electric vehicles (PHEVs) combine a battery-powered motor with an ICE for extended range, and hybrid electric vehicles (HEVs) use regenerative braking and an electric motor to assist the ICE but cannot plug in to charge. Tesla accelerated the EV revolution by proving that electric cars could be desirable, high-performance, and profitable, compelling traditional automakers to commit tens of billions of dollars toward electrification."
+  },
+  {
+    "q": [
+      "What are autonomous vehicles?",
+      "What are the SAE levels of driving automation?",
+      "How do self-driving cars work?",
+      "What is the difference between Level 2, Level 3, and Level 4 autonomy?",
+      "Which companies are developing autonomous vehicles?",
+      "autonomous vehicles",
+      "self-driving cars",
+      "SAE automation levels"
+    ],
+    "a": "Autonomous vehicles use a combination of sensors—cameras, radar, lidar (light detection and ranging), ultrasonic sensors, and GPS—along with advanced artificial intelligence algorithms to perceive the environment, plan paths, and control the vehicle without human input. The SAE International standard defines six levels of driving automation: Level 0 (no automation) through Level 2 (partial driver assistance, like Tesla Autopilot and GM Super Cruise) require constant human supervision, while Level 3 (conditional automation) allows the driver to disengage under specific conditions, Level 4 (high automation) operates fully without driver input within defined operational design domains, and Level 5 (full automation) drives anywhere a human could. Waymo operates a commercial Level 4 robotaxi service in Phoenix and San Francisco, while most other companies are still developing and testing Level 2+ and Level 3 systems."
+  },
+  {
+    "q": [
+      "How do automotive safety features work?",
+      "What are crash tests?",
+      "What are airbags and how do they work?",
+      "What is ABS (anti-lock braking system)?",
+      "What are the main automotive safety regulations?",
+      "What is Euro NCAP?",
+      "car safety features",
+      "crash test ratings"
+    ],
+    "a": "Modern automotive safety encompasses passive safety (protecting occupants during a crash) through seatbelts, airbags (frontal, side, curtain, and knee), crumple zones that absorb impact energy, and reinforced safety cages. Active safety systems prevent accidents and include anti-lock braking systems (ABS) that prevent wheel lockup during hard braking, electronic stability control (ESC) that reduces skidding, forward collision warning with automatic emergency braking, and lane departure warning and keeping systems. Government agencies (NHTSA in the US, Euro NCAP in Europe) conduct standardized crash tests—including frontal offset, side impact, and rollover tests—to evaluate and rate vehicle safety. Advanced driver assistance systems (ADAS) are increasingly standard, with regulations mandating ESC, rearview cameras, and soon automatic emergency braking on new vehicles."
+  }
+]

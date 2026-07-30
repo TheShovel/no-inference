@@ -1,0 +1,56 @@
+[
+  {
+    "q": [
+      "What are carbon nanotubes?",
+      "What is the difference between SWCNT and MWCNT?",
+      "What are the properties and applications of carbon nanotubes?",
+      "What is graphene?",
+      "What are graphene's properties?",
+      "How is graphene produced?",
+      "What are fullerenes?",
+      "carbon nanotubes explained",
+      "graphene structure",
+      "buckyballs"
+    ],
+    "a": "Carbon nanotubes (CNTs) are cylindrical carbon molecules with exceptional tensile strength (100x stronger than steel at 1/6 the weight), high electrical conductivity (metallic or semiconducting depending on chirality), and thermal conductivity exceeding diamond. Single-walled CNTs (SWCNTs) consist of a single graphene sheet rolled into a seamless cylinder 1-2 nm in diameter, while multi-walled CNTs (MWCNTs) contain multiple concentric tubes. Graphene—a single atom-thick layer of carbon atoms arranged in a hexagonal lattice—exhibits record-breaking electrical mobility, mechanical strength, and thermal conductivity, with production methods including mechanical exfoliation (scotch tape method), chemical vapor deposition (CVD), and graphene oxide reduction. Fullerenes (buckyballs, C₆₀) are spherical carbon cages with 60 atoms arranged in a soccer ball pattern, first discovered in 1985 and used in organic photovoltaics, lubricants, and biomedical applications."
+  },
+  {
+    "q": [
+      "What are gold nanoparticles used for?",
+      "What are silver nanoparticles used for?",
+      "What are iron oxide nanoparticles?",
+      "What are silica nanoparticles?",
+      "What are nanocomposites?",
+      "What are nanofibers?",
+      "What are nanocoatings?",
+      "types of nanoparticles",
+      "metal nanoparticles applications"
+    ],
+    "a": "Gold nanoparticles exhibit size-dependent plasmonic properties, appearing red or blue depending on diameter, and are widely used in biomedical diagnostics (lateral flow assays like pregnancy tests), photothermal therapy, drug delivery, and sensing. Silver nanoparticles are prized for their broad-spectrum antimicrobial activity, incorporated into wound dressings, food packaging, and consumer textiles to inhibit bacterial growth. Iron oxide nanoparticles (magnetite, maghemite) exhibit superparamagnetism for magnetic resonance imaging (MRI) contrast enhancement, targeted drug delivery via magnetic guidance, and hyperthermia cancer treatment. Silica nanoparticles serve as biocompatible carriers for controlled drug release, while nanocomposites combine nanoparticles with polymers or ceramics to enhance mechanical, thermal, or barrier properties, and nanocoatings (self-cleaning, anti-fog, anti-corrosion, scratch-resistant) are applied via sol-gel, CVD, or layer-by-layer deposition."
+  },
+  {
+    "q": [
+      "What are 2D materials beyond graphene?",
+      "What are MXenes?",
+      "What is molybdenum disulfide (MoS₂)?",
+      "What is hexagonal boron nitride (hBN)?",
+      "What are the properties of 2D materials?",
+      "2D materials",
+      "MXenes",
+      "transition metal dichalcogenides"
+    ],
+    "a": "Transition metal dichalcogenides (TMDs) like MoS₂ and WS₂ are 2D semiconductors with a direct bandgap in monolayer form, making them promising for next-generation transistors, photodetectors, and flexible electronics where graphene's lack of a bandgap limits applications. MXenes are a large family of 2D transition metal carbides, nitrides, and carbonitrides discovered in 2011, combining metallic conductivity with hydrophilic surfaces and tunable chemistry for applications in batteries, supercapacitors, electromagnetic interference shielding, and water purification. Hexagonal boron nitride (hBN) is an insulating 2D material with a graphene-like honeycomb structure, exceptional thermal stability, and high mechanical strength, widely used as a substrate and dielectric layer in 2D heterostructures and as a lubricant additive."
+  },
+  {
+    "q": [
+      "Why do nanoparticles have high surface area?",
+      "What is quantum confinement in nanomaterials?",
+      "What are plasmonic properties of nanoparticles?",
+      "How do nanomaterial properties differ from bulk?",
+      "nanoscale properties",
+      "surface area to volume ratio",
+      "plasmonics"
+    ],
+    "a": "As materials shrink to the nanoscale, their surface area to volume ratio increases dramatically: a cube of side 1 cm has a surface area of 6 cm², while the same volume divided into 1 nm cubes has a collective surface area of 6,000 m². This enormous surface area makes nanomaterials highly reactive and efficient for catalysis (catalytic converters, fuel cells), sensing (adsorption-based detection), and energy storage (battery and supercapacitor electrodes). Quantum confinement in semiconductor nanocrystals (quantum dots) discretizes electron energy levels, producing size-tunable fluorescence for displays, solar cells, and biological labeling. Plasmonic effects in metal nanoparticles—collective oscillation of conduction electrons when excited by light—concentrate electromagnetic fields at the nanoscale, enabling surface-enhanced Raman spectroscopy (SERS), metamaterials, and nanoscale optical antennas."
+  }
+]

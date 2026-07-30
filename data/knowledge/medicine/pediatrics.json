@@ -1,0 +1,51 @@
+[
+  {
+    "q": [
+      "What are well-child visits and why are they important?",
+      "What is the CDC vaccination schedule for children?",
+      "What vaccines do children need at different ages?",
+      "What are developmental milestones in pediatrics?",
+      "How are developmental milestones assessed?",
+      "What is the AAP recommended well-child visit schedule?",
+      "Why are routine checkups important for children?"
+    ],
+    "a": "Well-child visits are regular preventive healthcare appointments recommended by the American Academy of Pediatrics (AAP) at specific ages from birth through adolescence, including visits at 2-5 days, 1, 2, 4, 6, 9, 12, 15, 18, and 24 months, then annually. During these visits, pediatricians track growth parameters (height, weight, head circumference), perform developmental screenings to assess milestones in motor skills, language, social-emotional development, and cognition, and administer recommended vaccines. The CDC's childhood immunization schedule protects against 16 diseases including measles, polio, HPV, and pertussis, with vaccines distributed across visits from birth to age 18 to provide immunity at the most vulnerable developmental stages."
+  },
+  {
+    "q": [
+      "What are common childhood illnesses?",
+      "What is pediatric infectious disease?",
+      "How are common colds and flu treated in children?",
+      "What is otitis media in children?",
+      "What are common pediatric respiratory infections?",
+      "What is hand foot and mouth disease?",
+      "How are common childhood illnesses managed?"
+    ],
+    "a": "Common childhood illnesses include otitis media (middle ear infection), upper respiratory infections, streptococcal pharyngitis (strep throat), gastroenteritis, hand-foot-and-mouth disease, and varicella (chickenpox). Viral infections account for most pediatric illnesses and are generally managed with supportive care including fever reduction with acetaminophen or ibuprofen, adequate hydration, and rest. Bacterial infections like strep throat require antibiotic treatment, and distinguishing between viral and bacterial causes is a key clinical skill. Pediatricians also manage chronic conditions like asthma, allergies, and recurrent infections, with particular attention to appropriate medication dosing based on weight and age to avoid toxicity."
+  },
+  {
+    "q": [
+      "What is pediatric nutrition?",
+      "What are the nutritional needs of infants and children?",
+      "What is the importance of breastfeeding for infants?",
+      "When should solid foods be introduced to babies?",
+      "What is childhood obesity and how is it managed?",
+      "How does nutrition affect child development?",
+      "What are common nutritional deficiencies in children?"
+    ],
+    "a": "Pediatric nutrition focuses on the unique dietary needs of growing children, from exclusive breastfeeding or formula feeding for the first 6 months to the gradual introduction of solid foods thereafter. Proper nutrition is critical for brain development, immune function, and achieving growth milestones, with key nutrients including iron, calcium, vitamin D, and protein. Childhood obesity, defined as a BMI at or above the 95th percentile for age and sex, has become a major public health concern affecting approximately 20% of children in the United States, with management involving dietary modifications, increased physical activity, behavioral counseling, and family-based interventions to prevent long-term metabolic consequences like type 2 diabetes and hypertension."
+  },
+  {
+    "q": [
+      "What is ADHD and how is it diagnosed in children?",
+      "What are the symptoms of ADHD in children?",
+      "How is ADHD managed in pediatric patients?",
+      "What treatments are available for ADHD?",
+      "What is the difference between ADHD and normal childhood behavior?",
+      "What are pediatric emergencies?",
+      "What is neonatal care?",
+      "What are the most common pediatric emergencies?"
+    ],
+    "a": "Attention-deficit/hyperactivity disorder (ADHD) is one of the most common neurodevelopmental disorders of childhood, characterized by persistent inattention, hyperactivity, and impulsivity that interferes with functioning or development, with symptoms typically appearing before age 12. Diagnosis requires comprehensive evaluation including clinical interviews, behavior rating scales from parents and teachers, and ruling out other conditions like anxiety, learning disorders, or sleep disturbances. Management combines behavioral therapy, parent training, educational support, and medication (stimulants like methylphenidate are first-line). Pediatric emergencies include respiratory distress, seizures, dehydration from gastroenteritis, anaphylaxis, trauma, and meningitis, requiring immediate intervention. Neonatal care encompasses the care of newborns, particularly premature or ill infants, with specialized attention to thermoregulation, feeding, jaundice, and infection prevention in the neonatal intensive care unit (NICU)."
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "what is a professional fireworks display",
+      "how are fireworks displays set up",
+      "what equipment is used in professional fireworks displays",
+      "how are fireworks mortars set up",
+      "what is a firing system in pyrotechnics",
+      "how do fireworks shoot into the sky",
+      "what is the anatomy of a fireworks display site",
+      "what is a firing plot in pyrotechnics"
+    ],
+    "a": "A professional fireworks display involves extensive preparation and specialized equipment. Mortars — tubes made of HDPE (high-density polyethylene), steel, or fiberglass — are the launch platforms, sized to match specific shell diameters (ranging from 3 inches for smaller effects up to 12 inches or more for massive aerial bursts). Mortars are typically buried in the ground to the top third of their length for stability, arranged in racks or modules, and angled slightly downrange to ensure shells travel away from spectators. Each mortar contains a lift charge at the base (black powder) and a shell with a time-delay fuse that ignites during launch, ensuring the shell bursts at the correct altitude. The firing system connects each mortar to an electronic igniter (electric match) wired to a firing module, which communicates with the control computer via wireless or wired connections. A firing plot is a detailed map showing the exact position of each mortar, what shell it contains, and which cue number fires it, allowing the show designer to precisely choreograph the sequence. Safety zones around the mortar placement typically require a minimum spectator distance of 70 feet for 3-inch shells up to 840 feet for 12-inch shells, with additional clearance for fallout areas where shell debris lands."
+  },
+  {
+    "q": [
+      "what is a fireworks finale",
+      "how are fireworks sequences designed",
+      "what is the structure of a fireworks show",
+      "what is a barrage in fireworks",
+      "what is a volley in fireworks",
+      "how do fireworks shows build up to the finale",
+      "what is the difference between a show segment and a finale",
+      "how long should a fireworks finale last"
+    ],
+    "a": "A well-designed fireworks show follows a dramatic arc similar to a musical composition: an opening volley to grab attention, rhythmic sequences that build and release tension, featured effects showcasing specific shell types (like willow shells or crossettes), and a grand finale that delivers the maximum intensity. The finale typically lasts 60-120 seconds and fires 25-50% or more of the total show's shells in rapid succession, creating a sustained wall of sound, light, and color that overwhelms the senses. Show segments are organized by tempo and mood: slower, elegant sequences of large, trailing willow shells create a different emotional response than fast, crackling chains of cakes and salutes. A barrage is a simultaneous or near-simultaneous firing of multiple shells to create a massive wall of color, while a volley is a tightly timed sequence of shells that ripple across the sky. The overall show duration ranges from 15-20 minutes for municipal Fourth of July displays to 30-60 minutes for major events like New Year's Eve celebrations or theme park spectaculars, with the finale typically accounting for 10-15% of the total show time but over half the shell count."
+  },
+  {
+    "q": [
+      "what is a firework set piece",
+      "what is lancework in fireworks",
+      "how are fireworks used to create words and images",
+      "what is a firework waterfall",
+      "what is a firework crossette",
+      "what is a firework spider effect",
+      "what is a firework strobe effect",
+      "what is a firework crackling effect"
+    ],
+    "a": "Set pieces and lancework are static fireworks structures that create images, words, or symbols. Lancework consists of small-diameter cardboard tubes (lances) filled with colored flame composition, arranged in a pattern on a wooden frame and connected by quickmatch fuse so they ignite nearly simultaneously, burning for 30-60 seconds to display a flag, logo, or phrase. Waterfall or cascade pieces are long cables of flame effects suspended between poles that create a curtain of falling sparks, often used as a backdrop behind the main display. Special effects within aerial shells create distinctive visual signatures: crossette stars break into four smaller pieces that fly outward at right angles, creating a cruciform pattern; spider shells produce straight, long-lasting streaks radiating in all directions with minimal curve; strobe shells emit rapid, bright flashes from each star rather than a steady burn; crackling effects use dragon eggs (bismuth-based compositions) that pop and snap during the burn; and glitter effects produce twinkling, sparkling trails as the stars burn. The combination of these effects — arranged by timing, altitude, color, and position in the sky — gives each display its unique visual character and artistry."
+  },
+  {
+    "q": [
+      "what is the chemistry behind firework colors",
+      "what makes red fireworks red",
+      "what makes blue fireworks blue",
+      "why are blue fireworks hard to make",
+      "what chemical makes green fireworks",
+      "what makes purple fireworks",
+      "how do fireworks make white sparks",
+      "what is the hardest firework color to create"
+    ],
+    "a": "Firework colors are produced by specific metal salts heated to incandescence in the burning star composition. The most commonly used color agents are: strontium compounds (strontium carbonate, strontium nitrate) for red; barium compounds (barium nitrate, barium chlorate) for green; sodium compounds (sodium nitrate, cryolite) for bright yellow; copper compounds (copper chloride, copper carbonate) for blue; calcium compounds (calcium chloride) for orange; and a combination of strontium and copper for purple. White light comes from burning magnesium, aluminum, or titanium, which produce intense incandescent light. Blue is notoriously the most difficult color to produce reliably because copper emits blue light only within a narrow temperature range — too cool and the flame appears pale or greenish, too hot and the copper breaks down or emits white light. Achieving vivid blue requires precise fuel-oxidizer balance, the right copper compound, and careful control of flame temperature around 1,800-2,200°F. Silver and gold effects are produced by combinations of aluminum, magnesium, and iron filings with charcoal, creating varying trail lengths and sparkle intensities depending on particle size."
+  }
+]

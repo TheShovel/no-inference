@@ -1,0 +1,46 @@
+[
+  {
+    "q": [
+      "What is traditional animation?",
+      "How does hand-drawn animation work?",
+      "What are the techniques of traditional animation?",
+      "How many drawings go into a traditional animated film?",
+      "What is cel animation?",
+      "What are the principles of traditional animation?"
+    ],
+    "a": "Traditional animation, also called cel animation or hand-drawn animation, involves creating each frame by hand on transparent celluloid sheets, with animators drawing 24 individual frames per second of screen time. Disney's Nine Old Men—the studio's core team of animators—developed the fundamental principles of animation including squash and stretch, anticipation, follow-through, and timing that remain the foundation of the craft. Classic examples like Snow White and the Seven Dwarfs (1937), The Lion King, and Spirited Away demonstrate the painstaking artistry this technique requires, with a feature film typically needing over 100,000 individual drawings."
+  },
+  {
+    "q": [
+      "What is stop-motion animation?",
+      "How is stop-motion animation made?",
+      "What are the types of stop-motion animation?",
+      "What are famous stop-motion films?",
+      "How long does stop-motion animation take?",
+      "Who are notable stop-motion animators?"
+    ],
+    "a": "Stop-motion animation brings physical objects to life by photographing them one frame at a time with tiny incremental movements between shots, creating the illusion of motion when played back at normal speed. Subtypes include claymation (The Nightmare Before Christmas, Wallace & Gromit), puppet animation (The Fantastic Mr. Fox, Coraline), and model animation (King Kong, The Iron Giant). Stop-motion is among the most labor-intensive animation techniques—a single minute of finished footage can take weeks or even months to produce, demanding extraordinary patience and precision from animators."
+  },
+  {
+    "q": [
+      "What is CGI animation?",
+      "How does computer animation work?",
+      "What are the major CGI animation studios?",
+      "How did Pixar pioneer CGI animation?",
+      "What is the difference between 2D and 3D animation?",
+      "When did CGI animation become dominant?"
+    ],
+    "a": "CGI (computer-generated imagery) animation uses computer software to create three-dimensional models, rig them with virtual skeletons, and animate them through digital manipulation of movement and expression. Pixar revolutionized the field with Toy Story (1995), the first fully computer-animated feature film, establishing technical and storytelling standards that competitors like DreamWorks and Illumination have since built upon. CGI animation allows for complex camera movements and visual effects impossible in traditional animation, though it still relies on the same foundational animation principles developed by Disney's early animators."
+  },
+  {
+    "q": [
+      "What makes anime distinct as an animation style?",
+      "What are the characteristics of Japanese animation?",
+      "Who are the most important anime directors?",
+      "How did Studio Ghibli shape anime?",
+      "What are the major anime genres?",
+      "How does anime differ from Western animation?"
+    ],
+    "a": "Anime refers to Japanese animation characterized by its distinctive art style—large expressive eyes, stylized hair, and detailed backgrounds—along with its narrative diversity that spans genres from children's adventure to mature psychological drama. Studio Ghibli, co-founded by Hayao Miyazaki and Isao Takahata, elevated anime to global artistic recognition with masterpieces like Spirited Away, My Neighbor Totoro, and Princess Mononoke that combine hand-drawn beauty with ecologically conscious themes. Unlike Western animation's traditional association with children's entertainment, anime encompasses a vast range of storytelling for all age groups, with major directors like Mamoru Hosoda, Satoshi Kon, and Makoto Shinkai pushing the medium's boundaries."
+  }
+]

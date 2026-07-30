@@ -1,0 +1,75 @@
+[
+  {
+    "q": [
+      "What are the different ocean zones?",
+      "How is the ocean divided into zones?",
+      "What are the layers of the ocean?",
+      "What are the sunlight, twilight, and midnight zones?",
+      "How deep is each ocean zone?",
+      "What are the five main ocean zones?",
+      "What is the hadal zone?"
+    ],
+    "a": "The ocean is divided into zones based on depth and light penetration. The sunlight zone (epipelagic, 0-200 meters) receives enough light for photosynthesis and hosts most marine life including coral reefs and whales. The twilight zone (mesopelagic, 200-1,000 meters) receives faint blue light and is home to creatures like lanternfish and squid that have adapted to low-light conditions. The midnight zone (bathypelagic, 1,000-4,000 meters) is completely dark except for bioluminescence, with sparse life adapted to extreme pressure and cold. The abyssopelagic zone (4,000-6,000 meters) and the hadal zone (6,000-11,000 meters, found only in deep trenches) host specially adapted organisms like amphipods and sea cucumbers that survive on marine snow — organic detritus drifting down from above."
+  },
+  {
+    "q": [
+      "How do coral reefs form?",
+      "What are coral reefs and why are they important?",
+      "What is coral bleaching?",
+      "How do corals reproduce?",
+      "What are the different types of coral reefs?",
+      "Why are coral reefs called the rainforests of the sea?",
+      "What threatens coral reefs today?"
+    ],
+    "a": "Coral reefs are built by colonies of tiny animals called coral polyps that secrete calcium carbonate skeletons, forming massive underwater structures over thousands of years. They are among the most biodiverse ecosystems on Earth, supporting roughly 25% of all marine species despite covering less than 1% of the ocean floor, earning them the nickname 'rainforests of the sea.' There are three main types: fringing reefs directly attached to shorelines, barrier reefs separated from land by lagoons (the Great Barrier Reef being the largest), and atolls which are ring-shaped reefs surrounding a central lagoon formed on submerged volcanic islands. Coral bleaching occurs when rising ocean temperatures cause corals to expel the symbiotic algae (zooxanthellae) living in their tissues, turning them white and potentially leading to death if conditions do not improve. Climate change, ocean acidification, overfishing, and pollution are the primary threats causing widespread reef decline worldwide."
+  },
+  {
+    "q": [
+      "How do whales communicate?",
+      "What is whale song?",
+      "How intelligent are dolphins?",
+      "What are the differences between whales and dolphins?",
+      "How do whales and dolphins sleep?",
+      "What is echolocation in dolphins?",
+      "What is the largest whale species?"
+    ],
+    "a": "Whales and dolphins are cetaceans — marine mammals that evolved from land-dwelling ancestors about 50 million years ago. Whales are divided into two groups: baleen whales (like humpbacks and blue whales) that filter-feed using keratin plates, and toothed whales (like sperm whales and orcas) that hunt individual prey using echolocation. Humpback whales produce complex, evolving songs that can last for hours and travel hundreds of miles underwater, with all males in a population singing the same song that gradually changes over time. Dolphins demonstrate remarkable intelligence through self-recognition in mirrors, complex social structures, tool use (sponging to protect their beaks while foraging), and learned vocal labels called signature whistles that function like names. Cetaceans engage in unihemispheric slow-wave sleep, where one half of their brain sleeps while the other remains active to control breathing and watch for threats."
+  },
+  {
+    "q": [
+      "How many shark species are there?",
+      "Why are sharks important to the ocean ecosystem?",
+      "What are the different types of sharks?",
+      "Are all sharks dangerous to humans?",
+      "How do sharks hunt?",
+      "What is shark finning?",
+      "How do sharks reproduce?"
+    ],
+    "a": "There are over 500 known shark species, ranging from the dwarf lanternshark (barely 8 inches long) to the whale shark, which can reach 40 feet as the largest fish in the ocean. As apex predators, sharks play a critical role in maintaining the balance of marine ecosystems by preying on weak or sick individuals and regulating prey populations throughout the food web. Contrary to their fearsome reputation, only about a dozen species are considered dangerous to humans, and unprovoked shark attacks are extremely rare — you are more likely to be struck by lightning than bitten by a shark. Sharks have been on Earth for over 400 million years, predating dinosaurs, and possess remarkable adaptations including electroreception through ampullae of Lorenzini to detect the electrical fields of hidden prey. Shark finning, where fins are harvested and the often still-living shark is discarded at sea, kills an estimated 70 million sharks annually and is a primary driver of population declines."
+  },
+  {
+    "q": [
+      "How do sea turtles navigate?",
+      "What are the different sea turtle species?",
+      "Why are sea turtles endangered?",
+      "How long do sea turtles live?",
+      "What do sea turtles eat?",
+      "How do jellyfish sting?",
+      "Are all jellyfish dangerous?",
+      "What is the immortal jellyfish?"
+    ],
+    "a": "Sea turtles are ancient reptiles that have existed for over 100 million years, with seven living species including the leatherback (the largest, reaching 2,000 pounds), green sea turtle, loggerhead, hawksbill, Kemp's ridley, olive ridley, and flatback. Female sea turtles return to the exact beach where they were born to lay their eggs, using Earth's magnetic field as a navigational guide, a phenomenon called natal homing. All seven sea turtle species are listed as threatened or endangered due to threats including entanglement in fishing gear, plastic pollution (turtles often mistake plastic bags for jellyfish), coastal development, and climate change affecting sand temperatures that determine hatchling sex. Jellyfish are not fish but cnidarians, related to corals and sea anemones, and they capture prey using specialized stinging cells called nematocysts that inject venom on contact. The immortal jellyfish (Turritopsis dohrnii) can revert to its juvenile polyp stage after reaching maturity, potentially achieving biological immortality under the right conditions."
+  },
+  {
+    "q": [
+      "How intelligent are octopuses?",
+      "What makes octopus intelligence unique?",
+      "How do seahorses reproduce?",
+      "What are deep sea creatures?",
+      "What is bioluminescence and how is it used in the ocean?",
+      "What adaptations do deep sea creatures have?",
+      "What is the largest octopus species?"
+    ],
+    "a": "Octopuses are among the most intelligent invertebrates, with a distributed nervous system where two-thirds of their neurons are in their arms, allowing each arm to taste, touch, and make independent decisions. They can solve complex puzzles, open child-proof containers, use tools, and display impressive camouflage through rapid color and texture changes controlled by chromatophore organs in their skin. Seahorses are unique among fish for their monogamous mating system where the male carries fertilized eggs in a brood pouch and gives birth to live young. Deep sea creatures like the anglerfish, gulper eel, and giant squid have evolved remarkable adaptations including bioluminescence (chemical light production used for attracting prey, camouflage, and communication), enormous eyes for gathering scarce light, and slow metabolisms to survive on limited food resources. Bioluminescence is produced through a chemical reaction involving luciferin and luciferase, and it is estimated that up to 90% of animals in the deep sea produce their own light."
+  }
+]

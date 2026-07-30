@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What is the structure of the US Constitution?",
+      "What are the three branches of the US government?",
+      "How does the system of checks and balances work?",
+      "What is federalism in the United States?",
+      "What powers are reserved to the states versus the federal government?",
+      "What are the first ten amendments to the Constitution called?",
+      "How can the US Constitution be amended?"
+    ],
+    "a": "The US Constitution establishes the framework of the federal government with three co-equal branches: the legislative branch (Congress, consisting of the House of Representatives and the Senate) makes laws, the executive branch (the President and federal agencies) enforces laws, and the judicial branch (the Supreme Court and lower federal courts) interprets laws and reviews their constitutionality. The system of checks and balances ensures no single branch dominates — the President can veto legislation, Congress can override vetoes with a two-thirds majority and must confirm judicial nominees, and the Supreme Court can strike down laws as unconstitutional through judicial review (established in Marbury v. Madison, 1803). Federalism divides sovereignty between the national government (enumerated powers in Article I, including defense, interstate commerce, currency, and foreign policy) and state governments (reserved powers under the Tenth Amendment, including education, policing, land use, and intrastate commerce), with concurrent powers such as taxation held by both levels."
+  },
+  {
+    "q": [
+      "How does the Electoral College work?",
+      "Why does the US use the Electoral College instead of a popular vote?",
+      "How many electoral votes are needed to win the presidency?",
+      "What happens if no candidate gets 270 electoral votes?",
+      "What is a swing state in US elections?",
+      "Can a candidate win the popular vote but lose the Electoral College?",
+      "How are electoral votes allocated to each state?"
+    ],
+    "a": "The Electoral College is the constitutional mechanism for electing the US President and Vice President, consisting of 538 electors allocated among the states based on congressional representation (one elector per House member plus two senators), with the District of Columbia granted three electors by the 23rd Amendment. A candidate needs a majority of 270 electoral votes to win; all but two states (Maine and Nebraska) use a winner-take-all system where the candidate who wins the state's popular vote receives all its electoral votes. The Electoral College can produce outcomes where the popular vote winner loses the presidency, as happened in 2000 (Al Gore won the popular vote, George W. Bush won the Electoral College) and 2016 (Hillary Clinton won the popular vote, Donald Trump won the Electoral College), which has led to ongoing debates about democratic legitimacy and proposals for reform such as the National Popular Vote Interstate Compact."
+  },
+  {
+    "q": [
+      "What are the differences between the Democratic and Republican parties?",
+      "What do Democrats believe in?",
+      "What do Republicans believe in?",
+      "How do the two major US political parties differ on economic policy?",
+      "What is the political spectrum in the United States?",
+      "What is the New Deal coalition?",
+      "How have the Democratic and Republican parties changed over time?"
+    ],
+    "a": "The Democratic Party, generally positioned center-left, advocates for a larger social safety net, progressive taxation, universal healthcare, environmental protection and climate action (including the Green New Deal), gun control, abortion rights, organized labor, and racial and economic justice, drawing support from urban areas, minorities, college-educated voters, and younger generations. The Republican Party, positioned center-right, advocates for lower taxes and deregulation to promote economic growth, limited government, a strong national defense, Second Amendment gun rights, restrictions on abortion, free-market healthcare solutions, energy independence through fossil fuel development, and traditional social values, drawing support from rural and suburban areas, white working-class voters, evangelical Christians, and business interests. The two parties have undergone significant ideological realignment over the past century — the Democrats transformed from the conservative party of the segregated South under the New Deal coalition to the party of civil rights and social liberalism, while Republicans shifted from moderate Northeastern establishment figures (Rockefeller Republicans) to the conservative and populist movement led by grassroots activists and the Tea Party, culminating in the Trump-era populist-nationalist transformation."
+  },
+  {
+    "q": [
+      "How does Congress work?",
+      "What is the difference between the House and the Senate?",
+      "How a bill becomes a law in the United States?",
+      "What are the powers of Congress?",
+      "What is committee work in Congress?",
+      "What is the filibuster?",
+      "What is the role of the Speaker of the House and the Majority Leader?"
+    ],
+    "a": "Congress comprises two chambers: the House of Representatives (435 voting members serving two-year terms, apportioned by state population, with all revenue bills originating there) and the Senate (100 members serving six-year terms, two per state regardless of population, with powers including treaty ratification by two-thirds majority and confirmation of presidential appointments by simple majority). A bill becomes law by passing both chambers in identical form and being signed by the President, who may veto it — Congress can override a veto with a two-thirds majority in both chambers, but most bills die in committee (where the real legislative work of hearings, markup, and amendment occurs) because of the high number of introduced bills versus the limited floor time. The Senate filibuster allows unlimited debate unless a three-fifths supermajority (60 votes) invokes cloture, effectively requiring 60 votes to pass most major legislation, while the House limits debate through the Rules Committee and relies on majority control by the Speaker of the House, who is the most powerful leadership position in Congress."
+  },
+  {
+    "q": [
+      "What is presidential succession in the United States?",
+      "Who succeeds the President if they die or resign?",
+      "What is the line of succession to the US presidency?",
+      "What does the 25th Amendment cover?",
+      "What happens if the President becomes disabled?",
+      "How many presidents have been impeached?",
+      "What is the impeachment process in the United States?"
+    ],
+    "a": "The presidential line of succession is established by the Presidential Succession Act of 1947: the Vice President, then the Speaker of the House, the President pro tempore of the Senate, and then the Cabinet officers in order of department creation (starting with the Secretary of State). The 25th Amendment, ratified in 1967, clarified succession procedures including vice presidential vacancies (the President nominates a replacement, confirmed by both chambers), temporary presidential disability (the President can voluntarily transfer power to the Vice President, or the Cabinet and Vice President can declare the President unable to discharge duties), and the process for the President to resume power. Impeachment, sometimes confused with removal, is the House's power to formally charge a federal official with treason, bribery, or other high crimes and misdemeanors (requiring a simple majority) — if the House impeaches, the Senate then holds a trial requiring a two-thirds vote to convict and remove; three presidents (Andrew Johnson, Bill Clinton, and Donald Trump twice) have been impeached by the House, but none has been convicted by the Senate."
+  }
+]

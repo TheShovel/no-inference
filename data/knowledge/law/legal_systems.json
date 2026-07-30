@@ -1,0 +1,57 @@
+[
+  {
+    "q": [
+      "What is the common law legal system?",
+      "Tell me about common law in the UK and US.",
+      "How does common law differ from civil law?",
+      "What is case law and judicial precedent?",
+      "Describe the origins and features of the common law system.",
+      "Which countries use common law?"
+    ],
+    "a": "Common law is a legal system originating in medieval England where judicial decisions and precedent — rather than codified statutes alone — form the primary source of law. Under the doctrine of stare decisis, courts are bound to follow the rulings of higher courts in similar cases, creating a consistent body of case law that evolves incrementally. Common law systems are used in the United Kingdom, the United States, Canada, Australia, and other former British colonies, and place significant emphasis on adversarial courtroom procedures and the role of juries in factual determinations."
+  },
+  {
+    "q": [
+      "What is the civil law legal system?",
+      "Tell me about civil law in European countries.",
+      "How does civil law differ from common law?",
+      "What is a codified legal system based on Roman law?",
+      "Describe the Napoleonic Code and its influence on civil law.",
+      "Which countries use civil law systems?"
+    ],
+    "a": "Civil law, also known as Romano-Germanic law, is a legal system based on comprehensive written codes that serve as the primary source of law, with judicial decisions playing a secondary, interpretive role rather than creating binding precedent. Originating in Roman law and systematized through the Napoleonic Code of 1804, civil law systems prevail throughout continental Europe, Latin America, East Asia (including Japan and South Korea), and many parts of Africa and the Middle East. In civil law systems, judges take an inquisitorial role in proceedings, actively investigating facts and applying codified law rather than relying primarily on adversarial argument between parties."
+  },
+  {
+    "q": [
+      "What is Sharia or Islamic religious law?",
+      "Tell me about religious legal systems in the world.",
+      "How does Sharia law function in legal systems?",
+      "What are the sources of Islamic law?",
+      "Describe how religious law interacts with secular law.",
+      "Which countries incorporate religious law into their legal systems?"
+    ],
+    "a": "Religious legal systems derive their authority from sacred texts and religious doctrines, with Sharia (Islamic law) being the most widely applied, governing both personal and public matters in many Muslim-majority countries. Sharia is derived from the Quran, the Hadith (sayings of Prophet Muhammad), ijma (scholarly consensus), and qiyas (analogical reasoning), and covers areas including worship, family law, contracts, criminal justice, and ethics. While countries like Saudi Arabia and Iran apply Sharia as the foundation of their legal systems, others like Egypt, Indonesia, and Nigeria blend Islamic law with civil or common law traditions, typically applying religious law primarily to personal status matters like marriage, divorce, and inheritance."
+  },
+  {
+    "q": [
+      "What are customary law systems?",
+      "Tell me about indigenous and traditional legal systems.",
+      "How do customary laws operate alongside formal legal systems?",
+      "What is the role of tradition and custom in law?",
+      "Describe legal pluralism and customary law.",
+      "Which regions still use customary law systems?"
+    ],
+    "a": "Customary law consists of traditional rules, practices, and dispute-resolution mechanisms that have developed within communities over generations and are recognized as legally binding within those communities. Many countries in Africa, Asia, and the Pacific Islands operate under legal pluralism, where customary law exists alongside formal state law, often applied to matters of land tenure, marriage, inheritance, and community governance. Customary law systems emphasize reconciliation and community harmony over punitive sanctions, with elders or traditional leaders presiding over disputes through processes that prioritize restoring relationships rather than determining winners and losers."
+  },
+  {
+    "q": [
+      "What is international law?",
+      "Tell me about public international law and how it works.",
+      "How do treaties and international agreements function as law?",
+      "What is the difference between public and private international law?",
+      "Describe the role of the United Nations and the International Court of Justice.",
+      "How is international law enforced without a global government?"
+    ],
+    "a": "International law governs relations between sovereign states and international organizations, encompassing treaties, customary international law, and general principles recognized by nations. Public international law covers areas including human rights, the laws of war (international humanitarian law), diplomatic relations, maritime boundaries, environmental protection, and international criminal law enforced through bodies like the International Criminal Court. Unlike domestic legal systems, international law lacks a centralized enforcement mechanism and relies primarily on state consent, reciprocity, treaty obligations, diplomatic pressure, and the collective action of the international community to achieve compliance."
+  }
+]

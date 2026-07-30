@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is reinforcement learning and how does it differ from other ML paradigms?",
+      "Explain the basics of reinforcement learning.",
+      "How does an agent learn through reinforcement?",
+      "What are the key components of reinforcement learning?",
+      "What is reinforcement learning?",
+      "RL explained",
+      "reinforcement learning basics"
+    ],
+    "a": "Reinforcement learning (RL) is a machine learning paradigm where an agent learns to make sequential decisions by interacting with an environment, receiving rewards or penalties for its actions, and aiming to maximize cumulative reward over time. Unlike supervised learning, which learns from labeled examples, RL learns through trial and error, exploring actions and observing their consequences. Key components include the agent (decision-maker), environment (the world the agent interacts with), state (current situation), action (choices available), reward (feedback signal), and policy (strategy mapping states to actions)."
+  },
+  {
+    "q": [
+      "What are Markov decision processes in reinforcement learning?",
+      "How does Q-learning work?",
+      "What are deep Q-networks (DQN)?",
+      "What is the difference between Q-learning and deep Q-networks?",
+      "Markov decision processes RL",
+      "Q-learning explained",
+      "deep Q-networks DQN"
+    ],
+    "a": "Markov Decision Processes (MDPs) provide the mathematical framework for modeling sequential decision-making in RL, defined by states, actions, transition probabilities, rewards, and the Markov property (future states depend only on the current state and action). Q-learning is a model-free RL algorithm that learns the optimal action-value function (Q-function) by iteratively updating Q-values based on the Bellman equation without requiring a model of the environment. Deep Q-Networks (DQN) extend Q-learning by using deep neural networks to approximate the Q-function in high-dimensional state spaces, achieving landmark success in playing Atari games directly from pixel input."
+  },
+  {
+    "q": [
+      "What are policy gradients and actor-critic methods in RL?",
+      "How do policy gradient methods work?",
+      "What is the advantage of actor-critic methods?",
+      "What is the difference between value-based and policy-based RL?",
+      "policy gradients RL",
+      "actor-critic methods",
+      "policy gradient vs Q-learning"
+    ],
+    "a": "Policy gradient methods directly optimize the policy (the mapping from states to actions) by computing gradients of expected reward with respect to policy parameters and adjusting the policy to favor actions that yield higher returns. Actor-critic methods combine the strengths of value-based and policy-based approaches: the \"actor\" learns a policy, while the \"critic\" learns a value function to evaluate the actor's actions and reduce variance during training. Proximal Policy Optimization (PPO) is a popular actor-critic algorithm that constrains policy updates to small, stable steps, making it one of the most widely used RL algorithms in modern applications."
+  },
+  {
+    "q": [
+      "What are the key applications of reinforcement learning?",
+      "How was AlphaGo/AlphaZero developed using RL?",
+      "What is the exploration vs exploitation tradeoff in RL?",
+      "How is reinforcement learning used in game playing and robotics?",
+      "RL applications",
+      "AlphaGo AlphaZero",
+      "exploration vs exploitation RL"
+    ],
+    "a": "Reinforcement learning has achieved landmark successes in game-playing — AlphaGo defeated world champion Go player Lee Sedol in 2016 using deep RL and Monte Carlo tree search, and AlphaZero mastered Go, chess, and shogi entirely through self-play without human knowledge. In robotics, RL enables robots to learn complex manipulation skills, locomotion, and grasping through trial and error in simulated and real environments. The exploration vs exploitation tradeoff is fundamental to RL — the agent must balance exploring new actions to discover better strategies versus exploiting known rewarding actions — and is addressed through algorithms like epsilon-greedy, upper confidence bounds (UCB), and Thompson sampling in multi-armed bandit problems."
+  }
+]

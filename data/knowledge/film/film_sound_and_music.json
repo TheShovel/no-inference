@@ -1,0 +1,46 @@
+[
+  {
+    "q": [
+      "What is the difference between diegetic and non-diegetic sound in film?",
+      "What are diegetic and non-diegetic sounds with examples?",
+      "How do filmmakers use diegetic sound to tell a story?",
+      "What is non-diegetic music in film?",
+      "Give examples of diegetic versus non-diegetic sound.",
+      "What is the role of sound design in filmmaking?"
+    ],
+    "a": "Diegetic sound originates from sources within the film's world that characters can hear, such as dialogue, footsteps, ringing phones, and music playing from a radio or live band in a scene, helping ground the audience in the reality of the story. Non-diegetic sound exists outside the narrative world and is heard only by the audience, including the film score, voice-over narration, and sound effects added for dramatic emphasis — these sounds guide emotional response, build tension, and underscore thematic elements. Directors and sound designers often play with the boundary between diegetic and non-diegetic sound for creative effect, such as when a character puts on headphones and the previously non-diegetic score becomes diegetic."
+  },
+  {
+    "q": [
+      "What is foley in film?",
+      "How are sound effects created for movies?",
+      "What is ADR in film production?",
+      "What is automated dialogue replacement and how does it work?",
+      "What is the role of a foley artist?",
+      "How do sound editors create realistic audio for films?"
+    ],
+    "a": "Foley is the art of creating custom sound effects in synchronization with picture during post-production, performed by foley artists who use props and surfaces — such as stepping on gravel for footsteps, rustling fabric for clothing movements, or breaking celery for bone snaps — to produce sounds that are more convincing and controllable than location audio. ADR (Automated Dialogue Replacement) is a post-production process where actors re-record their dialogue in a studio to improve audio quality, change delivery, or adjust scripted lines, with the recording carefully synced to the actor's lip movements on screen. Both techniques are essential to modern filmmaking: foley brings physicality and texture to the soundscape, while ADR ensures clear, consistent dialogue that may have been compromised by location noise or performance issues during principal photography."
+  },
+  {
+    "q": [
+      "Who are the most famous film composers?",
+      "Tell me about John Williams, Hans Zimmer, and Ennio Morricone.",
+      "What are the most iconic film scores ever written?",
+      "How do composers create music for movies?",
+      "What is the role of a film composer?",
+      "Describe the work of famous film composers and their signature styles."
+    ],
+    "a": "John Williams is the most nominated film composer in history, known for unforgettable, leitmotif-driven scores for Star Wars, Jaws, Indiana Jones, Jurassic Park, and Harry Potter that use recurring melodic themes to represent characters and ideas with masterful orchestration. Hans Zimmer pioneered a hybrid orchestral-electronic sound, using synthesized textures alongside traditional orchestras in groundbreaking scores for The Lion King, Gladiator, Inception, and Interstellar, and is known for his collaborative approach at his Remote Control Productions studio. Ennio Morricone, the legendary Italian composer, created the iconic sound of Spaghetti Westerns through innovative use of electric guitar, whistling, gunshots, and vocalizations in his scores for Sergio Leone's films, and composed over 500 scores across six decades."
+  },
+  {
+    "q": [
+      "What is film sound mixing and editing?",
+      "How do surround sound systems work in theaters?",
+      "What is the difference between sound editing and sound mixing?",
+      "What is Dolby Atmos and how does it enhance film audio?",
+      "How was music used in silent films?",
+      "What defines a musical film as a genre?"
+    ],
+    "a": "Sound editing is the creative process of selecting, recording, and arranging all audio elements — dialogue, sound effects, ambient sounds, and music — while sound mixing is the technical process of balancing and combining these elements into a final stereo or surround sound track at the correct volume levels and spatial placement. Surround sound formats like Dolby Atmos allow sound designers to place and move audio objects in three-dimensional space, creating an immersive experience where sounds can come from above, behind, or move dynamically around the theater. Silent films were never truly silent: they were accompanied by live music ranging from a single pianist to full orchestras, with cue sheets guiding musicians through moods and tempos, establishing the foundation for the integral relationship between music and film that continues today."
+  }
+]

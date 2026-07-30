@@ -1,0 +1,51 @@
+[
+  {
+    "q": [
+      "What are common diseases in dogs?",
+      "What is parvovirus in dogs?",
+      "What is distemper in dogs?",
+      "What is heartworm disease?",
+      "What are common infectious diseases in pets?",
+      "What is FIV and FeLV in cats?",
+      "parvovirus distemper FIV FeLV heartworm"
+    ],
+    "a": "Common infectious diseases affecting pets include canine parvovirus (a highly contagious and often fatal gastrointestinal virus in dogs), canine distemper (a multisystemic viral disease affecting respiratory, gastrointestinal, and nervous systems), feline immunodeficiency virus (FIV, analogous to HIV in cats), feline leukemia virus (FeLV, a leading cause of cancer and immunosuppression in cats), and heartworm disease (caused by Dirofilaria immitis, a mosquito-borne parasitic worm affecting the heart and lungs of dogs and cats). Vaccination is the primary prevention strategy for most of these diseases, while heartworm requires monthly preventive medication. Early detection through regular veterinary screening significantly improves treatment outcomes."
+  },
+  {
+    "q": [
+      "What is the vaccination schedule for dogs?",
+      "What is the vaccination schedule for cats?",
+      "What vaccines do puppies need?",
+      "What vaccines do kittens need?",
+      "What are core vaccines for dogs?",
+      "What are core vaccines for cats?",
+      "When should I vaccinate my puppy?",
+      "pet vaccination schedule"
+    ],
+    "a": "Core vaccines for dogs include distemper, parvovirus, adenovirus (hepatitis), and rabies, typically given as a series beginning at 6-8 weeks of age with boosters every 3-4 weeks until 16 weeks, followed by a booster at 1 year and then every 1-3 years depending on the vaccine. Core vaccines for cats include panleukopenia (feline distemper), feline calicivirus, feline herpesvirus-1 (rhinotracheitis), and rabies, administered on a similar puppy/kitten schedule. Non-core or lifestyle vaccines (such as Bordetella, leptospirosis, canine influenza for dogs, and feline leukemia for cats) are recommended based on the pet's exposure risk and geographic location."
+  },
+  {
+    "q": [
+      "What is parasite prevention for pets?",
+      "How to prevent fleas and ticks on dogs and cats?",
+      "What is heartworm prevention?",
+      "How to deworm a dog or cat?",
+      "What are the best flea and tick treatments for pets?",
+      "What parasites affect dogs and cats?",
+      "pet parasite prevention fleas ticks worms"
+    ],
+    "a": "Parasite prevention for pets encompasses protection against external parasites (fleas, ticks, mites) and internal parasites (heartworms, roundworms, hookworms, whipworms, tapeworms). Year-round prevention is recommended, typically using monthly topical or oral medications that combine multiple active ingredients for broad-spectrum coverage. Flea and tick prevention includes products containing fipronil, imidacloprid, selamectin, or isoxazoline compounds, while heartworm prevention typically uses macrocyclic lactones such as ivermectin or milbemycin, often combined with intestinal dewormers."
+  },
+  {
+    "q": [
+      "What is spaying or neutering a pet?",
+      "What are the benefits of spaying a dog?",
+      "What are the benefits of neutering a cat?",
+      "When should I spay or neuter my pet?",
+      "What is the difference between spaying and neutering?",
+      "Is spaying or neutering safe for pets?",
+      "spay neuter pet surgery"
+    ],
+    "a": "Spaying (ovariohysterectomy in females) and neutering (castration in males) are surgical sterilization procedures that prevent unwanted litters and provide significant health and behavioral benefits. In females, spaying eliminates the risk of uterine infections (pyometra) and greatly reduces the risk of mammary tumors, especially when performed before the first heat cycle. In males, neutering reduces roaming, urine marking, and aggression while eliminating the risk of testicular cancer and reducing prostate problems. The optimal age for spay/neuter varies by species, breed, and size, with most procedures performed between 4-6 months of age, though recent research suggests larger-breed dogs may benefit from later sterilization."
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "q": [
+      "what is supply and demand",
+      "supply and demand explained",
+      "law of supply and demand",
+      "how does supply and demand work",
+      "supply and demand economics",
+      "what determines the price of goods",
+      "market equilibrium supply demand",
+      "supply curve demand curve"
+    ],
+    "a": "Supply and demand is the fundamental mechanism by which prices are determined in a market economy. The law of demand states that, all else being equal, as the price of a good rises, the quantity demanded falls, while the law of supply states that as the price rises, the quantity supplied rises. Market equilibrium occurs at the price where the quantity demanded equals the quantity supplied; if the price is above equilibrium, a surplus forms and pushes prices down, and if the price is below equilibrium, a shortage forms and pushes prices up. Factors that shift demand include changes in consumer income, tastes, population, and the prices of related goods, while factors that shift supply include changes in production costs, technology, taxes, and the number of sellers."
+  },
+  {
+    "q": [
+      "what is inflation",
+      "inflation explained",
+      "causes of inflation",
+      "how does inflation work",
+      "what causes prices to rise",
+      "inflation economics definition",
+      "demand pull vs cost push inflation",
+      "what is hyperinflation"
+    ],
+    "a": "Inflation is the rate at which the general level of prices for goods and services rises over time, eroding purchasing power. It is typically measured by the Consumer Price Index (CPI) or the Personal Consumption Expenditures (PCE) index. The main causes of inflation are demand-pull inflation (when aggregate demand outpaces supply), cost-push inflation (when production costs rise and are passed to consumers), and built-in inflation (when workers demand higher wages to keep up with rising living costs, creating a wage-price spiral). Moderate inflation of around 2% is generally considered healthy for an economy, as it encourages spending and investment, but high or hyperinflation — such as in Zimbabwe in the late 2000s or Weimar Germany in the 1920s — can destroy savings and destabilize entire economies."
+  },
+  {
+    "q": [
+      "what is GDP",
+      "gross domestic product explained",
+      "how is GDP calculated",
+      "what does GDP measure",
+      "GDP definition economics",
+      "nominal vs real GDP",
+      "what is the difference between GDP and GNP",
+      "why is GDP important"
+    ],
+    "a": "Gross Domestic Product (GDP) is the total monetary value of all finished goods and services produced within a country's borders over a specific time period, typically a quarter or a year. It is the primary metric used to gauge the size and health of an economy. GDP can be calculated using three approaches: the production approach (sum of value added), the expenditure approach (sum of consumption, investment, government spending, and net exports, expressed as C + I + G + (X - M)), and the income approach (sum of all incomes earned). Real GDP adjusts for inflation to reflect true economic growth, while nominal GDP does not. A growing GDP generally indicates economic expansion and rising living standards, while two consecutive quarters of negative GDP growth is a common rule of thumb for a recession."
+  },
+  {
+    "q": [
+      "what is the difference between a recession and a depression",
+      "recession vs depression",
+      "what defines a recession",
+      "what defines an economic depression",
+      "how is a recession measured",
+      "great depression vs great recession",
+      "what causes a recession"
+    ],
+    "a": "A recession is a significant, widespread decline in economic activity that lasts for several months, typically identified by two consecutive quarters of negative GDP growth, rising unemployment, falling consumer spending, and reduced industrial output. A depression is a much more severe and prolonged economic downturn, characterized by a GDP decline of 10% or more, extremely high unemployment (often exceeding 20%), widespread bank failures, and deflation. The most famous example is the Great Depression of the 1930s, which lasted roughly a decade and saw U.S. unemployment peak at around 25%. The 2008 financial crisis led to the Great Recession of 2007-2009, which was severe but did not meet the threshold of a depression thanks to intervention by central banks and governments."
+  },
+  {
+    "q": [
+      "monetary vs fiscal policy",
+      "what is monetary policy",
+      "what is fiscal policy",
+      "difference between monetary and fiscal policy",
+      "how does the federal reserve control the economy",
+      "central bank tools monetary policy",
+      "government fiscal policy explained",
+      "quantitative easing explained"
+    ],
+    "a": "Monetary policy refers to actions taken by a central bank — such as the Federal Reserve in the U.S. — to control the money supply, interest rates, and credit conditions to promote economic stability and growth. Central banks use tools like adjusting the federal funds rate, changing reserve requirements, conducting open market operations (buying and selling government securities), and employing quantitative easing (purchasing longer-term securities to lower long-term interest rates). Fiscal policy refers to government decisions about taxation and spending to influence the economy; expansionary fiscal policy involves cutting taxes and increasing government spending to stimulate growth, while contractionary policy does the opposite to cool an overheated economy. The key difference is that monetary policy is set by an independent central bank and focuses on money and credit, while fiscal policy is set by the legislature and executive branches and focuses on the government's budget."
+  },
+  {
+    "q": [
+      "market structures economics",
+      "perfect competition vs monopoly vs oligopoly",
+      "what is a monopoly",
+      "what is oligopoly",
+      "what is perfect competition",
+      "what is monopolistic competition",
+      "types of market structures",
+      "characteristics of different market structures"
+    ],
+    "a": "Market structures describe the competitive characteristics of a market, classified primarily by the number of firms, the type of product, and barriers to entry. In perfect competition, there are many small firms selling identical products with no barriers to entry, and firms are price takers (e.g., agricultural markets). Monopolistic competition features many firms selling differentiated products with low barriers to entry, giving firms some pricing power (e.g., restaurants, clothing brands). Oligopoly is characterized by a few large firms dominating the market, often selling either identical or differentiated products, with significant barriers to entry; firms in an oligopoly are interdependent and may engage in collusion or price leadership (e.g., airlines, telecommunications). A monopoly exists when a single firm controls the entire market for a product with no close substitutes, protected by high barriers to entry such as patents, resource control, or government regulation, and can set prices as a price maker (e.g., local utilities before deregulation)."
+  }
+]

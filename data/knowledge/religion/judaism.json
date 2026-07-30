@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "What is the history of Judaism?",
+      "Who was Abraham in Judaism?",
+      "What is the story of Moses and the Exodus?",
+      "What are the origins of the Jewish people?",
+      "What is the biblical history of ancient Israel?",
+      "Who were the patriarchs of Judaism?",
+      "What was the Babylonian exile?",
+      "What is the significance of the land of Israel in Judaism?"
+    ],
+    "a": "Judaism traces its origins to Abraham (circa 18th–19th century BCE), who established the covenant with God (Brit) that marks the beginning of the Jewish people, followed by his son Isaac and grandson Jacob (also called Israel, whose twelve sons became the tribes of Israel). The foundational event of Jewish identity is the Exodus from Egypt, led by Moses around the 13th century BCE, which includes the revelation of the Torah at Mount Sinai — including the Ten Commandments — and the 40-year journey through the wilderness before entering the land of Canaan. Jewish history continued through the united monarchy under Kings Saul, David (who made Jerusalem the capital), and Solomon (who built the First Temple), followed by the division of the kingdom, the destruction of the First Temple by the Babylonians in 586 BCE, the Babylonian exile, the Second Temple period, Roman occupation, and the destruction of the Second Temple in 70 CE, which began the Rabbinic period and nearly 2,000 years of diaspora until the modern founding of Israel in 1948."
+  },
+  {
+    "q": [
+      "What is the Torah?",
+      "What is the Talmud?",
+      "What is the difference between the Torah and the Talmud?",
+      "What are the books of the Jewish Bible?",
+      "What is the Tanakh?",
+      "What is the Mishnah and Gemara?",
+      "What are the main Jewish sacred texts?"
+    ],
+    "a": "The Torah (also called the Pentateuch or Five Books of Moses) is the most sacred text in Judaism, consisting of Genesis, Exodus, Leviticus, Numbers, and Deuteronomy — it contains the narrative of creation, the patriarchs, the Exodus, and the 613 mitzvot (commandments) that form the basis of Jewish law and practice. The Talmud, central to Rabbinic Judaism, comprises two components: the Mishnah (the oral law codified circa 200 CE) and the Gemara (rabbinic commentary and debates on the Mishnah, compiled in two versions — the Jerusalem Talmud circa 400 CE and the more authoritative Babylonian Talmud circa 500–600 CE). The Tanakh (the Jewish Bible) includes the Torah (the Law), Nevi'im (the Prophets, including Joshua, Isaiah, Jeremiah, and the twelve minor prophets), and Ketuvim (the Writings, including Psalms, Proverbs, Job, and the Book of Esther), for a total of 24 books."
+  },
+  {
+    "q": [
+      "What are the main denominations of Judaism?",
+      "What is Orthodox Judaism?",
+      "What is Reform Judaism?",
+      "What is Conservative Judaism?",
+      "What is Reconstructionist Judaism?",
+      "How do the different branches of Judaism differ?",
+      "What are the differences between Orthodox, Conservative, and Reform Judaism?",
+      "What is Hasidic Judaism?"
+    ],
+    "a": "Orthodox Judaism is the most traditional branch, holding that both the Written and Oral Torah were divinely revealed to Moses at Sinai and remain fully binding, observing strict adherence to Jewish law (Halakha), traditional liturgy, gender-separated prayer, and dietary laws (kashrut) — it includes subgroups such as Modern Orthodox (engaging with secular society while maintaining observance) and Haredi/Ultra-Orthodox (including Hasidic communities, who emphasize mystical spirituality and loyalty to dynastic rebbes). Reform Judaism, originating in 19th-century Germany, views Jewish law as non-binding but historically informed, emphasizes ethical monotheism, equality of men and women in worship (including female rabbis), egalitarian prayer, and adapting Jewish traditions to modern life, often using vernacular language alongside Hebrew. Conservative Judaism (Masorti outside the US) occupies a middle ground, affirming the authority of Jewish law while believing it can evolve through rabbinic interpretation in response to changing circumstances, maintaining traditional liturgy and Kashrut but with egalitarian practices and acceptance of modern scholarship on the historical development of the Torah."
+  },
+  {
+    "q": [
+      "What are the major Jewish holidays?",
+      "What is Yom Kippur?",
+      "What is Rosh Hashanah?",
+      "What is Passover?",
+      "What is Hanukkah?",
+      "What is Shabbat in Judaism?",
+      "What are the High Holy Days in Judaism?",
+      "What is Purim?",
+      "What are the pilgrimage festivals in Judaism?"
+    ],
+    "a": "The High Holy Days begin with Rosh Hashanah (the Jewish New Year, marking the creation of the world and the beginning of the Ten Days of Repentance, with the blowing of the shofar, eating apples and honey, and Tashlich ceremonies) and culminate in Yom Kippur (the Day of Atonement, the holiest day of the Jewish year, observed with 25 hours of fasting, intensive prayer, and confession of sins). The three pilgrimage festivals (Shalosh Regalim) are Passover (Pesach, celebrating the Exodus from Egypt with the Seder meal and prohibition of leavened bread, observed for 7 or 8 days), Shavuot (the giving of the Torah at Sinai, 7 weeks after Passover), and Sukkot (the Feast of Tabernacles, commemorating the 40 years in the wilderness, with temporary huts and the Four Species). Other major holidays include Hanukkah (the eight-day Festival of Lights, commemorating the Maccabean revolt and rededication of the Second Temple), Purim (celebrating Esther's rescue of Persian Jews from Haman's plot), and Shabbat (the weekly day of rest from Friday sunset to Saturday night, involving candle-lighting, festive meals, synagogue services, and refraining from 39 categories of creative work)."
+  }
+]

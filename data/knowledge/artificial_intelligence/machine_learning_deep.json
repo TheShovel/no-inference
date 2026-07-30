@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What is supervised learning in machine learning?",
+      "Explain supervised learning with examples",
+      "What is the difference between regression and classification?",
+      "How do SVM and random forest work?",
+      "What are supervised learning algorithms?",
+      "What is classification in machine learning?",
+      "What is regression analysis in ML?"
+    ],
+    "a": "Supervised learning is a machine learning paradigm where models are trained on labeled data, meaning each training example is paired with an output label, and the model learns to map inputs to the correct outputs. Regression algorithms predict continuous values (like house prices or temperature), using techniques such as linear regression and support vector regression, while classification algorithms assign inputs to discrete categories (like spam vs. not spam), using methods like logistic regression, support vector machines (SVM), and random forests. SVM finds the optimal hyperplane that best separates classes, often using kernel tricks to handle non-linear boundaries, while random forest builds an ensemble of decision trees and aggregates their predictions to achieve high accuracy and robustness against overfitting."
+  },
+  {
+    "q": [
+      "What is unsupervised learning?",
+      "Explain unsupervised learning with examples",
+      "What is clustering in machine learning?",
+      "What is dimensionality reduction?",
+      "What are unsupervised learning algorithms?",
+      "How does k-means clustering work?",
+      "What is PCA used for in ML?"
+    ],
+    "a": "Unsupervised learning involves training models on data without explicit labels, tasking the algorithm with finding hidden patterns, structures, or groupings within the data on its own. Clustering algorithms like k-means and hierarchical clustering group similar data points together based on feature similarity, useful for customer segmentation, anomaly detection, and image compression. Dimensionality reduction techniques like Principal Component Analysis (PCA) and t-SNE reduce the number of input features while preserving the most important information, helping to combat the curse of dimensionality, speed up training, and enable visualization of high-dimensional data."
+  },
+  {
+    "q": [
+      "What is reinforcement learning?",
+      "Explain reinforcement learning in AI",
+      "How does reinforcement learning work?",
+      "What are the key concepts in RL: agent, environment, reward?",
+      "What is the difference between reinforcement learning and supervised learning?",
+      "Give examples of reinforcement learning applications",
+      "What is Q-learning?"
+    ],
+    "a": "Reinforcement learning (RL) is a machine learning paradigm where an agent learns to make decisions by interacting with an environment, receiving rewards or penalties based on its actions, and maximizing cumulative reward over time through trial and error. Unlike supervised learning, RL receives no explicit correct answers — instead, the agent explores actions, observes their consequences, and refines its policy through algorithms like Q-learning and deep Q-networks (DQN). RL has achieved landmark successes in game-playing (AlphaGo beating world champions), robotics (learning complex manipulation tasks), autonomous driving, and recommendation systems, where sequential decision-making is crucial."
+  },
+  {
+    "q": [
+      "What is the difference between machine learning and deep learning?",
+      "What are neural networks in AI?",
+      "Explain deep learning and how it works",
+      "What are CNNs, RNNs, and transformers?",
+      "What is a neural network?",
+      "How does deep learning differ from traditional ML?",
+      "What are CNNs used for?",
+      "What are RNNs used for?"
+    ],
+    "a": "Deep learning is a subset of machine learning that uses multi-layered artificial neural networks to learn hierarchical representations of data, automatically extracting increasingly abstract features from raw inputs. Convolutional Neural Networks (CNNs) dominate computer vision tasks, using convolutional filters to detect spatial patterns like edges, textures, and shapes. Recurrent Neural Networks (RNNs) and their variants (LSTM, GRU) process sequential data like text or time series by maintaining a hidden state that captures temporal dependencies. Transformers, introduced in 2017, revolutionized natural language processing by replacing recurrence with self-attention mechanisms that process entire sequences in parallel, enabling models like BERT and GPT to capture long-range dependencies far more effectively than RNNs."
+  },
+  {
+    "q": [
+      "What is the difference between training, validation, and test sets?",
+      "Explain train/validation/test split in ML",
+      "Why is it important to split data into training, validation, and test sets?",
+      "What is overfitting and how do validation sets help?",
+      "How do you evaluate machine learning models?",
+      "What is cross-validation in machine learning?"
+    ],
+    "a": "In machine learning, the training set is used to teach the model by adjusting its parameters, the validation set is used to tune hyperparameters and make model selection decisions without biasing the final evaluation, and the test set provides an unbiased final assessment of how well the model generalizes to unseen data. Overfitting occurs when a model memorizes training data noise rather than learning true patterns, resulting in poor performance on new data — the validation set helps detect overfitting by revealing when training performance improves but validation performance stalls or degrades. Cross-validation extends this by repeatedly splitting the data into different training and validation folds, providing a more robust estimate of model performance, especially when data is limited."
+  }
+]

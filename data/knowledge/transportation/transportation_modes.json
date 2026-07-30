@@ -1,0 +1,67 @@
+[
+  {
+    "q": [
+      "What are the main modes of transportation?",
+      "What is road transportation?",
+      "What types of vehicles use roads?",
+      "How do cars, buses, and trucks move people and goods?",
+      "What is rail transportation?",
+      "What is the difference between light rail and subway?",
+      "modes of transportation",
+      "types of transportation"
+    ],
+    "a": "Road transportation encompasses cars, buses, trucks, and motorcycles operating on paved and unpaved road networks, offering door-to-door flexibility that makes it the dominant mode for both passenger travel and freight movement worldwide. Rail transportation includes passenger rail (commuter, intercity, and high-speed), freight rail (bulk commodities and containerized goods), light rail (street-level urban transit), and subways/metros (grade-separated urban rapid transit), with high-speed rail exceeding 300 km/h on dedicated tracks in countries like Japan, France, and China. Each mode balances speed, capacity, cost, energy efficiency, and infrastructure requirements, leading to specialized roles in integrated transport systems."
+  },
+  {
+    "q": [
+      "What is air transportation?",
+      "How do airplanes, helicopters, and drones differ?",
+      "What is water transportation?",
+      "What types of ships and boats are used for transport?",
+      "What are ferries and container ships?",
+      "What is pipeline transportation?",
+      "air transportation",
+      "water transportation",
+      "maritime shipping"
+    ],
+    "a": "Air transportation moves passengers and high-value cargo via commercial airliners, cargo aircraft, helicopters, and increasingly unmanned aerial vehicles (drones), offering the fastest long-distance travel at the highest energy cost per passenger-mile. Water transportation—including container ships (carrying standardized intermodal containers), bulk carriers (for commodities like grain, coal, and iron ore), tankers (for oil and chemicals), ferries (for passengers and vehicles), and barges (for inland waterways)—handles approximately 90% of global trade by volume at the lowest cost per ton-mile. Pipeline transportation continuously moves liquids (petroleum, refined products) and gases (natural gas) over long distances through buried pipes, providing highly efficient, low-labor transport for fluid commodities."
+  },
+  {
+    "q": [
+      "What is intermodal transportation?",
+      "How do different transport modes connect?",
+      "What is intermodal freight transport?",
+      "How do shipping containers enable intermodal transport?",
+      "What is micro-mobility?",
+      "What are bikes and scooters as transport?",
+      "intermodal transportation",
+      "micro-mobility"
+    ],
+    "a": "Intermodal transportation involves moving goods or people using multiple transport modes in a seamless journey, standardized by shipping containers that transfer between trucks, trains, and ships without unloading contents, vastly reducing handling costs and transit times. Intermodal passenger transport integrates different modes through transit hubs (airports with rail connections, bus-train interchanges) and coordinated scheduling, ticketing, and information systems. Micro-mobility—including bicycles, e-bikes, electric scooters, and shared mobility services—has grown rapidly as a flexible, low-carbon solution for short urban trips (typically under 5 km), often integrated with public transit through bike-share stations at transit stops and bike parking facilities."
+  },
+  {
+    "q": [
+      "What is the role of trucks in freight transportation?",
+      "How important are shipping ports?",
+      "What is the difference between passenger and freight rail?",
+      "How do cruise ships fit into transportation?",
+      "What is general aviation?",
+      "freight transportation",
+      "cargo shipping"
+    ],
+    "a": "Trucks carry the majority of domestic freight in many countries, with tractor-trailer combinations moving goods from ports and rail terminals to final destinations (the last mile of delivery), making trucking essential for supply chains but also a significant source of emissions and road wear. Ports serve as critical nodes in global trade, handling container ships, bulk carriers, and tankers, with the largest ports (Shanghai, Singapore, Ningbo-Zhoushan) processing over 40 million TEU (twenty-foot equivalent units) annually. Cruise ships represent a specialized passenger water transport segment blending transportation with tourism, carrying thousands of passengers on multi-day itineraries, while general aviation encompasses all non-commercial and non-military aircraft operations including private flying, business aviation, flight training, agricultural spraying, and emergency medical services."
+  },
+  {
+    "q": [
+      "What is high-speed rail?",
+      "How fast do high-speed trains go?",
+      "Which countries have high-speed rail?",
+      "What is the fastest train in the world?",
+      "What is the difference between a subway and light rail?",
+      "What are maglev trains?",
+      "high-speed rail",
+      "urban transit systems"
+    ],
+    "a": "High-speed rail operates at speeds over 250 km/h (155 mph) on dedicated, grade-separated tracks, with the world's fastest regular service being China's Shanghai Maglev reaching 431 km/h and Japan's Shinkansen (bullet train) operating since 1964 with a perfect safety record. Maglev (magnetic levitation) trains use electromagnetic forces to lift and propel the train, eliminating wheel-rail friction for speeds exceeding 600 km/h in test runs. Urban transit systems include subways (fully grade-separated, high-capacity metro rail), light rail (street-level or separated, medium-capacity), bus rapid transit (dedicated bus lanes with station-like stops), and commuter rail (suburban rail connecting cities with surrounding regions), with cities like Tokyo, London, New York, and Shanghai operating the world's largest and most complex networks."
+  }
+]

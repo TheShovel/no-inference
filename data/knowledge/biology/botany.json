@@ -1,0 +1,73 @@
+[
+  {
+    "q": [
+      "what is botany",
+      "botany definition",
+      "study of plants",
+      "what do botanists study",
+      "branches of botany",
+      "plant science explained",
+      "importance of botany",
+      "plant classification",
+      "mosses ferns gymnosperms angiosperms",
+      "types of plants"
+    ],
+    "a": "Botany is the scientific study of plants, including their structure, growth, reproduction, metabolism, development, diseases, and evolution. Plants are classified into major groups: bryophytes (mosses and liverworts) are non-vascular plants that lack true roots and stems; pteridophytes (ferns) are vascular plants that reproduce through spores; gymnosperms (conifers, cycads, ginkgo) are seed plants with naked seeds not enclosed in an ovary; and angiosperms (flowering plants) are the most diverse group, producing seeds enclosed within fruits. Angiosperms are further divided into monocots (one cotyledon, parallel leaf veins) and dicots (two cotyledons, netted leaf veins). This classification system reflects the evolutionary relationships among plant groups."
+  },
+  {
+    "q": [
+      "plant anatomy",
+      "parts of a plant",
+      "roots function",
+      "stem function",
+      "leaf structure",
+      "flower parts",
+      "plant structure explained",
+      "root system shoot system",
+      "xylem and phloem"
+    ],
+    "a": "Plant anatomy is the study of the internal and external structures of plants. The root system anchors the plant, absorbs water and minerals from the soil, and stores food; roots have root hairs that increase surface area for absorption. The stem supports leaves and flowers, transports water and nutrients through vascular tissue (xylem carries water upward, phloem distributes sugars throughout the plant), and may store food. Leaves are the primary photosynthetic organs, with a broad blade and a petiole; their internal structure includes a waxy cuticle, upper and lower epidermis, palisade and spongy mesophyll layers containing chloroplasts, and stomata that regulate gas exchange. Flowers are the reproductive structures of angiosperms, consisting of sepals, petals, stamens (male parts), and carpels (female parts)."
+  },
+  {
+    "q": [
+      "what is photosynthesis",
+      "how does photosynthesis work",
+      "photosynthesis explained",
+      "what is transpiration",
+      "transpiration in plants",
+      "plant respiration",
+      "how do plants breathe",
+      "plant physiology",
+      "light dependent reactions calvin cycle"
+    ],
+    "a": "Plant physiology encompasses the vital processes that sustain plant life. Photosynthesis is the process by which plants convert light energy into chemical energy, using carbon dioxide and water to produce glucose and oxygen; it occurs in chloroplasts and involves light-dependent reactions that generate ATP and NADPH, followed by the Calvin cycle that fixes carbon into sugars. Transpiration is the loss of water vapor through stomata in leaves, which creates a negative pressure that pulls water and dissolved minerals up from the roots through the xylem. Plant respiration is the opposite of photosynthesis: plants break down glucose to release energy for cellular processes, consuming oxygen and releasing carbon dioxide, and this occurs continuously in mitochondria throughout the plant."
+  },
+  {
+    "q": [
+      "plant reproduction",
+      "how do plants reproduce",
+      "pollination explained",
+      "types of pollination",
+      "seed dispersal",
+      "how are seeds dispersed",
+      "plant life cycle",
+      "asexual reproduction in plants",
+      "flower structure reproduction"
+    ],
+    "a": "Plant reproduction involves both sexual and asexual mechanisms. In flowering plants, sexual reproduction begins with pollination, the transfer of pollen from the stamen to the carpel. Pollination can occur through wind, water, or animal pollinators such as bees, butterflies, birds, and bats. After fertilization, the ovule develops into a seed and the ovary becomes a fruit. Seed dispersal mechanisms include wind (dandelions, maples), water (coconuts), animals (berries that pass through digestive tracts, burrs that stick to fur), and explosive dehiscence (touch-me-nots). Asexual reproduction, also called vegetative propagation, occurs when new plants grow from stems, roots, or leaves without seeds, as seen in strawberry runners and potato tubers. This allows plants to reproduce quickly and clone successful genotypes."
+  },
+  {
+    "q": [
+      "plant ecology",
+      "how do plants interact with their environment",
+      "economic botany",
+      "important food crops",
+      "medicinal plants",
+      "timber and wood products",
+      "plants in industry",
+      "ethnobotany",
+      "crop domestication"
+    ],
+    "a": "Plant ecology studies how plants interact with their environment and other organisms, including competition for resources, symbiosis with mycorrhizal fungi, and adaptations to different climates. Economic botany examines how humans use plants for food, medicine, shelter, and industry. The world's major food crops include rice, wheat, corn (maize), potatoes, and soybeans, which together provide the majority of human caloric intake. Medicinal plants have been used for millennia and continue to be a vital source of pharmaceutical compounds, including aspirin from willow bark, quinine from cinchona bark for malaria, and taxol from yew trees for cancer treatment. Timber from trees provides construction materials, paper, and fuel, while other plant products include fibers like cotton and flax, rubber from rubber trees, and oils from palms and olives."
+  }
+]

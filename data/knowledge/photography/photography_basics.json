@@ -1,0 +1,60 @@
+[
+  {
+    "q": [
+      "What is photography and how do cameras work?",
+      "Explain the basic principles of photography.",
+      "How does a camera capture an image?",
+      "What is the science behind photography?",
+      "What is photography?",
+      "how do cameras work",
+      "basics of photography"
+    ],
+    "a": "Photography is the art and science of capturing light to create images, derived from the Greek words \"photos\" (light) and \"graphé\" (drawing). A camera works by controlling the amount of light that reaches a photosensitive surface (film or digital sensor) through an aperture and shutter, while a lens focuses the light to form a sharp image. Modern digital cameras convert light into electrical signals via millions of tiny photosites on a sensor, producing a digital file that can be processed, edited, and shared."
+  },
+  {
+    "q": [
+      "What is the exposure triangle in photography?",
+      "Explain aperture, shutter speed, and ISO.",
+      "How do aperture, shutter speed, and ISO work together?",
+      "What is the relationship between aperture, shutter speed, and ISO?",
+      "exposure triangle",
+      "aperture shutter speed ISO",
+      "How do I control exposure in photography?"
+    ],
+    "a": "The exposure triangle is the fundamental concept of photographic exposure, comprising three interdependent settings: aperture (the size of the lens opening, measured in f-stops), shutter speed (how long the sensor is exposed to light), and ISO (the sensitivity of the sensor). Aperture controls depth of field and light — a wider aperture (low f-number) creates a shallow depth of field and lets in more light. Shutter speed determines motion blur — fast speeds freeze action while slow speeds blur movement, and ISO adjusts sensitivity — higher ISO brightens the image but introduces digital noise."
+  },
+  {
+    "q": [
+      "What is focal length and how does it affect photos?",
+      "Explain the difference between wide-angle, standard, and telephoto lenses.",
+      "How does focal length change perspective and composition?",
+      "What is focal length in photography?",
+      "focal length explained",
+      "What do different lens focal lengths do?"
+    ],
+    "a": "Focal length, measured in millimeters, describes the distance between the lens and the camera sensor when the subject is in focus, determining the angle of view and magnification. Wide-angle lenses (under 35mm) capture a broad field of view and exaggerate perspective, making foreground subjects appear larger and backgrounds recede. Telephoto lenses (70mm and above) magnify distant subjects and compress perspective, making objects appear closer together, while standard lenses around 50mm approximate human natural vision."
+  },
+  {
+    "q": [
+      "What is depth of field and how is it controlled?",
+      "Explain depth of field in photography.",
+      "How do aperture, distance, and focal length affect depth of field?",
+      "What is shallow depth of field used for?",
+      "depth of field explained",
+      "How do I get a blurry background in photos?"
+    ],
+    "a": "Depth of field (DoF) is the range of distance within a photo that appears acceptably sharp, controlled primarily by aperture, subject-to-camera distance, and focal length. A shallow depth of field (achieved with wide apertures like f/1.8, close subject distance, and long focal lengths) isolates the subject by blurring the background, ideal for portraits. A deep depth of field (small apertures like f/16, distant subjects, and wide angles) keeps everything from foreground to background sharp, essential for landscape photography."
+  },
+  {
+    "q": [
+      "What are the different types of cameras: DSLR, mirrorless, point-and-shoot, and phone cameras?",
+      "Compare DSLR vs mirrorless cameras.",
+      "What are the pros and cons of different camera types?",
+      "Which camera type is best for photography?",
+      "DSLR vs mirrorless",
+      "camera types explained",
+      "point-and-shoot vs phone camera"
+    ],
+    "a": "DSLR (Digital Single-Lens Reflex) cameras use a mirror and optical viewfinder to preview the scene, offering fast autofocus, extensive lens ecosystems, and excellent image quality but are bulkier. Mirrorless cameras replace the mirror with an electronic viewfinder, offering smaller size, silent shooting, and advanced video features while matching DSLR image quality. Point-and-shoot cameras prioritize portability and simplicity with fixed lenses, while modern phone cameras use computational photography — combining multiple exposures and AI processing — to produce impressive results in a device you always carry."
+  }
+]

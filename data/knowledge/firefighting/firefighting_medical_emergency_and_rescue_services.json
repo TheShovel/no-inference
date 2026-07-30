@@ -1,0 +1,64 @@
+[
+  {
+    "q": [
+      "What is the role of firefighters in emergency medical services?",
+      "What is the EMS system in fire departments?",
+      "What is the difference between EMT and paramedic?",
+      "How are fire departments involved in medical response?",
+      "What is the history of EMS in fire service?",
+      "What medical equipment do fire engines carry?",
+      "firefighter EMS EMT paramedic medical response first responder"
+    ],
+    "a": "Fire departments are increasingly the primary providers of emergency medical services in the United States and many other countries, responding to far more medical calls than fire incidents—typically 60 to 80 percent of a modern fire department's call volume is medical rather than fire suppression. Firefighters are cross-trained as emergency medical technicians (EMTs) or paramedics (advanced EMTs capable of administering drugs, cardiac monitoring, and advanced airway management), with fire apparatus carrying medical equipment including defibrillators, oxygen delivery systems, spinal immobilization devices, and advanced life support kits. The integration of EMS into fire services accelerated in the 1970s with the passage of the Emergency Medical Services Systems Act of 1973, which encouraged regional EMS systems, standardized training curricula, and established the 911 emergency number, fundamentally transforming the fire service from a fire-only response model to an all-hazards emergency response agency."
+  },
+  {
+    "q": [
+      "What is technical rescue in firefighting?",
+      "What is high-angle rescue?",
+      "What is confined space rescue?",
+      "What is trench rescue?",
+      "What is swift water rescue?",
+      "What is structural collapse rescue?",
+      "What is rope rescue in firefighting?",
+      "technical rescue high-angle confined space trench swift water collapse rope"
+    ],
+    "a": "Technical rescue encompasses specialized operations that require advanced training and equipment beyond standard firefighting, with NFPA 1006 establishing certification standards for rescue technicians in various disciplines including rope rescue (accessing and extricating victims from heights or depths using mechanical advantage systems, rappelling, and patient packaging in harnesses), confined space rescue (entering tanks, silos, tunnels, and other restricted spaces with limited entry and exit, often involving hazardous atmospheres that require SCBA and gas monitoring), and trench rescue (stabilizing collapsed excavation walls using shoring systems to safely extricate buried victims while protecting against secondary collapse). Swift water rescue has become increasingly critical with climate change-driven flooding, utilizing specialized personal flotation devices, throw bags, tethered swimming, and boat operations to reach and recover victims from moving water while rescuer safety is maintained through shore-based safety lines or helicopter-based rescue swimmer operations. Collapse rescue (structural collapse) after earthquakes, explosions, or building failures follows the FEMA Urban Search and Rescue (US and R) system, with task forces organized into specialized teams including search (canine and technical), breaching and breaking, heavy lifting and moving, and medical and hazardous materials."
+  },
+  {
+    "q": [
+      "What is vehicle extrication in firefighting?",
+      "How do firefighters cut cars to rescue victims?",
+      "What tools are used in vehicle extrication?",
+      "What is the Jaws of Life?",
+      "What are hydraulic rescue tools?",
+      "What are the steps of vehicle extrication?",
+      "What are new vehicle technologies that affect extrication?",
+      "vehicle extrication Jaws of Life hydraulic cutters spreaders rams stabilization"
+    ],
+    "a": "Vehicle extrication is the process of removing patients from motor vehicles after collisions, requiring a systematic approach beginning with scene size-up (vehicle stability, number of patients, hazards like airbag deployment or fuel leaks) followed by stabilization (cribbing or struts to prevent movement during cutting and spreading operations) and tool placement to create access points. Hydraulic rescue tools—often generically called the Jaws of Life (a trademark of the Hurst company)—include spreaders (for prying doors and forcing openings), cutters (for cutting through vehicle pillars and roof supports), combination tools that both spread and cut, and rams (extending tools for pushing dashes and steering columns away from trapped patients). Modern vehicle technologies pose new challenges for extrication: high-strength steel alloys in passenger compartments require greater cutting force or specialized blades, multiple airbags with reserve power supplies mean careful disconnection of battery systems, and high-voltage batteries in electric and hybrid vehicles require firefighters to identify and isolate high-voltage cables before cutting into structural members."
+  },
+  {
+    "q": [
+      "What is hazardous materials response?",
+      "What is the hazmat technician role?",
+      "What are the levels of hazmat training?",
+      "What is the hazmat scene management process?",
+      "What protective equipment is used in hazmat response?",
+      "What is the difference between a hazmat suit and an SCBA?",
+      "hazardous materials response hazmat technician levels A B C D PPE decontamination"
+    ],
+    "a": "Hazardous materials (hazmat) response involves the identification, containment, and mitigation of dangerous substance releases, with personnel trained at five levels: awareness (first responders who recognize a hazmat incident and initiate protection), operations (responders who defend from a safe distance and work to prevent spread), technician (personnel who actively enter the hot zone in chemical protective clothing to stop the release), specialist (who support technicians with specific chemical expertise), and incident commander (who manages the overall response). Personal protective equipment for hazmat response is graded by level: Level A (fully encapsulated, vapor-tight suit with self-contained breathing apparatus, worn for unknown or highly hazardous atmospheres), Level B (splash-protective suit with SCBA but less vapor protection, for known hazards where air is the primary concern), Level C (splash-protective suit with air-purifying respirator, for known contaminants with adequate oxygen), and Level D (standard work uniform, for nuisance contamination only). Decontamination is a critical hazmat operation, performed in a systematic corridor of hot zone, warm zone (decontamination), and cold zone (clean and rehab), where victims and responders are thoroughly washed and monitored before returning to non-contaminated areas."
+  },
+  {
+    "q": [
+      "What is mass casualty incident management?",
+      "How do fire departments handle mass casualty incidents?",
+      "What is triage in mass casualty incidents?",
+      "What are the START triage categories?",
+      "What is the incident command system for MCIs?",
+      "How do multiple agencies coordinate during mass casualty events?",
+      "mass casualty incident triage START jumpSTART SALT command coordination"
+    ],
+    "a": "Mass casualty incidents (MCIs) are events where the number of patients exceeds available resources, requiring a shift from normal emergency response (maximum care per patient) to incident triage (greatest good for the greatest number), where resources are allocated to save the most salvageable victims first. The START (Simple Triage and Rapid Transport) system is the most widely used MCI triage protocol, sorting patients into four categories based on their ability to walk, respiratory rate, perfusion (capillary refill), and mental status: Red (immediate, life-threatening but survivable with immediate treatment, transported first), Yellow (delayed, serious but stable enough to wait), Green (minor, walking wounded who can assist or wait), and Black (deceased or expectant, non-survivable injuries). The Incident Command System (ICS) for MCIs establishes unified command among responding agencies, creates designated staging, treatment, and transport areas, and implements a standard organizational structure with sections for operations, planning, logistics, and finance that scales to the event size, ensuring that fire, EMS, law enforcement, and hospital systems work in coordinated rather than competing efforts."
+  }
+]

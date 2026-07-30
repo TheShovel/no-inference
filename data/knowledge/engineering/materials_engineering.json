@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What is materials science and engineering?",
+      "What are the main classes of engineering materials?",
+      "What does a materials engineer do?",
+      "How are materials classified in engineering?",
+      "What is the difference between materials science and materials engineering?",
+      "Why is materials science important?",
+      "materials science engineering definition"
+    ],
+    "a": "Materials science and engineering is an interdisciplinary field that investigates the relationship between the structure (atomic, microscopic, and macroscopic) of materials and their properties, and applies this understanding to design, select, and develop new materials for specific applications. Engineering materials are traditionally divided into four main classes: metals and alloys (characterized by metallic bonding, high electrical and thermal conductivity, strength, ductility), ceramics (ionic/covalent bonds, hard, brittle, high melting points, corrosion-resistant), polymers (long-chain molecules, lightweight, flexible, low-cost, easily processed), and composites (combinations of two or more materials that produce properties superior to either constituent alone). The field has expanded to include advanced categories like semiconductors (essential for electronics), biomaterials (designed for medical implantation), nanomaterials (engineered at the 1-100 nanometer scale with emergent properties), and smart materials that respond to stimuli like temperature, pressure, pH, or electric and magnetic fields."
+  },
+  {
+    "q": [
+      "What are mechanical, thermal, and electrical material properties?",
+      "What is the difference between strength, hardness, and toughness?",
+      "How are material properties tested?",
+      "What is stress and strain in materials?",
+      "What are thermal properties like conductivity and expansion?",
+      "What are electrical properties like conductivity and resistivity?",
+      "material properties mechanical thermal electrical testing"
+    ],
+    "a": "Mechanical properties describe how materials respond to forces: strength (maximum stress before failure, measured in tensile, compressive, and shear modes), hardness (resistance to surface indentation or scratching, measured by Rockwell, Brinell, or Vickers tests), toughness (energy absorbed before fracture, combining strength and ductility), elasticity (ability to return to original shape after deformation), and ductility (ability to deform plastically without fracture, critical for metal forming). Thermal properties include thermal conductivity (rate of heat transfer, important for heat sink materials like copper and aluminum), coefficient of thermal expansion (how much dimensions change with temperature, critical in composite structures and bridges), and specific heat capacity (energy needed to raise temperature). Electrical properties encompass conductivity (how easily electrons flow, with copper, silver, and gold as excellent conductors), resistivity, dielectric strength (insulating ability), and semiconductor behavior where band gap engineering enables controlled electron flow in transistors, diodes, and solar cells."
+  },
+  {
+    "q": [
+      "What are metals and alloys?",
+      "What are ceramics and their properties?",
+      "What are polymers and plastics?",
+      "What are composite materials?",
+      "What are the different types of composites?",
+      "How are metals, ceramics, polymers, and composites different?",
+      "metals alloys ceramics polymers composites"
+    ],
+    "a": "Metals and alloys are crystalline solids with metallic bonding that makes them strong, ductile, electrically and thermally conductive, and easily shaped through casting, forging, rolling, extrusion, and machining, with steel (iron-carbon alloy), aluminum alloys, titanium alloys, and superalloys (nickel, cobalt-based for high-temperature applications) dominating structural engineering. Ceramics—including traditional clay-based pottery and brick, advanced alumina, silicon carbide, zirconia, and piezoelectric ceramics—are hard, chemically stable, withstand very high temperatures, and are excellent electrical and thermal insulators but suffer from brittleness and low tensile strength. Polymers range from thermoplastics (polyethylene, polypropylene, PET, nylon, polycarbonate—recyclable and melt-processable) to thermosets (epoxy, phenolic, polyurethane—cross-linked, cannot be remelted) and elastomers (natural rubber, silicone), offering low cost, lightweight, corrosion resistance, and easy processing, while composites like carbon fiber reinforced polymer (CFRP), fiberglass, and Kevlar combine high-strength fibers with a polymer matrix to achieve exceptional stiffness-to-weight ratios for aerospace, automotive, and sporting goods applications."
+  },
+  {
+    "q": [
+      "What are smart materials and how do they work?",
+      "What are nanomaterials?",
+      "What is biomaterials engineering?",
+      "What are shape memory alloys?",
+      "How are nanomaterials used in engineering?",
+      "What are the applications of smart materials?",
+      "smart materials nanomaterials biomaterials"
+    ],
+    "a": "Smart (responsive) materials change their properties in response to external stimuli: shape memory alloys (Nitinol, copper-aluminum-nickel) return to a pre-programmed shape when heated above a transition temperature, used in stents, actuators, and eyeglass frames; piezoelectric materials (quartz, lead zirconate titanate) generate electric charge under mechanical stress and deform under applied voltage, used in sensors, ultrasound transducers, and inkjet printers; and magnetostrictive, thermochromic, and self-healing materials are increasingly common in adaptive structures and smart coatings. Nanomaterials engineered at 1-100 nm exhibit dramatically altered properties due to quantum effects and high surface-to-volume ratios—carbon nanotubes are 100 times stronger than steel at one-sixth the weight, graphene is the thinnest known material with extraordinary electrical conductivity, and titanium dioxide nanoparticles enhance UV protection in sunscreens and photocatalyst self-cleaning surfaces. Biomaterials, designed for medical implants and devices, must be biocompatible (non-toxic, non-immunogenic), with examples including titanium and cobalt-chrome alloys for orthopedic implants, bioabsorbable polymers (PLA, PLGA) for resorbable sutures and drug delivery systems, bioceramics like hydroxyapatite for bone grafts, and hydrogels for tissue scaffolding and wound dressings."
+  },
+  {
+    "q": [
+      "How do engineers select the right material for a design?",
+      "What is the material selection process?",
+      "What factors are considered in material selection?",
+      "What is Ashby's method for material selection?",
+      "How are materials tested and compared?",
+      "What are material selection charts?",
+      "material selection materials testing Ashby charts"
+    ],
+    "a": "Material selection is a systematic process that identifies the best candidate material for a given application by evaluating property requirements (mechanical loads, operating temperature, corrosion environment, electrical/thermal needs), manufacturing constraints (formability, weldability, machinability, cost of processing), and lifecycle considerations (availability, cost per unit, recyclability, regulatory compliance). Michael Ashby's methodology uses material property charts (Ashby charts) that plot two properties (e.g., Young's modulus vs. density, strength vs. cost) on logarithmic axes, allowing designers to visually identify materials that fall within acceptable performance envelopes and apply material indices—derived equations that optimize specific design requirements like minimizing weight at a given stiffness. Materials testing and certification methods include tensile testing (stress-strain curves on universal testing machines), hardness testing, Charpy impact testing (toughness, ductile-brittle transition temperature), fatigue testing (cyclic loading to determine endurance limit), non-destructive testing (ultrasonic, X-ray, magnetic particle inspection for internal flaws), and accelerated environmental testing (corrosion chambers, UV exposure, thermal cycling)."
+  }
+]

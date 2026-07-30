@@ -1,0 +1,67 @@
+[
+    {
+        "q": [
+            "What is fermentation and how does it work biologically?",
+            "How does fermentation work on a microbiological level?",
+            "What is the biological process of fermentation?",
+            "Can you explain the science behind fermentation?",
+            "What microorganisms are involved in fermentation?",
+            "How do microbes convert sugars during fermentation?",
+            "What is fermentation in food science?",
+            "How does anaerobic metabolism drive fermentation?"
+        ],
+        "a": "Fermentation is an anaerobic metabolic process where microorganisms like yeast, bacteria, and molds convert carbohydrates into alcohols, acids, or gases. Yeasts such as Saccharomyces cerevisiae (ale yeast) and Saccharomyces pastorianus (lager yeast) perform alcoholic fermentation, converting sugars into ethanol and carbon dioxide. Bacteria like Lactobacillus species carry out lactic acid fermentation, producing lactic acid and contributing to the tangy flavor of foods like yogurt, sauerkraut, and kimchi. Different fermentation pathways exist — homofermentative lactic acid bacteria produce primarily lactic acid, while heterofermentative strains produce lactic acid, acetic acid, ethanol, and carbon dioxide."
+    },
+    {
+        "q": [
+            "What is the role of yeast in fermentation?",
+            "Which yeast species are commonly used in fermentation?",
+            "How does Saccharomyces cerevisiae differ from Saccharomyces pastorianus?",
+            "What is Brettanomyces and how is it used?",
+            "What are the main yeast species in food fermentation?",
+            "How do different yeast strains affect fermentation?",
+            "What is the difference between ale yeast and lager yeast?",
+            "Can you explain the role of non-Saccharomyces yeasts in fermentation?"
+        ],
+        "a": "Yeast is the primary driver of alcoholic fermentation, with Saccharomyces cerevisiae being the most widely used species in baking, brewing, and winemaking. Saccharomyces pastorianus, a hybrid species, is the workhorse of lager fermentation and thrives at cooler temperatures (7-15°C) compared to ale yeast. Non-Saccharomyces yeasts like Brettanomyces are used intentionally in certain beer styles (lambics, saisons) and wines for their distinctive funky, earthy, or horsey character. Torulaspora delbrueckii and Candida species are also used in specialty fermentations and contribute complex flavor profiles, while Saccharomycopsis fibuligera plays a key role in Asian starter cultures like ragi and marcha."
+    },
+    {
+        "q": [
+            "What bacteria are important in fermentation?",
+            "How does Lactobacillus contribute to fermentation?",
+            "What is the difference between homofermentative and heterofermentative bacteria?",
+            "Which bacteria are used in dairy fermentation?",
+            "What role do acetic acid bacteria play?",
+            "How do Pediococcus and Leuconostoc function in fermentation?",
+            "What bacteria are involved in vegetable fermentation?",
+            "Can you explain the role of Oenococcus oeni in winemaking?"
+        ],
+        "a": "Lactic acid bacteria (LAB) are the most important bacterial group in fermentation, with Lactobacillus being the cornerstone genus. Homofermentative LAB like Lactobacillus acidophilus and Lactobacillus delbrueckii produce lactic acid as nearly the sole end product, making them ideal for yogurt and cheese production. Heterofermentative LAB such as Leuconostoc mesenteroides and Lactobacillus brevis produce a mix of lactic acid, acetic acid, ethanol, and carbon dioxide, which is essential for the complex flavor of sauerkraut and kimchi. Acetobacter species perform acetic acid fermentation, converting ethanol into acetic acid to produce vinegar. Oenococcus oeni is critical in malolactic fermentation for wine, converting sharp malic acid into softer lactic acid, and Propionibacterium freudenreichii gives Swiss cheese its characteristic eyes and nutty flavor."
+    },
+    {
+        "q": [
+            "What are the main types of fermentation?",
+            "What is lactic acid fermentation and what foods use it?",
+            "What is alcoholic fermentation used for?",
+            "What is acetic acid fermentation?",
+            "How does alkali fermentation work?",
+            "What is koji fermentation?",
+            "Can you explain solid state vs submerged fermentation?",
+            "What are the different categories of food fermentation?"
+        ],
+        "a": "The six major types of fermentation in food production are lactic acid, alcoholic, acetic acid, alkali, koji/mold, and solid-state fermentation. Lactic acid fermentation is used for yogurt, kefir, sauerkraut, kimchi, pickles, cheese, sour cream, and buttermilk. Alcoholic fermentation by yeast produces beer, wine, cider, mead, sake, spirits, and leavened bread. Acetic acid fermentation converts ethanol into vinegar, essential for kombucha and various vinegars. Alkali fermentation, driven by Bacillus subtilis, produces natto, douchi, and thua nao with strong ammonia notes. Koji fermentation uses Aspergillus oryzae to break down starches and proteins, forming the basis of miso, soy sauce, sake, mirin, and amazake."
+    },
+    {
+        "q": [
+            "What is a starter culture and how is it used?",
+            "What is backslopping in fermentation?",
+            "How do you maintain a sourdough starter?",
+            "What is a SCOBY and what is it used for?",
+            "What are kefir grains made of?",
+            "What is spontaneous fermentation?",
+            "How do you create a ginger bug?",
+            "What is the difference between a starter culture and a mother culture?"
+        ],
+        "a": "A starter culture is a carefully maintained population of microorganisms used to initiate fermentation in a fresh batch of food or beverage. Backslopping is the practice of reserving a portion of a previous successful fermentation to inoculate the next batch, common in sourdough bread, yogurt, and vegetable ferments. A SCOBY (Symbiotic Culture of Bacteria and Yeast) is a cellulose mat produced by kombucha fermentation that houses the microorganisms needed for brewing. Kefir grains are gelatinous polysaccharide (kefiran) matrices containing a complex symbiosis of bacteria and yeast, used to ferment milk. Spontaneous fermentation relies on naturally occurring microbes from the environment, as seen in traditional lambic beers, while ginger bug is a wild yeast culture started from ginger, sugar, and water used to ferment sodas."
+    }
+]

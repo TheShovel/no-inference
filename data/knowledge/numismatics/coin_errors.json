@@ -1,0 +1,65 @@
+[
+  {
+    "q": [
+      "What is a doubled die coin?",
+      "What causes a doubled die error?",
+      "What is a repunched mintmark (RPM)?",
+      "What is an over mintmark (OMM)?",
+      "What is the 1955 doubled die Lincoln cent?",
+      "What are the most famous doubled die varieties?",
+      "What is the 2004 Wisconsin quarter extra leaf error?",
+      "doubled die RPM repunched mintmark OMM 1955 doubled die Wisconsin extra leaf"
+    ],
+    "a": "A doubled die error occurs when a die receives a doubled image from the hub during the hubbing process, causing design elements to appear doubled on every coin struck from that die—this is not a misalignment during striking but a manufacturing flaw in the die itself. Repunched Mintmarks (RPM) are a subtype where the mintmark was punched into the die multiple times at slightly different positions, creating visible doubling of the mintmark letter such as D/D or S/S, while Over Mintmarks (OMM) occur when one mintmark was punched over a different one, like D over S. Famous doubled die varieties include the 1955 Lincoln cent (dramatic doubling of date and lettering, worth thousands even in low grade), the 1969-S doubled die Lincoln cent, the 1972 doubled die, the 1995 doubled die, the 2000 doubled die Sacagawea dollar, and the 2004 Wisconsin state quarter with an extra leaf on the corn stalk (available in high and low leaf versions)."
+  },
+  {
+    "q": [
+      "What is a die crack on a coin?",
+      "What is a die break or cud?",
+      "What is a die chip?",
+      "What is a die clash error?",
+      "What is die deterioration doubling?",
+      "How do die cracks and breaks affect coin value?",
+      "die crack die break cud die clash die deterioration doubling"
+    ],
+    "a": "Die cracks appear as raised, irregular lines on a coin's surface caused by the die cracking from repeated striking stress, while die breaks occur when larger pieces of the die break away, producing raised, featureless areas called cuds, typically along the rim or edge. Die clash happens when the obverse and reverse dies strike together without a planchet between them, transferring design elements from one die onto the other, which then appear as incuse ghost images on subsequently struck coins. Die deterioration doubling is caused by the die wearing and spreading over time, creating subtle, mushy doubling of design elements near device edges—this differs from true doubled dies and machine doubling and generally adds only a modest premium to coins, whereas large cuds and dramatic die clashes are more sought after by error collectors."
+  },
+  {
+    "q": [
+      "What is machine doubling (strike doubling)?",
+      "How do you tell the difference between machine doubling and doubled die?",
+      "What is mechanical doubling?",
+      "What is ejection doubling?",
+      "Why is machine doubling worth less than doubled die?",
+      "How to identify machine doubling on a coin?",
+      "machine doubling strike doubling mechanical doubling ejection doubling vs doubled die"
+    ],
+    "a": "Machine doubling, also called strike doubling or mechanical doubling, occurs when the die strikes the planchet and then shifts or rebounds before releasing, creating flat, shelf-like doubling separated from the main design by a distinct step—it affects the entire strike uniformly and appears flattened rather than sharply separated. True doubled dies produce sharp, complete doubling with separation that tapers and blends back into the design, and the doubling appears consistently across multiple coins from the same die, whereas machine doubling varies from strike to strike and shows no separation between the design and its ghost. Machine doubling generally adds little to no value because it is a common striking anomaly rather than a genuine die error, so collectors must carefully examine the nature of the doubling before paying a premium for an alleged doubled die variety."
+  },
+  {
+    "q": [
+      "What is a wrong planchet error?",
+      "What is a clipped planchet coin?",
+      "What is a straight clip vs curved clip vs ragged clip?",
+      "What is a lamination error on a coin?",
+      "What is a split planchet or delamination?",
+      "What is a missing clad layer error?",
+      "What is an off-metal or transitional error?",
+      "wrong planchet clipped planchet lamination missing clad off-metal transitional error"
+    ],
+    "a": "Planchet errors originate before striking and include wrong planchet errors where a coin is struck on a planchet intended for another denomination or even a foreign planchet, such as a Lincoln cent struck on a dime planchet, known as off-metal or transitional errors. Clipped planchet errors occur when the metal strip is punched too close to an existing hole or edge during blanking, creating various clip shapes: straight clips (a straight edge), curved clips (smooth concave curve), ragged clips (rough torn edge), multiple clips (overlapping clips creating B-shaped or irregular outlines), and elliptical clips (elongated clip marks), with value depending on clip size and visibility. Lamination errors happen when impurities or gas trapped in the planchet cause the metal surface to separate, producing splitting, flaking, peeling, or full delamination, while missing clad errors occur on clad coinage when one or both cupronickel layers are absent, exposing the copper core and creating a distinctive copper-colored surface."
+  },
+  {
+    "q": [
+      "What is an off-center strike coin?",
+      "What is a broadstrike error?",
+      "What is a double strike coin?",
+      "What is a brockage error?",
+      "What is a mule coin?",
+      "What is a rotated die error?",
+      "What is a capped die strike?",
+      "off-center broadstrike double strike brockage mule rotated die capped die"
+    ],
+    "a": "Striking errors occur during the minting process: off-center strikes happen when the planchet is misaligned between dies, leaving part of the design missing, with value roughly proportional to the degree of offset and the visibility of the date and mintmark, while broadstrikes occur when the retaining collar is missing, allowing the coin to spread beyond its normal diameter with blank, smooth edges. Double strikes happen when a coin remains in the chamber and receives a second impression at a different orientation, creating dramatic overlapping designs, and brockage errors occur when a previously struck coin sticks to a die and impresses its mirror image into the next planchet, creating an incuse, reversed design. Mules are among the rarest errors, pairing dies from two different denominations (such as a Sacagawea dollar obverse with a Washington quarter reverse), while rotated die errors involve one die being misaligned relative to the other, causing the reverse to appear rotated versus the obverse, with 180-degree rotations being the most visually dramatic."
+  }
+]

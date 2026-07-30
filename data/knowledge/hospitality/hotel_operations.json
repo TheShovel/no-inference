@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is front office management in hotels?",
+      "What are the main front office operations in a hotel?",
+      "How does the hotel reservation process work?",
+      "What is the check-in and check-out process in hotels?",
+      "What does guest services involve at a hotel?",
+      "How do hotels manage reservations and bookings?",
+      "What is the role of the front desk in hotel operations?"
+    ],
+    "a": "Front office operations serve as the hub of hotel activity, encompassing reservation management (taking, modifying, and confirming bookings across channels), the check-in process (verifying identification, collecting payment, assigning rooms, issuing key cards), and check-out (settling folios, collecting feedback, handling billing adjustments). Guest services staff handle concierge duties, luggage assistance, transportation arrangements, restaurant recommendations, and resolving complaints, with many hotels now using mobile check-in, digital keys, and messaging platforms to enhance the guest experience. The front office also maintains the housekeeping status board, coordinates room assignments, manages group bookings, and tracks room availability through the property management system (PMS)."
+  },
+  {
+    "q": [
+      "What is housekeeping management in hotels?",
+      "How are hotel cleaning standards maintained?",
+      "What is linen management in hotel housekeeping?",
+      "How do hotels manage housekeeping inventory?",
+      "What are the roles in a hotel housekeeping department?",
+      "How is housekeeping efficiency measured in hotels?",
+      "What is the role of an executive housekeeper?"
+    ],
+    "a": "Housekeeping management is responsible for maintaining cleanliness and aesthetic standards across all hotel areas including guest rooms, public spaces, back-of-house areas, and laundry facilities, following detailed cleaning protocols for each surface type and establishing inspection checklists with quality scoring. Linen management involves inventorying and laundering bed sheets, towels, tablecloths, and uniform items, managing par levels (the quantity of each linen type required per room), monitoring linen loss and damage, and deciding on replacement cycles based on thread count quality and wear. Inventory control in housekeeping extends to guest amenities (soaps, shampoos, toiletries), cleaning chemicals and equipment, and guest supplies like minibar items, requiring careful tracking of consumption rates and reorder points to avoid stockouts while controlling costs."
+  },
+  {
+    "q": [
+      "What is engineering and maintenance in hotels?",
+      "What does hotel security involve?",
+      "How do hotels manage loss prevention?",
+      "What is the role of the engineering department in a hotel?",
+      "How do hotels ensure guest safety and security?",
+      "What is preventive maintenance in hotel operations?",
+      "What are the key responsibilities of hotel security?"
+    ],
+    "a": "The engineering and maintenance department is responsible for the physical upkeep of the hotel building and all mechanical, electrical, plumbing, HVAC, and life safety systems, operating through both reactive maintenance (addressing guest complaints and equipment breakdowns) and preventive maintenance programs (scheduled inspections, filter changes, painting, and equipment servicing to extend asset life). Hotel security and loss prevention encompasses 24/7 monitoring of surveillance cameras, access control systems, and alarm systems, with uniformed security personnel patrolling public areas, investigating incidents, managing key control, implementing emergency response plans, and training staff on fire safety, crowd control, and handling difficult guests. These departments also manage energy conservation programs, sustainability initiatives such as water recycling and LED retrofitting, and compliance with local building codes and safety regulations."
+  },
+  {
+    "q": [
+      "What is revenue management in hotels?",
+      "What is yield management in the hotel industry?",
+      "How do hotels use dynamic pricing?",
+      "What is RevPAR in hotel management?",
+      "What is ADR in hotel metrics?",
+      "How is hotel occupancy calculated?",
+      "What is the difference between RevPAR, ADR, and occupancy?"
+    ],
+    "a": "Revenue management (also called yield management) is the strategic practice of optimizing room revenue by forecasting demand and adjusting room rates, availability, and booking restrictions across different distribution channels to sell the right room to the right customer at the right time for the right price. Key performance metrics include Occupancy (percentage of available rooms sold), Average Daily Rate (ADR, total room revenue divided by rooms sold), and Revenue Per Available Room (RevPAR, occupancy multiplied by ADR or total room revenue divided by total available rooms). Advanced revenue management employs hotel property management systems (PMS) integrated with channel managers, rate shopping tools, and revenue management systems (RMS) that use machine learning to recommend pricing strategies in real time based on historical data, competitor pricing, local events, and booking pace."
+  }
+]

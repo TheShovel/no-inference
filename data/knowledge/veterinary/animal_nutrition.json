@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What are the nutritional requirements for dogs and cats?",
+      "What do dogs need in their diet?",
+      "What do cats need in their diet that is different?",
+      "What are essential nutrients for companion animals?",
+      "What is taurine and why do cats need it?",
+      "dog nutritional requirements AAFCO",
+      "cat nutritional requirements obligate carnivore",
+      "essential nutrients pet food",
+      "taurine deficiency cats",
+      "protein requirements dogs vs cats"
+    ],
+    "a": "Dogs are omnivores requiring a balance of protein, fats, carbohydrates, vitamins, and minerals, with AAFCO (Association of American Feed Control Officials) establishing minimum nutrient profiles for growth, adult maintenance, and all life stages, including at least 18% crude protein and 5.5% crude fat on a dry matter basis for adult maintenance. Cats are obligate carnivores with higher protein requirements (minimum 26% crude protein for adults on dry matter) and specific essential nutrients not required by dogs: dietary taurine (needed for cardiac function, vision, and reproduction; deficient in unsupplemented dog food or all-vegetable diets), preformed vitamin A (cats cannot convert beta-carotene to retinol), arachidonic acid (a fatty acid cats cannot synthesize from linoleic acid), and higher niacin requirements. Life-stage appropriate nutrition is critical: puppies and kittens need higher protein, calcium, and phosphorus for growth; seniors may need adjusted phosphorus (for kidney health), higher quality protein, joint-supporting nutrients like glucosamine and omega-3 fatty acids; and all life stages require precise calcium-to-phosphorus ratios (approximately 1.2:1 for large-breed puppies to prevent developmental orthopedic disease)."
+  },
+  {
+    "q": [
+      "What types of pet food are available?",
+      "What is the difference between dry and wet pet food?",
+      "Is raw pet food safe?",
+      "What are grain-free pet foods?",
+      "What are prescription diets for pets?",
+      "dry dog food vs wet dog food",
+      "raw diet dogs risks",
+      "grain-free dog food heart disease",
+      "prescription diet veterinary therapeutic",
+      "pet food types comparison"
+    ],
+    "a": "Dry pet food (kibble) is extruded and baked, offering convenience, longer shelf life, dental benefits from mechanical abrasion, and lower cost per calorie, while wet/canned food has higher moisture content (75-85% vs 10% in dry), beneficial for urinary health, increased palatability, and its higher protein-to-carbohydrate ratio more closely matches ancestral diets. Grain-free pet foods replaced grains (corn, wheat, rice, barley) with alternative carbohydrates like potatoes, peas, lentils, or tapioca, but have been linked (particularly legume-heavy formulas) to canine dilated cardiomyopathy (DCM) by the FDA investigation, suggesting taurine metabolism disruption or other mechanisms, though the relationship remains under investigation and grain-free diets are not inherently beneficial for dogs without confirmed grain allergies. Prescription (therapeutic) diets are formulated to manage specific medical conditions through precise nutrient modification: low-phosphorus, reduced-protein renal diets for chronic kidney disease; hydrolyzed protein or novel protein diets for adverse food reactions; low-fat diets for pancreatitis and hyperlipidemia; urinary dissolution and prevention diets for struvite and calcium oxalate uroliths; and gastrointestinal-support diets with highly digestible ingredients and prebiotic fiber for inflammatory bowel disease and chronic enteropathies."
+  },
+  {
+    "q": [
+      "How can pet obesity be prevented and managed?",
+      "What are feeding guidelines for dogs and cats?",
+      "What nutritional supplements do animals need?",
+      "What are the risks of homemade pet food?",
+      "pet obesity prevention tips",
+      "dog feeding guidelines portion control",
+      "veterinary nutritional supplements",
+      "homemade dog food risks",
+      "body condition score pets",
+      "calorie restriction weight loss pets"
+    ],
+    "a": "Pet obesity is the most common nutritional disease in companion animals, with over 50% of dogs and cats overweight or obese, managed through caloric restriction (using a body condition score of 4-5/9 as target), measured portions fed twice daily (not free-choice), eliminating table scraps and excessive treats, increasing exercise, and using veterinary therapeutic weight loss diets formulated with high protein, low fat, added fiber, and controlled calories to promote satiety while preserving lean muscle mass. Feeding guidelines on pet food labels provide starting points based on weight range and activity level, but individual requirements vary significantly based on metabolism, spay/neuter status (reducing energy needs by 20-30%), and lifestyle—necessitating body weight monitoring and adjustment of portions by 10-25% as needed to maintain ideal condition. Homemade pet diets carry significant risks of nutritional imbalance including calcium deficiencies (causing nutritional secondary hyperparathyroidism and pathologic fractures in growing animals), taurine deficiency in cats, and inappropriate calcium-to-phosphorus ratios, and should only be fed when formulated by a board-certified veterinary nutritionist using software like BalanceIT or through referral to a veterinary nutrition service."
+  },
+  {
+    "q": [
+      "What are specialized diets for pets with allergies?",
+      "What are specialized diets for kidney disease in pets?",
+      "What are specialized diets for urinary health in pets?",
+      "What is large animal nutrition for horses?",
+      "What is cattle and sheep nutrition?",
+      "veterinary allergy diet dogs cats",
+      "renal diet kidney disease dogs cats",
+      "urinary diet struvite oxalate",
+      "horse nutrition forage concentrates",
+      "cattle nutrition ruminant requirements"
+    ],
+    "a": "Adverse food reaction (food allergy and intolerance) management uses elimination diets with either novel protein sources (venison, rabbit, kangaroo, duck, salmon) not previously fed, or hydrolyzed protein diets where proteins are enzymatically broken into fragments too small to trigger immune responses, fed exclusively for 8-12 weeks during the food trial, followed by challenge testing to identify triggering ingredients. Kidney disease diets restrict phosphorus, protein (but not below minimum requirements, while maintaining high-quality biological value), and sodium while increasing omega-3 fatty acids, B vitamins, potassium citrate, and water-soluble fiber, with evidence-based feeding in IRIS Stage 2-4 chronic kidney disease delaying uremic crisis and improving quality of life. Large animal nutrition for horses focuses on forage (hay or pasture) as the foundation (1.5-2.5% of body weight daily), with concentrates (oats, corn, formulated feeds) added for performance horses, lactating mares, or hard keepers, requiring careful mineral balancing (calcium:phosphorus ratio, selenium, copper, zinc), while cattle rations are managed through total mixed rations (TMR) balancing energy, protein, fiber (NDF/ADF), vitamins, and minerals for different production stages—lactation, dry period, growing, and finishing—with rumen health maintained through adequate effective fiber and gradual ration changes to prevent acidosis or bloat."
+  }
+]

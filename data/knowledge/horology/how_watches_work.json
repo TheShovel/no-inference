@@ -1,0 +1,57 @@
+[
+  {
+    "q": [
+      "How does a mechanical watch work?",
+      "What are the main parts of a mechanical watch movement?",
+      "What is the mainspring in a watch?",
+      "What is the gear train in a watch?",
+      "What is the escapement in a watch?",
+      "What is the balance wheel in a watch?",
+      "mechanical movement mainspring gear train escapement balance wheel",
+      "how a watch movement works"
+    ],
+    "a": "A mechanical watch operates through four key components working in sequence: the mainspring stores energy when wound; the gear train transmits that energy from the mainspring barrel through a series of geared wheels to the hands; the escapement releases the energy in precisely controlled increments, creating the ticking sound; and the balance wheel oscillates back and forth at a fixed frequency (typically 28,800 vibrations per hour, or 4 Hz), acting as the timekeeping regulator. The balance wheel and hairspring form a harmonic oscillator—the hairspring's elasticity pulls the balance wheel back, and a jewel pallet fork interacts with the escape wheel to give it precisely timed impulses, maintaining consistent oscillation that drives the watch's accuracy."
+  },
+  {
+    "q": [
+      "What are the different types of watch escapements?",
+      "What is the Swiss lever escapement?",
+      "What is the coaxial escapement?",
+      "What is a tourbillon?",
+      "What is a balance wheel and hairspring?",
+      "escapement types Swiss lever coaxial tourbillon",
+      "balance wheel hairspring how it works",
+      "power reserve in watches"
+    ],
+    "a": "The Swiss lever escapement, invented in the 18th century and refined by Georges-Frédéric Roskopf, is the most common escapement in mechanical watches, using an escape wheel and a pallet fork to transfer energy to the balance wheel. The coaxial escapement, invented by George Daniels and commercialized by Omega, reduces friction by separating the locking and impulse actions, allowing longer service intervals (7–10 years vs 3–5). A tourbillon, invented by Abraham-Louis Breguet in 1801, mounts the escapement and balance wheel in a rotating cage that averages out positional gravity errors, though its value today is primarily aesthetic. Power reserve, the duration a watch runs on a full wind, ranges from 38–42 hours for standard movements to 70 hours or more for modern calibers with enhanced mainsprings and efficient gear trains."
+  },
+  {
+    "q": [
+      "What are watch jewels used for?",
+      "How does a watch calendar mechanism work?",
+      "How does a chronograph work?",
+      "What is a screw-down crown?",
+      "What is water resistance in watches?",
+      "What is the difference between sapphire crystal and mineral glass?",
+      "jewels as bearings in watches",
+      "calendar mechanism chronograph mechanism water resistance ratings",
+      "sapphire crystal vs mineral glass"
+    ],
+    "a": "Jewels (synthetic rubies or sapphires) serve as low-friction bearings for gear pivots in mechanical movements; a basic manual-wind movement uses 15–17 jewels, while complex automatic chronographs may use 40+. Calendar mechanisms use a rotating date disc advanced by a finger or jumper mechanism at midnight, with perpetual calendars accounting for month lengths and leap years via a mechanical program wheel. Chronographs use a column wheel or cam system to start, stop, and reset a seconds hand via a sliding clutch engaging the gear train. Water resistance is measured in meters, ATM, or bars (100m = 10 ATM = 10 bar), but these are static pressure ratings—screw-down crowns and casebacks are required for watches rated over 100m, and actual use in water demands regular gasket maintenance. Sapphire crystal (hardness 9 on the Mohs scale, next to diamond) is far more scratch-resistant than mineral glass (hardness 5–6), though it is more brittle and expensive."
+  },
+  {
+    "q": [
+      "What is Super-LumiNova?",
+      "What are luminous materials used in watches?",
+      "What is tritium used for in watches?",
+      "What are antimagnetic watches?",
+      "What is a silicon hairspring?",
+      "What is shock protection in watches?",
+      "What is COSC chronometer certification?",
+      "What are Grand Seiko accuracy standards?",
+      "luminous materials Super-LumiNova tritium",
+      "antimagnetic silicon hairspring shock protection Incisaflex Paraflex Kif"
+    ],
+    "a": "Luminous materials on watch hands and dials enable readability in darkness: Super-LumiNova is a photoluminescent pigment that charges under light and glows brightly initially, fading over hours; tritium (used in older military watches and still in some specialist brands like Ball) is a radioactive isotope that decays over ~12 years and requires no external charge. Antimagnetic properties are achieved through materials like silicon hairsprings (non-magnetic, also resistant to temperature and shock), ferrous shielding inside the case, and non-magnetic escapement components. Shock protection systems such as Incabloc, Paraflex (Rolex), and Kif protect the delicate balance wheel pivots from impact damage by allowing limited lateral movement. COSC (Contrôle Officiel Suisse des Chronomètres) certifies movements that meet accuracy standards of -4 to +6 seconds per day across five positions and three temperatures, while Grand Seiko's standards are even stricter at -3 to +5 seconds per day for mechanical movements and ±5 seconds per year for Spring Drive."
+  }
+]

@@ -1,82 +1,79 @@
 [
   {
     "q": [
-      "What is conservation?",
-      "How do you define conservation?",
-      "What does conservation actually mean in an environmental context?"
+      "What is conservation biology?",
+      "What is the goal of conservation biology?",
+      "Why is conservation biology important?",
+      "What are the principles of conservation biology?",
+      "How does conservation biology differ from environmental science?",
+      "What is the discipline of conservation biology?"
     ],
-    "a": "Conservation is the practice of protecting, preserving, and managing natural resources to prevent them from being depleted or destroyed. Unlike preservation, which often focuses on keeping nature untouched by humans, conservation focuses on the sustainable use of resources—like forests, water, and minerals—so that they remain available for future generations."
+    "a": "Conservation biology is a mission-driven scientific discipline focused on understanding, protecting, and restoring Earth's biological diversity and natural ecosystems. It emerged as a distinct field in the 1980s in response to the accelerating loss of species and habitats, integrating principles from ecology, genetics, evolution, and environmental policy. Key guiding principles include maintaining genetic diversity within populations, protecting keystone species that have disproportionately large effects on their ecosystems, preserving habitat corridors that allow species movement between fragmented areas, and prioritizing the most endangered species and ecosystems. Conservation biology applies both theoretical models and practical management strategies to address the biodiversity crisis, often working at the intersection of science, policy, and community engagement."
   },
   {
     "q": [
-      "What is the difference between conservation and preservation?",
-      "How does conservation differ from preservation?",
-      "Do conservation and preservation mean the same thing?"
+      "What are protected areas?",
+      "What is a national park?",
+      "What is a nature reserve?",
+      "How effective are protected areas for conservation?",
+      "What are the different types of protected areas?",
+      "What is the IUCN protected area categories?",
+      "What percentage of Earth is protected?"
     ],
-    "a": "While people often use them interchangeably, they have different goals. Preservation seeks to maintain landscapes in their pristine state by limiting human interference entirely. Conservation is more about 'wise use,' allowing humans to harvest resources sustainably, such as regulated logging or managed fishing, to balance human needs with ecological health."
+    "a": "Protected areas are clearly defined geographical spaces that are recognized, dedicated, and managed through legal or other effective means to achieve the long-term conservation of nature and associated ecosystem services. The IUCN categorizes protected areas into six categories ranging from strict nature reserves (Category Ia) where human visitation is limited, to protected areas with sustainable use of natural resources (Category VI). Currently, about 17% of land and 8% of marine areas globally are under some form of protection, with international targets aiming for 30% by 2030 under the Kunming-Montreal Global Biodiversity Framework. Well-managed protected areas have proven highly effective at reducing deforestation, protecting endangered species populations, and maintaining ecosystem integrity, though many protected areas face challenges including insufficient funding, illegal activities, and climate change impacts that are shifting suitable habitats beyond protected boundaries."
   },
   {
     "q": [
-      "What are the main types of biodiversity conservation?",
-      "How do scientists protect biodiversity?",
-      "What are the different approaches to conserving species?"
+      "What is reforestation?",
+      "How does reforestation help the environment?",
+      "What is the difference between reforestation and afforestation?",
+      "How are reforestation projects carried out?",
+      "What is the best way to restore forests?",
+      "What are some successful reforestation projects?"
     ],
-    "a": "Biodiversity conservation is generally split into two categories: in-situ and ex-situ. In-situ conservation happens in the organism's natural habitat, such as creating national parks or wildlife sanctuaries. Ex-situ conservation happens outside the natural habitat, such as in seed banks, zoos, or botanical gardens, providing a safety net for species that are critically endangered in the wild."
+    "a": "Reforestation is the process of replanting trees in areas where forests have been cut down or degraded, while afforestation involves planting trees in areas that have not historically been forested. Successful reforestation goes beyond simply planting large numbers of trees; it requires selecting appropriate native species that support local biodiversity, ensuring genetic diversity, preparing the site properly, and maintaining the young trees for several years. Natural regeneration, where forests are allowed to regrow on their own through seed dispersal from remaining forest patches, is often more cost-effective and produces more ecologically complex forests than active planting. Large-scale reforestation initiatives like the Bonn Challenge aim to restore 350 million hectares of degraded and deforested land by 2030, but careful planning is needed to avoid planting monocultures that provide limited biodiversity benefits or inadvertently replacing valuable non-forest ecosystems like grasslands."
   },
   {
     "q": [
-      "What is a seed bank and why is it important?",
-      "How do seed banks help conserve plants?",
-      "What is the purpose of the Svalbard Global Seed Vault?"
+      "What is rewilding?",
+      "How does rewilding work?",
+      "What are the principles of rewilding?",
+      "What is trophic rewilding?",
+      "What are examples of successful rewilding projects?",
+      "What is the reintroduction of wolves in Yellowstone?"
     ],
-    "a": "A seed bank is a secure facility that stores seeds from a wide variety of plants to preserve genetic diversity. This is crucial for preventing extinction and ensuring food security if crops are wiped out by pests or climate change. The most famous example is the Svalbard Global Seed Vault in Norway, which acts as a 'doomsday' backup for the world's crop diversity."
+    "a": "Rewilding is a conservation approach focused on restoring ecosystems to a state where they can function with minimal human intervention, often by reintroducing keystone species that have been locally extirpated. A classic example is the reintroduction of gray wolves to Yellowstone National Park in 1995, which triggered a cascade of ecological benefits: wolves controlled elk populations, which allowed overgrazed willow and aspen to recover, which stabilized riverbanks and benefited beavers, songbirds, and other species. Rewilding ranges from passive approaches that simply remove human barriers and allow natural processes to resume, to active reintroductions of large herbivores and carnivores that restore trophic complexity. Debates within conservation focus on what baseline to use for restoration, how to manage rewilded areas with minimal intervention, and whether to use de-extinction or assisted migration to address species losses."
   },
   {
     "q": [
-      "How do wildlife corridors help with conservation?",
-      "What are habitat corridors and why are they useful?",
-      "How does connecting fragmented habitats benefit animals?"
+      "What are biodiversity hotspots?",
+      "How are biodiversity hotspots identified?",
+      "Why are biodiversity hotspots important for conservation?",
+      "How many biodiversity hotspots are there?",
+      "What are the criteria for a biodiversity hotspot?",
+      "What are some examples of biodiversity hotspots?"
     ],
-    "a": "Wildlife corridors are strips of natural habitat that connect larger protected areas, allowing animals to move safely between them. This prevents 'habitat fragmentation,' where populations become isolated by roads or cities. By enabling migration and mating between different groups, corridors increase genetic diversity and help species adapt to changing environments."
+    "a": "Biodiversity hotspots are regions that harbor exceptional concentrations of plant and animal species found nowhere else (endemic species) and that have experienced significant habitat loss, making them top priorities for conservation investment. To qualify as a hotspot, a region must contain at least 1,500 species of endemic vascular plants (half a percent of the world's total) and have lost at least 70% of its original habitat. There are currently 36 recognized biodiversity hotspots worldwide, covering only 2.4% of Earth's land surface but containing more than half of the world's plant species and nearly 43% of bird, mammal, reptile, and amphibian species. Notable hotspots include the Atlantic Forest of Brazil, Madagascar and the Indian Ocean Islands, the Sundaland region of Southeast Asia, the Cape Floristic Region of South Africa, and the Tropical Andes."
   },
   {
     "q": [
-      "What is the purpose of the CITES agreement?",
-      "What does CITES stand for and what does it do?",
-      "How is the international trade of endangered species regulated?"
+      "What are endangered ecosystems?",
+      "How do ecosystems become endangered?",
+      "What is ecosystem collapse?",
+      "What are the most threatened ecosystems on Earth?",
+      "What is the IUCN Red List of Ecosystems?",
+      "What are the criteria for endangered ecosystems?"
     ],
-    "a": "CITES stands for the Convention on International Trade in Endangered Species of Wild Fauna and Flora. It is an international agreement between governments that ensures the international trade of wild animals and plants does not threaten their survival. For example, it strictly regulates or bans the trade of ivory from elephants and certain types of rare orchids."
+    "a": "Endangered ecosystems are natural communities and their associated environmental processes that are at significant risk of collapse or transformation due to human activities and environmental change. The IUCN Red List of Ecosystems provides a framework for assessing ecosystem risk using criteria similar to those for species, including declines in geographic distribution, degradation of key ecological functions, and disruption of biotic processes. Some of the most threatened ecosystems include coral reefs (threatened by ocean warming and acidification), Mediterranean-type shrublands (threatened by urbanization and altered fire regimes), freshwater wetlands (drained for agriculture and development), and tropical dry forests (among the most heavily converted ecosystems worldwide). Ecosystem collapse represents a state where the defining features, species composition, and ecological functions of an ecosystem have been fundamentally altered and cannot recover within human timeframes without active restoration."
   },
   {
     "q": [
-      "What is the role of Keystone Species in conservation?",
-      "Why is it important to protect keystone species?",
-      "What happens when a keystone species is removed from an ecosystem?"
+      "What are the IUCN categories for conservation?",
+      "What are IUCN protected area categories?",
+      "What is the difference between IUCN categories Ia and II?",
+      "What is a Category V protected landscape?",
+      "How does the IUCN classify protected areas?"
     ],
-    "a": "A keystone species is an organism that has a disproportionately large effect on its environment relative to its abundance. If a keystone species is removed, the entire ecosystem can collapse. A classic example is the sea otter; by eating sea urchins, otters prevent the urchins from overgrazing kelp forests, which provide vital habitat for countless other marine species."
-  },
-  {
-    "q": [
-      "How does sustainable forestry work?",
-      "What is sustainable forest management?",
-      "How can we log trees without destroying the forest?"
-    ],
-    "a": "Sustainable forestry involves harvesting timber in a way that maintains the forest's biodiversity, productivity, and regeneration capacity. Techniques include selective logging (cutting only specific trees instead of clear-cutting), planting native species to replace what was taken, and leaving 'buffer zones' around streams to protect water quality."
-  },
-  {
-    "q": [
-      "What was the significance of the US National Park Service's creation?",
-      "Why was the establishment of national parks a turning point for conservation?",
-      "When did the US start formalizing land conservation?"
-    ],
-    "a": "The creation of the US National Park Service in 1916 formalized the idea that vast tracts of land should be managed by the government for public enjoyment and ecological protection. Following the success of Yellowstone (established in 1872), this movement shifted the perspective of land from being a commodity for extraction to a shared heritage that requires active management."
-  },
-  {
-    "q": [
-      "What is rewilding and how does it work?",
-      "How does rewilding differ from traditional conservation?",
-      "What are some examples of rewilding projects?"
-    ],
-    "a": "Rewilding is a progressive approach to conservation that focuses on restoring natural processes and wilderness areas by reintroducing apex predators or engineers to the land. A famous example is the reintroduction of wolves to Yellowstone National Park in the 1990s, which controlled elk populations and allowed willow and aspen trees to regrow, fundamentally altering the river systems and attracting more birds and beavers."
+    "a": "The IUCN classifies protected areas into six management categories that reflect their primary objectives: Ia (Strict Nature Reserve) for scientific research with minimal human disturbance, Ib (Wilderness Area) for unmodified natural areas, II (National Park) for ecosystem protection and recreation, III (Natural Monument) for specific natural features, IV (Habitat/Species Management Area) for active management of particular species or habitats, V (Protected Landscape/Seascape) for areas where human-nature interaction has created distinctive landscapes, and VI (Protected Area with Sustainable Use of Natural Resources) for low-level non-industrial resource use. While all categories contribute to conservation, stricter categories like Ia and II generally provide higher biodiversity protection, while Category V and VI areas involve more human presence and land use. The IUCN also separately classifies species conservation status through the Red List Categories (Extinct through Least Concern), which are often confused with the protected area management categories."
   }
 ]

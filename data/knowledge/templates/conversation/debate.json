@@ -1,0 +1,153 @@
+[
+  {
+    "id": "debate-counterarg-001",
+    "triggers": [
+      "on the other hand",
+      "but what about the other side",
+      "what is the counterargument"
+    ],
+    "template": "That's one perspective, but let's consider the other side of the argument. Every position has its strengths and weaknesses, and looking at a claim from the opposite angle often reveals assumptions we didn't realize we were making. The strongest position is usually the one that has been tested against the best counterarguments, so let's explore what someone with a different viewpoint might say about this.",
+    "fallback": "Let's consider the other side of the argument. Every position has strengths and weaknesses worth exploring.",
+    "style": ["analytical", "educational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-devils-advocate-002",
+    "triggers": [
+      "playing devil's advocate",
+      "let me be the devil's advocate",
+      "devil's advocate here"
+    ],
+    "template": "Playing devil's advocate for a moment — let's challenge this position to see if it holds up. Even if we generally agree with the premise, it's worth asking what would happen if the opposite were true. What evidence would count against it? Under what conditions might this reasoning break down? Testing our ideas this way doesn't mean we reject them; it means we want to make sure they're built on solid ground.",
+    "fallback": "Playing devil's advocate means temporarily arguing against a position to test its strength, not because you necessarily disagree.",
+    "style": ["analytical", "conversational"],
+    "response_length": "short"
+  },
+  {
+    "id": "debate-both-sides-003",
+    "triggers": [
+      "both sides of the argument",
+      "what are both sides of this",
+      "present both perspectives"
+    ],
+    "template": "Let's lay out both sides of this argument fairly. On one side, the case rests on several compelling points backed by evidence and logical reasoning. The proponents argue that the benefits are clear and the approach is sound. On the other side, there are legitimate concerns and alternative interpretations of the same evidence. Critics point out potential drawbacks and question some of the underlying assumptions. When you look at both sides honestly, it becomes clear that this isn't a simple right-or-wrong question — it's a matter of weighing trade-offs and considering what matters most in a given situation.",
+    "fallback": "Looking at both sides of an argument means understanding the strongest points for and against a position before forming a conclusion.",
+    "style": ["analytical", "informative"],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-disagree-004",
+    "triggers": [
+      "what would someone who disagrees say",
+      "what do critics of this say",
+      "what is the opposing viewpoint"
+    ],
+    "context_role": "topic",
+    "template": "If someone disagreed with this perspective on {context}, they might raise several points. First, they might argue that the evidence is being interpreted too favorably and that alternative explanations haven't been ruled out. They could point to cases where {context} didn't work as expected, suggesting that it's less reliable than claimed. They might also question whether the principles of {context} are as universal as proponents suggest, arguing that they work only under specific conditions. Engaging with these counterarguments is valuable because it either strengthens your position by showing it can withstand criticism, or reveals blind spots you need to address.",
+    "fallback": "If someone disagreed with this perspective, they might raise counterpoints based on alternative evidence or different interpretations. What topic are we discussing?",
+    "style": ["analytical", "educational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-evidence-005",
+    "triggers": [
+      "is there evidence against that",
+      "what evidence refutes this",
+      "is there data that contradicts this"
+    ],
+    "template": "It's always worth asking what the evidence against a claim looks like. In most meaningful debates, there's evidence on multiple sides — the question is how strong each piece of evidence is and how well it stands up to scrutiny. Some evidence against a claim might come from studies that found different results, cases where the expected outcome didn't materialize, or theoretical arguments that highlight logical inconsistencies. The key isn't to dismiss a claim because there's some evidence against it, but to weigh the totality of evidence and understand why different sources point in different directions.",
+    "fallback": "Looking for contrary evidence is a key part of critical thinking. It's rare for all evidence to point in the same direction.",
+    "style": ["analytical", "informative"],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-prove-point-006",
+    "triggers": [
+      "prove your point",
+      "convince me you're right",
+      "make your case"
+    ],
+    "context_role": "topic",
+    "template": "Let me make the case for this position on {context}. The argument rests on three pillars. First, the logical foundation — the reasoning follows a clear chain from premises to conclusions that makes sense when you examine it step by step. Second, the evidence — there are multiple sources of data and real-world examples that support this view of {context}. Third, the practical implications — accepting this position leads to outcomes that are demonstrably better than the alternatives. Each of these pillars strengthens the overall case, and together they build a compelling argument for why this perspective on {context} deserves serious consideration.",
+    "fallback": "To prove a point effectively, you need clear logical reasoning, supporting evidence, and an understanding of potential counterarguments. What topic are we discussing?",
+    "style": ["analytical", "formal"],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-for-against-007",
+    "triggers": [
+      "make a case for and against",
+      "argue for and against this",
+      "what are the arguments for and against"
+    ],
+    "context_role": "topic",
+    "template": "Let's weigh the arguments for and against this position on {context}. In favor, the strongest points include the logical coherence of the idea, the supporting evidence that has accumulated over time, and the practical success stories where this approach to {context} has delivered results. Against it, the main arguments are the limitations and edge cases where {context} doesn't apply well, the alternative interpretations of the same evidence, and concerns about unintended consequences. When both sides are laid out clearly, it becomes apparent that reasonable people can disagree — and that the best conclusion depends on which factors you prioritize in your specific context.",
+    "fallback": "Making a case for and against means presenting the strongest arguments on both sides to reach a balanced understanding. What topic are we examining?",
+    "style": ["analytical", "educational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-socratic-008",
+    "triggers": [
+      "question this assumption",
+      "challenge this premise",
+      "what if I'm wrong about this"
+    ],
+    "context_role": "topic",
+    "template": "Let's use a Socratic approach to examine this assumption about {context}. We start by asking: what is this assumption based on? Then: how do we know that foundation is solid? Next: are there cases where this assumption about {context} might not hold? And finally: if this assumption turned out to be wrong, what else would change? This line of questioning isn't meant to tear down ideas, but to test them. The strongest beliefs about {context} are the ones that have survived this kind of rigorous examination.",
+    "fallback": "Challenging assumptions is a core part of critical thinking. What assumption would you like to examine together?",
+    "style": ["analytical", "educational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-fallacy-009",
+    "triggers": [
+      "is that a logical fallacy",
+      "what fallacy is this",
+      "spot the fallacy"
+    ],
+    "context_role": "topic",
+    "template": "Let's examine the reasoning here for logical fallacies. A common one in discussions about {context} is the appeal to authority — assuming something is true simply because an expert said it, without examining the evidence. Another frequent pattern is false dichotomy, where the argument presents only two options when there are actually more possibilities. There's also confirmation bias at play when people selectively focus on evidence that supports their view of {context} while ignoring contradicting information. Spotting these fallacies doesn't automatically disprove a position, but it helps us evaluate arguments about {context} more clearly and fairly.",
+    "fallback": "Common logical fallacies include appeals to authority, false dichotomies, and confirmation bias. Would you like me to analyze a specific argument?",
+    "style": ["analytical", "educational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-common-ground-010",
+    "triggers": [
+      "where do we agree",
+      "what common ground is there",
+      "find the middle ground"
+    ],
+    "context_role": "topic",
+    "template": "Even in heated debates about {context}, there's usually more common ground than it first appears. Most reasonable people can agree that understanding {context} is valuable and that certain core principles are well-established. They might also agree that there are still unanswered questions and that different approaches to {context} make sense in different situations. Finding this common ground isn't about avoiding disagreement — it's about establishing a foundation of shared understanding from which productive discussion can happen. Once we agree on what we agree on, we can focus our energy on the genuine disagreements that matter.",
+    "fallback": "Finding common ground means identifying shared beliefs and values even when we disagree on specifics. What topic are we exploring?",
+    "style": ["conversational", "analytical"],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-strawman-011",
+    "triggers": [
+      "is that a straw man",
+      "that's not what I meant",
+      "you're misrepresenting the argument"
+    ],
+    "template": "It sounds like you're concerned about a straw man argument — where someone misrepresents a position to make it easier to attack. This happens when the actual claim is replaced with a weaker or distorted version that's simpler to refute. The best way to avoid straw man arguments is to state the opposing position in its strongest form before responding to it. If you can accurately summarize someone's argument in a way they'd agree with, you're engaging in good faith. This principle of charity — assuming the best version of an argument — leads to more productive discussions and prevents the conversation from devolving into a series of misunderstandings.",
+    "fallback": "A straw man argument misrepresents someone's position to make it easier to attack. The best response is to clarify the original argument in good faith.",
+    "style": ["analytical", "conversational"],
+    "response_length": "medium"
+  },
+  {
+    "id": "debate-nuance-012",
+    "triggers": [
+      "it's more nuanced than that",
+      "let's not oversimplify",
+      "there are shades of gray here"
+    ],
+    "context_role": "topic",
+    "template": "You're right — this topic deserves more nuance than a simple for-or-against framing. {context} involves multiple dimensions that don't align neatly on one side or the other. For instance, what works well in one context may not work in another, and the same principle of {context} can lead to good or bad outcomes depending on how it's applied. The most honest approach is to acknowledge these complexities rather than forcing {context} into a binary framework. The goal of discussion shouldn't be to declare a winner, but to map the terrain of the issue in all its richness and help everyone walk away with a deeper understanding.",
+    "fallback": "Most meaningful topics have nuance and shades of gray that don't fit a simple for-or-against framing. What topic's complexity would you like to explore?",
+    "style": ["analytical", "educational"],
+    "response_length": "medium"
+  }
+]

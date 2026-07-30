@@ -1,0 +1,122 @@
+[
+  {
+    "q": [
+      "What is software engineering?",
+      "Define software engineering.",
+      "What does a software engineer do?",
+      "Explain the field of software engineering.",
+      "How is software engineering different from programming?",
+      "Software engineering overview",
+      "What are the key principles of software engineering?"
+    ],
+    "a": "Software engineering is the systematic application of engineering principles to the design, development, testing, deployment, and maintenance of software systems. Unlike casual programming, software engineering emphasizes disciplined processes, quality assurance, scalability, maintainability, and collaboration among teams. It covers the entire software lifecycle from requirements gathering and architecture design through coding, testing, release, and long-term evolution, using established methodologies and tools to manage complexity and deliver reliable software at scale."
+  },
+  {
+    "q": [
+      "What is the software development lifecycle?",
+      "Explain the SDLC.",
+      "What are the phases of the software development lifecycle?",
+      "What is the difference between waterfall and agile?",
+      "What are the main SDLC models?",
+      "Software development lifecycle explained",
+      "What are the stages of software development?"
+    ],
+    "a": "The Software Development Lifecycle (SDLC) is a structured framework defining the phases of software development: requirements analysis, system design, implementation (coding), testing, deployment, and maintenance. The Waterfall model follows a sequential, phase-by-phase approach where each stage must be completed before the next begins, suitable for projects with well-defined, stable requirements. Agile methodologies, such as Scrum and XP, use iterative cycles (sprints) with continuous feedback, adaptive planning, and frequent delivery of working software, making them ideal for projects with evolving requirements. Other models include V-Model (verification and validation at each phase), Spiral (risk-driven iterations), and DevOps (integrating development and operations for continuous delivery)."
+  },
+  {
+    "q": [
+      "What is requirements engineering?",
+      "Explain requirements engineering in software.",
+      "What are functional and non-functional requirements?",
+      "How are software requirements gathered and documented?",
+      "What is the difference between a user story and a use case?",
+      "Requirements engineering fundamentals",
+      "Why is requirements analysis important in software projects?"
+    ],
+    "a": "Requirements engineering is the process of defining, documenting, and maintaining the specifications for a software system, serving as the bridge between stakeholder needs and technical implementation. Functional requirements describe what the system should do (specific features, behaviors, and capabilities), while non-functional requirements specify quality attributes such as performance, security, scalability, usability, and reliability. Techniques include stakeholder interviews, user stories (short descriptions of features from the user's perspective), use cases (detailed interaction scenarios between actors and the system), and formal requirement specifications, with traceability maintained throughout the project to ensure all requirements are addressed."
+  },
+  {
+    "q": [
+      "What is software architecture?",
+      "Explain software architecture and design.",
+      "What are common software architectural patterns?",
+      "What is the difference between monolithic and microservices architecture?",
+      "What is a layered architecture?",
+      "Software architecture fundamentals",
+      "How is software architecture documented?"
+    ],
+    "a": "Software architecture is the high-level structure of a software system, defining its components, their relationships, and the principles guiding its design and evolution. Common architectural patterns include layered architecture (presentation, business logic, data access layers), microservices (independent, loosely coupled services communicating via APIs), event-driven architecture (components react to events through a message broker), and client-server or n-tier architectures. The choice of architecture impacts scalability, maintainability, deployment flexibility, and team organization. Architecture is documented using models like the C4 model (context, containers, components, code) and UML diagrams, with architectural decision records (ADRs) capturing key design decisions and their rationales."
+  },
+  {
+    "q": [
+      "What are design patterns in software engineering?",
+      "Explain software design patterns.",
+      "What are the main categories of design patterns?",
+      "What is the Singleton pattern?",
+      "What is the Observer pattern?",
+      "Design patterns explained",
+      "What are creational, structural, and behavioral patterns?"
+    ],
+    "a": "Design patterns are reusable, proven solutions to common design problems in software development, categorized into creational, structural, and behavioral patterns. Creational patterns (Singleton, Factory, Builder, Prototype) control object creation mechanisms. Structural patterns (Adapter, Decorator, Facade, Proxy) define how classes and objects compose to form larger structures. Behavioral patterns (Observer, Strategy, Command, Template Method) manage algorithms, responsibilities, and communication between objects. Understanding design patterns enables developers to communicate designs efficiently, avoid reinventing solutions, and create more flexible, maintainable software — though they should be applied judiciously to avoid over-engineering."
+  },
+  {
+    "q": [
+      "What are software testing methodologies?",
+      "Explain testing in software engineering.",
+      "What is the difference between unit testing and integration testing?",
+      "What is test-driven development?",
+      "What are the levels of software testing?",
+      "Software testing fundamentals",
+      "What are manual and automated testing?"
+    ],
+    "a": "Software testing is the process of evaluating and verifying that a software product meets requirements and works correctly, performed at multiple levels. Unit testing validates individual components or functions in isolation. Integration testing verifies that combined components work together correctly. System testing tests the complete, integrated system against requirements, while acceptance testing confirms the software meets user needs (often including alpha and beta testing). Testing approaches include black-box (functional testing without internal knowledge), white-box (structural testing covering code paths), and automated testing using frameworks like JUnit, pytest, Selenium, and Cypress. Test-driven development (TDD) writes tests before code, and behavior-driven development (BDD) uses natural-language scenarios to guide development and testing."
+  },
+  {
+    "q": [
+      "What is version control in software engineering?",
+      "Explain version control systems.",
+      "What is Git and how does it work?",
+      "What is the difference between Git and SVN?",
+      "How do teams collaborate using version control?",
+      "Version control fundamentals",
+      "What are branching strategies in Git?"
+    ],
+    "a": "Version control (source control) is the practice of tracking and managing changes to source code and other files over time, enabling teams to collaborate, revert to previous versions, and maintain a complete history of changes. Git is the most widely used distributed version control system, where each developer has a complete local repository, allowing offline work and flexible branching. Common workflows include Git Flow (with separate branches for features, releases, and hotfixes), GitHub Flow (trunk-based with short-lived feature branches and pull requests), and trunk-based development (frequent integration to a single main branch). Platforms like GitHub, GitLab, and Bitbucket add code review, CI/CD integration, and project management features."
+  },
+  {
+    "q": [
+      "What is code review in software engineering?",
+      "Explain the code review process.",
+      "Why is code review important?",
+      "What are best practices for code review?",
+      "How do teams conduct effective code reviews?",
+      "Code review fundamentals",
+      "What should reviewers look for in a code review?"
+    ],
+    "a": "Code review is the systematic evaluation of source code by one or more developers other than the author, aimed at finding defects, improving code quality, and sharing knowledge across the team. Reviews check for correctness, adherence to coding standards, maintainability, performance issues, security vulnerabilities, and appropriate test coverage. Modern code reviews are typically conducted through pull/merge requests on platforms like GitHub, GitLab, or Azure DevOps, with tools providing inline commenting, approval workflows, and automated checks (linters, static analysis, continuous integration). Best practices include reviewing small, focused changes; providing constructive, specific feedback; and separating style suggestions from functional issues to keep reviews efficient."
+  },
+  {
+    "q": [
+      "What is software deployment?",
+      "Explain software deployment and release management.",
+      "What is continuous integration and continuous deployment?",
+      "How is software deployed to production?",
+      "What are deployment strategies like blue-green and canary?",
+      "Software deployment fundamentals",
+      "What is DevOps and how does it relate to deployment?"
+    ],
+    "a": "Software deployment is the process of making a software system available for use, encompassing build automation, release management, environment configuration, and monitoring. Continuous Integration (CI) automatically builds and tests code with every commit, catching integration issues early. Continuous Delivery (CD) extends CI by automatically deploying to staging environments, with manual approval for production releases, while Continuous Deployment automates the entire pipeline to production. Common deployment strategies include blue-green deployment (maintaining two identical environments with instant traffic switching), canary releases (gradually rolling changes to a subset of users), and rolling updates (incrementally replacing instances). DevOps practices integrate development and operations teams, emphasizing automation, infrastructure as code (Terraform, Ansible), containerization (Docker, Kubernetes), and observability (logging, metrics, tracing)."
+  },
+  {
+    "q": [
+      "What is software maintenance?",
+      "Explain software maintenance in the SDLC.",
+      "What are the types of software maintenance?",
+      "What is refactoring?",
+      "How is legacy software managed?",
+      "Software maintenance fundamentals",
+      "Why is software maintenance important?"
+    ],
+    "a": "Software maintenance is the ongoing process of modifying and updating a software system after its initial deployment to correct faults, improve performance, adapt to changing environments, and enhance functionality. The four types are corrective (fixing bugs), adaptive (accommodating changes in external systems or platforms), perfective (improving performance, usability, or adding features), and preventive (refactoring, documentation updates, and technical debt reduction to prevent future issues). Maintenance typically consumes 60-80% of a software system's total lifecycle cost, making practices like automated testing, clear documentation, modular architecture, and continuous refactoring essential for keeping software maintainable over the long term."
+  }
+]

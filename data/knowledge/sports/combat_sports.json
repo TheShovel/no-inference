@@ -1,0 +1,49 @@
+[
+  {
+    "q": [
+      "What are the weight classes in boxing?",
+      "How does boxing work?",
+      "Who are the most famous boxers?",
+      "What is the difference between boxing and MMA?",
+      "What are the rules of boxing?",
+      "How is boxing scored?"
+    ],
+    "a": "Boxing is a combat sport where two opponents fight using only their fists, wearing padded gloves, in a roped square ring over a series of three-minute rounds (typically 10-12 for professional fights) with one-minute breaks between rounds. Weight classes in professional boxing include heavyweight (unlimited, over 200 lbs), cruiserweight, light heavyweight, middleweight, welterweight, lightweight, featherweight, bantamweight, and flyweight, ensuring fair competition between fighters of similar size. Famous legendary boxers include Muhammad Ali ('The Greatest,' known for his speed, footwork, and charisma), Mike Tyson (the youngest heavyweight champion at 20, feared for his devastating power), Sugar Ray Robinson (widely regarded as the greatest pound-for-pound boxer of all time), and modern stars like Canelo Álvarez and Floyd Mayweather (undefeated in 50 professional fights)."
+  },
+  {
+    "q": [
+      "What is MMA?",
+      "What is the UFC?",
+      "How does MMA scoring work?",
+      "What are the weight classes in the UFC?",
+      "What are the rules of MMA?",
+      "Who are the greatest MMA fighters?",
+      "what is the ufc",
+      "ufc",
+      "mma"
+    ],
+    "a": "Mixed martial arts (MMA) is a full-contact combat sport that incorporates techniques from boxing, wrestling, Brazilian Jiu-Jitsu (BJJ), Muay Thai, kickboxing, judo, and other martial arts, allowing striking (punches, kicks, knees, elbows) and grappling (takedowns, submission holds, ground control) within a regulated framework. The Ultimate Fighting Championship (UFC) is the premier MMA organization globally, founded in 1993, with weight classes spanning strawweight (115 lbs) to heavyweight (265 lbs) and scoring based on effective striking, grappling, aggression, and octagon control per 10-point must system. Legendary fighters include Jon Jones (youngest UFC champion in history), Georges St-Pierre (dominant welterweight champion from Canada), Anderson Silva (longest title reign in UFC history), Khabib Nurmagomedov (retired undefeated at 29-0 with dominant wrestling), and Amanda Nunes (widely considered the greatest female fighter of all time)."
+  },
+  {
+    "q": [
+      "What is Olympic wrestling?",
+      "What is freestyle wrestling?",
+      "What is Greco-Roman wrestling?",
+      "What is the difference between freestyle and Greco-Roman wrestling?",
+      "What are the rules of Olympic wrestling?",
+      "How is wrestling scored?"
+    ],
+    "a": "Olympic wrestling features two disciplines: freestyle wrestling, where competitors may use their legs to attack and defend above and below the waist, and Greco-Roman wrestling, which forbids holds below the waist and emphasizes upper-body throws and locks. Matches consist of two three-minute periods, with points awarded for takedowns (2-5 points based on amplitude and exposure), reversals, and exposure (turning an opponent's back to the mat). Wrestling is one of the oldest Olympic sports, dating back to the ancient Olympic Games in 708 BCE, and countries like the United States (especially freestyle), Russia, Iran, Japan, and Georgia have historically dominated Olympic wrestling medal counts."
+  },
+  {
+    "q": [
+      "What are the major martial arts competitions?",
+      "What is competitive martial arts?",
+      "How do martial arts competitions differ by style?",
+      "What are the safety concerns in combat sports?",
+      "How do combat sports address head injuries?",
+      "What is the medical side of combat sports?"
+    ],
+    "a": "Major martial arts competitions exist across numerous styles: judo (Olympic sport with throws and pins), taekwondo (Olympic sport emphasizing high kicks and speed), Brazilian Jiu-Jitsu (submission grappling tournaments like ADCC), karate (kata and kumite competitions, briefly at the 2020 Olympics), Muay Thai (professional striking with elbows and knees), and kickboxing (stand-up striking under various rule sets like K-1 and Glory). Safety in combat sports has become an increasingly important concern, with particular attention to traumatic brain injury and chronic traumatic encephalopathy (CTE) from repeated head impacts — regulations now include medical suspensions after knockouts, mandatory pre-fight medicals, stricter referee intervention, and weight-cutting oversight. Boxing and MMA organizations have implemented weight-cutting protocols, improved glove design, and longer rest periods between fights, though debate continues over the fundamental risks of sports where head trauma is an inherent part of competition."
+  }
+]

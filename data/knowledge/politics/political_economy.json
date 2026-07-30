@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is political economy?",
+      "How does political economy differ from economics?",
+      "What are the main approaches to political economy?",
+      "What is the difference between capitalism and socialism?",
+      "What are the key features of capitalism?",
+      "What are the key features of socialism?",
+      "What is a mixed economy?"
+    ],
+    "a": "Political economy is an interdisciplinary field that examines the interaction between politics, economics, and institutions, studying how political power and government policies shape economic outcomes and how economic forces influence political decision-making and institutional development. Unlike pure economics which often assumes rational actors in markets, political economy explicitly analyzes how power relations, institutional rules, collective action, and political conflicts affect resource allocation, distribution of wealth, and economic development. Major approaches include classical political economy (Smith, Ricardo, Marx focusing on value, distribution, and class), neoclassical political economy (applying rational choice theory to political behavior including public choice theory), comparative political economy (examining varieties of capitalism and welfare state regimes across countries), and international political economy (studying trade, finance, and global governance)."
+  },
+  {
+    "q": [
+      "What is the welfare state?",
+      "How does the welfare state work?",
+      "What are the different types of welfare states?",
+      "What is globalization?",
+      "How does globalization affect politics and economics?",
+      "What are the main drivers of globalization?",
+      "What are the benefits and drawbacks of globalization?"
+    ],
+    "a": "The welfare state is a system of government programs that provide social protections and economic security to citizens, including social insurance (pensions, unemployment benefits, health insurance), public services (education, healthcare, childcare), and redistributive transfers (progressive taxation, income support). Gøsta Esping-Andersen's influential typology identifies three welfare state regimes: liberal (means-tested, modest benefits, market-oriented — UK, US, Canada), conservative-corporatist (employment-based, status-preserving, family-centric — Germany, France, Italy), and social democratic (universal, generous, decommodifying — Sweden, Denmark, Norway). Globalization refers to the increasing integration of economies, cultures, and political systems through cross-border flows of goods, services, capital, information, and people, accelerated by trade liberalization, technological advances, and international institutions. While globalization has lifted millions out of poverty and reduced prices for consumers, it has also contributed to deindustrialization in developed countries, rising inequality, tax competition, and has constrained national policy autonomy as capital moves more freely than labor."
+  },
+  {
+    "q": [
+      "What is economic inequality?",
+      "How is economic inequality measured?",
+      "What is the Gini coefficient?",
+      "What are the causes of rising inequality?",
+      "What is labor market policy?",
+      "How do labor markets work?",
+      "What is the difference between minimum wage and living wage?"
+    ],
+    "a": "Economic inequality refers to the unequal distribution of income and wealth within a population, commonly measured by the Gini coefficient (ranging from 0 for perfect equality to 1 for complete inequality), the Palma ratio (share of top 10% divided by bottom 40%), and the share of income or wealth held by the top 1% or 10%. Drivers of rising inequality since the 1980s include skill-biased technological change (rewarding education and automation), globalization and trade competition, declining unionization and labor bargaining power, financialization, regressive tax policy, and rising returns to capital versus labor (Piketty's r > g thesis). Labor market policy encompasses regulations governing employment relationships, including minimum wage laws, collective bargaining rights, employment protection legislation, unemployment insurance, active labor market programs (job training, placement services), and anti-discrimination rules — with ongoing debates about the effects of minimum wage increases on employment, the gig economy's impact on worker protections, and the balance between labor market flexibility and security (flexicurity)."
+  },
+  {
+    "q": [
+      "What is trade policy?",
+      "What are tariffs and non-tariff barriers?",
+      "What is the difference between free trade and protectionism?",
+      "What is development economics?",
+      "How do countries develop economically?",
+      "What is the role of institutions in economic development?",
+      "What is economic regulation?"
+    ],
+    "a": "Trade policy encompasses government rules governing international trade, including tariffs (taxes on imported goods), quotas (quantitative limits on imports), non-tariff barriers (regulatory standards, licensing requirements, sanitary rules), and trade agreements that reduce these barriers (WTO agreements, regional deals like USMCA and the EU single market). The longstanding debate between free trade (based on comparative advantage theory, arguing that trade benefits all participating countries through specialization and efficiency) and protectionism (arguing that domestic industries, workers, and national security require shielding from foreign competition) has intensified with concerns about supply chain resilience, strategic competition with China, and the distributional effects of trade on manufacturing workers. Development economics examines why some countries grow rich while others remain poor, emphasizing the importance of institutions (property rights, rule of law, limited government), human capital (education and health), infrastructure, access to capital, geographic factors, and historical legacies of colonialism — with significant debates between Washington Consensus policies (liberalization, privatization, deregulation) and alternative approaches emphasizing industrial policy, state-led development, and attention to inequality and sustainability."
+  }
+]

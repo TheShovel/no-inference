@@ -1,0 +1,57 @@
+[
+  {
+    "q": [
+      "What is group dynamics in sociology?",
+      "How do groups influence individual behavior?",
+      "What are the different types of social groups?",
+      "What is the difference between primary and secondary groups?",
+      "What are in-groups and out-groups?",
+      "How do reference groups shape behavior and identity?"
+    ],
+    "a": "Group dynamics refers to the patterns of interaction, communication, and influence that occur within social groups. Sociologist Charles Horton Cooley distinguished between primary groups (small, intimate, enduring relationships like family and close friends that shape our core identity and values) and secondary groups (larger, more impersonal, goal-oriented relationships like coworkers or classmates). In-groups are groups we belong to and identify with, while out-groups are those we do not belong to — and this distinction can foster solidarity and loyalty toward the in-group but also prejudice and hostility toward out-groups. Reference groups are the groups to which individuals compare themselves, which may not be the groups they actually belong to (e.g., aspiring to join a higher social class), and they powerfully shape aspirations, self-evaluation, and behavior."
+  },
+  {
+    "q": [
+      "What is social identity theory?",
+      "Who developed social identity theory?",
+      "How does social identity theory explain group behavior?",
+      "What is the minimal group paradigm?",
+      "How does social identity theory relate to prejudice and discrimination?",
+      "What are the key stages of social identity formation?"
+    ],
+    "a": "Social identity theory, developed by Henri Tajfel and John Turner in the 1970s, proposes that individuals derive part of their self-concept from the groups they belong to, and that this social identity drives intergroup behavior. The theory identifies three key processes: social categorization (we classify people into groups), social identification (we adopt the identity of our groups), and social comparison (we compare our groups favorably to others to enhance self-esteem). Tajfel's minimal group paradigm experiments demonstrated that merely being assigned to an arbitrary, meaningless group was enough to trigger in-group favoritism and out-group discrimination. This indicates that the psychological need for positive distinctiveness — to see our own group as better than others — is a fundamental driver of prejudice, stereotyping, and intergroup conflict, even in the absence of any real competition or history between groups."
+  },
+  {
+    "q": [
+      "What is conformity and how does it work?",
+      "What is the difference between conformity, compliance, and obedience?",
+      "What were Solomon Asch's conformity experiments?",
+      "What factors increase or decrease conformity?",
+      "What is informational versus normative social influence?",
+      "What did the Asch line judgment experiment demonstrate?"
+    ],
+    "a": "Conformity is the tendency to align one's attitudes, beliefs, and behaviors with group norms or expectations. Psychologist Solomon Asch's classic 1950s experiments showed that in unambiguous tasks (matching line lengths), about 75% of participants conformed to an incorrect group answer at least once, revealing the power of social pressure even in clear-cut situations. Conformity arises from two distinct motivations: informational social influence (genuinely believing the group is correct, especially in ambiguous situations) and normative social influence (wanting to be accepted and avoid disapproval). Key factors that affect conformity include group size (growing up to 4-5 members), unanimity (even one dissenter dramatically reduces conformity), culture (collectivist societies show higher rates), and the public nature of the response. Obedience specifically refers to following direct commands from an authority figure, most famously studied in Stanley Milgram's shock experiments."
+  },
+  {
+    "q": [
+      "What is collective behavior and how do social movements form?",
+      "What are the different types of collective behavior?",
+      "What is crowd psychology?",
+      "What are the main theories of social movements?",
+      "What is the difference between a riot, a protest, and a social movement?",
+      "How does resource mobilization theory explain social movements?"
+    ],
+    "a": "Collective behavior refers to voluntary, often spontaneous activity by a large group of people that emerges outside established institutional frameworks — including crowds, panics, fads, rumors, and public opinion. Social movements are more organized, sustained, and goal-directed forms of collective behavior that aim to promote or resist social change. Key sociological theories of social movements include: resource mobilization theory (emphasizing the importance of resources like money, organization, and media access), political process theory (focusing on political opportunities and the broader political context), and framing theory (how movements construct narratives to inspire participation and win public support). Early crowd psychology, such as Gustave Le Bon's work (1895), portrayed crowds as irrational and easily manipulated, but modern scholarship recognizes that collective behavior involves complex decision-making, emergent norms, and rational strategic action by participants."
+  },
+  {
+    "q": [
+      "What is prejudice and how does it differ from discrimination?",
+      "What are the psychological and social roots of prejudice?",
+      "What is the difference between individual and institutional discrimination?",
+      "How do stereotypes relate to prejudice and discrimination?",
+      "How can prejudice be reduced between groups?",
+      "What is the contact hypothesis?"
+    ],
+    "a": "Prejudice refers to negative attitudes, beliefs (stereotypes), and emotional responses toward members of a group based solely on their group membership, while discrimination is the behavioral manifestation — unequal treatment of people based on their group affiliation. The two are related but not identical: prejudice can exist without discriminatory behavior (and vice versa), particularly when social norms or laws constrain action. Allport's contact hypothesis, later developed into intergroup contact theory, proposes that contact between groups under optimal conditions — equal status, common goals, intergroup cooperation, and institutional support — can reduce prejudice. Meta-analyses of over 500 studies confirm that intergroup contact reliably reduces prejudice across a wide range of groups and contexts. Institutional discrimination refers to patterns of unequal treatment embedded in the normal operations of organizations, systems, and policies (such as housing, banking, or criminal justice practices) that systematically disadvantage certain groups, regardless of individual intentions."
+  }
+]

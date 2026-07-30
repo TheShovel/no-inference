@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "What is dairy farming?",
+      "How do modern milking systems work?",
+      "What is automated milking?",
+      "How is herd management done in dairy farming?",
+      "What do dairy cows eat?",
+      "dairy farming practices",
+      "dairy herd management",
+      "dairy cattle nutrition"
+    ],
+    "a": "Dairy farming involves the production of milk from cows (and sometimes goats or sheep), with modern operations using automated milking systems (robotic milkers) that allow cows to be milked on demand, typically 2-3 times daily, while sensors monitor milk quality, volume, and cow health indicators. Herd management software tracks each animal's lactation cycle, reproductive status, health records, and genetic data, enabling precision feeding that balances rations for optimal milk production and cow health. Nutrition programs for dairy cows are carefully formulated with forages (alfalfa, corn silage), grains, protein supplements, minerals, and vitamins to meet the high energy demands of lactation, with total mixed rations (TMR) ensuring consistent nutrient intake across the herd."
+  },
+  {
+    "q": [
+      "What is beef cattle production?",
+      "What is a feedlot?",
+      "What is grass-fed beef?",
+      "How does beef cattle breeding work?",
+      "What are the different beef production systems?",
+      "beef cattle farming",
+      "feedlot operations",
+      "grass fed beef production"
+    ],
+    "a": "Beef cattle production spans two main systems: cow-calf operations where breeding herds produce calves that are raised on pasture until weaning, and finishing operations that bring cattle to market weight through grass-finishing on pasture or grain-finishing in feedlots. Feedlots (concentrated animal feeding operations or CAFOs) confine cattle in pens and feed them high-energy grain rations to achieve rapid weight gain and consistent marbling, producing the majority of beef in North America with close veterinary oversight and growth monitoring. Grass-fed beef production raises cattle entirely on pasture and forage, resulting in leaner meat with a different fatty acid profile higher in omega-3s and conjugated linoleic acid, though it requires more land and time to reach market weight compared to grain-fed systems."
+  },
+  {
+    "q": [
+      "What is poultry production?",
+      "What are layer hens?",
+      "What are broiler chickens?",
+      "What are the different poultry housing systems?",
+      "How are commercial eggs produced?",
+      "poultry farming",
+      "layer hen management",
+      "broiler production systems"
+    ],
+    "a": "Poultry production is divided into layer operations for egg production and broiler operations for meat production, with modern commercial breeds specialized for each purpose — laying hens can produce over 300 eggs per year while broilers reach market weight in as little as 6-7 weeks. Housing systems for layers range from conventional cage systems (battery cages) to enriched colonies with perches and nesting areas and cage-free barn or free-range systems, with regulatory trends in many regions phasing out conventional cages in favor of higher-welfare alternatives. Broiler production typically uses large, climate-controlled barns with automated feeding, watering, and ventilation systems, where chickens are raised on the floor with litter material and managed under strict biosecurity protocols to prevent disease outbreaks like avian influenza."
+  },
+  {
+    "q": [
+      "What is swine production?",
+      "How are pigs raised commercially?",
+      "What is sheep farming?",
+      "What is goat farming?",
+      "What is aquaculture?",
+      "How does fish farming work?",
+      "swine production systems",
+      "sheep and goat farming"
+    ],
+    "a": "Swine production ranges from farrow-to-finish operations managing the entire pig lifecycle to specialized wean-to-finish or finishing operations, with modern facilities using climate-controlled barns, slatted floors for waste management, and precision feeding systems that optimize growth rates and feed conversion ratios. Sheep farming produces meat (lamb and mutton), wool, and milk, with management systems varying from extensive range grazing in Australia and New Zealand to more intensive confined operations in Europe. Aquaculture is the fastest-growing food production sector globally, encompassing fish farming (salmon, tilapia, catfish, carp), shellfish cultivation (oysters, mussels, shrimp), and seaweed farming, with systems ranging from open-net pens in coastal waters to fully controlled recirculating aquaculture systems (RAS) on land."
+  }
+]

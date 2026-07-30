@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is food and beverage management?",
+      "What does F&B management involve in hospitality?",
+      "How are food and beverage operations structured?",
+      "What is the role of an F&B manager?",
+      "What departments fall under food and beverage management?",
+      "What are the key functions of F&B operations?",
+      "What does food and beverage service include?"
+    ],
+    "a": "Food and beverage management encompasses the planning, organizing, and controlling of all food and drink operations within a hospitality establishment, including restaurants, bars, room service, banquet facilities, and catering. It covers purchasing and receiving supplies, inventory control, menu planning and pricing, production management, service standards, sanitation compliance, and financial oversight. F&B management is considered one of the most complex areas of hospitality due to high operating costs, perishable inventory, fluctuating demand, and the direct impact on guest satisfaction and revenue generation."
+  },
+  {
+    "q": [
+      "What is menu engineering?",
+      "How does menu engineering maximize profitability?",
+      "What is the difference between menu analysis and menu engineering?",
+      "How are menu items categorized in menu engineering?",
+      "What are stars, plowhorses, puzzles, and dogs in menu engineering?",
+      "How do restaurants design profitable menus?",
+      "What is the menu engineering matrix?"
+    ],
+    "a": "Menu engineering is a systematic approach to menu analysis that categorizes items based on their popularity (sales volume) and profitability (contribution margin) into four quadrants: stars (high popularity, high profitability), plowhorses (high popularity, low profitability), puzzles (low popularity, high profitability), and dogs (low popularity, low profitability). The methodology uses a menu engineering matrix to identify which items to feature prominently, reposition, reprice, or remove, often leveraging eye-tracking data and psychological pricing tactics like eliminating dollar signs and placing high-margin items in prime positions. Effective menu engineering can increase restaurant profitability by 10-15% without changing food quality or raising prices across the board."
+  },
+  {
+    "q": [
+      "What is beverage management in hospitality?",
+      "How are bar operations managed?",
+      "What does a wine program include?",
+      "How do restaurants manage their beverage inventory?",
+      "What is a sommelier's role in beverage management?",
+      "What are the key components of beverage cost control?",
+      "How do bars calculate pour cost?"
+    ],
+    "a": "Beverage management involves overseeing bar operations and drink programs including purchasing and receiving alcoholic and non-alcoholic beverages, inventory control, recipe standardization, pricing, and staff training on proper pouring techniques and service standards. Wine program management includes selecting a balanced wine list, proper storage at correct temperatures and humidity, glassware selection, wine-by-the-glass programs, and training staff on food and wine pairing guided by a certified sommelier. Beverage cost control relies on measuring pour cost percentage (cost of goods sold divided by sales), implementing portion control through jiggers and automated dispensing systems, conducting regular inventory counts, and monitoring pour variance to detect over-pouring or theft."
+  },
+  {
+    "q": [
+      "What technology is used in restaurant and F&B operations?",
+      "What is a POS system in restaurants?",
+      "How do reservation systems work in hospitality?",
+      "What are modern F&B technology trends?",
+      "What is a kitchen display system?",
+      "How does restaurant technology improve operations?",
+      "What is the role of technology in food and beverage management?"
+    ],
+    "a": "Point of Sale (POS) systems are the central technology platform in F&B operations, handling order entry, payment processing, table management, inventory tracking, and sales reporting, with modern cloud-based systems offering real-time data access and integration with kitchen display systems (KDS) that replace printed tickets. Reservation and table management platforms like OpenTable and Resy enable online booking, optimize table turns through dynamic seating algorithms, and help manage waitlists and guest preferences. Emerging F&B technology trends include contactless ordering and payment via QR codes, AI-driven demand forecasting and dynamic pricing, robotic kitchen assistants, inventory management with RFID tagging, and data analytics tools that provide insights into menu performance, labor efficiency, and customer preferences."
+  }
+]

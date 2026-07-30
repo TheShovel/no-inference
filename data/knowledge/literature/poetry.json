@@ -1,0 +1,74 @@
+[
+  {
+    "q": [
+      "What is poetry?",
+      "What is the definition of poetry?",
+      "How is poetry different from prose?",
+      "What makes something a poem?",
+      "What are the elements of poetry?",
+      "What is the purpose of poetry?",
+      "Why do poets write poetry?"
+    ],
+    "a": "Poetry is a form of literary expression that uses aesthetic and rhythmic qualities of language — including sound, meter, imagery, and figurative meaning — to evoke emotion, convey experience, or explore ideas in ways that differ from ordinary speech or prose. Unlike prose, poetry often employs line breaks, stanza structure, concentrated language, and heightened attention to the sound and texture of words. Poetry can serve many purposes: to tell stories (narrative poetry), express personal emotion (lyric poetry), explore philosophical questions, critique society, celebrate beauty, or simply play with language. The essence of poetry lies in its compression — saying as much as possible in as few words as possible, with every word chosen for its sound, meaning, connotations, and contribution to the poem's overall effect."
+  },
+  {
+    "q": [
+      "What are the different poetic forms?",
+      "What is a sonnet?",
+      "What is a haiku?",
+      "What is a villanelle?",
+      "What is a sestina?",
+      "What is free verse poetry?",
+      "What is blank verse?",
+      "What is the difference between Petrarchan and Shakespearean sonnets?",
+      "How many lines are in a sonnet?",
+      "What is a limerick?"
+    ],
+    "a": "Poetic forms are structured patterns of meter, rhyme, and line organization. A sonnet is a 14-line poem typically written in iambic pentameter — the Shakespearean sonnet rhymes ABABCDCDEFEFGG with a concluding couplet, while the Petrarchan (Italian) sonnet divides into an octave (ABBAABBA) and a sestet (CDECDE or variations). A haiku is a traditional Japanese form of three lines with a 5-7-5 syllable pattern, usually containing a seasonal reference (kigo) and a cutting word (kireji) that creates a juxtaposition. A villanelle has 19 lines with five tercets followed by a quatrain, using only two rhymes and repeating two refrain lines throughout — exemplified by Dylan Thomas's 'Do Not Go Gentle into That Good Night.' A sestina is a highly complex form of 39 lines using six end-words rotated through a fixed pattern across six stanzas, while free verse avoids fixed meter and rhyme entirely, relying instead on natural speech rhythms, line breaks, and other poetic techniques, and blank verse is unrhymed iambic pentameter (the meter of Shakespeare's plays and Milton's 'Paradise Lost')."
+  },
+  {
+    "q": [
+      "What is rhyme and meter in poetry?",
+      "How does rhyme scheme work in poetry?",
+      "What is iambic pentameter?",
+      "What is poetic meter?",
+      "What are different types of meter in poetry?",
+      "What is imagery in poetry?",
+      "How is figurative language used in poetry?",
+      "What is a metaphor in poetry?",
+      "What is alliteration in poetry?",
+      "What is personification in poetry?"
+    ],
+    "a": "Meter in poetry is the rhythmic pattern of stressed and unstressed syllables, organized into feet — the most common in English being the iamb (unstressed-stressed, as in 'today'), trochee (stressed-unstressed, 'never'), anapest (unstressed-unstressed-stressed, 'intervene'), and dactyl (stressed-unstressed-unstressed, 'elephant'). Iambic pentameter — five iambs per line — is the most celebrated meter in English poetry, used by Shakespeare, Milton, and Wordsworth for its natural approximation of English speech rhythm. Rhyme scheme is the pattern of end-rhymes in a poem, labeled with letters (ABAB, etc.). Imagery appeals to the senses — visual, auditory, tactile, olfactory, and gustatory — creating vivid mental pictures that evoke emotion and convey meaning beyond the literal. Figurative language includes metaphor (direct comparison without 'like' or 'as'), simile (comparison using 'like' or 'as'), personification (giving human qualities to non-human things), alliteration (repetition of initial consonant sounds), and enjambment (continuing a sentence beyond a line break without a pause), all of which work together to create the layered, compressed meaning characteristic of poetry."
+  },
+  {
+    "q": [
+      "Who are the most famous poets?",
+      "What is Emily Dickinson known for?",
+      "What is Robert Frost known for?",
+      "What is Sylvia Plath known for?",
+      "What is Pablo Neruda known for?",
+      "What is Maya Angelou known for?",
+      "What is T.S. Eliot known for?",
+      "What is W.B. Yeats known for?",
+      "What is Walt Whitman known for?",
+      "Who are the most influential poets in history?"
+    ],
+    "a": "Emily Dickinson (1830-1886) wrote nearly 1,800 poems characterized by their compact, slant-rhymed, and brilliantly unconventional use of dashes and capitalization, exploring themes of death, immortality, nature, and the inner life — though fewer than a dozen were published in her lifetime. Robert Frost (1874-1963) used the rhythms and vernacular of rural New England to explore complex philosophical themes in deceptively simple poems like 'The Road Not Taken' and 'Stopping by Woods on a Snowy Evening,' winning four Pulitzer Prizes. Pablo Neruda (1904-1973), the Chilean poet and Nobel laureate, wrote passionate love poems (the 'Twenty Love Poems and a Song of Despair'), epic historical poems ('Canto General'), and odes to everyday objects, demonstrating poetry's capacity for both intimate emotion and political engagement. Maya Angelou (1928-2014) used her powerful, musical verse — most famously 'I Know Why the Caged Bird Sings' — to explore themes of identity, racism, and resilience, while T.S. Eliot's 'The Waste Land' (1922) and 'The Love Song of J. Alfred Prufrock' revolutionized modernist poetry with their fragmented, allusive style, and Walt Whitman's 'Leaves of Grass' broke decisively from European poetic tradition with its free verse, expansive catalogues, and democratic vision."
+  },
+  {
+    "q": [
+      "What are the major movements in poetry?",
+      "What is Romantic poetry?",
+      "What is Victorian poetry?",
+      "What is Modernist poetry?",
+      "What is Beat poetry?",
+      "What is Confessional poetry?",
+      "What was the Romantic movement in poetry?",
+      "Who were the Romantic poets?",
+      "What defines Modernist poetry?",
+      "What is the Beat Generation in poetry?"
+    ],
+    "a": "The Romantic movement (late 18th to mid-19th century) emphasized emotion, individualism, nature, and the sublime over Enlightenment rationalism, with poets like William Wordsworth, Samuel Taylor Coleridge, William Blake, John Keats, Percy Bysshe Shelley, and Lord Byron creating works that celebrated imagination, intense feeling, and the beauty of the natural world. Victorian poetry (1837-1901), including Alfred Lord Tennyson, Robert Browning, and Matthew Arnold, often grappled with religious doubt, industrialization, and social questions, using elaborate language and dramatic monologues. Modernist poetry (early to mid-20th century) reacted against Victorian conventions by embracing fragmentation, allusion, free verse, and the inner consciousness — Ezra Pound's directive to 'Make it new' drove experimentation by T.S. Eliot, William Carlos Williams, Wallace Stevens, and H.D. The Beat poets of the 1950s (Allen Ginsberg's 'Howl,' Jack Kerouac, Lawrence Ferlinghetti) rejected academic formalism for raw, spontaneous, and countercultural verse, while Confessional poetry of the 1950s-60s (Robert Lowell, Sylvia Plath, Anne Sexton, John Berryman) broke taboos by directly confronting personal experiences of mental illness, sexuality, trauma, and family with unflinching honesty."
+  }
+]

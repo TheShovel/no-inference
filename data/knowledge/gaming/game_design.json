@@ -1,0 +1,46 @@
+[
+  {
+    "q": [
+      "What are game mechanics in video game design?",
+      "Tell me about core game mechanics and gameplay loops.",
+      "How do game designers create engaging mechanics?",
+      "What is the difference between game mechanics and game dynamics?",
+      "Describe examples of innovative game mechanics.",
+      "What makes a good game mechanic?"
+    ],
+    "a": "Game mechanics are the rules, systems, and interactions that define how a game operates and how players engage with it, forming the fundamental building blocks of game design. Core mechanics form the primary gameplay loop — for example, Minecraft's loop of mining resources, crafting tools, and building structures creates an emergent creative experience. Well-designed mechanics provide meaningful choices with clear feedback, maintain a balanced risk-reward ratio, and often feature \"easy to learn, hard to master\" depth that keeps players engaged over time."
+  },
+  {
+    "q": [
+      "What is level design in video games?",
+      "Tell me about level design principles and techniques.",
+      "How do level designers create engaging game spaces?",
+      "What is the difference between linear and non-linear level design?",
+      "Describe the process of designing a game level.",
+      "What makes good level design in platformers and shooters?"
+    ],
+    "a": "Level design is the craft of creating the spaces, challenges, and pacing that players experience, from the layout of a platformer's obstacles to the geography of an open world. Good level design guides players through intuitive visual cues, teaches mechanics through safe practice before introducing challenges, and maintains engagement through varied pacing — alternating intensity with moments of rest. Level designers consider flow, sightlines, navigation, environmental storytelling, and how the level's structure supports the game's genre and mechanics, whether it's a tightly crafted linear corridor or a sprawling open landscape."
+  },
+  {
+    "q": [
+      "What is narrative design in games?",
+      "Tell me about storytelling in video games.",
+      "How do games tell stories differently from books and movies?",
+      "What is environmental storytelling in games?",
+      "Describe the role of a narrative designer in game development.",
+      "What are examples of games with excellent narrative design?"
+    ],
+    "a": "Narrative design encompasses how a game's story is delivered, structured, and integrated with gameplay, ranging from linear narratives to branching stories shaped by player choices. Unlike passive media, games can tell stories through gameplay itself — environmental storytelling uses level details and objects to convey history and atmosphere, while systemic narratives emerge from player actions within a dynamic world. Games like The Last of Us, Disco Elysium, and Planescape: Torment are celebrated for narrative design that deeply integrates story with mechanics, making players feel like active participants rather than observers."
+  },
+  {
+    "q": [
+      "What is playtesting in game development?",
+      "Tell me about the game prototyping and testing process.",
+      "How do game developers test and improve their games?",
+      "What is the difference between QA testing and playtesting?",
+      "Describe the iterative design process in game development.",
+      "Why is playtesting important for game design?"
+    ],
+    "a": "Playtesting is the practice of observing real players interacting with a game to identify issues, gather feedback, and validate design decisions throughout development. Early prototyping uses paper mockups, gray-box levels, and minimal mechanics to test core concepts before investing in full production. Iterative playtesting reveals usability problems, balance issues, and whether the game is actually fun, with designers analyzing player behavior and feedback to refine mechanics, difficulty curves, and user experience through multiple cycles of testing and adjustment."
+  }
+]

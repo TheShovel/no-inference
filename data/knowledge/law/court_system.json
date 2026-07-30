@@ -1,0 +1,49 @@
+[
+  {
+    "q": [
+      "What are trial courts and how do they work?",
+      "Tell me about the role of trial courts in the legal system.",
+      "How does a trial court proceeding work?",
+      "What is the difference between trial and appellate courts?",
+      "Describe the structure of a trial court.",
+      "What happens during a trial in court?"
+    ],
+    "a": "Trial courts are the first level of the judicial system where cases are initially heard, facts are determined, and law is applied to the specific circumstances of each case. They conduct both bench trials (decided by a judge alone) and jury trials (where a jury determines questions of fact), with the judge serving as the legal authority who rules on evidence and instructs the jury on the applicable law. Trial courts handle both criminal and civil matters, with specialized divisions that may include family court, probate court, traffic court, and small claims court designed for efficient resolution of particular types of disputes."
+  },
+  {
+    "q": [
+      "What are appellate courts and what do they do?",
+      "Tell me about the appeals process in the legal system.",
+      "How do appellate courts review trial court decisions?",
+      "What is the difference between an appeal and a trial?",
+      "Describe the structure of appellate court systems.",
+      "What standards of review do appellate courts use?"
+    ],
+    "a": "Appellate courts review decisions made by trial courts to determine whether legal errors occurred that affected the outcome, without conducting new trials or hearing new evidence. Unlike trial courts, appellate cases are typically heard by panels of multiple judges — often three in intermediate appellate courts — who review written briefs and hear oral arguments from attorneys. The appellate court can affirm the lower court's decision, reverse it, remand the case back for further proceedings, or modify the judgment, with review typically limited to questions of law rather than factual disputes."
+  },
+  {
+    "q": [
+      "What is a supreme court and what powers does it have?",
+      "Tell me about the role of supreme courts in different countries.",
+      "How does the US Supreme Court differ from other supreme courts?",
+      "What is the highest court in a country?",
+      "Describe the function of a supreme court in the judicial system.",
+      "How are supreme court justices selected?",
+      "supreme court",
+      "what is the supreme court",
+      "what does the supreme court do"
+    ],
+    "a": "A supreme court is the highest judicial body in a jurisdiction, serving as the court of last resort whose decisions are final and binding on all lower courts within that legal system. The United States Supreme Court, established by Article III of the Constitution, has the power of judicial review to declare laws unconstitutional and consists of nine justices appointed for life by the President with Senate confirmation. Other nations structure their highest courts differently — the UK Supreme Court has 12 justices, Germany's Federal Constitutional Court specializes in constitutional matters, and France's Court of Cassation primarily reviews procedural correctness rather than constitutional questions."
+  },
+  {
+    "q": [
+      "What is the jury system and how does it work?",
+      "Tell me about the role of juries in the legal system.",
+      "How are jurors selected for a trial?",
+      "What is the difference between a grand jury and a trial jury?",
+      "Describe how a jury reaches a verdict.",
+      "What are the advantages and disadvantages of the jury system?"
+    ],
+    "a": "The jury system involves ordinary citizens selected to serve as fact-finders in legal proceedings, a cornerstone of common law systems that ensures community participation in the administration of justice. In criminal trials, juries (typically 12 members in serious cases) hear evidence presented by both sides, receive legal instructions from the judge, and deliberate in secret to reach a unanimous or supermajority verdict. The jury selection process, known as voir dire, allows both prosecution and defense to question potential jurors and challenge those who may be biased, while the jury system itself is praised for providing peer judgment and criticized for potential biases, high costs, and the complexity of modern cases overwhelming lay jurors."
+  }
+]

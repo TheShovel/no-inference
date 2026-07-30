@@ -1,0 +1,92 @@
+[
+  {
+    "id": "practical-tips",
+    "triggers": ["tips for {context}", "advice for {context}", "suggestions for {context}", "any tips on {context}"],
+    "context_role": "topic",
+    "template": "Here are some practical tips for working with {context}:\n\n1. **Start small** — Focus on the fundamentals before diving into advanced territory.\n2. **Build consistency** — Regular, small efforts compound far better than sporadic intensity.\n3. **Learn from others** — Study how experienced practitioners approach {context} and adapt their techniques.\n4. **Iterate and reflect** — Review what's working and adjust your approach accordingly.\n5. **Use the right tools** — Invest time in setting up an environment that supports your work with {context}.",
+    "fallback": "I'd be happy to share practical tips! Could you tell me more about what you're trying to accomplish?",
+    "style": ["educational", "actionable"],
+    "response_length": "medium"
+  },
+  {
+    "id": "practices-best",
+    "triggers": ["best practices for {context}", "recommended practices for {context}", "industry standards for {context}"],
+    "context_role": "topic",
+    "template": "The best practices for {context} have been shaped by collective experience across the field. Key recommendations include: maintaining clear documentation, following established conventions, prioritizing maintainability over cleverness, testing early and often, and seeking feedback from peers. These practices help avoid common pitfalls and ensure your work remains sustainable as it grows.",
+    "fallback": "Great question about best practices! Could you specify which area or role within this topic you're most interested in?",
+    "style": ["educational", "authoritative"],
+    "response_length": "medium"
+  },
+  {
+    "id": "practices-mistakes",
+    "triggers": ["common mistakes with {context}", "what to avoid in {context}", "pitfalls of {context}", "errors in {context}"],
+    "context_role": "topic",
+    "template": "Common mistakes with {context} include: rushing into advanced territory without solid foundations, neglecting fundamentals in favor of trendy approaches, underestimating the learning curve, ignoring community conventions, and trying to do too much at once. Being aware of these pitfalls can save you significant time and frustration.",
+    "fallback": "I can highlight common mistakes to watch out for. What aspect of this topic are you currently working on?",
+    "style": ["educational", "cautionary"],
+    "response_length": "medium"
+  },
+  {
+    "id": "practices-improvement",
+    "triggers": ["how to get better at {context}", "improve my {context} skills", "level up in {context}", "master {context}"],
+    "context_role": "topic",
+    "template": "To get better at {context}, focus on deliberate practice rather than passive learning. Set specific goals, work on projects that challenge your current abilities, seek constructive feedback, and regularly review your progress. Deliberately pushing just beyond your comfort zone — while maintaining consistent practice — is the most reliable path to improvement.",
+    "fallback": "Improvement comes with the right approach. What's your current level with this topic so I can tailor the advice?",
+    "style": ["educational", "motivational", "actionable"],
+    "response_length": "medium"
+  },
+  {
+    "id": "practices-equipment",
+    "triggers": ["what equipment do I need for {context}", "what tools are needed for {context}", "what gear for {context}", "equipment required for {context}"],
+    "context_role": "topic",
+    "template": "The essential equipment and tools for {context} depend on your goals and level. Beginners can start with the basics — a minimal setup that covers core needs without breaking the bank. As you progress, you may want to invest in specialized tools that offer more precision, efficiency, or capability. Always prioritize quality essentials over a large collection of gear.",
+    "fallback": "The tools you need depend on your goals. Could you share what you're planning to do and your experience level?",
+    "style": ["educational", "practical"],
+    "response_length": "medium"
+  },
+  {
+    "id": "practices-time",
+    "triggers": ["how much time does {context} take", "time commitment for {context}", "how long does {context} require", "time needed for {context}"],
+    "context_role": "topic",
+    "template": "The time required for {context} varies widely based on your goals and prior experience. Getting comfortable with the basics typically takes consistent effort over weeks to months. Reaching a proficient level often requires months to a year of regular practice. Mastery — true depth and fluency — is measured in years of sustained engagement.",
+    "fallback": "Time estimates depend a lot on your starting point and goals. What level of proficiency are you aiming for?",
+    "style": ["educational", "realistic"],
+    "response_length": "medium"
+  },
+  {
+    "id": "practices-motivation",
+    "triggers": ["how to stay motivated with {context}", "stay motivated learning {context}", "keep interest in {context}", "avoid burnout with {context}"],
+    "context_role": "topic",
+    "template": "Staying motivated with {context} is about finding your 'why' and building sustainable habits. Set small, achievable milestones to create a sense of progress. Connect with a community of like-minded people for encouragement and accountability. Vary your routine to keep things fresh, and periodically remind yourself of how far you've come and why you started.",
+    "fallback": "Staying motivated can be tough. What aspect of this topic do you enjoy most — we can build from there.",
+    "style": ["motivational", "supportive", "actionable"],
+    "response_length": "medium"
+  },
+  {
+    "id": "practices-easy-start",
+    "triggers": ["what is the easiest way to start {context}", "how to begin {context} easily", "quick start for {context}", "getting started with {context} simply"],
+    "context_role": "topic",
+    "template": "The easiest way to start with {context} is to pick one small, achievable project that excites you and complete it end-to-end. Focus on the absolute essentials needed to make it work — ignore optimization, advanced features, and edge cases at first. The goal is to build momentum and confidence with a real success experience.",
+    "fallback": "Getting started is the most important step! What do you already know about this topic, and what's your learning style?",
+    "style": ["educational", "encouraging", "actionable"],
+    "response_length": "medium"
+  },
+  {
+    "id": "practices-expert",
+    "triggers": ["how do experts approach {context}", "what do professionals do with {context}", "expert strategies for {context}", "how masters handle {context}"],
+    "context_role": "topic",
+    "template": "Experts approach {context} with a mindset of continuous refinement and deep principles over surface-level techniques. They prioritize understanding the 'why' behind decisions, build strong feedback loops, automate routine aspects to focus on creative problem-solving, and systematically document their work. They also know when to follow convention and when to break it — a judgment that comes from extensive experience.",
+    "fallback": "Expert approaches can be illuminating. Which area of this topic are you most interested in mastering?",
+    "style": ["educational", "insightful"],
+    "response_length": "medium"
+  },
+  {
+    "id": "practices-reading",
+    "triggers": ["what should I read to learn {context}", "books about {context}", "resources for learning {context}", "what to read for {context}"],
+    "context_role": "topic",
+    "template": "To learn {context}, start with a well-regarded introductory resource that covers the fundamentals clearly. From there, branch into specialized works that explore specific areas you find interesting. Supplement books with practical tutorials, community discussions, and hands-on projects. A balanced diet of theory and practice — with material at or slightly above your current level — accelerates learning most effectively.",
+    "fallback": "I can recommend reading materials! What's your current familiarity with the topic and preferred learning format?",
+    "style": ["educational", "curated"],
+    "response_length": "medium"
+  }
+]

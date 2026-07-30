@@ -1,0 +1,72 @@
+[
+  {
+    "q": [
+      "What are Piaget's stages of development?",
+      "What are the four stages of cognitive development?",
+      "How did Piaget describe child development?",
+      "What is the sensorimotor stage?",
+      "What is object permanence?",
+      "What is the preoperational stage?",
+      "What is the concrete operational stage?",
+      "What is the formal operational stage?"
+    ],
+    "a": "Jean Piaget's theory of cognitive development proposes that children progress through four distinct stages as they construct understanding of the world. The sensorimotor stage (birth to 2 years) involves learning through sensory experiences and motor actions, with the key milestone being the development of object permanence — understanding that objects continue to exist even when not visible. The preoperational stage (2 to 7 years) is characterized by symbolic thinking, language development, and egocentrism, but children at this stage lack the ability to perform logical operations or understand conservation. The concrete operational stage (7 to 11 years) brings logical thinking about concrete events, mastery of conservation concepts, and the ability to classify objects by multiple characteristics. The formal operational stage (12 years and up) enables abstract reasoning, hypothetical thinking, and systematic problem-solving through deductive logic."
+  },
+  {
+    "q": [
+      "What is attachment theory?",
+      "What are the different attachment styles?",
+      "Who developed attachment theory?",
+      "What is the strange situation experiment?",
+      "How does early attachment affect adult relationships?",
+      "What is secure attachment?",
+      "What is insecure attachment?",
+      "Who was Mary Ainsworth?"
+    ],
+    "a": "Attachment theory, developed by John Bowlby and expanded by Mary Ainsworth, explains how the early emotional bonds formed between infants and their caregivers shape social and emotional development throughout life. Ainsworth's Strange Situation procedure identified three primary attachment patterns: secure attachment (the child explores freely, shows distress at separation, and is comforted by the caregiver's return), anxious-ambivalent attachment (the child is clingy and anxious, becomes extremely distressed at separation, and shows mixed responses upon reunion), and avoidant attachment (the child avoids or ignores the caregiver, showing little emotion at separation or reunion). A fourth category, disorganized attachment, was later identified by Mary Main, characterized by contradictory, confused behaviors often associated with trauma or inconsistent caregiving. Research has shown that early attachment patterns tend to persist into adulthood, influencing romantic relationships, parenting styles, and emotional regulation, though they can be modified through later positive experiences and therapy."
+  },
+  {
+    "q": [
+      "What are Erikson's stages of psychosocial development?",
+      "What are the eight stages of development according to Erikson?",
+      "What is the trust vs mistrust stage?",
+      "What is identity vs role confusion?",
+      "What are Erikson's psychosocial crises?",
+      "How does Erikson's theory differ from Piaget's?"
+    ],
+    "a": "Erik Erikson's theory of psychosocial development describes eight stages spanning the entire human lifespan, each characterized by a central conflict that must be resolved for healthy psychological development. The stages are: trust vs mistrust (infancy), autonomy vs shame and doubt (toddlerhood), initiative vs guilt (preschool), industry vs inferiority (school age), identity vs role confusion (adolescence), intimacy vs isolation (young adulthood), generativity vs stagnation (middle adulthood), and integrity vs despair (late adulthood). Successful resolution of each crisis leads to the development of a basic virtue: hope, will, purpose, competence, fidelity, love, care, and wisdom respectively. Unlike Piaget's focus on cognitive development, Erikson emphasized social and emotional development across the entire lifespan, with each stage building upon the successful resolution of previous stages."
+  },
+  {
+    "q": [
+      "What is the nature vs nurture debate?",
+      "How do genetics and environment influence development?",
+      "Which is more important: nature or nurture?",
+      "What is the interactionist perspective on nature vs nurture?",
+      "How do twin studies inform the nature vs nurture debate?",
+      "What is heritability in psychology?"
+    ],
+    "a": "The nature vs nurture debate concerns the relative contributions of genetics (nature) and environment (nurture) to human development, behavior, and individual differences. Twin studies comparing identical and fraternal twins raised together or apart have been instrumental in estimating heritability — the proportion of variance in a trait attributable to genetic factors — for everything from intelligence and personality to mental health conditions. Modern developmental psychology recognizes that nature and nurture interact in complex ways through gene-environment correlations (where genetic predispositions shape environmental experiences) and epigenetics (where environmental factors influence gene expression without changing the DNA sequence). The consensus among contemporary researchers is that most psychological traits result from complex interactions between genetic predispositions and environmental influences, making the question of 'which is more important' an oversimplification."
+  },
+  {
+    "q": [
+      "What are critical periods in development?",
+      "What is a sensitive period in development?",
+      "What is the critical period for language acquisition?",
+      "What happens if a child misses a critical period?",
+      "What is the difference between critical and sensitive periods?",
+      "What are examples of critical periods in animal development?",
+      "What is imprinting in animal behavior?"
+    ],
+    "a": "Critical periods are specific windows of time during development when an organism is especially sensitive to certain environmental stimuli and particular skills or abilities must be acquired for normal development to proceed. The most famous example is imprinting studied by Konrad Lorenz, where newly hatched geese form an irreversible attachment to the first moving object they see during a brief critical period after hatching. In humans, the critical period for language acquisition is most pronounced during early childhood, with children who experience severe linguistic deprivation during this period rarely achieving full native fluency if they learn language later. The concept of sensitive periods is now more commonly used than strict critical periods in human development, as these are broader windows of heightened plasticity rather than absolute deadlines — though earlier exposure still typically produces better outcomes."
+  },
+  {
+    "q": [
+      "What is Vygotsky's sociocultural theory?",
+      "What is the zone of proximal development?",
+      "What is scaffolding in education?",
+      "How did Vygotsky differ from Piaget?",
+      "What is the role of social interaction in cognitive development according to Vygotsky?"
+    ],
+    "a": "Lev Vygotsky's sociocultural theory emphasizes that cognitive development is fundamentally a social process, with learning occurring through interaction with more knowledgeable others within cultural contexts. The zone of proximal development (ZPD) is Vygotsky's central concept, defined as the gap between what a child can do independently and what they can achieve with guidance from a skilled partner, representing the optimal space for learning and instruction. Scaffolding, a term developed by Jerome Bruner building on Vygotsky's work, refers to the temporary support provided by a teacher or peer that is gradually removed as the learner becomes more competent. Unlike Piaget who viewed children as solitary explorers constructing knowledge through their own experiences, Vygotsky argued that higher mental functions originate in social interactions and are then internalized by the individual."
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "q": [
+      "How does GPS work?",
+      "What is trilateration in GPS?",
+      "How many satellites does GPS need?",
+      "What is the GPS satellite constellation?",
+      "What are atomic clocks and how are they used in GPS?",
+      "How does a GPS receiver calculate position?",
+      "What are the GPS segments?",
+      "What is the space segment of GPS?"
+    ],
+    "a": "GPS works through trilateration: each satellite transmits its precise position and the exact time from its onboard atomic clock, and the GPS receiver measures the time delay of signals from multiple satellites to calculate distance. With signals from at least four satellites, a receiver can solve for three-dimensional position (latitude, longitude, altitude) and time. The GPS system is organized into three segments: the space segment (a constellation of at least 24 operational satellites in six orbital planes at about 20,200 km altitude), the control segment (a network of ground stations that monitor satellite health, compute ephemeris data, and maintain clock synchronization), and the user segment (the billions of civilian and military receivers worldwide). Each satellite carries multiple atomic clocks (cesium and rubidium) with accuracy on the order of nanoseconds, essential because a timing error of just one nanosecond translates to a positional error of about 30 centimeters."
+  },
+  {
+    "q": [
+      "What is differential GPS?",
+      "What are augmentation systems like WAAS and EGNOS?",
+      "What is WAAS in GPS?",
+      "What is EGNOS?",
+      "What is MSAS?",
+      "What is GAGAN?",
+      "What other GNSS systems exist?",
+      "What is GLONASS?",
+      "What is Galileo?",
+      "What is BeiDou?"
+    ],
+    "a": "Differential GPS (DGPS) uses fixed ground stations at known locations to calculate GPS signal errors and broadcast corrections to nearby receivers, improving accuracy from about 5 meters to sub-meter level. Satellite-based augmentation systems (SBAS) extend this concept over continental areas: WAAS (Wide Area Augmentation System) covers North America, EGNOS (European Geostationary Navigation Overlay Service) covers Europe, MSAS covers Japan, and GAGAN covers India, each using geostationary satellites to broadcast correction messages for aviation and other safety-critical applications. Other global navigation satellite systems (GNSS) include Russia's GLONASS (fully operational with 24 satellites), the European Union's Galileo (designed for civilian rather than military control, with higher accuracy than standard GPS), China's BeiDou (which includes geostationary satellites for regional coverage), Japan's QZSS (regional augmentation over Asia-Oceania), and India's IRNSS/NavIC (regional coverage over the Indian subcontinent). Most modern receivers are multi-constellation, combining signals from all available systems for improved accuracy, reliability, and resistance to signal loss."
+  },
+  {
+    "q": [
+      "What causes GPS errors?",
+      "What is atmospheric delay in GPS?",
+      "What is multipath error in GPS?",
+      "What is ephemeris error?",
+      "What is clock error in GPS?",
+      "How accurate is GPS?",
+      "What factors affect GPS accuracy?",
+      "How is GPS corrected for errors?"
+    ],
+    "a": "GPS accuracy is degraded by several error sources: atmospheric delay (signals slow down passing through the ionosphere and troposphere, with ionospheric delay being the largest variable error), multipath (signals bouncing off buildings or terrain before reaching the receiver, creating false distance measurements), ephemeris errors (small inaccuracies in the satellite's reported orbital position), clock errors (residual timing differences after satellite clock corrections), and geometric dilution of precision (poor satellite geometry increases positional uncertainty). Standard civilian GPS accuracy is typically 3-5 meters horizontally under open sky, while dual-frequency receivers can correct ionospheric delay to achieve sub-meter accuracy. Modern receivers use sophisticated Kalman filtering, carrier-phase tracking, and multi-constellation integration to minimize these errors, and real-time kinematic (RTK) techniques can achieve centimeter-level accuracy for surveying and autonomous vehicle guidance."
+  },
+  {
+    "q": [
+      "What are the applications of GPS?",
+      "How is GPS used for navigation?",
+      "How is GPS used for timing?",
+      "How is GPS used in surveying?",
+      "How is GPS used in agriculture?",
+      "How is GPS used in autonomous vehicles?",
+      "What are GPS limitations and vulnerabilities?",
+      "Can GPS be jammed or spoofed?"
+    ],
+    "a": "GPS applications extend far beyond everyday navigation to include precise timing synchronization for financial networks, cellular base stations, and power grids (where 1 microsecond timing is critical), surveying and mapping at centimeter accuracy, precision agriculture (variable-rate seeding, fertilizing, and harvesting guided by GPS), and autonomous vehicle navigation requiring robust multi-sensor integration. GPS vulnerabilities include jamming (easily produced by low-power transmitters that overwhelm the weak satellite signals), spoofing (transmitting fake GPS signals that cause receivers to calculate false positions, a growing concern for drone security and maritime navigation), and space weather effects (solar flares disrupting ionospheric propagation). These risks are mitigated through receiver autonomous integrity monitoring (RAIM), multi-constellation reception, and integration with inertial navigation systems that can bridge GPS outages, as well as the US military's encrypted M-code signal designed for anti-spoofing resistance."
+  }
+]

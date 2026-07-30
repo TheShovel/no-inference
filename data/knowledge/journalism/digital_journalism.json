@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is digital journalism?",
+      "What is an online newsroom?",
+      "What is a content management system (CMS) in journalism?",
+      "How do journalists use content management systems?",
+      "What is SEO for journalists?",
+      "How do online newsrooms differ from traditional newsrooms?",
+      "What tools do digital journalists use?"
+    ],
+    "a": "Digital journalism encompasses news reporting and publishing across online platforms including news websites, social media, email newsletters, mobile apps, and streaming services, requiring journalists to understand multimedia production, audience analytics, search engine optimization (SEO), and social media distribution alongside traditional reporting and writing skills. Content management systems (CMS) like WordPress, Arc Publishing, and custom newspaper platforms serve as the central tool for digital newsrooms where journalists write, format, embed media, add metadata and tags, schedule publication, and manage story revisions, with many modern CMS platforms using structured content (separating content from presentation) for multichannel distribution. SEO for journalists involves strategically using keywords in headlines and article bodies, writing effective meta descriptions, structuring content with proper heading tags, optimizing image alt text, and understanding how Google's algorithms rank news content to maximize organic discoverability and readership."
+  },
+  {
+    "q": [
+      "What is social media journalism?",
+      "How do journalists use social media for reporting?",
+      "What is audience engagement in journalism?",
+      "How do news organizations measure audience metrics?",
+      "What are key analytics metrics for digital journalism?",
+      "How do journalists build audiences online?",
+      "What is the role of social media in modern journalism?"
+    ],
+    "a": "Social media journalism uses platforms like Twitter/X, Facebook, Instagram, TikTok, and LinkedIn for reporting — discovering breaking news, finding sources, crowdsourcing information, verifying user-generated content, and distributing stories to reach audiences where they already spend time. Audience engagement involves actively interacting with readers through comments, social media conversations, community forums, and live Q&A sessions to build trust, foster loyalty, and gather story ideas and feedback. Digital journalism analytics track key metrics including page views, unique visitors, time on page, bounce rate, scroll depth, social shares, and conversion rates (newsletter signups or subscriptions), with newsrooms using tools like Google Analytics, Chartbeat, and Parse.ly to understand what content resonates and inform editorial decisions about coverage priorities, headline testing, and distribution strategies."
+  },
+  {
+    "q": [
+      "What is multimedia storytelling in digital journalism?",
+      "What are interactive features in online journalism?",
+      "How is data visualization used in journalism?",
+      "What is mobile journalism (MoJo)?",
+      "How do journalists use video for digital platforms?",
+      "What tools are used for data visualization in news?",
+      "What makes a good interactive news story?"
+    ],
+    "a": "Multimedia storytelling combines text, photography, video, audio, graphics, animation, and interactive elements into cohesive narratives that leverage each medium's strengths, with examples including scroll-based longform features, embedded documentary video, photo essays with audio narration, and interactive timelines or maps. Data visualization in journalism translates complex datasets into accessible charts, graphs, maps, and infographics using tools like D3.js, Flourish, Datawrapper, and Tableau, helping readers grasp patterns, trends, and outliers in data-heavy stories about elections, public health, budgets, or climate change. Mobile journalism (MoJo) refers to reporting and producing news content primarily using smartphones, which are lightweight, discreet, and increasingly capable of broadcast-quality video, enabling journalists to cover stories quickly without heavy equipment and to publish directly to social platforms from the field."
+  },
+  {
+    "q": [
+      "What is newsletter journalism?",
+      "How do subscriber models work for news?",
+      "What are paywalls in digital journalism?",
+      "What is algorithm-driven news distribution?",
+      "How do news organizations monetize digital content?",
+      "What is the difference between hard paywalls and metered paywalls?",
+      "How do algorithms affect what news people see?"
+    ],
+    "a": "Newsletter journalism has revived as a direct-to-audience distribution channel where writers build personal brands and loyal readerships through regular email dispatches offering curated analysis, original reporting, and personality-driven commentary, with platforms like Substack, Beehiiv, and Ghost enabling independent journalists to monetize directly through paid subscriptions. Paywall models include hard paywalls (no content access without a subscription), metered paywalls (readers can view a limited number of free articles per month before being asked to subscribe), and freemium models (most content free, premium content locked for subscribers), with many news organizations also introducing dynamic paywalls that adjust based on reader behavior and willingness to pay. Algorithm-driven news distribution on platforms like Google News, Apple News, and social media feeds determines which stories reach large audiences based on engagement signals, personalization algorithms, and platform-specific ranking factors, raising concerns about filter bubbles, misinformation amplification, and the declining editorial control of news organizations over content discovery."
+  }
+]

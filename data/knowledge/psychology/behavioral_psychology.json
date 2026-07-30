@@ -1,0 +1,71 @@
+[
+  {
+    "q": [
+      "What is classical conditioning?",
+      "How did Pavlov discover classical conditioning?",
+      "What is Pavlov's dog experiment?",
+      "How does classical conditioning work?",
+      "What is the difference between unconditioned and conditioned stimuli?",
+      "What are real-world examples of classical conditioning?",
+      "What is extinction in classical conditioning?"
+    ],
+    "a": "Classical conditioning is a learning process discovered by Ivan Pavlov in which a neutral stimulus becomes associated with a reflexive response through repeated pairing with an unconditioned stimulus. In Pavlov's famous experiment, dogs naturally salivated (unconditioned response) when presented with food (unconditioned stimulus), and after repeatedly pairing the food with a bell (neutral stimulus), the dogs began salivating at the sound of the bell alone, now a conditioned stimulus producing a conditioned response. Key principles include acquisition (the initial learning phase), extinction (the gradual weakening of the conditioned response when the conditioned stimulus is presented without the unconditioned stimulus), and spontaneous recovery (the reappearance of the conditioned response after a rest period). Classical conditioning explains many human phenomena including phobias, taste aversions, emotional responses, and even some aspects of drug tolerance and addiction."
+  },
+  {
+    "q": [
+      "What is operant conditioning?",
+      "How did B.F. Skinner study operant conditioning?",
+      "What is the difference between classical and operant conditioning?",
+      "What is a Skinner box?",
+      "How does operant conditioning shape behavior?",
+      "What is the law of effect?"
+    ],
+    "a": "Operant conditioning, developed primarily by BF Skinner, is a learning process where behavior is modified by its consequences \u2014 behaviors followed by reinforcement are strengthened and more likely to recur, while behaviors followed by punishment are weakened. Skinner studied this using the operant conditioning chamber (Skinner box), where rats and pigeons learned to press levers or peck keys to receive food rewards or avoid electric shocks. The law of effect, proposed by Edward Thorndike, underlies operant conditioning: responses that produce a satisfying effect in a particular situation become more likely to occur again in that situation. Unlike classical conditioning which deals with involuntary reflexive behaviors, operant conditioning involves voluntary behaviors that operate on the environment to produce consequences."
+  },
+  {
+    "q": [
+      "What is reinforcement in psychology?",
+      "What is the difference between positive and negative reinforcement?",
+      "What are the types of reinforcement schedules?",
+      "How does reinforcement shape behavior?",
+      "What is continuous vs partial reinforcement?",
+      "What is a fixed ratio schedule?",
+      "What is variable interval reinforcement?"
+    ],
+    "a": "Reinforcement is any consequence that increases the likelihood of a behavior being repeated, and it comes in two forms: positive reinforcement adds a rewarding stimulus after a behavior, while negative reinforcement removes an aversive stimulus. Schedules of reinforcement determine when a behavior is reinforced and significantly affect how quickly a behavior is learned and how resistant it is to extinction. Fixed ratio schedules provide reinforcement after a set number of responses and produce high response rates, while variable ratio schedules (like gambling) provide reinforcement after an unpredictable number of responses and produce the highest resistance to extinction. Continuous reinforcement (reinforcing every correct response) leads to the fastest initial learning, but partial reinforcement schedules produce behaviors that are much more resistant to extinction, known as the partial reinforcement extinction effect."
+  },
+  {
+    "q": [
+      "What is punishment in operant conditioning?",
+      "What is the difference between positive and negative punishment?",
+      "Does punishment effectively change behavior?",
+      "What are the problems with using punishment?",
+      "How does punishment differ from reinforcement?",
+      "What is the most effective way to reduce unwanted behavior?"
+    ],
+    "a": "Punishment in operant conditioning is any consequence that decreases the likelihood of a behavior recurring, with positive punishment involving the addition of an aversive stimulus and negative punishment (also called omission training) involving the removal of a desirable stimulus. While punishment can quickly suppress unwanted behavior, it has significant drawbacks: it often produces only temporary suppression rather than lasting extinction, can create negative emotional side effects like fear and aggression, and teaches what not to do rather than what to do. Research consistently shows that reinforcement of alternative, desirable behaviors is more effective for long-term behavior change than punishment alone. Applied behavior analysis emphasizes using the mildest effective punishment, always paired with reinforcement of appropriate replacement behaviors."
+  },
+  {
+    "q": [
+      "What is behavior modification?",
+      "How does behavior modification work?",
+      "What are behavior modification techniques?",
+      "What is applied behavior analysis?",
+      "How is behavior modification used in therapy?",
+      "What is a token economy?"
+    ],
+    "a": "Behavior modification is a therapeutic approach that applies the principles of operant conditioning to systematically change maladaptive behaviors and reinforce adaptive ones, forming the basis of Applied Behavior Analysis (ABA). Key techniques include shaping (reinforcing successive approximations toward a target behavior), chaining (breaking complex behaviors into smaller steps and teaching each step), and token economies where desired behaviors earn tokens that can be exchanged for privileges or rewards. Behavior modification has been highly effective in treating autism spectrum disorders, reducing phobias, managing ADHD, improving workplace productivity, and supporting weight loss and addiction recovery programs. Critics argue that behavior modification can be overly controlling and may not address underlying cognitive or emotional factors, leading to the development of cognitive-behavioral approaches that integrate both behavioral and cognitive techniques."
+  },
+  {
+    "q": [
+      "How are habits formed?",
+      "What is the habit loop?",
+      "How long does it take to form a habit?",
+      "What is Charles Duhigg's habit loop?",
+      "How can I build good habits?",
+      "What is the science of habit formation?",
+      "What are the key components of a habit?"
+    ],
+    "a": "Habit formation is the process by which behaviors become automatic through repeated practice in consistent contexts, governed by a neurological habit loop consisting of a cue, routine, and reward. Charles Duhigg popularized this three-part loop: a trigger (cue) initiates the behavior (routine), which is followed by a reward that reinforces the association and makes the behavior more automatic over time. Research suggests it takes an average of 66 days for a new behavior to become automatic, though this varies widely from 18 to 254 days depending on the complexity of the behavior and individual differences. Key strategies for habit formation include making cues obvious, reducing friction for desired behaviors, using implementation intentions ('when X happens, I will do Y'), and stacking new habits onto existing routines."
+  }
+]

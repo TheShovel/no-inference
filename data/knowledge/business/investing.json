@@ -1,0 +1,69 @@
+[
+  {
+    "q": [
+      "what is a stock",
+      "how do stocks work",
+      "what are stocks",
+      "what is a bond",
+      "how do bonds work",
+      "stocks vs bonds explained",
+      "difference between stocks and bonds",
+      "types of investments",
+      "stock market basics"
+    ],
+    "a": "A stock represents a share of ownership in a company, giving the shareholder a claim on the company's assets and earnings. When you buy a stock, you become a partial owner and may receive dividends (profit distributions) and benefit from capital appreciation if the stock price rises. A bond is a fixed-income instrument that represents a loan from the investor to a borrower, typically a corporation or government. Bonds pay periodic interest payments (coupons) and return the principal at maturity. Stocks generally offer higher potential returns but with greater risk and volatility, while bonds provide more stable income with lower risk. The balance between stocks and bonds in a portfolio depends on the investor's risk tolerance, time horizon, and financial goals."
+  },
+  {
+    "q": [
+      "what is a mutual fund",
+      "mutual funds explained",
+      "what is an ETF",
+      "ETFs vs mutual funds",
+      "index funds explained",
+      "what is an index fund",
+      "passive investing",
+      "difference between ETF and mutual fund",
+      "exchange traded funds"
+    ],
+    "a": "Mutual funds and exchange-traded funds (ETFs) are pooled investment vehicles that allow investors to buy a diversified portfolio of stocks, bonds, or other assets in a single transaction. Mutual funds are priced once per day after market close and may have minimum investment requirements and sales loads. ETFs trade on stock exchanges throughout the day like individual stocks and typically have lower expense ratios. Index funds, which can be either mutual funds or ETFs, passively track a market index such as the S&P 500 rather than trying to outperform it through active stock selection. Index funds pioneered by John Bogle at Vanguard offer broad diversification, low costs, and tax efficiency, making them ideal for long-term passive investors."
+  },
+  {
+    "q": [
+      "real estate investing",
+      "how to invest in real estate",
+      "real estate investment strategies",
+      "dollar cost averaging",
+      "what is dollar cost averaging",
+      "DCA investing",
+      "systematic investment plan"
+    ],
+    "a": "Real estate investing involves purchasing properties to generate rental income, capital appreciation, or both. Common strategies include buying residential rental properties, commercial real estate, real estate investment trusts (REITs), which trade like stocks and distribute most of their income as dividends, and real estate crowdfunding platforms that allow smaller investments. Dollar-cost averaging is an investment strategy where an investor divides a total investment amount into equal periodic purchases of a target asset, regardless of its price. This approach reduces the impact of market volatility by buying more shares when prices are low and fewer when prices are high, potentially lowering the average cost per share. DCA helps investors avoid the risk of investing a lump sum at the wrong time and encourages consistent investing discipline."
+  },
+  {
+    "q": [
+      "value investing",
+      "growth investing",
+      "value vs growth investing",
+      "warren buffett investing strategy",
+      "dividend investing",
+      "dividend stocks",
+      "what are dividends",
+      "growth stocks vs value stocks"
+    ],
+    "a": "Value investing, championed by Benjamin Graham and Warren Buffett, involves buying stocks that appear underpriced relative to their intrinsic value based on fundamentals like earnings, book value, and cash flow. Value investors seek companies with low price-to-earnings ratios, strong balance sheets, and stable businesses that the market has temporarily discounted. Growth investing focuses on companies with above-average revenue and earnings growth potential, even if their current valuations are high based on traditional metrics; these are often found in technology and innovative sectors. Dividend investing targets companies that pay regular, growing dividends, providing a steady income stream along with potential appreciation. Each approach has different risk and return characteristics, and many investors combine elements of multiple strategies."
+  },
+  {
+    "q": [
+      "risk management investing",
+      "portfolio diversification",
+      "asset allocation",
+      "how to diversify a portfolio",
+      "investment risk management",
+      "modern portfolio theory",
+      "what is asset allocation",
+      "correlation diversification",
+      "rebalancing portfolio"
+    ],
+    "a": "Risk management in investing involves identifying, assessing, and controlling financial risks to protect capital and achieve consistent returns. Diversification spreads investments across different asset classes (stocks, bonds, real estate, commodities), sectors, geographic regions, and investment styles to reduce the impact of any single investment's poor performance. Asset allocation is the strategic distribution of investments among asset classes based on the investor's risk tolerance, time horizon, and goals; a common rule of thumb is that the percentage of stocks in a portfolio should equal 100 minus the investor's age. Modern portfolio theory, developed by Harry Markowitz, mathematically demonstrates that diversification can optimize returns for a given level of risk by combining assets with low or negative correlations. Regular portfolio rebalancing ensures that the allocation stays aligned with the investor's target strategy."
+  }
+]

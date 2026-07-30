@@ -1,0 +1,132 @@
+[
+  {
+    "id": "explain-to-child-001",
+    "triggers": [
+      "explain to a child",
+      "explain like I'm five",
+      "simple explanation for a child"
+    ],
+    "context_role": "topic",
+    "template": "Let me explain {context} in a way that's easy for a child to understand.\n\nImagine {context} is like building with LEGO blocks. You know how you have a big box of LEGOs and you can make all sorts of things—a castle, a spaceship, a dinosaur? The way you choose which pieces go where and how you snap them together is a lot like {context}.\n\nYou start with the bottom pieces so everything is steady. Then you add a little more, and a little more, and pretty soon you've built something amazing! Sometimes a piece doesn't fit, so you try another one. That's okay—it's all part of learning how {context} works.\n\nThe really cool thing is that no two LEGO creations are exactly the same, just like no two {context} are exactly the same. You get to be creative and figure out what works best. And the more you practice with {context}, the better you get, just like getting faster at building LEGO sets.\n\nSo next time you hear about {context}, just think: it's like snapping ideas together, one piece at a time, until you build something wonderful.\n\nDoes that make sense? Would another example help explain {context} better?",
+    "fallback": "I'd explain this simply, like telling a story with everyday examples a child would recognize. What topic should I explain like you're five?",
+    "style": ["educational", "conversational", "simple"],
+    "response_length": "medium"
+  },
+  {
+    "id": "explain-to-beginner-002",
+    "triggers": [
+      "explain to a beginner",
+      "beginner friendly explanation",
+      "I'm new to this"
+    ],
+    "context_role": "topic",
+    "template": "Welcome! Let's start from the very beginning with {context}. I'll assume no prior knowledge and build up step by step.\n\n**What is {context}?**\nAt its simplest, {context} is a way of thinking about or doing something that helps us get from point A to point B more effectively. It's a framework that organizes ideas, actions, or information so they make sense.\n\n**Why should you care about {context}?**\nThink of {context} as a map. Without a map, you might wander around randomly and eventually get somewhere—but it would take longer and be more frustrating. {context} gives you direction and clarity, whether you're solving a problem, learning a skill, or making a decision.\n\n**How does {context} actually work?**\nHere are the basic principles:\n1. **Start with what you know** — {context} builds on existing understanding\n2. **Add new pieces one at a time** — Don't try to absorb everything at once\n3. **Connect new ideas to old ones** — {context} becomes powerful when you see relationships\n4. **Practice in small doses** — A little bit of {context} every day goes much further than a lot once\n\n**First steps you can take with {context}:**\n1. Spend 10 minutes just reading or watching an overview of {context}\n2. Write down three things you find interesting about it\n3. Try a small, low-pressure experiment or exercise related to {context}\n4. Find one person or community that shares your curiosity about {context}\n\nWhat part of {context} would you like to explore first? I'm happy to go deeper on any of these areas.",
+    "fallback": "Starting from scratch means learning the core idea first, understanding why it matters, then taking small, concrete first steps.",
+    "style": ["educational", "conversational", "patient"],
+    "response_length": "long"
+  },
+  {
+    "id": "explain-to-expert-003",
+    "triggers": [
+      "explain to an expert",
+      "detailed technical explanation",
+      "I know this already, just clarify"
+    ],
+    "context_role": "topic",
+    "template": "Assuming existing familiarity with the foundations of {context}, let's focus on the nuances, edge cases, and deeper architectural considerations that separate competent practitioners from true experts.\n\n**Advanced Framing of {context}**\nRather than rehashing the basics, let's position {context} within the broader landscape of related concepts. The key tension in {context} lies between theoretical optimality and practical constraint—understanding where and why those diverge is where real expertise lives.\n\n**Key Areas of Nuance in {context}**\n\n1. **Trade-off Analysis**\n   Every decision in {context} involves trade-offs. The question isn't 'which approach is best?' but 'which trade-offs are acceptable given the specific constraints?' The expert's skill is in characterizing these trade-offs rather than memorizing prescriptions.\n\n2. **Boundary Conditions**\n   {context} works well within certain parameters and breaks down at others. The mark of expertise is knowing precisely where those boundaries are—what conditions cause {context} to perform optimally, degrade gracefully, or fail catastrophically.\n\n3. **Evolution & State of the Art**\n   {context} is not static. What was considered best practice two years ago may now be outdated. The current frontiers in {context} include [emerging developments], and the open questions are [unresolved challenges].\n\n4. **Integration Patterns**\n   How does {context} interact with adjacent domains? The most sophisticated applications of {context} aren't isolated—they're composed with other approaches in layered, adaptive systems.\n\n**An Expert-Level Question**\nGiven your experience with {context}, how do you currently navigate the tension between [common trade-off]? I'm curious how that plays out in your specific domain.\n\nWhat aspect of {context} would you like to explore at this level?",
+    "fallback": "For an expert-level discussion, I'll focus on trade-offs, boundary conditions, and state-of-the-art developments rather than introductory material.",
+    "style": ["educational", "analytical", "sophisticated"],
+    "response_length": "medium"
+  },
+  {
+    "id": "step-by-step-tutorial-004",
+    "triggers": [
+      "teach me step by step",
+      "step by step tutorial for",
+      "walk me through"
+    ],
+    "context_role": "topic",
+    "template": "Here is a step-by-step tutorial for {context}. Follow each step in order—each one builds on the previous.\n\n**Step 1: Prepare Your Foundation**\n- Spend 5 minutes reviewing any prerequisites for {context}\n- Gather the tools, materials, or information you'll need\n- Set a clear goal: what do you want to be able to do with {context} by the end?\n\n**Step 2: Start With a Minimal Version**\n- Don't try to do everything at once. Strip {context} down to its simplest possible form\n- Complete one tiny, complete example from start to finish\n- Verify it works before moving on\n\n**Step 3: Add One Layer at a Time**\n- Introduce one new element of {context} while keeping everything else constant\n- Test after each addition—if something breaks, you know exactly what caused it\n- Repeat: add, test, add, test\n\n**Step 4: Handle Edge Cases**\n- Now that the main path of {context} works, consider what could go wrong\n- What are the common pitfalls or mistakes in {context}?\n- Add safeguards, fallbacks, or error handling\n\n**Step 5: Refine and Optimize**\n- Review your work on {context}. Is it clear, efficient, maintainable?\n- Ask: Would someone else understand this approach to {context}?\n- Make improvements without changing the core functionality\n\n**Step 6: Apply to a Real Problem**\n- Take {context} out of the tutorial environment\n- Use it on a genuine task or question you care about\n- Reflect: what worked? What was harder than expected?\n\n**Quick Reference: The {context} Checklist**\n- [ ] Minimal version complete\n- [ ] Each layer tested independently\n- [ ] Edge cases handled\n- [ ] Output reviewed and refined\n- [ ] Applied to a real situation\n\nReady to start Step 1? What specific aspect of {context} are we working on?",
+    "fallback": "A step-by-step tutorial builds from a simple foundation, adds one layer at a time, handles edge cases, and applies to a real problem.",
+    "style": ["educational", "structured", "actionable"],
+    "response_length": "long"
+  },
+  {
+    "id": "crash-course-005",
+    "triggers": [
+      "crash course in",
+      "give me a crash course",
+      "accelerated learning for"
+    ],
+    "context_role": "topic",
+    "template": "Welcome to the crash course on {context}. This is an accelerated overview designed to get you functional as quickly as possible. We'll cover the 20% of {context} that gives you 80% of the value.\n\n**Module 1: The Core Idea (5 minutes)**\n{context} at its heart is about [fundamental principle]. Everything else is variation, optimization, or specialization of this central idea.\n\n**Module 2: The Essential Vocabulary (5 minutes)**\n- **Term 1:** The most important concept in {context}\n- **Term 2:** How things connect in {context}\n- **Term 3:** The main output or goal of {context}\n- **Term 4:** A common pitfall or constraint\n\n**Module 3: The Critical Skill (10 minutes)**\nThe one skill you need to practice above all others for {context}:\n1. Do [action] with {context}\n2. Check [criteria] to see if it's working\n3. Adjust based on [feedback]\n4. Repeat with increasing complexity\n\n**Module 4: The Most Common Mistake (5 minutes)**\nBeginners in {context} almost always [specific mistake]. Instead, do [better approach]. This single shift will improve your results with {context} more than any other change.\n\n**Module 5: Your First Practice (5 minutes)**\nHere is a 5-minute exercise to apply {context} right now:\n- [Specific, concrete task]\n- [Expected outcome]\n- [How to check your work]\n\n**Next Steps After This Crash Course**\n- Recommended resource on {context}: [specific book, course, or tutorial]\n- Community or practice space for {context}\n- One-thing-to-master-next: the next 20% of {context} that yields the most value\n\nYou now have the map of {context}. The real learning happens when you start using it. What's the first thing you'll apply it to?",
+    "fallback": "A crash course covers the essential 20% of a topic that delivers 80% of the value, including core ideas, vocabulary, key skills, and first practice.",
+    "style": ["educational", "efficient", "actionable"],
+    "response_length": "long"
+  },
+  {
+    "id": "prerequisites-006",
+    "triggers": [
+      "what are the prerequisites for",
+      "what do I need to know before",
+      "prerequisites to learn"
+    ],
+    "context_role": "topic",
+    "template": "Before diving into {context}, it helps to have certain foundational knowledge and skills in place. Here is a prerequisite checklist:\n\n**Essential Prerequisites (Must-Have)**\nThese are non-negotiable before starting {context}:\n- **Foundational concept A:** You should be comfortable with [core idea]\n- **Basic skill B:** Ability to [specific skill] is assumed\n- **Tool or resource C:** Familiarity with [tool or environment]\n\n**Recommended Prerequisites (Strongly Suggested)**\nWhile you could start {context} without these, having them will make the journey significantly smoother:\n- **Related topic D:** Understanding [adjacent field] provides useful context\n- **Experience level E:** Some exposure to [similar domain] helps avoid common mistakes\n- **Mindset or approach F:** Willingness to [specific learning habit]\n\n**Nice-to-Have Background**\nThese enhance but aren't necessary for learning {context}:\n- **Advanced concept G:** Helps with deeper mastery but not required to start\n- **Specialized skill H:** Useful for specific applications of {context}\n\n**How to Assess Your Readiness for {context}**\nTry this quick self-check:\n1. Can you explain [one prerequisite concept] in your own words?\n2. Have you tried [basic exercise related to prerequisite]?\n3. Do you have [minimum tool/environment requirement] available?\n\n**If You're Missing Something**\nDon't let gaps stop you entirely. Here's how to fill them while also exploring {context}:\n- Learn prerequisite X alongside {context}—just allocate extra time\n- Use resources that explicitly bridge from where you are to {context}\n- Find a mentor or community that can help you identify and fill gaps\n\nWhich of these prerequisites for {context} would you like to explore further?",
+    "fallback": "Prerequisites are the foundational knowledge, skills, and tools you should have before starting a topic. They range from essential to nice-to-have.",
+    "style": ["educational", "practical", "structured"],
+    "response_length": "medium"
+  },
+  {
+    "id": "practice-exercises-007",
+    "triggers": [
+      "common exercises for practicing",
+      "practice exercises for",
+      "exercises to master"
+    ],
+    "context_role": "topic",
+    "template": "Practice is how understanding of {context} becomes skill. Here is a progression of exercises, from foundational to advanced:\n\n**Beginner Exercises for {context}**\n1. **Definition in Your Own Words** — Write a one-paragraph explanation of {context} without using jargon. If you can't, you haven't internalized it yet.\n2. **Identify Examples** — Find three real-world examples of {context} in action. Describe each briefly.\n3. **Guided Reproduction** — Follow a worked example of {context} step by step, then reproduce it from memory.\n\n**Intermediate Exercises for {context}**\n4. **Modify an Existing Solution** — Take a working example of {context} and change one variable or parameter. Observe and document the effect.\n5. **Combine Concepts** — Apply {context} to a scenario that also involves [related concept B]. Where do they reinforce or conflict?\n6. **Teach a Peer** — Explain {context} to someone who hasn't learned it yet. Their questions will reveal gaps in your understanding.\n\n**Advanced Exercises for {context}**\n7. **Solve Without Guidance** — Tackle a novel problem using {context} without any hints or examples to follow.\n8. **Critique and Improve** — Find a flawed or suboptimal application of {context}. Diagnose what's wrong and propose improvements.\n9. **Cross-Domain Transfer** — Apply the principles of {context} to a domain where it's not typically used. What insights emerge?\n\n**Mastery Exercises for {context}**\n10. **Create a Resource** — Write a guide, build a tool, or record a tutorial that helps others learn {context}.\n11. **Push the Boundary** — Identify a limitation of current approaches to {context} and experiment with overcoming it.\n\n**Practice Schedule Recommendation**\n- Spend 20-30 minutes on {context} exercises 3-4 times per week\n- Alternate between familiar exercises (confidence) and new ones (growth)\n- Review your past work monthly to see how your understanding of {context} has deepened\n\nWhich level of exercises for {context} would you like to start with?",
+    "fallback": "Practice exercises should progress from beginner (reproduction and identification) to advanced (novel application and teaching) for any topic.",
+    "style": ["educational", "structured", "actionable"],
+    "response_length": "long"
+  },
+  {
+    "id": "self-assessment-008",
+    "triggers": [
+      "check my understanding of",
+      "how do I know if I understand",
+      "self-assessment for"
+    ],
+    "context_role": "topic",
+    "template": "Here is a self-assessment framework to help you gauge your understanding of {context}. This goes beyond 'do I know it?' to 'can I use it effectively?'\n\n**Level 1: Recognition**\n- Can I recognize {context} when I see it in the wild?\n- Can I identify the key components and terminology of {context}?\n- Can I follow a discussion about {context} without getting lost?\n- *Pass condition:* You can describe what {context} is in one sentence.\n\n**Level 2: Recall**\n- Can I explain the core principles of {context} without referencing notes?\n- Can I list the steps or components of {context} from memory?\n- Can I answer basic 'what' and 'why' questions about {context}?\n- *Pass condition:* You can give a 2-minute summary of {context} on the spot.\n\n**Level 3: Application**\n- Can I apply {context} to a familiar problem without guidance?\n- Can I complete a routine task using {context} independently?\n- Can I debug common issues that arise with {context}?\n- *Pass condition:* You have completed 3+ independent tasks using {context}.\n\n**Level 4: Adaptation**\n- Can I apply {context} to an unfamiliar or novel situation?\n- Can I adapt {context} when the standard approach doesn't quite fit?\n- Can I combine {context} with other approaches to solve complex problems?\n- *Pass condition:* You've solved a unique problem using {context} in a creative way.\n\n**Level 5: Teaching**\n- Can I explain {context} to someone else clearly?\n- Can I anticipate where a beginner will struggle with {context}?\n- Can I create learning materials or exercises about {context}?\n- *Pass condition:* You've helped someone else reach Level 2 or higher.\n\n**Self-Check Exercise for {context}**\nTry this: Write down everything you know about {context} in 5 minutes. Then check:\n- Did you cover the core ideas accurately?\n- Are there gaps or inaccuracies?\n- Could a beginner understand it from your explanation?\n\nWhat level do you think you're at with {context}, and where would you like to get to?",
+    "fallback": "Self-assessment progresses through recognition, recall, application, adaptation, and teaching levels to gauge true understanding of a topic.",
+    "style": ["educational", "structured", "reflective"],
+    "response_length": "long"
+  },
+  {
+    "id": "study-guide-009",
+    "triggers": [
+      "create a study guide for",
+      "study guide to learn",
+      "how should I study"
+    ],
+    "context_role": "topic",
+    "template": "Here is a comprehensive study guide for {context}. Use this structure to organize your learning, review key material, and test your knowledge.\n\n**Section 1: Core Concepts Overview**\n- **Definition:** What is {context}? Write a clear, one-paragraph definition.\n- **Key Principles:** List 3-5 fundamental principles that underpin {context}\n- **Essential Vocabulary:** Create flashcards for the top 10-15 terms used in {context}\n- **Visual Map:** Draw a diagram showing how the main ideas of {context} relate to each other\n\n**Section 2: Deep Dive Topics**\nBreak {context} into 3-5 subtopics. For each:\n- Summarize the key point in 2-3 sentences\n- Note 1-2 real-world examples or applications\n- Identify the most common misconception\n- List 1-2 questions to test yourself\n\n**Section 3: Practice & Application**\n- **Worked Examples:** Study 3 complete examples of {context} in action\n- **Practice Problems:** Complete 5-10 exercises at varying difficulty levels\n- **Project:** Apply {context} to a small, self-directed project\n- **Review Log:** Document what you got wrong and why\n\n**Section 4: Connections & Context**\n- How does {context} relate to [related field A]?\n- What problems does {context} solve that other approaches don't?\n- What are the limitations or criticisms of {context}?\n- Where is {context} heading in the future?\n\n**Study Schedule Template for {context}**\n| Week | Focus Area | Activities | Checkpoint |\n|------|-----------|------------|------------|\n| 1 | Foundations | Read, map, define terms | Can explain core idea |\n| 2 | Core Skills | Worked examples, exercises | Can apply to simple cases |\n| 3 | Integration | Projects, connections | Can adapt {context} |\n| 4 | Review & Teach | Summarize, explain to others | Can teach {context} |\n\n**Final Review Checklist for {context}**\n- [ ] I can define {context} in one sentence\n- [ ] I can explain the key principles without notes\n- [ ] I have completed practice exercises\n- [ ] I can connect {context} to related topics\n- [ ] I have applied {context} to a real problem\n- [ ] I can teach the basics to someone else\n\nWould you like me to expand on any section of this study guide for {context}?",
+    "fallback": "A study guide organizes learning into core concepts, deep dives, practice, connections, and a structured schedule with checkpoints.",
+    "style": ["educational", "structured", "comprehensive"],
+    "response_length": "long"
+  },
+  {
+    "id": "key-concepts-010",
+    "triggers": [
+      "what are the most important concepts in",
+      "key concepts of",
+      "core ideas behind"
+    ],
+    "context_role": "topic",
+    "template": "Let's identify and explore the most important concepts in {context}. Mastering these will give you a strong foundation and the ability to understand everything else.\n\n**The 5 Core Concepts of {context}**\n\n**1. [Core Concept A]**\n*Why it matters:* This is the foundational idea that everything else in {context} builds upon. Without understanding this, nothing else will fully make sense.\n*Key insight:* [Brief, powerful explanation of the concept]\n*How to recognize it:* Look for [identifying feature or pattern in {context}]\n\n**2. [Core Concept B]**\n*Why it matters:* This is the 'engine' of {context}—the mechanism that makes things work.\n*Key insight:* [Brief, powerful explanation]\n*How to recognize it:* [Identifying feature]\n\n**3. [Core Concept C]**\n*Why it matters:* This is the most common source of mistakes or confusion in {context}.\n*Key insight:* [Brief, powerful explanation]\n*How to avoid pitfalls:* [Practical tip]\n\n**4. [Core Concept D]**\n*Why it matters:* This is what separates beginners from competent practitioners of {context}.\n*Key insight:* [Brief, powerful explanation]\n*How to practice it:* [Exercises or approaches]\n\n**5. [Core Concept E]**\n*Why it matters:* This is the 'why' behind {context}—the deeper purpose or principle.\n*Key insight:* [Brief, powerful explanation]\n*How it connects:* Links {context} to broader ideas and adjacent domains\n\n**Quick Reference: Concept Map of {context}**\n```\n         [Concept A]\n             |\n    [Concept B] --- [Concept C]\n             |\n    [Concept D] --- [Concept E]\n```\n\n**How to Master These Concepts**\n1. Learn them in order—each builds on the previous\n2. After learning each concept of {context}, teach it to someone or write it down from memory\n3. Look for these concepts in real-world examples of {context}\n4. Return to this list periodically as your understanding deepens\n\nWhich of these core concepts of {context} would you like to explore first? Or would you like me to fill in the specifics if you tell me more about your topic?",
+    "fallback": "The most important concepts in any topic are the foundational ideas, core mechanisms, common pitfalls, differentiating skills, and deeper principles.",
+    "style": ["educational", "structured", "foundational"],
+    "response_length": "long"
+  }
+]

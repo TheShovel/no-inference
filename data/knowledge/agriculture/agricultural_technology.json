@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "What is precision agriculture?",
+      "How does GPS technology help in farming?",
+      "What is variable rate technology in agriculture?",
+      "How are drones used in agriculture?",
+      "What is yield monitoring in precision farming?",
+      "precision agriculture technology",
+      "GPS farming",
+      "drone agriculture"
+    ],
+    "a": "Precision agriculture uses GPS, sensors, drones, and data analytics to optimize field-level management of crops, applying inputs like water, fertilizer, and pesticides only where and when needed to maximize efficiency and reduce waste. GPS-guided tractors and implements enable auto-steering and precise planting with sub-inch accuracy, while variable rate technology (VRT) adjusts seed, fertilizer, and chemical application rates across a field based on soil maps and historical yield data. Yield monitors mounted on harvesters record real-time crop yield and moisture data, creating detailed maps that reveal spatial variability and inform future management decisions for improved productivity and profitability."
+  },
+  {
+    "q": [
+      "What is agricultural robotics?",
+      "How are robots used in farming?",
+      "What is automated irrigation?",
+      "How do sensor networks work in agriculture?",
+      "What are smart irrigation systems?",
+      "agricultural robots",
+      "automated farming",
+      "sensor networks in fields"
+    ],
+    "a": "Agricultural robotics includes autonomous tractors, robotic harvesters for fruits and vegetables, weeding robots that use computer vision to identify and remove weeds mechanically, and drones for spraying and crop scouting. Automated irrigation systems integrate soil moisture sensors, weather stations, and central controllers to deliver precise amounts of water through drip or sprinkler systems, reducing water usage by 20-50% compared to conventional scheduling. Wireless sensor networks deployed across fields monitor soil moisture, temperature, nutrient levels, and plant health in real time, transmitting data to cloud platforms for analysis and enabling automated responses such as activating irrigation or adjusting fertigation schedules."
+  },
+  {
+    "q": [
+      "How is satellite imaging used in agriculture?",
+      "What is smart farming?",
+      "How is big data used in agriculture?",
+      "What is farm management software?",
+      "What is agricultural IoT?",
+      "satellite imaging crops",
+      "smart farming technology",
+      "big data agriculture"
+    ],
+    "a": "Satellite imaging provides multispectral and thermal imagery of farmland, enabling growers to assess crop health through vegetation indices like NDVI, detect pest outbreaks and nutrient deficiencies, and monitor field variability without ground inspection. Smart farming integrates IoT devices, sensors, GPS, and data analytics across the entire agricultural operation — from planting to harvest to supply chain — allowing farmers to make data-driven decisions that increase yields, reduce costs, and minimize environmental impact. Agricultural IoT connects soil sensors, weather stations, equipment telematics, and livestock monitors through wireless networks, generating continuous data streams that feed machine learning models for predictive insights on irrigation needs, disease risk, and optimal harvest timing."
+  },
+  {
+    "q": [
+      "How is blockchain used in food supply chains?",
+      "What is blockchain in agriculture?",
+      "How does blockchain improve food traceability?",
+      "What are the benefits of blockchain for food safety?",
+      "How can blockchain help with food authenticity?",
+      "blockchain food supply chain",
+      "blockchain agriculture",
+      "food traceability blockchain"
+    ],
+    "a": "Blockchain technology creates an immutable, decentralized ledger that records every transaction and movement of food products from farm to fork, enabling unprecedented traceability and transparency in food supply chains. When a food safety issue like contamination is detected, blockchain allows companies to trace the affected batch back to its exact origin in seconds rather than days or weeks, reducing the scope of recalls and protecting public health. Beyond traceability, blockchain smart contracts can automate payments between farmers, processors, distributors, and retailers when predefined conditions are met, while consumers can scan QR codes to verify claims about organic certification, fair trade status, and geographic origin of their food."
+  }
+]

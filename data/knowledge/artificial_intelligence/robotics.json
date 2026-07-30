@@ -1,0 +1,59 @@
+[
+  {
+    "q": [
+      "What is robotics?",
+      "Define robotics as a field of engineering",
+      "What are the main components of a robot?",
+      "How do sensors, actuators, and controllers work in robotics?",
+      "What is a robot?",
+      "What are the key components that make up a robotic system?"
+    ],
+    "a": "Robotics is an interdisciplinary field at the intersection of mechanical engineering, electrical engineering, and computer science that deals with the design, construction, operation, and use of robots. The three core components of any robotic system are sensors (which gather data from the environment, such as cameras, LiDAR, encoders, and force sensors), actuators (which produce physical movement, including motors, servos, hydraulic pistons, and pneumatic systems), and controllers (the computational brain that processes sensor data, executes control algorithms, and commands actuators to perform desired tasks). Modern robots integrate these components with sophisticated software for perception, planning, and control to operate autonomously or under human guidance."
+  },
+  {
+    "q": [
+      "What are the different types of robots?",
+      "What are industrial robots used for?",
+      "What are medical robots?",
+      "What are service robots?",
+      "What are autonomous robots and how do they work?",
+      "What are humanoid robots?",
+      "What are drones and how are they used?"
+    ],
+    "a": "Robots are classified by application domain: industrial robots (robotic arms) perform manufacturing tasks like welding, painting, and assembly with precision and speed; medical robots assist in surgery (da Vinci system), rehabilitation, and hospital logistics; service robots clean, deliver, or provide customer service in homes and businesses; autonomous robots navigate without human intervention, used in warehouses (Amazon's Kiva) and self-driving vehicles; humanoid robots like Boston Dynamics' Atlas and Honda's ASIMO mimic human form and movement for research and interaction; and drones (UAVs) are used for aerial photography, delivery, agriculture monitoring, search and rescue, and military operations."
+  },
+  {
+    "q": [
+      "What is kinematics in robotics?",
+      "What is the Robot Operating System?",
+      "What is ROS in robotics?",
+      "What is forward and inverse kinematics?",
+      "What is SLAM in robotics?",
+      "What is autonomous navigation?",
+      "How do robots navigate their environment?"
+    ],
+    "a": "Kinematics is the study of robot motion without considering forces, encompassing forward kinematics (calculating the position of the end effector given joint angles) and inverse kinematics (determining joint angles needed to achieve a desired end-effector position), which is essential for tasks like robotic arm manipulation. The Robot Operating System (ROS) is an open-source middleware framework that provides tools, libraries, and conventions for building complex robotic systems, including hardware abstraction, low-level device control, message-passing between processes, and package management. SLAM (Simultaneous Localization and Mapping) enables a robot to build a map of an unknown environment while simultaneously keeping track of its own location within that map, using sensor fusion of LiDAR, cameras, IMUs, and wheel odometry — fundamental for autonomous navigation in unstructured environments."
+  },
+  {
+    "q": [
+      "What is robotic manipulation?",
+      "How do robotic grippers work?",
+      "What is human-robot interaction?",
+      "How do robots interact with humans safely?",
+      "What is collaborative robotics?",
+      "What are cobots?"
+    ],
+    "a": "Robotic manipulation involves a robot physically interacting with objects in its environment — grasping, moving, assembling, or deforming items — requiring integrated control of grippers or end effectors, force sensing, and visual feedback to handle objects of varying shapes, sizes, and fragility. Human-robot interaction (HRI) studies how humans and robots communicate and collaborate effectively, encompassing voice commands, gesture recognition, haptic feedback, and social cues, with safety being paramount through techniques like force limiting, speed monitoring, and proximity sensing. Collaborative robots (cobots) are specifically designed to work alongside humans in shared spaces, equipped with safety features that allow them to stop or slow down upon contact, making them suitable for tasks requiring human dexterity combined with robotic precision."
+  },
+  {
+    "q": [
+      "What are the ethical issues in robotics?",
+      "What is robot ethics?",
+      "Should robots have rights?",
+      "What are the risks of autonomous weapons?",
+      "How do we ensure ethical use of robots?",
+      "What are Asimov's laws of robotics?"
+    ],
+    "a": "Robot ethics addresses the moral implications of designing, deploying, and using robots, particularly as they become more autonomous and integrated into society. Isaac Asimov's Three Laws of Robotics — (1) a robot may not injure a human or allow harm through inaction, (2) a robot must obey humans except when conflicting with the first law, and (3) a robot must protect its own existence except when conflicting with the first two laws — while foundational in science fiction, are widely recognized as insufficient for real-world robot ethics due to ambiguity and conflicting priorities. Key contemporary concerns include autonomous weapons systems (raising questions about accountability and proportionality in warfare), job displacement from automation, privacy implications of domestic and surveillance robots, and ensuring that robots make decisions aligned with human values and legal frameworks."
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What is cryptography?",
+      "How does cryptography work in mathematics?",
+      "What is the difference between symmetric and asymmetric encryption?",
+      "What is RSA encryption?",
+      "Why is number theory important in cryptography?"
+    ],
+    "a": "Cryptography is the study and practice of secure communication through mathematical techniques that transform readable data (plaintext) into an unreadable form (ciphertext). Symmetric encryption uses a single shared key for both encryption and decryption (e.g., AES), while asymmetric encryption uses a public-private key pair (e.g., RSA), where the public key encrypts and the private key decrypts. RSA encryption relies on the practical difficulty of factoring the product of two large prime numbers, making number theory — especially prime numbers and modular arithmetic — the mathematical backbone of modern cryptographic systems."
+  },
+  {
+    "q": [
+      "What is game theory?",
+      "How is game theory used in mathematics?",
+      "What is the Nash equilibrium?",
+      "What is the Prisoner's Dilemma?",
+      "How does game theory apply to economics?"
+    ],
+    "a": "Game theory is the mathematical study of strategic interaction among rational decision-makers, modeling situations where the outcome for each participant depends on the choices of all. The Nash equilibrium, a core concept introduced by John Nash, describes a state where no player can benefit by changing their strategy unilaterally. The Prisoner's Dilemma famously illustrates why two rational individuals might not cooperate even when it is in their mutual best interest, and game theory is widely applied in economics (auction design, market competition), political science (voting systems), and evolutionary biology."
+  },
+  {
+    "q": [
+      "What is graph theory?",
+      "How are graphs defined in mathematics?",
+      "What are vertices and edges in graph theory?",
+      "What is the difference between directed and undirected graphs?",
+      "What are real-world applications of graph theory?"
+    ],
+    "a": "Graph theory studies graphs, which are mathematical structures consisting of vertices (nodes) connected by edges (links). Undirected graphs have edges without direction, while directed graphs (digraphs) have edges with orientation. Graph theory has powerful applications: social networks model users as vertices and friendships as edges; Google's PageRank algorithm uses a directed graph of web links; GPS navigation relies on shortest-path algorithms (like Dijkstra's algorithm); and network flow problems optimize transportation, internet data routing, and supply chains."
+  },
+  {
+    "q": [
+      "What is linear programming?",
+      "How does linear programming work?",
+      "What is the simplex method?",
+      "What are real-world applications of linear programming?",
+      "What is the difference between linear programming and integer programming?"
+    ],
+    "a": "Linear programming is a mathematical method for optimizing a linear objective function subject to a set of linear equality and inequality constraints. The simplex algorithm, developed by George Dantzig in 1947, efficiently navigates the vertices of the feasible region (a convex polytope) to find the optimal solution. Linear programming is used extensively in operations research for production planning, transportation logistics, portfolio optimization, and diet formulation; integer programming extends the model by requiring some or all variables to take integer values, which handles indivisible resources but is computationally harder."
+  },
+  {
+    "q": [
+      "What is discrete mathematics?",
+      "What topics does discrete mathematics cover?",
+      "Why is discrete mathematics important in computer science?",
+      "How is discrete math different from continuous math?",
+      "What are applications of discrete mathematics?"
+    ],
+    "a": "Discrete mathematics studies countable, distinct structures rather than continuous quantities, covering topics such as logic, set theory, combinatorics, graph theory, number theory, and Boolean algebra. It is the foundational mathematics of computer science: Boolean logic underlies digital circuits and programming conditions, combinatorics analyzes algorithm complexity, graph theory models networks and data structures, and recurrence relations describe algorithm performance. Unlike calculus which deals with smooth change, discrete mathematics handles finite or countably infinite sets essential for computation, cryptography, and digital communications."
+  },
+  {
+    "q": [
+      "What is mathematical modeling?",
+      "How do you build a mathematical model?",
+      "What are examples of mathematical models?",
+      "Why is mathematical modeling important?",
+      "What is the difference between a deterministic and stochastic model?"
+    ],
+    "a": "Mathematical modeling uses mathematical language and equations to represent and analyze real-world systems, translating observations into forms that can be manipulated, predicted, and tested. The process involves identifying relevant variables, making simplifying assumptions, formulating equations, solving or simulating them, and validating results against data. Deterministic models (like Newton's laws of motion) produce the same output for given initial conditions, while stochastic models (like those for stock prices or epidemic spread) incorporate randomness to reflect inherent uncertainty. Models are vital in climate science, epidemiology (SIR models for disease spread), engineering design, and economic forecasting."
+  }
+]

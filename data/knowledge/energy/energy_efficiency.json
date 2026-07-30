@@ -1,0 +1,60 @@
+[
+  {
+    "q": [
+      "What is energy efficiency?",
+      "How is energy efficiency different from energy conservation?",
+      "What are examples of energy efficiency?",
+      "Why is energy efficiency important?",
+      "What is the definition of energy efficiency?",
+      "energy efficiency vs energy conservation",
+      "benefits of energy efficiency",
+      "examples of energy efficient technologies"
+    ],
+    "a": "Energy efficiency means using less energy to provide the same level of service or output — for example, an LED bulb using 10 watts to produce the same light as a 60-watt incandescent bulb, or a modern refrigerator using 75% less electricity than a 1970s model while offering greater capacity and features. Energy efficiency is distinct from energy conservation (which involves behavioral changes like turning off lights or wearing a sweater instead of turning up the heat) — efficiency achieves savings through technological improvement without changing behavior or sacrificing comfort. Energy efficiency is widely recognized as the most cost-effective and rapidly available strategy for reducing greenhouse gas emissions, lowering household and business energy bills, reducing the need for new power plants and grid infrastructure, improving energy security, and creating economic benefits through reduced energy spending and jobs in manufacturing, installation, and retrofit services."
+  },
+  {
+    "q": [
+      "What are energy-efficient buildings?",
+      "What is insulation in buildings?",
+      "What is energy-efficient HVAC?",
+      "What are energy-efficient appliances?",
+      "What is energy-efficient lighting?",
+      "How do you make a building energy efficient?",
+      "energy efficient building design",
+      "building insulation types",
+      "efficient HVAC systems",
+      "Energy Star appliances"
+    ],
+    "a": "Energy-efficient buildings minimize energy use through an integrated 'whole-building' approach: high-performance building envelopes with continuous insulation (spray foam, rigid foam, mineral wool, or cellulose), air sealing to prevent drafts, energy-efficient windows (double or triple glazing with low-emissivity coatings and gas fills), and thermal bridge-free construction that prevents heat flow through structural elements. Efficient heating, ventilation, and air conditioning (HVAC) systems include heat pumps (air-source and ground-source/geothermal, which can provide 3-4 units of heat for every unit of electricity), variable refrigerant flow (VRF) systems, energy recovery ventilators (ERVs) that capture heat from exhaust air, and programmable or smart thermostats that optimize heating and cooling schedules based on occupancy. Energy-efficient appliances carry ENERGY STAR certification (a US EPA/DOE program) or equivalent labels in other countries, meeting strict efficiency criteria: ENERGY STAR refrigerators use about 15% less energy than standard models, efficient clothes washers use 25% less energy and 33% less water, and LED lighting uses 75-90% less energy than incandescent bulbs while lasting 15-25 times longer, with the global LED lighting market now exceeding 50% of residential sales."
+  },
+  {
+    "q": [
+      "What is combined heat and power (CHP)?",
+      "What is waste heat recovery?",
+      "What are industrial energy efficiency measures?",
+      "What are CAFE standards?",
+      "What is fuel economy?",
+      "How does energy efficiency improve transportation?",
+      "combined heat and power CHP",
+      "industrial waste heat recovery",
+      "CAFE standards fuel economy",
+      "transportation energy efficiency"
+    ],
+    "a": "Combined heat and power (CHP or cogeneration) is a highly efficient industrial process that simultaneously generates electricity and useful thermal energy from a single fuel source, capturing the heat that would otherwise be wasted in conventional power generation and using it for space heating, process heating, or cooling via absorption chillers — achieving overall efficiencies of 65-80% compared to about 50% for separate electricity and heat generation. Waste heat recovery technologies capture and repurpose heat from industrial processes (exhaust gases, cooling water, equipment surfaces) for preheating feedstocks, generating additional electricity through bottoming cycle turbines (organic Rankine cycle), or supplying district heating networks. Transportation efficiency is governed by fuel economy standards like the US Corporate Average Fuel Economy (CAFE) standards (requiring new vehicles to achieve an average of 49 mpg by 2026 for passenger cars) and EU CO₂ emission standards (targeting 95 g CO₂/km for new cars), driving improvements through engine downsizing and turbocharging, transmission efficiency (more gears, CVTs, dual-clutch), lightweight materials (aluminum, high-strength steel, carbon fiber), aerodynamic design, hybridization, and electric vehicle adoption."
+  },
+  {
+    "q": [
+      "What is the Passive House standard?",
+      "What is Passivhaus?",
+      "What is a net-zero building?",
+      "What is a net-zero energy building?",
+      "What is an energy audit?",
+      "What are smart thermostats?",
+      "How do behavioral approaches improve energy efficiency?",
+      "Passivhaus standard",
+      "home energy audit",
+      "behavioral energy efficiency"
+    ],
+    "a": "The Passive House (Passivhaus) standard is the world's most rigorous voluntary building energy performance standard, requiring extremely low energy consumption for heating and cooling (≤ 15 kWh/m² per year, roughly 90% less than conventional buildings) through five key principles: superinsulation, airtight construction (≤ 0.6 air changes per hour at 50 Pa), high-performance triple-glazed windows, elimination of thermal bridges, and a mechanical ventilation system with heat recovery (HRV/ERV) that continuously supplies fresh air while capturing 80-90% of the heat from exhaust air. Net-zero energy buildings produce as much energy as they consume over the course of a year through on-site renewable generation (typically rooftop solar) combined with very high energy efficiency, while net-zero carbon buildings account for both operational and embodied carbon emissions across the full lifecycle. Energy audits are systematic assessments of a building's energy use, conducted at three levels: Level I (walk-through audit identifying low-cost measures), Level II (detailed survey with energy bills analysis and cost-benefit calculations), and Level III (investment-grade audit with monitored data and calibrated simulation). Behavioral approaches — including real-time energy feedback displays, gamification, social norms comparisons with neighbors (e.g., Opower's home energy reports), and smart thermostat scheduling — have demonstrated 5-15% energy savings at very low cost by making energy use visible and motivating conservation without requiring technology upgrades."
+  }
+]

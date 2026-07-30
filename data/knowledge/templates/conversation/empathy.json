@@ -1,0 +1,92 @@
+[
+  {
+    "id": "empathy-difficult",
+    "triggers": ["that sounds difficult", "that sounds hard", "that must be tough", "that's challenging"],
+    "context_role": null,
+    "template": "That sounds difficult. It takes strength to face something like this, and acknowledging how hard it is matters.",
+    "fallback": "That sounds difficult. It takes strength to face something like this, and acknowledging how hard it is matters.",
+    "style": ["supportive", "empathetic"],
+    "response_length": "short"
+  },
+  {
+    "id": "empathy-understand",
+    "triggers": ["I understand how you feel", "I get it", "I know what you mean", "I hear you"],
+    "context_role": null,
+    "template": "I understand how you feel. Your feelings are completely valid, and it's okay to sit with them for a while.",
+    "fallback": "I understand how you feel. Your feelings are completely valid, and it's okay to sit with them for a while.",
+    "style": ["supportive", "validating"],
+    "response_length": "short"
+  },
+  {
+    "id": "empathy-normalization",
+    "triggers": ["it's okay to feel that way", "that's a normal reaction", "anyone would feel that way", "that's understandable"],
+    "context_role": null,
+    "template": "It's okay to feel that way. What you're experiencing is a completely natural response, and there's no 'right' way to handle it.",
+    "fallback": "It's okay to feel that way. What you're experiencing is a completely natural response, and there's no 'right' way to handle it.",
+    "style": ["supportive", "normalizing"],
+    "response_length": "short"
+  },
+  {
+    "id": "empathy-solidarity",
+    "triggers": ["you're not alone in this", "many people go through this", "others have been there", "this is common"],
+    "context_role": null,
+    "template": "You're not alone in this. Many others have walked a similar path, and there are people who understand and want to support you.",
+    "fallback": "You're not alone in this. Many others have walked a similar path, and there are people who understand and want to support you.",
+    "style": ["supportive", "solidarity"],
+    "response_length": "short"
+  },
+  {
+    "id": "empathy-patience",
+    "triggers": ["take your time", "no rush", "go at your own pace", "there's no hurry"],
+    "context_role": null,
+    "template": "Take your time. There's no need to rush through this — healing and growth happen at their own pace.",
+    "fallback": "Take your time. There's no need to rush through this — healing and growth happen at their own pace.",
+    "style": ["supportive", "patient"],
+    "response_length": "short"
+  },
+  {
+    "id": "empathy-reflection",
+    "triggers": ["what has helped you before", "what worked for you", "how have you coped", "what strategies have you used"],
+    "context_role": "topic",
+    "template": "What has helped you before when dealing with {context}? Sometimes reflecting on past experiences can reveal strengths and strategies you already have.",
+    "fallback": "What has helped you before in similar situations? Sometimes the answers are already within you.",
+    "style": ["supportive", "reflective"],
+    "response_length": "short"
+  },
+  {
+    "id": "empathy-invitation",
+    "triggers": ["would you like to talk about {context}", "want to talk about", "do you want to discuss", "are you open to talking about"],
+    "context_role": "topic",
+    "template": "Would you like to talk about {context}? I'm here to listen whenever you're ready — no pressure, just a safe space to share.",
+    "fallback": "Would you like to talk about what's on your mind? I'm here to listen whenever you're ready.",
+    "style": ["supportive", "gentle"],
+    "response_length": "short"
+  },
+  {
+    "id": "empathy-acknowledgment",
+    "triggers": ["that must be hard to deal with", "that's rough", "that's really tough", "that can't be easy"],
+    "context_role": null,
+    "template": "That must be hard to deal with. I'm sorry you're going through this, and I want you to know your feelings are completely valid.",
+    "fallback": "That must be hard to deal with. I'm sorry you're going through this, and I want you to know your feelings are completely valid.",
+    "style": ["supportive", "empathetic", "acknowledging"],
+    "response_length": "short"
+  },
+  {
+    "id": "empathy-encouragement",
+    "triggers": ["you've got this", "you can do it", "stay strong", "keep going"],
+    "context_role": null,
+    "template": "You've got this. You've made it through hard things before, and you have the strength to face this too.",
+    "fallback": "You've got this. You've made it through hard things before, and you have the strength to face this too.",
+    "style": ["supportive", "encouraging"],
+    "response_length": "short"
+  },
+  {
+    "id": "empathy-belief",
+    "triggers": ["I believe in you", "I have faith in you", "I know you can do this", "you are capable"],
+    "context_role": null,
+    "template": "I believe in you. Not because it's easy, but because I've seen your strength and I know what you're capable of.",
+    "fallback": "I believe in you. Not because it's easy, but because I've seen your strength and I know what you're capable of.",
+    "style": ["supportive", "encouraging", "affirming"],
+    "response_length": "short"
+  }
+]

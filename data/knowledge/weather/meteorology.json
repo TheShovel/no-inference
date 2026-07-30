@@ -1,0 +1,56 @@
+[
+  {
+    "q": [
+      "What is meteorology?",
+      "Define meteorology and its scope.",
+      "What do meteorologists study?",
+      "How is meteorology different from climatology?",
+      "What are the main branches of meteorology?"
+    ],
+    "a": "Meteorology is the scientific study of the atmosphere, atmospheric phenomena, and weather processes. It encompasses the physics, chemistry, and dynamics of the atmosphere, including cloud formation, precipitation, atmospheric circulation, and energy transfer. While weather describes short-term atmospheric conditions (hours to days), meteorology as a field also contributes to climatology by providing the long-term data and physical understanding needed to study climate patterns and climate change."
+  },
+  {
+    "q": [
+      "How are weather forecasts made?",
+      "What methods do meteorologists use to predict weather?",
+      "What is numerical weather prediction?",
+      "How accurate are modern weather forecasts?",
+      "What data goes into weather forecasting models?",
+      "weather forecast",
+      "how is weather forecast",
+      "weather forecasting",
+      "how do meteorologists predict weather"
+    ],
+    "a": "Weather forecasting relies on numerical weather prediction (NWP), which uses powerful supercomputers to solve mathematical equations describing atmospheric physics. Forecast models ingest billions of observations from weather stations, satellites, radiosondes, aircraft, and ships, then simulate future atmospheric states. Forecast accuracy has improved significantly, with 5-day forecasts today as accurate as 3-day forecasts were 20 years ago, though skill declines rapidly beyond 7-10 days due to the chaotic nature of the atmosphere."
+  },
+  {
+    "q": [
+      "What is satellite meteorology?",
+      "How do weather satellites observe the atmosphere?",
+      "What is the difference between geostationary and polar-orbiting satellites?",
+      "How are satellite images used in weather forecasting?",
+      "What data do weather satellites collect?"
+    ],
+    "a": "Satellite meteorology uses instruments on orbiting spacecraft to observe clouds, temperature, humidity, precipitation, winds, and sea surface temperatures across the globe. Geostationary satellites (e.g., GOES) orbit at 35,786 km above the equator, matching Earth's rotation to provide continuous imagery of the same region. Polar-orbiting satellites (e.g., NOAA POES, Suomi NPP) circle at lower altitudes (about 850 km), providing higher-resolution data but only twice daily over each location, complementing geostationary coverage."
+  },
+  {
+    "q": [
+      "How does weather radar work?",
+      "What is Doppler radar and how is it used?",
+      "How does radar detect precipitation?",
+      "What can weather radar tell us about storms?",
+      "What is the difference between reflectivity and velocity data on radar?"
+    ],
+    "a": "Weather radar (particularly Doppler radar) emits pulses of microwave radiation that bounce off precipitation particles and return to the radar antenna. Reflectivity data shows the location and intensity of precipitation, with colors indicating rainfall rate or hail presence. Doppler shift measurements reveal whether particles are moving toward or away from the radar, allowing meteorologists to detect rotation in thunderstorms (mesocyclones) that may produce tornadoes, and to estimate wind speeds in storms."
+  },
+  {
+    "q": [
+      "What are weather stations and weather balloons?",
+      "How do weather stations measure atmospheric conditions?",
+      "What is a radiosonde and what does it measure?",
+      "How is upper-atmosphere data collected?",
+      "What instruments are carried on a weather balloon?"
+    ],
+    "a": "Weather stations are ground-based facilities that measure temperature, humidity, air pressure, wind speed and direction, and precipitation at regular intervals, forming the backbone of surface meteorological observations. Weather balloons carry radiosondes instrument packages that ascend through the atmosphere to about 30 km, transmitting vertical profiles of temperature, humidity, pressure, and GPS-derived wind data. This upper-air data is critical for initializing numerical weather prediction models and understanding atmospheric stability."
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is preventive medicine?",
+      "What are the three levels of prevention in medicine?",
+      "How does preventive medicine differ from treatment?",
+      "What is the goal of preventive healthcare?",
+      "Describe the different types of disease prevention.",
+      "What is primary, secondary, and tertiary prevention?",
+      "preventive medicine definition"
+    ],
+    "a": "Preventive medicine focuses on preventing disease rather than treating it after onset, operating across three levels: primary prevention (preventing disease before it occurs through vaccination, healthy lifestyle, and safety measures), secondary prevention (early detection of asymptomatic disease through screening tests like mammograms and colonoscopies), and tertiary prevention (managing established disease to prevent complications and disability, such as cardiac rehabilitation after a heart attack). The field draws on epidemiology, biostatistics, health behavior science, and public health policy to reduce the burden of disease at both individual and population levels. Preventive medicine physicians specialize in fields such as public health, occupational medicine, and aerospace medicine, working to identify risk factors and implement interventions that improve health outcomes on a broad scale."
+  },
+  {
+    "q": [
+      "What are the most important screening tests?",
+      "How do cancer screening guidelines work?",
+      "What screening tests should adults get regularly?",
+      "When should I get a mammogram or colonoscopy?",
+      "What is the difference between screening and diagnostic tests?",
+      "What are the recommended screenings for different ages?",
+      "screening tests preventive medicine cancer screening"
+    ],
+    "a": "Cancer screening tests aim to detect malignancies at early, treatable stages—mammography for breast cancer (recommended every 1-2 years starting at age 40-50), colonoscopy for colorectal cancer (every 10 years starting at age 45), Pap smears for cervical cancer (every 3-5 years starting at age 21), and low-dose CT for lung cancer (annual screening for high-risk smokers aged 50-80). Additional important screenings include blood pressure measurement for hypertension (annually), lipid panels for cardiovascular risk (every 4-6 years starting at age 20), blood glucose or HbA1c for diabetes (every 3 years starting at age 45 or earlier with risk factors), bone density scans for osteoporosis (starting at age 65 for women), and depression and anxiety screening using validated questionnaires. Screening guidelines vary between organizations such as the U.S. Preventive Services Task Force (USPSTF), the American Cancer Society, and the World Health Organization, reflecting differences in evidence evaluation, resource availability, and population risk profiles."
+  },
+  {
+    "q": [
+      "What is lifestyle medicine?",
+      "How does lifestyle affect health and disease prevention?",
+      "What are the pillars of lifestyle medicine?",
+      "Can lifestyle changes prevent chronic diseases?",
+      "How important are diet and exercise for preventive health?",
+      "What is the role of nutrition in disease prevention?",
+      "lifestyle medicine health promotion"
+    ],
+    "a": "Lifestyle medicine is an evidence-based approach that uses six key pillars—nutrition, physical activity, sleep, stress management, social connection, and avoidance of risky substances—to prevent, treat, and often reverse chronic diseases like type 2 diabetes, cardiovascular disease, hypertension, and certain cancers. A whole-food, plant-predominant diet rich in vegetables, fruits, legumes, and whole grains, combined with at least 150 minutes of moderate-intensity aerobic activity per week and two sessions of strength training, has been shown to reduce all-cause mortality by up to 50% compared to sedentary, poor-diet lifestyles. Lifestyle medicine interventions are increasingly prescribed as first-line therapy before medication, with programs like the Diabetes Prevention Program (DPP) demonstrating that lifestyle changes can reduce the risk of developing type 2 diabetes by 58%—more effectively than metformin alone."
+  },
+  {
+    "q": [
+      "How do vaccines prevent disease?",
+      "What is the importance of vaccination in public health?",
+      "What types of vaccines are available?",
+      "How do routine immunizations work?",
+      "What is the recommended vaccination schedule?",
+      "How do vaccines contribute to herd immunity?",
+      "vaccination immunization preventive medicine"
+    ],
+    "a": "Vaccination is one of the most cost-effective public health interventions, preventing an estimated 2-3 million deaths annually from diseases like measles, diphtheria, tetanus, pertussis, and influenza. Routine childhood immunization schedules include vaccines for hepatitis B, rotavirus, DTaP (diphtheria, tetanus, pertussis), Hib, pneumococcus, polio, MMR (measles, mumps, rubella), varicella, hepatitis A, and HPV (human papillomavirus), with COVID-19 and annual influenza vaccines recommended for all age groups. Adult vaccination focuses on booster doses (tetanus/diphtheria/pertussis every 10 years), shingles vaccine (recommended at age 50), pneumococcal vaccines (at age 65 or earlier with chronic conditions), and travel vaccines (yellow fever, typhoid, hepatitis A, meningococcal) based on destination, with maternal vaccination (Tdap and influenza) protecting both pregnant women and newborns through passive antibody transfer."
+  }
+]

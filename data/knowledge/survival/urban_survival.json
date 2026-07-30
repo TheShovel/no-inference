@@ -1,0 +1,61 @@
+[
+  {
+    "q": [
+      "What should be in an emergency go-bag?",
+      "What is a bug-out bag and what goes in it?",
+      "What is a 72-hour kit?",
+      "How much water should I store for emergencies?",
+      "What food should I store for emergencies?",
+      "What should be in a family emergency plan?",
+      "How do I create a family communication plan?"
+    ],
+    "a": "A comprehensive emergency kit (go-bag/bug-out bag) should contain at least 3 days of supplies: 1 gallon of water per person per day, non-perishable food (MREs, freeze-dried meals, energy bars, canned goods with manual can opener), first aid kit, prescription medications, flashlight with extra batteries, multi-tool, whistle, dust masks, moist towelettes, garbage bags, wrench or pliers for utility shut-offs, local maps, fully charged power bank, cash in small bills, and copies of critical documents (ID, insurance, medical info) in a waterproof container. A family emergency plan should include an out-of-state contact (local lines may be congested), predetermined meeting locations (one near home, one outside the neighborhood), evacuation routes mapped to multiple destinations, and a plan for pets and family members with special needs. Water storage should be 1 gallon per person per day for at least 2 weeks for home storage, plus purification methods (bleach, filter, or purification tablets). Food storage should focus on shelf-stable items your family will actually eat, with a rotation system to maintain freshness."
+  },
+  {
+    "q": [
+      "How do I prepare for an earthquake?",
+      "What should I do during an earthquake (drop, cover, hold on)?",
+      "How do I secure my home for an earthquake?",
+      "How do I prepare for a hurricane?",
+      "What should I do during a hurricane?",
+      "How do I prepare for a tornado?",
+      "Where should I go during a tornado?"
+    ],
+    "a": "Natural disaster preparedness is hazard-specific. For earthquakes: secure heavy furniture to walls, learn how to shut off gas (using a wrench at the meter), strap the water heater, and practice 'Drop, Cover, and Hold On' (drop to hands and knees, cover head and neck under sturdy furniture, hold on until shaking stops). For hurricanes: install storm shutters or board windows, reinforce garage doors, trim trees and secure loose outdoor items, know your evacuation zone, and have a hurricane kit ready. For tornadoes: identify a safe room or basement (interior room on the lowest floor, away from windows), practice drills, and in mobile homes—evacuate to a pre-identified sturdy building. For floods: purchase flood insurance (standard homeowners policies don't cover flood damage), elevate utilities and appliances, install sump pumps, and use sandbags where needed. For wildfire: create defensible space (clear vegetation within 30 feet of structures), use fire-resistant construction materials (Class A roof, tempered windows, non-combustible siding), and have a go-bag ready for immediate evacuation."
+  },
+  {
+    "q": [
+      "How do I make my home more secure?",
+      "What are the best home security systems?",
+      "How do I prevent burglary?",
+      "What is target hardening?",
+      "How do I secure my home when on vacation?",
+      "What are the best smart home security devices?"
+    ],
+    "a": "Home security uses layered defense (target hardening). Start with the basics: install deadbolt locks on all exterior doors (grade 1 or 2), reinforce door frames with strike plates anchored by 3-inch screws, secure sliding glass doors with a bar or pin lock, and ensure all windows have functional locks. Exterior lighting (motion-activated LED floods) deters nocturnal intrusion. Visible security cameras (doorbell cameras, exterior IP cameras) and alarm system signage are effective deterrents. Landscaping matters: keep shrubs trimmed below window level to eliminate hiding spots, and use gravel on walkways for audible approach detection. When away, create an occupied appearance with timers on lights and electronics, hold mail delivery, and never announce vacation plans on social media. Smart home security options include video doorbells, motion sensors, glass break detectors, smart locks with access logs, and cellular-backup alarm monitoring."
+  },
+  {
+    "q": [
+      "How do I practice situational awareness for self-defense?",
+      "What is the Cooper color code of awareness?",
+      "What is the OODA loop?",
+      "How do I de-escalate a confrontation?",
+      "What is verbal judo?",
+      "What self-defense weapons are legal and effective?",
+      "Is pepper spray effective for self-defense?"
+    ],
+    "a": "Situational awareness is the foundation of personal safety. Jeff Cooper's color code describes mental states: Condition White (unaware and unprepared), Condition Yellow (relaxed alertness—scanning your environment), Condition Orange (specific potential threat identified—mentally preparing a response), and Condition Red (action triggered). The OODA loop (Observe, Orient, Decide, Act), developed by military strategist John Boyd, describes the decision cycle for effective response. Avoidance and de-escalation are always the primary strategies: stay calm, use non-threatening body language, speak firmly but respectfully, give the person a respectful way to save face, and create distance. If physical self-defense is necessary, pepper spray (OC spray) is widely legal and effective at 10-15 feet, creating temporary incapacitation. Personal alarms produce 130+ dB startling noise. Self-defense classes in Krav Maga, Brazilian Jiu-Jitsu, or boxing provide practical skills for physical confrontations. Legal use of force varies by jurisdiction—understand your local laws regarding duty to retreat, stand your ground, and castle doctrine."
+  },
+  {
+    "q": [
+      "What is the legal use of force for self-defense?",
+      "What are self-defense laws (stand your ground, castle doctrine)?",
+      "Should I own a firearm for home defense?",
+      "What are the basics of firearm safety?",
+      "How do I store firearms safely at home?",
+      "What is the duty to retreat?",
+      "What self-defense weapons are legal in my state?"
+    ],
+    "a": "Self-defense law varies significantly by jurisdiction. The three general categories are: Duty to Retreat (you must attempt to avoid confrontation before using force, if safely possible), Stand Your Ground (you have no duty to retreat before using force in self-defense anywhere you are lawfully present), and Castle Doctrine (you have no duty to retreat from your own home and may use force—including deadly force—against an unlawful intruder). Firearm ownership for self-defense requires significant commitment to training, safe storage (gun safe or lockbox, ammunition stored separately), and understanding legal use-of-force principles. Firearm safety fundamentals are: treat every firearm as if it's loaded, never point at anything you're not willing to destroy, keep your finger off the trigger until ready to fire, and know your target and what lies beyond it. Less-lethal options including pepper spray, tasers, and stun guns are legal in most states but restricted in some (Massachusetts, New York, Hawaii, California have varying restrictions). Regardless of tool, de-escalation, avoidance, and situational awareness remain the primary self-defense strategies."
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "q": [
+      "How do hurricanes form and intensify?",
+      "What is the Saffir-Simpson Hurricane Wind Scale?",
+      "What conditions are needed for hurricane formation?",
+      "How are hurricane categories determined?",
+      "What is the difference between a Category 1 and Category 5 hurricane?"
+    ],
+    "a": "Hurricanes require warm ocean water (at least 26.5°C to a depth of 50 meters), high humidity, low wind shear, and a pre-existing disturbance to form. The Saffir-Simpson scale categorizes hurricanes from 1 (minimal, 74-95 mph winds) to 5 (catastrophic, 157+ mph), based on sustained wind speeds. Category 3 and above are considered major hurricanes capable of devastating structural damage, storm surge flooding, and prolonged power outages."
+  },
+  {
+    "q": [
+      "How do tornadoes form?",
+      "What is the Enhanced Fujita Scale?",
+      "How are tornadoes rated on the EF scale?",
+      "What conditions are favorable for tornado development?",
+      "What is a tornado outbreak?"
+    ],
+    "a": "Tornadoes form within severe thunderstorms, especially supercells, when strong wind shear creates horizontal rotation that is tilted vertically by the updraft, forming a mesocyclone. The Enhanced Fujita (EF) Scale rates tornadoes from EF0 (65-85 mph, light damage) to EF5 (over 200 mph, incredible damage), based on 28 damage indicators such as damage to trees, houses, and commercial buildings. Tornado outbreaks occur when multiple tornadoes form from the same storm system, sometimes producing dozens of tornadoes in a single day."
+  },
+  {
+    "q": [
+      "What is the definition of a severe thunderstorm?",
+      "What criteria qualify a thunderstorm as severe?",
+      "What is the difference between a severe thunderstorm watch and a warning?",
+      "When should a severe thunderstorm warning be issued?",
+      "What hazards come with severe thunderstorms?"
+    ],
+    "a": "A thunderstorm is classified as severe when it produces hail at least 1 inch in diameter, wind gusts of 58 mph (50 knots) or higher, or a tornado. A severe thunderstorm watch means conditions are favorable for severe storms to develop in an area covering typically thousands of square miles, while a warning means a severe storm has been detected by radar or reported by spotters and is imminent or occurring. Hazards include damaging winds, large hail that destroys crops and property, flash flooding, and lightning strikes."
+  },
+  {
+    "q": [
+      "What should you do to prepare for severe weather?",
+      "What is an emergency preparedness plan for severe storms?",
+      "What should be in a severe weather emergency kit?",
+      "How do you stay safe during a tornado warning?",
+      "What is the difference between a watch and a warning for severe weather?"
+    ],
+    "a": "Severe weather preparedness includes having a NOAA Weather Radio, multiple ways to receive warnings, a family emergency plan, and a stocked emergency kit with water, food, medications, flashlights, and batteries. During a tornado warning, seek shelter in a basement or interior room on the lowest floor away from windows. For hurricanes, plans should include evacuation routes and boarding up windows. Understanding the difference between watches (conditions are favorable) and warnings (take action now) is critical for timely response."
+  }
+]

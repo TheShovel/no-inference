@@ -1,0 +1,46 @@
+[
+  {
+    "q": [
+      "What is seismology?",
+      "How do scientists study earthquakes?",
+      "What are seismic waves and how do they work?",
+      "What is the difference between P-waves, S-waves, and surface waves?",
+      "How do seismometers measure earthquakes?",
+      "What can seismic waves tell us about Earth's interior?"
+    ],
+    "a": "Seismology is the scientific study of earthquakes and the propagation of elastic waves through the Earth, providing crucial insights into Earth's internal structure and the mechanics of fault movements. Seismic waves are categorized into body waves that travel through the Earth's interior — P-waves (primary or compression waves) are the fastest, traveling through solids, liquids, and gases by compressing and expanding material in the direction of travel, while S-waves (secondary or shear waves) are slower and can only travel through solids by moving material perpendicular to their direction. Surface waves (Love waves and Rayleigh waves) travel along the Earth's surface, are slower than body waves but produce the most ground shaking and damage during earthquakes, and their study helps seismologists understand crustal structure and earthquake hazard."
+  },
+  {
+    "q": [
+      "How are earthquakes measured?",
+      "What is the difference between the Richter scale and the moment magnitude scale?",
+      "What does each earthquake magnitude level mean?",
+      "How is earthquake intensity different from magnitude?",
+      "What is the Modified Mercalli Intensity scale?",
+      "How strong does an earthquake have to be to cause damage?"
+    ],
+    "a": "Earthquake magnitude measures the energy released at the source, with the moment magnitude scale (Mw) now preferred over the older Richter scale because it more accurately measures large earthquakes by calculating the seismic moment — the product of fault area, slip distance, and rock rigidity. The Richter scale was developed in 1935 by Charles Richter for local California earthquakes and is logarithmic (each whole number increase represents a tenfold increase in amplitude and roughly 32 times more energy release), but it saturates for events above magnitude 7. The Modified Mercalli Intensity scale (MMI) measures the observed effects and damage at specific locations on a I-XII scale, providing a practical assessment of shaking and destruction that varies with distance from the epicenter, local geology, and building construction quality."
+  },
+  {
+    "q": [
+      "What are the different types of faults?",
+      "What is the difference between normal, reverse, and strike-slip faults?",
+      "How do fault types relate to plate tectonics?",
+      "What is a fault and how does it cause earthquakes?",
+      "What is the San Andreas Fault and what type is it?",
+      "Describe the three main fault types and their movement."
+    ],
+    "a": "Faults are fractures in the Earth's crust where blocks of rock have moved past each other, classified by their movement direction: normal faults occur where tectonic forces pull apart (extension), with the hanging wall moving down relative to the footwall; reverse (or thrust) faults occur where compression pushes rocks together, with the hanging wall moving up; and strike-slip faults involve horizontal sliding where blocks move past each other laterally, like the San Andreas Fault in California. Fault slip can occur steadily through aseismic creep or suddenly through stick-slip behavior where accumulated stress is released in an earthquake — the larger the fault area that ruptures, the larger the maximum possible earthquake magnitude. Transform plate boundaries like the San Andreas accommodate horizontal sliding between tectonic plates, while divergent boundaries feature normal faulting and convergent boundaries generate reverse and thrust faulting, often producing the largest and most destructive earthquakes."
+  },
+  {
+    "q": [
+      "How do earthquake early warning systems work?",
+      "Can earthquakes be predicted?",
+      "What is seismic hazard assessment?",
+      "What is induced seismicity and how is it caused by fracking?",
+      "What are the most notable earthquakes in history?",
+      "How do scientists assess earthquake risk for a region?"
+    ],
+    "a": "Earthquake early warning systems detect the initial, faster-traveling P-waves from an earthquake and automatically send alerts before the slower but more destructive S-waves and surface waves arrive, providing seconds to tens of seconds of warning for protective actions like stopping trains, opening emergency doors, and shutting down industrial processes. These systems are operational in Japan, Mexico, California, and other seismically active regions but cannot predict earthquakes — they detect them as they begin and race the warning ahead of the damaging waves. Induced seismicity refers to earthquakes triggered by human activities, most notably wastewater injection from oil and gas operations (including fracking), where injected fluids increase pore pressure on faults, reducing the stress needed to cause slip; notable examples include a dramatic increase in earthquakes in Oklahoma linked to wastewater disposal from oil and gas extraction."
+  }
+]

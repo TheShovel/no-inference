@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "How is the education system structured in most countries?",
+      "What are the levels of formal education?",
+      "What is the difference between primary, secondary, and tertiary education?",
+      "What is K-12 education?",
+      "How do education systems around the world compare?",
+      "What is compulsory education and until what age?",
+      "What is early childhood education?"
+    ],
+    "a": "Most education systems are structured into sequential stages: early childhood education (preschool), primary education (elementary school, typically ages 5-11), secondary education (middle and high school, ages 11-18), and tertiary education (college, university, vocational training). Primary education focuses on foundational literacy, numeracy, and social skills, while secondary education broadens subject exposure and provides specialized tracks. Tertiary education offers academic degrees and professional certifications, with variations across countries—some separate students into academic and vocational tracks as early as age 10-12, while others maintain a comprehensive system through the end of secondary schooling."
+  },
+  {
+    "q": [
+      "What is the difference between public, private, and charter schools?",
+      "How do public schools differ from private schools?",
+      "What are charter schools?",
+      "How are public schools funded compared to private schools?",
+      "What is school choice?",
+      "What are the advantages and disadvantages of private schools?",
+      "How do charter schools differ from traditional public schools?"
+    ],
+    "a": "Public schools are government-funded institutions that provide free education to all students within a designated district, following state curriculum standards and regulations. Private schools charge tuition and are independently operated, often with religious affiliations or specialized educational philosophies, and have more flexibility in curriculum and admissions. Charter schools are publicly funded but independently operated under a performance contract or 'charter' that grants them greater autonomy in exchange for accountability, and they are typically open to all students via lottery rather than geographic assignment."
+  },
+  {
+    "q": [
+      "What is standardized testing?",
+      "Why is standardized testing used in education?",
+      "What are the advantages and disadvantages of standardized tests?",
+      "What are examples of standardized tests?",
+      "How do standardized tests measure student learning?",
+      "What is high-stakes testing?",
+      "What are the criticisms of standardized testing?"
+    ],
+    "a": "Standardized testing refers to examinations administered and scored in a consistent, uniform manner to measure student performance against common standards, allowing comparisons across individuals, schools, and districts. Proponents argue that standardized tests provide objective data on student achievement, school accountability, and educational equity, while critics contend they narrow the curriculum, encourage teaching to the test, disadvantage students from diverse backgrounds, and fail to measure important skills like creativity, critical thinking, and collaboration. Major examples include the SAT and ACT in the United States, A-levels in the UK, and PISA international assessments."
+  },
+  {
+    "q": [
+      "What is vocational education?",
+      "How does vocational education differ from academic education?",
+      "What is the difference between vocational training and traditional college?",
+      "What are the benefits of vocational education?",
+      "What are examples of vocational education programs?",
+      "What is CTE (Career and Technical Education)?",
+      "How do apprenticeship programs work?"
+    ],
+    "a": "Vocational education, also called career and technical education (CTE), prepares students for specific trades, crafts, and careers through practical, hands-on training in fields such as healthcare, information technology, construction, automotive repair, culinary arts, and manufacturing. Unlike academic education focused on theoretical knowledge, vocational education emphasizes direct skill development and often includes apprenticeships, internships, and industry certifications that lead directly to employment. Countries like Germany and Switzerland have highly developed dual education systems that combine classroom learning with paid on-the-job training, resulting in low youth unemployment and strong alignment between workforce skills and labor market needs."
+  },
+  {
+    "q": [
+      "What is the International Baccalaureate?",
+      "How does the IB program work?",
+      "What are the different IB programs?",
+      "How does IB differ from other curricula?",
+      "What are the benefits of an IB education?",
+      "What is the IB Diploma Programme?",
+      "Which schools offer the International Baccalaureate?"
+    ],
+    "a": "The International Baccalaureate (IB) is an internationally recognized educational foundation offering four programs for students aged 3-19: the Primary Years Programme (PYP), Middle Years Programme (MYP), Diploma Programme (DP), and Career-related Programme (CP). The IB emphasizes critical thinking, intercultural understanding, and holistic education through a rigorous curriculum that includes theory of knowledge (TOK), creativity/activity/service (CAS), and the extended essay. The IB Diploma Programme is widely regarded for preparing students for university-level work and is offered in over 5,000 schools across 160 countries, providing a globally transferable qualification."
+  }
+]

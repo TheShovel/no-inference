@@ -1,0 +1,46 @@
+[
+  {
+    "q": [
+      "What is epidemiology?",
+      "How does epidemiology study disease patterns?",
+      "What are the types of epidemiological studies?",
+      "What is the difference between incidence and prevalence?",
+      "How do epidemiologists track disease outbreaks?",
+      "What is the importance of epidemiology in public health?"
+    ],
+    "a": "Epidemiology is the study of how diseases distribute across populations and what factors influence their occurrence, forming the scientific foundation of public health. Epidemiologists use methods like cohort studies (following groups over time), case-control studies (comparing affected and unaffected individuals), and randomized controlled trials to identify risk factors and evaluate interventions. Key measures include incidence (new cases over time) and prevalence (total existing cases), with outbreak investigations using tools like epidemic curves and reproductive number (R₀) to guide containment strategies."
+  },
+  {
+    "q": [
+      "How do vaccines work?",
+      "What is herd immunity?",
+      "Why are vaccines important for public health?",
+      "What types of vaccines exist?",
+      "How are vaccines developed and tested?",
+      "What diseases have been eradicated by vaccines?"
+    ],
+    "a": "Vaccines work by exposing the immune system to harmless components of a pathogen (killed or weakened microbes, specific proteins, or genetic material) to generate protective immunity without causing disease. Vaccination has been one of history's most effective public health interventions—smallpox has been eradicated globally, polio is nearly eliminated, and diseases like measles, diphtheria, and tetanus have been dramatically reduced where vaccination rates are high. Herd immunity occurs when sufficient population vaccination protects even those who cannot be vaccinated (immunocompromised individuals) by reducing pathogen circulation, though this requires high coverage rates that vary by disease."
+  },
+  {
+    "q": [
+      "What is health policy?",
+      "How does health policy affect healthcare?",
+      "What are the goals of public health policy?",
+      "What is universal health coverage?",
+      "How do different countries organize healthcare systems?",
+      "What factors influence health policy decisions?"
+    ],
+    "a": "Health policy encompasses decisions, plans, and actions undertaken by governments and organizations to achieve specific healthcare goals within a society, addressing financing, delivery, quality, and access to medical services. Different nations organize their systems along various models—from single-payer government-run systems (UK's NHS) to social health insurance (Germany, Japan) to mixed public-private systems (United States) to out-of-pocket models. Effective health policy balances competing priorities: cost containment, quality improvement, equitable access, innovation, and population health outcomes, with decisions shaped by political considerations, economic constraints, and evidence-based research."
+  },
+  {
+    "q": [
+      "What is the World Health Organization (WHO)?",
+      "What is the role of the CDC?",
+      "How do global health organizations respond to outbreaks?",
+      "What is the difference between WHO and CDC?",
+      "How do international health organizations coordinate?",
+      "What are the major global health initiatives?"
+    ],
+    "a": "The World Health Organization (WHO), a specialized agency of the United Nations founded in 1948, coordinates international public health efforts including disease surveillance, setting health standards, and providing technical assistance to member states. The U.S. Centers for Disease Control and Prevention (CDC) operates at the national level, conducting disease surveillance, outbreak investigations, health promotion, and research, while also collaborating globally through its international programs. During health emergencies like the COVID-19 pandemic or Ebola outbreaks, these organizations coordinate surveillance, laboratory capacity, technical guidance, and vaccination campaigns, though their effectiveness depends on political will, funding, and international cooperation."
+  }
+]

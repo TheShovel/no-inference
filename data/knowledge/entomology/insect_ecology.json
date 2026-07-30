@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What is the role of insects in pollination?",
+      "Which insects are important pollinators?",
+      "What is buzz pollination?",
+      "What is colony collapse disorder in bees?",
+      "How do insects and flowers coevolve?",
+      "What is pollinator conservation?",
+      "How does pollination by insects work?"
+    ],
+    "a": "Pollination by insects is essential for the reproduction of over 75% of flowering plants and one-third of the world's food crops. Bees are the most important pollinators, with specialized structures like pollen baskets on their legs and the ability to perform buzz pollination (sonicating flowers by vibrating their flight muscles at specific frequencies to release tightly held pollen). Butterflies, moths, beetles, flies, and wasps also serve as pollinators, often forming specialized relationships with certain flower shapes, colors, and scents. Colony collapse disorder (CCD) has caused massive honey bee colony losses since 2006, driven by pesticide exposure, parasites (Varroa mites), pathogens, and habitat loss — prompting extensive pollinator conservation efforts including native plant restoration, reduced pesticide use, and protection of nesting habitats."
+  },
+  {
+    "q": [
+      "What is the role of insects in decomposition?",
+      "What do dung beetles do?",
+      "What are the different types of dung beetles?",
+      "How do carrion beetles help the ecosystem?",
+      "What insects are involved in breaking down dead matter?",
+      "How does nutrient cycling work with insects?",
+      "Why are scavenger insects important?"
+    ],
+    "a": "Insects are the primary drivers of decomposition in most ecosystems, breaking down dead plant matter, animal carcasses, and dung into nutrients that return to the soil. Dung beetles are divided into three functional groups: rollers (form dung into balls and roll them away to bury), tunnelers (dig directly beneath the dung and pack it into tunnels), and dwellers (live and breed within the dung itself). Carrion beetles, burying beetles, flesh flies, and blow flies rapidly consume and break down animal carcasses, preventing disease spread and recycling nutrients. Without insect decomposers, ecosystems would be buried under dead organic matter, nutrients would remain locked up, and soil fertility would rapidly decline — making decomposition insects essential for ecosystem health."
+  },
+  {
+    "q": [
+      "What are predatory insects and how do they hunt?",
+      "What insects are beneficial predators in the garden?",
+      "What are ladybugs known for?",
+      "How do praying mantises hunt?",
+      "What are parasitoid wasps?",
+      "What is biological control or IPM?",
+      "How do ichneumon wasps parasitize their hosts?"
+    ],
+    "a": "Predatory insects actively hunt and consume other insects, playing a crucial role in natural pest control. Ladybugs (ladybird beetles) are voracious predators of aphids, scale insects, and mites, consuming up to 5,000 aphids in their lifetime. Praying mantises are ambush predators with lightning-fast raptorial forelegs that snatch flies, crickets, moths, and even small vertebrates. Parasitoids like ichneumon wasps, braconid wasps, and tachinid flies lay their eggs inside or on a host insect — the developing larvae consume the host from within, eventually killing it. Integrated Pest Management (IPM) uses these natural enemies alongside cultural, mechanical, and targeted chemical controls to manage agricultural pests sustainably, reducing the need for broad-spectrum insecticides."
+  },
+  {
+    "q": [
+      "What are insect-plant interactions?",
+      "How do plants defend themselves against insects?",
+      "What types of herbivory do insects cause?",
+      "What is galling by insects?",
+      "What are insect leaf miners?",
+      "How do plants use volatile compounds against insects?",
+      "What is coevolution between insects and plants?"
+    ],
+    "a": "Insect-plant interactions range from herbivory (insects feeding on plants) to mutualism (both species benefiting). Herbivorous insects feed by chewing leaves (caterpillars, beetles), sucking sap (aphids, scale insects), mining between leaf surfaces (leaf miner larvae), or inducing galls (gall wasps, gall midges) — abnormal plant growths that provide shelter and food for the developing insect. Plants defend themselves through physical barriers (thorns, thick cuticles, trichomes), chemical defenses (alkaloids, tannins, latex, cyanogenic compounds), and indirect defenses (releasing volatile organic compounds that attract predators of the attacking herbivore). Coevolution occurs when plants and insects drive each other's evolution — for example, butterfly-dispersed plants evolving specific flower shapes while butterflies evolve proboscis lengths to match, or milkweed evolving toxic cardiac glycosides while monarch butterflies evolved resistance to them."
+  },
+  {
+    "q": [
+      "What is entomophagy or eating insects?",
+      "Which insects are commonly eaten by humans?",
+      "Is eating insects sustainable?",
+      "What is insect farming?",
+      "What are the nutritional benefits of edible insects?",
+      "How are insects used as animal feed?",
+      "Is entomophagy environmentally friendly?"
+    ],
+    "a": "Entomophagy — the practice of eating insects — is common for over 2 billion people worldwide, particularly in parts of Asia, Africa, and Latin America, where insects are traditional foods. Commonly consumed species include crickets, grasshoppers, mealworms, silkworm pupae, ants, termites, and certain caterpillars like the mopane worm. Edible insects are highly nutritious: they contain 40-75% protein by dry weight, are rich in healthy fats (especially omega-3 and omega-6 fatty acids), and provide essential micronutrients like iron, zinc, calcium, and B vitamins. Insect farming has a dramatically lower environmental footprint than traditional livestock — requiring far less land, water, and feed per gram of protein, and producing minimal greenhouse gas emissions. Insects are increasingly farmed for animal feed (fish, poultry, pig feed) as a sustainable protein source, particularly mealworms and black soldier fly larvae."
+  }
+]

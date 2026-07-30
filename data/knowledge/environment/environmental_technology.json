@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "What is green technology?",
+      "What are examples of green technologies?",
+      "What is clean tech?",
+      "What is environmental technology?",
+      "How does green technology help the environment?",
+      "What are the main categories of green technology?",
+      "What is sustainable technology?",
+      "How is green technology driving economic growth?"
+    ],
+    "a": "Green technology (or clean tech) encompasses a broad range of technologies, products, and processes designed to reduce environmental impact, conserve natural resources, and promote sustainability across energy, transportation, manufacturing, agriculture, and waste management. Key categories include renewable energy generation (solar photovoltaics, wind turbines, geothermal, tidal), energy storage and efficiency (advanced batteries, smart grids, LED lighting), pollution control (carbon capture, water filtration, air scrubbing), sustainable materials (bioplastics, green concrete, recycled composites), and resource conservation (precision agriculture, water recycling, waste-to-energy systems). The global clean tech market is growing rapidly as costs fall and policy support increases — solar and wind are now the cheapest sources of new electricity generation in most regions, and innovations in green hydrogen, battery storage, and carbon removal technologies are opening new pathways to deep decarbonization."
+  },
+  {
+    "q": [
+      "What is carbon capture and storage?",
+      "How does carbon capture technology work?",
+      "What is CCS?",
+      "What is carbon sequestration?",
+      "What are the types of carbon capture?",
+      "What is direct air capture?",
+      "How is captured carbon stored or used?",
+      "What are the challenges of carbon capture technology?"
+    ],
+    "a": "Carbon capture and storage (CCS) is a suite of technologies that capture carbon dioxide emissions from industrial point sources (power plants, cement factories, steel mills) or directly from the atmosphere (direct air capture or DAC), then compress and transport the CO2 for permanent storage deep underground in geological formations such as depleted oil and gas reservoirs or saline aquifers. Post-combustion capture uses chemical solvents (typically amines) to separate CO2 from flue gas, pre-combustion capture gasifies fuel and captures CO2 before combustion, and oxy-fuel combustion burns fuel in pure oxygen to produce a concentrated CO2 stream. CCS faces significant challenges including high energy requirements (the capture process can consume 20–30% of a plant's output), substantial costs ($50–$200 per ton of CO2 captured), concerns about long-term storage permanence and leakage, and the need for extensive CO2 pipeline infrastructure."
+  },
+  {
+    "q": [
+      "What is a smart grid?",
+      "How does a smart grid differ from a traditional electrical grid?",
+      "What technologies are used in smart grids?",
+      "What is the role of AI in smart grids?",
+      "How do smart meters work?",
+      "What is green hydrogen?",
+      "How is green hydrogen produced and used?",
+      "What is the difference between green, blue, and gray hydrogen?"
+    ],
+    "a": "A smart grid is an electricity network that uses digital communication technology, sensors, and automation to monitor, predict, and manage energy flows more efficiently than traditional one-way grids, enabling the integration of distributed renewable sources, electric vehicles, and demand-side management. Smart grids incorporate advanced metering infrastructure (smart meters that provide real-time usage data), distribution automation (self-healing grids that isolate faults and reroute power), and grid-scale energy storage that smooths the variability of solar and wind generation. Green hydrogen, produced by electrolysis of water using renewable electricity, is emerging as a key clean energy carrier for hard-to-decarbonize sectors — unlike gray hydrogen (produced from natural gas without CCS, emitting CO2) and blue hydrogen (also from natural gas but with CCS capturing ~85% of emissions), green hydrogen produces zero emissions during production and can decarbonize heavy industry (steel, cement), long-haul shipping, aviation, and seasonal energy storage."
+  },
+  {
+    "q": [
+      "What is vertical farming?",
+      "How does vertical farming work?",
+      "What is lab-grown meat?",
+      "How is cultivated meat produced?",
+      "What is the environmental impact of lab-grown meat?",
+      "What are the benefits of vertical farming?",
+      "What technologies enable vertical farming?",
+      "How does waste-to-energy technology work?"
+    ],
+    "a": "Vertical farming is the practice of growing crops in vertically stacked layers, often indoors under controlled environmental conditions using LED lighting, hydroponics (nutrient-rich water), aeroponics (misting roots with nutrients), or aquaponics (combining fish farming with plant cultivation). These systems can produce up to 10 times more yield per square foot than traditional farming while using 95% less water, eliminating pesticide use, and enabling year-round production in urban areas near consumers — reducing transportation emissions and food waste. Lab-grown meat (cultivated meat) is produced by culturing animal stem cells in bioreactors with a nutrient medium, growing muscle tissue without raising and slaughtering animals — early studies suggest it could reduce land use by over 90%, water use by up to 80%, and greenhouse gas emissions by 70–90% compared to conventional beef production, though challenges remain in scaling production, reducing the cost of growth media, and achieving consumer acceptance."
+  }
+]

@@ -1,0 +1,61 @@
+[
+  {
+    "q": [
+      "What are the basic flight instruments used in aeronautical navigation?",
+      "What is the pitot-static system?",
+      "What is the altimeter?",
+      "What is the attitude indicator?",
+      "What is the heading indicator?",
+      "What is the turn coordinator?",
+      "What is the vertical speed indicator?",
+      "What is the airspeed indicator?",
+      "What are the six-pack flight instruments?",
+      "basic flight instruments aeronautical navigation",
+      "pitot-static system altimeter attitude heading indicator"
+    ],
+    "a": "Aircraft navigation relies on the six basic flight instruments powered by the pitot-static system and gyroscopic systems: the airspeed indicator (measuring dynamic pressure from the pitot tube, displaying indicated airspeed in knots), the altimeter (measuring static pressure and displaying altitude, adjustable for barometric pressure settings for QNH, QFE, or standard 29.92 inHg), and the vertical speed indicator (showing rate of climb or descent in feet per minute) comprise the pitot-static group. The gyroscopic instruments include the attitude indicator (artificial horizon showing pitch and bank relative to a gyroscope-stabilized horizon line), the heading indicator (directional gyro that must be periodically aligned with the magnetic compass due to precession), and the turn coordinator (displaying rate of turn and roll coordination). The magnetic compass serves as the primary heading reference when the heading indicator is unreliable, but suffers from acceleration and turning errors, making instrument cross-checks and scan patterns essential for accurate navigation"
+  },
+  {
+    "q": [
+      "What is flight planning in aviation?",
+      "What is a navigation log in aviation?",
+      "What is the E6B flight computer?",
+      "How do pilots calculate headings and groundspeeds?",
+      "What are waypoints in flight planning?",
+      "What are airways in aviation?",
+      "What is IFR and VFR flight planning?",
+      "flight planning navigation log E6B computer",
+      "waypoints airways VFR IFR cross-country planning"
+    ],
+    "a": "Flight planning involves calculating headings to steer, groundspeeds, fuel requirements, and arrival times by accounting for wind direction and speed, true airspeed, variation (difference between true north and magnetic north), and deviation (compass errors), typically using the E6B flight computer or electronic equivalents to solve wind triangle problems and determine magnetic headings. A navigation log systematically records waypoints (defined by latitude/longitude, radial/distance from VOR, or GPS coordinates), courses between waypoints, distances, estimated times of arrival, and checkpoints for position verification during flight, with VFR flight planning relying on visual checkpoints (towns, roads, lakes, railroads) while IFR flight planning uses defined airways (Victor airways for low altitude, Jet airways for high altitude) and instrument procedures. Modern flight planning is increasingly automated through Flight Management Systems (FMS) and GPS-based navigation, but all pilots learn manual flight planning as a critical skill for understanding the underlying principles and as a backup when electronic systems fail"
+  },
+  {
+    "q": [
+      "What are the different types of airspace?",
+      "What are Class A, B, C, D, E, and G airspace?",
+      "What is controlled vs uncontrolled airspace?",
+      "What are special use airspaces?",
+      "What is the difference between VFR and IFR in different airspaces?",
+      "What are airport traffic patterns?",
+      "What are runway markings and signage?",
+      "airspace classifications explained",
+      "special use airspace airport traffic pattern runway markings"
+    ],
+    "a": "Airspace is classified alphabetically A through G: Class A (18,000 to 60,000 feet, IFR only, ATC clearance required), Class B (airspace around major airports like LAX and JFK, requiring ATC clearance for both VFR and IFR), Class C and D (controlled airspace around smaller airports with operating control towers), Class E (controlled airspace not classified as A-D, where IFR operations receive ATC separation and VFR aircraft must meet visibility and cloud clearance requirements), and Class G (uncontrolled airspace where ATC provides no separation services and pilots are responsible for see-and-avoid). Special use airspaces include Prohibited Areas (e.g., the White House), Restricted Areas (military operations), Warning Areas (over international waters), Military Operations Areas (MOAs), Alert Areas, Controlled Firing Areas, and Temporary Flight Restrictions (TFRs) for events like presidential movements or sporting events. Airport traffic patterns are standardized rectangular flight paths around airports (upwind, crosswind, downwind, base, final) flown at specific altitudes and positions to ensure orderly arrival and departure, with runway markings including centerline stripes, threshold markings, aiming point markers, and displaced thresholds, and signage including mandatory instruction signs (red background, white text) for runway hold positions and location signs (black background, yellow text) identifying taxiways"
+  },
+  {
+    "q": [
+      "What is GPS-based navigation in aviation?",
+      "What is an RNAV approach?",
+      "What is an RNP approach?",
+      "What is WAAS and LPV in aviation?",
+      "What is Required Navigation Performance (RNP)?",
+      "What is a Flight Management System (FMS)?",
+      "How is GPS changing aviation navigation?",
+      "What are GPS approaches and LPV minimums?",
+      "RNAV RNP GPS approaches aviation navigation",
+      "WAAS LPV FMS flight management system"
+    ],
+    "a": "GPS-based Area Navigation (RNAV) allows aircraft to navigate directly between any two waypoints rather than following ground-based navaids, with GPS approaches becoming the most common instrument approach type in the United States—including LPV (Localizer Performance with Vertical Guidance) approaches that use WAAS (Wide Area Augmentation System) to achieve decision heights as low as 200 feet, equivalent to Category I ILS without requiring any ground-based equipment at the airport. RNP (Required Navigation Performance) approaches take RNAV further by adding onboard performance monitoring and alerting, allowing curved approach paths, narrower obstacle clearance areas, and access to airports in challenging terrain that cannot support conventional approaches, fundamentally changing which airports can have precision approach capability. Flight Management Systems (FMS) integrate GPS, inertial navigation, VOR, DME, and ILS sensors to provide automated navigation from departure to destination, managing waypoints, altitude constraints, speed restrictions, and holding patterns through a flight plan programmed before departure, with modern FMS capable of flying fully coupled approaches to autoland with Category III capability"
+  }
+]

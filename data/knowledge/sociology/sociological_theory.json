@@ -1,0 +1,53 @@
+[
+  {
+    "q": [
+      "Who are the founding theorists of sociology?",
+      "What did Karl Marx contribute to sociology?",
+      "What did Émile Durkheim contribute to sociology?",
+      "What did Max Weber contribute to sociology?",
+      "What is Marx's theory of capitalism?",
+      "What is Durkheim's concept of anomie?",
+      "What is Weber's concept of the Protestant ethic?",
+      "What is the difference between Marx, Durkheim, and Weber?"
+    ],
+    "a": "The three classical theorists of sociology established the discipline's core questions and frameworks. Karl Marx focused on material conditions, class conflict, and capitalism as a historical mode of production, arguing that economic structures (base) shape cultural and political institutions (superstructure) and that class struggle between the bourgeoisie (owners of capital) and the proletariat (workers) drives historical change — culminating in a predicted transition to socialism and communism. Émile Durkheim established sociology as a rigorous academic discipline, emphasizing social facts (external constraints on behavior), the division of labor, and the concept of anomie (a state of normlessness when social regulation breaks down during rapid change), and his study of suicide demonstrated how even the most individual act is shaped by social integration and regulation. Max Weber emphasized understanding social action through Verstehen (interpretive understanding), developed the concept of the Protestant Ethic linking Calvinist predestination beliefs to the spirit of capitalism, analyzed rationalization and bureaucracy as defining features of modern society, and distinguished class (economic position), status (social honor), and party (political power) as three distinct dimensions of social stratification."
+  },
+  {
+    "q": [
+      "What is structural functionalism?",
+      "What is conflict theory in sociology?",
+      "What is the difference between functionalism and conflict theory?",
+      "Who were key functionalist theorists?",
+      "Who were key conflict theorists?",
+      "What is symbolic interactionism?",
+      "What is the difference between macro and micro sociology?"
+    ],
+    "a": "Structural functionalism, developed by Talcott Parsons and Robert Merton, views society as a complex system of interrelated parts (institutions like family, education, government, religion) that work together to maintain social stability and equilibrium — each institution serves functions (Merton's manifest functions are intended and recognized, latent functions are unintended and unrecognized) that contribute to the overall functioning of the social system. Conflict theory, drawing on Marx and developed by C. Wright Mills, Ralf Dahrendorf, and Randall Collins, emphasizes social inequality, power differentials, and competition over scarce resources as the fundamental drivers of social organization and change, arguing that social order is maintained through coercion and domination rather than consensus. Symbolic interactionism (George Herbert Mead, Herbert Blumer, Erving Goffman) focuses on the micro-level of face-to-face interaction, examining how people create, interpret, and negotiate shared meanings through symbols, language, and gestures — Goffman's dramaturgical approach analyzes social interaction as theatrical performance where individuals manage impressions and present different selves in different social contexts. These three perspectives represent the major theoretical traditions in sociology, with functionalism and conflict theory operating at the macro level (social structures and institutions) and symbolic interactionism at the micro level (everyday interaction and meaning-making)."
+  },
+  {
+    "q": [
+      "What is feminist theory in sociology?",
+      "What are the main contributions of feminist sociology?",
+      "What is postmodern theory?",
+      "How does postmodernism differ from modernism?",
+      "What is critical theory (Frankfurt School)?",
+      "Who were the key thinkers of the Frankfurt School?",
+      "What is structuration theory (Giddens)?",
+      "What is practice theory (Bourdieu)?"
+    ],
+    "a": "Feminist theory in sociology analyzes the social construction of gender, the mechanisms of gender inequality, and the ways that gender intersects with other systems of stratification — it challenges the male-centered assumptions of classical theory, emphasizes the importance of studying everyday life and the private sphere, employs standpoint theory (arguing that knowledge is situated and marginalized groups offer particularly valuable perspectives), and uses research methods that center women's experiences and voices. Postmodern theory, associated with Jean-François Lyotard, Michel Foucault, Jean Baudrillard, and Judith Butler, rejects grand narratives (universal theories of history, progress, or society), emphasizes the fragmentary, contingent, and constructed nature of knowledge and identity, and examines how power operates through discourse, knowledge production, and normalization rather than solely through economic or political structures. Pierre Bourdieu's practice theory bridges structure and agency through concepts including habitus (internalized dispositions that guide behavior), field (social arenas with specific rules and power relations), and capital in its multiple forms (economic, cultural, social, and symbolic) — individuals navigate social spaces strategically, with their habitus generating practices that reproduce social structures while allowing room for improvisation and change. Anthony Giddens' structuration theory similarly argues that structure and agency are a duality — structures are both the medium and outcome of social practices, meaning that every social interaction both follows existing rules and resources and potentially transforms them."
+  },
+  {
+    "q": [
+      "What is social exchange theory?",
+      "What is rational choice theory in sociology?",
+      "What is ethnomethodology?",
+      "How does ethnomethodology differ from other sociological approaches?",
+      "What is social constructionism?",
+      "What is network theory in sociology?",
+      "What are contemporary sociological theories?",
+      "What is the difference between micro and macro sociological theories?"
+    ],
+    "a": "Social exchange theory (George Homans, Peter Blau) applies rational choice principles to social interaction, arguing that individuals engage in relationships and interactions based on a cost-benefit analysis, seeking to maximize rewards and minimize costs while maintaining equity and fairness in exchanges. Rational choice theory in sociology extends economic assumptions to social behavior, positing that actors make strategic decisions based on their preferences and available information to achieve their goals, with James Coleman's work on collective action and social networks being particularly influential. Ethnomethodology, developed by Harold Garfinkel, studies the everyday methods people use to produce and make sense of social order, focusing on the common-sense knowledge, practical reasoning, and taken-for-granted procedures (such as conversational turn-taking and shared understandings) through which social reality is continuously created in interaction. Social constructionism (Peter Berger and Thomas Luckmann's 'The Social Construction of Reality') argues that knowledge, meaning, and social institutions are produced through ongoing social interaction and become experienced as objective reality through processes of habitualization, institutionalization, and legitimation — this perspective has been influential across sociology, particularly in studies of deviance, gender, race, and science and technology (actor-network theory, Bruno Latour)."
+  }
+]

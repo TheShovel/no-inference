@@ -1,0 +1,58 @@
+[
+  {
+    "q": [
+      "What is Integrated Pest Management?",
+      "What is IPM in agriculture?",
+      "How does Integrated Pest Management work?",
+      "What are the principles of IPM?",
+      "What are the components of IPM?",
+      "Define integrated pest management.",
+      "IPM strategies",
+      "integrated pest management explained"
+    ],
+    "a": "Integrated Pest Management (IPM) is a science-based, sustainable approach to controlling pests — insects, weeds, diseases, and rodents — that combines multiple tactics to minimize economic, health, and environmental risks while keeping pest populations below damaging thresholds. IPM operates through a four-tiered framework: establishing action thresholds (the pest population level at which intervention is needed), monitoring and identifying pests correctly, prevention through cultural practices (crop rotation, resistant varieties, sanitation), and control using progressively intensive methods — starting with biological and mechanical controls, and using chemical pesticides only when monitoring indicates they are necessary and in a targeted manner. By reducing reliance on broad-spectrum pesticides, IPM slows the development of pesticide resistance, protects beneficial organisms, reduces environmental contamination, and often proves more cost-effective in the long run than conventional chemical-only approaches."
+  },
+  {
+    "q": [
+      "What is biological control in pest management?",
+      "How are predators used in biological control?",
+      "What are parasitoids in pest control?",
+      "What are pathogens used for pest control?",
+      "What is biocontrol?",
+      "What are beneficial insects in agriculture?",
+      "biological pest control",
+      "predators and parasitoids",
+      "beneficial insects"
+    ],
+    "a": "Biological control uses living organisms to suppress pest populations, divided into three main categories: predators (organisms that consume multiple prey over their lifetime, such as lady beetles for aphids, lacewings for soft-bodied insects, and predatory mites for spider mites), parasitoids (insects that lay eggs on or inside a host, with developing larvae consuming and killing the host — such as tiny wasps that parasitize whiteflies, tomato hornworms, or aphids), and pathogens (microorganisms including Bacillus thuringiensis or Bt bacteria, entomopathogenic fungi like Beauveria bassiana, and insect viruses that cause lethal infections). Classical biological control involves introducing a natural enemy from the pest's native region to establish permanent control, augmentative biocontrol releases commercially reared beneficial organisms periodically, and conservation biocontrol protects and enhances existing natural enemy populations through habitat management, flowering strips, and reduced pesticide use."
+  },
+  {
+    "q": [
+      "What are the types of chemical pesticides?",
+      "What is pesticide resistance?",
+      "How does pesticide resistance develop?",
+      "What is resistance management in pests?",
+      "What are the classes of insecticides?",
+      "How do insecticides work?",
+      "pesticide types",
+      "pesticide resistance management",
+      "chemical pest control"
+    ],
+    "a": "Chemical pesticides are classified by target organism (insecticides, herbicides, fungicides, rodenticides), chemical family, and mode of action — key insecticide classes include organophosphates and carbamates (acetylcholinesterase inhibitors), pyrethroids (sodium channel modulators derived from chrysanthemum compounds), neonicotinoids (nicotinic acetylcholine receptor agonists), and newer classes like diamides (ryanodine receptor modulators) known for high selectivity and low mammalian toxicity. Pesticide resistance is the genetic ability of a pest population to survive a pesticide dose that would normally be lethal, evolving through natural selection as resistant individuals survive and reproduce — over 600 species of insects and mites and hundreds of weed species have evolved resistance to one or more pesticide classes. Resistance management strategies include rotating pesticides with different modes of action, using tank mixtures of multiple active ingredients, maintaining refuges of unexposed pest populations, integrating non-chemical controls, and adhering to label rates and application timing to delay the evolution of resistance."
+  },
+  {
+    "q": [
+      "What are cultural controls in pest management?",
+      "What is crop rotation for pest control?",
+      "What are mechanical controls for pests?",
+      "How do pheromones work for pest control?",
+      "What is mating disruption in pest management?",
+      "What is organic pest control?",
+      "cultural pest control methods",
+      "mechanical pest control",
+      "pheromone traps",
+      "organic pest management"
+    ],
+    "a": "Cultural controls manage pests by altering the environment or farming practices to make it less favorable for pests, including crop rotation (disrupting pest life cycles by planting non-host crops in sequence), sanitation (removing crop residues, volunteer plants, and weeds that harbor pests), adjusting planting dates to avoid peak pest emergence, and using trap crops (sacrificial plantings that attract pests away from the main crop). Mechanical and physical controls include insect exclusion netting, row covers, sticky traps, light traps, pheromone-baited traps that monitor pest populations, and tillage practices that bury or destroy overwintering pest stages — while pheromone-based mating disruption saturates the area with synthetic sex pheromones, preventing males from locating females and collapsing pest reproduction without insecticides. Organic pest control relies primarily on prevention, biological controls, and approved natural substances (neem oil, insecticidal soaps, diatomaceous earth, sulfur, copper, Bacillus thuringiensis) under regulations like the USDA National Organic Program, with synthetic pesticides strictly prohibited."
+  }
+]

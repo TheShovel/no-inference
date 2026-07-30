@@ -1,0 +1,55 @@
+[
+  {
+    "q": [
+      "What is the fire triangle?",
+      "What is the fire tetrahedron?",
+      "What are the four elements of the fire tetrahedron?",
+      "What is the difference between the fire triangle and fire tetrahedron?",
+      "fire triangle vs fire tetrahedron heat fuel oxygen chemical chain reaction",
+      "what are the components of fire"
+    ],
+    "a": "The fire triangle describes three elements necessary for combustion: heat (ignition source to raise material to its ignition temperature), fuel (combustible material), and oxygen (typically from air, at least 16% concentration to sustain most fires). The fire tetrahedron adds a fourth element: the chemical chain reaction—fire is a self-sustaining exothermic reaction where free radicals (OH, H, O) propagate the combustion cycle, which is why some suppression agents like dry chemical powder and Halon work by interrupting this chain reaction rather than just cooling or smothering. Removing any one element extinguishes the fire, and different suppression methods target different elements: water primarily removes heat, foam separates fuel from oxygen, and CO₂ displaces oxygen."
+  },
+  {
+    "q": [
+      "What are the classes of fire?",
+      "What is a Class A fire?",
+      "What is a Class B fire?",
+      "What is a Class C fire?",
+      "What is a Class D fire?",
+      "What is a Class K fire?",
+      "classes of fire A B C D K",
+      "fire classifications ordinary combustibles flammable liquids electrical metals cooking oils"
+    ],
+    "a": "Fires are classified by the type of fuel involved, determining the appropriate extinguishing agent. Class A fires involve ordinary combustibles like wood, paper, cloth, and plastics, best extinguished with water or multi-purpose dry chemical. Class B fires involve flammable liquids and gases (gasoline, oil, propane), requiring foam, CO₂, or dry chemical—water can spread the fire. Class C fires involve energized electrical equipment, requiring non-conductive agents like CO₂ or dry chemical—water conducts electricity and poses an electrocution risk. Class D fires involve combustible metals (magnesium, titanium, sodium, potassium), requiring specialized dry powder agents—water reacts violently with many burning metals. Class K fires involve cooking oils and fats in commercial kitchens, requiring wet chemical extinguishers that saponify the oil, creating a non-combustible foam layer."
+  },
+  {
+    "q": [
+      "What is fire behavior?",
+      "What is flashover?",
+      "What is backdraft?",
+      "What is rollover?",
+      "What is flameover?",
+      "What is the combustion process?",
+      "What are the methods of heat transfer?",
+      "what is conduction convection radiation in fires",
+      "flashover backdraft rollover flameover fire behavior"
+    ],
+    "a": "Fire behavior describes how a fire develops and spreads through a structure. Flashover is the sudden transition from a growing fire to full-room involvement when all surfaces reach their ignition temperature simultaneously, often through radiant heat feedback—it is the most dangerous event for interior firefighters, typically occurring at 500–600°C (930–1,110°F) at ceiling level. Backdraft occurs when a fire in an oxygen-limited space smolders until a fresh air source (opened door or broken window) triggers an explosive ignition of accumulated unburned fire gases. Rollover (or flameover) is the ignition of fire gases accumulating at the ceiling, seen as tongues of flame rolling across the ceiling ahead of the main fire. Heat transfer in fires occurs through three mechanisms: conduction (heat moving through solid materials like steel beams or pipes), convection (heat moving through air and hot gases—the primary way fire spreads through a building), and radiation (heat traveling as electromagnetic waves, which can ignite materials at a distance without direct flame contact)."
+  },
+  {
+    "q": [
+      "What is building construction and fire resistance?",
+      "What are Type I through Type V building construction types?",
+      "What are fire protection systems?",
+      "What are fire sprinklers?",
+      "What are fire alarms?",
+      "What are standpipes?",
+      "What is the fire code?",
+      "What is fire investigation?",
+      "building construction types I II III IV V fire resistance",
+      "fire protection systems sprinklers alarms standpipes"
+    ],
+    "a": "Building construction types (I through V) determine fire resistance based on materials: Type I (fire-resistive, steel or concrete with fireproofing, skyscrapers) withstands fire longest; Type II (non-combustible, unprotected steel, modern commercial buildings) fails faster when steel heats and expands; Type III (ordinary, masonry walls with wood floors, older buildings) has concealed spaces where fire can spread undetected; Type IV (heavy timber, intentionally large beams that char slowly) was historically fire-resistant; Type V (wood frame, residential homes) collapses most quickly under fire conditions. Fire protection systems include automatic sprinklers (activated by heat, controlling or extinguishing fires in their early stages), fire alarms (detecting smoke or heat, alerting occupants, and notifying emergency services), and standpipes (vertical water pipes in tall buildings allowing firefighters to connect hoses on upper floors without laying hose from the street). Fire code regulations—covering occupancy limits, egress paths, fire-rated doors and walls, sprinkler requirements, and hazardous material storage—are based on investigation of past fires and fire dynamics research conducted by institutions like UL (Underwriters Laboratories) and NIST (National Institute of Standards and Technology), which use instrumented burn structures, computer modeling, and full-scale testing to improve firefighter safety and building design."
+  }
+]

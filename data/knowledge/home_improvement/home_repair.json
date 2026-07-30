@@ -1,0 +1,67 @@
+[
+    {
+        "q": [
+            "How do I fix a running toilet?",
+            "What causes a toilet to keep running?",
+            "How do I replace a toilet flapper?",
+            "How do I adjust the fill valve on a toilet?",
+            "What is the float adjustment on a toilet?",
+            "How do I fix a toilet that won't stop running?",
+            "What parts are inside a toilet tank?",
+            "How do I replace a toilet fill valve?"
+        ],
+        "a": "A running toilet is most commonly caused by a worn or misaligned flapper that fails to seal properly, allowing water to leak from the tank into the bowl. First check the flapper — if it's cracked, warped, or doesn't seat evenly, replace it by disconnecting the chain and sliding it off the overflow tube. If the problem persists, adjust the float (either a floating ball or a float cup) so the fill valve shuts off when the water level reaches about 1 inch below the overflow tube. Replacing the fill valve is more involved — you'll need to drain the tank, disconnect the water supply line, and unthread the old valve from outside the tank before installing the replacement."
+    },
+    {
+        "q": [
+            "How do I unclog a drain naturally?",
+            "What is the best way to unclog a sink drain?",
+            "How do I use a plunger to unclog a drain?",
+            "How does baking soda and vinegar unclog drains?",
+            "What is a drain snake and how do I use it?",
+            "How do I clean a P-trap?",
+            "How do I unclog a toilet without a plunger?",
+            "What is the difference between a sink plunger and a toilet plunger?"
+        ],
+        "a": "For mild clogs, start with a plunger — use a cup plunger for sinks and a flange plunger for toilets, creating a tight seal and using firm up-and-down strokes. For tougher clogs, use a drain snake (auger) by feeding the cable into the drain and cranking to break through or retrieve the blockage. A natural solution of 1/2 cup baking soda followed by 1/2 cup vinegar, left to foam for 15 minutes and flushed with hot water, can dissolve organic buildup. If the clog is in the P-trap (the curved pipe under the sink), place a bucket underneath, unscrew the slip nuts, and clean out the trap directly. Avoid chemical drain cleaners as they can damage pipes over time."
+    },
+    {
+        "q": [
+            "How do I fix a leaky faucet?",
+            "What type of faucet do I have — compression, cartridge, or ceramic disc?",
+            "How do I replace a faucet washer?",
+            "How do I fix a dripping faucet?",
+            "What tools do I need to repair a faucet?",
+            "How do I disassemble a compression faucet?",
+            "How do I replace the O-rings on a faucet?",
+            "How do I fix a faucet that leaks from the handle?"
+        ],
+        "a": "Leaky faucets are repaired differently depending on the type: compression faucets have separate hot and cold handles and leak when the rubber washer at the stem wears out. Cartridge faucets have a single cartridge that can be replaced as a unit when leaking. Ceramic disc faucets use two precision-ground ceramic discs and usually only need the inlet seals replaced. Before disassembling any faucet, always shut off the water supply valves underneath the sink and open the faucet to relieve pressure. A faucet that leaks from the handle typically needs new O-rings on the valve stem, while a leak from the spout indicates the seat washer or cartridge needs replacement."
+    },
+    {
+        "q": [
+            "How do I change a light switch?",
+            "What is the difference between a single-pole and three-way switch?",
+            "How do I install a dimmer switch?",
+            "How do I safely replace a light switch?",
+            "What tools do I need to change a light switch?",
+            "How do I wire a three-way switch?",
+            "How do I test if a switch is getting power?",
+            "What is the difference between line and load wires on a switch?"
+        ],
+        "a": "Always turn off the power at the circuit breaker and use a non-contact voltage tester to confirm the wires are dead before touching any electrical components. A single-pole switch has two brass terminal screws (plus a ground screw) and controls a light from one location. A three-way switch has three terminal screws (one common and two travelers) and works in pairs to control a light from two locations. After removing the old switch, connect the hot wire (usually black) to the dark or common screw, the neutral wires (white) together with a wire nut (they don't connect to the switch), and the ground wire (bare copper or green) to the green ground screw."
+    },
+    {
+        "q": [
+            "How do I fix a garbage disposal that is jammed?",
+            "Why is my garbage disposal humming but not working?",
+            "How do I use the Allen wrench on a garbage disposal?",
+            "How do I reset a garbage disposal?",
+            "Why is my garbage disposal leaking?",
+            "How do I unjam a garbage disposal safely?",
+            "What is the reset button on a garbage disposal?",
+            "How do I replace a garbage disposal?"
+        ],
+        "a": "If your garbage disposal hums but doesn't spin, it's likely jammed — first turn off the power at the circuit breaker, then use a 1/4-inch Allen wrench inserted into the hex socket on the bottom of the disposal to manually rotate the flywheel back and forth. After freeing the jam, press the red reset button on the bottom or side of the unit and restore power. If the disposal doesn't run at all, check the circuit breaker and GFCI outlet first, then press the reset button. Leaks commonly occur at the sink flange (tighten the mounting ring), the dishwasher connection (tighten the hose clamp), or the drain pipe connection (replace the gasket). NEVER put your hand inside the disposal chamber even when it's off."
+    }
+]

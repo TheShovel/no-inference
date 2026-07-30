@@ -1,0 +1,54 @@
+[
+  {
+    "q": [
+      "What happened at the Dartmouth Conference of 1956?",
+      "Why is the Dartmouth Conference important for AI?",
+      "Who organized the Dartmouth Summer Research Project?",
+      "When was the term artificial intelligence first coined?",
+      "What was the significance of the Dartmouth Conference?",
+      "Who attended the Dartmouth Conference?",
+      "What was the goal of the Dartmouth Workshop?",
+      "How did the Dartmouth Conference shape AI research?"
+    ],
+    "a": "The Dartmouth Summer Research Project on Artificial Intelligence, held in 1956 at Dartmouth College, is widely recognized as the founding event of AI as a formal academic discipline. Organized by John McCarthy (who coined the term 'artificial intelligence'), Marvin Minsky, Nathaniel Rochester, and Claude Shannon, the two-month workshop gathered leading researchers to explore the hypothesis that 'every aspect of learning or any other feature of intelligence can in principle be so precisely described that a machine can be made to simulate it.' Though no major breakthroughs occurred during the workshop itself, it established AI as a legitimate research field, defined its core questions, and created the collaborative community that would drive early AI research at institutions like MIT, Carnegie Mellon, and Stanford."
+  },
+  {
+    "q": [
+      "What was the Logic Theorist?",
+      "What was ELIZA in AI history?",
+      "What was SHRDLU?",
+      "What were the first AI programs?",
+      "Who created ELIZA and what did it do?",
+      "What was the significance of early AI programs like Logic Theorist?",
+      "How did SHRDLU demonstrate AI capabilities?",
+      "What were the limitations of early AI systems?"
+    ],
+    "a": "Early AI milestones include the Logic Theorist (1956), created by Allen Newell, Cliff Shaw, and Herbert Simon, which is often considered the first AI program — it could prove mathematical theorems from Whitehead and Russell's Principia Mathematica, once producing a proof more elegant than the original. ELIZA (1966), developed by Joseph Weizenbaum at MIT, was a natural language processing program that simulated a Rogerian psychotherapist by pattern-matching user input and rephrasing it as questions, creating an illusion of understanding that surprised even its creator. SHRDLU (1970), built by Terry Winograd, operated a virtual 'blocks world' where it could understand and execute natural language commands like 'pick up the big red block' while answering questions about its actions, demonstrating integrated reasoning, planning, and language understanding that was far ahead of its time."
+  },
+  {
+    "q": [
+      "What were the AI winters?",
+      "Why did AI research decline in the 1970s?",
+      "What caused the first AI winter?",
+      "When was the AI winter period?",
+      "What caused the second AI winter?",
+      "How did the Lighthill Report affect AI funding?",
+      "What was the collapse of the expert systems market?",
+      "How did AI survive the winters?"
+    ],
+    "a": "AI winters were periods of reduced funding and interest in AI research, following inflated expectations and subsequent disappointment. The first AI winter (1974–1980) was triggered by the Lighthill Report in the UK, which criticized AI research for failing to deliver on its grand promises of general intelligence, leading to deep funding cuts by government agencies like DARPA and the UK Science Research Council. The second AI winter (1987–1993) followed the collapse of the expert systems industry, when specialized Lisp machines and AI hardware companies failed after the broader market shifted to general-purpose computers, and the Japanese Fifth Generation Computer project failed to achieve its ambitious goals. Each winter forced AI researchers to abandon overly ambitious claims, refocus on narrower problems, and develop more rigorous mathematical foundations — lessons that contributed to the field's eventual practical successes in machine learning."
+  },
+  {
+    "q": [
+      "When did Deep Blue beat Kasparov?",
+      "How did IBM Watson win Jeopardy?",
+      "What is AlphaGo and how did it beat Lee Sedol?",
+      "What is the history of game-playing AI?",
+      "How did Deep Blue work?",
+      "What was the significance of AlphaGo's victory?",
+      "How did Watson process natural language for Jeopardy?",
+      "What is the timeline of major AI milestones?"
+    ],
+    "a": "Key AI milestones include Deep Blue defeating world chess champion Garry Kasparov in 1997 — the first time a computer beat a reigning world champion in a match under tournament conditions, using brute-force search and specialized hardware to evaluate 200 million positions per second. Watson's 2011 Jeopardy! victory demonstrated advanced natural language processing and question-answering, using thousands of algorithms to analyze clues, weigh evidence, and generate confidence-scored responses without an internet connection, defeating human champions Brad Rutter and Ken Jennings. AlphaGo's 2016 victory over Go champion Lee Sedol marked another watershed moment — Go's astronomical branching factor had long been considered impervious to brute-force methods, but AlphaGo combined deep neural networks with Monte Carlo tree search and reinforcement learning, learning from human games and then improving through millions of self-play games to achieve superhuman performance."
+  }
+]

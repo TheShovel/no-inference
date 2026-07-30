@@ -1,0 +1,59 @@
+[
+  {
+    "q": [
+      "What is sustainable transportation?",
+      "What are the types of electric vehicles?",
+      "What is the difference between BEV, PHEV, and FCEV?",
+      "How does EV charging infrastructure work?",
+      "What is sustainable mobility?",
+      "sustainable transportation definition",
+      "electric vehicle types explained",
+      "BEV PHEV FCEV differences",
+      "EV charging levels"
+    ],
+    "a": "Sustainable transportation encompasses modes and systems that minimize environmental impact, reduce greenhouse gas emissions, and promote social equity and economic viability, shifting away from single-occupancy fossil-fuel vehicles toward cleaner, shared, and active alternatives. Electric vehicles come in three main types: Battery Electric Vehicles (BEVs) run solely on electricity with zero tailpipe emissions; Plug-in Hybrid Electric Vehicles (PHEVs) combine a battery-powered electric motor with a gasoline engine for extended range; and Fuel Cell Electric Vehicles (FCEVs) generate electricity onboard from hydrogen through a chemical reaction, emitting only water vapor. EV charging infrastructure is categorized into Level 1 (standard 120V household outlet, adding about 3-5 miles of range per hour), Level 2 (240V like a dryer outlet, 10-30 miles per hour, common at homes and public chargers), and DC fast charging (direct current at 50-350 kW, adding up to 200 miles in 20-30 minutes, found along highways)."
+  },
+  {
+    "q": [
+      "What role does public transit play in sustainable transportation?",
+      "What is bike infrastructure and bike-share?",
+      "What is micromobility?",
+      "How do e-scooters and e-bikes fit into sustainable transport?",
+      "What are car-sharing and ride-sharing?",
+      "What is active transportation?",
+      "public transit sustainable transport",
+      "bike-share programs",
+      "micromobility e-scooters e-bikes",
+      "car sharing vs ride sharing"
+    ],
+    "a": "Public transit—buses, trains, subways, light rail, and trams—is a cornerstone of sustainable transportation because moving large numbers of people in shared vehicles drastically reduces per-capita energy use, emissions, and road congestion compared to private cars. Bike infrastructure includes protected bike lanes, cycle tracks, bike parking, and traffic-calmed streets, often complemented by bike-share systems that provide on-demand bicycle rentals at docking stations or through dockless apps. Micromobility refers to small, lightweight vehicles operating at speeds below 25 mph, primarily e-scooters and e-bikes, which fill the gap between walking and driving for short urban trips and can reduce car trips if well-integrated with transit."
+  },
+  {
+    "q": [
+      "What is sustainable aviation fuel (SAF)?",
+      "How is the shipping industry becoming greener?",
+      "What are alternative fuels in shipping?",
+      "What is green shipping?",
+      "What is sustainable aviation?",
+      "sustainable aviation fuel SAF",
+      "green shipping alternative fuels",
+      "shipping emissions reduction"
+    ],
+    "a": "Sustainable aviation fuel (SAF) is a drop-in biofuel or synthetic fuel made from feedstocks like used cooking oil, agricultural waste, or captured carbon and green hydrogen, which can reduce lifecycle CO2 emissions by up to 80% compared to conventional jet fuel while requiring no modifications to aircraft or airport fueling infrastructure, though current production meets less than 1% of global aviation fuel demand due to high costs and limited supply. Green shipping efforts focus on alternative marine fuels including LNG (liquefied natural gas) as a transitional fuel with lower sulfur and CO2 emissions, methanol, ammonia, and hydrogen for zero-emission vessels, alongside operational efficiency measures like hull design optimization, weather routing, slow steaming, and shore-side electricity (cold ironing) that allows ships to plug into grid power instead of running auxiliary diesel engines in port."
+  },
+  {
+    "q": [
+      "What are low-emission zones?",
+      "How does transportation affect land use?",
+      "What is transport-oriented development?",
+      "What are transportation emissions?",
+      "What is ESG in transportation?",
+      "How can we reduce car dependence?",
+      "low-emission zones explained",
+      "transportation and land use planning",
+      "transportation emissions greenhouse gases",
+      "ESG transportation"
+    ],
+    "a": "Low-emission zones (LEZs) and ultra-low emission zones (ULEZs) restrict or charge the most polluting vehicles from entering designated urban areas, encouraging drivers to switch to cleaner vehicles or use alternative transport, with London's ULEZ serving as a prominent example that has significantly reduced nitrogen dioxide concentrations. Transportation is the largest source of greenhouse gas emissions in many developed countries, with road vehicles accounting for the majority, followed by aviation and shipping, and solutions include electrification, mode shift to transit and active transport, fuel efficiency improvements, and carbon pricing. ESG (Environmental, Social, Governance) criteria in transportation guide investment toward companies and projects that demonstrate lower carbon intensity, safe labor practices, and transparent governance, influencing fleet modernization, sustainable infrastructure bonds, and corporate sustainability reporting across the sector."
+  }
+]

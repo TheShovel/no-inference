@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is the First Amendment and how does it protect the press?",
+      "What is libel in journalism?",
+      "What is the difference between libel and slander?",
+      "How does privacy law affect journalists?",
+      "How does copyright and fair use apply to journalism?",
+      "What are the legal defenses against libel claims?",
+      "How do journalists avoid defamation lawsuits?"
+    ],
+    "a": "The First Amendment of the U.S. Constitution protects freedom of the press, prohibiting Congress from making laws that abridge press freedom, which courts have interpreted as a strong shield against prior restraint and most content-based regulation, though it is not absolute and does not protect against defamation, obscenity, or incitement to violence. Libel is a published false statement that damages a person's reputation, while slander is its spoken equivalent; for public figures, journalists are protected by the New York Times v. Sullivan (1964) ruling requiring proof of actual malice (knowledge of falsity or reckless disregard for truth), while private individuals only need to prove negligence. Copyright and fair use law allows journalists to use limited portions of copyrighted works for news reporting, criticism, and commentary without permission, but courts weigh factors including the purpose of use, the nature of the copyrighted work, the amount used, and the effect on the potential market for the original."
+  },
+  {
+    "q": [
+      "What are shield laws for journalists?",
+      "What is reporter's privilege?",
+      "Can journalists be forced to reveal their sources?",
+      "What is prior restraint in journalism?",
+      "What are gag orders in legal cases?",
+      "How does the Freedom of Information Act (FOIA) work?",
+      "What are open meetings laws?"
+    ],
+    "a": "Shield laws provide legal protection for journalists against being compelled to reveal confidential sources in court proceedings, with 49 states and the District of Columbia having some form of shield law (the federal level lacks a statutory shield, though the Department of Justice has internal guidelines that limit subpoenas of journalists). Prior restraint is government action that prevents publication of news before it occurs, which courts have consistently held to be presumptively unconstitutional under the First Amendment, as established in Near v. Minnesota (1931) and New York Times Co. v. United States (1971) — the Pentagon Papers case. The Freedom of Information Act (FOIA) gives journalists and the public the right to request access to federal agency records, requiring agencies to disclose requested documents unless they fall under one of nine exemptions (such as national security, trade secrets, or personal privacy), while state open meetings laws require most government bodies to conduct meetings publicly with advance notice and allow press and public attendance."
+  },
+  {
+    "q": [
+      "What is the SPJ Code of Ethics?",
+      "What is the RTDNA Code of Ethics?",
+      "What are journalism ethics codes?",
+      "What is conflict of interest in journalism?",
+      "How do journalists avoid conflicts of interest?",
+      "What ethical principles guide journalists?",
+      "Why are ethics important in journalism?"
+    ],
+    "a": "The Society of Professional Journalists (SPJ) Code of Ethics is built on four guiding principles: Seek Truth and Report It (verify information, identify sources, avoid distortion), Minimize Harm (treat sources and subjects with compassion, consider cultural differences, respect privacy), Act Independently (avoid conflicts of interest, refuse gifts and favors, disclose affiliations), and Be Accountable and Transparent (admit mistakes, explain ethical choices, respond to public criticism). The Radio Television Digital News Association (RTDNA) Code of Ethics similarly emphasizes truth, fairness, and integrity while providing guidance specific to broadcast and digital journalists on issues like editing that could mislead audiences, the use of graphic content, and maintaining editorial independence from advertisers. Conflict of interest situations arise when journalists have personal, financial, or professional relationships that could compromise their impartiality — such as covering family members, accepting free trips or products from sources, investing in industries they cover, or engaging in political activism — and ethical journalists must disclose such relationships or recuse themselves from affected coverage."
+  },
+  {
+    "q": [
+      "What is plagiarism in journalism?",
+      "What is fabrication in journalism?",
+      "How do news organizations handle corrections?",
+      "What are policies on anonymous sources in journalism?",
+      "What happens when journalists commit plagiarism?",
+      "What is the difference between plagiarism and copyright infringement?",
+      "How should journalists attribute sources?"
+    ],
+    "a": "Plagiarism in journalism — presenting someone else's work, words, or ideas as one's own without attribution — is considered one of the most serious ethical violations in the field, often resulting in immediate termination and permanent career damage, with notable scandals involving journalists at major publications like The New York Times, The Washington Post, and CNN fabricating sources, quotes, or entire stories. Corrections policies are a cornerstone of journalistic accountability; responsible news organizations publish corrections prominently and promptly when errors are discovered, explaining what was wrong, what the correct information is, and often maintaining a corrections log, with some also issuing clarifications or editor's notes on significant errors. Anonymous sources should only be used when the information is of significant public interest and cannot be obtained any other way, requiring that at least one editor knows the source's identity, the reporter explains why anonymity is needed, and the story provides as much context as possible about the source's motives, credibility, and position without revealing their identity."
+  }
+]

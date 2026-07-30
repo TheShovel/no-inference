@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What is calculus?",
+      "Define calculus as a branch of mathematics",
+      "What does calculus study?",
+      "Why was calculus invented?",
+      "What are the two main branches of calculus?"
+    ],
+    "a": "Calculus is the mathematical study of continuous change, developed independently by Isaac Newton and Gottfried Wilhelm Leibniz in the 17th century. It is divided into two main branches: differential calculus (concerned with rates of change and slopes of curves) and integral calculus (concerned with accumulation of quantities and areas under curves). Calculus provides the language to model motion, growth, optimization, and dynamic systems across physics, engineering, economics, and biology."
+  },
+  {
+    "q": [
+      "What is a derivative in calculus?",
+      "How do derivatives work?",
+      "What does the derivative represent?",
+      "What is the limit definition of a derivative?",
+      "Give examples of derivatives in real life"
+    ],
+    "a": "The derivative measures the instantaneous rate of change of a function with respect to one of its variables, geometrically representing the slope of the tangent line at a point on a curve. Formally, the derivative f'(x) is defined as the limit of [f(x+h) - f(x)] / h as h approaches 0. Derivatives are used everywhere — from computing velocity as the derivative of position, to finding maximum profit in economics by setting marginal cost equal to marginal revenue."
+  },
+  {
+    "q": [
+      "What is an integral in calculus?",
+      "How do integrals work?",
+      "What is the difference between definite and indefinite integrals?",
+      "What does the integral represent geometrically?",
+      "How are integrals used in real-world applications?"
+    ],
+    "a": "An integral represents the accumulation of a quantity, such as the area under a curve, the total distance traveled given a velocity function, or the total accumulated growth of a population. A definite integral computes the net accumulation between two bounds (producing a number), while an indefinite integral finds a family of antiderivative functions (producing a general formula plus a constant). Integrals are essential in physics for calculating work, in probability for finding expected values, and in engineering for computing volumes and centers of mass."
+  },
+  {
+    "q": [
+      "What is a limit in calculus?",
+      "How do limits work in mathematics?",
+      "Why are limits important in calculus?",
+      "What is the formal definition of a limit?",
+      "What does it mean for a limit to exist?"
+    ],
+    "a": "A limit describes the value that a function approaches as its input approaches some point, even if the function is not defined exactly at that point. The formal (epsilon-delta) definition states that the limit of f(x) as x approaches a equals L if for every ε > 0 there exists a δ > 0 such that |f(x) - L| < ε whenever 0 < |x - a| < δ. Limits are the foundational concept of all calculus — both derivatives and integrals are defined through limits — and they allow mathematicians to rigorously handle infinity and instantaneous change."
+  },
+  {
+    "q": [
+      "What is the Fundamental Theorem of Calculus?",
+      "Explain the Fundamental Theorem of Calculus",
+      "How does the Fundamental Theorem connect derivatives and integrals?",
+      "What are the two parts of the Fundamental Theorem of Calculus?",
+      "Why is the Fundamental Theorem of Calculus important?"
+    ],
+    "a": "The Fundamental Theorem of Calculus links differentiation and integration, showing they are inverse operations. The first part states that if a function is continuous on [a, b], then the derivative of its integral from a to x is the original function itself. The second part provides a practical way to evaluate definite integrals: the integral from a to b of f(x) dx equals F(b) - F(a), where F is any antiderivative of f. This theorem is a cornerstone of mathematics because it unifies the two branches of calculus and makes computing areas and accumulations dramatically simpler."
+  },
+  {
+    "q": [
+      "What are real-world applications of calculus?",
+      "How is calculus used in everyday life?",
+      "What industries use calculus?",
+      "Give examples of calculus in physics and engineering",
+      "How does calculus apply to economics and biology?"
+    ],
+    "a": "Calculus is used extensively across science and engineering: in physics, it models motion (velocity and acceleration are derivatives of position), electromagnetism (Maxwell's equations use differential and integral calculus), and fluid dynamics. In economics, derivatives find optimal production levels (marginal analysis) and integrals compute consumer surplus. In biology, calculus models population growth (logistic differential equations), the spread of diseases, and pharmacokinetics — how drugs are absorbed and metabolized in the body."
+  }
+]

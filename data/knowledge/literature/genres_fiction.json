@@ -1,0 +1,83 @@
+[
+    {
+        "q": [
+            "What is science fiction?",
+            "What defines the science fiction genre?",
+            "What are the key characteristics of science fiction?",
+            "What are notable works of science fiction?",
+            "Who are major science fiction authors?",
+            "How is science fiction different from fantasy?",
+            "What is hard science fiction vs soft science fiction?",
+            "How does science fiction explore social issues?",
+            "What is the difference between sci-fi and speculative fiction?"
+        ],
+        "a": "Science fiction is a genre that explores speculative concepts rooted in science and technology, including advanced physics, space travel, artificial intelligence, time travel, and dystopian or utopian futures. Unlike fantasy, which relies on magic and the supernatural, sci-fi grounds its imagined worlds in plausible scientific principles, though the line blurs in subgenres like science fantasy. Major authors include Isaac Asimov, Arthur C. Clarke, Ursula K. Le Guin, Philip K. Dick, Octavia Butler, and Frank Herbert, with landmark works such as Dune, Neuromancer, The Left Hand of Darkness, and Foundation. Science fiction often uses its futuristic settings to comment on contemporary social, political, and ethical issues, from identity and inequality to the nature of consciousness."
+    },
+    {
+        "q": [
+            "What is fantasy literature?",
+            "What defines the fantasy genre?",
+            "What are the key characteristics of fantasy fiction?",
+            "What are notable works of fantasy?",
+            "Who are major fantasy authors?",
+            "What is high fantasy vs low fantasy?",
+            "What is the difference between fantasy and magical realism?",
+            "How does fantasy build world and magic systems?",
+            "What is the hero's journey in fantasy?"
+        ],
+        "a": "Fantasy is a genre that features magical or supernatural elements that do not exist in the real world, often set in imaginary worlds with their own rules, histories, and mythologies. High fantasy takes place entirely in a secondary world (like Tolkien's Middle-earth in The Lord of the Rings), while low fantasy introduces magical elements into our familiar world (like Harry Potter's hidden wizarding world). Key authors include J.R.R. Tolkien, C.S. Lewis, George R.R. Martin, Ursula K. Le Guin, Patrick Rothfuss, and N.K. Jemisin. Fantasy explores universal themes of good versus evil, heroism, destiny, and the struggle for power through the lens of imagination."
+    },
+    {
+        "q": [
+            "What is mystery fiction?",
+            "What defines the mystery genre?",
+            "What are the key characteristics of mystery novels?",
+            "What are notable works of mystery fiction?",
+            "Who are major mystery authors?",
+            "What is a whodunit?",
+            "What is the difference between mystery and thriller?",
+            "How does a mystery story build suspense?",
+            "What is the role of the detective in mystery fiction?"
+        ],
+        "a": "Mystery fiction is a genre centered on the investigation of a crime, typically a murder, where the plot builds toward discovering the perpetrator and the motive. The genre was virtually invented by Edgar Allan Poe's 'The Murders in the Rue Morgue' and later perfected by Arthur Conan Doyle's Sherlock Holmes stories and Agatha Christie's novels like Murder on the Orient Express. While closely related to the thriller, mystery emphasizes the intellectual puzzle of solving the crime through clues, deduction, and red herrings, whereas thrillers prioritize tension and suspense. Subgenres include cozy mysteries, hardboiled detective fiction (Chandler, Hammett), and police procedurals."
+    },
+    {
+        "q": [
+            "What is horror fiction?",
+            "What defines the horror genre?",
+            "What are the key characteristics of horror literature?",
+            "What are notable works of horror?",
+            "Who are major horror authors?",
+            "What is the difference between psychological horror and gothic horror?",
+            "How does horror explore fear and the unknown?",
+            "What is cosmic horror?",
+            "What makes horror effective in literature?"
+        ],
+        "a": "Horror fiction is a genre designed to evoke fear, dread, disgust, or shock in the reader, often by confronting supernatural forces, psychological terrors, or the monstrous aspects of humanity itself. Gothic horror, pioneered by Horace Walpole and Mary Shelley's Frankenstein, relies on atmosphere, haunted settings, and the supernatural, while psychological horror (like Shirley Jackson's The Haunting of Hill House) creates dread through the instability of the human mind. Major authors include H.P. Lovecraft (who defined cosmic horror — the terror of vast, indifferent cosmic forces), Stephen King (the modern master, with works like The Shining and It), and Edgar Allan Poe. Horror uses suspense, isolation, and the violation of the familiar to explore deep-seated cultural and personal anxieties."
+    },
+    {
+        "q": [
+            "What is historical fiction?",
+            "What defines the historical fiction genre?",
+            "What are the key characteristics of historical novels?",
+            "What are notable works of historical fiction?",
+            "How does historical fiction blend fact and imagination?",
+            "Who are major historical fiction authors?",
+            "What is the difference between historical fiction and alternate history?"
+        ],
+        "a": "Historical fiction is a genre set in a specific past time period, where the author researches the era's social customs, politics, and events to create an authentic backdrop for fictional characters and stories. Unlike alternate history, which speculates on how the past might have changed, historical fiction hews closely to known historical facts while filling in the personal lives and motivations of imagined or real figures. Landmark works include Hilary Mantel's Wolf Hall (Thomas Cromwell's court), Leo Tolstoy's War and Peace (Napoleonic Wars), and Ken Follett's The Pillars of the Earth (medieval cathedral-building). The genre illuminates how ordinary people experienced major historical moments, making the past feel immediate and human."
+    },
+    {
+        "q": [
+            "What is magical realism?",
+            "What defines magical realism as a genre?",
+            "What are notable works of magical realism?",
+            "Who are major magical realist authors?",
+            "How is magical realism different from fantasy?",
+            "How does magical realism treat supernatural elements?",
+            "What is the relationship between magical realism and Latin American literature?",
+            "What makes magical realism distinct from surrealism?"
+        ],
+        "a": "Magical realism is a literary genre in which fantastical or magical elements are presented as ordinary and accepted within an otherwise realistic setting, without surprise or explanation. Unlike fantasy, which builds separate worlds with their own rules, magical realism embeds the impossible into everyday life — a character may levitate while doing chores or live for two centuries without anyone finding it remarkable. The genre is strongly associated with Latin American writers like Gabriel García Márquez (One Hundred Years of Solitude), Isabel Allende (The House of the Spirits), and Jorge Amado, but global practitioners include Salman Rushdie, Haruki Murakami, and Toni Morrison. Magical realism often serves political and cultural purposes, using the fantastic to challenge colonial narratives, explore suppressed histories, and express realities that conventional realism cannot capture."
+    }
+]

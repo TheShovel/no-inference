@@ -1,0 +1,63 @@
+[
+  {
+    "q": [
+      "What was the Space Race?",
+      "Explain the Space Race.",
+      "Who won the Space Race?",
+      "What was the competition between the US and USSR in space?",
+      "What were the key events of the Space Race?",
+      "Who was the first person in space?",
+      "Who was the first person on the Moon?",
+      "When did the Space Race begin and end?"
+    ],
+    "a": "The Space Race was a competition between the United States and the Soviet Union spanning from 1955 to 1975, driven by Cold War rivalry. The Soviets achieved early milestones: Sputnik 1 (the first artificial satellite, 1957), Laika (first animal in orbit), and Yuri Gagarin (first human in space, 1961). The US responded with Alan Shepard's suborbital flight and President Kennedy's bold 1961 goal of landing a man on the Moon before the decade ended. The race culminated in the US Apollo program achieving the first crewed Moon landing with Apollo 11 on July 20, 1969, when Neil Armstrong and Buzz Aldrin walked on the lunar surface, effectively winning the race for America."
+  },
+  {
+    "q": [
+      "What was the Apollo program?",
+      "Explain the Apollo program.",
+      "How many Apollo missions were there?",
+      "Which Apollo missions landed on the Moon?",
+      "What happened during Apollo 11?",
+      "What was Apollo 13?",
+      "What was the Saturn V rocket?"
+    ],
+    "a": "The Apollo program was NASA's ambitious project to land humans on the Moon and return them safely to Earth, running from 1961 to 1972. It used the Saturn V rocket, still the most powerful rocket ever flown, which launched the Apollo spacecraft consisting of the Command Module, Service Module, and Lunar Module. Six missions (Apollo 11, 12, 14, 15, 16, and 17) successfully landed 12 astronauts on the lunar surface between 1969 and 1972, where they conducted scientific experiments, collected samples, and deployed instruments. Apollo 13 famously suffered an oxygen tank explosion but safely returned its crew through improvised problem-solving. The program cost about $25 billion (over $200 billion today) and returned 382 kilograms of lunar samples, fundamentally advancing planetary science."
+  },
+  {
+    "q": [
+      "What is the International Space Station?",
+      "Explain the ISS.",
+      "What is the purpose of the ISS?",
+      "How big is the ISS?",
+      "Who operates the ISS?",
+      "How fast does the ISS orbit Earth?",
+      "How long do astronauts stay on the ISS?"
+    ],
+    "a": "The International Space Station (ISS) is a modular space station in low Earth orbit, representing a partnership between NASA, Roscosmos, ESA, JAXA, and CSA. It orbits Earth at roughly 400 km altitude at 28,000 km/h, completing one orbit every 90 minutes, and has been continuously occupied since November 2000. The station is about the size of a football field (109 meters end-to-end) and serves as a microgravity laboratory for scientific research in biology, physics, astronomy, and material science, as well as testing technologies for long-duration spaceflight. Crews typically spend 6 months on board, conducting experiments, maintaining the station, and performing spacewalks."
+  },
+  {
+    "q": [
+      "What are the Mars rovers?",
+      "Explain Mars rovers.",
+      "Which rovers have been sent to Mars?",
+      "What have the Mars rovers discovered?",
+      "What is Perseverance rover?",
+      "What is Curiosity rover?",
+      "How do Mars rovers work?"
+    ],
+    "a": "Mars rovers are robotic vehicles sent to explore the surface of Mars, collecting data about its geology, climate, and potential for past life. NASA's successful rovers include Sojourner (1997), Spirit and Opportunity (2004, with Opportunity operating until 2018), Curiosity (2012), and Perseverance (2021). These rovers have made groundbreaking discoveries: evidence of ancient water flows, organic molecules in ancient rocks, and a habitable environment that could have supported microbial life billions of years ago. Perseverance is collecting rock and soil samples for future return to Earth and carries the Ingenuity helicopter, which demonstrated powered flight in Mars's thin atmosphere. China's Zhurong rover also successfully explored Mars as part of the Tianwen-1 mission."
+  },
+  {
+    "q": [
+      "What is the James Webb Space Telescope?",
+      "Explain the James Webb Space Telescope.",
+      "How is Webb different from Hubble?",
+      "What has Webb discovered so far?",
+      "Where is the Webb Telescope located?",
+      "What is the purpose of the Webb Telescope?",
+      "How powerful is the James Webb Space Telescope?"
+    ],
+    "a": "The James Webb Space Telescope (JWST) is the largest and most powerful space telescope ever built, launched in December 2021 as a successor to Hubble. It observes primarily in the infrared spectrum from the Sun-Earth L2 Lagrange point, about 1.5 million kilometers from Earth, using a 6.5-meter segmented mirror and a tennis-court-sized sunshield to keep instruments at cryogenic temperatures. Webb's capabilities allow it to see the first galaxies that formed after the Big Bang, study the formation of stars and planetary systems, analyze exoplanet atmospheres for potential biosignatures, and observe objects too distant, faint, or obscured by dust for Hubble to detect. Its early images have already revealed galaxies from less than 400 million years after the Big Bang."
+  }
+]

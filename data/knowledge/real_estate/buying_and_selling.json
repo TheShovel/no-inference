@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is the home buying process?",
+      "How do I buy a house?",
+      "What are the steps to buying a home?",
+      "What is the first step in buying a house?",
+      "How long does it take to buy a home?",
+      "home buying process steps"
+    ],
+    "a": "The home buying process typically begins with pre-approval from a lender to establish a budget, followed by engaging a real estate agent to search for properties that match your criteria. Once a property is selected, the buyer makes an offer, negotiates terms, and signs a purchase agreement, which is followed by the due diligence period involving home inspection, appraisal, and final loan approval. The process concludes at closing, where all documents are signed, funds are transferred, and ownership is officially transferred to the buyer."
+  },
+  {
+    "q": [
+      "What types of mortgages are available?",
+      "What is a fixed-rate mortgage?",
+      "What is an adjustable-rate mortgage (ARM)?",
+      "What is an FHA loan?",
+      "What is a VA loan?",
+      "What is a conventional loan?",
+      "What is the difference between fixed and adjustable rate mortgages?",
+      "mortgage types fixed adjustable FHA VA conventional"
+    ],
+    "a": "Fixed-rate mortgages lock in an interest rate for the entire loan term (commonly 15 or 30 years), providing predictable monthly payments regardless of market fluctuations. Adjustable-rate mortgages (ARMs) start with a lower introductory rate that adjusts periodically based on market indexes after an initial fixed period, making them suitable for buyers who plan to sell or refinance before rates adjust. Government-backed loans include FHA loans (lower down payment, flexible credit requirements), VA loans (for eligible veterans and service members, often requiring no down payment), and USDA loans (for rural properties), while conventional loans conform to limits set by Fannie Mae and Freddie Mac and typically require higher credit scores and larger down payments."
+  },
+  {
+    "q": [
+      "What is a down payment on a house?",
+      "How much should I put down on a house?",
+      "What are closing costs in real estate?",
+      "What is PMI (private mortgage insurance)?",
+      "What costs are involved in buying a home?",
+      "down payment closing costs home buying"
+    ],
+    "a": "A down payment is the portion of the home purchase price paid upfront by the buyer, typically expressed as a percentage of the purchase price; while 20% is traditional to avoid private mortgage insurance (PMI), many loan programs allow as little as 3-5% down. Closing costs are fees associated with finalizing the mortgage and transferring ownership, typically ranging from 2-5% of the purchase price, including loan origination fees, title insurance, appraisal fees, escrow fees, attorney fees, and prepaid property taxes and insurance. Buyers should budget for both the down payment and closing costs, as these represent significant upfront cash requirements."
+  },
+  {
+    "q": [
+      "What is a home inspection?",
+      "What is a home appraisal?",
+      "What is the difference between a home inspection and an appraisal?",
+      "What is a contingency clause in real estate?",
+      "What are seller disclosures?",
+      "What is the closing process in real estate?",
+      "What is escrow in real estate?",
+      "home inspection appraisal contingency escrow closing"
+    ],
+    "a": "A home inspection is a detailed examination of a property's condition, covering structural components, roofing, plumbing, electrical systems, HVAC, and major appliances, allowing the buyer to identify defects or safety concerns before purchase. An appraisal is a professional estimate of a property's market value required by the lender to ensure the loan amount does not exceed the property's worth. Contingency clauses in purchase agreements protect buyers by allowing them to withdraw without penalty if specified conditions (such as satisfactory inspection, financing approval, or sale of the buyer's current home) are not met. Escrow is a neutral third-party arrangement where funds and documents are held until all conditions of the sale are satisfied, at which point the transaction is completed at the closing."
+  }
+]

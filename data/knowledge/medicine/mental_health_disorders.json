@@ -1,0 +1,65 @@
+[
+  {
+    "q": [
+      "What is major depressive disorder?",
+      "What are the different types of depression?",
+      "How is depression different from sadness?",
+      "What are the symptoms of clinical depression?",
+      "What is persistent depressive disorder (dysthymia)?",
+      "What is seasonal affective disorder?",
+      "depression major depressive disorder types",
+      "what is depression",
+      "major depressive disorder",
+      "clinical depression"
+    ],
+    "a": "Major depressive disorder (MDD) is a common and serious mental health condition characterized by persistent low mood, loss of interest or pleasure in activities (anhedonia), changes in appetite or weight, sleep disturbances, fatigue, feelings of worthlessness, difficulty concentrating, and recurrent thoughts of death, lasting at least two weeks and causing significant functional impairment. Subtypes include persistent depressive disorder (dysthymia)—a chronic, milder form lasting at least two years; seasonal affective disorder (SAD)—depression that occurs during specific seasons, typically winter; postpartum depression—occurring after childbirth; and psychotic depression—accompanied by delusions or hallucinations. Treatment typically involves antidepressant medications (selective serotonin reuptake inhibitors or SNRIs), psychotherapy (especially cognitive-behavioral therapy and interpersonal therapy), and for severe or treatment-resistant cases, electroconvulsive therapy (ECT) or transcranial magnetic stimulation (TMS)."
+  },
+  {
+    "q": [
+      "What is bipolar disorder?",
+      "What is the difference between bipolar I and bipolar II?",
+      "What are manic and hypomanic episodes?",
+      "How is bipolar disorder treated?",
+      "What are the symptoms of bipolar disorder?",
+      "How does bipolar disorder differ from depression?",
+      "bipolar disorder manic depression"
+    ],
+    "a": "Bipolar disorder is a mood disorder characterized by alternating episodes of mania or hypomania and depression, with bipolar I defined by full manic episodes lasting at least one week (or requiring hospitalization) that involve elevated or irritable mood, grandiosity, decreased need for sleep, pressured speech, racing thoughts, increased goal-directed activity, and risky behavior with poor judgment. Bipolar II involves hypomanic episodes (less severe than mania, lasting at least four days) paired with major depressive episodes, and is often misdiagnosed as unipolar depression because depressive episodes are more frequent and distressing than hypomanic ones. Treatment relies on mood stabilizers such as lithium (the gold standard for suicide prevention), anticonvulsants (valproate, lamotrigine), and atypical antipsychotics, combined with psychoeducation about sleep hygiene and trigger management, as psychotherapy alone is insufficient for acute episodes."
+  },
+  {
+    "q": [
+      "What are anxiety disorders?",
+      "What is generalized anxiety disorder (GAD)?",
+      "What is the difference between a panic attack and a phobia?",
+      "What are the symptoms of panic disorder?",
+      "How are anxiety disorders treated?",
+      "What is social anxiety disorder?",
+      "anxiety disorders GAD panic phobias"
+    ],
+    "a": "Anxiety disorders are the most common class of mental disorders, affecting an estimated 30% of adults at some point in their lives, encompassing generalized anxiety disorder (GAD)—excessive, uncontrollable worry about multiple domains lasting at least six months, accompanied by restlessness, fatigue, muscle tension, and sleep disturbance. Panic disorder involves recurrent, unexpected panic attacks—sudden surges of intense fear or discomfort peaking within minutes, with symptoms like palpitations, chest pain, shortness of breath, dizziness, and fear of dying or losing control, often leading to agoraphobic avoidance of situations where escape might be difficult. Specific phobias are intense, irrational fears of particular objects or situations (heights, flying, spiders, enclosed spaces), while social anxiety disorder involves marked fear of negative evaluation in social situations, with first-line treatments including cognitive-behavioral therapy (especially exposure therapy), selective serotonin reuptake inhibitors, and for acute situational anxiety, short-acting benzodiazepines or beta-blockers."
+  },
+  {
+    "q": [
+      "What is PTSD and how does it develop?",
+      "What are the symptoms of post-traumatic stress disorder?",
+      "How is PTSD treated?",
+      "What is complex PTSD (C-PTSD)?",
+      "What events can cause PTSD?",
+      "How does PTSD differ from acute stress disorder?",
+      "PTSD post-traumatic stress disorder trauma"
+    ],
+    "a": "Post-traumatic stress disorder (PTSD) develops after exposure to actual or threatened death, serious injury, or sexual violence, and is characterized by four symptom clusters: intrusive re-experiencing (flashbacks, nightmares, distressing memories), avoidance of trauma reminders, negative alterations in cognition and mood (persistent fear, shame, detachment, inability to remember details of the event), and marked changes in arousal and reactivity (hypervigilance, exaggerated startle response, angry outbursts, sleep disturbance) persisting for more than one month. Complex PTSD (C-PTSD), recognized in ICD-11, results from prolonged, repeated trauma—such as childhood abuse, domestic violence, or torture—and adds difficulties with emotional regulation, negative self-concept, and interpersonal relationship problems beyond standard PTSD symptoms. Evidence-based treatments include trauma-focused cognitive-behavioral therapies (prolonged exposure, cognitive processing therapy), eye movement desensitization and reprocessing (EMDR), and SSRIs, with emerging evidence for MDMA-assisted psychotherapy for treatment-resistant cases."
+  },
+  {
+    "q": [
+      "What is OCD?",
+      "What are the symptoms of obsessive-compulsive disorder?",
+      "How is OCD different from OCPD?",
+      "What are common obsessions and compulsions?",
+      "How is OCD treated?",
+      "What is the difference between OCD and being a perfectionist?",
+      "OCD obsessive-compulsive disorder"
+    ],
+    "a": "Obsessive-compulsive disorder (OCD) is characterized by recurrent, intrusive, unwanted thoughts, urges, or images (obsessions) that cause marked anxiety or distress, and repetitive behaviors or mental acts (compulsions) that the person feels driven to perform in response to the obsession or according to rigid rules. Common obsessions include contamination fears, pathological doubt (e.g., worry about leaving doors unlocked), need for symmetry or exactness, and intrusive taboo thoughts (aggressive, sexual, or religious), with corresponding compulsions such as excessive hand washing, checking, counting, ordering, or mental rituals. First-line treatment is exposure and response prevention (ERP), a specific form of cognitive-behavioral therapy where patients gradually confront triggering situations while refraining from compulsions, combined with SSRIs at higher-than-depression doses, with deep brain stimulation (DBS) as an option for severe, treatment-refractory cases."
+  }
+]

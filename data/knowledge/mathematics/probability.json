@@ -1,0 +1,61 @@
+[
+  {
+    "q": [
+      "What is probability?",
+      "Define probability as a branch of mathematics",
+      "What does probability theory study?",
+      "Why is probability important?",
+      "What are the basic concepts in probability?",
+      "How is probability measured?",
+      "What is the difference between probability and statistics?"
+    ],
+    "a": "Probability is the branch of mathematics that quantifies the likelihood of events occurring, expressed as a number between 0 (impossible) and 1 (certain). A probability of 0.5 indicates an event has an equal chance of happening or not happening. Probability theory provides the mathematical foundation for making predictions under uncertainty, analyzing random phenomena, and quantifying risk. It is fundamental to statistics, machine learning, insurance, finance, quantum physics, game theory, and everyday decision-making, with applications ranging from weather forecasting and medical diagnosis to sports analytics and artificial intelligence."
+  },
+  {
+    "q": [
+      "What are basic probability rules?",
+      "What is the addition rule of probability?",
+      "What is the multiplication rule of probability?",
+      "What is conditional probability?",
+      "What is Bayes theorem?",
+      "What are independent and dependent events?",
+      "How do you calculate the probability of multiple events?"
+    ],
+    "a": "The addition rule states that P(A or B) = P(A) + P(B) − P(A and B) for any two events, subtracting the overlap to avoid double-counting. The multiplication rule states that P(A and B) = P(A) × P(B|A), where P(B|A) is the conditional probability of B given A. Bayes theorem, P(A|B) = P(B|A) × P(A) / P(B), updates the probability of a hypothesis based on new evidence and is the foundation of Bayesian statistics. It is widely used in spam filtering, medical diagnostics, and machine learning classifiers like naive Bayes. Conditional probability measures the likelihood of one event occurring given that another has already occurred, and two events are independent if P(A and B) = P(A) × P(B), meaning one event's occurrence does not affect the other's probability."
+  },
+  {
+    "q": [
+      "What are random variables?",
+      "What is a probability distribution?",
+      "What is the normal distribution?",
+      "What is the binomial distribution?",
+      "What is the Poisson distribution?",
+      "What is the difference between discrete and continuous probability distributions?",
+      "How are probability distributions used in statistics?"
+    ],
+    "a": "A random variable is a variable whose possible values are numerical outcomes of a random phenomenon, and it can be either discrete (taking countable values, like the number of heads in coin flips) or continuous (taking any value in an interval, like height or temperature). A probability distribution describes how probabilities are assigned to each possible value of a random variable. The normal (Gaussian) distribution is the most important continuous distribution, characterized by its bell-shaped curve, with about 68% of data within one standard deviation of the mean. The binomial distribution models the number of successes in a fixed number of independent trials (like flipping a coin 10 times), while the Poisson distribution models the number of events occurring in a fixed interval of time or space (like customer arrivals). These distributions form the basis for statistical inference, hypothesis testing, and predictive modeling across virtually all scientific fields."
+  },
+  {
+    "q": [
+      "What is expected value and variance?",
+      "What is the expected value of a random variable?",
+      "How is expected value calculated?",
+      "What is variance in probability?",
+      "What is the difference between variance and standard deviation?",
+      "How are expected value and variance used in practice?",
+      "What is the law of large numbers?"
+    ],
+    "a": "Expected value (or mean) is the long-run average value of a random variable, calculated as the weighted average of all possible outcomes where each outcome is weighted by its probability. Variance measures how spread out the values of a random variable are around the expected value, calculated as the average of squared deviations from the mean, while standard deviation is the square root of variance and is in the same units as the original data. The law of large numbers states that as the number of trials increases, the sample average converges to the expected value — this is why casinos always profit in the long run and why larger sample sizes give more reliable estimates in polls and clinical trials. These concepts are critical in risk assessment, portfolio theory, quality control, and any field requiring quantitative decision-making under uncertainty."
+  },
+  {
+    "q": [
+      "What is the central limit theorem?",
+      "Why is the central limit theorem important?",
+      "What does the central limit theorem state?",
+      "How does the central limit theorem apply to statistics?",
+      "What is the practical significance of the central limit theorem?",
+      "How does the central limit theorem enable hypothesis testing?"
+    ],
+    "a": "The central limit theorem (CLT) states that the sampling distribution of the sample mean approaches a normal distribution as the sample size increases, regardless of the shape of the population distribution. This is one of the most important results in all of statistics because it justifies the use of the normal distribution for inference even when the underlying population is not normally distributed. In practice, with a sufficiently large sample size (typically n ≥ 30), the CLT allows statisticians to construct confidence intervals and conduct hypothesis tests for population means using normal probability calculations. It is the theoretical foundation behind opinion polls, A/B testing, quality control sampling, and virtually all parametric statistical methods."
+  }
+]

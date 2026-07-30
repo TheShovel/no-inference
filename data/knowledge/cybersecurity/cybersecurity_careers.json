@@ -1,0 +1,41 @@
+[
+  {
+    "q": [
+      "What are the different roles in cybersecurity?",
+      "What does a security analyst do?",
+      "What does a security engineer do?",
+      "What does a security architect do?",
+      "What does a CISO do?",
+      "What does a security consultant do?",
+      "What is the career path in cybersecurity?",
+      "What is the difference between a security analyst and engineer?"
+    ],
+    "a": "Cybersecurity offers diverse career roles with distinct responsibilities: security analysts monitor systems and respond to incidents at the operational level, security engineers design and implement security solutions like firewalls and encryption systems, security architects create the overall security strategy and blueprints for an organization, security consultants provide expert advice to multiple clients on risk assessment and compliance, and the Chief Information Security Officer (CISO) is the executive leader responsible for an organization's entire security posture and strategy. Entry-level roles typically begin with security operations center (SOC) analyst positions, advancing through incident response and engineering roles to senior architecture and leadership positions. The field offers strong job growth, with the U.S. Bureau of Labor Statistics projecting 32% growth for information security analysts through 2032, far outpacing the average for all occupations."
+  },
+  {
+    "q": [
+      "What is the CISSP certification?",
+      "What is the CEH certification?",
+      "What is CompTIA Security+?",
+      "What is the OSCP certification?",
+      "What are the best cybersecurity certifications?",
+      "What is the difference between CISSP and CEH?",
+      "Which cybersecurity certification should I get first?",
+      "How do I choose a cybersecurity certification?"
+    ],
+    "a": "Major cybersecurity certifications target different career stages and specializations: CompTIA Security+ is an entry-level certification covering fundamental security concepts, risk management, and cryptography — often the first certification for newcomers. The Certified Information Systems Security Professional (CISSP) is an advanced certification for experienced professionals covering eight security domains, requiring at least five years of paid work experience in at least two domains. The Certified Ethical Hacker (CEH) focuses on penetration testing tools and techniques from an attacker's perspective, while the Offensive Security Certified Professional (OSCP) is a hands-on, rigorous certification requiring candidates to pass a 24-hour practical penetration testing exam. Other notable certifications include CISA (Certified Information Systems Auditor), CISM (Certified Information Security Manager), and GIAC certifications from the SANS Institute, each tailored to specific security disciplines."
+  },
+  {
+    "q": [
+      "What is ethical hacking?",
+      "What is the difference between ethical and unethical hacking?",
+      "What is bug bounty?",
+      "How do bug bounty programs work?",
+      "What is security research?",
+      "What are the career paths in security research?",
+      "How do I start a career in ethical hacking?",
+      "What are responsible disclosure policies?"
+    ],
+    "a": "Ethical hacking involves authorized attempts to bypass an organization's security systems to identify vulnerabilities before malicious attackers can exploit them, conducted under a formal scope of work and legal agreement that distinguishes it from criminal hacking. Bug bounty programs are crowdsourced security testing initiatives where organizations offer monetary rewards (ranging from $100 to millions for critical vulnerabilities) to independent security researchers who discover and responsibly report security flaws — major platforms like HackerOne and Bugcrowd connect researchers with companies. Security research involves deep technical investigation of software, hardware, and protocols to discover novel vulnerabilities, develop exploitation techniques, and advance defensive knowledge, often published at academic conferences like IEEE S&P and USENIX Security or industry events like DEF CON and Black Hat. Career paths in ethical hacking typically begin with self-study of networking, operating systems, and web technologies, followed by practical lab experience (Capture The Flag competitions, vulnerable VMs like HackTheBox), certification, and gradually building a reputation through responsible disclosures or published research."
+  }
+]

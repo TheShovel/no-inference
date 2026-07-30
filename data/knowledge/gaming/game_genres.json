@@ -1,0 +1,60 @@
+[
+  {
+    "q": [
+      "What are action and adventure game genres?",
+      "Tell me about action, adventure, and action-adventure games.",
+      "How do action games differ from adventure games?",
+      "What defines a platformer game like Super Mario?",
+      "Describe the first-person shooter genre.",
+      "What are the key elements of action games?"
+    ],
+    "a": "Action games emphasize physical challenges, hand-eye coordination, and real-time reaction, encompassing subgenres like first-person shooters (Call of Duty), platformers (Super Mario), fighting games (Street Fighter), and battle royale titles (Fortnite). Adventure games prioritize exploration, puzzle-solving, and narrative over combat, with classic point-and-click adventures like Monkey Island and modern narrative adventures like Life is Strange. The action-adventure hybrid genre, exemplified by The Legend of Zelda and Uncharted, combines combat and exploration with story-driven progression and puzzle-solving."
+  },
+  {
+    "q": [
+      "What are RPGs and how do they work?",
+      "Tell me about role-playing games in video gaming.",
+      "What is the difference between Western RPGs and Japanese RPGs?",
+      "How do MMORPGs differ from single-player RPGs?",
+      "Describe character progression and leveling in RPGs.",
+      "What are the defining features of role-playing games?",
+      "what is an rpg",
+      "rpg games",
+      "role playing games"
+    ],
+    "a": "Role-playing games (RPGs) center on character development through statistical progression, skill trees, and narrative choices that shape the story and world. Western RPGs like The Elder Scrolls and Fallout emphasize open worlds, player freedom, and complex moral systems, while Japanese RPGs (JRPGs) like Final Fantasy and Dragon Quest typically feature linear stories, turn-based combat, and predefined characters. Massively Multiplayer Online RPGs (MMORPGs) like World of Warcraft and Final Fantasy XIV host thousands of simultaneous players in persistent worlds, combining traditional RPG progression with social and cooperative gameplay at massive scale."
+  },
+  {
+    "q": [
+      "What are strategy and simulation games?",
+      "Tell me about real-time strategy and turn-based strategy games.",
+      "How do simulation games like The Sims and SimCity work?",
+      "Describe the difference between RTS and 4X strategy games.",
+      "What defines the strategy game genre?",
+      "What are the best-known strategy game franchises?"
+    ],
+    "a": "Strategy games emphasize tactical or logistical decision-making, divided into real-time strategy (RTS) like StarCraft and Age of Empires where actions happen simultaneously, and turn-based strategy like Civilization and XCOM where players take sequential turns. Simulation games replicate real-world activities with varying fidelity, from life simulations like The Sims and city-building games like Cities: Skylines to vehicle simulators like Microsoft Flight Simulator and farming simulators like Stardew Valley. Both genres reward planning, resource management, and systems understanding over raw reflexes."
+  },
+  {
+    "q": [
+      "What are horror and survival horror games?",
+      "Tell me about the horror game genre.",
+      "How do games like Resident Evil and Silent Hill create fear?",
+      "What defines a survival horror game?",
+      "Describe the evolution of horror in video games.",
+      "What are the scariest video game franchises?"
+    ],
+    "a": "Horror games aim to frighten and unsettle players through atmospheric tension, jump scares, psychological dread, and often limited resources that heighten vulnerability. The survival horror subgenre, pioneered by Resident Evil (1996), combines horror themes with resource management, puzzle-solving, and combat against monstrous enemies. Games like Silent Hill emphasize psychological horror and disturbing narratives, while more recent titles like Amnesia: The Dark Descent and Outlast popularized the first-person horror experience where players cannot fight back and must rely on hiding and running to survive."
+  },
+  {
+    "q": [
+      "What are open-world games?",
+      "Tell me about open-world and sandbox game design.",
+      "How do open-world games like GTA and Skyrim work?",
+      "What defines an open-world game?",
+      "Describe the difference between open-world and linear game design.",
+      "What are the largest and most detailed open-world games?"
+    ],
+    "a": "Open-world games provide large, continuous game spaces that players can explore freely without artificial barriers, emphasizing player agency and emergent gameplay over strictly linear progression. Landmark open-world titles include Grand Theft Auto III (2001) which established the modern sandbox template, The Elder Scrolls V: Skyrim with its vast fantasy world and countless side quests, and The Legend of Zelda: Breath of the Wild which redefined open-world exploration through its physics-driven interactivity. The genre has grown to encompass everything from massive role-playing worlds to open-world action-adventure games, with map sizes ranging from dozens to hundreds of square kilometers."
+  }
+]

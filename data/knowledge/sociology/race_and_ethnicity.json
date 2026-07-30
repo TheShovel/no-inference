@@ -1,0 +1,51 @@
+[
+  {
+    "q": [
+      "How does sociology study race and ethnicity?",
+      "What is the difference between race and ethnicity?",
+      "What is racism from a sociological perspective?",
+      "What is the difference between prejudice and discrimination?",
+      "What is individual vs institutional racism?",
+      "How do sociologists define race?",
+      "Is race biologically meaningful?"
+    ],
+    "a": "Sociology approaches race and ethnicity as socially constructed categories rather than biological realities, examining how societies create, maintain, and transform racial and ethnic boundaries, hierarchies, and identities through social interaction, institutional practices, and cultural representations. Race refers to a socially defined category based on physical characteristics (like skin color) that has been used historically to justify inequality and oppression, while ethnicity refers to shared cultural heritage, language, ancestry, and traditions that groups claim as their identity — unlike race, ethnicity is often voluntary and can encompass multiple racial groups. Sociologists distinguish between prejudice (negative attitudes and beliefs about a group) and discrimination (unequal treatment of individuals based on group membership), recognizing that discrimination can occur with or without individual prejudice through institutional policies and practices that perpetuate racial inequality regardless of intent."
+  },
+  {
+    "q": [
+      "What is institutional racism?",
+      "How does institutional racism differ from individual racism?",
+      "What is critical race theory?",
+      "What are the main tenets of critical race theory?",
+      "What is white privilege?",
+      "How does privilege operate in society?",
+      "What is racial identity?",
+      "What is the difference between assimilation and multiculturalism?"
+    ],
+    "a": "Institutional (or systemic) racism refers to patterns of differential access to resources, opportunities, and power structured along racial lines that are embedded in the normal operations of institutions like the legal system, education, housing, employment, and healthcare — it persists even in the absence of explicitly discriminatory laws or individually racist actors through seemingly neutral policies that produce racially disparate outcomes. Critical race theory (CRT) emerged from legal studies in the 1970s and 1980s (Derrick Bell, Kimberlé Crenshaw, Richard Delgado) arguing that racism is ordinary, not aberrational; that race is a social construction created to maintain power; that racism intersects with other forms of oppression; and that the experiential knowledge of people of color provides essential insights often excluded from mainstream discourse. White privilege refers to the unearned advantages and immunities that white people benefit from in racially stratified societies, often invisible to those who possess them, including assumptions of competence, representation in media and history, and freedom from racial profiling."
+  },
+  {
+    "q": [
+      "What is racial identity development?",
+      "How do people form racial identities?",
+      "What is assimilation theory?",
+      "What is the difference between assimilation and acculturation?",
+      "What is multiculturalism as a sociological concept?",
+      "What are the critiques of assimilation?",
+      "What is segmented assimilation?"
+    ],
+    "a": "Racial identity development refers to the process by which individuals come to understand and identify with their racial group, with various stage models describing how people move from lack of awareness or internalization of dominant narratives to a more secure, positive, and self-defined racial identity — these processes differ across racial groups and are shaped by experiences of discrimination, socialization, and historical context. Assimilation theory, originating with the Chicago School (Robert Park) and systematized by Milton Gordon, describes the process by which immigrant groups adopt the cultural norms and values of the host society and become integrated into its social structures, traditionally conceived as a straight-line process across generations. Segmented assimilation theory (Portes and Zhou) recognizes that assimilation outcomes vary — some groups experience upward mobility through integration into the mainstream middle class, others face downward assimilation into marginalized underclass positions, and others maintain selective acculturation combining economic integration with preservation of ethnic community ties and values, with outcomes shaped by racial status, government reception, and community resources."
+  },
+  {
+    "q": [
+      "How do sociologists study discrimination?",
+      "What is implicit bias?",
+      "What is racialization?",
+      "What is intersectionality in race studies?",
+      "How does race intersect with class and gender?",
+      "What is colorblind racism?",
+      "What is the difference between old-fashioned and modern racism?"
+    ],
+    "a": "Sociologists study discrimination through multiple methodological approaches including field experiments (audit studies using matched pairs of applicants with racially distinctive names to measure hiring discrimination), survey research on experiences of discrimination and attitudes, analysis of administrative data revealing racial disparities (in policing, sentencing, lending, healthcare), and ethnographic observation of how race shapes everyday interaction and institutional processes. Eduardo Bonilla-Silva's concept of 'colorblind racism' describes how in the post-Civil Rights era, racial inequality is perpetuated through ostensibly non-racial frames — abstract liberalism (individual choice arguments), naturalization (explaining segregation as natural preference), cultural racism (blaming minority cultural deficiencies), and minimization of racism (claiming discrimination is rare). Intersectionality, a term coined by legal scholar Kimberlé Crenshaw, examines how multiple dimensions of identity and inequality — race, gender, class, sexuality, ability — interact simultaneously to produce unique experiences of privilege and oppression that cannot be understood by examining any single dimension alone."
+  }
+]

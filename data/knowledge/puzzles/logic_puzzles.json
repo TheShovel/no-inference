@@ -1,0 +1,63 @@
+[
+  {
+    "q": [
+      "How do I solve a logic grid puzzle like Einstein's Riddle?",
+      "What is the Zebra Puzzle method for logic grid solving?",
+      "How do I use attributes and categories to solve grid puzzles?",
+      "What are constraints and clues in logic grid puzzles?",
+      "How do I set up a deduction grid for logic puzzles?",
+      "What is the process of elimination in logic grid puzzles?",
+      "How do I use positive and negative clues in grid puzzles?",
+      "What are direct and indirect deductions in logic puzzles?"
+    ],
+    "a": "Logic grid puzzles (such as Einstein's Riddle/Zebra Puzzle) present a scenario with categories (people names, colors, foods, pets, etc.) where the solver must match all items across categories using logical clues and deductive reasoning. To solve them, create a grid with one row and column for each attribute across two categories at a time—place an X where a combination is impossible and a checkmark where it is confirmed. Categories serve as axes (rows and columns), and by systematically applying each clue as either a positive match (checkmark), a negative match (X), or a conditional relationship (if-then, and/or, not), you cross-reference information between grids to make deductions. Direct deduction occurs when a clue explicitly matches two items (the man in the red house drinks coffee), while indirect deduction uses negative information from one grid to eliminate possibilities in another (if the red house isn't first or last, and the green house is left of the white house, you narrow positional possibilities). The key technique is always to update every relevant grid whenever you make any new deduction, as one checkmark can cascade into many eliminations across related categories until the unique consistent arrangement emerges."
+  },
+  {
+    "q": [
+      "What are the basic clue types in logic grid puzzles?",
+      "How do I interpret 'and' and 'or' clues in logic puzzles?",
+      "How do I use 'if-then' and 'if and only if' clues?",
+      "What are 'not', 'none', 'all', and 'some' clues?",
+      "How do I use 'among', 'between', and 'besides' clues?",
+      "How do 'next to', 'adjacent', 'immediately left/right' clues work?",
+      "What are 'always' and 'never' clues in logic puzzles?",
+      "How do 'before' and 'after' position clues affect the grid?"
+    ],
+    "a": "Logic grid puzzles use a variety of relational clue types. Positive clues ('The Englishman lives in the red house') create direct checkmarks in the grid; negative clues ('The Norwegian does not live in the blue house') create X eliminations; and 'and' clues ('The man who drinks tea is British and has a dog') combine multiple attributes. 'If-then' clues ('If the red house is first, then the green house is second') establish conditional relationships that only activate when the condition is met, while 'if and only if' creates a two-way conditional (both must be true or both false). Positional clues using 'immediately left/right', 'next to', 'adjacent', 'between', 'north/south/east/west', and 'above/below' locate items relative to each other in the linear or spatial arrangement, often the most challenging clues to translate into grid entries. 'Among/between/besides' clues indicate grouping without specifying exact positions, and 'always/never/sometimes/occasionally' clues establish rules of varying certainty that may allow multiple possibilities or force absolute constraints around specific attribute combinations. The skill in solving lies in translating each linguistic clue into logical relationships—premises and conclusions that interact through valid deductive inference to form a sound argument that uniquely satisfies all conditions."
+  },
+  {
+    "q": [
+      "What is the X-Wing technique in Sudoku?",
+      "How do I identify and use X-Wing patterns in Sudoku?",
+      "What is a fish pattern of size 2 in Sudoku?",
+      "How do X-Wing patterns eliminate candidates?",
+      "What is the difference between a finned and sashimi X-Wing?",
+      "How do I spot an X-Wing on rows versus columns?",
+      "Can X-Wing be used with multiple candidates?"
+    ],
+    "a": "The X-Wing is a classic Sudoku solving technique where a candidate number appears exactly twice in two rows (or columns), and those same two positions also align in exactly two columns (or rows), forming a rectangular pattern. When identified, any other occurrence of that candidate in those two columns (or rows) outside the rectangular cells can be eliminated because the candidate must occupy one of the two diagonal positions in each row, creating a binary constraint. For example, if candidate 7 appears only in columns 2 and 5 of rows 1 and 4, then the 7s in those rows must occupy those four cells in diagonal opposition, meaning all other 7s in columns 2 and 5 (in other rows) can be eliminated. Finned X-Wings and sashimi X-Wings are variations where the pattern has an extra candidate (the fin) that partially breaks the pure rectangle but still allows for limited eliminations—the fin must be in the same box as part of the pattern, creating slightly different elimination rules. X-Wings are considered an advanced technique and are often one of the first fish patterns learners master (fish patterns are categorized by size: X-Wing is size 2, Swordfish is size 3, Jellyfish is size 4)."
+  },
+  {
+    "q": [
+      "What is the Swordfish technique in Sudoku?",
+      "How do I identify a Swordfish pattern in Sudoku?",
+      "How is Swordfish different from X-Wing?",
+      "What is a size 3 fish pattern in Sudoku?",
+      "What are finned and sashimi Swordfish variations?",
+      "How do I use Swordfish to eliminate candidates?",
+      "What is a Swordfish on rows vs columns?"
+    ],
+    "a": "The Swordfish is an extension of the X-Wing concept to size 3 fish patterns: a candidate number appears in exactly three rows (or columns), and across those rows the candidate is confined to exactly three columns (or rows), creating a 3x3 grid of possible positions. The constraint is that the candidate must be placed in each of the three rows using those three columns, one per column, meaning any occurrence of that candidate in those three columns outside the three Swordfish rows can be eliminated. To identify a Swordfish, scan for a candidate that appears in at most three positions within each of three different rows, and check whether all those positions fall within the same three columns. Finned Swordfish and sashimi Swordfish are variants where one cell of the pattern is missing (sashimi) or there is an extra candidate cell (fin) that must be in the same box as a Swordfish cell, modifying the elimination rules slightly. The skyscraper, crane, turbot fish, and 2-string kite are related single-digit techniques that can be seen as simpler or limited forms of fish patterns, all relying on the same candidate chain logic across rows and columns within the Sudoku grid."
+  },
+  {
+    "q": [
+      "What is the Jellyfish technique in Sudoku?",
+      "How do I identify a Jellyfish pattern?",
+      "What is the difference between X-Wing, Swordfish, and Jellyfish?",
+      "How does Jellyfish eliminate candidates?",
+      "What is a size 4 fish in Sudoku?",
+      "What are advanced fish patterns beyond Jellyfish?"
+    ],
+    "a": "The Jellyfish is a size 4 fish pattern extending the X-Wing and Swordfish logic to four rows and four columns: a candidate appears in at most four positions within each of four rows, and those positions are confined to the same four columns (or vice versa). When this pattern holds, the candidate can be eliminated from all cells in those four columns (or rows) outside the Jellyfish rows (or columns). To identify a Jellyfish, search for a candidate that appears exactly two, three, or four times in each of four rows, then verify that all candidate positions across those four rows are contained within the same four columns. Jellyfish patterns are relatively rare and can be challenging to spot due to the larger grid area they span. Beyond Jellyfish, the next fish sizes are theoretical (Squirmbag at size 5 and even larger fish for 16x16 Sudoku variants), but in standard 9x9 Sudoku, the maximum effective fish size is Jellyfish. Related advanced techniques that interact with fish logic include simple coloring, multicoloring, X-Cycles, XY-Chains, XY-Wing, XYZ-Wing, WXYZ-Wing, ALS (Almost Locked Sets), and AIC (Alternating Inference Chains), which form the progressive hierarchy of advanced solving methods beyond basic candidate elimination."
+  }
+]

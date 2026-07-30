@@ -1,0 +1,86 @@
+[
+  {
+    "q": [
+      "What is investigative journalism?",
+      "How does investigative journalism differ from regular reporting?",
+      "What are famous examples of investigative journalism?",
+      "What techniques do investigative journalists use?",
+      "Why is investigative journalism important?",
+      "How long does investigative journalism take?",
+      "What is the Watergate scandal's connection to investigative journalism?"
+    ],
+    "a": "Investigative journalism is in-depth reporting that uncovers information of public interest that someone is trying to keep hidden, often requiring extensive research, data analysis, document review, and interviews with confidential sources over weeks or months. Unlike daily news reporting, investigative journalism seeks to expose wrongdoing, corruption, or systemic failures through original research rather than covering events already in the public domain. Landmark examples include the Washington Post's Watergate investigation, The Guardian's coverage of phone hacking, and the Panama Papers collaboration among hundreds of journalists worldwide."
+  },
+  {
+    "q": [
+      "What is data journalism?",
+      "How is data used in journalism?",
+      "What tools do data journalists use?",
+      "What is the difference between data journalism and computer-assisted reporting?",
+      "How does data journalism help tell stories?",
+      "What are examples of data journalism?",
+      "What skills does a data journalist need?"
+    ],
+    "a": "Data journalism is a practice of using data as a primary source material for reporting, combining statistical analysis, data visualization, and traditional journalistic investigation to find and communicate stories hidden in datasets. Data journalists use tools like spreadsheets, Python or R for analysis, and visualization libraries or platforms like D3.js, Datawrapper, and Tableau to create interactive graphics that help audiences understand complex information. The New York Times, The Guardian, and ProPublica have pioneered data journalism with projects ranging from analyzing police shootings to tracking COVID-19 spread and election forecasting."
+  },
+  {
+    "q": [
+      "What is citizen journalism?",
+      "How has social media enabled citizen journalism?",
+      "What are the advantages and disadvantages of citizen journalism?",
+      "How does citizen journalism differ from professional journalism?",
+      "What role did citizen journalists play in major events?",
+      "Can citizen journalism be trusted?",
+      "What is the difference between citizen journalism and user-generated content?"
+    ],
+    "a": "Citizen journalism is news and information gathered, reported, and disseminated by ordinary citizens rather than professional journalists, often through social media platforms, blogs, and video-sharing sites. It played a crucial role in events like the Arab Spring uprisings, the Ferguson protests, and natural disasters where professional journalists had limited access. While citizen journalism enables real-time coverage from eyewitnesses and amplifies underrepresented voices, it also raises concerns about verification, accuracy, bias, and lack of editorial oversight that professional news organizations provide."
+  },
+  {
+    "q": [
+      "What is broadcast journalism?",
+      "How does broadcast journalism differ from print journalism?",
+      "What is the difference between television and radio journalism?",
+      "What skills are required for broadcast journalism?",
+      "What is print journalism?",
+      "How has digital journalism changed the industry?",
+      "What is online journalism?"
+    ],
+    "a": "Broadcast journalism encompasses news reporting for television and radio, characterized by its need for concise storytelling, visual elements (for TV), and immediate delivery to mass audiences through scheduled newscasts or breaking news coverage. Print journalism refers to news published in newspapers and magazines, traditionally offering deeper analysis and longer-form storytelling than broadcast, though the lines have blurred as both sectors move online. Digital or online journalism encompasses news delivered through websites, apps, podcasts, and social media, combining text, video, audio, and interactive elements while enabling real-time updates and global reach that traditional print and broadcast cannot match."
+  },
+  {
+    "q": [
+      "What is photojournalism?",
+      "How does photojournalism tell stories?",
+      "What are the ethics of photojournalism?",
+      "What makes a powerful news photograph?",
+      "How has digital photography changed photojournalism?",
+      "What is the difference between photojournalism and street photography?",
+      "What are famous examples of photojournalism?"
+    ],
+    "a": "Photojournalism is the practice of using photographs to tell news stories, capturing candid, unposed moments that document events with authenticity and emotional impact. Ethical photojournalism strictly prohibits staging or manipulating images beyond basic adjustments, as altering the content of a news photograph undermines its documentary value and public trust. Iconic photojournalists like Robert Capa, Dorothea Lange, and James Nachtwey have created images that shaped public understanding of wars, social conditions, and human struggles, demonstrating photography's power to bear witness and drive change."
+  },
+  {
+    "q": [
+      "What is sports journalism?",
+      "How does sports journalism differ from other journalism?",
+      "What does a sports journalist do?",
+      "What is science journalism?",
+      "How do science journalists interpret research?",
+      "What is business journalism?",
+      "What is the role of a business reporter?"
+    ],
+    "a": "Sports journalism covers athletic events, athletes, teams, and the business and culture of sports, spanning game coverage, investigative reporting on doping or corruption, feature writing, and commentary across broadcast, print, and digital platforms. Science journalism translates complex scientific research and discoveries for general audiences, requiring journalists to critically evaluate studies, understand methodology, and communicate uncertainty accurately while avoiding sensationalism. Business journalism reports on companies, markets, economics, and industries, covering everything from corporate earnings and mergers to regulatory changes and consumer trends that affect financial decision-making."
+  },
+  {
+    "q": [
+      "What is feature writing?",
+      "How does feature writing differ from hard news?",
+      "What are the different types of feature stories?",
+      "What is an opinion piece or editorial?",
+      "How do editorials differ from news articles?",
+      "What is the purpose of an editorial in a newspaper?",
+      "What is the difference between an editorial and an op-ed?"
+    ],
+    "a": "Feature writing is a style of journalism that goes beyond straight news to tell a story with narrative techniques, descriptive detail, character development, and a distinctive voice, often focusing on human interest, profiles, or cultural trends rather than breaking news. Opinion and editorial content includes editorials (the institutional stance of a publication's editorial board), op-eds (opinion pieces by outside contributors), and columns (regular opinion pieces by named journalists), all of which are explicitly subjective and argument-driven, clearly distinguished from news reporting by labeling and placement to maintain journalistic credibility."
+  }
+]

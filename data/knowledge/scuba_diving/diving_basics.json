@@ -1,0 +1,67 @@
+[
+  {
+    "q": [
+      "what is scuba diving",
+      "how does scuba diving work",
+      "what does SCUBA stand for",
+      "how does a scuba regulator work",
+      "what equipment do I need for scuba diving",
+      "what is a scuba tank",
+      "how do scuba divers breathe underwater",
+      "what is compressed air in scuba diving"
+    ],
+    "a": "SCUBA (Self-Contained Underwater Breathing Apparatus) diving is a mode of underwater diving where the diver carries their own breathing gas, typically compressed air in a high-pressure cylinder (tank), allowing independent freedom of movement underwater. The air flows from the tank through a regulator, which reduces the high cylinder pressure (typically 3,000 psi / 200 bar) to ambient pressure so the diver can breathe naturally. The first stage of the regulator attaches to the tank valve and reduces pressure to an intermediate level (about 140 psi above ambient), while the second stage, held in the diver's mouth, delivers air on demand when the diver inhales. A complete scuba system includes the tank and regulator, a buoyancy compensator device (BCD) for controlling buoyancy, a submersible pressure gauge (SPG) to monitor remaining air, a mask for clear vision, fins for efficient propulsion, and exposure protection (wetsuit or drysuit) appropriate for water temperature. Modern scuba diving also typically includes a dive computer that tracks depth, time, and calculates decompression status to prevent decompression sickness."
+  },
+  {
+    "q": [
+      "what are the different types of scuba masks",
+      "how should a scuba mask fit",
+      "what is a tempered glass mask",
+      "what are the different types of scuba fins",
+      "what is the difference between open heel and full foot fins",
+      "what is a split fin vs paddle fin",
+      "what is the frog kick in scuba diving",
+      "what is the difference between split fins and blade fins for scuba"
+    ],
+    "a": "A scuba mask should be made of tempered glass (for safety if broken) with a silicone skirt (clear or black) that creates a watertight seal against the face. Fit is critical — a properly fitting mask should stay in place without the strap when you inhale gently through your nose, and should seal evenly around the nose and eye sockets without pressure points. Low-volume masks minimize the air space inside, making equalization easier and reducing drag. Prescription masks, bifocal masks, and frameless designs are options for divers with vision needs. Fins come in two main types: open-heel fins (worn with neoprene boots, with an adjustable heel strap for a secure fit) and full-foot fins (worn barefoot or with thin socks, common in warm-water recreational diving). Blade fins (stiff, powerful blades) provide maximum thrust for strong currents, while split fins use a divided blade design that channels water for efficient, less tiring kicking. The frog kick — where the diver bends their knees and kicks backward like a frog — is the most common and efficient finning technique for recreational diving, while the flutter kick is similar to swimming. Modified frog, helicopter (rotational) kick, and back kick are additional techniques used for precise positioning, especially in cave or wreck diving where disturbing sediment must be avoided."
+  },
+  {
+    "q": [
+      "what is a scuba regulator",
+      "how does a scuba regulator work",
+      "what is a first stage regulator",
+      "what is a second stage regulator",
+      "what is a DIN vs yoke regulator",
+      "what is a balanced vs unbalanced regulator",
+      "what is a diaphragm vs piston regulator",
+      "what is a cold water regulator"
+    ],
+    "a": "A scuba regulator is a critical life-support device that reduces high-pressure air from the tank to breathable ambient pressure through two stages. The first stage attaches to the tank valve and reduces pressure from cylinder pressure (up to 3,000-3,500 psi) to an intermediate pressure (about 125-145 psi above ambient). The two common connection types are yoke (A-clamp, fitting over the tank valve O-ring, standard in the U.S. for low-pressure tanks) and DIN (Deutsche Industrie Norm, screwing into the valve, preferred for high-pressure steel tanks and technical diving due to its stronger, more secure seal). First stage designs include diaphragm (sealed from water contact, better for cold water where ice could jam a piston) and piston (simpler, more airflow at depth). Balanced first stages maintain consistent intermediate pressure as tank pressure drops, providing more consistent breathing performance, while unbalanced designs cause breathing resistance to increase as the tank empties. The second stage reduces intermediate pressure to ambient pressure on demand — adjustable second stages let the diver fine-tune cracking effort (the force needed to begin airflow) and Venturi effect. Environmental seals or cold water kits prevent ice formation in freezing conditions by isolating the first stage mechanism from water contact."
+  },
+  {
+    "q": [
+      "what is a BCD in scuba diving",
+      "how does a buoyancy compensator work",
+      "what are the different types of BCDs",
+      "what is a jacket BCD",
+      "what is a back-inflate BCD",
+      "what is a backplate and wing system",
+      "what is a weight integrated BCD",
+      "how do I use a BCD for buoyancy control"
+    ],
+    "a": "A Buoyancy Compensator Device (BCD) is an inflatable vest or wing that allows the diver to adjust their buoyancy underwater and maintain neutral buoyancy at any depth. The BCD has an oral inflator (for manual inflation using breath), a power inflator (connected to the low-pressure hose from the regulator for rapid inflation via the tank), and multiple dump valves (shoulder pull dump, rear or lower exhaust) for controlled or rapid deflation. Jacket-style BCDs wrap around the diver like a vest, providing all-around lift and integrated weight pockets — they are the most common type for recreational divers, comfortable and stable at the surface but can feel restrictive underwater. Back-inflate BCDs place the air cell behind the diver, keeping the chest free and improving trim (horizontal positioning), popular among advanced recreational and technical divers. The backplate and wing (BP/W) system uses a rigid plate (stainless steel or aluminum) with a separate wing (air cell) mounted on the back, offering modularity, perfect trim, and minimal drag — preferred by technical, cave, and sidemount divers. All BCD types use weight integration (pockets that hold lead weights with quick-release tabs for emergency ditching), eliminating the need for a separate weight belt. Proper weighting and BCD inflation are essential for neutral buoyancy — the diver adds air to descend, vents air to ascend, and adjusts volume to hover motionless at any depth."
+  },
+  {
+    "q": [
+      "what is a wetsuit",
+      "what is a drysuit",
+      "what is the difference between a wetsuit and a drysuit",
+      "what wetsuit thickness do I need",
+      "what is neoprene in wetsuits",
+      "what is a farmer john wetsuit",
+      "what is a semidry wetsuit",
+      "what exposure protection is needed for cold water diving"
+    ],
+    "a": "Exposure protection in scuba diving ranges from lightweight dive skins to heavy drysuits depending on water temperature. Wetsuits are made of neoprene foam, which traps a thin layer of water against the skin that is warmed by body heat to provide insulation. Wetsuit thickness is measured in millimeters (common: 3mm for warm water 75°F+/24°C+, 5mm for moderate 65-75°F/18-24°C, 7mm for cold 50-65°F/10-18°C, and 7mm with hooded vest and gloves for colder conditions). Farmer John wetsuits have overall-style bottoms that add core warmth when paired with a separate jacket. Semidry suits use improved neck, wrist, and ankle seals to minimize water exchange, significantly increasing warmth in cold conditions. Drysuits, used for water below 50°F/10°C, keep the diver completely dry by creating a sealed environment with latex or neoprene seals at the neck and wrists, worn with insulating undergarments (fleece, Thinsulate, or compressed air-trapping layers) for warmth. Drysuit divers use a power inflator (fed from the regulator) to add air for insulation and buoyancy compensation, and an exhaust valve to vent excess air during ascent. Proper exposure protection is critical for safety: cold water causes loss of dexterity and cognitive function, increases air consumption, and raises the risk of hypothermia and decompression sickness."
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "q": [
+      "What is the difference between climate and weather?",
+      "How do climate and weather differ?",
+      "Define climate versus weather.",
+      "What distinguishes climate from weather?",
+      "Are climate and weather the same thing? Explain.",
+      "Weather vs climate: what's the difference?"
+    ],
+    "a": "Weather refers to short-term atmospheric conditions in a specific place at a specific time — such as temperature, humidity, precipitation, and wind — typically measured over hours to days. Climate, by contrast, describes the long-term average of weather patterns in a region, typically measured over decades or centuries. A helpful analogy is that weather is your mood, while climate is your personality."
+  },
+  {
+    "q": [
+      "What is the greenhouse effect and how does it work?",
+      "Explain the greenhouse effect.",
+      "How does the greenhouse effect warm the Earth?",
+      "What role do greenhouse gases play in the atmosphere?",
+      "Describe the natural greenhouse effect.",
+      "Why is the greenhouse effect important for life on Earth?"
+    ],
+    "a": "The greenhouse effect is a natural process in which certain gases in Earth's atmosphere — primarily carbon dioxide, methane, water vapor, and nitrous oxide — trap heat radiated from the planet's surface. These gases allow incoming shortwave solar radiation to pass through but absorb and re-emit outgoing longwave infrared radiation, warming the lower atmosphere. Without this effect, Earth's average surface temperature would be about -18°C (0°F) instead of the current 15°C (59°F), making life as we know it impossible."
+  },
+  {
+    "q": [
+      "What are the main causes of global warming?",
+      "What causes global warming?",
+      "Why is the Earth's temperature rising?",
+      "What human activities contribute most to global warming?",
+      "What are the primary drivers of climate change?",
+      "Explain the main factors behind global warming."
+    ],
+    "a": "Global warming is primarily driven by human activities that increase concentrations of greenhouse gases in the atmosphere. The largest contributor is the burning of fossil fuels (coal, oil, and natural gas) for energy, transportation, and industry, which releases vast amounts of CO2. Other major causes include deforestation (which reduces Earth's capacity to absorb CO2), agricultural practices (especially livestock producing methane and fertilizer use releasing nitrous oxide), and industrial processes that emit fluorinated gases."
+  },
+  {
+    "q": [
+      "What are climate feedback loops?",
+      "How do climate feedback loops work?",
+      "Explain positive and negative feedbacks in the climate system.",
+      "What is an example of a climate feedback loop?",
+      "How can feedback loops accelerate climate change?",
+      "Describe the ice-albedo feedback loop."
+    ],
+    "a": "Climate feedback loops are processes that amplify (positive feedback) or dampen (negative feedback) the effects of climate forcings. A prominent example is the ice-albedo feedback: as warming melts ice and snow, darker land or water is exposed, which absorbs more solar radiation and causes further warming and more melting. Another important positive feedback is permafrost thaw releasing methane and CO2, which then drives additional warming. Negative feedbacks, such as increased cloud cover reflecting more sunlight, can moderate warming but are generally weaker than the positive feedbacks currently in play."
+  },
+  {
+    "q": [
+      "What is the IPCC and what does it do?",
+      "What does IPCC stand for?",
+      "Tell me about the Intergovernmental Panel on Climate Change.",
+      "What is the role of the IPCC in climate science?",
+      "How does the IPCC produce its reports?",
+      "Who is involved in the IPCC?"
+    ],
+    "a": "The IPCC (Intergovernmental Panel on Climate Change) is a United Nations body established in 1988 to provide policymakers with regular scientific assessments of climate change, its impacts, and future risks, as well as options for adaptation and mitigation. It involves thousands of scientists from around the world who volunteer to review and synthesize the latest peer-reviewed research. The IPCC does not conduct its own research but produces comprehensive Assessment Reports every six to seven years that represent the global scientific consensus on climate change."
+  },
+  {
+    "q": [
+      "What is the carbon cycle and why is it important?",
+      "Explain the carbon cycle.",
+      "How does carbon move through the environment?",
+      "Why is the carbon cycle important for climate regulation?",
+      "What are the main reservoirs in the carbon cycle?",
+      "How have human activities disrupted the carbon cycle?"
+    ],
+    "a": "The carbon cycle is the biogeochemical process by which carbon atoms move between Earth's major reservoirs: the atmosphere, oceans, terrestrial biomass (plants, soils), geological formations (fossil fuels, sedimentary rocks), and the geosphere. Key natural fluxes include photosynthesis (removing CO2 from the atmosphere), respiration and decomposition (releasing it back), and ocean-atmosphere gas exchange. Human activities — especially burning fossil fuels and deforestation — have released billions of tons of stored carbon into the atmosphere, overwhelming the cycle's natural balancing capacity and driving atmospheric CO2 to levels not seen in millions of years."
+  }
+]

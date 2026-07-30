@@ -1,0 +1,80 @@
+[
+  {
+    "q": [
+      "startup basics",
+      "how to start a startup",
+      "what is a startup",
+      "startup vs small business",
+      "how do startups work",
+      "startup fundamentals",
+      "what makes a successful startup",
+      "starting a technology company"
+    ],
+    "a": "A startup is a young company founded to develop a unique product or service, bring it to market, and grow rapidly, often with the goal of disrupting an existing industry. Unlike traditional small businesses, startups are designed to scale quickly by leveraging technology, network effects, or novel business models. Key elements of a successful startup include identifying a genuine problem or pain point (product-market fit), developing a minimum viable product (MVP) to test assumptions, assembling a founding team with complementary skills, and securing initial funding. Startups operate in an environment of extreme uncertainty and typically use iterative development and rapid experimentation to find a repeatable and scalable business model before pursuing aggressive growth."
+  },
+  {
+    "q": [
+      "types of business models",
+      "what is a business model",
+      "business model examples",
+      "subscription business model",
+      "freemium business model",
+      "marketplace business model",
+      "direct sales business model",
+      "how to choose a business model"
+    ],
+    "a": "A business model defines how a company creates, delivers, and captures value — essentially, how it makes money. Common business models include the subscription model (charging customers recurring fees for ongoing access, used by Netflix and Spotify), the freemium model (offering basic services for free while charging for premium features, used by Dropbox and LinkedIn), the marketplace model (connecting buyers and sellers and taking a commission, used by Airbnb and eBay), the direct-to-consumer (DTC) model (selling products directly to customers without intermediaries, used by Warby Parker and Casper), and the razor-and-blades model (selling a durable product at a low price and making profit on consumable replacements). The choice of business model profoundly affects pricing strategy, customer acquisition costs, revenue predictability, and scalability, and successful startups often innovate on their business model as much as their product."
+  },
+  {
+    "q": [
+      "what is venture capital",
+      "venture capital explained",
+      "how does venture capital work",
+      "stages of venture capital funding",
+      "seed funding series A B C",
+      "VC funding process",
+      "what do venture capitalists look for",
+      "venture capital vs angel investor"
+    ],
+    "a": "Venture capital (VC) is a form of private equity financing provided by firms or funds to early-stage, high-potential startups in exchange for equity ownership. The VC funding process typically progresses through stages: pre-seed and seed funding (for product development and initial market testing, usually $500K to $2M), Series A (for optimizing product-market fit and early scaling, $2M to $15M), Series B (for scaling operations and market expansion, $10M to $50M), and later stages like Series C and beyond (for significant growth, acquisitions, or preparing for an IPO). Venture capitalists typically seek startups with large addressable markets, strong founding teams, defensible technology or intellectual property, and clear paths to profitability or exit. VCs are high-risk, high-reward investors, expecting most of their portfolio companies to fail while hoping a few become unicorns (startups valued at over $1 billion) that generate outsized returns."
+  },
+  {
+    "q": [
+      "lean startup methodology",
+      "what is lean startup",
+      "lean startup explained",
+      "build measure learn feedback loop",
+      "minimum viable product MVP",
+      "Eric Ries lean startup",
+      "pivot vs persevere lean startup",
+      "lean startup principles"
+    ],
+    "a": "The Lean Startup methodology, popularized by Eric Ries in his 2011 book, applies principles from lean manufacturing to the process of building startups, emphasizing rapid iteration, customer feedback, and validated learning over traditional business planning. The core loop is the Build-Measure-Learn cycle: build a Minimum Viable Product (MVP) — the simplest version of a product that can be released to test a hypothesis — measure how customers respond using actionable metrics, and then learn whether to pivot (change strategy) or persevere. This approach rejects the traditional model of writing a lengthy business plan, developing in stealth, and launching with a big bang, favoring instead frequent, small experiments that reduce waste and help startups discover a viable business model before running out of capital."
+  },
+  {
+    "q": [
+      "how to write a business plan",
+      "business plan template",
+      "what should a business plan include",
+      "executive summary business plan",
+      "business plan sections",
+      "lean canvas vs business plan",
+      "why is a business plan important",
+      "how long should a business plan be"
+    ],
+    "a": "A business plan is a formal written document that outlines a company's goals, strategy, target market, financial projections, and operational plan. A traditional business plan typically includes an executive summary (a concise overview of the entire plan), company description, market analysis (industry research and target customer profile), organization and management structure, product or service line, marketing and sales strategy, funding request (if seeking investment), and financial projections (income statements, cash flow statements, and balance sheets for 3-5 years). Increasingly, many startups use a lean canvas — a one-page, nine-section framework developed by Ash Maurya that focuses on the problem, solution, key metrics, unique value proposition, and competitive advantages — as a faster, more flexible alternative to traditional business plans. The choice between the two depends on the audience: formal investors may expect a detailed business plan, while early-stage founders may prefer the lean canvas for its agility."
+  },
+  {
+    "q": [
+      "what is intellectual property",
+      "types of intellectual property",
+      "patents trademarks copyrights explained",
+      "how to protect intellectual property",
+      "intellectual property for startups",
+      "patent vs trademark vs copyright",
+      "trade secrets explained",
+      "why is IP important for business"
+    ],
+    "a": "Intellectual property (IP) refers to creations of the mind — inventions, designs, brand identifiers, artistic works, and trade secrets — that are legally protected from unauthorized use by others. The four main types of IP protection are: patents (grant exclusive rights to inventions for 20 years, protecting novel, useful, and non-obvious processes or products), trademarks (protect brand identifiers such as logos, names, and slogans used in commerce), copyrights (protect original creative works like books, music, software code, and art for the author's lifetime plus 70 years), and trade secrets (confidential business information that provides competitive advantage, protected through non-disclosure agreements and security measures). For startups, securing IP is often critical to building a competitive moat, attracting investors, and increasing company valuation. However, founders should be strategic — filing patents can be expensive and slow, so deciding which inventions to patent and which to keep as trade secrets is an important business decision."
+  }
+]

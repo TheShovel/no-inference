@@ -1,0 +1,57 @@
+[
+  {
+    "q": [
+      "What is mise-en-scène in film?",
+      "How does mise-en-scène affect a film?",
+      "What elements make up mise-en-scène?",
+      "Explain mise-en-scène in film theory",
+      "Why is mise-en-scène important to cinema?",
+      "What are the components of mise-en-scène?"
+    ],
+    "a": "Mise-en-scène, a French term meaning 'placing on stage,' encompasses everything that appears within the frame of a film—setting, lighting, costume, makeup, props, figure movement, and spatial relationships. It refers to the director's control over what the audience sees and how they see it, creating meaning through visual arrangement rather than dialogue or editing. A film's mise-en-scène can establish mood, reveal character psychology, reinforce themes, and guide the viewer's attention through composition and staging."
+  },
+  {
+    "q": [
+      "What is cinematography in filmmaking?",
+      "How does cinematography tell a story?",
+      "What are the elements of cinematography?",
+      "Explain camera work in film theory",
+      "What does a cinematographer do?",
+      "How does lighting affect cinematography?"
+    ],
+    "a": "Cinematography is the art and technology of capturing moving images on camera, encompassing decisions about camera placement, movement, lens choice, depth of field, color grading, and lighting design. The cinematographer (or director of photography) works closely with the director to create the visual language of the film, choosing whether to use handheld cameras for intimacy, Steadicam for fluidity, or locked-off shots for objectivity. Cinematography can convey psychological states through visual choices—warm colors might suggest comfort while desaturated blues evoke alienation, and shallow depth of field can isolate characters emotionally."
+  },
+  {
+    "q": [
+      "What is film editing and why is it important?",
+      "How does editing affect storytelling in film?",
+      "What are the principles of film editing?",
+      "Explain montage theory in film",
+      "What is the Kuleshov effect?",
+      "How did Eisenstein develop montage theory?"
+    ],
+    "a": "Film editing is the process of selecting, arranging, and juxtaposing shots to create coherent narrative, emotional impact, and rhythmic flow. The Kuleshov effect, demonstrated by Soviet filmmaker Lev Kuleshov, proved that viewers derive meaning from the juxtaposition of shots rather than from individual shots alone—the same image of an actor's neutral face seemed to express hunger, grief, or desire depending on what it was cut against. Sergei Eisenstein expanded this into montage theory, arguing that conflict between shots (through graphic, rhythmic, tonal, or intellectual montage) generates new ideas that neither shot contains individually."
+  },
+  {
+    "q": [
+      "What is auteur theory?",
+      "How does auteur theory evaluate films?",
+      "Who developed auteur theory?",
+      "What are the arguments for and against auteur theory?",
+      "Why is auteur theory important in film criticism?",
+      "How does auteur theory apply to modern filmmaking?"
+    ],
+    "a": "Auteur theory, originally developed by French critics at Cahiers du Cinéma—most notably François Truffaut—argues that the director is the primary creative force behind a film, imposing a distinctive personal vision that can be traced across their body of work. The theory elevated directors from mere craftspeople to artists, establishing the framework for evaluating films based on the director's recurring themes, stylistic signatures, and worldview. While criticized for downplaying collaborative contributions (writers, cinematographers, editors), auteur theory remains influential in film criticism, though contemporary scholars have expanded it to acknowledge the collaborative nature of filmmaking."
+  },
+  {
+    "q": [
+      "What is the difference between formalism and realism in film?",
+      "How do formalist films differ from realist films?",
+      "What is formalist film theory?",
+      "What is realist film theory?",
+      "How do formalism and realism approach storytelling differently?",
+      "What are examples of formalist and realist films?"
+    ],
+    "a": "Formalism and realism represent two opposing poles of filmmaking philosophy. Realism aims to capture life as it is, using natural lighting, location shooting, long takes, amateur actors, and minimal editing to create an unfiltered window onto reality—exemplified by Italian Neorealism (Bicycle Thieves) and the Dogme 95 movement. Formalism, by contrast, emphasizes stylized expression through deliberate manipulation of cinematic techniques—elaborate editing, expressionistic lighting, surreal imagery, and overt visual metaphor—as seen in the works of filmmakers like Fritz Lang, Sergei Eisenstein, or Terry Gilliam. Most films exist somewhere on the spectrum between these two approaches."
+  }
+]

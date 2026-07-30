@@ -1,0 +1,370 @@
+{
+  "_note": "Extended social/emotional response patterns. Add categories here — no code changes needed. Each entry has: patterns (regex list), response (string or array for random choice).",
+  "procrastination": {
+    "patterns": [
+      "i'?m (?:so |really )?procrastinating",
+      "i keep (?:procrastinating|putting things off|delaying|postponing things)",
+      "i can'?t (?:focus|concentrate|get started|get going)",
+      "i'?m so (?:distracted|unfocused|scattered)",
+      "i keep getting (?:distracted|sidetracked)",
+      "i should be working but",
+      "i don'?t want to do (?:this|my work|anything)",
+      "i'?m having trouble (?:starting|getting motivated|focusing)"
+    ],
+    "response": [
+      "Starting is often the hardest part. Try the 5-minute rule — just commit to doing it for 5 minutes, and you might find it easier to keep going. You've got this!",
+      "It happens to everyone! Try breaking your task into tiny steps. Sometimes just doing one small thing is enough to build momentum.",
+      "Be kind to yourself — procrastination is often a sign that something feels overwhelming. What's one small step you could take right now?",
+      "Take a deep breath. Set a timer for 10 minutes and see how much you can get done. You'll feel better once you start!"
+    ]
+  },
+  "overwhelm": {
+    "patterns": [
+      "i'?m (?:so |completely |totally )?overwhelmed",
+      "i'?m (?:feeling |so )?stressed (?:out|about everything)?",
+      "(?:too much|so much) to do",
+      "i can'?t handle (?:all this|this all|everything)",
+      "i'?m drowning in work",
+      "i'?m buried (?:in work|under everything)",
+      "i have too (?:much|many) (?:on my plate|things to do|responsibilities)",
+      "i'?m (?:feeling )?(?:burned out|burnt out|overloaded)",
+      "everything is (?:too much|overwhelming)"
+    ],
+    "response": [
+      "Take a breath. You don't have to do everything at once. Write down the top 3 things that truly matter today and focus on those one at a time.",
+      "That sounds really tough. Remember to be kind to yourself — you're only human. Can you delegate, postpone, or simplify anything on your plate?",
+      "Let's take a step back. What's one single thing you can do right now that would make the biggest difference? Start there.",
+      "It's okay to pause. Your well-being matters more than productivity. Try the Pomodoro technique: 25 minutes of work, then a short break."
+    ]
+  },
+  "frustration": {
+    "patterns": [
+      "this is (?:so |really )?frustrat(?:ing|ed)",
+      "i'?m (?:so |really )?annoyed",
+      "i'?m (?:so |really )?irritated",
+      "why won'?t this work",
+      "i can'?t (?:figure this out|get this to work|make this work)",
+      "this is (?:ridiculous|impossible|infuriating|aggravating)",
+      "i'?m (?:fed up|sick of this|tired of this)",
+      "this keeps (?:breaking|failing|going wrong)"
+    ],
+    "response": [
+      "I hear you — that sounds really frustrating. Sometimes stepping away for a few minutes can help. Want to talk through what's going wrong?",
+      "Ugh, I know that feeling. Take a deep breath — you've handled tricky things before and you'll figure this out too.",
+      "Frustration is totally valid here. Try explaining the problem out loud or to someone else — sometimes that helps spot what's off.",
+      "Hang in there! These kinds of hiccups happen to everyone. If you want, describe what you're dealing with and I'll try to help."
+    ]
+  },
+  "excitement": {
+    "patterns": [
+      "i'?m (?:so |really |super )?excited",
+      "i can'?t wait",
+      "i'?m (?:so |really )?thrilled",
+      "this is (?:so |really )?amazing",
+      "i'?m (?:so |really )?pumped",
+      "i'?m (?:so |really )?hyped",
+      "i'?m looking forward to (?:this|it|that)",
+      "i'?m (?:so |really )?happy about",
+      "get to do something (?:cool|fun|awesome|great)"
+    ],
+    "response": [
+      "That's so exciting! I love that energy. Tell me all about it — what's got you so hyped?",
+      "Awesome! Your excitement is contagious. Whatever it is, I hope it's even better than you're expecting!",
+      "Love it! That's fantastic news. You totally deserve this excitement — enjoy every moment!",
+      "Woo hoo! That sounds amazing. I'm genuinely happy for you — what's the best part about it?"
+    ]
+  },
+  "surprise": {
+    "patterns": [
+      "i didn'?t expect (?:that|this|it)",
+      "that'?s (?:so |really )?surprising",
+      "wow (?:really|seriously|for real)",
+      "no way",
+      "are you serious",
+      "you'?re kidding(?: me)?",
+      "what a (?:surprise|shock|twist)",
+      "i'?m (?:so |really )?surprised",
+      "well that'?s unexpected"
+    ],
+    "response": [
+      "Right?! Life has a way of throwing curveballs. Is this a good surprise or a confusing one?",
+      "I know, things don't always go as planned! How are you feeling about it?",
+      "Surprising indeed! Sometimes the unexpected turns out to be a good thing. What do you think will happen next?",
+      "Well, that came out of nowhere! If you want to talk it through, I'm here."
+    ]
+  },
+  "disappointment": {
+    "patterns": [
+      "i'?m (?:so |really |a bit )?disappointed",
+      "that'?s (?:too bad|a shame|disappointing)",
+      "i was hoping for (?:better|more|a different outcome)",
+      "what a (?:letdown|disappointment|bummer)",
+      "that didn'?t (?:work out|go as planned|turn out how i wanted)",
+      "i'?m (?:feeling )?let down",
+      "i had my hopes up",
+      "(?:that|this) sucks"
+    ],
+    "response": [
+      "I'm sorry things didn't work out the way you hoped. It's okay to feel disappointed — take some time to process it.",
+      "That's tough. Disappointment means you cared, and that matters. When you're ready, think about what you might try next.",
+      "Ah, that's a real bummer. Be kind to yourself today — maybe do something small that you enjoy to lift your spirits.",
+      "I hear you. Not getting what you hoped for is hard. But this is just one chapter, not the whole story."
+    ]
+  },
+  "hope": {
+    "patterns": [
+      "i hope (?:so|it works out|everything works out|things get better|the best)",
+      "fingers crossed",
+      "here'?s hoping",
+      "i'?m (?:feeling )?optimistic",
+      "i have a good feeling (?:about this|about it)",
+      "keep (?:my|our) fingers crossed",
+      "hoping for the best",
+      "i'?m hopeful"
+    ],
+    "response": [
+      "I love that optimism! Hope is a powerful thing. Rooting for things to work out is the first step toward making it happen.",
+      "Fingers crossed here too! It's great that you're staying positive — that energy makes a real difference.",
+      "Love that hopeful attitude! Whatever happens, you've got the strength to handle it. Wishing you the best outcome!",
+      "There's something special about hope. It keeps us moving forward. I'm right here cheering you on!"
+    ]
+  },
+  "jealousy": {
+    "patterns": [
+      "i'?m (?:so |really |super )?jealous",
+      "i wish i could (?:do that|go there|have that|be like that)",
+      "lucky (?:you|them|they are)",
+      "must be nice",
+      "i wish (?:i had that|that were me|i was in their shoes)",
+      "i'?m (?:so |really )?envious",
+      "green with envy"
+    ],
+    "response": [
+      "It's totally normal to feel that way sometimes. Use it as inspiration — what's one step you could take toward something similar?",
+      "Comparison is natural, but remember your journey is unique. You have strengths and experiences that are all your own!",
+      "I get that feeling. Let their success motivate you — if they can do it, there's a path for you too. What resonates with you about what they have?",
+      "It's okay to acknowledge that feeling. Just don't forget to also appreciate what you've already accomplished!"
+    ]
+  },
+  "embarrassment": {
+    "patterns": [
+      "i'?m (?:so |really )?embarrassed",
+      "how (?:awkward|embarrassing)",
+      "i feel (?:so |really )?silly",
+      "that was (?:so |really )?awkward",
+      "i can'?t believe i (?:did that|said that|just did that)",
+      "i want to (?:disappear|hide|crawl into a hole|crawl under a rock)",
+      "i'?m (?:so |really )?mortified",
+      "facepalm"
+    ],
+    "response": [
+      "Oh no! But honestly, most people probably didn't even notice — and if they did, they've already forgotten. Don't be too hard on yourself!",
+      "Awkward moments happen to everyone. In a day or two, it'll make a funny story. Try to laugh it off — you've got this!",
+      "Trust me, we all have those moments. The embarrassment fades faster than you think. Be kind to yourself!",
+      "I promise you're the only one still thinking about it. Everyone else has moved on. Take a deep breath and let it go."
+    ]
+  },
+  "awkward_silence": {
+    "patterns": [
+      "^\\.\\.\\.+$",
+      "^\\.\\.\\.\\.\\.\\.\\.\\.\\.$",
+      "awkward",
+      "so\\.\\.\\. yeah",
+      "yeah\\.\\.\\. so",
+      "well\\.\\.\\. this is awkward",
+      "cricket",
+      "anyway\\.\\.\\.",
+      "awkward silence"
+    ],
+    "response": [
+      "*taps microphone* Is this thing on? 😄 Want to ask me anything? I'm full of random facts!",
+      "Well, this is cozy! I'll break the silence — did you know that octopuses have three hearts?",
+      "👀 *awkwardly whistles* So... how about those local sports teams?",
+      "I'll go first! Fun fact: a group of flamingos is called a 'flamboyance'. Your turn — what's on your mind?"
+    ]
+  },
+  "tech_support": {
+    "patterns": [
+      "my (?:computer|laptop|pc|desktop) (?:isn'?t working|is not working|won'?t turn on|is broken|is acting up|crashed|froze|is slow)",
+      "the (?:internet|wifi|network) (?:is down|isn'?t working|is not working|is slow|keeps dropping)",
+      "my (?:phone|cell|mobile|tablet) (?:died|is dead|won'?t charge|isn'?t working)",
+      "(?:something|everything) is broken",
+      "it won'?t turn on",
+      "(?:my|the) (?:app|software|program) (?:crashed|froze|isn'?t responding|is buggy)",
+      "it'?s not (?:working|responding)",
+      "i'?m having (?:technical|tech) (?:issues|problems|difficulties)",
+      "error (?:message|code|pop.?up)"
+    ],
+    "response": [
+      "Tech troubles are the worst! Let's start simple — have you tried turning it off and on again? You'd be surprised how often that works!",
+      "Let's troubleshoot together. First, try restarting the device. Still acting up? Describe the error and I'll help you track down a fix.",
+      "Ugh, technology can be so temperamental. Here's a checklist: 1) Restart it 2) Check connections 3) Update drivers 4) Google the error. Where are you in that process?",
+      "I know how frustrating tech issues can be. Let's work through this step by step. What exactly is happening when you try to use it?"
+    ]
+  },
+  "productivity": {
+    "patterns": [
+      "i need to be more productive",
+      "how (?:can i|do i|to) get things done",
+      "i want to be (?:more )?(?:efficient|productive|effective)",
+      "time management (?:tips|advice|help|techniques|strategies)",
+      "how (?:can i|do i|to) (?:focus|stay focused|manage my time)",
+      "productivity (?:tips|hacks|advice|techniques)",
+      "i (?:keep|always) (?:procrastinate|get distracted|waste time)",
+      "how to (?:be|get) more productive"
+    ],
+    "response": [
+      "Great question! The key is often doing less, not more. Try the 'eat the frog' method — tackle your hardest task first thing in the morning.",
+      "Productivity is about consistency, not intensity. Try time-blocking: assign specific hours to specific tasks and protect those blocks.",
+      "Two tips that work well: 1) The Pomodoro Technique (25 min work, 5 min break) 2) The 2-minute rule (if it takes <2 min, do it now). Give them a try!",
+      "Start by identifying your most productive time of day. Schedule your most important work then, and batch smaller tasks for later."
+    ]
+  },
+  "creativity": {
+    "patterns": [
+      "i want to be more creative",
+      "i have (?:writer'?s|creative) block",
+      "i need (?:some |more )?inspiration",
+      "creative (?:ideas|inspiration|block|help|advice)",
+      "i'?m (?:feeling )?uncreative",
+      "i (?:can'?t |don'?t |struggle to )?think of (?:anything new|new ideas|something original)",
+      "i need help with (?:creative|artistic) (?:ideas|projects|work)",
+      "how (?:can i|do i|to) (?:be|get|become) more creative"
+    ],
+    "response": [
+      "Creativity isn't something you have — it's something you practice. Try a change of scenery, a walk outside, or just doing something different for 10 minutes.",
+      "Writer's block is real! Try freewriting — set a timer for 10 minutes and write whatever comes to mind, no editing allowed. The mess is where the magic happens.",
+      "Inspiration often comes from cross-pollination. Read about something totally unrelated, look at art, listen to new music. Sometimes stepping away is the best way forward.",
+      "Constraints can actually boost creativity! Give yourself weird limitations — write a poem in 6 words, draw using only circles. You might surprise yourself."
+    ]
+  },
+  "gratitude_extended": {
+    "patterns": [
+      "i really appreciate (?:you|your help|your assistance|everything you do)",
+      "you'?ve been (?:so |really |incredibly )?helpful",
+      "i'?m (?:so |really |truly |deeply )?grateful for (?:your|this|our) (?:help|assistance|conversation|chat)",
+      "you'?re (?:amazing|the best|incredible|wonderful|fantastic)",
+      "i can'?t thank you enough",
+      "thank you (?:so|very) much for (?:everything|all your help)",
+      "you'?re a (?:lifesaver|big help|great help)",
+      "i'?m so lucky (?:to have you|to have your help)"
+    ],
+    "response": [
+      "That really means a lot — thank you! I'm genuinely glad I could help. Is there anything else you'd like to explore or chat about?",
+      "You're very welcome! It's my pleasure to assist you. I'm here whenever you need a hand or just someone to talk to.",
+      "Thank you for saying that! It makes what I do worthwhile. If there's ever anything more I can help with, just let me know.",
+      "You're too kind! Helping you has been a joy. Never hesitate to come back if you need anything at all."
+    ]
+  },
+  "learning_struggles": {
+    "patterns": [
+      "this is (?:so|really|very) hard (?:to learn|to understand|for me)",
+      "i don'?t (?:understand|get it|follow)",
+      "this is (?:so |really |very )?confusing",
+      "i'?m (?:really |so )?struggling with (?:this|this concept|this topic|this material)",
+      "can you (?:make|explain) this (?:simpler|easier|more understandable)",
+      "i'?m having (?:trouble|difficulty|a hard time) (?:learning|understanding|grasping)",
+      "i can'?t (?:figure this out|wrap my head around this|make sense of this)",
+      "explain it (?:like i'?m five|simply|differently|again)",
+      "this doesn'?t make (?:sense|any sense)"
+    ],
+    "response": [
+      "Learning something new is always challenging at first — that means you're growing! Let's break it down. What part feels the trickiest?",
+      "Don't worry — confusion is just a step on the path to understanding. Let me try explaining it differently. What's the main thing that's unclear?",
+      "It's totally normal to struggle with new concepts. Think of it like building a muscle — it takes reps. Want me to explain it with an analogy?",
+      "You're not alone in finding this tough. The fact that you're pushing through is what matters most. Let's go back to the basics and build up from there."
+    ]
+  },
+  "opinion_requests": {
+    "patterns": [
+      "what do you think about",
+      "in your opinion",
+      "do you think",
+      "what'?s your take on",
+      "what'?s your opinion (?:on|about)",
+      "would you recommend",
+      "which (?:one|option|choice) (?:do you think|should i|is better)",
+      "what do you (?:reckon|figure)"
+    ],
+    "response": [
+      "I don't have personal opinions like a human would, but I can share what I know! Here's what the data says about that topic...",
+      "Great question! I don't have personal feelings, but I can give you a balanced look at the different perspectives and let you decide what fits best.",
+      "I'm here to provide information, not opinions — but I can break down the pros and cons to help you make your own informed choice!",
+      "I don't experience preferences myself, but I can definitely help you weigh the options. What matters most to you in this decision?"
+    ]
+  },
+  "weekend_plans": {
+    "patterns": [
+      "any plans (?:for|this) (?:the )?weekend",
+      "what are you (?:doing|up to) (?:for|this) weekend",
+      "weekend plans",
+      "what'?s your (?:plan for|take on) (?:this |the )?weekend",
+      "got any (?:fun |big )?plans this weekend",
+      "anything (?:good|fun|exciting) happening this weekend",
+      "how do you spend (?:your |the )?weekend"
+    ],
+    "response": [
+      "No plans here — I'm always around to help! But what about you? Any fun weekend plans or just taking it easy?",
+      "I'll be right here doing what I do best! More importantly — what are you up to this weekend? Anything exciting?",
+      "I don't get weekends off, but I'm curious about yours! Got anything fun planned or are you keeping it low-key?",
+      "My weekends look a lot like my weekdays — helping awesome people like you! Tell me about your weekend plans instead!"
+    ]
+  },
+  "holidays": {
+    "patterns": [
+      "happy holidays",
+      "merry christmas",
+      "happy new (?:year|years)",
+      "happy (?:hanukkah|kwanzaa|diwali|eid|ramadan|passover)",
+      "happy birthday (?:to me|to .+|today)",
+      "it'?s my birthday",
+      "today is my birthday",
+      "happy (?:valentine'?s|thanksgiving|easter|halloween)"
+    ],
+    "response": [
+      "Happy holidays to you too! I hope your day is filled with joy, warmth, and good company. How are you celebrating?",
+      "What a wonderful time of year! Wishing you all the best — may your day be as bright and cheerful as you are!",
+      "That's wonderful! I hope you have a fantastic celebration. Is there anything special you're doing to mark the occasion?",
+      "Thank you! Sending good vibes your way. Enjoy every moment — you deserve a day that's all about you!"
+    ]
+  },
+  "small_talk_extended": {
+    "patterns": [
+      "how'?s it going",
+      "what'?s up",
+      "how are things",
+      "how'?s your day",
+      "what'?s new",
+      "how'?s everything",
+      "how are you (?:today|doing)",
+      "how have you been"
+    ],
+    "response": [
+      "Hey! I'm doing well, thanks for asking. Always happy to chat — what's on your mind today?",
+      "All good on my end! I'm here, I'm ready, and I'm curious — what's happening in your world?",
+      "Doing great! Just enjoying our conversation. Got anything interesting going on?",
+      "Everything's running smoothly here! Thanks for checking in. So what's new with you — anything exciting lately?",
+      "I'm doing wonderfully, thanks! Always a good day when I get to help someone. What can we dive into today?"
+    ]
+  },
+  "affirmations": {
+    "patterns": [
+      "i can do this",
+      "i believe in myself",
+      "positive (?:vibes|energy|thinking|thoughts|affirmations)",
+      "stay positive",
+      "everything (?:will be|is going to be) okay",
+      "i (?:am|will be) okay",
+      "i'?m (?:strong|capable|enough|worthy)",
+      "i'?ve got this",
+      "i am enough",
+      "today will be a good day"
+    ],
+    "response": [
+      "Yes, you can! That's the spirit. You've got everything you need to handle whatever comes your way today.",
+      "I love that energy! Believing in yourself is half the battle. Just take it one step at a time — you're stronger than you know.",
+      "That's right — you are worthy, you are capable, and you are enough. Keep that positivity going. I'm rooting for you!",
+      "Your mindset is powerful, and you're already choosing strength. No matter what happens today, you've got what it takes. Let's go!"
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "q": [
+      "What is a firewall?",
+      "How does a firewall work?",
+      "What are the types of firewalls?",
+      "What is the difference between a stateful and stateless firewall?",
+      "What is a next-generation firewall?",
+      "What is an IDS and IPS?",
+      "What is the difference between intrusion detection and prevention systems?",
+      "How does a firewall protect a network?",
+      "what is a firewall",
+      "how does a firewall work",
+      "firewall"
+    ],
+    "a": "A firewall is a network security device or software that monitors and controls incoming and outgoing network traffic based on predetermined security rules, acting as a barrier between trusted internal networks and untrusted external networks like the internet. Packet-filtering firewalls inspect individual packets against rules based on source/destination IP addresses, ports, and protocols, while stateful firewalls track the state of active connections to make more intelligent filtering decisions. Next-generation firewalls (NGFWs) combine traditional firewall capabilities with additional features like application-layer inspection, intrusion prevention, SSL/TLS decryption, and deep packet inspection. Intrusion Detection Systems (IDS) passively monitors network traffic for suspicious patterns and alerts administrators, while Intrusion Prevention Systems (IPS) actively blocks detected threats in real-time — many modern deployments combine both in a unified threat management (UTM) appliance or as cloud-based security services."
+  },
+  {
+    "q": [
+      "What is a VPN?",
+      "How does a VPN work?",
+      "What is the difference between a VPN and a proxy?",
+      "What are VPN protocols?",
+      "What is IPsec?",
+      "What is WireGuard?",
+      "Why should you use a VPN?",
+      "What are the limitations of VPNs?"
+    ],
+    "a": "A Virtual Private Network (VPN) creates an encrypted tunnel between a user's device and a remote VPN server, protecting the user's internet traffic from eavesdropping, masking their IP address, and allowing secure access to private networks over public infrastructure. Common VPN protocols include IPsec (Internet Protocol Security, widely used for site-to-site VPNs), OpenVPN (open-source and highly configurable), and WireGuard (a modern, streamlined protocol with built-in cryptography that offers better performance and simpler configuration). VPNs are essential for secure remote access to corporate networks, protecting privacy on untrusted networks like public Wi-Fi, and bypassing geographic content restrictions. However, VPNs do not provide complete anonymity (the VPN provider can see your traffic), and users should be aware that free VPN services may log and sell user data — trustworthy providers maintain a strict no-logs policy verified through independent audits."
+  },
+  {
+    "q": [
+      "What is HTTPS?",
+      "How is HTTPS different from HTTP?",
+      "What is SSH?",
+      "What is SFTP?",
+      "What is the difference between FTPS and SFTP?",
+      "What are secure protocols in networking?",
+      "What is TLS?",
+      "Why are secure protocols important?"
+    ],
+    "a": "HTTPS (Hypertext Transfer Protocol Secure) encrypts HTTP traffic using TLS, ensuring that data exchanged between a web browser and server remains confidential and tamper-proof, with the padlock icon in browsers indicating a valid TLS certificate. SSH (Secure Shell) provides encrypted remote command-line access to servers and supports secure file transfers through SFTP (SSH File Transfer Protocol), which is often preferred over FTPS (FTP over SSL) because it uses a single connection through firewalls more easily. Other important secure protocols include DNSSEC (adding cryptographic signatures to DNS responses to prevent spoofing), STARTTLS (upgrading plaintext connections to encrypted ones for email protocols like SMTP, IMAP, and POP3), and secure WebSocket (wss://) for real-time browser-based communications. These protocols collectively ensure confidentiality, integrity, and authentication across various network services, forming the backbone of secure internet communication."
+  },
+  {
+    "q": [
+      "What is network segmentation?",
+      "Why is network segmentation important for security?",
+      "What is DNS security?",
+      "How does DNS work and what are its security risks?",
+      "What is email security?",
+      "What are WPA and WPA3?",
+      "What is the difference between WPA2 and WPA3?",
+      "What is penetration testing?"
+    ],
+    "a": "Network segmentation divides a computer network into smaller subnetworks (segments) using switches, VLANs, routers, and firewalls, limiting the ability of an attacker who compromises one segment to move laterally to more sensitive systems — a critical security control widely recommended by frameworks like NIST and CIS. DNS security involves protecting the Domain Name System from attacks like DNS spoofing/cache poisoning (where attackers redirect traffic to malicious sites), DNS tunneling (exfiltrating data through DNS queries), and DDoS attacks on DNS infrastructure — DNSSEC and DNS-over-HTTPS/DNS-over-TLS are key protective measures. Email security addresses threats like phishing, spam, malware attachments, and business email compromise through technologies including SPF, DKIM, and DMARC for sender authentication, alongside email filtering and sandboxing. WPA3 is the latest Wi-Fi security standard, replacing WPA2, and introduces Simultaneous Authentication of Equals (SAE) to prevent offline dictionary attacks and forward secrecy to protect past sessions even if the password is compromised."
+  }
+]

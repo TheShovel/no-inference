@@ -1,0 +1,56 @@
+[
+  {
+    "q": [
+      "How is nanotechnology used in medicine?",
+      "What is nanomedicine?",
+      "How are nanoparticles used for drug delivery?",
+      "How is nanotechnology used for imaging and diagnostics?",
+      "What is theranostics?",
+      "What are nanocarriers?",
+      "nanomedicine applications",
+      "nanoparticle drug delivery"
+    ],
+    "a": "Nanomedicine applies nanomaterials for diagnosis, treatment, and monitoring of disease at the molecular level. Nanoparticle drug delivery systems—including liposomes, polymeric nanoparticles, dendrimers, and mesoporous silica—can encapsulate therapeutic agents, protect them from degradation, and release them at target sites, reducing systemic side effects in cancer chemotherapy. Gold nanoparticles and quantum dots serve as contrast agents for advanced imaging (photoacoustic, fluorescence, Raman), while iron oxide nanoparticles enhance MRI contrast. Theranostics combines therapeutic and diagnostic functions in a single nanoplatform, enabling real-time monitoring of drug distribution and treatment response, with FDA-approved nanomedicines including Doxil (liposomal doxorubicin) and Abraxane (albumin-bound paclitaxel) for cancer therapy."
+  },
+  {
+    "q": [
+      "How is nanotechnology used in electronics?",
+      "What are nanoscale transistors?",
+      "How are nanomaterials used in memory and sensors?",
+      "What is nanoelectronics?",
+      "How small can transistors get?",
+      "nanoelectronics applications",
+      "nanoscale transistors",
+      "nanosensors"
+    ],
+    "a": "Nanoelectronics is driving the continued miniaturization of transistors, now at just a few nanometers in commercial processors, with gate-all-around (GAA) FET and 2D materials like MoS₂ being explored for sub-1 nm nodes beyond silicon's physical limits. Nanoscale memory technologies include magnetoresistive RAM (MRAM) using magnetic tunnel junctions, resistive RAM (RRAM) based on filament formation in metal oxides, and phase-change memory (PCM) exploiting resistance changes in chalcogenide glasses. Nanosensors—including carbon nanotube FETs, silicon nanowire biosensors, and gold nanoparticle-based plasmonic sensors—achieve detection limits down to single molecules for applications in medical diagnostics, environmental monitoring, and security. Quantum dot displays (QLED) leverage size-tunable nanocrystal emission for superior color purity and energy efficiency compared to OLED."
+  },
+  {
+    "q": [
+      "How is nanotechnology used in energy?",
+      "How do nanomaterials improve solar cells?",
+      "How do nanomaterials improve batteries?",
+      "How are nanomaterials used in supercapacitors?",
+      "How are nanocatalysts used in energy?",
+      "nanoenergy applications",
+      "nanotechnology in solar cells",
+      "nanomaterials for batteries"
+    ],
+    "a": "In solar energy, nanomaterials—including perovskite nanocrystals, quantum dots, and plasmonic nanoparticles—enhance light absorption, charge separation, and carrier collection, with perovskite-silicon tandem cells exceeding 30% efficiency. Lithium-ion battery performance is improved by nanostructured anodes (silicon nanowires, titanium dioxide nanotubes) that accommodate volume changes and shorten ion diffusion paths, and nanocoatings on cathodes that suppress degradation. Supercapacitors using nanostructured carbon (graphene, carbon nanotubes) achieve high power density and cycling stability for rapid energy storage and release. Nanocatalysts—including platinum nanoparticles on carbon supports for fuel cells and nanostructured transition metal oxides for electrolysis—reduce precious metal loading while increasing catalytic activity for hydrogen production and CO₂ reduction."
+  },
+  {
+    "q": [
+      "What are common nanotech consumer products?",
+      "How is nanotechnology used in sunscreen?",
+      "How is nanotechnology used in cosmetics?",
+      "How are nanomaterials used in textiles?",
+      "How is nanotechnology used in sports equipment?",
+      "How is nanotechnology used in water purification?",
+      "How is nanotechnology used in air filtration?",
+      "What are self-cleaning surfaces?",
+      "nanotechnology consumer products",
+      "nanotech in everyday products"
+    ],
+    "a": "Titanium dioxide and zinc oxide nanoparticles are used in sunscreens for transparent UV protection without the white paste of conventional formulations. Silver nanoparticles are embedded in textiles, bandages, and food containers for antimicrobial properties, while silica nanocoatings on fabrics provide water and stain repellency (hydrophobic surfaces). In sports equipment, carbon nanotubes and graphene reinforce tennis rackets, bicycle frames, and golf clubs for lighter, stronger, and more durable performance. Environmental nanotech includes nanoporous membranes for water desalination and purification, photocatalytic titanium dioxide nanoparticles for air purification and self-cleaning surfaces, and zero-valent iron nanoparticles for groundwater remediation of chlorinated solvents and heavy metals."
+  }
+]

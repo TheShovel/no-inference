@@ -1,0 +1,110 @@
+[
+  {
+    "q": [
+      "What is viticulture and how does it relate to wine production?",
+      "What is the wine making process from grape to bottle?",
+      "What is terroir in winemaking?",
+      "What are the major grape varieties used in wine production?",
+      "How does viticulture affect wine quality?",
+      "What factors define terroir?",
+      "Explain the winemaking process in detail."
+    ],
+    "a": "Viticulture is the science and practice of grape cultivation for winemaking, encompassing vine selection, planting, trellising, irrigation, pest management, and harvest timing that fundamentally determines the quality and character of the resulting wine. The winemaking process involves harvesting grapes, crushing and destemming, fermentation (converting sugar to alcohol using yeast), pressing, clarification, aging (in stainless steel, concrete, or oak barrels), and bottling, with specific techniques varying by wine style. Terroir is the unique combination of soil composition, climate, topography, and vineyard microclimate that imparts distinctive characteristics to wine from a specific region, explaining why identical grape varieties produce dramatically different wines from different locations."
+  },
+  {
+    "q": [
+      "What are the four steps of wine tasting?",
+      "How do you evaluate wine appearance?",
+      "What does wine nose or aroma refer to?",
+      "What is the palate in wine tasting?",
+      "What is the finish of a wine?",
+      "How do you professionally taste wine?",
+      "What is the proper wine tasting technique?"
+    ],
+    "a": "Professional wine tasting follows a structured four-step evaluation: appearance (clarity, intensity, and color which can indicate age, grape variety, and winemaking methods), nose (aroma and bouquet assessed by swirling to release volatile compounds, noting primary fruit aromas, secondary fermentation notes, and tertiary aged characteristics), palate (sweetness, acidity, tannins, alcohol, body, and flavor intensity evaluated as the wine coats the mouth), and finish (the length and quality of the aftertaste, with longer finishes generally indicating higher quality wine). The process engages all senses and follows a systematic approach to ensure consistent, objective evaluation across different wines. Tasters typically use specialized glassware, control serving temperature, and cleanse their palate between samples to maintain accuracy in their assessments."
+  },
+  {
+    "q": [
+      "What are the major wine regions of the world?",
+      "What is Bordeaux wine known for?",
+      "What wines come from Burgundy?",
+      "What is Tuscany famous for in wine?",
+      "What wine region is Napa Valley known for?",
+      "What is Marlborough known for in winemaking?",
+      "Describe the wine regions of France.",
+      "What are notable wine regions in Italy and the US?"
+    ],
+    "a": "Bordeaux, France, is renowned for its classified growth system and produces some of the world's most prestigious red wines from Cabernet Sauvignon and Merlot blends, along with dry and sweet white wines from Sauternes. Burgundy produces exceptional Pinot Noir reds and Chardonnay whites from a complex patchwork of appellations ranging from regional to grand cru classifications, with terroir being the defining philosophy of the region. Tuscany, Italy, is famous for Sangiovese-based wines like Chianti Classico, Brunello di Montalcino, and Vino Nobile di Montepulciano, as well as Super Tuscan wines that blend international varieties, while Napa Valley, California, is celebrated for its bold Cabernet Sauvignons and has established itself as a premier wine region through pioneering wine-making techniques and the 1976 Judgment of Paris. Marlborough, New Zealand, put Sauvignon Blanc on the global map with its intensely aromatic, zesty style and has become the benchmark region for this variety worldwide."
+  },
+  {
+    "q": [
+      "What are the principles of wine and food pairing?",
+      "How do you pair wine with food?",
+      "What is the golden rule of wine pairing?",
+      "What wine goes with red meat?",
+      "What wine pairs with seafood?",
+      "What are classic wine and food combinations?",
+      "How does acidity in wine affect food pairing?"
+    ],
+    "a": "Wine and food pairing principles center on balancing key components: acidity (wine with higher acidity pairs with acidic foods like tomatoes and vinaigrettes), tannins (tannic red wines pair with fatty proteins like steak that soften tannins and cleanse the palate), sweetness (wine should be at least as sweet as the dish to avoid making the wine taste bitter or flat), and weight or body (match the intensity of the wine to the intensity of the dish). Classic pairings include Chardonnay with lobster or creamy sauces, Sangiovese with tomato-based pasta dishes, Riesling with spicy Asian cuisine, and Port with blue cheese or dark chocolate. Regional pairing traditions often work well because wines and cuisines evolved together — enjoy Burgundy with coq au vin, Rioja with Spanish tapas, and Prosecco with light appetizers and seafood."
+  },
+  {
+    "q": [
+      "What are the main beer styles and how are they classified?",
+      "What are ales and lagers?",
+      "What is the difference between ale and lager?",
+      "What is the brewing process for beer?",
+      "What are the main ingredients in beer?",
+      "How is beer brewed?",
+      "What are craft beer styles?"
+    ],
+    "a": "Beer is broadly classified into two main categories: ales, which use top-fermenting yeast at warmer temperatures producing fruity and complex flavors (including pale ales, IPAs, stouts, porters, Belgian styles, and wheat beers), and lagers, which use bottom-fermenting yeast at cooler temperatures resulting in clean, crisp profiles (including pilsners, helles, bocks, and Vienna lagers). The brewing process involves mashing milled grain (typically barley) in hot water to convert starches to fermentable sugars, lautering to separate the liquid wort, boiling with hops for bitterness and aroma, cooling, fermenting with yeast, conditioning or lagering for maturation, and finally carbonating and packaging. Key beer ingredients are water, malted barley (which provides sugars, color, and body), hops (contributing bitterness, flavor, and antimicrobial properties), and yeast (which determines fermentation characteristics and contributes esters and phenols), with adjuncts like wheat, rice, corn, oats, and specialty ingredients such as fruit, coffee, and spices used to create specific styles."
+  },
+  {
+    "q": [
+      "What is distillation and how are spirits made?",
+      "What are the major categories of spirits?",
+      "What is the difference between whiskey, vodka, and gin?",
+      "How is whiskey distilled and aged?",
+      "What are the main types of spirits and how are they produced?",
+      "What is the distillation process for spirits?"
+    ],
+    "a": "Distillation is the process of heating fermented liquid to separate alcohol (which boils at 78.37°C) from water and other compounds through evaporation and condensation, concentrating ethanol and selective flavor compounds to produce spirits typically 40-50% ABV. Major spirit categories include whiskey (aged in oak barrels, produced worldwide from grains with styles like Scotch, Bourbon, Irish, and Japanese), vodka (neutral spirit distilled to high purity, often from grains or potatoes, with minimal congeners), gin (vodka-like base redistilled with juniper berries and botanicals), rum (made from sugarcane molasses or juice, aged or unaged), tequila (from blue agave in designated Mexican regions, including blanco, reposado, and añejo), brandy (distilled wine or fruit fermentations), and liqueurs (sweetened spirits infused with fruits, herbs, creams, or spices). The skill of the distiller in managing cuts during distillation — separating heads (volatile compounds), hearts (the desired spirit), and tails (heavy compounds) — is crucial to spirit quality, while aging in wood barrels adds color, flavor, and complexity through extraction of oak compounds and oxidation."
+  },
+  {
+    "q": [
+      "What are the fundamentals of cocktails and mixology?",
+      "What are the classic cocktails every bartender should know?",
+      "What is the difference between shaken and stirred cocktails?",
+      "What are the main cocktail families?",
+      "How do you balance flavors in a cocktail?",
+      "What is mixology and how does it differ from bartending?",
+      "What tools are used in cocktail making?"
+    ],
+    "a": "Mixology is the art and science of crafting cocktails, combining spirits with modifiers (vermouths, liqueurs, bitters), juices, syrups, and garnishes using techniques such as shaking (for cocktails containing fruit juices, dairy, eggs, or cream to properly dilute and aerate), stirring (for spirit-forward cocktails like martinis and Manhattans to achieve clarity and silky texture), building (layering ingredients directly in the glass), and muddling (crushing herbs or fruit to release flavors). The classic cocktail canon includes the Martini (gin and dry vermouth), Manhattan (rye whiskey and sweet vermouth), Old Fashioned (spirit, sugar, bitters), Margarita (tequila, lime, orange liqueur), Daiquiri (rum, lime, sugar), Negroni (gin, Campari, sweet vermouth), and Sazerac (rye, absinthe rinse, Peychaud's bitters), each representing a fundamental balance of spirit, sweetener, modifier, and water from dilution. Proper cocktail-making requires understanding the role of dilution (15-30% of a cocktail's final volume from melted ice), using fresh ingredients, precision in measurement with a jigger, and selecting appropriate glassware that shapes aroma delivery and temperature retention."
+  },
+  {
+    "q": [
+      "What are the major non-alcoholic beverages in hospitality?",
+      "What is specialty coffee and how is it prepared?",
+      "What is the difference between tea types?",
+      "What are mocktails and how are they crafted?",
+      "What is craft soda?",
+      "What non-alcoholic beverage options do restaurants offer?",
+      "How is espresso-based coffee made?"
+    ],
+    "a": "Specialty coffee is a growing segment of the beverage industry focusing on high-quality beans graded 80+ points by Q Graders, prepared through methods like espresso (pressurized hot water extraction), pour-over (manual filtered brewing that highlights origin characteristics), French press (full-immersion with metal mesh filter), and cold brew (long steep in cold water for smooth, low-acidity concentrate). Tea categories include white (minimally processed), green (steamed or pan-fired to prevent oxidation), oolong (partially oxidized), black (fully oxidized), pu-erh (aged and fermented), and herbal tisanes (caffeine-free infusions of herbs, flowers, and fruits), each with specific brewing temperatures and steeping times. Mocktails and craft sodas have become sophisticated segments of beverage programs, employing techniques such as fat-washing, clarification, carbonation, and barrel-aging of non-alcoholic ingredients, along with house-made syrups, shrubs (drinking vinegars), fresh juices, bitters, and artisanal sodas to create complex alcohol-free alternatives that mirror the sophistication of cocktail programs."
+  },
+  {
+    "q": [
+      "What are the principles of beverage service in hospitality?",
+      "What is wine list management?",
+      "How do you build a wine list for a restaurant?",
+      "What is the sommelier profession?",
+      "How does beverage service differ for fine dining vs casual dining?",
+      "What is proper wine service etiquette?",
+      "What are the responsibilities of a sommelier?"
+    ],
+    "a": "Beverage service in hospitality encompasses proper glassware selection, serving temperatures (champagne at 6-8°C, white wine at 8-12°C, red wine at 14-18°C, beer depending on style), pouring techniques (wine service including presenting the bottle, opening tableside, offering a taste, and pouring appropriately), and service sequencing that aligns with the dining experience. Wine list management involves curating a balanced selection that reflects the restaurant's cuisine style and price points, managing inventory turnover, pricing strategy (typically 2.5-3x wholesale cost), maintaining proper storage conditions (temperature-controlled cellars, humidity, darkness, and minimal vibration), and regularly updating selections based on seasonality and availability. The sommelier is a trained wine professional responsible for wine list development, wine purchasing and cellar management, staff education and training, tableside wine service, and guest consultation on wine and food pairings, with certification levels from introductory to master sommelier through organizations like the Court of Master Sommeliers and the Wine & Spirit Education Trust."
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "q": [
+      "What is urban design?",
+      "What are the principles of urban design?",
+      "What is the difference between urban planning and urban design?",
+      "What makes good urban design?",
+      "What are the elements of urban design?",
+      "How does urban design affect quality of life?"
+    ],
+    "a": "Urban design is the discipline concerned with the physical form, function, and experience of cities and public spaces, operating at the intersection of architecture, landscape architecture, and urban planning — it focuses on the arrangement and appearance of buildings, streets, public spaces, and landscape, and how these elements work together to create functional, attractive, and meaningful urban environments. Good urban design principles include human scale (designing for pedestrians rather than vehicles), enclosure (defining public space with building frontages), connectivity (permitting easy movement through well-connected street networks), legibility (making the city easy to navigate through landmarks, nodes, and clear pathways — Kevin Lynch's imageability concept), robustness (spaces and buildings adaptable to different uses over time), richness (sensory variety and detail), and appropriateness (responding to local context, climate, and culture). Urban designers use various scales of intervention, from street furniture and lighting details to district-wide public realm strategies and design guidelines, drawing on both technical knowledge and understanding of how people perceive, use, and value urban spaces."
+  },
+  {
+    "q": [
+      "What is streetscape design?",
+      "What are the elements of streetscape?",
+      "What is placemaking?",
+      "How does placemaking create better cities?",
+      "What is the public realm?",
+      "What are examples of successful placemaking?",
+      "What is the difference between a street and a place?"
+    ],
+    "a": "Streetscape design encompasses the detailed design of all elements within the street right-of-way beyond the roadway, including sidewalks, street trees and landscaping, lighting, benches, bicycle parking, signage, wayfinding, transit stops, bollards, planters, public art, street furniture, pavement materials, and drainage — well-designed streetscapes encourage walking, social interaction, and economic activity while providing comfort, safety, and sensory interest. Placemaking is a people-centered approach to designing and managing public spaces that emphasizes community participation, local identity, and the creation of vibrant, well-used places rather than purely functional infrastructure — the Project for Public Spaces (founded by William H. Whyte) identifies four key qualities of successful places: accessibility and linkages (easy to reach and well-connected), comfort and image (clean, safe, with places to sit), uses and activities (things to do), and sociability (places where people meet and interact). The public realm includes all publicly accessible spaces in a city — streets, squares, plazas, parks, waterfronts, and markets — that serve as the stage for public life, civic engagement, and social encounter, and its quality is increasingly recognized as essential to urban vitality, social inclusion, and democratic culture."
+  },
+  {
+    "q": [
+      "What is human scale in urban design?",
+      "What is pedestrian experience?",
+      "How do you design for pedestrians?",
+      "What is the pedestrian shed?",
+      "What is urban furniture?",
+      "What is wayfinding?",
+      "How does good signage help in cities?",
+      "What is the role of lighting in urban design?"
+    ],
+    "a": "Human scale in urban design means designing the physical environment to relate to the size, speed, and sensory capabilities of the human body — it involves building heights that create comfortable street proportions (building height to street width ratios of 1:1 to 1:3), detailed facades with features at eye level, short block lengths (200-400 feet), accessible building entrances, and elements like awnings, storefronts, and street trees that create a comfortable pedestrian environment. The pedestrian experience is shaped by multiple factors: safety (from traffic and crime), comfort (shade, shelter, seating, smooth surfaces), convenience (direct routes, minimal crossing delays, frequent crosswalks), interest (active ground-floor uses, varied facades, windows, public art), and legibility (clear wayfinding through signage, landmarks, sight lines, and intuitive street patterns). Wayfinding is the systematic design of spatial information systems — including signage, maps, landmarks, color-coded districts, and digital tools — that help people navigate urban environments efficiently and confidently, particularly important in complex settings like transit stations, hospitals, university campuses, and large public spaces."
+  },
+  {
+    "q": [
+      "What is public art?",
+      "How does public art contribute to cities?",
+      "What is tactical urbanism?",
+      "What is the difference between tactical and traditional urbanism?",
+      "What are examples of tactical urbanism?",
+      "What is pop-up urbanism?",
+      "What is guerrilla gardening?",
+      "How do temporary interventions improve cities?"
+    ],
+    "a": "Public art encompasses artworks created for and sited in public spaces accessible to all, ranging from permanent sculptures and murals to temporary installations, performance art, and integrated design elements — it enhances civic identity, creates landmarks and gathering places, expresses community values and history, stimulates public discourse, and can contribute to economic revitalization by attracting visitors and increasing property values. Tactical urbanism refers to low-cost, temporary, and often community-initiated interventions in the built environment intended to demonstrate potential improvements and catalyze longer-term change — examples include pop-up bike lanes (rapidly installed using traffic cones and barriers), temporary plazas (converting parking spaces or traffic lanes into seating areas using movable furniture, planters, and paint), guerrilla gardening (planting in neglected public spaces without official permission), crosswalk murals painted by communities, and parklets (converting a few on-street parking spaces into mini-parks with seating and plantings). Tactical urbanism has been widely adopted by municipalities as a legitimate planning tool for testing changes before permanent implementation, engaging communities in hands-on placemaking, and demonstrating quick wins that build political support for larger investments."
+  }
+]

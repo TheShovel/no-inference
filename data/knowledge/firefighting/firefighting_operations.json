@@ -1,0 +1,57 @@
+[
+  {
+    "q": [
+      "How are fire stations organized?",
+      "What are the different types of fire apparatus?",
+      "What is a fire engine?",
+      "What is a fire truck or ladder truck?",
+      "What is a quint fire apparatus?",
+      "What is a tanker in firefighting?",
+      "What is a brush truck?",
+      "What is a hazardous materials unit?",
+      "fire apparatus types engine ladder truck quint tanker brush hazmat"
+    ],
+    "a": "Fire stations are organized to house apparatus and personnel for rapid emergency response, typically staffed by shifts (often 24-hour shifts following a 48/96 schedule) with a minimum crew per apparatus. Fire apparatus types serve specific functions: an engine carries water (typically 500–1,000 gallons), a pump, hoses, and basic EMS equipment for fire attack; a ladder/truck carries ground and aerial ladders, forcible entry tools, ventilation equipment, and is specialized for search and rescue and roof operations; a quint combines engine and truck functions with a pump, water tank, and aerial ladder; tankers (or water tenders) transport large water volumes (2,000–4,000 gallons) to rural areas; brush trucks are smaller, four-wheel-drive vehicles for wildland fires; and hazardous materials units carry specialized containment and detection equipment for chemical and biological incidents."
+  },
+  {
+    "q": [
+      "What are the different firefighter roles?",
+      "What is a fire captain?",
+      "What is a fire lieutenant?",
+      "What is a fire engineer?",
+      "What is a firefighter?",
+      "What is a firefighter paramedic?",
+      "firefighter roles captain lieutenant engineer firefighter paramedic"
+    ],
+    "a": "Firefighter roles follow a hierarchical command structure on each apparatus. The captain or company officer commands the apparatus and crew, making strategic decisions at the scene. The lieutenant serves as second-in-command, often supervising specific fireground operations like interior attack or ventilation. The engineer (also called driver/operator) is responsible for safely driving the apparatus, operating the pump (calculating pressure, managing water supply), and maintaining vehicle readiness. Firefighters perform interior and exterior fire attack, search and rescue, forcible entry, ventilation, and overhaul operations. Paramedic-certified firefighters provide advanced life support EMS, as fire departments respond to far more medical emergencies than fires—typically 60–80% of call volume in urban departments."
+  },
+  {
+    "q": [
+      "What is the Incident Command System (ICS)?",
+      "What are fire ground operations?",
+      "What is size-up in firefighting?",
+      "What is water supply in firefighting?",
+      "What is hose line advancement?",
+      "What is ventilation in firefighting?",
+      "What are search and rescue operations?",
+      "What is overhaul in firefighting?",
+      "Incident Command System ICS fire ground operations",
+      "size-up water supply hose line advancement ventilation search and rescue overhaul"
+    ],
+    "a": "The Incident Command System (ICS) is a standardized emergency management structure used across fire, police, and EMS to ensure clear command, communication, and coordination on any scale incident, with roles including Incident Commander, Safety Officer, Operations, Planning, Logistics, and Finance sections. Fireground operations follow a systematic sequence: size-up (evaluating building type, fire location and extent, occupancy, hazards, and resources needed), establishing water supply (connecting to hydrants or drafting from static sources), advancing hose lines (typically 1¾-inch attack lines for interior fires, 2½-inch lines for master streams), ventilation (removing heat and smoke through roof openings, positive pressure fans, or hydraulic ventilation to improve visibility and reduce flashover risk), search and rescue (primary rapid search of fire areas, secondary thorough search after fire control), and overhaul (checking for hidden fire extension, pulling ceilings, opening walls, and extinguishing remaining hot spots to prevent rekindle)."
+  },
+  {
+    "q": [
+      "What are fire suppression methods?",
+      "What is forcible entry in firefighting?",
+      "What are ladder operations in firefighting?",
+      "What is a Mayday in firefighting?",
+      "What is a PASS device?",
+      "What is a RIT or RIC team?",
+      "What is firefighter safety?",
+      "fire suppression methods forcible entry ladder operations",
+      "firefighter safety Mayday PASS device RIT RIC"
+    ],
+    "a": "Fire suppression methods apply the fire triangle/tetrahedron principles: cooling (water absorbs heat), smothering (foam or CO₂ excludes oxygen), and chemical flame inhibition (dry chemical or clean agents interrupt the combustion reaction). Forcible entry uses specialized tools (halligan bar, flathead axe, sledgehammer, hydraulic spreaders) to breach locked doors, gates, and barriers with minimal delay. Ladder operations include ground ladder placement for rescue (reaching windows), access (roof operations), and ventilation (opening roof sections). Firefighter safety systems include: Mayday protocols (urgent radio transmission when a firefighter is trapped, lost, or injured, triggering an immediate emergency response), PASS (Personal Alert Safety System) devices that emit a loud alarm if a firefighter remains motionless for 30 seconds, and RIT/RIC (Rapid Intervention Team/Crew) standing by at every working fire, equipped and ready to rescue firefighters in distress."
+  }
+]

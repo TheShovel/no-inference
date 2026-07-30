@@ -1,0 +1,61 @@
+[
+  {
+    "q": [
+      "What is energy policy?",
+      "What are the goals of energy policy?",
+      "What is the energy trilemma?",
+      "What are the main objectives of energy policy?",
+      "How do governments make energy policy?",
+      "What is energy security?",
+      "energy policy goals",
+      "energy trilemma explained",
+      "energy affordability sustainability security"
+    ],
+    "a": "Energy policy refers to the set of laws, regulations, subsidies, and strategies that a government adopts to manage the production, distribution, and consumption of energy, balancing three often-competing objectives known as the energy trilemma: security (reliable and uninterrupted access to energy at all times), affordability (energy costs that households and businesses can bear without economic hardship), and environmental sustainability (minimizing ecological impacts, especially greenhouse gas emissions). Energy policy encompasses electricity generation and grid regulation, transportation fuel standards, building energy codes, taxation and subsidies for different energy sources, research and development funding for emerging technologies, international agreements on climate and energy trade, and crisis response mechanisms for supply disruptions. Effective energy policy requires long-term planning (given the decades-long lifetimes of energy infrastructure), coordination across multiple levels of government, and balancing the interests of utilities, consumers, fossil fuel industries, renewable energy developers, and environmental advocates."
+  },
+  {
+    "q": [
+      "What is electricity market design?",
+      "What are feed-in tariffs?",
+      "What are renewable portfolio standards?",
+      "What is net metering?",
+      "How do renewable energy policies work?",
+      "What is a renewable energy certificate?",
+      "feed-in tariff explained",
+      "renewable portfolio standard RPS",
+      "net metering policy",
+      "electricity market regulation"
+    ],
+    "a": "Feed-in tariffs (FiTs) are policy mechanisms that guarantee renewable energy producers a fixed, above-market price for every unit of electricity they generate over a long-term contract (typically 15-20 years), providing investment certainty that has successfully driven renewable deployment in Germany, Spain, and China. Renewable portfolio standards (RPS) — also called renewable electricity standards — require utilities to source a specified percentage of their electricity from renewable sources by a target date, with tradeable renewable energy certificates (RECs) used for compliance, and are a primary driver of renewable growth in US states like California (60% by 2030) and New York (70% by 2030). Net metering allows residential and commercial customers who generate their own electricity (typically from rooftop solar) to receive credit on their utility bills for excess power fed back into the grid at the retail electricity rate, effectively reducing their electricity costs and incentivizing distributed generation, though some utilities argue it shifts grid maintenance costs to non-solar customers."
+  },
+  {
+    "q": [
+      "What are energy subsidies?",
+      "What is carbon pricing?",
+      "What is a carbon tax?",
+      "What is cap and trade?",
+      "What are energy efficiency standards?",
+      "What is energy independence?",
+      "carbon pricing mechanisms",
+      "carbon tax vs cap and trade",
+      "energy subsidies types",
+      "energy independence definition"
+    ],
+    "a": "Energy subsidies are government interventions that reduce the cost of energy production or consumption, taking the form of direct financial transfers, tax breaks, price controls, research grants, or preferential loans — globally, fossil fuel subsidies are estimated at over $5 trillion annually when including externalities (health, environmental, climate damages), while renewable energy subsidies have grown significantly to accelerate the clean energy transition. Carbon pricing puts a monetary cost on greenhouse gas emissions to internalize the climate externality, implemented either as a carbon tax (setting a fixed price per ton of CO₂, as in Sweden at over $100/ton and Canada) or a cap-and-trade system (setting a declining emissions cap and allowing trading of emission allowances, as in the European Union Emissions Trading System or EU ETS, the world's largest carbon market). Energy efficiency standards mandate minimum efficiency levels for appliances (refrigerators, air conditioners), vehicles (CAFE standards in the US, CO₂ standards in the EU), and buildings (building energy codes), while energy independence — reducing reliance on imported energy — is pursued through domestic production and efficiency but has been increasingly reframed to focus on resilience and clean energy leadership rather than autarky."
+  },
+  {
+    "q": [
+      "What is the International Energy Agency?",
+      "What is OPEC and how does it influence energy markets?",
+      "What are international energy agreements?",
+      "What was the Paris Agreement on energy?",
+      "How do international organizations affect energy policy?",
+      "What is the role of the IEA in global energy?",
+      "International Energy Agency IEA",
+      "OPEC oil production",
+      "Paris Agreement energy transition",
+      "global energy governance"
+    ],
+    "a": "The International Energy Agency (IEA), founded in 1974 after the 1973 oil crisis, is an autonomous Paris-based intergovernmental organization of 31 member countries that coordinates collective energy security responses (including strategic petroleum reserves for supply emergencies), provides authoritative energy data and analysis through publications like the World Energy Outlook, and has increasingly focused on clean energy transitions, energy efficiency, and climate change mitigation. OPEC (Organization of the Petroleum Exporting Countries), founded in 1960 by Iran, Iraq, Kuwait, Saudi Arabia, and Venezuela and now comprising 13 member nations, coordinates petroleum production policies among member countries to stabilize oil markets and secure fair returns for producers, influencing global oil prices through production quotas — despite reduced market dominance due to US shale production, OPEC+ (including Russia and other allies) still manages over 40% of global crude oil production. International energy agreements shape global energy governance, from the UN Framework Convention on Climate Change (UNFCCC) and the Paris Agreement (which commits nations to hold global warming well below 2°C and pursue efforts to limit it to 1.5°C) to the Energy Charter Treaty (protecting cross-border energy investments) and the Mission Innovation initiative accelerating clean energy research and development across 23 countries."
+  }
+]

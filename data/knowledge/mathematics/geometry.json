@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What is geometry?",
+      "Define geometry as a branch of mathematics",
+      "What does geometry study?",
+      "Tell me about the origins of geometry",
+      "Why is geometry important in math?"
+    ],
+    "a": "Geometry is the branch of mathematics concerned with the properties, measurement, and relationships of points, lines, angles, surfaces, and solids. Originating from ancient Greek traditions (notably Euclid's Elements around 300 BCE), geometry was initially the study of shapes and space using deductive reasoning. Modern geometry extends far beyond, encompassing coordinate geometry, differential geometry, and topology."
+  },
+  {
+    "q": [
+      "What are points, lines, and angles in geometry?",
+      "Define a point in geometry",
+      "What is the difference between a line and a line segment?",
+      "How are angles classified?",
+      "What are complementary and supplementary angles?"
+    ],
+    "a": "A point is a location in space with no size or dimension, while a line is a straight one-dimensional figure extending infinitely in both directions. An angle is formed by two rays sharing a common endpoint (vertex) and is measured in degrees or radians; acute angles are less than 90°, right angles are exactly 90°, and obtuse angles are between 90° and 180°. Complementary angles sum to 90°, while supplementary angles sum to 180°."
+  },
+  {
+    "q": [
+      "What are the properties of triangles?",
+      "What are different types of triangles?",
+      "How do you calculate the area of a triangle?",
+      "What is the triangle inequality theorem?",
+      "What makes triangles special in geometry?"
+    ],
+    "a": "A triangle is a three-sided polygon with three angles summing to 180°, classified by side lengths as equilateral (all sides equal), isosceles (two sides equal), or scalene (no equal sides). Triangles are uniquely rigid among polygons — given three side lengths, only one shape is possible — which makes them essential in engineering and construction. The area is computed as (1/2) × base × height, and the triangle inequality theorem states that the sum of any two sides must exceed the third."
+  },
+  {
+    "q": [
+      "What are the properties of circles?",
+      "Define radius, diameter, and circumference of a circle",
+      "How do you calculate the area of a circle?",
+      "What is pi in relation to a circle?",
+      "What is a chord and a tangent in a circle?"
+    ],
+    "a": "A circle is the set of all points equidistant from a center point; the distance from the center to any point is the radius (r), and the diameter is twice the radius. The circumference (distance around the circle) equals 2πr, and the area equals πr², where π (pi) is the irrational constant approximately 3.14159. A chord is a segment connecting two points on the circle, while a tangent is a line that touches the circle at exactly one point."
+  },
+  {
+    "q": [
+      "What is the Pythagorean theorem?",
+      "How does the Pythagorean theorem work?",
+      "When is the Pythagorean theorem used?",
+      "What is the formula a² + b² = c²?",
+      "Can the Pythagorean theorem be used in 3D?"
+    ],
+    "a": "The Pythagorean theorem states that in any right triangle, the square of the hypotenuse (the side opposite the right angle) equals the sum of squares of the other two sides: a² + b² = c². It is used to find unknown side lengths in right triangles and has applications in navigation, construction, and computer graphics. This theorem is the foundation of Euclidean distance and extends to three dimensions as d² = a² + b² + c²."
+  },
+  {
+    "q": [
+      "What is the difference between Euclidean and non-Euclidean geometry?",
+      "What is Euclidean geometry?",
+      "What is non-Euclidean geometry?",
+      "Give examples of non-Euclidean geometries",
+      "How does geometry on a sphere differ from flat geometry?"
+    ],
+    "a": "Euclidean geometry is based on Euclid's five postulates, including the parallel postulate: given a line and a point not on it, exactly one parallel line exists through that point. Non-Euclidean geometries — such as spherical (elliptic) geometry where no parallel lines exist and the angles of a triangle sum to more than 180° — arise by modifying this postulate. Hyperbolic geometry, another non-Euclidean system, allows infinitely many parallels, with triangles summing to less than 180°, and models curved space in Einstein's theory of relativity."
+  }
+]

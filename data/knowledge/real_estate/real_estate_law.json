@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What is property law?",
+      "What is real property law?",
+      "What are deeds and titles in real estate?",
+      "What is a title search?",
+      "What is title insurance?",
+      "What is the difference between a deed and a title?",
+      "What is a warranty deed?",
+      "What is a quitclaim deed?",
+      "property law basics",
+      "deed vs title explained"
+    ],
+    "a": "Property law governs the ownership, use, and transfer of real property, defining the legal rights and interests that individuals and entities hold in land and improvements. A deed is the physical legal document that transfers ownership from one party to another, while title is the legal concept of ownership itself — someone can hold title even if the deed is lost. Title searches examine public records to verify the chain of ownership and identify any encumbrances (liens, easements, judgments, tax delinquencies), with title insurance protecting the buyer and lender against undiscovered title defects, claims, or clouds on the title that were not uncovered during the search."
+  },
+  {
+    "q": [
+      "What is the escrow process in real estate?",
+      "How does escrow work?",
+      "What are disclosure requirements in real estate?",
+      "What are seller disclosures?",
+      "What are fair housing laws?",
+      "What is the Fair Housing Act?",
+      "What is landlord-tenant law?",
+      "What are the rights of tenants?",
+      "escrow disclosure fair housing",
+      "real estate legal requirements"
+    ],
+    "a": "Escrow is a neutral third-party process where a title company or escrow agent holds funds, documents, and instructions from buyer, seller, and lender, ensuring all conditions of the purchase agreement are satisfied before the transaction closes and title transfers. Disclosure requirements mandate that sellers inform buyers of known material defects affecting the property's value or safety, including structural issues, past repairs, pest damage, environmental hazards (lead paint, asbestos, mold, radon), and in many states, whether a death occurred on the property. Fair housing laws, primarily the federal Fair Housing Act (1968), prohibit discrimination in housing transactions based on race, color, national origin, religion, sex, familial status, or disability, covering sales, rentals, financing, and advertising with enforcement through HUD complaints and federal litigation."
+  },
+  {
+    "q": [
+      "What is zoning in real estate?",
+      "What are land use regulations?",
+      "What are easements in real estate?",
+      "What is a lien on a property?",
+      "What is a mortgage lien?",
+      "What is a tax lien?",
+      "What is a mechanics lien?",
+      "What is foreclosure?",
+      "What is adverse possession?",
+      "zoning land use easements liens",
+      "foreclosure process explained"
+    ],
+    "a": "Zoning ordinances regulate land use by dividing municipalities into districts with specific permitted uses (residential, commercial, industrial, agricultural) and standards for building height, density, setbacks, parking, and lot coverage administered by local planning departments and zoning boards. Easements grant a non-ownership right to use another's property for a specific purpose (utility access, driveway crossing, drainage, public trails), running with the land so they transfer to subsequent owners and can significantly affect property use and value. Liens are legal claims against a property securing debt payment — mortgage liens are voluntarily granted by borrowers, tax liens arise from unpaid property taxes and take priority over most other claims, and mechanic's liens are filed by unpaid contractors or suppliers who provided work or materials, potentially forcing a property sale to satisfy the debt."
+  },
+  {
+    "q": [
+      "What should be in a real estate purchase agreement?",
+      "What are contingencies in a real estate contract?",
+      "What is a financing contingency?",
+      "What is an inspection contingency?",
+      "What is an appraisal contingency?",
+      "What is the role of a real estate attorney?",
+      "When do I need a real estate lawyer?",
+      "real estate contracts and contingencies",
+      "purchase agreement terms"
+    ],
+    "a": "A real estate purchase agreement includes the purchase price, earnest money deposit amount, closing date and location, included personal property (appliances, fixtures), and contingencies — conditions that must be satisfied for the contract to become binding. Common contingencies include the financing contingency (allowing the buyer to withdraw if they cannot obtain a mortgage within a specified period), inspection contingency (permitting negotiation or cancellation based on professional home inspection findings), and appraisal contingency (ensuring the property appraises for at least the purchase price to satisfy lender requirements). A real estate attorney reviews and drafts contracts, performs title examinations, coordinates the closing process, resolves title defects, and represents their client in disputes or litigation — their role is mandatory in some states (particularly in the northeastern US) while in others a real estate agent or title company handles most of the transaction."
+  }
+]

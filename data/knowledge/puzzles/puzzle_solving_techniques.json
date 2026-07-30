@@ -1,0 +1,64 @@
+[
+  {
+    "q": [
+      "What is the Alternating Inference Chain (AIC) in Sudoku?",
+      "How do AICs help eliminate candidates in Sudoku?",
+      "What are strong and weak links in Sudoku chains?",
+      "What is a Nice Loop in Sudoku solving?",
+      "What is the difference between a continuous and discontinuous nice loop?",
+      "How do I build an AIC between two candidates?",
+      "What is a grouped nice loop?",
+      "How do I identify starting points for an AIC?"
+    ],
+    "a": "An Alternating Inference Chain (AIC) is an advanced Sudoku technique that builds a chain of logical inferences alternating between strong links (if candidate A is false then candidate B must be true within a unit) and weak links (if candidate A is true then candidate B is false—a simple relationship between candidates sharing a cell or unit). The chain is constructed as a sequence such as strong-weak-strong-weak-strong, starting and ending with strong links, and when the beginning and end cells both see a shared candidate, that candidate can be eliminated. Nice Loops are continuous or discontinuous versions of AICs—a continuous nice loop returns to its starting point and allows eliminations on all links within the loop, while a discontinuous nice loop starts and ends on different candidates of the same cell, allowing the elimination of the starting candidate. Grouped nice loops extend the concept by allowing links through groups of cells within the same house (such as all cells in a box sharing a candidate), making the chain-building more flexible. AICs and Nice Loops are among the most powerful human-friendly solving techniques, capable of cracking extremely difficult puzzles, but require substantial practice to spot efficiently during solving."
+  },
+  {
+    "q": [
+      "What is an XY-Wing in Sudoku?",
+      "How do I identify an XY-Wing pattern?",
+      "What is the difference between XY-Wing and XYZ-Wing?",
+      "What is a WXYZ-Wing in Sudoku?",
+      "How do ALS (Almost Locked Sets) relate to XY-Wings?",
+      "What is ALS-XZ and ALS-XY in Sudoku?",
+      "How do I use an XY-Wing to eliminate candidates?"
+    ],
+    "a": "The XY-Wing is a pattern involving three cells across three different houses, each containing two candidates that form a chain: a central 'pivot' cell with candidates XY, connected to two 'pincer' cells—one with XZ and one with YZ. Since the pivot must contain either X or Y, one of the pincers must be Z (if pivot=X then XZ pincer=Z; if pivot=Y then YZ pincer=Z), meaning any cell that both pincers can see cannot contain Z and that candidate can be eliminated. The XYZ-Wing extends this with a three-candidate pivot cell (XYZ) that sees two two-candidate wings (XZ and YZ), while WXYZ-Wings use a four-candidate pivot cell with up to three wings, creating progressively larger elimination patterns. Almost Locked Sets (ALS) generalize this concept—an ALS is a set of N cells within a house containing exactly N+1 total candidates, and the interaction between two ALS (ALS-XZ, ALS-XY, and the more complex Death Blossom) can create powerful elimination chains. These techniques form the bridge between pattern-based solving (like X-Wing, Swordfish) and chain-based solving (like AICs), and are essential for solving extreme-rated puzzles without resorting to brute-force backtracking or T&E (trial and error)."
+  },
+  {
+    "q": [
+      "What is simple coloring in Sudoku?",
+      "What is the difference between simple and multi-coloring in Sudoku?",
+      "How do I use coloring to eliminate candidates?",
+      "What is an X-Cycle in Sudoku?",
+      "What are conjugate pairs in Sudoku coloring?",
+      "How do I start a coloring chain in Sudoku?",
+      "What is the trap rule in simple coloring?"
+    ],
+    "a": "Simple coloring is a single-digit technique that traces chains of conjugate pairs (cells within a house where a candidate must occupy one of exactly two positions) through the grid, alternating colors to represent two possible states for that candidate. Starting with a conjugate pair—say, coloring one cell blue and the other green—you extend the chain by looking for additional conjugate pairs connected to each colored cell, maintaining that all blues must share the same truth state and all greens the opposite state. The two key elimination rules are: (1) if two cells of the same color appear in the same unit (row, column, or box), that color must be false (since they cannot both be true in the same house), and the opposite color establishes the true positions; (2) if any uncolored cell sees both a blue and a green cell (from the same color chain), the candidate in that cell can be eliminated because whichever color is true eliminates it. Multi-coloring extends this to multiple independent color chains, using bridge links (weak links between clusters) to make cross-chain eliminations, while X-Cycles formalize coloring as cyclic chains where continuous cycles identify eliminations throughout the cycle and discontinuous cycles identify eliminations at the discontinuity point."
+  },
+  {
+    "q": [
+      "What is Bowman's Bingo in Sudoku?",
+      "What is the difference between Bowman's Bingo and AIC?",
+      "What is brute-force solving in Sudoku?",
+      "What is T&E (trial and error) in Sudoku solving?",
+      "How do backtracking algorithms solve Sudoku?",
+      "What is recursive solving for Sudoku?",
+      "What is the template or pattern overlay method for Sudoku?",
+      "When should I use trial and error vs logical techniques?"
+    ],
+    "a": "Bowman's Bingo is a controversial Sudoku technique that involves picking a candidate in a bi-value cell, assuming it to be true, and following the logical implications forward until either a contradiction is found (proving the assumption false) or the puzzle is solved (proving the assumption true). It is often considered a form of trial and error (T&E) because it tests an assumption rather than deriving the conclusion purely through logical inference. The template or pattern overlay method is a more systematic version where a solver tests all possible placements of a single digit (all 9-cell patterns where the digit can appear given the grid constraints)—this is computationally efficient for computers but impractical for most human solvers. Pure backtracking (choosing a cell, trying each candidate in sequence, and backtracking when contradictions occur) is the brute-force algorithm used by Sudoku solvers and is guaranteed to solve any valid puzzle, but is considered the last resort by human solvers who prefer elegant logical deductions. The debate between pure logic and trial and error reflects a philosophical divide in the Sudoku community—purists insist that all puzzles should be solvable through logical chains, while pragmatists accept limited T&E for extremely difficult puzzles (such as those rated above SE 10 or 'extreme' difficulty) as long as it is applied systematically rather than through random guessing."
+  },
+  {
+    "q": [
+      "What are the hardest Sudoku techniques to learn?",
+      "What is a Death Blossom in Sudoku?",
+      "What is Distributed Disjointed Subsets in Sudoku?",
+      "What is a Kraken pattern in Sudoku?",
+      "What are the most advanced solving techniques beyond AIC?",
+      "How do I progress from intermediate to advanced Sudoku solving?",
+      "What is the proper order to learn Sudoku techniques?"
+    ],
+    "a": "The most advanced Sudoku techniques include the Death Blossom (an ALS technique where a 'stem' cell with N candidates connects to N ALS sets, one per candidate, creating powerful eliminations when the stem's candidates see all members of the ALS groups), Distributed Disjointed Subsets (multiple ALS sets spread across different houses that interact to create eliminations through shared restricted candidates), and Kraken patterns (a candidate is connected to a fish pattern—typically a finned or sashimi fish—where the fin's implications are traced through links to produce eliminations equivalent to a chain). The progression of learning typically follows: basic techniques (singles, pairs, triples, locked candidates) → intermediate (X-Wing, XY-Wing, simple coloring, Swordfish) → advanced (AIC, Nice Loops, XYZ-Wing, WXYZ-Wing, Jellyfish, ALS-XZ) → expert (ALS-XY, Death Blossom, Kraken, grouped AIC, continuous Nice Loops). Many human solvers never need the most advanced techniques because extremely difficult Sudoku puzzles (like those with SE ratings above 8.0) are rare in publications, and most 'hard' newspaper puzzles can be solved with techniques through the intermediate level combined with careful candidate management and systematic scanning."
+  }
+]

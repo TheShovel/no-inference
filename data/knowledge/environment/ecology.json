@@ -1,0 +1,68 @@
+[
+  {
+    "q": [
+      "What is an ecosystem and what are its components?",
+      "How do ecosystems function?",
+      "What are the biotic and abiotic components of an ecosystem?",
+      "What is the difference between a habitat and an ecosystem?",
+      "How do energy and nutrients flow through an ecosystem?",
+      "What are ecosystem services?"
+    ],
+    "a": "An ecosystem is a community of living organisms (biotic components) interacting with their physical environment (abiotic components) as a functional unit. Biotic components include producers (plants, algae), consumers (herbivores, carnivores, omnivores), and decomposers (fungi, bacteria). Abiotic components include sunlight, temperature, water, soil, and nutrients. Energy flows through ecosystems in a single direction — from the sun through photosynthesis to producers, then through trophic levels as organisms consume one another — while nutrients cycle continuously between living and non-living reservoirs. Ecosystems provide essential services such as pollination, water purification, climate regulation, and nutrient cycling that underpin human well-being."
+  },
+  {
+    "q": [
+      "What is a food web and how does it differ from a food chain?",
+      "How do trophic levels work in an ecosystem?",
+      "What are producers, consumers, and decomposers?",
+      "What happens to energy as it moves through a food web?",
+      "What is the 10% rule in energy transfer?",
+      "Explain the difference between a food chain and a food web."
+    ],
+    "a": "A food chain is a linear sequence showing who eats whom in an ecosystem, while a food web is a more realistic, interconnected network of multiple food chains that reveals the complex feeding relationships within a community. Organisms occupy trophic levels: primary producers (plants) at the base, followed by primary consumers (herbivores), secondary consumers (carnivores that eat herbivores), tertiary consumers (top predators), and decomposers that break down organic matter at all levels. Only about 10% of the energy at one trophic level is transferred to the next, with the rest lost as heat through metabolic processes — a principle known as the 10% rule, which explains why food chains rarely exceed four or five trophic levels."
+  },
+  {
+    "q": [
+      "What are the major biomes of the world?",
+      "What defines a biome?",
+      "Describe the characteristics of tropical rainforests.",
+      "What are the main differences between tundra and desert biomes?",
+      "How do climate and geography determine biome distribution?",
+      "What are the key features of grassland, taiga, and temperate forest biomes?"
+    ],
+    "a": "Biomes are large-scale ecological communities defined primarily by climate (temperature and precipitation) and characterized by distinct plant and animal communities. Major terrestrial biomes include tropical rainforest (high rainfall, immense biodiversity), savanna (grassland with scattered trees, seasonal rainfall), desert (very low precipitation, extreme temperature swings), temperate grasslands (fertile soils, fire-adapted grasses), Mediterranean shrublands (mild wet winters, hot dry summers), temperate deciduous forest (distinct seasons, broadleaf trees that shed leaves), taiga/boreal forest (cold, coniferous forest, long winters), and tundra (permanently frozen subsoil, no trees). Aquatic biomes include freshwater (lakes, rivers, wetlands) and marine (oceans, coral reefs, estuaries) systems, which cover over 70% of Earth's surface."
+  },
+  {
+    "q": [
+      "What is population ecology?",
+      "What factors affect population growth and decline?",
+      "What is carrying capacity?",
+      "What is the difference between exponential and logistic growth?",
+      "How do density-dependent and density-independent factors regulate populations?",
+      "What are r-selected and K-selected species?"
+    ],
+    "a": "Population ecology studies how populations of organisms change over time and space, and what factors influence those changes. Key concepts include population density, age structure, birth and death rates, immigration and emigration. Populations can grow exponentially (J-shaped curve) when resources are unlimited, but in reality, logistic growth (S-shaped curve) occurs as populations approach the environment's carrying capacity — the maximum population size that can be sustained indefinitely. Density-dependent factors (competition, predation, disease) have effects that intensify as population density increases, while density-independent factors (natural disasters, weather) affect populations regardless of density. R-selected species produce many offspring with little parental care in unstable environments, while K-selected species produce few offspring with extensive care in stable environments near carrying capacity."
+  },
+  {
+    "q": [
+      "What is community ecology?",
+      "What are the different types of species interactions in a community?",
+      "What is niche partitioning?",
+      "How does competition shape ecological communities?",
+      "What are the differences between predation, parasitism, and mutualism?",
+      "What is the competitive exclusion principle?"
+    ],
+    "a": "Community ecology examines how populations of different species interact within a shared environment. Key species interactions include competition (both species harmed), predation (one benefits, one is harmed), parasitism (parasite benefits, host is harmed), mutualism (both benefit), commensalism (one benefits, the other unaffected), and amensalism (one harmed, other unaffected). The competitive exclusion principle states that two species competing for the same limiting resource cannot coexist indefinitely; one will outcompete the other. Niche partitioning — where competing species evolve to use different resources, habitats, or activity periods — allows coexistence by reducing direct competition. Keystone species and ecosystem engineers are species whose impacts on community structure are disproportionately large relative to their abundance."
+  },
+  {
+    "q": [
+      "What is ecological succession?",
+      "What is the difference between primary and secondary succession?",
+      "How do pioneer species initiate succession?",
+      "What is a climax community?",
+      "What factors influence the rate of ecological succession?",
+      "Give an example of succession after a disturbance."
+    ],
+    "a": "Ecological succession is the predictable, directional process of community change over time following a disturbance or the creation of new habitat. Primary succession occurs on lifeless surfaces with no soil — such as bare rock after a volcanic eruption or glacial retreat — beginning with pioneer species like lichens and mosses that gradually build soil. Secondary succession happens in areas where an existing community has been disturbed but soil remains — such as after a forest fire, flood, or agricultural abandonment — and proceeds more rapidly because the soil seed bank and nutrients are already present. Over time, succession typically leads to a relatively stable climax community whose species composition reflects the regional climate. However, modern ecology recognizes that disturbances are natural and many ecosystems exist in dynamic, non-equilibrium states rather than reaching a single permanent climax."
+  }
+]

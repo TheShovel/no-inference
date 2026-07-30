@@ -1,0 +1,79 @@
+[
+  {
+    "q": [
+      "what is the pomodoro technique",
+      "pomodoro technique explained",
+      "how to use pomodoro timer",
+      "pomodoro method for productivity",
+      "pomodoro technique time intervals",
+      "how does pomodoro technique work"
+    ],
+    "a": "The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. It uses a timer to break work into focused intervals, traditionally 25 minutes long, separated by short breaks of 5 minutes. After completing four consecutive pomodoro sessions, you take a longer break of 15-30 minutes. The technique helps maintain high concentration, reduces mental fatigue, and makes large tasks feel less overwhelming by breaking them into manageable chunks."
+  },
+  {
+    "q": [
+      "what is the eisenhower matrix",
+      "eisenhower matrix explained",
+      "urgent important matrix",
+      "how to use the eisenhower matrix",
+      "priority matrix time management",
+      "eisenhower box method"
+    ],
+    "a": "The Eisenhower Matrix (also called the Urgent-Important Matrix) is a prioritization framework that sorts tasks into four quadrants based on urgency and importance. Quadrant I contains urgent and important tasks (do immediately), Quadrant II contains not urgent but important tasks (schedule), Quadrant III contains urgent but not important tasks (delegate), and Quadrant IV contains neither urgent nor important tasks (eliminate). The key insight is that truly effective people spend most of their time in Quadrant II — the important but not urgent tasks that drive long-term success, like planning, skill development, and relationship building."
+  },
+  {
+    "q": [
+      "what is time blocking",
+      "time blocking method",
+      "how to time block your day",
+      "time blocking vs to-do list",
+      "calendar blocking productivity",
+      "how to schedule time blocks"
+    ],
+    "a": "Time blocking is a scheduling method where you divide your day into dedicated blocks of time, each reserved for a specific task or type of work. Instead of working from a to-do list, you assign each task a specific slot on your calendar, including transitions, breaks, and meals. The technique is particularly effective for knowledge workers because it protects deep work time from interruptions and ensures important tasks get dedicated attention rather than being squeezed into leftover moments."
+  },
+  {
+    "q": [
+      "how to overcome procrastination",
+      "why do I procrastinate",
+      "tips to stop procrastinating",
+      "procrastination causes and solutions",
+      "beat procrastination psychology",
+      "how to stop putting things off"
+    ],
+    "a": "Procrastination is often less about laziness and more about emotional regulation — we avoid tasks that trigger negative feelings like anxiety, boredom, or overwhelm. Effective strategies include breaking tasks into tiny steps (the 2-minute rule: if it takes under 2 minutes, do it now), using implementation intentions like 'I will do X at Y time in Z location,' and forgiving yourself for past procrastination (research shows self-forgiveness reduces future procrastination). The 5-second rule — counting backward from 5 and then starting the task — can help bypass the brain's resistance to uncomfortable work."
+  },
+  {
+    "q": [
+      "what is GTD methodology",
+      "getting things done explained",
+      "david allen GTD system",
+      "how does GTD work",
+      "GTD productivity method steps",
+      "getting things done workflow"
+    ],
+    "a": "Getting Things Done (GTD) is a productivity methodology by David Allen that relies on capturing all tasks and ideas into a trusted external system rather than keeping them in your head. The core workflow has five stages: capture (collect everything that has your attention), clarify (decide what each item means and what to do about it), organize (put items into appropriate categories like next actions, projects, or someday/maybe), reflect (regularly review your system), and engage (trust the system and take action). GTD's central principle is that your mind is for having ideas, not holding them — freeing mental RAM reduces stress and improves focus."
+  },
+  {
+    "q": [
+      "what are SMART goals",
+      "SMART goal framework",
+      "how to set SMART goals",
+      "SMART goals explained",
+      "specific measurable achievable relevant time-bound",
+      "setting effective goals"
+    ],
+    "a": "SMART is an acronym for setting effective goals: Specific (clearly define what you want to accomplish), Measurable (include concrete criteria for tracking progress), Achievable (realistic given your resources and constraints), Relevant (aligns with your broader objectives), and Time-bound (has a clear deadline or timeframe). For example, instead of 'I want to get fit,' a SMART goal would be 'I will exercise for 30 minutes, 4 days per week, for the next 3 months.' Research shows that specific and challenging goals consistently lead to higher performance than vague or easy goals."
+  },
+  {
+    "q": [
+      "what is kanban method",
+      "kanban board productivity",
+      "how to use kanban for work",
+      "kanban vs scrum",
+      "visual task management kanban",
+      "kanban system explained"
+    ],
+    "a": "Kanban is a visual workflow management method originating from Toyota's manufacturing system. It uses a board with columns representing stages of work — typically 'To Do,' 'In Progress,' and 'Done' — with tasks written on cards that move across the board as they progress. The key principles are visualizing work, limiting work-in-progress (WIP) to avoid overloading, and continuously improving the flow. Kanban is popular for both software development teams and personal productivity because it makes bottlenecks obvious and encourages completing tasks before starting new ones."
+  }
+]

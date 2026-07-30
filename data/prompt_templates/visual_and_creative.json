@@ -1,0 +1,102 @@
+[
+  {
+    "id": "character_profile",
+    "patterns": [
+      "(?:create|write|build|develop)\\s+(?:a|an|the)?\\s*character\\s+profile\\s+(?:for|of)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)",
+      "(?:describe|create|write)\\s+(?:a|an|the)?\\s*character\\s+named\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+    ],
+    "slots": {"topic": "topic"},
+    "response_type": "story",
+    "weight": 0.85
+  },
+  {
+    "id": "world_building",
+    "patterns": [
+      "(?:describe|create|build|design)\\s+(?:a|an|the)?\\s*fictional\\s+world\\s+where\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)",
+      "(?:create|build|design|establish)\\s+(?:a|an|the)?\\s*fictional\\s+setting\\s+(?:for|of)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+    ],
+    "slots": {"topic": "topic"},
+    "response_type": "story",
+    "weight": 0.85
+  },
+  {
+    "id": "dialogue_scene",
+    "patterns": [
+      "(?:write|create|compose|draft)\\s+(?:a|an|the)?\\s*dialogue\\s+between\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)",
+      "(?:create|write|compose|draft)\\s+(?:a|an|the)?\\s*conversation\\s+(?:about|on|regarding)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+    ],
+    "slots": {"topic": "topic"},
+    "response_type": "story",
+    "weight": 0.8
+  },
+  {
+    "id": "html_dashboard",
+    "patterns": [
+      "(?:create|build|design|develop)\\s+(?:a|an|the)?\\s*dashboard\\s+(?:for|of|about)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)",
+      "(?:design|create|build|develop)\\s+(?:a|an|the)?\\s*data\\s+dashboard\\s+(?:for|of|about)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+    ],
+    "slots": {"topic": "topic"},
+    "response_type": "html_page",
+    "weight": 0.85
+  },
+  {
+    "id": "html_form",
+    "patterns": [
+      "(?:create|build|design|develop)\\s+(?:a|an|the)?\\s*registration\\s+form\\s+(?:for|of)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)",
+      "(?:build|create|design|develop)\\s+(?:a|an|the)?\\s*contact\\s+form\\s+(?:for|of)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+    ],
+    "slots": {"topic": "topic"},
+    "response_type": "html_page",
+    "weight": 0.8
+  },
+  {
+    "id": "html_gallery",
+    "patterns": [
+      "(?:create|build|design|develop)\\s+(?:a|an|the)?\\s*image\\s+gallery\\s+(?:for|of|about)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)",
+      "(?:build|create|design|develop)\\s+(?:a|an|the)?\\s*photo\\s+gallery\\s+(?:for|of|about)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+    ],
+    "slots": {"topic": "topic"},
+    "response_type": "html_page",
+    "weight": 0.8
+  },
+  {
+    "id": "infographic_text",
+    "patterns": [
+      "(?:create|design|build|develop)\\s+(?:a|an|the)?\\s*infographic\\s+(?:about|on|for)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)",
+      "(?:visualize|illustrate|present)\\s+information\\s+(?:about|on|regarding)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+    ],
+    "slots": {"topic": "topic"},
+    "response_type": "explanation",
+    "weight": 0.75
+  },
+  {
+    "id": "press_release",
+    "patterns": [
+      "(?:write|compose|draft|create|prepare)\\s+(?:a|an|the)?\\s*press\\s+release\\s+(?:about|on|for|regarding)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)",
+      "(?:announce|proclaim|declare)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+    ],
+    "slots": {"topic": "topic"},
+    "response_type": "blog",
+    "weight": 0.85
+  },
+  {
+    "id": "speech",
+    "patterns": [
+      "(?:write|compose|draft|create|prepare)\\s+(?:a|an|the)?\\s*speech\\s+(?:about|on|for)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)",
+      "speech\\s+on\\s+(?P<topic>.+?)(?:\\s+for\\s+(?P<audience>.+?))?(?:\\.\\s*|\\?\\s*|$)"
+    ],
+    "slots": {"topic": "topic", "audience": "audience"},
+    "response_type": "essay",
+    "weight": 0.85
+  },
+  {
+    "id": "manifesto",
+    "patterns": [
+      "(?:write|compose|draft|create|prepare)\\s+(?:a|an|the)?\\s*manifesto\\s+(?:for|of|about)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)",
+      "manifesto\\s+(?:about|for|on)\\s+(?P<topic>.+?)(?:\\.\\s*|\\?\\s*|$)"
+    ],
+    "slots": {"topic": "topic"},
+    "response_type": "essay",
+    "weight": 0.8
+  }
+]

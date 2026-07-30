@@ -1,0 +1,66 @@
+[
+  {
+    "q": [
+      "What is veterinary emergency triage?",
+      "How is an emergency patient assessed in veterinary medicine?",
+      "What are the ABCs of veterinary emergency?",
+      "What is shock in animals?",
+      "How is pain assessed in animals?",
+      "veterinary triage system",
+      "ABCs veterinary emergency",
+      "shock in dogs and cats",
+      "pain assessment in animals"
+    ],
+    "a": "Veterinary emergency triage uses a systematic approach to prioritize patients based on the severity of their condition, often employing the Veterinary Triage List or a simple color-coded system (red for critical/immediate, yellow for urgent, green for stable) to ensure the most life-threatening cases receive immediate attention. The emergency assessment follows the ABCDE approach: Airway (ensure the airway is clear and patent), Breathing (assess respiratory rate, effort, and lung sounds), Circulation (check heart rate, pulse quality, mucous membrane color, capillary refill time, and blood pressure), Disability (neurologic status, mentation, and pain level), and Exposure (full physical examination for injuries, wounds, or abnormalities. Shock in animals is a life-threatening state of inadequate tissue perfusion that can be hypovolemic (blood loss or dehydration), distributive (septic or anaphylactic), cardiogenic (heart failure), or obstructive, presenting with tachycardia, pale mucous membranes, weak pulses, and altered mentation that requires immediate intravenous fluid resuscitation and supportive care."
+  },
+  {
+    "q": [
+      "What is GDV or bloat in dogs?",
+      "What to do if a dog is hit by a car?",
+      "What are common pet poisons?",
+      "How are seizures treated in animals?",
+      "What is dystocia in animals?",
+      "What is heat stroke in dogs?",
+      "How are snake bites treated in animals?",
+      "What is anaphylaxis in animals?",
+      "GDV bloat dog emergency",
+      "hit by car dog treatment",
+      "common pet poisoning toxins",
+      "seizures in dogs cats",
+      "dystocia veterinary emergency"
+    ],
+    "a": "Gastric dilatation-volvulus (GDV or bloat) is a life-threatening condition primarily affecting large, deep-chested dog breeds where the stomach distends with gas and then twists on its axis, cutting off blood flow and requiring immediate emergency surgery to decompress and reposition the stomach. Common veterinary emergencies include hit-by-car trauma requiring assessment for fractures, pneumothorax, pulmonary contusions, and internal bleeding; poisoning from toxins like chocolate (theobromine), xylitol, grapes/raisins, rodenticides, and lilies (in cats); seizures lasting more than a few minutes (status epilepticus) requiring emergency anticonvulsant therapy; dystocia (difficult birth) requiring medical or surgical intervention when labor fails to progress; heat stroke (hyperthermia above 105°F/40.5°C) demanding aggressive cooling and monitoring for multi-organ dysfunction; snake bites (especially pit vipers) requiring antivenom, fluid therapy, and monitoring for coagulopathy; and anaphylactic reactions to insect stings, vaccines, or drugs needing epinephrine, oxygen, and antihistamines."
+  },
+  {
+    "q": [
+      "What is emergency surgery in veterinary medicine?",
+      "What is veterinary critical care?",
+      "How does fluid therapy work in emergency care?",
+      "What is oxygen therapy for animals?",
+      "What is a blood transfusion in animals?",
+      "What equipment is used in veterinary emergency?",
+      "What is veterinary CPR?",
+      "veterinary emergency surgery",
+      "critical care veterinary medicine",
+      "fluid therapy dogs cats",
+      "oxygen therapy animals",
+      "blood transfusion veterinary"
+    ],
+    "a": "Veterinary emergency surgery encompasses procedures performed on an urgent basis to save life or limb, including exploratory celiotomy for GDV, foreign body obstruction (intestinal or esophageal), septic peritonitis from gastrointestinal rupture, splenic mass rupture (hemangiosarcoma), urinary tract obstruction, and Cesarean section for dystocia. Veterinary critical care involves continuous monitoring and intensive treatment of critically ill patients using advanced modalities including intravenous fluid therapy (crystalloids and colloids for resuscitation, maintenance, and replacement), oxygen therapy (via flow-by, mask, nasal cannula, oxygen cage, or mechanical ventilation for respiratory compromise), blood transfusion products (packed red blood cells, fresh frozen plasma, whole blood for anemia, coagulopathy, or hypoproteinemia), and continuous electrocardiographic, blood pressure, and pulse oximetry monitoring. Veterinary CPR follows the RECOVER (Reassessment Campaign on Veterinary Resuscitation) evidence-based guidelines emphasizing high-quality chest compressions, immediate defibrillation for shockable rhythms, and post-cardiac arrest care for improved survival outcomes."
+  },
+  {
+    "q": [
+      "What are after-hours emergency veterinary services?",
+      "How should veterinary practices prepare for emergencies?",
+      "What is pet first aid?",
+      "How to handle a pet emergency at home?",
+      "How to prepare a pet first aid kit?",
+      "What makes a good veterinary emergency clinic?",
+      "after-hours vet emergency",
+      "emergency preparedness veterinary practice",
+      "pet first aid basics",
+      "pet emergency kit"
+    ],
+    "a": "After-hours emergency veterinary services are provided by dedicated 24-hour emergency hospitals or smaller clinics that rotate on-call coverage, and they are essential because many critical conditions—including GDV, toxin ingestion, trauma, and seizures—occur outside regular business hours and require immediate intervention to prevent death or severe complications. Veterinary practices prepare for emergencies by maintaining crash carts stocked with emergency drugs (epinephrine, atropine, naloxone, dextrose, reversal agents), airway equipment (endotracheal tubes, laryngoscope, ambu bag, oxygen source), IV catheters and fluids, and surgical packs for emergency procedures, along with staff training through regular CPR drills, triage simulations, and RECOVER certification. Pet first aid involves basic emergency care including muzzle application for pain-induced aggression, wound cleaning and bandaging, carrying an injured pet on a makeshift stretcher (for suspected spinal injuries), inducing vomiting only when directed by a veterinarian (never for caustic or sharp objects), and knowing how to safely transport an injured animal to an emergency facility while minimizing stress and further injury."
+  }
+]

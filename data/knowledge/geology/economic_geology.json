@@ -1,0 +1,61 @@
+[
+  {
+    "q": [
+      "What is economic geology?",
+      "What does economic geology study?",
+      "What are ore deposits?",
+      "How are ore deposits classified?",
+      "What are magmatic ore deposits?",
+      "What are hydrothermal ore deposits?",
+      "What are sedimentary ore deposits?",
+      "What are placer deposits?",
+      "economic geology definition",
+      "types of ore deposits"
+    ],
+    "a": "Economic geology is the scientific study of Earth's materials that can be extracted for economic benefit — including metallic ores, industrial minerals, and energy resources — focusing on how these deposits form, their distribution, how to find them, and how to extract them profitably while managing environmental impacts. Ore deposits are classified by their genetic (formation) process into magmatic deposits (formed by crystallization and segregation of minerals from cooling magma, such as chromite, platinum-group elements, and nickel sulfides in layered intrusions like the Bushveld Complex in South Africa), hydrothermal deposits (precipitated from hot, mineral-rich fluids circulating through fractures and porous rocks, forming veins, porphyry copper deposits, and massive sulfide deposits — the source of most copper, gold, silver, lead, and zinc), sedimentary deposits (formed through chemical precipitation, evaporation, or biological accumulation in sedimentary environments, including banded iron formations, sedimentary copper deposits, evaporites, and phosphorites), and placer deposits (physical accumulations of heavy, erosion-resistant minerals like gold, diamonds, tin, and titanium in stream sediments and beach sands, concentrated by flowing water or wave action)."
+  },
+  {
+    "q": [
+      "What are the main mining methods?",
+      "What is open-pit mining?",
+      "What is underground mining?",
+      "What is placer mining?",
+      "How are minerals extracted from the Earth?",
+      "open pit mining method",
+      "underground mining techniques",
+      "mining methods comparison",
+      "how are ores mined"
+    ],
+    "a": "Open-pit mining is used for near-surface, disseminated ore bodies, involving the removal of overlying waste rock (overburden) to expose the ore, which is then extracted in a series of descending benches or terraces — this method, used for copper (Bingham Canyon, Utah), iron ore, diamonds (Mirny, Russia), and gold, allows high production rates and low operating costs but creates large visual scars and requires extensive pit dewatering and slope stability management. Underground mining is used for deep or narrow ore bodies accessed through shafts, adits, and tunnels, with common methods including block caving (undercutting massive ore bodies allowing them to collapse under their own weight, used at the Grasberg copper-gold mine in Indonesia), room-and-pillar (leaving pillars of ore to support the roof, used for coal and potash), cut-and-fill (mining in horizontal slices with backfill for support, common in narrow-vein gold mines), and longwall mining (a mechanized shearer moving along a coal face with hydraulic roof supports, highly efficient for coal). Both methods require extensive ventilation, dewatering, ground support, and materials handling systems, with the choice depending on ore geometry, depth, grade distribution, rock strength, groundwater conditions, and economic considerations — open-pit is generally preferred when economically feasible because of its lower cost and higher safety."
+  },
+  {
+    "q": [
+      "What is mineral exploration?",
+      "How are mineral deposits discovered?",
+      "What is the difference between a resource and a reserve?",
+      "What is the resource-reserve classification?",
+      "What are rare earth elements?",
+      "What are critical minerals for the energy transition?",
+      "mineral exploration methods",
+      "resource vs reserve definition",
+      "rare earth elements REE",
+      "critical minerals list"
+    ],
+    "a": "Mineral exploration is the systematic process of finding economically viable mineral deposits, progressing from regional-scale geological mapping, geochemical sampling (stream sediments, soils, rocks), and geophysical surveys (magnetic, gravity, electromagnetic, seismic) to identify targets, followed by detailed trenching and diamond drilling to define the deposit's geometry, grade distribution, and mineralogy — only about one in a thousand exploration projects advances to become a producing mine. The resource-reserve classification system distinguishes between mineral resources (concentrations of minerals with reasonable prospects for eventual economic extraction, subdivided into inferred, indicated, and measured categories with increasing confidence) and mineral reserves (the economically mineable part of a measured or indicated resource, considering mining, metallurgical, economic, marketing, legal, environmental, social, and governmental factors — the reserve is the subset of a resource that is actually profitable to extract using existing technology at current prices). Rare earth elements (REEs) — a group of 17 elements including lanthanides plus scandium and yttrium — are essential for permanent magnets in wind turbines and electric vehicles, phosphors for displays and LED lighting, and catalysts, with China dominating global production (over 60%) and processing (over 90%), creating strategic supply chain vulnerabilities. Critical minerals for the energy transition — including lithium, cobalt, nickel, graphite, copper, and rare earths — face rapidly growing demand from electric vehicles, batteries, solar panels, and wind turbines, with the IEA projecting that mineral demand for clean energy technologies could quadruple by 2040, driving a global surge in exploration and mining investment."
+  },
+  {
+    "q": [
+      "What are the environmental impacts of mining?",
+      "What is mine reclamation?",
+      "How are mines restored after closure?",
+      "What is acid mine drainage?",
+      "What are industrial minerals?",
+      "What are the environmental issues with mining?",
+      "mining environmental impact",
+      "mine reclamation process",
+      "acid mine drainage AMD",
+      "industrial minerals examples"
+    ],
+    "a": "Mining's environmental impacts include habitat destruction and deforestation from clearing land for pits, waste rock dumps, and tailings storage facilities; water pollution from acid mine drainage (AMD — formed when sulfide minerals like pyrite are exposed to air and water, producing sulfuric acid that mobilizes heavy metals like arsenic, cadmium, and lead, which can contaminate groundwater and surface water for centuries); air pollution from drilling, blasting, hauling, and ore processing dust; energy consumption and greenhouse gas emissions; and the risk of catastrophic tailings dam failures (such as the 2019 Brumadinho disaster in Brazil that killed 270 people). Mine reclamation is the process of restoring mined land to a beneficial use after mining ceases, including regrading waste dumps and pit slopes, replacing and stabilizing topsoil, revegetating with native or adapted species, treating contaminated water in perpetuity, monitoring groundwater quality, and converting sites to alternative uses like wildlife habitat, recreation areas, or agricultural land — costs for reclamation are typically required to be bonded before mining begins. Industrial minerals — non-metallic minerals used for their physical and chemical properties — include limestone and dolomite (construction aggregate, cement, steel flux), clay and shale (bricks, ceramics, cement), sand and gravel (concrete aggregate, glass manufacturing, hydraulic fracturing), phosphate rock (fertilizer), potash (fertilizer), salt (chemical feedstock, deicing), gypsum (wallboard, plaster), talc (cosmetics, paper), and dimension stone (granite, marble for building and monuments), and are produced in enormous quantities, with construction aggregates alone exceeding 50 billion tons per year globally."
+  }
+]

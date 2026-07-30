@@ -1,0 +1,95 @@
+[
+  {
+    "q": [
+      "What are the basics of dog care?",
+      "How often should I feed my dog?",
+      "How much exercise does my dog need?",
+      "How often should I groom my dog?",
+      "What veterinary care does a dog need?",
+      "How do I socialize my dog?",
+      "Should I brush my dog's teeth?"
+    ],
+    "a": "Basic dog care includes proper feeding (2-3 meals daily for adults, more for puppies, with portion sizes based on weight, age, and activity level), daily exercise (at least 30-60 minutes for most breeds), regular grooming (brushing 2-3 times weekly, bathing every 4-8 weeks, nail trimming every 2-4 weeks, and dental brushing several times weekly), and veterinary care (annual wellness exams, core vaccinations, heartworm prevention, flea and tick control, and dental cleanings as needed). Socialization—exposing your dog to a variety of people, animals, environments, and experiences—is critical during the first 16 weeks and should continue throughout life to prevent fear and aggression. Parasite prevention (heartworm, flea, and tick medication) should be administered year-round as recommended by your veterinarian."
+  },
+  {
+    "q": [
+      "What are the basics of cat care?",
+      "How do I litter train a cat?",
+      "How often should I feed my cat?",
+      "Does my cat need scratching posts?",
+      "Should I keep my cat indoors or outdoors?",
+      "What environmental enrichment do cats need?",
+      "How often does a cat need veterinary care?"
+    ],
+    "a": "Basic cat care includes providing a clean litter box (one per cat plus one, scooped daily, completely cleaned weekly), a balanced diet (2-3 measured meals daily, or free-feeding for some cats, with fresh water always available), and regular grooming (brushing short-haired cats weekly, long-haired cats daily). Environmental enrichment is crucial: cat trees for vertical territory, scratching posts (sisal, cardboard, or carpet-covered), window perches with outdoor views, interactive toys (wand toys, laser pointers, puzzle feeders), and hiding spots. Veterinary care includes annual wellness exams, core vaccinations (FVRCP, rabies), and parasite prevention. Indoor cats live significantly longer (12-18 years) than outdoor cats (2-5 years) due to reduced risks of trauma, infectious disease, and predation."
+  },
+  {
+    "q": [
+      "What should I feed my pet for optimal nutrition?",
+      "What are AAFCO standards for pet food?",
+      "Is raw feeding safe for dogs and cats?",
+      "Is grain-free dog food better?",
+      "What human foods are safe for pets?",
+      "Should I give my pet supplements?",
+      "What is the difference between wet and dry pet food?"
+    ],
+    "a": "Pet nutrition should meet AAFCO (Association of American Feed Control Officials) standards for 'complete and balanced' nutrition appropriate for the pet's life stage (growth, adult maintenance, or all life stages). Wet food has higher moisture content (70-85%) beneficial for urinary tract health and hydration, while dry food is more convenient and economical but lower in moisture. Raw feeding (biologically appropriate raw food or BARF) requires careful balancing and hygiene to avoid nutritional deficiencies and bacterial contamination. Grain-free diets are not inherently healthier for most pets and have been linked to dilated cardiomyopathy (DCM) in some dogs. Treats should not exceed 10% of daily calories. Many human foods are safe (plain cooked meats, certain fruits and vegetables), while others (grapes, raisins, onions, garlic, xylitol, chocolate) are toxic."
+  },
+  {
+    "q": [
+      "How much exercise does my pet need?",
+      "What are good enrichment activities for dogs?",
+      "What are good enrichment activities for cats?",
+      "What is a catio?",
+      "How do I play with my cat?",
+      "What are puzzle toys for pets?",
+      "What is nosework for dogs?"
+    ],
+    "a": "Exercise and enrichment needs vary widely. Most dogs need 30-60 minutes of structured exercise daily (walks, runs, fetch) plus mental stimulation through puzzle toys, nosework (scent detection games), training sessions, and socialization at dog parks or playdates. Cats need at least 15-30 minutes of interactive play daily, mimicking hunting behaviors with wand toys, laser pointers, and chase toys. Catios (enclosed outdoor cat patios) provide safe outdoor access and enrichment. Food puzzles and foraging toys (where pets work to release kibble or treats) engage natural problem-solving behaviors for both species. Activities like hide-and-seek, agility training, and trick training strengthen the human-animal bond while providing essential mental stimulation."
+  },
+  {
+    "q": [
+      "How often should I groom my pet?",
+      "How do I trim my dog's nails?",
+      "How do I clean my pet's ears?",
+      "How often should I bathe my dog?",
+      "How do I brush my pet's teeth?",
+      "What grooming tools do I need?"
+    ],
+    "a": "Grooming needs depend on coat type. Short-haired dogs and cats need weekly brushing; long-haired and double-coated breeds need daily brushing to prevent matting and reduce shedding. Bathing frequency varies: dogs typically every 4-8 weeks (or when dirty), while cats rarely need baths unless hairless or medically necessary. Nail trimming every 2-4 weeks prevents overgrowth, splitting, and posture problems—use guillotine or scissor-type trimmers and avoid the quick (the blood vessel inside the nail). Ear cleaning (weekly for floppy-eared dogs, monthly for others) using a vet-approved solution prevents infections. Dental hygiene is critical: brush your pet's teeth 2-3 times weekly with pet-safe toothpaste, provide dental chews, and schedule professional veterinary dental cleanings annually. Deshedding tools (Furminator, undercoat rakes) are essential for heavy shedders."
+  },
+  {
+    "q": [
+      "How do I train my puppy or kitten?",
+      "What is positive reinforcement training?",
+      "How do I house train a puppy?",
+      "What is crate training?",
+      "How do I teach basic commands?",
+      "How do I leash train my dog?",
+      "How do I train a kitten?"
+    ],
+    "a": "Pet training should be based on positive reinforcement—rewarding desired behaviors with treats, praise, or play while ignoring or redirecting unwanted behaviors. Puppy house training requires frequent outdoor trips (every 1-2 hours, after meals, naps, and play), confinement or supervision when indoors, and plenty of rewards for eliminating in the right spot. Crate training, when done correctly, provides a safe den-like space and aids in house training and preventing destructive behavior. Basic commands (sit, stay, come, down, leave it) should be taught using lure-and-reward methods with short (5-10 minute) sessions. Leash walking requires teaching your dog to walk on a loose leash by stopping when they pull and rewarding when they return to your side. Kitten training includes litter box use (provide a clean box in a quiet location), scratching on appropriate surfaces (use catnip, praise, and redirect from furniture), and gentle handling for veterinary care."
+  },
+  {
+    "q": [
+      "How do I monitor my pet's health at home?",
+      "What are signs of illness in dogs?",
+      "What are signs of illness in cats?",
+      "How do I check my pet's weight?",
+      "What changes in behavior indicate health problems?",
+      "How do I check my pet's teeth and gums?"
+    ],
+    "a": "Regular home health monitoring catches problems early. Track your pet's weight monthly (you should feel but not see ribs), check skin and coat for lumps, bumps, parasites, or hair loss, inspect ears for redness, discharge, or odor, examine teeth for tartar, gingivitis, or broken teeth, and observe eyes for cloudiness, discharge, or redness. Monitor appetite, water intake, and urination/defecation habits—changes in any of these are early indicators of illness. For dogs, watch for limping, excessive panting, lethargy, vomiting, diarrhea, or coughing. For cats, subtle signs of illness include hiding, decreased grooming, changes in litter box habits (straining, urinating outside the box), decreased appetite, and increased vocalization. Any significant or persistent changes warrant a veterinary visit."
+  },
+  {
+    "q": [
+      "How do I travel with my pet?",
+      "How do I fly with a dog or cat?",
+      "What is a pet health certificate?",
+      "How do I keep my pet calm during travel?",
+      "What do I need for a road trip with my pet?",
+      "Are there pet-friendly accommodations?"
+    ],
+    "a": "Traveling with pets requires advance planning. For car travel, use a crash-tested crate or harness, never allow pets to ride loose or in truck beds, stop every 2-3 hours for bathroom breaks and water, and never leave pets alone in a parked car (deadly heat stroke can occur within minutes). For airline travel, most carriers require health certificates issued within 10 days of travel, age-appropriate vaccinations, and approved carriers that fit under the seat for cabin travel (small dogs and cats). Some breeds (brachycephalic dogs like Bulldogs, Pugs, and Boston Terriers) are restricted from cargo holds due to breathing risks. Motion sickness can be managed with medication from your vet, and anxiety may be reduced with pheromone sprays (Adaptil for dogs, Feliway for cats), familiar bedding, and gradual car acclimation. Many hotels, rental properties, and campgrounds offer pet-friendly accommodations, though policies and fees vary."
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "q": [
+      "Who invented the Rubik's Cube?",
+      "How many combinations does a Rubik's Cube have?",
+      "What is the standard 3x3 Rubik's Cube?",
+      "What are the different types of twisty puzzles?",
+      "What is a Megaminx?",
+      "What is a Pyraminx?",
+      "What is a Square-1?",
+      "What is a Ghost Cube?",
+      "What is a Mirror Cube?"
+    ],
+    "a": "The Rubik's Cube was invented in 1974 by Hungarian architect and professor Ernő Rubik, originally conceived as a teaching tool to help his students understand three-dimensional space—it achieved global popularity with over 450 million cubes sold worldwide and is recognized as the best-selling puzzle of all time, with the standard 3x3 cube having approximately 43 quintillion possible configurations. The twisty puzzle family has expanded enormously from the original 3x3 cube to include a vast array of variants: smaller cubes (2x2 or Pocket Cube), larger cubes (4x4 Rubik's Revenge, 5x5 Professor's Cube, 6x6, 7x7, and up to 21x21 mass-produced cubes), shape modifications like the Mirror Cube (same mechanics but irregular pieces that change shape when scrambled) and Ghost Cube (a shape-shifting 3x3 where every piece is a unique shape), face-turning puzzles like the Megaminx (a 12-sided dodecahedron puzzle), vertex-turning puzzles like the Pyraminx (a tetrahedron), corner-turning puzzles like the Skewb, and hybrids like the Square-1 (which changes shape as it turns) and the Rubik's Clock (a multi-gear puzzle using pins and wheels)."
+  },
+  {
+    "q": [
+      "What is the CFOP method for Rubik's Cube?",
+      "What is the Fridrich method?",
+      "What is the Roux method?",
+      "What is the ZZ method?",
+      "What is the Petrus method?",
+      "How do you solve a Rubik's Cube for beginners?",
+      "How do speedcubers solve the cube so fast?",
+      "What is blindfolded cubing?",
+      "What are the world record times for Rubik's Cube?"
+    ],
+    "a": "CFOP (Cross-F2L-OLL-PLL), also called the Fridrich method, is the most popular speedcubing method, solving the cube in four stages: building a cross on one face, solving the first two layers simultaneously (F2L) using intuitive pair insertion, orienting the last layer's pieces (OLL) with 57 algorithm patterns, then permuting them to their correct positions (PLL) with 21 algorithm patterns, enabling solves routinely under 10 seconds for advanced cubers. The Roux method (developed by Gilles Roux) uses block-building with fewer algorithms but more intuitive moves, solving the cube through three stages—building two 1x2x3 blocks, finishing corners, then orienting and permuting edges—and is particularly popular among advanced solvers who value ergonomic move sequences and look-ahead. The ZZ method (developed by Zbigniew Zborowski) reduces cube rotations and move count by orienting all edges during the first stage (EOLine), then solving the rest with efficient block-building and a reduced algorithm set, while the Petrus method (Lars Petrus) builds a 2x2x2 block first and expands it to a 2x2x3 before orienting edges, favored for its logical step-by-step construction. Blindfolded solving uses the Old Pochmann or M2/OP method to memorize the cube state as a sequence of piece swaps using letter pairs, then execute a memorized algorithm sequence sight-unseen—world-class blindfold solvers can memorize in under 10 seconds and execute in under 20, with multiple-cube blindfold challenges involving 50+ cubes memorized in sequence."
+  },
+  {
+    "q": [
+      "Who invented the jigsaw puzzle?",
+      "What are the different types of jigsaw puzzles?",
+      "What are the major jigsaw puzzle brands?",
+      "What is speed puzzling?",
+      "How are jigsaw puzzles made?",
+      "How do you solve a jigsaw puzzle efficiently?",
+      "What is the world's largest jigsaw puzzle?",
+      "What is puzzle dust?"
+    ],
+    "a": "The jigsaw puzzle was invented in 1767 by British mapmaker and engraver John Spilsbury, who mounted a map on a sheet of hardwood and cut along the country borders with a fine saw to create a teaching tool for geography—these earliest puzzles were literally 'jigged' (cut with a jigsaw or fretsaw), giving the puzzle its name, and were expensive educational toys for the wealthy before the invention of die-cutting with cardboard made puzzles affordable and mass-producible in the early 20th century. The puzzle industry has grown enormously in the 21st century, with major brands like Ravensburger (known for premium quality, linen-textured paper, and tight-fitting pieces from their proprietary steel die-cutting process), Springbok (the first US company to produce interlocking jigsaw puzzles, with random-cut pieces for unique shapes), Buffalo Games, White Mountain (large-piece panoramic puzzles of Americana), Cobble Hill, Eurographics, and boutique brands like Pomegranate and Artifact Puzzle that produce artist-licensed imagery and wooden laser-cut puzzles with whimsy pieces. Speed puzzling has emerged as a competitive sport governed by the World Jigsaw Puzzle Federation (WJPF), where teams or individuals race to complete 500- or 1000-piece puzzles as quickly as possible—the 2024 world records for a 500-piece puzzle is approximately 20 minutes for individuals and under 10 minutes for pairs, requiring advanced sorting techniques (sorting by piece shape, edge shape, and color zones) and efficient assembly patterns."
+  },
+  {
+    "q": [
+      "What are disentanglement puzzles?",
+      "What are burr puzzles?",
+      "What are packing puzzles?",
+      "What are pentominoes?",
+      "What is the Soma Cube?",
+      "What are tangram puzzles?",
+      "What are puzzle boxes?",
+      "What are Hanayama puzzles?",
+      "What are trick locks?"
+    ],
+    "a": "Disentanglement puzzles (also called wire puzzles) consist of intertwined metal wires, rings, or cords that must be separated by manipulating them through the correct sequence of moves—classic examples include the Ring Puzzle (Chinese linked rings, one of the oldest known puzzle types, dating back to ancient China), the Horseshoe Ring (remove the ring from the horseshoes), and the Celtic Cross, with solutions often involving counterintuitive moves that reveal three-dimensional spatial logic. Burr puzzles are interlocking three-dimensional puzzles composed of notched sticks that fit together to form a symmetrical shape, typically requiring the solver to discover the correct sequence of moves to disassemble and reassemble them—the classic 6-piece burr (the 'Puzzle Knot' or 'Chinese Cross') has thousands of possible interior notching patterns, and the study of burr puzzles has generated its own mathematical literature on notch theory and assembly complexity. Packing puzzles challenge the solver to arrange a set of pieces to perfectly fill a defined space, encompassing classic examples like pentominoes (12 pieces each made of five connected squares that must fit into various rectangular shapes, with 2,339 distinct solutions for a 6x10 rectangle), the Soma Cube (seven tetromino and triomino pieces forming a 3x3x3 cube with 240 distinct solutions), and tangrams (a seven-piece Chinese dissection puzzle forming a square, rearranged into hundreds of silhouette shapes). Hanayama puzzles—the Cast Puzzle series from Japan—are precision-cast metal disentanglement, assembly, and sequential movement puzzles graded by difficulty (1-6 on the Hanayama scale), with each puzzle designed to be compact, elegant, and solve in an 'aha' moment that reveals the puzzle's clever mechanism."
+  }
+]

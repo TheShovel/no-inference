@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is broadcast journalism?",
+      "How is TV news production organized?",
+      "What does a news producer do in TV?",
+      "How does radio journalism work?",
+      "What is the difference between TV news and radio news?",
+      "How are broadcast newsrooms structured?",
+      "What is the role of a news director in broadcasting?"
+    ],
+    "a": "Broadcast journalism covers news reporting for television, radio, and increasingly digital streaming platforms, characterized by time-sensitive production cycles, visual storytelling for TV, and audio-only delivery for radio. TV news production involves a structured team including assignment editors who track stories, field producers who coordinate logistics, reporters who gather and present information, photojournalists who capture footage, news writers who craft scripts, producers who build the rundown of stories, and the news director who oversees editorial direction. Radio journalism relies more heavily on natural sound, voice inflection, and descriptive language since it has no visual component, often producing newscasts on tighter deadlines with smaller teams and utilizing actualities (recorded soundbites) and wraps (reporter-narrated packages with sound)."
+  },
+  {
+    "q": [
+      "What is field reporting in broadcast journalism?",
+      "What is a live shot in TV news?",
+      "What is a stand-up in broadcast journalism?",
+      "How are news packages produced?",
+      "What is the difference between a live shot and a package?",
+      "How do field reporters prepare for a story?",
+      "What equipment does a field reporter use?"
+    ],
+    "a": "Field reporting involves gathering news outside the studio by interviewing sources, capturing b-roll footage (supplemental visuals that illustrate the story), and collecting natural sound, with reporters often working under strict deadlines to produce content for multiple newscasts throughout the day. A live shot is a real-time broadcast from a remote location where the reporter speaks directly to the anchor, demonstrating immediacy and presence at a news event, while a stand-up is a portion of a recorded package where the reporter appears on camera at the scene delivering key information or transitioning between story elements. A news package is a self-contained edited segment that combines reporter narration (track), interview soundbites (sots), natural sound, and b-roll, typically 90 seconds to 3 minutes long, that tells a complete story and can be aired in multiple newscasts once produced."
+  },
+  {
+    "q": [
+      "How do you write for broadcast news?",
+      "What is broadcast writing style?",
+      "How does broadcast writing differ from print journalism?",
+      "What is a teleprompter and how is it used?",
+      "What is voiceover technique in broadcast?",
+      "How do news anchors read from a teleprompter?",
+      "How do you interview for broadcast?"
+    ],
+    "a": "Broadcast writing style is conversational, using short sentences, active voice, and simple language meant to be heard and understood immediately, with scripts written in all-caps or sentence case depending on the station, and formatted to match the timing of video and sound elements (each second is roughly three words of spoken copy). Teleprompter use requires anchors to maintain natural eye contact, modulate vocal pitch to avoid a monotone reading style, and smoothly handle script changes during a live broadcast while cueing video and graphics. Interviewing for broadcast requires asking concise, open-ended questions that elicit quotable answers, listening actively to follow up on unexpected responses, and managing interview pacing to keep segments within strict time limits while maintaining conversational flow and extracting meaningful information from sources."
+  },
+  {
+    "q": [
+      "What is multimedia journalism?",
+      "What is podcast journalism?",
+      "How has broadcast journalism evolved with digital media?",
+      "What skills do multimedia journalists need?",
+      "What is a one-person band in broadcast journalism?",
+      "How do radio and TV journalism differ from digital platforms?",
+      "What is the future of broadcast journalism?"
+    ],
+    "a": "Multimedia journalism (also called convergence journalism) refers to journalists who work across multiple platforms — shooting video, recording audio, writing web stories, posting on social media, and appearing on air — a role known as a one-person band or backpack journalist, increasingly common as newsrooms streamline crews to reduce costs. Podcast journalism has grown dramatically as an audio-first format that combines broadcast storytelling techniques — narrative arcs, natural sound, interviews — with the flexibility of on-demand, long-form content that listeners consume via streaming platforms like Spotify and Apple Podcasts, with notable examples including Serial, The Daily, and Radiolab. The integration of broadcast and digital journalism continues to accelerate with live streaming on social platforms, short-form vertical video news for mobile audiences, interactive broadcast elements like real-time audience polling, and the emergence of streaming news channels that operate without traditional cable distribution."
+  }
+]

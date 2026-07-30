@@ -1,0 +1,60 @@
+[
+  {
+    "q": [
+      "What is veterinary public health?",
+      "What is the role of veterinarians in public health?",
+      "What is the One Health concept?",
+      "How do veterinarians contribute to global health security?",
+      "Why is veterinary medicine important for public health?",
+      "veterinary public health definition",
+      "One Health veterinary medicine",
+      "veterinarians and public health"
+    ],
+    "a": "Veterinary public health is the branch of public health focused on the application of veterinary science to protect and improve human health, encompassing zoonotic disease control, food safety, environmental health, and biomedical research. Veterinarians serve as essential frontline defenders of global health security through surveillance of emerging infectious diseases, many of which originate in animals, and by ensuring the safety of food products of animal origin. The One Health concept formally recognizes that human health, animal health, and environmental health are inextricably linked, requiring collaborative interdisciplinary approaches spanning veterinary medicine, human medicine, ecology, and public health to address complex health threats like pandemics, antimicrobial resistance, and climate change impacts."
+  },
+  {
+    "q": [
+      "What are zoonotic diseases?",
+      "How is rabies transmitted?",
+      "What is avian influenza?",
+      "What is the animal origin of COVID-19?",
+      "How does West Nile virus spread?",
+      "What is Ebola and its animal reservoir?",
+      "zoonotic diseases examples",
+      "rabies transmission",
+      "avian influenza in animals",
+      "COVID-19 origin animals"
+    ],
+    "a": "Zoonotic diseases are infections that transmit between animals and humans, accounting for approximately 60% of all infectious diseases in humans and 75% of emerging infectious diseases, including rabies (transmitted through the saliva of infected animals via bites, nearly 100% fatal once symptoms appear but entirely preventable through vaccination and post-exposure prophylaxis), avian influenza (bird flu, particularly H5N1 and H7N9 strains, that can spill over from poultry to humans causing severe respiratory illness), Ebola virus (believed to originate in fruit bats and transmit through contact with infected wildlife or bodily fluids of infected humans), West Nile virus (maintained in a bird-mosquito cycle and transmitted to humans and horses by Culex mosquitoes), and SARS-CoV-2 (the virus causing COVID-19, which genetic evidence traces to a zoonotic origin, likely from bats through an intermediate host)."
+  },
+  {
+    "q": [
+      "What is food safety from farm to fork?",
+      "What is meat inspection in veterinary medicine?",
+      "What is HACCP in food safety?",
+      "How is milk safety ensured?",
+      "What is antimicrobial resistance in animals?",
+      "What is the role of veterinarians in food safety?",
+      "food safety farm to fork",
+      "meat inspection veterinary",
+      "HACCP food safety system",
+      "antimicrobial resistance animals"
+    ],
+    "a": "Veterinarians are integral to food safety through the entire farm-to-fork continuum, beginning on farms with herd health management and judicious use of antibiotics, continuing at slaughter facilities through ante-mortem and post-mortem meat inspection to detect disease and ensure hygienic processing, and extending to retail through surveillance of foodborne pathogens like Salmonella, E. coli, and Campylobacter. Hazard Analysis and Critical Control Points (HACCP) is the systematic preventive approach used in food production that identifies potential hazards (biological, chemical, physical) and establishes critical control points for monitoring and corrective action. Antimicrobial resistance (AMR) in animals is a growing global health crisis driven by the overuse and misuse of antibiotics in livestock production, which selects for resistant bacteria that can spread to humans through food, direct contact, or environmental contamination, prompting WHO and OIE guidelines for responsible antibiotic use and the phasing out of growth-promoting antibiotics."
+  },
+  {
+    "q": [
+      "What is disease surveillance in animals?",
+      "What is veterinary epidemiology?",
+      "How are outbreaks investigated in veterinary medicine?",
+      "What is the World Organisation for Animal Health (OIE)?",
+      "How does climate change affect animal health?",
+      "What are international health regulations for animal diseases?",
+      "veterinary disease surveillance",
+      "veterinary epidemiology outbreak investigation",
+      "WOAH OIE animal health",
+      "climate change and animal health"
+    ],
+    "a": "Veterinary epidemiology applies epidemiological principles to animal populations to study disease patterns, identify risk factors, design surveillance systems, and evaluate interventions for disease control and eradication at the local, national, and global levels. The World Organisation for Animal Health (WOAH, formerly OIE) is the intergovernmental organization that sets international standards for animal health and zoonotic disease control, including the Terrestrial Animal Health Code, notification requirements for 118 listed diseases, and guidelines for safe international trade of animals and animal products. Climate change increasingly impacts animal health by altering the geographic range of vector-borne diseases (such as bluetongue virus and African swine fever expanding into previously cooler regions), causing heat stress in livestock that reduces productivity and welfare, and disrupting ecosystems in ways that favor disease emergence at the human-animal-environment interface."
+  }
+]

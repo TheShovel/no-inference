@@ -1,0 +1,46 @@
+[
+  {
+    "q": [
+      "What is the mobile gaming market?",
+      "How big is the mobile gaming industry?",
+      "What are the most popular mobile games?",
+      "Tell me about mobile game revenue and monetization.",
+      "How does mobile gaming compare to console and PC gaming?",
+      "What drives the growth of the mobile gaming market?"
+    ],
+    "a": "The mobile gaming market is the largest segment of the global gaming industry, generating over $90 billion in annual revenue and accounting for roughly half of all gaming revenue worldwide, driven by the ubiquity of smartphones and low barriers to entry. Mobile games span every genre, from casual puzzle games like Candy Crush Saga and hyper-casual games with simple one-tap mechanics to deep role-playing games like Genshin Impact and competitive battle royale titles like PUBG Mobile and Call of Duty Mobile. The market is particularly dominant in Asia, where countries like China, Japan, and South Korea represent the largest mobile gaming audiences, and emerging markets like India and Brazil are experiencing rapid growth as smartphone adoption increases."
+  },
+  {
+    "q": [
+      "What is the free-to-play model in mobile gaming?",
+      "How do free-to-play mobile games make money?",
+      "What are in-app purchases in mobile games?",
+      "What is the difference between free-to-play and premium mobile games?",
+      "How do mobile games monetize through microtransactions?",
+      "What are the ethics of free-to-play mobile game design?"
+    ],
+    "a": "Free-to-play (F2P) is the dominant business model in mobile gaming, where the game is downloaded for free and generates revenue through in-app purchases such as virtual currency, cosmetic items, power-ups, and battle passes, with a small percentage of players — typically 2-5% — accounting for the vast majority of spending. Game designers employ engagement optimization techniques including daily login rewards, limited-time events, and energy systems that require waiting or paying to continue playing, all calibrated to maximize player retention and conversion to paying users. The model has been criticized for employing manipulative design patterns — sometimes called 'dark patterns' — that encourage compulsive spending, particularly in games targeting children, leading to regulatory scrutiny and calls for greater consumer protections around loot boxes and predatory monetization."
+  },
+  {
+    "q": [
+      "What are hyper-casual games?",
+      "Tell me about the hyper-casual mobile game genre.",
+      "How do hyper-casual games become viral hits?",
+      "What makes hyper-casual games different from other mobile games?",
+      "How are hyper-casual games monetized?",
+      "What are some examples of successful hyper-casual games?"
+    ],
+    "a": "Hyper-casual games are extremely simple, instantly playable mobile games characterized by one-tap controls, minimalistic graphics, short 30-60 second play sessions, and addictive loop-based mechanics — examples include Flappy Bird, Crossy Road, and Helix Jump. Their business model relies almost entirely on advertising revenue, particularly rewarded video ads that offer in-game benefits in exchange for watching ads and interstitial ads between sessions, rather than in-app purchases. Hyper-casual developers prioritize rapid prototyping and data-driven testing, often releasing dozens of game concepts to find a single hit, then scaling user acquisition through aggressive ad campaigns optimized for low cost-per-install and high ad revenue."
+  },
+  {
+    "q": [
+      "What is mobile esports?",
+      "How do competitive mobile games work in esports?",
+      "What are the biggest mobile esports games and tournaments?",
+      "How does mobile esports differ from PC/console esports?",
+      "What is the future of competitive mobile gaming?",
+      "Tell me about the mobile esports ecosystem."
+    ],
+    "a": "Mobile esports have grown into a billion-dollar ecosystem, led by titles like PUBG Mobile (with its PMGC world championship offering multi-million dollar prize pools), Call of Duty Mobile, Mobile Legends: Bang Bang (particularly dominant in Southeast Asia), and Free Fire which has massive popularity in Latin America and India. Mobile esports differ from PC and console esports in their accessibility — anyone with a smartphone can compete — and their shorter, more fast-paced match formats designed for mobile play sessions. The mobile esports audience has surpassed PC esports viewership in many regions, particularly in Asia and developing markets where smartphones are the primary gaming device, with major brands and streaming platforms investing heavily in mobile esports tournaments and content."
+  }
+]

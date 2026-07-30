@@ -1,0 +1,51 @@
+[
+  {
+    "q": [
+      "What causes ocean tides?",
+      "What is the difference between spring tides and neap tides?",
+      "What is tidal range and why does it vary by location?",
+      "How do the moon and sun affect tides?",
+      "What are diurnal, semidiurnal, and mixed tides?",
+      "How do tides affect marine navigation?",
+      "tide causes spring neap tidal range diurnal semidiurnal moon sun gravity"
+    ],
+    "a": "Tides are the periodic rise and fall of sea level caused primarily by the moon's gravitational pull and secondarily by the sun's, with the moon exerting about twice the tidal force of the sun due to its proximity to Earth. Spring tides occur when the sun, moon, and Earth are aligned at new and full moons, producing the highest high tides and lowest low tides with maximum tidal range, while neap tides occur when the sun and moon are at right angles during quarter moons, producing the smallest tidal range. Tidal patterns vary by location: semidiurnal tides (two nearly equal highs and lows each day, common on the US East Coast), diurnal tides (one high and one low each day, common in the Gulf of Mexico), and mixed tides (two highs and lows of unequal height, common on the US West Coast), with extreme ranges exceeding 15 meters in places like Canada's Bay of Fundy."
+  },
+  {
+    "q": [
+      "How are tide tables created and used?",
+      "What are tidal stream atlases?",
+      "What are tidal diamonds on nautical charts?",
+      "How do you calculate tidal height for a specific time?",
+      "What is the rule of twelfths for tides?",
+      "How do you predict tidal currents for navigation?",
+      "tide tables tidal stream atlases tidal diamonds rule of twelfths secondary port"
+    ],
+    "a": "Tide tables provide predicted times and heights of high and low water for standard ports, published annually by national hydrographic offices, and navigators apply secondary port corrections (time and height differences) to calculate tides for any location. Tidal stream atlases show the direction and speed of tidal currents at successive hours relative to high water at a reference port, plotted as arrows on charts with rates in knots, which is essential for planning passages through tidal gates and past hazardous headlands. The rule of twelfths approximates the tidal curve between high and low water: the tide rises or falls by 1/12 of the range in the first hour, 2/12 in the second, 3/12 in the third, 3/12 in the fourth, 2/12 in the fifth, and 1/12 in the sixth, enabling quick depth calculations without reference to tables."
+  },
+  {
+    "q": [
+      "What drives the major ocean currents?",
+      "How do ocean gyres form?",
+      "What is the difference between surface and deep ocean currents?",
+      "What are the five major ocean gyres?",
+      "What is the Antarctic Circumpolar Current?",
+      "What is upwelling and where does it occur?",
+      "How do ocean currents affect global shipping routes?",
+      "gyres Gulf Stream Kuroshio Antarctic Circumpolar Current thermohaline upwelling"
+    ],
+    "a": "Ocean currents are driven by wind friction, the Coriolis effect, and the shape of ocean basins, forming large rotating systems called gyres in each major ocean basin: the North Atlantic Gyre (Gulf Stream, North Atlantic Current, Canary Current), South Atlantic Gyre (Brazil Current, Benguela Current), North Pacific Gyre (Kuroshio, North Pacific Current, California Current), South Pacific Gyre (East Australian Current, Peru/Humboldt Current), and Indian Ocean Gyre (Agulhas Current, West Australian Current, Somali Current). The Antarctic Circumpolar Current (West Wind Drift) flows eastward around Antarctica without land barriers, connecting all three major oceans and playing a vital role in global climate and ocean circulation. Upwelling occurs when winds push surface water away from coastlines, allowing cold, nutrient-rich water to rise from depth, creating productive fishing grounds along the west coasts of continents such as California, Peru, and Namibia."
+  },
+  {
+    "q": [
+      "What are tidal gates and how do you plan for them?",
+      "How do you calculate under-keel clearance in tidal waters?",
+      "How do tides affect harbor entry and departure?",
+      "What is a tidal window for navigation?",
+      "What are overfalls and tide rips?",
+      "How do you plan anchorages considering tides?",
+      "tidal gate under-keel clearance overfalls tide rips tidal window UKC"
+    ],
+    "a": "Tidal gates are constricted channels where tidal streams run strongly, creating narrow time windows when the current is slack or favorable—navigators must time their arrival precisely to avoid being swept into danger or unable to make headway. Under-keel clearance (UKC) calculations require adding the height of tide at the transit time to the charted depth, then subtracting the vessel's draft, which allows deep-draft ships to schedule departures and arrivals around high water when greatest clearance is available. Overfalls and tide rips are dangerous turbulent conditions created when tidal streams flow against the wind or over irregular seabed, forming breaking waves and strong eddies that can be hazardous to small vessels, and experienced navigators use tidal stream atlases to avoid these areas during maximum tidal flow."
+  }
+]

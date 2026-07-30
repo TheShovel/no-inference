@@ -1,0 +1,69 @@
+[
+  {
+    "q": [
+      "What is geomorphology?",
+      "What is weathering?",
+      "What are the types of weathering?",
+      "What is physical weathering?",
+      "What is chemical weathering?",
+      "What is biological weathering?",
+      "How do rocks break down?",
+      "geomorphology definition",
+      "types of weathering",
+      "physical vs chemical weathering"
+    ],
+    "a": "Geomorphology is the scientific study of landforms and the processes that shape them, including weathering, erosion, deposition, and tectonic activity that create and modify Earth's surface features over time. Physical (mechanical) weathering breaks rocks into smaller pieces without changing their chemical composition, through processes including frost wedging (water freezing and expanding in cracks), thermal expansion (daily temperature changes in deserts), exfoliation (pressure release as overlying rock erodes away), and salt crystal growth in porous rocks. Chemical weathering alters the chemical composition of minerals through reactions with water, oxygen (oxidation, creating rust in iron-bearing minerals), carbonic acid (dissolving limestone and marble in karst landscapes), and hydrolysis (transforming feldspar into clay minerals). Biological weathering involves living organisms—tree roots growing into cracks, burrowing animals, lichen secreting acids—that break down rocks physically and chemically."
+  },
+  {
+    "q": [
+      "What are the different types of erosion?",
+      "How does water erosion work?",
+      "How does wind erosion work?",
+      "How does glacial erosion work?",
+      "How does gravity cause erosion?",
+      "What is mass wasting?",
+      "erosion types",
+      "water erosion",
+      "wind erosion",
+      "glacial erosion",
+      "mass wasting"
+    ],
+    "a": "Water erosion is the most widespread erosion type, progressing from sheet erosion (thin layer of soil removed by rainfall runoff) to rill erosion (small channels), gully erosion (deep, steep-sided channels), and stream channel erosion (rivers cutting and transporting sediment). Wind erosion dominates arid regions through deflation (lifting and removing loose particles) and abrasion (sandblasting rock surfaces), creating features like desert pavements, yardangs (streamlined ridges), and ventifacts (wind-faceted stones). Glacial erosion occurs as moving ice plucks rock fragments from the bed and grinds them against the underlying surface, producing U-shaped valleys, cirques, arêtes, horn peaks, and striated (scratched) bedrock. Mass wasting is the downslope movement of rock and soil under gravity, ranging from slow soil creep (<1 cm/year) to rapid landslides, rockfalls, debris flows, and slumps, often triggered by heavy rainfall, earthquakes, or human activity."
+  },
+  {
+    "q": [
+      "What are the main types of landforms?",
+      "How do mountains form?",
+      "How do valleys form?",
+      "What are plateaus?",
+      "What are plains?",
+      "What are hills?",
+      "What are deserts?",
+      "What are coastal landforms?",
+      "types of landforms",
+      "mountain formation",
+      "valley types",
+      "desert landforms",
+      "coastal landforms"
+    ],
+    "a": "Landforms are categorized by their morphology and origin: mountains (rising over 300 m above surroundings, formed by plate convergence—fold mountains like the Himalayas, volcanic mountains like Fuji, and fault-block mountains like the Sierra Nevada), valleys (elongated depressions—V-shaped river valleys, flat-floored glacial valleys, and steep-sided canyons), plateaus (elevated flat areas like the Colorado Plateau), and plains (flat lowlands like the Great Plains). Desert landforms include sand dunes (barchan, transverse, star, and parabolic shapes), playas (dry lake beds), alluvial fans (fan-shaped deposits at mountain fronts), mesas and buttes (flat-topped erosional remnants), and wadis (dry ephemeral riverbeds). Coastal landforms encompass beaches, spits, barrier islands, sea stacks, sea arches, wave-cut platforms, cliffs, estuaries, and deltas (like the Mississippi and Nile deltas), shaped by wave action, tides, currents, and sea-level changes."
+  },
+  {
+    "q": [
+      "What are river systems and drainage basins?",
+      "How do rivers shape landscapes?",
+      "What is a drainage basin?",
+      "What are the different drainage patterns?",
+      "What are glacial landforms?",
+      "What is karst topography?",
+      "What is landscape evolution?",
+      "How do humans impact landscapes?",
+      "river systems",
+      "drainage basins",
+      "glacial landforms",
+      "karst topography",
+      "human impact on landscapes"
+    ],
+    "a": "River systems consist of a drainage basin (watershed) where precipitation collects and flows through a network of streams—from headwaters with steep gradients, waterfalls, and rapids, through transfer zones with meandering channels and floodplains, to depositional zones with deltas and alluvial fans. Drainage patterns reveal underlying geology: dendritic (tree-like, uniform substrate), trellis (folded sedimentary rocks), rectangular (faulted jointed rocks), radial (volcanic peaks), and parallel (steep slopes). Glacial landforms include erosional features (U-shaped valleys, hanging valleys with waterfalls, cirques, tarns, fjords) and depositional features (moraines, drumlins, eskers, kames, and glacial erratic boulders transported far from their source). Karst topography forms in soluble bedrock (limestone, dolomite, gypsum) through chemical weathering, creating sinkholes (dolines), disappearing streams, cave systems with stalactites and stalagmites, and large springs, with famous karst regions including Mammoth Cave (Kentucky), the Yucatán Peninsula cenotes, and the karst towers of Guilin, China. Human activities—deforestation, agriculture, mining, urbanization, dam construction, and coastal engineering—have become dominant geomorphic agents, accelerating erosion rates, modifying river courses, triggering landslides, and altering sediment transport to coasts on a scale rivaling natural geological processes."
+  }
+]

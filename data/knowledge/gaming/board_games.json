@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What are the most classic board games?",
+      "Tell me about Chess, Go, Monopoly, and Scrabble.",
+      "How old are classic board games like Chess and Go?",
+      "What is the history of Chess and Go?",
+      "Describe classic board games and their origins.",
+      "How do classic board games differ from modern ones?",
+      "chess",
+      "what is chess",
+      "chess game",
+      "chess rules"
+    ],
+    "a": "Classic board games span thousands of years, from ancient strategy games like Chess (originating in 6th century India as Chaturanga) and Go (developed in ancient China over 2,500 years ago) to more modern classics like Monopoly (1935) and Scrabble (1938). Chess and Go are abstract strategy games with perfect information and no luck elements, revered for their immense strategic depth and competitive play. Monopoly, despite its reputation for long playtimes and player elimination, became the best-selling commercially published board game of the 20th century, while Scrabble combined vocabulary skill with spatial tile-placement strategy."
+  },
+  {
+    "q": [
+      "What are modern board games and the Eurogame movement?",
+      "Tell me about Settlers of Catan, Ticket to Ride, and Pandemic.",
+      "How did German-style board games change the industry?",
+      "What defines a modern board game versus a classic one?",
+      "Describe the board game renaissance of the 1990s and 2000s.",
+      "What is the difference between American-style and Euro-style board games?"
+    ],
+    "a": "The modern board game renaissance began with The Settlers of Catan (1995), a German-style game that emphasized resource trading, modular boards, and strategy over luck, introducing millions to a new approach to tabletop gaming. Ticket to Ride (2004) simplified route-building into an accessible family game, while Pandemic (2008) pioneered cooperative play where all players win or lose together against the game itself. These games, along with classics like Carcassonne and Puerto Rico, defined the Eurogame movement characterized by elegant mechanics, minimal player elimination, and victory points as the primary win condition."
+  },
+  {
+    "q": [
+      "What are the most popular card games?",
+      "Tell me about trading card games like Magic: The Gathering.",
+      "How do deck-building games work?",
+      "Describe collectible card games and their history.",
+      "What is the difference between a deck-building and a trading card game?",
+      "What are the most successful card game franchises?"
+    ],
+    "a": "Card games range from traditional playing card games like Poker and Bridge to modern collectible card games (CCGs) and deck-building games. Magic: The Gathering (1993) created the CCG genre, introducing trading card packs, rarity systems, and tournament play that spawned a multi-billion-dollar industry. Dominion (2008) pioneered the deck-building genre where players construct their decks during play rather than before, a mechanic later adapted in games like Clank! and the popular cooperative card game The Crew."
+  },
+  {
+    "q": [
+      "What are tabletop RPGs like Dungeons & Dragons?",
+      "Tell me about Dungeons & Dragons and other tabletop role-playing games.",
+      "How do tabletop RPGs work?",
+      "What is the difference between a tabletop RPG and a board game?",
+      "Describe the history and impact of Dungeons & Dragons.",
+      "What is a Dungeon Master and how do RPG campaigns work?"
+    ],
+    "a": "Tabletop role-playing games (TTRPGs) like Dungeons & Dragons (1974) are collaborative storytelling games where players assume character roles and navigate narratives guided by a Game Master (or Dungeon Master) who controls the world, non-player characters, and challenges. Unlike board games with fixed rules and win conditions, TTRPGs emphasize open-ended creativity, character development, and shared storytelling, using dice rolls and rule systems to resolve uncertain outcomes. D&D has experienced a massive resurgence since the release of its 5th edition in 2014 and the rise of actual-play podcasts and streaming shows like Critical Role."
+  }
+]

@@ -6,9 +6,11 @@
       "climate change explained",
       "what causes climate change",
       "greenhouse effect",
-      "climate change solutions"
+      "climate change solutions",
+      "what is the greenhouse effect",
+      "explain climate change"
     ],
-    "a": "Information about climate change."
+    "a": "Climate change refers to long-term shifts in global temperatures and weather patterns, primarily driven by human activities that increase greenhouse gas concentrations in the atmosphere. The burning of fossil fuels, deforestation, and industrial agriculture release carbon dioxide, methane, and nitrous oxide that trap heat through the greenhouse effect. Consequences include rising global temperatures, more frequent extreme weather events, sea level rise, and disruptions to ecosystems and agriculture. The greenhouse effect is the natural process where certain atmospheric gases trap heat radiating from Earth's surface — without it, the planet would be too cold for life, but human activities have dramatically amplified this effect, leading to global warming and climate disruption."
   },
   {
     "q": [
@@ -16,9 +18,10 @@
       "hydrologic cycle",
       "how does the water cycle work",
       "water cycle explained",
-      "evaporation condensation precipitation"
+      "evaporation condensation precipitation",
+      "what is the water cycle"
     ],
-    "a": "Information about water cycle."
+    "a": "The water cycle, also known as the hydrologic cycle, is the continuous movement of water through Earth's atmosphere, land, and oceans. Water evaporates from oceans, lakes, and rivers due to solar energy, rises into the atmosphere where it cools and condenses into clouds, and then falls back to Earth as precipitation (rain, snow, sleet, or hail). Some precipitation infiltrates into the ground to become groundwater, while some flows over land as runoff back into water bodies. Plants also release water vapor through transpiration. This cycle is essential for distributing fresh water across the planet and sustaining all terrestrial life."
   },
   {
     "q": [
@@ -27,8 +30,11 @@
       "ecosystem",
       "what is a food chain",
       "trophic levels",
-      "producers consumers decomposers"
+      "producers consumers decomposers",
+      "what is an ecosystem",
+      "explain ecosystem",
+      "what is a food web"
     ],
-    "a": "Information about food chain."
+    "a": "An ecosystem is a community of living organisms interacting with their physical environment as a functional unit. Within ecosystems, energy flows through food chains and food webs. A food chain is a linear sequence showing who eats whom — from producers (plants, algae) that capture solar energy, to primary consumers (herbivores), secondary consumers (carnivores), and decomposers that break down organic matter. A food web is a more realistic, interconnected network of multiple food chains showing the complex feeding relationships in an ecosystem. Only about 10% of energy transfers between each trophic level, which limits how many links a food chain can have."
   }
 ]

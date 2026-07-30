@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What is statistics?",
+      "Define statistics as a field of study",
+      "What does statistics involve?",
+      "Why is statistics important in data analysis?",
+      "What is the difference between descriptive and inferential statistics?"
+    ],
+    "a": "Statistics is the science of collecting, organizing, analyzing, interpreting, and presenting data to make informed decisions and draw conclusions. It is broadly divided into descriptive statistics (summarizing data through measures like mean and graphs) and inferential statistics (using sample data to make predictions or test hypotheses about a larger population). Statistics underpins modern scientific research, business analytics, public policy, machine learning, and quality control."
+  },
+  {
+    "q": [
+      "What is the difference between mean, median, and mode?",
+      "How do you calculate the mean?",
+      "What is the median in statistics?",
+      "What does the mode represent in a data set?",
+      "When should you use median instead of mean?"
+    ],
+    "a": "Mean, median, and mode are measures of central tendency that describe the center of a data set. The mean is the arithmetic average (sum of values divided by count), the median is the middle value when data is sorted (or the average of the two middle values for even counts), and the mode is the most frequently occurring value. The median is preferred over the mean when data contains outliers or is skewed, since the mean can be heavily distorted by extreme values while the median remains robust."
+  },
+  {
+    "q": [
+      "What is standard deviation?",
+      "How do you interpret standard deviation?",
+      "What is the formula for standard deviation?",
+      "What does a large standard deviation indicate?",
+      "How is standard deviation related to variance?"
+    ],
+    "a": "Standard deviation measures the spread or dispersion of a data set around its mean, calculated as the square root of the variance (the average of squared deviations from the mean). A small standard deviation indicates data points cluster tightly around the mean, while a large one indicates they are spread out over a wider range. In a normal distribution, roughly 68% of values lie within one standard deviation of the mean, 95% within two, and 99.7% within three."
+  },
+  {
+    "q": [
+      "What is probability in statistics?",
+      "How is probability defined mathematically?",
+      "What is the difference between theoretical and experimental probability?",
+      "What are the basic rules of probability?",
+      "What does it mean for two events to be independent?"
+    ],
+    "a": "Probability quantifies the likelihood of an event occurring, expressed as a number between 0 (impossible) and 1 (certain). Theoretical probability is based on reasoning about the possible outcomes (e.g., rolling a 3 on a fair die has probability 1/6), while experimental probability is based on observed data from actual trials. Key rules include the addition rule (for the probability of A or B occurring), the multiplication rule (for the probability of A and B both occurring), and the concept of independence, where the occurrence of one event does not affect the probability of another."
+  },
+  {
+    "q": [
+      "What is a probability distribution?",
+      "What are common types of probability distributions?",
+      "What is a normal distribution?",
+      "What is the difference between discrete and continuous distributions?",
+      "Give examples of probability distributions in real life"
+    ],
+    "a": "A probability distribution describes the likelihood of different outcomes for a random variable. Discrete distributions (e.g., binomial and Poisson) apply to countable outcomes like the number of heads in coin flips, while continuous distributions (e.g., normal and exponential) apply to measurable outcomes like height or time. The normal (Gaussian) distribution is the most important, with its symmetric bell shape appearing naturally in many phenomena due to the Central Limit Theorem, which states that sample means tend toward normality regardless of the original population distribution."
+  },
+  {
+    "q": [
+      "What is hypothesis testing in statistics?",
+      "How does hypothesis testing work?",
+      "What are the null and alternative hypotheses?",
+      "What is a p-value?",
+      "What are Type I and Type II errors?"
+    ],
+    "a": "Hypothesis testing is a statistical method for making decisions using data, where a null hypothesis (H₀, representing no effect or status quo) is tested against an alternative hypothesis (H₁, representing the effect being investigated). The p-value measures the probability of observing results at least as extreme as those in the data, assuming the null hypothesis is true; a p-value below a chosen significance level (typically 0.05) leads to rejecting H₀. A Type I error is rejecting a true null hypothesis (false positive), while a Type II error is failing to reject a false null hypothesis (false negative)."
+  }
+]

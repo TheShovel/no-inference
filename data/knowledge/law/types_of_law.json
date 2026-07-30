@@ -1,0 +1,57 @@
+[
+  {
+    "q": [
+      "What is criminal law?",
+      "Tell me about criminal law and how it differs from civil law.",
+      "How are criminal offenses classified?",
+      "What is the burden of proof in criminal cases?",
+      "Describe the difference between felonies and misdemeanors.",
+      "What are the elements of a crime?"
+    ],
+    "a": "Criminal law defines conduct prohibited by the state because it threatens public safety, welfare, or order, and prescribes punishment for those convicted. Crimes are typically classified as felonies (serious offenses like murder, robbery, and drug trafficking carrying prison terms over one year) or misdemeanors (lesser offenses like petty theft or disorderly conduct with lighter penalties). In criminal cases, the prosecution must prove guilt \"beyond a reasonable doubt,\" the highest standard of proof in the legal system, reflecting the severe consequences including imprisonment, fines, and loss of certain rights."
+  },
+  {
+    "q": [
+      "What is contract law?",
+      "Tell me about contract law and how agreements are enforced.",
+      "What are the essential elements of a valid contract?",
+      "How are contracts formed and what makes them binding?",
+      "What happens when a contract is breached?",
+      "Describe the difference between express and implied contracts."
+    ],
+    "a": "Contract law governs legally enforceable agreements between parties, providing the framework for commercial transactions, employment relationships, and countless everyday arrangements. A valid contract requires offer, acceptance, consideration (something of value exchanged), mutual assent, capacity of the parties, and a lawful purpose. When a contract is breached, the non-breaching party may seek remedies including damages (monetary compensation), specific performance (court-ordered completion of the contractual duty), or rescission (cancellation restoring both parties to their pre-contract positions)."
+  },
+  {
+    "q": [
+      "What is tort law?",
+      "Tell me about tort law and personal injury claims.",
+      "What is the difference between a tort and a crime?",
+      "How do negligence lawsuits work?",
+      "What are intentional torts and strict liability?",
+      "Describe the elements of a negligence claim."
+    ],
+    "a": "Tort law addresses civil wrongs that cause harm or loss to individuals, allowing injured parties to seek compensation through lawsuits even when no criminal charge is filed. Tort claims fall into three categories: intentional torts (assault, battery, defamation, trespass), negligence (failure to exercise reasonable care causing injury, requiring proof of duty, breach, causation, and damages), and strict liability (liability without proof of fault, typically applied to abnormally dangerous activities or defective products). Unlike criminal law which punishes wrongdoing, tort law primarily aims to compensate victims and deter future harmful conduct."
+  },
+  {
+    "q": [
+      "What is constitutional law?",
+      "Tell me about constitutional law and its importance.",
+      "How does constitutional law limit government power?",
+      "What is judicial review in constitutional law?",
+      "Describe the role of constitutional law in protecting rights.",
+      "What are landmark constitutional law cases?"
+    ],
+    "a": "Constitutional law establishes the fundamental principles by which a government operates, defining the structure of government, distributing powers among branches, and protecting individual rights against state overreach. Constitutions can be written (like the United States Constitution) or partly unwritten (like the United Kingdom's uncodified constitutional arrangements), and typically establish mechanisms like separation of powers, federalism, and judicial review. Constitutional law evolves through amendments, judicial interpretation, and changing social norms, with courts often serving as arbiters of constitutional disputes and guardians of fundamental rights."
+  },
+  {
+    "q": [
+      "What is intellectual property law?",
+      "Tell me about copyright, patent, and trademark law.",
+      "How does intellectual property law protect creators and inventors?",
+      "What is the difference between copyright and patent protection?",
+      "How do trademarks and trade secrets work?",
+      "Describe the types of intellectual property protection."
+    ],
+    "a": "Intellectual property (IP) law grants creators and inventors exclusive rights to their intangible creations, balancing incentives for innovation with public access to knowledge and culture. Patents protect inventions and discoveries for a limited period (typically 20 years) in exchange for public disclosure, while copyright protects original creative works of authorship (literature, music, art, software) for the author's lifetime plus extended terms (70 years in many jurisdictions). Trademarks protect brand identifiers like names, logos, and slogans that distinguish goods in the marketplace, and trade secrets protect confidential business information through non-disclosure agreements and security measures rather than public registration."
+  }
+]

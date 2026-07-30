@@ -1,0 +1,41 @@
+[
+  {
+    "q": [
+      "What is the mathematics behind origami?",
+      "What are the geometric principles of origami?",
+      "How is origami related to geometry?",
+      "What is the Huzita-Hatori axiom system?",
+      "What are the origami axioms?",
+      "How does origami relate to mathematics?",
+      "What mathematical concepts are used in origami design?",
+      "What is the connection between origami and geometry?"
+    ],
+    "a": "Origami is deeply mathematical, governed by geometric constraints that emerge from the physics of folding a flat sheet. The Huzita-Hatori axioms, the most complete known set of origami folding operations, describe seven fundamental ways to create a single crease by aligning points, lines, or combinations of both—these axioms demonstrate that origami is more powerful than straightedge-and-compass geometry, capable of solving cubic equations and trisecting angles that are impossible with classical Euclidean tools. Key principles include Kawasaki's theorem (for a flat-foldable vertex, the sum of alternating angles must be 180 degrees), Maekawa's theorem (the difference between mountain and valley folds at any flat vertex is always 2), and the concept of flat-foldable crease patterns which require that every interior vertex satisfies specific parity and angle conditions, forming the theoretical backbone of all origami design."
+  },
+  {
+    "q": [
+      "What is a crease pattern in origami?",
+      "What is circle packing in origami design?",
+      "What is box-pleating in origami?",
+      "How do origami designers use mathematics to create models?",
+      "What is the tree method in origami?",
+      "How does Robert Lang use mathematics in origami?",
+      "What is a flap in origami design?",
+      "How are crease patterns used in complex origami?"
+    ],
+    "a": "Crease patterns (CPs) are compact diagrams showing every crease in a model's folded state as a two-dimensional plan, used by advanced designers to represent complex designs more efficiently than step-by-step diagrams. Circle packing is a fundamental design technique where non-overlapping circles are arranged on a square, each circle representing a flap or appendage, with the circle's radius determining the flap's length and the packing arrangement solving the problem of allocating paper area efficiently. Box-pleating is a related technique using a grid of right-angle folds that create rectangular flaps, prized for its symmetry and ease of design, while the tree method (implemented in Lang's TreeMaker software) represents a model as a stick figure and mathematically computes the optimal crease pattern that produces exactly those appendages in the correct proportions, effectively automating the first stage of complex origami design."
+  },
+  {
+    "q": [
+      "What are the engineering applications of origami?",
+      "How is origami used in space exploration?",
+      "What is origami engineering?",
+      "How is origami used in medical devices?",
+      "What is the NASA origami solar array?",
+      "How is origami used in airbag design?",
+      "What is origami-inspired engineering?",
+      "What are real-world applications of origami mathematics?"
+    ],
+    "a": "Origami mathematics has inspired numerous engineering applications where compact deployment and structural stability are critical. NASA and the Jet Propulsion Laboratory have developed origami-inspired solar arrays and telescope sunshields that fold into compact launch configurations and deploy in space without motors; the Starshade concept uses an origami-pattern occulter to block starlight for exoplanet imaging. Medical applications include folding stents that expand inside arteries, surgical grippers inspired by the waterbomb base, and DNA origami where nanoscale sheets self-assemble into targeted shapes for drug delivery. In automotive safety, airbag folding patterns optimized using origami principles ensure rapid, controlled deployment, while civil engineers study origami tessellations for deployable emergency shelters, retractable roofs, and earthquake-resistant building panels that absorb energy through controlled folding."
+  }
+]

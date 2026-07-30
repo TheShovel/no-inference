@@ -1,0 +1,67 @@
+[
+  {
+    "q": [
+      "What is the history of weaving?",
+      "How old is weaving?",
+      "When did humans start weaving?",
+      "What is the oldest evidence of weaving?",
+      "How did ancient people weave?",
+      "What is the history of textile production?",
+      "How has weaving evolved over time?",
+      "What cultures developed weaving independently?"
+    ],
+    "a": "Weaving is one of humanity's oldest crafts, with evidence of woven textiles dating back over 27,000 years — impressions of woven cloth have been found on clay fragments from the Paleolithic era in the Czech Republic. Ancient civilizations independently developed weaving: the Egyptians produced fine linen from flax as early as 5000 BCE, the Andean cultures (Inca, Paracas, Nazca) wove extraordinary cotton and alpaca textiles by 3000 BCE, the Chinese developed silk weaving by 2700 BCE, and the Indus Valley civilization wove cotton and wool around 2500 BCE. These early textiles served not only as clothing but as currency, status markers, ceremonial objects, and cultural records, with weaving techniques and patterns passed down through generations as treasured cultural knowledge."
+  },
+  {
+    "q": [
+      "What was the Industrial Revolution in weaving?",
+      "Who invented the power loom?",
+      "What is the Jacquard loom?",
+      "Who was Edmund Cartwright?",
+      "What is the flying shuttle?",
+      "Who invented the spinning jenny?",
+      "How did the Industrial Revolution change weaving?",
+      "What is the history of mechanized weaving?"
+    ],
+    "a": "The Industrial Revolution transformed weaving through a series of innovations: John Kay's flying shuttle (1733) doubled weaving speed and allowed wider cloth, James Hargreaves' spinning jenny (1764) multiplied yarn production, Richard Arkwright's water frame (1769) produced strong cotton warp yarn, and Edmund Cartwright's power loom (1785) mechanized the entire weaving process. The Jacquard loom (1804), invented by Joseph Marie Jacquard, used a system of punched cards to control individual warp threads, allowing automatic pattern weaving — this punch-card system directly inspired Charles Babbage's Analytical Engine and the development of computer programming. These mechanized looms centralized textile production in factories, dramatically reduced the cost of cloth, and fundamentally reshaped global economics, trade, and labor patterns."
+  },
+  {
+    "q": [
+      "What is the history of the handloom?",
+      "What is traditional handloom weaving?",
+      "What cultures have famous handloom traditions?",
+      "What is Indian handloom weaving?",
+      "What is Peruvian weaving?",
+      "What is Guatemalan weaving?",
+      "What is West African strip weaving?",
+      "What are famous world weaving traditions?"
+    ],
+    "a": "Traditional handloom weaving continues as a vital craft and cultural practice around the world: India's handloom sector employs millions, producing iconic textiles like Banarasi silk brocade, Kanchipuram silk sarees, Pashmina shawls, and Ikat patterns from Odisha and Telangana. Guatemala and Chiapas, Mexico, are known for vibrant backstrap loom weaving using pre-Columbian patterns, where Maya women weave huipiles (traditional blouses) and textiles whose patterns encode community identity, marital status, and spiritual beliefs. West African strip weaving — practiced by the Ashanti, Ewe, Yoruba, and other groups — produces Kente cloth, narrow strips woven on horizontal looms and hand-sewn together into brilliantly colored, symbol-rich cloth whose patterns have specific names and meanings passed down through generations."
+  },
+  {
+    "q": [
+      "What is the history of the spinning wheel?",
+      "What is spinning in textile production?",
+      "What is the drop spindle?",
+      "How did people make yarn before machines?",
+      "What is the history of fiber preparation?",
+      "How is yarn made for weaving?",
+      "What is handspinning?",
+      "What is the difference between spinning and weaving?"
+    ],
+    "a": "Before mechanization, all yarn for weaving was produced by hand using drop spindles (the oldest spinning tool, dating back 10,000+ years and still used by traditional spinners today) or spinning wheels (invented in India or China around 500-1000 CE and spread to Europe by the Middle Ages). The spinning process draws out fibers (drafting) and twists them together to create continuous yarn, with the amount of twist determining the yarn's strength, texture, and suitability for warp or weft. Different preparatory processes — carding (aligning fibers for woolen spinning), combing (removing short fibers for worsted spinning), retting (rotting flax stems to extract linen fibers), and ginning (removing seeds from cotton) — produce fibers with specific qualities that directly affect the woven fabric's final characteristics."
+  },
+  {
+    "q": [
+      "What is the history of the loom?",
+      "What were ancient looms like?",
+      "What is warp-weighted loom?",
+      "What is a vertical loom?",
+      "What is a horizontal loom?",
+      "How did looms develop through history?",
+      "What is the evolution of loom technology?",
+      "What were the earliest looms?"
+    ],
+    "a": "The earliest looms were simple frames — the backstrap loom (still used in the Andes, Central America, and Southeast Asia) uses the weaver's body to provide tension, while the warp-weighted loom (used by ancient Greeks, Romans, and Vikings) used clay or stone weights to tension warp threads from an upper beam. The horizontal ground loom was developed in Egypt around 4000 BCE and spread across Africa and the Middle East, while the vertical two-beam loom appeared in Europe during the Roman period and remained the standard for medieval tapestry weaving. The treadle loom (with foot pedals for hands-free shed changing) emerged in Europe around the 11th-13th centuries, dramatically increasing weaving speed and allowing wider fabric production, and remained the dominant handloom design through the Industrial Revolution."
+  }
+]

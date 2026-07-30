@@ -1,0 +1,57 @@
+[
+  {
+    "q": [
+      "What is social stratification?",
+      "How do systems of social stratification differ?",
+      "What are the main types of stratification systems?",
+      "Why does social stratification exist in societies?",
+      "What is the difference between open and closed stratification systems?",
+      "What are the key dimensions of social stratification?"
+    ],
+    "a": "Social stratification refers to a society's hierarchical arrangement that creates systemic inequality, grouping individuals based on factors like wealth, income, education, occupation, race, and gender. The four main systems of stratification are slavery (individuals owned as property), caste systems (ascribed status at birth with no mobility, historically in India and other societies), estate systems (feudal hierarchy of nobility, clergy, and commoners), and class systems (based primarily on economic position, with some degree of social mobility). In open systems like modern class societies, individuals can theoretically move between strata through achievement, while closed systems (caste) fix social position permanently at birth. The key dimensions of stratification — according to Max Weber — are class (economic position), status (social prestige), and party (political power), which may not always align for a given individual."
+  },
+  {
+    "q": [
+      "What is social class and how is it measured?",
+      "What determines social class in modern societies?",
+      "What are the main social classes in capitalist societies?",
+      "How do sociologists define upper, middle, and lower class?",
+      "What is the difference between objective and subjective measures of class?",
+      "How does Pierre Bourdieu's concept of cultural capital relate to social class?"
+    ],
+    "a": "Social class refers to a group of people sharing a similar economic position in society, typically measured by income, wealth, occupation, and education. Sociologists commonly distinguish among upper class (owners of major assets, high-level executives), middle class (professionals, managers, skilled white-collar workers), working class (blue-collar, manual, and service workers), and lower class (those in poverty or with unstable employment). French sociologist Pierre Bourdieu expanded the concept beyond economic capital to include cultural capital (knowledge, tastes, credentials), social capital (networks and connections), and symbolic capital (prestige and recognition). These forms of capital interact to reproduce class advantages across generations, as children inherit not just wealth but also cultural dispositions and social networks that facilitate success."
+  },
+  {
+    "q": [
+      "What is social mobility?",
+      "What is the difference between intragenerational and intergenerational mobility?",
+      "How can individuals move between social classes?",
+      "What factors affect social mobility?",
+      "What is relative versus absolute mobility?",
+      "How does education affect social mobility?"
+    ],
+    "a": "Social mobility refers to the movement of individuals or groups up or down the social hierarchy. Intragenerational mobility occurs within a person's own lifetime (e.g., rising from entry-level to management), while intergenerational mobility compares a person's social position to that of their parents. Vertical mobility involves moving to a higher or lower class, whereas horizontal mobility involves changing occupation or location without changing social rank. In recent decades, intergenerational mobility has declined in many developed nations, with the United States notably having lower mobility than most other wealthy countries. Key determinants of mobility include access to quality education, family wealth, race, gender, geographic opportunity, and economic structure — the 'American Dream' of rags-to-riches upward mobility is statistically rare, with most people remaining close to their parents' socioeconomic position."
+  },
+  {
+    "q": [
+      "What is poverty and how is it measured?",
+      "What is the difference between absolute and relative poverty?",
+      "What causes poverty from a sociological perspective?",
+      "What is the poverty line and how is it calculated?",
+      "What is the difference between situational and generational poverty?",
+      "What are the main sociological explanations for persistent poverty?"
+    ],
+    "a": "Poverty can be defined in absolute terms (lacking basic necessities like food, clean water, shelter, and healthcare) or relative terms (being significantly worse off economically than the average person in one's society). Absolute poverty, measured by benchmarks like the World Bank's international poverty line (currently $2.15/day), has declined dramatically globally but remains concentrated in Sub-Saharan Africa and South Asia. In wealthy countries, poverty is typically measured relative to median income (e.g., below 50% or 60% of median income). Sociological explanations for poverty range from individualistic (blaming personal failings) to structural (focusing on labor market conditions, inadequate education systems, discrimination, and insufficient social safety nets). The culture of poverty thesis (Oscar Lewis) and the concept of the underclass have been controversial, criticized for blaming victims rather than addressing structural barriers."
+  },
+  {
+    "q": [
+      "What is intersectionality?",
+      "Who coined the term intersectionality?",
+      "How does intersectionality help us understand inequality?",
+      "What is an example of intersectionality in social stratification?",
+      "How do race, class, and gender interact to shape life outcomes?",
+      "What is the difference between intersectionality and additive approaches to oppression?"
+    ],
+    "a": "Intersectionality is a theoretical framework developed by legal scholar Kimberlé Crenshaw in 1989 to analyze how multiple social identities — such as race, gender, class, sexuality, and disability — intersect to create unique experiences of privilege and oppression. Crenshaw originally used the concept to critique anti-discrimination law's failure to recognize Black women's experiences of both racism and sexism, which were not captured by single-axis frameworks focused on either race or gender alone. Intersectionality reveals that systems of inequality (racism, sexism, classism, etc.) are not independent but mutually reinforcing, producing distinctive experiences that cannot be understood by simply adding the effects of each identity independently. For example, a low-income immigrant woman of color faces a different constellation of challenges and barriers than a middle-class white woman or a low-income immigrant man, demanding policy responses that address the specific intersection rather than treating all members of each group as homogeneous."
+  }
+]

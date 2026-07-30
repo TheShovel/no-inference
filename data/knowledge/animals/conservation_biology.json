@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What are conservation strategies in biology?",
+      "How do conservation biologists protect endangered species?",
+      "What are the main approaches to conservation?",
+      "What is the difference between in-situ and ex-situ conservation?",
+      "What strategies are used to prevent species extinction?",
+      "How do conservation strategies work in practice?",
+      "What is ecosystem-based conservation?"
+    ],
+    "a": "Conservation strategies encompass a range of approaches to protect biodiversity, broadly divided into in-situ conservation (protecting species in their natural habitats through measures like protected areas, wildlife corridors, and habitat restoration) and ex-situ conservation (protecting species outside their natural habitats through zoos, seed banks, botanical gardens, and captive breeding programs). Effective conservation requires integrated approaches that combine scientific research, legal protections, community engagement, sustainable resource management, and increasingly, climate change adaptation strategies to address the interconnected threats of habitat loss, overexploitation, pollution, invasive species, and global climate change."
+  },
+  {
+    "q": [
+      "What are protected areas in conservation?",
+      "What is a wildlife corridor?",
+      "How do protected areas help conserve biodiversity?",
+      "What are the different types of protected areas?",
+      "What is a national park?",
+      "How effective are protected areas for conservation?",
+      "What is the IUCN protected area categories system?"
+    ],
+    "a": "Protected areas are clearly defined geographical spaces recognized, dedicated, and managed through legal or other effective means to achieve the long-term conservation of nature and associated ecosystem services and cultural values. The IUCN categorizes them from strict nature reserves (Category Ia) to managed resource protected areas (Category VI), including national parks, wilderness areas, and habitat management areas. Wildlife corridors are landscape connections that link isolated habitat patches, allowing animals to move between protected areas for migration, genetic exchange, and climate adaptation. Despite covering about 17% of Earth's land and 8% of marine areas, many protected areas face challenges including insufficient funding, illegal exploitation, and insufficient connectivity."
+  },
+  {
+    "q": [
+      "What is captive breeding?",
+      "How does captive breeding help conservation?",
+      "What is rewilding?",
+      "How does reintroduction work in conservation?",
+      "What are examples of successful captive breeding programs?",
+      "What is the difference between captive breeding and head-starting?",
+      "What challenges do reintroduction programs face?"
+    ],
+    "a": "Captive breeding involves breeding endangered species in controlled environments such as zoos and specialized breeding centers to maintain genetically viable populations and potentially reintroduce individuals into the wild. Rewilding is a conservation approach focused on restoring ecosystems by reintroducing keystone species that have been extirpated, allowing natural processes to restore ecological balance. Monumental success stories include the California condor (recovered from 22 individuals to over 500), the black-footed ferret (bred from seven founders to thousands), and the Arabian oryx (reintroduced to Oman after extinction in the wild). Successful reintroduction requires addressing the original threats, adequate habitat, genetic diversity, and preparing captive animals for survival skills."
+  },
+  {
+    "q": [
+      "What is the IUCN Red List?",
+      "How does the IUCN Red List categorize species?",
+      "What are the IUCN Red List categories?",
+      "What is the difference between endangered and vulnerable species?",
+      "How is the IUCN Red List used in conservation?",
+      "What does Critically Endangered mean?",
+      "How does a species become listed on the IUCN Red List?"
+    ],
+    "a": "The IUCN Red List of Threatened Species is the world's most comprehensive inventory of the global conservation status of biological species, maintained by the International Union for Conservation of Nature (IUCN). Species are evaluated against quantitative criteria including population size, rate of decline, geographic range, and extinction probability, and assigned to categories: Extinct, Extinct in the Wild, Critically Endangered, Endangered, Vulnerable, Near Threatened, Least Concern, or Data Deficient. The Red List serves as a critical tool for conservation priority-setting, policy development, and resource allocation, with over 150,000 species assessed, of which more than 42,000 are currently threatened with extinction."
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "q": [
+      "What instruments are used to measure weather conditions?",
+      "What does a weather station measure?",
+      "What are the basic instruments found at a weather station?",
+      "How are temperature, pressure, wind, and humidity measured?",
+      "What is the difference between a thermometer and a barometer?"
+    ],
+    "a": "A standard weather station includes a thermometer (temperature), barometer (atmospheric pressure), anemometer (wind speed), wind vane (wind direction), hygrometer (humidity), and rain gauge (precipitation). These instruments are typically housed in a Stevenson screen to protect them from direct sunlight and precipitation while allowing free air circulation. Modern automated weather stations (AWOS, ASOS) collect and transmit this data in real-time to weather agencies for forecasting and climate monitoring."
+  },
+  {
+    "q": [
+      "What is a weather balloon and how is it used?",
+      "What is a radiosonde?",
+      "How does a weather balloon collect upper-atmosphere data?",
+      "What data does a radiosonde measure as it ascends?",
+      "How often are weather balloons launched?"
+    ],
+    "a": "A weather balloon carries a radiosonde instrument package aloft to measure vertical profiles of temperature, humidity, pressure, and wind speed/direction (tracked by GPS). The balloon ascends at about 5 m/s to altitudes of 30 km or more before bursting and descending by parachute. A global network launches over 800 radiosondes twice daily at 00:00 and 12:00 UTC from stations around the world, providing crucial upper-air data for numerical weather prediction models."
+  },
+  {
+    "q": [
+      "How does weather radar work?",
+      "What is Doppler radar used for?",
+      "How does radar measure precipitation intensity?",
+      "What does dual-polarization radar add to weather observation?",
+      "How can radar detect tornado rotation?"
+    ],
+    "a": "Weather radar transmits pulses of microwave energy that scatter off precipitation particles, with the returned signal (reflectivity) indicating precipitation intensity and location. Doppler radar detects the frequency shift of the returned signal to measure particle motion toward or away from the radar, allowing detection of rotation in thunderstorms (mesocyclones) and estimation of wind speeds. Dual-polarization radar sends both horizontal and vertical pulses, improving discrimination between rain, snow, hail, and debris, and providing better rainfall rate estimates."
+  },
+  {
+    "q": [
+      "What weather data do satellites collect?",
+      "How do weather satellites observe Earth?",
+      "What is the difference between visible, infrared, and water vapor satellite imagery?",
+      "How do polar-orbiting and geostationary satellites differ?",
+      "What is the GOES satellite system?"
+    ],
+    "a": "Weather satellites carry radiometers and sounders that observe Earth in multiple spectral bands. Visible imagery shows cloud cover as the human eye sees it. Infrared imagery detects temperature of clouds and surfaces, allowing 24-hour observation. Water vapor imagery tracks moisture in the upper atmosphere using specific infrared wavelengths. Geostationary satellites like GOES (Geostationary Operational Environmental Satellite) provide continuous monitoring of the Western Hemisphere, while polar-orbiting satellites offer higher resolution global coverage twice daily."
+  }
+]

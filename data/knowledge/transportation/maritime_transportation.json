@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What is the shipping industry and how does it work?",
+      "What is containerization and how did it change shipping?",
+      "What are the main types of cargo ships?",
+      "How do container ships work?",
+      "What are tankers and bulk carriers?",
+      "What are LNG carriers?",
+      "What are the different types of ships?",
+      "containerization shipping revolution",
+      "container ship types sizes",
+      "ship types explained"
+    ],
+    "a": "The shipping industry transports approximately 90% of world trade by volume, forming the backbone of global commerce through a fleet of over 50,000 merchant vessels operating under various national flags. Containerization, pioneered by Malcolm McLean in 1956 with the Ideal X, standardized cargo into steel intermodal containers (primarily 20-foot and 40-foot TEUs), dramatically reducing loading times, labor costs, and pilferage while enabling seamless integration with truck and rail transport that transformed global supply chains. Major ship types include container ships (ranging from feeder vessels of 1,000 TEU to ultra-large container vessels exceeding 24,000 TEU), oil tankers (from product tankers to Very Large Crude Carriers of over 200,000 deadweight tons), bulk carriers (for dry commodities like iron ore, coal, grain), and LNG carriers (specially insulated cryogenic vessels that transport liquefied natural gas at -162°C), along with roll-on/roll-off ships, chemical tankers, and cruise ships."
+  },
+  {
+    "q": [
+      "What are the major shipping routes and canals?",
+      "How does the Panama Canal work?",
+      "How does the Suez Canal work?",
+      "What are the key shipping lanes of the world?",
+      "Panama Canal locks and expansion",
+      "Suez Canal global trade",
+      "major shipping routes Asia Europe",
+      "Strait of Malacca shipping",
+      "chokepoints maritime trade",
+      "Panama Canal vs Suez Canal comparison"
+    ],
+    "a": "The Suez Canal (Egypt, opened 1869, 193 km long) connects the Mediterranean Sea to the Red Sea, allowing ships to travel between Europe and Asia without circumnavigating Africa, handling about 12% of global trade volume, though its single-lane sections require convoy systems and make it vulnerable to disruption (as demonstrated by the 2021 Ever Given grounding). The Panama Canal (Panama, opened 1914, expanded in 2016) uses a system of locks to lift ships 26 meters above sea level across the Isthmus of Panama, with the new Neopanamax locks accommodating vessels up to 13,000 TEU, critically enabling East Asia-to-US East Coast trade without transiting through the Suez or rounding South America. Major shipping chokepoints include the Strait of Malacca (between Malaysia and Indonesia, carrying 25% of global trade), the Strait of Hormuz (persian Gulf oil exports), the Bab-el-Mandeb (access to Suez from the Indian Ocean), and the Turkish Straits (Bosporus and Dardanelles connecting the Black Sea)."
+  },
+  {
+    "q": [
+      "How do ports and terminals operate?",
+      "What is shipping logistics and supply chain management?",
+      "What is maritime law and the Law of the Sea?",
+      "What are flag states in shipping?",
+      "What are freight rates and chartering in shipping?",
+      "What is shipbuilding?",
+      "ports and terminals operations",
+      "UNCLOS Law of the Sea",
+      "flags of convenience shipping",
+      "freight rates chartering types"
+    ],
+    "a": "Modern ports operate as intermodal logistics hubs where container terminals use massive ship-to-shore gantry cranes, automated stacking cranes, and terminal operating systems (TOS) to transfer containers between ships, trucks, and trains, with leading ports like Shanghai, Singapore, and Rotterdam processing over 30 million TEU annually. Maritime law, governed primarily by the UN Convention on the Law of the Sea (UNCLOS), establishes territorial waters (12 nautical miles), exclusive economic zones (200 nautical miles), and the legal framework for navigation, while flag states register ships and enforce safety standards—with flags of convenience (Panama, Liberia, Marshall Islands) accounting for over 70% of world tonnage by offering lower taxes and looser regulations. Ship chartering involves several contractual types: voyage charter (payment per cargo ton for a specific voyage), time charter (vessel leased for a period with the owner covering crew and insurance), and bareboat charter (the charterer takes full control of the vessel for the charter period), with freight rates determined by supply-demand dynamics in specific shipping markets."
+  },
+  {
+    "q": [
+      "What is maritime safety and the SOLAS convention?",
+      "What is MARPOL and environmental regulation in shipping?",
+      "What is maritime piracy and how is it addressed?",
+      "What is the International Maritime Organization (IMO)?",
+      "SOLAS maritime safety",
+      "MARPOL pollution prevention shipping",
+      "maritime piracy modern threats",
+      "International Maritime Organization role",
+      "maritime security measures",
+      "environmental regulations shipping emissions"
+    ],
+    "a": "The International Convention for the Safety of Life at Sea (SOLAS) is the most important maritime safety treaty, establishing minimum standards for ship construction, fire protection, life-saving appliances, navigation equipment, and safety management systems through the International Safety Management (ISM) Code. The International Convention for the Prevention of Pollution from Ships (MARPOL) sets regulations for oil, chemicals, sewage, garbage, and air emissions from ships, including the 2020 global sulfur cap reducing allowable fuel sulfur content to 0.5%, driving adoption of scrubbers and cleaner alternative fuels. The International Maritime Organization (IMO), a UN specialized agency, develops and maintains the comprehensive regulatory framework for international shipping, addressing safety, environmental protection, legal matters, maritime security (including the International Ship and Port Facility Security Code adopted after 9/11), and facilitating cooperation among member states on technical and operational standards. Modern maritime piracy, concentrated in the Gulf of Guinea, the Strait of Singapore, and previously off Somalia, is countered through naval patrols, armed guards on vessels, best management practices, and international legal cooperation through the IMO and regional agreements."
+  }
+]

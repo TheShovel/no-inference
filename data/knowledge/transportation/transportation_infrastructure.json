@@ -1,0 +1,71 @@
+[
+  {
+    "q": [
+      "How are roads and highways built?",
+      "What materials are used for road construction?",
+      "What is the Interstate Highway System?",
+      "What are the different types of bridges?",
+      "How are bridges engineered?",
+      "What are famous bridges around the world?",
+      "road design and construction",
+      "bridge types",
+      "interstate highway system"
+    ],
+    "a": "Roads are constructed with multiple layers: a subgrade of compacted soil, a base course of crushed stone or gravel for drainage and load distribution, and a wearing surface of either asphalt (flexible pavement, common for highways) or concrete (rigid pavement, longer-lasting but more expensive). The US Interstate Highway System, begun in 1956 under President Eisenhower, spans over 48,000 miles and is the world's largest highway network by lane-miles, using a standardized design with controlled access, grade-separated interchanges, and minimum speeds. Bridges come in several structural types: beam bridges (simple spans), arch bridges (compression-based), suspension bridges (cables in tension, capable of longest spans like the Akashi Kaikyo Bridge at 1,991 m), cable-stayed bridges (a modern hybrid), and truss bridges (triangular framework for efficient load transfer)."
+  },
+  {
+    "q": [
+      "How are tunnels built?",
+      "What are the different tunnel construction methods?",
+      "How are airports designed and operated?",
+      "What are the main parts of an airport?",
+      "How do ports and harbors work?",
+      "What is seaport infrastructure?",
+      "tunnel construction",
+      "airport design",
+      "port infrastructure"
+    ],
+    "a": "Tunnels are constructed using cut-and-cover (digging a trench, building the tunnel, and covering it) for shallow tunnels, tunnel boring machines (TBMs) that excavate and line the tunnel simultaneously for deep, long tunnels, and the New Austrian Tunneling Method (NATM) that uses the surrounding rock as a structural support element. Major airports consist of airside areas (runways, taxiways, aprons, air traffic control towers, hangars) and landside areas (passenger terminals with check-in, security screening, gates, baggage handling, and ground transportation connections). Ports and harbors provide infrastructure for cargo handling including container terminals with gantry cranes, bulk terminals with conveyor systems, roll-on/roll-off (Ro-Ro) ramps for vehicles, storage yards, and intermodal connections to rail and truck networks, with the most efficient ports using automated guided vehicles and automated stacking cranes."
+  },
+  {
+    "q": [
+      "How do public transit systems work?",
+      "What are the different types of public transportation?",
+      "What are bike lanes and how do they work?",
+      "What is EV charging infrastructure?",
+      "What are the different levels of EV charging?",
+      "What are intelligent transportation systems?",
+      "public transit systems",
+      "bike lane infrastructure",
+      "EV charging stations"
+    ],
+    "a": "Public transit systems include buses (most flexible and common), bus rapid transit (BRT with dedicated lanes and station-like stops), light rail, subways/metros, commuter rail, and ferries, with integrated fare collection (smart cards, mobile apps) and coordinated scheduling enabling seamless transfers between modes. Bike lane infrastructure ranges from painted lanes on roads and separated cycle tracks to protected intersections and bike boulevards prioritizing cyclists, with cities like Copenhagen and Amsterdam achieving over 30% of trips by bicycle through comprehensive networks and supportive policies. EV charging infrastructure is categorized by Level 1 (120V AC, slowest, for home overnight charging), Level 2 (240V AC, the standard for home and public destination charging, adding 20-60 miles of range per hour), and DC fast charging (Level 3, 400-900V DC, adding 200+ miles in 20-30 minutes, essential for long-distance travel)."
+  },
+  {
+    "q": [
+      "What are intelligent transportation systems?",
+      "How does traffic management work?",
+      "What is transportation planning?",
+      "How are transportation systems designed for cities?",
+      "What is the future of transportation infrastructure?",
+      "intelligent transportation systems",
+      "transportation planning",
+      "traffic management"
+    ],
+    "a": "Intelligent transportation systems (ITS) apply information and communication technologies to improve transportation safety, efficiency, and sustainability, including adaptive traffic signal control that adjusts timings based on real-time traffic flow, electronic toll collection (like E-ZPass), variable message signs, incident detection systems, and connected vehicle communications (V2V and V2I). Transportation planning evaluates current and future travel demand using travel demand models, considers all modes and their interactions, and develops long-range plans for infrastructure investments that balance mobility, safety, environmental sustainability, equity, and economic development goals. Modern planning emphasizes multimodal networks (integrating walking, cycling, transit, and driving), complete streets designed for all users regardless of age or ability, and transit-oriented development (TOD) that concentrates housing and jobs around transit stations."
+  },
+  {
+    "q": [
+      "What materials are used for road surfaces?",
+      "What is the difference between asphalt and concrete roads?",
+      "How are roads maintained?",
+      "What are rail networks?",
+      "How does track gauge affect railroads?",
+      "What is the role of rail in transportation?",
+      "road materials",
+      "rail network infrastructure",
+      "railroad tracks"
+    ],
+    "a": "Asphalt (bituminous concrete) is the most common road surface material, composed of aggregate bound with bitumen, offering smooth, quiet ride surfaces that are relatively quick and inexpensive to repair, though less durable than concrete. Concrete (Portland cement concrete) roads are more rigid, longer-lasting (20-40 years vs 10-20 for asphalt), and better suited for heavy loads and high-volume highways, but are more expensive initially and harder to repair. Rail network infrastructure includes ballasted track (stone ballast supporting rails on wooden or concrete ties) and slab track (concrete base for high-speed rail), with signaling systems from traditional block signals to modern positive train control (PTC) and European Train Control System (ETCS), with standard gauge (1,435 mm/4 ft 8.5 in) used by about 60% of the world's railways including most of North America, Europe, and China."
+  }
+]

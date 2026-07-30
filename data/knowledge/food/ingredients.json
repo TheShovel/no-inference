@@ -1,0 +1,64 @@
+[
+  {
+    "q": [
+      "What are the most common spices and herbs?",
+      "What is the difference between spices and herbs?",
+      "What are essential spices for cooking?",
+      "How should spices be stored?",
+      "What is the difference between whole and ground spices?",
+      "What are the most popular culinary herbs?",
+      "What is a spice blend?"
+    ],
+    "a": "Herbs are the leafy green parts of plants (basil, cilantro, parsley, rosemary, thyme, oregano, mint), used fresh or dried for aromatic flavor. Spices come from other parts of plants — bark (cinnamon, cassia), seeds (cumin, coriander, fennel, mustard), roots (ginger, turmeric), flower buds (cloves), or berries (allspice, black pepper) — and are typically used dried. Essential pantry spices include black pepper, cumin, paprika, cinnamon, cayenne, nutmeg, and turmeric, while common blends incorporate garam masala in Indian cooking, herbes de Provence in French, Chinese five-spice, and ras el hanout in North African cuisine. Whole spices retain their flavor much longer than ground (2-4 years versus 6-12 months), and toasting whole spices in a dry pan before grinding releases their essential oils for deeper flavor. Dried herbs are more concentrated than fresh (use about one-third the amount when substituting), and both should be stored in airtight containers away from light and heat."
+  },
+  {
+    "q": [
+      "What are the different types of cooking oils?",
+      "What is the difference between olive oil and vegetable oil?",
+      "What is the best oil for frying?",
+      "What is extra virgin olive oil?",
+      "What is the smoke point of oil?",
+      "What are healthy cooking oils?",
+      "What is clarified butter?"
+    ],
+    "a": "Cooking oils are extracted from plants and seeds, each with different smoke points and flavor profiles suited to specific uses. Extra virgin olive oil is cold-pressed from olives without chemical processing, retaining antioxidants and flavor compounds, with a smoke point around 375°F, making it ideal for dressings, drizzling, and moderate-heat cooking. Refined oils like canola, vegetable, peanut, and avocado oil have higher smoke points (400-520°F) due to processing that removes impurities, making them better for high-heat frying and searing. Coconut oil is about 90% saturated fat, giving it a high smoke point and a distinct flavor popular in baking and Southeast Asian cooking. The smoke point is the temperature at which oil begins to degrade, producing acrid smoke and harmful compounds, so selecting an oil with a smoke point above your cooking temperature is critical. Clarified butter (ghee) has had milk solids removed, raising its smoke point to 450°F and making it shelf-stable, widely used in Indian and Middle Eastern cooking."
+  },
+  {
+    "q": [
+      "What are the main types of grains?",
+      "What is the difference between whole grains and refined grains?",
+      "What are the different types of wheat?",
+      "What are the varieties of rice?",
+      "What is corn used for in cooking?",
+      "What are oats and how are they processed?",
+      "What are ancient grains?"
+    ],
+    "a": "Grains are the seeds of cereal grasses and are the most important food source for humanity, providing over half of global caloric intake. Wheat is classified by protein content: hard wheat (high protein, 12-15%) is ideal for bread, soft wheat (low protein, 8-10%) for pastries and cakes, and durum wheat (very hard) for pasta. Rice varieties include long-grain (basmati, jasmine — separate and fluffy), medium-grain (arborio, bomba — creamy, ideal for risotto), and short-grain (sushi rice — sticky when cooked). Corn (maize) is remarkably versatile: field corn is dried for cornmeal, tortillas, corn syrup, and animal feed, while sweet corn is eaten fresh as a vegetable. Oats are minimally processed for oat groats, steamed and rolled for rolled oats, or steamed and ground for quick oats and instant oatmeal. Ancient grains like quinoa, amaranth, millet, teff, farro, spelt, and freekeh have remained largely unchanged for centuries, offering diverse textures and often higher nutritional value, with quinoa being a complete protein containing all nine essential amino acids."
+  },
+  {
+    "q": [
+      "What are natural sweeteners?",
+      "What is the difference between types of sugar?",
+      "How is honey made and used?",
+      "What is maple syrup?",
+      "What are the different types of salt?",
+      "What is the difference between table salt and kosher salt?",
+      "What is sea salt?",
+      "How does salt affect cooking?"
+    ],
+    "a": "Sugar comes in many forms: white granulated sugar (pure sucrose from cane or beet), brown sugar (with molasses added for moisture and caramel flavor), and specialty sugars like turbinado, demerara, and muscovado with varying molasses content and crystal size. Honey is produced by bees from flower nectar, with flavor varying dramatically by floral source — clover, orange blossom, manuka, and lavender honeys all taste distinctly different. Maple syrup is boiled down from the sap of sugar maple trees, graded by color and flavor from golden delicate to very dark robust. Salt types differ primarily in crystal size and mineral content: table salt is fine-grained with anti-caking additives and often contains iodine; kosher salt has large, irregular flakes that are easy to pinch and sprinkle; sea salt is produced by evaporating seawater with trace minerals affecting flavor and color; and finishing salts like fleur de sel, Maldon, and Himalayan pink salt are prized for texture and visual appeal. Coarse, flaky salts are preferred for finishing dishes because they dissolve more slowly on the tongue, delivering bursts of saltiness."
+  },
+  {
+    "q": [
+      "What are leavening agents in baking?",
+      "What is the difference between baking soda and baking powder?",
+      "What is yeast and how does it work?",
+      "What are thickening agents?",
+      "How do you thicken a sauce?",
+      "What is a roux?",
+      "What is umami?",
+      "What are umami-rich foods?"
+    ],
+    "a": "Leavening agents produce gas to make baked goods rise: baking soda (sodium bicarbonate) requires an acid (buttermilk, lemon juice, yogurt) to activate, while baking powder contains both baking soda and a dry acid (cream of tartar) that activates when wetted and again when heated (double-acting). Yeast is a living fungus that ferments sugars into carbon dioxide and ethanol, producing the rise and complex flavors in bread, with active dry, instant, and fresh yeast being the common forms. Thickening agents include flour and cornstarch (slurried with cold liquid before adding to hot mixtures), roux (flour cooked in fat), egg yolks (tempered to prevent scrambling), and gelatin (for cold-set desserts and jellies). Umami, the savory fifth taste (alongside sweet, sour, salty, and bitter), is primarily from glutamate and nucleotides, naturally abundant in aged cheeses (Parmesan), cured meats (prosciutto), fermented products (soy sauce, miso, fish sauce), mushrooms (especially dried shiitake), tomatoes, seaweed, and aged or fermented foods."
+  }
+]

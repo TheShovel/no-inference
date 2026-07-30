@@ -1,0 +1,64 @@
+[
+  {
+    "q": [
+      "What is the difference between intrinsic and extrinsic motivation?",
+      "Intrinsic vs extrinsic motivation",
+      "What motivates students in education?",
+      "What is intrinsic motivation?",
+      "What is extrinsic motivation?",
+      "motivation in learning"
+    ],
+    "a": "Intrinsic motivation comes from internal factors — genuine interest, curiosity, satisfaction, or enjoyment of the activity itself. Extrinsic motivation is driven by external rewards (grades, praise, money, certificates) or avoidance of punishment. Research consistently shows that intrinsic motivation leads to deeper learning, greater creativity, and more persistence, while excessive reliance on extrinsic rewards can undermine intrinsic interest — a phenomenon known as the overjustification effect. Effective educators balance both types, using extrinsic incentives strategically while fostering autonomy, competence, and relatedness (Self-Determination Theory) to support students' intrinsic motivation."
+  },
+  {
+    "q": [
+      "What is Carol Dweck's growth mindset?",
+      "Growth mindset explained",
+      "What is the difference between fixed and growth mindset?",
+      "How does mindset affect learning?",
+      "How can I develop a growth mindset?",
+      "What did Carol Dweck discover about mindset?",
+      "growth mindset",
+      "what is growth mindset"
+    ],
+    "a": "Growth mindset, a concept developed by psychologist Carol Dweck, is the belief that intelligence and abilities can be developed through effort, learning, and persistence — as opposed to a fixed mindset, which views these traits as innate and unchangeable. Dweck's research demonstrated that students with a growth mindset embrace challenges, persist through setbacks, see effort as a path to mastery, learn from criticism, and find inspiration in others' success, leading to higher achievement across academic domains. In contrast, students with a fixed mindset avoid challenges (fearing failure will expose their limitations), give up easily, see effort as fruitless, ignore useful feedback, and feel threatened by others' success. Growth mindset interventions, such as teaching students that the brain grows stronger through learning and praising effort rather than intelligence, have been shown to improve academic performance, particularly for struggling students."
+  },
+  {
+    "q": [
+      "What is self-efficacy in educational psychology?",
+      "Self-efficacy explained",
+      "How does self-efficacy affect learning?",
+      "What is the difference between self-efficacy and self-esteem?",
+      "What factors influence self-efficacy?",
+      "self-efficacy",
+      "what is self efficacy"
+    ],
+    "a": "Self-efficacy, a concept introduced by psychologist Albert Bandura, refers to an individual's belief in their capacity to execute behaviors necessary to achieve specific performance goals. In education, self-efficacy strongly influences students' choice of activities, effort expenditure, persistence in the face of difficulties, and ultimate achievement. Bandura identified four sources of self-efficacy: mastery experiences (previous success — the most powerful), vicarious experiences (observing peers succeed), social persuasion (encouragement from teachers and mentors), and physiological states (reducing anxiety and stress). Self-efficacy differs from self-esteem in that it is task-specific rather than global — a student may have high self-efficacy for math but low self-efficacy for writing, while still having overall healthy self-esteem."
+  },
+  {
+    "q": [
+      "What is the zone of proximal development?",
+      "Zone of proximal development explained",
+      "What is Vygotsky's ZPD?",
+      "What is scaffolding in education?",
+      "How do teachers apply the zone of proximal development?",
+      "zone of proximal development",
+      "zpd",
+      "vygotsky zone"
+    ],
+    "a": "The zone of proximal development (ZPD), a concept developed by Lev Vygotsky, is the difference between what a learner can do independently and what they can achieve with guidance from a more knowledgeable person (teacher, peer, or technology). Vygotsky argued that learning occurs most effectively within this zone — tasks that are too easy (already mastered) lead to boredom, while tasks too far beyond the learner's current ability lead to frustration. Scaffolding is the instructional technique of providing temporary support structures — hints, prompts, modeling, breaking tasks into smaller steps — that help the student succeed within their ZPD. As the student gains competence, the scaffolding is gradually removed, transferring responsibility to the learner. Effective scaffolding requires accurate assessment of the learner's current level and adjusting support dynamically."
+  },
+  {
+    "q": [
+      "What is spaced repetition?",
+      "Spaced repetition explained",
+      "How does spaced repetition improve memory?",
+      "What is the spacing effect?",
+      "What are spaced repetition systems?",
+      "How do apps like Anki use spaced repetition?",
+      "spaced repetition",
+      "what is spaced repetition"
+    ],
+    "a": "Spaced repetition is a learning technique that involves reviewing information at gradually increasing intervals over time to optimize long-term memory retention. Based on the spacing effect (first documented by Hermann Ebbinghaus in his 1885 forgetting curve research), spaced repetition takes advantage of the way memories are consolidated — each review strengthens the neural pathway and extends how long the information is retained before it needs to be revisited. Spaced repetition systems (SRS) like Anki and SuperMemo algorithmically schedule reviews based on how easily each item is recalled, showing difficult items more frequently and well-known items at longer intervals. Research consistently shows that spaced repetition is dramatically more effective for long-term retention than massed practice or cramming, with studies finding 50-100% improvement in recall compared to non-spaced study methods."
+  }
+]

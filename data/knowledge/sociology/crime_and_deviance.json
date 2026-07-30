@@ -1,0 +1,53 @@
+[
+  {
+    "q": [
+      "What is deviance in sociology?",
+      "How do sociologists define deviance?",
+      "What is the difference between deviance and crime?",
+      "What are examples of deviant behavior?",
+      "Is deviance always negative?",
+      "How does deviance vary across cultures?",
+      "What is the difference between formal and informal deviance?"
+    ],
+    "a": "Deviance in sociology refers to any behavior, belief, or condition that violates significant social norms or expectations in a given society or social context — it is a socially constructed concept, meaning what counts as deviant varies across cultures, historical periods, and social groups. Crime is a subset of deviance consisting of behaviors that violate formally enacted criminal laws and are punishable by the state, whereas deviance can include non-criminal norm violations such as unconventional dress, unusual beliefs, or violations of etiquette. Émile Durkheim argued that deviance is actually a normal and necessary part of society because it clarifies moral boundaries, promotes social solidarity through collective reaction against wrongdoing, and can stimulate social change — for example, the civil rights movement's deliberate violation of segregation laws was deviant in its time but led to more just laws."
+  },
+  {
+    "q": [
+      "What are the main sociological theories of crime?",
+      "What is strain theory in criminology?",
+      "What is social control theory?",
+      "What is labeling theory in deviance?",
+      "What is differential association theory?",
+      "How does Merton's strain theory explain crime?",
+      "What is Hirschi's social bond theory?",
+      "How does Becker's labeling theory explain deviance?"
+    ],
+    "a": "Strain theory, developed by Robert Merton, argues that crime results from a disconnect between culturally prescribed goals (such as material wealth) and the legitimate means available to achieve them — individuals may adapt through innovation (using illegal means), ritualism, retreatism, or rebellion, particularly among lower-class individuals with limited educational and economic opportunities. Social control theory (most notably Travis Hirschi's social bond theory) asks not why people commit crime but why most people do not — it proposes that strong bonds to society through attachment (to family, school), commitment (to conventional goals), involvement (in conventional activities), and belief (in moral values) constrain individuals from offending. Labeling theory, associated with Howard Becker, argues that deviance is not an inherent quality of an act but a label applied by powerful groups — being officially labeled as a criminal or deviant can create a self-fulfilling prophecy where individuals internalize the label and adopt deviant identities through secondary deviance, and this labeling process can actually increase rather than decrease future offending."
+  },
+  {
+    "q": [
+      "What are the different types of crime?",
+      "What is white-collar crime?",
+      "What is organized crime?",
+      "What are violent crimes?",
+      "What are property crimes?",
+      "What is the difference between street crime and corporate crime?",
+      "What are victimless crimes?",
+      "What is the difference between felony and misdemeanor?"
+    ],
+    "a": "Crime is categorized into several major types: violent crime (murder, assault, robbery, rape — the most serious in public perception but least common), property crime (burglary, larceny, motor vehicle theft, arson — far more common than violent crime), white-collar crime (nonviolent financial crimes committed by professionals and corporations, including fraud, embezzlement, insider trading, tax evasion, and corporate malfeasance that often causes far greater financial harm than street crime), organized crime (ongoing criminal enterprises operated by structured groups for profit through illegal activities such as drug trafficking, human trafficking, gambling, and racketeering), and public order or victimless crimes (drug offenses, prostitution, gambling violations, where the offender is often seen as the primary victim). The distinction between felony and misdemeanor is based on severity — felonies carry penalties of more than one year of imprisonment and often involve serious harm, while misdemeanors carry up to one year in jail or fines, with many drug and property offenses falling in the latter category."
+  },
+  {
+    "q": [
+      "What is the criminal justice system?",
+      "How does the criminal justice system work?",
+      "What are the main components of the US criminal justice system?",
+      "What is recidivism?",
+      "What is restorative justice?",
+      "How effective is the prison system at reducing crime?",
+      "What are alternatives to incarceration?",
+      "What are the goals of punishment in the criminal justice system?"
+    ],
+    "a": "The criminal justice system comprises three main components: law enforcement (police who investigate crimes and make arrests), the courts (prosecutors, defense attorneys, and judges who determine guilt and impose sentences), and corrections (prisons, jails, probation, and parole that carry out sentences). Recidivism is the tendency of convicted criminals to re-offend after release — in the United States, about two-thirds of released prisoners are rearrested within three years and half are re-incarcerated, suggesting that the current punitive approach does little to address the underlying causes of crime such as poverty, addiction, mental illness, and lack of education. Restorative justice is an alternative philosophy focusing on repairing harm through dialogue between offenders, victims, and community members rather than purely punitive measures — practices include victim-offender mediation, family group conferencing, and circle sentencing, which have shown promising results in reducing recidivism and increasing victim satisfaction compared to traditional incarceration."
+  }
+]

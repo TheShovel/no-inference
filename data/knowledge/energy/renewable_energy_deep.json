@@ -1,0 +1,69 @@
+[
+  {
+    "q": [
+      "What are the different types of solar panels?",
+      "What is monocrystalline vs polycrystalline solar?",
+      "What is thin-film solar technology?",
+      "What are perovskite solar cells?",
+      "How does concentrated solar power work?",
+      "What is solar PV technology?",
+      "types of solar panels",
+      "solar photovoltaic technology"
+    ],
+    "a": "Monocrystalline silicon panels, made from single-crystal silicon ingots, offer the highest efficiency (20-23%) and longest lifespan but are more expensive to produce. Polycrystalline silicon panels, made from melted silicon fragments, are slightly less efficient (15-18%) but more affordable, making them common in residential installations. Thin-film solar cells (CdTe, CIGS, amorphous silicon) are lightweight, flexible, and cheaper to manufacture but have lower efficiencies (10-13%), while perovskite solar cells are an emerging technology that has rapidly achieved over 25% efficiency in lab settings and promises low-cost production, though stability and scalability challenges remain. Concentrated solar power (CSP) uses mirrors to focus sunlight and heat a working fluid that drives turbines, incorporating thermal energy storage for dispatchable power generation."
+  },
+  {
+    "q": [
+      "How does wind power work?",
+      "What is the difference between onshore and offshore wind?",
+      "How does hydropower generate electricity?",
+      "What is run-of-river hydro?",
+      "What is reservoir hydro?",
+      "What are enhanced geothermal systems?",
+      "wind energy",
+      "hydropower",
+      "geothermal energy"
+    ],
+    "a": "Wind turbines convert kinetic energy from wind into electricity via rotor blades connected to a generator, with onshore wind being the most mature and cost-effective renewable technology, while offshore wind benefits from stronger, more consistent winds and larger turbine sizes but requires higher capital investment and marine infrastructure. Hydropower generates electricity by channeling flowing water through turbines; run-of-river facilities have minimal storage and follow natural river flows, while reservoir hydro (dams) stores water for on-demand release, providing flexible baseload and grid-balancing power. Enhanced geothermal systems (EGS) inject water into hot, dry rock formations deep underground to create artificial geothermal reservoirs, expanding geothermal potential beyond naturally occurring hydrothermal sites to wider geographic areas."
+  },
+  {
+    "q": [
+      "How does tidal energy work?",
+      "What is the difference between tidal barrages and tidal stream?",
+      "How do wave energy converters work?",
+      "What is marine energy?",
+      "tidal power",
+      "wave energy",
+      "ocean energy"
+    ],
+    "a": "Tidal barrages are dam-like structures built across estuaries that capture water during high tide and release it through turbines during low tide, generating predictable power but with significant environmental and construction costs. Tidal stream turbines operate similarly to underwater wind turbines, harnessing kinetic energy from tidal currents without the extensive infrastructure of barrages, and have lower environmental impact. Wave energy converters (WECs) capture energy from ocean surface waves using various technologies including oscillating water columns (OWCs), point absorbers (buoys), and attenuators (snake-like devices), with the global wave energy potential estimated at over 2,000 TWh/year but commercial deployment still limited by harsh marine conditions, maintenance costs, and grid connection challenges."
+  },
+  {
+    "q": [
+      "What is biomass energy?",
+      "What are biofuels?",
+      "What is biogas?",
+      "What are wood pellets?",
+      "How does bioenergy work?",
+      "biomass energy",
+      "biofuels",
+      "biogas production"
+    ],
+    "a": "Biomass energy derives from organic materials—wood, agricultural residues, energy crops, and organic waste—which can be burned directly for heat and power or converted into gaseous or liquid fuels. Biofuels include ethanol (produced by fermenting corn or sugarcane starch) and biodiesel (from vegetable oils or animal fats), with advanced biofuels from cellulosic feedstocks and algae being developed to avoid food-versus-fuel conflicts. Biogas is produced through anaerobic digestion of organic waste in digesters, yielding methane-rich gas for electricity generation, heating, or upgraded to renewable natural gas (RNG), while wood pellets are compressed biomass used for large-scale power plant co-firing and residential heating, particularly in Europe."
+  },
+  {
+    "q": [
+      "What are the main energy storage technologies?",
+      "How do lithium-ion batteries work for grid storage?",
+      "What is pumped hydro storage?",
+      "What are flow batteries?",
+      "What is green hydrogen?",
+      "What is levelized cost of energy?",
+      "How do renewables integrate with the grid?",
+      "energy storage",
+      "grid integration of renewables",
+      "levelized cost of energy"
+    ],
+    "a": "Lithium-ion batteries dominate short-duration energy storage (2-4 hours) for grid frequency regulation and solar integration, while pumped hydro storage—pumping water uphill to a reservoir and releasing it through turbines—accounts for over 90% of global grid storage capacity with large scale (up to several GW) and long duration (8-16 hours). Flow batteries (vanadium redox, zinc-bromine) store energy in liquid electrolytes in external tanks, offering decoupled power and energy capacity suitable for 4-12 hour storage, and green hydrogen—produced via electrolysis using renewable electricity—enables seasonal storage and decarbonization of hard-to-electrify sectors. The levelized cost of energy (LCOE) measures the average cost per MWh of electricity over a plant's lifetime, with utility-scale solar and onshore wind now cheaper than new coal and gas in most regions, though grid integration requires investments in transmission, storage, and flexible demand to manage renewable variability."
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "q": [
+      "What are geological disasters?",
+      "How do earthquakes happen?",
+      "What causes earthquakes?",
+      "How are earthquakes measured?",
+      "What is the difference between magnitude and intensity?",
+      "What causes volcanoes to erupt?",
+      "What are the different types of volcanic eruptions?",
+      "How do tsunamis form?",
+      "What causes landslides?",
+      "What is the Ring of Fire?"
+    ],
+    "a": "Geological disasters are caused by Earth's internal geological processes. Earthquakes result from the sudden release of accumulated stress along fault lines in Earth's crust, measured by magnitude (the Richter scale and moment magnitude scale quantify energy released) and intensity (the Modified Mercalli scale describes observed effects). Volcanoes erupt when magma from Earth's mantle rises through weaknesses in the crust, driven by dissolved gases that expand explosively — eruptions range from gentle effusive flows (Hawaiian-style shield volcanoes) to catastrophic Plinian eruptions (like Mount Vesuvius and Mount St. Helens) that eject ash and pyroclastic flows over vast areas. Tsunamis are large ocean waves generated primarily by undersea earthquakes (vertical displacement of the seafloor), but also by volcanic collapse, submarine landslides, or asteroid impacts — they travel at speeds up to 500 mph in deep water and can surge to over 100 feet upon reaching shallow coastal waters. Landslides involve the downslope movement of rock, soil, and debris triggered by earthquakes, heavy rainfall, volcanic activity, or human modification of slopes, ranging from slow soil creep to devastating debris flows."
+  },
+  {
+    "q": [
+      "What are meteorological disasters?",
+      "How do hurricanes form?",
+      "What is the difference between a hurricane, typhoon, and cyclone?",
+      "How are hurricanes categorized?",
+      "How do tornadoes form?",
+      "What is the Enhanced Fujita scale?",
+      "What causes floods?",
+      "What is the difference between a flood and a flash flood?",
+      "What causes droughts?",
+      "What causes wildfires?"
+    ],
+    "a": "Meteorological disasters are caused by weather and climate processes. Hurricanes (also called typhoons or cyclones depending on region) are massive tropical storm systems that form over warm ocean waters above 80°F, deriving energy from evaporation and condensation — they are categorized on the Saffir-Simpson scale from Category 1 (74-95 mph winds) to Category 5 (over 157 mph) based on sustained wind speeds. Tornadoes are violently rotating columns of air extending from thunderstorms to the ground, formed when wind shear creates horizontal rotation that is tilted vertical by strong updrafts — rated on the Enhanced Fujita scale (EF0 to EF5) by damage severity. Floods occur when water exceeds the capacity of natural or artificial drainage systems: river floods follow heavy rain or snowmelt, coastal floods result from storm surges and high tides, and flash floods develop within minutes of intense rainfall in urban or mountainous areas. Droughts are extended periods of below-normal precipitation causing water shortages, agricultural damage, and ecosystem stress, while wildfires are uncontrolled fires in vegetated areas ignited by lightning or human activity, spread by dry conditions, wind, and abundant fuel — with climate change increasing their frequency and intensity across many regions through hotter, drier conditions."
+  },
+  {
+    "q": [
+      "What is disaster preparedness?",
+      "How do you prepare for a natural disaster?",
+      "What should be in an emergency kit?",
+      "How do communities prepare for disasters?",
+      "What is an emergency plan?",
+      "What is early warning system for disasters?",
+      "How do you make a family disaster plan?",
+      "What supplies do you need for an emergency?",
+      "What is the first step in disaster preparedness?"
+    ],
+    "a": "Disaster preparedness involves proactive measures taken before a disaster occurs to reduce risk and ensure effective response. Key preparedness steps include: creating an emergency plan covering evacuation routes, family communication protocols, and meeting points; assembling an emergency supply kit with at least 72 hours of water (one gallon per person per day), non-perishable food, flashlights, batteries, first aid supplies, medications, cash, important documents, and a battery-powered or hand-crank radio; and staying informed about local hazards and warning systems. Community-level preparedness includes land-use planning (avoiding building in floodplains and landslide-prone areas), building codes that enforce seismic and wind-resistant construction, infrastructure hardening (levees, seawalls, fire breaks), emergency services training, and public education campaigns. Early warning systems — such as tsunami warning buoys, earthquake early detection networks (like ShakeAlert), weather radar for tornado detection, and flood gauges — provide critical minutes to hours of advance notice, significantly reducing casualties when communities know how to respond appropriately to alerts."
+  },
+  {
+    "q": [
+      "What is disaster response?",
+      "How do emergency services respond to disasters?",
+      "What is search and rescue?",
+      "What is the role of FEMA in disaster response?",
+      "What is the incident command system?",
+      "How are disasters managed?",
+      "What is triage in disaster response?",
+      "How do international disaster response operations work?"
+    ],
+    "a": "Disaster response encompasses the immediate actions taken during and after a disaster to save lives, meet basic human needs, and prevent further damage — it is typically managed through the Incident Command System (ICS), a standardized organizational structure that coordinates personnel, facilities, equipment, and communication across multiple agencies. Response phases include: alert and mobilization (activating emergency services and pre-positioning resources), search and rescue (locating and extracting victims from damaged structures or hazardous areas), medical triage (prioritizing treatment based on injury severity to maximize survival), shelter and mass care (providing temporary housing, food, water, and sanitation), and critical infrastructure restoration (repairing power, water, transportation, and communication systems). In the United States, FEMA (Federal Emergency Management Agency) coordinates federal disaster response and provides financial assistance to individuals and communities, while international responses involve organizations like the United Nations Office for the Coordination of Humanitarian Affairs (OCHA), the Red Cross/Red Crescent movement, and non-governmental organizations like Doctors Without Borders — with logistics, coordination, and cultural sensitivity being major challenges in large-scale international disaster relief operations."
+  },
+  {
+    "q": [
+      "How does climate change affect natural disasters?",
+      "Is climate change making natural disasters worse?",
+      "What is the connection between climate change and hurricanes?",
+      "How does global warming affect wildfires?",
+      "How does climate change affect flooding?",
+      "What is disaster mitigation?",
+      "How can we reduce the impact of natural disasters?",
+      "What is structural mitigation for disasters?",
+      "What is non-structural mitigation?",
+      "What are nature-based solutions for disaster risk reduction?"
+    ],
+    "a": "Climate change is intensifying many natural disasters by altering the underlying physical processes: warmer ocean temperatures provide more energy for hurricanes and typhoons, leading to stronger storms with higher wind speeds and heavier rainfall; hotter and drier conditions in many regions increase vegetation flammability and lengthen fire seasons, contributing to more extensive and severe wildfires; and a warming atmosphere holds more moisture, causing extreme precipitation events and catastrophic flooding across many areas. Sea level rise, driven by thermal expansion and melting ice sheets, amplifies coastal storm surge flooding and erosion. Disaster mitigation focuses on reducing the long-term risk and impact of disasters through both structural measures (building levees, seawalls, earthquake-resistant buildings, fire-resistant construction, and avalanche barriers) and non-structural measures (land-use zoning that restricts development in hazard zones, building codes, insurance programs, early warning systems, public education, and ecosystem conservation). Nature-based solutions — such as restoring mangroves and coastal wetlands for storm surge protection, maintaining coral reefs as natural wave barriers, reforesting slopes to prevent landslides, and preserving floodplains for natural water absorption — are increasingly recognized as cost-effective, sustainable approaches to disaster risk reduction that provide additional ecological benefits."
+  }
+]

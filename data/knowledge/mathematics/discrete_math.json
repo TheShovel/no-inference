@@ -1,0 +1,77 @@
+[
+  {
+    "q": [
+      "What is set theory?",
+      "What is a set in mathematics?",
+      "What are the basic set operations?",
+      "What is union and intersection in sets?",
+      "What is a subset?",
+      "What is set notation?",
+      "What is the cardinality of a set?",
+      "What is the power set?",
+      "What is logic in discrete mathematics?",
+      "What are truth tables?"
+    ],
+    "a": "Set theory is the foundation of modern mathematics, dealing with collections of objects called sets. A set is defined by its elements, written in curly braces like A = {1, 2, 3}, and basic operations include union (A union B, all elements in either set), intersection (A intersect B, elements in both sets), complement (elements not in the set), difference (A minus B, elements in A but not B), and Cartesian product (A times B, ordered pairs of elements). Propositional logic studies how statements (propositions) combine using logical connectives: conjunction (AND), disjunction (OR), negation (NOT), implication (if-then), and biconditional (iff). Truth tables systematically show the truth value of compound propositions for all possible truth values of their component variables — for example, p implies q is false only when p is true and q is false. Predicate logic extends propositional logic with quantifiers: the universal quantifier (for all) and existential quantifier (there exists), enabling precise formalization of mathematical statements like 'for all x, if x is even then x squared is even.'"
+  },
+  {
+    "q": [
+      "What is combinatorics?",
+      "What are permutations and combinations?",
+      "What is the difference between permutation and combination?",
+      "How do you calculate combinations?",
+      "What is the fundamental counting principle?",
+      "What is the pigeonhole principle?",
+      "What is the binomial theorem?",
+      "What is the formula for permutations?",
+      "What is n choose k?",
+      "What are counting principles in discrete mathematics?"
+    ],
+    "a": "Combinatorics is the branch of discrete mathematics concerned with counting, arrangement, and combination of objects. The fundamental counting principle states that if one event has m possible outcomes and another independent event has n possible outcomes, there are m times n total possible outcomes for the sequence. Permutations count arrangements where order matters: the number of ways to arrange r items chosen from n distinct items is P(n,r) = n factorial divided by (n minus r) factorial — for example, the number of ways to arrange 3 books picked from 10 on a shelf is P(10,3) = 720. Combinations count selections where order does not matter: C(n,r) = n factorial divided by r factorial times (n minus r) factorial, also written as the binomial coefficient 'n choose r.' The pigeonhole principle states that if n items are placed into m containers and n is greater than m, then at least one container must contain more than one item — a simple but powerful principle with applications from computer science to social networks. The binomial theorem expands (x + y) to the power n as a sum of terms involving binomial coefficients, forming the basis of Pascal's triangle."
+  },
+  {
+    "q": [
+      "What is graph theory?",
+      "What is a graph in discrete mathematics?",
+      "What are vertices and edges in graph theory?",
+      "What is the difference between directed and undirected graphs?",
+      "What is a tree in graph theory?",
+      "What is Eulerian path?",
+      "What is the shortest path problem?",
+      "What is a spanning tree?",
+      "What is graph coloring?",
+      "What are the applications of graph theory?"
+    ],
+    "a": "Graph theory studies structures consisting of vertices (nodes) connected by edges — fundamental to modeling relationships in computer networks, social networks, transportation systems, and countless other domains. Graphs are classified as undirected (edges have no direction, like Facebook friendships), directed (edges have direction, like Twitter follows), weighted (edges have associated costs or distances), or unweighted. A tree is a connected undirected graph with no cycles, forming the basis of hierarchical data structures, file systems, and decision trees. Eulerian paths (traversing every edge exactly once) originated with the Seven Bridges of Koenigsberg problem and are essential to route planning and circuit design. Graph theory has profound practical applications: Dijkstra's algorithm finds shortest paths in navigation systems, spanning tree algorithms optimize network design, graph coloring assigns frequencies to radio towers with minimal interference, and social network analysis uses graph metrics like centrality, clustering coefficient, and PageRank to identify influential nodes and community structures in complex networks."
+  },
+  {
+    "q": [
+      "What is number theory?",
+      "What are prime numbers?",
+      "What is modular arithmetic?",
+      "What is the greatest common divisor?",
+      "What is the Euclidean algorithm?",
+      "What is a proof in mathematics?",
+      "What is mathematical induction?",
+      "How does mathematical induction work?",
+      "What are the different types of proof in discrete math?",
+      "What is proof by contradiction?"
+    ],
+    "a": "Number theory is the study of integers and their properties, including prime numbers (integers greater than 1 divisible only by 1 and themselves), divisibility rules, modular arithmetic (clock arithmetic where numbers wrap around after reaching a modulus, written as a congruent to b modulo m), and the fundamental theorem of arithmetic (every integer greater than 1 has a unique prime factorization). Mathematical induction is a powerful proof technique for statements about natural numbers: prove a base case (e.g., P(1) is true), then prove the inductive step (if P(k) is true, then P(k+1) is true), establishing the statement for all natural numbers. Other fundamental proof techniques include direct proof (deducing the conclusion from premises using logical steps), proof by contradiction (assuming the negation and deriving a contradiction), proof by contrapositive (proving 'if not Q then not P' instead of 'if P then Q'), and constructive vs. non-constructive existence proofs. The Euclidean algorithm efficiently finds the greatest common divisor of two integers through repeated division, and is one of the oldest algorithms still in common use."
+  },
+  {
+    "q": [
+      "What is Boolean algebra?",
+      "How is Boolean algebra used in computing?",
+      "What are Boolean operations?",
+      "What are relations in mathematics?",
+      "What are functions in discrete mathematics?",
+      "What is the difference between injective, surjective, and bijective functions?",
+      "What is a partial order?",
+      "What is an equivalence relation?",
+      "What is a function in set theory?",
+      "What are the different types of relations?"
+    ],
+    "a": "Boolean algebra, developed by George Boole in the 19th century, is an algebraic structure dealing with binary values (true/false, 1/0) and operations AND, OR, NOT, NAND, NOR, XOR, and XNOR — it forms the mathematical foundation of digital circuit design and computer science, with logic gates implementing Boolean operations in hardware and Boolean expressions controlling program flow in software. Relations are subsets of a Cartesian product that define relationships between elements of sets — the key properties are reflexivity (a relates to a), symmetry (if a relates to b then b relates to a), antisymmetry (if a relates to b and b relates to a then a equals b), and transitivity (if a relates to b and b relates to c then a relates to c). An equivalence relation (reflexive, symmetric, transitive) partitions a set into disjoint equivalence classes, while a partial order (reflexive, antisymmetric, transitive) defines hierarchical structures like subset inclusion. Functions are special relations where each input maps to exactly one output, classified as injective (one-to-one: each output corresponds to at most one input), surjective (onto: every possible output is reached), and bijective (both injective and surjective, creating a perfect pairing between domain and codomain that guarantees an inverse function exists)."
+  }
+]

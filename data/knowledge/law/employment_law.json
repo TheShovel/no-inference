@@ -1,0 +1,46 @@
+[
+  {
+    "q": [
+      "What is employment at will?",
+      "What does at-will employment mean for workers?",
+      "What are the exceptions to at-will employment?",
+      "Can an employee be fired for any reason in at-will states?",
+      "How does at-will employment affect wrongful termination claims?",
+      "What states do not have at-will employment?"
+    ],
+    "a": "Employment at will is a legal doctrine that allows either the employer or the employee to terminate the employment relationship at any time, for any reason — or no reason at all — without legal liability, provided the reason is not discriminatory or retaliatory under federal or state law. All U.S. states except Montana follow at-will employment, but significant exceptions exist: the public policy exception (cannot fire for refusing to commit illegal acts, filing a workers' compensation claim, or serving on a jury), the implied contract exception (when employer statements or handbooks create an expectation of continued employment), and the implied covenant of good faith and fair dealing recognized in some states. These exceptions are the primary basis for wrongful termination lawsuits, requiring employees to prove the termination violated a specific legal protection rather than the at-will principle itself."
+  },
+  {
+    "q": [
+      "What laws prohibit workplace discrimination?",
+      "What is Title VII of the Civil Rights Act?",
+      "What is the ADA and how does it protect disabled workers?",
+      "What is the Age Discrimination in Employment Act (ADEA)?",
+      "What are the protected classes under employment discrimination law?",
+      "How do employees file a workplace discrimination claim?"
+    ],
+    "a": "Title VII of the Civil Rights Act of 1964 is the primary federal law prohibiting employment discrimination based on race, color, religion, sex (including pregnancy, sexual orientation, and gender identity per recent Supreme Court rulings), and national origin, applying to employers with 15 or more employees. The Americans with Disabilities Act (ADA) prohibits discrimination against qualified individuals with disabilities and requires employers to provide reasonable accommodations (such as modified work schedules, assistive technology, or accessible facilities) unless doing so causes undue hardship. The Age Discrimination in Employment Act (ADEA) protects workers aged 40 and older from age-based discrimination, while additional laws like the Equal Pay Act address gender-based wage disparities — employees alleging discrimination must typically file a charge with the Equal Employment Opportunity Commission (EEOC) before pursuing a private lawsuit."
+  },
+  {
+    "q": [
+      "What are wage and hour laws?",
+      "What is the federal minimum wage?",
+      "How does overtime pay work under the FLSA?",
+      "What is the Fair Labor Standards Act?",
+      "Who is exempt from overtime pay requirements?",
+      "What are the difference between exempt and non-exempt employees?"
+    ],
+    "a": "The Fair Labor Standards Act (FLSA) is the primary federal law governing minimum wage, overtime pay, child labor, and recordkeeping, establishing a federal minimum wage (currently $7.25 per hour, though many states and cities have higher minimums) and requiring overtime pay at 1.5 times the regular rate for hours worked beyond 40 in a workweek. Employees are classified as exempt (not entitled to overtime) or non-exempt (entitled to overtime), with exempt status requiring a salary basis of pay (at least $684 per week under federal rules), a primarily executive, administrative, or professional duties test, and certain other criteria. The FLSA also restricts child labor by setting minimum ages for different types of work and hours limitations for minors, with the Department of Labor's Wage and Hour Division enforcing these provisions through investigations and penalties for violations."
+  },
+  {
+    "q": [
+      "What is OSHA and workplace safety law?",
+      "What are the employer's responsibilities under OSHA?",
+      "What is the Family and Medical Leave Act (FMLA)?",
+      "What does FMLA provide for employees?",
+      "What are the requirements for taking FMLA leave?",
+      "What is ERISA and how does it regulate employee benefits?"
+    ],
+    "a": "The Occupational Safety and Health Act (OSHA) requires employers to provide a workplace free from recognized hazards that cause or are likely to cause death or serious physical harm, enforced through workplace inspections, citations, and penalties that can reach hundreds of thousands of dollars for willful violations. The Family and Medical Leave Act (FMLA) entitles eligible employees to 12 weeks of unpaid, job-protected leave per year for specific family and medical reasons including the birth or adoption of a child, a serious personal health condition, or caring for a family member with a serious health condition, requiring 12 months of employment and 1,250 hours worked in the prior year. The Employee Retirement Income Security Act (ERISA) sets minimum standards for private-sector pension, health, and welfare benefit plans, requiring disclosure of plan information, fiduciary responsibilities for plan administrators, and a grievance and appeals process for participants denied benefits."
+  }
+]

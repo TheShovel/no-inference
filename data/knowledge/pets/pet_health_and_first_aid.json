@@ -1,0 +1,73 @@
+[
+  {
+    "q": [
+      "How do I assess my pet's vital signs at home?",
+      "How do I check a pet's temperature, heart rate, and respiratory rate?",
+      "What are normal vital signs for dogs and cats?",
+      "How do I check capillary refill time and hydration status?",
+      "What is the normal temperature for a dog or cat?",
+      "How do I perform CPR on a dog or cat?",
+      "What is the correct compression-to-breath ratio for pet CPR?",
+      "How do I perform rescue breathing on a pet?"
+    ],
+    "a": "Normal vital signs for dogs: temperature 100.5-102.5°F, heart rate 60-140 bpm (larger breeds slower, small breeds faster), respiratory rate 10-30 breaths per minute. Normal cat vital signs: temperature 100.5-102.5°F, heart rate 140-220 bpm, respiratory rate 20-30 breaths per minute. Check temperature rectally with a digital thermometer (lubricated, inserted 1-2 inches). Check hydration by gently tenting skin at the scruff or over the shoulder blades—skin that does not snap back quickly indicates dehydration. Capillary refill time (CRT) is checked by pressing on the gums until they blanch and counting seconds for color return: normal is 1-2 seconds, prolonged CRT (>2-3 seconds) indicates shock or poor circulation. Pet CPR for dogs and cats: lay the animal on their right side, compress the chest at one-third to one-half its width, at a rate of 100-120 compressions per minute. For medium-large dogs (>30 lbs), compress the widest part of the chest near the heart; for deep-chested dogs, compress the lower sternum. For barrel-chested dogs, compress on the sternum over the heart. For cats and small dogs, cradle and compress the chest over the heart. The compression-to-breath ratio is 30:2 for single rescuers (like human CPR). Rescue breathing: extend the neck to open the airway, close the mouth, and breathe into the nose, watching the chest rise—give one breath every 6 seconds (10 breaths per minute) once an airway is established."
+  },
+  {
+    "q": [
+      "How do I clean and bandage a pet wound?",
+      "How do I control bleeding in a pet?",
+      "What should I do if my pet is bleeding?",
+      "How do I treat a burn on a dog or cat?",
+      "What is shock in pets and how do I treat it?",
+      "How do I splint a fracture on a pet?",
+      "How do I muzzle and restrain an injured pet?",
+      "How do I safely transport an injured pet?"
+    ],
+    "a": "Wound care: control bleeding with direct pressure using a clean gauze pad for at least 3-5 minutes without peeking. For severe bleeding on a limb, apply a pressure bandage—wrap gauze snugly but not tight enough to cut circulation, followed by an elastic wrap. Tourniquets are reserved only for life-threatening arterial hemorrhage not controlled by pressure (mark time of application). Clean wounds with warm water or dilute chlorhexidine solution (not hydrogen peroxide—it damages tissue). Apply sterile gauze and bandage with non-adherent dressing. Burns require immediate cool water flushing for 15-20 minutes, then cover with a sterile non-stick dressing—never apply butter, oil, or ice. Shock (pale gums, rapid weak pulse, shallow breathing, weakness) requires keeping the pet warm, elevating hindquarters slightly, and transporting immediately to a vet. Fractures: immobilize the limb with a padded splint (SAM splint, rolled newspaper, or stiff cardboard) padded with cotton or soft cloth, extending above and below the injury—never attempt to realign bones. Muzzling: an injured pet in pain may bite even if normally friendly—use a gauze bandage (dogs) wrapped around the muzzle, tied behind the head, or a commercial muzzle. For cats, use a towel wrap or cat restraint bag. Transport on a rigid surface (stretcher, board, blanket) keeping the spine straight—especially important for suspected spinal or pelvic fractures."
+  },
+  {
+    "q": [
+      "What are common pet emergencies I should know about?",
+      "What should I do if my pet is poisoned?",
+      "What foods are toxic to dogs and cats?",
+      "What should I do if my pet is choking?",
+      "How do I treat heat stroke in a dog?",
+      "What is bloat or GDV in dogs?",
+      "How do I treat a snake bite on my pet?",
+      "What common household items are toxic to pets?",
+      "When should I take my pet to an emergency vet?",
+      "What should be in a pet first aid kit?"
+    ],
+    "a": "Common pet emergencies include poisoning (antifreeze, chocolate, grapes, raisins, onions, garlic, xylitol, medications, marijuana, rodenticides, snail bait, toxic plants like lilies for cats, alcohol, caffeine, salt, yeast dough, macadamia nuts), heat stroke (excessive panting, drooling, vomiting, collapse—cool slowly with room-temperature water, never ice, and get to a vet), bloat/GDV (distended abdomen, unproductive retching, restlessness—life-threatening, requires emergency surgery within hours), choking (gagging, pawing at mouth—perform Heimlich for pets by giving chest thrusts), fractures, snake bites (keep calm, immobilize, transport—do NOT cut or suck venom), and insect stings (monitor for allergic reaction, give Benadryl 1 mg/lb if no other contraindications). Pet Poison Helpline (855-764-7661) and ASPCA Animal Poison Control (888-426-4435) are 24/7 resources. A pet first aid kit should include gauze pads, rolled gauze, adhesive tape, antiseptic wipes (chlorhexidine), antibiotic ointment, instant cold pack, tweezers, blunt-tip scissors, sterile saline eye wash, digital thermometer, styptic powder (for nail bleeds), muzzle, leash, emergency blanket, hydrogen peroxide (induce vomiting ONLY on vet instruction), Benadryl (consult vet for dosage), and your vet's emergency number. Veterinary care should be sought immediately for any toxin ingestion, difficulty breathing, severe bleeding, seizures, collapse, eye injuries, bloating with retching, or inability to urinate or defecate."
+  },
+  {
+    "q": [
+      "What is the standard puppy vaccination schedule?",
+      "What is the standard kitten vaccination schedule?",
+      "What are core vaccines for dogs and cats?",
+      "What are non-core vaccines for dogs?",
+      "Is rabies vaccination required by law?",
+      "What are titer tests and can they replace vaccines?",
+      "What are the risks and side effects of pet vaccines?",
+      "What does an annual wellness exam for a pet include?",
+      "How often should senior pets see the vet?",
+      "What is the difference between core and non-core vaccines?"
+    ],
+    "a": "Core vaccines for dogs: DHPP (distemper, hepatitis/adenovirus, parainfluenza, parvovirus) given at 6-8, 10-12, 14-16 weeks, and a booster at 1 year then every 3 years; rabies given at 12-16 weeks and boostered per state law (typically 1-3 years). Core vaccines for cats: FVRCP (feline viral rhinotracheitis, calicivirus, panleukopenia) at 6-8, 10-12, 14-16 weeks and booster at 1 year then every 3 years; rabies per law. Non-core dog vaccines include Bordetella (kennel cough, annually for social dogs), leptospirosis (annually, especially in rural/suburban areas with wildlife exposure), Lyme disease (endemic areas), and canine influenza (kennel situations). Non-core cat vaccines include FeLV (feline leukemia—recommended for any cat with outdoor access) and FIV (for high-risk cats). Titer tests measure antibody levels but are not accepted by all clinics or boarding facilities as proof of immunity and don't guarantee protection against all diseases. Annual wellness exams include physical examination (heart, lungs, ears, eyes, teeth, skin, joints), weight assessment, bloodwork for senior pets, fecal exam for intestinal parasites, and vaccination boosters as needed. Senior pets (7+ years) should have semi-annual exams with comprehensive bloodwork, urinalysis, and thyroid testing. Vaccine reactions (mild: lethargy, mild fever, local swelling; severe: facial swelling, hives, vomiting, anaphylaxis) are rare but require veterinary attention—most pets tolerate vaccines well."
+  },
+  {
+    "q": [
+      "How do I prevent heartworm in my dog or cat?",
+      "What flea and tick prevention options are available?",
+      "How often should I give heartworm prevention?",
+      "What is heartworm disease and how is it treated?",
+      "How do I safely remove a tick from my pet?",
+      "What intestinal parasites are common in pets?",
+      "Why is year-round parasite prevention important?",
+      "How do I care for my pet's teeth?",
+      "What is dental disease in pets?",
+      "What is periodontal disease in dogs and cats?"
+    ],
+    "a": "Heartworm disease is transmitted by mosquitoes and is life-threatening—lung damage, heart failure, and death. Prevention (monthly oral or topical medication, or a 6-12 month injectable for dogs) should be year-round in all regions, as temperature variations allow mosquito survival even in colder months. Treatment for active heartworm infection in dogs is expensive, painful (arsenic-based injectable therapy with strict exercise restriction for months), and carries serious risks. Prevention is vastly safer and cheaper. Flea and tick prevention options include oral tablets (NexGard, Bravecto, Simparica Trio), topical solutions (Frontline, Advantage, Revolution), collars (Seresto), and shampoos/sprays—many combined products also prevent heartworm and intestinal parasites. Tick removal: use fine-tipped tweezers, grasp as close to the skin as possible, pull upward steadily (do not twist or jerk), and clean the area with antiseptic—never use heat, petroleum jelly, or alcohol to remove. Common intestinal parasites include roundworms, hookworms, whipworms, tapeworms, coccidia, and giardia—fecal exams 1-2 times annually and routine deworming are recommended. Dental disease is the most common health problem in pets (80% of dogs and 70% of cats by age 3), progressing from plaque and tartar to gingivitis (reversible) to periodontal disease (irreversible bone loss, tooth loss, and bacteria entering the bloodstream damaging heart, liver, kidneys). Prevention requires daily tooth brushing with pet-safe toothpaste, dental chews, dental diets (Hill's t/d, Royal Canin Dental), water additives, and annual professional veterinary dental cleanings under anesthesia with X-rays to assess below the gumline. Broken teeth, tooth resorption (FORLs in cats), and advanced periodontal disease may require extraction or dental surgery."
+  }
+]

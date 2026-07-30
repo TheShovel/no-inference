@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "What is the difference between subsistence and commercial farming?",
+      "What is subsistence farming?",
+      "What is commercial farming?",
+      "How does subsistence agriculture differ from industrial agriculture?",
+      "What are the characteristics of subsistence farming?",
+      "What are the characteristics of commercial farming?",
+      "Compare subsistence and commercial agriculture."
+    ],
+    "a": "Subsistence farming is agricultural production primarily for the farmer's own consumption, using traditional methods, family labor, and small plots of land, with little or no surplus for sale — it remains widespread in developing regions of Africa, Asia, and Latin America. Commercial farming, also called industrial or agribusiness farming, produces crops and livestock for sale in markets, characterized by large-scale operations, mechanization, use of synthetic fertilizers and pesticides, and integration into global supply chains. While subsistence farming supports roughly 2 billion people worldwide, commercial farming dominates global food production, with a relatively small number of large farms producing the majority of staple commodities traded internationally."
+  },
+  {
+    "q": [
+      "What is crop farming?",
+      "What are the main types of crops grown?",
+      "What are grain crops?",
+      "What are the most important staple crops?",
+      "What are vegetable crops?",
+      "What are fruit crops?",
+      "What is arable farming?"
+    ],
+    "a": "Crop farming is the cultivation of plants for food, feed, fiber, or fuel, divided into categories including grain crops (wheat, rice, corn, barley, oats), vegetables (leafy greens, root vegetables, legumes), fruits (tree fruits, berries, melons), oilseeds (soybeans, sunflower, canola), and cash crops (coffee, cotton, tobacco, sugarcane) grown primarily for export or processing. Staple crops are the dominant food sources that provide the majority of calories in human diets globally, led by rice, wheat, and maize (corn), which together supply more than 50% of the world's caloric intake. Crop selection depends on climate, soil conditions, water availability, market demand, and economic factors, with farmers increasingly using data-driven precision agriculture techniques to optimize planting decisions and maximize yields."
+  },
+  {
+    "q": [
+      "What is livestock farming?",
+      "What types of animals are raised in livestock farming?",
+      "What is cattle farming?",
+      "What is poultry farming?",
+      "What is swine farming?",
+      "What is sheep farming?",
+      "How are livestock raised in modern agriculture?"
+    ],
+    "a": "Livestock farming involves raising animals for meat, milk, eggs, wool, leather, or other products, encompassing cattle (beef and dairy), poultry (chickens, turkeys, ducks), swine (pigs), sheep (meat and wool), and goats as the primary species. Modern livestock production ranges from extensive pasture-based systems where animals graze on large land areas to intensive confined animal feeding operations (CAFOs) that maximize production efficiency through controlled feeding, housing, and health management. The livestock sector faces significant challenges including environmental impacts (greenhouse gas emissions, water use, land degradation), animal welfare concerns, antibiotic resistance from routine use, and the growing demand for alternative proteins from plant-based and cultivated meat sources."
+  },
+  {
+    "q": [
+      "What is mixed farming?",
+      "What is organic farming?",
+      "How does organic farming differ from conventional farming?",
+      "What is hydroponics?",
+      "How does hydroponic farming work?",
+      "What is aquaculture?",
+      "What is fish farming?"
+    ],
+    "a": "Mixed farming is an agricultural system that combines crop production with livestock raising on the same farm, allowing farmers to diversify income streams, use animal manure as fertilizer, and feed crop residues and byproducts to animals in a complementary cycle. Organic farming avoids synthetic pesticides, fertilizers, genetically modified organisms (GMOs), and antibiotics, relying instead on crop rotation, natural pest predators, compost, and biological soil management to maintain productivity through certified practices. Hydroponics is a soilless cultivation method where plants grow in nutrient-rich water solutions, enabling year-round production in controlled environments with higher yields per square foot and significantly less water than conventional soil farming."
+  },
+  {
+    "q": [
+      "What is vertical farming?",
+      "How does vertical farming work?",
+      "What is precision agriculture?",
+      "How is technology used in precision farming?",
+      "What is agroforestry?",
+      "What is permaculture?",
+      "What are sustainable farming methods?"
+    ],
+    "a": "Vertical farming is the practice of growing crops in stacked layers, often indoors under LED lighting, using hydroponic or aeroponic systems to maximize production per unit of land area while eliminating pesticide use and reducing water consumption by up to 95%. Precision agriculture uses GPS guidance, satellite imagery, drone monitoring, soil sensors, and variable-rate technology to apply water, fertilizers, and pesticides with centimeter-level accuracy, optimizing inputs based on field variability and reducing environmental waste. Agroforestry integrates trees and shrubs with crops or livestock, providing shade, windbreaks, soil conservation, and additional products like timber or fruit, while permaculture is a design approach that mimics natural ecosystems, emphasizing perennial plants, water harvesting, and closed-loop nutrient cycling to create self-sustaining agricultural systems."
+  }
+]

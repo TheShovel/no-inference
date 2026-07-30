@@ -1,0 +1,56 @@
+[
+  {
+    "q": [
+      "what is accounting",
+      "accounting definition",
+      "accounting explained",
+      "types of accounting",
+      "why is accounting important",
+      "what do accountants do",
+      "financial statements",
+      "balance sheet explained",
+      "income statement",
+      "cash flow statement"
+    ],
+    "a": "Accounting is the systematic process of recording, classifying, summarizing, and interpreting financial transactions to provide useful information for economic decision-making. The three primary financial statements form the foundation of financial reporting. The balance sheet provides a snapshot of a company's assets, liabilities, and shareholders' equity at a specific point in time, following the equation Assets = Liabilities + Equity. The income statement, also called the profit and loss statement, shows revenues, expenses, and net income or loss over a period. The cash flow statement reports the cash generated and used by operating, investing, and financing activities, revealing the company's liquidity and cash management."
+  },
+  {
+    "q": [
+      "double entry bookkeeping",
+      "how does double entry accounting work",
+      "debits and credits",
+      "what is GAAP",
+      "GAAP vs IFRS",
+      "generally accepted accounting principles",
+      "accounting standards",
+      "US GAAP IFRS differences"
+    ],
+    "a": "Double-entry bookkeeping is the fundamental system underlying modern accounting, where every financial transaction affects at least two accounts, with equal debits and credits, maintaining the accounting equation's balance. Debits increase asset and expense accounts while decreasing liability, equity, and revenue accounts; credits work in the opposite direction. GAAP (Generally Accepted Accounting Principles) is the standard framework of guidelines for financial accounting used in the United States, established by the Financial Accounting Standards Board (FASB). IFRS (International Financial Reporting Standards), issued by the International Accounting Standards Board (IASB), is used in over 140 countries worldwide. Key differences include GAAP being more rules-based while IFRS is principles-based, and IFRS prohibiting LIFO inventory accounting while GAAP permits it."
+  },
+  {
+    "q": [
+      "what is auditing",
+      "types of audits",
+      "external vs internal audit",
+      "audit process",
+      "tax accounting",
+      "what is tax accounting",
+      "tax planning",
+      "tax compliance"
+    ],
+    "a": "Auditing is the independent examination of financial records and internal controls to ensure accuracy, completeness, and compliance with accounting standards and regulations. External audits are performed by independent CPA firms to provide an opinion on whether financial statements are fairly presented, while internal audits are conducted by company employees to evaluate risk management and operational efficiency. Tax accounting focuses on preparing tax returns, tax planning to minimize tax liability within legal bounds, and ensuring compliance with tax laws and regulations. Tax accountants must stay current with constantly changing tax codes at federal, state, and local levels. Forensic accounting involves investigating financial discrepancies for legal proceedings."
+  },
+  {
+    "q": [
+      "managerial accounting",
+      "what is managerial accounting",
+      "cost accounting",
+      "management accounting vs financial accounting",
+      "forensic accounting",
+      "what is forensic accounting",
+      "financial fraud investigation",
+      "difference between managerial and financial accounting"
+    ],
+    "a": "Managerial accounting (or management accounting) provides financial information to internal decision-makers such as managers and executives for planning, controlling, and strategic decision-making. Unlike financial accounting, which focuses on historical reporting for external stakeholders, managerial accounting emphasizes forward-looking analysis including budgeting, cost-volume-profit analysis, variance analysis, and performance evaluation. Forensic accounting combines accounting, auditing, and investigative skills to examine financial records for evidence of fraud, embezzlement, money laundering, or other financial crimes. Forensic accountants often work with law enforcement and legal teams, serve as expert witnesses in court, and help companies implement internal controls to prevent financial misconduct."
+  }
+]

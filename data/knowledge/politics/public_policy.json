@@ -1,0 +1,48 @@
+[
+  {
+    "q": [
+      "What is public policy?",
+      "How is public policy made?",
+      "What are the stages of the policy process?",
+      "What is the policy cycle?",
+      "What is policy analysis?",
+      "What is the difference between policy and law?",
+      "What types of public policy exist?"
+    ],
+    "a": "Public policy refers to the set of decisions, actions, and programs adopted by government institutions to address public problems and achieve societal goals, encompassing legislation, executive orders, regulations, judicial rulings, and resource allocation decisions. The policy process is commonly understood through the stages model (the policy cycle): agenda setting (identifying and prioritizing problems), policy formulation (developing proposed solutions), adoption/legitimation (securing approval through legislative, executive, or judicial action), implementation (carrying out policy through government agencies), and evaluation (assessing effectiveness and outcomes, which feeds back into agenda setting). Policy analysis involves systematically evaluating policy alternatives based on criteria such as effectiveness, efficiency, equity, political feasibility, and administrative practicality, using tools like cost-benefit analysis, impact assessments, and stakeholder analysis to inform decision-makers."
+  },
+  {
+    "q": [
+      "What is regulatory policy?",
+      "How does government regulation work?",
+      "What is social welfare policy?",
+      "What are examples of social welfare programs?",
+      "What is healthcare policy?",
+      "What are different approaches to healthcare policy?",
+      "What is environmental policy?"
+    ],
+    "a": "Regulatory policy involves government rules that restrict or guide behavior of individuals and organizations to achieve public objectives, including economic regulation (controlling prices, market entry, and competition in industries like utilities and telecommunications) and social regulation (protecting health, safety, and the environment through agencies like the EPA, OSHA, and FDA). Social welfare policy encompasses government programs designed to support citizens' well-being, including social insurance (Social Security, Medicare funded through payroll taxes), means-tested assistance (Medicaid, SNAP/food stamps, housing vouchers based on income), and universal programs (public education, child benefits). Healthcare policy addresses the financing and delivery of medical services, with different national models including single-payer systems (where government funds healthcare through taxes, as in Canada and the UK), social health insurance (mandatory contributions to non-profit insurance funds, as in Germany and Japan), and mixed public-private systems (as in the United States with Medicare, Medicaid, and private insurance)."
+  },
+  {
+    "q": [
+      "What is economic policy?",
+      "What is the difference between fiscal and monetary policy?",
+      "What is foreign policy?",
+      "What are the tools of foreign policy?",
+      "How is foreign policy made?",
+      "What is the difference between isolationism and internationalism?"
+    ],
+    "a": "Economic policy encompasses government actions to influence the economy, divided into fiscal policy (taxation and government spending decisions made by legislatures and executives) and monetary policy (controlling money supply and interest rates, typically managed by independent central banks like the Federal Reserve). Fiscal policy can be expansionary (increasing spending or cutting taxes to stimulate growth during recessions) or contractionary (reducing spending or raising taxes to cool inflation). Foreign policy is a government's strategy for interacting with other nations and international actors, pursued through tools including diplomacy (negotiations, treaties, alliances), economic instruments (trade agreements, sanctions, foreign aid), military force (deterrence, intervention, peacekeeping), and soft power (cultural influence, public diplomacy, development assistance). Major theories of foreign policy include realism (states act primarily for security and power), liberalism (cooperation through institutions and interdependence), and constructivism (norms, identity, and ideas shape international behavior)."
+  },
+  {
+    "q": [
+      "What is policy implementation?",
+      "What challenges arise in policy implementation?",
+      "What is policy evaluation?",
+      "How is policy effectiveness measured?",
+      "What is evidence-based policy?",
+      "What is the difference between output and outcome in policy evaluation?"
+    ],
+    "a": "Policy implementation is the process of translating policy decisions into action through government agencies, which involves rulemaking, resource allocation, coordination across agencies, training of personnel, and service delivery — it is often the most challenging stage of the policy cycle due to what Pressman and Wildavsky called 'implementation deficits' resulting from unclear goals, inadequate resources, interagency conflicts, bureaucratic resistance, and unanticipated external conditions. Policy evaluation assesses whether a policy achieved its intended objectives and at what cost, using methods including randomized controlled trials, quasi-experimental designs, cost-effectiveness analysis, and process evaluation — it distinguishes between outputs (what was done, like number of people served or miles of road built) and outcomes (the actual change achieved, like improved health or reduced commute times). Evidence-based policy movement advocates for grounding policy decisions in rigorous research and data, though challenges include political values overriding evidence, time lags between research and implementation, and the difficulty of generalizing findings across different contexts."
+  }
+]

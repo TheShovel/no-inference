@@ -1,0 +1,67 @@
+[
+  {
+    "q": [
+      "what is a podcast production workflow",
+      "how do I record a podcast episode",
+      "what is remote podcast recording",
+      "what is a double-ender recording",
+      "what is a mix-minus setup",
+      "what is the best way to record remote interviews",
+      "how do I record a podcast with guests online",
+      "what tools can I use to record remote podcasts"
+    ],
+    "a": "Podcast production follows a general workflow: pre-production (planning topics, researching guests, preparing questions, setting up equipment), recording (capturing clean audio from each participant), editing (cleaning up audio, removing mistakes, adjusting timing, adding music and effects), mixing (balancing levels, applying compression, EQ, and noise reduction), and publishing (exporting, writing show notes, uploading to a hosting platform, and distributing via RSS). Remote recording can be done with dedicated platforms like Riverside, SquadCast, or Zencastr, which record high-quality local audio from each participant and sync it in the cloud. For the best audio quality, a double-ender or tape-sync technique has each participant record their own local audio file (using a DAW or voice recorder) while the call audio serves as a sync reference, resulting in separate high-bitrate tracks for each speaker. A mix-minus setup routes the remote caller's audio back to them minus their own voice to prevent echo and feedback, which is essential for phone or Skype-based recording. Clean feed technology sends only the remote guest's audio to the host without any mix-minus complications."
+  },
+  {
+    "q": [
+      "what is gain staging in podcast recording",
+      "what are proper recording levels for podcasting",
+      "what is noise floor in audio recording",
+      "what are plosives and how do I avoid them",
+      "what is sibilance in podcasting",
+      "what is the proximity effect in microphones",
+      "how do I set up a mix-minus for podcasting",
+      "what is room tone and why is it important"
+    ],
+    "a": "Gain staging means setting input levels so the signal is strong enough to overcome the noise floor (the ambient electronic hiss of your equipment) without clipping or distorting. Aim for peaks between -12 dB and -6 dB in your recording software, leaving headroom for unexpected loud moments. Plosives are explosive bursts of air from consonants like P and B that cause low-frequency thumps; they're controlled with a pop filter, windscreen, or by speaking slightly off-axis to the microphone. Sibilance refers to harsh, exaggerated S and Sh sounds, which can be reduced with a de-esser during post-production or by adjusting mic placement. The proximity effect is the increase in bass frequencies when you speak close to a directional microphone — dynamic broadcasters often use it intentionally for a warm, intimate voice, but it can also cause muddiness if not managed. Room tone (the ambient sound of your recording space with no one speaking) should be recorded for 30-60 seconds during each session so it can be used to fill gaps or for noise reduction sampling during editing."
+  },
+  {
+    "q": [
+      "how do I edit a podcast in post-production",
+      "what is noise reduction in podcast editing",
+      "what is compression in podcast audio",
+      "what is EQ in audio production",
+      "how do I remove ums and ahs from a podcast",
+      "what is spectral editing",
+      "how do I fade audio in a podcast",
+      "what is the difference between normalize and compress"
+    ],
+    "a": "Podcast post-production involves multiple stages of audio processing. First, editing: trimming dead air, removing verbal fillers (um, ah, like, you know), cutting mistakes and retakes, and rearranging segments for pacing and flow. Most editors use spectral editing (visualizing audio frequencies) to precisely remove clicks, mouth noises, breaths, and background noises. Noise reduction samples a noise profile from silent portions and subtracts that frequency signature from the whole track. Compression reduces the dynamic range by making loud parts quieter and quiet parts louder, creating a more consistent listening level, while normalization adjusts the overall gain so the loudest peak reaches a target level (typically -1 dB or -3 dB). EQ (equalization) shapes tonal balance: high-pass filtering removes low-frequency rumble below 80 Hz, a gentle presence boost around 3-5 kHz adds clarity to voices, and cutting around 200-400 Hz reduces muddiness. Fades and crossfades smooth transitions between edited segments, and fade-ins/outs at episode boundaries prevent abrupt starts or stops."
+  },
+  {
+    "q": [
+      "what is podcast hosting",
+      "what is the best podcast hosting platform",
+      "how do I publish a podcast to Apple Podcasts",
+      "how do I submit a podcast to Spotify",
+      "what is a podcast RSS feed",
+      "what are podcast show notes",
+      "what is podcast distribution",
+      "how do I get my podcast on all podcast directories"
+    ],
+    "a": "A podcast host stores your audio files and generates an RSS feed — an XML file that podcast directories read to display your show. Popular hosting platforms include Libsyn (the oldest, with detailed analytics), Buzzsprout (user-friendly with a free tier), Podbean (good monetization features), Anchor (free, owned by Spotify), Transistor (team-friendly with multiple shows), and Simplecast (great analytics and distribution). Once your host generates your RSS feed, you submit it to directories: Apple Podcasts requires an Apple ID and takes 24-48 hours for approval; Spotify accepts the RSS feed directly or via Anchor; Google Podcasts uses Google's search-based index. Other directories include Stitcher, TuneIn, iHeartRadio, Amazon Music, Overcast, Pocket Casts, Castro, and Podchaser. Show notes are text descriptions accompanying each episode, including timestamps, links, guest information, and a summary; they help with SEO and listener engagement. Most podcasters also create episode artwork (3000x3000 pixels minimum), set explicit content flags, add chapter markers for navigation, and include transcripts for accessibility and search indexing."
+  },
+  {
+    "q": [
+      "how do podcasters make money",
+      "what is podcast monetization",
+      "what are pre-roll mid-roll and post-roll ads",
+      "what is dynamic ad insertion in podcasting",
+      "how do podcasts get sponsors",
+      "what is Patreon for podcasters",
+      "what is affiliate marketing for podcasts",
+      "how do podcasters earn revenue"
+    ],
+    "a": "Podcast monetization falls into several categories. Advertising and sponsorship is the most common model: advertisers pay for pre-roll (beginning), mid-roll (middle), or post-roll (end) ad slots, with host-read ads commanding higher rates than baked-in or dynamically inserted ads. Dynamic ad insertion (DAI) technology swaps ads in and out of episodes using the podcaster's hosting platform, allowing for targeted or time-sensitive promotions. Direct listener support via Patreon, membership subscriptions, or platforms like Supercast offers recurring revenue in exchange for bonus episodes, ad-free content, early access, or community perks. Affiliate marketing earns commissions when listeners purchase products through unique discount codes or referral links. Additional revenue streams include merchandise (t-shirts, mugs), live events and tours, consulting or coaching services, online courses, speaking fees, and product sales. Most podcasters combine multiple approaches, and the industry standard CPM (cost per thousand downloads) ranges from $15 to $50 or more for mid-roll ads, with rates varying by audience size, demographics, and niche."
+  }
+]

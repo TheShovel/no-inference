@@ -1,0 +1,71 @@
+[
+  {
+    "q": [
+      "What are the survival priorities in a wilderness emergency?",
+      "What does S.T.O.P. stand for in survival?",
+      "What is the survival rule of threes?",
+      "How long can you survive without water?",
+      "How long can you survive without food?",
+      "What should I do first if I get lost in the wilderness?"
+    ],
+    "a": "The survival rule of threes provides a hierarchy of priorities: you can survive approximately 3 minutes without air (in extreme conditions), 3 hours without shelter in harsh weather (exposure kills quickly), 3 days without water, and 3 weeks without food. The S.T.O.P. acronym is the first response to finding yourself lost or in an emergency: Stop (sit down and calm yourself), Think (assess your situation, resources, and options), Observe (note surroundings, weather, available resources, and hazards), and Plan (develop a realistic course of action before moving). The immediate priority is always shelter—protecting yourself from hypothermia, hyperthermia, or other environmental threats—before water procurement or signaling for rescue."
+  },
+  {
+    "q": [
+      "How do I build an emergency shelter in the wilderness?",
+      "What is a lean-to shelter?",
+      "How do I build a debris hut?",
+      "How do I build a snow cave or igloo?",
+      "What is a quinzhee?",
+      "Where should I build a survival shelter?",
+      "How do I insulate a survival shelter?"
+    ],
+    "a": "Shelter building is the top survival priority. Types range from simple to complex: a lean-to requires a ridge pole between two trees with branches leaning against it, covered with leaves, bark, or a tarp. A debris hut is a small, cocoon-like shelter made by creating a frame of sticks and piling insulating debris (leaves, pine needles, grass) at least 2-3 feet thick. In snowy environments, a snow cave (tunneled into a deep snowdrift) or quinzhee (a piled and hollowed-out mound of snow) provides excellent insulation, with internal temperatures often 30-40°F warmer than outside. Selection criteria include proximity to water and firewood, natural windbreaks, level ground, elevation above potential flooding, and avoidance of hazards (dead trees, avalanche paths, animal dens). Insulating the shelter floor from the cold ground is critical—use debris, pine boughs, or sleeping pads."
+  },
+  {
+    "q": [
+      "How do I find and purify water in the wilderness?",
+      "How do I build a solar still?",
+      "How do I purify water in the backcountry?",
+      "Is it safe to drink rainwater?",
+      "How do I collect water in the wild?",
+      "How do I melt snow for drinking water?"
+    ],
+    "a": "Finding water is critical after shelter is secured. Look for green vegetation, animal tracks converging, birds circling at dawn/dusk, low-lying areas, and seeps at the base of cliffs or in streambeds. Collection methods include solar stills (condensation from vegetation under plastic sheeting), transpiration bags (securing a clear bag over leafy tree branches), rainwater catchment, and snow melting. Water purification is essential to prevent waterborne illness: boiling vigorously for at least 1 minute (3 minutes above 6,500 ft) kills all pathogens, portable water filters (pump, squeeze, or gravity) remove protozoa and bacteria but not viruses, chemical treatment (iodine or chlorine dioxide tablets) kills most organisms but leaves chemical taste, and UV purifiers (SteriPEN) neutralize pathogens in clear water. Distillation is required to remove salts from seawater or chemical contaminants."
+  },
+  {
+    "q": [
+      "How do I start a fire in the wilderness without matches?",
+      "What is the best fire lay for survival?",
+      "What are the best tinder materials for starting a fire?",
+      "How do I use a ferrocerium rod?",
+      "How do I make a bow drill fire?",
+      "What is a Dakota fire hole?",
+      "What is the fire triangle?"
+    ],
+    "a": "The fire triangle requires heat (ignition source), fuel, and oxygen. Tinder materials include dry grass, birch bark, cattail fluff, juniper bark, fatwood, commercial fire starters, or Vaseline-coated cotton balls. Kindling transitions from tinder to larger fuel in graduated sizes. Fire lays include the teepee (cones sticks for rapid ignition), log cabin (stable, good coil bed), lean-to (catches wind well), and Dakota fire hole (a hole with an underground air tunnel, less visible and more efficient). Ignition methods include modern ferrocerium rods (reliable with practice, scrape with a sharp edge for sparks), magnifying glass (requires direct sunlight), and friction methods such as the bow drill (spindle, fireboard, bow, and bearing block) and hand drill. Matches and lighters should be kept in waterproof containers as primary methods, with ferro rods as backup."
+  },
+  {
+    "q": [
+      "What wild plants are safe to eat?",
+      "How do I fish without equipment?",
+      "How do I set a snare or trap for survival food?",
+      "What are the best edible wild berries?",
+      "How do I hunt in a survival situation?",
+      "How do I process and cook wild game?"
+    ],
+    "a": "Food procurement should never jeopardize safety—prioritize shelter, water, and signaling first. Foraging requires positive plant identification: universally safe edibles include dandelion (all parts), cattail (roots, shoots, pollen), pine (inner bark, seeds, needles for tea), and clover (leaves and flowers). Avoid any plant you cannot identify with 100% certainty—many toxic lookalikes exist. Fishing methods include improvised hooks (from thorns, safety pins, or carved wood), spearing (sharpened stick), hand-line fishing, and setting nets or traps from cordage. Trapping and snaring requires knowledge of animal habits, proper placement, and legal considerations: simple snares (wire or cordage loop on game trails) and deadfalls (weighted log triggered by bait) can catch small game. Processing requires field dressing, skinning, and cooking thoroughly to kill parasites—especially important with wild game and freshwater fish."
+  },
+  {
+    "q": [
+      "How do I signal for rescue in the wilderness?",
+      "What is the international distress signal?",
+      "How do I use a signal mirror?",
+      "What ground signals work for search and rescue?",
+      "What is a PLB or personal locator beacon?",
+      "How do I make smoke signals?",
+      "What is an EPIRB?"
+    ],
+    "a": "Signaling increases the chance of rescue dramatically. The universal distress signal is SOS (three short, three long, three short) in any medium—flashes, sounds, or marks. Signal fires: build three fires in a triangle (international distress signal) or a single large fire that can be quickly lit when aircraft or searchers are heard. Smoke signals by adding green vegetation to a hot fire produce white smoke (visible against green backgrounds) or oil/rubber produce black smoke (visible against snow). A signal mirror can be seen up to 10 miles away on a sunny day. Ground-to-air signals include stomping SOS or HELP in snow, arranging branches or rocks in geometric patterns (large X signals 'need medical assistance,' large V signals 'need assistance'), or using a bright ground cloth. Personal locator beacons (PLBs) and satellite messengers (like Garmin inReach or SPOT) transmit GPS coordinates via satellite networks and are the most reliable modern signaling devices."
+  }
+]

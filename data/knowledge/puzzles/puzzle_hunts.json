@@ -1,0 +1,59 @@
+[
+  {
+    "q": [
+      "What are puzzle hunts?",
+      "How do puzzle hunts work?",
+      "What is the MIT Mystery Hunt?",
+      "What is DASH puzzle hunt?",
+      "What types of clues appear in puzzle hunts?",
+      "puzzle hunts explained",
+      "MIT Mystery Hunt history",
+      "DASH distributed puzzle hunt"
+    ],
+    "a": "Puzzle hunts are large-scale team puzzle competitions where participants solve a series of interconnected puzzles that typically yield words, phrases, or answers that are then combined to solve a final metapuzzle, with the entire hunt often wrapped in a theme or narrative. The MIT Mystery Hunt, begun in 1981 by MIT students and now the world's premier puzzle hunt event, involves hundreds of participants in teams solving dozens of highly creative puzzles over a long January weekend, with the winning team earning the privilege of writing the following year's hunt. DASH (Different Area, Same Hunt) is a distributed puzzle hunt that takes place simultaneously in multiple cities worldwide, allowing teams who cannot travel to MIT to participate in a collaborative puzzle-solving experience."
+  },
+  {
+    "q": [
+      "What kinds of clues appear in puzzle hunts?",
+      "What are wordplay clues in puzzle hunts?",
+      "What are cipher clues in puzzle hunts?",
+      "What are map-based clues in puzzle hunts?",
+      "What are physical clues in puzzle hunts?",
+      "What are metapuzzles?",
+      "wordplay ciphers maps physical clues metapuzzles",
+      "puzzle hunt clue types explained",
+      "metapuzzles how they work"
+    ],
+    "a": "Puzzle hunt clues span an enormous variety of types including wordplay (anagrams, homophones, hidden words, and rebuses), ciphers (from simple Caesar shifts through substitution ciphers and Enigma-style codes to steganography), maps (geographic or fictional maps where locations encode puzzle answers), physical clues (interacting with real-world objects, scavenger hunt style tasks, or puzzles embedded in physical locations), and data puzzles (finding patterns in charts, images, audio files, or datasets). Metapuzzles are the capstone challenge that synthesizes answers from previous puzzles—each previous puzzle's answer becomes a piece of the metapuzzle grid or clue, requiring solvers to identify relationships between the answers and extract a final solution that completes the hunt."
+  },
+  {
+    "q": [
+      "How are puzzle hunts constructed?",
+      "How do you design a puzzle hunt?",
+      "What makes a good puzzle hunt puzzle?",
+      "How do you solve puzzle hunts as a team?",
+      "What is puzzle hunt culture like?",
+      "How do puzzle hunt teams organize?",
+      "puzzle hunt construction design",
+      "team solving strategies puzzle hunts",
+      "puzzle hunt culture community"
+    ],
+    "a": "Constructing a puzzle hunt involves designing puzzles of varying difficulty that have a consistent extraction mechanism (solvers typically get a final answer word for each puzzle), carefully testing puzzles to ensure they have exactly one correct solution path and no unintended alternate solutions, and weaving puzzles into a coherent narrative structure with an engaging metapuzzle that requires synthesis of all completed answers. Successful puzzle hunt teams organize with specialist roles including solvers (who focus on puzzle solving), clue-finders (who locate and gather physical clue materials), spreadsheet wranglers (who track solved and unsolved puzzles), and metapuzzle experts (who synthesize solved answers looking for patterns), while puzzle hunt culture emphasizes sportsmanship, the principle of 'talking to a wall' (verbalizing thoughts to spark ideas), and the joy of creative problem-solving over competition."
+  },
+  {
+    "q": [
+      "What are online puzzle hunts?",
+      "What are the best online puzzle hunts?",
+      "What is notpron?",
+      "What is The Black Chamber?",
+      "How do escape rooms relate to puzzle hunts?",
+      "What are puzzle hunt conventions?",
+      "What happened at the first puzzle hunts?",
+      "What resources are available for puzzle hunters?",
+      "online puzzle hunt notpron",
+      "escape rooms as puzzle hunts",
+      "puzzle hunt history resources"
+    ],
+    "a": "Online puzzle hunts like notpron (one of the earliest and most notoriously difficult internet puzzle games, created by David Münnich in 2004, requiring solvers to navigate through 140 levels of increasingly cryptic puzzles hidden in web page source code and metadata) and The Black Chamber (a web-based cryptography education puzzle) introduced millions to puzzle hunt concepts without requiring physical participation. Escape rooms share deep DNA with puzzle hunts, requiring teams to find and solve puzzles under time pressure to achieve a goal (typically escaping a themed room), and have experienced explosive commercial growth since 2010, with many rooms designed by puzzle hunt enthusiasts who bring metapuzzle structure and multi-layered clue design to physical spaces. The puzzle hunt community produces resources including the Puzzle Hunt Calendar (tracking worldwide events), the Puzzazz puzzle app, and annual conventions like the Puzzle Hunt Festival, while online archives and past hunts from MIT, DASH, and Galactic Puzzle Hunt provide rich materials for new solvers to learn the craft."
+  }
+]

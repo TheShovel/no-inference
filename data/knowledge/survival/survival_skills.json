@@ -1,0 +1,62 @@
+[
+  {
+    "q": [
+      "How do I navigate without a GPS?",
+      "How do I read a topographic map?",
+      "How do I use a compass to find my way?",
+      "How do I navigate using the sun and stars?",
+      "How do I find the North Star (Polaris)?",
+      "How do I use terrain association for navigation?",
+      "What is dead reckoning in navigation?"
+    ],
+    "a": "Traditional navigation skills are essential when GPS fails. Topographic maps show elevation contours, water features, vegetation, and man-made structures—reading them involves understanding contour intervals (closer lines mean steeper terrain), grid references (UTM or lat/long), and map scale. A compass with a map requires setting declination (the difference between magnetic north and true north), taking a bearing from the map, and following that bearing on the ground. Triangulation (taking bearings on two or three visible landmarks and plotting their intersection) determines your location. Natural navigation includes using the sun (rises in east, sets in west; at noon it's due south in the northern hemisphere, due north in the southern hemisphere), stars (Polaris in the north, the Southern Cross points south), and terrain features (ridges, valleys, and water drainage patterns). Dead reckoning involves tracking your direction and estimated distance traveled from a known point, accounting for obstacles and pace count."
+  },
+  {
+    "q": [
+      "What are the most important knots for survival?",
+      "How do I tie a bowline knot?",
+      "How do I tie a clove hitch?",
+      "What is a taut-line hitch used for?",
+      "How do I tie a trucker's hitch?",
+      "What is a Prusik knot?",
+      "What is the best knot for joining two ropes?"
+    ],
+    "a": "Knot proficiency is a core survival skill. Essential knots include the bowline (forms a fixed loop that won't slip—used for rescue, securing lines, and many camp applications), clove hitch (quickly attaches a rope to a post or tree, works well for shelter building), taut-line hitch (an adjustable knot ideal for tent guy lines and shelter tensioning), trucker's hitch (creates a mechanical advantage pulley for cinching loads tightly), and Prusik knot (a friction hitch that grips the main rope when loaded but slides when unloaded—essential for rope climbing and rescue). The square (reef) knot joins two ropes of equal diameter for low-load applications. The double fisherman's and water knot are strongest for joining two ropes or webbing respectively. Rope types include natural fibers (hemp, sisal—less durable) and synthetic (nylon—strong, UV-degradable; polypropylene—floats, UV-degradable; Dyneema/Spectra—very strong, low stretch)."
+  },
+  {
+    "q": [
+      "What should be in a wilderness first aid kit?",
+      "How do I treat a wound in the backcountry?",
+      "How do I splint a fracture in the wilderness?",
+      "How do I treat and prevent blisters?",
+      "How do I treat burns in the field?",
+      "What are the signs and treatment of hypothermia?",
+      "How do I treat heat exhaustion and heat stroke?",
+      "How do I treat altitude sickness?"
+    ],
+    "a": "A wilderness first aid kit should include sterile gauze pads, trauma shears, adhesive bandages, medical tape, antiseptic wipes, antibiotic ointment, tweezers, SAM splint, triangular bandages, moleskin for blisters, nitrile gloves, ibuprofen and acetaminophen, antihistamines (Benadryl), and any personal medications. Wound care involves cleaning with clean water, removing debris, applying antiseptic, covering with sterile dressing, and monitoring for infection. Fractures are splinted using the RICE principle (Rest, Immobilize, Cold, Elevation) with SAM splints or improvised materials (sticks, tent poles, sleeping pads secured with bandages). Blister prevention includes properly fitted footwear, moisture-wicking socks, and addressing hot spots immediately with moleskin or tape. Hypothermia (shivering, confusion, lethargy) requires removal from cold, insulation, gentle rewarming with warm drinks and body heat—avoid rough handling which can trigger cardiac arrest. Heat stroke (hot dry skin, altered consciousness, high body temperature) is a medical emergency requiring immediate cooling and evacuation. Altitude sickness prevention includes gradual ascent, acclimatization days, and acetazolamide; treatment of AMS requires descent, while HACE and HAPE require immediate descent and possible dexamethasone or nifedipine."
+  },
+  {
+    "q": [
+      "How do I treat snake bites in the wilderness?",
+      "How do I remove a tick?",
+      "What do I do for an allergic reaction in the backcountry?",
+      "How do I treat poison ivy, oak, or sumac?",
+      "How do I perform CPR in the wilderness?",
+      "When should I use a tourniquet?",
+      "How do I improvise a medical evacuation?"
+    ],
+    "a": "Wilderness medicine differs from urban medicine due to evacuation delays and limited resources. Snake bites: keep the victim calm and still, immobilize the bitten limb at or below heart level, remove jewelry or restrictive items near the bite, and evacuate immediately—do NOT cut, suck, apply tourniquet, or use a venom extractor. Tick removal: use fine-tipped tweezers to grasp as close to the skin as possible and pull upward steadily—do not twist or jerk. Allergic reactions with anaphylaxis (hives, swelling, difficulty breathing) require immediate epinephrine (EpiPen) and evacuation. Poison ivy/oak/sumac: wash affected area with soap and water within 30 minutes to remove urushiol oil, then apply calamine or hydrocortisone for itching. CPR in wilderness follows standard protocols but the decision to cease resuscitative efforts is more complex due to evacuation time. Tourniquets: use only for life-threatening extremity bleeding not controlled by direct pressure, marking the time of application."
+  },
+  {
+    "q": [
+      "How do I pack a survival kit?",
+      "What should I carry in my go-bag?",
+      "What should be in my get-home bag?",
+      "What should be in my car emergency kit?",
+      "How much water should I store in my bug-out bag?",
+      "What tools should I carry in the backcountry?"
+    ],
+    "a": "A well-designed survival kit follows the ten essentials: navigation (map, compass, GPS, PLB), headlamp/flashlight (with extra batteries), sun protection (sunglasses, sunscreen, SPF lip balm), first aid kit, knife (fixed blade preferred for heavy use) or multi-tool, fire (lighter, matches in waterproof container, ferro rod), emergency shelter (space blanket, bivvy sack, tarp), extra food (trail mix, energy bars), extra water (or purification method), and extra clothes (insulating layer, rain gear). A get-home bag for commuters should include hydration, snacks, basic first aid, warmth layers, flashlight, multi-tool, portable charger, and copies of critical documents. A car kit adds booster cables, tire repair, reflective triangles, and extra blankets. Water should be stored at 1 gallon per person per day (minimum 3-day supply for bug-out bags), with additional purification capacity."
+  }
+]

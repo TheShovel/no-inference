@@ -1,0 +1,39 @@
+[
+  {
+    "q": [
+      "What is fire ecology?",
+      "What are fire-adapted species?",
+      "What are fire-dependent ecosystems?",
+      "What is a fire regime?",
+      "How do some plants survive wildfires?",
+      "fire ecology fire-adapted species fire-dependent ecosystems",
+      "fire regime types frequency intensity seasonality"
+    ],
+    "a": "Fire ecology is the study of the role of fire in natural ecosystems, recognizing that fire is a natural and necessary process in many environments. Fire-adapted species have evolved traits that allow them to survive or thrive with periodic fire: serotinous cones (jack pine, lodgepole pine) remain sealed with resin and only open to release seeds after exposure to high heat; thick bark (ponderosa pine, giant sequoia) insulates living tissue; and many grasses and forbs resprout vigorously from underground root crowns after top-kill by fire. Fire-dependent ecosystems—such as longleaf pine savannas, California chaparral, South African fynbos, and Australian eucalyptus forests—require periodic fire to maintain biodiversity, recycle nutrients, clear understory debris, and trigger seed germination. A fire regime describes the pattern of fire in an ecosystem: frequency (how often fires occur), intensity (energy released), severity (ecosystem effects), seasonality (time of year), and spatial pattern (size and patchiness of burns). Historical fire regimes vary from frequent low-severity surface fires (ponderosa pine forests every 5–30 years) to infrequent high-severity crown fires (subalpine fir forests every 100–300 years), and fire suppression over the past century has dramatically altered many regimes, leading to fuel accumulation and more severe wildfires."
+  },
+  {
+    "q": [
+      "What is prescribed burning?",
+      "Why are prescribed burns conducted?",
+      "What is wildfire prevention and public education?",
+      "How does fire prevention education reduce fire risk?",
+      "What is Smokey Bear's role in wildfire prevention?",
+      "prescribed burn controlled burn Rx fire",
+      "wildfire prevention Smokey Bear public education"
+    ],
+    "a": "Prescribed burning (also called controlled burning or Rx fire) is the intentional application of fire under specified environmental conditions (temperature, humidity, wind speed, fuel moisture) to achieve specific land management objectives. Benefits include reducing hazardous fuel accumulations (thus decreasing the severity of future wildfires), improving wildlife habitat, controlling invasive species, promoting native plant regeneration, and maintaining fire-dependent ecosystems. Prescribed burns are conducted under a detailed burn plan with defined prescriptions, weather parameters, smoke management considerations (avoiding smoke impacts on populated areas and highways), and holdover monitoring (ensuring no residual fire escapes). Wildfire prevention and public education efforts include Smokey Bear (the longest-running PSA campaign in US history, since 1944, teaching drip torch vs match tip—Only YOU Can Prevent Wildfires), Firewise USA (a program teaching homeowners how to create defensible space and harden homes against ember ignitions), and local fire department outreach to high-risk communities. Climate change adaptation in wildfire prevention increasingly emphasizes managed wildfire (allowing some naturally ignited fires to burn under monitoring) and cultural burning (reviving Indigenous burning practices that maintained healthy landscapes for millennia before colonization)."
+  },
+  {
+    "q": [
+      "What are notable wildfires in history?",
+      "What was the Great Fire of 1910?",
+      "What was the Yellowstone Fire of 1988?",
+      "What was the Oakland Hills fire of 1991?",
+      "What were the California wildfires of 2017-2024?",
+      "What were the Australian bushfires of 2019-2020?",
+      "Great Fire of 1910 Yellowstone 1988 Oakland Hills 1991",
+      "California wildfires 2017-2024 Australian bushfires Black Summer"
+    ],
+    "a": "The Great Fire of 1910 (also called the Big Burn) burned 3 million acres across Idaho, Montana, and Washington in two days, killing 87 people (including 78 firefighters) and shaping US wildfire policy for nearly a century—it established the US Forest Service's fire suppression doctrine that all wildfires must be extinguished by 10 a.m. the next morning (the 10 AM policy). The Yellowstone fires of 1988 burned 1.58 million acres within and around Yellowstone National Park, demonstrating the ecological role of large, severe fires in lodgepole pine ecosystems and forcing the National Park Service to revise its natural fire management policies. The 1991 Oakland Hills firestorm (Tunnel Fire) killed 25 people and destroyed 3,000+ homes in an urban-wildland interface area, with embers spotting up to a mile ahead of the main fire front—it became a landmark case for WUI (Wildland-Urban Interface) fire safety reform. The California wildfires of 2017–2024 include the deadliest (Camp Fire 2018: 85 killed, Paradise destroyed), largest (August Complex 2020: 1.03 million acres), and most destructive (Tubbs Fire 2017, Dixie Fire 2021, CZU Lightning Complex 2020), with climate change-driven drought, extreme heat, and Diablo/Santa Ana winds driving increasingly extreme fire behavior. The 2019–2020 Australian bushfire season (Black Summer) burned 46 million acres across every Australian state, killed 33 people and an estimated 3 billion animals, and destroyed over 3,000 homes, driven by record-breaking drought and heat that created pyrocumulonimbus clouds generating their own weather."
+  }
+]

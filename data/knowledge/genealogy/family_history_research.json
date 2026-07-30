@@ -1,0 +1,67 @@
+[
+    {
+        "q": [
+            "How do I start researching my family history?",
+            "What is the first step in genealogical research?",
+            "Where should a beginner start with genealogy?",
+            "How do I organize my family history research?",
+            "What records should I collect first for genealogy?",
+            "How do I begin tracing my family tree?",
+            "What information should I gather before searching online?",
+            "What is the best way to start genealogy research?"
+        ],
+        "a": "Begin your family history research by recording everything you already know about yourself, your parents, and your grandparents — full names, dates, and places of birth, marriage, and death. Interview older relatives, especially grandparents, aunts, and uncles, asking about their memories, family stories, and any documents or photographs they possess. Collect and digitize family artifacts like Bibles, letters, diaries, obituaries, and certificates, as these provide crucial primary source information. Work backward from yourself, one generation at a time, following the Genealogical Proof Standard (GPS) which requires a reasonably exhaustive search, complete source citations, analysis of all evidence, resolution of conflicting information, and a soundly reasoned conclusion."
+    },
+    {
+        "q": [
+            "What are the best resources for finding census records?",
+            "How do I search US Federal Census records?",
+            "What information is available in historical census records?",
+            "What years are available for US Census research?",
+            "How do I use Soundex coding for census searches?",
+            "What special census schedules exist beyond population counts?",
+            "Where can I access census records online?",
+            "How do census records help genealogy research?"
+        ],
+        "a": "US Federal Census records from 1790 to 1950 are among the most valuable resources for genealogists, providing snapshots of families every ten years with names, ages, places of birth, occupations, and relationships. The 1950 census is the most recent publicly available, released after a 72-year privacy restriction. Special schedules exist for agriculture, manufacturing, mortality, slave schedules (1850-1860), and veteran schedules, each offering additional context about ancestors' lives. Census records can be searched using Soundex indexing, which codes surnames phonetically to account for spelling variations, and are available through the National Archives, Ancestry.com, FamilySearch.org, and other genealogy databases."
+    },
+    {
+        "q": [
+            "What are vital records and how do I get them?",
+            "How do I obtain birth, marriage, and death certificates?",
+            "What information do vital records contain?",
+            "Are vital records public or restricted?",
+            "How do state laws affect access to vital records?",
+            "What is the difference between vital records and census records?",
+            "How far back can I find vital records?",
+            "What are the alternatives if vital records are sealed?"
+        ],
+        "a": "Vital records include birth, marriage, divorce, and death certificates maintained by state or county vital records offices, typically starting in the early 20th century. These records contain primary source information like full names, dates, places, parents' names, occupations, and causes of death. Access restrictions vary by state — some states seal birth records for 75-100 years and death records for 25-50 years to protect privacy. When vital records are restricted, substitute records such as church registers, newspaper obituaries, cemetery records, Social Security applications (SS-5), and probate court files can provide equivalent information."
+    },
+    {
+        "q": [
+            "What is the Genealogical Proof Standard?",
+            "How do I evaluate genealogical evidence?",
+            "What is the difference between primary and secondary sources in genealogy?",
+            "How do I resolve conflicting genealogical information?",
+            "What are direct, indirect, and negative evidence in genealogy?",
+            "How do I properly cite genealogical sources?",
+            "What makes a genealogical conclusion sound?",
+            "How do I analyze and correlate genealogical evidence?"
+        ],
+        "a": "The Genealogical Proof Standard (GPS) is the gold standard for establishing genealogical conclusions, consisting of five elements: a reasonably exhaustive search for all relevant sources, complete and accurate source citations, analysis and correlation of all collected information, resolution of any conflicting evidence, and a soundly reasoned, coherently written conclusion. Primary sources were created at or near the time of an event by a knowledgeable participant, while secondary sources are created later or by non-witnesses. Direct evidence directly answers a research question, indirect evidence requires combining multiple pieces of information, and negative evidence is the absence of expected records — all must be weighed together to form reliable conclusions."
+    },
+    {
+        "q": [
+            "What immigration and naturalization records are available for genealogy?",
+            "How do I find passenger lists and ship manifests?",
+            "What information is on a naturalization record?",
+            "How do I trace an ancestor's immigration through records?",
+            "What is an A-file and how do I request it?",
+            "Where can I find alien registration records?",
+            "How do I search for ancestors who arrived through Ellis Island?",
+            "What passport and visa records exist for genealogical research?"
+        ],
+        "a": "Immigration and naturalization records are rich sources for genealogists, with passenger lists (ship manifests) after 1820 recording names, ages, occupations, nationalities, and destinations of arriving passengers. Naturalization records document the multi-step process of becoming a citizen, including declarations of intent (first papers) and petitions for naturalization (final papers), which contain detailed biographical information. The A-file (Alien File) system began in 1944 and contains comprehensive immigration records that can be requested through USCIS FOIA requests. The SS-5 (Social Security application) and the Social Security Death Index (SSDI) are additional vital resources for locating deceased individuals and their identifying information."
+    }
+]

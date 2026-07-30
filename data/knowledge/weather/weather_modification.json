@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is cloud seeding?",
+      "How does cloud seeding work?",
+      "Does cloud seeding actually work?",
+      "What chemicals are used in cloud seeding?",
+      "What is the history of rainmaking?",
+      "Who invented cloud seeding?",
+      "What is the difference between static and dynamic cloud seeding?"
+    ],
+    "a": "Cloud seeding is a weather modification technique that disperses substances into clouds to stimulate precipitation, invented by Vincent Schaefer and Irving Langmuir at General Electric in 1946 when Schaefer dropped dry ice (frozen CO₂) into a cloud and produced snow. The most common method uses silver iodide (AgI), which has a crystalline structure similar to ice, dispersed by aircraft, ground-based generators, or rockets into supercooled clouds where ice crystals form and grow heavy enough to fall as rain or snow (glaciogenic seeding). A newer approach uses hygroscopic materials (salts like calcium chloride or sodium chloride) that attract water droplets, encouraging coalescence into raindrops (hygroscopic seeding) — while cloud seeding is widely used in over 50 countries, particularly in China, the United States (especially in the Colorado River Basin), and the United Arab Emirates, rigorous double-blind studies have shown mixed results, with increases in precipitation typically estimated at 5–15% under optimal conditions but with high uncertainty."
+  },
+  {
+    "q": [
+      "What is hail suppression?",
+      "How is fog dispersal done?",
+      "What is Project Stormfury?",
+      "Can hurricanes be controlled or weakened?",
+      "What were the results of Project Stormfury?",
+      "What other attempts have been made to modify hurricanes?"
+    ],
+    "a": "Hail suppression involves cloud seeding with large quantities of silver iodide to encourage the formation of many small ice crystals rather than fewer large hailstones, theoretically reducing the size of hail that reaches the ground before it can cause crop and property damage — programs like Argentina's and China's extensive hail suppression operations claim 30–50% reductions in hail damage, though scientific consensus remains cautious about effectiveness. Fog dispersal uses seeding or heating to clear fog at airports: cold fog (below freezing) is cleared by seeding with dry ice or liquid propane to nucleate ice crystals that fall out, while warm fog is dispersed by heating the air (used at some European airports) or by helicopters downwashing dry air. Project Stormfury (1962–1983) was a US government experiment that tried to weaken hurricanes by seeding clouds outside the eyewall with silver iodide, theorizing that this would trigger a new eyewall formation and reduce maximum wind speeds by 10–15%, but the experiments failed to produce statistically significant results, and the project was terminated."
+  },
+  {
+    "q": [
+      "What is geoengineering?",
+      "What is solar radiation management?",
+      "What is carbon dioxide removal?",
+      "What are the different types of geoengineering?",
+      "What is stratospheric aerosol injection?",
+      "What is marine cloud brightening?",
+      "What is ocean iron fertilization?",
+      "What are the risks of geoengineering?"
+    ],
+    "a": "Geoengineering (or climate engineering) refers to the deliberate large-scale intervention in the Earth's climate system to counteract global warming, divided into two main categories: solar radiation management (SRM) and carbon dioxide removal (CDR). SRM methods aim to reflect a small percentage of incoming sunlight back into space to cool the planet, with the most studied technique being stratospheric aerosol injection (releasing sulfate aerosols or calcium carbonate particles into the stratosphere, mimicking the cooling effect of major volcanic eruptions like Mount Pinatubo in 1991 — it would be fast-acting and relatively cheap but does not address CO₂ levels or ocean acidification, could disrupt regional precipitation patterns (especially the Asian and African monsoons), and poses termination shock if suddenly stopped). CDR methods remove CO₂ from the atmosphere, including direct air capture (machines that chemically scrub CO₂ from ambient air), enhanced weathering (spreading crushed silicate minerals that absorb CO₂), bioenergy with carbon capture and storage (BECCS), afforestation, and ocean iron fertilization — CDR addresses the root cause but is currently expensive, slow, and insufficient at scale to make a meaningful difference without aggressive emissions cuts."
+  },
+  {
+    "q": [
+      "What are the ethical concerns with weather modification?",
+      "What are the international regulations on weather modification?",
+      "Is weather modification legal?",
+      "What is the Environmental Modification Convention?",
+      "What are the controversies around cloud seeding?",
+      "Who controls the weather?",
+      "What are the legal issues with geoengineering?"
+    ],
+    "a": "Weather modification raises significant ethical and legal questions about who has the right to modify the weather, especially since clouds and weather patterns cross political boundaries — cloud seeding in one region could reduce rainfall for downwind areas, creating transboundary disputes and potential liability for alleged weather theft or damage (droughts, floods) attributed to seeding programs. International regulations include the Environmental Modification Convention (ENMOD, 1978), which prohibits the hostile use of environmental modification techniques (weather as a weapon), and various national laws such as the US Weather Modification Reporting Act (requires reporting but does not prohibit operations) and China's extensive state-run weather modification program which is the world's largest. The broader geoengineering debate centers on governance challenges: there are no comprehensive international treaties regulating SRM research or deployment, critics raise moral hazard concerns (the fear that geoengineering research might reduce the urgency of emissions reductions), and there are unresolved questions about liability, compensation for harm, who decides to deploy, and how to manage the risks of unilateral action by nations or wealthy individuals."
+  }
+]

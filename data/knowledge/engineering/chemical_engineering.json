@@ -1,0 +1,122 @@
+[
+  {
+    "q": [
+      "What is chemical engineering?",
+      "Define chemical engineering.",
+      "What does a chemical engineer do?",
+      "Explain the field of chemical engineering.",
+      "What are the main areas of chemical engineering?",
+      "Chemical engineering overview",
+      "How is chemical engineering different from chemistry?"
+    ],
+    "a": "Chemical engineering is the discipline that applies chemistry, physics, biology, and mathematics to design, optimize, and operate processes that transform raw materials into valuable products on an industrial scale. Unlike chemistry, which focuses on laboratory-scale reactions, chemical engineering scales up reactions and separations into continuous, cost-effective manufacturing processes. Chemical engineers work in industries including petroleum refining, pharmaceuticals, food processing, polymers, specialty chemicals, environmental engineering, biotechnology, and energy production."
+  },
+  {
+    "q": [
+      "What is process design in chemical engineering?",
+      "Explain process design and flowsheets.",
+      "How are chemical processes designed?",
+      "What is a process flow diagram?",
+      "What is the difference between PFD and P&ID?",
+      "Process design fundamentals",
+      "What are the stages of process design?"
+    ],
+    "a": "Process design is the systematic development of chemical processes from concept to detailed engineering, involving the selection and arrangement of unit operations — reactors, distillation columns, heat exchangers, pumps, and separators — to achieve desired production goals. Engineers create process flow diagrams (PFDs) showing major equipment, material flows, and operating conditions, then develop piping and instrumentation diagrams (P&IDs) with detailed piping, valves, instrumentation, and control logic. Key design phases include feasibility study, conceptual design, detailed engineering, and construction/commissioning, using simulation software such as Aspen Plus, CHEMCAD, or gPROMS for mass and energy balances."
+  },
+  {
+    "q": [
+      "What is reaction engineering?",
+      "Explain chemical reaction engineering.",
+      "What are the main types of chemical reactors?",
+      "How are chemical reactors designed?",
+      "What is a batch reactor vs a continuous reactor?",
+      "Reaction engineering fundamentals",
+      "What factors affect reactor design and performance?"
+    ],
+    "a": "Chemical reaction engineering is the study of chemical reactions in industrial reactors, focusing on reaction kinetics, mass/heat transfer, and reactor design to achieve desired conversion, selectivity, and yield. Common reactor types include batch reactors (all material loaded at once, common for specialty chemicals), continuous stirred-tank reactors (CSTR — steady-state operation with mixing), plug-flow reactors (PFR — material flows through a tube without axial mixing), and packed-bed reactors (catalyst particles in a fixed bed). Design equations combine reaction rate laws with mole balances, energy balances, and pressure drop correlations, with key considerations including catalyst activity, temperature control, residence time distribution, and non-ideal flow patterns."
+  },
+  {
+    "q": [
+      "What are separation processes in chemical engineering?",
+      "Explain separation processes in chemical engineering.",
+      "How does distillation work?",
+      "What is the difference between absorption and adsorption?",
+      "What are membrane separations?",
+      "Separation processes overview",
+      "What are the main separation techniques used in chemical engineering?"
+    ],
+    "a": "Separation processes are unit operations that isolate desired products from mixtures based on differences in physical or chemical properties. Distillation separates components by boiling point differences, with vapor-liquid equilibrium driving purification in tray or packed columns — the most widely used separation in chemical plants. Other key processes include absorption (gas dissolved into liquid), adsorption (molecules adhere to solid surfaces), extraction (liquid-liquid separation using solvent), membrane filtration (size or affinity-based separation through semipermeable membranes), crystallization (forming solid crystals from solution), and drying (removing liquid from solids by evaporation). Each process is designed using equilibrium and rate-based models."
+  },
+  {
+    "q": [
+      "What is chemical engineering thermodynamics?",
+      "Explain thermodynamics in chemical engineering.",
+      "How is thermodynamics applied in chemical engineering?",
+      "What is phase equilibrium?",
+      "What is the difference between ideal and real fluids?",
+      "Thermodynamics for chemical engineers",
+      "Why is thermodynamic modeling important in chemical engineering?"
+    ],
+    "a": "Chemical engineering thermodynamics applies thermodynamic principles to predict phase behavior, chemical equilibrium, and energy requirements for industrial processes. Key concepts include phase equilibrium (vapor-liquid, liquid-liquid, solid-liquid described by Raoult's law, Henry's law, and activity coefficient models like NRTL, UNIQUAC), chemical reaction equilibrium (Gibbs free energy minimization), and property estimation using equations of state (Peng-Robinson, Soave-Redlich-Kwong). Engineers use thermodynamic models to design distillation columns, calculate heat duties, determine compressor/pump work, and predict how temperature, pressure, and composition affect process performance — essential for process simulation and optimization."
+  },
+  {
+    "q": [
+      "What is transport phenomena in chemical engineering?",
+      "Explain momentum, heat, and mass transfer.",
+      "What are the three transport phenomena?",
+      "How are fluid flow, heat transfer, and mass transfer related?",
+      "What is the analogy between heat and mass transfer?",
+      "Transport phenomena fundamentals",
+      "Why are transport phenomena important in chemical engineering?"
+    ],
+    "a": "Transport phenomena is the unified study of momentum transfer (fluid mechanics), heat transfer, and mass transfer — three fundamental rate processes in chemical engineering. Fluid mechanics (governed by the Navier-Stokes equations) describes flow behavior in pipes, reactors, and separation equipment. Heat transfer encompasses conduction (Fourier's law), convection (Newton's law of cooling), and radiation, essential for designing heat exchangers, reactors, and insulation. Mass transfer describes molecular diffusion (Fick's law) and convective mass transport, governing separations, reaction rates, and mixing. The analogy between these phenomena — similar mathematical forms for flux as a driving force divided by resistance — allows engineers to apply insights from one transport process to another."
+  },
+  {
+    "q": [
+      "What is plant design in chemical engineering?",
+      "Explain chemical plant design.",
+      "How are chemical plants laid out and designed?",
+      "What factors are considered in plant design?",
+      "What is the difference between plant design and process design?",
+      "Chemical plant design and layout",
+      "What goes into designing a chemical processing plant?"
+    ],
+    "a": "Chemical plant design encompasses the overall engineering of a manufacturing facility, including site selection, equipment layout, piping design, utility systems, safety systems, and economic analysis. Engineers perform detailed cost estimation (capital expenditure CAPEX, operating expenditure OPEX), profitability analysis (net present value, internal rate of return), and equipment sizing using design codes (ASME, API, TEMA). Key considerations include process safety (hazard identification like HAZOP, relief system design, containment), environmental compliance (emissions control, waste treatment), materials of construction (corrosion resistance), and plant layout optimization for maintenance access and emergency response."
+  },
+  {
+    "q": [
+      "What is safety engineering in chemical engineering?",
+      "Explain process safety in chemical engineering.",
+      "What is HAZOP analysis?",
+      "How are chemical plants designed for safety?",
+      "What are the key principles of process safety?",
+      "Chemical process safety fundamentals",
+      "What is the hierarchy of hazard controls in chemical engineering?"
+    ],
+    "a": "Process safety engineering focuses on preventing major accidents — fires, explosions, toxic releases — in chemical plants through systematic hazard identification, risk assessment, and mitigation. The Hierarchy of Hazard Controls ranges from inherently safer design (eliminate or substitute hazards) through passive engineered safeguards (containment, relief devices), active engineered safeguards (safety instrumented systems, interlocks), and procedural controls (operating procedures, training). Key tools include HAZOP (Hazard and Operability) studies, Layer of Protection Analysis (LOPA), Quantitative Risk Assessment (QRA), and consequence modeling for flammable/toxic releases. Regulations such as OSHA's Process Safety Management (PSM) and the EPA's Risk Management Program (RMP) govern process safety in the US."
+  },
+  {
+    "q": [
+      "What is biochemical engineering?",
+      "Explain biochemical engineering.",
+      "How is chemical engineering applied in biotechnology?",
+      "What is a bioreactor?",
+      "How are biological processes scaled up?",
+      "Biochemical engineering overview",
+      "What do biochemical engineers do?"
+    ],
+    "a": "Biochemical engineering applies chemical engineering principles to biological systems for producing pharmaceuticals, biofuels, enzymes, food ingredients, and other bio-based products. Bioreactor design involves oxygen transfer, mixing, sterilization, and maintaining optimal conditions (pH, temperature, nutrient supply) for microorganisms, plant cells, or mammalian cell cultures. Downstream processing — including centrifugation, filtration, chromatography, and lyophilization — purifies biological products that are often heat-sensitive and require aseptic processing. Applications span fermentation (antibiotics, beer, ethanol), enzyme production, vaccine manufacturing, cell and gene therapy, and wastewater treatment using microbial consortia."
+  },
+  {
+    "q": [
+      "What is polymer science and engineering?",
+      "Explain polymer engineering in chemical engineering.",
+      "How are polymers manufactured?",
+      "What is the difference between thermoplastics and thermosets?",
+      "What are addition and condensation polymerization?",
+      "Polymer science and engineering basics",
+      "How do chemical engineers produce plastics and polymers?"
+    ],
+    "a": "Polymer science and engineering covers the synthesis, characterization, processing, and properties of polymeric materials — long-chain molecules composed of repeating monomer units. Polymerization methods include addition (chain-growth) polymerization for polymers like polyethylene and polystyrene, and condensation (step-growth) polymerization for nylon and polyester. Engineers design and operate polymerization reactors (batch, continuous stirred-tank, tubular, fluidized-bed) controlling molecular weight distribution, copolymer composition, and polymer architecture. Processing techniques include extrusion, injection molding, blow molding, and film casting, with product applications ranging from packaging, automotive components, medical devices, and coatings to advanced composites and conductive polymers."
+  }
+]

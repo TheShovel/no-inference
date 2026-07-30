@@ -1,0 +1,57 @@
+[
+  {
+    "q": [
+      "What is logistics and supply chain management?",
+      "What is the difference between logistics and supply chain management?",
+      "What does logistics mean in business?",
+      "What is supply chain management?",
+      "What are the key components of logistics?",
+      "logistics definition",
+      "supply chain management definition",
+      "logistics vs supply chain"
+    ],
+    "a": "Logistics refers to the detailed coordination and movement of goods, services, and information from the point of origin to the point of consumption, encompassing transportation, warehousing, inventory management, order fulfillment, and distribution. Supply chain management (SCM) is a broader concept that integrates logistics with the entire network of suppliers, manufacturers, distributors, and retailers, managing the upstream and downstream flows of materials, information, and finances from raw material sourcing through production to final delivery. Together, logistics and SCM are critical to global commerce, with companies like Amazon, Walmart, and UPS building vast logistic networks that enable fast, reliable delivery at massive scale."
+  },
+  {
+    "q": [
+      "What are the different modes of freight transportation?",
+      "What is intermodal transportation?",
+      "What are the pros and cons of trucking, rail, ocean, and air freight?",
+      "How does freight shipping work?",
+      "What is multimodal logistics?",
+      "freight transportation modes",
+      "trucking rail ocean air freight comparison",
+      "intermodal vs multimodal"
+    ],
+    "a": "The five primary freight transportation modes are trucking (flexible and ubiquitous for short- to medium-haul, carrying about 70% of US freight by value), rail (cost-effective for heavy, bulky goods over long distances, especially coal, grain, and containers), ocean (the backbone of global trade, handling roughly 90% of world trade by volume via container ships), air (fastest but most expensive, used for high-value, time-sensitive goods like electronics and perishables), and intermodal (combining multiple modes, such as truck-rail-ocean, using standardized containers that transfer seamlessly between modes). Each mode balances trade-offs in speed, cost, capacity, reliability, and environmental impact, leading shippers to choose based on cargo type, distance, urgency, and budget."
+  },
+  {
+    "q": [
+      "What is last-mile delivery?",
+      "What is cold chain logistics?",
+      "What are 3PL and reverse logistics?",
+      "What is third-party logistics?",
+      "What is reverse logistics?",
+      "What is just-in-time inventory?",
+      "What is FIFO and LIFO inventory?",
+      "last-mile delivery explained",
+      "cold chain logistics definition",
+      "3PL services"
+    ],
+    "a": "Last-mile delivery is the final step of the supply chain where goods move from a transportation hub to the end customer's doorstep, widely considered the most expensive and complex segment due to traffic, failed deliveries, and customer expectations for speed (same-day or next-day). Cold chain logistics maintains temperature-controlled environments throughout the supply chain for perishable goods like food, pharmaceuticals, and vaccines, using refrigerated trucks, cold storage warehouses, and temperature monitoring technologies. Third-party logistics (3PL) providers like DHL, XPO Logistics, and C.H. Robinson offer outsourced logistics services including warehousing, transportation, and freight forwarding. Reverse logistics handles the return flow of goods for returns, recycling, repairs, or disposal, a growing concern with e-commerce return rates often exceeding 20-30%."
+  },
+  {
+    "q": [
+      "What technology is used in logistics?",
+      "What are WMS and TMS?",
+      "What is RFID in logistics?",
+      "What are logistics KPIs?",
+      "How does GPS tracking work in logistics?",
+      "What are the challenges in logistics today?",
+      "logistics technology",
+      "WMS vs TMS",
+      "logistics KPIs examples"
+    ],
+    "a": "Logistics technology includes Warehouse Management Systems (WMS) that optimize inventory placement, picking routes, and labor management within distribution centers; Transportation Management Systems (TMS) that plan, execute, and optimize freight movements across modes while tracking costs and performance; and RFID tags and GPS tracking that provide real-time visibility into asset location, shipment status, and chain-of-custody. Key logistics KPIs include on-time delivery rate, order accuracy, inventory turnover, warehouse capacity utilization, cost per mile, and perfect order percentage. The industry faces persistent challenges including labor shortages (driver and warehouse worker), capacity constraints during peak seasons, supply chain disruptions from geopolitical events or natural disasters, rising customer expectations for faster and free shipping, and pressure to reduce carbon emissions across the supply chain."
+  }
+]

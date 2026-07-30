@@ -1,0 +1,66 @@
+[
+  {
+    "q": [
+      "What defines the action genre?",
+      "What are the conventions of action films?",
+      "Give me examples of classic action movies",
+      "How has the action genre evolved?",
+      "What makes a good action movie?",
+      "What are the key elements of action cinema?"
+    ],
+    "a": "The action genre centers on physical feats, stunts, chases, fights, and spectacle, with a primary emphasis on exciting set pieces and high-stakes conflict. Its conventions include a resourceful hero confronting overwhelming odds, fast-paced editing, explosive practical effects, and escalating sequences of danger. Notable examples range from Die Hard and Mad Max: Fury Road to John Wick, each demonstrating how the genre balances visceral thrills with character stakes."
+  },
+  {
+    "q": [
+      "What defines comedy as a film genre?",
+      "What are the conventions of comedy films?",
+      "Give me examples of great comedy movies",
+      "What are the subgenres of comedy in film?",
+      "How does comedic timing work in movies?",
+      "What makes a film funny?"
+    ],
+    "a": "Comedy is a genre designed to provoke laughter through humor, wit, exaggeration, and absurd situations, often relying on timing, wordplay, physical slapstick, or social satire. Its subgenres include romantic comedy, screwball comedy, dark comedy, parody, and slapstick, each employing different techniques to generate humor. Classic examples include Some Like It Hot, Airplane!, Groundhog Day, and Bridesmaids, demonstrating the genre's remarkable versatility."
+  },
+  {
+    "q": [
+      "What defines drama as a film genre?",
+      "What are conventions of dramatic films?",
+      "Give me examples of powerful drama movies",
+      "How does drama differ from other genres?",
+      "What makes drama effective on screen?"
+    ],
+    "a": "Drama is a broad genre focused on realistic character development and emotional narratives, often exploring serious themes such as love, loss, moral conflict, and social issues. It prioritizes character arcs, dialogue, and authentic emotional beats over spectacle, with subgenres including legal drama, historical drama, melodrama, and psychological drama. Exceptional dramas like The Godfather, Schindler's List, and Moonlight demonstrate the genre's power to generate deep emotional engagement with audiences."
+  },
+  {
+    "q": [
+      "What defines horror as a film genre?",
+      "What are the conventions of horror movies?",
+      "Give me examples of influential horror films",
+      "How does horror create fear in audiences?",
+      "What are the subgenres of horror?",
+      "What makes horror effective?"
+    ],
+    "a": "Horror is a genre designed to evoke fear, dread, disgust, or shock, using techniques like suspenseful pacing, disturbing imagery, jump scares, and psychological tension. It encompasses subgenres including supernatural horror, slasher, psychological horror, body horror, found footage, and folk horror. Landmark films such as Psycho, The Exorcist, Halloween, Get Out, and Hereditary show how horror reflects cultural anxieties while delivering visceral emotional experiences."
+  },
+  {
+    "q": [
+      "What defines science fiction in film?",
+      "What are the conventions of sci-fi movies?",
+      "Give me examples of great science fiction films",
+      "How does sci-fi explore ideas through cinema?",
+      "What is the difference between sci-fi and fantasy in film?"
+    ],
+    "a": "Science fiction explores speculative concepts rooted in science, technology, future societies, space exploration, or alternate realities, often using these settings to examine philosophical and social questions. Its conventions include futuristic technology, alien encounters, dystopian or utopian worlds, and ethical dilemmas arising from scientific advancement. Seminal works like 2001: A Space Odyssey, Blade Runner, The Matrix, and Arrival demonstrate how the genre combines imaginative world-building with profound thematic depth."
+  },
+  {
+    "q": [
+      "What defines film noir as a genre?",
+      "What are the conventions of film noir?",
+      "Give me examples of classic noir films",
+      "How did film noir originate?",
+      "What is neo-noir?",
+      "What visual style defines noir cinema?"
+    ],
+    "a": "Film noir emerged in 1940s and 1950s Hollywood, characterized by its dark, cynical worldview, morally ambiguous protagonists, femme fatales, and striking visual style featuring low-key lighting, deep shadows, and off-kilter compositions. The genre drew from German Expressionist cinematography and hardboiled crime fiction, with classics like Double Indemnity, The Maltese Falcon, and Touch of Evil defining its aesthetic. Neo-noir later revived and modernized these conventions in films like Chinatown, L.A. Confidential, and Blade Runner."
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "q": [
+      "What is family law?",
+      "What areas does family law cover?",
+      "What legal issues are handled in family court?",
+      "What types of cases does a family lawyer handle?",
+      "Tell me about family law and domestic relations.",
+      "What is the scope of family law practice?"
+    ],
+    "a": "Family law is the legal practice area that governs family relationships and domestic matters, encompassing marriage, divorce, child custody and visitation, child support, spousal support (alimony), adoption, domestic partnerships, parental rights, and juvenile dependency proceedings. These cases are typically heard in specialized family courts, which emphasize equitable resolution and the best interests of children rather than adversarial litigation. Family law varies significantly between jurisdictions, particularly regarding grounds for divorce, property division rules (community property vs. equitable distribution), and the factors courts consider when determining custody arrangements."
+  },
+  {
+    "q": [
+      "What is the difference between divorce and legal separation?",
+      "What is no-fault divorce?",
+      "How does the divorce process work?",
+      "What are the grounds for divorce?",
+      "How is property divided in a divorce?",
+      "What is the difference between contested and uncontested divorce?"
+    ],
+    "a": "No-fault divorce allows married couples to dissolve their marriage without proving wrongdoing by either spouse, simply citing irreconcilable differences or an irretrievable breakdown of the marriage, and is now available in all 50 U.S. states — New York was the last state to adopt it in 2010. The divorce process involves filing a petition, serving the spouse, negotiating terms of division of assets, debts, custody, and support, and obtaining a final judgment from the court. Contested divorces involve disputes over these terms and can require court hearings or trial, while uncontested divorces where both parties agree on all terms are typically faster, cheaper, and less adversarial, often resolved through mediation before formal litigation."
+  },
+  {
+    "q": [
+      "How is child custody determined?",
+      "What is the difference between legal and physical custody?",
+      "What factors do courts consider in custody decisions?",
+      "What is the best interest of the child standard?",
+      "How does joint custody work?",
+      "What is child support and how is it calculated?"
+    ],
+    "a": "Child custody is divided into legal custody (the right to make major decisions about a child's education, healthcare, and religious upbringing) and physical custody (where the child resides), with courts favoring arrangements that allow both parents meaningful involvement unless one parent poses a risk to the child's safety. Courts determine custody based on the best interest of the child standard, considering factors such as each parent's ability to provide stability, the child's emotional ties to each parent, the parents' mental and physical health, and in some states, the child's own preferences depending on age and maturity. Child support is calculated using state-specific guidelines that consider both parents' incomes, the number of children, custody time-sharing arrangements, and additional expenses like healthcare and childcare, with the non-custodial parent typically making payments to the custodial parent."
+  },
+  {
+    "q": [
+      "What is a prenuptial agreement?",
+      "How do prenuptial agreements work?",
+      "What can and cannot be included in a prenup?",
+      "What is the difference between prenuptial and postnuptial agreements?",
+      "Why would someone want a prenuptial agreement?",
+      "Are prenuptial agreements legally enforceable?"
+    ],
+    "a": "A prenuptial agreement (prenup) is a legally binding contract entered into before marriage that specifies how assets, debts, and financial matters will be handled during the marriage and in the event of divorce or death. Valid prenups must be in writing, signed voluntarily by both parties with full financial disclosure, and not be unconscionable (grossly unfair) at the time of enforcement — they typically cover property division, spousal support, and inheritance rights, but cannot dictate child custody or support, which courts always determine based on the child's best interests at the time. Postnuptial agreements function similarly but are created after marriage, often used to address changes in financial circumstances or to reconcile after infidelity by establishing terms for reconciliation."
+  }
+]

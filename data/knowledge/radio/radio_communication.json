@@ -1,0 +1,67 @@
+[
+  {
+    "q": [
+      "what is radio",
+      "how does radio communication work",
+      "what is frequency in radio",
+      "what is wavelength in radio",
+      "what is amplitude modulation",
+      "what is frequency modulation",
+      "what is the difference between AM and FM",
+      "how do radio waves travel"
+    ],
+    "a": "Radio is a technology that uses electromagnetic waves in the radio frequency spectrum (3 Hz to 300 GHz) to transmit information wirelessly. A radio transmitter generates an alternating current at a specific frequency, which is fed to an antenna that radiates the energy as electromagnetic waves; a receiving antenna intercepts a tiny fraction of this energy and converts it back into an electrical signal that is amplified and demodulated to recover the original information. Frequency (measured in hertz) determines how many wave cycles pass a point per second, while wavelength is the physical distance between wave peaks — they are inversely related by the speed of light. Amplitude Modulation (AM) encodes information by varying the strength (amplitude) of the carrier wave, while Frequency Modulation (FM) encodes information by varying the frequency of the carrier wave. AM is more prone to static and interference but can travel farther, especially at night via skywave propagation, while FM offers higher audio fidelity and better noise immunity but is largely limited to line-of-sight propagation. Other important modulation modes include Single Sideband (SSB), which is more efficient than AM for long-distance voice communication, and Continuous Wave (CW) for Morse code, along with numerous digital modes."
+  },
+  {
+    "q": [
+      "what is the radio spectrum",
+      "what are the frequency bands in radio",
+      "what is HF radio used for",
+      "what is VHF radio used for",
+      "what is UHF radio used for",
+      "what frequencies does AM radio use",
+      "what frequencies does FM radio use",
+      "what is the difference between HF VHF and UHF"
+    ],
+    "a": "The radio spectrum is divided into frequency bands with distinct propagation characteristics and uses. Low Frequency (LF, 30-300 kHz) and Medium Frequency (MF, 300-3000 kHz) include the AM broadcast band (530-1710 kHz), which propagates via ground wave during the day and sky wave at night. High Frequency (HF, 3-30 MHz), also called shortwave, can propagate around the world via ionospheric reflection, making it essential for international broadcasting, amateur radio, maritime, and military communication. Very High Frequency (VHF, 30-300 MHz) includes the FM broadcast band (88-108 MHz), aircraft communication (118-137 MHz), marine VHF (156-174 MHz), and amateur radio 6-meter and 2-meter bands, with propagation limited primarily to line of sight. Ultra High Frequency (UHF, 300-3000 MHz) covers television broadcasting, cellular networks, Wi-Fi (2.4 GHz), Bluetooth, GPS, and amateur radio 70-centimeter and 33-centimeter bands. Super High Frequency (SHF, 3-30 GHz) includes Wi-Fi (5 GHz), satellite communication, and radar. Extremely High Frequency (EHF, 30-300 GHz) is used for advanced wireless systems, millimeter-wave radar, and experimental communication links. Each band's propagation characteristics — ground wave, sky wave, tropospheric ducting, and line of sight — determine its practical applications and range capabilities."
+  },
+  {
+    "q": [
+      "how does radio propagation work",
+      "what is sky wave propagation",
+      "what is ground wave propagation",
+      "what is the ionosphere and how does it affect radio",
+      "what is sporadic E propagation",
+      "what is tropospheric ducting",
+      "what is NVIS propagation",
+      "how does the solar cycle affect radio propagation"
+    ],
+    "a": "Radio propagation refers to how radio waves travel from transmitter to receiver, with different modes dominating at different frequencies. Ground wave propagation follows the Earth's curvature, providing reliable local coverage for AM broadcast and LF/MF frequencies. Sky wave propagation occurs when HF radio waves reflect off the ionosphere — layers of ionized gas in the upper atmosphere (primarily the D, E, and F layers) — allowing signals to travel thousands of kilometers beyond the horizon. The solar cycle, sunspot count, and solar flux directly affect ionospheric ionization: high solar activity enhances F-layer density and supports higher usable frequencies for long-distance communication. Sporadic E (Es) is unpredictable patchy ionization in the E layer that can propagate VHF signals (including FM broadcast and 6-meter amateur band) over 1,000-2,000 kilometers. Tropospheric ducting occurs when temperature inversions in the lower atmosphere create ducts that propagate VHF and UHF signals far beyond normal line of sight. Near-Vertical Incidence Skywave (NVIS) uses high-angle radiation on frequencies below the critical frequency of the F layer to provide local-to-regional coverage (0-300 miles) with no skip zone, popular for emergency communication. Geomagnetic storms and solar flares can cause radio blackouts by disrupting or absorbing signals in the D layer, particularly affecting HF propagation for hours or days at a time."
+  },
+  {
+    "q": [
+      "what are digital radio modes",
+      "what is FT8 in amateur radio",
+      "what is RTTY radio",
+      "what is PSK31",
+      "what is DMR radio",
+      "what is APRS in amateur radio",
+      "what is the difference between analog and digital modes",
+      "what is JS8Call"
+    ],
+    "a": "Digital radio modes encode information as digital data rather than varying the amplitude or frequency of a carrier wave with an analog voice waveform. RTTY (Radio Teletype) is one of the oldest digital modes, using frequency-shift keying at 45.45 baud to transmit text. PSK31 is a popular low-power mode that uses phase-shift keying at 31.25 baud, with excellent noise performance and narrow bandwidth. FT8, developed by Joe Taylor K1JT, is a highly efficient weak-signal mode that can decode signals 20 dB below the noise floor but requires computer-assisted timing and exchanges only minimal information in 15-second transmission sequences. JS8Call is a derivative of FT8 that adds keyboard-to-keyboard messaging, store-and-forward messaging, and automated relay capability for emergency communication. DMR (Digital Mobile Radio) is a commercial digital voice standard widely adopted by amateur radio operators, using Time Division Multiple Access (TDMA) to provide two simultaneous voice channels in a 12.5 kHz bandwidth. APRS (Automatic Packet Reporting System) uses packet radio on 144.390 MHz (in the U.S.) to transmit position data, weather information, messages, and telemetry, displayed on maps via digipeaters and iGates connected to the internet. Digital modes generally offer better noise immunity, narrower bandwidth, lower power requirements, and automated logging compared to analog voice or CW, at the cost of requiring specialized equipment or computer interfaces."
+  },
+  {
+    "q": [
+      "what is an antenna in radio",
+      "how do radio antennas work",
+      "what are the different types of radio antennas",
+      "what is a dipole antenna",
+      "what is a vertical antenna",
+      "what is a Yagi antenna",
+      "how does antenna height affect radio range",
+      "what is SWR in antenna systems"
+    ],
+    "a": "An antenna is a transducer that converts electrical energy from a transmitter into electromagnetic radio waves (and vice versa for reception), with its physical size determined primarily by wavelength — the most efficient length is typically a half-wavelength or quarter-wavelength at the operating frequency. The dipole antenna, consisting of two equal-length conductors fed at the center, is the simplest and most widely used reference antenna, offering a balanced feed pattern and omnidirectional coverage in its horizontal plane. Vertical antennas (quarter-wave ground planes) provide omnidirectional coverage with a lower profile and are popular for mobile and space-constrained installations, but require an effective ground plane (radials) for efficient operation. The Yagi-Uda beam antenna uses multiple parallel elements (a driven element, a reflector, and one or more directors) to focus radiation in a specific direction, providing gain and directivity that improves signal strength and reduces interference from other directions. Standing Wave Ratio (SWR) measures how well an antenna's impedance matches the transmitter's output impedance; a 1:1 SWR is ideal, while SWR above 2:1 causes power loss and can damage the transmitter. Antenna height significantly affects range, especially at VHF and UHF frequencies where line-of-sight propagation dominates — doubling antenna height approximately doubles the radio horizon distance."
+  }
+]

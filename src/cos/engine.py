@@ -98,27 +98,27 @@ def _make_conversational(text: str) -> str:
     # ── Clean Wikipedia formatting artifacts ───────────────────────────
     # Strip em dashes and en dashes first
     text = text.replace('\u2014', ' -- ').replace('\u2013', ' - ')
-    
+
     # Strip ALL Wikipedia section headers throughout the text (not just at end)
     # These are single lines that start with a capital letter and end with no period
     # Common headers: History, Geography, Culture, Economy, Demographics, etc.
     text = re.sub(r'\n\n[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\n\n', '\n\n', text)
     text = re.sub(r'\n[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\n\n', '\n\n', text)
-    
+
     # Strip "See also", "References", "Further reading", "External links" sections and everything after
     text = re.split(r'\n\nSee\s+also\n|\n\nReferences\n|\n\nFurther\s+reading\n|\n\nExternal\s+links\n|\n\nBibliography\n|\n\nNotes\n|\n\nCitations\n', text, maxsplit=1)[0]
-    
+
     # Strip trailing word fragments (truncated Wikipedia content)
     text = re.sub(r'\s+[a-zA-Z]{1,2}$', '.', text.strip())
     text = re.sub(r'\s*\-+\s*$', '.', text)
     text = re.sub(r'\s+(?:the|a|an|and|or|but|for|nor|yet|so|with|from|that|this|these|those)\s*$', '.', text)
-    
+
     # Strip any remaining trailing section headers (standalone capitalized lines)
     text = re.sub(r'\n\n[A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+){0,3}\s*$', '', text)
     text = re.sub(r'\n[A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+){0,3}\s*$', '', text)
     text = re.sub(r'\n\n[A-Z][a-z]+\s*$', '', text)
     text = re.sub(r'\n[A-Z][a-z]+\s*$', '', text)
-    
+
     # Clean up multiple consecutive newlines
     text = re.sub(r'\n{3,}', '\n\n', text)
 
@@ -1348,7 +1348,7 @@ def _wiki_search_variants(term):
 
 def _extract_search_topic(query):
     """Extract a clean search topic using symbolic extraction.
-    
+
     Strips trailing clauses (covering, including, featuring, with) and
     keeps only the core topic for Wikipedia search.
     """
@@ -1407,7 +1407,7 @@ def _extract_search_topic(query):
             return _clean_topic(topic)
     except Exception:
         pass
-    
+
     # Improved fallback: look for known patterns in the raw query
     # "impact of X" → X, "history of X" → X, "concept of X" → X
     of_match = re.search(r'(?:impact|history|evolution|development|concept|idea|role|importance|future|analysis|overview)\s+of\s+(.+?)$', q, re.IGNORECASE)
@@ -1415,14 +1415,14 @@ def _extract_search_topic(query):
         topic = of_match.group(1).strip().rstrip('.!?,;: ')
         if len(topic) > 3:
             return _clean_topic(topic)
-    
+
     # "the X of Y" → Y
     the_of_match = re.search(r'the\s+(.+?)\s+of\s+(.+?)$', q, re.IGNORECASE)
     if the_of_match:
         topic = the_of_match.group(2).strip().rstrip('.!?,;: ')
         if len(topic) > 3:
             return _clean_topic(topic)
-    
+
     return _clean_topic(q)
 
 
@@ -1878,7 +1878,7 @@ def _search_wikipedia(query):
             trunc = extract[:extract.rfind('. ', 0, 6000) + 1] if '. ' in extract[:6000] else extract[:6000]
             trunc = re.sub(r'\b\w+$', '', trunc).rstrip(',;: ') + '.'
             extract = trunc
-        
+
         # If the summary is too short (<500 chars), try to get the full article
         # for richer content
         if len(extract.strip()) < 500 and len(extract.strip()) > 50:
@@ -2638,14 +2638,14 @@ What would you like to discuss? I am ready to respond entirely in character!"""
 
 def _handle_instruction(query):
     """Handle instruction/coding queries.
-    
+
     First tries the prompt template system (from data/prompt_templates/*.json)
     which matches complex patterns like essays, HTML pages, code functions,
     guides, explanations. Falls back to regex-based handlers if no template
     matches.
     """
     q = query.strip()
-    
+
     q_lower = q.lower()
 
     # IMPORTANT: Check for factual prefixes BEFORE templates
@@ -2676,7 +2676,7 @@ def _handle_instruction(query):
             return template_response
     except Exception:
         pass
-    
+
 
     # Normalize the query to handle variations like "Can you write...", "Could you write...",
     # "Can you give me...", "Write me...", etc. Strip polite prefixes.
@@ -2774,7 +2774,7 @@ def _handle_instruction(query):
                 if result:
                     return _format_as_essay(result, main_topic)
                 return result
-            
+
             # For guides, explanations: return content directly
             kb_essay = knowledge_lookup(main_topic)
             if kb_essay and len(kb_essay) > 100:
@@ -2855,7 +2855,7 @@ def _handle_follow_up(query):
                 last_content_query = q_hist
                 last_content_response = r_hist
                 break
-        
+
         if last_content_query:
             prev_topic = _resolve_topic(last_content_query, conversation_history)
             if prev_topic and len(prev_topic) > 2:
@@ -2866,14 +2866,14 @@ def _handle_follow_up(query):
                     if content != last_content_response and len(content) > len(last_content_response) * 1.05:
                         clean = _make_conversational(content)
                         return f"Here is a more detailed version:\n\n{clean}"
-                
+
                 # If no new content, try to find related subtopic content
                 related = _search_wikipedia_best(prev_topic + " cuisine")
                 if related and related[0] and len(related[0]) > 100:
                     if related[0] != last_content_response:
                         clean = _make_conversational(related[0])
                         return f"Expanding on {prev_topic}:\n\n{clean}"
-                
+
                 # Final fallback: acknowledge we can't add more
                 return f"I have covered the main aspects of {prev_topic}. You could ask a specific question about it for more details."
 
@@ -2922,7 +2922,7 @@ def _handle_follow_up(query):
             wiki, _ = _search_wikipedia(topic)
             if wiki and len(wiki) > 50:
                 return _make_conversational(wiki)
-    
+
     # Get the last response for context
     last_response = None
     for q_hist, r_hist in reversed(conversation_history):
@@ -3316,7 +3316,7 @@ def _handle_factual(query, use_cos):
         best_content = _search_wikipedia_rich(phrase.lower())
         if best_content and best_content[0]:
             return _make_conversational(best_content[0])
-    
+
     # Step 4: Comprehensive fallback — try ALL significant words from the query
     # as standalone Wikipedia searches
     try:
@@ -3374,7 +3374,7 @@ def _handle_factual(query, use_cos):
                         return _make_conversational(best_content[0])
     except Exception:
         pass
-    
+
     return None
 
 

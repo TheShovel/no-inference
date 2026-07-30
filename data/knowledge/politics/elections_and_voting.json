@@ -1,0 +1,50 @@
+[
+  {
+    "q": [
+      "What is first-past-the-post voting?",
+      "How does the first-past-the-post electoral system work?",
+      "What are the advantages and disadvantages of first-past-the-post?",
+      "Which countries use first-past-the-post?",
+      "How does FPTP differ from proportional representation?",
+      "What is plurality voting?",
+      "Why does first-past-the-post often produce two-party systems?"
+    ],
+    "a": "First-past-the-post (FPTP) is a plurality voting system where voters cast a single vote for one candidate in a single-member district, and the candidate with the most votes wins, regardless of whether they achieve an absolute majority. It is simple to understand, produces clear outcomes, and often fosters stable single-party governments, as seen in the United Kingdom, United States, and Canada. However, FPTP frequently results in disproportional outcomes where parties can win majority power with well under 50% of the popular vote, and it tends to penalize smaller parties and third-party candidates, often leading to strategic voting."
+  },
+  {
+    "q": [
+      "What is proportional representation?",
+      "How does proportional representation work?",
+      "What are the different types of proportional representation?",
+      "What are the advantages of proportional representation?",
+      "Which countries use proportional representation?",
+      "How does PR differ from first-past-the-post?",
+      "What is the difference between party-list PR and mixed-member proportional?"
+    ],
+    "a": "Proportional representation (PR) is an electoral system designed to allocate legislative seats in proportion to the votes each party receives, ensuring that a party's share of seats closely reflects its share of the popular vote. Common forms include party-list PR (where voters choose among party lists in multi-member districts) and mixed-member proportional (MMP, combining single-member districts with compensatory seats). PR systems, used in over 80 countries including Germany, New Zealand, and South Africa, typically produce multi-party legislatures and coalition governments, leading to broader representation but sometimes less stable governments than plurality systems."
+  },
+  {
+    "q": [
+      "What is ranked-choice voting?",
+      "How does ranked-choice voting work?",
+      "What is instant-runoff voting?",
+      "What are the advantages of ranked-choice voting?",
+      "Which jurisdictions use ranked-choice voting?",
+      "How does RCV differ from traditional plurality voting?",
+      "What is the difference between ranked-choice and preferential voting?"
+    ],
+    "a": "Ranked-choice voting (RCV), also known as instant-runoff voting, allows voters to rank candidates in order of preference rather than selecting just one. If no candidate achieves an absolute majority of first-choice votes, the candidate with the fewest votes is eliminated and their votes are redistributed to those voters' next preferred choices, repeating until one candidate reaches a majority. RCV, used in national elections in Australia, Ireland, and several U.S. cities, eliminates the spoiler effect, encourages candidates to appeal beyond their base, and ensures that winners have majority support rather than merely a plurality."
+  },
+  {
+    "q": [
+      "What is gerrymandering?",
+      "How does gerrymandering affect elections?",
+      "What are the different types of gerrymandering?",
+      "Why is gerrymandering considered a problem?",
+      "How can gerrymandering be prevented?",
+      "What is the difference between packing and cracking in gerrymandering?",
+      "Is gerrymandering legal in the United States?"
+    ],
+    "a": "Gerrymandering is the deliberate drawing of electoral district boundaries to give one political party or group an electoral advantage, typically by manipulating the geographic distribution of voters. The two main techniques are 'packing' (concentrating opposition voters into a few districts so they win fewer total seats) and 'cracking' (spreading opposition voters across many districts so they cannot form a majority anywhere). While gerrymandering has been practiced since the early days of representative government, modern computational tools allow for highly precise manipulation, and it is increasingly challenged in courts as a violation of democratic principles, though legal remedies remain inconsistent."
+  }
+]

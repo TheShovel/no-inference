@@ -1,0 +1,61 @@
+[
+  {
+    "q": [
+      "What is natural language processing?",
+      "Define NLP in artificial intelligence",
+      "How does natural language processing work?",
+      "What is NLP used for?",
+      "Explain natural language processing with examples",
+      "What are the main applications of NLP?",
+      "what is natural language processing",
+      "nlp"
+    ],
+    "a": "Natural language processing (NLP) is a subfield of AI focused on enabling computers to understand, interpret, generate, and respond to human language in a meaningful and useful way. NLP combines computational linguistics with statistical and deep learning models to process text and speech data at scale. Common applications include machine translation, sentiment analysis, chatbots and virtual assistants, named entity recognition, text summarization, and question-answering systems."
+  },
+  {
+    "q": [
+      "What is tokenization in NLP?",
+      "Explain text preprocessing steps in NLP",
+      "What are stop words and stemming?",
+      "What is lemmatization?",
+      "How do you clean text data for NLP?",
+      "What is text preprocessing and why is it important?"
+    ],
+    "a": "Text preprocessing is the essential first step in NLP that transforms raw text into a clean, structured format suitable for analysis or model input. Tokenization splits text into individual units (tokens), typically words or subwords, which serve as the basic building blocks for further processing. Additional preprocessing steps include lowercasing, removing punctuation and special characters, filtering stop words (common words like 'the' and 'and' that carry little meaning), and normalization techniques like stemming (crudely chopping word endings) and lemmatization (reducing words to their dictionary root form using vocabulary analysis), which help models generalize across morphological variations."
+  },
+  {
+    "q": [
+      "What are word embeddings in NLP?",
+      "Explain Word2Vec, GloVe, and BERT embeddings",
+      "How do word embeddings represent meaning?",
+      "What is Word2Vec?",
+      "What is GloVe?",
+      "How does BERT create contextual embeddings?",
+      "What is the difference between static and contextual embeddings?"
+    ],
+    "a": "Word embeddings are dense vector representations of words in a continuous vector space, where semantically similar words are positioned close together and relationships between words are captured through vector arithmetic. Word2Vec, introduced by Google in 2013, learns embeddings by predicting a word from its context (CBOW) or the context from a word (Skip-gram) across a large corpus, producing static embeddings where each word has a single vector regardless of context. GloVe (Global Vectors) by Stanford constructs embeddings by factorizing a word co-occurrence matrix, capturing global statistical patterns. BERT (Bidirectional Encoder Representations from Transformers) generates contextual embeddings that vary based on surrounding words — 'bank' in 'river bank' and 'bank account' receive different representations, enabling far more nuanced language understanding."
+  },
+  {
+    "q": [
+      "What are large language models?",
+      "How do GPT and LLaMA work?",
+      "What is a language model in AI?",
+      "Explain transformer-based language models",
+      "What is GPT?",
+      "What is LLaMA?",
+      "How do language models generate text?"
+    ],
+    "a": "Large language models (LLMs) are deep learning models trained on massive text corpora using transformer architectures, capable of understanding and generating human-like text across diverse tasks. GPT (Generative Pre-trained Transformer) by OpenAI pioneered the approach of scaling up unsupervised pre-training followed by fine-tuning, with GPT-3 and GPT-4 demonstrating remarkable few-shot and zero-shot learning abilities across tasks like translation, question-answering, and code generation. LLaMA (Large Language Model Meta AI) by Meta focuses on achieving competitive performance with smaller, more efficient models, allowing broader access to LLM capabilities through open-weight releases. These models predict the next token in a sequence given all previous tokens, using billions of parameters and self-attention mechanisms to capture complex linguistic patterns and world knowledge."
+  },
+  {
+    "q": [
+      "How does machine translation work?",
+      "What is sentiment analysis in NLP?",
+      "What is named entity recognition?",
+      "How does speech recognition work?",
+      "What is text generation in AI?",
+      "What are the main NLP tasks and applications?"
+    ],
+    "a": "Machine translation uses sequence-to-sequence models to convert text from one language to another, with modern systems like Google Translate employing transformer architectures that process entire sentences contextually rather than word-by-word. Sentiment analysis classifies text as positive, negative, or neutral based on the expressed emotion or opinion, widely used for brand monitoring and customer feedback analysis. Named entity recognition (NER) identifies and classifies proper names like persons, organizations, locations, dates, and quantities within text, serving as a foundation for information extraction. Speech recognition (automatic speech recognition or ASR) converts audio speech signals into text, using acoustic models, language models, and neural networks to handle variations in accents, background noise, and speaking rates — powering virtual assistants like Siri and Alexa."
+  }
+]

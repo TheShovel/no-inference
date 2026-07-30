@@ -1,0 +1,78 @@
+[
+  {
+    "q": [
+      "what is ecology",
+      "ecology definition",
+      "study of ecosystems",
+      "what do ecologists study",
+      "ecology explained",
+      "levels of ecological organization",
+      "population ecology",
+      "population growth models",
+      "carrying capacity",
+      "limiting factors"
+    ],
+    "a": "Ecology is the branch of biology that studies how organisms interact with each other and with their physical environment. It spans multiple levels of organization: individual organisms, populations (groups of the same species in an area), communities (different interacting populations), ecosystems (communities plus their abiotic environment), landscapes, and the biosphere. Population ecology focuses on how populations change over time, examining factors such as birth rate, death rate, immigration, emigration, and carrying capacity. Populations can grow exponentially when resources are abundant, but eventually reach a carrying capacity determined by limiting factors such as food availability, space, water, and predation."
+  },
+  {
+    "q": [
+      "community ecology",
+      "species interactions",
+      "what is a community in ecology",
+      "predator prey relationships",
+      "symbiosis mutualism commensalism parasitism",
+      "competition ecology",
+      "niche vs habitat",
+      "keystone species",
+      "ecosystem ecology",
+      "energy flow in ecosystems",
+      "trophic levels food chain"
+    ],
+    "a": "Community ecology examines how species within an area interact through predation, competition, mutualism, commensalism, and parasitism. The niche of an organism describes its role and position in the environment, including its resource use and interactions, while habitat is the physical location where it lives. Ecosystem ecology studies the flow of energy and cycling of materials through ecosystems. Energy enters ecosystems through photosynthesis by primary producers, moves up trophic levels through the food chain (primary consumers, secondary consumers, tertiary consumers), and is lost as heat at each transfer, typically following the 10% rule where only about 10% of energy passes from one trophic level to the next. Keystone species have a disproportionately large effect on their environment relative to their abundance."
+  },
+  {
+    "q": [
+      "what are biomes",
+      "types of biomes",
+      "biomes explained",
+      "terrestrial biomes",
+      "biomes of the world",
+      "nutrient cycles",
+      "carbon cycle",
+      "nitrogen cycle",
+      "water cycle",
+      "biogeochemical cycles"
+    ],
+    "a": "Biomes are large-scale ecological communities defined by climate, vegetation, and animal life. Major terrestrial biomes include tropical rainforests (high rainfall, immense biodiversity), deserts (very low rainfall), grasslands (dominated by grasses, seasonal droughts), temperate forests (moderate climate, deciduous or coniferous trees), taiga (cold coniferous forests), and tundra (cold, treeless plains with permafrost). Nutrient cycles, also called biogeochemical cycles, describe how essential elements move through living organisms and the physical environment. The carbon cycle involves photosynthesis, respiration, decomposition, and combustion; the nitrogen cycle includes nitrogen fixation, nitrification, assimilation, and denitrification; and the water cycle involves evaporation, condensation, precipitation, and runoff. These cycles maintain the availability of essential elements for life."
+  },
+  {
+    "q": [
+      "ecological succession",
+      "primary vs secondary succession",
+      "how do ecosystems change over time",
+      "pioneer species",
+      "climax community",
+      "what is biodiversity",
+      "biodiversity explained",
+      "why is biodiversity important",
+      "threats to biodiversity"
+    ],
+    "a": "Ecological succession is the process by which ecosystems change and develop over time. Primary succession occurs in areas with no existing soil, such as bare rock after a volcanic eruption or glacial retreat; pioneer species like lichens and mosses break down rock to form soil. Secondary succession occurs in areas where soil already exists but the previous community was disturbed, such as after a wildfire, flood, or abandoned farmland. Over time, succession leads to a relatively stable climax community. Biodiversity refers to the variety of life at all levels, from genetic diversity within species to ecosystem diversity across landscapes. High biodiversity enhances ecosystem resilience, productivity, and stability. Major threats to biodiversity include habitat destruction, climate change, invasive species, overexploitation, and pollution."
+  },
+  {
+    "q": [
+      "conservation ecology",
+      "what is conservation biology",
+      "conservation strategies",
+      "restoration ecology",
+      "endangered species",
+      "protected areas",
+      "wildlife conservation",
+      "ecosystem management",
+      "landscape ecology",
+      "habitat fragmentation",
+      "corridors ecology"
+    ],
+    "a": "Conservation ecology applies ecological principles to protect and restore biodiversity and ecosystems. Conservation strategies include establishing protected areas such as national parks and wildlife reserves, restoring degraded habitats through active replanting and reintroduction of native species, controlling invasive species, and implementing sustainable resource management practices. Landscape ecology studies how spatial patterns and landscape structure affect ecological processes, including how habitat fragmentation from roads, agriculture, and urban development impacts species survival. Conservation efforts increasingly use ecological corridors to connect isolated habitat patches, allowing gene flow and migration. Endangered species recovery programs combine captive breeding, habitat protection, and public education to prevent extinctions."
+  }
+]

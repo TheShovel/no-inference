@@ -1,0 +1,63 @@
+[
+  {
+    "q": [
+      "What is linear algebra?",
+      "Define linear algebra as a branch of mathematics",
+      "What does linear algebra study?",
+      "Why is linear algebra important?",
+      "What are the fundamental concepts in linear algebra?",
+      "How is linear algebra used in real-world applications?",
+      "What problems does linear algebra solve?"
+    ],
+    "a": "Linear algebra is the branch of mathematics that studies vectors, vector spaces (also called linear spaces), linear transformations, and systems of linear equations. It provides a framework for representing and solving problems involving linear relationships, where variables are connected by addition and scalar multiplication. Linear algebra is foundational to virtually all areas of modern mathematics and is critically important in computer science (computer graphics, machine learning, data science), physics (quantum mechanics, relativity), engineering (control systems, signal processing), and economics (input-output models, optimization)."
+  },
+  {
+    "q": [
+      "What are vectors and matrices?",
+      "What is a vector in linear algebra?",
+      "What is a matrix in linear algebra?",
+      "How are vectors and matrices related?",
+      "What are vector operations?",
+      "What are matrix operations?",
+      "What is matrix multiplication and how does it work?"
+    ],
+    "a": "A vector is an ordered list of numbers representing magnitude and direction in a coordinate space, often written as a column or row of components. A matrix is a rectangular array of numbers arranged in rows and columns that can represent linear transformations, systems of equations, or collections of data. Key operations include vector addition and scalar multiplication, matrix addition and multiplication, and the transpose operation. Matrix multiplication is not commutative (AB ≠ BA in general) and requires the number of columns in the first matrix to equal the number of rows in the second, with each element in the product computed as the dot product of a row from the first matrix and a column from the second."
+  },
+  {
+    "q": [
+      "What is a determinant?",
+      "How do determinants work in linear algebra?",
+      "What does the determinant tell us about a matrix?",
+      "How is the determinant calculated?",
+      "What is the geometric meaning of the determinant?",
+      "What does a zero determinant mean?",
+      "Why are determinants important?"
+    ],
+    "a": "The determinant is a scalar value that can be computed from a square matrix, providing important information about the matrix's properties. Geometrically, the absolute value of the determinant represents the scaling factor of the volume (or area in 2D) when the matrix is applied as a linear transformation; a determinant of zero indicates that the transformation collapses dimensions, meaning the matrix is singular and not invertible. Determinants are used to determine whether a matrix is invertible, to compute eigenvalues, in Cramer's rule for solving systems of linear equations, and in calculus for change of variables in multiple integrals."
+  },
+  {
+    "q": [
+      "What are eigenvalues and eigenvectors?",
+      "What is an eigenvalue?",
+      "What is an eigenvector?",
+      "Why are eigenvalues and eigenvectors important?",
+      "How do you find eigenvalues and eigenvectors?",
+      "What is the characteristic equation?",
+      "How are eigenvalues used in real applications?",
+      "What does eigendecomposition mean?"
+    ],
+    "a": "An eigenvector of a square matrix is a non-zero vector that, when the matrix is applied to it, changes only by a scalar factor — that scalar factor is the corresponding eigenvalue. In other words, Av = λv, where A is the matrix, v is the eigenvector, and λ is the eigenvalue. Eigenvalues and eigenvectors are fundamental in understanding linear transformations: they reveal the directions (eigenvectors) that are stretched or compressed by the transformation and by how much (eigenvalues). They are essential in machine learning (principal component analysis), quantum mechanics (observable quantities), vibration analysis (resonant frequencies), Google's PageRank algorithm, and facial recognition (eigenfaces)."
+  },
+  {
+    "q": [
+      "What are linear transformations and vector spaces?",
+      "What is a vector space?",
+      "What is a linear transformation?",
+      "What is basis and dimension in linear algebra?",
+      "What does it mean for vectors to span a space?",
+      "How are linear transformations represented as matrices?",
+      "What is the difference between a basis and a spanning set?"
+    ],
+    "a": "A vector space is a set of objects (vectors) that can be added together and multiplied by scalars while satisfying specific axioms like closure, associativity, commutativity, and distributivity. A linear transformation is a function from one vector space to another that preserves vector addition and scalar multiplication, and every linear transformation between finite-dimensional vector spaces can be represented as a matrix. The basis of a vector space is a set of linearly independent vectors that span the entire space, and the dimension is the number of vectors in any basis — for example, the standard basis of R³ has three vectors (i, j, k) giving it dimension 3. Applications include computer graphics where geometric transformations (rotation, scaling, translation) are represented as matrices acting on coordinate vectors, machine learning where high-dimensional data is manipulated in vector spaces, and engineering where physical systems are modeled using linear transformations."
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "q": [
+      "What is computer architecture?",
+      "What is the von Neumann architecture?",
+      "What are the main components of a computer?",
+      "What is digital logic in computing?",
+      "What are logic gates?",
+      "What is a CPU?",
+      "How does a processor work?",
+      "What is the instruction cycle?",
+      "What is the difference between RISC and CISC?",
+      "What is pipelining in computer architecture?"
+    ],
+    "a": "Computer architecture is the design and organization of a computer's core components — the central processing unit (CPU), memory system, input/output interfaces, and the interconnections between them — defining how a computer executes instructions and processes data. The von Neumann architecture, proposed by John von Neumann in 1945, describes a stored-program computer with four main subsystems: the arithmetic/logic unit (ALU) for computations, the control unit that fetches and decodes instructions, memory that stores both data and program instructions, and input/output systems. Digital logic is the foundation of all digital circuits, using Boolean algebra to design logic gates (AND, OR, NOT, NAND, NOR, XOR, XNOR) that combine to create more complex circuits like adders, multiplexers, flip-flops, and registers — which in turn compose into processors and entire systems. Modern processors use techniques like pipelining (overlapping instruction execution stages for throughput), superscalar execution (dispatching multiple instructions per clock cycle), and hierarchical cache memory to improve performance beyond the limitations of raw clock speed."
+  },
+  {
+    "q": [
+      "What is a microprocessor?",
+      "How is a microprocessor different from a microcontroller?",
+      "What is an embedded system?",
+      "What are examples of embedded systems?",
+      "How are microprocessors designed?",
+      "What is Moore's Law?",
+      "What is the difference between a CPU and a microprocessor?",
+      "What is a system on a chip?",
+      "What is the ARM processor architecture?"
+    ],
+    "a": "A microprocessor is a complete central processing unit (CPU) fabricated on a single integrated circuit chip, containing the ALU, control unit, registers, and cache — examples include Intel's Core series, AMD's Ryzen, and ARM's Cortex processors. An embedded system is a specialized computing system designed for a specific function within a larger device, combining a microprocessor or microcontroller with memory, I/O interfaces, and software optimized for that dedicated application. A microcontroller differs from a microprocessor by integrating the CPU, RAM, ROM (or flash memory), and peripherals on a single chip for compact, low-cost applications like microwave controls, automotive engine management, and IoT sensors. Moore's Law — Gordon Moore's 1965 observation that the number of transistors on a chip doubles approximately every two years — has driven exponential growth in computing power for decades, though the industry now faces physical limitations requiring new architectures like multi-core processors, specialized accelerators, and advanced packaging to continue performance scaling."
+  },
+  {
+    "q": [
+      "What is an operating system?",
+      "What are the main functions of an operating system?",
+      "What is kernel in operating system?",
+      "What is computer hardware?",
+      "What are the main hardware components of a computer?",
+      "What is networking hardware?",
+      "What is a router?",
+      "What is a switch in networking?",
+      "How does computer memory hierarchy work?",
+      "What is the difference between RAM and ROM?"
+    ],
+    "a": "An operating system (OS) is system software that manages computer hardware resources and provides common services for application programs — its core functions include process management (scheduling tasks on the CPU), memory management (allocating and protecting memory spaces), file system management (organizing data on storage devices), device driver management (interfacing with hardware peripherals), and security/access control. Computer hardware encompasses the physical components of a computer: the motherboard (connecting all components via buses), CPU (the processor), RAM (volatile memory for active programs and data), storage drives (SSDs or HDDs for persistent data), GPU (for graphics processing), power supply, and cooling systems. Networking hardware enables communication between computers: routers forward data packets between different networks by examining IP addresses, switches connect devices within a local network using MAC addresses, and network interface cards (NICs) provide the physical connection to a network. Memory hierarchy exploits the trade-off between speed and capacity: the fastest, smallest, most expensive memory (CPU registers cache) sits closest to the processor, with progressively slower but larger and cheaper memory further away (RAM, then SSD/HDD storage)."
+  },
+  {
+    "q": [
+      "What is an FPGA?",
+      "How does an FPGA differ from a regular processor?",
+      "What is an ASIC?",
+      "What is the difference between FPGA and ASIC?",
+      "When would you use an FPGA instead of a processor?",
+      "What are applications of FPGAs?",
+      "What is Verilog or VHDL?",
+      "What is hardware description language?",
+      "What is the design flow for digital circuits?"
+    ],
+    "a": "FPGA (Field-Programmable Gate Array) is an integrated circuit that can be configured by the user after manufacturing to implement arbitrary digital logic circuits — essentially a 'blank slate' of configurable logic blocks and programmable interconnects that can be programmed using hardware description languages (HDLs) like Verilog or VHDL to become virtually any digital circuit, from simple controllers to complex parallel processors. ASIC (Application-Specific Integrated Circuit) is a custom-designed chip manufactured for a specific application — unlike FPGAs, ASICs cannot be reprogrammed after fabrication, but they offer higher performance, lower power consumption, and much lower per-unit costs at high volumes. The design trade-off between FPGAs and ASICs mirrors the general-purpose vs. custom trade-off: FPGAs offer flexibility, faster time-to-market, and lower upfront cost (no expensive mask sets), making them ideal for prototyping, low-volume production, and applications requiring field updates, while ASICs dominate high-volume consumer products (smartphone processors, crypto-mining chips, networking ASICs) where the massive initial design cost is amortized over millions of units."
+  },
+  {
+    "q": [
+      "What is the difference between computer engineering and computer science?",
+      "How is computer engineering different from software engineering?",
+      "What is the hardware-software interface?",
+      "What do computer engineers do?",
+      "What is the relationship between hardware and software?",
+      "What is firmware?",
+      "What is an instruction set architecture?",
+      "What is a device driver?",
+      "What knowledge do computer engineers need?",
+      "computer engineering",
+      "what is computer engineering",
+      "explain computer engineering"
+    ],
+    "a": "Computer engineering bridges electrical engineering and computer science, focusing on the design and integration of computer hardware and software systems — computer engineers understand both digital circuit design and programming, enabling them to work on embedded systems, processor design, operating systems, networking hardware, and the hardware-software interface. Computer science, by contrast, focuses more on algorithms, computational theory, software design, data structures, and programming languages, with less emphasis on the underlying hardware. The hardware-software interface is a critical area where computer engineers operate: it includes the instruction set architecture (ISA) defining how software communicates with the processor, firmware (low-level software stored in non-volatile memory that controls hardware), device drivers (software that allows the OS to communicate with peripherals), and the BIOS/UEFI that initializes hardware during boot. Computer engineers need a broad skill set including digital logic design, microprocessor architecture, electronics, circuit theory, programming (C/C++, assembly, VHDL/Verilog), operating system principles, computer networks, and signal integrity — making the field ideal for those interested in the full stack from transistors to application software."
+  }
+]

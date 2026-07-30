@@ -1,0 +1,52 @@
+[
+  {
+    "q": [
+      "What is the history of urban planning?",
+      "How were ancient cities planned?",
+      "What was Renaissance city planning?",
+      "How did Haussmann transform Paris?",
+      "What is the City Beautiful movement?",
+      "What is the Garden City movement?",
+      "Who was Ebenezer Howard?",
+      "What did Haussmann do to Paris?"
+    ],
+    "a": "Urban planning has ancient roots, with early planned cities like Mohenjo-Daro in the Indus Valley (grid layouts, drainage systems), ancient Greek cities with grid plans by Hippodamus of Miletus, Roman military camps (castra) with orthogonal street patterns, and Chinese imperial cities following cosmological principles of symmetry and cardinal orientation. Baron Haussmann's transformation of Paris under Napoleon III (1853-1870) was a monumental planning project that created wide boulevards, parks, uniform building heights, and modern infrastructure (water, sewer, gas) — while improving circulation, sanitation, and aesthetics, it also displaced working-class residents and served military purposes by preventing barricade construction. The Garden City movement, founded by Ebenezer Howard in his 1898 book 'To-Morrow: A Peaceful Path to Real Reform,' proposed self-contained communities surrounded by greenbelts, balancing town and country living with planned population limits, mixed land uses, and public ownership of land — directly influencing the British New Towns program and suburbs like Letchworth and Welwyn Garden City."
+  },
+  {
+    "q": [
+      "What was the City Beautiful movement?",
+      "What was modernist planning?",
+      "Who was Le Corbusier and what was his vision for cities?",
+      "What is Brasília known for in urban planning?",
+      "What is the Radiant City concept?",
+      "What is New Urbanism?",
+      "What is smart growth?",
+      "What are the principles of New Urbanism?"
+    ],
+    "a": "The City Beautiful movement emerged in the 1890s in response to industrial city squalor, advocating for monumental civic architecture, grand boulevards, public parks, and Beaux-Arts design to inspire civic virtue and moral uplift — exemplified by Daniel Burnham's 1909 Plan of Chicago and the 1893 World's Columbian Exposition, though critics argue it prioritized aesthetics over social needs and slum clearance. Modernist planning, championed by Le Corbusier's 'Radiant City' concept (Ville Radieuse, 1935), proposed high-density tower blocks set in vast open green spaces, strict functional zoning separating housing, work, and recreation, and extensive highway networks — most fully realized in Brasília (planned by Lúcio Costa and Oscar Niemeyer, inaugurated 1960), which is celebrated for its bold modernist vision but criticized for its inhuman scale, lack of street life, automobile dependency, and social segregation. New Urbanism, emerging in the 1980s (Andrés Duany, Elizabeth Plater-Zyberk, Peter Calthorpe), explicitly rejected modernist planning principles, advocating instead for walkable, mixed-use neighborhoods, traditional street grids with human-scaled blocks, a diversity of housing types, and defined centers and edges — with the Congress for the New Urbanism (1993) codifying principles including walkability, connectivity, mixed use and diversity, and quality architecture and urban design."
+  },
+  {
+    "q": [
+      "What is smart growth?",
+      "How does smart growth differ from urban sprawl?",
+      "What are the principles of smart growth?",
+      "What is contemporary urban planning?",
+      "How has urban planning evolved in the 21st century?",
+      "What is sustainable urban planning?",
+      "What is tactical urbanism?"
+    ],
+    "a": "Smart growth is a planning approach that concentrates development in compact, walkable, transit-accessible urban centers to avoid the environmental, social, and economic costs of low-density sprawl — its ten principles established by the Smart Growth Network include mixing land uses, taking advantage of compact building design, creating walkable neighborhoods, providing diverse transportation choices, preserving open space and critical environmental areas, and making development decisions predictable and equitable. Contemporary urban planning increasingly emphasizes climate resilience (adapting to sea-level rise, extreme heat, flooding), sustainability (green building, renewable energy, waste reduction, complete streets), equity (addressing historic disinvestment, displacement, and unequal access to amenities through planning processes), participatory and inclusive processes (community engagement, participatory budgeting, co-design), and data-driven decision-making (GIS analytics, digital twins, performance metrics). Planners today work with complex challenges including housing affordability crises, post-industrial redevelopment, aging infrastructure, demographic shifts, and the impacts of automation and remote work on urban form and transportation demand."
+  },
+  {
+    "q": [
+      "What is the difference between planning and urban design?",
+      "What is contemporary urban design?",
+      "How has planning theory evolved?",
+      "What is rational planning model?",
+      "What is collaborative planning?",
+      "What is advocacy planning?",
+      "Who was Jane Jacobs and what was her contribution to planning?"
+    ],
+    "a": "Jane Jacobs profoundly challenged modernist planning orthodoxy with her 1961 book 'The Death and Life of Great American Cities,' arguing that cities are complex, organic systems that cannot be understood through top-down, abstract planning models — she championed dense, mixed-use neighborhoods with short blocks, aged buildings, and concentrated diversity that generate the 'sidewalk ballet' of informal social control and vibrant street life. Major planning theory traditions include the rational planning model (systematic goal-setting, analysis of alternatives, implementation, and evaluation — criticized as technocratic and depoliticizing), incrementalism (Lindblom's 'muddling through,' where planning proceeds through small, pragmatic adjustments), advocacy planning (Davidoff, 1965, arguing that planners should represent marginalized communities in a pluralistic planning process rather than claiming value-neutral expertise), and collaborative planning (Healey and Innes, emphasizing communicative rationality, stakeholder deliberation, and consensus-building to address deeply contested planning issues). Contemporary planning theory grapples with tensions between technical expertise and democratic participation, the challenge of addressing systemic racism and inequality through spatial interventions, and the role of planning in an era of climate crisis, globalization, and digital transformation."
+  }
+]

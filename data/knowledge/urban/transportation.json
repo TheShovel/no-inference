@@ -1,0 +1,64 @@
+[
+  {
+    "q": [
+      "What are the different types of urban transit systems?",
+      "What is a metro system?",
+      "How do bus rapid transit systems work?",
+      "What is light rail?",
+      "What is the difference between a metro, light rail, and tram?",
+      "What is the largest metro system in the world?",
+      "How do transit systems reduce traffic congestion?"
+    ],
+    "a": "Urban transit systems include heavy rail metro (rapid transit with dedicated grade-separated rights-of-way, high capacity, and frequent service), light rail (lighter vehicles that can run on street-level tracks or dedicated guideways, with lower capacity than metro), bus rapid transit or BRT (buses running on dedicated lanes with station-like boarding platforms and signal priority), and commuter rail (regional trains connecting suburbs to city centers). The Shanghai Metro is the world's largest by route length, spanning over 500 miles with more than 500 stations. Effective public transit reduces urban congestion by replacing private car trips, with each metro train capable of replacing hundreds of vehicles, while BRT systems offer faster implementation at lower cost than rail. Modern transit systems increasingly integrate contactless payment, real-time arrival data, and coordinated transfers between different modes through unified smart card systems, with cities like Singapore, Tokyo, and London recognized as having the world's most efficient multimodal transit networks."
+  },
+  {
+    "q": [
+      "What is bike infrastructure?",
+      "How do bike lanes improve cities?",
+      "What is a bike-sharing system?",
+      "What makes a city bike-friendly?",
+      "What are protected bike lanes?",
+      "What is walkability in urban design?",
+      "What makes a city walkable?",
+      "What is a 15-minute city?"
+    ],
+    "a": "Bicycle infrastructure ranges from painted bike lanes (lowest level of separation) to protected bike lanes with physical barriers like curbs, bollards, or parked cars, and extends to bike boulevards on low-traffic streets and dedicated cycle tracks fully separated from both traffic and pedestrians. The 15-minute city concept proposes that all residents should be able to meet most daily needs — work, shopping, education, healthcare, and recreation — within a 15-minute walk or bike ride from home, reducing car dependence and improving quality of life. Walkable cities feature dense, mixed-use neighborhoods, human-scaled blocks (short blocks of 200-400 feet), continuous sidewalks with street furniture and trees, safe crosswalks with pedestrian signals, active ground-floor retail, and traffic calming measures that slow vehicles. Copenhagen and Amsterdam are model cycling cities where over 30% of all trips are by bicycle, achieved through decades of consistent investment in separated cycling infrastructure, traffic signal prioritization for cyclists, and policies that make cycling more convenient than driving for short urban trips."
+  },
+  {
+    "q": [
+      "How does traffic management work?",
+      "What are the principles of traffic calming?",
+      "How do traffic signals optimize flow?",
+      "What is smart traffic management?",
+      "What is parking policy?",
+      "How does parking affect cities?",
+      "What is minimum parking requirement?",
+      "What is parking reform?"
+    ],
+    "a": "Traffic management uses a combination of signal timing optimization (coordinated signals creating green waves along corridors), intelligent transportation systems (adaptive signals responding to real-time traffic conditions), traffic calming measures (speed humps, chicanes, roundabouts, narrowed lanes, raised crosswalks) that physically reduce vehicle speeds, and congestion pricing that charges drivers for entering busy zones during peak hours. Parking policy has profound impacts on urban form: minimum parking requirements (mandating a certain number of off-street parking spaces per building) have been shown to increase housing costs, encourage car dependence, and waste valuable urban land, with parking often occupying more land than the buildings themselves. Progressive cities are now eliminating parking minimums, implementing maximum parking limits, unbundling parking from rent, and pricing on-street parking through demand-responsive meters. Congestion pricing in London reduced traffic by 30% and generated billions in revenue for transit investment, while cities like Oslo and Paris have removed thousands of on-street parking spaces to create pedestrian zones, bike lanes, and sidewalk cafes."
+  },
+  {
+    "q": [
+      "What is transit-oriented development?",
+      "How does transit-oriented design work?",
+      "What is the difference between TOD and sprawl?",
+      "What is high-speed rail?",
+      "What countries have high-speed rail?",
+      "How fast does high-speed rail travel?",
+      "What is the fastest train in the world?"
+    ],
+    "a": "Transit-oriented development (TOD) concentrates dense, mixed-use, pedestrian-friendly development around transit stations, typically within a quarter to half-mile radius, creating walkable neighborhoods where residents can easily access jobs, services, and amenities without a car. Successful TOD projects integrate housing at various affordability levels, office space, retail, and public spaces directly connected to station entrances, with examples including Hong Kong's MTR stations, Stockholm's satellite towns on the Tunnelbana, and Arlington, Virginia's Rosslyn-Ballston corridor. The Shinkansen in Japan and the TGV in France are the world's most established high-speed rail networks, with trains regularly reaching 200 mph, while China now operates the world's largest high-speed rail network spanning over 25,000 miles. The fastest operational train is China's Shanghai Maglev, reaching 268 mph using magnetic levitation technology that eliminates wheel-on-rail friction. High-speed rail competes effectively with air travel for trips of 200-600 miles when city-center to city-center travel times including airport security and transit are considered."
+  },
+  {
+    "q": [
+      "What is street design?",
+      "What are complete streets?",
+      "What is the difference between a street, a road, and a boulevard?",
+      "How does street design affect safety?",
+      "What is a woonerf?",
+      "What is road diet?",
+      "How does street design affect pedestrians and cyclists?"
+    ],
+    "a": "Street design encompasses the layout and configuration of all elements within the public right-of-way, including travel lanes, sidewalks, bike lanes, medians, curb extensions, street trees, lighting, and street furniture. The 'complete streets' approach mandates that streets be designed for all users — pedestrians, cyclists, transit riders, and drivers — regardless of age or ability, rather than prioritizing automobile throughput above all else. A road diet reduces the number of travel lanes (typically converting a four-lane undivided road to two through lanes with a center turn lane and bike lanes) while maintaining or improving vehicle capacity through more orderly traffic flow. A woonerf or 'living street' is a shared space where pedestrians, cyclists, and cars mix at very low speeds (typically walking pace) without conventional curb separation, often using textured paving, changes in alignment, and street furniture to naturally slow traffic. Well-designed streets with narrow lanes (10-11 feet instead of 12+), raised crosswalks, curb extensions at intersections, and protected bike infrastructure dramatically reduce traffic fatalities, known as Vision Zero implementation."
+  }
+]

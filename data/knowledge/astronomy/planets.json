@@ -1,0 +1,64 @@
+[
+  {
+    "q": [
+      "What are the planets in the Solar System?",
+      "How many planets are in our Solar System?",
+      "What is the order of the planets from the Sun?",
+      "What are the terrestrial planets?",
+      "What are the gas giants?",
+      "What are the ice giants?",
+      "What are the inner and outer planets?",
+      "Describe the Solar System's composition."
+    ],
+    "a": "The Solar System consists of eight planets orbiting the Sun, divided into three categories. The terrestrial planets — Mercury, Venus, Earth, and Mars — are relatively small, rocky worlds with thin or minimal atmospheres, located closest to the Sun. The gas giants — Jupiter and Saturn — are massive planets composed primarily of hydrogen and helium with deep atmospheres and systems of rings and moons. The ice giants — Uranus and Neptune — are smaller than the gas giants but larger than Earth, composed largely of water, methane, and ammonia ices, and located in the outer Solar System. Beyond Neptune lies the Kuiper Belt, which contains dwarf planets like Pluto and Eris."
+  },
+  {
+    "q": [
+      "What are the characteristics of Mercury?",
+      "Describe the planet Mercury.",
+      "What is Mercury made of?",
+      "Why is Mercury so hot and cold?",
+      "Does Mercury have an atmosphere?",
+      "How big is Mercury?",
+      "What is unique about Mercury's orbit?"
+    ],
+    "a": "Mercury is the smallest planet in the Solar System and the closest to the Sun, with an average distance of about 58 million kilometers. It has an extremely thin atmosphere (an exosphere) composed mainly of oxygen, sodium, and hydrogen, which cannot retain heat, causing surface temperature swings from 430°C during the day to -180°C at night. Its surface is heavily cratered, resembling Earth's Moon, with smooth plains and scarps formed as the planet's interior cooled and contracted. Mercury has a large iron core making up about 85% of its radius, giving it a surprisingly strong magnetic field, and its highly elliptical orbit causes significant variations in its orbital speed."
+  },
+  {
+    "q": [
+      "What are the characteristics of Venus?",
+      "Describe the planet Venus.",
+      "Why is Venus the hottest planet?",
+      "What is Venus's atmosphere made of?",
+      "Is Venus similar to Earth?",
+      "What causes the greenhouse effect on Venus?",
+      "Does Venus rotate backwards?"
+    ],
+    "a": "Venus is often called Earth's twin due to their similar size, mass, and composition, yet its surface conditions are radically different. It has a crushing carbon dioxide atmosphere 90 times thicker than Earth's, creating a runaway greenhouse effect that makes Venus the hottest planet in the Solar System with a consistent surface temperature of about 462°C — hot enough to melt lead. Venus rotates in the opposite direction to most planets (retrograde rotation), and its rotation is so slow that a Venusian day is longer than its year. The surface is obscured by thick sulfuric acid clouds, hiding a landscape of vast volcanic plains, mountains, and thousands of volcanic structures, with evidence of ongoing volcanic activity."
+  },
+  {
+    "q": [
+      "What are the characteristics of Jupiter?",
+      "Describe the planet Jupiter.",
+      "What is Jupiter made of?",
+      "What is the Great Red Spot on Jupiter?",
+      "How many moons does Jupiter have?",
+      "Does Jupiter have rings?",
+      "What is Jupiter's atmosphere like?",
+      "How big is Jupiter compared to Earth?"
+    ],
+    "a": "Jupiter is the largest planet in the Solar System, with a mass more than 300 times that of Earth and a diameter of about 143,000 kilometers. It is a gas giant composed primarily of hydrogen and helium, with no solid surface — its atmosphere transitions gradually from gaseous to liquid metallic hydrogen deep within. The Great Red Spot is a persistent anticyclonic storm larger than Earth that has been observed for hundreds of years. Jupiter has at least 95 known moons, including the four large Galilean moons (Io, Europa, Ganymede, and Callisto), which are worlds in their own right, with Europa believed to harbor a subsurface ocean that could support life."
+  },
+  {
+    "q": [
+      "What is a dwarf planet?",
+      "What are dwarf planets?",
+      "Why is Pluto considered a dwarf planet?",
+      "What is the difference between a planet and a dwarf planet?",
+      "What are the dwarf planets in the Solar System?",
+      "What is Eris?",
+      "What is the Kuiper Belt?"
+    ],
+    "a": "Dwarf planets are celestial bodies that orbit the Sun, have sufficient mass for self-gravity to give them a nearly round shape, but have not cleared their orbital neighborhood of other debris. The International Astronomical Union (IAU) established this category in 2006, reclassifying Pluto and recognizing it as the prototype. Known dwarf planets include Pluto, Eris, Haumea, Makemake, and Ceres (the largest object in the asteroid belt). Pluto's reclassification was prompted by the discovery of Eris, which is slightly more massive, and other Kuiper Belt objects of comparable size, revealing that Pluto is just one of many large bodies in the outer reaches of the Solar System rather than a dominant planet."
+  }
+]

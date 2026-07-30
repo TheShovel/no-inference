@@ -1,0 +1,67 @@
+[
+  {
+    "q": [
+      "What are weaving drafts?",
+      "What is a weaving pattern?",
+      "How do you read a weaving draft?",
+      "What is a threading draft?",
+      "What is a treadling pattern?",
+      "What is a tie-up in weaving?",
+      "How do you design a weave structure?",
+      "What is a profile draft?"
+    ],
+    "a": "A weaving draft is a visual diagram that communicates exactly how to set up and weave a pattern, consisting of four quadrants: the threading (which warp thread goes through which heddle on which shaft), the tie-up (which shafts connect to which treadles), the treadling (the order of treadle presses), and the drawdown (a woven preview showing the resulting pattern in grid format). Reading a draft from bottom to top shows the weaving sequence, while the threading is read from right to left or left to right depending on convention. Profile drafts simplify complex patterns by representing groups of threads as single units, allowing weavers to design intricate structures without tracking every individual thread."
+  },
+  {
+    "q": [
+      "What is a 4-shaft weave pattern?",
+      "What can you weave on 4 shafts?",
+      "What is an 8-shaft loom pattern?",
+      "What are the advantages of more shafts?",
+      "What patterns require 4 shafts?",
+      "What is a 2-shaft weave?",
+      "What can you weave on more shafts?",
+      "What are the limitations of fewer shafts?"
+    ],
+    "a": "The number of shafts on a loom determines the complexity of possible patterns: 2 shafts produce only plain weave, 4 shafts unlock twills (2/2, 2/1, 3/1), herringbone, simple overshot, crackle weave, and beginning lace structures, while 8 shafts allow complex twills, advancing twills, satin weaves, double weave (two layers of fabric simultaneously), undulating and networked structures, and intricate lace and shadow weaves. Each additional shaft doubles the potential combinations (a 4-shaft loom has 16 possible shed combinations; an 8-shaft loom has 256), but requires more complex threading and tie-up. Multi-shaft looms (12, 16, 24+) are used by professional weavers for the most intricate patterns, including damask, taqueté, and structurally complex textiles."
+  },
+  {
+    "q": [
+      "What is double weave?",
+      "How do you weave two layers at once?",
+      "What is tubular weave?",
+      "What is double width weaving?",
+      "What is pocket weave?",
+      "What is double cloth?",
+      "How do you weave a tube on a loom?",
+      "What is double weave pickup?"
+    ],
+    "a": "Double weave is a structure that weaves two separate layers of fabric simultaneously on the same warp, created by alternately weaving the top layer's weft through the front half of the warp threads and the bottom layer's weft through the back half. The layers can be completely separate (for tubular weaving, making bags or garments without seams), connected at one or both edges (for double-width fabric on narrower looms), or exchanged between layers in patterns (double weave pickup, where colored threads switch between layers to create patterns on both sides). Double weave is also used for pocket weave (layers sealed at intervals to create pockets), quilt-like patterns with different colored layers, and reversible fabrics with contrasting faces."
+  },
+  {
+    "q": [
+      "What is tapestry weaving?",
+      "What is the difference between tapestry and cloth weaving?",
+      "What is a tapestry cartoon?",
+      "What is a slit tapestry?",
+      "What is a dovetailed tapestry?",
+      "What is an interlocked tapestry?",
+      "What is a weft-faced weave?",
+      "What materials are used in tapestry?"
+    ],
+    "a": "Tapestry weaving is a weft-faced technique where the weft completely covers the warp, allowing the weaver to create images and patterns by using different colored weft threads in specific areas — only the colored weft is visible, while the warp threads are hidden entirely. Tapestry is woven on simple frame looms or specialized tapestry looms using discontinuous wefts (each color area has its own weft thread that doesn't span the full width), with joins between color areas handled through slits (leaving a gap), dovetailing (alternating wefts), or interlocking (looping wefts together). Traditional high-warp (haute-lisse) tapestry from European workshops like the Gobelins Manufactory uses vertical looms, while low-warp (basse-lisse) uses horizontal looms, both dating back centuries for creating monumental decorative wall hangings."
+  },
+  {
+    "q": [
+      "What is lace weave?",
+      "What is huck lace?",
+      "What is Bronson lace?",
+      "What is Swedish lace?",
+      "What is leno weave?",
+      "What are the types of lace weaves?",
+      "How do you weave lace on a loom?",
+      "What is open weave in weaving?"
+    ],
+    "a": "Lace weaves create open, patterned fabric with deliberate gaps or holes in the structure, achieved by grouping warp threads and skipping or floating them over areas where no weft is visible. Huck lace (also called huckaback) creates small diamond or geometric openings through a pattern of long floats and plain weave areas, while Bronson lace produces spot lace patterns with small groups of threads alternating between plain weave and spaced floats. Leno weave (also called gauze weave) is structurally different — warp threads are twisted around each other between weft picks to lock threads in place and create permanent open lace-like openings, commonly used for curtains, sheer fabrics, and lightweight summer garments."
+  }
+]

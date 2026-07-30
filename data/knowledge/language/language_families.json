@@ -1,0 +1,61 @@
+[
+  {
+    "q": [
+      "What are language families?",
+      "Explain language families.",
+      "What is the largest language family?",
+      "How are language families classified?",
+      "What are the major language families of the world?",
+      "How many language families are there?",
+      "What is the Indo-European language family?"
+    ],
+    "a": "Language families are groups of languages that share a common ancestral language, known as a proto-language, from which they evolved over time through processes of linguistic change. The Indo-European family is the largest, with over 3 billion speakers across languages including English, Spanish, Hindi, Russian, and Persian, spanning from Europe to India. Other major families include Sino-Tibetan (Mandarin, Cantonese, Tibetan), Niger-Congo (Swahili, Yoruba, Zulu — the largest by number of distinct languages), Afroasiatic (Arabic, Hebrew, Somali, Hausa), Austronesian (Malay, Tagalog, Hawaiian, Maori), Turkic (Turkish, Uzbek, Kazakh), and Uralic (Finnish, Hungarian, Estonian). Linguists estimate there are approximately 140 to 150 language families worldwide, though many are small and endangered."
+  },
+  {
+    "q": [
+      "What is a language isolate?",
+      "Explain language isolates.",
+      "What are examples of language isolates?",
+      "Is Korean a language isolate?",
+      "Is Basque a language isolate?",
+      "What is the difference between a language family and a language isolate?",
+      "How many language isolates exist?"
+    ],
+    "a": "A language isolate is a language that has no demonstrable genetic relationship to any other language — it cannot be classified into any known language family. Well-known examples include Basque, spoken in the Pyrenees region of Spain and France, which predates Indo-European arrival in Europe and has resisted all attempts to link it to other languages. Other isolates include Ainu (Japan, now nearly extinct), Burushaski (Pakistan), and Ket (Siberia). Korean and Japanese are sometimes considered isolates, though some linguists propose connections to Altai or other families, and they clearly share many features with each other due to long contact. Language isolates are especially common in Papua New Guinea and the Americas, reflecting the deep linguistic diversity of these regions."
+  },
+  {
+    "q": [
+      "What is linguistic reconstruction?",
+      "How is Proto-Indo-European reconstructed?",
+      "What is the comparative method in linguistics?",
+      "How do linguists reconstruct ancient languages?",
+      "What are cognates in language reconstruction?",
+      "What is a proto-language?",
+      "How do we know what dead languages sounded like?"
+    ],
+    "a": "Linguistic reconstruction is the process by which linguists infer the features of unattested ancestral languages, called proto-languages, by comparing descendant languages. The comparative method involves systematically identifying cognates (words in different languages that share a common origin) and observing regular sound correspondences between them — for example, the consistent p/f correspondence between Latin 'pater' and English 'father' reveals sound changes from Proto-Indo-European. By reversing these changes, linguists can reconstruct proto-words, morphology, and even aspects of syntax and culture, such as the existence of snow in the Proto-Indo-European homeland. Additional evidence comes from internal reconstruction (analyzing patterns within a single language) and the study of language universals."
+  },
+  {
+    "q": [
+      "What is language distribution?",
+      "How are languages distributed across the world?",
+      "Which countries have the most languages?",
+      "What is language density?",
+      "Why does Papua New Guinea have so many languages?",
+      "What causes linguistic diversity?",
+      "How does geography affect language distribution?"
+    ],
+    "a": "Language distribution across the world is highly uneven, shaped by historical, geographical, and political factors. Papua New Guinea is the most linguistically diverse country on Earth with over 800 languages spoken, due to its rugged mountainous terrain that isolated communities for millennia. By contrast, large areas like the Amazon Basin, Siberia, and Australia once had high diversity before colonization drastically reduced it. Europe has relatively few languages for its area, largely due to centuries of nation-state consolidation and standardization. Regions with high biodiversity tend to correlate with high linguistic diversity, a pattern known as biolinguistic diversity. Currently, about half of the world's approximately 7,000 languages are spoken by fewer than 10,000 speakers, and many face extinction within this century as younger generations shift to dominant languages."
+  },
+  {
+    "q": [
+      "What is the Sino-Tibetan language family?",
+      "Explain the Sino-Tibetan language family.",
+      "What languages are in the Sino-Tibetan family?",
+      "How many people speak Sino-Tibetan languages?",
+      "What is the relationship between Chinese and Tibetan?",
+      "What are the branches of Sino-Tibetan?"
+    ],
+    "a": "The Sino-Tibetan family is the world's second-largest language family by number of speakers, with over 1.4 billion speakers primarily in East Asia, Southeast Asia, and South Asia. It consists of two main branches: Sinitic (the Chinese languages, including Mandarin, Cantonese, Hakka, Min, and others, often considered dialects of a single language) and Tibeto-Burman (including Tibetan, Burmese, and hundreds of languages spoken across Nepal, Bhutan, Myanmar, southwest China, and northeast India). Sino-Tibetan languages are typically tonal (though some Tibeto-Burman languages are not), largely monosyllabic in root structure, and use word order and particles rather than inflection to express grammatical relationships. The family's deep history and internal relationships remain active areas of linguistic research, with the homeland likely in northern China around 6,000 to 8,000 years ago."
+  }
+]

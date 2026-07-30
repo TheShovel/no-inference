@@ -1,0 +1,63 @@
+[
+  {
+    "q": [
+      "What are the major insect orders?",
+      "How are insects classified?",
+      "What is the largest order of insects?",
+      "What are Coleoptera?",
+      "What are Lepidoptera?",
+      "What are Hymenoptera?",
+      "What is the difference between Diptera and Hemiptera?",
+      "What are the most common insect orders?"
+    ],
+    "a": "Insects are classified into orders based on their evolutionary relationships and physical characteristics. The largest order is Coleoptera (beetles), with over 400,000 species characterized by hardened forewings called elytra. Lepidoptera (butterflies and moths) have scale-covered wings and are renowned for their metamorphosis. Hymenoptera (bees, wasps, and ants) are highly social insects with complex colony structures. Other major orders include Diptera (flies and mosquitoes, with one pair of functional wings and halteres), Hemiptera (true bugs with piercing-sucking mouthparts), Orthoptera (grasshoppers and crickets), Odonata (dragonflies and damselflies), and Blattodea (cockroaches and termites). Each order is distinguished by wing structure, mouthpart type, metamorphosis type, and other morphological features."
+  },
+  {
+    "q": [
+      "What is the anatomy of an insect?",
+      "What are the three body parts of an insect?",
+      "How do insect eyes work?",
+      "What are compound eyes in insects?",
+      "What types of mouthparts do insects have?",
+      "What is the insect exoskeleton made of?",
+      "How many legs and wings do insects have?"
+    ],
+    "a": "Insects have three main body segments: the head (with compound eyes, simple ocelli, antennae, and mouthparts), the thorax (divided into prothorax, mesothorax, and metathorax, each bearing a pair of legs — six total), and the abdomen (containing digestive, reproductive, and respiratory organs with spiracles for breathing). Compound eyes consist of thousands of individual light-sensing units called ommatidia, providing excellent motion detection and, in many insects, UV and polarization vision. Mouthparts are highly adapted to diet: chewing (beetles, cockroaches), piercing-sucking (mosquitoes, bugs), siphoning (butterflies), and lapping (flies). The exoskeleton is made of chitin and protein, forming a rigid cuticle that provides protection and muscle attachment points."
+  },
+  {
+    "q": [
+      "What is complete vs incomplete metamorphosis?",
+      "How do insects grow and develop?",
+      "What is the difference between holometabolous and hemimetabolous insects?",
+      "What are the stages of complete metamorphosis?",
+      "What insects go through incomplete metamorphosis?",
+      "What is an instar in insect development?",
+      "What is molting or ecdysis in insects?"
+    ],
+    "a": "Insect metamorphosis comes in two main forms. Complete metamorphosis (holometabolism) has four distinct stages: egg, larva (feeding and growing), pupa (transformation inside a cocoon or chrysalis), and adult (imago) — seen in beetles, butterflies, bees, flies, and ants. Incomplete metamorphosis (hemimetabolism) has three stages: egg, nymph (which resembles a smaller adult and molts repeatedly), and adult — seen in grasshoppers, true bugs, dragonflies, and cockroaches. Molting (ecdysis) is the process of shedding the old exoskeleton to allow growth, controlled by the hormone ecdysone. Each stage between molts is called an instar, and the number of instars varies by species from three to over 30."
+  },
+  {
+    "q": [
+      "How do insects sense their environment?",
+      "How do insects see the world?",
+      "Can insects see UV light?",
+      "How do insects hear?",
+      "How do insects smell and detect pheromones?",
+      "How do insects taste?",
+      "What sensory organs do insects have?"
+    ],
+    "a": "Insects have sophisticated sensory systems adapted to their ecological niches. Vision is provided by compound eyes (excellent at detecting movement and forms) and simple ocelli (light intensity detection) — many insects see into the ultraviolet spectrum and can detect polarized light for navigation. Hearing organs include tympanal organs (membranes similar to eardrums on legs, thorax, or abdomen), Johnston's organ (vibration sensing in antennae), and fine hair sensilla that detect air movements. Smell is primarily through antennae covered in olfactory sensilla that detect pheromones, plant volatiles, and food sources with extraordinary sensitivity — male silk moths can detect a single female pheromone molecule from miles away. Taste receptors are located on the tarsi (feet), mouthparts, and even the ovipositor, allowing insects to taste potential food by simply walking on it."
+  },
+  {
+    "q": [
+      "What are the main characteristics of insects?",
+      "What defines an insect from other arthropods?",
+      "What is entomology?",
+      "How many species of insects are there?",
+      "What is the difference between insects and arachnids?",
+      "Are all bugs insects?",
+      "Why are insects so successful?"
+    ],
+    "a": "Entomology is the scientific study of insects, the most diverse group of animals on Earth with over one million described species and estimates of 5-30 million total. Insects are arthropods characterized by three body regions (head, thorax, abdomen), six legs, two pairs of wings (in most adults), one pair of antennae, and compound eyes. They are distinguished from arachnids (spiders, scorpions, mites), which have two body segments and eight legs, and from crustaceans, which have two pairs of antennae and typically more legs. The term 'bug' technically refers only to the order Hemiptera (true bugs), though it's commonly used loosely for any insect. Insects' success is attributed to their small size, rapid reproduction, exoskeleton for protection, flight capability, complete metamorphosis, and remarkable adaptability to virtually every terrestrial environment."
+  }
+]

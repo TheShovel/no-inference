@@ -1,0 +1,57 @@
+[
+  {
+    "q": [
+      "What is horticulture?",
+      "How does horticulture differ from agriculture?",
+      "What are the branches of horticulture?",
+      "What does horticulture encompass?",
+      "Define horticulture and its scope.",
+      "What is the difference between horticulture and agronomy?",
+      "What is horticulture science?",
+      "branches of horticulture"
+    ],
+    "a": "Horticulture is the science and art of cultivating fruits, vegetables, flowers, ornamental plants, and landscape plantings, distinguished from broad-scale agriculture by its intensive, specialized management of high-value crops grown in smaller spaces. The major branches include pomology (fruit cultivation), olericulture (vegetable production), floriculture (flower production), landscape horticulture (design and maintenance of green spaces), nursery management (propagation and sale of plants), and post-harvest physiology (handling and storage of horticultural products). Horticulture combines plant biology, chemistry, genetics, and environmental science to optimize plant growth, yield, quality, and aesthetic appeal for food, medicine, and beautification of human environments."
+  },
+  {
+    "q": [
+      "What is plant propagation?",
+      "How do you propagate plants from cuttings?",
+      "What is grafting in horticulture?",
+      "What is layering in plant propagation?",
+      "What is tissue culture in plants?",
+      "What are the methods of plant propagation?",
+      "How does cutting propagation work?",
+      "plant propagation methods",
+      "grafting plants",
+      "tissue culture plants"
+    ],
+    "a": "Plant propagation is the process of creating new plants from a variety of sources, broadly divided into sexual propagation (using seeds resulting from pollination) and asexual or vegetative propagation (using vegetative parts like stems, roots, or leaves to produce genetically identical clones). Cutting propagation involves taking a stem, leaf, or root section from a parent plant and placing it in a suitable medium to develop roots and shoots, with success depending on factors like timing, hormone treatment, humidity, and temperature control. Grafting joins the scion (desired variety) to a compatible rootstock, combining desirable traits such as disease resistance or dwarfing from the rootstock with superior fruit or flower quality from the scion — widely used in fruit trees and ornamental shrubs. Layering encourages root formation on a stem while still attached to the parent plant, and tissue culture (micropropagation) grows thousands of identical plants from tiny explants in sterile laboratory conditions using nutrient media and growth regulators, enabling rapid multiplication of disease-free stock."
+  },
+  {
+    "q": [
+      "What is floriculture?",
+      "What is the greenhouse production of flowers?",
+      "What is nursery management?",
+      "What is ornamental horticulture?",
+      "How are flowers grown commercially?",
+      "What is the floriculture industry?",
+      "commercial flower production",
+      "greenhouse floriculture"
+    ],
+    "a": "Floriculture is the branch of horticulture focused on the cultivation of flowering and ornamental plants for gardens, floristry, and the floral industry, including cut flowers (roses, tulips, lilies), potted flowering plants (poinsettias, orchids, chrysanthemums), and bedding plants for landscape use. Greenhouse production allows year-round cultivation of floricultural crops by controlling temperature, humidity, light intensity, photoperiod, and CO₂ levels, with modern operations using automated irrigation, fertigation, and environmental control systems to optimize growth and flowering cycles. Nursery management involves the large-scale production of trees, shrubs, and perennial plants for transplanting into landscapes, requiring expertise in propagation, container or field growing, pest management, winter protection, and marketing to garden centers, landscapers, and retail customers."
+  },
+  {
+    "q": [
+      "What is pruning and training in plants?",
+      "Why is pruning important in horticulture?",
+      "What are the different types of pruning cuts?",
+      "How do you train fruit trees?",
+      "What is espalier training?",
+      "What is the difference between pruning and training?",
+      "plant pruning techniques",
+      "training ornamental plants",
+      "how to prune trees and shrubs"
+    ],
+    "a": "Pruning is the selective removal of plant parts — branches, buds, roots — to improve plant health, control size and shape, increase flower or fruit production, and remove diseased or damaged wood, with common techniques including thinning cuts (removing entire branches at their origin) and heading cuts (shortening branches to stimulate lower bud growth). Training directs a plant's growth form through mechanical manipulation such as staking, tying, and spreading branches, creating desired shapes like central leader (a single dominant trunk used in apples and pears), open center (vase-shaped for peaches and plums), or espalier (flattened against a wall or trellis for space efficiency and sun exposure). Proper pruning and training are essential in commercial orchards and vineyards to maximize light interception, air circulation, harvest efficiency, and fruit quality, with timing varying by species — most deciduous trees are pruned during winter dormancy, while spring-flowering shrubs are pruned immediately after blooming to avoid removing next season's flower buds."
+  }
+]

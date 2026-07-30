@@ -1,0 +1,57 @@
+[
+  {
+    "q": [
+      "What is artificial intelligence?",
+      "Define artificial intelligence in simple terms",
+      "What does AI mean?",
+      "How is artificial intelligence defined?",
+      "Explain the concept of AI",
+      "What is AI and how does it work?"
+    ],
+    "a": "Artificial intelligence (AI) is a branch of computer science focused on creating systems capable of performing tasks that typically require human intelligence, such as visual perception, speech recognition, decision-making, and language translation. AI systems range from simple rule-based programs to complex machine learning models that can improve their performance over time through experience. The field draws on multiple disciplines including computer science, cognitive science, mathematics, and neuroscience."
+  },
+  {
+    "q": [
+      "What is the difference between strong AI and weak AI?",
+      "Explain strong AI vs weak AI",
+      "What is narrow AI?",
+      "What is artificial general intelligence?",
+      "What is artificial superintelligence?",
+      "How do narrow, general, and super AI differ?"
+    ],
+    "a": "Weak AI, also called narrow AI, is designed to perform a specific task or a limited set of tasks, such as playing chess, recommending products, or recognizing faces — it operates within a constrained domain and cannot generalize beyond its training. Strong AI, or artificial general intelligence (AGI), refers to a hypothetical system with human-level cognitive abilities capable of understanding, learning, and applying intelligence to any problem across diverse domains. Artificial superintelligence (ASI) is a theoretical future AI that surpasses human intelligence across all fields, including creativity, problem-solving, and emotional intelligence."
+  },
+  {
+    "q": [
+      "What is the Turing test?",
+      "How does the Turing test work?",
+      "Explain Alan Turing's test for machine intelligence",
+      "Can a machine pass the Turing test?",
+      "What is the imitation game?",
+      "How is the Turing test used to evaluate AI?"
+    ],
+    "a": "The Turing test, proposed by Alan Turing in 1950 in his paper 'Computing Machinery and Intelligence,' is a test of a machine's ability to exhibit intelligent behavior indistinguishable from that of a human. In the test, a human judge engages in natural language conversations with both a human and a machine without knowing which is which — if the judge cannot reliably distinguish the machine from the human, the machine is said to have passed the test. While the test remains a foundational philosophical benchmark in AI, it has been criticized for focusing solely on linguistic mimicry rather than genuine understanding, and several chatbots (like Eugene Goostman) have claimed to pass it under specific conditions."
+  },
+  {
+    "q": [
+      "What happened at the Dartmouth Conference of 1956?",
+      "Why is the Dartmouth Conference important in AI history?",
+      "Who organized the Dartmouth Summer Research Project?",
+      "When was the term artificial intelligence first coined?",
+      "What is the significance of Dartmouth 1956 for AI?",
+      "How did AI begin as a field?"
+    ],
+    "a": "The Dartmouth Summer Research Project on Artificial Intelligence, held in 1956 at Dartmouth College in Hanover, New Hampshire, is widely considered the founding event of AI as a formal academic field. Organized by John McCarthy (who coined the term 'artificial intelligence'), along with Marvin Minsky, Nathaniel Rochester, and Claude Shannon, the two-month workshop brought together leading researchers to explore the conjecture that 'every aspect of learning or any other feature of intelligence can be so precisely described that a machine can be made to simulate it.' Though the meeting produced no major breakthroughs, it established AI as a legitimate research discipline, set research agendas, and formed the core community that would drive the field forward."
+  },
+  {
+    "q": [
+      "What is the difference between symbolic AI and connectionism?",
+      "Explain symbolic AI vs connectionist AI",
+      "What is good old-fashioned AI?",
+      "What is the connectionist approach in AI?",
+      "How do symbol-based and neural network approaches differ?",
+      "What are the main differences between symbolic and sub-symbolic AI?"
+    ],
+    "a": "Symbolic AI, also known as GOFAI (Good Old-Fashioned AI), represents knowledge using explicit symbols, rules, and logical relationships — it treats intelligence as the manipulation of these symbols through predefined rules, making it transparent and interpretable but brittle when faced with ambiguity or real-world noise. Connectionism, by contrast, models intelligence using artificial neural networks inspired by the brain's structure, where learning emerges from adjusting connections between simple processing units based on data rather than explicit programming. Modern AI increasingly combines both approaches: neuro-symbolic AI systems leverage the interpretability of symbolic reasoning with the pattern-recognition strengths of neural networks."
+  }
+]

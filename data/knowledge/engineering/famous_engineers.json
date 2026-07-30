@@ -1,0 +1,112 @@
+[
+  {
+    "q": [
+      "Who was Nikola Tesla and what did he invent?",
+      "What are Nikola Tesla's contributions to electrical engineering?",
+      "What did Nikola Tesla invent?",
+      "Tell me about Nikola Tesla's AC motor and Tesla coil.",
+      "Nikola Tesla achievements and inventions",
+      "How did Nikola Tesla change the world?"
+    ],
+    "a": "Nikola Tesla (1856–1943) was a Serbian-American inventor, electrical engineer, mechanical engineer, and futurist whose pioneering work in alternating current (AC) systems laid the foundation for modern electrical power distribution. He invented the AC induction motor and the polyphase AC system, which were licensed by George Westinghouse and ultimately won the 'War of the Currents' against Thomas Edison's DC system. Tesla also developed the Tesla coil (a high-voltage, high-frequency transformer), made fundamental contributions to radio technology, and experimented with wireless power transmission, X-rays, and remote control in his later years."
+  },
+  {
+    "q": [
+      "Who was Isambard Kingdom Brunel?",
+      "What did Isambard Kingdom Brunel build?",
+      "Tell me about Isambard Kingdom Brunel's bridges and railways.",
+      "Isambard Kingdom Brunel achievements in engineering",
+      "How did Brunel shape modern civil engineering?",
+      "What were Brunel's most famous engineering projects?"
+    ],
+    "a": "Isambard Kingdom Brunel (1806–1859) was a brilliant British civil engineer who transformed public transport and modern engineering through ambitious projects in railways, bridges, steamships, and tunnels. He designed the Great Western Railway, including the iconic Clifton Suspension Bridge in Bristol, the Maidenhead Railway Bridge (still with the longest brick arch span), and the Box Tunnel. Brunel also built three revolutionary steamships — the Great Western, Great Britain (the first iron-hulled, propeller-driven ocean liner), and the Great Eastern (the largest ship ever built at the time). His daring engineering vision and willingness to push technological boundaries made him a legendary figure of the Industrial Revolution."
+  },
+  {
+    "q": [
+      "Who was Ada Lovelace and why is she important?",
+      "What did Ada Lovelace contribute to computing?",
+      "Ada Lovelace achievements in computer science",
+      "Why is Ada Lovelace considered the first programmer?",
+      "What did Ada Lovelace write about the Analytical Engine?",
+      "Tell me about Ada Lovelace and Charles Babbage."
+    ],
+    "a": "Ada Lovelace (1815–1852) was an English mathematician and writer, widely regarded as the world's first computer programmer. She collaborated with Charles Babbage on his Analytical Engine, a mechanical general-purpose computer design, and published the first algorithm specifically designed to be processed by a machine. In her extensive notes, Lovelace recognized that Babbage's machine could manipulate symbols and create music or graphics beyond mere numerical calculation — a visionary insight that anticipated modern computing by over a century. The Ada programming language, developed by the US Department of Defense, was named in her honor."
+  },
+  {
+    "q": [
+      "Who was Grace Hopper and what did she accomplish?",
+      "What did Grace Hopper contribute to computer science?",
+      "Grace Hopper achievements in computing",
+      "What was Grace Hopper's role in COBOL?",
+      "Tell me about Grace Hopper and the first compiler.",
+      "How did Grace Hopper influence modern programming?"
+    ],
+    "a": "Grace Brewster Murray Hopper (1906–1992) was an American computer scientist and United States Navy rear admiral, celebrated as a pioneer in computer programming and compiler development. She invented the first compiler (A-0 system), which translated English-like statements into machine code, fundamentally changing how software was written. Hopper was instrumental in developing COBOL (COBOL-61), one of the earliest high-level programming languages still in use today, and advocated strongly for programming languages based on English rather than machine code. She also popularized the term 'debugging' after an actual moth was removed from the Harvard Mark II computer — though the concept of debugging predates her."
+  },
+  {
+    "q": [
+      "Who is Elon Musk and what engineering companies did he found?",
+      "What has Elon Musk accomplished in engineering?",
+      "What companies did Elon Musk found?",
+      "How has Elon Musk influenced aerospace and automotive engineering?",
+      "Elon Musk contributions to technology and engineering",
+      "What are Elon Musk's most significant engineering achievements?"
+    ],
+    "a": "Elon Musk (born 1971) is a South African-born entrepreneur and engineer who has founded and led multiple companies at the forefront of engineering innovation. At SpaceX, he revolutionized aerospace engineering by developing the Falcon 9 reusable rocket, dramatically reducing launch costs, and creating the Starship program for interplanetary travel. At Tesla, he accelerated the automotive industry's transition to electric vehicles with models like the Model S and Model 3, while also advancing battery technology and autonomous driving. His other ventures include Neuralink (brain-computer interfaces), The Boring Company (tunnel construction), and SolarCity (solar energy), with each company pushing the boundaries of its respective engineering discipline."
+  },
+  {
+    "q": [
+      "Who was James Watt and what did he invent?",
+      "What did James Watt contribute to the steam engine?",
+      "James Watt achievements in mechanical engineering",
+      "How did James Watt improve the steam engine?",
+      "What is the watt unit named after?",
+      "Tell me about James Watt and the Industrial Revolution."
+    ],
+    "a": "James Watt (1736–1819) was a Scottish inventor and mechanical engineer whose improvements to the steam engine were fundamental to the Industrial Revolution. While repairing a Newcomen engine, he invented the separate condenser in 1765, which dramatically improved efficiency by avoiding the need to alternately heat and cool the cylinder. He also developed the double-acting engine, the centrifugal governor (for automatic speed regulation), a steam indicator (for measuring pressure), and the concept of horsepower as a unit of measurement. The SI unit of power, the watt (W), is named in his honor."
+  },
+  {
+    "q": [
+      "Who was Thomas Edison and what did he invent?",
+      "What did Thomas Edison invent?",
+      "Thomas Edison achievements and inventions",
+      "How did Thomas Edison contribute to electrical engineering?",
+      "What is Thomas Edison known for?",
+      "Tell me about Thomas Edison and the light bulb."
+    ],
+    "a": "Thomas Alva Edison (1847–1931) was an American inventor and businessman who held over 1,000 US patents and created the world's first industrial research laboratory in Menlo Park, New Jersey. His most famous invention was the practical, long-lasting incandescent light bulb (1879), but his true breakthrough was the entire electric lighting system — including generators, meters, wiring, and sockets. Edison also invented the phonograph (the first sound recording device), the motion picture camera (Kinetograph), and improvements to the telegraph and telephone. While often compared to Tesla in the 'War of the Currents' (Edison championed DC power), his greatest legacy is arguably the systematic approach to innovation through organized research and development."
+  },
+  {
+    "q": [
+      "Who was Archimedes and what did he discover?",
+      "What were Archimedes' contributions to engineering and physics?",
+      "Archimedes inventions and discoveries",
+      "What is Archimedes' principle?",
+      "Tell me about Archimedes and the lever.",
+      "How did Archimedes influence ancient engineering?"
+    ],
+    "a": "Archimedes of Syracuse (c. 287–212 BCE) was the greatest mathematician and inventor of the ancient Greek world, whose discoveries in physics and engineering remain foundational today. He formulated Archimedes' principle (buoyancy — an object immersed in fluid experiences an upward force equal to the weight of the displaced fluid) and the law of the lever, famously stating 'Give me a place to stand and I will move the Earth.' He invented the Archimedes screw for lifting water, compound pulleys, and war machines such as the claw of Archimedes and parabolic mirrors to defend Syracuse. His mathematical works anticipated integral calculus by nearly 2,000 years through the method of exhaustion for calculating areas and volumes."
+  },
+  {
+    "q": [
+      "Who was Leonardo da Vinci and what were his engineering contributions?",
+      "What did Leonardo da Vinci design as an engineer?",
+      "Leonardo da Vinci engineering inventions",
+      "What machines did Leonardo da Vinci design?",
+      "Tell me about da Vinci's flying machines and war engines.",
+      "How did Leonardo da Vinci contribute to engineering?"
+    ],
+    "a": "Leonardo da Vinci (1452–1519) was a Renaissance polymath whose engineering designs were centuries ahead of their time, documented in thousands of pages of detailed sketches and notes. He designed pioneering concepts for flying machines (ornithopters and a helicopter-like aerial screw), military engineering (tanks, giant crossbows, catapults, and a diving suit), hydraulics (canal systems, locks, and water pumps), and mechanical devices (ball bearings, self-propelled carts — an early robot concept, and automated looms). While many of his designs were never built in his lifetime, his systematic approach to studying nature and applying mechanical principles made him a visionary engineer whose notebooks inspire engineers to this day."
+  },
+  {
+    "q": [
+      "Who were the Wright brothers and what did they achieve?",
+      "What did Wilbur and Orville Wright invent?",
+      "The Wright brothers contributions to aviation",
+      "How did the Wright brothers achieve the first powered flight?",
+      "Tell me about the Wright brothers and the Wright Flyer.",
+      "What made the Wright brothers successful in aviation?"
+    ],
+    "a": "Wilbur (1867–1912) and Orville (1871–1948) Wright were American inventors and aviation pioneers who achieved the first powered, controlled, sustained heavier-than-air flight on December 17, 1903, at Kitty Hawk, North Carolina. Their breakthrough came from a methodical engineering approach: they built their own wind tunnel to gather accurate aerodynamic data, developed a three-axis control system (roll via wing warping, pitch via elevator, yaw via rudder) that became the standard for all aircraft, and designed their own lightweight, high-power engine and propellers. The Wright Flyer flew 120 feet in 12 seconds on its first flight, and by 1905 their Flyer III could remain airborne for over 30 minutes, demonstrating practical, controllable flight."
+  }
+]

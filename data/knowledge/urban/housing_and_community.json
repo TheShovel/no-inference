@@ -1,0 +1,66 @@
+[
+  {
+    "q": [
+      "What are the different types of housing?",
+      "What is the difference between apartments and condominiums?",
+      "What is single-family housing?",
+      "What is a duplex?",
+      "What is a townhouse?",
+      "What is co-housing?",
+      "What is a co-living space?",
+      "What is accessory dwelling unit?"
+    ],
+    "a": "Housing types range from single-family detached homes (a standalone building on its own lot) to various forms of multi-family housing including duplexes (two units in one building), townhouses (attached single-family units sharing walls), apartment buildings (rental units in a multi-story building with shared common areas), condominiums (individually owned units in a multi-unit building), and cooperative housing where residents collectively own and manage the building. Co-housing communities are intentional neighborhoods where private homes cluster around shared facilities like a common house with kitchen, dining, and laundry, combining private living space with community-oriented amenities designed to foster social interaction. Accessory dwelling units (ADUs) are secondary smaller housing units on the same lot as a primary residence, such as garage conversions, basement apartments, or backyard cottages, increasingly legalized by cities as an incremental approach to increasing housing density without altering neighborhood character. The spectrum of housing types in a healthy city provides options for households at every stage of life — from studio apartments for young professionals to family-sized apartments and houses with yards."
+  },
+  {
+    "q": [
+      "What is affordable housing?",
+      "How is affordable housing defined?",
+      "What is the difference between affordable and subsidized housing?",
+      "What is inclusionary zoning?",
+      "How can cities increase affordable housing?",
+      "What is the housing crisis?",
+      "Why is housing so expensive in cities?"
+    ],
+    "a": "Affordable housing is generally defined as housing where total costs (rent or mortgage plus utilities) do not exceed 30% of a household's gross income. The widespread shortage of affordable housing stems from a combination of factors: restrictive zoning that limits density, rising land costs, construction cost increases, stagnant wages relative to housing costs, and the financialization of housing where properties are treated as investment assets. Inclusionary zoning requires or incentivizes developers to include a percentage of affordable units in new market-rate developments, often through density bonuses that allow extra height or units in exchange for affordability commitments. Other strategies to address the housing crisis include legalizing multi-family housing in areas previously zoned exclusively for single-family homes, streamlining permitting processes, establishing community land trusts that remove land from speculative markets, rent stabilization policies, and direct public investment in social housing. Vacancy taxes and empty home taxes are increasingly adopted to discourage property speculation and bring unused housing units back into the market, with Vancouver and London implementing such measures."
+  },
+  {
+    "q": [
+      "What is mixed-use development?",
+      "What are the benefits of mixed-use neighborhoods?",
+      "What is neighborhood planning?",
+      "What is community engagement in planning?",
+      "How do public spaces benefit communities?",
+      "What are examples of great public spaces?",
+      "What is the role of parks in cities?"
+    ],
+    "a": "Mixed-use development combines residential, commercial, office, and sometimes institutional uses within the same building or neighborhood, reducing travel distances and creating vibrant, populated streets at all hours. Successful mixed-use areas typically have ground-floor retail activating the sidewalk, residential or office uses above, and careful management of potential conflicts between uses (noise, odor, delivery traffic). Public spaces — including parks, plazas, squares, community gardens, waterfront promenades, and greenways — serve as the urban living room where social interaction, recreation, and community events take place. Great public spaces are accessible, comfortable, and programmed with activities, with exemplars including New York's High Line (an elevated railway turned linear park), Barcelona's Las Ramblas, Copenhagen's Strøget pedestrian street, and the Siena Piazza del Campo. Neighborhood planning involves residents, businesses, and other stakeholders in shaping development and public investment decisions for their area through participatory workshops, design charrettes, and advisory boards."
+  },
+  {
+    "q": [
+      "What is gentrification?",
+      "How does gentrification affect communities?",
+      "What is the difference between gentrification and revitalization?",
+      "What is displacement in housing?",
+      "What is urban renewal?",
+      "What were the problems with mid-century urban renewal?",
+      "What is equitable development?",
+      "what is gentrification",
+      "gentrification",
+      "explain gentrification"
+    ],
+    "a": "Gentrification is a process where an influx of higher-income residents, new businesses, and property investments into a historically lower-income neighborhood leads to rising rents, property values, and cost of living, often displacing long-term residents and changing the area's character and culture. Unlike simple neighborhood improvement or revitalization that benefits existing residents, gentrification becomes problematic when it results in involuntary displacement of vulnerable populations unable to afford rising costs, loss of small businesses serving the original community, and erosion of cultural identity and social networks. Urban renewal programs in the mid-20th century, particularly in the United States, involved slum clearance and large-scale demolition of entire neighborhoods deemed 'blighted,' disproportionately affecting Black and immigrant communities, destroying dense urban fabric, and replacing it with highways, high-rise public housing towers, and institutional buildings disconnected from the surrounding city. Anti-displacement strategies include community benefits agreements, rent control and stabilization, property tax freezes for long-term residents, tenant right of first refusal, and community land trusts that maintain permanent affordability."
+  },
+  {
+    "q": [
+      "What is zoning?",
+      "What are the different types of zoning?",
+      "What is single-family zoning?",
+      "How does zoning affect housing affordability?",
+      "What is exclusionary zoning?",
+      "What is form-based code?",
+      "What is the difference between Euclidean zoning and performance zoning?"
+    ],
+    "a": "Zoning codes regulate how land can be used, specifying permitted uses (residential, commercial, industrial), building dimensions (height, setbacks, floor area ratio), and density (units per acre). Euclidean zoning (named after the US Supreme Court case Euclid v. Ambler) separates land uses into distinct districts, creating the pattern of single-family neighborhoods separated from commercial strips and office parks that dominates American suburbia but also contributes to car dependence and housing shortages. Exclusionary zoning refers to regulations that intentionally or unintentionally exclude lower-income households, particularly single-family zoning (which prohibits multi-family housing on most residential land) and minimum lot size requirements (which mandate large lots that inflate housing costs). Some cities are reforming zoning by eliminating single-family-only zoning (Minneapolis, Portland, Oregon, and statewide in Oregon and California), allowing duplexes, triplexes, and fourplexes on most residential lots. Form-based codes focus on building form and streetscape character rather than use separation, allowing mixed uses while regulating massing, facade design, and relationship to the street, offering a more flexible approach."
+  }
+]

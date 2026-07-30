@@ -1,0 +1,53 @@
+[
+  {
+    "q": [
+      "What are the principles of organic farming?",
+      "How does organic certification work?",
+      "What is USDA Organic certification?",
+      "What is the EU Organic label?",
+      "What are the core principles of organic agriculture?",
+      "organic farming principles",
+      "organic certification requirements",
+      "USDA Organic standards"
+    ],
+    "a": "Organic farming is an agricultural system based on principles of ecological balance, biodiversity, soil health, and natural inputs, prohibiting synthetic pesticides, fertilizers, genetically modified organisms (GMOs), antibiotics, and growth hormones while emphasizing crop rotation, composting, biological pest control, and closed nutrient cycles. Organic certification requires farms to undergo a rigorous third-party inspection and verification process, maintaining detailed records and following strict production standards for a minimum transition period (typically 3 years) before products can be labeled organic. The USDA Organic seal and EU Organic leaf are certification marks that assure consumers a product meets comprehensive organic standards from farm to table, covering everything from seed selection and soil management to processing, handling, and labeling."
+  },
+  {
+    "q": [
+      "What is the difference between organic and conventional farming?",
+      "How is soil health managed in organic systems?",
+      "What is organic pest management?",
+      "How do organic farmers control pests without chemicals?",
+      "organic vs conventional agriculture",
+      "soil health organic farming",
+      "organic pest control methods"
+    ],
+    "a": "The fundamental difference between organic and conventional farming lies in input philosophy: conventional farming uses synthetic fertilizers and pesticides for immediate nutrient availability and pest control, while organic farming relies on natural inputs and preventive practices that build long-term soil health and ecosystem resilience, often resulting in lower yields but higher environmental benefits. Soil health in organic systems is maintained through practices such as adding compost and manure, growing cover crops (clover, rye, hairy vetch) to fix nitrogen and prevent erosion, reduced tillage to preserve soil structure, and diverse crop rotations that improve soil organic matter and microbial activity. Organic pest management employs an integrated approach using beneficial insects (ladybugs, praying mantises), biological controls (Bacillus thuringiensis), physical barriers (row covers, traps), crop rotation to disrupt pest cycles, and resistant crop varieties, with naturally derived pesticides like neem oil and pyrethrin used only as a last resort."
+  },
+  {
+    "q": [
+      "What is organic crop rotation?",
+      "How does crop rotation work in organic farming?",
+      "What are organic livestock standards?",
+      "How are organic animals raised?",
+      "What are the requirements for organic meat and dairy?",
+      "organic crop rotation practices",
+      "organic livestock requirements",
+      "organic animal welfare standards"
+    ],
+    "a": "Organic crop rotation is a planned sequence of different crop families grown successively on the same land, designed to break pest and disease cycles, manage soil fertility through nitrogen-fixing legumes, suppress weeds through competition and allelopathy, and improve soil structure with deep-rooted crops. Organic livestock standards require animals to have access to the outdoors and pasture (ruminants must graze during the growing season), be fed 100% organic feed without growth promoters or synthetic additives, and receive preventive health care including vaccinations while treating illness with natural remedies first and antibiotics only when necessary (after which the animal cannot be sold as organic). Additionally, organic livestock must be raised in conditions that accommodate natural behaviors, with sufficient space, bedding, and appropriate housing that meets species-specific welfare requirements."
+  },
+  {
+    "q": [
+      "What is the organic food market?",
+      "How big is the organic food industry?",
+      "What are the challenges of organic farming?",
+      "Why is organic food more expensive?",
+      "What is biodynamic agriculture?",
+      "organic farming economics",
+      "challenges of organic agriculture",
+      "biodynamic farming"
+    ],
+    "a": "The global organic food market has grown to over $200 billion annually, driven by consumer demand for healthier, more sustainable food options, with organic products commanding significant price premiums of 20-100% over conventional counterparts due to higher production costs, lower yields, more labor-intensive practices, and expensive certification and supply chain segregation. Major challenges facing organic farming include lower and more variable yields compared to conventional systems, limited availability of organic inputs and seeds, high certification costs for small farmers, weed management without herbicides, and competition from \"natural\" or \"clean label\" conventional products that blur marketing distinctions. Biodynamic agriculture, developed by Rudolf Steiner in 1924, extends organic principles with spiritual and mystical elements, treating the farm as a closed, self-sustaining organism and using specific preparations made from fermented herbs, minerals, and animal manures applied according to astronomical calendars."
+  }
+]

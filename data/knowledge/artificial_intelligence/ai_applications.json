@@ -1,0 +1,67 @@
+[
+  {
+    "q": [
+      "How is AI used in healthcare?",
+      "What are the applications of AI in medical diagnosis?",
+      "How does AI help in drug discovery?",
+      "What is the role of AI in radiology and medical imaging?",
+      "How is AI used in pathology?",
+      "Can AI predict diseases before symptoms appear?",
+      "What are AI-powered health assistants?",
+      "How is machine learning used in personalized medicine?"
+    ],
+    "a": "AI in healthcare spans medical diagnosis, drug discovery, personalized medicine, and clinical workflow optimization. In medical imaging, deep learning models can analyze X-rays, CT scans, and MRIs to detect conditions like cancers, fractures, and cardiovascular disease, often matching or exceeding radiologist accuracy in specific tasks. In drug discovery, AI accelerates the identification of candidate molecules and predicts their properties, dramatically reducing the time and cost of bringing new drugs to market — exemplified by systems like DeepMind's AlphaFold, which solved the protein folding problem and opened new avenues for drug design. AI also powers clinical decision support systems, robotic surgery assistants, predictive analytics for patient deterioration, and personalized treatment plans based on genomic data and electronic health records."
+  },
+  {
+    "q": [
+      "How is AI used in finance?",
+      "What are the applications of AI in fraud detection?",
+      "How is AI used in algorithmic trading?",
+      "What is robo-advisory in finance?",
+      "How does AI detect credit card fraud?",
+      "How is machine learning used for risk assessment in finance?",
+      "What is the role of AI in anti-money laundering?",
+      "How do banks use AI for customer service?"
+    ],
+    "a": "AI in finance is widely used for fraud detection, algorithmic trading, risk management, and personalized banking services. Fraud detection systems use machine learning to analyze transaction patterns in real time, flagging anomalies that may indicate credit card fraud, identity theft, or money laundering — adapting to new fraud patterns faster than static rule-based systems. In algorithmic trading, AI models analyze vast amounts of market data, news, and social media sentiment to execute trades at optimal prices, with high-frequency trading systems making decisions in milliseconds. AI also powers robo-advisors that provide automated, personalized investment advice, credit scoring models that assess borrower risk using alternative data sources, and chatbots that handle customer service queries, reducing operational costs while improving response times."
+  },
+  {
+    "q": [
+      "How is AI used in autonomous vehicles?",
+      "How do self-driving cars work?",
+      "What AI technologies power autonomous vehicles?",
+      "What are the levels of autonomous driving?",
+      "How does computer vision help self-driving cars?",
+      "How is AI used in traffic management?",
+      "What is the role of reinforcement learning in autonomous driving?",
+      "How do autonomous vehicles perceive their environment?"
+    ],
+    "a": "Autonomous vehicles rely on a combination of computer vision, sensor fusion, path planning, and control systems powered by deep learning. The vehicle perceives its environment through cameras, LiDAR, radar, and ultrasonic sensors, with convolutional neural networks identifying objects like pedestrians, vehicles, traffic signs, and lane markings. A planning system then uses this perception data to predict the movement of other agents and chart a safe path, often employing reinforcement learning to handle complex driving scenarios. Beyond individual vehicles, AI optimizes traffic management through adaptive traffic signal control, route optimization for logistics fleets, and predictive analytics for congestion management — systems that can reduce travel times and emissions in urban environments by dynamically responding to real-time traffic conditions."
+  },
+  {
+    "q": [
+      "How is AI used in education?",
+      "What is personalized learning with AI?",
+      "How does AI adapt to individual student needs?",
+      "What are intelligent tutoring systems?",
+      "How is AI used for educational assessment?",
+      "What is the role of AI in adaptive learning platforms?",
+      "How can AI help students with learning disabilities?",
+      "What are the benefits and risks of AI in education?"
+    ],
+    "a": "AI in education enables personalized learning by adapting content, pacing, and instructional strategies to each student's knowledge level, learning style, and progress. Adaptive learning platforms use machine learning to analyze student responses and engagement patterns, dynamically adjusting difficulty, providing targeted feedback, and recommending remedial or enrichment materials — systems like Carnegie Learning's MATHia and Khan Academy's AI tutor demonstrate significant learning gains over one-size-fits-all instruction. AI also assists educators through automated grading of assignments, intelligent tutoring systems that provide step-by-step guidance, early warning systems that identify at-risk students, and tools that generate customized practice problems and explanations, freeing teachers to focus on higher-value interactions."
+  },
+  {
+    "q": [
+      "How is AI used in agriculture?",
+      "What is precision farming with AI?",
+      "How does AI help with crop monitoring?",
+      "How are drones and AI used in agriculture?",
+      "What is the role of AI in yield prediction?",
+      "How does AI detect plant diseases?",
+      "What is smart farming and how does AI enable it?",
+      "How is machine learning used in agricultural robotics?"
+    ],
+    "a": "AI in agriculture enables precision farming by analyzing data from satellites, drones, and ground sensors to monitor crop health, soil conditions, and weather patterns at a field-by-field or even plant-by-plant resolution. Computer vision models can detect early signs of pest infestation, nutrient deficiency, or disease from drone imagery, allowing farmers to apply pesticides and fertilizers only where needed — reducing chemical use by up to 40% while improving yields. AI-powered agricultural robots perform tasks like weeding, harvesting, and spraying with greater accuracy than manual labor, while predictive models forecast crop yields, optimize irrigation schedules, and recommend planting times based on historical data and climate projections, collectively improving farm profitability and sustainability."
+  }
+]

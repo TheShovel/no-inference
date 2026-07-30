@@ -1,0 +1,158 @@
+[
+  {
+    "id": "research_paper",
+    "patterns": [
+      "write (?:a|an|the)? research paper (?:about|on|covering) (?P<topic>.+?)(?: with (?:a|an)? (?P<focus>.+?) (?:focus|approach|methodology))?",
+      "research paper (?:about|on) (?P<topic>.+?)",
+      "write a paper on (?P<topic>.+?)"
+    ],
+    "slots": {
+      "topic": "topic",
+      "focus": "focus"
+    },
+    "response_type": "essay",
+    "weight": 0.9
+  },
+  {
+    "id": "case_study",
+    "patterns": [
+      "write (?:a|an|the)? case study (?:of|about|on) (?P<topic>.+?)",
+      "case study analysis of (?P<topic>.+?)"
+    ],
+    "slots": {
+      "topic": "topic"
+    },
+    "response_type": "essay",
+    "weight": 0.85
+  },
+  {
+    "id": "outline",
+    "patterns": [
+      "outline (?:for|of|a)? (?P<topic>.+?)",
+      "create (?:a|an|the)? outline (?:for|of|about) (?P<topic>.+?)",
+      "structure for (?P<topic>.+?)"
+    ],
+    "slots": {
+      "topic": "topic"
+    },
+    "response_type": "list",
+    "weight": 0.9
+  },
+  {
+    "id": "summary",
+    "patterns": [
+      "summarize (?P<topic>.+?)",
+      "give me a summary of (?P<topic>.+?)",
+      "brief me on (?P<topic>.+?)",
+      "executive summary of (?P<topic>.+?)"
+    ],
+    "slots": {
+      "topic": "topic"
+    },
+    "response_type": "blog",
+    "weight": 0.85
+  },
+  {
+    "id": "lesson_plan",
+    "patterns": [
+      "create (?:a|an|the)? lesson plan (?:for|about|on) (?P<topic>.+?)(?: for (?P<audience>.+?) students)?",
+      "lesson plan for teaching (?P<topic>.+?)"
+    ],
+    "slots": {
+      "topic": "topic",
+      "audience": "audience"
+    },
+    "response_type": "explanation",
+    "weight": 0.85
+  },
+  {
+    "id": "product_description",
+    "patterns": [
+      "write (?:a|an|the)? product description (?:for|of) (?P<topic>.+?)",
+      "describe (?:a|an|the)? product (?P<topic>.+?)"
+    ],
+    "slots": {
+      "topic": "topic"
+    },
+    "response_type": "blog",
+    "weight": 0.8
+  },
+  {
+    "id": "argument_essay",
+    "patterns": [
+      "(?:write|compose|draft|create) (?:a|an|the)? (?:argumentative|persuasive) (?:essay|article|piece) (?:about|on|arguing|supporting|against) (?P<topic>.+?)(?: from (?P<position>.+?) perspective)?",
+      "argue (?:for|against) (?P<topic>.+?)"
+    ],
+    "slots": {
+      "topic": "topic",
+      "position": "position"
+    },
+    "response_type": "essay",
+    "weight": 0.85
+  },
+  {
+    "id": "how_to_guide",
+    "patterns": [
+      "how (?:do|can|would) (?:i|we|you|one) (?P<topic>.+?)",
+      "(?:step by step|step-by-step) guide (?:to|for|on) (?P<topic>.+?)",
+      "instructions for (?P<topic>.+?)",
+      "guide to (?P<topic>.+?)"
+    ],
+    "slots": {
+      "topic": "topic"
+    },
+    "response_type": "explanation",
+    "weight": 0.9
+  },
+  {
+    "id": "biography",
+    "patterns": [
+      "write (?:a|an)? biography (?:of|about) (?P<topic>.+?)",
+      "biography of (?P<topic>.+?)",
+      "tell me about the life of (?P<topic>.+?)"
+    ],
+    "slots": {
+      "topic": "topic"
+    },
+    "response_type": "essay",
+    "weight": 0.85
+  },
+  {
+    "id": "faq",
+    "patterns": [
+      "faq (?:about|for|on) (?P<topic>.+?)",
+      "frequently asked questions (?:about|for|on) (?P<topic>.+?)",
+      "common questions about (?P<topic>.+?)"
+    ],
+    "slots": {
+      "topic": "topic"
+    },
+    "response_type": "explanation",
+    "weight": 0.8
+  },
+  {
+    "id": "news_report",
+    "patterns": [
+      "write (?:a|an|the)? news report (?:about|on) (?P<topic>.+?)",
+      "news article about (?P<topic>.+?)",
+      "report on (?P<topic>.+?)"
+    ],
+    "slots": {
+      "topic": "topic"
+    },
+    "response_type": "blog",
+    "weight": 0.8
+  },
+  {
+    "id": "interview_questions",
+    "patterns": [
+      "interview questions (?:for|about) (?P<topic>.+?)",
+      "questions to ask about (?P<topic>.+?)"
+    ],
+    "slots": {
+      "topic": "topic"
+    },
+    "response_type": "list",
+    "weight": 0.8
+  }
+]
