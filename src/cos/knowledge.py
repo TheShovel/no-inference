@@ -259,6 +259,354 @@ def reload():
     return get_all_knowledge()
 
 
+# ── Question wrapper / trailing qualifier stripping ───────────────────────────
+# Stripping these lets one KB entry match many different phrasings:
+#   "do you know what X is" -> "X is"      "whats the deal with X" -> "X"
+#   "explain X like i'm five" -> "the X"   "what is X exactly" -> "X"
+_QUESTION_WRAPPERS = [
+    r'^(?:do|does|did)\s+you\s+know\s+(?:what|who|where|when|why|how|if|whether)\s+',
+    r'^(?:do|does|did)\s+you\s+know\s+(?:anything\s+)?(?:about|on)\s+',
+    r'^(?:do|does|did)\s+you\s+know\s+',
+    r'^(?:can|could|would|will)\s+you\s+(?:tell|show|give)\s+(?:me|us)\s+(?:about|what|how)\s+',
+    r'^(?:can|could|would|will)\s+you\s+(?:tell|show|give)\s+(?:me|us)\s+(?:a|an|the)?\s*(?:brief\s+|quick\s+|short\s+|little\s+|bit\s+)?(?:explanation|summary|overview|description|introduction)\s+(?:of|about|on)\s+',
+    r'^(?:can|could|would|will)\s+you\s+(?:explain|describe|define)\s+',
+    r'^(?:can|could|would|will)\s+you\s+happen\s+to\s+know\s+',
+    r'^(?:can|could|would|will)\s+you\s+help\s+(?:me|us)\s+(?:with|understand|learn)\s+',
+    r'^(?:can|could|would|will)\s+you\s+please\s+(?:tell|show|give|explain|describe|define)\s+',
+    r'^(?:i\s+was\s+wondering|i\s+wondered|i\s+want\s+to\s+know|i\s+wanna\s+know|i\s+need\s+to\s+know|i\s+d\'?d\s+like\s+to\s+know|i\s+would\s+like\s+to\s+know)\s+(?:what|who|where|when|why|how|if|whether)\s+',
+    r'^(?:i\s+was\s+wondering|i\s+wondered|i\s+want\s+to\s+know|i\s+wanna\s+know|i\s+need\s+to\s+know|i\s+d\'?d\s+like\s+to\s+know|i\s+would\s+like\s+to\s+know)\s+(?:about|on)\s+',
+    r'^(?:i\'?m|i\s+am)\s+(?:curious|wondering)\s+(?:about|what)\s+',
+    r'^curious\s+(?:about|what)\s+',
+    r'^(?:i\s+heard|i\'ve\s+heard|i\s+heard\s+that|i\'ve\s+heard\s+that|i\s+read\s+somewhere\s+that|apparently)\s+(?:that\s+)?',
+    r'^(?:is\s+it\s+true\s+that|is\s+it\s+true|correct\s+me\s+if\s+i\'?m\s+wrong\s+but|am\s+i\s+right\s+that)\s+',
+    r'^(?:whats|what\'s)\s+the\s+(?:deal|story)\s+with\s+',
+    r'^(?:whats|what\'s)\s+the\s+story\s+of\s+',
+    r'^tell\s+(?:me|us)\s+(?:a\s+(?:bit|little)\s+|a\s+bit\s+more\s+|some\s+|everything\s+|all\s+|what\s+you\s+know\s+)(?:about|on)\s+',
+    r'^tell\s+(?:me|us)\s+(?:about|what|how|everything|all|more)\s+',
+    r'^(?:brief\s+me\s+on|brief\s+me\s+about|fill\s+me\s+in\s+on|fill\s+me\s+in\s+about|catch\s+me\s+up\s+on)\s+',
+    r'^(?:give|gimme|provide)\s+(?:me|us)?\s*(?:the\s+)?(?:lowdown|rundown|scoop|411|info|information|facts|details|insight|deets)\s+(?:on|about|regarding)\s+',
+    r'^(?:the\s+)?(?:lowdown|rundown|scoop)\s+(?:on|about)\s+',
+    r'^(?:walk\s+me\s+through|break\s+down)\s+',
+    r'^(?:shed\s+(?:some|a\s+little)\s+light\s+on|enlighten\s+me\s+(?:about|on)|educate\s+me\s+(?:on|about)|school\s+me\s+(?:on|about))\s+',
+    r'^(?:quick\s+question(?:\s+about)?|question\s+(?:about|on|re|:))\s*',
+    r'^(?:do\s+you\s+have\s+any\s+info\s+on|got\s+any\s+info\s+on|any\s+info\s+on|any\s+thoughts\s+on|do\s+you\s+know\s+anything\s+about)\s+',
+    r'^(?:any\s+idea|any\s+clue|any\s+guesses?|any\s+thoughts?)\s+(?:what|who|where|when|why|how)\s+',
+    r'^(?:any\s+idea|any\s+clue|any\s+guesses?|any\s+thoughts?)\s+(?:about|on)\s+',
+    r'^(?:everything|all)\s+about\s+',
+    r'^(?:explain|describe|define)\s+(?:the\s+)?(?:concept\s+of\s+|idea\s+of\s+|process\s+of\s+|science\s+behind\s+|basics\s+of\s+|fundamentals\s+of\s+)?',
+    r'^(?:regarding|as\s+for|speaking\s+of|on\s+the\s+topic\s+of|the\s+topic\s+of|re:|about|on)\s+',
+    r'^(?:please|pls|plz)\s+(?:tell\s+(?:me|us)|explain|describe|define|give\s+(?:me|us))\s+',
+    r'^(?:please|pls|plz)\s+',
+    r'^(?:what|wats|wat|wut)\s+do\s+you\s+know\s+about\s+',
+    r'^(?:what|wats|wat|wut)\s+do\s+you\s+know\s+',
+    r'^(?:what|wats|wat|wut)\s+can\s+you\s+tell\s+(?:me|us)\s+(?:about|on)\s+',
+    r'^(?:what\s+should\s+i\s+know\s+about|what\s+do\s+i\s+need\s+to\s+know\s+about|what\s+should\s+one\s+know\s+about)\s+',
+    r'^(?:teach\s+me\s+about|teach\s+me\s+on|teach\s+me)\s+',
+    r'^(?:do\s+you\s+have\s+anything\s+on|got\s+anything\s+on|anything\s+on)\s+',
+    r'^(?:can\s+i\s+get\s+some\s+info\s+on|can\s+i\s+get\s+info\s+on|can\s+i\s+get\s+information\s+(?:on|about)|i\s+want\s+some\s+info\s+on)\s+',
+    r'^(?:what\s+is\s+going\s+on\s+with|whats\s+going\s+on\s+with|what\s+is\s+the\s+(?:situation|story|deal)\s+with|what\s+is\s+up\s+with)\s+',
+    r'^(?:what\s+happened\s+(?:with|to)|whats\s+going\s+on\s+with)\s+',
+    r'^(?:where\s+did|where\'?d)\s+',
+    r'^(?:how\s+did|how\'?d)\s+',
+    r'^(?:who\s+(?:invented|discovered|created|built|founded|wrote|made|designed|developed)|who\s+was\s+the\s+(?:inventor|creator|founder)\s+of)\s+',
+    r'^(?:give\s+me|give|name|list|some)\s+(?:some\s+|a\s+few\s+|any\s+)?(?:examples?|instances?|cases?)\s+of\s+',
+    r'^(?:what\s+are\s+(?:some\s+|a\s+few\s+)?(?:examples?|instances?|types?|kinds?)\s+of)\s+',
+    r'^(?:the\s+)?(?:history|origins?|definition|basics|fundamentals|overview|introduction|intro|summary|workings|mechanics|causes|benefits|effects|signs|symptoms|types|features|characteristics|properties|importance|significance|role|future|science|purpose|meaning)\s+of\s+',
+    r'^intro\s+to\s+',
+    r'^(?:more\s+about|more\s+on|further\s+details\s+on|more\s+info\s+on|more\s+information\s+(?:about|on))\s+',
+    r'^(?:expand\s+on|elaborate\s+on|go\s+deeper\s+on|deep\s+dive\s+into|dive\s+into)\s+',
+    r'^(?:explain\s+to\s+me|describe\s+to\s+me)\s+',
+    r'^(?:why\s+do\s+(?:we|humans|people)\s+(?:have|need)\s+|why\s+does\s+(?:the|a|an)\s+|why\s+do\s+we\s+have\s+|why\s+is\s+the\s+)',
+    r'^(?:what\s+is\s+the\s+(?:point|purpose|goal|aim)\s+of|whats\s+the\s+(?:point|purpose|goal|aim)\s+of)\s+',
+    r'^(?:the\s+)?(?:pros\s+and\s+cons|advantages\s+and\s+disadvantages|good\s+and\s+bad)\s+of\s+',
+    r'^(?:the\s+)?(?:gist|basics|fundamentals|idea|concept|meaning|definition|summary|lowdown|rundown)\s+of\s+',
+    r'^(?:whats|what\'s)\s+the\s+(?:gist|idea|concept)\s+of\s+',
+    r'^(?:so|ok|okay|well|hey|right|anyway|just|like|hmm|um|uh|wait)\s+(?:what|which|who|where|when|why|how|tell|explain|describe|define)\s+',
+    r'^(?:in\s+brief|in\s+short|in\s+one\s+word|in\s+simple\s+terms|to\s+sum\s+up|basically|long\s+story\s+short),\s+',
+    r'^(?:i\s+need\s+(?:some\s+|any\s+|the\s+)?(?:info|information|facts|details|deets)\s+(?:on|about)\s+)',
+    r'^fun\s+fact:?\s+',
+    r'^(?:what\s+year\s+did|what\s+year\s+was)\s+',
+    r'^(?:what\s+do\s+you\s+got\s+on|whaddya\s+know\s+about|waddaya\s+know\s+about|whatcha\s+know\s+about)\s+',
+    r'^(?:how\s+long\s+(?:does|do|is|are|has|have|did)\s+)',
+    r'^(?:how\s+(?:old|big|tall|far|fast|heavy|hot|cold|large|small|wide|deep|high|many|much)\s+(?:is|are|was|were|does|do|did)\s+)',
+    r'^(?:how\s+(?:old|big|tall|far|fast|heavy|hot|cold|large|small|wide|deep|high|long|many|much)\s+[a-z]+\s+(?:is|are|was|were|does|do|did|has|have)\s+)',
+    r'^(?:how\s+much\s+does\s+|how\s+much\s+do\s+)',
+    r'^(?:does|do|did)\s+',
+    r'^(?:can|could|is|are|was|were)\s+',
+    r'^(?:what\s+makes|what\s+made)\s+',
+    r'^(?:what\s+do\s+you\s+mean\s+by|what\s+did\s+you\s+mean\s+by|what\s+is\s+meant\s+by)\s+',
+    r'^(?:what\s+does\s+the\s+term|what\s+is\s+the\s+term|define\s+the\s+term|the\s+term)\s+',
+    r'^(?:the\s+story\s+behind|what\s+is\s+the\s+story\s+behind)\s+',
+    r'^(?:summarize|summarise|sum\s+up)\s+',
+    r'^(?:who\s+killed|who\s+won|who\s+lost|who\s+beat)\s+',
+    r'^(?:where\s+does\s+the\s+name|what\s+is\s+the\s+origin\s+of\s+the\s+name|the\s+origin\s+of\s+the\s+name)\s+',
+    r'^(?:in\s+other\s+words|put\s+simply|simply\s+put|to\s+put\s+it\s+simply),\s+',
+    r'^(?:what\s+information\s+do\s+you\s+have\s+on|what\s+do\s+you\s+have\s+on|what\s+can\s+you\s+say\s+about|anything\s+you\s+can\s+tell\s+me\s+about)\s+',
+    r'^(?:i\'?d\s+(?:love|like)\s+to\s+hear\s+about|i\s+want\s+to\s+hear\s+about|i\s+wanna\s+hear\s+about)\s+',
+    r'^(?:spill\s+the\s+beans\s+(?:about|on)|the\s+skinny\s+on|the\s+dirt\s+on)\s+',
+    r'^(?:who\s+exactly\s+is|what\s+exactly\s+is|where\s+exactly\s+is|how\s+exactly\s+(?:does|do|is|are)|why\s+exactly\s+(?:is|are|does|do))\s+',
+    r'^(?:what\s+is\s+your\s+knowledge\s+of|your\s+knowledge\s+of)\s+',
+    r"^(?:what'?s|what\s+is)\s+wrong\s+with\s+",
+    r'^(?:who\s+first\s+(?:discovered|invented|created|used|found)|when\s+was\s+the\s+first)\s+',
+    r'^(?:what\s+day\s+is|what\s+date\s+is|when\s+is|when\s+are)\s+',
+    r'^(?:how\s+often\s+(?:does|do|is|are|did)|how\s+frequently\s+(?:does|do|is|are|did))\s+',
+    r'^(?:what\s+(?:family|group|class|category|kingdom|phylum|order)\s+(?:does|do|is|are))\s+',
+    r'^(?:why\s+do\s+we\s+celebrate|when\s+do\s+we\s+celebrate|how\s+do\s+we\s+celebrate)\s+',
+    r'^(?:what|which|who|where|when|why|how)\s+(?:even|exactly|actually|the\s+heck|the\s+actual\s+heck|on\s+earth|in\s+the\s+world|the\s+hell|the\s+actual\s+hell|in\s+the\s+heck|in\s+the\s+actual\s+world)\s+',
+    r'^how\s+come\s+',
+    r'^(?:whats|what\'s|wat\'s|wats)\s+',
+    r'^(?:how|why|what)\s+is\s+it\s+that\s+',
+    r'^(?:tell|show|give|name|list)\s+(?:me|us)?\s*',
+]
+
+# Trailing qualifiers stripped after the topic ("what is X exactly",
+# "what is X made of", "explain X to me") so the bare topic remains.
+_TRAILING_QUALIFIERS = [
+    r'\s+exactly$', r'\s+actually$', r'\s+anyway$', r'\s+again$', r'\s+then$',
+    r'\s+please$', r'\s+pls$', r'\s+plz$', r'\s+rn$', r'\s+tbh$', r'\s+fr$',
+    r'\s+tho$', r'\s+though$', r'\s+for\s+real$', r'\s+in\s+simple\s+terms$',
+    r'\s+in\s+plain\s+(?:english|words)$', r'\s+for\s+dummies$', r'\s+to\s+me$',
+    r'\s+mean\??$', r'\s+even\s+mean\??$', r'\s+mean\s+by\s+that$',
+    r'\s+used\s+for$', r'\s+made\s+of$', r'\s+known\s+for$', r'\s+do\??$',
+    r'\s+look\s+like$', r'\s+consist\s+of$', r'\s+all\s+about$', r'\s+about$',
+    r'\s+and\s+stuff$', r'\s+and\s+things$', r'\s+and\s+all$',
+    r'\s+briefly$', r'\s+quickly$', r'\s+for\s+me$', r'\s+to\s+know$',
+    r'\s+in\s+detail$', r'\s+in\s+depth$', r'\s+more$', r'\s+some\s+more$',
+    r'\s+like\s+i\'?m\s+(?:five|5|a\s+fifth\s+grader|a\s+child)$',
+    # Topic-first suffix formats: "X explained", "X basics", "X 101",
+    # "X facts", "X history", "X overview"
+    r'\s+explained\s+simply$', r'\s+explained$', r'\s+in\s+simple\s+words$',
+    r'\s+for\s+beginners$', r'\s+for\s+kids$', r'\s+basics$', r'\s+101$',
+    r'\s+facts$', r'\s+fact$', r'\s+overview$', r'\s+history$', r'\s+origins$',
+    r'\s+introduction$', r'\s+intro$', r'\s+summary$', r'\s+details$',
+    r'\s+more\s+details$', r'\s+in\s+general$', r'\s+man$', r'\s+dude$',
+    r'\s+bro$', r'\s+fam$', r'\s+my\s+dude$', r'\s+my\s+guy$', r'\s+pal$',
+    r'\s+friend$', r'\s+buddy$', r'\s+mate$',
+    # "how did X come to be / start / begin / originate",
+    # "where did X come from / originate"
+    r'\s+(?:come\s+to\s+be|come\s+about|start|begin|originate|get\s+started)$',
+    r'\s+come\s+from$', r'\s+come\s+into\s+existence$', r'\s+first\s+appear$',
+    # Attribute / descriptor suffixes: "what is X like", "what does X
+    # stand for", "when was X invented", "where is X located"
+    r'\s+like$', r'\s+good\s+for$', r'\s+famous\s+for$', r'\s+best\s+known\s+for$',
+    r'\s+known\s+for$', r'\s+stand\s+for$', r'\s+composed\s+of$', r'\s+made\s+out\s+of$',
+    r'\s+made\s+from$', r'\s+invented$', r'\s+discovered$', r'\s+founded$', r'\s+built$',
+    r'\s+established$', r'\s+created$', r'\s+located$', r'\s+meaning$', r'\s+definition$',
+    r'\s+in\s+your\s+own\s+words$', r'\s+examples$', r'\s+example$',
+    r'\s+out\s+loud$', r'\s+real\s+quick$', r'\s+real\s+fast$', r'\s+rn\s+please$',
+    # Round 5: more casual suffix formats
+    r'\s+in\s+a\s+nutshell$', r'\s+at\s+a\s+glance$', r'\s+summarized$',
+    r'\s+tl;?dr$', r'\s+tldr$', r'\s+cheat\s+sheet$', r'\s+timeline$',
+    r'\s+causes$', r'\s+benefits$', r'\s+effects$', r'\s+examples\s+please$',
+    r'\s+for\s+real\s+tho$', r'\s+tho\s+fr$', r'\s+ngl$', r'\s+deadass$',
+    r'\s+lowkey$', r'\s+highkey$', r'\s+rn\s+fr$', r'\s+real\s+quick\s+fr$',
+    r'\s+one\s+more\s+time$', r'\s+again\s+please$', r'\s+real\s+talk$',
+    # Round 6 trailing qualifiers
+    r'\s+for$', r'\s+called$', r'\s+happen$', r'\s+happened$', r'\s+take$',
+    r'\s+lasted$', r'\s+last$', r'\s+started$', r'\s+released$', r'\s+published$',
+    r'\s+invented\s+by\s+someone$', r'\s+made\s+of\s+what$', r'\s+made\s+up\s+of$',
+    r'\s+sort\s+of\s+thing$', r'\s+and\s+such$', r'\s+and\s+so\s+on$', r'\s+etc$',
+    r'\s+or\s+something$', r'\s+or\s+so$', r'\s+or\s+whatever$', r'\s+anyway\s+tho$',
+    # Round 7 trailing qualifiers: attribute/have-questions
+    r'\s+weigh$', r'\s+weighs$', r'\s+from\s+scratch$', r'\s+really$', r'\s+truly$',
+    r'\s+have\s+(?:a|an|the)?\s+[a-z]+$', r'\s+has\s+(?:a|an|the)?\s+[a-z]+$',
+    r'\s+have$', r'\s+has$',
+    r'\s+and\s+why$', r'\s+then\s+what$', r'\s+now\s+what$',
+    # Round 8 trailing qualifiers
+    r'\s+work$', r'\s+function$', r'\s+functions$', r'\s+so\s+[a-z]+$',
+    r'\s+special$', r'\s+unique$', r'\s+interesting$', r'\s+fascinating$',
+    r'\s+special\s+about$', r'\s+different\s+about$', r'\s+so\s+special$',
+    r'\s+(?:a|an)\s+[a-z]+$', r'\s+tho\s+ngl$', r'\s+or\s+nah$',
+    # Round 9: sensory / descriptor / verification qualifiers
+    # NOTE: only keep qualifiers whose words don't commonly form compound
+    # topics ("dark matter", "big bang", "fast food", "hot sauce") — those
+    # would get wrongly stripped.
+    r'\s+real$', r'\s+actually\s+exist$', r'\s+really\s+exist$',
+    r'\s+dangerous$', r'\s+safe$', r'\s+worth\s+it$', r'\s+healthy$',
+    r'\s+taste\s+like$', r'\s+smell\s+like$', r'\s+sound\s+like$', r'\s+feel\s+like$',
+    r'\s+important$', r'\s+so\s+important$', r'\s+necessary$', r'\s+essential$',
+    r'\s+useful$', r'\s+helpful$',
+    # Round 10 trailing qualifiers
+    r'\s+end$', r'\s+die$', r'\s+died$', r'\s+get\s+its\s+name$', r'\s+get\s+the\s+name$',
+    r'\s+and\s+how$', r'\s+or\s+how$', r'\s+and\s+why$',
+    # Round 11 trailing qualifiers
+    r'\s+a\s+thing$', r'\s+even\s+a\s+thing$', r'\s+even\s+real$', r'\s+actually\s+real$',
+    r'\s+to\s+me$', r'\s+like\s+i\'?m\s+(?:stupid|dumb|an\s+idiot|a\s+moron)$',
+    r'\s+these\s+days$', r'\s+nowadays$', r'\s+anymore$', r'\s+these\s+days\s+fr$',
+    r'\s+for\s+real\s+tho\s+fr$', r'\s+tho\s+fr\s+fr$', r'\s+lowkey\s+fr$',
+    # Round 12 trailing qualifiers
+    r'\s+the\s+way\s+it\s+is$', r'\s+first\s+invented$', r'\s+first\s+discovered$',
+    r'\s+first\s+created$', r'\s+first\s+used$', r'\s+first\s+found$',
+    r'\s+existed$', r'\s+been\s+around$', r'\s+been\s+around\s+for\s+ages$',
+    r'\s+classified\s+as$', r'\s+categorized\s+as$', r'\s+grouped\s+as$',
+    r'\s+belong\s+to$', r'\s+symbolize$', r'\s+represent$', r'\s+celebrate$',
+    r'\s+celebrate\s+it$', r'\s+occur$', r'\s+take\s+place$', r'\s+happen\s+in\s+general$',
+    r'\s+is\s+it$', r'\s+or\s+not$',
+]
+
+
+def _apply_slang(text):
+    """Apply slang/text-speak normalization: "wat is x" -> "what is x".
+
+    Word-boundary replacements only. Shared by lookup() and unwrap_query().
+    """
+    _SLANG = [
+        (r'\bwat\b', 'what'), (r'\bwut\b', 'what'), (r'\bwat\'s\b', 'what is'),
+        (r'\bwats\b', 'what is'), (r'\bwhos\b', 'who is'), (r'\bwhys\b', 'why is'),
+        (r'\bhows\b', 'how is'), (r'\bwheres\b', 'where is'), (r'\bwhens\b', 'when is'),
+        (r'\bu\b', 'you'), (r'\bur\b', 'your'), (r'\bu\'re\b', 'you are'),
+        (r'\bim\b', 'i am'), (r'\bive\b', 'i have'),
+        (r'\byr\b', 'your'), (r'\btho\b', 'though'), (r'\btho\b', 'though'),
+        (r'\bthx\b', 'thanks'), (r'\bty\b', 'thanks'), (r'\bplz\b', 'please'),
+        (r'\bpls\b', 'please'), (r'\bplss\b', 'please'),
+        (r'\bcuz\b', 'because'), (r'\bcoz\b', 'because'), (r'\bbc\b', 'because'),
+        (r'\bcos\b', 'because'), (r'\bdonno\b', 'do not know'), (r'\bdunno\b', 'do not know'),
+        (r'\bidk\b', 'i do not know'), (r'\bwth\b', 'what the heck'),
+        (r'\bwtf\b', 'what the'), (r'\brly\b', 'really'), (r'\brlly\b', 'really'),
+        (r'\bgonna\b', 'going to'), (r'\bwanna\b', 'want to'), (r'\bgotta\b', 'got to'),
+        (r'\bkinda\b', 'kind of'), (r'\bsorta\b', 'sort of'),
+        (r'\bsmth\b', 'something'), (r'\bsomethin\b', 'something'),
+        (r'\bsomethin\'\b', 'something'), (r'\babt\b', 'about'),
+        (r'\bthats\b', 'that is'), (r'\btheres\b', 'there is'), (r'\bheres\b', 'here is'),
+        (r'\bbtw\b', 'by the way'), (r'\brn\b', 'right now'), (r'\byall\b', 'you all'),
+        (r'\bluv\b', 'love'), (r'\bgud\b', 'good'), (r'\bgr8\b', 'great'),
+        (r'\bk\b', 'okay'), (r'\boke\b', 'okay'), (r'\bokeh\b', 'okay'),
+        (r'\br\b', 'are'), (r'\by\b', 'why'),
+        (r'\bda\b', 'the'), (r'\bdis\b', 'this'),
+        (r'\bdat\b', 'that'), (r'\bdem\b', 'them'), (r'\bdere\b', 'there'),
+        (r'\bgimme\b', 'give me'), (r'\blemme\b', 'let me'),
+        (r'\bwhar\b', 'what'), (r'\bwaht\b', 'what'), (r'\bwahts\b', 'what is'),
+        (r'\bwhas\b', 'what is'), (r'\bwass\b', 'what is'), (r'\bwatz\b', 'what is'),
+        (r'\bwutz\b', 'what is'), (r'\bwhad\b', 'what'), (r'\bwhadd\b', 'what'),
+        (r'\bwen\b', 'when'), (r'\bwhn\b', 'when'), (r'\bwhr\b', 'where'),
+        (r'\bwy\b', 'why'), (r'\bhwy\b', 'why'), (r'\biz\b', 'is'),
+        (r'\bizit\b', 'is it'), (r'\bar\b', 'are'), (r'\bhav\b', 'have'),
+        (r'\bcud\b', 'could'), (r'\bwud\b', 'would'), (r'\bshud\b', 'should'),
+        (r'\bdu\b', 'do'), (r'\bdun\b', 'done'), (r'\bbin\b', 'been'),
+        (r'\bbcoz\b', 'because'), (r'\bbcz\b', 'because'), (r'\bb/cth\b', 'because'),
+        (r'\bnope\b', 'no'), (r'\bnaw\b', 'no'), (r'\byep\b', 'yes'),
+        (r'\byeah\b', 'yes'), (r'\byah\b', 'yes'), (r'\byup\b', 'yes'),
+        (r'\blil\b', 'little'), (r'\bbout\b', 'about'),
+        (r'\bdont\b', 'do not'), (r'\bcant\b', 'cannot'), (r'\bwont\b', 'will not'),
+        (r'\bisnt\b', 'is not'), (r'\barent\b', 'are not'), (r'\bwasnt\b', 'was not'),
+        (r'\bwerent\b', 'were not'), (r'\bhasnt\b', 'has not'), (r'\bhavent\b', 'have not'),
+        (r'\bdoesnt\b', 'does not'), (r'\bdidnt\b', 'did not'), (r'\bcouldnt\b', 'could not'),
+        (r'\bwouldnt\b', 'would not'), (r'\bshouldnt\b', 'should not'), (r'\bmustnt\b', 'must not'),
+        (r'\bits\b', 'it is'), (r'\byoure\b', 'you are'), (r'\btheyll\b', 'they will'),
+        (r'\bshes\b', 'she is'), (r'\bhes\b', 'he is'), (r'\bid\b', 'i would'),
+        (r'\bsmh\b', 'shaking my head'), (r'\bomg\b', 'oh my god'), (r'\btbh\b', 'to be honest'),
+        (r'\bimo\b', 'in my opinion'), (r'\bimho\b', 'in my humble opinion'),
+        (r'\birl\b', 'in real life'), (r'\bjk\b', 'just kidding'), (r'\bidc\b', 'i do not care'),
+        (r'\bafaik\b', 'as far as i know'), (r'\biirc\b', 'if i recall correctly'),
+        (r'\b2morrow\b', 'tomorrow'), (r'\b2day\b', 'today'), (r'\b2nite\b', 'tonight'),
+        (r'\btmrw\b', 'tomorrow'), (r'\bsrsly\b', 'seriously'), (r'\bsrs\b', 'serious'),
+        (r'\bdefo\b', 'definitely'), (r'\bdeffo\b', 'definitely'),
+        (r'\bprolly\b', 'probably'), (r'\bprobly\b', 'probably'), (r'\bppl\b', 'people'),
+        (r'\bsome1\b', 'someone'), (r'\bany1\b', 'anyone'), (r'\bno1\b', 'no one'),
+        (r'\bw/e\b', 'whatever'), (r'\bwya\b', 'where are you'), (r'\bwyd\b', 'what are you doing'),
+        (r'\bwbu\b', 'what about you'), (r'\bhbu\b', 'how about you'), (r'\bnm\b', 'not much'),
+        (r'\bfr\b', 'for real'), (r'\bong\b', 'on god'),
+        (r'\bimma\b', 'i am going to'), (r'\bima\b', 'i am going to'), (r'\bfinna\b', 'going to'),
+        (r'\btryna\b', 'trying to'), (r'\baint\b', 'is not'), (r'\bwuz\b', 'was'),
+        (r'\bwhut\b', 'what'), (r'\bwha\b', 'what'), (r'\bwit\b', 'with'),
+        (r'\bwanna\b', 'want to'), (r'\bb4\b', 'before'), (r'\bl8r\b', 'later'),
+        (r'\bstr8\b', 'straight'), (r'\bcya\b', 'see you'), (r'\bc\s+u\b', 'see you'),
+        (r'\bcud\b', 'could'), (r'\bwud\b', 'would'), (r'\bshud\b', 'should'),
+        (r'\bdat\b', 'that'), (r'\bdem\b', 'them'), (r'\bdere\b', 'there'),
+        (r'&', ' and '),
+        # Round 5
+        (r'\bwsp\b', 'what is up'), (r'\bwsg\b', 'what is good'), (r'\byoo\b', 'yo'),
+        (r'\bhewwo\b', 'hello'), (r'\bikr\b', 'i know right'), (r'\biono\b', 'i do not know'),
+        (r'\bngl\b', 'not going to lie'), (r'\bstg\b', 'swear to god'),
+        (r'\bistg\b', 'i swear to god'), (r'\bgotchu\b', 'got you'), (r'\blwk\b', 'lowkey'),
+        (r'\bnite\b', 'night'), (r'\bmornin\b', 'morning'),
+        (r'\bevenin\b', 'evening'), (r'\bwassup\b', 'what is up'), (r'\bwazup\b', 'what is up'),
+        (r'\bwasup\b', 'what is up'), (r'\bwhats\s+up\b', 'what is up'),
+        (r'\bsupp\b', 'sup'), (r'\bdeadass\b', 'for real'),
+        # Round 6: contractions of question phrases
+        (r'\bwhaddya\b', 'what do you'), (r'\bwaddaya\b', 'what do you'),
+        (r'\bwhatcha\b', 'what do you'), (r'\bd\'you\b', 'do you'), (r'\bdidja\b', 'did you'),
+        (r'\bwouldja\b', 'would you'), (r'\bcouldja\b', 'could you'), (r'\by\'know\b', 'you know'),
+        # Round 6: casual verb contractions
+        (r'\bhafta\b', 'have to'), (r'\busta\b', 'used to'), (r'\bshoulda\b', 'should have'),
+        (r'\bcoulda\b', 'could have'), (r'\bwoulda\b', 'would have'), (r'\bmighta\b', 'might have'),
+        (r'\bmusta\b', 'must have'), (r'\boutta\b', 'out of'), (r'\blotsa\b', 'lots of'),
+        (r'\bbetcha\b', 'bet you'),
+        # Round 7: internet / gaming slang
+        (r'\bwym\b', 'what do you mean'), (r'\bwdym\b', 'what do you mean'),
+        (r'\btmi\b', 'too much information'), (r'\bsus\b', 'suspicious'),
+        (r'\bcringe\b', 'cringeworthy'), (r'\byolo\b', 'you only live once'),
+        (r'\bfomo\b', 'fear of missing out'), (r'\biykyk\b', 'if you know you know'),
+        (r'\bomw\b', 'on my way'), (r'\bily\b', 'i love you'), (r'\bhmu\b', 'hit me up'),
+        (r'\bglhf\b', 'good luck have fun'), (r'\bafk\b', 'away from keyboard'),
+        (r'\bidm\b', 'i do not mind'), (r'\bnp\b', 'no problem'),
+        (r'\bgg\b', 'good game'), (r'\bwp\b', 'well played'), (r'\bez\b', 'easy'),
+        (r'\bnoob\b', 'newbie'), (r'\brekt\b', 'destroyed'),
+        # Round 8
+        (r'\bight\b', 'alright'), (r'\bsayless\b', 'say less'), (r'\bfrfr\b', 'for real for real'),
+        (r'\bokayy\b', 'okay'), (r'\bokayyy\b', 'okay'), (r'\bsuree\b', 'sure'),
+        (r'\bidts\b', 'i do not think so'), (r'\bprobz\b', 'probably'),
+        (r'\bdats\b', 'that is'), (r'\bidgaf\b', 'i do not care'),
+        # Round 9
+        (r'\bfyi\b', 'for your information'), (r'\bjs\b', 'just saying'),
+        (r'\basap\b', 'as soon as possible'), (r'\baka\b', 'also known as'),
+        (r'\bik\b', 'i know'), (r'\bmhm\b', 'mm hmm'), (r'\bsmh\b', 'shaking my head'),
+        (r'\bnp\b', 'no problem'), (r'\bidc\b', 'i do not care'), (r'\bidgaf\b', 'i do not care'),
+        # Round 10
+        (r'\bicymi\b', 'in case you missed it'), (r'\btfw\b', 'that feeling when'),
+        (r'\bftw\b', 'for the win'), (r'\bdw\b', 'do not worry'), (r'\btotes\b', 'totally'),
+        (r'\bobvi\b', 'obviously'), (r'\bhundo\b', 'one hundred percent'),
+        (r'\bfax\b', 'facts'), (r'\brl\b', 'real'),
+        # Round 11
+        (r'\bhundo\s+p\b', 'one hundred percent'), (r'\bpreciate\b', 'appreciate'),
+        (r'\bappreesh\b', 'appreciate'), (r'\ball\s+g\b', 'all good'),
+        (r'\bpreesh\b', 'appreciate'), (r'\btotes\s+magotes\b', 'totally'),
+        (r'\bwassgood\b', 'what is good'), (r'\bwassup\b', 'what is up'),
+        # Round 12
+        (r'\bjsyk\b', 'just so you know'), (r'\bjic\b', 'just in case'),
+        (r'\bpov\b', 'point of view'), (r'\bfwiw\b', 'for what it is worth'),
+        (r'\bggez\b', 'good game easy'), (r'\bunlucky\b', 'that is unlucky'),
+    ]
+    result = text
+    for pat, repl in _SLANG:
+        result = re.sub(pat, repl, result)
+    return result
+
+
+def unwrap_query(query):
+    """Strip casual question wrappers and trailing qualifiers from a query.
+
+    "whats the story of the titanic" -> "titanic"
+    "do you know what photosynthesis is" -> "photosynthesis is"
+    "explain the milgram experiment like i'm five" -> "the milgram experiment"
+
+    Returns the cleaned string (unchanged if nothing matched). Used by lookup()
+    as a matching variant and by the engine for better Wikipedia fallback.
+    """
+    q = query.lower().strip()
+    q = re.sub(r'[\"\'\'\"\“\”\‘\’]', '', q)
+    q = re.sub(r'[\U0001F000-\U0001FAFF\u2600-\u27BF\uFE0F\u200D]', '', q)
+    q = re.sub(r'\s+', ' ', q).strip()
+    q = q.rstrip('?!.;,').strip()
+
+    unwrapped = q
+    # Normalize slang FIRST so wrappers/trailing qualifiers see the
+    # expanded form ("rock & roll history" -> "rock and roll history").
+    slanged = _apply_slang(unwrapped)
+    if slanged != unwrapped:
+        unwrapped = slanged
+    for wrapper in _QUESTION_WRAPPERS:
+        stripped = re.sub(wrapper, '', unwrapped, flags=re.IGNORECASE).strip()
+        if stripped and len(stripped) > 3 and stripped != unwrapped:
+            unwrapped = stripped
+            break
+    for qual in _TRAILING_QUALIFIERS:
+        unwrapped = re.sub(qual, '', unwrapped, flags=re.IGNORECASE).strip()
+    if unwrapped != q and len(unwrapped) < 5:
+        unwrapped = f"what is {unwrapped}"
+    return unwrapped
+
+
 def lookup(query):
     """Look up a query in the dynamic knowledge base.
 
@@ -287,11 +635,19 @@ def lookup(query):
 
     # Strip common punctuation artifacts that can prevent matching
     q = query.lower().strip()
-    q = re.sub(r'[\"\'\'\"\u201c\u201d\u2018\u2019]', '', q)
+    q = re.sub(r'[\"\'\'\"\“\”\‘\’]', '', q)
+    # Strip emoji and common symbols that add no search meaning
+    q = re.sub(r'[\U0001F000-\U0001FAFF\u2600-\u27BF\uFE0F\u200D]', '', q)
     q = re.sub(r'\s+', ' ', q).strip()
     # Strip trailing sentence-ending punctuation (?, !, ., ;) that can prevent
     # KB entries ending in "?" from matching user queries without trailing "?"
     q = q.rstrip('?!.;,').strip()
+
+    # Slang/text-speak normalization: "wat is x" -> "what is x", "u" -> "you"
+    # so KB patterns match casual phrasing. Word-boundary replacements only.
+    q_slang = _apply_slang(q)
+    if q_slang == q:
+        q_slang = None
 
     # Normalize common grammatical variations to increase matching.
     # E.g., "why is it that we dream" -> "why do we dream"
@@ -361,6 +717,12 @@ def lookup(query):
         if stripped and len(stripped) > 5 and stripped != q:
             q_writing_stripped = stripped
             break
+
+    # Create a variant with casual question wrappers stripped via the
+    # module-level unwrap_query() helper (defined above lookup).
+    q_unwrapped = unwrap_query(q)
+    if q_unwrapped == q:
+        q_unwrapped = None
     
     # Also create a simplified query with filler/stop words removed.
     # This allows patterns like "how do mushrooms communicate" to match
@@ -419,6 +781,10 @@ def lookup(query):
     variants = [q, q_norm, q_simple]
     if q_contracted:
         variants.append(q_contracted)
+    if q_slang and q_slang not in variants:
+        variants.append(q_slang)
+    if q_unwrapped and q_unwrapped not in variants:
+        variants.append(q_unwrapped)
     # Add the writing-stripped variant if different
     if q_writing_stripped != q and q_writing_stripped not in variants:
         variants.append(q_writing_stripped)
@@ -431,9 +797,16 @@ def lookup(query):
                 match_len = len(m.group(0))
                 # Require at least 3 characters to match — prevents accidental
                 # matches like 'c' (from regex 'c++') matching 'metallic'
-                if match_len >= 3 and match_len > best_match_len:
-                    best_match_len = match_len
-                    best_answer = answer
+                if match_len >= 3:
+                    # Matches on the cleaned topic (q_unwrapped) are a much
+                    # stronger signal than equal-length matches on the raw
+                    # query — "is the moon a planet" should match "the moon"
+                    # (4 chars) over "a planet" (8 chars) on the raw query.
+                    if variant is q_unwrapped or variant == q_unwrapped:
+                        match_len += 5
+                    if match_len > best_match_len:
+                        best_match_len = match_len
+                        best_answer = answer
 
     # Word-overlap fallback: if no exact substring match found, try
     # matching by keyword overlap. This lets patterns match queries that
@@ -441,6 +814,9 @@ def lookup(query):
     if not best_answer:
         try:
             # Extract key content words from the query (exclude stop words)
+            # Prefer the unwrapped query so "is the moon a planet" matches
+            # "the moon" rather than fuzzy-matching "planet".
+            _fuzzy_source = q_unwrapped if q_unwrapped else q
             _STOP_WORDS_FUZZY = {
                 'what', 'why', 'how', 'when', 'where', 'which', 'who', 'does',
                 'this', 'that', 'with', 'from', 'they', 'have', 'been', 'tell',
@@ -469,7 +845,7 @@ def lookup(query):
                 'long', 'short', 'full', 'free', 'open', 'close', 'left', 'right',
                 'name', 'type', 'form', 'line', 'set', 'run', 'end',
             }
-            q_words = set(w.lower() for w in re.findall(r'\b[a-zA-Z]{3,}\b', q)
+            q_words = set(w.lower() for w in re.findall(r'\b[a-zA-Z]{3,}\b', _fuzzy_source)
                          if w.lower() not in _STOP_WORDS_FUZZY)
             if q_words:
                 best_fuzzy_score = -999999  # Can be negative (with penalty)

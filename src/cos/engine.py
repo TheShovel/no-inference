@@ -1727,6 +1727,9 @@ def _query_is_context_dependent(query):
     # are inherently self-contained — they ask about a category, not prior context.
     if re.search(r'^(?:what|which)\s+(?:types?|kinds?|breeds?|species?|varieties?|forms?|styles?|members?|groups?)\s+of\b', q):
         return False
+    # "what Xs are there" / "what Xs exist" — self-contained category questions
+    if re.search(r'^(?:what|which)\s+[a-z\s-]+?\s+(?:are\s+there|exist|do\s+we\s+have)$', q):
+        return False
 
     # Short follow-up questions (< 40 chars) starting with question words
     # often refer to previous context even without explicit pronouns.
@@ -1736,8 +1739,68 @@ def _query_is_context_dependent(query):
     # questions ("how are fossils formed") are self-contained.
     if re.search(r'^who\s+(?:is|was|are|were)\s+[A-Z]', query):
         return False  # proper-noun identification, not a context reference
-    if re.search(r'^(?:how|why|what)\s+(?:is|are|was|were|do|does|did)\s+(?:the\s+)?[a-z]+\s+(?:formed|made|created|built|produced|generated|caused|work|works|occur|occurs|happen|happens)$', q):
-        return False  # self-contained process question ("how are fossils formed")
+    # "who invented/discovered/built X" — attribution questions are
+    # self-contained ("who invented the telephone", "who first discovered X")
+    if re.search(r'^who\s+(?:first\s+)?(?:invented|discovered|created|built|founded|wrote|made|designed|developed|painted)\s+', q):
+        return False
+    # "what day is X" / "when is X" — calendar questions are self-contained
+    if re.search(r'^(?:what\s+(?:day|date)\s+is|when\s+(?:is|are|was|were))\s+', q):
+        return False
+    # "what does X symbolize" / "what does X stand for" — self-contained
+    if re.search(r'^what\s+(?:does|do|did)\s+(?:(?:the|a|an)\s+)?[a-z\s-]+?\s+(?:symbolize|represent|stand\s+for|mean)$', q):
+        return False
+    if re.search(r'^(?:how|why|what)\s+(?:is|are|was|were|do|does|did)\s+(?:(?:the|a|an|this|that|these|those)\s+)?[a-z]+\s+(?:formed|made|created|built|produced|generated|caused|work|works|occur|occurs|happen|happens|function|function|run|runs)$', q):
+        return False  # self-contained process question ("how are fossils formed", "how does an mri work")
+    # Emphatic question forms ("what even is X", "what exactly are X",
+    # "how on earth does X work") are self-contained — the emphasis word
+    # doesn't refer back to prior context.
+    if re.search(r'^(?:what|which|who|where|when|why|how)\s+(?:even|exactly|actually|the\s+heck|on\s+earth|in\s+the\s+world|the\s+hell)\s+(?:is|are|was|were|do|does|did)\b', q):
+        return False
+    # "how come X" means "why X" — always self-contained
+    if re.search(r'^how\s+come\b', q):
+        return False
+    # "why do we have X" / "why do we hiccup" / "why do humans get X" —
+    # self-contained biology/behavior questions. Excludes genuine follow-ups
+    # containing a referential pronoun ("why do we care about it").
+    if re.search(r'^why\s+do\s+(?:we|humans|people)\s+', q):
+        _remainder = re.sub(r'^why\s+do\s+(?:we|humans|people)\s+', '', q)
+        if not re.search(r'\b(?:that|it|this|them|they|you)\b', _remainder):
+            return False
+    # Info-request forms ("what information do you have on X",
+    # "what do you have on X", "what can you say about X") are self-contained.
+    if re.search(r'^(?:what\s+(?:information|knowledge|facts|details)\s+(?:do|does|is|are)|what\s+do\s+you\s+have|what\s+can\s+you\s+say|anything\s+you\s+can\s+tell\s+me|your\s+knowledge\s+of|i\'?d\s+(?:love|like)\s+to\s+hear\s+about|spill\s+the\s+beans)', q):
+        return False
+    # "why is X so Y" / "why are cats so cute" — self-contained
+    if re.search(r'^why\s+(?:is|are|was|were)\s+(?:the\s+)?[a-z]+\s+so\s+[a-z]+$', q):
+        return False
+    # Sensory questions ("what does X taste like", "how does X feel") are
+    # self-contained.
+    if re.search(r'^what\s+(?:does|do|did)\s+(?:(?:the|a|an|this|that)\s+)?[a-z]+\s+(?:taste|smell|look|feel|sound)\s+like$', q):
+        return False
+    # Lifecycle questions ("when did X end", "how did X die", "when did X
+    # start") and relationship questions ("how are X and Y related",
+    # "is X the same as Y") are self-contained.
+    if re.search(r'^(?:how|when|where|why)\s+(?:did|does|do|was|were|is|are)\s+[a-z\s-]+?(?:die|end|start|begin|form|happen|occur|originate|get\s+its\s+name)$', q):
+        return False
+    if re.search(r'^how\s+are\s+[a-z\s-]+?\s+and\s+[a-z\s-]+?\s+related$', q):
+        return False
+    if re.search(r'^(?:is|are)\s+[a-z\s-]+?\s+the\s+same\s+as\s+[a-z\s-]+?$', q):
+        return False
+    # Origin questions ("where does jazz come from", "where does the name
+    # jazz come from") are self-contained.
+    if re.search(r'^where\s+(?:does|do|did)\s+(?:the\s+name\s+)?[a-z\s-]+?\s+come\s+from$', q):
+        return False
+    # Measurement questions ("how tall is X", "how old is the earth",
+    # "how much does X weigh", "how many moons does X have") are self-contained.
+    if re.search(r'^how\s+(?:old|big|tall|far|fast|heavy|hot|cold|large|small|wide|deep|high|long|many|much)\s+(?:[a-z]+\s+)?(?:is|are|was|were|does|do|did)\b', q):
+        return False
+    if re.search(r'^why\s+(?:does\s+(?:the|a|an)|is\s+the|are\s+the|do\s+(?:we|humans|people)\s+(?:get|feel))\s*', q):
+        return False
+    # Origin/location/event questions with a concrete subject are
+    # self-contained: "where did jazz come from", "when was rome built",
+    # "how did the universe begin", "why is the ocean blue"
+    if re.search(r'^(?:where|when|how|why)\s+(?:is|are|was|were|did|does|do)\s+(?:the|a|an)?\s*[a-z]+\s+(?:come\s+from|originate|located|built|founded|created|invented|discovered|start|started|begin|began|form|formed|evolve|evolved|happen|happened|occur|occurred|first\s+appear|made|launched|established|developed|introduced)$', q):
+        return False
     if len(q) < 40 and not q.startswith(('what is', 'what are', 'what was', 'define', 'explain', 'describe', 'who is', 'who was', 'whats')):
         # Check if query starts with a question word and is short
         question_words = ['who', 'what', 'when', 'where', 'how', 'why', 'which', 'whose']
@@ -1772,6 +1835,21 @@ def _query_is_context_dependent(query):
             # (e.g., "a human body if it fell" or "people... they see"), it's
             # not context-dependent — the pronoun is resolved within the query.
             referential_pronouns = {'it', 'them', 'they', 'that', 'this'}
+            # "that" after a reporting/thinking verb ("i heard that X",
+            # "i read that X", "did you know that X") is a complementizer
+            # introducing a clause, NOT a referential pronoun.
+            _COMPLEMENTIZER_VERBS = (
+                'heard', 'said', 'says', 'say', 'think', 'thought', 'know',
+                'knew', 'believe', 'believed', 'read', 'realized', 'realised',
+                'found', 'found out', 'noticed', 'noted', 'feel', 'felt', 'saw',
+                'seen', 'told', 'decided', 'assume', 'assumed', 'guess',
+                'guessed', 'bet', 'wonder', 'wondered', 'hope', 'hoped',
+                'understand', 'understood', 'remember', 'recall', 'learned',
+                'learnt', 'discovered', 'recalled', 'claimed', 'stated',
+                'mentioned', 'wrote', 'explained', 'figured', 'figured out',
+            )
+            if re.search(r'\b(?:' + '|'.join(_COMPLEMENTIZER_VERBS) + r')\s+that\b', q):
+                referential_pronouns = referential_pronouns - {'that'}
             has_referential_pronoun = any(
                 w.rstrip('.,;:!?') in referential_pronouns for w in words
             )
@@ -2353,6 +2431,37 @@ def process_query(query, use_cos=True):
     if not q_clean:
         return ""
 
+    # Strip emoji and decorative symbols before any matching
+    q_clean = re.sub(r'[\U0001F000-\U0001FAFF\u2600-\u27BF\uFE0F\u200D]', '', q_clean).strip()
+    # Strip ASCII emoticons ( :), :(, :D, XD, <3, ^_^, T_T, etc.)
+    # Emoticons must be standalone tokens (not preceded by a word char) so
+    # "xP" doesn't eat the "xp" inside "explain"/"experiment".
+    q_clean = re.sub(
+        r'(?<!\w)(?:[:;=xX8][-~^]?[)\\(DdpP/\\*oO0|[\]{}]|<3|<\/3|\^_\^|T_?T|T-T|-_-|O_O|\*_\*|>_<|>\\.<)(?!\w)',
+        '', q_clean).strip()
+    if not q_clean:
+        return "I see some emoji but no words! Type a question and I'll do my best to answer it."
+
+    # Bare punctuation or keyboard-mash: "???", "!!!", "..."
+    if re.fullmatch(r'[?!.\s,;:]+', q_clean):
+        return "I didn't quite catch that — try asking me a question with words!"
+
+    # Single-character / trivial inputs
+    if len(q_clean) <= 1:
+        return "Just one character! Ask me something like 'what is the capital of France?'"
+
+    # Bare question words ("what", "why", "how") with no topic
+    if q_clean.lower().rstrip('?!. ') in {'what', 'why', 'how', 'when', 'where', 'who', 'which', 'whose', 'huh'}:
+        return "What would you like to know? Ask me a full question like 'what is photosynthesis?'"
+
+    # URLs and links
+    if re.fullmatch(r'https?://\S+|www\.\S+', q_clean, re.IGNORECASE):
+        return "That looks like a link! I can't browse the web, but if you tell me what it's about I can answer questions about it."
+
+    # Email addresses
+    if re.fullmatch(r'[\w.+-]+@[\w-]+\.[\w.]+', q_clean):
+        return "That looks like an email address! I don't send or store emails — but I'm happy to answer questions about anything else."
+
     # 0. Check for simple greetings and farewells (before any KB/Wikipedia lookup)
     q_lower = q_clean.lower().rstrip('!?. ')
     _GREETINGS = {'hi', 'hello', 'hey', 'greetings', 'howdy', 'sup', 'yo', 'heya', 'hey there', 'hi there', 'hello there'}
@@ -2656,6 +2765,18 @@ def _handle_instruction(query):
     matches.
     """
     q = query.strip()
+
+    # "list all X" / "name the Xs" category questions compose from the KB
+    # category index rather than the generic list template (which can't
+    # produce real members).
+    try:
+        _multi = _detect_multi_entity_query(q)
+        if _multi:
+            composed = _compose_multi_entity_answer(*_multi)
+            if composed:
+                return composed
+    except Exception:
+        pass
 
     q_lower = q.lower()
 
@@ -3075,6 +3196,22 @@ _MULTI_ENTITY_PATTERNS = [
     re.compile(
         r'^(?:what|which)\s+(?P<category>[a-z\s-]+?)\s+(?:are|live|exist|found|native|dwell|occur)\s+(?:in|at|on|to|around|within)\s+(?P<location>.+)$',
         re.IGNORECASE),
+    # "what Xs are there" / "what Xs exist" / "what Xs do we have"
+    re.compile(
+        r'^(?:what|which)\s+(?P<category>[a-z\s-]+?)\s+(?:exist|are\s+there|do\s+we\s+have|do\s+you\s+have|are\s+out\s+there)$',
+        re.IGNORECASE),
+    # "list all X" / "name all X" / "list the Xs" / "enumerate Xs"
+    re.compile(
+        r'^(?:list|name|enumerate)\s+(?:all\s+|the\s+|some\s+|a\s+few\s+|every\s+)?(?P<category>[a-z\s-]+?)$',
+        re.IGNORECASE),
+    # Bare "types of X" / "kinds of X" / "varieties of X"
+    re.compile(
+        r'^(?:types?|kinds?|varieties?|species?|styles?|forms?|breeds?)\s+of\s+(?P<category>[a-z\s-]+?)$',
+        re.IGNORECASE),
+    # "examples of X" / "give me examples of X" / "what are examples of X"
+    re.compile(
+        r'^(?:give\s+me\s+|give\s+|some\s+|what\s+are\s+(?:some\s+|a\s+few\s+)?)?(?:examples?|instances?|cases?)\s+of\s+(?P<category>[a-z\s-]+?)$',
+        re.IGNORECASE),
 ]
 
 def _detect_multi_entity_query(query):
@@ -3091,8 +3228,10 @@ def _detect_multi_entity_query(query):
         m = pattern.match(q)
         if not m:
             continue
-        category = m.group('category').strip().rstrip(',').strip()
-        location = (m.group('location') or '').strip().rstrip(',').strip()
+        gd = m.groupdict()
+        category = (gd.get('category') or '').strip().rstrip(',').strip()
+        category = re.sub(r'^(?:the|a|an)\s+', '', category).strip()
+        location = (gd.get('location') or '').strip().rstrip(',').strip()
         # Location may include a leading connector ("to poland and sweden")
         # or a "native to" / "found in" construction — normalize it away
         location = re.sub(r'^(?:(?:are|is)\s+)?(?:native|found|living|present|dwelling)\s+(?:to|in|at|on|around|within|the)\s+', '', location).strip()
@@ -3201,6 +3340,14 @@ _MULTI_POINT_PATTERNS = [
     re.compile(
         r'^(?:compare|contrast)\s+(?P<topic1>.+?)\s+(?:and|with|to|versus|vs)\s+(?P<topic2>[a-z\s-]+?)$',
         re.IGNORECASE),
+    # "how does X compare to Y" / "how does X compare with Y"
+    re.compile(
+        r'^how\s+(?:does|do|would|can)\s+(?P<topic1>.+?)\s+compare\s+(?:to|with|against)\s+(?P<topic2>[a-z\s-]+?)$',
+        re.IGNORECASE),
+    # "X compared to Y" / "X vs Y" / "X versus Y"
+    re.compile(
+        r'^(?P<topic1>[a-z][a-z\s-]+?)\s+(?:compared\s+to|compared\s+with|vs|versus)\s+(?P<topic2>[a-z\s-]+?)$',
+        re.IGNORECASE),
     # "difference between X and Y" / "similarities between X and Y"
     re.compile(
         r'^(?:what\s+(?:is\s+)?(?:the\s+)?)?(?:difference|differences|similarities?)\s+between\s+(?P<topic1>.+?)\s+and\s+(?P<topic2>[a-z\s-]+?)$',
@@ -3213,9 +3360,17 @@ _MULTI_POINT_PATTERNS = [
     re.compile(
         r"^tell\s+me\s+(?:the\s+)?(?:difference|differences|similarities?)\s+between\s+(?P<topic1>.+?)\s+and\s+(?P<topic2>[a-z\s-]+?)$",
         re.IGNORECASE),
-    # "X vs Y" / "X versus Y"
+    # "is X the same as Y" / "are X and Y the same"
     re.compile(
-        r'^(?P<topic1>[a-z][a-z\s-]+?)\s+(?:vs|versus)\s+(?P<topic2>[a-z\s-]+?)$',
+        r'^(?:is|are)\s+(?P<topic1>.+?)\s+the\s+same\s+as\s+(?P<topic2>[a-z\s-]+?)$',
+        re.IGNORECASE),
+    # "what is the relationship between X and Y" / "how are X and Y related"
+    re.compile(
+        r'^(?:what\s+(?:is\s+)?the\s+relationship\s+between|how\s+are)\s+(?P<topic1>.+?)\s+and\s+(?P<topic2>[a-z\s-]+?)(?:\s+related)?$',
+        re.IGNORECASE),
+    # "what's the relationship between X and Y" (apostrophe form)
+    re.compile(
+        r"^what'?s\s+the\s+relationship\s+between\s+(?P<topic1>.+?)\s+and\s+(?P<topic2>[a-z\s-]+?)$",
         re.IGNORECASE),
 ]
 
@@ -3408,13 +3563,25 @@ def _handle_factual(query, use_cos):
             if wiki_summary:
                 return _make_conversational(wiki_summary)
 
-    # Fallback: multi-source retrieval
-    content = _retrieve_multi_content(search_query, max_sources=2)
+    # Fallback: multi-source retrieval. Use the unwrapped topic ("whats the
+    # story of X" -> "X") so Wikipedia gets a clean search term instead of
+    # the full casual wrapper phrase.
+    _fallback_search = search_query
+    try:
+        from cos.knowledge import unwrap_query as _unwrap_q
+        _unwrapped_topic = _unwrap_q(q)
+        if (_unwrapped_topic and len(_unwrapped_topic) > 3
+                and _unwrapped_topic.lower() not in (q.lower(), search_query.lower())):
+            _fallback_search = _unwrapped_topic
+    except Exception:
+        pass
+
+    content = _retrieve_multi_content(_fallback_search, max_sources=2)
     if content:
         return _make_conversational(content)
 
     # Use best-match Wikipedia search (tries multiple terms, scores results)
-    best_content = _search_wikipedia_rich(search_query)
+    best_content = _search_wikipedia_rich(_fallback_search)
     if best_content and best_content[0]:
         return _make_conversational(best_content[0])
 

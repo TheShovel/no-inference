@@ -1,0 +1,18 @@
+[
+  {
+    "q": [
+      "api",
+      "what is an api",
+      "what is api",
+      "what does api stand for",
+      "application programming interface",
+      "what is an application programming interface",
+      "explain api",
+      "apis explained",
+      "how do apis work",
+      "what are apis"
+    ],
+    "categories": ["software", "programming concept"],
+    "a": "An API (Application Programming Interface) is a set of rules and protocols that allows one software application to communicate with another. It defines the methods and data formats that programs can use to request and exchange information, acting as a contract between the client (the requester) and the server (the provider). Common API styles include REST (using HTTP methods like GET, POST, PUT, DELETE on resource URLs), SOAP (XML-based), GraphQL (query language for APIs), and gRPC. APIs power nearly every modern app — from a weather app fetching data from a service, to a payment gateway processing a transaction, to a social media platform letting third-party apps post on your behalf. They allow developers to build on top of existing services without reinventing them, which is why they're often described as the 'glue' of the internet."
+  }
+]

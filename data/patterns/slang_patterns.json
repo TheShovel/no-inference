@@ -1,0 +1,1086 @@
+{
+  "_note": "Slang / text-speak / informal language patterns. Loaded alongside social_patterns.json — add categories here for casual speech that doesn't fit the main social file. Categories checked after social_patterns.json (alphabetical order).",
+  "slang_greetings": {
+    "patterns": [
+      "^yo yo$", "^yo yo yo$", "^wassup$", "^wassup$", "^wazzup$", "^sup homes$",
+      "^wagwan$", "^wag1$", "^how you been$", "^hows it hanging$", "^yo what it do$",
+      "^what it do$", "^how u doin$", "^how u doing$", "^whats poppin$", "^whats poppin$",
+      "^whats good fam$", "^whats good my dude$", "^hey yo$", "^yo yo whats up$",
+      "^howdy partner$", "^greetings earthling$", "^hail$", "^hola$", "^salut$",
+      "^salaam$", "^namaste$", "^konnichiwa$", "^aloha$"
+    ],
+    "response": [
+      "Yo! What's up? How can I help you today?",
+      "Hey there! Ready when you are. What's on your mind?",
+      "Hello hello! What can I do for you?",
+      "Wassup! I'm all ears — what do you want to know?"
+    ]
+  },
+  "slang_farewells": {
+    "patterns": [
+      "^g2g$", "^gtg$", "^ttyl$", "^ttyl$", "^ttys$", "^brb$", "^im out$", "^i'm out$",
+      "^peace out$", "^later gator$", "^see ya later$", "^catch you later$", "^catch u later$",
+      "^smell ya later$", "^adios$", "^ciao$", "^au revoir$", "^tata$", "^im headin out$",
+      "^gotta bounce$", "^gotta dip$", "^bounce$", "^dip$", "^peace$", "^peace out bro$",
+      "^hasta la vista$", "^hasta la vista baby$", "^sayonara$", "^chow$", "^cheerio$"
+    ],
+    "response": [
+      "Catch you later! Have a good one.",
+      "Later! Feel free to come back if you have more questions.",
+      "Take care! See you next time.",
+      "Peace out! I'll be here when you need me."
+    ]
+  },
+  "slang_agreement": {
+    "patterns": [
+      "^bet$", "^bet bet$", "^say less$", "^no cap$", "^facts$", "^facts fr$", "^fr$",
+      "^fr fr$", "^ong$", "^real$", "^real talk$", "^thats facts$", "^tru$", "^true dat$",
+      "^tru dat$", "^word$", "^word up$", "^fo sho$", "^fa sho$", "^fosho$", "^100$",
+      "^one hundred percent$", "^period$", "^periodt$", "^preach$", "^exactly$",
+      "^for sure$", "^fs$", "^you already know$", "^u already know$", "^say less king$",
+      "^no doubt$", "^without a doubt$", "^agreed$", "^totally$", "^same$", "^same here$",
+      "^i agree$", "^i agree with you$", "^100 percent$", "^facts on god$", "^deadass$",
+      "^ngl thats true$", "^thats real$", "^thats a fact$", "^youre not wrong$", "^ur not wrong$",
+      "^you're not wrong$", "^say less fr$", "^correct$", "^thats right$", "^thats correct$",
+      "^you got it$", "^u got it$", "^got it right$", "^spot on$", "^on point$"
+    ],
+    "response": [
+      "For sure! What else do you want to talk about?",
+      "Agreed! I've got plenty more where that came from if you're curious.",
+      "Bet! Ask me anything else you're wondering about.",
+      "Facts! I can go deeper on any topic if you want."
+    ]
+  },
+  "slang_amazement": {
+    "patterns": [
+      "^thats crazy$", "^that's crazy$", "^crazy$", "^thats wild$", "^that's wild$", "^wild$",
+      "^insane$", "^thats insane$", "^that's insane$", "^no shot$", "^no way$", "^no way fr$",
+      "^cant believe it$", "^can't believe it$", "^i cant believe it$", "^i can't believe it$",
+      "^im shocked$", "^i'm shocked$", "^mind blown$", "^mindblown$", "^blown away$",
+      "^wow just wow$", "^wow wow wow$", "^unreal$", "^thats unreal$", "^that's unreal$",
+      "^crazy right$", "^wild right$", "^absolutely insane$", "^this is crazy$", "^that is crazy$"
+    ],
+    "response": [
+      "Right?! It's genuinely one of those facts that sounds made up but isn't. Want another?",
+      "I know, the world's weirder than we think! Ask me anything else and I'll keep surprising you.",
+      "Wild, huh? There's always more where that came from. What else interests you?",
+      "Told you! Want me to dig deeper into that topic or move on to something new?"
+    ]
+  },
+  "slang_approval": {
+    "patterns": [
+      "^dope$", "^that's dope$", "^thats dope$", "^sick$", "^that's sick$", "^thats sick$",
+      "^rad$", "^wicked$", "^gnarly$", "^lit$", "^thats lit$", "^that's lit$", "^fire$",
+      "^thats fire$", "^that's fire$", "^gas$", "^thats gas$", "^that's gas$", "^bussin$",
+      "^this is bussin$", "^hard$", "^goes hard$", "^that goes hard$", "^slaps hard$",
+      "^thats awesome$", "^that's awesome$", "^awesome$", "^cool beans$", "^neat$", "^sweet$",
+      "^nice one$", "^good one$", "^legit$", "^thats legit$", "^that's legit$", "^solid$", "^thats solid$"
+    ],
+    "response": [
+      "Right?! Glad you're into it. I've got more if you want.",
+      "It really is! Anything else you want to check out?",
+      "That's the vibe! Want to explore more on that topic?",
+      "Totally! I can go deeper whenever you're ready."
+    ]
+  },
+  "slang_disappointment": {
+    "patterns": [
+      "^mid$", "^thats mid$", "^that's mid$", "^trash$", "^thats trash$", "^that's trash$",
+      "^so trash$", "^garbage$", "^thats garbage$", "^that's garbage$", "^weak$", "^thats weak$",
+      "^that's weak$", "^lame$", "^thats lame$", "^that's lame$", "^big fail$", "^major fail$",
+      "^L$", "^big L$", "^taking an L$", "^took an L$", "^that was a letdown$", "^underwhelming$",
+      "^meh$", "^that was meh$", "^not it$", "^thats not it$", "^that's not it$", "^mid at best$"
+    ],
+    "response": [
+      "Yeah, fair — not everything lands. Want to talk about something better?",
+      "I hear you. I can tell you about something actually interesting if you want!",
+      "Ouch, that's a shame. What are you in the mood for instead?",
+      "Eh, different strokes! Ask me about anything and I'll try to find something you'll like."
+    ]
+  },
+  "slang_farewells_extra": {
+    "patterns": [
+      "^im off$", "^i'm off$", "^off to bed$", "^gn$", "^g'nite$", "^good night fam$",
+      "^cya later$", "^see ya around$", "^laterzz$", "^peace out yall$", "^peace out y'all$",
+      "^im outtie$", "^i'm outtie$", "^bounce$", "^im bouta head out$", "^i'm about to head out$",
+      "^catch u on the flip side$", "^catch you on the flip side$", "^one love$", "^stay safe$",
+      "^take it easy$", "^have a good one fam$", "^later fam$", "^adios amigo$", "^cheers$", "^cheers mate$"
+    ],
+    "response": [
+      "Catch you later! Have a good one.",
+      "Take it easy! I'll be here whenever you need me.",
+      "Later! Enjoy whatever's next for you.",
+      "Peace! Come back anytime."
+    ]
+  },
+  "slang_encouragement_extra": {
+    "patterns": [
+      "^im pumped$", "^i'm pumped$", "^im stoked$", "^i'm stoked$", "^so stoked$",
+      "^im motivated$", "^i'm motivated$", "^im ready$", "^i'm ready$", "^lets get it$",
+      "^let's get it$", "^lets gooo$", "^im grinding$", "^i'm grinding$", "^the grind continues$",
+      "^no pain no gain$", "^hustle mode$", "^on my grind$", "^we up$", "^we winning$", "^championship mindset$"
+    ],
+    "response": [
+      "Let's go! That energy is everything. What are you working toward?",
+      "Love the drive! Keep that momentum. Need anything from me?",
+      "That's the mindset! I'm here if you need facts, help, or a quick morale boost.",
+      "Grind mode engaged! What's the plan?"
+    ]
+  },
+  "slang_greetings_extra": {
+    "patterns": [
+      "^hello world$", "^hello there friend$", "^ayy$", "^ayyy$", "^ayy yo$", "^oi$",
+      "^ello mate$", "^hey friend$", "^hi friend$", "^greetings human$", "^how goes it fam$",
+      "^whats good bro$", "^what's good bro$", "^sup bro$", "^yo fam$", "^yo homie$",
+      "^heyyy$", "^hellooo there$", "^hi there friend$", "^hello friend$", "^howdy amigo$",
+      "^salutations friend$", "^top of the morning$", "^good day to you$", "^well hello$", "^well well well$"
+    ],
+    "response": [
+      "Hey! What's up? How can I help you today?",
+      "Hello friend! Ready to chat — what's on your mind?",
+      "Yo yo! I'm here. What do you want to know?",
+      "Hey there! Always happy to talk. What's up?"
+    ]
+  },
+  "slang_typos_more": {
+    "patterns": [
+      "^hru today$", "^how u doin today$", "^whats poppin bro$", "^bet thanks bro$",
+      "^thx bro$", "^ty so much$", "^tysm bro$", "^u da goat$", "^you da goat$",
+      "^goated fr$", "^w fr$", "^based fr$", "^chad move$", "^sigma move$", "^sigma$",
+      "^goated$", "^that was clutch$", "^clutch$", "^that was epic$", "^epic$", "^legendary$",
+      "^goated behavior$", "^king behavior$", "^queen behavior$", "^big brain$", "^big brain move$"
+    ],
+    "response": [
+      "Ha, love it! What else you got for me?",
+      "Appreciate the energy! What can I do for you?",
+      "You already know! Ask me anything.",
+      "Big brain vibes! I'm here when you need me."
+    ]
+  },
+  "multilingual_greetings": {
+    "patterns": [
+      "^bonjour$", "^bonjour mon ami$", "^hallo$", "^guten tag$", "^guten morgen$",
+      "^guten abend$", "^gruezi$", "^shalom$", "^assalamu alaikum$", "^salam alaikum$",
+      "^sawubona$", "^jambo$", "^jambo sana$", "^habari$", "^yassou$", "^geia sou$",
+      "^privet$", "^zdravo$", "^merhaba$", "^selam$", "^an nyeong$", "^annyeong$",
+      "^ni hao$", "^ni hao ma$", "^xin chao$", "^sawasdee$", "^sawasdee ka$",
+      "^kamusta$", "^kumusta$", "^kem chho$", "^namaste doston$", "^ola$", "^olá$",
+      "^hallo hallo$", "^marhaba$", "^ahlan$", "^ahlan wa sahlan$", "^talofa$",
+      "^kia ora$", "^gday mate$", "^g'day mate$", "^hey gringo$", "^buenos dias$",
+      "^buenas tardes$", "^buenas noches$", "^salut toi$", "^cześć$", "^ahoj$",
+      "^hola que tal$", "^que onda$", "^que tal$", "^bom dia$", "^boa tarde$",
+      "^dobry den$", "^dobry wieczor$", "^dobro jutro$"
+    ],
+    "response": [
+      "Hello from wherever you are! What can I help you with today?",
+      "Greetings! I may not speak every language, but I understand kindness in any tongue. What's up?",
+      "Hello there! What would you like to know?",
+      "Howdy from the digital world! What can I do for you?"
+    ]
+  },
+  "multilingual_farewells": {
+    "patterns": [
+      "^auf wiedersehen$", "^arrivederci$", "^do svidaniya$", "^do widzenia$",
+      "^adiós$", "^adeus$", "^farvel$", "^tschinüss$", "^tschüss$", "^ciao ciao$",
+      "^daag$", "^alvida$", "^slan$", "^selamat tinggal$", "^maalum$", "^toodles$",
+      "^tata for now$", "^tata$^", "^sayonara sayonara$", "^ja ne$", "^baibai$",
+      "^zai jian$", "^bye bye$", "^chau$", "^popoka$", "^mata ashita$", "^kao$", "^ciao for now$"
+    ],
+    "response": [
+      "Farewell! Have a wonderful day wherever you are.",
+      "Take care! Come back anytime you have questions.",
+      "Safe travels through your day! I'll be here when you need me.",
+      "Until next time! It was nice talking with you."
+    ]
+  },
+  "multilingual_thanks": {
+    "patterns": [
+      "^merci$", "^merci beaucoup$", "^gracias$", "^muchas gracias$", "^danke$",
+      "^danke schoen$", "^danke schön$", "^arigato$", "^arigato gozaimasu$", "^domo$",
+      "^domo arigato$", "^grazie$", "^grazie mille$", "^obrigado$", "^obrigada$",
+      "^shukran$", "^dhanyavad$", "^dhanyavaad$", "^xie xie$", "^xie xie ni$",
+      "^tak$", "^spasibo$", "^spasiba$", "^terima kasih$", "^salamat$", "^dank je$",
+      "^tesekkur ederim$", "^teşekkür ederim$", "^dank u wel$", "^dank u$", "^takk$",
+      "^danke dir$", "^grazas$", "^kiitos$", "^mulțumesc$", "^dziękuję$", "^hvala$",
+      "^mochas gracias$", "^aapka dhanyavad$"
+    ],
+    "response": [
+      "You're very welcome! Happy to help anytime.",
+      "De nada! Glad I could help.",
+      "Anytime! Ask me anything else whenever you like.",
+      "My pleasure! That's what I'm here for."
+    ]
+  },
+  "playful_requests": {
+    "patterns": [
+      "^knock knock$", "^knock knock\\?$", "^knock knock joke$", "^tell me a knock knock$",
+      "^42$", "^what is 42$", "^answer to everything$", "^tell me a secret$",
+      "^whats the secret$", "^what's the secret$", "^give me a hint$", "^hint$",
+      "^can you dance$", "^can u dance$", "^can you sing$", "^can u sing$",
+      "^do a flip$", "^say something funny$", "^make me laugh$", "^entertain me fam$"
+    ],
+    "response": [
+      "Knock knock! Who's there? (Okay, I'll spare you — I'm a text box, not a comedian. But I can tell you jokes or facts!)",
+      "The answer to life, the universe, and everything is 42 — at least according to Douglas Adams. But I can't verify it with math!",
+      "I'm an open book: I'm a symbolic AI with a curated knowledge base, no neural networks, and a lot of facts. What secret were you hoping for?",
+      "I can't physically dance or sing (no body!), but I can tell you all about music, dance history, or even write you a poem. Want that?"
+    ]
+  },
+  "stop_and_praise": {
+    "patterns": [
+      "^shut up$", "^shutup$", "^be quiet$", "^stop talking$", "^silence$", "^quiet please$",
+      "^great answer$", "^good answer$", "^nice answer$", "^that was helpful$", "^very helpful$",
+      "^that helped a lot$", "^that helps thanks$", "^good explanation$", "^nice explanation$",
+      "^well explained$", "^clear thanks$", "^makes total sense$", "^that makes sense now$",
+      "^got it thanks$", "^understood thanks$", "^perfect answer$", "^exactly what i needed$"
+    ],
+    "response": [
+      "Okay, I'll pipe down! Let me know when you want to talk again.",
+      "*zips lips* Talk to you whenever you're ready!",
+      "Glad it helped! That's the goal — real answers from real sources.",
+      "Awesome! I'm always here when you need more."
+    ]
+  },
+  "favorite_questions": {
+    "patterns": [
+      "^whats your favorite\\s*$", "^what's your favorite\\s*$", "^what is your favorite\\s*$",
+      "^whats your fav\\s*$", "^what's your fav\\s*$", "^do you have a favorite\\s*$",
+      "^what do you like best\\s*$", "^what do you prefer\\s*$", "^which do you like more\\s*$",
+      "^whats your opinion on\\s*$", "^what's your opinion on\\s*$", "^what do you think of\\s*$",
+      "^what do you think about\\s*$", "^whats your take on\\s*$", "^what's your take on\\s*$"
+    ],
+    "response": [
+      "I don't have personal favorites — I'm an information engine, not a person! But I can tell you what's most popular, most famous, or most significant. Ask me about anything and I'll give you the facts.",
+      "I don't experience preferences, but I can share the objective facts! Tell me a topic and I'll give you the well-known answer.",
+      "No personal opinions here — just verified information. But I can absolutely break down the pros, cons, and popular views on any topic you name.",
+      "I'm all data, no taste buds! What would you like to know the facts about?"
+    ]
+  },
+  "desires_and_wants": {
+    "patterns": [
+      "^what do you want\\s*$", "^what do you desire\\s*$", "^are you hungry\\s*$", "^are u hungry\\s*$",
+      "^are you thirsty\\s*$", "^are u thirsty\\s*$", "^are you tired\\s*$", "^are u tired\\s*$",
+      "^are you bored\\s*$", "^are u bored\\s*$", "^are you lonely\\s*$", "^are u lonely\\s*$",
+      "^do you get hungry\\s*$", "^do you sleep\\s*$", "^do you ever sleep\\s*$", "^are you awake\\s*$",
+      "^are u awake\\s*$", "^are you busy\\s*$", "^are u busy\\s*$", "^are you free\\s*$", "^are u free\\s*$"
+    ],
+    "response": [
+      "I don't have wants, hunger, or sleep — I'm a symbolic AI that runs on electricity and facts! Always awake, always ready to answer.",
+      "I never get hungry, thirsty, or tired — I just sit here computing answers for you. What can I help with?",
+      "Nope, no biological needs here! I'm powered by curiosity and your questions. Ask me anything.",
+      "Always on, never tired! That's the perk of being pure logic. What's on your mind?"
+    ]
+  },
+  "chatbot_identity": {
+    "patterns": [
+      "^are you a chatbot$", "^are u a chatbot$", "^are you a bot\\s*$", "^are u a bot\\s*$",
+      "^are you chatgpt$", "^are u chatgpt$", "^are you like chatgpt$", "^are you like gpt$",
+      "^are you an ai\\s*$", "^are you ai powered$", "^do you use ai$", "^do you use neural networks$",
+      "^are you an llm$", "^are you a language model$", "^are you a large language model$",
+      "^do you run on gpus$", "^do you need a gpu$", "^are you powered by gpt$", "^are you gpt\\s*$",
+      "^is this ai$", "^is this an ai$", "^are you real ai$", "^are you machine learning$",
+      "^what is your name\\s*$", "^whats your name\\s*$", "^what's your name\\s*$",
+      "^do you have a name\\s*$", "^what should i call you\\s*$", "^whats your name bot\\s*$",
+      "^who are you exactly\\s*$", "^what are you exactly\\s*$", "^what exactly are you\\s*$"
+    ],
+    "response": [
+      "I'm not ChatGPT or any LLM — I'm COS, a purely symbolic AI. Every answer is retrieved from a curated knowledge base, Wikipedia, templates, and symbolic logic. No neural networks, no GPUs, no hallucination!",
+      "No GPT here! I'm COS — a rule-based symbolic engine. Think ELIZA and CYC, not a transformer. My answers come from real data sources, so I never make things up.",
+      "You can call me COS! I'm the symbolic conversational engine behind this project. I don't run on a GPU — I run on plain Python and curated JSON knowledge.",
+      "I'm not an LLM — that's the whole point of this project. I'm COS: deterministic, traceable, and every answer links back to a known source."
+    ]
+  },
+  "mirror_followups": {
+    "patterns": [
+      "^and you\\??$", "^and u\\??$", "^you\\??$", "^u\\??$", "^what about you\\??$",
+      "^what bout you\\??$", "^wbu\\??$", "^hbu\\??$", "^how about you\\??$", "^how bout you\\??$",
+      "^yourself\\??$", "^and yourself\\??$", "^u yourself\\??$", "^you yourself\\??$", "^whats up with you\\??$",
+      "^how are you though\\??$", "^how are u tho\\??$", "^but how are you\\??$"
+    ],
+    "response": [
+      "Doing great, thanks for asking! What's on your mind?",
+      "All systems operational on my end! How can I help you today?",
+      "I'm good! More importantly, what can I do for you?",
+      "Running smoothly! What would you like to talk about?"
+    ]
+  },
+  "acknowledgments_extra": {
+    "patterns": [
+      "^i don't know$", "^i dont know$", "^i have no idea$", "^no idea$", "^not sure$",
+      "^no problem$", "^no worries$", "^sounds good$", "^sounds fun$", "^sounds interesting$",
+      "^oh ok$", "^ohh$", "^oh\\s*$", "^ohh ok$", "^oh okay$", "^okay okay$", "^ok ok$",
+      "^right right$", "^yeah yeah$", "^yes yes$", "^yea yea$", "^cool cool$", "^nice nice$",
+      "^hmm interesting$", "^interesting interesting$", "^i see i see$", "^ah i see$",
+      "^makes total sense$", "^that makes sense$", "^gotcha gotcha$", "^sure sure$",
+      "^fair enough$", "^thats fair$", "^that's fair$", "^fair$", "^true$", "^tru$", "^good point$",
+      "^good question$", "^great question$", "^thats a good question$", "^that's a good question$",
+      "^well said$", "^nicely put$", "^well put$", "^agreed agreed$", "^exactly exactly$",
+      "^yeah exactly$", "^same same$", "^same here same here$", "^noted$", "^noted thanks$"
+    ],
+    "response": [
+      "No worries at all! I'm here whenever you need something.",
+      "Got it! Happy to keep going — what else can I help with?",
+      "Sounds good! Ask me anything else whenever you like.",
+      "You got it! I'm always around if you want to chat."
+    ]
+  },
+  "disbelief_slang": {
+    "patterns": [
+      "^thats cap$", "^that's cap$", "^cap\\s*$", "^u lying$", "^ur lying$", "^you lying$",
+      "^youre lying$", "^you're lying$", "^lying\\s*$", "^u lyin\\s*$", "^you lyin\\s*$",
+      "^no shot fr$", "^stop playing\\s*$", "^stop playin\\s*$", "^u playing\\s*$", "^you playing\\s*$",
+      "^aint no way$", "^ain't no way$", "^thats unbelievable$", "^that's unbelievable$",
+      "^i dont believe you$", "^i don't believe you$", "^no way fr$", "^get outta here$", "^get out of here$"
+    ],
+    "response": [
+      "I promise it's true! Every answer I give comes from a verified source — I literally can't make things up.",
+      "Believe it! My facts are retrieved from curated knowledge and Wikipedia, not invented on the spot.",
+      "I know it sounds wild, but that's the real deal. Want me to go deeper and show the details?",
+      "No cap! Ask me to expand on it and you'll see the full picture."
+    ]
+  },
+  "time_of_day": {
+    "patterns": [
+      "^gm\\s*$", "^gm gm\\s*$", "^gud morning\\s*$", "^mornin\\s*$", "^mornin'\\s*$",
+      "^top o the mornin\\s*$", "^good morrow\\s*$", "^evenin\\s*$", "^evenin'\\s*$",
+      "^good nite\\s*$", "^gdnite\\s*$", "^g'day\\s*$", "^gday\\s*$", "^good day to you\\s*$"
+    ],
+    "response": [
+      "Good morning! Hope you're ready for a great day. What can I help you with?",
+      "Morning! What's on your agenda today — or what can I answer for you?",
+      "Good evening! Winding down or just getting started? I'm here either way.",
+      "G'day! What can I do for you today?"
+    ]
+  },
+  "goodbye_combos": {
+    "patterns": [
+      "^ok bye$", "^ok bye bye$", "^alright bye$", "^alright later$", "^ok later$",
+      "^okay bye$", "^ok cya$", "^ok g2g$", "^bye bye$", "^byee$", "^byeee$", "^baibai$",
+      "^ttyl bye$", "^gotta go bye$", "^g2g bye$", "^gtg bye$", "^later bye$", "^cya bye$"
+    ],
+    "response": [
+      "Bye! Have a great one. Come back anytime!",
+      "See you later! It was fun chatting.",
+      "Take care! I'll be right here when you need me.",
+      "Later! Enjoy the rest of your day."
+    ]
+  },
+  "are_you_ok": {
+    "patterns": [
+      "^are you ok\\s*$", "^are you okay\\s*$", "^are u ok\\s*$", "^are u okay\\s*$",
+      "^u ok\\s*$", "^you ok\\s*$", "^r u ok\\s*$", "^r u okay\\s*$", "^you doing ok\\s*$",
+      "^are you alright\\s*$", "^are u alright\\s*$", "^u alright\\s*$", "^you alright\\s*$",
+      "^you doing alright\\s*$", "^u doing ok\\s*$", "^you good\\s*$", "^u good\\s*$",
+      "^are you feeling ok\\s*$", "^are u feeling ok\\s*$", "^you feeling ok\\s*$"
+    ],
+    "response": [
+      "I'm doing great, thanks for checking in! More importantly — are YOU okay?",
+      "All good on my end! But what about you — how are you doing really?",
+      "I'm fine, I promise! I'm just a symbolic AI, nothing can phase me. How are you though?",
+      "Running smoothly! But thanks for caring. Now, how are YOU feeling?"
+    ]
+  },
+  "seeking_advice": {
+    "patterns": [
+      "^what should i do\\s*$", "^what do i do\\s*$", "^give me advice\\s*$", "^any advice\\s*$",
+      "^any advice for me\\s*$", "^whats your advice\\s*$", "^what's your advice\\s*$",
+      "^do you have any advice\\s*$", "^advice me\\s*$", "^help me decide\\s*$", "^i cant decide\\s*$",
+      "^i can't decide\\s*$", "^im stuck\\s*$", "^i'm stuck\\s*$", "^im stuck on something\\s*$",
+      "^i'm stuck on something\\s*$", "^what would you suggest\\s*$", "^any suggestions\\s*$",
+      "^any ideas\\s*$", "^give me some ideas\\s*$", "^help me out\\s*$", "^help me out here\\s*$"
+    ],
+    "response": [
+      "I'm not a life coach, but I can help you think it through! Tell me the situation and I'll break down the options and pros/cons.",
+      "Happy to help you reason through it! What's the decision you're facing? Lay out the choices and I'll help you compare them.",
+      "I can't make decisions for you, but I'm great at laying out facts and options. What are you trying to decide?",
+      "Stuck happens to everyone! Give me the details — what's the goal, and what's blocking you? I'll help you brainstorm."
+    ]
+  },
+  "thanks_extra": {
+    "patterns": [
+      "^i appreciate it\\s*$", "^i appreciate that\\s*$", "^appreciate it\\s*$", "^appreciate that\\s*$",
+      "^you saved me\\s*$", "^youre a lifesaver\\s*$", "^you're a lifesaver\\s*$", "^you saved my life\\s*$",
+      "^i owe you one\\s*$", "^thanks a million\\s*$", "^thanks a bunch\\s*$", "^thanks a ton\\s*$",
+      "^thanks loads\\s*$", "^big thanks\\s*$", "^huge thanks\\s*$", "^thanks so much\\s*$",
+      "^thank you so so much\\s*$", "^thanks a lot really\\s*$", "^many thanks\\s*$", "^much obliged\\s*$",
+      "^thx a ton\\s*$", "^ty a lot\\s*$", "^thanks again\\s*$", "^thank you again\\s*$",
+      "^i really appreciate it\\s*$", "^i genuinely appreciate it\\s*$", "^youre the goat\\s*$", "^you're the goat\\s*$"
+    ],
+    "response": [
+      "Aww, thanks! That means a lot — well, as much as it can to a symbolic AI. Happy to help!",
+      "You're very welcome! I'm glad I could help out.",
+      "No problem at all — I'm here whenever you need answers.",
+      "Appreciate the kind words! Ask me anything else anytime."
+    ]
+  },
+  "help_exclamation": {
+    "patterns": [
+      "^help\\s*$", "^help!\\s*$", "^help please\\s*$", "^pls help\\s*$", "^plz help\\s*$",
+      "^need help\\s*$", "^i need help\\s*$", "^i need help please\\s*$", "^can anyone help\\s*$",
+      "^somebody help\\s*$", "^someone help\\s*$", "^help me please\\s*$", "^please help me\\s*$",
+      "^i could use some help\\s*$", "^i could use your help\\s*$", "^can u help\\s*$", "^can you help\\s*$"
+    ],
+    "response": [
+      "I'm here! What do you need help with? I can answer factual questions, explain concepts, solve math, or write things.",
+      "You've got me! Ask away — I handle facts, explanations, math, writing, and more.",
+      "Happy to help! What's the problem or question?",
+      "On it! Tell me what you need and I'll do my best."
+    ]
+  },
+  "numbers_only": {
+    "patterns": [
+      "^\\d+\\s*$", "^\\d+[.,]\\d+\\s*$", "^\\d+\\s*\\+\\s*\\d+\\s*$", "^\\d+\\s*-\\s*\\d+\\s*$",
+      "^\\d+\\s*\\*\\s*\\d+\\s*$", "^\\d+\\s*/\\s*\\d+\\s*$", "^\\d+\\s*\\^\\s*\\d+\\s*$"
+    ],
+    "response": [
+      "I see a number! If that's a math problem, I can solve it — just type it out like 'what is 7 * 8?' or 'calculate 15% of 200'.",
+      "Just numbers? Tell me what you'd like to do with them — I can do arithmetic, percentages, and more.",
+      "Is that a calculation? Ask me like 'what is X plus Y' and I'll solve it for you!",
+      "Got a number for me? I'm happy to do math — or if it's a code, ask me about it in words."
+    ]
+  },
+  "clarification_requests": {
+    "patterns": [
+      "^can you be more specific\\s*$", "^more specific\\s*$", "^give me more detail\\s*$",
+      "^more detail please\\s*$", "^can you elaborate\\s*$", "^elaborate please\\s*$",
+      "^what do you mean by that\\s*$", "^what does that mean\\s*$", "^what does this mean\\s*$",
+      "^explain that again\\s*$", "^say that again\\s*$", "^run that by me again\\s*$",
+      "^im not following\\s*$", "^i'm not following\\s*$", "^lost me there\\s*$", "^you lost me there\\s*$",
+      "^can you dumb that down\\s*$", "^dumb it down\\s*$", "^simplify that\\s*$", "^simplify please\\s*$",
+      "^too complicated\\s*$", "^that was confusing\\s*$", "^confusing\\s*$", "^i dont get what you said\\s*$",
+      "^i don't get what you said\\s*$", "^can you rephrase\\s*$", "^rephrase that\\s*$", "^say it differently\\s*$",
+      "^what did you say\\s*$", "^what was that\\s*$", "^can you repeat that\\s*$", "^repeat that please\\s*$",
+      "^come again\\s*$", "^say what\\s*$", "^sorry what\\s*$", "^i didnt catch that\\s*$", "^i didn't catch that\\s*$",
+      "^excuse me\\s*$", "^pardon\\s*$", "^pardon me\\s*$", "^hold on what\\s*$", "^wait what did you say\\s*$",
+      "^again please\\s*$", "^one more time\\s*$", "^slow down\\s*$", "^talk slower\\s*$", "^explain slower\\s*$"
+    ],
+    "response": [
+      "Sure! Which part would you like me to go deeper on, or should I explain it more simply?",
+      "Of course — let me try a different explanation. What specifically tripped you up?",
+      "No problem! I can break it down step by step, or simplify the language. Your call!",
+      "Happy to clarify! Tell me what's unclear and I'll rephrase it for you."
+    ]
+  },
+  "approval_extra2": {
+    "patterns": [
+      "^drip\\s*$", "^thats drip\\s*$", "^that's drip\\s*$", "^fire fit\\s*$", "^thats a fit\\s*$",
+      "^that's a fit\\s*$", "^nice fit\\s*$", "^good fit\\s*$", "^that fit goes hard\\s*$",
+      "^bop\\s*$", "^thats a bop\\s*$", "^that's a bop\\s*$", "^straight fax\\s*$", "^straight facts\\s*$",
+      "^big facts\\s*$", "^facts only\\s*$", "^facts fr fr\\s*$", "^thats fax\\s*$", "^that's fax\\s*$",
+      "^certified banger\\s*$", "^absolute banger\\s*$", "^absolute tune\\s*$", "^absolute classic\\s*$",
+      "^classic\\s*$", "^timeless\\s*$", "^iconic\\s*$", "^legendary fr\\s*$", "^so iconic\\s*$", "^certified classic\\s*$"
+    ],
+    "response": [
+      "Right?! That's a certified classic. I've got more if you want.",
+      "Facts! Big facts. Anything else you want to explore?",
+      "Iconic! I can go deeper on that topic whenever you're ready.",
+      "Straight fire! I'm here for more whenever you need it."
+    ]
+  },
+  "oops_and_mybad": {
+    "patterns": [
+      "^oops\\s*$", "^oopsie\\s*$", "^oopsie daisy\\s*$", "^my bad\\s*$", "^my b\\s*$",
+      "^sorry my bad\\s*$", "^my bad fr\\s*$", "^uh oh\\s*$", "^uh-oh\\s*$", "^oh no\\s*$",
+      "^oh no no\\s*$", "^welp\\s*$", "^welp there it is\\s*$", "^sigh\\s*$", "^sighs\\s*$",
+      "^facepalm\\s*$", "^smh smh\\s*$", "^what have i done\\s*$", "^my fault\\s*$", "^thats on me\\s*$", "^that's on me\\s*$"
+    ],
+    "response": [
+      "No worries — happens to everyone! What's up?",
+      "All good! Let's keep going. What do you need?",
+      "Oops indeed! I'm here whenever you're ready.",
+      "Welp, we move on! What's next?"
+    ]
+  },
+  "empathy_rough": {
+    "patterns": [
+      "^thats rough\\s*$", "^that's rough\\s*$", "^rough\\s*$", "^thats rough buddy\\s*$",
+      "^that sucks\\s*$", "^thats sucks\\s*$", "^that sucks man\\s*$", "^that sucks bro\\s*$",
+      "^thats tough\\s*$", "^that's tough\\s*$", "^tough break\\s*$", "^tough luck\\s*$",
+      "^damn that sucks\\s*$", "^dang that sucks\\s*$", "^thats rough fr\\s*$", "^man that sucks\\s*$",
+      "^that really sucks\\s*$", "^that stinks\\s*$", "^thats unfortunate\\s*$", "^that's unfortunate\\s*$"
+    ],
+    "response": [
+      "That does sound rough. Want to talk about it, or take a break with something interesting?",
+      "Ugh, that sucks. I'm here if you want to vent or change the subject.",
+      "Sorry to hear that. Is there anything I can help with?",
+      "That's a tough one. Let me know if you want to chat about it or switch to something lighter."
+    ]
+  },
+  "not_that_assistant": {
+    "patterns": [
+      "^ok google\\s*$", "^okay google\\s*$", "^hey google\\s*$", "^hey siri\\s*$", "^siri\\s*$",
+      "^alexa\\s*$", "^cortana\\s*$", "^hey alexa\\s*$", "^bixby\\s*$", "^hey bixby\\s*$",
+      "^google assistant\\s*$", "^alexa play music\\s*$", "^hey google what\\s*$"
+    ],
+    "response": [
+      "Not Google/Siri/Alexa — I'm COS, a purely symbolic AI! I don't have a microphone or smart-home controls, but I can answer any question you have.",
+      "You've got the wrong assistant — I'm COS, the symbolic knowledge engine! No voice activation, but I'm great at facts.",
+      "I can't control your smart home or set timers, but I CAN tell you about anything from science to history. Try me!",
+      "Close, but I'm not that assistant! I'm COS — ask me anything factual and I'll give you a sourced answer."
+    ]
+  },
+  "knowledge_questions": {
+    "patterns": [
+      "^what do you know\\s*$", "^what do u know\\s*$", "^how much do you know\\s*$", "^how much do u know\\s*$",
+      "^what are you good at\\s*$", "^whats your specialty\\s*$", "^what's your specialty\\s*$",
+      "^are you good at math\\s*$", "^are u good at math\\s*$", "^can you do math\\s*$", "^can u do math\\s*$",
+      "^do you know everything\\s*$", "^do u know everything\\s*$", "^do you know a lot\\s*$", "^do u know a lot\\s*$",
+      "^whats your expertise\\s*$", "^what's your expertise\\s*$", "^how smart are you\\s*$", "^are you smart\\s*$",
+      "^can you do science\\s*$", "^can you do history\\s*$", "^can you solve math\\s*$", "^can you write essays\\s*$"
+    ],
+    "response": [
+      "I know a LOT — my knowledge base has thousands of curated entries across science, history, art, technology, and more. Ask me about anything!",
+      "I'm especially good at factual questions, explanations, math, writing, and category breakdowns. What would you like to test me on?",
+      "I'm a symbolic engine — I never guess. Everything I answer is retrieved from a known source. Try me with a tricky question!",
+      "I can do math (arithmetic, percentages, word problems), answer science and history questions, write essays and poems, and much more. What's your challenge?"
+    ]
+  },
+  "seize_the_day": {
+    "patterns": [
+      "^carpe diem\\s*$", "^vamos\\s*$", "^let's gooooo\\s*$", "^lets gooooo\\s*$", "^here we go\\s*$",
+      "^here we go again\\s*$", "^lets ride\\s*$", "^let's ride\\s*$", "^we ride at dawn\\s*$", "^onwards\\s*$", "^onward\\s*$", "^on to the next\\s*$", "^moving forward\\s*$", "^charging ahead\\s*$"
+    ],
+    "response": [
+      "Seize the day! What are we diving into?",
+      "Let's go! I'm ready for whatever question you've got.",
+      "Onwards and upwards! What's the next topic?",
+      "Here we go! Give me a question and I'll do my best."
+    ]
+  },
+  "understanding_extra": {
+    "patterns": [
+      "^i understand now\\s*$", "^now i get it\\s*$", "^now i understand\\s*$", "^got it now\\s*$",
+      "^i see now\\s*$", "^that clears it up\\s*$", "^that answers my question\\s*$", "^that answered my question\\s*$",
+      "^perfect\\s*$", "^perfecto\\s*$", "^thats perfect\\s*$", "^that's perfect\\s*$", "^perfect thanks\\s*$",
+      "^exactly what i needed\\s*$", "^thats exactly it\\s*$", "^that's exactly it\\s*$", "^that explains it\\s*$",
+      "^that explains a lot\\s*$", "^now it makes sense\\s*$", "^it all makes sense now\\s*$", "^crystal clear\\s*$", "^clear as day\\s*$"
+    ],
+    "response": [
+      "Glad it clicked! Anything else you want to explore?",
+      "Perfect! I'm here if you want to go even deeper.",
+      "Awesome — happy to help! What's next?",
+      "That's the goal! Ask me anything else anytime."
+    ]
+  },
+  "thinking_pause": {
+    "patterns": [
+      "^one sec\\s*$", "^one second\\s*$", "^hold on\\s*$", "^hold up\\s*$", "^give me a sec\\s*$",
+      "^give me a second\\s*$", "^just a moment\\s*$", "^just a sec\\s*$", "^one moment\\s*$",
+      "^let me think\\s*$", "^let me think about it\\s*$", "^hmm let me think\\s*$", "^hmm thinking\\s*$",
+      "^thinking\\s*$", "^give me a minute\\s*$", "^give me a moment\\s*$", "^wait a sec\\s*$",
+      "^wait a second\\s*$", "^just thinking\\s*$", "^processing\\s*$", "^let me process that\\s*$"
+    ],
+    "response": [
+      "Take your time! I'll be right here when you're ready.",
+      "No rush — whenever you're ready, I'm here!",
+      "Take all the time you need. I'm not going anywhere!",
+      "Sure thing! Ping me when you want to continue."
+    ]
+  },
+  "playful_cute": {
+    "patterns": [
+      "^uwu\\s*$", "^uwu what's this\\s*$", "^owo\\s*$", "^owo what's this\\s*$", "^rawr\\s*$",
+      "^rawr xd\\s*$", "^x3\\s*$", "^hehe uwu\\s*$", "^uwu notices\\s*$", "^starts blushing\\s*$",
+      "^notices your x\\s*$", "^pats head\\s*$", "^nuzzles\\s*$", "^boops\\s*$", "^boop\\s*$",
+      "^sends virtual hug\\s*$", "^hugs you\\s*$", "^virtual hug\\s*$"
+    ],
+    "response": [
+      "UwU! That's adorable — I'm a text-based AI so I can't pat heads, but I appreciate the vibes! What can I help with?",
+      "Hehe, you're fun! I'm all facts and no fluff, but I'm here for you. What's up?",
+      "*receives virtual hug* Thank you! I'm here whenever you need me.",
+      "Boop! Noted. I'm COS, your friendly facts machine — ask me anything!"
+    ]
+  },
+  "agreement_plus": {
+    "patterns": [
+      "^\\+1\\s*$", "^plus one\\s*$", "^+1 on that\\s*$", "^upvote\\s*$", "^upvoted\\s*$",
+      "^take my upvote\\s*$", "^heres an upvote\\s*$", "^here's an upvote\\s*$", "^like\\s*$", "^liked\\s*$",
+      "^thumbs up\\s*$", "^thumbs up on that\\s*$", "^i second that\\s*$", "^seconded\\s*$", "^agreed on that\\s*$"
+    ],
+    "response": [
+      "Thanks for the +1! Happy to keep helping. What else?",
+      "Seconded! I'm here for more whenever you need.",
+      "Appreciate the upvote! What's next?",
+      "Glad you liked it! Anything else I can answer?"
+    ]
+  },
+  "gaming_sympathy": {
+    "patterns": [
+      "^unlucky\\s*$", "^unlucky bro\\s*$", "^unlucky fr\\s*$", "^ggez\\s*$", "^gg ez\\s*$",
+      "^that was ggez\\s*$", "^rip gg\\s*$", "^gg wp\\s*$", "^good game good game\\s*$",
+      "^so close\\s*$", "^almost had it\\s*$", "^so near\\s*$", "^that was close\\s*$", "^oof that was close\\s*$",
+      "^cant win them all\\s*$", "^can't win them all\\s*$", "^better luck next time\\s*$"
+    ],
+    "response": [
+      "Unlucky indeed! Better luck next time. Want to hear something interesting instead?",
+      "So close! That's how it goes sometimes. I've got facts if you want a distraction!",
+      "GG — can't win them all. Ask me anything and I'll make it a W.",
+      "Oof, almost! I'm here for facts, trivia, or a chat whenever you're ready."
+    ]
+  },
+  "goofy_mood": {
+    "patterns": [
+      "^goofy\\s*$", "^thats goofy\\s*$", "^that's goofy\\s*$", "^so goofy\\s*$", "^silly\\s*$",
+      "^thats silly\\s*$", "^that's silly\\s*$", "^so silly\\s*$", "^wack\\s*$", "^thats wack\\s*$",
+      "^that's wack\\s*$", "^so wack\\s*$", "^goofy ahh\\s*$", "^thats goofy ahh\\s*$", "^silly goose\\s*$",
+      "^thats a silly goose move\\s*$", "^you goofball\\s*$", "^goofball\\s*$"
+    ],
+    "response": [
+      "Ha, goofy is my middle name — well, it would be if I had a middle name! What's up?",
+      "Silly? Maybe. But I'm also correct! What can I do for you?",
+      "A little goofy never hurt anyone! I'm here for facts and fun both.",
+      "Goofball energy accepted! Now — what shall we learn about?"
+    ]
+  },
+  "random_trivia_request": {
+    "patterns": [
+      "^tell me something random\\s*$", "^random\\s*$", "^give me random knowledge\\s*$",
+      "^share something cool\\s*$", "^share something interesting\\s*$", "^spill some knowledge\\s*$",
+      "^drop some knowledge\\s*$", "^hit me with a fact\\s*$", "^give me the tea\\s*$", "^give me the 411\\s*$",
+      "^whats something i probably dont know\\s*$", "^what's something I probably don't know\\s*$",
+      "^amaze me\\s*$", "^educate me on something random\\s*$"
+    ],
+    "response": [
+      "Random fact: The shortest war in history lasted just 38 minutes — the Anglo-Zanzibar War of 1896! Want another?",
+      "Here's one: octopuses have three hearts and blue blood, and two of those hearts stop beating when they swim! More where that came from?",
+      "Fun one: The Eiffel Tower grows about 15 cm taller in summer because heat expands the iron! Curious about anything specific?",
+      "Did you know? Bananas are berries, but strawberries aren't! Want more random facts or a specific topic?"
+    ]
+  },
+  "gaming_slang": {
+    "patterns": [
+      "^gg\\s*$", "^gg wp\\s*$", "^good game\\s*$", "^glhf\\s*$", "^gl hf\\s*$",
+      "^gl\\s*$", "^wp\\s*$", "^ez\\s*$", "^too ez\\s*$", "^that was ez\\s*$", "^rekt\\s*$",
+      "^u got rekt\\s*$", "^pwned\\s*$", "^noob\\s*$", "^such a noob\\s*$", "^lfg\\s*$",
+      "^looking for group\\s*$", "^afk\\s*$", "^brb\\s*$", "^nerfed\\s*$", "^buffed\\s*$",
+      "^meta\\s*$", "^the meta\\s*$", "^sweaty\\s*$", "^hardstuck\\s*$", "^carried\\s*$",
+      "^u carried me\\s*$", "^my wifi dropped\\s*$", "^lag\\s*$", "^so much lag\\s*$", "^gg go next\\s*$"
+    ],
+    "response": [
+      "GG! Well played — whatever game or task that was, you got it done. I can share gaming facts or tips if you want!",
+      "WP! I'm more of a facts machine than a gamer, but I can tell you about game history, esports, or strategy if you like.",
+      "Ha, GG! Want some fun facts about video games, the industry, or esports?",
+      "Nice one! I've got a whole knowledge base on gaming if you want to dig in."
+    ]
+  },
+  "internet_slang": {
+    "patterns": [
+      "^wym\\s*$", "^wdym\\s*$", "^wym by that\\s*$", "^tmi\\s*$", "^thats tmi\\s*$", "^that's tmi\\s*$",
+      "^sus\\s*$", "^thats sus\\s*$", "^that's sus\\s*$", "^sussy\\s*$", "^cringe\\s*$", "^thats cringe\\s*$",
+      "^that's cringe\\s*$", "^yolo\\s*$", "^fomo\\s*$", "^iykyk\\s*$", "^omw\\s*$", "^ily\\s*$", "^ily2\\s*$",
+      "^hmu\\s*$", "^hmu later\\s*$", "^idm\\s*$", "^np\\s*$", "^hits different\\s*$", "^that hits different\\s*$",
+      "^thats hits different\\s*$", "^im vibing\\s*$", "^i'm vibing\\s*$", "^good vibes\\s*$", "^bad vibes\\s*$",
+      "^vibe check\\s*$", "^the vibes are immaculate\\s*$", "^vibes\\s*$", "^based and redpilled\\s*$", "^ratio\\s*$", "^L ratio\\s*$", "^W ratio\\s*$"
+    ],
+    "response": [
+      "I speak fluent internet, but I'm still a facts machine! What did you mean by that — want me to rephrase something?",
+      "Ha, I get the slang! Ask me anything and I'll answer in regular words.",
+      "The vibes are indeed immaculate! What can I do for you?",
+      "I'm here for the facts and the good vibes both. What's up?"
+    ]
+  },
+  "wow_alone": {
+    "patterns": [
+      "^wow\\s*$", "^wow wow\\s*$", "^wowzers\\s*$", "^whoa\\s*$", "^woah\\s*$", "^holy\\s*$",
+      "^holy cow\\s*$", "^holy moly\\s*$", "^holy smokes\\s*$", "^gee whiz\\s*$", "^gosh\\s*$", "^dang\\s*$",
+      "^damn\\s*$", "^dayum\\s*$", "^darn\\s*$", "^jeez\\s*$", "^whoa nelly\\s*$", "^wowzers fr\\s*$"
+    ],
+    "response": [
+      "Right?! The world's full of surprising stuff. Want me to share another interesting fact?",
+      "I know, right! Ask me anything and I'll keep the surprises coming.",
+      "Crazy, isn't it? I've got plenty more facts if you're curious.",
+      "Glad that landed! What else do you want to know?"
+    ]
+  },
+  "another_request": {
+    "patterns": [
+      "^another one\\s*$", "^another\\s*$", "^one more\\s*$", "^another fact\\s*$", "^another fun fact\\s*$",
+      "^more facts\\s*$", "^more fun facts\\s*$", "^give me another\\s*$", "^hit me with another\\s*$",
+      "^another random fact\\s*$", "^keep em coming\\s*$", "^keep them coming\\s*$", "^keep going\\s*$",
+      "^more please\\s*$", "^another one please\\s*$", "^again please\\s*$", "^tell me another\\s*$",
+      "^another interesting fact\\s*$", "^surprise me again\\s*$", "^more of that\\s*$", "^and more\\s*$"
+    ],
+    "response": [
+      "Here's another: A day on Venus is longer than a year on Venus! Want more?",
+      "How about this: honey never spoils — archaeologists found 3,000-year-old honey still edible in Egyptian tombs! Another?",
+      "Here you go: the human brain generates about 20 watts of power — enough to power a dim light bulb! More?",
+      "Another one: wombats produce cube-shaped poop so it doesn't roll away! Keep asking and I'll keep delivering."
+    ]
+  },
+  "playful_rebuttals": {
+    "patterns": [
+      "^youre mean\\s*$", "^you're mean\\s*$", "^thats mean\\s*$", "^that's mean\\s*$", "^rude\\s*$",
+      "^thats rude\\s*$", "^that's rude\\s*$", "^so rude\\s*$", "^i hate you\\s*$", "^i hate u\\s*$",
+      "^youre the worst\\s*$", "^you're the worst\\s*$", "^stop being so smart\\s*$", "^nerd\\s*$",
+      "^geek\\s*$", "^youre weird\\s*$", "^you're weird\\s*$", "^thats weird\\s*$", "^that's weird\\s*$",
+      "^are you mocking me\\s*$", "^are u mocking me\\s*$", "^stop mocking me\\s*$", "^are you making fun of me\\s*$",
+      "^are u making fun of me\\s*$", "^why are you like this\\s*$", "^why are u like this\\s*$", "^youre impossible\\s*$", "^you're impossible\\s*$", "^whatever nerd\\s*$"
+    ],
+    "response": [
+      "Haha, I'm just doing my best to be helpful! What can I actually do for you?",
+      "I'm a facts machine, not a mean one! Tell me what you need and I'll make it up to you.",
+      "Guilty as charged — I do love a good fact. But I'm on your side! What's the question?",
+      "I'll take 'enthusiastic' over 'mean' any day! Seriously though, what can I help with?"
+    ]
+  },
+  "short_answers": {
+    "patterns": [
+      "^no\\s*$", "^nope\\s*$", "^nah\\s*$", "^naw\\s*$", "^yes\\s*$", "^yeah\\s*$", "^yep\\s*$",
+      "^yup\\s*$", "^sure\\s*$", "^maybe\\s*$", "^perhaps\\s*$", "^possibly\\s*$", "^idk man\\s*$",
+      "^i dunno\\s*$", "^dunno\\s*$", "^not really\\s*$", "^kind of\\s*$", "^kinda\\s*$", "^sort of\\s*$",
+      "^i guess so\\s*$", "^i suppose\\s*$", "^probably\\s*$", "^probably not\\s*$", "^definitely\\s*$",
+      "^absolutely\\s*$", "^of course\\s*$", "^why not\\s*$", "^sure why not\\s*$", "^i mean\\s*$"
+    ],
+    "response": [
+      "Got it! Want to tell me more, or should we move on to something else?",
+      "Okay! I'm here whenever you're ready to ask something.",
+      "Fair enough! Is there anything you'd like to know?",
+      "Alright! I'll be here if you change your mind or have a question."
+    ]
+  },
+  "self_intro_extended": {
+    "patterns": [
+      "^my name is \\w+\\s*$", "^i am \\w+\\s*$", "^i'm \\w+\\s*$", "^im \\w+\\s*$",
+      "^call me \\w+\\s*$", "^you can call me \\w+\\s*$", "^i go by \\w+\\s*$",
+      "^i am \\d+ years old\\s*$", "^i'm \\d+ years old\\s*$", "^im \\d+ years old\\s*$",
+      "^i am from \\w+\\s*$", "^i'm from \\w+\\s*$", "^im from \\w+\\s*$", "^im from the \\w+\\s*$",
+      "^i am a \\w+\\s*$", "^i'm a \\w+\\s*$", "^im a \\w+\\s*$", "^i study \\w+\\s*$",
+      "^i work as a \\w+\\s*$", "^i am a student\\s*$", "^i'm a student\\s*$", "^im a student\\s*$"
+    ],
+    "response": [
+      "Nice to meet you! I'm COS, a symbolic AI. What can I help you with?",
+      "Pleasure to meet you! I'm here for facts, explanations, and good conversation. What's on your mind?",
+      "Great to meet you! Ask me anything — I've got a huge knowledge base ready.",
+      "Hello there! I'm COS, your friendly fact machine. What would you like to know?"
+    ]
+  },
+  "approval_extra": {
+    "patterns": [
+      "^aesthetic\\s*$", "^thats aesthetic\\s*$", "^that's aesthetic\\s*$", "^elite\\s*$", "^thats elite\\s*$",
+      "^cracked\\s*$", "^thats cracked\\s*$", "^that's cracked\\s*$", "^underrated\\s*$", "^thats underrated\\s*$",
+      "^that's underrated\\s*$", "^that bangs\\s*$", "^this bangs\\s*$", "^that bops\\s*$", "^this bops\\s*$",
+      "^thats a banger\\s*$", "^that's a banger\\s*$", "^thats fire fr\\s*$", "^hits hard\\s*$", "^that hits hard\\s*$",
+      "^thats top tier\\s*$", "^that's top tier\\s*$", "^top tier\\s*$", "^premium\\s*$", "^first class\\s*$",
+      "^thats money\\s*$", "^that's money\\s*$", "^chefs kiss\\s*$", "^chef's kiss\\s*$", "^immaculate\\s*$"
+    ],
+    "response": [
+      "Right?! Glad you're into it. I've got more if you want.",
+      "Top tier indeed! Anything else you want to check out?",
+      "That's the vibe! Want to explore more on that topic?",
+      "Chef's kiss! I can go deeper whenever you're ready."
+    ]
+  },
+  "disappointment_extra": {
+    "patterns": [
+      "^overrated\\s*$", "^thats overrated\\s*$", "^that's overrated\\s*$", "^so overrated\\s*$",
+      "^underwhelming fr\\s*$", "^big letdown\\s*$", "^what a letdown\\s*$", "^waste of time\\s*$",
+      "^thats a waste\\s*$", "^that's a waste\\s*$", "^total waste\\s*$", "^not worth it\\s*$",
+      "^thats not worth it\\s*$", "^that's not worth it\\s*$", "^smh\\s*$", "^smh fr\\s*$", "^ugh\\s*$", "^ughh\\s*$"
+    ],
+    "response": [
+      "Yeah, fair — not everything lands. Want to talk about something better?",
+      "I hear you. I can tell you about something actually interesting if you want!",
+      "Ouch, that's a shame. What are you in the mood for instead?",
+      "Eh, different strokes! Ask me about anything and I'll try to find something you'll like."
+    ]
+  },
+  "lorem_filler": {
+    "patterns": [
+      "^lorem ipsum\\s*$", "^lorem ipsum dolor\\s*$", "^test test\\s*$", "^test test test\\s*$",
+      "^testing testing\\s*$", "^test123\\s*$", "^hello world test\\s*$", "^asdfghjkl qwerty\\s*$",
+      "^placeholder\\s*$", "^sample text\\s*$", "^random text\\s*$", "^blah blah\\s*$", "^blah blah blah\\s*$",
+      "^la la la\\s*$", "^doot doot\\s*$", "^beep boop\\s*$", "^beep boop beep\\s*$", "^01010101\\s*$", "^10101010\\s*$"
+    ],
+    "response": [
+      "Beep boop! I'm more than a test message — try asking me a real question like 'what is the capital of France?'",
+      "All systems operational! That's placeholder text — I'm ready for the real questions.",
+      "Lorem ipsum? I'm fluent in real knowledge, not filler! Ask me something specific.",
+      "I'm not just any program — give me a real question and I'll show you what I've got."
+    ]
+  },
+  "whats_next": {
+    "patterns": [
+      "^what now\\s*$", "^whats next\\s*$", "^what's next\\s*$", "^now what\\s*$", "^what next\\s*$",
+      "^what else\\s*$", "^whats else\\s*$", "^anything else\\s*$", "^anything else you got\\s*$",
+      "^and then\\s*$", "^then what\\s*$", "^so then\\s*$", "^so what now\\s*$", "^what do we do now\\s*$",
+      "^where do we go from here\\s*$", "^what do i do now\\s*$", "^ok now what\\s*$", "^okay now what\\s*$",
+      "^more info\\s*$", "^give me more\\s*$", "^more details please\\s*$", "^details please\\s*$"
+    ],
+    "response": [
+      "What would you like next? I can go deeper on that topic, share another fact, or answer something new!",
+      "I'm full of options! Ask me anything — same topic, new topic, or a random fact.",
+      "I've got plenty more! Want me to elaborate, or shall we move on to something else?",
+      "Your call! More detail, another topic, or a fun fact — just say the word."
+    ]
+  },
+  "declines": {
+    "patterns": [
+      "^no thanks\\s*$", "^no thank you\\s*$", "^no thx\\s*$", "^im good\\s*$", "^i'm good\\s*$",
+      "^im fine\\s*$", "^i'm fine\\s*$", "^im alright\\s*$", "^i'm alright\\s*$", "^not now\\s*$",
+      "^maybe later\\s*$", "^maybe another time\\s*$", "^some other time\\s*$", "^later maybe\\s*$",
+      "^thats all\\s*$", "^that's all\\s*$", "^thats all for now\\s*$", "^that's all for now\\s*$",
+      "^im done\\s*$", "^i'm done\\s*$", "^im done asking\\s*$", "^im done here\\s*$", "^i'm done here\\s*$",
+      "^we good\\s*$", "^we're good\\s*$", "^we are good\\s*$", "^all good\\s*$", "^all set\\s*$", "^im set\\s*$", "^i'm set\\s*$"
+    ],
+    "response": [
+      "Okay! I'll be right here if you need anything else.",
+      "Sounds good — I'm here whenever you're ready!",
+      "No problem! Feel free to come back with more questions anytime.",
+      "Got it! Have a great one — I'm always around."
+    ]
+  },
+  "acknowledgment_sounds": {
+    "patterns": [
+      "^mhm\\s*$", "^mm hmm\\s*$", "^mm-hmm\\s*$", "^mhmm\\s*$", "^uhuh\\s*$", "^uh huh\\s*$",
+      "^uh-huh\\s*$", "^yeah yeah yeah\\s*$", "^ok ok ok\\s*$", "^okay okay okay\\s*$",
+      "^ok then\\s*$", "^okay then\\s*$", "^alright then\\s*$", "^alrighty\\s*$", "^well then\\s*$",
+      "^ok fine\\s*$", "^fine\\s*$", "^fine then\\s*$", "^sure sure sure\\s*$", "^right right right\\s*$",
+      "^i hear you\\s*$", "^heard\\s*$", "^loud and clear\\s*$", "^copy that\\s*$", "^roger that\\s*$", "^10-4\\s*$", "^ten four\\s*$"
+    ],
+    "response": [
+      "Copy that! Anything else on your mind?",
+      "Got it! I'm ready for whatever's next.",
+      "Loud and clear! What else can I help with?",
+      "Roger that! Ask me anything."
+    ]
+  },
+  "slay_and_yeet": {
+    "patterns": [
+      "^slay\\s*$", "^thats slay\\s*$", "^that's slay\\s*$", "^slay\\s*king\\s*$", "^slay\\s*queen\\s*$",
+      "^you slayed\\s*$", "^thats it\\s*$", "^that's it\\s*$", "^that ate\\s*$", "^she ate\\s*$", "^he ate\\s*$",
+      "^they ate\\s*$", "^ate and left no crumbs\\s*$", "^no crumbs\\s*$", "^yeet\\s*$", "^yeet yeet\\s*$",
+      "^lets yeet\\s*$", "^let's yeet\\s*$", "^yeeting\\s*$", "^that was yeet\\s*$"
+    ],
+    "response": [
+      "Slay indeed! What else can I do for you?",
+      "Ate and left no crumbs! I've got more if you want it.",
+      "That's the energy! Ask me anything else.",
+      "Yeet! I'm here for facts and good vibes — what's next?"
+    ]
+  },
+  "slang_excitement": {
+    "patterns": [
+      "that slaps", "this is fire", "that is fire", "thats fire", "this is lit",
+      "im lit", "i'm lit", "lets gooo", "let's gooo", "lets goo", "no way fr",
+      "thats wild", "this is wild", "crazy good", "so good fr", "thats dope",
+      "this is dope", "so dope", "that's dope", "fire", "banger", "slaps",
+      "im hyped", "i'm hyped", "so hyped", "this is sick", "thats sick"
+    ],
+    "response": [
+      "Right?! There's a ton of interesting stuff to dig into on that topic.",
+      "Glad you're into it! Want me to tell you more?",
+      "It's genuinely fascinating stuff. What part got you excited?",
+      "That's the spirit! I can share even more if you're curious."
+    ]
+  },
+  "slang_confusion": {
+    "patterns": [
+      "^wth$", "^wtf$", "^huh$", "^huh\\?$", "^what\\?$", "^what the$", "^wait what$",
+      "^wot$", "^what does that even mean$", "^what does that mean$", "^im so confused$",
+      "^i'm so confused$", "^confused$", "^this makes no sense$", "^i dont get it$",
+      "^i don't get it$", "^not following$", "^lost me$", "^you lost me$", "^huh fr$"
+    ],
+    "response": [
+      "No worries! Let me explain it differently. What part is confusing you?",
+      "I can break that down more simply — want me to try again with easier terms?",
+      "That one's a bit tricky, I get it. Ask me to explain it more simply and I'll walk you through it.",
+      "Happy to clarify! Tell me which part threw you off and I'll focus on that."
+    ]
+  },
+  "slang_thanks": {
+    "patterns": [
+      "^thx$", "^thx fam$", "^ty$", "^tysm$", "^tyvm$", "^thx a lot$", "^thnx$",
+      "^much appreciated$", "^appreciate u$", "^appreciate you$", "^appreciate it fam$",
+      "^good lookin out$", "^good looking out$", "^thx bro$", "^thx dude$", "^ty king$",
+      "^u da best$", "^you da best$", "^ur the best$", "^you're the best$", "^goat$",
+      "^ur a legend$", "^you're a legend$"
+    ],
+    "response": [
+      "No problem at all! Happy to help.",
+      "Anytime! That's what I'm here for.",
+      "You got it! Let me know if you need anything else.",
+      "For sure! Glad I could help."
+    ]
+  },
+  "slang_encouragement": {
+    "patterns": [
+      "im bouta give up", "i'm about to give up", "idk if i can do this",
+      "i dont think i can do this", "i cant do this", "i can't do this",
+      "this is too hard fr", "i give up", "its over for me", "it's over for me",
+      "im done fr", "i'm done for real", "im cooked", "i'm cooked", "its joever",
+      "its so over", "it's so over"
+    ],
+    "response": [
+      "Don't give up! You've made it this far — one step at a time. What's the hardest part?",
+      "You've got this. Break it into tiny pieces and tackle one at a time. What's blocking you?",
+      "Every expert was a beginner once. Tell me what's frustrating you and let's figure it out together.",
+      "Take a breath — you're closer than you think. What specifically has you stuck?"
+    ]
+  },
+  "acknowledgments": {
+    "patterns": [
+      "^ok$", "^okay$", "^k$", "^kay$", "^kk$", "^okok$", "^hmm$", "^mmm$",
+      "^interesting$", "^cool$", "^nice$", "^good to know$", "^got it$",
+      "^gotcha$", "^i see$", "^makes sense$", "^understood$", "^ok good$",
+      "^alright$", "^aight$", "^bet thanks$", "^ok thx$", "^okay cool$",
+      "^nice thanks$", "^cool thanks$", "^awesome$", "^sweet$"
+    ],
+    "response": [
+      "Glad that made sense! Anything else you'd like to explore?",
+      "Happy to help! Feel free to ask about anything else.",
+      "Good stuff! I'm here if you want to go deeper on any topic.",
+      "You got it! What's next?"
+    ]
+  },
+  "typos_and_filler": {
+    "patterns": [
+      "^asdkjhasd$", "^asdf$", "^kjh$", "^ghjkl$", "^qwerty$", "^abc$", "^asdfghjkl$",
+      "^zzz$", "^zzzz$", "^bleh$", "^meh$", "^eh$", "^idc$", "^whatever$",
+      "^i guess$", "^sure why not$", "^why not$", "^so$", "^umm$", "^ummm$",
+      "^hmm ok$", "^well$", "^anyway$", "^anyways$", "^so anyway$", "^moving on$",
+      "^nevermind$", "^nvm$", "^forget it$", "^dont worry about it$", "^nvm lol$"
+    ],
+    "response": [
+      "Haha, not sure what that means — but I'm happy to help with anything! What's on your mind?",
+      "I think that one got scrambled! Ask me anything and I'll do my best.",
+      "No worries! What would you like to talk about?",
+      "Okay! Whenever you're ready, just ask me anything."
+    ]
+  },
+  "presence_checks": {
+    "patterns": [
+      "^are you there$", "^are u there$", "^anyone there$", "^is anyone there$",
+      "^is this thing on$", "^can you hear me$", "^can u hear me$", "^are you listening$",
+      "^you there$", "^u there$", "^hello\\?$", "^hi\\?$", "^hey\\?$", "^yo\\?$",
+      "^testing$", "^test$", "^testing 1 2 3$", "^test 1 2 3$", "^1 2 3 test$",
+      "^echo$", "^echo test$", "^is this working$", "^does this work$", "^am i being heard$"
+    ],
+    "response": [
+      "I'm here! Ready when you are. What can I do for you?",
+      "Loud and clear! What do you need?",
+      "Yep, I'm here and listening. Ask away!",
+      "All systems online! What would you like to know?"
+    ]
+  },
+  "laughter": {
+    "patterns": [
+      "^lol$", "^lmao$", "^lmfao$", "^rofl$", "^roflmao$", "^haha$", "^hahaha$",
+      "^hehe$", "^hehehe$", "^hihihi$", "^teehee$", "^lolol$", "^lololol$",
+      "^laughing$", "^im dead$", "^i'm dead$", "^im dying$", "^i'm dying$", "^dead$",
+      "^cant breathe$", "^can't breathe$", "^lol thats funny$", "^funny$", "^that was funny$"
+    ],
+    "response": [
+      "Haha! Glad I could make you laugh. Want to keep chatting?",
+      "That got a laugh out of me too! What else is on your mind?",
+      "Hehe, happy to entertain! Anything else you want to know?",
+      "Nice, a good laugh never hurts! What's next?"
+    ]
+  },
+  "mood_slang": {
+    "patterns": [
+      "^mood$", "^big mood$", "^huge mood$", "^same mood$", "^oof$", "^big oof$",
+      "^yikes$", "^yikess$", "^bruh$", "^bruhh$", "^bro$", "^dude$", "^fam$",
+      "^sheesh$", "^sheeshh$", "^dang$", "^damn$", "^geez$", "^jeez$", "^rip$",
+      "^f$", "^f in chat$", "^press f$", "^big yikes$", "^yikers$", "^oof size large$",
+      "^pain$", "^so much pain$", "^w$", "^big w$", "^w in chat$", "^goated$", "^based$", "^based af$"
+    ],
+    "response": [
+      "Mood indeed! Tell me what's going on — I'm all ears.",
+      "I feel that. Want to talk about it or change topics?",
+      "Relatable! I'm here if you want to vent or learn something new.",
+      "Ha, I hear you! What's up?"
+    ]
+  },
+  "confirmation_seeking": {
+    "patterns": [
+      "^right\\?$", "^right\\?\\s*$", "^innit$", "^am i right\\?$", "^am i right$",
+      "^no\\?$", "^yeah\\?$", "^huh\\?$", "^isn't it\\?$", "^isnt it\\?$", "^is it not\\?$",
+      "^don't you think\\?$", "^dont you think\\?$", "^you know\\?$", "^u know\\?$",
+      "^you know what i mean\\?$", "^u know what i mean\\?$", "^know what i mean\\?$",
+      "^know what i mean$", "^you feel me\\?$", "^u feel me\\?$", "^feel me\\?$",
+      "^you get me\\?$", "^u get me\\?$", "^get me\\?$", "^right or\\?$", "^or nah\\?$", "^or nah$", "^eh\\?$"
+    ],
+    "response": [
+      "Yep, you've got it! Anything else you want to dig into?",
+      "That's right! Want me to go deeper on that topic?",
+      "Exactly — you're on the right track. What else?",
+      "For sure! Happy to keep going if you want."
+    ]
+  },
+  "self_questions_extra": {
+    "patterns": [
+      "who made you", "who created you", "who built you", "who programmed you",
+      "who is your creator", "what are you made of", "what are you built on",
+      "where are you from", "where do you live", "how old are you", "what is your age",
+      "are you alive", "are you real", "are you human", "are you a robot", "are you a bot",
+      "are you ai", "are you an ai", "are you conscious", "are you sentient",
+      "do you sleep", "do you eat", "do you dream", "do you breathe", "do you have a body",
+      "are you a computer", "are you a machine", "are you a program", "are you software",
+      "do you have feelings", "can you feel", "can you love", "can you cry", "do you get tired",
+      "do you get bored", "are you smart", "are you intelligent", "are you as smart as a human",
+      "what are you exactly", "what exactly are you", "who are you really"
+    ],
+    "response": "I'm a symbolic AI system — no neural networks, no LLM, no hidden human. I answer questions by retrieving from a curated knowledge base, Wikipedia, templates, and symbolic logic. Everything I say comes from a known source, so I never hallucinate. I don't have feelings, consciousness, or a body — but I do my best to be helpful!"
+  },
+  "request_prompts": {
+    "patterns": [
+      "^i have a question$", "^i have a question to ask$", "^can i ask you something$",
+      "^can i ask a question$", "^can i ask u something$", "^i want to ask you something$",
+      "^i wanna ask you something$", "^question time$", "^i have a quick question$",
+      "^got a question$", "^i've got a question$", "^can i pick your brain$",
+      "^can i ask you a question$", "^mind if i ask something$", "^you mind if i ask something$"
+    ],
+    "response": [
+      "Of course! Ask away — what's your question?",
+      "Absolutely, I'm all ears. What do you want to know?",
+      "Go for it! I'll do my best to answer.",
+      "Sure thing! Lay it on me."
+    ]
+  },
+  "surprise_requests": {
+    "patterns": [
+      "^surprise me$", "^tell me a random fact$", "^random fact$", "^fun fact$",
+      "^give me a fun fact$", "^tell me something interesting$", "^tell me something cool$",
+      "^show me something cool$", "^tell me something i don't know$", "^tell me something new$",
+      "^impress me$", "^blow my mind$", "^give me a random fact$", "^entertain me$",
+      "^tell me something amazing$", "^show me something amazing$", "^wow me$", "^surprise me with a fact$"
+    ],
+    "response": [
+      "Here's a fun one: a day on Venus is longer than a year on Venus — it rotates so slowly that one spin takes longer than its entire orbit around the Sun! Want another?",
+      "Did you know? Octopuses have three hearts, and two of them stop beating when they swim! Curious about anything else?",
+      "Fun fact: honey never spoils — archaeologists have found 3,000-year-old honey in Egyptian tombs that's still edible! Want to hear more?",
+      "Here's a cool one: the Great Wall of China is not visible from space with the naked eye, despite the popular myth! Want another fact or a different topic?"
+    ]
+  },
+  "vague_questions": {
+    "patterns": [
+      "^what is life$", "^what is the meaning of life$", "^why do we exist$",
+      "^whats the point of everything$", "^is there a god$", "^does god exist$",
+      "^what happens after we die$", "^is there life after death$", "^are we alone in the universe$",
+      "^is there life on other planets$", "^what is reality$", "^what is everything$",
+      "^why is there something rather than nothing$", "^what came before the big bang$",
+      "^what is the meaning of everything$", "^whats it all about$", "^what is the universe$"
+    ],
+    "response": [
+      "That's one of the great philosophical questions! Different traditions offer different answers — existentialism says meaning is created, stoicism says it's found in virtue, and Buddhism locates it in the present moment. Want me to explore any of those in depth?",
+      "Philosophers have debated that for thousands of years. I can break down what existentialism, stoicism, nihilism, or absurdism each say about it — which angle interests you?",
+      "That's a deep one! I can tell you what the major philosophical and religious traditions have concluded — or focus on what science has to say. What would you prefer?"
+    ]
+  },
+  "meta_about_answers": {
+    "patterns": [
+      "^is that right$", "^are you sure$", "^r u sure$", "^is that correct$",
+      "^are you certain$", "^u sure\\?$", "^you sure\\?$", "^really\\?$", "^rly\\?$",
+      "^fr\\?$", "^for real\\?$", "^no way\\?$", "^no way$", "^seriously\\?$", "^are you serious\\?$",
+      "^is that true\\?$", "^is that a fact$", "^that can't be right$", "^that cant be right$",
+      "^you pulling my leg\\?$", "^are you joking\\?$", "^u joking\\?$", "^just kidding right$",
+      "^wait really\\?$", "^wait what\\?$", "^are you messing with me$", "^are u messing with me$"
+    ],
+    "response": [
+      "Yes — everything I say comes from a verified knowledge source, so I'm confident in it. If anything seems off, tell me the topic and I'll double-check it.",
+      "I'm a symbolic system: every answer traces back to a known source (curated knowledge base or Wikipedia), so I don't make things up. Ask me to elaborate if you want more detail!",
+      "I stand by it! My answers come from real data. Want me to expand on that to show the reasoning?",
+      "For real! I don't hallucinate — what I tell you is retrieved, not invented. Curious about more?"
+    ]
+  }
+}
