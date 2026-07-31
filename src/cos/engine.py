@@ -1723,11 +1723,22 @@ def _query_is_context_dependent(query):
     if not q:
         return False
 
+    # Category questions ("what types of X are there", "what kinds of X live in Y")
+    # are inherently self-contained — they ask about a category, not prior context.
+    if re.search(r'^(?:what|which)\s+(?:types?|kinds?|breeds?|species?|varieties?|forms?|styles?|members?|groups?)\s+of\b', q):
+        return False
+
     # Short follow-up questions (< 40 chars) starting with question words
     # often refer to previous context even without explicit pronouns.
     # E.g., "Who were the key pioneers?" after discussing jazz means
     # "jazz pioneers". "What instruments are used?" means "instruments in <previous topic>".
-    if len(q) < 40 and not q.startswith(('what is', 'what are', 'what was', 'define', 'explain', 'describe')):
+    # BUT: "who is X" with a proper noun ("who is anubis") and process
+    # questions ("how are fossils formed") are self-contained.
+    if re.search(r'^who\s+(?:is|was|are|were)\s+[A-Z]', query):
+        return False  # proper-noun identification, not a context reference
+    if re.search(r'^(?:how|why|what)\s+(?:is|are|was|were|do|does|did)\s+(?:the\s+)?[a-z]+\s+(?:formed|made|created|built|produced|generated|caused|work|works|occur|occurs|happen|happens)$', q):
+        return False  # self-contained process question ("how are fossils formed")
+    if len(q) < 40 and not q.startswith(('what is', 'what are', 'what was', 'define', 'explain', 'describe', 'who is', 'who was', 'whats')):
         # Check if query starts with a question word and is short
         question_words = ['who', 'what', 'when', 'where', 'how', 'why', 'which', 'whose']
         first_word = q.split()[0].rstrip('.,;:!?') if q.split() else ''
@@ -3021,6 +3032,280 @@ def _search_wikipedia_rich(query):
     return None, None
 
 
+# ── Multi-entity (category) query detection & composition ─────────────────────
+# Handles queries like "what types of cat are native to Poland and Sweden" by
+# detecting the category pattern, retrieving each member entry from the KB,
+# filtering by any mentioned location, and composing a combined answer.
+
+_CATEGORY_REGISTRY = None
+
+# Categories that are already plural/uncountable and must not gain an 's'
+_UNCOUNTABLE_CATEGORIES = {'music', 'art', 'information', 'knowledge', 'advice',
+                           'furniture', 'equipment', 'software', 'news'}
+
+
+def _pluralize_category(category):
+    """Pluralize a category name for intro text ("cat"->"cats", "philosophy"->"philosophies")."""
+    if category.endswith('s') or category in _UNCOUNTABLE_CATEGORIES:
+        return category
+    if category.endswith('y') and not category.endswith(('ay', 'ey', 'oy', 'uy')):
+        return category[:-1] + 'ies'
+    return category + 's'
+
+def _load_category_registry():
+    """Load category → member mapping from data/categories.json (cached)."""
+    global _CATEGORY_REGISTRY
+    if _CATEGORY_REGISTRY is not None:
+        return _CATEGORY_REGISTRY
+    path = Path(__file__).parent.parent.parent / 'data' / 'categories.json'
+    try:
+        with open(path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        _CATEGORY_REGISTRY = {k: v for k, v in data.items() if not k.startswith('_')}
+    except Exception:
+        _CATEGORY_REGISTRY = {}
+    return _CATEGORY_REGISTRY
+
+_MULTI_ENTITY_PATTERNS = [
+    # "what types of X are native to Y" / "what kinds of X live in Y"
+    re.compile(
+        r'^(?:what|which)\s+(?:types?|kinds?|breeds?|species?|varieties?|forms?|styles?|members?|groups?)\s+of\s+(?P<category>[a-z\s-]+?)\s+(?:are|is|exist|live|found|native|present|dwell|occur)(?:\s+(?:in|at|on|to|around|within))?\s*(?P<location>[a-z\s,]+)?$',
+        re.IGNORECASE),
+    # "what X are native to Y" / "what wild cats live in Y" / "which cats live in Y"
+    re.compile(
+        r'^(?:what|which)\s+(?P<category>[a-z\s-]+?)\s+(?:are|live|exist|found|native|dwell|occur)\s+(?:in|at|on|to|around|within)\s+(?P<location>.+)$',
+        re.IGNORECASE),
+]
+
+def _detect_multi_entity_query(query):
+    """Detect a category query ("types of X") in the prompt.
+
+    Returns (category, location) or None. Location may be empty string.
+    Category is matched against data/categories.json member registry.
+    """
+    q = query.strip().lower()
+    registry = _load_category_registry()
+    if not registry:
+        return None
+    for pattern in _MULTI_ENTITY_PATTERNS:
+        m = pattern.match(q)
+        if not m:
+            continue
+        category = m.group('category').strip().rstrip(',').strip()
+        location = (m.group('location') or '').strip().rstrip(',').strip()
+        # Location may include a leading connector ("to poland and sweden")
+        # or a "native to" / "found in" construction — normalize it away
+        location = re.sub(r'^(?:(?:are|is)\s+)?(?:native|found|living|present|dwelling)\s+(?:to|in|at|on|around|within|the)\s+', '', location).strip()
+        location = re.sub(r'^(?:in|at|on|to|around|within|the)\s+', '', location).strip()
+        if location.lower() in {'there', 'out there', 'around', 'here'}:
+            location = ''
+        # Category must be resolvable: either a registered member-name list
+        # (data/categories.json) or entries tagged with the category in the KB
+        # index (generic — works for ANY subject).
+        if category in registry:
+            return (category, location)
+        try:
+            from cos.knowledge import get_category_members
+            if get_category_members(category):
+                return (category, location)
+        except Exception:
+            pass
+        # Try plural/grammatical variants of the category
+        for candidate in (category + 's', category.rstrip('s')):
+            if candidate in registry:
+                return (candidate, location)
+            try:
+                if get_category_members(candidate):
+                    return (candidate, location)
+            except Exception:
+                pass
+    return None
+
+def _compose_multi_entity_answer(category, location):
+    """Retrieve KB entries for a category and compose an answer.
+
+    First tries the KB category index (entries tagged with the category),
+    which works generically for ANY subject. Falls back to the member-name
+    registry (data/categories.json) for categories without tagged entries.
+    Members whose KB entry doesn't mention the requested location are
+    filtered out when a location is given.
+    Returns composed string or None if no members could be retrieved.
+    """
+    from cos.knowledge import get_category_members
+
+    # 1) Prefer the KB category index (generic across all subjects)
+    found = []
+    indexed = get_category_members(category) or []
+    for name, answer in indexed:
+        found.append((name, answer))
+
+    # 2) Fallback: member-name registry (data/categories.json)
+    if not found:
+        registry = _load_category_registry()
+        members = registry.get(category, [])
+        for member in members:
+            # knowledge_lookup skips variants shorter than 5 chars, so pad short
+            # single-word members ("lion", "tea") with a question stem.
+            if len(member) >= 5:
+                member_query = member
+            else:
+                member_query = f"what is {member}"
+            answer = knowledge_lookup(member_query)
+            if not answer or len(answer) < 40:
+                continue
+            found.append((member.strip().title(), answer))
+
+    if not found:
+        return None
+
+    location_words = None
+    if location:
+        # Location words: "poland and sweden" -> {"poland", "sweden"}
+        location_words = set(
+            w for w in re.split(r'[\s,;]+', location)
+            if len(w) > 2 and w not in {'and', 'the', 'or', 'with', 'in', 'of', 'our', 'near', 'around'}
+        )
+        # Filter members whose entries don't mention the location — do this
+        # BEFORE truncating so e.g. "cats in Poland" doesn't lose the wildcat
+        # entry to earlier-loading big-cat entries.
+        found = [f for f in found if any(w in f[1].lower() for w in location_words)]
+        if not found:
+            return None
+
+    # Truncate only after filtering (keep the composed answer manageable)
+    found = found[:5]
+
+    # Pluralize the category name for the intro ("cats", "big cats", "teas")
+    intro_cat = _pluralize_category(category)
+    parts = []
+    if location:
+        intro = f"Here are the main {intro_cat} found in {location}:"
+    else:
+        intro = f"Here are the main {intro_cat}:"
+    parts.append(intro)
+    for display, answer in found:
+        sentences = re.split(r'(?<=[.!?])\s+', answer.strip())
+        # Keep up to 3 sentences per member for a compact but informative answer
+        short = ' '.join(sentences[:3]).strip()
+        parts.append(f"{display} — {short}")
+    return '\n'.join(parts)
+
+
+# ── Multi-point (comparison) query detection & composition ───────────────────
+# Handles queries that reference two topics: "compare X and Y",
+# "difference between X and Y", "X vs Y", "tell me about X and Y".
+# Both topics are looked up independently and composed into one answer.
+
+_MULTI_POINT_PATTERNS = [
+    # "compare X and Y" / "compare X with Y" / "compare X to Y"
+    re.compile(
+        r'^(?:compare|contrast)\s+(?P<topic1>.+?)\s+(?:and|with|to|versus|vs)\s+(?P<topic2>[a-z\s-]+?)$',
+        re.IGNORECASE),
+    # "difference between X and Y" / "similarities between X and Y"
+    re.compile(
+        r'^(?:what\s+(?:is\s+)?(?:the\s+)?)?(?:difference|differences|similarities?)\s+between\s+(?P<topic1>.+?)\s+and\s+(?P<topic2>[a-z\s-]+?)$',
+        re.IGNORECASE),
+    # "what is the difference between X and Y?" (with apostrophe in what's)
+    re.compile(
+        r"^what'?s\s+(?:the\s+)?(?:difference|differences)\s+between\s+(?P<topic1>.+?)\s+and\s+(?P<topic2>[a-z\s-]+?)$",
+        re.IGNORECASE),
+    # "tell me the difference between X and Y" / "tell me about X and Y"
+    re.compile(
+        r"^tell\s+me\s+(?:the\s+)?(?:difference|differences|similarities?)\s+between\s+(?P<topic1>.+?)\s+and\s+(?P<topic2>[a-z\s-]+?)$",
+        re.IGNORECASE),
+    # "X vs Y" / "X versus Y"
+    re.compile(
+        r'^(?P<topic1>[a-z][a-z\s-]+?)\s+(?:vs|versus)\s+(?P<topic2>[a-z\s-]+?)$',
+        re.IGNORECASE),
+]
+
+# Topic names that are too vague to look up individually
+_TOPIC_STOP = {'it', 'that', 'this', 'them', 'those', 'these', 'which', 'what',
+               'the', 'a', 'an', 'one', 'other', 'another', 'some', 'any',
+               'both', 'all', 'each', 'they', 'their', 'these', 'those'}
+
+
+def _detect_multi_point_query(query):
+    """Detect a two-topic (comparison) query in the prompt.
+
+    Returns (topic1, topic2) or None. Topics are noun phrases extracted
+    from compare/difference/vs patterns.
+    """
+    q = query.strip().lower()
+    for pattern in _MULTI_POINT_PATTERNS:
+        m = pattern.match(q)
+        if not m:
+            continue
+        t1 = m.group('topic1').strip().rstrip('?!.,;:').strip()
+        t2 = m.group('topic2').strip().rstrip('?!.,;:').strip()
+        # Topics must be substantive (not "it and that") and not the same
+        if not t1 or not t2 or len(t1) < 3 or len(t2) < 3:
+            continue
+        if t1 == t2:
+            continue
+        if t1 in _TOPIC_STOP or t2 in _TOPIC_STOP:
+            continue
+        return (t1, t2)
+    return None
+
+
+def _compose_multi_point_answer(topic1, topic2, original_query=None):
+    """Look up two topics independently and compose a combined answer.
+
+    If a curated KB entry matches the full comparison query (e.g. the
+    chocolate difference entry), it is used instead — curated beats composed.
+    Returns a two-part comparison string, or None if neither topic has
+    KB/Wikipedia content.
+    """
+    # Curated comparison entries win over composition — but only when a KB
+    # pattern actually covers most of the query. Substring matches (e.g.
+    # "existentialism" inside "compare stoicism and existentialism") must not
+    # count as curated, or they'd hijack the composed comparison.
+    if original_query:
+        from cos.knowledge import get_all_knowledge
+        q = original_query.strip().lower()
+        best_answer = None
+        best_len = 0
+        for pattern, answer in get_all_knowledge() or []:
+            try:
+                m = pattern.search(q)
+            except Exception:
+                continue
+            if m and len(m.group(0)) > best_len:
+                best_len = len(m.group(0))
+                best_answer = answer
+        if best_answer and best_len >= max(25, int(len(q) * 0.6)):
+            return best_answer
+
+    def _retrieve(topic):
+        answer = knowledge_lookup(topic)
+        if answer and len(answer) > 40:
+            return answer
+        # Short topics may hit the lookup's min-length filter
+        if len(topic) < 5:
+            answer = knowledge_lookup(f"what is {topic}")
+            if answer and len(answer) > 40:
+                return answer
+        wiki, _ = _search_wikipedia(topic)
+        if wiki and len(wiki) > 40:
+            return wiki
+        return None
+
+    a1 = _retrieve(topic1)
+    a2 = _retrieve(topic2)
+    if not a1 and not a2:
+        return None
+
+    parts = [f"Here's a comparison of {topic1} and {topic2}:"]
+    if a1:
+        sentences = re.split(r'(?<=[.!?])\s+', a1.strip())
+        parts.append(f"{topic1.title()} — " + ' '.join(sentences[:3]).strip())
+    if a2:
+        sentences = re.split(r'(?<=[.!?])\s+', a2.strip())
+        parts.append(f"{topic2.title()} — " + ' '.join(sentences[:3]).strip())
+    return '\n'.join(parts)
+
+
 def _handle_factual(query, use_cos):
     """Handle factual knowledge queries."""
     q = query.strip()
@@ -3078,6 +3363,28 @@ def _handle_factual(query, use_cos):
         math_answer = _solve_wp(search_query)
         if math_answer:
             return math_answer
+
+    # Multi-entity detection: "what types of X are native to Y" →
+    # retrieve each member entry from the KB and compose a combined answer.
+    # Runs before the direct KB lookup so category questions compose from
+    # separate member entries instead of relying on a hand-written catch-all.
+    _multi = _detect_multi_entity_query(q)
+    if _multi:
+        composed = _compose_multi_entity_answer(*_multi)
+        if composed:
+            return composed
+
+    # Multi-point detection: "compare X and Y" / "difference between X and Y"
+    # → compose a comparison. Runs BEFORE the direct KB lookup so substring
+    # matches (e.g. "compare stoicism and existentialism" matching just
+    # "existentialism") don't hijack the answer. Curated comparison entries
+    # are still preferred: _compose_multi_point_answer checks the full query
+    # against the KB first (e.g. "difference between dark and milk chocolate").
+    _multi_point = _detect_multi_point_query(q)
+    if _multi_point:
+        composed = _compose_multi_point_answer(*_multi_point, original_query=q)
+        if composed:
+            return composed
 
     # First: direct KB lookup — curated content with light conversational polish
     kb_answer = knowledge_lookup(search_query)

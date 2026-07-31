@@ -268,8 +268,12 @@ def is_coding_query(query: str) -> bool:
     # false positives on queries like "working-class families".
     _AMBIGUOUS = {'class', 'method'}
 
-    # Check for code-specific punctuation (braces, parens, semicolons, etc.)
-    has_code_punct = bool(re.search(r'[{}\(\)]|->|::|;', q))
+    # Check for code-specific punctuation (braces, arrows, semicolons, etc.)
+    # NOTE: parentheses are intentionally NOT treated as code punctuation —
+    # they appear in ordinary English queries ("(e.g. X)") and the engine's
+    # context-rewrite wraps topics in parens ("what is X (topic)"), which
+    # would otherwise misroute factual questions to the code handler.
+    has_code_punct = bool(re.search(r'[{}]|->|::|;', q))
 
     # Multi-word coding phrases (reliable)
     # Check longest phrases first using WORD BOUNDARIES to avoid

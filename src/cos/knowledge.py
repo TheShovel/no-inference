@@ -83,6 +83,16 @@ def _load_knowledge(base_dir=None):
             if not questions or not answer:
                 continue
 
+            # Category index: entries may declare which categories they belong
+            # to via 'categories' (list), 'category' (str), or 'tags' (list).
+            # This powers multi-entity composition ("what types of X are there")
+            # across ALL subjects — any tagged entry becomes a member of its
+            # category, no per-category registry needed.
+            declared = entry.get('categories') or entry.get('category') or entry.get('tags') or []
+            if isinstance(declared, str):
+                declared = [declared]
+            declared = [str(c).strip().lower() for c in declared if str(c).strip()]
+
             # If questions is a string, wrap in list
             if isinstance(questions, str):
                 questions = [questions]
@@ -117,6 +127,14 @@ def _load_knowledge(base_dir=None):
                     print(f'  Warning: Bad pattern "{q_clean}": {e}')
                     continue
 
+            # Register entry in the category index (once per entry, not per question)
+            if declared:
+                name = _derive_entry_name(entry, questions)
+                for cat in declared:
+                    _CATEGORY_INDEX.setdefault(cat, [])
+                    if not any(a == answer for _, a in _CATEGORY_INDEX[cat]):
+                        _CATEGORY_INDEX[cat].append((name, answer))
+
         if loaded > 0:
             # Print category summary
             rel_path = path.relative_to(base_dir.parent.parent if base_dir == _KNOWLEDGE_DIR else base_dir)
@@ -126,6 +144,104 @@ def _load_knowledge(base_dir=None):
 
 # ── Load knowledge at module import time ─────────────────────────────────────
 _KNOWLEDGE_CACHE = None
+
+# Category index: category name (lowercase) -> [(display_name, answer), ...]
+# Built during _load_knowledge from entries declaring 'categories'/'tags'.
+_CATEGORY_INDEX = {}
+
+
+def _derive_entry_name(entry, questions):
+    """Derive a display name for a KB entry for category composition.
+
+    Prefers an explicit 'name' field; otherwise the shortest question that
+    looks like a noun phrase (no leading question word).
+    """
+    name = entry.get('name')
+    if isinstance(name, str) and name.strip():
+        return name.strip()
+    _QUESTION_LEADERS = ('what', 'which', 'who', 'where', 'when', 'why', 'how',
+                         'tell', 'explain', 'describe', 'define', 'is', 'are',
+                         'do', 'does', 'did', 'list', 'name', 'give')
+    # Multi-word prefixes to strip from question-style questions
+    _LEADER_PHRASES = (
+        'what is ', 'what are ', 'what was ', 'what were ', 'what does ',
+        'what do ', 'what did ', 'which is ', 'which are ', 'who is ',
+        'who was ', 'where do ', 'where does ', 'how does ', 'how do ',
+        'how is ', 'how are ', 'tell me about ', 'tell me what ', 'tell me how ',
+        'explain ', 'describe ', 'define ', 'why is ', 'why do ', 'why are ',
+        'what is the ', 'what are the ',
+    )
+    _CUT_WORDS = {' and ', ' or ', ' how ', ' why ', ' which ', ' where ',
+                  ' when ', ' who ', ' with ', ' by ', ' including ',
+                  ' such as ', ' like ', ' versus ', ' vs ', ' compared to '}
+
+    best = None
+    for q in questions:
+        q = str(q).strip().rstrip('?!.,;:')
+        if not q or len(q) < 2:
+            continue
+        words = q.split()
+        candidate = None
+        if words and words[0].lower() not in _QUESTION_LEADERS:
+            candidate = q  # already a noun phrase (e.g. "european wildcat")
+        else:
+            stripped = q
+            for leader in _LEADER_PHRASES:
+                if stripped.lower().startswith(leader):
+                    stripped = stripped[len(leader):].strip()
+                    break
+            if stripped and stripped.lower() != q.lower():
+                candidate = stripped
+        if not candidate:
+            continue
+        # Cut at conjunctions / sub-question words: "black tea and how is it
+        # processed" -> "black tea"
+        lower_c = candidate.lower()
+        cut_at = None
+        for cut in _CUT_WORDS:
+            idx = lower_c.find(cut)
+            if idx > 0 and (cut_at is None or idx < cut_at):
+                cut_at = idx
+        if cut_at:
+            candidate = candidate[:cut_at].strip()
+        if len(candidate) < 2:
+            continue
+        # Prefer the shortest cleaned name
+        if best is None or len(candidate.split()) < len(best.split()):
+            best = candidate
+    if best:
+        return best.title()
+    return 'Item'
+
+
+def get_category_members(category):
+    """Return [(display_name, answer)] for all entries tagged with a category.
+
+    Matches the category name case-insensitively, trying exact, singular,
+    and plural forms so "cats" finds entries tagged "cat" and vice versa.
+    Returns None if the category index has no members (caller decides
+    whether to fall back to the registry / Wikipedia).
+    """
+    global _CATEGORY_INDEX
+    if _KNOWLEDGE_CACHE is None:
+        get_all_knowledge()
+    if not _CATEGORY_INDEX:
+        return None
+    cat = category.strip().lower()
+    candidates = {cat}
+    if cat.endswith('s') and not cat.endswith('ss'):
+        candidates.add(cat[:-1])  # cats -> cat
+    else:
+        candidates.add(cat + 's')  # cat -> cats
+    results = []
+    seen = set()
+    for c in candidates:
+        for name, answer in _CATEGORY_INDEX.get(c, []):
+            if answer not in seen:
+                seen.add(answer)
+                results.append((name, answer))
+    return results or None
+
 
 def get_all_knowledge():
     """Get all loaded knowledge entries, caching after first load."""

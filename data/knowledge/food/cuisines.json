@@ -9,7 +9,11 @@
       "What makes Italian cuisine unique?",
       "What are classic Italian ingredients?"
     ],
-    "a": "Italian cuisine is renowned for its emphasis on fresh, high-quality ingredients and regional diversity, with each area of Italy boasting distinct culinary traditions. Northern Italian cuisine features rice (risotto), polenta, butter, and cream-based sauces, while Southern Italian cooking relies heavily on olive oil, tomatoes, garlic, and seafood. Signature dishes include pasta varieties like spaghetti carbonara and lasagna, wood-fired Neapolitan pizza, risotto alla Milanese, osso buco, and classic desserts such as tiramisu and panna cotta. The cuisine follows the philosophy of 'la cucina povera' or peasant cooking, making the most of simple, seasonal ingredients through techniques that let their natural flavors shine."
+    "a": "Italian cuisine is renowned for its emphasis on fresh, high-quality ingredients and regional diversity, with each area of Italy boasting distinct culinary traditions. Northern Italian cuisine features rice (risotto), polenta, butter, and cream-based sauces, while Southern Italian cooking relies heavily on olive oil, tomatoes, garlic, and seafood. Signature dishes include pasta varieties like spaghetti carbonara and lasagna, wood-fired Neapolitan pizza, risotto alla Milanese, osso buco, and classic desserts such as tiramisu and panna cotta. The cuisine follows the philosophy of 'la cucina povera' or peasant cooking, making the most of simple, seasonal ingredients through techniques that let their natural flavors shine.",
+    "categories": [
+      "cuisine",
+      "food"
+    ]
   },
   {
     "q": [
@@ -21,7 +25,11 @@
       "What cooking techniques are used in Chinese cuisine?",
       "What are the key ingredients in Chinese cooking?"
     ],
-    "a": "Chinese cuisine is one of the world's oldest and most diverse culinary traditions, with eight major regional cuisines including Cantonese, Sichuan, Shandong, Jiangsu, and Hunan. Cantonese cuisine emphasizes fresh ingredients and subtle flavors with techniques like steaming and stir-frying, while Sichuan cuisine is famous for its bold, spicy flavors created by Sichuan peppercorns and chili peppers. Signature dishes include Peking duck with crispy skin, dim sum served in bamboo steamers, mapo tofu, kung pao chicken, and hand-pulled noodles. The cuisine is built on the principle of balancing flavors — sweet, sour, salty, bitter, and umami — and textures, with cooking techniques ranging from stir-frying and steaming to braising and deep-frying."
+    "a": "Chinese cuisine is one of the world's oldest and most diverse culinary traditions, with eight major regional cuisines including Cantonese, Sichuan, Shandong, Jiangsu, and Hunan. Cantonese cuisine emphasizes fresh ingredients and subtle flavors with techniques like steaming and stir-frying, while Sichuan cuisine is famous for its bold, spicy flavors created by Sichuan peppercorns and chili peppers. Signature dishes include Peking duck with crispy skin, dim sum served in bamboo steamers, mapo tofu, kung pao chicken, and hand-pulled noodles. The cuisine is built on the principle of balancing flavors — sweet, sour, salty, bitter, and umami — and textures, with cooking techniques ranging from stir-frying and steaming to braising and deep-frying.",
+    "categories": [
+      "cuisine",
+      "food"
+    ]
   },
   {
     "q": [
@@ -34,7 +42,11 @@
       "What are traditional Japanese cooking techniques?",
       "What is the difference between ramen, soba, and udon?"
     ],
-    "a": "Japanese cuisine, or washoku, is characterized by its emphasis on seasonality, presentation, and the natural flavors of ingredients, recognized by UNESCO as an Intangible Cultural Heritage. Staple dishes include sushi (vinegared rice with raw fish), sashimi (sliced raw fish), tempura (battered and deep-fried seafood and vegetables), ramen (noodle soup with various broths), and teppanyaki (grilled dishes prepared on an iron griddle. Key ingredients include rice, soy sauce, miso, seaweed, dashi broth, and wasabi, with cooking techniques that prioritize precision and minimal handling. The cuisine follows the principle of 'ichiju-sansai' (one soup, three sides) for a balanced meal, and presentation is considered as important as taste, with careful attention to plate arrangement, color contrast, and seasonal garnishes."
+    "a": "Japanese cuisine, or washoku, is characterized by its emphasis on seasonality, presentation, and the natural flavors of ingredients, recognized by UNESCO as an Intangible Cultural Heritage. Staple dishes include sushi (vinegared rice with raw fish), sashimi (sliced raw fish), tempura (battered and deep-fried seafood and vegetables), ramen (noodle soup with various broths), and teppanyaki (grilled dishes prepared on an iron griddle. Key ingredients include rice, soy sauce, miso, seaweed, dashi broth, and wasabi, with cooking techniques that prioritize precision and minimal handling. The cuisine follows the principle of 'ichiju-sansai' (one soup, three sides) for a balanced meal, and presentation is considered as important as taste, with careful attention to plate arrangement, color contrast, and seasonal garnishes.",
+    "categories": [
+      "cuisine",
+      "food"
+    ]
   },
   {
     "q": [
@@ -46,7 +58,11 @@
       "What is curry?",
       "What is the difference between North and South Indian cuisine?"
     ],
-    "a": "Indian cuisine is defined by its sophisticated use of spices and herbs, with dishes varying dramatically across the subcontinent's diverse regions, cultures, and religious traditions. North Indian cuisine features rich, creamy gravies using dairy products like ghee and paneer, tandoor-cooked breads like naan and roti, and dishes such as butter chicken, biryani, and dal makhani. South Indian cuisine is predominantly rice-based, featuring fermented dishes like dosa and idli, coconut-based curries, and tangy tamarind-flavored sambar. Signature spice blends like garam masala and curry powder vary by region and family tradition, and the cuisine offers extensive vegetarian options due to religious influences from Hinduism, Jainism, and Buddhism."
+    "a": "Indian cuisine is defined by its sophisticated use of spices and herbs, with dishes varying dramatically across the subcontinent's diverse regions, cultures, and religious traditions. North Indian cuisine features rich, creamy gravies using dairy products like ghee and paneer, tandoor-cooked breads like naan and roti, and dishes such as butter chicken, biryani, and dal makhani. South Indian cuisine is predominantly rice-based, featuring fermented dishes like dosa and idli, coconut-based curries, and tangy tamarind-flavored sambar. Signature spice blends like garam masala and curry powder vary by region and family tradition, and the cuisine offers extensive vegetarian options due to religious influences from Hinduism, Jainism, and Buddhism.",
+    "categories": [
+      "cuisine",
+      "food"
+    ]
   },
   {
     "q": [
@@ -58,7 +74,11 @@
       "What is the difference between Mexican and Tex-Mex?",
       "What are authentic Mexican cooking techniques?"
     ],
-    "a": "Mexican cuisine is a vibrant fusion of indigenous Mesoamerican and Spanish influences, recognized by UNESCO as an Intangible Cultural Heritage. Core ingredients include corn, beans, chili peppers, tomatoes, avocados, and chocolate, with corn being the foundation of staple foods like tortillas, tamales, and pozole. Regional variations are significant: Oaxaca is known for its seven moles and tlayudas, Yucatán for cochinita pibil (achiote-marinated pork), and Puebla for chiles en nogada and mole poblano. Traditional cooking techniques include nixtamalization (alkaline treatment of corn to improve nutrition), grinding spices and chilies with a molcajete (stone mortar and pestle), and cooking in banana leaves or clay pots."
+    "a": "Mexican cuisine is a vibrant fusion of indigenous Mesoamerican and Spanish influences, recognized by UNESCO as an Intangible Cultural Heritage. Core ingredients include corn, beans, chili peppers, tomatoes, avocados, and chocolate, with corn being the foundation of staple foods like tortillas, tamales, and pozole. Regional variations are significant: Oaxaca is known for its seven moles and tlayudas, Yucatán for cochinita pibil (achiote-marinated pork), and Puebla for chiles en nogada and mole poblano. Traditional cooking techniques include nixtamalization (alkaline treatment of corn to improve nutrition), grinding spices and chilies with a molcajete (stone mortar and pestle), and cooking in banana leaves or clay pots.",
+    "categories": [
+      "cuisine",
+      "food"
+    ]
   },
   {
     "q": [
@@ -70,6 +90,10 @@
       "What is the difference between French regional cuisines?",
       "What are classic French sauces?"
     ],
-    "a": "French cuisine is considered one of the foundational pillars of Western culinary tradition, famous for its rigorous techniques, rich sauces, and emphasis on butter, cream, and wine. Classic dishes include coq au vin (chicken braised in wine), bouillabaisse (Provençal seafood stew), beef bourguignon, escargots, duck confit, and delicate pastries like croissants and crème brûlée. French culinary technique, systematized by chefs like Auguste Escoffier, includes five 'mother sauces' (béchamel, velouté, espagnole, tomato, and hollandaise) that form the basis for countless derivative sauces. Regional cuisines vary considerably, with Provence featuring olive oil and herbs de Provence, Normandy emphasizing apples and cream, and Alsace showing German influences with sauerkraut and pork."
+    "a": "French cuisine is considered one of the foundational pillars of Western culinary tradition, famous for its rigorous techniques, rich sauces, and emphasis on butter, cream, and wine. Classic dishes include coq au vin (chicken braised in wine), bouillabaisse (Provençal seafood stew), beef bourguignon, escargots, duck confit, and delicate pastries like croissants and crème brûlée. French culinary technique, systematized by chefs like Auguste Escoffier, includes five 'mother sauces' (béchamel, velouté, espagnole, tomato, and hollandaise) that form the basis for countless derivative sauces. Regional cuisines vary considerably, with Provence featuring olive oil and herbs de Provence, Normandy emphasizing apples and cream, and Alsace showing German influences with sauerkraut and pork.",
+    "categories": [
+      "cuisine",
+      "food"
+    ]
   }
 ]

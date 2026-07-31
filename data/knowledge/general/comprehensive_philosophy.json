@@ -9,7 +9,11 @@
       "sartre camus existentialism",
       "define existentialism"
     ],
-    "a": "Existentialism is a philosophical movement that emphasizes individual existence, freedom, choice, and the search for meaning in a seemingly absurd or indifferent universe. Key figures include Søren Kierkegaard (considered the father of existentialism, focusing on individual faith and subjective truth), Friedrich Nietzsche (the will to power and the Übermensch), Jean-Paul Sartre (existence precedes essence — we are born without a predetermined purpose and must create our own meaning through choices), Albert Camus (the absurd — the conflict between humans' desire for meaning and the universe's indifference), and Simone de Beauvoir (existentialist feminism). Existentialism rejects the idea that human beings have a fixed nature or essence, instead arguing that we define ourselves through our actions and commitments."
+    "a": "Existentialism is a philosophical movement that emphasizes individual existence, freedom, choice, and the search for meaning in a seemingly absurd or indifferent universe. Key figures include Søren Kierkegaard (considered the father of existentialism, focusing on individual faith and subjective truth), Friedrich Nietzsche (the will to power and the Übermensch), Jean-Paul Sartre (existence precedes essence — we are born without a predetermined purpose and must create our own meaning through choices), Albert Camus (the absurd — the conflict between humans' desire for meaning and the universe's indifference), and Simone de Beauvoir (existentialist feminism). Existentialism rejects the idea that human beings have a fixed nature or essence, instead arguing that we define ourselves through our actions and commitments.",
+    "categories": [
+      "philosophy",
+      "philosophy school"
+    ]
   },
   {
     "q": [
@@ -21,7 +25,11 @@
       "utilitarian philosophy",
       "define utilitarianism"
     ],
-    "a": "Utilitarianism is an ethical theory that holds that the right action is the one that maximizes overall happiness or well-being and minimizes suffering for the greatest number of people. Developed by Jeremy Bentham (who proposed measuring pleasure and pain on a hedonic calculus) and refined by John Stuart Mill (who distinguished between higher and lower pleasures), utilitarianism is a form of consequentialism where the moral worth of an action is determined solely by its outcomes. Key concepts include the principle of utility (the greatest good for the greatest number), act vs rule utilitarianism (whether individual actions or general rules should be evaluated by their consequences), and the distinction between Bentham's quantitative approach and Mill's qualitative distinction among pleasures."
+    "a": "Utilitarianism is an ethical theory that holds that the right action is the one that maximizes overall happiness or well-being and minimizes suffering for the greatest number of people. Developed by Jeremy Bentham (who proposed measuring pleasure and pain on a hedonic calculus) and refined by John Stuart Mill (who distinguished between higher and lower pleasures), utilitarianism is a form of consequentialism where the moral worth of an action is determined solely by its outcomes. Key concepts include the principle of utility (the greatest good for the greatest number), act vs rule utilitarianism (whether individual actions or general rules should be evaluated by their consequences), and the distinction between Bentham's quantitative approach and Mill's qualitative distinction among pleasures.",
+    "categories": [
+      "philosophy",
+      "philosophy school"
+    ]
   },
   {
     "q": [
@@ -33,7 +41,10 @@
       "kants moral philosophy",
       "immanuel kant ethics"
     ],
-    "a": "The categorical imperative is the central concept in Immanuel Kant's moral philosophy, an unconditional moral obligation that applies to all rational beings regardless of desires or circumstances. Kant formulated several versions: the Formula of Universal Law ('Act only according to that maxim whereby you can at the same time will that it should become a universal law'), the Formula of Humanity ('Act in such a way that you treat humanity, whether in your own person or in the person of any other, never merely as a means to an end, but always at the same time as an end'), and the Formula of Autonomy (the will of every rational being as a universally legislating will). Unlike hypothetical imperatives which are conditional ('if you want X, do Y'), the categorical imperative commands absolutely and is grounded in reason alone."
+    "a": "The categorical imperative is the central concept in Immanuel Kant's moral philosophy, an unconditional moral obligation that applies to all rational beings regardless of desires or circumstances. Kant formulated several versions: the Formula of Universal Law ('Act only according to that maxim whereby you can at the same time will that it should become a universal law'), the Formula of Humanity ('Act in such a way that you treat humanity, whether in your own person or in the person of any other, never merely as a means to an end, but always at the same time as an end'), and the Formula of Autonomy (the will of every rational being as a universally legislating will). Unlike hypothetical imperatives which are conditional ('if you want X, do Y'), the categorical imperative commands absolutely and is grounded in reason alone.",
+    "categories": [
+      "philosophy"
+    ]
   },
   {
     "q": [
@@ -44,6 +55,9 @@
       "social contract philosophy",
       "define social contract"
     ],
-    "a": "Social contract theory is a political philosophy that explores the legitimacy of government and the moral obligations of individuals based on an implicit agreement among members of a society to cooperate for mutual benefit. Thomas Hobbes (Leviathan, 1651) argued that in the state of nature — a 'war of all against all' — life was solitary, poor, nasty, brutish, and short, so people surrendered their freedoms to an absolute sovereign (the Leviathan) in exchange for security and order. John Locke had a more optimistic view of the state of nature, arguing that people have natural rights (life, liberty, property) and consent to government primarily to protect those rights, with the right to revolt if government violates the social contract. Jean-Jacques Rousseau emphasized popular sovereignty and the general will — the collective good of the people as a whole — arguing that legitimate political authority rests on the consent of the governed."
+    "a": "Social contract theory is a political philosophy that explores the legitimacy of government and the moral obligations of individuals based on an implicit agreement among members of a society to cooperate for mutual benefit. Thomas Hobbes (Leviathan, 1651) argued that in the state of nature — a 'war of all against all' — life was solitary, poor, nasty, brutish, and short, so people surrendered their freedoms to an absolute sovereign (the Leviathan) in exchange for security and order. John Locke had a more optimistic view of the state of nature, arguing that people have natural rights (life, liberty, property) and consent to government primarily to protect those rights, with the right to revolt if government violates the social contract. Jean-Jacques Rousseau emphasized popular sovereignty and the general will — the collective good of the people as a whole — arguing that legitimate political authority rests on the consent of the governed.",
+    "categories": [
+      "political philosophy"
+    ]
   }
 ]

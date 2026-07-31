@@ -22,7 +22,10 @@
       "How big is Mercury?",
       "What is unique about Mercury's orbit?"
     ],
-    "a": "Mercury is the smallest planet in the Solar System and the closest to the Sun, with an average distance of about 58 million kilometers. It has an extremely thin atmosphere (an exosphere) composed mainly of oxygen, sodium, and hydrogen, which cannot retain heat, causing surface temperature swings from 430°C during the day to -180°C at night. Its surface is heavily cratered, resembling Earth's Moon, with smooth plains and scarps formed as the planet's interior cooled and contracted. Mercury has a large iron core making up about 85% of its radius, giving it a surprisingly strong magnetic field, and its highly elliptical orbit causes significant variations in its orbital speed."
+    "a": "Mercury is the smallest planet in the Solar System and the closest to the Sun, with an average distance of about 58 million kilometers. It has an extremely thin atmosphere (an exosphere) composed mainly of oxygen, sodium, and hydrogen, which cannot retain heat, causing surface temperature swings from 430°C during the day to -180°C at night. Its surface is heavily cratered, resembling Earth's Moon, with smooth plains and scarps formed as the planet's interior cooled and contracted. Mercury has a large iron core making up about 85% of its radius, giving it a surprisingly strong magnetic field, and its highly elliptical orbit causes significant variations in its orbital speed.",
+    "categories": [
+      "planet"
+    ]
   },
   {
     "q": [
@@ -34,7 +37,10 @@
       "What causes the greenhouse effect on Venus?",
       "Does Venus rotate backwards?"
     ],
-    "a": "Venus is often called Earth's twin due to their similar size, mass, and composition, yet its surface conditions are radically different. It has a crushing carbon dioxide atmosphere 90 times thicker than Earth's, creating a runaway greenhouse effect that makes Venus the hottest planet in the Solar System with a consistent surface temperature of about 462°C — hot enough to melt lead. Venus rotates in the opposite direction to most planets (retrograde rotation), and its rotation is so slow that a Venusian day is longer than its year. The surface is obscured by thick sulfuric acid clouds, hiding a landscape of vast volcanic plains, mountains, and thousands of volcanic structures, with evidence of ongoing volcanic activity."
+    "a": "Venus is often called Earth's twin due to their similar size, mass, and composition, yet its surface conditions are radically different. It has a crushing carbon dioxide atmosphere 90 times thicker than Earth's, creating a runaway greenhouse effect that makes Venus the hottest planet in the Solar System with a consistent surface temperature of about 462°C — hot enough to melt lead. Venus rotates in the opposite direction to most planets (retrograde rotation), and its rotation is so slow that a Venusian day is longer than its year. The surface is obscured by thick sulfuric acid clouds, hiding a landscape of vast volcanic plains, mountains, and thousands of volcanic structures, with evidence of ongoing volcanic activity.",
+    "categories": [
+      "planet"
+    ]
   },
   {
     "q": [
@@ -47,7 +53,10 @@
       "What is Jupiter's atmosphere like?",
       "How big is Jupiter compared to Earth?"
     ],
-    "a": "Jupiter is the largest planet in the Solar System, with a mass more than 300 times that of Earth and a diameter of about 143,000 kilometers. It is a gas giant composed primarily of hydrogen and helium, with no solid surface — its atmosphere transitions gradually from gaseous to liquid metallic hydrogen deep within. The Great Red Spot is a persistent anticyclonic storm larger than Earth that has been observed for hundreds of years. Jupiter has at least 95 known moons, including the four large Galilean moons (Io, Europa, Ganymede, and Callisto), which are worlds in their own right, with Europa believed to harbor a subsurface ocean that could support life."
+    "a": "Jupiter is the largest planet in the Solar System, with a mass more than 300 times that of Earth and a diameter of about 143,000 kilometers. It is a gas giant composed primarily of hydrogen and helium, with no solid surface — its atmosphere transitions gradually from gaseous to liquid metallic hydrogen deep within. The Great Red Spot is a persistent anticyclonic storm larger than Earth that has been observed for hundreds of years. Jupiter has at least 95 known moons, including the four large Galilean moons (Io, Europa, Ganymede, and Callisto), which are worlds in their own right, with Europa believed to harbor a subsurface ocean that could support life.",
+    "categories": [
+      "planet"
+    ]
   },
   {
     "q": [
@@ -59,6 +68,9 @@
       "What is Eris?",
       "What is the Kuiper Belt?"
     ],
-    "a": "Dwarf planets are celestial bodies that orbit the Sun, have sufficient mass for self-gravity to give them a nearly round shape, but have not cleared their orbital neighborhood of other debris. The International Astronomical Union (IAU) established this category in 2006, reclassifying Pluto and recognizing it as the prototype. Known dwarf planets include Pluto, Eris, Haumea, Makemake, and Ceres (the largest object in the asteroid belt). Pluto's reclassification was prompted by the discovery of Eris, which is slightly more massive, and other Kuiper Belt objects of comparable size, revealing that Pluto is just one of many large bodies in the outer reaches of the Solar System rather than a dominant planet."
+    "a": "Dwarf planets are celestial bodies that orbit the Sun, have sufficient mass for self-gravity to give them a nearly round shape, but have not cleared their orbital neighborhood of other debris. The International Astronomical Union (IAU) established this category in 2006, reclassifying Pluto and recognizing it as the prototype. Known dwarf planets include Pluto, Eris, Haumea, Makemake, and Ceres (the largest object in the asteroid belt). Pluto's reclassification was prompted by the discovery of Eris, which is slightly more massive, and other Kuiper Belt objects of comparable size, revealing that Pluto is just one of many large bodies in the outer reaches of the Solar System rather than a dominant planet.",
+    "categories": [
+      "dwarf planet"
+    ]
   }
 ]
