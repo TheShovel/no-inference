@@ -1667,9 +1667,9 @@ def _pronoun_has_antecedent_in_sentence(query: str) -> bool:
     # Check for "they/them" with a preceding plural noun (e.g., "people... they see")
     if re.search(r'\b(?:people|scientists|researchers|humans|humans?|animals|creatures)\s+.*?\s+they\b', q):
         return True
-    # Check for "them" referring to a noun within the same sentence
-    # Require a VERY clear antecedent within the same sentence before "them"
-    if re.search(r'\b(\w+s)\b.{0,30}\bthem\b', q) and not re.search(r'\b(why|what|when|where|how)\s+(is|are|was|were)\s+it\b', q):
+    # Check for "them"/"they" referring to a noun within the same sentence
+    # Require a VERY clear antecedent within the same sentence before the pronoun
+    if re.search(r'\b(\w+s)\b.{0,30}\b(?:them|they)\b', q) and not re.search(r'\b(why|what|when|where|how)\s+(is|are|was|were)\s+it\b', q):
         words = q.split()
         them_idx = None
         for i, w in enumerate(words):
@@ -1679,8 +1679,10 @@ def _pronoun_has_antecedent_in_sentence(query: str) -> bool:
         if them_idx and them_idx > 1:  # Must be at least the 3rd word (not 2nd)
             # Check if the word immediately before is a specific plural noun
             prev_word = words[them_idx - 1].rstrip('.,;:!?').lower()
-            # If preceded by a verb (is, are, was, etc.), the antecedent is less clear
-            if prev_word in ('is', 'are', 'was', 'were', 'do', 'does', 'did', 'have', 'has', 'had', 'and', 'or', 'but', 'of', 'in', 'on', 'at', 'to', 'for', 'with', 'by', 'from'):
+            # If preceded by a verb (is, are, was, etc.), the antecedent is less
+            # clear — but auxiliaries like "do"/"have" before the pronoun still
+            # allow an in-sentence plural noun ("status codes ... do they mean").
+            if prev_word in ('is', 'are', 'was', 'were', 'and', 'or', 'but', 'of', 'in', 'on', 'at', 'to', 'for', 'with', 'by', 'from'):
                 return False
             # Check if there's a clear plural noun as antecedent within first half of sentence
             half_idx = len(words) // 2
@@ -1723,6 +1725,27 @@ def _query_is_context_dependent(query):
     if not q:
         return False
 
+    # "why is it called X" / "why is X called Y" — etymology/name questions
+    # are self-contained (the "it" is generic, not referential).
+    if re.search(r'^why\s+is\s+it\s+called\s+[a-z\s-]+$', q):
+        return False
+    # "what is a unit test and why write them" — the trailing clause's pronoun
+    # refers to the noun introduced earlier in the SAME query, so it is
+    # self-contained ("what is X and why/how/when <verb> them").
+    if re.search(r'^what\s+is\s+(?:a|an|the)\s+[a-z\s-]{3,60}\s+and\s+(?:why|how|when|where|what)\s+\w+(?:\s+\w+)?\s+(?:them|it|they|these|those)$', q):
+        return False
+    # "what causes earthquakes" / "what causes the seasons" — causation
+    # questions are self-contained.
+    if re.search(r'^what\s+causes?\s+', q):
+        return False
+    # "what is the capital/currency/population/language/religion/climate of X"
+    # — attribute questions are self-contained.
+    if re.search(r'^what\s+is\s+the\s+(?:capital|currency|population|language|religion|climate|highest|lowest|largest|smallest|biggest|tallest|longest|fastest|deepest)\s+(?:of|in|on)\s+', q):
+        return False
+    # "why do leaves change color" — seasonal/nature color changes are
+    # self-contained.
+    if re.search(r'^why\s+do(?:es)?\s+[a-z\s-]+?\s+change\s+color$', q):
+        return False
     # Category questions ("what types of X are there", "what kinds of X live in Y")
     # are inherently self-contained — they ask about a category, not prior context.
     if re.search(r'^(?:what|which)\s+(?:types?|kinds?|breeds?|species?|varieties?|forms?|styles?|members?|groups?)\s+of\b', q):
@@ -1741,16 +1764,30 @@ def _query_is_context_dependent(query):
         return False  # proper-noun identification, not a context reference
     # "who invented/discovered/built X" — attribution questions are
     # self-contained ("who invented the telephone", "who first discovered X")
-    if re.search(r'^who\s+(?:first\s+)?(?:invented|discovered|created|built|founded|wrote|made|designed|developed|painted)\s+', q):
+    if re.search(r'^who\s+(?:even\s+|the\s+heck\s+|the\s+hell\s+|actually\s+)?(?:first\s+)?(?:invented|discovered|created|built|founded|wrote|made|designed|developed|painted)\s+', q):
         return False
     # "what day is X" / "when is X" — calendar questions are self-contained
     if re.search(r'^(?:what\s+(?:day|date)\s+is|when\s+(?:is|are|was|were))\s+', q):
         return False
+    # "what year was X" / "when was X" / "who was X" — temporal/attribution
+    # questions with a concrete subject are self-contained (excludes pronouns)
+    if re.search(r'^(?:what\s+year\s+(?:was|were|did|is|are)|in\s+what\s+year\s+(?:was|were|did|is|are))\s+', q):
+        return False
+    if re.search(r'^(?:when|who)\s+(?:was|were|is|are|did)\s+(?!(?:it|that|this|they|them)\b)', q):
+        # "who were the romans" is self-contained, but "who were the key
+        # pioneers?" / "who were the main characters?" after a topic is a
+        # follow-up that needs the previous subject to make sense.
+        if not re.search(r'\b(?:pioneers?|leaders?|members?|characters?|figures?|instruments?|features?|reasons?|causes?|examples?|founders?|inventors?|artists?|scientists?|players?|teams?|cities?|countries?|wars?|battles?|events?|effects?|benefits?|risks?|types?|kinds?|rulers?|pharaohs?|dynasties?|empires?|civilizations?)\b', q):
+            return False
     # "what does X symbolize" / "what does X stand for" — self-contained
     if re.search(r'^what\s+(?:does|do|did)\s+(?:(?:the|a|an)\s+)?[a-z\s-]+?\s+(?:symbolize|represent|stand\s+for|mean)$', q):
         return False
-    if re.search(r'^(?:how|why|what)\s+(?:is|are|was|were|do|does|did)\s+(?:(?:the|a|an|this|that|these|those)\s+)?[a-z]+\s+(?:formed|made|created|built|produced|generated|caused|work|works|occur|occurs|happen|happens|function|function|run|runs)$', q):
-        return False  # self-contained process question ("how are fossils formed", "how does an mri work")
+    # "why is X bad" / "why is sugar unhealthy" — health evaluation questions
+    # are self-contained
+    if re.search(r'^why\s+is\s+(?:the\s+)?[a-z]+\s+(?:bad|good|unhealthy|healthy|important|necessary|useful|dangerous|safe|popular|famous|expensive|cheap)(?:\s+for\s+(?:you|your\s+health|humans))?$', q):
+        return False
+    if re.search(r'^(?:how|why|what)\s+(?:is|are|was|were|do|does|did)\s+(?:(?:the|a|an|this|that|these|those)\s+)?[a-z\s-]+?\s+(?:formed|made|created|built|produced|generated|caused|work|works|occur|occurs|happen|happens|function|run|runs|processed|brewed|extracted|fermented|refined|manufactured|cooked|prepared|stored|preserved|harvested|distilled|bottled|packaged|grown|raised|caught|wet|float|floats|sink|freeze|freezes|melt|melt|boil|boils|evaporate|evaporates|condense|condenses|burn|burns|rust|rots|rot|decay|glow|glows|shine|shines|turn|turns|change|changes|form|forms)$', q):
+        return False  # self-contained process question ("how are fossils formed", "how is olive oil extracted")
     # Emphatic question forms ("what even is X", "what exactly are X",
     # "how on earth does X work") are self-contained — the emphasis word
     # doesn't refer back to prior context.
@@ -1762,10 +1799,23 @@ def _query_is_context_dependent(query):
     # "why do we have X" / "why do we hiccup" / "why do humans get X" —
     # self-contained biology/behavior questions. Excludes genuine follow-ups
     # containing a referential pronoun ("why do we care about it").
-    if re.search(r'^why\s+do\s+(?:we|humans|people)\s+', q):
-        _remainder = re.sub(r'^why\s+do\s+(?:we|humans|people)\s+', '', q)
-        if not re.search(r'\b(?:that|it|this|them|they|you)\b', _remainder):
+    if re.search(r'^why\s+do\s+(?:we|humans|people|i|you)\s+', q):
+        _remainder = re.sub(r'^why\s+do\s+(?:we|humans|people|i|you)\s+', '', q)
+        if not re.search(r'\b(?:that|it|this|them|they)\b', _remainder):
             return False
+    # "what do X eat" / "where do X live" / "why do cats purr" —
+    # subject+verb behavior questions are self-contained
+    if re.search(r'^(?:what|why|how|when|where|which)\s+(?:do|does|did|is|are|was|were|can|could)\s+[a-z\s-]+?\s+(?:eat|live|sleep|dream|drink|hunt|swim|fly|climb|run|jump|sing|talk|purr|bark|meow|migrate|hibernate|mate|nest|grow|form|have|use|need|die|end|start|begin|occur|happen|work|function|survive|breed|communicate|navigate|see|hear|smell|reproduce|adapt|breathe|walk\s+on\s+walls|see\s+in\s+the\s+dark|hold\s+its\s+breath|defend\s+themselves|protect\s+themselves|find\s+their\s+way|hunt)$', q):
+        return False
+    # "how strong is X" / "how smart are X" — capability questions are
+    # self-contained (excludes pronouns)
+    if re.search(r'^how\s+(?:strong|smart|intelligent|big|tall|heavy|fast|far|deep|high|wide|old|long)\s+(?:is|are|was|were)\s+(?!(?:it|that|this|they|them)\b)', q):
+        return False
+    # Media/story questions ("what happens at the end of X", "where is X set") are self-contained
+    if re.search(r'^what\s+happens\s+(?:at\s+the\s+end\s+of|in|during|when)\s+', q):
+        return False
+    if re.search(r'^(?:where|when)\s+(?:is|are|was|were)\s+[a-z\s-]+?\s+set$', q):
+        return False
     # Info-request forms ("what information do you have on X",
     # "what do you have on X", "what can you say about X") are self-contained.
     if re.search(r'^(?:what\s+(?:information|knowledge|facts|details)\s+(?:do|does|is|are)|what\s+do\s+you\s+have|what\s+can\s+you\s+say|anything\s+you\s+can\s+tell\s+me|your\s+knowledge\s+of|i\'?d\s+(?:love|like)\s+to\s+hear\s+about|spill\s+the\s+beans)', q):
@@ -1780,9 +1830,25 @@ def _query_is_context_dependent(query):
     # Lifecycle questions ("when did X end", "how did X die", "when did X
     # start") and relationship questions ("how are X and Y related",
     # "is X the same as Y") are self-contained.
-    if re.search(r'^(?:how|when|where|why)\s+(?:did|does|do|was|were|is|are)\s+[a-z\s-]+?(?:die|end|start|begin|form|happen|occur|originate|get\s+its\s+name)$', q):
+    if re.search(r'^(?:how|when|where|why)\s+(?:did|does|do|was|were|is|are)\s+[a-z\s-]+?(?:die|end|start|begin|form|happen|occur|originate|fall|fell|collapse|collapsed|decline|declined|get\s+its\s+name)$', q):
         return False
     if re.search(r'^how\s+are\s+[a-z\s-]+?\s+and\s+[a-z\s-]+?\s+related$', q):
+        return False
+    # Comparison questions ("how do X and Y differ", "are X and Y the
+    # same", "what do X and Y have in common", "how is X different from
+    # Y") are self-contained — they compare two named subjects.
+    if re.search(r'^(?:how\s+(?:do|does|are|is)|what\s+(?:do|does)|are|is)\s+[a-z\s-]+?\s+and\s+[a-z\s-]+?\s+(?:differ|different|similar|the\s+same|have\s+in\s+common)$', q):
+        return False
+    if re.search(r'^how\s+(?:is|are)\s+(?!(?:it|this|that|they|them|we|you)\s+different\s+from)[a-z\s-]+?\s+different\s+from\s+[a-z\s-]+?$', q):
+        return False
+    if re.search(r'^how\s+do(?:es)?\s+(?!(?:it|this|that|they|them|we|you)\s+differ\s+from)[a-z\s-]+?\s+differ\s+from\s+[a-z\s-]+?$', q):
+        return False
+    # "who is X married to" — personal-relationship questions are self-contained
+    if re.search(r'^who\s+(?:is|was|are|were)\s+[a-z\s-]+?\s+married\s+to$', q):
+        return False
+    # "what language do they speak in X" / "what do they call X" — the
+    # "they" is impersonal, not referential
+    if re.search(r'^(?:what\s+language\s+do\s+they\s+speak\s+in|what\s+language\s+is\s+spoken\s+in|what\s+do\s+they\s+call)\s+', q):
         return False
     if re.search(r'^(?:is|are)\s+[a-z\s-]+?\s+the\s+same\s+as\s+[a-z\s-]+?$', q):
         return False
@@ -2519,21 +2585,11 @@ def process_query(query, use_cos=True):
             return response
         # Fall through to normal processing if follow-up can't handle it
 
-    # 1. Check template engine for context-dependent follow-ups first.
-    # This catches "tell me more about that", "write an essay about that",
-    # "explain that" — queries that only make sense with prior context.
-    # Generic templates (no context_role) are handled later per-intent,
-    # so they don't override knowledge base or Wikipedia lookups.
-    # IMPORTANT: Only use the template early if context was actually
-    # available (not via fallback), otherwise the fallback filler text
-    # can override real factual answers.
-    ctx = get_context_topic()
-    tmpl_result = match_template(q_clean, context=ctx)
-    # Only use the early template path for genuinely context-dependent queries
-    # (e.g. "tell me more about that", "write an essay about it") where the
-    # query uses a pronoun/demonstrative instead of naming a new topic.
-    # Standalone queries like "what is the capital of france" should go
-    # through intent routing so KB/Wikipedia can answer first.
+    # 1. Resolve context-dependent references BEFORE template matching, so
+    #    "how does it work exactly?" becomes "how does solar panels work
+    #    exactly?" instead of being hijacked by a generic "how does it work"
+    #    template. Standalone queries like "what is the capital of france"
+    #    go through intent routing so KB/Wikipedia can answer first.
     current_topic = _resolve_topic(q_clean, conversation_history)
     # If a context-dependent query was resolved to a different topic,
     # rewrite the query to include the resolved topic for better KB/Wikipedia matching
@@ -2541,7 +2597,30 @@ def process_query(query, use_cos=True):
                          or current_topic is None
                          or current_topic.lower() in ('that', 'it', 'this', 'them', 'those'))
     if is_contextual_ref and current_topic and current_topic.lower() not in ('that', 'it', 'this', q_clean.lower()):
-        q_clean = f"{q_clean} ({current_topic})"
+        # Prefer substituting the resolved topic for the referential pronoun
+        # so the rewritten query is a self-contained question: "how is it
+        # different from blues" -> "how is jazz different from blues" (which
+        # then hits multi-point composition). Fall back to appending the
+        # topic in parentheses when there is no pronoun to replace.
+        _subbed = re.sub(r'\b(?:it|this|that|they|them)\b', current_topic, q_clean, count=1)
+        if _subbed != q_clean:
+            q_clean = _subbed
+        else:
+            q_clean = f"{q_clean} ({current_topic})"
+
+    # 2. Check template engine for context-dependent follow-ups.
+    #    This catches "tell me more about that", "write an essay about that",
+    #    "explain that" — queries that only make sense with prior context.
+    #    Generic templates (no context_role) are handled later per-intent,
+    #    so they don't override knowledge base or Wikipedia lookups.
+    #    IMPORTANT: Only use the template early if context was actually
+    #    available (not via fallback), otherwise the fallback filler text
+    #    can override real factual answers.
+    ctx = get_context_topic()
+    tmpl_result = match_template(q_clean, context=ctx)
+    # Only use the early template path for genuinely context-dependent queries
+    # (e.g. "tell me more about that", "write an essay about it") where the
+    # query uses a pronoun/demonstrative instead of naming a new topic.
     # Skip template for "tell me more about X" where X is a specific named entity
     # (e.g. "Miles Davis") — these should be handled by the factual handler
     # which can search Wikipedia for the named entity.
@@ -2635,7 +2714,6 @@ def process_query(query, use_cos=True):
         'problem solving',
         'here\'s a structured approach',
         'refers to the process',
-        'the process of ',
         'here is a step-by-step',
         'checklist and a step-by-step timeline',
         'tracking progress',
@@ -3311,8 +3389,9 @@ def _compose_multi_entity_answer(category, location):
         if not found:
             return None
 
-    # Truncate only after filtering (keep the composed answer manageable)
-    found = found[:5]
+    # Truncate only after filtering (keep the composed answer manageable, but
+    # "list all the planets" should still list all 8 planets).
+    found = found[:8]
 
     # Pluralize the category name for the intro ("cats", "big cats", "teas")
     intro_cat = _pluralize_category(category)
@@ -3366,11 +3445,30 @@ _MULTI_POINT_PATTERNS = [
         re.IGNORECASE),
     # "what is the relationship between X and Y" / "how are X and Y related"
     re.compile(
-        r'^(?:what\s+(?:is\s+)?the\s+relationship\s+between|how\s+are)\s+(?P<topic1>.+?)\s+and\s+(?P<topic2>[a-z\s-]+?)(?:\s+related)?$',
+        r'^what\s+(?:is\s+)?the\s+relationship\s+between\s+(?P<topic1>.+?)\s+and\s+(?P<topic2>[a-z\s-]+?)$',
+        re.IGNORECASE),
+    re.compile(
+        r'^how\s+are\s+(?P<topic1>.+?)\s+and\s+(?P<topic2>[a-z\s-]+?)\s+related$',
         re.IGNORECASE),
     # "what's the relationship between X and Y" (apostrophe form)
     re.compile(
         r"^what'?s\s+the\s+relationship\s+between\s+(?P<topic1>.+?)\s+and\s+(?P<topic2>[a-z\s-]+?)$",
+        re.IGNORECASE),
+    # "how is X different from Y" / "how does X differ from Y" / "how is X unlike Y"
+    re.compile(
+        r'^how\s+(?:is|are)\s+(?P<topic1>.+?)\s+different\s+from\s+(?P<topic2>[a-z\s-]+?)$',
+        re.IGNORECASE),
+    re.compile(
+        r'^how\s+do(?:es)?\s+(?P<topic1>.+?)\s+differ\s+from\s+(?P<topic2>[a-z\s-]+?)$',
+        re.IGNORECASE),
+    # "is X bigger than Y" / "are X faster than Y"
+    re.compile(
+        r'^(?:is|are)\s+(?P<topic1>.+?)\s+(?:bigger|smaller|larger|faster|slower|taller|shorter|heavier|lighter|hotter|colder|older|younger|farther|further|more\s+expensive|more\s+popular|more\s+common|better|worse)\s+than\s+(?P<topic2>[a-z\s-]+?)$',
+        re.IGNORECASE),
+    # "how do X and Y differ" / "are X and Y the same" /
+    # "how are X and Y different/similar" / "what do X and Y have in common"
+    re.compile(
+        r'^(?:how\s+(?:do|does|are|is)\s+|are\s+|what\s+(?:do|does)\s+)(?P<topic1>.+?)\s+and\s+(?P<topic2>[a-z\s-]+?)\s+(?:differ|different|similar|the\s+same|have\s+in\s+common)$',
         re.IGNORECASE),
 ]
 
@@ -3417,28 +3515,25 @@ def _compose_multi_point_answer(topic1, topic2, original_query=None):
     # "existentialism" inside "compare stoicism and existentialism") must not
     # count as curated, or they'd hijack the composed comparison.
     if original_query:
-        from cos.knowledge import get_all_knowledge
+        from cos.knowledge import find_best_match as _find_best_match
         q = original_query.strip().lower()
-        best_answer = None
-        best_len = 0
-        for pattern, answer in get_all_knowledge() or []:
-            try:
-                m = pattern.search(q)
-            except Exception:
-                continue
-            if m and len(m.group(0)) > best_len:
-                best_len = len(m.group(0))
-                best_answer = answer
+        best_len, best_answer = _find_best_match(q)
         if best_answer and best_len >= max(25, int(len(q) * 0.6)):
             return best_answer
 
     def _retrieve(topic):
+        topic = re.sub(r'^(?:a|an|the)\s+', '', topic.strip())
         answer = knowledge_lookup(topic)
         if answer and len(answer) > 40:
             return answer
         # Short topics may hit the lookup's min-length filter
         if len(topic) < 5:
             answer = knowledge_lookup(f"what is {topic}")
+            if answer and len(answer) > 40:
+                return answer
+        # Plural topics often have singular-keyed entries ("lions" -> "lion")
+        if topic.endswith('s') and not topic.endswith('ss'):
+            answer = knowledge_lookup(topic[:-1])
             if answer and len(answer) > 40:
                 return answer
         wiki, _ = _search_wikipedia(topic)
@@ -3545,6 +3640,18 @@ def _handle_factual(query, use_cos):
     kb_answer = knowledge_lookup(search_query)
     if kb_answer and len(kb_answer) > 15:
         return _make_conversational(kb_answer)
+
+    # Context-rewritten queries carry the resolved topic in parentheses:
+    # "who were the key pioneers? (jazz)". If the rewritten query matched
+    # nothing, retrieve content for the parenthesized topic directly so the
+    # follow-up resolves to the discussed subject instead of a generic
+    # keyword match (e.g. "American pioneers").
+    _paren_match = re.search(r'\(([a-z0-9][a-z0-9\s-]{1,40})\)\s*$', q)
+    if _paren_match:
+        _paren_topic = _paren_match.group(1).strip()
+        _paren_content = _retrieve_multi_content(_paren_topic, max_sources=2)
+        if _paren_content:
+            return _make_conversational(_paren_content)
 
     # Try intent-aware aliases FIRST (before _retrieve_multi_content which
     # may return wrong Wikipedia articles via bad topic extraction)
@@ -3727,9 +3834,15 @@ def _handle_factual(query, use_cos):
             if content:
                 return _make_conversational(content)
 
-        # Partial alias matching: try each alias key as substring of topic
+        # Partial alias matching: try each alias key as substring of topic.
+        # Word-boundary matching only — without it, "cat" matches
+        # "ethical" (e-thi-cat-l) and sends "what is a cat" to the AI
+        # ethics article.
+        _topic_lower = topic.lower()
         for alias_key, alias_val in _TOPIC_ALIASES_OLD.items():
-            if alias_key in topic.lower() or topic.lower() in alias_key:
+            _key_re = re.compile(r'\b' + re.escape(alias_key) + r'\b')
+            _topic_re = re.compile(r'\b' + re.escape(_topic_lower) + r'\b')
+            if _key_re.search(_topic_lower) or _topic_re.search(alias_key):
                 best_content = _search_wikipedia_rich(alias_val)
                 if best_content and best_content[0]:
                     return _make_conversational(best_content[0])

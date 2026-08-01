@@ -1,0 +1,57 @@
+[
+  {
+    "q": ["why does ice float", "ice floats", "does ice float", "why does ice float in water"],
+    "a": "Ice floats because solid water is less dense than liquid water — one of the rare cases where a solid is lighter than its liquid form. As water cools below 4 degrees Celsius, its molecules arrange into a hexagonal crystal lattice (the structure of ice) that holds them farther apart than in the liquid state, so ice is about 9% less dense than liquid water. This unusual behavior comes from hydrogen bonding between water molecules. Because ice floats, lakes freeze from the top down, insulating the water below so fish and other aquatic life survive the winter. If ice sank, lakes would freeze solid from the bottom and most freshwater life would die.",
+    "categories": ["science", "physics"]
+  },
+  {
+    "q": ["how tall is mount everest", "mount everest height", "how high is mount everest", "what is the height of mount everest"],
+    "a": "Mount Everest, the world's highest mountain, stands 8,848.86 meters (29,031.7 feet) above sea level, as officially re-measured in 2020 by China and Nepal. It sits in the Himalayas on the border of Nepal and Tibet (China), and its Tibetan name is Chomolungma ('Mother Goddess of the World'), its Nepali name Sagarmatha. The summit was first reached by Sir Edmund Hillary of New Zealand and Tenzing Norgay, a Sherpa of Nepal, on 29 May 1953. The mountain grows about 4 millimeters per year as the Indian plate continues to push into Asia, and its summit is the highest point on Earth when measured from sea level, though Mauna Kea in Hawaii is taller when measured from its base.",
+    "categories": ["geography", "mountain"]
+  },
+  {
+    "q": ["why did the soviet union collapse", "why did the ussr collapse", "soviet union fall", "what caused the fall of the soviet union"],
+    "a": "The Soviet Union collapsed in December 1991 after decades of economic stagnation, political stagnation, and mounting nationalist pressures. The centrally planned economy was inefficient and increasingly unable to deliver consumer goods, and the 1980s oil price drop starved the state of revenue. Mikhail Gorbachev's reforms — perestroika (economic restructuring) and glasnost (openness) — aimed to revive the system but instead unleashed pent-up criticism and demands for change. Nationalist movements in the Baltic states, Ukraine, and the Caucasus grew, a failed hard-line coup in August 1991 fatally weakened Gorbachev, and on 25 December 1991 he resigned as the Soviet Union was formally dissolved into 15 independent republics, with Boris Yeltsin leading Russia. The collapse ended the Cold War and the Communist Party's 74-year monopoly on power.",
+    "categories": ["history", "country"]
+  },
+  {
+    "q": ["what causes earthquakes", "why do earthquakes happen", "how do earthquakes happen", "why do earthquakes occur"],
+    "a": "Earthquakes are caused by the sudden release of energy when blocks of Earth's crust move past each other. The crust is broken into tectonic plates that move slowly; where their edges catch (stick) due to friction, stress builds up for decades to centuries. When the stress exceeds the strength of the rock, the fault slips suddenly, releasing energy as seismic waves that shake the ground. Most earthquakes occur along plate boundaries — subduction zones, transform faults like the San Andreas, and mid-ocean ridges — but some happen deep inside plates. The magnitude scale (Richter/Moment Magnitude) is logarithmic: each whole number is about 32 times more energy. The largest recorded earthquake, the 1960 Chile quake, measured 9.5, and a major earthquake can trigger tsunamis, landslides, and aftershocks.",
+    "categories": ["geology", "science"]
+  },
+  {
+    "q": ["what causes the seasons", "why do we have seasons", "why are there seasons", "why do seasons change"],
+    "a": "The seasons are caused by Earth's axial tilt of about 23.5 degrees, not by the distance to the Sun (which varies only 3% during the year). As Earth orbits the Sun, the tilt keeps one hemisphere pointed toward the Sun for part of the year and away for the opposite half. When the Northern Hemisphere tilts toward the Sun (around June), it receives more direct sunlight and longer days — summer; six months later it tilts away — winter. The Southern Hemisphere experiences the opposite seasons at the same time. The tropics, which are always nearly facing the Sun, have little seasonal temperature variation, while the poles have extreme swings. Without the tilt, we would have no seasons at all, and the tilt also explains the midnight sun and polar night.",
+    "categories": ["astronomy", "science"]
+  },
+  {
+    "q": ["what came after the roman empire", "what came after the roman empire fell", "what followed the roman empire", "what replaced the roman empire"],
+    "a": "After the fall of the Western Roman Empire in 476 CE, western Europe fragmented into a patchwork of Germanic kingdoms — the Ostrogoths in Italy, the Visigoths in Spain, the Franks in Gaul, and the Anglo-Saxons in Britain — beginning the Early Middle Ages. The Eastern Roman Empire, known as the Byzantine Empire with its capital at Constantinople, survived for another thousand years until 1453, preserving Roman law, Greek learning, and Christianity. The Catholic Church, centered in Rome, became the great unifying institution of the West, and in 800 CE Charlemagne was crowned 'Emperor of the Romans', founding the Carolingian Empire. This succession of Rome's legacy — Byzantine, Papal, and Frankish — shaped the medieval world that followed.",
+    "categories": ["history"]
+  },
+  {
+    "q": ["who wrote romeo and juliet", "romeo and juliet author", "who authored romeo and juliet"],
+    "a": "Romeo and Juliet was written by William Shakespeare (1564-1616), the English playwright and poet, around 1595-1596, early in his career. The play, set in Verona, Italy, tells of two young lovers from feuding families whose secret romance ends in tragedy. Shakespeare adapted the story from Arthur Brooke's 1562 narrative poem The Tragical History of Romeus and Juliet, which itself drew on earlier Italian tales by Matteo Bandello and Luigi da Porto — da Porto's 1530 novella first gave the lovers the names Romeo and Giulietta. Shakespeare's version is the most famous, turning the tale into the archetypal tragedy of forbidden love, and it remains one of his most performed plays.",
+    "categories": ["literature", "play"]
+  },
+  {
+    "q": ["what is dna", "dna", "dna explained", "what does dna stand for", "dna structure", "what is deoxyribonucleic acid"],
+    "a": "DNA (deoxyribonucleic acid) is the molecule that carries the genetic instructions for the development, functioning, growth, and reproduction of all known living organisms and many viruses. It is a double helix of two strands wound around each other, each strand a chain of nucleotides composed of a sugar (deoxyribose), a phosphate group, and one of four bases: adenine (A), thymine (T), guanine (G), and cytosine (C). The strands pair by hydrogen bonds — A always pairs with T, and G with C — and the sequence of these bases along the strands encodes genes. DNA is packaged into chromosomes in the cell nucleus, and its 3-billion-base-pair human genome contains roughly 20,000-25,000 genes. The double-helix structure was discovered in 1953 by James Watson and Francis Crick, using X-ray data from Rosalind Franklin. DNA replicates before cell division, and errors in its sequence (mutations) drive evolution and disease.",
+    "categories": ["biology", "science"]
+  },
+  {
+    "q": ["why is it called the pacific ocean", "pacific ocean", "what is the pacific ocean", "why is the pacific ocean called pacific"],
+    "a": "The Pacific Ocean is the largest and deepest of Earth's five oceanic divisions, covering about a third of the planet's surface — roughly 165 million square kilometers — and containing more water than all the other oceans combined. It stretches from the Arctic in the north to Antarctica in the south, bordered by Asia and Australia on the west and the Americas on the east. The name comes from the explorer Ferdinand Magellan, who in 1520 sailed through the treacherous strait later named for him and then into the vast, calm waters beyond; he called it 'Mar Pacifico', meaning 'peaceful sea', because of its unusually tranquil weather during his crossing. The name stuck despite the ocean's violent storms and the deadly 'Ring of Fire' of earthquakes and volcanoes around its rim. The deepest point on Earth, the Mariana Trench's Challenger Deep, lies nearly 11,000 meters below its surface.",
+    "categories": ["geography", "ocean"]
+  },
+  {
+    "q": ["what is jazz", "jazz", "jazz music", "tell me about jazz", "jazz history"],
+    "a": "Jazz is a music genre that originated in the African-American communities of New Orleans, Louisiana, in the late 19th and early 20th centuries, blending African rhythms, blues, ragtime, and European harmony. Its defining features are swing rhythm, improvisation, blue notes, and call-and-response. Jazz evolved through many styles: New Orleans jazz, big band swing of the 1930s, bebop (Charlie Parker, Dizzy Gillespie) of the 1940s, cool jazz (Miles Davis), hard bop, modal jazz (Miles Davis's Kind of Blue), free jazz (Ornette Coleman), and jazz fusion. The key pioneers of jazz include Louis Armstrong, Duke Ellington, Thelonious Monk, John Coltrane, and Ella Fitzgerald. Jazz influenced virtually all later popular music — rock, R&B, hip hop — and the Smithsonian and the US Congress declared April Jazz Appreciation Month.",
+    "categories": ["music genre", "music"]
+  },
+  {
+    "q": ["blues", "blues music", "what is the blues", "what is blues"],
+    "a": "The blues is a music genre and form created by African Americans in the Deep South in the late 19th century, rooted in work songs, spirituals, and field hollers. Its defining form is the 12-bar blues with a call-and-response pattern and blue notes — the flattened third, fifth, and seventh degrees that give the music its melancholy, expressive character. The lyrics typically follow an AAB structure, with the first line repeated. Early blues was acoustic and rural (Robert Johnson, Charley Patton), then urban and electric after World War II (Muddy Waters, B.B. King in Chicago). The blues is the root of jazz, rock and roll, R&B, and soul, and its influence is so pervasive that blues licks and forms appear throughout popular music. W.C. Handy, the 'Father of the Blues', published the first blues song in 1912.",
+    "categories": ["music genre", "music"]
+  }
+]

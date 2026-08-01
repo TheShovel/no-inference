@@ -8,7 +8,7 @@
       "what was the renaissance",
       "renaissance history"
     ],
-    "a": "Information about renaissance."
+    "a": "The Renaissance was a cultural and intellectual rebirth that swept Europe from roughly the 14th to the 17th century, beginning in Italy and spreading northward. It marked a revival of classical Greek and Roman learning, art, and values, with a new emphasis on humanism — the belief in human potential and achievement rather than solely religious devotion. The period produced masterpieces by Leonardo da Vinci, Michelangelo, Raphael, and Botticelli, and advances in science by figures like Galileo and Copernicus. The invention of the printing press by Gutenberg around 1440 turbocharged the spread of ideas. The Renaissance is generally divided into the Early Renaissance (1400-1490), the High Renaissance (1490-1527, the era of Leonardo and Michelangelo), and the Northern Renaissance, which blended Italian ideas with local traditions in Germany, the Netherlands, France, and England — the era of Shakespeare, Erasmus, and Dürer."
   },
   {
     "q": [
@@ -18,7 +18,7 @@
       "what caused the industrial revolution",
       "industrial revolution history"
     ],
-    "a": "Information about industrial revolution."
+    "a": "The Industrial Revolution was the period of rapid industrialization that transformed economies from agrarian and handcraft-based to machine-based manufacturing, beginning in Britain in the late 18th century (roughly 1760-1840) and spreading to Europe, America, and the world. Its causes included abundant coal and iron, colonial trade wealth, agricultural improvements that freed labor, a growing population, and key inventions like the steam engine (improved by James Watt), the spinning jenny, the power loom, and the railroad. It created the factory system, massive urbanization, and the modern working class, but also harsh labor conditions, pollution, and child labor. The First Industrial Revolution centered on coal, steam, and textiles; the Second (late 19th century) added electricity, steel, chemicals, and the assembly line; and the Third and Fourth brought computing, automation, and digital technology."
   },
   {
     "q": [
@@ -29,7 +29,7 @@
       "world war 1 explained",
       "world war 1 history"
     ],
-    "a": "Information about world war 1."
+    "a": "World War I (1914-1918) was a global conflict fought primarily between the Allied Powers (Britain, France, Russia, later Italy and the US) and the Central Powers (Germany, Austria-Hungary, the Ottoman Empire, Bulgaria). The immediate trigger was the assassination of Archduke Franz Ferdinand of Austria-Hungary in June 1914, which activated a web of alliances; underlying causes included militarism, imperialism, nationalism, and the complex system of treaties. The war introduced trench warfare, machine guns, tanks, poison gas, and aircraft, and caused an estimated 16-17 million deaths. The US entered in 1917, and the war ended with the Armistice of November 11, 1918. Its aftermath — the punitive Treaty of Versailles, the collapse of empires, and the Spanish flu pandemic — set the stage for World War II."
   },
   {
     "q": [
@@ -38,9 +38,11 @@
       "ww2",
       "what caused world war 2",
       "world war 2 explained",
-      "world war 2 history"
+      "world war 2 history",
+      "in what year did world war 2 end",
+      "when did world war 2 end"
     ],
-    "a": "Information about world war 2."
+    "a": "World War II (1939-1945) was the deadliest conflict in human history, killing an estimated 70-85 million people. It was fought between the Allies (led by the US, UK, Soviet Union, and China) and the Axis powers (Nazi Germany, Fascist Italy, and Imperial Japan). It began on September 1, 1939, when Germany invaded Poland, and ended in Europe on May 8, 1945 (VE Day) with Germany's surrender, and in Asia on September 2, 1945 (VJ Day) after the atomic bombings of Hiroshima and Nagasaki. The war featured the Holocaust (the genocide of 6 million Jews and millions of others), total war economies, and technologies including radar, jet aircraft, and the atomic bomb. It led to the founding of the United Nations, the start of the Cold War, and the decolonization of much of the world."
   },
   {
     "q": [
@@ -50,6 +52,6 @@
       "cold war history",
       "what was the cold war"
     ],
-    "a": "Information about cold war."
+    "a": "The Cold War was the decades-long geopolitical tension (roughly 1947-1991) between the United States and its capitalist allies and the Soviet Union and its communist bloc, fought through proxy wars, espionage, propaganda, and an arms race rather than direct military confrontation between the superpowers. Key events included the Berlin Blockade and Airlift, the Korean War, the Cuban Missile Crisis (1962, the closest the world came to nuclear war), the Vietnam War, the space race, and the construction of the Berlin Wall. The doctrine of mutually assured destruction (MAD) kept both sides from using their nuclear arsenals. The Cold War ended with the fall of the Berlin Wall in 1989 and the dissolution of the Soviet Union in 1991, leaving the US as the sole superpower."
   }
 ]

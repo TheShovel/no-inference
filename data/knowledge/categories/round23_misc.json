@@ -1,0 +1,464 @@
+[
+  {
+    "name": "Mercury",
+    "q": ["mercury", "planet mercury", "what is mercury"],
+    "a": "Mercury is the smallest planet in the Solar System and the closest to the Sun, orbiting at an average distance of about 58 million kilometers. It has no atmosphere to speak of, so its surface temperatures swing from 430 degrees Celsius in sunlight to -180 degrees Celsius at night. A year on Mercury lasts just 88 Earth days. Its cratered, gray surface resembles the Moon, and NASA's MESSENGER probe mapped it in 2011-2015.",
+    "categories": ["planet", "planets"]
+  },
+  {
+    "name": "Venus",
+    "q": ["venus", "planet venus", "what is venus"],
+    "a": "Venus is the second planet from the Sun and the hottest planet in the Solar System, with a surface temperature around 465 degrees Celsius — hot enough to melt lead. A thick atmosphere of carbon dioxide with clouds of sulfuric acid traps heat in a runaway greenhouse effect, and surface pressure is 92 times Earth's. Venus spins backward and has the slowest rotation of any planet; a day is longer than its year. It is often called Earth's twin because of its similar size, and it shines as the brightest natural object in our night sky after the Moon.",
+    "categories": ["planet", "planets"]
+  },
+  {
+    "name": "Mars",
+    "q": ["mars", "planet mars", "what is mars"],
+    "a": "Mars is the fourth planet from the Sun and the second smallest, about half Earth's diameter. Its reddish color comes from iron oxide (rust) in its soil, earning it the nickname the Red Planet. Mars has the largest volcano in the Solar System, Olympus Mons (21 km high), and a canyon system, Valles Marineris, that would stretch across the United States. Its thin atmosphere is mostly carbon dioxide, and its polar caps hold water ice and frozen carbon dioxide. Mars is the most explored planet beyond Earth, with rovers including Curiosity and Perseverance actively searching for signs of ancient life.",
+    "categories": ["planet", "planets"]
+  },
+  {
+    "name": "Jupiter",
+    "q": ["jupiter", "planet jupiter", "what is jupiter"],
+    "a": "Jupiter is the largest planet in the Solar System — more than twice as massive as all the other planets combined — a gas giant with no solid surface, composed mostly of hydrogen and helium. Its famous Great Red Spot is a storm larger than Earth that has raged for centuries. Jupiter has at least 95 known moons, including Ganymede, the largest moon in the Solar System, and the volcanic Io. Its powerful magnetic field is 20,000 times stronger than Earth's, and its gravity shields the inner planets from many comets and asteroids.",
+    "categories": ["planet", "planets"]
+  },
+  {
+    "name": "Saturn",
+    "q": ["saturn", "planet saturn", "what is saturn"],
+    "a": "Saturn is the sixth planet from the Sun and the second largest, a gas giant famous for its spectacular ring system — billions of particles of ice and rock spanning 280,000 kilometers yet averaging only about 10 meters thick. Like Jupiter, Saturn is mostly hydrogen and helium and has no solid surface; its density is so low it would float in water. It has 146 known moons, including Titan, which has a thick atmosphere and lakes of liquid methane. Saturn's winds are among the fastest in the Solar System, reaching 1,800 km/h at the equator.",
+    "categories": ["planet", "planets"]
+  },
+  {
+    "name": "Uranus",
+    "q": ["uranus", "planet uranus", "what is uranus"],
+    "a": "Uranus is the seventh planet from the Sun, an ice giant composed largely of water, methane, and ammonia ices. Its most distinctive feature is its extreme axial tilt of 98 degrees, so it essentially rolls around the Sun on its side, likely the result of a massive ancient collision. Methane in its atmosphere absorbs red light, giving Uranus its pale blue-green color. It is the coldest planet in the Solar System, with minimum temperatures around -224 degrees Celsius, and it has 28 known moons and a faint ring system. Uranus was the first planet discovered with a telescope, by William Herschel in 1781.",
+    "categories": ["planet", "planets"]
+  },
+  {
+    "name": "Neptune",
+    "q": ["neptune", "planet neptune", "what is neptune"],
+    "a": "Neptune is the eighth and most distant planet from the Sun, an ice giant discovered by mathematical prediction in 1846 before it was observed. It has the strongest winds in the Solar System, reaching 2,100 km/h, and appears deep blue because of methane in its atmosphere. Neptune has 16 known moons, including Triton, which orbits backward and is likely a captured Kuiper Belt object. It was visited by only one spacecraft, Voyager 2, in 1989, and takes about 165 Earth years to complete one orbit of the Sun.",
+    "categories": ["planet", "planets"]
+  },
+  {
+    "name": "Asia",
+    "q": ["asia", "continent asia", "what is asia"],
+    "a": "Asia is the largest and most populous continent, covering about 30% of Earth's land area and home to roughly 60% of humanity — over 4.7 billion people. It contains the world's highest point, Mount Everest (8,849 meters), and the lowest, the Dead Sea shore. Asia is the cradle of many of the world's great civilizations and religions, including Hinduism, Buddhism, Islam, and Confucianism, and its major economies include China, India, Japan, and South Korea. It spans climates from Siberian tundra to tropical rainforests and deserts.",
+    "categories": ["continent", "continents"]
+  },
+  {
+    "name": "Africa",
+    "q": ["africa", "continent africa", "what is africa"],
+    "a": "Africa is the second-largest and second-most-populous continent, covering about 20% of Earth's land area with over 1.4 billion people in 54 countries. It is home to the Sahara, the world's largest hot desert, the Nile, the longest river, and some of the world's richest biodiversity, including the 'Big Five' game animals. Africa is widely regarded as the birthplace of humanity — the earliest Homo sapiens fossils, around 300,000 years old, were found in Morocco and Ethiopia. Nigeria, Ethiopia, and Egypt are its most populous countries, and its economies are growing rapidly, driven by resources, agriculture, and technology.",
+    "categories": ["continent", "continents"]
+  },
+  {
+    "name": "Europe",
+    "q": ["europe", "continent europe", "what is europe"],
+    "a": "Europe is the second-smallest continent by area but historically among the most influential, bounded by the Arctic Ocean, the Atlantic, and the Mediterranean. It has about 745 million people in roughly 44 countries, from the EU's single market to microstates like Monaco and Vatican City. Europe is the birthplace of classical Greece and Rome, the Renaissance, the Enlightenment, and the Industrial Revolution, and it is home to some of the world's most visited cities — Paris, London, Rome, and Barcelona. The EU, with 27 member states and the euro as a shared currency for many, is the world's largest trading bloc.",
+    "categories": ["continent", "continents"]
+  },
+  {
+    "name": "North America",
+    "q": ["north america", "continent north america", "what is north america"],
+    "a": "North America is the third-largest continent, spanning from the Arctic to Central America and the Caribbean, with about 600 million people in 23 countries. The United States, Canada, and Mexico are its largest countries, and it contains diverse geography from the Rocky Mountains and the Great Lakes to the Amazon-adjacent rainforests of Central America. North America is home to indigenous peoples with cultures spanning over 15,000 years, and it became a global economic powerhouse after European colonization, with the US as the world's largest economy. Its highest peak is Denali (6,190 meters) in Alaska.",
+    "categories": ["continent", "continents"]
+  },
+  {
+    "name": "South America",
+    "q": ["south america", "continent south america", "what is south america"],
+    "a": "South America is the fourth-largest continent, containing 12 countries plus French Guiana, with about 440 million people. Brazil, the largest country, covers nearly half the continent and hosts most of the Amazon rainforest, the world's largest tropical forest and the most biodiverse ecosystem on Earth. The continent is home to the Andes, the longest mountain range, Angel Falls, the world's tallest waterfall, and the Atacama Desert, the driest. South America's cultures blend Indigenous, African, and European heritage, and its Portuguese and Spanish-speaking nations share the carnival, tango, and a deep football tradition.",
+    "categories": ["continent", "continents"]
+  },
+  {
+    "name": "Australia",
+    "q": ["australia", "oceania", "continent australia", "what is australia"],
+    "a": "Australia (with Oceania) is the smallest continent and the only one occupied by a single country, though the region includes New Zealand, Papua New Guinea, and thousands of Pacific islands. Australia is famous for its unique wildlife, evolved in isolation for millions of years: kangaroos, koalas, platypuses, and over 800 species of birds. It is the flattest and driest inhabited continent, with most of its 26 million people living on the coasts. The Great Barrier Reef, off its northeast coast, is the world's largest coral reef system, and its Indigenous peoples have lived there for over 60,000 years.",
+    "categories": ["continent", "continents"]
+  },
+  {
+    "name": "Antarctica",
+    "q": ["antarctica", "continent antarctica", "what is antarctica"],
+    "a": "Antarctica is the southernmost continent, the coldest, windiest, driest, and iciest place on Earth. It holds about 90% of the world's ice and 70% of its fresh water in an ice sheet up to 4.8 kilometers thick; if it all melted, sea levels would rise about 60 meters. Antarctica has no permanent human population, only research stations run by scientists from many nations under the Antarctic Treaty of 1959, which reserves the continent for peaceful scientific use. It hosts penguins, seals, and whales, and its ice cores preserve a 800,000-year climate record. The ozone hole was discovered over Antarctica in 1985.",
+    "categories": ["continent", "continents"]
+  },
+  {
+    "name": "Oak",
+    "q": ["oak", "oak tree", "what is an oak tree"],
+    "a": "The oak is a hardwood tree of the genus Quercus, with about 500 species in the Northern Hemisphere, some living over 1,000 years. Oaks produce acorns, the seeds eaten by squirrels, jays, and wild boar, and their strong, durable wood is used for furniture, flooring, and — famously — the barrels that age wine and whiskey. Mature oaks support hundreds of insect species and are keystone trees in many ecosystems. In many cultures the oak symbolizes strength and endurance, and it is the national tree of England, Germany, and the United States.",
+    "categories": ["tree", "trees", "plant"]
+  },
+  {
+    "name": "Pine",
+    "q": ["pine", "pine tree", "what is a pine tree"],
+    "a": "Pines are evergreen coniferous trees of the genus Pinus, with about 120 species in the Northern Hemisphere, from cold boreal forests to warm Mediterranean slopes. They bear needles in clusters and woody cones containing seeds, and their resin is the source of turpentine and rosin. Pines grow fast and straight, making them the most commercially important timber trees in the world, used for lumber, paper pulp, and furniture. Scots pine and radiata pine are among the most widely planted species, and pines are iconic symbols of winter, used as Christmas trees.",
+    "categories": ["tree", "trees", "plant"]
+  },
+  {
+    "name": "Maple",
+    "q": ["maple", "maple tree", "what is a maple tree"],
+    "a": "Maples are trees and shrubs of the genus Acer, with about 130 species in the Northern Hemisphere, famous for their spectacular autumn colors — the sugar maple and red maple turn brilliant orange and red. The sugar maple is the source of maple syrup: in late winter, sap is tapped from the trunk and boiled down, with about 40 liters of sap yielding one liter of syrup. Maple wood is hard, pale, and fine-grained, prized for furniture, flooring, and musical instruments including violin backs. The maple leaf is the national symbol of Canada, appearing on its flag.",
+    "categories": ["tree", "trees", "plant"]
+  },
+  {
+    "name": "Birch",
+    "q": ["birch", "birch tree", "what is a birch tree"],
+    "a": "Birches are slender, fast-growing trees of the genus Betula, with about 60 species across the Northern Hemisphere, easily recognized by their striking white, peeling bark. The bark's papery layers are waterproof and were used by indigenous peoples for canoes, containers, and writing material. Birch wood is pale and strong, used for furniture, plywood, and veneer, and birch sap can be tapped for a sweet drink or syrup. Birches are pioneer species that quickly colonize disturbed land, and their catkins (flower clusters) appear in early spring.",
+    "categories": ["tree", "trees", "plant"]
+  },
+  {
+    "name": "Willow",
+    "q": ["willow", "willow tree", "what is a willow tree"],
+    "a": "Willows are trees and shrubs of the genus Salix, with about 400 species found mostly in wet places across the Northern Hemisphere, often growing beside rivers and lakes. The famous weeping willow drapes its branches to the ground and is native to China, widely planted as an ornamental. Willow wood is soft, flexible, and rot-resistant, traditionally used for cricket bats, baskets, and furniture. The bark of willows contains salicin, the natural precursor of aspirin — Hippocrates prescribed willow bark tea for pain 2,400 years ago. Willows root easily from cuttings and grow extremely fast.",
+    "categories": ["tree", "trees", "plant"]
+  },
+  {
+    "name": "Palm",
+    "q": ["palm", "palm tree", "what is a palm tree"],
+    "a": "Palms are a family (Arecaceae) of about 2,600 species of tropical and subtropical plants, from the coconut palm of Pacific beaches to the date palm of desert oases. Despite their tree-like appearance, palms are not true trees — they are monocots with a single unbranched trunk and a crown of large, fan or feather-shaped leaves. Palms are among the most economically important plants: coconuts, dates, and palm oil (from the oil palm of West Africa) are global commodities, and palm fronds symbolize victory and peace from ancient times. The tallest palms reach 60 meters.",
+    "categories": ["tree", "trees", "plant"]
+  },
+  {
+    "name": "Cheddar",
+    "q": ["cheddar", "cheddar cheese", "what is cheddar cheese"],
+    "a": "Cheddar is a hard, cow's-milk cheese that originated in the English village of Cheddar in Somerset, now made worldwide. Its distinctive sharp, nutty flavor develops during aging, which ranges from a few months (mild) to several years (extra sharp). The defining step of cheddar-making is 'cheddaring' — stacking and turning slabs of curd to expel whey — followed by milling, salting, and pressing. Traditional farmhouse cheddar is wrapped in cloth and aged in caves; the sharpest, crystallized cheddars develop crunchy calcium lactate crystals. It is the most popular cheese in the United Kingdom and a staple of mac and cheese and cheeseburgers.",
+    "categories": ["cheese", "food", "dairy"]
+  },
+  {
+    "name": "Mozzarella",
+    "q": ["mozzarella", "mozzarella cheese", "what is mozzarella"],
+    "a": "Mozzarella is a fresh, soft Italian cheese traditionally made from water buffalo milk (mozzarella di bufala) or cow's milk. It is a pasta filata ('stretched curd') cheese: the curds are heated and kneaded until they form the elastic, stringy texture that makes mozzarella the classic pizza and caprese salad cheese. Fresh mozzarella is white, mild, and milky, sold in brine balls; low-moisture mozzarella, the pizza workhorse, is firmer and melts into long, stretchy strands. It is best eaten within days of production.",
+    "categories": ["cheese", "food", "dairy"]
+  },
+  {
+    "name": "Swiss",
+    "q": ["swiss cheese", "what is swiss cheese"],
+    "a": "Swiss cheese refers to the firm, pale yellow cheeses with large holes ('eyes') that originated in Switzerland, most famously Emmental. The holes are formed by carbon dioxide gas released by Propionibacterium bacteria during a warm fermentation stage of aging — the same bacteria also give Swiss cheese its sweet, nutty flavor. Emmental is made from cow's milk and aged 2-6 months, and true Swiss cheese is a protected designation. The American version is typically milder. Swiss cheeses melt beautifully, making them favorites for fondue and sandwiches.",
+    "categories": ["cheese", "food", "dairy"]
+  },
+  {
+    "name": "Brie",
+    "q": ["brie", "brie cheese", "what is brie"],
+    "a": "Brie is a soft, creamy French cheese named for the Brie region near Paris, made from cow's milk and famous for its bloomy white rind of Penicillium candidum mold. Beneath the edible rind, the interior (pâtes) is buttery and velvety, ripening from the outside in; a perfectly ripe brie is runny at room temperature. Brie was historically a cheese of the French nobility — it was reportedly served at the Congress of Vienna in 1814, where it was crowned 'king of cheeses'. It pairs with crusty bread, fruit, and Champagne. True Brie de Meaux and Brie de Melun have protected status.",
+    "categories": ["cheese", "food", "dairy"]
+  },
+  {
+    "name": "Parmesan",
+    "q": ["parmesan", "parmigiano reggiano", "what is parmesan"],
+    "a": "Parmesan is a hard, granular Italian cheese; the original, Parmigiano-Reggiano, is made only in the Emilia-Romagna region from cow's milk and aged 12-36 months, with each wheel weighing about 40 kilograms. Its intense, savory, nutty flavor and crystalline crunch come from long aging, during which proteins break down into amino acids that form crunchy crystals. Parmesan is grated over pasta and risotto, shaved over salads, and eaten in chunks with balsamic vinegar. By law, true Parmigiano-Reggiano is aged a minimum of 12 months, and each wheel is inspected and fire-branded before leaving the region.",
+    "categories": ["cheese", "food", "dairy"]
+  },
+  {
+    "name": "Gouda",
+    "q": ["gouda", "gouda cheese", "what is gouda"],
+    "a": "Gouda is a creamy, buttery Dutch cheese named for the city of Gouda, where it has been traded for centuries. Made from cow's milk, it ranges from young (aged 4 weeks, mild and soft) to very old (aged 18+ months, dark, firm, and intensely caramelized with crunchy crystals). Young gouda has a smooth, mild, nutty flavor, while aged gouda develops deep toffee and butterscotch notes. Traditional farmhouse gouda is made from raw milk and coated in a natural rind; the iconic red wax coating is typical of commercial wheels. It is one of the world's most produced cheeses.",
+    "categories": ["cheese", "food", "dairy"]
+  },
+  {
+    "name": "Espresso",
+    "q": ["espresso", "what is espresso"],
+    "a": "Espresso is a concentrated coffee beverage made by forcing hot water at about 9 bars of pressure through finely ground coffee beans, producing a 25-30 ml shot topped with a golden crema of emulsified oils. It originated in early 20th-century Italy, and the word means 'expressed' or 'pressed out'. A proper espresso has a balance of sweetness, acidity, and bitterness, and it is the base for drinks like cappuccino, latte, americano, and macchiato. Espresso roast is typically darker, but the shot quality depends less on roast than on grind, dose, and extraction time — about 25-30 seconds.",
+    "categories": ["coffee", "beverage", "drink"]
+  },
+  {
+    "name": "Latte",
+    "q": ["latte", "cafe latte", "what is a latte"],
+    "a": "A latte (caffè latte, 'milk coffee' in Italian) is an espresso-based drink made with a shot or two of espresso and steamed milk, topped with a thin layer of milk foam. Typically served in a large glass or cup, a standard latte uses a ratio of about one part espresso to two parts steamed milk, making it smooth, creamy, and milder than a cappuccino, which has equal parts espresso, steamed milk, and foam. Lattes are often flavored with syrups (vanilla, caramel, hazelnut) and decorated with latte art. The latte rose to global popularity in the 1980s-90s through specialty coffee chains.",
+    "categories": ["coffee", "beverage", "drink"]
+  },
+  {
+    "name": "Cappuccino",
+    "q": ["cappuccino", "what is a cappuccino"],
+    "a": "A cappuccino is an Italian coffee drink made of equal parts espresso, steamed milk, and milk foam, traditionally served in a small cup with a thick, dry foam cap that holds its shape. The name comes from the Capuchin friars, whose brown robes the drink's color was said to resemble. The ideal cappuccino has distinct layers — dark espresso below, white steamed milk, and a creamy foam crown — and is typically drunk in the morning in Italy. Baristas often finish it with a dusting of cocoa or cinnamon, and modern versions add latte art.",
+    "categories": ["coffee", "beverage", "drink"]
+  },
+  {
+    "name": "Americano",
+    "q": ["americano", "what is an americano"],
+    "a": "An americano is a coffee drink made by adding hot water to espresso, producing a strength similar to drip coffee with the flavor profile of espresso. The name is said to date to World War II, when American soldiers in Italy diluted espresso with hot water to approximate the coffee they were used to at home. A long black, popular in Australia and New Zealand, inverts the order — espresso poured over hot water — which preserves more of the crema. Americanos are black and smooth, typically served without milk, though milk and sugar are common additions.",
+    "categories": ["coffee", "beverage", "drink"]
+  },
+  {
+    "name": "Mocha",
+    "q": ["mocha", "cafe mocha", "what is a mocha"],
+    "a": "A mocha (caffè mocha) is a chocolate-flavored espresso drink: espresso combined with chocolate syrup or melted chocolate, steamed milk, and often a layer of foam or whipped cream. It is essentially a latte with chocolate, named after the Yemeni port of Mocha, a historic center of coffee trade whose beans were once known for a chocolatey flavor note. Mochas are sweeter and richer than lattes or cappuccinos, and variations include white mochas made with white chocolate. The drink balances espresso bitterness with cocoa sweetness, making it a popular gateway into coffee.",
+    "categories": ["coffee", "beverage", "drink"]
+  },
+  {
+    "name": "Spaghetti",
+    "q": ["spaghetti", "what is spaghetti"],
+    "a": "Spaghetti is a long, thin, cylindrical pasta of Italian origin, typically served with tomato sauces, olive oil and garlic (aglio e olio), or carbonara. The word means 'little strings' in Italian. Spaghetti is usually made from durum wheat semolina and is sold dry, cooking in 8-12 minutes; fresh spaghetti is rarer. Its long shape is traditionally twirled around a fork, and it is the base of classic dishes like spaghetti bolognese (ragù) and spaghetti alle vongole (clams). The maximum diameter for official 'spaghetti' is about 2 mm, with thicker versions called spaghettoni.",
+    "categories": ["pasta", "food"]
+  },
+  {
+    "name": "Penne",
+    "q": ["penne", "what is penne"],
+    "a": "Penne is a short, cylindrical pasta cut diagonally at both ends, its name meaning 'quills' or 'pens' in Italian — the diagonal cuts resemble the nib of a fountain pen. The ridged version, penne rigate, is the most common because the ridges and hollow center hold sauce well. Penne pairs with chunky sauces, baked dishes like penne alla vodka and pasta al forno, and salads, because its sturdy shape survives tossing and baking. It is one of the most popular pasta shapes worldwide.",
+    "categories": ["pasta", "food"]
+  },
+  {
+    "name": "Fusilli",
+    "q": ["fusilli", "what is fusilli"],
+    "a": "Fusilli is a spiral-shaped pasta, its name from the Italian 'fuso', spindle. The corkscrew ridges are formed by extruding the dough through grooved dies and twisting it, and they trap sauce in every groove, making fusilli ideal for thick ragùs, pesto, and pasta salads. A tightly spiraled version is called rotini in the US. The twisted shape also gives fusilli a pleasant, chewy bite. It originated in southern Italy, particularly Campania and Puglia.",
+    "categories": ["pasta", "food"]
+  },
+  {
+    "name": "Farfalle",
+    "q": ["farfalle", "bow tie pasta", "what is farfalle"],
+    "a": "Farfalle, meaning 'butterflies' in Italian, is a bow-tie-shaped pasta made by pinching the center of a small rectangular piece of dough. The pinched center stays firm while the wings stay tender, giving it a pleasant contrast of textures. Farfalle is believed to have originated in Lombardy and Emilia-Romagna in the 16th century. It works well with light cream sauces, vegetables, and salads, and it is a favorite in cold pasta salads because the shape holds up and looks festive. Colored versions are made with spinach or tomato dough.",
+    "categories": ["pasta", "food"]
+  },
+  {
+    "name": "Rigatoni",
+    "q": ["rigatoni", "what is rigatoni"],
+    "a": "Rigatoni is a large, short, ridged tube pasta, its name meaning 'ridged' or 'large grooved' in Italian. The wide channel and ridges capture chunky meat sauces, cheese, and vegetables, and the large hollow makes it excellent for baked dishes like rigatoni al forno. Rigatoni is typically cut straight across (unlike penne's diagonal cut) and is one of the sturdiest tube shapes, holding up well in hearty Roman dishes such as rigatoni all'amatriciana and rigatoni alla carbonara.",
+    "categories": ["pasta", "food"]
+  },
+  {
+    "name": "Linguine",
+    "q": ["linguine", "what is linguine"],
+    "a": "Linguine is a flat, narrow pasta, wider than spaghetti but narrower than fettuccine, its name meaning 'little tongues' in Italian. It originated in the Liguria region of Italy, the home of pesto, with which it is classically paired. Linguine's slightly flattened shape lets it carry delicate, oil- or seafood-based sauces, such as linguine alle vongole (clams), shrimp scampi, and pesto. It is traditionally served with a fork and spoon in Italy, though purists use only a fork.",
+    "categories": ["pasta", "food"]
+  },
+  {
+    "name": "Ballet",
+    "q": ["ballet", "what is ballet"],
+    "a": "Ballet is a theatrical dance form characterized by precise, highly formalized movements, turnout of the legs, pointe work, and an emphasis on grace and technique. It originated in the Italian Renaissance courts of the 15th century and was refined in France under Louis XIV, who founded the Académie Royale de Danse in 1661 — most ballet vocabulary is still French (plié, jeté, pirouette). Classical ballets like Swan Lake, The Nutcracker, and Giselle tell stories through dance set to orchestral scores. Professional ballerinas train from childhood, and the art form continues to evolve with contemporary styles.",
+    "categories": ["dance", "art"]
+  },
+  {
+    "name": "Salsa",
+    "q": ["salsa dance", "what is salsa dancing"],
+    "a": "Salsa is a lively, energetic partner dance that originated in the Caribbean, particularly Cuba and Puerto Rico, in the mid-20th century, blending Afro-Cuban rhythms with jazz and Latin American styles. It is danced to salsa music, built on a repeating eight-count pattern with the basic step taking six beats, leaving two beats for breaks and turns. Salsa has many styles — Cuban (casino), New York (on2), LA (on1), and Colombian — differing in timing and footwork. It is danced socially worldwide at clubs, festivals, and congresses, prized for its fast footwork, hip motion, and partner connection.",
+    "categories": ["dance", "music"]
+  },
+  {
+    "name": "Tango",
+    "q": ["tango", "what is tango"],
+    "a": "Tango is a passionate partner dance that originated in the working-class neighborhoods of Buenos Aires, Argentina, and Montevideo, Uruguay, in the late 19th century, born of immigrant and Afro-Argentine cultures. It is danced to tango music, characterized by the bandoneon's haunting sound, and emphasizes improvisation, embrace, and a dramatic, staccato walk. Argentine tango is the original, improvised form; ballroom tango is a standardized competition version. Tango was declared Intangible Cultural Heritage of Humanity by UNESCO in 2009, and milongas (social dance gatherings) keep it alive worldwide.",
+    "categories": ["dance", "music"]
+  },
+  {
+    "name": "Hip Hop",
+    "q": ["hip hop dance", "what is hip hop dance"],
+    "a": "Hip hop dance emerged in the 1970s in the Bronx, New York, alongside hip hop music, rooted in African American and Latino street culture. Its original forms include breaking (breakdancing), with its acrobatic freezes and spins; popping, based on sharp muscle contractions; and locking, with its fast, comic gestures. Hip hop dance is freestyle at its core — improvised to the beat — but has also been choreographed for stage and film, and it has evolved into dozens of sub-styles like krump, house, and waacking. It is now a global dance culture with competitions and battles worldwide.",
+    "categories": ["dance", "music"]
+  },
+  {
+    "name": "Flamenco",
+    "q": ["flamenco", "what is flamenco"],
+    "a": "Flamenco is an expressive art form from Andalusia, southern Spain, combining song (cante), guitar (toque), dance (baile), and rhythmic hand-clapping (palmas). It developed from the cultural fusion of Andalusian, Roma (Gitano), Moorish, and Jewish traditions from the 18th century onward. Flamenco dance is known for its intense emotion, percussive footwork (zapateado), swirling dresses, and proud posture; the cante ranges from deep, anguished songs (cante jondo) to light festive ones. UNESCO declared flamenco Intangible Cultural Heritage of Humanity in 2010, and it remains a living art performed in tablaos and festivals across Spain.",
+    "categories": ["dance", "music"]
+  },
+  {
+    "name": "Breakdancing",
+    "q": ["breakdancing", "breaking", "what is breakdancing"],
+    "a": "Breakdancing (breaking) is an athletic, acrobatic street dance that originated among Black and Latino youth in the Bronx, New York, in the early 1970s, during the birth of hip hop. Breakdancers ('b-boys' and 'b-girls') battle in crews, combining toprock (standing footwork), downrock (floor work including the six-step), power moves (windmills, headspins, flares), and freezes (sudden poses held on hands, head, or shoulders). Breaking became a global competitive culture with its own events, and it made its Olympic debut at the Paris 2024 Games. The dance's music is the break beat, the instrumental drum section of funk and soul records looped by DJs.",
+    "categories": ["dance", "music"]
+  },
+  {
+    "name": "Waltz",
+    "q": ["waltz", "what is the waltz"],
+    "a": "The waltz is a smooth, graceful ballroom dance in triple time, danced in closed position with a rising and falling motion, turning around the floor in sweeping circles. It evolved from the German-Austrian Ländler and swept Europe in the early 19th century, scandalizing conservatives with its close hold and fast turning — but its popularity was unstoppable, and composers like Johann Strauss II wrote its immortal music, including The Blue Danube. The Viennese waltz is fast (about 180 beats per minute); the slower international waltz is the standard ballroom version. The waltz remains a staple of balls, weddings, and dance competitions worldwide.",
+    "categories": ["dance", "music"]
+  },
+  {
+    "name": "Football",
+    "q": ["football", "soccer", "what is football"],
+    "a": "Football (soccer) is the world's most popular sport, played by over 250 million players in more than 200 countries. Two teams of 11 players try to score by kicking a ball into the opponent's goal, with only the goalkeeper allowed to use hands. The modern rules were codified in England in 1863, and the sport is governed globally by FIFA, whose World Cup, held every four years, is the most-watched sporting event on Earth, drawing over 5 billion viewers. The biggest clubs — Real Madrid, Barcelona, Manchester United — compete in continental leagues and the UEFA Champions League, and Brazil has won the World Cup a record five times.",
+    "categories": ["sport", "sports"]
+  },
+  {
+    "name": "Basketball",
+    "q": ["basketball", "what is basketball"],
+    "a": "Basketball is a fast-paced team sport invented in 1891 by Canadian physical education teacher James Naismith in Springfield, Massachusetts, who nailed peach baskets to a balcony and wrote 13 rules. Two teams of five players score by shooting a ball through a hoop 3.05 meters high, with three-pointers, free throws, and two-point baskets. The NBA is the world's premier professional league, and its stars — Michael Jordan, LeBron James, Kobe Bryant — are global icons. Basketball is played by over 400 million people worldwide, and the sport has grown hugely in Europe, Asia, and Australia.",
+    "categories": ["sport", "sports"]
+  },
+  {
+    "name": "Tennis",
+    "q": ["tennis", "what is tennis"],
+    "a": "Tennis is a racket sport played singles or doubles on a rectangular court divided by a net, with players hitting a felt-covered rubber ball over the net, scoring with a distinctive 15-30-40-game system. The modern game evolved from the French jeu de paume in the 12th century and was codified in England in 1873. The four Grand Slam tournaments — the Australian Open, French Open, Wimbledon, and US Open — are the sport's pinnacle, played on hard, clay, grass, and hard courts respectively. Wimbledon, the oldest, dates to 1877. Tennis is one of the world's most-watched individual sports, with icons like Roger Federer, Rafael Nadal, Novak Djokovic, and Serena Williams.",
+    "categories": ["sport", "sports"]
+  },
+  {
+    "name": "Swimming",
+    "q": ["swimming", "what is swimming"],
+    "a": "Swimming is the sport of propelling oneself through water using the arms and legs, and one of the oldest competitive sports — swimming races appear in records from ancient Egypt, Greece, and Japan. The four competitive strokes are freestyle (front crawl), backstroke, breaststroke, and butterfly, raced over distances from 50 meters to the 10 km marathon. Swimming has been an Olympic sport since 1896, and its modern superstars include Michael Phelps, the most decorated Olympian of all time with 23 gold medals, and Katie Ledecky. Beyond competition, swimming is a life skill, a fitness activity, and therapy, practiced by hundreds of millions worldwide.",
+    "categories": ["sport", "sports"]
+  },
+  {
+    "name": "Athletics",
+    "q": ["athletics", "track and field", "what is athletics"],
+    "a": "Athletics (track and field) is the oldest competitive sport, comprising running, jumping, and throwing events. Track events range from the 100-meter sprint — the 'blue riband' event decided in under 10 seconds — to the 42.195 km marathon, inspired by the legendary run of Pheidippides from Marathon to Athens in 490 BCE. Field events include the high jump, long jump, pole vault, shot put, discus, javelin, and hammer. Athletics has been at the center of every modern Olympics since 1896, and its records — like Usain Bolt's 9.58 seconds for 100 meters — are among the most celebrated in all of sport.",
+    "categories": ["sport", "sports"]
+  },
+  {
+    "name": "Cricket",
+    "q": ["cricket", "what is cricket"],
+    "a": "Cricket is a bat-and-ball sport played between two teams of 11 on an oval field, centered on a 22-yard pitch with two sets of wickets. The batting team tries to score runs by hitting the ball and running between the wickets or striking it to the boundary; the bowling and fielding team tries to dismiss the batters. Modern cricket has three formats: Test matches (up to 5 days), one-day internationals (50 overs per side), and Twenty20 (20 overs, about 3 hours). Cricket is the second-most-popular sport in the world, a passion of over 2.5 billion fans, especially in India, Pakistan, Australia, and England, and its World Cup is one of sport's biggest events.",
+    "categories": ["sport", "sports"]
+  },
+  {
+    "name": "Rugby",
+    "q": ["rugby", "what is rugby"],
+    "a": "Rugby is a full-contact team sport that legend says began in 1823 when William Webb Ellis, a pupil at Rugby School in England, picked up the ball and ran with it during a football game. Two teams of 15 (rugby union) or 13 (rugby league) advance an oval ball up the field by running with it, passing it backward, or kicking it, scoring tries (5 points), conversions, penalties, and drop goals. Rugby is famous for its physicality, scrums, lineouts, and rucks, and for its spirit of fair play. The Rugby World Cup, held every four years, is the sport's pinnacle, and rugby sevens, a fast seven-a-side version, is an Olympic sport since 2016.",
+    "categories": ["sport", "sports"]
+  },
+  {
+    "name": "Cumulus",
+    "q": ["cumulus", "cumulus clouds", "what are cumulus clouds"],
+    "a": "Cumulus clouds are the puffy, cotton-ball clouds with flat bases that form on sunny days, their name from the Latin for 'heap' or 'pile'. They form when warm air rises, cools, and its water vapor condenses; the flat base marks the level where condensation begins. Fair-weather cumulus are low clouds that usually mean good weather, but when they grow tall into cumulus congestus or cumulonimbus, they produce showers, thunderstorms, and hail. Cumulus clouds are common in spring and summer, and their distinctive cauliflower tops are a sign of vigorous rising air.",
+    "categories": ["cloud", "clouds", "weather"]
+  },
+  {
+    "name": "Stratus",
+    "q": ["stratus", "stratus clouds", "what are stratus clouds"],
+    "a": "Stratus clouds are low, uniform gray sheets of cloud that cover the sky like a blanket, the name from the Latin for 'layer' or 'spread out'. They form when moist air cools gently over a large area without strong vertical motion, often producing drizzle or light snow. When stratus forms at ground level, it is fog. Stratus clouds diffuse sunlight, creating dull, overcast days, and they are common in coastal areas and ahead of warm fronts. They are typically featureless, though they may show weak breaks (stratus fractus) as they move.",
+    "categories": ["cloud", "clouds", "weather"]
+  },
+  {
+    "name": "Cirrus",
+    "q": ["cirrus", "cirrus clouds", "what are cirrus clouds"],
+    "a": "Cirrus clouds are thin, wispy, feather-like clouds found at altitudes above 6,000 meters, made almost entirely of ice crystals — the name means 'curl of hair' in Latin. Their hooked, streaked shapes ('mare's tails') form when high-altitude winds spread the frozen crystals. Cirrus clouds usually signal fair weather, but increasing cirrus ahead of a warm front often indicates rain within 24-48 hours. Because they are so high and cold, cirrus can produce halos around the sun and moon. They cover about 25-30% of the globe at any time.",
+    "categories": ["cloud", "clouds", "weather"]
+  },
+  {
+    "name": "Cumulonimbus",
+    "q": ["cumulonimbus", "cumulonimbus clouds", "what are cumulonimbus clouds"],
+    "a": "Cumulonimbus are the towering thunderstorm clouds that can rise from near the ground to over 18 kilometers, punching through the tropopause with a flattened, anvil-shaped top. They are the most powerful clouds, producing heavy rain, lightning and thunder, hail, strong winds, tornadoes, and downbursts. A cumulonimbus forms when rising air is so unstable that cumulus clouds grow explosively; the mature storm has separate updrafts and downdrafts, and its top spreads into an anvil as the updraft hits the stable stratosphere. A fully developed storm can release the energy of a small nuclear weapon per second.",
+    "categories": ["cloud", "clouds", "weather"]
+  },
+  {
+    "name": "Tornado",
+    "q": ["tornado", "tornadoes", "what is a tornado"],
+    "a": "A tornado is a violently rotating column of air that extends from a thunderstorm to the ground, the most violent atmospheric phenomenon on Earth, with winds that can exceed 480 km/h. Tornadoes form in supercell thunderstorms when wind shear creates a rotating updraft (a mesocyclone), which can tighten into a funnel. They occur on every continent except Antarctica, but the United States experiences by far the most — over 1,000 per year, concentrated in 'Tornado Alley'. They are rated on the Enhanced Fujita scale from EF0 (weak) to EF5 (devastating). Most tornadoes last only minutes, but the deadliest, the 1925 Tri-State tornado, killed 695 people.",
+    "categories": ["storm", "storms", "weather"]
+  },
+  {
+    "name": "Hurricane",
+    "q": ["hurricane", "hurricanes", "typhoon", "what is a hurricane"],
+    "a": "A hurricane is a powerful tropical cyclone with sustained winds of at least 119 km/h (74 mph), forming over warm ocean water of at least 26.5 degrees Celsius. It is called a hurricane in the Atlantic and eastern Pacific, a typhoon in the western Pacific, and a cyclone in the Indian Ocean. Hurricanes have an organized eye, eyewall, and rainbands, and they weaken over land or cool water. The most intense Atlantic hurricane on record, Hurricane Allen (1980), reached winds of 305 km/h. Climate change is warming oceans and making hurricanes more intense and wetter. Hurricanes cause billions in damage annually, and Katrina (2005) killed nearly 1,400 people.",
+    "categories": ["storm", "storms", "weather"]
+  },
+  {
+    "name": "Blizzard",
+    "q": ["blizzard", "blizzards", "what is a blizzard"],
+    "a": "A blizzard is a severe winter storm defined by sustained winds of at least 56 km/h (35 mph) and heavy blowing snow reducing visibility to under 400 meters for at least three hours. The defining feature is wind-blown snow, not snowfall amount — blizzards can occur even without much new snow if strong winds lift existing snow. Blizzards are most common in the northern Great Plains, the upper Midwest, and the northeastern United States, and in Siberia and Antarctica. The 1888 Great Blizzard of the northeastern US killed over 400 people, and the 1993 'Storm of the Century' affected 26 states. Blizzards cause whiteout conditions, drifts, and dangerous wind chill.",
+    "categories": ["storm", "storms", "weather"]
+  },
+  {
+    "name": "Thunderstorm",
+    "q": ["thunderstorm", "thunderstorms", "what is a thunderstorm"],
+    "a": "A thunderstorm is a storm with lightning and thunder, produced by cumulonimbus clouds. It forms when warm, moist air rises rapidly in an unstable atmosphere, typically on hot afternoons or along cold fronts. Lightning is a giant electric spark — up to 30,000 degrees Celsius, five times hotter than the sun's surface — and thunder is the sound of the rapidly expanding air around the bolt; counting the seconds between flash and bang gives the distance in miles (about 5 seconds per mile). An estimated 16 million thunderstorms occur worldwide each year, with the most in central Africa, Florida, and Southeast Asia. Severe thunderstorms can produce hail, damaging winds, and tornadoes.",
+    "categories": ["storm", "storms", "weather"]
+  },
+  {
+    "name": "Katana",
+    "q": ["katana", "what is a katana"],
+    "a": "The katana is the curved, single-edged Japanese samurai sword, characterized by its 60-80 cm blade, distinctive circular or squared guard (tsuba), and wrapped handle. Its legendary sharpness comes from traditional forging: layers of high- and low-carbon steel are folded and hammered up to a dozen times, then differentially hardened so the edge is extremely hard while the spine stays flexible. The katana was worn edge-up, drawn in a single fluid motion, and was the soul of the samurai class from the 14th century. Modern katana are still made by licensed smiths using these ancient methods.",
+    "categories": ["sword", "swords", "weapon"]
+  },
+  {
+    "name": "Longsword",
+    "q": ["longsword", "what is a longsword"],
+    "a": "The longsword is a European two-handed sword of the 13th-16th centuries, with a double-edged blade of about 90-110 cm and a cruciform hilt with a leather-wrapped grip and counterweight pommel. Designed to be wielded with both hands, it could be used for powerful cuts, thrusts, and, held by the blade (half-swording), for armored combat. It was the weapon of the knight and of the medieval fencing schools recorded in the fighting manuals (Fechtbücher) of masters like Johannes Liechtenauer, which survive today. The longsword is the core weapon of modern historical European martial arts (HEMA).",
+    "categories": ["sword", "swords", "weapon"]
+  },
+  {
+    "name": "Rapier",
+    "q": ["rapier", "what is a rapier"],
+    "a": "The rapier is a slender, sharply pointed sword developed in Renaissance Spain and Italy in the 16th century, with a long blade of 100-130 cm and an elaborate hilt with rings and a cup or shell guard. It was primarily a thrusting weapon, designed for civilian dueling and self-defense rather than the battlefield, and it was carried as part of gentlemanly dress. Rapier fencing was a science of its own, documented in detailed manuals like Ridolfo Capo Ferro's 1610 treatise, emphasizing precise footwork and the straight thrust. The rapier is the ancestor of the modern sport fencing foil and épée.",
+    "categories": ["sword", "swords", "weapon"]
+  },
+  {
+    "name": "Saber",
+    "q": ["saber", "sabre", "what is a saber"],
+    "a": "The saber is a curved, single-edged cavalry sword designed for slashing from horseback, with origins in Central Asian and Middle Eastern horsemen and adopted across Europe from the 17th century. Its curved blade and forward-weighted balance make it ideal for fast, sweeping cuts, while still allowing thrusts. The saber became the iconic weapon of hussars and cavalry regiments, and its light version (the sabre) is one of the three Olympic fencing weapons, where points are scored with the edge as well as the point. The word comes from the Hungarian 'szablya'.",
+    "categories": ["sword", "swords", "weapon"]
+  },
+  {
+    "name": "Tyrannosaurus Rex",
+    "q": ["tyrannosaurus rex", "t rex", "t-rex", "what is a tyrannosaurus rex"],
+    "a": "Tyrannosaurus rex was one of the largest land predators ever, living in western North America at the end of the Cretaceous period, about 68-66 million years ago. It stood up to 4 meters at the hip, reached 12-13 meters in length, and weighed 7-9 tonnes, with bone-crushing jaws and serrated teeth up to 30 centimeters long. T. rex had famously tiny arms, but its bite force — about 8,000 pounds — was the strongest of any land animal. For decades paleontologists debated whether it was a hunter or scavenger; the current consensus is that it was primarily an apex predator. Its name means 'tyrant lizard king'.",
+    "categories": ["dinosaur", "dinosaurs"]
+  },
+  {
+    "name": "Velociraptor",
+    "q": ["velociraptor", "what is a velociraptor"],
+    "a": "Velociraptor was a small, feathered dromaeosaurid dinosaur of the late Cretaceous (about 75-71 million years ago) in what is now Mongolia and China. Despite its movie fame, it was only about the size of a turkey — 2 meters long and 15 kg — not the human-sized predator of Jurassic Park. It had a sickle-shaped killing claw on each foot, a long stiff tail for balance, and was covered in feathers, with fossil evidence showing it was a swift, intelligent hunter of small prey. Its name means 'swift thief' or 'swift seizer'.",
+    "categories": ["dinosaur", "dinosaurs"]
+  },
+  {
+    "name": "Triceratops",
+    "q": ["triceratops", "what is a triceratops"],
+    "a": "Triceratops was a large ceratopsian dinosaur of the late Cretaceous (about 68-66 million years ago) in western North America, famous for its three horns — two long brow horns and a shorter nose horn — and a large bony frill at the back of its skull. It grew to about 9 meters long and weighed 6-12 tonnes, feeding on low vegetation with its powerful beak and rows of shearing teeth. The frill and horns were likely used for display and defense against predators like T. rex, and fossil evidence shows triceratops skulls with T. rex bite marks — and healed wounds — proof the two giants fought. Its name means 'three-horned face'.",
+    "categories": ["dinosaur", "dinosaurs"]
+  },
+  {
+    "name": "Stegosaurus",
+    "q": ["stegosaurus", "what is a stegosaurus"],
+    "a": "Stegosaurus was a herbivorous dinosaur of the late Jurassic (about 155-150 million years ago), famous for the double row of large bony plates along its back and the four spikes on its tail (the thagomizer). It reached about 9 meters long and weighed up to 5 tonnes, with a tiny head and a brain the size of a walnut — once used to argue dinosaurs were unintelligent. The plates were probably for display and temperature regulation rather than defense; the tail spikes could deliver a damaging swing at predators like Allosaurus. Its name means 'roofed lizard', because its plates were originally thought to lie flat like roof tiles.",
+    "categories": ["dinosaur", "dinosaurs"]
+  },
+  {
+    "name": "Brachiosaurus",
+    "q": ["brachiosaurus", "what is a brachiosaurus"],
+    "a": "Brachiosaurus was a gigantic sauropod dinosaur of the late Jurassic (about 154-150 million years ago) in North America and Africa, distinguished by its long neck held upright like a giraffe and its front legs longer than its hind legs. It reached about 25 meters long and 12 meters tall and weighed 30-50 tonnes, feeding high in the treetops that other dinosaurs couldn't reach. It had a small head with spoon-shaped teeth for cropping plants and, like other sauropods, likely swallowed stones (gastroliths) to help grind food in its stomach. Its name means 'arm lizard', referring to its long forelimbs. The similar Giraffatitan, long considered the same animal, is now treated as a separate genus.",
+    "categories": ["dinosaur", "dinosaurs"]
+  },
+  {
+    "name": "Pterodactyl",
+    "q": ["pterodactyl", "pterodactylus", "what is a pterodactyl"],
+    "a": "Pterodactyl (properly Pterodactylus) was a small pterosaur — a flying reptile, not a dinosaur — of the late Jurassic (about 150 million years ago) in Europe. It had a wingspan of about 1 meter, a long fourth finger supporting a leathery wing membrane, and a long beak with teeth. Pterosaurs were the first vertebrates to achieve powered flight, and their relatives include the giant Quetzalcoatlus, the largest flying animal ever, with a 10-11 meter wingspan. The name 'pterodactyl' comes from the Greek for 'wing finger'. Popular usage often applies the name to all pterosaurs, but Pterodactylus itself was small and hunted insects and small animals.",
+    "categories": ["dinosaur", "dinosaurs"]
+  },
+  {
+    "name": "Western Dragon",
+    "q": ["western dragon", "european dragon", "what is a dragon"],
+    "a": "The Western (European) dragon is a legendary reptilian creature of folklore and myth, typically depicted as a large, winged, fire-breathing reptile with four legs, scales, and a barbed tail, often hoarding treasure and guarding it fiercely. In European legend, dragons symbolize chaos, greed, and evil — Saint George slays a dragon, Beowulf fights a dragon, and the Norse tale of Fafnir turns a cursed man into one. They appear in the myths of Greece (Ladon), Babylon (Tiamat), and medieval bestiaries. In modern fantasy, from The Hobbit's Smaug to Game of Thrones' dragons, they have been reimagined as intelligent, sometimes noble beings. Some scholars suggest dragon legends were inspired by discoveries of dinosaur fossils.",
+    "categories": ["dragon", "dragons", "mythical creature"]
+  },
+  {
+    "name": "Eastern Dragon",
+    "q": ["eastern dragon", "chinese dragon", "what is a chinese dragon"],
+    "a": "The Chinese (Eastern) dragon, long, is a benevolent, wise serpentine creature of East Asian mythology, in sharp contrast to the Western dragon. It is depicted as a long, scaled body with four legs, antler-like horns, whiskers, and no wings, able to fly by magical means. The dragon is a symbol of power, strength, and good fortune — the emperor was called the Son of the Dragon, and the dragon is one of the 12 signs of the Chinese zodiac. Dragons control water and weather, bringing rain for crops. Chinese dragons appear in festivals (the dragon dance), art, and architecture, and the 2024 Year of the Dragon is one of the most auspicious in the cycle.",
+    "categories": ["dragon", "dragons", "mythical creature"]
+  },
+  {
+    "name": "Wyvern",
+    "q": ["wyvern", "what is a wyvern"],
+    "a": "A wyvern is a dragon-like legendary creature with two legs (instead of four) and a pair of wings, usually with a barbed, venomous tail. In medieval heraldry, the wyvern — symbolizing war, envy, and pestilence — was distinguished from the four-legged dragon, and it became a common emblem on coats of arms, especially in Wales and Wessex. In modern fantasy and role-playing games, wyverns are typically portrayed as smaller, less intelligent cousins of dragons, aggressive and territorial. The word comes from the Old French 'wivre', from Latin 'vipera', meaning viper, reflecting its venomous associations.",
+    "categories": ["dragon", "dragons", "mythical creature"]
+  },
+  {
+    "name": "Unicorn",
+    "q": ["unicorn", "what is a unicorn"],
+    "a": "The unicorn is a mythical creature depicted as a horse with a single spiraling horn on its forehead. It appears in ancient Indian and Mesopotamian art and in classical Greek accounts, where Ctesias described a wild Indian ass with a multi-colored horn. In medieval European bestiaries and tapestries, the unicorn symbolized purity and grace, and it was said that only a virgin could tame it — the unicorn became a Christian symbol of Christ and the Virgin Mary. The narwhal's tusk was once sold as unicorn horn, and in Scotland the unicorn is the national animal, chained on the royal coat of arms. In modern culture, 'unicorn' also means something rare and magical, and in business, a startup valued over $1 billion.",
+    "categories": ["mythical creature", "mythology"]
+  },
+  {
+    "name": "Pegasus",
+    "q": ["pegasus", "what is pegasus"],
+    "a": "Pegasus is the winged horse of Greek mythology, born from the blood of the Gorgon Medusa when the hero Perseus beheaded her, and the brother of the warrior Chrysaor. He was tamed by the hero Bellerophon with a golden bridle and carried him in his battle against the Chimera; in some versions, Bellerophon's prideful attempt to fly to Olympus caused Zeus to throw him off, and Pegasus ascended to the heavens, where he became a constellation. Pegasus was sacred to the Muses: his hoof strike on Mount Helicon created the spring Hippocrene, the source of poetic inspiration. He remains an enduring symbol of imagination and freedom.",
+    "categories": ["mythical creature", "mythology"]
+  },
+  {
+    "name": "Phoenix",
+    "q": ["phoenix", "what is a phoenix"],
+    "a": "The phoenix is a mythical bird of ancient Greek, Egyptian, and Persian legend that dies in a burst of flames and is reborn from its own ashes, symbolizing renewal, resurrection, and immortality. In Egyptian mythology it was the Bennu bird, associated with the sun god Ra and the cycle of the Nile; the Greek historian Herodotus described it as a crimson-and-gold bird living 500 years, building its own funeral pyre, and rising anew. Early Christians adopted the phoenix as a symbol of Christ's resurrection. It appears in the Harry Potter series as Fawkes, in the slogan 'rise from the ashes', and in the name of Phoenix, Arizona, a city that rose on the site of ancient Hohokam settlements.",
+    "categories": ["mythical creature", "mythology"]
+  },
+  {
+    "name": "Griffin",
+    "q": ["griffin", "griffon", "gryphon", "what is a griffin"],
+    "a": "The griffin (griffon, gryphon) is a legendary creature with the body, tail, and hind legs of a lion and the head, wings, and talons of an eagle — the union of the king of beasts and the king of birds, symbolizing power, vigilance, and divine guardianship. It appears in ancient Mesopotamian and Egyptian art, in Greek myth as the guardian of the gold of the Hyperboreans, and in medieval heraldry and bestiaries, where griffins guarded treasure and sacred places. The griffin decorates the coats of arms of many European cities, and modern fantasy casts it as a noble, intelligent creature of the skies.",
+    "categories": ["mythical creature", "mythology"]
+  },
+  {
+    "name": "Hydra",
+    "q": ["hydra", "what is the hydra"],
+    "a": "The Hydra was a monstrous serpent in Greek mythology with many heads — usually nine — that lived in the swamps of Lerna. Each time a head was cut off, two more grew back, making it nearly impossible to kill; Heracles defeated it as the second of his Twelve Labors, with his nephew Iolaus searing each neck with fire to prevent regrowth, and he dipped his arrows in the Hydra's venomous blood, making their wounds incurable. The creature was guarded by a giant crab sent by Hera. Today the 'hydra effect' describes problems that multiply when you attack them, and the name also belongs to a freshwater animal, the hydrozoan Hydra, which can regenerate its body.",
+    "categories": ["mythical creature", "mythology"]
+  }
+]

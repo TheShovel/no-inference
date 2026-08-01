@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Labrador Retriever",
+    "q": ["labrador retriever", "labrador", "what is a labrador retriever"],
+    "a": "The Labrador Retriever is a British-bred gundog, developed from Canadian fishing dogs of Newfoundland. It is the most popular dog breed in the United States, prized for its friendly, outgoing temperament, intelligence, and strong retrieving instinct. Labs are medium-to-large dogs weighing 25-36 kg, with a short water-resistant double coat in black, yellow, or chocolate. They are famously energetic, food-motivated, and excellent family dogs, and they excel as service dogs, guide dogs, and in search-and-rescue work.",
+    "categories": ["dog", "dogs", "breed", "pet"]
+  },
+  {
+    "name": "German Shepherd",
+    "q": ["german shepherd", "what is a german shepherd"],
+    "a": "The German Shepherd is a large, agile herding dog developed in Germany in the late 19th century by Max von Stephanitz. Standing up to 65 cm at the shoulder, they are intelligent, loyal, and highly trainable, making them the world's most widely used working dog: police, military, and service work. German Shepherds are known for their confident, courageous temperament and distinctive sloping back and dense double coat. They bond closely with their families and need substantial daily exercise and mental stimulation.",
+    "categories": ["dog", "dogs", "breed", "pet"]
+  },
+  {
+    "name": "Golden Retriever",
+    "q": ["golden retriever", "what is a golden retriever"],
+    "a": "The Golden Retriever is a medium-to-large gundog bred in Scotland in the 19th century to retrieve waterfowl. Renowned for its gentle, patient, and affectionate nature, it is one of the most popular family dogs in the world, excellent with children and other animals. Goldens have a dense, water-repellent golden coat and a soft mouth for carrying game. They are intelligent and eager to please, thriving as therapy, assistance, and search-and-rescue dogs, and they need plenty of exercise and grooming.",
+    "categories": ["dog", "dogs", "breed", "pet"]
+  },
+  {
+    "name": "Poodle",
+    "q": ["poodle", "what is a poodle"],
+    "a": "The Poodle is an intelligent, elegant dog breed that comes in three sizes: standard, miniature, and toy. Originating in Germany as a water retriever (its name comes from the German 'pudel', to splash), it became the national dog of France. Poodles have a distinctive curly, hypoallergenic coat that requires regular grooming and comes in many solid colors. They are among the most intelligent dog breeds, highly trainable, and excel in obedience, agility, and as companions. Despite their refined image, they are athletic and playful.",
+    "categories": ["dog", "dogs", "breed", "pet"]
+  },
+  {
+    "name": "Beagle",
+    "q": ["beagle", "what is a beagle"],
+    "a": "The Beagle is a small-to-medium hound breed developed in England for hare hunting, tracking by scent. Beagles weigh 9-16 kg and have a short, weatherproof coat, usually tricolor (black, tan, and white), with long, drooping ears and a distinctive howling bay. They are merry, curious, and sociable, but famously stubborn and scent-driven — a beagle's nose leads it everywhere. Beagles are excellent family pets and have also been used as detection dogs at airports for agricultural smuggling.",
+    "categories": ["dog", "dogs", "breed", "pet"]
+  },
+  {
+    "name": "Bulldog",
+    "q": ["bulldog", "english bulldog", "what is a bulldog"],
+    "a": "The Bulldog (English Bulldog) is a medium-sized, muscular dog with a wrinkled face, pushed-in nose, and distinctive rolling gait. Bred originally in England for bull-baiting, a cruel sport banned in 1835, the breed was later refined into a gentle companion known for its calm, courageous, and comical disposition. Bulldogs weigh 18-25 kg and are notoriously low-energy, affectionate, and good with children. Their flat faces make them prone to breathing problems and heat sensitivity, and they require careful health management.",
+    "categories": ["dog", "dogs", "breed", "pet"]
+  },
+  {
+    "name": "Bald Eagle",
+    "q": ["bald eagle", "what is a bald eagle", "eagle"],
+    "a": "The bald eagle is a large bird of prey native to North America and the national bird and symbol of the United States since 1782, appearing on the Great Seal. Adults have a white head and tail contrasting with a dark brown body, a 2-meter wingspan, and a massive yellow hooked beak. Bald eagles are opportunistic hunters and scavengers that feed mainly on fish, which they snatch from the water with their talons. They build the largest nests of any bird in North America, some weighing over a tonne. Once endangered by DDT, they have rebounded dramatically since the 1970s.",
+    "categories": ["bird", "birds", "raptor"]
+  },
+  {
+    "name": "Penguin",
+    "q": ["penguin", "penguins", "what is a penguin"],
+    "a": "Penguins are flightless seabirds of the family Spheniscidae, almost entirely confined to the Southern Hemisphere, with species ranging from the Antarctic emperor penguin to the Galapagos penguin near the equator. They are superb swimmers, using their flipper-like wings to 'fly' underwater at speeds up to 30 km/h, and their black-and-white plumage provides camouflage from predators above and below. Penguins have a thick layer of blubber and densely packed feathers for insulation, huddle together for warmth, and the emperor penguin, the largest species at up to 1.2 meters, endures Antarctic winters to incubate its egg on its feet.",
+    "categories": ["bird", "birds"]
+  },
+  {
+    "name": "Owl",
+    "q": ["owl", "owls", "what is an owl"],
+    "a": "Owls are nocturnal birds of prey of the order Strigiformes, found on every continent except Antarctica, with about 250 species. They have large, forward-facing eyes (fixed in their sockets, so they turn their heads up to 270 degrees), exceptional hearing from asymmetrically placed ear openings, and specially fringed flight feathers that make their flight nearly silent — an adaptation for ambushing prey. Most owls hunt small mammals, birds, and insects at night, and they regurgitate indigestible fur and bones as pellets. Owls have symbolized wisdom since ancient Greece, where the little owl was sacred to Athena.",
+    "categories": ["bird", "birds", "raptor"]
+  },
+  {
+    "name": "Parrot",
+    "q": ["parrot", "parrots", "what is a parrot"],
+    "a": "Parrots are intelligent, often brightly colored birds of the order Psittaciformes, with about 400 species found mostly in tropical and subtropical regions. They are characterized by strong, curved beaks, zygodactyl feet (two toes forward, two back) for grasping, and a remarkable ability to mimic human speech. The African grey parrot is among the most intelligent birds known, capable of using words with apparent understanding. Parrots are highly social, long-lived (macaws can live 50-80 years), and form strong pair bonds. Many species are threatened by habitat loss and the pet trade.",
+    "categories": ["bird", "birds"]
+  },
+  {
+    "name": "King Cobra",
+    "q": ["king cobra", "cobra", "what is a king cobra"],
+    "a": "The king cobra is the world's longest venomous snake, reaching up to 5.5 meters, and is found in forests of India and Southeast Asia. Despite its name, it belongs to its own genus, Ophiophagus, and preys primarily on other snakes, including pythons and even other cobras. When threatened, it raises the front third of its body, spreads a narrow hood, and hisses loudly. Its venom is a potent neurotoxin, and a single bite can deliver enough to kill an elephant — though it typically avoids humans and envenomates only about a third of the time. The female is the only snake that builds a nest and guards her eggs.",
+    "categories": ["snake", "snakes", "reptile"]
+  },
+  {
+    "name": "Python",
+    "q": ["python snake", "what is a python snake", "reticulated python"],
+    "a": "Pythons are non-venomous constrictor snakes found in Africa, Asia, and Australia, with the reticulated python of Southeast Asia the longest snake in the world at over 9 meters. Pythons kill prey by coiling around it and squeezing until it suffocates, then swallowing it whole, head first — their jaws unhinge and their skin stretches to accommodate meals many times the width of their head. They have heat-sensing pits along their jaws to detect warm-blooded prey in the dark, and some species, like the Burmese python, have become invasive in the Florida Everglades after being released by pet owners.",
+    "categories": ["snake", "snakes", "reptile"]
+  },
+  {
+    "name": "Viper",
+    "q": ["viper", "vipers", "what is a viper"],
+    "a": "Vipers are a family (Viperidae) of venomous snakes found on every continent except Australia and Antarctica, including adders, rattlesnakes, and bushmasters. They are distinguished by long, hinged, hollow fangs that fold against the roof of the mouth when closed and swing forward to inject venom when striking. Vipers have relatively short, heavy bodies, keeled scales, and most give birth to live young. Their venom is primarily hemotoxic, destroying tissue and blood cells, and viper bites are responsible for the majority of snakebite deaths worldwide, particularly in rural tropical regions.",
+    "categories": ["snake", "snakes", "reptile"]
+  },
+  {
+    "name": "Rattlesnake",
+    "q": ["rattlesnake", "rattlesnakes", "what is a rattlesnake"],
+    "a": "Rattlesnakes are venomous pit vipers native to the Americas, from southern Canada to Argentina, with about 36 species, most in the southwestern United States. They are named for the interlocking keratin segments at the tail tip that vibrate to produce a warning rattle at up to 50 times per second. Rattlesnakes are ambush predators of small mammals, using heat-sensing pits between eye and nostril to strike accurately in darkness. The eastern diamondback is the largest species, exceeding 2 meters. Their venom is hemotoxic, and bites can be fatal without antivenom, though they rarely strike unless threatened.",
+    "categories": ["snake", "snakes", "reptile"]
+  },
+  {
+    "name": "Blue Whale",
+    "q": ["blue whale", "what is a blue whale"],
+    "a": "The blue whale is the largest animal ever known to have lived, reaching up to 30 meters and 200 tonnes. A baleen whale of the family Balaenopteridae, it feeds almost exclusively on krill, filtering up to 4 tonnes a day through its plates of baleen. Blue whales live in all oceans, migrating between cold feeding grounds and warm breeding grounds. Their low-frequency calls can reach 188 decibels and travel hundreds of kilometers. Hunted to near extinction by whaling, with over 350,000 killed in the 20th century, they are now protected and number roughly 10,000-25,000, classified as endangered.",
+    "categories": ["whale", "whales", "mammal"]
+  },
+  {
+    "name": "Humpback Whale",
+    "q": ["humpback whale", "what is a humpback whale"],
+    "a": "The humpback whale is a large baleen whale known for its spectacular breaching, long pectoral fins (up to a third of body length), and complex songs, sung mainly by males and lasting up to 20 minutes. Humpbacks grow to about 16 meters and 30 tonnes, and they migrate up to 25,000 kilometers per year between polar feeding grounds and tropical breeding grounds. They feed by lunging through dense schools of krill and small fish, sometimes cooperating in 'bubble-net feeding' — herding prey with curtains of bubbles. Once severely depleted by whaling, humpbacks have recovered strongly and were removed from the US endangered species list in 2016.",
+    "categories": ["whale", "whales", "mammal"]
+  },
+  {
+    "name": "Orca",
+    "q": ["orca", "killer whale", "what is an orca"],
+    "a": "The orca, or killer whale, is the largest member of the dolphin family, reaching 9 meters and 6 tonnes, and is an apex predator found in every ocean. Despite the name 'killer whale', it is a toothed whale, not a baleen whale. Orcas live in tight family groups called pods led by matriarchs, and different ecotypes specialize in distinct prey and hunting techniques: resident orcas eat fish, transient orcas hunt marine mammals including seals and even other whales, and offshore orcas target sharks. They are highly intelligent, with distinct dialects, and coordinate hunts with remarkable teamwork. Orcas live 50-90 years in the wild.",
+    "categories": ["whale", "whales", "mammal"]
+  },
+  {
+    "name": "Sperm Whale",
+    "q": ["sperm whale", "what is a sperm whale"],
+    "a": "The sperm whale is the largest toothed whale, with males reaching 18 meters, and is famous for its massive square head containing the spermaceti organ, once harvested for oil. It is the deepest-diving marine mammal, descending over 2,000 meters for up to 90 minutes to hunt giant squid, which leave the distinctive circular scars on its skin. Sperm whales are found in all deep oceans and live in matrilineal pods. The white whale in Herman Melville's Moby-Dick was a sperm whale. They were hunted heavily for centuries, and while still listed as vulnerable, populations are slowly recovering.",
+    "categories": ["whale", "whales", "mammal"]
+  },
+  {
+    "name": "Salmon",
+    "q": ["salmon", "what is salmon", "salmon fish"],
+    "a": "Salmon are anadromous fish of the family Salmonidae: they hatch in freshwater rivers, migrate to the ocean to grow, and return to their natal stream to spawn, often leaping up waterfalls on the journey. The six Pacific species include sockeye, coho, and chinook; the Atlantic salmon is a separate species. Salmon are rich in omega-3 fatty acids and are a major food fish, both wild-caught and farmed. After spawning, Pacific salmon die, their bodies fertilizing the ecosystem. Salmon support entire food webs — bears, eagles, and orcas all depend on them — and their homing ability, guided by magnetic fields and smell, remains a marvel of biology.",
+    "categories": ["fish", "fishes", "animal"]
+  },
+  {
+    "name": "Clownfish",
+    "q": ["clownfish", "clown fish", "what is a clownfish"],
+    "a": "The clownfish is a small, brightly colored reef fish of the family Pomacentridae, made famous by the film Finding Nemo. Clownfish live in a symbiotic relationship with sea anemones: they are immune to the anemone's stinging tentacles, gaining protection from predators, while their presence lures prey to the anemone. All clownfish are born male, and the dominant fish of a group becomes female — if she dies, the largest male changes sex to replace her. There are about 30 species, ranging in color from orange to pink and maroon.",
+    "categories": ["fish", "fishes", "animal"]
+  },
+  {
+    "name": "Great White Shark",
+    "q": ["great white shark", "white shark", "what is a great white shark"],
+    "a": "The great white shark is the largest predatory fish in the world, reaching over 6 meters and 2 tonnes, found in coastal waters of all major oceans. It is an apex predator with multiple rows of serrated, replaceable teeth, and it hunts seals, sea lions, and large fish, often attacking from below at high speed. Great whites have specialized organs that detect the electromagnetic fields of prey and can raise their body temperature above the water. Despite their fearsome reputation, attacks on humans are rare and usually exploratory bites. They are classified as vulnerable, threatened by bycatch and finning.",
+    "categories": ["fish", "fishes", "shark", "animal"]
+  },
+  {
+    "name": "Butterfly Fish",
+    "q": ["butterfly fish", "butterflyfish", "what is a butterfly fish"],
+    "a": "Butterflyfish are small, strikingly patterned reef fish of the family Chaetodontidae, with about 130 species found in tropical oceans, especially the Indo-Pacific. Their deep, flattened bodies and bold colors — yellow, black, white, and orange — serve as camouflage and warning signals. They have tiny, brush-like mouths adapted for picking coral polyps, small crustaceans, and zooplankton, and most are diurnal, retreating to crevices at night. Butterflyfish often swim in pairs and are a favorite of reef aquarists, though they are difficult to keep in captivity.",
+    "categories": ["fish", "fishes", "animal"]
+  },
+  {
+    "name": "Ant",
+    "q": ["ant", "ants", "what is an ant"],
+    "a": "Ants are eusocial insects of the family Formicidae, related to wasps and bees, with over 13,000 described species on every continent except Antarctica. They live in colonies that can range from a few dozen to millions of individuals, organized into queens (reproductive), workers (sterile females), and, seasonally, males and new queens. Ants communicate primarily through pheromones, and some species practice agriculture — fungus-growing ants cultivate gardens, and certain species keep aphids as livestock. Their combined biomass rivals that of humans, and leaf-cutter ant colonies are among the most complex animal societies known.",
+    "categories": ["insect", "insects", "animal"]
+  },
+  {
+    "name": "Ladybug",
+    "q": ["ladybug", "ladybird", "what is a ladybug"],
+    "a": "The ladybug (ladybird beetle) is a small, rounded beetle of the family Coccinellidae, with about 5,000 species worldwide, usually red or orange with black spots. Both adults and larvae are voracious predators of aphids and other plant pests — a single ladybug can eat 5,000 aphids in its lifetime — which is why gardeners and farmers value them as natural pest control. Their bright colors warn predators of their bitter-tasting defensive chemicals, and when threatened they secrete a yellow fluid from their leg joints and play dead. Ladybugs hibernate in large groups during winter.",
+    "categories": ["insect", "insects", "animal"]
+  },
+  {
+    "name": "Dragonfly",
+    "q": ["dragonfly", "dragonflies", "what is a dragonfly"],
+    "a": "Dragonflies are ancient insects of the order Odonata that have existed for over 300 million years — the earliest had wingspans of 70 centimeters. They are master fliers with two pairs of independently controlled wings, capable of hovering, flying backward, and reaching speeds of 50 km/h. Dragonflies are voracious aerial predators of mosquitoes and flies, with huge compound eyes covering most of their head and nearly 360-degree vision. They spend months or years as aquatic nymphs, hunting tadpoles and small fish, before emerging as adults that live only a few weeks to months.",
+    "categories": ["insect", "insects", "animal"]
+  },
+  {
+    "name": "Firefly",
+    "q": ["firefly", "fireflies", "lightning bug", "what is a firefly"],
+    "a": "Fireflies (lightning bugs) are soft-bodied beetles of the family Lampyridae that produce light through bioluminescence — a chemical reaction between luciferin and oxygen catalyzed by the enzyme luciferase, emitting light with almost no heat. Each species has a unique flash pattern, and fireflies flash to attract mates: males signal from the air and females answer from the ground. Some species synchronize their flashing in spectacular displays. Their larvae are predators of snails and slugs. Firefly populations are declining due to habitat loss and light pollution, which disrupts their mating signals.",
+    "categories": ["insect", "insects", "animal"]
+  },
+  {
+    "name": "Praying Mantis",
+    "q": ["praying mantis", "mantis", "what is a praying mantis"],
+    "a": "The praying mantis is an ambush predator insect of the order Mantodea, named for its folded, praying-hands posture — a stance that conceals raptorial front legs armed with spines for grasping prey. Mantises are masters of camouflage, resembling leaves, twigs, or flowers, and they wait motionless before striking in under a tenth of a second. They eat insects, spiders, and occasionally small vertebrates. The female is notorious for sometimes eating the male after mating. Mantises can rotate their triangular heads 180 degrees and have two large compound eyes with a 300-degree field of view.",
+    "categories": ["insect", "insects", "animal"]
+  },
+  {
+    "name": "Honeybee",
+    "q": ["honeybee", "honey bee", "what is a honeybee"],
+    "a": "The honeybee is a social insect of the genus Apis, famous for producing honey and for pollinating roughly a third of the crops humans eat. A colony of up to 60,000 workers is organized around a single queen, with male drones for mating. Worker bees communicate the location of flowers through the waggle dance, a coded figure-eight movement indicating direction and distance. Honeybees collect nectar and pollen from flowers, store honey in wax comb, and defend the hive with stings — the barbed stinger of the worker tears away, killing the bee. Managed honeybees and wild bees alike face threats from pesticides, habitat loss, and colony collapse.",
+    "categories": ["insect", "insects", "animal"]
+  },
+  {
+    "name": "Moth",
+    "q": ["moth", "moths", "what is a moth"],
+    "a": "Moths are insects of the order Lepidoptera, the group they share with butterflies; about 160,000 moth species exist, vastly outnumbering butterflies. Most moths are nocturnal, with feathery antennae, and they rest with wings spread flat, whereas butterflies are usually diurnal with club-tipped antennae. Some moths, like the Atlas moth with a 25-centimeter wingspan, are enormous, and the hawk moths are among the fastest fliers in the insect world. Moths are important pollinators, and their caterpillars are a key food source for birds. The death's-head hawkmoth is famous for its skull-like marking, featured in The Silence of the Lambs.",
+    "categories": ["insect", "insects", "animal"]
+  },
+  {
+    "name": "Butterfly",
+    "q": ["butterfly", "butterflies", "what is a butterfly"],
+    "a": "Butterflies are insects of the order Lepidoptera with about 17,500 species worldwide, characterized by colorful scaled wings and a four-stage life cycle: egg, caterpillar (larva), chrysalis (pupa), and adult. Most are diurnal, with club-tipped antennae and wings that rest vertically. Butterflies taste with their feet and feed on nectar through a long coiled proboscis. The monarch undertakes one of nature's great migrations, traveling up to 4,800 kilometers from Canada to Mexico, spanning multiple generations. Butterflies are sensitive indicators of ecosystem health, and many species are declining due to habitat loss and pesticides.",
+    "categories": ["insect", "insects", "animal"]
+  }
+]

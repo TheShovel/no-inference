@@ -238,6 +238,7 @@ _CODING_KEYWORDS_STRICT = {
     'list slice', 'string slice', 'substring',
     'json parse', 'json stringify', 'serialize',
     'http request', 'http response', 'fetch api',
+    'http', 'https', 'status code', 'status codes',
     'write a function', 'write a program', 'write code',
     'how to code', 'how to program',
     'center a div', 'responsive layout',

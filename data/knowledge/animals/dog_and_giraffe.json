@@ -1,0 +1,12 @@
+[
+  {
+    "q": ["dog", "dogs", "domestic dog", "what is a dog", "dog facts", "how long do dogs live", "what is the average lifespan of a dog", "what do dogs eat", "are dogs intelligent", "dog breeds", "how many dog breeds are there", "do dogs dream", "why do dogs wag their tails"],
+    "categories": ["pet", "mammal", "domestic animal"],
+    "a": "The dog (Canis familiaris) is a domesticated carnivorous mammal descended from wolves, and it was the first animal to be domesticated by humans, around 15,000-40,000 years ago. There are over 340 recognized dog breeds worldwide, ranging from the tiny Chihuahua to the giant Great Dane, and dogs come in a huge variety of sizes, colors, and temperaments due to selective breeding. The average lifespan of a dog is about 10-13 years, though small breeds often live longer (15-20 years) than large breeds (8-10 years). Dogs are renowned for their intelligence, loyalty, and remarkable sense of smell — about 100,000 times more sensitive than humans' — and they can learn hundreds of words and commands. They're used as working animals (herding, hunting, search-and-rescue, service) and are the most popular pet worldwide, with an estimated 900 million dogs."
+  },
+  {
+    "q": ["giraffe", "giraffes", "what is a giraffe", "how tall is a giraffe", "what is the average height of a giraffe", "giraffe facts", "what do giraffes eat", "how long is a giraffe's neck", "giraffe habitat", "why are giraffes so tall", "how many giraffes are left in the world"],
+    "categories": ["mammal", "african animal"],
+    "a": "The giraffe (Giraffa camelopardalis) is the tallest land animal on Earth, with adult males reaching 4.8-5.5 meters (16-18 feet) tall and weighing up to 1,200 kg. Its most distinctive feature is its long neck — which can be up to 2 meters long and contains only seven vertebrae, the same number as humans, but each one hugely elongated. A giraffe's average height is about 5 meters for males and 4.5 meters for females, and its heart is enormous (about 11 kg) to pump blood up to its brain against gravity. Giraffes are herbivores that browse on acacia leaves, eating up to 34 kg of vegetation daily, and they live in the savannas of sub-Saharan Africa. They have a distinctive walking gait (pacing both legs on one side), sleep only about 30 minutes to 2 hours per day, and the wild population has declined significantly, with giraffes now classified as vulnerable."
+  }
+]

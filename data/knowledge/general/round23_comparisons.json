@@ -1,0 +1,117 @@
+[
+  {
+    "q": ["rome", "ancient rome", "what is rome", "what was ancient rome", "roman empire"],
+    "a": "Ancient Rome was a civilization that grew from a small Italian city-state into a vast empire dominating the Mediterranean world, traditionally founded in 753 BCE. Rome passed through a kingdom, a republic (509-27 BCE) governed by the Senate and elected magistrates, and an empire ruled by emperors from Augustus (27 BCE) onward. At its height under Trajan (early 2nd century CE), the empire stretched from Britain to Mesopotamia, encompassing over 60 million people. Rome bequeathed Latin (the root of the Romance languages), Roman law, engineering (aqueducts, roads, concrete), and Christianity as its state religion. The western empire fell in 476 CE, while the eastern half continued as the Byzantine Empire for another thousand years.",
+    "categories": ["history", "civilization"]
+  },
+  {
+    "q": ["greece", "ancient greece", "what is greece", "what was ancient greece"],
+    "a": "Ancient Greece was a civilization of the Mediterranean, flourishing from about 800 BCE, organized not as a single state but as hundreds of independent city-states (poleis), the most famous being Athens and Sparta. It is called the cradle of Western civilization: Greece gave the world democracy (invented in Athens), philosophy (Socrates, Plato, Aristotle), theater (tragedy and comedy), the Olympic Games, and foundational works of science and mathematics (Euclid, Pythagoras). Alexander the Great spread Greek culture across the known world in the 4th century BCE, ushering in the Hellenistic age, and Greece was later absorbed into the Roman Empire in 146 BCE. Modern Greece is a nation of about 10.4 million people with the same Mediterranean heritage.",
+    "categories": ["history", "civilization"]
+  },
+  {
+    "q": ["rhino", "rhinoceros", "rhinos", "what is a rhinoceros"],
+    "a": "Rhinoceroses are large, thick-skinned herbivorous mammals of the family Rhinocerotidae, with five living species: the white and black rhino of Africa, and the Indian, Javan, and Sumatran rhino of Asia. They are distinguished by their horn(s), made not of bone but of keratin, the same protein as hair and nails. The white rhino is the largest, weighing up to 2.3 tonnes and second only to the elephant among land animals; the Sumatran rhino, at under a tonne, is the smallest and is the only hairy rhino. Rhinos have poor eyesight but excellent hearing and smell, and they can run at 55 km/h. All five species are threatened, with the Javan and Sumatran rhinos numbering fewer than 100 each, driven by poaching for their horns.",
+    "categories": ["mammal", "animal"]
+  },
+  {
+    "q": ["apple", "apples", "what is an apple"],
+    "a": "The apple is the fruit of the apple tree (Malus domestica), the most widely cultivated tree fruit in the world, with over 7,500 varieties grown. Apples originated in the mountains of Central Asia (Kazakhstan's wild ancestor is still found there) and have been cultivated for at least 4,000 years. They come in a spectrum of colors — red, green, yellow — and flavors from tart (Granny Smith) to sweet (Honeycrisp, Fuji). Apples are rich in fiber, vitamin C, and antioxidants, and the saying 'an apple a day keeps the doctor away' dates to 1866 Wales. The apple is also central to mythology and history: the forbidden fruit of Eden, the golden apple of Discord in Greek myth, and the apple that (by legend) fell on Newton's head.",
+    "categories": ["fruit", "food"]
+  },
+  {
+    "q": ["orange", "oranges", "what is an orange"],
+    "a": "The orange is a citrus fruit of the tree Citrus × sinensis, a hybrid of the pomelo and mandarin that originated in southern China thousands of years ago. It is the most widely grown citrus fruit, and Brazil, China, and India are the top producers. Oranges are round, orange-colored, with a pithy rind and juicy segments rich in vitamin C — a single orange provides over 70% of the daily recommended intake. The sweet orange was brought to Europe by Portuguese traders around the 15th century; bitter oranges were known earlier. Navel, Valencia, and blood oranges (which have red flesh due to anthocyanins) are the main types, and oranges also give their name to the color.",
+    "categories": ["fruit", "food"]
+  },
+  {
+    "q": ["phone", "smartphone", "what is a phone", "what is a smartphone"],
+    "a": "A phone is a device for voice communication over distances, and today almost always means a smartphone — a pocket computer combining a phone, camera, GPS, web browser, and thousands of apps. The first mobile phone call was made by Motorola's Martin Cooper in 1973, and the first mass-market smartphones, led by the iPhone (2007) and Android devices, transformed society within a decade. Modern smartphones have multi-core processors, high-resolution touchscreens, and cameras that rival dedicated cameras, and there are over 7 billion smartphone subscriptions worldwide — more than one per person on Earth. The phone's predecessor, the landline telephone, was invented by Alexander Graham Bell in 1876.",
+    "categories": ["technology", "device"]
+  },
+  {
+    "q": ["computer", "what is a computer"],
+    "a": "A computer is an electronic device that processes data under the control of programs, performing arithmetic, logic, storage, and communication operations. The modern computer is built on the von Neumann architecture: a CPU (central processing unit) executes instructions from memory, supported by storage (SSD/HDD), and input/output devices. The first electronic computers, like ENIAC (1945), filled entire rooms; today's smartphones are millions of times more powerful. Computers run everything from personal tasks to spacecraft, and the world's most powerful supercomputers perform over a quintillion (10^18) calculations per second. The invention of the transistor (1947) and the integrated circuit made the computer revolution possible, and Turing's theoretical work laid its foundations.",
+    "categories": ["technology", "device"]
+  },
+  {
+    "q": ["frog", "frogs", "what is a frog"],
+    "a": "Frogs are amphibians of the order Anura, the most diverse group of amphibians with about 7,000 species, found on every continent except Antarctica. They begin life as aquatic tadpoles with gills and tails, then metamorphose into leaping, tailless adults with lungs and moist, permeable skin, which they use to breathe and drink. Frogs range from the 7.7-millimeter Paedophryne amauensis, the world's smallest vertebrate, to the 32-centimeter Goliath frog. They are indicator species — their permeable skin makes them exquisitely sensitive to pollution, and global frog populations have crashed due to habitat loss, pesticides, and the chytrid fungus. The golden poison frog is among the most toxic animals on Earth.",
+    "categories": ["amphibian", "animal"]
+  },
+  {
+    "q": ["toad", "toads", "what is a toad"],
+    "a": "Toads are a family of amphibians (Bufonidae) closely related to frogs, distinguished by their dry, warty skin, shorter hind legs adapted for hopping rather than leaping, and a squat, robust body. Unlike frogs, which are usually moist and smooth-skinned, toads can live farther from water and are often nocturnal, though they still need water to breed — their eggs are laid in long strings, unlike frogs' clumps. The common toad and the American toad are widespread, and the cane toad, introduced to Australia in 1935 to control beetles, became a notorious invasive species that poisoned native predators. Toads' parotoid glands secrete bufotoxin, a bitter, irritating poison that deters many predators.",
+    "categories": ["amphibian", "animal"]
+  },
+  {
+    "q": ["fruit", "fruits", "what is a fruit"],
+    "a": "Botanically, a fruit is the mature ovary of a flowering plant, containing seeds — so tomatoes, cucumbers, peppers, and pumpkins are all fruits. Fruits develop from a flower after pollination and serve to protect and disperse seeds, often by being eaten: animals consume the flesh and deposit the seeds elsewhere. Culinary usage is different: sweet fruits (apples, berries, melons) are treated as fruits in the kitchen, while savory ones (tomatoes, avocados, squash) are called vegetables. Fruits are rich in vitamins, fiber, and antioxidants, and the world's most produced fruits are bananas, apples, grapes, and oranges. Edible fruits have been a cornerstone of human diets since prehistory, and seedless varieties like seedless grapes are cultivated for convenience.",
+    "categories": ["food", "plant"]
+  },
+  {
+    "q": ["vegetable", "vegetables", "what is a vegetable"],
+    "a": "A vegetable is any edible part of a plant eaten as food that is not a fruit or seed in the culinary sense: roots (carrots, potatoes), stems (celery, asparagus), leaves (spinach, lettuce), bulbs (onions, garlic), flowers (broccoli, cauliflower), and immature seeds (peas, green beans). Botanically, 'vegetable' is not a precise category — it is a culinary term, which is why a tomato, botanically a fruit, is commonly called a vegetable. Vegetables are low in calories and rich in vitamins, minerals, fiber, and phytochemicals; health guidelines recommend several servings daily. Global vegetable production exceeds a billion tonnes per year, led by China and India, and the 'five-a-day' advice is based on extensive evidence linking vegetable intake to lower disease risk.",
+    "categories": ["food", "plant"]
+  },
+  {
+    "q": ["jam", "jams", "what is jam"],
+    "a": "Jam is a fruit preserve made by cooking crushed or chopped fruit with sugar, and often pectin, until it sets into a thick, spreadable mixture containing visible fruit pieces. The sugar acts as a preservative by binding water, and the pectin (a natural gelling agent in fruit, often added as apple or citrus pectin) makes the mixture set. Jams are made from berries, stone fruits, citrus, and more, and they date back to ancient Rome, where fruit was preserved in honey. The difference from jelly is that jelly is made from fruit juice only and is clear and firm; preserves contain large chunks; and marmalade is a citrus preserve with peel.",
+    "categories": ["food", "preserve"]
+  },
+  {
+    "q": ["jelly", "jellies", "what is jelly"],
+    "a": "Jelly is a clear, firm fruit preserve made from strained fruit juice — not the crushed fruit — cooked with sugar and pectin until it sets into a translucent, quivering gel that holds its shape when cut. Because the fruit solids are removed, jelly is smooth and seedless, and its clarity is a mark of quality. Classic jellies include grape, apple, and currant. In the United Kingdom and Commonwealth, 'jelly' also means the gelatin-based dessert that Americans call Jell-O. Jelly is distinguished from jam (which contains crushed fruit pieces) and preserves (which contain large fruit chunks). Making jelly at home is a tradition of preserving seasonal fruit.",
+    "categories": ["food", "preserve"]
+  },
+  {
+    "q": ["alligator", "alligators", "what is an alligator"],
+    "a": "Alligators are large reptiles of the family Alligatoridae, with two living species: the American alligator of the southeastern United States and the smaller Chinese alligator of the Yangtze River. They have broad, U-shaped snouts, and when their jaws close, their lower teeth fit into pits in the upper jaw and are hidden — unlike crocodiles, whose narrow V-shaped snouts show a protruding tooth when closed. Alligators are freshwater animals, less salt-tolerant than crocodiles, and build mound nests of vegetation. The American alligator, once endangered, has rebounded to over a million and is a conservation success story; it can reach 4.5 meters and live over 50 years.",
+    "categories": ["reptile", "animal"]
+  },
+  {
+    "q": ["crocodile", "crocodiles", "what is a crocodile"],
+    "a": "Crocodiles are large semiaquatic reptiles of the family Crocodylidae, found in tropical regions of Africa, Asia, the Americas, and Australia, with about 15 species. They have long, narrow V-shaped snouts, and when their jaws close, the fourth lower tooth remains visible — a key difference from alligators. The saltwater crocodile is the largest living reptile, reaching over 6 meters and a tonne, and the Nile crocodile is Africa's largest predator, responsible for the most human attacks of any crocodilian. Crocodiles are more tolerant of saltwater than alligators and are ambush predators that can sprint briefly and swim at speed, with a bite force among the strongest of any animal. They are ancient survivors, nearly unchanged for 80 million years.",
+    "categories": ["reptile", "animal"]
+  },
+  {
+    "q": ["rabbit", "rabbits", "what is a rabbit"],
+    "a": "Rabbits are small herbivorous mammals of the family Leporidae, with about 29 species found on every continent except Antarctica, though they are native to Europe, Africa, and the Americas. They are distinguished from hares by being smaller, born blind and hairless in nests, and living in underground warrens. Rabbits have long ears for heat regulation and sharp hearing, powerful hind legs for leaping, and continuously growing teeth. They are famous for rapid breeding — a female can produce up to 60 young per year — which is why they became both a beloved pet and a devastating invasive species (the rabbit plague of Australia). Domestic rabbits, descended from the European rabbit, are the third most popular pet mammal after dogs and cats.",
+    "categories": ["mammal", "animal"]
+  },
+  {
+    "q": ["hare", "hares", "what is a hare"],
+    "a": "Hares are fast-running herbivorous mammals of the genus Lepus, in the same family (Leporidae) as rabbits but distinct: hares are larger, with longer ears and legs, born fully furred with open eyes, and they live above ground in simple forms (shallow scrapes) rather than in burrows. They are among the fastest small mammals, reaching 70 km/h in bursts, and use their speed and zigzag running to escape predators. The brown hare of Europe and the snowshoe hare of North America (which turns white in winter) are well-known species. Hares are solitary for most of the year but gather for dramatic spring 'boxing' matches — actually females fending off males, the origin of the 'March hare' madness in Alice in Wonderland.",
+    "categories": ["mammal", "animal"]
+  },
+  {
+    "q": ["turtle", "turtles", "what is a turtle"],
+    "a": "Turtles are reptiles of the order Testudines, unique among vertebrates for their shells — a fused rib cage and backbone covered by a carapace (top) and plastron (bottom), made of bone and keratin. There are about 350 living species, found on every continent except Antarctica and in oceans, rivers, and deserts. Sea turtles, with flippers instead of feet, migrate thousands of kilometers between feeding and nesting beaches; land tortoises are slow, long-lived vegetarians — the Galapagos giant tortoise can exceed 150 years. Turtles lay eggs on land, and their sex is often determined by nest temperature. They have existed for over 220 million years, predating the dinosaurs, but nearly half of all species are now threatened.",
+    "categories": ["reptile", "animal"]
+  },
+  {
+    "q": ["tortoise", "tortoises", "what is a tortoise"],
+    "a": "Tortoises are land-dwelling turtles of the family Testudinidae, adapted entirely to life on dry land: they have heavy, dome-shaped shells, sturdy elephantine hind legs, and no webbed feet. Unlike sea and freshwater turtles, tortoises cannot swim. They are the longest-lived vertebrates — Jonathan, a Seychelles giant tortoise, has lived over 190 years — and the Galapagos and Aldabra giant tortoises can weigh over 300 kilograms. Tortoises are slow-moving vegetarians that can go months without food or water, and their slow metabolism lets some species live over a year without eating. All tortoises lay eggs on land, and many species, especially in Asia and Africa, are threatened by the pet trade and habitat loss.",
+    "categories": ["reptile", "animal"]
+  },
+  {
+    "q": ["llama", "llamas", "what is a llama"],
+    "a": "The llama is a domesticated South American camelid, descended from the wild guanaco, domesticated in the Andes over 4,000-6,000 years ago. Llamas stand about 1.8 meters tall, weigh 130-200 kg, and are valued as pack animals (carrying up to a quarter of their weight), for their wool, meat, and leather, and for their role in Andean culture. They are intelligent, social, and communicate with a humming vocalization; their famous spitting is a defense, aimed mostly at other llamas. The main differences from alpacas: llamas are larger with longer, banana-shaped ears, while alpacas have short, spear-shaped ears and finer, denser fleece. Llamas' padded feet make them gentle on trails, which is why they are also used as therapy and guard animals.",
+    "categories": ["mammal", "animal"]
+  },
+  {
+    "q": ["alpaca", "alpacas", "what is an alpaca"],
+    "a": "The alpaca is a domesticated South American camelid, descended from the wild vicuña, bred for its exceptionally soft, fine fleece. Alpacas are smaller than llamas — about 90 cm at the shoulder and 55-65 kg — with short, spear-shaped ears and dense fiber covering their bodies. Their fleece, which comes in 22 natural colors, is warmer, softer, and lighter than sheep's wool and is prized for luxury garments. Alpacas were domesticated in the Andes more than 6,000 years ago and are herd animals that hum, spit when annoyed, and are gentle enough to be kept as livestock and pets worldwide. They are divided into two breeds: Huacaya (dense, fluffy fiber) and Suri (long, silky, dreadlock-like fiber).",
+    "categories": ["mammal", "animal"]
+  },
+  {
+    "q": ["stalactite", "stalactites", "what is a stalactite"],
+    "a": "A stalactite is a mineral formation that hangs from the ceiling of a cave, shaped like an icicle or cone. It forms over thousands of years as groundwater carrying dissolved calcium carbonate seeps through the cave ceiling; as the water evaporates and carbon dioxide escapes, the mineral precipitates, depositing a ring of calcite that grows downward, drop by drop. Stalactites are typically found alongside stalagmites, which grow upward from the cave floor where the drips land — the memory aid is that stalactites hold 'tight' to the ceiling, while stalagmites 'might' reach it. The largest known stalactite, in the Gruta do Janelão cave in Brazil, is over 28 meters long, and these formations grow at a rate of about 0.13 mm per year.",
+    "categories": ["geology", "science"]
+  },
+  {
+    "q": ["stalagmite", "stalagmites", "what is a stalagmite"],
+    "a": "A stalagmite is a mineral mound or column that grows upward from the floor of a cave, formed when mineral-rich water drips from the ceiling and deposits dissolved calcium carbonate (calcite) at the point of impact, building up over thousands of years. Stalagmites are usually broader and stumpier than the stalactites they grow beneath — the memory aid: stalagmites 'might' reach the ceiling, while stalactites hold 'tight' to it. They can reach over 60 meters tall, and their growth layers, like tree rings, record past climate: scientists analyze stalagmites as natural archives of rainfall and temperature over tens of thousands of years. Stalagmites form only where dripping water persists, and they grow at roughly 0.1-1 mm per year.",
+    "categories": ["geology", "science"]
+  }
+]

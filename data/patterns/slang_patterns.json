@@ -38,11 +38,12 @@
       "^tru dat$", "^word$", "^word up$", "^fo sho$", "^fa sho$", "^fosho$", "^100$",
       "^one hundred percent$", "^period$", "^periodt$", "^preach$", "^exactly$",
       "^for sure$", "^fs$", "^you already know$", "^u already know$", "^say less king$",
-      "^no doubt$", "^without a doubt$", "^agreed$", "^totally$", "^same$", "^same here$",
-      "^i agree$", "^i agree with you$", "^100 percent$", "^facts on god$", "^deadass$",
+      "^no doubt$", "^without a doubt$", "^no doubt about it$", "^agreed$", "^totally$", "^same$", "^same here$",
+      "^i agree$", "^i agree with you$", "^100 percent$", "^one hundred percent$", "^facts on god$", "^deadass$",
       "^ngl thats true$", "^thats real$", "^thats a fact$", "^youre not wrong$", "^ur not wrong$",
       "^you're not wrong$", "^say less fr$", "^correct$", "^thats right$", "^thats correct$",
-      "^you got it$", "^u got it$", "^got it right$", "^spot on$", "^on point$"
+      "^you got it$", "^u got it$", "^got it right$", "^spot on$", "^on point$",
+      "^100%$", "^100 %$", "^this is the way$", "^that's the move$", "^thats the move$", "^this is it$", "^we move$", "^lets move$", "^let's move$"
     ],
     "response": [
       "For sure! What else do you want to talk about?",
@@ -133,7 +134,9 @@
       "^ello mate$", "^hey friend$", "^hi friend$", "^greetings human$", "^how goes it fam$",
       "^whats good bro$", "^what's good bro$", "^sup bro$", "^yo fam$", "^yo homie$",
       "^heyyy$", "^hellooo there$", "^hi there friend$", "^hello friend$", "^howdy amigo$",
-      "^salutations friend$", "^top of the morning$", "^good day to you$", "^well hello$", "^well well well$"
+      "^salutations friend$", "^top of the morning$", "^good day to you$", "^well hello$", "^well well well$",
+      "^sup dawg$", "^whats up dawg$", "^what's up dawg$", "^sup homie$", "^yo dawg$",
+      "^whats good homie$", "^how u doin homie$", "^whats up broski$", "^yo broski$", "^sup broski$"
     ],
     "response": [
       "Hey! What's up? How can I help you today?",
@@ -330,7 +333,9 @@
       "^youre lying$", "^you're lying$", "^lying\\s*$", "^u lyin\\s*$", "^you lyin\\s*$",
       "^no shot fr$", "^stop playing\\s*$", "^stop playin\\s*$", "^u playing\\s*$", "^you playing\\s*$",
       "^aint no way$", "^ain't no way$", "^thats unbelievable$", "^that's unbelievable$",
-      "^i dont believe you$", "^i don't believe you$", "^no way fr$", "^get outta here$", "^get out of here$"
+      "^i dont believe you$", "^i don't believe you$", "^no way fr$", "^get outta here$", "^get out of here$",
+      "^bffr\\s*$", "^be for real\\s*$", "^be fr\\s*$", "^dead serious\\s*$", "^im dead serious\\s*$", "^i'm dead serious\\s*$",
+      "^no lie\\s*$", "^no lie fr\\s*$", "^on god\\s*$", "^i swear\\s*$", "^i swear to god\\s*$", "^swear to god\\s*$", "^fr on god\\s*$", "^no cap fr\\s*$"
     ],
     "response": [
       "I promise it's true! Every answer I give comes from a verified source — I literally can't make things up.",
@@ -466,9 +471,11 @@
       "^drip\\s*$", "^thats drip\\s*$", "^that's drip\\s*$", "^fire fit\\s*$", "^thats a fit\\s*$",
       "^that's a fit\\s*$", "^nice fit\\s*$", "^good fit\\s*$", "^that fit goes hard\\s*$",
       "^bop\\s*$", "^thats a bop\\s*$", "^that's a bop\\s*$", "^straight fax\\s*$", "^straight facts\\s*$",
-      "^big facts\\s*$", "^facts only\\s*$", "^facts fr fr\\s*$", "^thats fax\\s*$", "^that's fax\\s*$",
+      "^straight facts\\s*$", "^facts only\\s*$", "^facts fr fr\\s*$", "^thats fax\\s*$", "^that's fax\\s*$",
       "^certified banger\\s*$", "^absolute banger\\s*$", "^absolute tune\\s*$", "^absolute classic\\s*$",
-      "^classic\\s*$", "^timeless\\s*$", "^iconic\\s*$", "^legendary fr\\s*$", "^so iconic\\s*$", "^certified classic\\s*$"
+      "^classic\\s*$", "^timeless\\s*$", "^iconic\\s*$", "^legendary fr\\s*$", "^so iconic\\s*$", "^certified classic\\s*$",
+      "^rizz\\s*$", "^thats rizz\\s*$", "^that's rizz\\s*$", "^W rizz\\s*$", "^big rizz\\s*$", "^major rizz\\s*$",
+      "^cinema\\s*$", "^thats cinema\\s*$", "^that's cinema\\s*$", "^absolute cinema\\s*$", "^pure cinema\\s*$"
     ],
     "response": [
       "Right?! That's a certified classic. I've got more if you want.",
@@ -568,7 +575,8 @@
       "^give me a second\\s*$", "^just a moment\\s*$", "^just a sec\\s*$", "^one moment\\s*$",
       "^let me think\\s*$", "^let me think about it\\s*$", "^hmm let me think\\s*$", "^hmm thinking\\s*$",
       "^thinking\\s*$", "^give me a minute\\s*$", "^give me a moment\\s*$", "^wait a sec\\s*$",
-      "^wait a second\\s*$", "^just thinking\\s*$", "^processing\\s*$", "^let me process that\\s*$"
+      "^wait a second\\s*$", "^wait wait\\s*$", "^wait wait wait\\s*$", "^hol up\\s*$",
+      "^just thinking\\s*$", "^processing\\s*$", "^let me process that\\s*$", "^brb\\s*$", "^be right back\\s*$"
     ],
     "response": [
       "Take your time! I'll be right here when you're ready.",
@@ -623,7 +631,8 @@
       "^goofy\\s*$", "^thats goofy\\s*$", "^that's goofy\\s*$", "^so goofy\\s*$", "^silly\\s*$",
       "^thats silly\\s*$", "^that's silly\\s*$", "^so silly\\s*$", "^wack\\s*$", "^thats wack\\s*$",
       "^that's wack\\s*$", "^so wack\\s*$", "^goofy ahh\\s*$", "^thats goofy ahh\\s*$", "^silly goose\\s*$",
-      "^thats a silly goose move\\s*$", "^you goofball\\s*$", "^goofball\\s*$"
+      "^thats a silly goose move\\s*$", "^you goofball\\s*$", "^goofball\\s*$",
+      "^delulu\\s*$", "^thats delulu\\s*$", "^that's delulu\\s*$", "^so delulu\\s*$", "^delulu is the solulu\\s*$"
     ],
     "response": [
       "Ha, goofy is my middle name — well, it would be if I had a middle name! What's up?",
@@ -729,7 +738,9 @@
       "^yup\\s*$", "^sure\\s*$", "^maybe\\s*$", "^perhaps\\s*$", "^possibly\\s*$", "^idk man\\s*$",
       "^i dunno\\s*$", "^dunno\\s*$", "^not really\\s*$", "^kind of\\s*$", "^kinda\\s*$", "^sort of\\s*$",
       "^i guess so\\s*$", "^i suppose\\s*$", "^probably\\s*$", "^probably not\\s*$", "^definitely\\s*$",
-      "^absolutely\\s*$", "^of course\\s*$", "^why not\\s*$", "^sure why not\\s*$", "^i mean\\s*$"
+      "^absolutely\\s*$", "^of course\\s*$", "^why not\\s*$", "^sure why not\\s*$", "^i mean\\s*$",
+      "^yerr\\s*$", "^yurr\\s*$", "^yeah yeah\\s*$", "^ok fine\\s*$", "^fine\\s*$", "^i suppose so\\s*$",
+      "^i think so\\s*$", "^i dont think so\\s*$", "^i don't think so\\s*$", "^idts\\s*$"
     ],
     "response": [
       "Got it! Want to tell me more, or should we move on to something else?",
@@ -786,7 +797,7 @@
   },
   "lorem_filler": {
     "patterns": [
-      "^lorem ipsum\\s*$", "^lorem ipsum dolor\\s*$", "^test test\\s*$", "^test test test\\s*$",
+      "^lorem ipsum\\s*$", "^lorem ipsum dolor\\s*$", "^lorem ipsum dolor sit amet\\s*$", "^test test\\s*$", "^test test test\\s*$",
       "^testing testing\\s*$", "^test123\\s*$", "^hello world test\\s*$", "^asdfghjkl qwerty\\s*$",
       "^placeholder\\s*$", "^sample text\\s*$", "^random text\\s*$", "^blah blah\\s*$", "^blah blah blah\\s*$",
       "^la la la\\s*$", "^doot doot\\s*$", "^beep boop\\s*$", "^beep boop beep\\s*$", "^01010101\\s*$", "^10101010\\s*$"
@@ -863,7 +874,7 @@
       "that slaps", "this is fire", "that is fire", "thats fire", "this is lit",
       "im lit", "i'm lit", "lets gooo", "let's gooo", "lets goo", "no way fr",
       "thats wild", "this is wild", "crazy good", "so good fr", "thats dope",
-      "this is dope", "so dope", "that's dope", "fire", "banger", "slaps",
+      "this is dope", "so dope", "that's dope", "^fire[!?.]*$", "banger", "slaps",
       "im hyped", "i'm hyped", "so hyped", "this is sick", "thats sick"
     ],
     "response": [
@@ -1005,6 +1016,18 @@
       "That's right! Want me to go deeper on that topic?",
       "Exactly — you're on the right track. What else?",
       "For sure! Happy to keep going if you want."
+    ]
+  },
+  "no_prob_thanks": {
+    "patterns": [
+      "^no prob\\s*$", "^no prob bob\\s*$", "^no problemo\\s*$", "^no problamo\\s*$",
+      "^mmhm\\s*$", "^mm hmm\\s*$", "^mhm\\s*$", "^mm-hmm\\s*$", "^sanks\\s*$", "^kewl\\s*$"
+    ],
+    "response": [
+      "No worries! Happy to help anytime.",
+      "Anytime! That's what I'm here for.",
+      "You got it! Let me know if you need anything else.",
+      "Cool! I'm here whenever you need me."
     ]
   },
   "self_questions_extra": {

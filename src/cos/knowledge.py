@@ -40,6 +40,11 @@ def _load_knowledge(base_dir=None):
     Returns:
         List of (pattern_regex, answer_text) tuples
     """
+    global _WORD_INDEX, _RAW_ENTRY_INDICES, _ENTRY_WORDS
+    _WORD_INDEX = {}
+    _RAW_ENTRY_INDICES = set()
+    _ENTRY_WORDS = []
+
     if base_dir is None:
         base_dir = _KNOWLEDGE_DIR
 
@@ -123,6 +128,17 @@ def _load_knowledge(base_dir=None):
                             regex = re.compile(re.escape(q_clean), re.IGNORECASE)
                     entries.append((regex, answer))
                     loaded += 1
+                    # Index the entry by its significant words so lookup() can
+                    # skip patterns whose words cannot appear in the query.
+                    idx = len(entries) - 1
+                    if has_regex_backslash:
+                        _RAW_ENTRY_INDICES.add(idx)
+                        _ENTRY_WORDS.append(None)
+                    else:
+                        _entry_words = _word_tokens(q_clean)
+                        _ENTRY_WORDS.append(_entry_words)
+                        for _w in _entry_words:
+                            _WORD_INDEX.setdefault(_w, set()).add(idx)
                 except re.error as e:
                     print(f'  Warning: Bad pattern "{q_clean}": {e}')
                     continue
@@ -144,6 +160,27 @@ def _load_knowledge(base_dir=None):
 
 # ── Load knowledge at module import time ─────────────────────────────────────
 _KNOWLEDGE_CACHE = None
+
+# Word index for fast lookup: significant word (lowercase) -> set of entry
+# indices into _KNOWLEDGE_CACHE. Built during _load_knowledge so lookup()
+# only scans candidate entries instead of all 40k+ patterns on every query.
+# The index is SOUND: an escaped-literal pattern can only match text that
+# contains every one of its words, so patterns whose words are missing from
+# the query can never match it and are safely skipped.
+_WORD_INDEX = {}
+# Entry indices whose pattern is a raw regex (contains backslash escapes);
+# these cannot be word-indexed and are always considered candidates.
+_RAW_ENTRY_INDICES = set()
+# Parallel to _KNOWLEDGE_CACHE: frozenset of word tokens for each entry, or
+# None for raw-regex entries (never filtered).
+_ENTRY_WORDS = []
+
+_WORD_TOKEN_RE = re.compile(r'[a-z0-9]+')
+
+
+def _word_tokens(text):
+    """Extract the set of significant word tokens from text."""
+    return set(_WORD_TOKEN_RE.findall(text.lower()))
 
 # Category index: category name (lowercase) -> [(display_name, answer), ...]
 # Built during _load_knowledge from entries declaring 'categories'/'tags'.
@@ -234,12 +271,25 @@ def get_category_members(category):
     else:
         candidates.add(cat + 's')  # cat -> cats
     results = []
-    seen = set()
-    for c in candidates:
+    seen_names = set()
+    seen_answers = set()
+    # Normalize display names so "The Planet Mercury" and "Mercury" (and
+    # other "the <label> <name>" derivations) collapse to the same member
+    # instead of listing the same planet twice.
+    _norm = lambda n: re.sub(
+        r'^(?:the|a|an)\s+(?:(?:planet|animal|plant|fish|bird|tree|rock|storm|cloud|dragon|sword|dance|sport|pasta|cheese|type|kind|breed|species|variety|style|form|member|cat|dog|whale|shark|bear|snake|insect|bird|flower|fruit|vegetable|mushroom|country|city|river|mountain|desert|ocean|sea|lake|island|continent|god|goddess|hero|creature|monster|dinosaur|genus|species)\s+)?',
+        '', n.lower().strip())
+    # Iterate candidates in sorted order — a set's iteration order varies
+    # per process (hash randomization), which made "list all the planets"
+    # sometimes list my new entries first and sometimes the legacy ones.
+    for c in sorted(candidates):
         for name, answer in _CATEGORY_INDEX.get(c, []):
-            if answer not in seen:
-                seen.add(answer)
-                results.append((name, answer))
+            _key = _norm(name)
+            if _key in seen_names or answer in seen_answers:
+                continue
+            seen_names.add(_key)
+            seen_answers.add(answer)
+            results.append((name, answer))
     return results or None
 
 
@@ -251,6 +301,51 @@ def get_all_knowledge():
         if _KNOWLEDGE_CACHE:
             print(f"  Loaded {len(_KNOWLEDGE_CACHE)} knowledge entries from data/knowledge/")
     return _KNOWLEDGE_CACHE
+
+
+def find_best_match(query):
+    """Find the KB entry whose pattern matches the query with the longest span.
+
+    Returns (match_len, answer) or (0, None). Uses the word index so it does
+    not scan all 40k+ patterns. Equivalent to:
+
+        for pattern, answer in get_all_knowledge():
+            m = pattern.search(query)
+            ...keep longest m.group(0)...
+
+    Callers wanting curated-over-composed behavior (e.g. comparison queries
+    that have a hand-written KB entry) use this to check the full query first.
+    """
+    entries = get_all_knowledge()
+    if not entries:
+        return 0, None
+    q = query.lower().strip()
+    q_words = _word_tokens(q)
+    if q_words:
+        # Use the two rarest words' candidate lists — the rarest word is the
+        # content noun matching patterns share, and the second covers cases
+        # where the rarest word is slang/incidental to the pattern.
+        _sorted = sorted(q_words, key=lambda w: len(_WORD_INDEX.get(w, ())))
+        candidates = set(_RAW_ENTRY_INDICES)
+        for _w in _sorted[:2]:
+            candidates |= set(_WORD_INDEX.get(_w, ()))
+    else:
+        candidates = set(range(len(entries)))
+    best_len = 0
+    best_answer = None
+    for ci in sorted(candidates):
+        pattern, answer = entries[ci]
+        _entry_word_set = _ENTRY_WORDS[ci]
+        if _entry_word_set is not None and not (_entry_word_set <= q_words):
+            continue
+        try:
+            m = pattern.search(q)
+        except Exception:
+            continue
+        if m and len(m.group(0)) > best_len:
+            best_len = len(m.group(0))
+            best_answer = answer
+    return best_len, best_answer
 
 def reload():
     """Force reload of all knowledge from disk."""
@@ -264,6 +359,9 @@ def reload():
 #   "do you know what X is" -> "X is"      "whats the deal with X" -> "X"
 #   "explain X like i'm five" -> "the X"   "what is X exactly" -> "X"
 _QUESTION_WRAPPERS = [
+    r'^(?:not\s+going\s+to\s+lie|not\s+gonna\s+lie|ngl|no\s+cap|for\s+real|fr)\s+',
+    r'^(?:yo|hey|heya|yo\s+yo|hey\s+there)\s+',
+    r'^(?:i\'?m|i\s+am)\s+(?:going\s+to|gonna|want\s+to|wanna)\s+ask\s+(?:you\s+)?(?:about|on)\s+',
     r'^(?:do|does|did)\s+you\s+know\s+(?:what|who|where|when|why|how|if|whether)\s+',
     r'^(?:do|does|did)\s+you\s+know\s+(?:anything\s+)?(?:about|on)\s+',
     r'^(?:do|does|did)\s+you\s+know\s+',
@@ -311,12 +409,12 @@ _QUESTION_WRAPPERS = [
     r'^(?:who\s+(?:invented|discovered|created|built|founded|wrote|made|designed|developed)|who\s+was\s+the\s+(?:inventor|creator|founder)\s+of)\s+',
     r'^(?:give\s+me|give|name|list|some)\s+(?:some\s+|a\s+few\s+|any\s+)?(?:examples?|instances?|cases?)\s+of\s+',
     r'^(?:what\s+are\s+(?:some\s+|a\s+few\s+)?(?:examples?|instances?|types?|kinds?)\s+of)\s+',
-    r'^(?:the\s+)?(?:history|origins?|definition|basics|fundamentals|overview|introduction|intro|summary|workings|mechanics|causes|benefits|effects|signs|symptoms|types|features|characteristics|properties|importance|significance|role|future|science|purpose|meaning)\s+of\s+',
+    r'^(?:the\s+)?(?:history|origins?|definition|basics|fundamentals|overview|introduction|intro|summary|workings|mechanics|causes|benefits|effects|signs|symptoms|types|features|characteristics|properties|importance|significance|role|future|science|purpose|meaning|language|religion|climate|capital|population|currency|economy|government|ruler|leader|structure|parts|components|elements|ingredients|members|anatomy|biology|message|theme|moral|lesson|plot|story|ending|finale|outcome|result|setting|symbolism|legacy|risks|dangers|drawbacks|downsides|side\s+effects|advantages|disadvantages|pros|cons|nutrition|nutritional\s+value|taste|flavor|color|size|weight|height|speed|average\s+height|average\s+weight|average\s+lifespan|average\s+life\s+span|average\s+life\s+expectancy|life\s+expectancy|average\s+age|average\s+size|average\s+speed|average\s+cost|average\s+price|average\s+temperature|average\s+rainfall|annual\s+rainfall|lifespan)\s+of\s+',
     r'^intro\s+to\s+',
     r'^(?:more\s+about|more\s+on|further\s+details\s+on|more\s+info\s+on|more\s+information\s+(?:about|on))\s+',
     r'^(?:expand\s+on|elaborate\s+on|go\s+deeper\s+on|deep\s+dive\s+into|dive\s+into)\s+',
     r'^(?:explain\s+to\s+me|describe\s+to\s+me)\s+',
-    r'^(?:why\s+do\s+(?:we|humans|people)\s+(?:have|need)\s+|why\s+does\s+(?:the|a|an)\s+|why\s+do\s+we\s+have\s+|why\s+is\s+the\s+)',
+    r'^(?:why\s+do\s+(?:we|humans|people|i|you)\s+(?:have|need)\s+|why\s+does\s+(?:the|a|an)\s+|why\s+do\s+we\s+have\s+|why\s+is\s+the\s+)',
     r'^(?:what\s+is\s+the\s+(?:point|purpose|goal|aim)\s+of|whats\s+the\s+(?:point|purpose|goal|aim)\s+of)\s+',
     r'^(?:the\s+)?(?:pros\s+and\s+cons|advantages\s+and\s+disadvantages|good\s+and\s+bad)\s+of\s+',
     r'^(?:the\s+)?(?:gist|basics|fundamentals|idea|concept|meaning|definition|summary|lowdown|rundown)\s+of\s+',
@@ -326,10 +424,11 @@ _QUESTION_WRAPPERS = [
     r'^(?:i\s+need\s+(?:some\s+|any\s+|the\s+)?(?:info|information|facts|details|deets)\s+(?:on|about)\s+)',
     r'^fun\s+fact:?\s+',
     r'^(?:what\s+year\s+did|what\s+year\s+was)\s+',
+    r'^(?:in\s+what\s+year\s+(?:did|was|were|is|are)|when\s+exactly\s+(?:was|were|is|are|did))\s+',
     r'^(?:what\s+do\s+you\s+got\s+on|whaddya\s+know\s+about|waddaya\s+know\s+about|whatcha\s+know\s+about)\s+',
     r'^(?:how\s+long\s+(?:does|do|is|are|has|have|did)\s+)',
     r'^(?:how\s+(?:old|big|tall|far|fast|heavy|hot|cold|large|small|wide|deep|high|many|much)\s+(?:is|are|was|were|does|do|did)\s+)',
-    r'^(?:how\s+(?:old|big|tall|far|fast|heavy|hot|cold|large|small|wide|deep|high|long|many|much)\s+[a-z]+\s+(?:is|are|was|were|does|do|did|has|have)\s+)',
+    r'^(?:how\s+(?:old|big|tall|far|fast|heavy|hot|cold|large|small|wide|deep|high|many|much)\s+[a-z]+\s+(?:does|do|has|have|did)\s+)',
     r'^(?:how\s+much\s+does\s+|how\s+much\s+do\s+)',
     r'^(?:does|do|did)\s+',
     r'^(?:can|could|is|are|was|were)\s+',
@@ -349,6 +448,22 @@ _QUESTION_WRAPPERS = [
     r"^(?:what'?s|what\s+is)\s+wrong\s+with\s+",
     r'^(?:who\s+first\s+(?:discovered|invented|created|used|found)|when\s+was\s+the\s+first)\s+',
     r'^(?:what\s+day\s+is|what\s+date\s+is|when\s+is|when\s+are)\s+',
+    r'^(?:what\s+do\s+people\s+call|what\s+is\s+another\s+name\s+for|what\s+is\s+the\s+nickname\s+for)\s+',
+    r'^(?:what\s+is\s+the\s+job\s+of|what\s+is\s+the\s+duty\s+of)\s+',
+    r'^(?:why\s+do\s+(?:we|humans|people)\s+use)\s+',
+    r'^(?:how\s+many\s+people\s+live\s+in|how\s+many\s+people\s+live\s+on|how\s+many\s+people\s+live\s+in\s+the)\s+',
+    r'^(?:how\s+strong\s+(?:is|are|was|were)|how\s+smart\s+(?:is|are|was|were)|how\s+intelligent\s+(?:is|are|was|were))\s+',
+    r'^(?:how\s+(?:big|tall|heavy|large|long|fast|far|deep|high|wide|old)\s+can\s+)',
+    r'^(?:what\s+are\s+the\s+parts\s+of|what\s+are\s+the\s+components\s+of|what\s+are\s+the\s+elements\s+of|what\s+are\s+the\s+ingredients\s+of|what\s+are\s+the\s+members\s+of)\s+',
+    r'^(?:can\s+you\s+eat|can\s+you\s+drink|can\s+humans\s+eat|can\s+humans\s+drink)\s+',
+    r'^(?:how\s+many\s+people\s+(?:speak|use|play|watch|visit|read|own|drive)\s+)\s+',
+    r'^(?:who\s+is\s+the\s+main\s+character\s+of|who\s+are\s+the\s+main\s+characters\s+of|who\s+is\s+the\s+villain\s+of|who\s+is\s+the\s+protagonist\s+of|who\s+is\s+the\s+antagonist\s+of|who\s+dies\s+in)\s+',
+    r'^(?:what\s+happens\s+at\s+the\s+end\s+of|what\s+happens\s+in\s+the\s+end\s+of)\s+',
+    r'^(?:what\s+came\s+(?:after|before)|what\s+was\s+(?:before|after)|what\s+led\s+to\s+the\s+(?:fall|decline|rise|end)\s+of|what\s+led\s+to|what\s+caused\s+the\s+(?:fall|decline|rise|end)\s+of)\s+',
+    r'^(?:what\s+is\s+the\s+effect\s+of|what\s+are\s+the\s+effects\s+of)\s+',
+    r'^(?:what\s+is\s+the\s+population\s+of|what\s+was\s+the\s+population\s+of|what\s+is\s+the\s+currency\s+of)\s+',
+    r'^(?:what\s+language\s+do\s+they\s+speak\s+in|what\s+language\s+is\s+spoken\s+in)\s+',
+    r'^(?:why\s+is\s+it\s+called|why\s+are\s+they\s+called)\s+',
     r'^(?:how\s+often\s+(?:does|do|is|are|did)|how\s+frequently\s+(?:does|do|is|are|did))\s+',
     r'^(?:what\s+(?:family|group|class|category|kingdom|phylum|order)\s+(?:does|do|is|are))\s+',
     r'^(?:why\s+do\s+we\s+celebrate|when\s+do\s+we\s+celebrate|how\s+do\s+we\s+celebrate)\s+',
@@ -442,6 +557,61 @@ _TRAILING_QUALIFIERS = [
     r'\s+belong\s+to$', r'\s+symbolize$', r'\s+represent$', r'\s+celebrate$',
     r'\s+celebrate\s+it$', r'\s+occur$', r'\s+take\s+place$', r'\s+happen\s+in\s+general$',
     r'\s+is\s+it$', r'\s+or\s+not$',
+    # Round 13 trailing qualifiers
+    r'\s+cost$', r'\s+overrated$', r'\s+made$', r'\s+produced$', r'\s+created$',
+    r'\s+grown$', r'\s+formed$', r'\s+written\s+by$', r'\s+written$', r'\s+created\s+by$',
+    r'\s+made\s+by$', r'\s+killed\s+by$', r'\s+caused\s+by$', r'\s+first\s+mentioned$',
+    r'\s+first\s+recorded$', r'\s+first\s+documented$', r'\s+first\s+used\s+in\s+writing$',
+    r'\s+grow$', r'\s+form$',
+    # Round 14 trailing qualifiers
+    r'\s+called\s+the\s+[a-z\s]+$', r'\s+also\s+called$', r'\s+exist$', r'\s+exist\s+at\s+all$',
+    r'\s+affect\s+[a-z]+$', r'\s+affects\s+[a-z]+$', r'\s+get\s+its\s+nickname$',
+    r'\s+for\s+humans$', r'\s+for\s+the\s+body$', r'\s+for\s+your\s+health$',
+    # "effect of X on Y" — strip the qualifier target (curated list so
+    # compound topics like "life on mars" are never broken)
+    r'\s+on\s+(?:sleep|health|the\s+body|the\s+brain|the\s+mind|the\s+heart|mood|memory|focus|the\s+skin|the\s+gut|the\s+environment|the\s+climate|the\s+economy|the\s+weather|the\s+planet|the\s+earth|plants|animals|humans|children|adults|athletes|performance|appetite|energy|the\s+nervous\s+system|the\s+immune\s+system|the\s+digestive\s+system)$',
+    # Round 15 trailing qualifiers
+    r'\s+based\s+on\s+a\s+true\s+story$', r'\s+a\s+real\s+place$', r'\s+still\s+around$',
+    r'\s+still\s+exist$', r'\s+now$', r'\s+still\s+alive$', r'\s+married\s+to$',
+    r'\s+have\s+kids$', r'\s+have\s+children$', r'\s+from\s+[a-z]+$',
+    r'\s+are\s+in\s+the\s+world$', r'\s+are\s+on\s+earth$', r'\s+exist\s+in\s+the\s+world$',
+    r'\s+in\s+the\s+world\s+today$', r'\s+left\s+in\s+the\s+world$', r'\s+left\s+on\s+earth$',
+    r'\s+are\s+left\s+in\s+the\s+world$', r'\s+are\s+left\s+on\s+earth$',
+    # Round 16: animal-behavior trailing qualifiers
+    r'\s+live$', r'\s+eat$', r'\s+eats$', r'\s+feed\s+on$', r'\s+run$', r'\s+runs$',
+    r'\s+fly$', r'\s+flies$', r'\s+jump$', r'\s+dive$', r'\s+swim$', r'\s+swims$',
+    r'\s+climb$', r'\s+climbs$', r'\s+talk$', r'\s+talks$', r'\s+purr$', r'\s+purrs$',
+    r'\s+bark$', r'\s+meow$', r'\s+hibernate$', r'\s+hibernates$', r'\s+mate$',
+    r'\s+nest$', r'\s+migrate$', r'\s+migrates$', r'\s+sing$', r'\s+sings$',
+    r'\s+hunt$', r'\s+hunts$', r'\s+attack$', r'\s+attacks$', r'\s+sleep$', r'\s+sleeps$',
+    # Round 17: capability/process trailing qualifiers
+    r'\s+reproduce$', r'\s+communicate$', r'\s+see$', r'\s+hear$', r'\s+smell$',
+    r'\s+navigate$', r'\s+find\s+their\s+way$', r'\s+defend\s+themselves$',
+    r'\s+protect\s+themselves$', r'\s+survive$', r'\s+adapt$', r'\s+breathe$',
+    r'\s+breathe\s+underwater$', r'\s+see\s+in\s+the\s+dark$', r'\s+walk\s+on\s+walls$',
+    r'\s+get$', r'\s+gets$', r'\s+go$', r'\s+travel$', r'\s+hold\s+its\s+breath$',
+    r'\s+structured$', r'\s+organized$', r'\s+made\s+up\s+of$',
+    # Round 18 trailing qualifiers
+    r'\s+most\s+known\s+for$', r'\s+really\s+about$', r'\s+actually\s+about$',
+    r'\s+set$', r'\s+set\s+in$', r'\s+based\s+on\s+a\s+book$', r'\s+based\s+on\s+true\s+events$',
+    r'\s+written\s+for$', r'\s+made\s+for$', r'\s+known\s+for\s+being$',
+    # Round 19: rise/fall/history trailing qualifiers
+    r'\s+become\s+popular$', r'\s+become\s+famous$', r'\s+popular$', r'\s+so\s+popular$',
+    r'\s+fall$', r'\s+falls$', r'\s+fall\s+apart$', r'\s+collapse$', r'\s+collapses$',
+    r'\s+decline$', r'\s+declines$', r'\s+came\s+after$', r'\s+came\s+before$',
+    r'\s+succeeded$', r'\s+ended$', r'\s+replaced$', r'\s+rise\s+to\s+power$',
+    r'\s+rise\s+and\s+fall$', r'\s+fall\s+of$',
+r'\s+rise\s+to\s+power$', r'\s+rise\s+and\s+fall$', r'\s+fall\s+of$',
+    # Round 20: health/process trailing qualifiers
+    r'\s+edible$', r'\s+safe\s+to\s+eat$', r'\s+poisonous$', r'\s+venomous$',
+    r'\s+good\s+for\s+you$', r'\s+bad\s+for\s+you$', r'\s+good\s+for\s+your\s+health$',
+    r'\s+bad$', r'\s+unhealthy$', r'\s+healthy$',
+    r'\s+harvested$', r'\s+extracted$', r'\s+refined$', r'\s+processed$',
+    r'\s+manufactured$', r'\s+cooked$', r'\s+prepared$', r'\s+stored$', r'\s+preserved$',
+    r'\s+fermented$', r'\s+brewed$', r'\s+distilled$', r'\s+bottled$', r'\s+packaged$',
+    # Round 21 trailing qualifiers
+    r'\s+exist$', r'\s+are\s+left$', r'\s+in\s+existence$', r'\s+in\s+circulation$',
+    r'\s+currently$', r'\s+today$', r'\s+right\s+now$', r'\s+in\s+the\s+us$',
 ]
 
 
@@ -566,6 +736,32 @@ def _apply_slang(text):
         (r'\bjsyk\b', 'just so you know'), (r'\bjic\b', 'just in case'),
         (r'\bpov\b', 'point of view'), (r'\bfwiw\b', 'for what it is worth'),
         (r'\bggez\b', 'good game easy'), (r'\bunlucky\b', 'that is unlucky'),
+        # Round 14
+        (r'\bidek\b', 'i do not even know'), (r'\byk\b', 'you know'),
+        (r'\bwhatchu\b', 'what do you'), (r'\bwhachu\b', 'what do you'),
+        (r'\bbroski\b', 'bro'), (r'\bbrotha\b', 'brother'), (r'\bsis\b', 'sister'),
+        (r'\bdawg\b', 'friend'), (r'\bhomie\b', 'friend'),
+        # Round 15
+        (r'\bbestie\b', 'best friend'), (r'\bbff\b', 'best friend'),
+        (r'\bhubby\b', 'husband'), (r'\bwifey\b', 'wife'), (r'\bboi\b', 'boy'),
+        (r'\bgurl\b', 'girl'), (r'\bcuh\b', 'cousin'), (r'\bsupa\b', 'super'),
+        (r'\bbros\b', 'brothers'), (r'\bsis\b', 'sister'),
+        # Round 16
+        (r'\bkewl\b', 'cool'), (r'\bsanks\b', 'thanks'), (r'\bmmhm\b', 'mm hmm'),
+        # Round 17
+        (r'\bprobs\b', 'probably'), (r'\bbday\b', 'birthday'), (r'\bidky\b', 'i do not know why'),
+        (r'\bkthx\b', 'thanks'), (r'\btysvm\b', 'thank you so much'),
+        (r'\bxoxo\b', 'hugs and kisses'), (r'\bsmt\b', 'something'),
+        # Round 18
+        (r'\bnoice\b', 'nice'), (r'\bnooice\b', 'nice'), (r'\bniceee\b', 'nice'),
+        (r'\bsheeeeesh\b', 'sheesh'), (r'\bggwp\b', 'good game well played'),
+        (r'\bhol\s+up\b', 'hold up'), (r'\bhol\'\s+up\b', 'hold up'), (r'\blmaooo\b', 'laughing my a off'),
+        # Round 19
+        (r'\b100%\b', 'one hundred percent'), (r'\b100\s*percent\b', 'one hundred percent'),
+        # Round 21
+        (r'\bpeeps\b', 'people'), (r'\bya\'ll\b', 'you all'), (r'\brizz\b', 'charisma'),
+        # Round 22
+        (r'\bbffr\b', 'be for real'), (r'\bdeadass\b', 'for real'), (r'\bngl\b', 'not going to lie'),
     ]
     result = text
     for pat, repl in _SLANG:
@@ -595,6 +791,14 @@ def unwrap_query(query):
     slanged = _apply_slang(unwrapped)
     if slanged != unwrapped:
         unwrapped = slanged
+    # "i don't know what X is" / "idk what X is" -> "what is X"
+    _idk_match = re.match(
+        r'^i\s+do\s+not\s+know\s+what\s+(?:a\s+|an\s+|the\s+)?(.+?)(?:\s+is|\s+are|\s+means?|\s+means|\s+stand\s+for|\s+was|\s+were)?$',
+        unwrapped)
+    if _idk_match:
+        _idk_topic = _idk_match.group(1).strip()
+        if len(_idk_topic) > 2:
+            unwrapped = f"what is {_idk_topic}"
     for wrapper in _QUESTION_WRAPPERS:
         stripped = re.sub(wrapper, '', unwrapped, flags=re.IGNORECASE).strip()
         if stripped and len(stripped) > 3 and stripped != unwrapped:
@@ -708,8 +912,8 @@ def lookup(query):
         r'^(?:explain|describe|define)\s+(?:the\s+)?(?:concept\s+of\s+|idea\s+of\s+)?',
         r'^what\s+is\s+(?:a|an|the|this|that)?\s*',
         r'^what\s+are\s+',
-        r'^how\s+(?:does|do|would|can|should|could)\s+(?:a|an|the|this|that|i|we|you|they|he|she|it)?\s*',
-        r'^why\s+(?:is|are|do|does|did|would|could|should)\s+(?:a|an|the|this|that|i|we|you|they|he|she|it)?\s*',
+        r'^how\s+(?:does|do|would|can|should|could)\s+(?:(?:a|an|the|this|that|i|we|you|they|he|she|it)\s+)?',
+        r'^why\s+(?:is|are|do|does|did|would|could|should)\s+(?:(?:a|an|the|this|that|i|we|you|they|he|she|it)\s+)?',
     ]
     q_writing_stripped = q
     for prefix in _WRITING_PREFIXES:
@@ -788,9 +992,35 @@ def lookup(query):
     # Add the writing-stripped variant if different
     if q_writing_stripped != q and q_writing_stripped not in variants:
         variants.append(q_writing_stripped)
-    for pattern, answer in entries:
+
+    # Candidate pre-filter: an escaped-literal pattern can only match a
+    # variant that contains every one of its words. For each variant, take its
+    # rarest (least-common) word and pull that word's candidate list — the
+    # rarest word of a natural-language query is almost always the content
+    # noun that matching patterns also contain. Union across variants (so
+    # slang-normalized variants like "what is a cat" contribute their own
+    # candidates even when the raw query has none), then verify each entry's
+    # word set is fully contained in the variant word union (raw-regex
+    # entries always pass).
+    _candidate_indices = set(_RAW_ENTRY_INDICES)
+    _variant_words = set()
+    for _v in variants:
+        if not _v or len(_v) < 3:
+            continue
+        _vwords = _word_tokens(_v)
+        if not _vwords:
+            continue
+        _variant_words |= _vwords
+        _vrarest = min(_vwords, key=lambda w: len(_WORD_INDEX.get(w, ())))
+        _candidate_indices |= set(_WORD_INDEX.get(_vrarest, ()))
+
+    for _ci in sorted(_candidate_indices):
+        pattern, answer = entries[_ci]
+        _entry_word_set = _ENTRY_WORDS[_ci]
+        if _entry_word_set is not None and not (_entry_word_set <= _variant_words):
+            continue
         for variant in variants:
-            if not variant or len(variant) < 5:
+            if not variant or len(variant) < 3:
                 continue
             m = pattern.search(variant)
             if m:
@@ -851,7 +1081,14 @@ def lookup(query):
                 best_fuzzy_score = -999999  # Can be negative (with penalty)
                 best_fuzzy_answer = None
                 best_fuzzy_pattern = ''
-                for pattern, answer in entries:
+                # Fuzzy candidates: any entry sharing at least one query word
+                # (plus raw-regex entries). Winners need raw_hits >= 2, so
+                # entries sharing zero words can never win and are skipped.
+                _fuzzy_candidates = set(_RAW_ENTRY_INDICES)
+                for _w in q_words:
+                    _fuzzy_candidates |= _WORD_INDEX.get(_w, ())
+                for _ci in _fuzzy_candidates:
+                    pattern, answer = entries[_ci]
                     pattern_str = pattern.pattern.lower()
                     # Count how many query words appear in the pattern
                     word_hits = sum(1 for w in q_words if w in pattern_str)

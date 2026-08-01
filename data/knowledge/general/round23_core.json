@@ -1,0 +1,167 @@
+[
+  {
+    "q": ["cat", "cats", "what is a cat", "what even is a cat", "do you know what a cat is", "what information do you have on cats", "tell me about cats"],
+    "a": "The cat (Felis catus), also called the domestic cat or house cat, is a small domesticated carnivorous mammal of the family Felidae. It is an obligate carnivore, requiring a mostly meat-based diet, and it hunts by stalking and pouncing. Cats were domesticated around 10,000 years ago in the Near East, valued for controlling rodents. They have retractable claws, excellent night vision, and highly sensitive whiskers. Domestic cats come in hundreds of breeds and coat colors, and they communicate through meowing, purring, hissing, and body language.",
+    "categories": ["pet", "mammal", "domestic animal"]
+  },
+  {
+    "q": ["dog", "dogs", "what is a dog", "what is a dog?", "tell me about dogs", "facts about dogs"],
+    "a": "The dog (Canis familiaris or Canis lupus familiaris) is a domesticated carnivorous mammal descended from grey wolves, and was the first animal domesticated by humans, around 15,000 to 40,000 years ago. Dogs were bred from wolves for hunting, guarding, and companionship, and today there are over 340 recognized breeds ranging from tiny Chihuahuas to giant Great Danes. Dogs have an extraordinary sense of smell, up to 100,000 times more sensitive than humans, and they communicate through barking, tail wagging, and body posture. They are widely used as working animals (herding, search and rescue, police, guide dogs) and are famously loyal companions.",
+    "categories": ["pet", "mammal", "domestic animal"]
+  },
+  {
+    "q": ["coffee", "what is coffee", "coffee facts", "tell me about coffee"],
+    "a": "Coffee is a brewed beverage made from roasted coffee beans, the seeds of the Coffea plant, a shrub native to the highlands of Ethiopia. The two most commonly grown species are Coffea arabica, prized for its smooth, complex flavor, and Coffea robusta, which has higher caffeine and a stronger, more bitter taste. Coffee contains caffeine, a stimulant that blocks adenosine receptors in the brain, increasing alertness. It is brewed in many ways, including espresso, French press, pour-over, and cold brew. Coffee is one of the world's most traded commodities, and the global coffee industry is worth hundreds of billions of dollars annually, with Brazil, Vietnam, and Colombia among the top producers.",
+    "categories": ["beverage", "drink"]
+  },
+  {
+    "q": ["tea", "what is tea", "tea facts", "tell me about tea"],
+    "a": "Tea is an aromatic beverage made by steeping the cured leaves of Camellia sinensis, an evergreen shrub native to East Asia, in hot or boiling water. All traditional teas — green, black, white, oolong, and pu-erh — come from the same plant species and differ mainly in how the leaves are processed and oxidized. Black tea is fully oxidized, green tea is unoxidized and steamed or pan-fired, and oolong is partially oxidized. Tea contains caffeine (less than coffee), plus L-theanine, an amino acid that promotes calm alertness, and polyphenols called catechins that act as antioxidants. After water, tea is the most widely consumed beverage in the world, with China, India, and Kenya among the largest producers.",
+    "categories": ["beverage", "drink"]
+  },
+  {
+    "q": ["sun", "what is the sun", "why does the sun shine", "how big is the sun"],
+    "a": "The Sun is the star at the center of our solar system, a nearly perfect sphere of hot plasma about 1.39 million kilometers (864,000 miles) across — roughly 109 times Earth's diameter. It contains about 99.86% of the solar system's mass and is about 4.6 billion years old. The Sun shines because its core fuses hydrogen into helium via nuclear fusion at around 15 million degrees Celsius, releasing enormous energy that radiates outward as light and heat. Its surface temperature is about 5,500 degrees Celsius. The Sun is a G-type main-sequence star (yellow dwarf) and will eventually expand into a red giant in about 5 billion years.",
+    "categories": ["star", "celestial body"]
+  },
+  {
+    "q": ["moon", "what is the moon", "tell me about the moon"],
+    "a": "The Moon is Earth's only natural satellite, a rocky body about 3,475 kilometers in diameter, roughly a quarter of Earth's size. It orbits Earth at an average distance of about 384,400 kilometers (239,000 miles) and takes about 27.3 days to complete one orbit. The Moon is in synchronous rotation, so the same face always points toward Earth. It formed about 4.5 billion years ago, most likely when a Mars-sized body collided with the early Earth. The Moon has almost no atmosphere and no liquid water on its surface, with extreme temperature swings from about 127 degrees Celsius in sunlight to -173 degrees Celsius in shadow. Its gravity drives Earth's ocean tides, and it is the only celestial body humans have walked on, first in 1969 during Apollo 11.",
+    "categories": ["moon", "celestial body"]
+  },
+  {
+    "q": ["earth", "what is the earth", "is the earth flat", "how old is the earth"],
+    "a": "Earth is the third planet from the Sun and the only known planet to harbor life. It is about 12,742 kilometers in diameter and orbits the Sun at an average distance of about 150 million kilometers (93 million miles). Earth is roughly 4.54 billion years old. It is an oblate spheroid — nearly spherical but slightly flattened at the poles — not flat, as proven by centuries of observations including ship horizons, lunar eclipses, and photographs from space. About 71% of Earth's surface is covered by saltwater oceans, and it has a nitrogen-oxygen atmosphere, a protective magnetic field, and plate tectonics that recycle its crust. Its single moon stabilizes its axial tilt, giving us stable seasons.",
+    "categories": ["planet", "celestial body"]
+  },
+  {
+    "q": ["fire", "what is fire", "is fire a thing", "what even is fire"],
+    "a": "Fire is a rapid chemical reaction called combustion, in which a fuel reacts with oxygen, releasing heat and light. It is not a state of matter (solid, liquid, gas, or plasma); it is a process — the visible result of burning. Fire requires three things, often called the fire triangle: fuel, oxygen, and heat. The flames we see are glowing gases and tiny soot particles heated to incandescence. Fire has been used by humans for hundreds of thousands of years for warmth, cooking, light, and toolmaking, and it was a turning point in human evolution. Uncontrolled fire is a major natural hazard, while controlled fire remains essential to industry and daily life.",
+    "categories": ["phenomenon"]
+  },
+  {
+    "q": ["water", "what is water", "why is water wet"],
+    "a": "Water (H2O) is a transparent, tasteless, odorless chemical substance composed of two hydrogen atoms covalently bonded to one oxygen atom. It is a liquid at room temperature and freezes at 0 degrees Celsius and boils at 100 degrees Celsius at sea level. Water is essential to all known forms of life, covering about 71% of Earth's surface, though only about 2.5% is freshwater. Ice floats because solid water is less dense than liquid water — an unusual property caused by hydrogen bonding that arranges water molecules into an open crystalline lattice. Water is called the universal solvent because it dissolves more substances than any other common liquid.",
+    "categories": ["substance", "chemical"]
+  },
+  {
+    "q": ["rainbow", "rainbows", "what is a rainbow", "how is a rainbow formed", "explain how rainbows form"],
+    "a": "A rainbow is an optical and meteorological phenomenon that appears as a multicolored arc when sunlight is refracted, reflected, and dispersed by water droplets in the atmosphere. When sunlight enters a raindrop, it slows down and bends (refracts), separates into its component colors, reflects off the back of the drop, and refracts again as it exits. The result is a spectrum of colors — red, orange, yellow, green, blue, indigo, and violet — with red on the outer edge and violet on the inner edge. Each color appears at a slightly different angle, about 42 degrees from the anti-solar point, which is why a rainbow always appears opposite the Sun. Double rainbows occur when light reflects twice inside the droplets.",
+    "categories": ["phenomenon"]
+  },
+  {
+    "q": ["spider", "spiders", "what is a spider", "how many legs does a spider have"],
+    "a": "Spiders are air-breathing arachnids of the order Araneae, with eight legs (not six like insects), two body segments (cephalothorax and abdomen), and no wings or antennae. They are found on every continent except Antarctica, with over 50,000 described species. Spiders produce silk from spinnerets at the rear of their abdomen, using it to build webs, line burrows, wrap prey, and travel by ballooning. Nearly all spiders are venomous, but only a few dozen species are dangerous to humans, with the black widow and brown recluse among the most notable. Spiders are crucial predators that control insect populations, and they evolved around 300 million years ago.",
+    "categories": ["arachnid", "animal"]
+  },
+  {
+    "q": ["bee", "bees", "what is a bee", "what should i know about bees", "how do bees make honey"],
+    "a": "Bees are flying insects closely related to wasps and ants, known for their role in pollination and, in the case of honeybees, for producing honey. There are over 20,000 species of bees worldwide, ranging from solitary species to highly social ones like the western honeybee (Apis mellifera), which lives in colonies of tens of thousands. Bees make honey by collecting nectar from flowers, carrying it in their honey stomachs, and depositing it in the hive where water is evaporated and enzymes break down the sugars. A single honeybee visits up to 5,000 flowers per day, and bees pollinate roughly a third of the food crops humans eat. A colony is led by a queen, with female workers doing most of the labor and male drones existing mainly to mate.",
+    "categories": ["insect", "animal"]
+  },
+  {
+    "q": ["elephant", "elephants", "what is an elephant", "what information do you have on elephants", "how much does an elephant weigh"],
+    "a": "Elephants are the largest living land animals, belonging to the family Elephantidae. There are three living species: the African bush elephant, the African forest elephant, and the Asian elephant. African bush elephants, the largest, can stand over 4 meters (13 feet) tall at the shoulder and weigh up to 6,000 to 7,000 kilograms (13,000-15,000 pounds). Elephants are distinguished by their trunks (a fused nose and upper lip with up to 40,000 muscles), large ears that radiate heat, and ivory tusks. They are highly intelligent, with complex social structures led by matriarchs, and they communicate through infrasound that travels for kilometers. Elephants live 60-70 years and are keystone species that shape their ecosystems by clearing paths and dispersing seeds.",
+    "categories": ["mammal", "animal"]
+  },
+  {
+    "q": ["volcano", "volcanoes", "what is a volcano", "what can you say about volcanoes", "how do volcanoes erupt"],
+    "a": "A volcano is an opening in Earth's crust through which molten rock (magma), ash, and gases escape from below the surface. Volcanoes form where tectonic plates diverge, converge, or at hot spots like Hawaii. When magma rises and pressure builds, eruptions occur, ranging from gentle lava flows to violent explosions that blast ash high into the atmosphere. There are about 1,500 potentially active volcanoes on Earth, with roughly 50-70 erupting each year. The most active include Kilauea in Hawaii, Stromboli in Italy, and Mount Etna. Volcanic eruptions can create new land, enrich soils with minerals, and, in extreme cases, affect global climate by injecting ash and sulfur aerosols into the stratosphere.",
+    "categories": ["geology", "phenomenon"]
+  },
+  {
+    "q": ["titanic", "the titanic", "what is the titanic", "spill the beans about the titanic", "tell me about the titanic"],
+    "a": "The Titanic was a British passenger liner of the White Star Line, the largest ship afloat when she set sail on her maiden voyage from Southampton to New York on 10 April 1912. She was 269 meters (882 feet) long, with luxury accommodations including a gymnasium, swimming pool, and grand staircase. On 14 April 1912, four days into the voyage, she struck an iceberg in the North Atlantic and sank in under three hours. Of the roughly 2,224 people aboard, about 1,500 died, making it one of the deadliest peacetime maritime disasters in history. The tragedy led to sweeping safety reforms, including the International Convention for the Safety of Life at Sea (SOLAS), which mandated enough lifeboats for all aboard. The wreck was discovered in 1985 at a depth of about 3,800 meters.",
+    "categories": ["ship", "history"]
+  },
+  {
+    "q": ["quasar", "what is a quasar", "what the heck is a quasar"],
+    "a": "A quasar (short for quasi-stellar radio source) is an extremely luminous active galactic nucleus powered by a supermassive black hole at the center of a distant galaxy. As matter spirals into the black hole, it forms an accretion disk heated to millions of degrees, emitting immense amounts of light across the electromagnetic spectrum. A single quasar can outshine an entire galaxy of hundreds of billions of stars, yet its light comes from a region smaller than our solar system. Quasars are among the most distant and oldest objects observed, with some seen as they were less than a billion years after the Big Bang, making them crucial probes of the early universe. The closest known quasar is about 600 million light-years away.",
+    "categories": ["astronomy", "celestial object"]
+  },
+  {
+    "q": ["tesseract", "what is a tesseract", "what in the world is a tesseract"],
+    "a": "A tesseract is the four-dimensional analogue of a cube: a geometric figure whose four dimensions are all mutually perpendicular. Just as a cube has 6 square faces, 12 edges, and 8 vertices, a tesseract has 8 cubical cells, 24 square faces, 32 edges, and 16 vertices. It cannot exist physically in our three-dimensional space, but it can be projected or unfolded into 3D, just as a cube can be unfolded into a 2D cross-shaped net. The tesseract appears in mathematics, physics (as a model of four-dimensional spacetime), and culture, most famously as the Marvel Cinematic Universe's 'Cosmic Cube' and in Madeleine L'Engle's novel A Wrinkle in Time.",
+    "categories": ["mathematics", "geometry"]
+  },
+  {
+    "q": ["wheel", "who invented the wheel", "who even invented the wheel", "the wheel"],
+    "a": "The wheel is one of humanity's most important inventions, but no single person invented it — it emerged independently in multiple ancient cultures. The earliest known wheels date to around 3500 BCE in Mesopotamia (modern Iraq), where they were used on potter's wheels before being applied to carts and chariots. Solid wooden wheels were first, later lightened with spokes around 2000 BCE. The wheel-and-axle mechanism revolutionized transport, agriculture, and industry. Interestingly, some great ancient civilizations, including the pre-Columbian Americas, never developed the wheel for transport despite having it on toys, likely because they lacked suitable draft animals.",
+    "categories": ["invention", "technology"]
+  },
+  {
+    "q": ["rose", "what is a rose", "what does the rose symbolize"],
+    "a": "The rose is a woody perennial flowering plant of the genus Rosa, family Rosaceae, with over 300 species and thousands of cultivars. Roses are prized for their fragrant, layered flowers and have been cultivated for over 5,000 years. Symbolically, the rose is the most iconic flower in Western culture: a red rose represents romantic love and passion, white roses symbolize purity and innocence, yellow roses friendship, and pink roses gratitude or admiration. In ancient Rome, roses symbolized secrecy (the phrase 'sub rosa', under the rose, meant confidential), and in Christian iconography the rose is associated with the Virgin Mary. The rose is the national flower of England and the state flower of several US states, including New York and Georgia.",
+    "categories": ["flower", "plant"]
+  },
+  {
+    "q": ["banana", "bananas", "what is a banana", "what does a banana taste like", "what are bananas"],
+    "a": "The banana is an elongated, curved fruit produced by large herbaceous flowering plants of the genus Musa, native to Southeast Asia and Papua New Guinea. Botanically, the banana is a berry, and the plant is technically a giant herb rather than a tree — its 'trunk' is a pseudostem of tightly packed leaves. Bananas have a sweet, creamy taste with a soft texture and subtle floral notes; the common Cavendish variety is mild and sweet, while red bananas taste sweeter with raspberry-like hints. Bananas are rich in potassium, vitamin B6, vitamin C, and fiber. The most widely consumed banana variety, the Cavendish, is seedless and propagated by cloning, which makes the global crop vulnerable to diseases like Panama disease.",
+    "categories": ["fruit", "food"]
+  },
+  {
+    "q": ["chocolate", "what is chocolate", "what does chocolate taste like", "how is chocolate made"],
+    "a": "Chocolate is a food made from roasted and ground cacao beans, the seeds of the Theobroma cacao tree native to the Americas. The beans are fermented, dried, roasted, and ground into cocoa mass, which is separated into cocoa solids and cocoa butter. Dark chocolate contains 50-90% cocoa solids plus sugar, giving it a rich, bittersweet taste with earthy, fruity, and sometimes nutty notes; milk chocolate adds milk powder for a creamier, sweeter flavor; white chocolate contains cocoa butter, milk, and sugar but no cocoa solids. Chocolate contains theobromine and a small amount of caffeine, and dark chocolate is rich in flavanols, antioxidants linked to heart health. Cacao was first domesticated by the Olmec and Maya civilizations over 3,000 years ago, and chocolate was consumed as a bitter, spiced drink before the Spanish brought it to Europe.",
+    "categories": ["food", "confection"]
+  },
+  {
+    "q": ["what family does the lion belong to", "what family do lions belong to", "lion family"],
+    "a": "The lion (Panthera leo) belongs to the family Felidae, the biological family of all cats, which also includes tigers, leopards, jaguars, cheetahs, cougars, lynxes, and domestic cats. Within Felidae, the lion is placed in the subfamily Pantherinae (the big cats) and the genus Panthera, which it shares with the tiger, leopard, jaguar, and snow leopard. Felidae is part of the order Carnivora, the meat-eating mammals that also include dogs, bears, weasels, and seals. All felids share traits such as retractable claws (except cheetahs), sharp carnassial teeth, and highly specialized senses of sight and hearing.",
+    "categories": ["cat", "animal"]
+  },
+  {
+    "q": ["peace sign", "what does the peace sign stand for", "peace symbol", "what does the peace symbol mean"],
+    "a": "The peace sign — a circle with a vertical line and two downward diagonal lines inside — was designed in 1958 by British graphic designer Gerald Holtom for the Campaign for Nuclear Disarmament (CND). It combines the semaphore signals for the letters N and D (nuclear disarmament), with the vertical line and downward diagonals representing N and the outer circle framing them. Holtom said the symbol also suggested a person in despair, with arms outstretched downward. It was first used in a march on Easter weekend 1958 and spread rapidly in the 1960s as a symbol of the anti-war and counterculture movements, particularly against the Vietnam War, before becoming a universal symbol of peace and protest.",
+    "categories": ["symbol"]
+  },
+  {
+    "q": ["what is the biggest animal in the world", "largest animal in the world", "biggest animal ever"],
+    "a": "The biggest animal in the world is the blue whale (Balaenoptera musculus), a marine mammal of the family Balaenopteridae. Blue whales can reach about 30 meters (98 feet) in length and weigh up to 200 tonnes (440,000 pounds), making them not only the largest animal alive today but likely the largest animal that has ever lived, bigger than any dinosaur. A blue whale's heart alone can weigh as much as a small car, and its tongue can weigh as much as an elephant. Despite their size, they feed almost exclusively on tiny shrimp-like crustaceans called krill, filtering up to four tonnes of krill per day through their baleen plates. Their low-frequency calls can travel hundreds of kilometers underwater.",
+    "categories": ["animal", "mammal"]
+  },
+  {
+    "q": ["is a tomato a fruit", "are tomatoes fruits", "tomato fruit or vegetable"],
+    "a": "Botanically, a tomato is a fruit — specifically a berry — because it develops from the ovary of a flower and contains seeds. However, in culinary terms, tomatoes are treated as vegetables because of their savory flavor and typical uses in cooking. This split is so entrenched that the US Supreme Court ruled on it in Nix v. Hedden (1893), deciding that for tariff purposes tomatoes count as vegetables, even though botanists classify them as fruits. So both answers are correct, depending on whether you're speaking botanically or culinarily.",
+    "categories": ["fruit", "food"]
+  },
+  {
+    "q": ["how many tigers are left in the world", "tiger population", "how many tigers remain"],
+    "a": "An estimated 4,500 to 5,500 tigers (Panthera tigris) remain in the wild today, a dramatic decline from the roughly 100,000 that roamed Asia a century ago. Around 75% of wild tigers live in India, whose Project Tiger program has helped populations recover from about 1,400 in 2006 to roughly 3,000-3,700 today. Other significant populations exist in Russia (Siberian tigers), Nepal, Bhutan, and Indonesia (Sumatran tigers). Tigers have lost over 90% of their historical range due to habitat destruction, poaching for traditional medicine, and prey depletion. Three subspecies — the Bali, Caspian, and Javan tigers — went extinct in the 20th century, and the South China tiger survives only in captivity. Global conservation goal TX2 aims to double wild tiger numbers by 2022, with mixed results.",
+    "categories": ["cat", "animal"]
+  },
+  {
+    "q": ["what is the population of china", "how many people live in china", "china population"],
+    "a": "China is the second-most-populous country in the world, with about 1.41 billion people as of the mid-2020s (India surpassed it in 2023 with roughly 1.43 billion). China's population grew rapidly in the 20th century but has begun to decline, falling for several consecutive years since 2022 as birth rates dropped well below replacement level. The country's one-child policy, in effect from 1980 to 2016, accelerated this demographic transition. China now faces an aging population and a shrinking workforce, with the median age around 39 years. About 60% of Chinese people live in urban areas, and the largest city is Shanghai, followed by Beijing and Chongqing.",
+    "categories": ["country", "geography"]
+  },
+  {
+    "q": ["what is the climate of the sahara", "sahara desert climate"],
+    "a": "The Sahara, the world's largest hot desert spanning North Africa, has an extreme arid climate. It is one of the hottest and driest places on Earth, with summer daytime temperatures regularly exceeding 40-47 degrees Celsius (104-117 degrees Fahrenheit), and the record high reaching about 58 degrees Celsius in Libya in 1922. Rainfall averages less than 100 millimeters (4 inches) per year, with large areas receiving virtually none, and some parts go years between rains. Because of the clear, dry air and lack of cloud cover, nights are surprisingly cold — temperatures can drop below freezing in winter, with a diurnal range of 30 degrees or more. The Sahara experiences hot, dry winds like the khamsin and harmattan, and its boundaries expand and contract over thousands of years due to orbital cycles, with evidence it was a green, lake-filled savanna as recently as 6,000 years ago.",
+    "categories": ["geography", "climate"]
+  },
+  {
+    "q": ["what are the risks of smoking", "risks of smoking", "health effects of smoking", "why is smoking bad"],
+    "a": "Smoking is one of the leading preventable causes of death worldwide, killing over 8 million people per year according to the WHO. Cigarette smoke contains thousands of chemicals, at least 70 of which are known carcinogens, including tar, formaldehyde, arsenic, and benzene. Smoking causes lung cancer (responsible for about 85% of cases), as well as cancers of the mouth, throat, esophagus, bladder, pancreas, and cervix. It damages the cardiovascular system, causing heart attacks, strokes, and peripheral artery disease, and destroys lung tissue through chronic obstructive pulmonary disease (COPD) and emphysema. Smoking also harms reproductive health, accelerates skin aging, and damages the DNA of every cell type it contacts. Secondhand smoke causes an estimated 1.2 million deaths annually in non-smokers. Quitting at any age reduces risk, with substantial benefits within months.",
+    "categories": ["health"]
+  },
+  {
+    "q": ["what are the disadvantages of nuclear energy", "nuclear energy downsides", "nuclear power disadvantages"],
+    "a": "Nuclear energy generates large amounts of low-carbon electricity, but it carries significant disadvantages. The most serious risks are nuclear accidents: catastrophic failures like Chernobyl (1986) and Fukushima (2011) released radioactive material that forced mass evacuations and contaminated large areas, and the long-term health and cleanup costs are enormous. Radioactive waste remains hazardous for thousands to hundreds of thousands of years, and no country has yet opened a permanent deep-geological repository for high-level waste. Nuclear plants are extremely expensive to build — often $6-10 billion and a decade or more of construction — with cost overruns common. There are also proliferation concerns, since enrichment and reprocessing technologies can produce weapons-usable material. Finally, plants have long decommissioning costs, and uranium mining has environmental and health impacts on local communities.",
+    "categories": ["energy", "technology"]
+  },
+  {
+    "q": ["how is olive oil extracted", "how is olive oil made", "olive oil production"],
+    "a": "Olive oil is extracted from the fruit of the olive tree (Olea europaea) through a mechanical process that does not involve chemical solvents. First, olives are harvested, washed, and crushed — traditionally with stone mills, now with stainless steel hammers — into a paste, pits and all. The paste is then malaxed (slowly mixed) for 20-40 minutes to allow oil droplets to coalesce. Next, the oil is separated from the solid pulp and water, typically using a centrifuge (decanter) that spins the paste and separates the lighter oil from the heavier water and solids. The first pressing yields extra virgin olive oil, the highest quality grade with acidity below 0.8% and no defects, which must be produced entirely by mechanical means at temperatures below 27 degrees Celsius to preserve flavor compounds. Refined olive oil is produced from lower-quality oil using heat and filtration, losing much of its flavor and antioxidants.",
+    "categories": ["food", "cooking"]
+  },
+  {
+    "q": ["how is beer brewed", "how is beer made", "beer brewing process"],
+    "a": "Beer is brewed through a process called mashing, boiling, fermenting, and conditioning. First, malted barley (grain that has been allowed to germinate, then dried) is crushed and mixed with hot water in a mash tun, where enzymes convert the grain's starches into fermentable sugars; the resulting sweet liquid is called wort. The wort is boiled for 60-90 minutes, and hops are added during the boil to provide bitterness, flavor, and preservative qualities. After boiling, the wort is rapidly cooled, then transferred to a fermentation vessel where brewer's yeast is added. The yeast ferments the sugars into alcohol and carbon dioxide, typically over one to two weeks. Finally, the beer is conditioned (aged) for weeks to months, carbonated, filtered, and packaged. The four essential ingredients are water, malted grain, hops, and yeast, and beer styles range from crisp lagers (bottom-fermenting yeast, cold fermentation) to complex ales (top-fermenting yeast, warmer fermentation).",
+    "categories": ["food", "beverage", "brewing"]
+  },
+  {
+    "q": ["how is cheese fermented", "how is cheese made", "cheese making process"],
+    "a": "Cheese is made by coagulating milk proteins (casein) and then fermenting and aging the curds. The process begins by warming milk and adding a starter culture of lactic acid bacteria, which begin fermenting lactose into lactic acid and lowering the pH. Rennet, an enzyme mixture, is then added to coagulate the milk into a gel, which is cut into curds and whey. The curds are cooked, drained, pressed, and salted. Ripening (fermentation) happens during aging: the starter bacteria, plus added molds or surface cultures like Penicillium roqueforti (blue cheese) or Brevibacterium linens (washed rinds), break down proteins and fats into flavorful compounds. Aging can last from a few weeks (fresh cheeses like mozzarella) to several years (hard cheeses like Parmigiano-Reggiano), and it is during this stage that cheese develops its characteristic texture, aroma, and sharpness.",
+    "categories": ["food", "dairy"]
+  }
+]

@@ -1,0 +1,117 @@
+[
+  {
+    "q": ["albert einstein", "einstein", "who is albert einstein", "who is einstein", "who was einstein", "tell me about einstein"],
+    "a": "Albert Einstein (1879-1955) was a German-born theoretical physicist widely regarded as one of the greatest scientists of all time. In 1905, his 'miracle year', he published four groundbreaking papers, including the special theory of relativity and the photoelectric effect, for which he won the 1921 Nobel Prize in Physics. In 1915 he published the general theory of relativity, which recast gravity as the curvature of spacetime and predicted phenomena later confirmed, such as the bending of starlight and gravitational waves. His famous equation E=mc^2 established the equivalence of mass and energy. Einstein fled Nazi Germany in 1933 and settled at Princeton, where he spent his later years working on a unified field theory. He was also a vocal pacifist and civil rights advocate.",
+    "categories": ["scientist", "physicist"]
+  },
+  {
+    "q": ["napoleon", "napoleon bonaparte", "who is napoleon", "who was napoleon"],
+    "a": "Napoleon Bonaparte (1769-1821) was a French military general and statesman who rose to prominence during the French Revolution and became Emperor of the French from 1804 to 1814, and briefly again in 1815. He built one of the largest European empires since Rome through a series of brilliant military campaigns, defeating Austria, Prussia, and Russia in turn. His most enduring legacy is the Napoleonic Code, a civil law system that influenced legal codes worldwide. In 1812 he disastrously invaded Russia, losing most of his army to the winter, and was eventually defeated at Waterloo in 1815 and exiled to the remote island of Saint Helena, where he died. Despite his final defeat, Napoleon is remembered as one of history's greatest military commanders and a transformative (if controversial) figure in modern state-building.",
+    "categories": ["historical figure", "leader"]
+  },
+  {
+    "q": ["cleopatra", "who was cleopatra", "cleopatra vii", "tell me about cleopatra"],
+    "a": "Cleopatra VII (69-30 BCE) was the last active ruler of the Ptolemaic Kingdom of Egypt, a Greek-Macedonian dynasty descended from Alexander the Great's general Ptolemy. She ascended the throne at about 18 and ruled for 21 years, speaking many languages and presenting herself as the reincarnation of the goddess Isis. Her political and romantic alliances with Julius Caesar and later Mark Antony were crucial to her power and ultimately her downfall. After Antony's defeat by Octavian (later Augustus) at the Battle of Actium in 31 BCE, Cleopatra took her own life — traditionally said to be by the bite of an asp, though modern historians debate the method. Her death in 30 BCE marked the end of Ptolemaic rule and the beginning of Egypt as a Roman province.",
+    "categories": ["historical figure", "ruler"]
+  },
+  {
+    "q": ["gandhi", "mahatma gandhi", "who is gandhi", "who was gandhi"],
+    "a": "Mohandas Karamchand Gandhi (1869-1948), known as Mahatma ('Great Soul'), was an Indian lawyer, anti-colonial nationalist, and political ethicist who led India's independence movement against British rule through nonviolent civil disobedience. He developed the philosophy of satyagraha (truth-force), organizing mass campaigns including the Salt March of 1930, a 390-kilometer protest against the British salt tax that drew worldwide attention. His tactics of nonviolence and peaceful protest inspired civil rights movements globally, including Martin Luther King Jr. and Nelson Mandela. Gandhi also campaigned against untouchability, for religious harmony between Hindus and Muslims, and for rural self-sufficiency through hand-spun cloth. India gained independence in 1947, and Gandhi was assassinated in January 1948 by a Hindu nationalist who opposed his pluralism. His birthday, 2 October, is the UN's International Day of Non-Violence.",
+    "categories": ["historical figure", "leader"]
+  },
+  {
+    "q": ["martin luther king", "martin luther king jr", "mlk", "who was martin luther king", "who is martin luther king"],
+    "a": "Martin Luther King Jr. (1929-1968) was an American Baptist minister and civil rights leader who became the most prominent advocate of nonviolent resistance to racial segregation and discrimination in the United States. He led the Montgomery bus boycott (1955-56), helped found the Southern Christian Leadership Conference, and was the driving force behind the 1963 March on Washington, where he delivered his iconic 'I Have a Dream' speech. His leadership was instrumental in the passage of the Civil Rights Act of 1964 and the Voting Rights Act of 1965. King won the Nobel Peace Prize in 1964, becoming the youngest recipient at 35. He was assassinated on 4 April 1968 in Memphis, Tennessee. In 1986, Martin Luther King Jr. Day became a US federal holiday, and his legacy remains the moral touchstone of the American civil rights movement.",
+    "categories": ["historical figure", "leader"]
+  },
+  {
+    "q": ["nelson mandela", "mandela", "who is nelson mandela", "who was nelson mandela"],
+    "a": "Nelson Mandela (1918-2013) was a South African anti-apartheid revolutionary, political leader, and philanthropist who served as President of South Africa from 1994 to 1999, the country's first Black head of state and its first elected in a fully representative democratic election. A lawyer and member of the African National Congress, he was imprisoned for 27 years, mostly on Robben Island, for his opposition to apartheid. Released in 1990 amid growing domestic and international pressure, he negotiated with President F.W. de Klerk to dismantle apartheid and establish multiracial elections. Mandela and de Klerk shared the 1993 Nobel Peace Prize, and Mandela's government established the Truth and Reconciliation Commission to address apartheid-era crimes. Revered as a global icon of reconciliation and forgiveness, he is affectionately known by his clan name, Madiba.",
+    "categories": ["historical figure", "leader"]
+  },
+  {
+    "q": ["leonardo da vinci", "da vinci", "who was leonardo da vinci", "who is da vinci", "who is leonardo da vinci"],
+    "a": "Leonardo da Vinci (1452-1519) was an Italian polymath of the Renaissance, celebrated as one of the greatest painters of all time and a brilliant scientist, engineer, anatomist, and inventor. His best-known paintings are the Mona Lisa, famous for its enigmatic smile, and The Last Supper. Only about 20 of his paintings survive, but his notebooks contain thousands of pages of drawings and studies on anatomy, flight, hydraulics, optics, and military engineering, including designs for flying machines and armored vehicles centuries ahead of their time. He dissected over 30 human corpses to understand anatomy, and his Vitruvian Man remains an iconic image of human proportion. Leonardo died in France in 1519, where he spent his final years under the patronage of King Francis I, embodying the Renaissance ideal of the 'universal man'.",
+    "categories": ["artist", "historical figure"]
+  },
+  {
+    "q": ["galileo", "galileo galilei", "who was galileo", "who is galileo"],
+    "a": "Galileo Galilei (1564-1642) was an Italian astronomer, physicist, and engineer, often called the father of modern science and the father of observational astronomy. In 1609 he improved the newly invented telescope and turned it to the heavens, discovering the four largest moons of Jupiter (now called the Galilean moons), the phases of Venus, and mountains on the Moon — evidence supporting the Copernican heliocentric model that the Earth orbits the Sun. His advocacy of heliocentrism brought him into conflict with the Catholic Church, which tried him before the Inquisition in 1633 and placed him under house arrest for the rest of his life. He also formulated laws of falling bodies and pendulum motion. In 1992, Pope John Paul II formally acknowledged the Church's error in condemning him.",
+    "categories": ["scientist", "astronomer"]
+  },
+  {
+    "q": ["newton", "isaac newton", "sir isaac newton", "who was newton", "who is newton", "who discovered gravity"],
+    "a": "Sir Isaac Newton (1642-1727) was an English mathematician, physicist, and astronomer, widely regarded as one of the most influential scientists in history. In his 1687 work Philosophiae Naturalis Principia Mathematica, he formulated the laws of motion and universal gravitation, showing that the same force that makes an apple fall also governs the orbits of planets and moons. He developed calculus (independently of Leibniz), built the first practical reflecting telescope, and discovered that white light is composed of the colors of the spectrum. Newton served as Lucasian Professor at Cambridge and later as Warden and Master of the Royal Mint. The apocryphal apple story popularized his insight about gravity, and his laws remained the foundation of physics until Einstein's relativity.",
+    "categories": ["scientist", "physicist"]
+  },
+  {
+    "q": ["nikola tesla", "tesla the inventor", "who was tesla", "who is nikola tesla"],
+    "a": "Nikola Tesla (1856-1943) was a Serbian-American inventor, electrical engineer, and futurist, best known for pioneering alternating current (AC) electricity. He developed the induction motor and the polyphase AC system, which won the 'War of the Currents' against Thomas Edison's direct current and became the standard for power transmission worldwide. Tesla's other contributions include the Tesla coil, wireless power experiments, and early work in radio (the US Supreme Court later credited his patents for radio's fundamental principles). He also made important contributions to X-ray research and robotics. In his later years Tesla became increasingly reclusive and eccentric, developing grand but unrealized schemes for wireless global power. The modern electric car company Tesla, Inc. is named in his honor, and he remains a beloved figure in engineering culture.",
+    "categories": ["inventor", "scientist"]
+  },
+  {
+    "q": ["who painted the mona lisa", "who painted the scream", "who sculpted david", "mona lisa artist", "the scream artist"],
+    "a": "The Mona Lisa was painted by Leonardo da Vinci (1452-1519), the Italian Renaissance polymath, who began the portrait around 1503 and worked on it for years, possibly until 1517. The subject is widely believed to be Lisa Gherardini, the wife of Florentine silk merchant Francesco del Giocondo (hence its Italian title, La Gioconda). The Scream was painted by Edvard Munch (1863-1944), the Norwegian Expressionist, in 1893; there are four versions in different media, and it depicts a figure overwhelmed by an existential anxiety Munch described as 'an infinite scream passing through nature'. The sculpture David was created by Michelangelo Buonarroti (1475-1564) between 1501 and 1504 from a single block of Carrara marble; the 5.17-meter statue in Florence's Accademia Gallery depicts the biblical hero moments before his battle with Goliath.",
+    "categories": ["art", "artist"]
+  },
+  {
+    "q": ["who invented the light bulb", "who invented the lightbulb", "light bulb inventor"],
+    "a": "The incandescent light bulb was not invented by a single person but perfected through a series of innovations. Thomas Edison is most commonly credited because in 1879 he developed a practical, long-lasting bulb with a carbonized bamboo filament and, crucially, built the entire electrical system — generators, wiring, and sockets — to make electric lighting commercially viable, founding the Edison Electric Light Company. However, earlier inventors made key advances: Humphry Davy demonstrated the first electric arc lamp in 1802, Warren de la Rue designed an early platinum-filament bulb in 1840, and Joseph Swan in England independently demonstrated a working carbon-filament lamp in 1878, a year before Edison, and the two later merged their companies. Modern bulbs use tungsten filaments, and LEDs have now largely replaced incandescents for energy efficiency.",
+    "categories": ["invention", "technology"]
+  },
+  {
+    "q": ["who discovered america", "who discovered the americas"],
+    "a": "The conventional answer is Christopher Columbus, who landed in the Bahamas on 12 October 1492 while seeking a westward route to Asia, initiating sustained European contact with the Americas. But the fuller story is more complex: the Norse explorer Leif Erikson led a settlement at L'Anse aux Meadows in Newfoundland around 1000 CE, nearly 500 years before Columbus, making the Vikings the first Europeans known to have reached the Americas. And of course, Indigenous peoples had inhabited both continents for at least 15,000 years before either arrival, having migrated across the Bering land bridge from Asia. Columbus's voyages remain historically pivotal because they permanently connected the Eastern and Western Hemispheres, triggering the Columbian Exchange of crops, animals, diseases, and peoples.",
+    "categories": ["history"]
+  },
+  {
+    "q": ["who discovered the electron", "who discovered the proton", "who discovered the neutron", "electron discovery"],
+    "a": "The electron was discovered in 1897 by British physicist J.J. Thomson, who demonstrated that cathode rays were streams of negatively charged particles much lighter than atoms, earning him the 1906 Nobel Prize in Physics and overturning the idea that atoms were indivisible. The proton was discovered by Ernest Rutherford in 1917-1919, who showed that hydrogen nuclei were emitted when nitrogen was bombarded with alpha particles. The neutron was discovered by James Chadwick in 1932, earning him the 1935 Nobel Prize; his discovery explained why atomic masses exceeded the combined mass of their protons and helped enable nuclear fission.",
+    "categories": ["science", "physics"]
+  },
+  {
+    "q": ["who discovered radioactivity", "radioactivity discovery"],
+    "a": "Radioactivity was discovered in 1896 by French physicist Henri Becquerel, who found that uranium salts fogged photographic plates even in darkness, emitting penetrating rays without any external energy source. The term 'radioactivity' itself was coined by Marie Curie, who with her husband Pierre Curie discovered the new elements polonium (named for her native Poland) and radium, and showed that the radiation was a property of atoms themselves. The Curies shared the 1903 Nobel Prize in Physics with Becquerel, and Marie Curie later won the 1911 Nobel Prize in Chemistry for her work on radium, becoming the first person to win Nobel Prizes in two different sciences.",
+    "categories": ["science", "physics"]
+  },
+  {
+    "q": ["who discovered the structure of dna", "dna structure discovery", "who discovered dna"],
+    "a": "The double-helix structure of DNA was discovered in 1953 by James Watson and Francis Crick at the University of Cambridge, working from X-ray diffraction images of DNA taken by Rosalind Franklin and Raymond Gosling at King's College London, and from Erwin Chargaff's finding that adenine pairs with thymine and guanine with cytosine. Watson, Crick, and Maurice Wilkins shared the 1962 Nobel Prize in Physiology or Medicine — Franklin, whose crucial 'Photo 51' X-ray image was used without her knowledge, had died in 1958 and was not eligible. DNA was first identified as the genetic material by Oswald Avery in 1944 (building on Frederick Griffith's 1928 experiments), and the molecule itself was first isolated by Friedrich Miescher in 1869.",
+    "categories": ["science", "biology"]
+  },
+  {
+    "q": ["who invented the telephone", "who invented the telephone and when", "telephone inventor"],
+    "a": "Alexander Graham Bell is credited with inventing the first practical telephone, receiving the first US patent for the device in 1876 (patent 174,465, granted 7 March 1876) and famously making the first intelligible voice transmission to his assistant Thomas Watson on 10 March 1876: 'Mr. Watson, come here — I want to see you.' Bell, a Scottish-born speech teacher for the deaf, was investigating ways to transmit speech electrically. The invention's history is contested: Italian inventor Antonio Meucci filed a patent caveat in 1871 for a 'teletrofono' and was embroiled in litigation with Bell's company, and Elisha Gray filed a patent caveat for a similar device on the same day as Bell in 1876, sparking one of the most famous patent disputes in history. Bell's patent nonetheless withstood challenges and launched the Bell Telephone Company.",
+    "categories": ["invention", "technology"]
+  },
+  {
+    "q": ["who discovered penicillin", "penicillin discovery"],
+    "a": "Penicillin, the first antibiotic, was discovered in 1928 by Scottish scientist Alexander Fleming at St Mary's Hospital in London. Returning from holiday, he noticed that a mold, Penicillium notatum, had contaminated one of his Staphylococcus culture plates and killed the bacteria around it. Fleming published his findings but could not purify enough of the compound to be useful. A decade later, in 1939-1941, Australian pharmacologist Howard Florey and German-born biochemist Ernst Chain at Oxford developed methods to mass-produce and purify penicillin, enabling its life-saving use during World War II. Fleming, Florey, and Chain shared the 1945 Nobel Prize in Physiology or Medicine. Penicillin's success launched the antibiotic era, and Fleming reportedly warned as early as 1945 about the dangers of antibiotic resistance.",
+    "categories": ["science", "medicine"]
+  },
+  {
+    "q": ["who is the ceo of tesla", "tesla ceo", "ceo of tesla"],
+    "a": "Elon Musk has been the CEO of Tesla, Inc. since October 2008, when he took over the role during the company's near-bankruptcy, having become its largest shareholder and chairman in 2004. Under his leadership, Tesla launched the Model S (2012), Model 3 (2017), Model X, Model Y, and the Cybertruck, becoming the world's most valuable automaker and the largest seller of battery-electric vehicles. Musk is also CEO of SpaceX and founder of xAI, Neuralink, and The Boring Company, and he bought Twitter (now X) in 2022. Tesla, Inc. is headquartered in Austin, Texas, and was founded in 2003 by Martin Eberhard and Marc Tarpenning — Musk joined the company's Series A funding round in 2004.",
+    "categories": ["business", "person"]
+  },
+  {
+    "q": ["who wrote moby dick", "moby dick author"],
+    "a": "Moby-Dick; or, The Whale, published in 1851, was written by Herman Melville (1819-1891), the American novelist, poet, and former whaler. The novel tells the story of Captain Ahab's obsessive quest for revenge against the white sperm whale Moby Dick that maimed him, narrated by the sailor Ishmael, and it weaves together narrative, cetology, and philosophical digressions. The book was poorly received in Melville's lifetime, selling only a few thousand copies, and Melville died largely forgotten. It was rediscovered in the 1920s by critics like D.H. Lawrence and Carl Van Doren and is now regarded as one of the greatest American novels, a cornerstone of the American Renaissance.",
+    "categories": ["literature", "book"]
+  },
+  {
+    "q": ["who wrote the catcher in the rye", "catcher in the rye author"],
+    "a": "The Catcher in the Rye (1951) was written by J.D. Salinger (1919-2010), the famously reclusive American author. The novel is narrated by Holden Caulfield, a cynical, alienated 16-year-old who recounts a few days in New York City after being expelled from prep school, and its frank voice and theme of teenage angst made it a defining work of postwar American literature and a perennial favorite of young readers. Salinger published his last original work in 1965 and withdrew from public life, granting no interviews for decades. The novel has sold over 65 million copies, and its portrait of Holden — who wants to be 'the catcher in the rye' saving children from falling off a cliff — has influenced countless writers and artists.",
+    "categories": ["literature", "book"]
+  },
+  {
+    "q": ["who directed the godfather", "godfather director"],
+    "a": "The Godfather (1972) was directed by Francis Ford Coppola, who also co-wrote the screenplay with Mario Puzo, adapting Puzo's 1969 novel about the Corleone mafia family. Coppola's direction made the film a landmark of American cinema, winning the 1973 Academy Award for Best Picture (the first sequel, The Godfather Part II, won Best Picture again in 1975, making it the only franchise with two Best Picture winners). The film stars Marlon Brando as Don Vito Corleone and Al Pacino as his son Michael, and its blend of family drama, operatic violence, and Nino Rota's haunting score has made it a cultural touchstone, frequently ranked among the greatest films ever made. Coppola faced constant studio interference during production, but the film's success made him one of the defining directors of the New Hollywood era.",
+    "categories": ["film", "media"]
+  },
+  {
+    "q": ["who directed star wars", "star wars director", "who created star wars"],
+    "a": "Star Wars was created and directed by George Lucas, beginning with Star Wars (1977), later subtitled Episode IV: A New Hope. Lucas, an American filmmaker who had made his name with American Graffiti, conceived the space opera as a blend of Flash Gordon serials, samurai films, and Joseph Campbell's hero's journey mythology, and he directed the original film and its sequel The Empire Strikes Back was directed by Irvin Kershner and Return of the Jedi by Richard Marquand — Lucas oversaw both as producer and story writer. Lucas's Lucasfilm pioneered special effects through Industrial Light & Magic and became a media empire; Disney acquired Lucasfilm in 2012 for $4 billion. The original 1977 film became the highest-grossing film of its time and spawned the saga of nine main films plus spin-offs, TV series, and an enormous expanded universe.",
+    "categories": ["film", "media"]
+  }
+]

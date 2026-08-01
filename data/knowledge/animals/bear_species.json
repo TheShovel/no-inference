@@ -1,0 +1,22 @@
+[
+  {
+    "q": ["brown bear", "brown bears", "grizzly bear", "what is a brown bear", "where do brown bears live", "what do brown bears eat", "brown bear facts", "grizzly bear facts"],
+    "categories": ["bear", "bears", "mammal"],
+    "a": "The brown bear (Ursus arctos) is a large bear species found across North America, Europe, and Asia, with a wide range of habitats from forests and mountains to tundra. The grizzly bear is a North American subspecies of the brown bear, distinguished by its shoulder hump of muscle and often gray-tipped fur. Brown bears are omnivores that eat berries, roots, nuts, fish (especially salmon), small mammals, and carrion, and they can weigh from 130 kg up to over 680 kg for the largest coastal and Kodiak individuals. They hibernate in winter, sleeping in dens for up to six months, and females give birth to cubs during hibernation. Brown bears are solitary except during mating season and when mothers care for cubs."
+  },
+  {
+    "q": ["polar bear", "polar bears", "what is a polar bear", "where do polar bears live", "what do polar bears eat", "polar bear facts", "how big is a polar bear", "polar bears and climate change"],
+    "categories": ["bear", "bears", "mammal", "arctic animals"],
+    "a": "The polar bear (Ursus maritimus) is the largest land carnivore, with adult males weighing 400-700 kg and standing up to 3 meters tall on their hind legs. They live in the Arctic, primarily on sea ice, which they use as a platform to hunt their main prey: seals, especially ringed and bearded seals. Polar bears are superbly adapted to the cold with a thick layer of blubber, dense fur, and black skin that absorbs heat, and they can swim for hours between ice floes. They are classified as vulnerable, with climate change shrinking the sea ice they depend on — the main threat to their survival. Unlike brown bears, polar bears don't hibernate (except pregnant females), and they are the only bear species considered marine mammals."
+  },
+  {
+    "q": ["black bear", "black bears", "american black bear", "what is a black bear", "where do black bears live", "what do black bears eat", "black bear facts", "are black bears dangerous"],
+    "categories": ["bear", "bears", "mammal", "north american animals"],
+    "a": "The American black bear (Ursus americanus) is the most common bear species in North America, found from Canada and Alaska down to Mexico, in forests, swamps, and mountains. Despite the name, black bears can be black, brown, cinnamon, or even bluish-white, and they are smaller than brown bears, with males weighing 60-270 kg. They are opportunistic omnivores that eat berries, nuts, roots, insects, fish, small mammals, and human food when available — which sometimes leads to conflict. Black bears are excellent climbers and swimmers, and they hibernate in winter. They are generally shy and avoid humans, and fatal attacks are extremely rare; most conflicts involve bears attracted to food or garbage."
+  },
+  {
+    "q": ["panda", "pandas", "panda bear", "giant panda", "what is a panda", "what do pandas eat", "where do pandas live", "panda facts", "why do pandas eat bamboo", "are pandas endangered", "how many pandas are left in the world", "panda conservation"],
+    "categories": ["bear", "bears", "mammal"],
+    "a": "The giant panda (Ailuropoda melanoleuca) is a bear species native to the bamboo forests of central China, instantly recognizable by its black-and-white coat. Despite being classified as a carnivore (it shares the bear family and has the digestive system of one), the panda's diet is about 99% bamboo — it eats 12-38 kg of bamboo daily and must feed for 10-16 hours a day to get enough nutrition. Pandas are solitary, have a distinctive 'pseudo-thumb' (an extended wrist bone) for gripping bamboo, and females are fertile only a few days a year, making reproduction challenging. They were downlisted from endangered to vulnerable in 2016 thanks to decades of conservation, with the wild population now around 1,800 — a remarkable recovery driven by habitat protection and captive breeding programs."
+  }
+]

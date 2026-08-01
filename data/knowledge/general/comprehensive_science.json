@@ -7,7 +7,7 @@
       "photosynthesis explained",
       "photosynthesis process"
     ],
-    "a": "Information about photosynthesis."
+    "a": "Photosynthesis is the process by which plants, algae, and some bacteria convert light energy into chemical energy, using carbon dioxide and water to produce glucose (sugar) and oxygen. It takes place in the chloroplasts of plant cells, primarily in the leaves, where the green pigment chlorophyll captures sunlight. The process has two main stages: the light-dependent reactions (which split water molecules and generate ATP and NADPH using sunlight) and the Calvin cycle (which uses those energy carriers to fix carbon dioxide into glucose). The overall equation is 6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂. Photosynthesis is the foundation of nearly all food chains, produces the oxygen we breathe, and has transformed Earth's atmosphere over billions of years."
   },
   {
     "q": [
@@ -18,7 +18,7 @@
       "theory of gravity",
       "gravitational force"
     ],
-    "a": "Information about gravity."
+    "a": "Gravity is the fundamental force by which objects with mass attract one another — the reason objects fall to the ground and planets orbit stars. Isaac Newton described gravity as a universal force proportional to the product of masses and inversely proportional to the square of the distance between them (F = Gm₁m₂/r²). Albert Einstein's general relativity went further, describing gravity not as a force but as the curvature of spacetime caused by mass and energy — massive objects like the Sun warp spacetime around them, and objects follow the curved paths, which we experience as attraction. Gravity is the weakest of the four fundamental forces but dominates at large scales because it's always attractive and acts over infinite range. On Earth it accelerates objects at about 9.8 m/s², keeps our atmosphere in place, and governs tides through the Moon's pull."
   },
   {
     "q": [
@@ -28,7 +28,7 @@
       "what is quantum entanglement",
       "quantum entanglement physics"
     ],
-    "a": "Information about quantum entanglement."
+    "a": "Quantum entanglement is a physical phenomenon in which two or more particles become linked so that the quantum state of each cannot be described independently, even when separated by large distances. Measuring a property of one entangled particle (such as spin or polarization) instantly determines the corresponding property of the other — a correlation Albert Einstein famously called 'spooky action at a distance,' since it appears to defy locality. Entanglement has been experimentally confirmed many times, but it cannot be used to send information faster than light, because the measurement outcomes are random. It's the key resource behind emerging technologies including quantum computing, quantum cryptography (secure communication), and quantum teleportation."
   },
   {
     "q": [
@@ -38,7 +38,7 @@
       "quantum computer vs classical",
       "quantum computing qubits"
     ],
-    "a": "Information about quantum computing."
+    "a": "A quantum computer is a machine that uses quantum mechanical phenomena — superposition and entanglement — to process information. Instead of classical bits (0 or 1), quantum computers use qubits, which can exist in a superposition of both states simultaneously, allowing an n-qubit machine to represent 2ⁿ states at once. Entanglement links qubits so operations affect many values in parallel, which can give quantum computers exponential speedups for certain problems, such as factoring large numbers (Shor's algorithm) and searching unsorted databases (Grover's algorithm). Current quantum computers are 'noisy' and error-prone (the NISQ era), requiring error correction and extreme cooling to near absolute zero. They're not expected to replace classical computers but to excel at specific tasks like cryptography, drug discovery, materials science, and optimization."
   },
   {
     "q": [
@@ -49,7 +49,7 @@
       "inside a black hole",
       "black hole singularity"
     ],
-    "a": "Information about black holes."
+    "a": "A black hole is a region of spacetime where gravity is so intense that nothing — not even light — can escape. They form when massive stars (roughly 20+ times the Sun's mass) exhaust their fuel and collapse at the end of their lives, compressing their mass into an incredibly small point called a singularity. The boundary around a black hole from which nothing can escape is called the event horizon. Black holes come in different sizes: stellar-mass black holes (a few to tens of solar masses), supermassive black holes (millions to billions of solar masses) at the centers of galaxies — including Sagittarius A* at the center of the Milky Way — and theoretical intermediate and primordial black holes. The first direct image of a black hole (M87*) was released in 2019 by the Event Horizon Telescope, and black holes warp spacetime, time, and nearby matter dramatically."
   },
   {
     "q": [
@@ -59,7 +59,7 @@
       "aurora australis",
       "aurora explained"
     ],
-    "a": "Information about aurora borealis."
+    "a": "The aurora borealis (northern lights) and aurora australis (southern lights) are luminous displays in the sky caused by charged particles from the Sun colliding with Earth's atmosphere. When the solar wind — a stream of charged particles (mostly electrons and protons) — reaches Earth, our magnetic field deflects most of it, but some particles are channeled toward the poles along magnetic field lines. There, they collide with oxygen and nitrogen atoms in the upper atmosphere (80-300 km up), exciting them and causing them to emit light: oxygen produces green and red, nitrogen produces blue and purple. Auroras are most common near the magnetic poles, typically within about 20 degrees of them, and are more frequent and intense during periods of high solar activity, such as solar storms and coronal mass ejections. They occur on other planets too, including Jupiter and Saturn."
   },
   {
     "q": [
@@ -70,7 +70,7 @@
       "how does dna work",
       "dna explained"
     ],
-    "a": "Information about dna."
+    "a": "DNA (deoxyribonucleic acid) is the molecule that carries the genetic instructions for the development, functioning, growth, and reproduction of all known living organisms. Its structure is the famous double helix, discovered by James Watson and Francis Crick in 1953 (building on Rosalind Franklin's X-ray data): two strands of nucleotides wound around each other, held together by base pairs — adenine (A) pairs with thymine (T), and guanine (G) pairs with cytosine (C). The sequence of these four bases encodes genes, which provide the instructions for making proteins. DNA replicates by unwinding and using each strand as a template to build a new complementary strand, ensuring genetic information is passed to daughter cells. Humans have about 3 billion base pairs of DNA, and over 99% of it is identical between any two people."
   },
   {
     "q": [
@@ -81,7 +81,7 @@
       "darwin evolution",
       "evolution explained"
     ],
-    "a": "Information about evolution."
+    "a": "Evolution is the process by which species of living organisms change over generations through genetic variation and natural selection. Charles Darwin and Alfred Russel Wallace proposed the theory of evolution by natural selection in the mid-19th century: individuals in a population vary, some variations make individuals better suited to their environment, those individuals survive and reproduce more, and their advantageous traits become more common over generations. Evolution also operates through other mechanisms including genetic drift, gene flow, and mutation. Over long timescales, this process produces new species, explains the shared ancestry of all life (the tree of life), and is supported by overwhelming evidence from fossils, DNA, biogeography, and observed evolution in action (such as antibiotic resistance in bacteria). The modern synthesis combines Darwinian selection with genetics."
   },
   {
     "q": [
@@ -92,7 +92,7 @@
       "how do seeds grow",
       "what triggers seed germination"
     ],
-    "a": "Information about seed germination."
+    "a": "Seed germination is the process by which a seed develops into a new plant. It begins when a seed absorbs water (imbibition), which activates enzymes and swells the seed, then the embryo's root (radicle) emerges and grows downward while the shoot (plumule) grows upward. Germination requires the right conditions: adequate water, oxygen, and a suitable temperature, and some seeds need light, cold, or even fire to break dormancy. A seed knows which way is up through gravitropism — specialized cells containing starch-filled structures called statoliths settle under gravity, signaling the root to grow down (positive gravitropism) and the shoot to grow up (negative gravitropism), regardless of how the seed is planted. Once photosynthesis begins, the seedling becomes independent of the seed's stored nutrients."
   },
   {
     "q": [
@@ -102,6 +102,6 @@
       "how do birds navigate",
       "migration explained"
     ],
-    "a": "Information about animal migration."
+    "a": "Animal migration is the regular, often seasonal movement of animals from one region to another, typically to exploit resources like food, breeding sites, or better climates. Famous migrations include the Arctic tern (which travels up to 70,000 km a year between poles), monarch butterflies (multi-generational journeys of thousands of km), wildebeest herds, salmon returning to spawn in their birth rivers, and whales traveling between feeding and breeding grounds. Birds navigate using a remarkable toolkit: the position of the Sun and stars, the Earth's magnetic field (detected through specialized receptors), visual landmarks, and even smell. Migratory journeys are among the most demanding feats in the animal kingdom, and many migratory species face threats from habitat loss, climate change, and artificial light."
   }
 ]

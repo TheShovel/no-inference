@@ -1,0 +1,200 @@
+[
+  {
+    "q": ["python function to check if a number is prime", "how do i check if a number is prime in python", "is prime python", "check if number is prime"],
+    "a": "A simple primality test checks divisibility from 2 up to the square root of the number. If any divisor is found, the number is not prime. Numbers less than 2 are not prime. This runs in O(sqrt(n)) time.",
+    "code": "def is_prime(n):\n    if n < 2:\n        return False\n    i = 2\n    while i * i <= n:\n        if n % i == 0:\n            return False\n        i += 1\n    return True\n\nprint(is_prime(17))  # True\nprint(is_prime(15))  # False",
+    "lang": "python"
+  },
+  {
+    "q": ["python function to compute the factorial of a number", "how do you find the factorial of a number in python", "factorial python", "compute factorial"],
+    "a": "The factorial of n (written n!) is the product of all positive integers up to n: 5! = 5 x 4 x 3 x 2 x 1 = 120. It can be computed with a loop or with recursion. The recursive definition is n! = n * (n-1)! with 0! = 1.",
+    "code": "def factorial(n):\n    if n < 0:\n        raise ValueError('factorial of negative number')\n    result = 1\n    for i in range(2, n + 1):\n        result *= i\n    return result\n\nprint(factorial(5))  # 120\n\n# Recursive version\ndef fact_rec(n):\n    return 1 if n <= 1 else n * fact_rec(n - 1)",
+    "lang": "python"
+  },
+  {
+    "q": ["write a fizzbuzz program in python", "fizzbuzz python", "fizz buzz python"],
+    "a": "FizzBuzz is a classic coding exercise: print each number from 1 to n, but print 'Fizz' for multiples of 3, 'Buzz' for multiples of 5, and 'FizzBuzz' for multiples of both 3 and 5.",
+    "code": "def fizzbuzz(n):\n    for i in range(1, n + 1):\n        if i % 15 == 0:\n            print('FizzBuzz')\n        elif i % 3 == 0:\n            print('Fizz')\n        elif i % 5 == 0:\n            print('Buzz')\n        else:\n            print(i)\n\nfizzbuzz(20)",
+    "lang": "python"
+  },
+  {
+    "q": ["python function to check if a string is a palindrome", "palindrome check python", "is palindrome python"],
+    "a": "A palindrome is a string that reads the same forward and backward (ignoring case and non-alphanumeric characters), like 'racecar' or 'A man, a plan, a canal: Panama'. The simplest check compares the string with its reverse.",
+    "code": "def is_palindrome(s):\n    cleaned = ''.join(c.lower() for c in s if c.isalnum())\n    return cleaned == cleaned[::-1]\n\nprint(is_palindrome('racecar'))      # True\nprint(is_palindrome('hello'))        # False",
+    "lang": "python"
+  },
+  {
+    "q": ["how do generators work in python", "python generator example", "what is a generator in python", "yield python"],
+    "a": "A generator is a function that produces a sequence of values lazily, one at a time, using the `yield` keyword instead of `return`. Each call to the generator resumes execution where it left off, so generators use memory proportional to one item rather than the whole sequence. This makes them ideal for large or infinite sequences.",
+    "code": "def countdown(n):\n    while n > 0:\n        yield n\n        n -= 1\n\nfor x in countdown(3):\n    print(x)  # 3, 2, 1\n\n# Infinite generator: take only what you need\nfrom itertools import islice\ndef squares():\n    n = 1\n    while True:\n        yield n * n\n        n += 1\n\nprint(list(islice(squares(), 5)))  # [1, 4, 9, 16, 25]",
+    "lang": "python"
+  },
+  {
+    "q": ["what is the difference between a list and a tuple in python", "list vs tuple python", "difference between list and tuple"],
+    "a": "The key difference is mutability: lists are mutable (you can add, remove, or change elements) and tuples are immutable (fixed once created). Lists use square brackets `[1, 2, 3]` and tuples use parentheses `(1, 2, 3)`. Because tuples are immutable, they are hashable (usable as dictionary keys, when they contain only hashable items), slightly faster, and safer to use for data that shouldn't change, like coordinates or function return values.",
+    "code": "lst = [1, 2, 3]\nlst.append(4)          # works\n\ntpl = (1, 2, 3)\n# tpl.append(4)        # AttributeError: 'tuple' object has no attribute 'append'\n\na, b = (1, 2)         # tuple unpacking\nprint(a, b)",
+    "lang": "python"
+  },
+  {
+    "q": ["how to use the requests library in python", "python requests get json", "requests library python"],
+    "a": "The `requests` library is the standard way to make HTTP requests in Python. Use `requests.get(url)` for GET requests and `requests.post(url, json=...)` for POST requests. The response object has `.status_code`, `.text`, and `.json()` to parse JSON responses. Always handle network errors with try/except.",
+    "code": "import requests\n\nresp = requests.get('https://api.example.com/data', timeout=10)\nif resp.status_code == 200:\n    data = resp.json()      # parsed JSON\n    print(data)\nelse:\n    print('Error:', resp.status_code)\n\n# POST with JSON body\n# resp = requests.post('https://api.example.com/items', json={'name': 'x'}, timeout=10)",
+    "lang": "python"
+  },
+  {
+    "q": ["python datetime current date and time", "how to get current date and time in python", "datetime python"],
+    "a": "The `datetime` module provides `datetime.now()` for the current local date and time, and `date.today()` for the date only. Format dates with `.strftime()` and parse strings with `datetime.strptime()`. Use `timedelta` for date arithmetic.",
+    "code": "from datetime import datetime, date, timedelta\n\nnow = datetime.now()\nprint(now)                      # 2025-01-15 14:30:05.123456\nprint(now.strftime('%Y-%m-%d')) # formatted string\n\ntoday = date.today()\ntomorrow = today + timedelta(days=1)\nprint(tomorrow)\n\nparsed = datetime.strptime('2024-12-25', '%Y-%m-%d')\nprint(parsed)",
+    "lang": "python"
+  },
+  {
+    "q": ["what are args and kwargs in python", "python args kwargs", "asterisk args kwargs"],
+    "a": "`*args` collects extra positional arguments into a tuple, and `**kwargs` collects extra keyword arguments into a dictionary. They let a function accept a variable number of arguments. The names are conventions; the asterisks are what matter.",
+    "code": "def greet(greeting, *args, **kwargs):\n    print(greeting)\n    print('positional:', args)   # tuple\n    print('named:', kwargs)      # dict\n\ngreet('hi', 'a', 'b', name='x', age=3)\n# positional: ('a', 'b')\n# named: {'name': 'x', 'age': 3}\n\n# Unpacking in calls\ndef add(a, b, c):\n    return a + b + c\n\nnums = [1, 2, 3]\nprint(add(*nums))  # 6",
+    "lang": "python"
+  },
+  {
+    "q": ["what is a set in python", "python set example", "how do sets work in python"],
+    "a": "A set is an unordered collection of unique hashable elements. It supports fast membership tests (O(1) average), and set operations like union, intersection, and difference. Use `set()` or curly braces `{1, 2, 3}` (but `{}` is an empty dict).",
+    "code": "s = {3, 1, 2, 2, 3}\nprint(s)               # {1, 2, 3} — duplicates removed\n\nprint(2 in s)          # True — fast membership\n\na = {1, 2, 3}\nb = {3, 4, 5}\nprint(a | b)           # union: {1, 2, 3, 4, 5}\nprint(a & b)           # intersection: {3}\nprint(a - b)           # difference: {1, 2}\n\n# Dedupe a list while preserving order\nitems = ['a', 'b', 'a']\nprint(list(dict.fromkeys(items)))  # ['a', 'b']",
+    "lang": "python"
+  },
+  {
+    "q": ["python how to use enumerate", "enumerate python", "python enumerate example"],
+    "a": "`enumerate()` adds a counter to an iterable, giving you (index, item) pairs while looping. It's the idiomatic way to get both the position and the value instead of using `range(len(...))`.",
+    "code": "colors = ['red', 'green', 'blue']\nfor i, color in enumerate(colors):\n    print(i, color)\n# 0 red / 1 green / 2 blue\n\n# Start the counter at a custom value\nfor i, color in enumerate(colors, start=1):\n    print(i, color)\n# 1 red / 2 green / 3 blue",
+    "lang": "python"
+  },
+  {
+    "q": ["python zip two lists", "how to use zip in python", "python zip example"],
+    "a": "`zip()` pairs elements from multiple iterables into tuples, stopping at the shortest one. It's the idiomatic way to iterate over two lists in parallel, and you can unzip with `zip(*pairs)`.",
+    "code": "names = ['a', 'b', 'c']\nages = [20, 30, 40]\nfor name, age in zip(names, ages):\n    print(name, age)\n\npairs = list(zip(names, ages))   # [('a', 20), ('b', 30), ('c', 40)]\n\n# Unzip back\nn2, a2 = zip(*pairs)\nprint(n2, a2)\n\n# Build a dict from two lists\nmapping = dict(zip(names, ages))\nprint(mapping)",
+    "lang": "python"
+  },
+  {
+    "q": ["what is the difference between var let and const in javascript", "var vs let vs const", "javascript var let const"],
+    "a": "`var` is the old, function-scoped declaration: it is hoisted to the top of its function (initialized as `undefined`) and can be redeclared, which causes bugs. `let` is block-scoped, cannot be redeclared in the same scope, and is hoisted but not initialized (temporal dead zone). `const` is like `let` but the binding cannot be reassigned — though objects/arrays declared with `const` can still be mutated. Modern JavaScript uses `const` by default and `let` only when you need to reassign.",
+    "code": "var x = 1;        // function-scoped, redeclarable, hoisted\nlet y = 2;        // block-scoped, reassignable\nconst z = 3;      // block-scoped, not reassignable\n\n// z = 4;  // TypeError: Assignment to constant variable\n\nconst obj = { n: 1 };\nobj.n = 2;        // OK — mutation is allowed\n\nif (true) {\n  let inside = 'block';\n  var leaked = 'function';\n}\nconsole.log(leaked);  // 'function' — var escapes the block\n// console.log(inside); // ReferenceError",
+    "lang": "javascript"
+  },
+  {
+    "q": ["what is hoisting in javascript", "javascript hoisting explained"],
+    "a": "Hoisting is JavaScript's behavior of moving declarations to the top of their scope before execution. Function declarations are fully hoisted (callable before their line). `var` declarations are hoisted but initialized to `undefined`, so reading them before assignment gives `undefined` rather than an error. `let` and `const` are hoisted into a 'temporal dead zone' — accessing them before the declaration throws a ReferenceError.",
+    "code": "sayHi();               // works: function declarations are hoisted\nfunction sayHi() {\n  console.log('hi');\n}\n\nconsole.log(a);        // undefined (var hoisted + initialized)\nvar a = 1;\n\n// console.log(b);     // ReferenceError: Cannot access 'b' before initialization\nlet b = 2;",
+    "lang": "javascript"
+  },
+  {
+    "q": ["what is a closure in javascript", "javascript closure example", "closures explained"],
+    "a": "A closure is a function that remembers the variables from the scope where it was created, even after that scope has finished executing. This lets you create private state and factory functions. Every function in JavaScript closes over its lexical environment.",
+    "code": "function makeCounter() {\n  let count = 0;          // private state\n  return function () {\n    count += 1;\n    return count;\n  };\n}\n\nconst counter = makeCounter();\nconsole.log(counter());   // 1\nconsole.log(counter());   // 2\n// `count` is not accessible from outside",
+    "lang": "javascript"
+  },
+  {
+    "q": ["what is the this keyword in javascript", "javascript this explained", "this binding javascript"],
+    "a": "`this` in JavaScript refers to the object that owns the executing code. Its value depends on HOW a function is called: as a method, `this` is the receiver object; as a plain function, `this` is the global object (or `undefined` in strict mode); with `new`, `this` is the new instance; with arrow functions, `this` is lexically inherited from the enclosing scope. You can set it explicitly with `.call()`, `.apply()`, or `.bind()`.",
+    "code": "const obj = {\n  name: 'cos',\n  greet() {\n    console.log(this.name);   // 'cos' — method call\n  },\n};\nobj.greet();\n\nfunction standalone() {\n  console.log(this);          // global object (or undefined in strict mode)\n}\n\nconst arrow = () => console.log(this);  // lexical this, not own",
+    "lang": "javascript"
+  },
+  {
+    "q": ["javascript destructuring assignment", "destructuring javascript", "js destructuring"],
+    "a": "Destructuring unpacks values from arrays or properties from objects into distinct variables in one expression. It works with function parameters, default values, and renaming.",
+    "code": "const [a, b, ...rest] = [1, 2, 3, 4];\nconsole.log(a, b, rest);   // 1 2 [3, 4]\n\nconst { name, age = 30 } = { name: 'x' };\nconsole.log(name, age);    // x 30 (default applied)\n\n// Renaming + nested\nconst user = { id: 1, profile: { city: 'nyc' } };\nconst { id, profile: { city } } = user;\nconsole.log(id, city);     // 1 nyc\n\n// In function params\nfunction draw({ x, y }) {\n  console.log(x, y);\n}\ndraw({ x: 5, y: 7 });",
+    "lang": "javascript"
+  },
+  {
+    "q": ["what is the event loop in javascript", "javascript event loop explained", "how does the event loop work"],
+    "a": "The event loop is how JavaScript handles asynchronous code despite being single-threaded. The call stack runs synchronous code; async callbacks (timers, I/O, promises) are handed to the browser/Node. When the stack is empty, the event loop moves tasks from the task queue (macrotasks like setTimeout) and the microtask queue (promises, queueMicrotask) onto the stack — microtasks run before the next macrotask.",
+    "code": "console.log('start');\n\nsetTimeout(() => console.log('timeout'), 0);  // macrotask\nPromise.resolve().then(() => console.log('promise'));  // microtask\n\nconsole.log('end');\n// Output: start, end, promise, timeout",
+    "lang": "javascript"
+  },
+  {
+    "q": ["javascript ternary operator", "ternary operator javascript", "js ternary"],
+    "a": "The ternary operator `condition ? a : b` is a concise if/else expression: it evaluates to `a` when the condition is truthy and `b` otherwise. Prefer it for simple assignments; use if/else for complex logic to keep code readable.",
+    "code": "const age = 20;\nconst status = age >= 18 ? 'adult' : 'minor';\nconsole.log(status);  // 'adult'\n\n// Equivalent to:\nlet status2;\nif (age >= 18) {\n  status2 = 'adult';\n} else {\n  status2 = 'minor';\n}",
+    "lang": "javascript"
+  },
+  {
+    "q": ["what is the difference between a stack and a queue", "stack vs queue", "difference between stack and queue"],
+    "a": "A stack is a LIFO (Last In, First Out) data structure — like a stack of plates: you push onto the top and pop from the top. A queue is FIFO (First In, First Out) — like a line of people: you enqueue at the back and dequeue from the front. Stacks are used for call stacks, undo history, and backtracking; queues for task scheduling, breadth-first search, and buffering. In Python, use a list for a stack (append/pop) and collections.deque for an efficient queue (append/popleft).",
+    "code": "# Stack (LIFO) — list\nstack = []\nstack.append(1)          # push\nstack.append(2)\nstack.pop()              # -> 2 (last in, first out)\n\n# Queue (FIFO) — deque\nfrom collections import deque\nqueue = deque()\nqueue.append(1)          # enqueue\nqueue.append(2)\nqueue.popleft()          # -> 1 (first in, first out)",
+    "lang": "python"
+  },
+  {
+    "q": ["explain how a hash map works", "what is a hash map", "how do hash tables work"],
+    "a": "A hash map (hash table) stores key-value pairs and gives O(1) average lookup. A hash function converts the key into an array index; the value is stored at that slot. Collisions — two keys hashing to the same slot — are resolved by chaining (each slot holds a linked list) or open addressing (probing for the next free slot). Good hash functions spread keys uniformly. Python's dict and set, JavaScript's Map and object, and Java's HashMap are all hash maps. The main tradeoff is memory: a hash map uses extra space to keep load factor low for speed.",
+    "code": "# Python dict is a hash map\nphonebook = {}\nphonebook['alice'] = '555-1234'   # hashes 'alice' -> slot\nphonebook['bob'] = '555-5678'\nprint(phonebook.get('alice'))     # O(1) lookup\nprint('carol' in phonebook)       # False — also O(1)",
+    "lang": "python"
+  },
+  {
+    "q": ["what is recursion in programming", "recursion explained", "how does recursion work"],
+    "a": "Recursion is a technique where a function calls itself to solve a problem by breaking it into smaller subproblems. Every recursive function needs a base case (a condition that stops the recursion) and a recursive case that moves toward it. Without a base case you get infinite recursion (eventually a stack overflow). Recursion is elegant for problems with self-similar structure — tree traversal, divide and conquer — but can be less efficient than iteration due to call-stack overhead, and Python has a default recursion limit of about 1000.",
+    "code": "def sum_to(n):\n    if n <= 1:            # base case\n        return n\n    return n + sum_to(n - 1)   # recursive case\n\nprint(sum_to(5))  # 15\n\n# Iterative equivalent\ns = 0\nfor i in range(1, 6):\n    s += i",
+    "lang": "python"
+  },
+  {
+    "q": ["explain time complexity vs space complexity", "time complexity vs space complexity", "big o time and space"],
+    "a": "Time complexity measures how runtime grows with input size; space complexity measures how memory grows. Both are expressed in Big O notation: O(1) constant, O(log n) logarithmic, O(n) linear, O(n log n) linearithmic (good sorting), O(n^2) quadratic (nested loops), O(2^n) exponential. A function can trade one for the other — memoization uses extra space to reduce time, and streaming algorithms use little space but may do more passes.",
+    "code": "# O(n) time, O(n) space (creates a copy)\ndef copy_list(items):\n    return list(items)\n\n# O(n) time, O(1) space (in-place)\ndef max_item(items):\n    best = items[0]\n    for x in items:\n        if x > best:\n            best = x\n    return best",
+    "lang": "python"
+  },
+  {
+    "q": ["how does quicksort work", "quicksort python", "quick sort algorithm"],
+    "a": "Quicksort is a divide-and-conquer sort: pick a pivot, partition the array so smaller elements go left and larger go right, then recursively sort each side. Average and best case are O(n log n); worst case (already-sorted input with a bad pivot choice) is O(n^2), avoided by picking a random or median pivot.",
+    "code": "def quicksort(arr):\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[len(arr) // 2]\n    left = [x for x in arr if x < pivot]\n    mid = [x for x in arr if x == pivot]\n    right = [x for x in arr if x > pivot]\n    return quicksort(left) + mid + quicksort(right)\n\nprint(quicksort([3, 6, 1, 8, 2, 5]))  # [1, 2, 3, 5, 6, 8]",
+    "lang": "python"
+  },
+  {
+    "q": ["breadth first search vs depth first search", "bfs vs dfs", "difference between bfs and dfs"],
+    "a": "BFS (breadth-first search) explores a graph level by level using a queue, finding the shortest path in unweighted graphs. DFS (depth-first search) explores as deep as possible along each branch using a stack (or recursion), good for cycle detection, topological sort, and maze solving. BFS uses O(width) memory; DFS uses O(depth) memory. On a tree, BFS is level-order traversal and DFS has preorder/inorder/postorder variants.",
+    "code": "from collections import deque\n\ndef bfs(graph, start):\n    visited, queue = set(), deque([start])\n    while queue:\n        node = queue.popleft()\n        if node not in visited:\n            visited.add(node)\n            queue.extend(graph[node] - visited)\n    return visited\n\ndef dfs(graph, start, visited=None):\n    if visited is None:\n        visited = set()\n    visited.add(start)\n    for nxt in graph[start] - visited:\n        dfs(graph, nxt, visited)\n    return visited\n\ngraph = {'A': {'B', 'C'}, 'B': {'A', 'D'}, 'C': {'A'}, 'D': {'B'}}\nprint(bfs(graph, 'A'))  # {'A', 'B', 'C', 'D'}\nprint(dfs(graph, 'A'))  # {'A', 'B', 'D', 'C'} (order varies)",
+    "lang": "python"
+  },
+  {
+    "q": ["sql group by example", "how does group by work in sql", "group by sql"],
+    "a": "GROUP BY collapses rows into groups based on the values in one or more columns, usually combined with aggregate functions like COUNT, SUM, AVG, MIN, or MAX. Every column in the SELECT list that is not an aggregate must appear in the GROUP BY. Use HAVING to filter groups (WHERE filters rows before grouping).",
+    "code": "SELECT department, COUNT(*) AS employees, AVG(salary) AS avg_salary\nFROM employees\nGROUP BY department\nHAVING COUNT(*) > 5\nORDER BY avg_salary DESC;",
+    "lang": "sql"
+  },
+  {
+    "q": ["how do sql indexes work", "sql index explained", "what is an index in sql"],
+    "a": "An index is a data structure (usually a B-tree) that lets the database find rows without scanning the whole table, turning O(n) full scans into O(log n) lookups. Indexes speed up WHERE, JOIN, and ORDER BY on the indexed columns but slow down INSERT/UPDATE/DELETE (the index must be maintained) and use extra disk space. Create them on columns used heavily in filters and joins; avoid over-indexing small tables.",
+    "code": "CREATE INDEX idx_employees_department ON employees (department);\n\n-- Multi-column index (leftmost-prefix rule applies)\nCREATE INDEX idx_orders_customer_date ON orders (customer_id, order_date);\n\n-- Unique index enforces uniqueness too\nCREATE UNIQUE INDEX idx_users_email ON users (email);\n\n-- See the query plan to confirm the index is used\nEXPLAIN SELECT * FROM employees WHERE department = 'eng';",
+    "lang": "sql"
+  },
+  {
+    "q": ["what is the difference between html and css", "html vs css", "difference between html and css"],
+    "a": "HTML (HyperText Markup Language) defines the structure and content of a web page — headings, paragraphs, images, links — using elements and tags. CSS (Cascading Style Sheets) defines the presentation — colors, fonts, layout, spacing, responsiveness. HTML is the skeleton; CSS is the styling. They are separate languages that work together: HTML provides elements (often via class/id) and CSS selects them to apply styles.",
+    "code": "<!-- HTML: structure -->\n<button class=\"btn\">Click me</button>\n\n<!-- CSS: presentation -->\n.btn {\n  background-color: #4a90d9;\n  color: white;\n  padding: 10px 20px;\n  border-radius: 6px;\n  border: none;\n  cursor: pointer;\n}",
+    "lang": "html"
+  },
+  {
+    "q": ["what is docker", "docker explained", "docker containers basics"],
+    "a": "Docker is a platform for packaging applications and their dependencies into lightweight, isolated units called containers. A Dockerfile describes the image build steps (base image, dependencies, code, run command). Containers share the host OS kernel, so they start in seconds and use far less memory than virtual machines. Docker Compose orchestrates multi-container apps; Kubernetes orchestrates containers across many machines.",
+    "code": "# Dockerfile\nFROM python:3.12-slim\nWORKDIR /app\nCOPY requirements.txt .\nRUN pip install -r requirements.txt\nCOPY . .\nCMD [\"python\", \"app.py\"]\n\n# Build and run\n# docker build -t myapp .\n# docker run -p 8000:8000 myapp",
+    "lang": "docker"
+  },
+  {
+    "q": ["what is the difference between git merge and rebase", "git merge vs rebase", "merge or rebase"],
+    "a": "Both integrate changes from one branch into another, but they rewrite history differently. `git merge` creates a new merge commit joining the branches, preserving the full history — safe and non-destructive. `git rebase` replays your commits on top of the other branch's tip, producing a clean linear history, but it rewrites commits (which is dangerous on shared branches). Rule of thumb: rebase local unpushed commits for a tidy history; merge or squash for shared branches.",
+    "code": "# Merge: keeps a merge commit\ngit checkout main\ngit merge feature\n\n# Rebase: linear history\ngit checkout feature\ngit rebase main\ngit checkout main\ngit merge feature   # fast-forward\n\n# Never rebase commits others have pulled",
+    "lang": "bash"
+  },
+  {
+    "q": ["what is a binary search tree", "binary search tree explained", "bst data structure"],
+    "a": "A binary search tree (BST) is a tree where each node has at most two children, and for every node, all values in its left subtree are smaller and all values in its right subtree are larger. This ordering gives O(log n) average search, insert, and delete. If the tree becomes unbalanced (e.g., inserting sorted data), operations degrade to O(n); self-balancing variants like AVL trees and red-black trees fix this.",
+    "code": "class Node:\n    def __init__(self, val):\n        self.val = val\n        self.left = None\n        self.right = None\n\ndef insert(root, val):\n    if root is None:\n        return Node(val)\n    if val < root.val:\n        root.left = insert(root.left, val)\n    elif val > root.val:\n        root.right = insert(root.right, val)\n    return root\n\ndef search(root, val):\n    if root is None or root.val == val:\n        return root\n    if val < root.val:\n        return search(root.left, val)\n    return search(root.right, val)",
+    "lang": "python"
+  },
+  {
+    "q": ["how do promises work in javascript", "what is a promise in javascript", "promises explained", "javascript promise example"],
+    "a": "A Promise represents a value that will be available now, later, or never. It has three states: pending, fulfilled, and rejected. Attach `.then()` for fulfillment, `.catch()` for rejection, and `.finally()` for cleanup. `Promise.all` runs promises in parallel and waits for all; `Promise.allSettled` waits for all regardless of outcome. Promises avoid callback nesting ('callback hell') and are the foundation for `async`/`await`, which is syntactic sugar over them.",
+    "code": "function fetchUser(id) {\n  return new Promise((resolve, reject) => {\n    setTimeout(() => {\n      if (id > 0) resolve({ id, name: 'cos' });\n      else reject(new Error('bad id'));\n    }, 100);\n  });\n}\n\nfetchUser(1)\n  .then((user) => console.log(user))\n  .catch((err) => console.error(err));\n\n// Parallel:\n// Promise.all([fetchUser(1), fetchUser(2)]).then(console.log);",
+    "lang": "javascript"
+  },
+  {
+    "q": ["what is an algorithm", "what are algorithms in programming", "algorithms explained"],
+    "a": "An algorithm is a precise, step-by-step procedure for solving a problem or performing a computation — like a recipe for a computer. Good algorithms are correct, terminate, and are efficient in time and space (measured with Big O notation). Classic examples include sorting (quicksort, mergesort), searching (binary search), and graph traversal (BFS, DFS). The same problem can have many algorithms with very different performance: searching a sorted list with linear scan is O(n), while binary search is O(log n).",
+    "code": "# An algorithm as a function: find the largest number\ndef find_max(items):\n    max_so_far = items[0]\n    for x in items[1:]:\n        if x > max_so_far:\n            max_so_far = x\n    return max_so_far\n\nprint(find_max([3, 9, 2, 7]))  # 9",
+    "lang": "python"
+  }
+]

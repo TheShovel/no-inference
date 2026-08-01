@@ -214,7 +214,7 @@
     "patterns": [
       "i'?m (?:so |really |feeling )?(?:tired|exhausted|sleepy|drowsy|fatigued|weary|worn out|drained|beat|bushed|wiped|spent|dead tired|knackered|pooped|wiped out)",
       "i feel (?:tired|exhausted|sleepy|drowsy|fatigued|weary|drained|beat)",
-      "i need (?:some |a )?sleep",
+      "^i need (?:some |a )?sleep$",
       "i (?:didn'?t|did not) sleep (?:well|enough|much|at all)",
       "i'?m (?:so |really )?sleepy",
       "i could use a nap",
@@ -1863,7 +1863,7 @@
       "i'?m a tea person",
       "coffee lover",
       "tea lover",
-      "caffeine",
+      "^caffeine$",
       "need caffeine"
     ],
     "response": [
