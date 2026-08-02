@@ -1,0 +1,86 @@
+[
+  {
+    "q": [
+      "how many moons does mercury have",
+      "how many moons does mercury have",
+      "mercury moons",
+      "does mercury have moons"
+    ],
+    "a": "Mercury has no moons. It is one of only two planets in the Solar System without any natural satellites — the other is Venus. Because Mercury is so close to the Sun, its gravitational sphere of influence is small, which makes it difficult for the planet to capture and hold a moon in a stable orbit. Any moon that tried to orbit Mercury would likely be pulled away by the Sun's gravity.",
+    "categories": ["astronomy", "planet", "mercury"]
+  },
+  {
+    "q": [
+      "how many moons does venus have",
+      "venus moons",
+      "does venus have moons"
+    ],
+    "a": "Venus has no moons. It is one of only two planets in the Solar System without any natural satellites — the other is Mercury. Venus is similar in size to Earth but has no moon, likely because no large body ever collided with it in its early history the way the impact that formed Earth's Moon did.",
+    "categories": ["astronomy", "planet", "venus"]
+  },
+  {
+    "q": [
+      "how many moons does earth have",
+      "how many moons does the earth have",
+      "earth moons",
+      "how many moons does our planet have"
+    ],
+    "a": "Earth has one moon, simply called the Moon (Luna). It is the fifth-largest moon in the Solar System and the largest relative to its planet. The Moon formed about 4.5 billion years ago, most likely when a Mars-sized body called Theia collided with the early Earth. The Moon stabilizes Earth's axial tilt, drives the ocean tides, and takes about 27.3 days to orbit Earth. Earth also has a few quasi-satellites and temporary captured objects, but only one true moon.",
+    "categories": ["astronomy", "planet", "earth"]
+  },
+  {
+    "q": [
+      "how many moons does mars have",
+      "mars moons",
+      "how many moons orbit mars"
+    ],
+    "a": "Mars has two small moons: Phobos and Deimos. Both are irregularly shaped and are probably captured asteroids from the nearby asteroid belt. Phobos, the larger of the two, is about 22 kilometers (14 miles) across and orbits Mars so closely that it rises and sets twice a day; it is slowly spiraling inward and will either crash into Mars or break up into a ring in about 50 million years. Deimos is about 12 kilometers (7.5 miles) across and much farther out. Their names come from the Greek gods of fear and dread, sons of Ares (Mars).",
+    "categories": ["astronomy", "planet", "mars"]
+  },
+  {
+    "q": [
+      "how many moons does jupiter have",
+      "jupiter moons",
+      "how many moons orbit jupiter",
+      "how many moons does jupiter have 2024"
+    ],
+    "a": "Jupiter has 95 confirmed moons, the second most of any planet in the Solar System (after Saturn). The four largest are the Galilean moons — Io, Europa, Ganymede, and Callisto — discovered by Galileo in 1610. Ganymede is the largest moon in the Solar System, bigger than the planet Mercury. Europa is a prime target in the search for life because it has a subsurface ocean beneath its icy crust. The vast majority of Jupiter's moons are small irregular satellites captured from the asteroid belt, and new ones are still being discovered.",
+    "categories": ["astronomy", "planet", "jupiter"]
+  },
+  {
+    "q": [
+      "how many moons does saturn have",
+      "saturn moons",
+      "how many moons orbit saturn",
+      "how many moons does saturn have 2024"
+    ],
+    "a": "Saturn has 146 confirmed moons, the most of any planet in the Solar System, with more being discovered regularly. The largest is Titan, the second-largest moon in the Solar System (after Jupiter's Ganymede) and the only moon with a thick atmosphere; it has lakes and rivers of liquid methane. Other notable moons include Enceladus, which sprays water vapor from geysers at its south pole, indicating a subsurface ocean, and Rhea, Iapetus, and Dione. Many of Saturn's small moons orbit within its famous ring system and help shape the rings.",
+    "categories": ["astronomy", "planet", "saturn"]
+  },
+  {
+    "q": [
+      "how many moons does uranus have",
+      "uranus moons",
+      "how many moons orbit uranus"
+    ],
+    "a": "Uranus has 28 known moons, named after characters from the works of William Shakespeare and Alexander Pope. The five largest are Miranda, Ariel, Umbriel, Titania, and Oberon, which were discovered by 1851. Miranda is notable for its dramatic, patchwork surface of canyons and cliffs, including Verona Rupes, the tallest known cliff in the Solar System. The moons of Uranus orbit the planet at a steep tilt, matching the planet's extreme axial tilt of about 98 degrees.",
+    "categories": ["astronomy", "planet", "uranus"]
+  },
+  {
+    "q": [
+      "how many moons does neptune have",
+      "neptune moons",
+      "how many moons orbit neptune"
+    ],
+    "a": "Neptune has 16 known moons. The largest is Triton, which is unusual because it orbits Neptune in the opposite direction to the planet's rotation (a retrograde orbit), indicating it is a captured Kuiper Belt object. Triton is extremely cold, with geysers of nitrogen ice, and is slowly spiraling inward — it will eventually be torn apart by Neptune's gravity. The second-largest moon, Proteus, was discovered only in 1989 by the Voyager 2 spacecraft. The moon Nereid has one of the most eccentric orbits of any moon in the Solar System.",
+    "categories": ["astronomy", "planet", "neptune"]
+  },
+  {
+    "q": [
+      "how many moons does the sun have",
+      "does the sun have moons"
+    ],
+    "a": "The Sun is a star, not a planet, so it does not have moons. Instead, it has eight planets orbiting it — Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune — along with dwarf planets like Pluto, and hundreds of moons orbiting those planets. Objects that orbit the Sun directly are called planets, dwarf planets, asteroids, or comets, not moons.",
+    "categories": ["astronomy", "sun"]
+  }
+]

@@ -362,6 +362,9 @@ _QUESTION_WRAPPERS = [
     r'^(?:not\s+going\s+to\s+lie|not\s+gonna\s+lie|ngl|no\s+cap|for\s+real|fr)\s+',
     r'^(?:yo|hey|heya|yo\s+yo|hey\s+there)\s+',
     r'^(?:i\'?m|i\s+am)\s+(?:going\s+to|gonna|want\s+to|wanna)\s+ask\s+(?:you\s+)?(?:about|on)\s+',
+    r'^(?:whats|what\'s|wuts|wut\'s|wats|wat\'s)\s+up\s+with\s+',
+    r'^(?:i\s+)?(?:wanna|want\s+to)\s+know\s+',
+    r'^(?:gimme|give\s+me)\s+the\s+lowdown\s+on\s+',
     r'^(?:do|does|did)\s+you\s+know\s+(?:what|who|where|when|why|how|if|whether)\s+',
     r'^(?:do|does|did)\s+you\s+know\s+(?:anything\s+)?(?:about|on)\s+',
     r'^(?:do|does|did)\s+you\s+know\s+',
@@ -927,7 +930,7 @@ def lookup(query):
     q_unwrapped = unwrap_query(q)
     if q_unwrapped == q:
         q_unwrapped = None
-    
+
     # Also create a simplified query with filler/stop words removed.
     # This allows patterns like "how do mushrooms communicate" to match
     # queries like "How do mushrooms actually communicate with each other".
@@ -1078,6 +1081,17 @@ def lookup(query):
             q_words = set(w.lower() for w in re.findall(r'\b[a-zA-Z]{3,}\b', _fuzzy_source)
                          if w.lower() not in _STOP_WORDS_FUZZY)
             if q_words:
+                def _fuzzy_word_match(w, words):
+                    """True if w (or its singular/plural form) is in the set:
+                    capitals matches capital and vice versa."""
+                    if w in words:
+                        return True
+                    if len(w) > 4 and w.endswith('s') and not w.endswith('ss') \
+                            and w[:-1] in words:
+                        return True
+                    if len(w) > 3 and w + 's' in words:
+                        return True
+                    return False
                 best_fuzzy_score = -999999  # Can be negative (with penalty)
                 best_fuzzy_answer = None
                 best_fuzzy_pattern = ''
@@ -1090,12 +1104,14 @@ def lookup(query):
                 for _ci in _fuzzy_candidates:
                     pattern, answer = entries[_ci]
                     pattern_str = pattern.pattern.lower()
-                    # Count how many query words appear in the pattern
-                    word_hits = sum(1 for w in q_words if w in pattern_str)
-                    # PENALTY: Count pattern words NOT in query (prevents false matches)
                     p_words = set(w for w in re.findall(r'\b[a-zA-Z]{3,}\b', pattern_str)
                                   if w not in _STOP_WORDS_FUZZY)
-                    extraneous = len(p_words - q_words)
+                    # Count how many query words appear in the pattern
+                    # (singular/plural forms count: "capitals" ~ "capital")
+                    word_hits = sum(1 for w in q_words if _fuzzy_word_match(w, p_words))
+                    # PENALTY: Count pattern words NOT in query (prevents false matches)
+                    extraneous = len([pw for pw in p_words
+                                      if not _fuzzy_word_match(pw, q_words)])
                     score = word_hits - extraneous * 3  # -3 per extraneous word
                     if score > best_fuzzy_score:
                         best_fuzzy_score = score
@@ -1106,7 +1122,9 @@ def lookup(query):
                 # AND the overlap covers at least 40% of pattern key words
                 # Bidirectional check prevents false matches between unrelated topics
                 # Compute the raw word_hits (without penalty) for ratio checks
-                raw_hits = sum(1 for w in q_words if w in best_fuzzy_pattern)
+                best_p_words = set(w for w in re.findall(r'\b[a-zA-Z]{3,}\b', best_fuzzy_pattern)
+                                   if w not in _STOP_WORDS_FUZZY)
+                raw_hits = sum(1 for w in q_words if _fuzzy_word_match(w, best_p_words))
                 if q_words and raw_hits >= 2 and best_fuzzy_answer:
                     q_ratio = raw_hits / len(q_words)
                     # Count pattern words too for bidirectional check

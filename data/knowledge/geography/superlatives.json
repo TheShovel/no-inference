@@ -1,0 +1,173 @@
+[
+  {
+    "q": [
+      "what is the tallest building",
+      "what is the tallest building in the world",
+      "tallest building in the world",
+      "what is the highest building",
+      "highest building in the world"
+    ],
+    "a": "The Burj Khalifa in Dubai, United Arab Emirates, is the tallest building in the world, standing 828 meters (2,717 feet) tall with 163 floors. Designed by Adrian Smith of Skidmore, Owings & Merrill and completed in 2010, it is more than twice the height of the Empire State Building. Its observation deck, At the Top, sits on the 124th floor. The building's design is inspired by the Hymenocallis flower, and it holds numerous records including the highest outdoor observation deck and the highest elevator. The next tallest buildings are Merdeka 118 in Kuala Lumpur (679 m) and the Shanghai Tower (632 m).",
+    "categories": ["geography", "building", "landmark"]
+  },
+  {
+    "q": [
+      "what is the longest river",
+      "what is the longest river in the world",
+      "longest river in the world",
+      "longest river",
+      "what is the longest river on earth"
+    ],
+    "a": "The Nile River is generally considered the longest river in the world, flowing about 6,650 kilometers (4,130 miles) from its sources in East Africa through Egypt to the Mediterranean Sea. However, the Amazon River in South America is a close contender — recent studies measuring it from its farthest source in Peru give it a length of about 6,400 kilometers (4,000 miles), and some researchers argue the Amazon is actually longer. What is undisputed is that the Amazon carries by far the most water of any river. The Nile was the lifeline of ancient Egyptian civilization, while the Amazon basin contains the world's largest rainforest.",
+    "categories": ["geography", "river"]
+  },
+  {
+    "q": [
+      "what is the highest waterfall",
+      "highest waterfall in the world",
+      "what is the tallest waterfall",
+      "tallest waterfall in the world",
+      "what is the largest waterfall"
+    ],
+    "a": "Angel Falls (Salto Ángel) in Canaima National Park, Venezuela, is the highest waterfall in the world, with a total drop of 979 meters (3,212 feet), including an uninterrupted plunge of 807 meters (2,648 feet). The water falls from the summit of Auyán-tepui, a table-top mountain, into the Churún River. The falls were named after American aviator Jimmie Angel, who spotted them in 1933 and landed on the tepui in 1937. By volume, the largest waterfall is Inga Falls on the Congo River, and the widest is Khone Falls in Laos.",
+    "categories": ["geography", "waterfall"]
+  },
+  {
+    "q": [
+      "how many countries are in europe",
+      "how many countries are there in europe",
+      "number of countries in europe",
+      "how many countries make up europe"
+    ],
+    "a": "Europe has 44 to 50 countries depending on how you count them. The United Nations recognizes 44 countries as part of Europe, but including transcontinental countries — Russia, Turkey, Kazakhstan, Azerbaijan, Georgia, and Armenia, which straddle the Europe-Asia boundary — the total rises to about 50. The Council of Europe has 46 member states. Some smaller or disputed territories like Kosovo, Northern Cyprus, and the Vatican City complicate the count further; the Vatican and San Marino, Monaco, Andorra, Liechtenstein, and Malta are among Europe's microstates. Russia is the largest European country by far, and Vatican City the smallest.",
+    "categories": ["geography", "europe", "countries"]
+  },
+  {
+    "q": [
+      "how many countries are in asia",
+      "how many countries are there in asia",
+      "number of countries in asia"
+    ],
+    "a": "Asia has 49 to 50 countries according to the United Nations, making it the continent with the most countries. Including the transcontinental countries that are also counted in Europe (Russia, Turkey, Kazakhstan, Azerbaijan, Georgia, and Armenia), the count varies. Asia is the largest and most populous continent, home to China and India, the world's two most populous countries, together with over 2.8 billion people. Some territories like Taiwan are counted differently by different organizations.",
+    "categories": ["geography", "asia", "countries"]
+  },
+  {
+    "q": [
+      "how many countries are in africa",
+      "how many countries are there in africa",
+      "number of countries in africa"
+    ],
+    "a": "Africa has 54 countries recognized by the United Nations, more than any other continent. The African Union has 55 member states, which includes Western Sahara. Africa is the second-largest and second-most populous continent, with Nigeria its most populous country (over 220 million people) and Algeria the largest by area. The newest African country is South Sudan, which gained independence in 2011. The continent's longest river is the Nile and its largest country by area is Algeria.",
+    "categories": ["geography", "africa", "countries"]
+  },
+  {
+    "q": [
+      "how many countries are in north america",
+      "how many countries are there in north america",
+      "number of countries in north america"
+    ],
+    "a": "North America has 23 countries and territories recognized by the United Nations, but only 10 are considered part of the continent proper when counting the Caribbean separately. Counting the Caribbean island nations (like Cuba, Jamaica, Haiti, and the Dominican Republic) and Central American countries (like Mexico, Guatemala, and Panama) together with Canada and the United States gives about 23 independent countries. The three largest by population are the United States, Mexico, and Canada. Greenland is the largest territory but is an autonomous country within the Kingdom of Denmark.",
+    "categories": ["geography", "north america", "countries"]
+  },
+  {
+    "q": [
+      "how many countries are in south america",
+      "how many countries are there in south america",
+      "number of countries in south america"
+    ],
+    "a": "South America has 12 independent countries: Argentina, Bolivia, Brazil, Chile, Colombia, Ecuador, Guyana, Paraguay, Peru, Suriname, Uruguay, and Venezuela. In addition, there are dependent territories like French Guiana (an overseas department of France) and the Falkland Islands (a British territory). Brazil is by far the largest country on the continent, covering nearly half of its area, and also the most populous. The continent is home to the Amazon rainforest, the Andes mountains, and the highest waterfall, Angel Falls in Venezuela.",
+    "categories": ["geography", "south america", "countries"]
+  },
+  {
+    "q": [
+      "how many countries are in oceania",
+      "how many countries are there in oceania",
+      "number of countries in oceania",
+      "how many countries are in australia and oceania"
+    ],
+    "a": "Oceania has 14 independent countries: Australia, New Zealand, Papua New Guinea, Fiji, Solomon Islands, Vanuatu, Samoa, Tonga, Kiribati, Nauru, Palau, Federated States of Micronesia, Marshall Islands, and Tuvalu. Australia is by far the largest country in the region, while the continent itself is often called Australia or Australia-Oceania. The region also includes numerous territories like French Polynesia, New Caledonia, and Hawaii (a U.S. state). Oceania is the least populous continent after Antarctica, with about 45 million people.",
+    "categories": ["geography", "oceania", "countries"]
+  },
+  {
+    "q": [
+      "what is the most spoken language",
+      "what is the most spoken language in the world",
+      "most spoken language in the world",
+      "most spoken language",
+      "what is the most widely spoken language"
+    ],
+    "a": "The most spoken language in the world by total speakers (native plus second-language speakers) is English, with roughly 1.4 to 1.5 billion speakers. By native speakers, the most spoken language is Mandarin Chinese, with about 920 million native speakers, followed by Spanish (~480 million) and English (~380 million). Hindi is fourth by native speakers, and Arabic is spoken across dozens of countries. Because English is the global language of business, science, and the internet, it has far more second-language speakers than any other language.",
+    "categories": ["language", "general"]
+  },
+  {
+    "q": [
+      "what is the largest desert",
+      "largest desert in the world",
+      "what is the biggest desert",
+      "biggest desert in the world",
+      "what is the largest desert in the world"
+    ],
+    "a": "The largest desert in the world is the Antarctic Desert, which covers about 14.2 million square kilometers (5.5 million square miles) — nearly the entire continent of Antarctica. Deserts are defined by low precipitation, not heat, so Antarctica qualifies as a cold desert. The largest hot desert is the Sahara in North Africa, covering about 9.2 million square kilometers (3.6 million square miles), roughly the size of the United States. The Sahara's name means 'desert' in Arabic, and it has expanded and contracted over thousands of years as the climate shifted.",
+    "categories": ["geography", "desert"]
+  },
+  {
+    "q": [
+      "what is the largest island",
+      "largest island in the world",
+      "what is the biggest island",
+      "biggest island in the world"
+    ],
+    "a": "Greenland is the largest island in the world, covering about 2.17 million square kilometers (836,000 square miles). It is an autonomous territory within the Kingdom of Denmark, mostly covered by the Greenland ice sheet, which holds about 7% of the world's fresh water. Australia is sometimes called an island, but it is classified as a continent. The second-largest island is New Guinea, followed by Borneo, Madagascar, and Baffin Island. Greenland's capital is Nuuk, and its population is only about 56,000.",
+    "categories": ["geography", "island"]
+  },
+  {
+    "q": [
+      "what is the largest lake",
+      "largest lake in the world",
+      "what is the biggest lake",
+      "biggest lake in the world"
+    ],
+    "a": "The Caspian Sea is the largest lake in the world, covering about 371,000 square kilometers (143,000 square miles). It is a saltwater lake bordered by Russia, Kazakhstan, Turkmenistan, Iran, and Azerbaijan, and it is sometimes called a sea because of its size. The largest freshwater lake by surface area is Lake Superior in North America, and the largest freshwater lake by volume is Lake Baikal in Russia, which holds about 20% of the world's unfrozen fresh water and is also the deepest lake at 1,642 meters (5,387 feet).",
+    "categories": ["geography", "lake"]
+  },
+  {
+    "q": [
+      "what is the largest rainforest",
+      "largest rainforest in the world",
+      "what is the biggest rainforest",
+      "biggest rainforest in the world"
+    ],
+    "a": "The Amazon Rainforest is the largest rainforest in the world, covering about 5.5 million square kilometers (2.1 million square miles) across nine countries in South America, primarily Brazil (60%). It is home to an estimated 10% of the world's known species, including jaguars, harpy eagles, pink river dolphins, and over 40,000 plant species. The Amazon produces about 20% of the world's oxygen and is often called the 'lungs of the Earth', though it absorbs more carbon dioxide than it releases. It is threatened by deforestation, mainly for cattle ranching and soy farming.",
+    "categories": ["geography", "rainforest"]
+  },
+  {
+    "q": [
+      "what is the largest volcano",
+      "largest volcano in the world",
+      "what is the biggest volcano",
+      "biggest volcano in the world"
+    ],
+    "a": "Mauna Loa in Hawaii is the largest active volcano on Earth by volume, estimated at about 75,000 cubic kilometers. It rises about 9,170 meters (30,085 feet) from the seafloor, making it taller than Mount Everest when measured from its base. Mauna Loa is a shield volcano that last erupted in November-December 2022. The largest volcano in the solar system is Olympus Mons on Mars, about 22 kilometers (13.6 miles) high. The tallest volcano on Earth by elevation above sea level is Nevado Ojos del Salado on the Chile-Argentina border.",
+    "categories": ["geography", "volcano"]
+  },
+  {
+    "q": [
+      "what is the largest city",
+      "what is the largest city in the world",
+      "largest city in the world",
+      "biggest city in the world"
+    ],
+    "a": "The largest city in the world by population is Tokyo, Japan, whose greater metropolitan area is home to about 37 million people. By city proper (administrative) population, Shanghai and Beijing in China are among the largest, each with over 20 million. Delhi, India, has also surpassed 30 million in its metropolitan area. Tokyo is followed by Delhi, Shanghai, Dhaka, São Paulo, and Mexico City in the ranking of the world's largest urban areas. The largest city by area is New York City's metropolitan region or various Chinese prefecture-level cities depending on the measure used.",
+    "categories": ["geography", "city"]
+  },
+  {
+    "q": [
+      "what is the most populous country",
+      "most populous country in the world",
+      "what is the most populated country",
+      "what country has the largest population"
+    ],
+    "a": "The most populous country in the world is India, with a population of over 1.4 billion people, surpassing China in 2023. China is the second most populous with about 1.4 billion. Together, India and China account for more than a third of the world's population. The United States is third with about 335 million, followed by Indonesia, Pakistan, Nigeria, and Brazil. India's population continues to grow, though its fertility rate has fallen below replacement level, and it is projected to peak around 2060.",
+    "categories": ["geography", "population", "countries"]
+  }
+]

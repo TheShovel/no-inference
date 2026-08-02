@@ -1,0 +1,201 @@
+[
+  {
+    "q": [
+      "what is the difference between a list and a tuple",
+      "difference between list and tuple",
+      "list vs tuple",
+      "list versus tuple",
+      "how is a list different from a tuple"
+    ],
+    "a": "In Python, the main difference between a list and a tuple is mutability: a list is mutable (you can add, remove, or change elements after creation), while a tuple is immutable (once created, its elements cannot be changed). Lists are written with square brackets — [1, 2, 3] — and tuples with parentheses — (1, 2, 3). Because tuples are immutable, they are faster and use less memory, and they can be used as dictionary keys (lists cannot). Tuples are often used for data that should not change, like coordinates or function return values, while lists are used for collections that grow or shrink. Both are ordered and can contain mixed types.",
+    "categories": ["coding", "python"]
+  },
+  {
+    "q": [
+      "what is the difference between a stack and a queue",
+      "difference between stack and queue",
+      "stack vs queue",
+      "stack versus queue"
+    ],
+    "a": "A stack and a queue are both linear data structures that store a collection of elements, and they differ in the order elements are removed. A stack follows LIFO (Last In, First Out) — the last element added is the first one removed, like a stack of plates. The two main operations are push (add to top) and pop (remove from top). A queue follows FIFO (First In, First Out) — the first element added is the first one removed, like a line of people. The main operations are enqueue (add to back) and dequeue (remove from front). Stacks are used in function calls (call stack), undo operations, and expression evaluation; queues are used in task scheduling, print jobs, and breadth-first search.",
+    "categories": ["coding", "data structures"]
+  },
+  {
+    "q": [
+      "what is the difference between an array and a list",
+      "difference between array and list",
+      "array vs list",
+      "array versus list"
+    ],
+    "a": "The difference between an array and a list depends on the language. In Python, a list is a built-in dynamic data structure that can hold mixed types and grows and shrinks automatically, while an array (from the array module or NumPy) holds elements of a single type and is more memory-efficient for numeric data. In lower-level languages like C and Java, an array has a fixed size set at creation and holds elements of one type, while a 'list' (like Java's ArrayList or C++'s vector) is a dynamic array that resizes as needed. In JavaScript, 'array' is the standard name for the ordered list. Generally, arrays are more compact and faster for indexing, while lists are more flexible.",
+    "categories": ["coding", "data structures"]
+  },
+  {
+    "q": [
+      "what is the difference between synchronous and asynchronous",
+      "difference between synchronous and asynchronous",
+      "sync vs async",
+      "synchronous vs asynchronous"
+    ],
+    "a": "Synchronous operations run one at a time, each blocking until it finishes before the next starts — like a single-line queue where you wait for each task to complete. Asynchronous operations let the program continue running other tasks while waiting for a slow operation (like a network request or file read) to finish, using callbacks, promises, or async/await. In programming, synchronous code is simpler to reason about but can freeze the UI if a task is slow, while asynchronous code keeps applications responsive. In communication, synchronous means both sides exchange data in real time (like a phone call), and asynchronous means data is sent without waiting for an immediate response (like email).",
+    "categories": ["coding", "concepts"]
+  },
+  {
+    "q": [
+      "what is the difference between a compiler and an interpreter",
+      "difference between a compiler and an interpreter",
+      "difference between compiler and interpreter",
+      "compiler vs interpreter",
+      "compiler versus interpreter",
+      "what is the difference between compiler and interpreter"
+    ],
+    "a": "A compiler and an interpreter are both tools that translate high-level programming languages into machine code, and they differ in how they do it. A compiler translates the entire program into machine code in one go, producing an executable file that runs later — errors are reported all at once, and the compiled program runs fast. An interpreter translates and executes the program line by line, immediately running each statement — errors appear as soon as the interpreter hits them, and there is no separate executable. Compiled languages include C, C++, Go, and Rust; interpreted languages include Python, JavaScript, Ruby, and PHP (though many modern implementations use just-in-time compilation, a hybrid). Compilation typically catches more errors before running and produces faster executables.",
+    "categories": ["coding", "concepts"]
+  },
+  {
+    "q": [
+      "what is the difference between git merge and git rebase",
+      "difference between merge and rebase",
+      "git merge vs git rebase",
+      "merge vs rebase"
+    ],
+    "a": "Git merge and git rebase both integrate changes from one branch into another, but they do it differently. Merge creates a new 'merge commit' that joins the two branches' histories, preserving the original commits from both — the history shows a clear branching structure, and it is safe and non-destructive. Rebase rewrites history by taking your branch's commits and replaying them on top of the target branch, producing a linear history — cleaner, but it changes commit hashes, so you should never rebase commits that others have already based work on. In practice, teams often rebase their feature branch before merging, then use merge (or squash-merge) to integrate, combining the benefits of both.",
+    "categories": ["coding", "git"]
+  },
+  {
+    "q": [
+      "what is the difference between http and https",
+      "difference between http and https",
+      "http vs https",
+      "http versus https"
+    ],
+    "a": "HTTPS is HTTP encrypted with TLS (Transport Layer Security). HTTP (Hypertext Transfer Protocol) sends data between your browser and a web server in plain text, so anyone on the network can read it — passwords, credit card numbers, and messages are exposed. HTTPS encrypts that data, so even if it is intercepted, it cannot be read. HTTPS also verifies the server's identity through digital certificates, protecting against impersonation and man-in-the-middle attacks. Websites using HTTPS show a padlock icon in the browser. HTTPS is now the default for most of the web, and search engines rank HTTPS sites higher. It uses port 443 by default, while HTTP uses port 80.",
+    "categories": ["coding", "web"]
+  },
+  {
+    "q": [
+      "what is the difference between get and post",
+      "difference between get and post",
+      "get vs post",
+      "get versus post",
+      "get method vs post method"
+    ],
+    "a": "GET and POST are the two most common HTTP methods, and they differ mainly in where data is sent and its side effects. GET requests retrieve data from the server and include parameters in the URL (like ?id=5), so they are visible in the address bar, logged in history, and can be bookmarked, cached, and shared. GET is idempotent — making the same request repeatedly has no additional effect — and should never be used for sensitive data. POST requests send data in the request body, so it is not visible in the URL and has no length limits (GET URLs are typically limited to a few thousand characters). POST is used to create or update resources (forms, logins, uploads), is not idempotent, and is not cached or bookmarked. In short: GET reads, POST writes.",
+    "categories": ["coding", "web"]
+  },
+  {
+    "q": [
+      "what is the difference between rest and soap",
+      "difference between rest and soap",
+      "rest vs soap",
+      "rest versus soap",
+      "soap vs rest"
+    ],
+    "a": "REST and SOAP are two styles of web service APIs. REST (Representational State Transfer) is an architectural style that uses standard HTTP methods (GET, POST, PUT, DELETE) and works with simple formats like JSON or XML. It is lightweight, flexible, easy to use, and the dominant choice for modern web APIs. SOAP (Simple Object Access Protocol) is a strict protocol that requires an XML envelope, WSDL definitions, and typically runs over HTTP, SMTP, or TCP. SOAP is heavier and more verbose but offers built-in security standards (WS-Security), transactions, and reliability guarantees, making it common in banking and enterprise systems. As a rule of thumb: REST for modern, public, mobile-friendly APIs; SOAP for legacy enterprise systems with strict security requirements.",
+    "categories": ["coding", "web"]
+  },
+  {
+    "q": [
+      "what is the difference between sql and nosql",
+      "difference between sql and nosql",
+      "sql vs nosql",
+      "sql versus nosql"
+    ],
+    "a": "SQL and NoSQL are two families of databases. SQL databases (relational — MySQL, PostgreSQL, SQL Server) store data in tables with rows and columns and enforce a fixed schema, with relationships managed through foreign keys. They use Structured Query Language and excel at complex queries, transactions (ACID), and data integrity. NoSQL databases (MongoDB, Cassandra, Redis, DynamoDB) are non-relational — document, key-value, graph, or column-family stores — and typically allow flexible, schema-less data. They scale out horizontally across many servers more easily and handle high write volumes well, at the cost of weaker consistency guarantees (BASE). Choose SQL for structured data with relationships and strong integrity needs; NoSQL for massive scale, flexible schemas, or rapid iteration.",
+    "categories": ["coding", "databases"]
+  },
+  {
+    "q": [
+      "what is the difference between tcp and udp",
+      "difference between tcp and udp",
+      "tcp vs udp",
+      "tcp versus udp"
+    ],
+    "a": "TCP and UDP are the two main transport-layer protocols of the internet. TCP (Transmission Control Protocol) is connection-oriented: it establishes a handshake, sequences packets, retransmits lost ones, and guarantees ordered, reliable delivery — but with higher latency and overhead. It is used for web browsing (HTTP/HTTPS), email, and file transfers, where correctness matters. UDP (User Datagram Protocol) is connectionless: it sends packets without handshaking, ordering, or retransmission — faster and lighter, but packets can arrive out of order or be lost. UDP is used for live video, VoIP, online gaming, and DNS lookups, where speed matters more than perfect delivery. In short: TCP is reliable and slower; UDP is fast and lossy.",
+    "categories": ["coding", "networking"]
+  },
+  {
+    "q": [
+      "what is the difference between a process and a thread",
+      "difference between process and thread",
+      "process vs thread",
+      "process versus thread"
+    ],
+    "a": "A process is an instance of a running program with its own isolated memory space, file descriptors, and system resources — processes do not share memory and must use inter-process communication (pipes, sockets, shared memory) to exchange data. A thread is the smallest unit of execution within a process; a process can contain many threads that share the process's memory and resources, making communication between threads cheap and fast. Threads are lighter to create and switch between than processes, but because they share memory, they require synchronization (locks) to avoid race conditions. As a rule: threads for concurrent work inside one program (fast, shared state), processes for isolation and fault tolerance (one crashing doesn't take down others).",
+    "categories": ["coding", "concepts"]
+  },
+  {
+    "q": [
+      "what is the difference between frontend and backend",
+      "difference between frontend and backend",
+      "frontend vs backend",
+      "front end vs back end",
+      "frontend versus backend"
+    ],
+    "a": "Frontend and backend are the two main parts of a web application. The frontend (client side) is everything the user sees and interacts with in the browser — the layout, styling, buttons, and interactivity. It is built with HTML, CSS, and JavaScript, using frameworks like React, Vue, or Angular. The backend (server side) is what runs on the server: it handles data storage, business logic, authentication, and APIs. It is built with languages like Python (Django, Flask), JavaScript (Node.js), Java (Spring), or Go, and works with databases like PostgreSQL or MongoDB. The two communicate over HTTP: the frontend sends requests to backend APIs and renders the JSON responses. A full-stack developer works on both sides.",
+    "categories": ["coding", "web"]
+  },
+  {
+    "q": [
+      "what is the difference between a class and an object",
+      "difference between class and object",
+      "class vs object",
+      "class versus object",
+      "what is the difference between a class and an object in oop"
+    ],
+    "a": "In object-oriented programming, a class is a blueprint or template that defines the properties (attributes) and behaviors (methods) that objects of that type will have, while an object is a concrete instance created from that class. For example, the class 'Dog' defines attributes like name and breed and methods like bark(), and then 'my_dog = Dog(\\\"Rex\\\", \\\"Labrador\\\")' creates an object (instance) with specific values. A class exists once in your code and describes a category; you can create many objects from one class, each with its own state. Classes are defined at compile time, objects are created at runtime. In short: the class is the recipe, and the object is the cake baked from it.",
+    "categories": ["coding", "concepts"]
+  },
+  {
+    "q": [
+      "what is the difference between an array and a linked list",
+      "difference between array and linked list",
+      "array vs linked list",
+      "linked list vs array"
+    ],
+    "a": "An array and a linked list are both linear data structures that store sequences of elements, and they trade off speed in different operations. An array stores elements in contiguous memory, so accessing any element by index is instant (O(1)), but inserting or deleting in the middle requires shifting elements (O(n)) and may require resizing when full. A linked list stores elements in separate nodes, each pointing to the next, so insertion and deletion are fast (O(1)) once you have the node, but accessing element n requires walking the list from the head (O(n)). Arrays have better cache locality and lower memory overhead per element; linked lists use more memory (for the pointers) but never waste space on unused capacity. Arrays are the default choice unless you need frequent mid-list insertions.",
+    "categories": ["coding", "data structures"]
+  },
+  {
+    "q": [
+      "what is the difference between rest and graphql",
+      "difference between rest and graphql",
+      "rest vs graphql",
+      "graphql vs rest",
+      "rest versus graphql"
+    ],
+    "a": "REST and GraphQL are both ways to build web APIs. REST is an architectural style with multiple endpoints, one per resource — you fetch a user at /users/1 and their posts at /users/1/posts, possibly making several round trips. Clients receive fixed response shapes defined by the server, and over-fetching or under-fetching data is common. GraphQL is a query language that exposes a single endpoint, and the client asks for exactly the fields it needs in one request — for example, a query can fetch a user's name and only the titles of their posts in a single call. GraphQL has a typed schema with built-in documentation and is great for complex, nested data and mobile apps with limited bandwidth. REST is simpler, cacheable, and more mature, with wide tooling support. Both are widely used; GraphQL excels at flexibility, REST at simplicity.",
+    "categories": ["coding", "web"]
+  },
+  {
+    "q": [
+      "what is the difference between recursion and iteration",
+      "difference between recursion and iteration",
+      "recursion vs iteration",
+      "recursion versus iteration"
+    ],
+    "a": "Recursion and iteration are two ways to repeat a process. Iteration uses loops (for, while) to repeat a block of code a set number of times, tracking progress with a counter or condition; it uses constant extra memory and is usually faster because there is no function-call overhead. Recursion solves a problem by having a function call itself with a smaller input, relying on a base case to stop; it can express certain problems (tree traversal, directory walks, divide-and-conquer) far more elegantly, but each call consumes stack space, so deep recursion can cause a stack overflow, and it is often slower. Many recursive problems can be rewritten iteratively (sometimes with an explicit stack). The choice is a trade-off: iteration for performance and simplicity, recursion for clarity on naturally recursive structures. Some languages optimize tail recursion, making recursive code as fast as loops.",
+    "categories": ["coding", "concepts"]
+  },
+  {
+    "q": [
+      "what is the difference between mysql and postgresql",
+      "difference between mysql and postgresql",
+      "mysql vs postgresql",
+      "postgresql vs mysql",
+      "mysql versus postgres"
+    ],
+    "a": "MySQL and PostgreSQL are both open-source relational databases, and they differ in philosophy and features. PostgreSQL (often just Postgres) is feature-rich: it supports advanced SQL (window functions, CTEs), JSON/JSONB types, full-text search, user-defined types, and powerful indexing options (GiST, GIN, BRIN). MySQL is known for speed and simplicity, is extremely widely deployed (it powers much of the web via the LAMP stack), and handles read-heavy workloads efficiently; its common storage engines are InnoDB and MyISAM. Both support ACID transactions. Postgres has stricter standards compliance and better concurrency handling (MVCC done well), while MySQL has a gentler learning curve and a massive ecosystem. Many modern projects choose Postgres for its features, and MySQL for simplicity and existing infrastructure. Either is an excellent choice.",
+    "categories": ["coding", "databases"]
+  },
+  {
+    "q": [
+      "what is the difference between a function and a method",
+      "difference between function and method",
+      "function vs method",
+      "method vs function"
+    ],
+    "a": "A function and a method are both reusable blocks of code that perform a task, and the difference is context. A function is a standalone block of code that can be called by name — like print() or a function you define with def in Python. A method is a function that is associated with an object or class and is called on an instance of that object — like my_list.append(x) in Python or array.map() in JavaScript. Methods automatically receive the object they belong to (self in Python, this in JavaScript/Java). In essence: all methods are functions, but functions are only called 'methods' when they are defined inside and accessed through a class or object.",
+    "categories": ["coding", "concepts"]
+  }
+]

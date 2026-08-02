@@ -1,0 +1,84 @@
+[
+  {
+    "q": [
+      "how many bones does an adult human have",
+      "how many bones are in the human body",
+      "how many bones does the human body have",
+      "how many bones in the human body",
+      "how many bones do adults have"
+    ],
+    "a": "An adult human has 206 bones. Babies are born with about 270 bones, but many of them fuse together as the child grows — for example, the bones of the skull fuse, and the sacrum and coccyx (tailbone) each form from several vertebrae that merge. The largest bone is the femur (thigh bone), and the smallest is the stapes, a tiny bone in the middle ear about 3 millimeters long. The hands contain 54 bones, and the feet contain 52 — over a quarter of all the body's bones.",
+    "categories": ["biology", "human body"]
+  },
+  {
+    "q": [
+      "how many teeth does an adult human have",
+      "how many teeth do adults have",
+      "how many teeth in a human mouth",
+      "how many teeth do humans have"
+    ],
+    "a": "An adult human typically has 32 teeth, including 8 incisors, 4 canines, 8 premolars, and 12 molars (which include 4 wisdom teeth). Children have 20 baby teeth (also called deciduous or milk teeth) that begin falling out around age 6. Many adults have their wisdom teeth removed, leaving 28 teeth, and some people are born with fewer or extra teeth. The enamel coating teeth is the hardest substance in the human body.",
+    "categories": ["biology", "human body"]
+  },
+  {
+    "q": [
+      "how many chromosomes do humans have",
+      "how many chromosomes does a human have",
+      "number of chromosomes in humans",
+      "how many pairs of chromosomes do humans have"
+    ],
+    "a": "Humans have 46 chromosomes, arranged in 23 pairs: 22 pairs of autosomes plus one pair of sex chromosomes (XX in females, XY in males). One chromosome from each pair is inherited from the mother and one from the father. A person with Down syndrome has an extra copy of chromosome 21, giving 47 total. The Y chromosome is the smallest human chromosome, and chromosome 1 is the largest, containing about 2,000 genes.",
+    "categories": ["biology", "human body"]
+  },
+  {
+    "q": [
+      "how many senses do humans have",
+      "how many senses does a human have",
+      "how many senses are there",
+      "the five senses"
+    ],
+    "a": "Humans traditionally have five senses: sight, hearing, taste, smell, and touch. However, scientists now count many more — often between 9 and 20 — including balance (vestibular sense), body position (proprioception), temperature (thermoreception), pain (nociception), and the sense of time. Some lists add interoception (the sense of internal body states like hunger and thirst). The classic five senses were first listed by Aristotle around 350 BC.",
+    "categories": ["biology", "human body"]
+  },
+  {
+    "q": [
+      "what is the tallest animal",
+      "tallest animal in the world",
+      "what is the tallest animal on earth",
+      "tallest land animal"
+    ],
+    "a": "The giraffe is the tallest animal in the world, with males (bulls) reaching up to 5.5 meters (18 feet) tall. A giraffe's neck alone can be about 2 meters (6.5 feet) long and contains only seven vertebrae — the same number as a human neck, but each one is much larger. Giraffes have a specialized cardiovascular system: an unusually powerful heart and high blood pressure, plus valves and elastic blood vessels in the neck to prevent blood from pooling in the head when they bend down to drink. A newborn giraffe calf is already about 1.8 meters (6 feet) tall.",
+    "categories": ["biology", "animal", "giraffe"]
+  },
+  {
+    "q": [
+      "what is the largest continent",
+      "largest continent in the world",
+      "what is the biggest continent",
+      "biggest continent",
+      "which continent is the largest"
+    ],
+    "a": "Asia is the largest continent, covering about 44.6 million square kilometers (17.2 million square miles) — roughly 30% of Earth's land area. It is also the most populous, home to about 4.7 billion people, or 60% of the world's population. Asia contains the world's highest point (Mount Everest), its largest country by area (Russia, which straddles Asia and Europe), and its two most populous countries (China and India). The continents in order of size are Asia, Africa, North America, South America, Antarctica, Europe, and Australia.",
+    "categories": ["geography", "continent"]
+  },
+  {
+    "q": [
+      "what is the smallest continent",
+      "smallest continent in the world",
+      "what is the smallest continent",
+      "which continent is the smallest"
+    ],
+    "a": "Australia is the smallest continent, covering about 8.6 million square kilometers (3.3 million square miles). It is sometimes called Australia-Oceania when the Pacific island nations are included. Australia is the only continent occupied by a single country and is the flattest and driest inhabited continent, with much of its interior covered by desert. It is famous for its unique wildlife, including kangaroos, koalas, and the platypus, which evolved in isolation for millions of years. Its highest point is Mount Kosciuszko at 2,228 meters (7,310 feet).",
+    "categories": ["geography", "continent"]
+  },
+  {
+    "q": [
+      "how many countries are in the world",
+      "how many countries are there in the world",
+      "how many countries exist",
+      "how many countries in the world"
+    ],
+    "a": "There are 195 countries in the world according to the United Nations — 193 member states plus two observer states (the Vatican City and Palestine). If you include partially recognized or disputed territories like Kosovo, Taiwan, and Western Sahara, the total rises to around 200. The newest country is South Sudan, which became independent in 2011. There are 206 'Olympic nations' recognized by the International Olympic Committee, which adds a few more.",
+    "categories": ["geography", "countries"]
+  }
+]

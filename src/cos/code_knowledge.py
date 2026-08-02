@@ -133,19 +133,44 @@ def _detect_lang(path: str) -> str:
 _KNOWLEDGE_DIR = Path(__file__).parent.parent.parent / 'data' / 'knowledge' / 'coding'
 _KB_CACHE = None  # List of (regex_pattern, answer)
 
+# Word index for fast coding lookup: significant word (lowercase) -> set of
+# entry indices into _KB_CACHE. Built during _load_coding_knowledge so
+# code_lookup only scans candidate entries instead of all ~1.7k patterns on
+# every query. SOUND for the exact-match phase: an escaped-literal pattern can
+# only match text that contains every one of its words.
+_CODE_WORD_INDEX = {}
+# Parallel to _KB_CACHE: frozenset of word tokens for each entry.
+_CODE_ENTRY_WORDS = []
+# All distinct index keys, for substring expansion in the fuzzy phase
+# (query word "api" should find patterns containing "apis" or "api_key").
+_CODE_WORD_KEYS = set()
+
+_CODE_WORD_TOKEN_RE = re.compile(r'[a-z0-9]+')
+
+
+def _code_word_tokens(text):
+    """Extract the set of significant word tokens from text."""
+    return set(_CODE_WORD_TOKEN_RE.findall(text.lower()))
+
 
 def _load_coding_knowledge():
     """Load all coding knowledge entries from data/knowledge/coding/"""
-    global _KB_CACHE
+    global _KB_CACHE, _CODE_WORD_INDEX, _CODE_ENTRY_WORDS, _CODE_WORD_KEYS
     if _KB_CACHE is not None:
         return _KB_CACHE
 
     if not _KNOWLEDGE_DIR.exists():
         _KNOWLEDGE_DIR.mkdir(parents=True, exist_ok=True)
         _KB_CACHE = []
+        _CODE_WORD_INDEX = {}
+        _CODE_ENTRY_WORDS = []
+        _CODE_WORD_KEYS = set()
         return []
 
     entries = []
+    _CODE_WORD_INDEX = {}
+    _CODE_ENTRY_WORDS = []
+    _CODE_WORD_KEYS = set()
     for path in sorted(_KNOWLEDGE_DIR.glob('*.json')):
         try:
             with open(path, 'r', encoding='utf-8') as f:
@@ -177,7 +202,13 @@ def _load_coding_knowledge():
                 if isinstance(q_text, str) and q_text.strip():
                     try:
                         regex = re.compile(re.escape(q_text.strip()), re.IGNORECASE)
+                        idx = len(entries)
                         entries.append((regex, full))
+                        _entry_words = _code_word_tokens(q_text)
+                        _CODE_ENTRY_WORDS.append(_entry_words)
+                        for _w in _entry_words:
+                            _CODE_WORD_INDEX.setdefault(_w, set()).add(idx)
+                            _CODE_WORD_KEYS.add(_w)
                     except re.error:
                         continue
 
@@ -215,6 +246,10 @@ _CODING_KEYWORDS_STRICT = {
     'crud operation', 'mvc pattern', 'design pattern',
     'recursion', 'recursive function', 'callback', 'promise',
     'async await', 'concurrency', 'parallelism',
+    'operator', 'modulo', 'modulus', 'mod operator',
+    'goroutine', 'goroutines', 'channel', 'keyerror', 'segfault',
+    'segmentation fault', 'null pointer', 'nullpointerexception',
+    'race condition', 'deadlock',
     'multithreading', 'race condition', 'deadlock',
     'memory leak', 'memory management', 'garbage collection',
     'pointer', 'reference', 'inheritance', 'polymorphism',
@@ -239,6 +274,7 @@ _CODING_KEYWORDS_STRICT = {
     'json parse', 'json stringify', 'serialize',
     'http request', 'http response', 'fetch api',
     'http', 'https', 'status code', 'status codes',
+    'api endpoint', 'rest api', 'graphql',
     'write a function', 'write a program', 'write code',
     'how to code', 'how to program',
     'center a div', 'responsive layout',
@@ -274,7 +310,11 @@ def is_coding_query(query: str) -> bool:
     # they appear in ordinary English queries ("(e.g. X)") and the engine's
     # context-rewrite wraps topics in parens ("what is X (topic)"), which
     # would otherwise misroute factual questions to the code handler.
-    has_code_punct = bool(re.search(r'[{}]|->|::|;', q))
+    has_code_punct = bool(re.search(r'[{}]|->|::|;|==', q))
+
+    # "js" is shorthand for JavaScript in coding contexts
+    if re.search(r'\bjs\b', q):
+        return True
 
     # Multi-word coding phrases (reliable)
     # Check longest phrases first using WORD BOUNDARIES to avoid
@@ -348,6 +388,13 @@ def code_lookup(query: str) -> Optional[str]:
         (r'\bhow\s+can\s+i\b', 'how to'),
         (r'\bhow\s+would\s+i\b', 'how to'),
         (r'\bhow\s+does\s+one\b', 'how to'),
+        # Expand "whats"/"whos" etc. so patterns using "what is" match
+        (r'\bwhats\b', 'what is'),
+        (r'\bwhos\b', 'who is'),
+        (r'\bwheres\b', 'where is'),
+        (r'\bwhens\b', 'when is'),
+        (r'\bwhys\b', 'why is'),
+        (r'\bhow s\b', 'how is'),
         # Keep "in <language>" intact to match KB patterns
         (r'\b(?:using|with\s+the)\s+', ''),
         (r'\b(?:properly|efficiently|effectively|correctly)\b', ''),
@@ -396,7 +443,27 @@ def code_lookup(query: str) -> Optional[str]:
     if q_simple2 and q_simple2 != q:
         variants.append(_norm_variant(q_simple2))
 
-    for pattern, answer in entries:
+    # Candidate pre-filter (exact phase): an escaped-literal pattern can only
+    # match a variant containing every one of its words. For each variant, take
+    # its rarest word's candidate list and union across variants, then verify
+    # each entry's word set is fully contained in the variant word union.
+    _variant_words = set()
+    _candidate_indices = set()
+    for _v in variants:
+        if not _v or len(_v) < 3:
+            continue
+        _vwords = _code_word_tokens(_v)
+        if not _vwords:
+            continue
+        _variant_words |= _vwords
+        _vrarest = min(_vwords, key=lambda w: len(_CODE_WORD_INDEX.get(w, ())))
+        _candidate_indices |= set(_CODE_WORD_INDEX.get(_vrarest, ()))
+
+    for _ci in sorted(_candidate_indices):
+        pattern, answer = entries[_ci]
+        _entry_words = _CODE_ENTRY_WORDS[_ci]
+        if _entry_words is not None and not (_entry_words <= _variant_words):
+            continue
         for variant in variants:
             if not variant or len(variant) < 3:
                 continue
@@ -471,7 +538,24 @@ def code_lookup(query: str) -> Optional[str]:
                        'write', 'create', 'make', 'build', 'implement',
                        'item', 'element', 'key', 'set', 'call', 'return',
                        'work', 'want', 'using', 'used', 'based', 'show',
-                       'give', 'take', 'know'}
+                       'give', 'take', 'know',
+                       # Common function words: without these, "what is the
+                       # difference between X and Y" queries all share
+                       # "difference between and" and match EACH OTHER
+                       # ("react vs vue" matched "stack vs queue").
+                       'the', 'a', 'an', 'and', 'or', 'but', 'not', 'so',
+                       'of', 'to', 'in', 'on', 'at', 'by', 'for', 'is', 'are',
+                       'was', 'were', 'be', 'been', 'being', 'do', 'does', 'did',
+                       'between', 'vs', 'versus', 'difference', 'differences',
+                       'similarities', 'similar', 'different', 'same', 'should',
+                       'would', 'could', 'might', 'may', 'its', 'it', 'his', 'her',
+                       'their', 'our', 'your', 'my', 'me', 'we', 'you', 'he', 'she',
+                       'them', 'they', 'as', 'if', 'while', 'when', 'after', 'before',
+                       'what', 'why', 'how', 'there', 'here', 'all', 'each', 'both',
+                       'more', 'most', 'other', 'another', 'such', 'no', 'yes',
+                       'want', 'need', 'like', 'good', 'great', 'best', 'help',
+                       'explain', 'describe', 'tell', 'show', 'give', 'please',
+                       }
         # Use 3+ char words to catch important short coding terms like 'div', 'css', 'js', 'api'
         q_words = set(w for w in re.findall(r'\b\w{3,}\b', q.lower())
                       if w not in _STOP_WORDS)
@@ -481,8 +565,23 @@ def code_lookup(query: str) -> Optional[str]:
             _LANG_WORDS = {'python', 'javascript', 'java', 'c++', 'c#', 'typescript',
                            'rust', 'go', 'golang', 'ruby', 'swift', 'kotlin', 'php'}
             query_lang = next((w for w in q_words if w in _LANG_WORDS), None)
-            
-            for pattern, answer in entries:
+
+            # Candidate pre-filter (fuzzy phase): the scorer rewards patterns
+            # sharing query words, so restrict to entries whose pattern shares
+            # at least one token with the query — plus substring-key expansion
+            # (query word "api" should still reach patterns containing "apis"
+            # or "api_key", mirroring the scorer's substring matching).
+            _fuzzy_candidates = set()
+            for _w in q_words:
+                _fuzzy_candidates |= set(_CODE_WORD_INDEX.get(_w, ()))
+            if _CODE_WORD_KEYS:
+                for _w in q_words:
+                    for _key in _CODE_WORD_KEYS:
+                        if _w in _key:
+                            _fuzzy_candidates |= _CODE_WORD_INDEX[_key]
+
+            for _ci in sorted(_fuzzy_candidates):
+                pattern, answer = entries[_ci]
                 pattern_str = pattern.pattern.lower() if hasattr(pattern, 'pattern') else ''
                 
                 # Count how many query words appear in the PATTERN
@@ -504,7 +603,16 @@ def code_lookup(query: str) -> Optional[str]:
                 # Combined: pattern match is paramount, answer match is tiebreaker
                 # Penalty: subtract for extraneous pattern words not in query
                 combined = pattern_overlap * 10 + answer_overlap - penalty
-                
+
+                # Minimum-overlap gate: an entry sharing only ONE common word
+                # with the query (e.g. just "python") is not a real match —
+                # without this, "how to check python version" matched a
+                # palindrome function and "git pull" matched dictionary
+                # iteration. Requiring two pattern-word overlaps stops
+                # plausible-looking wrong answers.
+                if pattern_overlap < 2:
+                    continue
+
                 # Language bonus: if query asks for a specific language, prefer
                 # entries whose pattern mentions that language. This prevents
                 # returning Python code when Java was requested (e.g., "binary search

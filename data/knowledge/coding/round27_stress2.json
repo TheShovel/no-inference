@@ -1,0 +1,12 @@
+[
+  {
+    "q": [
+      "what is the difference between == and === in js",
+      "double equals vs triple equals javascript",
+      "javascript == vs ==="
+    ],
+    "a": "== is loose equality: it converts the operands to a common type before comparing, so 5 == '5' is true and 0 == false is true. === is strict equality: it compares both value AND type without conversion, so 5 === '5' is false and 0 === false is false. Always prefer === (and !==) to avoid surprising type-coercion bugs. The only cases where == is deliberately used are checking for both null and undefined at once: value == null is true for both null and undefined.",
+    "code": "console.log(5 == '5');    // true  (coerces)\nconsole.log(5 === '5');   // false (type differs)\nconsole.log(0 == false);   // true\nconsole.log(0 === false);  // false\nconsole.log(null == undefined);   // true\nconsole.log(null === undefined);  // false\n\n// Safe null check\nif (value == null) { /* null OR undefined */ }",
+    "lang": "javascript"
+  }
+]

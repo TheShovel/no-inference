@@ -1,0 +1,378 @@
+[
+  {
+    "q": [
+      "what is the tallest mountain in africa",
+      "tallest mountain in africa",
+      "what is the highest mountain in africa",
+      "highest mountain in africa",
+      "tallest peak in africa",
+      "highest peak in africa"
+    ],
+    "a": "Mount Kilimanjaro in Tanzania is the highest mountain in Africa, standing 5,895 meters (19,341 feet) above sea level. It is a dormant stratovolcano with three volcanic cones: Kibo (the highest), Mawenzi, and Shira. Kilimanjaro is famous for its snow-capped peak near the equator and is the world's tallest free-standing mountain, rising from the plains rather than from a mountain range. The summit, Uhuru Peak, is reachable by non-technical hiking and attracts about 50,000 climbers per year.",
+    "categories": ["geography", "mountain"]
+  },
+  {
+    "q": [
+      "what is the tallest mountain in europe",
+      "tallest mountain in europe",
+      "what is the highest mountain in europe",
+      "highest mountain in europe",
+      "highest peak in europe"
+    ],
+    "a": "Mount Elbrus in Russia is the highest mountain in Europe, standing 5,642 meters (18,510 feet) above sea level. It is a dormant stratovolcano in the Caucasus Mountains near the border with Georgia, with two main summits, the taller West Peak and the slightly lower East Peak. Elbrus is one of the Seven Summits (the highest peaks on each continent) and its summit is covered by glaciers. The mountain lies entirely in Europe or on the Europe-Asia border depending on the boundary convention used.",
+    "categories": ["geography", "mountain"]
+  },
+  {
+    "q": [
+      "what is the tallest mountain in asia",
+      "tallest mountain in asia",
+      "what is the highest mountain in asia",
+      "highest mountain in asia",
+      "highest peak in asia"
+    ],
+    "a": "Mount Everest is the highest mountain in Asia and the world, reaching 8,848.86 meters (29,032 feet) above sea level. It lies in the Mahalangur Himal range of the Himalayas on the border between Nepal and Tibet (China). Its Nepali name is Sagarmatha and its Tibetan name is Chomolungma. The first confirmed summit was reached by Sir Edmund Hillary and Tenzing Norgay on 29 May 1953.",
+    "categories": ["geography", "mountain"]
+  },
+  {
+    "q": [
+      "what is the tallest mountain in north america",
+      "tallest mountain in north america",
+      "highest mountain in north america",
+      "highest peak in north america"
+    ],
+    "a": "Denali (formerly Mount McKinley) in Alaska is the highest mountain in North America, standing 6,190 meters (20,310 feet) above sea level. It is the centerpiece of Denali National Park and Preserve and is the third most prominent peak on Earth. Denali is known for its extreme cold and severe weather; its name is derived from the Koyukon Athabaskan word for 'the high one'.",
+    "categories": ["geography", "mountain"]
+  },
+  {
+    "q": [
+      "what is the tallest mountain in south america",
+      "tallest mountain in south america",
+      "highest mountain in south america",
+      "highest peak in south america"
+    ],
+    "a": "Aconcagua in Argentina is the highest mountain in South America, standing 6,961 meters (22,837 feet) above sea level. It is part of the Andes mountain range and is the highest peak outside Asia. Aconcagua is also one of the Seven Summits. It lies in the Mendoza province near the border with Chile, and its name comes from the Quechua phrase meaning 'Stone Sentinel'.",
+    "categories": ["geography", "mountain"]
+  },
+  {
+    "q": [
+      "what is the tallest mountain in oceania",
+      "tallest mountain in oceania",
+      "highest mountain in oceania",
+      "highest peak in oceania"
+    ],
+    "a": "Puncak Jaya (also called Carstensz Pyramid) in the Indonesian province of Central Papua is the highest mountain in Oceania, standing 4,884 meters (16,024 feet) above sea level. It is the highest island peak in the world and one of the Seven Summits. Its summit is often covered in glaciers, though they are retreating rapidly. Australia's highest mountain is Mount Kosciuszko at 2,228 meters (7,310 feet).",
+    "categories": ["geography", "mountain"]
+  },
+  {
+    "q": [
+      "what is the largest ocean",
+      "largest ocean",
+      "what is the biggest ocean",
+      "biggest ocean"
+    ],
+    "a": "The Pacific Ocean is the largest ocean on Earth, covering about 165 million square kilometers (64 million square miles) — roughly 30% of the planet's surface and more than all of Earth's land combined. It is also the deepest ocean, containing the Mariana Trench with its deepest point, Challenger Deep, at about 10,935 meters (35,876 feet).",
+    "categories": ["geography", "ocean"]
+  },
+  {
+    "q": [
+      "what is the smallest ocean",
+      "smallest ocean"
+    ],
+    "a": "The Arctic Ocean is the smallest ocean on Earth, covering about 14 million square kilometers (5.4 million square miles) — roughly the size of Antarctica. It is also the shallowest ocean, surrounded by the northern coasts of North America, Europe, and Asia, and it is mostly covered by sea ice for much of the year.",
+    "categories": ["geography", "ocean"]
+  },
+  {
+    "q": [
+      "pacific", "pacific ocean", "the pacific ocean", "what is the pacific ocean",
+      "tell me about the pacific ocean"
+    ],
+    "a": "The Pacific Ocean is the largest and deepest of Earth's five oceans, covering about 165 million square kilometers (64 million square miles) — roughly 30% of the planet's surface, more than all of Earth's land combined. It stretches from the western coast of the Americas to eastern Asia and Australia, and from the Arctic in the north to the Southern Ocean in the south. The Pacific contains the Mariana Trench with its deepest point, Challenger Deep, at about 10,935 meters (35,876 feet) below sea level. The name comes from the Latin 'Mare Pacificum' (peaceful sea), coined by Ferdinand Magellan in 1521. The Pacific Ring of Fire, a belt of active volcanoes and earthquakes, runs along its edges.",
+    "categories": ["geography", "ocean"]
+  },
+  {
+    "q": [
+      "atlantic", "atlantic ocean", "the atlantic ocean", "what is the atlantic ocean",
+      "tell me about the atlantic ocean"
+    ],
+    "a": "The Atlantic Ocean is the second-largest ocean on Earth, covering about 106 million square kilometers (41 million square miles) — roughly 20% of the planet's surface. It separates the Americas from Europe and Africa, and is connected to the Arctic Ocean in the north and the Southern Ocean in the south. The Mid-Atlantic Ridge, the longest mountain range on Earth, runs down the center of the Atlantic, where the seafloor spreads apart about 2.5 centimeters (1 inch) per year. The Atlantic is the saltiest of the major oceans, and it is crossed by major shipping lanes between Europe and North America. The name comes from Greek mythology's Atlas.",
+    "categories": ["geography", "ocean"]
+  },
+  {
+    "q": [
+      "indian ocean", "the indian ocean", "what is the indian ocean",
+      "tell me about the indian ocean"
+    ],
+    "a": "The Indian Ocean is the third-largest ocean on Earth, covering about 70 million square kilometers (27 million square miles). It is bounded by Africa to the west, Asia to the north, and Australia to the east. The Indian Ocean is the warmest of the major oceans, and its surface temperatures stay above 22°C (72°F) in the tropics, which makes it prone to monsoons and cyclones. It carries about half of the world's container traffic and a third of global bulk cargo, including oil from the Persian Gulf. The name comes from the Indian subcontinent, which borders it to the north.",
+    "categories": ["geography", "ocean"]
+  },
+  {
+    "q": [
+      "southern ocean", "the southern ocean", "antarctic ocean",
+      "what is the southern ocean"
+    ],
+    "a": "The Southern Ocean, also called the Antarctic Ocean, is the fourth-largest ocean, surrounding Antarctica. It is defined by the Antarctic Circumpolar Current, the strongest current on Earth, which flows eastward around the continent and connects the Atlantic, Pacific, and Indian Oceans. The Southern Ocean covers about 20 million square kilometers (8 million square miles). It has the coldest waters of any ocean, and it is home to krill, penguins, seals, and whales. It was officially recognized as a distinct ocean by the International Hydrographic Organization in 2000, though its exact northern boundary is debated.",
+    "categories": ["geography", "ocean"]
+  },
+  {
+    "q": [
+      "name a famous river in india",
+      "famous river in india",
+      "what is a famous river in india",
+      "the most famous river in india",
+      "main river in india"
+    ],
+    "a": "The Ganges (Ganga) is the most famous river in India. It flows about 2,525 kilometers (1,569 miles) from the Gangotri Glacier in the Himalayas through northern India and Bangladesh, where it joins the Brahmaputra before emptying into the Bay of Bengal. For Hindus, the Ganges is the most sacred river, personified as the goddess Ganga, and cities along its banks — including Varanasi, Haridwar, and Allahabad — are major pilgrimage sites. The Ganges basin is home to over 400 million people and is one of the most densely populated river basins in the world.",
+    "categories": ["geography", "river"]
+  },
+  {
+    "q": [
+      "name a famous river in egypt",
+      "famous river in egypt",
+      "what is a famous river in egypt",
+      "the main river in egypt",
+      "the river that flows through egypt"
+    ],
+    "a": "The Nile is the famous river of Egypt and the longest river in the world, stretching about 6,650 kilometers (4,130 miles) from its sources in East Africa to the Mediterranean Sea. The Nile flows north through Egypt, and almost all of Egypt's population and agriculture are concentrated along its narrow valley and delta. Ancient Egyptian civilization developed along the Nile, which flooded predictably each year, depositing fertile silt. The Aswan High Dam, completed in 1970, now controls the flooding and provides irrigation and hydroelectric power.",
+    "categories": ["geography", "river"]
+  },
+  {
+    "q": [
+      "name a famous river in china",
+      "famous river in china",
+      "what is a famous river in china"
+    ],
+    "a": "The Yangtze (Chang Jiang) is the most famous river in China and the longest river in Asia, flowing about 6,300 kilometers (3,915 miles) from the Tibetan Plateau to the East China Sea at Shanghai. It is the third-longest river in the world. The Yangtze basin is home to about a third of China's population, and the Three Gorges Dam on the river is the world's largest power station. The river also gave its name to the Yangtze finless porpoise and the Chinese paddlefish.",
+    "categories": ["geography", "river"]
+  },
+  {
+    "q": [
+      "name a famous river in brazil",
+      "famous river in brazil",
+      "what is a famous river in brazil"
+    ],
+    "a": "The Amazon is the most famous river in Brazil and the largest river in the world by water volume, discharging more water than the next seven largest rivers combined. It flows about 6,400 kilometers (4,000 miles) from the Andes in Peru across northern Brazil to the Atlantic Ocean, and its basin contains the Amazon rainforest, the largest tropical rainforest on Earth. During the wet season, the river can be up to 40 kilometers (25 miles) wide in places.",
+    "categories": ["geography", "river"]
+  },
+  {
+    "q": [
+      "name a famous river in the usa",
+      "famous river in america",
+      "famous river in the united states",
+      "what is a famous river in the usa"
+    ],
+    "a": "The Mississippi River is one of the most famous rivers in the United States. It flows about 3,730 kilometers (2,320 miles) from Lake Itasca in Minnesota south to the Gulf of Mexico, draining all or part of 32 U.S. states and two Canadian provinces. With the Missouri River, it forms the longest river system in North America. The Mississippi has been central to American commerce and culture — Mark Twain's stories, jazz, blues, and riverboat travel all center on it.",
+    "categories": ["geography", "river"]
+  },
+  {
+    "q": [
+      "what is the national animal of australia",
+      "national animal of australia",
+      "australia national animal",
+      "what is australia's national animal",
+      "australias national animal"
+    ],
+    "a": "The national animal of Australia is the red kangaroo. The kangaroo appears on the Australian coat of arms alongside the emu, chosen because neither animal can easily walk backward, symbolizing a nation that moves forward. Kangaroos are marsupials found only in Australia and nearby islands, and the red kangaroo is the largest marsupial, with males standing up to 2 meters (6.5 feet) tall. The kangaroo also features prominently on Australian currency and the national airline's logo.",
+    "categories": ["geography", "animal", "australia"]
+  },
+  {
+    "q": [
+      "what is the national animal of scotland",
+      "national animal of scotland",
+      "scotland national animal",
+      "what is scotland's national animal",
+      "scotlands national animal"
+    ],
+    "a": "The national animal of Scotland is the unicorn. Scotland has used the unicorn as a heraldic symbol since the 12th century, and it appears on the Royal Coat of Arms of the United Kingdom alongside England's lion. The unicorn was chosen for its strength, purity, and untamed nature — and because it is chained in the coat of arms, symbolizing that only a king could tame it. The unicorn's connection to Scottish identity also relates to the country's long association with the Celtic myth of the horned horse.",
+    "categories": ["geography", "animal", "scotland"]
+  },
+  {
+    "q": [
+      "what is the national animal of canada",
+      "national animal of canada",
+      "canada national animal",
+      "what is canada's national animal",
+      "canadas national animal"
+    ],
+    "a": "The national animal of Canada is the North American beaver, recognized as an official symbol since 1975. The beaver was chosen for its industriousness and its central role in Canada's history — the fur trade drove European exploration and settlement of the country. The beaver appears on the Canadian five-cent coin (the 'nickel') and is featured on the coat of arms. In 1975, Parliament also designated the Canadian horse as a national animal, and the Canadian national sports are lacrosse and hockey.",
+    "categories": ["geography", "animal", "canada"]
+  },
+  {
+    "q": [
+      "what is the national animal of new zealand",
+      "national animal of new zealand",
+      "new zealand national animal",
+      "what is new zealand's national animal"
+    ],
+    "a": "The national animal of New Zealand is the kiwi, a flightless bird found only in New Zealand. The kiwi is so deeply tied to national identity that New Zealanders themselves are nicknamed 'Kiwis'. There are five species of kiwi, all nocturnal and endangered. Kiwis have tiny vestigial wings, hair-like feathers, and lay the largest egg relative to body size of any bird. The kiwi appears on New Zealand's coat of arms, currency, and the national airline's logo.",
+    "categories": ["geography", "animal", "new zealand"]
+  },
+  {
+    "q": [
+      "what is the national animal of the usa",
+      "national animal of the usa",
+      "national animal of america",
+      "united states national animal",
+      "what is america's national animal"
+    ],
+    "a": "The national animal of the United States is the bald eagle, adopted as the national emblem in 1782 when it was placed on the Great Seal. The bald eagle is a sea eagle found throughout North America, and its white head and tail feathers appear only once the bird matures at around five years old. It nearly went extinct in the 20th century due to the pesticide DDT but recovered after the chemical was banned in 1972 and was removed from the endangered species list in 2007. The bald eagle also appears on U.S. currency, military insignia, and government buildings.",
+    "categories": ["geography", "animal", "usa"]
+  },
+  {
+    "q": [
+      "what is the national animal of india",
+      "national animal of india",
+      "india national animal",
+      "what is india's national animal"
+    ],
+    "a": "The national animal of India is the Bengal tiger, declared in 1972. The tiger symbolizes India's wildlife heritage, power, and grace, and appears on the Indian rupee and government documents. India is home to about 70% of the world's wild tigers, protected in reserves like Ranthambore and Corbett. Project Tiger, launched in 1973, has helped stabilize the population, which now numbers around 3,000. The national bird of India is the Indian peacock.",
+    "categories": ["geography", "animal", "india"]
+  },
+  {
+    "q": [
+      "what is the national animal of china",
+      "national animal of china",
+      "china national animal",
+      "what is china's national animal"
+    ],
+    "a": "The national animal of China is the giant panda. The panda is a bear native to the bamboo forests of central China, and it appears on China's coat of arms and is a symbol of conservation worldwide. There are about 1,800 giant pandas in the wild, mostly in Sichuan, Shaanxi, and Gansu provinces. Pandas eat almost exclusively bamboo — up to 12-38 kilograms (26-84 pounds) per day — and were removed from the endangered list in 2016, reclassified as vulnerable. The national bird of China is the red-crowned crane.",
+    "categories": ["geography", "animal", "china"]
+  },
+  {
+    "q": [
+      "what is the national animal of england",
+      "national animal of england",
+      "england national animal",
+      "what is england's national animal"
+    ],
+    "a": "The national animal of England is the lion, used as a heraldic symbol since the 12th century. Three lions passant guardant appear on the Royal Arms of England and on the England national football team's crest. The lion was chosen by King Richard I (Richard the Lionheart) and has represented English royalty ever since. On the Royal Coat of Arms of the United Kingdom, England's lion stands alongside Scotland's unicorn.",
+    "categories": ["geography", "animal", "england"]
+  },
+  {
+    "q": [
+      "what are the main languages spoken in belgium",
+      "main languages spoken in belgium",
+      "what languages are spoken in belgium",
+      "languages spoken in belgium",
+      "official languages of belgium",
+      "what language do they speak in belgium"
+    ],
+    "a": "Belgium has three official languages: Dutch (Flemish), spoken by about 60% of the population mainly in the northern Flanders region; French, spoken by about 40% mainly in the southern Wallonia region; and German, spoken by a small community (about 1%) in the east. Brussels, the capital, is officially bilingual (French and Dutch), with French now the majority spoken there. The linguistic divide shapes Belgian politics, with the country divided into three language communities.",
+    "categories": ["geography", "language", "belgium"]
+  },
+  {
+    "q": [
+      "what are the main languages spoken in canada",
+      "main languages spoken in canada",
+      "what languages are spoken in canada",
+      "languages spoken in canada",
+      "official languages of canada",
+      "what language do they speak in canada"
+    ],
+    "a": "Canada has two official languages: English and French. English is the first language of about 75% of Canadians, while French is the first language of about 21%, concentrated mainly in the province of Quebec, where it is the sole official language. The federal government operates in both languages, and all federal services are available in English and French. Beyond the official languages, Canada is home to dozens of Indigenous languages, including Cree, Inuktitut, and Ojibwe, and large immigrant communities speak Punjabi, Mandarin, Spanish, and Tagalog.",
+    "categories": ["geography", "language", "canada"]
+  },
+  {
+    "q": [
+      "what are the main languages spoken in switzerland",
+      "main languages spoken in switzerland",
+      "what languages are spoken in switzerland",
+      "languages spoken in switzerland",
+      "official languages of switzerland"
+    ],
+    "a": "Switzerland has four national languages: German (spoken by about 62% of the population, mainly in the central and eastern cantons), French (about 23%, in the west, known as Romandy), Italian (about 8%, in the southern canton of Ticino), and Romansh (under 1%, a Rhaeto-Romance language in the canton of Graubünden). All four are official national languages, and the federal government must publish in German, French, and Italian, with Romansh used when communicating with its speakers. Swiss German, the everyday spoken form in the German-speaking region, differs considerably from standard German.",
+    "categories": ["geography", "language", "switzerland"]
+  },
+  {
+    "q": [
+      "what currency is used in the united kingdom",
+      "currency used in the united kingdom",
+      "what is the currency of the uk",
+      "what currency does the uk use",
+      "currency of great britain",
+      "what is the currency of england"
+    ],
+    "a": "The currency of the United Kingdom is the pound sterling (symbol £, code GBP). One pound is divided into 100 pence. Banknotes are issued in denominations of £5, £10, £20, and £50, with the Bank of England issuing notes for England and Wales, while Scotland and Northern Ireland have their own banknotes that are also legal currency. The pound is one of the oldest currencies still in use, dating back to Anglo-Saxon times, and it is the fourth most-traded currency in the world. In 1971, Britain decimalized the currency, replacing the old system of 20 shillings to the pound and 12 pence to the shilling.",
+    "categories": ["geography", "currency", "united kingdom"]
+  },
+  {
+    "q": [
+      "what currency is used in the united states",
+      "currency used in the united states",
+      "what is the currency of the usa",
+      "what currency does america use",
+      "what is the currency of america"
+    ],
+    "a": "The currency of the United States is the U.S. dollar (symbol $, code USD), divided into 100 cents. The dollar is the world's primary reserve currency and the most widely used currency in international transactions. It was adopted in 1792 by the Coinage Act, which established a decimal system modeled on the Spanish dollar. The Federal Reserve issues paper notes in denominations of $1, $2, $5, $10, $20, $50, and $100, while coins include the penny, nickel, dime, quarter, half-dollar, and dollar coin.",
+    "categories": ["geography", "currency", "usa"]
+  },
+  {
+    "q": [
+      "what currency is used in canada",
+      "currency used in canada",
+      "what is the currency of canada",
+      "what currency does canada use"
+    ],
+    "a": "The currency of Canada is the Canadian dollar (symbol $ or C$, code CAD), divided into 100 cents. It was adopted in 1858, replacing the Canadian pound. Canadian banknotes are issued by the Bank of Canada in denominations of $5, $10, $20, $50, and $100, and are notable for being made of polymer and featuring vibrant colors. The loonie, the $1 coin, is named after the common loon bird pictured on it, and the $2 coin is called the toonie.",
+    "categories": ["geography", "currency", "canada"]
+  },
+  {
+    "q": [
+      "what currency is used in australia",
+      "currency used in australia",
+      "what is the currency of australia",
+      "what currency does australia use"
+    ],
+    "a": "The currency of Australia is the Australian dollar (symbol $ or A$, code AUD), divided into 100 cents. It was introduced in 1966, replacing the Australian pound, as part of the move to decimal currency. The Australian dollar is the sixth most traded currency in the world and is sometimes called 'the Pacific peso' because of its role as a commodity-linked currency. Australia pioneered polymer banknotes in 1988, and all Australian notes are now printed on plastic polymer, making them durable and difficult to counterfeit.",
+    "categories": ["geography", "currency", "australia"]
+  },
+  {
+    "q": [
+      "what currency is used in india",
+      "currency used in india",
+      "what is the currency of india",
+      "what currency does india use"
+    ],
+    "a": "The currency of India is the Indian rupee (symbol ₹, code INR), divided into 100 paise. The name 'rupee' comes from the Sanskrit word 'rupyakam', meaning a silver coin. The Reserve Bank of India issues notes in denominations of ₹10, ₹20, ₹50, ₹100, ₹200, ₹500, and ₹2000, with the ₹500 and ₹2000 notes featuring Mahatma Gandhi's portrait. In 2016, India demonetized its ₹500 and ₹1000 notes to curb black money and counterfeit currency, a move that caused significant economic disruption.",
+    "categories": ["geography", "currency", "india"]
+  },
+  {
+    "q": [
+      "what currency is used in china",
+      "currency used in china",
+      "what is the currency of china",
+      "what currency does china use"
+    ],
+    "a": "The currency of China is the renminbi (RMB), whose basic unit is the yuan (symbol ¥, code CNY). The name 'renminbi' means 'people's currency', while 'yuan' means 'round' or 'circle'. The People's Bank of China issues notes in denominations from ¥0.1 to ¥100, with the ¥100 note featuring Mao Zedong's portrait. China tightly manages the yuan's exchange rate, and the currency is increasingly used in international trade and in central bank reserves, having joined the IMF's Special Drawing Rights basket in 2016.",
+    "categories": ["geography", "currency", "china"]
+  },
+  {
+    "q": [
+      "what currency is used in brazil",
+      "currency used in brazil",
+      "what is the currency of brazil",
+      "what currency does brazil use"
+    ],
+    "a": "The currency of Brazil is the real (plural reais, symbol R$, code BRL), divided into 100 centavos. It was introduced in 1994 as part of the Plano Real, an economic stabilization plan that ended decades of hyperinflation. The Central Bank of Brazil issues banknotes in denominations from R$2 to R$200. The real is one of the most traded currencies in Latin America and a major commodity-linked currency, as Brazil is a leading exporter of soybeans, iron ore, and coffee.",
+    "categories": ["geography", "currency", "brazil"]
+  },
+  {
+    "q": [
+      "how many legs does an insect have",
+      "how many legs do insects have",
+      "insects number of legs",
+      "legs of an insect"
+    ],
+    "a": "Insects have six legs, which is one of the defining characteristics of the class Insecta. The six legs are attached to the thorax in three pairs, and all adult insects have exactly six legs — spiders (with eight) and centipedes (with many) are not insects. In addition to six legs, insects have three body segments (head, thorax, and abdomen), a pair of antennae, and usually one or two pairs of wings. This six-legged body plan is shared by everything from ants and bees to beetles, butterflies, and flies.",
+    "categories": ["biology", "animal", "insect"]
+  },
+  {
+    "q": [
+      "how many legs does a spider have",
+      "how many legs do spiders have",
+      "spiders number of legs",
+      "legs of a spider"
+    ],
+    "a": "Spiders have eight legs, which distinguishes them from insects (which have six). The eight legs are arranged in four pairs attached to the cephalothorax. Spiders also have two main body parts (the cephalothorax and the abdomen), unlike insects which have three. The eight legs allow spiders to climb, jump, and move quickly across their webs, and the last pair sometimes helps them produce and manipulate silk. Related arachnids share the eight-legged plan — mites, ticks, and scorpions all have eight legs too.",
+    "categories": ["biology", "animal", "spider"]
+  }
+]

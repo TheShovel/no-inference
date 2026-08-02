@@ -1,0 +1,122 @@
+[
+  {
+    "q": [
+      "how do i declare a variable in c++",
+      "declare variable c++",
+      "c++ variable declaration"
+    ],
+    "a": "Declare a variable in C++ with a type followed by a name, optionally with an initializer: `int count = 0;`. C++ is statically typed — the type is fixed at compile time. Prefer initialization over assignment (`int x = 5;` rather than `int x; x = 5;`), and since C++11 use braced initialization `int x{5};` which catches narrowing conversions.",
+    "code": "#include <iostream>\n\nint main() {\n    int count = 0;           // integer\n    double price = 19.99;    // floating point\n    char grade = 'A';        // single character\n    bool done = false;       // boolean\n    std::string name = \"cos\"; // string (needs <string>)\n\n    // auto deduces the type\n    auto x = 42;\n    std::cout << count << name << \"\\n\";\n    return 0;\n}",
+    "lang": "cpp"
+  },
+  {
+    "q": [
+      "what is a pointer in c",
+      "c pointers explained",
+      "pointers in c"
+    ],
+    "a": "A pointer is a variable that stores the memory address of another variable. Declare with `type *name;`, take an address with `&var`, and dereference (read/write the pointed-to value) with `*ptr`. Pointers enable dynamic memory allocation, arrays, and passing by reference. In C++ prefer references and smart pointers (unique_ptr, shared_ptr) over raw pointers where possible to avoid leaks and dangling pointers.",
+    "code": "#include <stdio.h>\n\nint main() {\n    int x = 42;\n    int *ptr = &x;      // ptr holds the address of x\n\n    printf(\"%d\\n\", *ptr);  // 42  (dereference)\n    *ptr = 7;                // write through the pointer\n    printf(\"%d\\n\", x);      // 7\n\n    int *null_ptr = NULL;    // points nowhere — check before deref\n    return 0;\n}",
+    "lang": "c"
+  },
+  {
+    "q": [
+      "what is a goroutine in go",
+      "goroutines explained",
+      "go goroutine example"
+    ],
+    "a": "A goroutine is a lightweight concurrent execution unit in Go, started with the `go` keyword: `go myFunc()`. Goroutines are much cheaper than OS threads (starting stack ~2KB, grows as needed) and are multiplexed onto OS threads by the Go runtime. They communicate by passing values over channels rather than by sharing memory, which avoids many race conditions.",
+    "code": "package main\n\nimport (\n    \"fmt\"\n    \"time\"\n)\n\nfunc say(s string) {\n    fmt.Println(s)\n}\n\nfunc main() {\n    go say(\"async\")      // runs concurrently\n    say(\"sync\")\n    time.Sleep(10 * time.Millisecond) // let the goroutine finish\n}",
+    "lang": "go"
+  },
+  {
+    "q": [
+      "why does my python code throw a keyerror",
+      "python keyerror explained",
+      "what is a keyerror"
+    ],
+    "a": "A KeyError is raised when you access a dictionary with a key that doesn't exist: `d['missing']`. Use `d.get(key, default)` to return a default instead of raising, check with `if key in d:`, or use collections.defaultdict. In Python 3.11+, the error message helpfully shows the missing key.",
+    "code": "d = {'a': 1, 'b': 2}\n\n# Raises KeyError: 'z'\n# print(d['z'])\n\n# Safe options\nprint(d.get('z'))            # None\nprint(d.get('z', 0))         # 0\n\nif 'z' in d:\n    print(d['z'])\n\nfrom collections import defaultdict\ndd = defaultdict(int)        # missing keys default to int() = 0\nprint(dd['new'])             # 0",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "what is a segfault",
+      "segmentation fault explained",
+      "segfault c++"
+    ],
+    "a": "A segmentation fault (segfault) is a crash caused by a program accessing memory it isn't allowed to — dereferencing a null or dangling pointer, reading past an array boundary, or using freed memory. The OS kills the process with SIGSEGV. In C/C++ it's the programmer's job to avoid these; higher-level languages like Python and Java prevent them with bounds checking and garbage collection. Debug with a debugger (gdb), AddressSanitizer, or valgrind.",
+    "code": "// Common segfault causes\nint *p = nullptr;\n*p = 5;            // dereferencing null → segfault\n\nint arr[3];\narr[100] = 1;      // out-of-bounds write → may segfault\n\nint *q = new int(5);\ndelete q;\n*q = 7;            // use-after-free → segfault\n\n// Fix: check pointers and stay in bounds\nif (p) *p = 5;",
+    "lang": "cpp"
+  },
+  {
+    "q": [
+      "what is a race condition",
+      "race condition explained",
+      "concurrency race condition"
+    ],
+    "a": "A race condition occurs when the outcome of a program depends on the interleaving of concurrent threads or processes — e.g., two threads reading and writing the same variable without synchronization, so the final value depends on which runs first. The classic fix is mutual exclusion: protect shared data with a lock (threading.Lock), or use thread-safe structures and atomic operations. In Python, the GIL protects individual bytecodes but NOT compound operations like `counter += 1`, which is a classic race.",
+    "code": "import threading\n\ncounter = 0\nlock = threading.Lock()\n\ndef increment():\n    global counter\n    for _ in range(100000):\n        with lock:          # mutual exclusion fixes the race\n            counter += 1\n\nthreads = [threading.Thread(target=increment) for _ in range(2)]\nfor t in threads:\n    t.start()\nfor t in threads:\n    t.join()\nprint(counter)   # 200000 with the lock; less without it",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "what is a null pointer exception",
+      "nullpointerexception explained",
+      "null pointer java"
+    ],
+    "a": "A NullPointerException (Java) — or null reference error in C#, Kotlin, and other languages — is thrown when you access a method or field on a null reference: `String s = null; s.length();`. Defensive fixes: check for null before use, return empty objects instead of null, and use Optional (Java 8+). Kotlin and Rust eliminate most null-pointer errors at compile time with null-safe types.",
+    "code": "// Java\nString s = null;\n// s.length();  // NullPointerException\n\n// Fix 1: null check\nif (s != null) {\n    System.out.println(s.length());\n}\n\n// Fix 2: Optional\nimport java.util.Optional;\nOptional<String> opt = Optional.ofNullable(s);\nSystem.out.println(opt.map(String::length).orElse(0));  // 0",
+    "lang": "java"
+  },
+  {
+    "q": [
+      "what is django",
+      "django framework explained",
+      "python django basics"
+    ],
+    "a": "Django is a high-level Python web framework that follows the 'batteries included' philosophy — it ships with an ORM, admin interface, authentication, templating, URL routing, and migrations built in. It follows the MVT (Model-View-Template) pattern. Django emphasizes security (protecting against SQL injection, XSS, CSRF by default) and is used by Instagram, Pinterest, and Spotify. Create a project with `django-admin startproject` and an app with `python manage.py startapp`.",
+    "code": "# Install and create a project\n# pip install django\n# django-admin startproject mysite\n# cd mysite && python manage.py runserver\n\n# mysite/urls.py — routing\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('', views.home, name='home'),\n]\n\n# app/views.py — a view\nfrom django.http import HttpResponse\n\ndef home(request):\n    return HttpResponse('Hello from Django')",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "what is the difference between react and vue",
+      "react vs vue",
+      "react or vue"
+    ],
+    "a": "React and Vue are both JavaScript UI libraries, but they differ in philosophy. React (by Meta) uses JSX, a unidirectional data flow with explicit state (useState/useReducer), and gives you freedom to pick libraries for routing/state — it has a larger ecosystem and is widely used in big apps. Vue (by Evan You) uses single-file components with a template syntax, offers a gentler learning curve with reactivity built in (ref/reactive), and includes official solutions like Vue Router and Pinia. Both are component-based and fast; choose React for huge ecosystems and jobs, Vue for approachability and small-to-medium apps.",
+    "code": "// React: JSX + hooks\nfunction Counter() {\n  const [count, setCount] = React.useState(0);\n  return <button onClick={() => setCount(count + 1)}>{count}</button>;\n}\n\n// Vue: template + reactivity\n// <template><button @click=\"count++\">{{ count }}</button></template>\n// <script setup>\n// import { ref } from 'vue';\n// const count = ref(0);\n// </script>",
+    "lang": "javascript"
+  },
+  {
+    "q": [
+      "what does the mod operator do",
+      "modulus operator explained",
+      "modulo operator python"
+    ],
+    "a": "The modulo operator (%) returns the remainder of a division: 17 % 5 is 2, because 17 = 3*5 + 2. It's used to check divisibility (n % 2 == 0 means even), wrap around ranges (index % length), and extract digits. In Python the result has the sign of the divisor; in C/Java it has the sign of the dividend — so -7 % 3 is 2 in Python but -1 in Java.",
+    "code": "# Python\nprint(17 % 5)   # 2\nprint(10 % 2)   # 0 — even\nprint(-7 % 3)   # 2 (Python: sign of divisor)\n\n# Wrap-around cycling\nitems = ['a', 'b', 'c']\nfor i in range(7):\n    print(items[i % 3])   # a b c a b c a",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "how to write a for loop in java",
+      "java for loop example",
+      "for loop java"
+    ],
+    "a": "A Java for loop has three parts: initialization, condition, and update: `for (int i = 0; i < 10; i++)`. Use the enhanced for-each loop `for (Type x : collection)` to iterate arrays and collections without an index. The classic loop is fastest when you need the index; the for-each is cleaner otherwise.",
+    "code": "// Classic for loop\nfor (int i = 0; i < 5; i++) {\n    System.out.println(i);   // 0 1 2 3 4\n}\n\n// For-each over an array\nint[] nums = {1, 2, 3};\nfor (int n : nums) {\n    System.out.println(n);\n}\n\n// For-each over a List\nimport java.util.List;\nList<String> names = List.of(\"a\", \"b\");\nfor (String name : names) {\n    System.out.println(name);\n}",
+    "lang": "java"
+  },
+  {
+    "q": [
+      "how does json stringify and parse work in javascript",
+      "json stringify and parse",
+      "json.parse vs json.stringify"
+    ],
+    "a": "JSON.stringify(obj) converts a JavaScript object into a JSON string (serialization); JSON.parse(str) converts a JSON string back into a JavaScript object (deserialization). They're the standard pair for saving data, sending it to APIs, or storing in localStorage. Note that JSON has no undefined, functions, or Dates — those are dropped or stringified, so use a replacer/reviver to handle special cases.",
+    "code": "const obj = { name: 'cos', tags: ['a', 'b'], n: 3 };\n\n// Object -> JSON string\nconst str = JSON.stringify(obj);\nconsole.log(str);   // {\"name\":\"cos\",\"tags\":[\"a\",\"b\"],\"n\":3}\n\n// Pretty-print\nconsole.log(JSON.stringify(obj, null, 2));\n\n// JSON string -> Object\nconst back = JSON.parse(str);\nconsole.log(back.name);   // 'cos'\n\n// localStorage round-trip\nlocalStorage.setItem('user', JSON.stringify(obj));\nconst user = JSON.parse(localStorage.getItem('user'));",
+    "lang": "javascript"
+  }
+]

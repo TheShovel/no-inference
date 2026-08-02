@@ -1623,7 +1623,8 @@ def _resolve_topic(query, conversation_history):
     topic = _extract_search_topic(query)
 
     is_vague = (not topic or topic.lower() in (
-        'that', 'it', 'this', 'them', 'those', 'these', 'they', 'he', 'she'
+        'that', 'it', 'this', 'them', 'those', 'these', 'they', 'he', 'she',
+        'there', 'here'
     ))
 
     # Also treat short questions (< 5 words) as potentially context-dependent
@@ -1706,6 +1707,12 @@ def _pronoun_has_antecedent_in_sentence(query: str) -> bool:
         noun = m.group(1).lower()
         if noun not in generic_nouns and len(noun) > 3:
             return True
+    # "that" as a relative pronoun introducing a clause about a named thing
+    # ("a function that returns the length", "code that prints a list")
+    for m in re.finditer(r'\b(\w+)\s+that\s+(returns|takes|accepts|prints|produces|handles|finds|sorts|reverses|computes|calculates|reads|writes|opens|closes|creates|contains|includes|outputs|parses|loads|saves|stores|sends|receives|matches|filters|maps|counts|measures|shows|explains|describes|tells)\b', q):
+        noun = m.group(1).lower()
+        if noun not in generic_nouns and len(noun) > 3:
+            return True
     # "that" as a demonstrative adjective (e.g., "that specific smell", "that particular reason")
     # The noun follows "that" in the same sentence, so the query is self-contained
     if re.search(r'\bthat\s+(?:specific|particular|certain|unique|distinct|given|mentioned|previous|prior|main|primary|key|actual|real|true)\s+\w+', q):
@@ -1728,6 +1735,12 @@ def _query_is_context_dependent(query):
     # "why is it called X" / "why is X called Y" — etymology/name questions
     # are self-contained (the "it" is generic, not referential).
     if re.search(r'^why\s+is\s+it\s+called\s+[a-z\s-]+$', q):
+        return False
+    # Short coding how-tos ("how to check python version", "how to convert
+    # string to int") name their subject and are self-contained — the previous
+    # topic must not be appended, or "how to check python version" can
+    # misroute to an entry about the previous subject. Pronouns excluded.
+    if re.search(r'^how\s+to\s+(?:check|install|use|run|get|set|convert|find|sort|reverse|split|join|merge|remove|add|create|open|read|write|parse|validate|start|stop|update|upgrade|list|rename|delete|copy|move|enable|disable|sleep|catch|handle|print|count|make|build|store|save|load|fetch|send|post|calculate|compare|filter|map|iterate|loop|repeat|round|format|split|strip|replace|search|match|test|debug|fix|solve|implement|define|declare|initialize|assign|return|throw|raise|import|export|install|uninstall|downgrade|pin|commit|push|pull|clone|branch|stash|rebase|reset|revert)\s+(?!(?:it|that|this|them|these|those)\b)', q):
         return False
     # "what is a unit test and why write them" — the trailing clause's pronoun
     # refers to the noun introduced earlier in the SAME query, so it is
@@ -1782,6 +1795,15 @@ def _query_is_context_dependent(query):
     # "what does X symbolize" / "what does X stand for" — self-contained
     if re.search(r'^what\s+(?:does|do|did)\s+(?:(?:the|a|an)\s+)?[a-z\s-]+?\s+(?:symbolize|represent|stand\s+for|mean)$', q):
         return False
+    # "what about X" / "how about X" — introduces a NEW subject ("what
+    # about spain" after discussing France means tell me about Spain), not a
+    # reference to the previous topic
+    if re.search(r'^(?:what|how)\s+about\s+[a-z\s-]{3,}$', q):
+        return False
+    # "... there / ... here" — locative deictics refer to the previous
+    # topic ("what is the population there" after discussing Paris)
+    if re.search(r'\s(?:there|here)\s*$', q):
+        return True
     # "why is X bad" / "why is sugar unhealthy" — health evaluation questions
     # are self-contained
     if re.search(r'^why\s+is\s+(?:the\s+)?[a-z]+\s+(?:bad|good|unhealthy|healthy|important|necessary|useful|dangerous|safe|popular|famous|expensive|cheap)(?:\s+for\s+(?:you|your\s+health|humans))?$', q):
@@ -1805,7 +1827,7 @@ def _query_is_context_dependent(query):
             return False
     # "what do X eat" / "where do X live" / "why do cats purr" —
     # subject+verb behavior questions are self-contained
-    if re.search(r'^(?:what|why|how|when|where|which)\s+(?:do|does|did|is|are|was|were|can|could)\s+[a-z\s-]+?\s+(?:eat|live|sleep|dream|drink|hunt|swim|fly|climb|run|jump|sing|talk|purr|bark|meow|migrate|hibernate|mate|nest|grow|form|have|use|need|die|end|start|begin|occur|happen|work|function|survive|breed|communicate|navigate|see|hear|smell|reproduce|adapt|breathe|walk\s+on\s+walls|see\s+in\s+the\s+dark|hold\s+its\s+breath|defend\s+themselves|protect\s+themselves|find\s+their\s+way|hunt)$', q):
+    if re.search(r'^(?:what|why|how|when|where|which)\s+(?:do|does|did|is|are|was|were|can|could)\s+[a-z\s-]+?\s+(?:eat|live|sleep|dream|drink|hunt|swim|fly|climb|run|jump|sing|talk|purr|bark|meow|migrate|hibernate|mate|nest|grow|form|have|use|need|die|end|start|begin|occur|happen|work|function|survive|breed|communicate|navigate|see|hear|smell|reproduce|adapt|breathe|do|does|build|make|produce|create|walk\s+on\s+walls|see\s+in\s+the\s+dark|hold\s+its\s+breath|defend\s+themselves|protect\s+themselves|find\s+their\s+way|hunt)$', q):
         return False
     # "how strong is X" / "how smart are X" — capability questions are
     # self-contained (excludes pronouns)
@@ -1839,6 +1861,12 @@ def _query_is_context_dependent(query):
     # Y") are self-contained — they compare two named subjects.
     if re.search(r'^(?:how\s+(?:do|does|are|is)|what\s+(?:do|does)|are|is)\s+[a-z\s-]+?\s+and\s+[a-z\s-]+?\s+(?:differ|different|similar|the\s+same|have\s+in\s+common)$', q):
         return False
+    # "which is bigger, X or Y" / "is X or Y bigger" — comparison questions
+    # name both subjects and are self-contained
+    if re.search(r'^which\s+is\s+(?:the\s+)?(?:bigger|smaller|larger|faster|slower|taller|shorter|heavier|lighter|hotter|colder|older|younger|better|worse|stronger|longer|wider|deeper|higher|more\s+popular|more\s+common|farther|further)\s*,?\s*.+\s+or\s+.+$', q):
+        return False
+    if re.search(r'^(?:is|are)\s+.+\s+or\s+.+\s+(?:bigger|smaller|larger|faster|slower|taller|shorter|heavier|lighter|hotter|colder|older|younger|better|worse|stronger|longer|wider|deeper|higher|more\s+popular|more\s+common|farther|further)\s*$', q):
+        return False
     if re.search(r'^how\s+(?:is|are)\s+(?!(?:it|this|that|they|them|we|you)\s+different\s+from)[a-z\s-]+?\s+different\s+from\s+[a-z\s-]+?$', q):
         return False
     if re.search(r'^how\s+do(?:es)?\s+(?!(?:it|this|that|they|them|we|you)\s+differ\s+from)[a-z\s-]+?\s+differ\s+from\s+[a-z\s-]+?$', q):
@@ -1850,6 +1878,10 @@ def _query_is_context_dependent(query):
     # "they" is impersonal, not referential
     if re.search(r'^(?:what\s+language\s+do\s+they\s+speak\s+in|what\s+language\s+is\s+spoken\s+in|what\s+do\s+they\s+call)\s+', q):
         return False
+    # "what currency is used in japan" / "what food is eaten in mexico" —
+    # attribute questions with a concrete subject and place are self-contained
+    if re.search(r'^what\s+[a-z\s-]+?\s+(?:is|are)\s+(?:used|spoken|written|made|built|produced|grown|found|mined|manufactured|located|situated|eaten|drunk|served|celebrated|practiced|practised|played)\s+(?:in|at|on|by)\s+[a-z\s-]+$', q):
+        return False
     if re.search(r'^(?:is|are)\s+[a-z\s-]+?\s+the\s+same\s+as\s+[a-z\s-]+?$', q):
         return False
     # Origin questions ("where does jazz come from", "where does the name
@@ -1857,8 +1889,9 @@ def _query_is_context_dependent(query):
     if re.search(r'^where\s+(?:does|do|did)\s+(?:the\s+name\s+)?[a-z\s-]+?\s+come\s+from$', q):
         return False
     # Measurement questions ("how tall is X", "how old is the earth",
-    # "how much does X weigh", "how many moons does X have") are self-contained.
-    if re.search(r'^how\s+(?:old|big|tall|far|fast|heavy|hot|cold|large|small|wide|deep|high|long|many|much)\s+(?:[a-z]+\s+)?(?:is|are|was|were|does|do|did)\b', q):
+    # "how much does X weigh", "how many moons does X have") are self-contained
+    # — but a pronoun subject ("how many legs does it have") is a follow-up.
+    if re.search(r'^how\s+(?:old|big|tall|far|fast|heavy|hot|cold|large|small|wide|deep|high|long|many|much)\s+(?:[a-z]+\s+)?(?:is|are|was|were|does|do|did)\b(?!\s*(?:it|this|that|they|them|these|those)\b)', q):
         return False
     if re.search(r'^why\s+(?:does\s+(?:the|a|an)|is\s+the|are\s+the|do\s+(?:we|humans|people)\s+(?:get|feel))\s*', q):
         return False
@@ -2500,10 +2533,11 @@ def process_query(query, use_cos=True):
     # Strip emoji and decorative symbols before any matching
     q_clean = re.sub(r'[\U0001F000-\U0001FAFF\u2600-\u27BF\uFE0F\u200D]', '', q_clean).strip()
     # Strip ASCII emoticons ( :), :(, :D, XD, <3, ^_^, T_T, etc.)
-    # Emoticons must be standalone tokens (not preceded by a word char) so
-    # "xP" doesn't eat the "xp" inside "explain"/"experiment".
+    # Emoticons must be standalone tokens (not preceded by a word char or an
+    # opening bracket — "x)" inside "prnit(x)" is code, not an emoticon,
+    # and "xP" shouldn't eat the "xp" inside "explain"/"experiment").
     q_clean = re.sub(
-        r'(?<!\w)(?:[:;=xX8][-~^]?[)\\(DdpP/\\*oO0|[\]{}]|<3|<\/3|\^_\^|T_?T|T-T|-_-|O_O|\*_\*|>_<|>\\.<)(?!\w)',
+        r'(?<![\w(\[{<])(?:[:;=xX8][-~^]?[)\\(DdpP/\\*oO0|[\]{}]|<3|<\/3|\^_\^|T_?T|T-T|-_-|O_O|\*_\*|>_<|>\\.<)(?!\w)',
         '', q_clean).strip()
     if not q_clean:
         return "I see some emoji but no words! Type a question and I'll do my best to answer it."
@@ -2548,7 +2582,82 @@ def process_query(query, use_cos=True):
         conversation_history.append((q_clean, response))
         return response
 
-    # 0b. Check for social/emotional patterns (before any KB/Wikipedia lookup)
+    # 0b. Edit requests: "fix this code: ...", "edit this email to fix any
+    # problems: ...", "rewrite this paragraph: ..." — deterministic,
+    # rule-based editing of the supplied text. Runs very early (before social
+    # patterns and coding/factual routing) so "fix the punctuation in this
+    # text: ... how are you" isn't answered by a greeting pattern, and
+    # "fix this code: def add(a b):" isn't answered with an unrelated code
+    # example.
+    try:
+        from cos.text_editor import (
+            detect_edit_request, edit_content, detect_code_lang,
+            detect_change_request, apply_change, _kind_of_content,
+            detect_metrics_request, text_metrics,
+            set_last_edit, get_last_edit_content, get_last_edit_kind,
+        )
+        # Text-metrics questions: "how many words in this text: ...",
+        # "count the sentences: ..." — pure counting, not an edit.
+        _metrics = detect_metrics_request(q_clean)
+        if _metrics:
+            _unit, _m_content = _metrics
+            response = text_metrics(_unit, _m_content)
+            conversation_history.append((q_clean, response))
+            return response
+        # Change/refinement requests come first: "make it shorter", "make this
+        # more formal", "change hello to hi", "add a greeting" — applied to
+        # inline content or the last edited content.
+        _change = detect_change_request(q_clean)
+        if _change:
+            _change_type, _change_params, _change_inline = _change
+            _base = _change_inline or get_last_edit_content()
+            if not _base:
+                response = ("What would you like me to change? Paste some text or code first, "
+                            "then ask for a change like 'make it shorter' or 'change hello to hi'.")
+                conversation_history.append((q_clean, response))
+                return response
+            # Inline content is typed by what was pasted ("make this more
+            # formal: <text>" after a code edit must not inherit the code
+            # kind and refuse the change); follow-ups reuse the last kind.
+            _kind = _kind_of_content(_base) if _change_inline else get_last_edit_kind()
+            _changed, _notes = apply_change(_change_type, _base, _change_params,
+                                            kind=_kind)
+            set_last_edit(_kind, _changed)
+            response = (f"> {_changed}\n\n"
+                        "Changes made:\n- " + "\n- ".join(_notes))
+            conversation_history.append((q_clean, response))
+            return response
+
+        _edit = detect_edit_request(q_clean)
+        if _edit:
+            _edit_kind, _edit_content = _edit
+            if not _edit_content or len(_edit_content) < 4:
+                response = ("I can help with that! Paste the {} you'd like me to "
+                            "edit and I'll fix it up for you.".format(
+                                'code' if _edit_kind == 'code' else 'text'))
+                conversation_history.append((q_clean, response))
+                return response
+            _edited, _changes = edit_content(_edit_kind, _edit_content, q_clean)
+            if _edit_kind == 'json_check':
+                response = _edited
+                conversation_history.append((q_clean, response))
+                return response
+            set_last_edit(_edit_kind, _edited)
+            if _edit_kind == 'code' or _edit_kind == 'json':
+                lang = 'json' if _edit_kind == 'json' else detect_code_lang(_edit_content, q_clean)
+                response = ("Here's your code with these fixes applied:\n\n"
+                            f"```{lang}\n{_edited}\n```\n\n"
+                            "Changes made:\n- " + "\n- ".join(_changes))
+            else:
+                response = ("Here's the edited version:\n\n"
+                            f"> {_edited}\n\n"
+                            "Changes made:\n- " + "\n- ".join(_changes))
+            conversation_history.append((q_clean, response))
+            return response
+    except Exception as _edit_exc:
+        print('EDIT-HANDLER-EXC:', repr(_edit_exc))
+
+    # 0c. Check for social/emotional patterns (before any KB/Wikipedia lookup)
     # Loaded from data/patterns/*.json — add new patterns there, no code changes needed
     try:
         from cos.pattern_matcher import match_pattern
@@ -2568,6 +2677,7 @@ def process_query(query, use_cos=True):
             response_text = f"That's nice! {thing.title()} sounds interesting. Would you like to know more about it or discuss something related?"
             conversation_history.append((q_clean, response_text))
             return response_text
+
 
     # 0c. Check for refinement/expansion/shortening single-word commands
     # These must be routed to the follow-up handler, not treated as factual queries
@@ -3268,7 +3378,7 @@ def _load_category_registry():
 _MULTI_ENTITY_PATTERNS = [
     # "what types of X are native to Y" / "what kinds of X live in Y"
     re.compile(
-        r'^(?:what|which)\s+(?:types?|kinds?|breeds?|species?|varieties?|forms?|styles?|members?|groups?)\s+of\s+(?P<category>[a-z\s-]+?)\s+(?:are|is|exist|live|found|native|present|dwell|occur)(?:\s+(?:in|at|on|to|around|within))?\s*(?P<location>[a-z\s,]+)?$',
+        r'^(?:what|which)\s+(?:types?|kinds?|sorts?|breeds?|species?|varieties?|forms?|styles?|members?|groups?)\s+of\s+(?P<category>[a-z\s-]+?)\s+(?:are|is|exist|live|found|native|present|dwell|occur)(?:\s+(?:in|at|on|to|around|within))?\s*(?P<location>[a-z\s,]+)?$',
         re.IGNORECASE),
     # "what X are native to Y" / "what wild cats live in Y" / "which cats live in Y"
     re.compile(
@@ -3284,7 +3394,7 @@ _MULTI_ENTITY_PATTERNS = [
         re.IGNORECASE),
     # Bare "types of X" / "kinds of X" / "varieties of X"
     re.compile(
-        r'^(?:types?|kinds?|varieties?|species?|styles?|forms?|breeds?)\s+of\s+(?P<category>[a-z\s-]+?)$',
+        r'^(?:types?|kinds?|sorts?|varieties?|species?|styles?|forms?|breeds?)\s+of\s+(?P<category>[a-z\s-]+?)$',
         re.IGNORECASE),
     # "examples of X" / "give me examples of X" / "what are examples of X"
     re.compile(
@@ -3309,6 +3419,9 @@ def _detect_multi_entity_query(query):
         gd = m.groupdict()
         category = (gd.get('category') or '').strip().rstrip(',').strip()
         category = re.sub(r'^(?:the|a|an)\s+', '', category).strip()
+        # "dog breeds" / "cat species" / "cloud types" -> the category is the
+        # first word ("dog"); the trailing classifier repeats the question word.
+        category = re.sub(r'\s+(?:breeds?|species|types?|kinds?|sorts?|varieties?|forms?|styles?|members?|groups?|animals?|plants?)$', '', category).strip()
         location = (gd.get('location') or '').strip().rstrip(',').strip()
         # Location may include a leading connector ("to poland and sweden")
         # or a "native to" / "found in" construction — normalize it away
@@ -3409,6 +3522,125 @@ def _compose_multi_entity_answer(category, location):
     return '\n'.join(parts)
 
 
+# ── Compound factual questions ───────────────────────────────────────────────
+# "what is the capital of france and the capital of spain" (two questions
+# joined by 'and'), "what is the largest ocean and the smallest ocean" (shared
+# verb). Each half is answered independently and the answers are joined.
+
+_QUESTION_OPENERS = (
+    'what', 'who', 'which', 'where', 'when', 'why', 'how', 'name', 'describe',
+    'explain', 'list', 'tell', 'is', 'are', 'was', 'were', 'do', 'does', 'did',
+    'can', 'how many', 'how much', 'how far', 'how tall', 'how old', 'how big',
+    'how long', 'give', 'define', 'identify', 'mention', 'whats', 'what\'s',
+)
+
+_QUESTION_OPENERS_RE = re.compile(
+    r'^(?:' + '|'.join(sorted(_QUESTION_OPENERS, key=len, reverse=True)) + r')\b',
+    re.IGNORECASE)
+
+_COMPOUND_SKIP = (
+    'difference between', 'differences between', 'similarities between',
+    'compare', 'versus', ' vs', 'vs.', 'the same as', 'compared to',
+    'compared with', 'differ from', 'different from', 'related to',
+    'relationship between', 'bigger than', 'smaller than', 'larger than',
+    'faster than', 'slower than', 'taller than', 'shorter than', 'older than',
+    'younger than', 'heavier than', 'lighter than', 'hotter than', 'colder than',
+    'better than', 'worse than', 'more expensive than', 'more popular than',
+    'more common than', 'same as', 'similar to', 'types of', 'kinds of',
+    'list of', 'examples of',
+)
+
+
+def _looks_like_factual_question(q):
+    ql = q.strip().lower()
+    if not ql or len(ql) < 6:
+        return False
+    # "how do I ..." / "how to ..." are instructions, not factual halves
+    if re.match(r'^how\s+(?:do\s+(?:i|you|we|they)|to|can\s+i|should\s+i)\b', ql):
+        return False
+    # word-boundary match so "dogs differ" isn't a match just because it
+    # starts with the prefix "do"
+    return bool(_QUESTION_OPENERS_RE.match(q))
+
+
+def _reconstruct_shared(q1, q2):
+    """Rebuild the second half of a shared-verb compound question:
+    'what is the largest ocean and the smallest ocean' ->
+    'what is the smallest ocean'."""
+    q1l = q1.strip().lower()
+    q2s = q2.strip()
+    if re.match(r'^(?:in|at|on|from|to|for|of|with|under|over|near)\b', q2s, re.IGNORECASE):
+        # "what currency is used in japan and in the united kingdom"
+        m = re.match(r'^(what\s+\S.*?\s+(?:in|at|on|from|for|of)\s+)\S.*', q1l)
+        if m:
+            q2c = re.sub(r'^(?:in|at|on|from|to|for|of|with|under|over|near)\s+',
+                         '', q2s, count=1, flags=re.IGNORECASE)
+            return f"{m.group(1).strip()} {q2c}"
+        return None
+    m = re.match(r'^(what|who)\s+(is|are|was|were)\s+(the|a|an)\s+(.+)$', q1l)
+    if m:
+        head = f"{m.group(1)} {m.group(2)}"  # "what is" / "who is"
+        art1, np = m.group(3), m.group(4).strip()
+        # "what is the capital of france and spain" — replace the trailing
+        # prepositional phrase's object: "capital of france" + "spain";
+        # also "who is the president of france and of the usa"
+        mprep = re.search(r'\s(?:of|in|at|on|from|for)\s+([a-z\s]+)$', np)
+        if mprep:
+            prep_word = mprep.group(0).strip().split()[0]  # "of"
+            obj2 = q2s
+            # the second half may repeat the whole phrase ("the capital of
+            # spain") — keep only its trailing object
+            m2 = re.search(r'\s(?:of|in|at|on|from|for)\s+([a-z\s]+)$', q2s)
+            if m2:
+                obj2 = m2.group(1).strip()
+            return f"{head} {art1} {np[:mprep.start()].strip()} {prep_word} {obj2}"
+        # "what is the largest ocean and the smallest ocean" — the second
+        # half carries its own article
+        if re.match(r'^(?:the|a|an)\s+', q2s, re.IGNORECASE):
+            return f"{head} {q2s}"
+        # "what is a cat and a dog" — reuse the first half's article
+        return f"{head} {art1} {q2s}"
+    # "name a famous river in egypt and a famous river in india" — the
+    # second half repeats the whole phrase; keep only its location
+    m = re.match(r'^(name\s+(?:a|an|the)\s+\S.*?\s+(?:in|on|at|from|of|for)\s+)\S.*', q1l)
+    if m:
+        q2c = re.sub(r'^(?:a|an|the)\s+\S.*?\s+(?:in|on|at|from|of|for)\s+', '', q2s, count=1, flags=re.IGNORECASE)
+        if not q2c:
+            q2c = q2s
+        return f"{m.group(1).strip()} {q2c}"
+    return None
+
+
+def _detect_compound_question(query):
+    """Detect a compound factual question joined by 'and'.
+
+    Returns (q1, q2) where both halves are answerable questions, or None.
+    Ordinary coordination ("cats and dogs") is never split — each half must
+    look like an independent question, or the second half must reconstruct
+    via a shared verb ("what is the X and the Y").
+    """
+    q = query.strip().rstrip('?!.,;')
+    ql = q.lower()
+    if any(skip in ql for skip in _COMPOUND_SKIP):
+        return None
+    # Try "and" junctions first (strongest), then commas and "or". The
+    # LAST junction is preferred so "what is X, what is Y, and what is Z"
+    # splits "X, Y" from "Z", and the recursion answers "X" and "Y".
+    for sep in (' and ', ', and ', ', ', ' or ', ', or '):
+        if sep in q:
+            idx = q.rfind(sep)
+            q1, q2 = q[:idx].strip(), q[idx + len(sep):].strip()
+            if not q1 or not q2:
+                continue
+            if _looks_like_factual_question(q1):
+                if _looks_like_factual_question(q2):
+                    return (q1, q2)
+                q2_full = _reconstruct_shared(q1, q2)
+                if q2_full and q2_full.lower() != q1.lower():
+                    return (q1, q2_full)
+    return None
+
+
 # ── Multi-point (comparison) query detection & composition ───────────────────
 # Handles queries that reference two topics: "compare X and Y",
 # "difference between X and Y", "X vs Y", "tell me about X and Y".
@@ -3469,6 +3701,22 @@ _MULTI_POINT_PATTERNS = [
     # "how are X and Y different/similar" / "what do X and Y have in common"
     re.compile(
         r'^(?:how\s+(?:do|does|are|is)\s+|are\s+|what\s+(?:do|does)\s+)(?P<topic1>.+?)\s+and\s+(?P<topic2>[a-z\s-]+?)\s+(?:differ|different|similar|the\s+same|have\s+in\s+common)$',
+        re.IGNORECASE),
+    # "whats the same about X and Y" / "what's similar about X and Y"
+    re.compile(
+        r'^what\'?s\s+(?:the\s+same|similar)\s+about\s+(?P<topic1>.+?)\s+and\s+(?P<topic2>[a-z\s-]+?)$',
+        re.IGNORECASE),
+    # "X or Y which is better" / "which is better X or Y"
+    re.compile(
+        r'^(?P<topic1>[a-z\s-]+?)\s+or\s+(?P<topic2>[a-z\s-]+?)\s+which\s+is\s+(?:better|worse|faster|bigger|stronger|more\s+popular|more\s+common)$',
+        re.IGNORECASE),
+    # "which is bigger, X or Y" / "which is X or Y bigger"
+    re.compile(
+        r'^which\s+is\s+(?:the\s+)?(?:bigger|smaller|larger|faster|slower|taller|shorter|heavier|lighter|hotter|colder|older|younger|longer|wider|deeper|higher|better|worse|more\s+popular|more\s+common|stronger|farther|further)\s*,?\s*(?P<topic1>.+?)\s+or\s+(?P<topic2>[a-z\s-]+?)$',
+        re.IGNORECASE),
+    # "is X or Y bigger" / "are X or Y faster"
+    re.compile(
+        r'^(?:is|are)\s+(?P<topic1>.+?)\s+or\s+(?P<topic2>[a-z\s-]+?)\s+(?:bigger|smaller|larger|faster|slower|taller|shorter|heavier|lighter|hotter|colder|older|younger|longer|wider|deeper|higher|better|worse|more\s+popular|more\s+common|stronger|farther|further)\s*$',
         re.IGNORECASE),
 ]
 
@@ -3571,6 +3819,12 @@ def _handle_factual(query, use_cos):
         extracted = tell_me_match.group(1).strip().rstrip('.!?')
         if extracted and len(extracted) > 2:
             search_query = extracted
+    # "what about X" / "how about X" — introduces a new subject to discuss
+    what_about = re.search(r'^(?:what|how)\s+about\s+(.+)', q, re.IGNORECASE)
+    if what_about:
+        extracted = what_about.group(1).strip().rstrip('.!?')
+        if extracted and len(extracted) > 2:
+            search_query = extracted
 
     if _query_is_context_dependent(q):
         resolved = _resolve_topic(q, conversation_history)
@@ -3613,6 +3867,25 @@ def _handle_factual(query, use_cos):
         math_answer = _solve_wp(search_query)
         if math_answer:
             return math_answer
+
+    # Compound factual questions: "what is the capital of france and the
+    # capital of spain", "who wrote hamlet and who painted the mona lisa",
+    # "what is the largest ocean and the smallest ocean" — answer each half
+    # independently and join. Runs before the category/direct lookups so a
+    # compound question never degrades to a single-topic answer.
+    _compound = _detect_compound_question(q)
+    if _compound:
+        _q1, _q2 = _compound
+        _a1 = _handle_factual(_q1, True)
+        if not _a1:
+            _a1 = _handle_fallback(_q1, True, 'factual')
+        _a2 = _handle_factual(_q2, True)
+        if not _a2:
+            _a2 = _handle_fallback(_q2, True, 'factual')
+        if _a1 and _a2:
+            return f"{_a1}\n\n{_a2}"
+        if _a1 or _a2:
+            return _a1 or _a2
 
     # Multi-entity detection: "what types of X are native to Y" →
     # retrieve each member entry from the KB and compose a combined answer.

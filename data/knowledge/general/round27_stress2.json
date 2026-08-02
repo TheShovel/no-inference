@@ -1,0 +1,60 @@
+[
+  {
+    "q": [
+      "what is the difference between == and === in js",
+      "double equals vs triple equals javascript",
+      "javascript == vs ==="
+    ],
+    "a": "== is loose equality: it converts the operands to a common type before comparing, so 5 == '5' is true and 0 == false is true. === is strict equality: it compares both value AND type without conversion, so 5 === '5' is false and 0 === false is false. Always prefer === (and !==) to avoid surprising type-coercion bugs. The only cases where == is deliberately used are checking for both null and undefined at once: value == null is true for both null and undefined.",
+    "code": "console.log(5 == '5');    // true  (coerces)\nconsole.log(5 === '5');   // false (type differs)\nconsole.log(0 == false);   // true\nconsole.log(0 === false);  // false\nconsole.log(null == undefined);   // true\nconsole.log(null === undefined);  // false\n\n// Safe null check\nif (value == null) { /* null OR undefined */ }",
+    "lang": "javascript"
+  },
+  {
+    "q": [
+      "how are clouds formed",
+      "how do clouds form",
+      "why do clouds form"
+    ],
+    "a": "Clouds form when moist air rises and cools to its dew point, causing water vapor to condense onto tiny particles (cloud condensation nuclei like dust, salt, or pollution). As the air rises, it expands and cools — about 1 degree Celsius per 100 meters. When the air reaches 100% relative humidity, water vapor condenses into billions of microscopic droplets or ice crystals that are light enough to float. The type of cloud depends on the altitude and the strength of the rising air: stratus (flat layers), cumulus (puffy), cirrus (wispy ice crystals), and cumulonimbus (thunderstorms). When droplets grow heavy enough, they fall as rain or snow."
+  },
+  {
+    "q": [
+      "is a strawberry a berry",
+      "are strawberries berries",
+      "strawberry botanical classification"
+    ],
+    "a": "Botanically, a strawberry is NOT a true berry. A true berry develops from a single flower with one ovary — like tomatoes, bananas, and grapes. The strawberry's fleshy red part develops from the flower's RECEPTACLE (the base that holds the petals), not the ovary, and the tiny 'seeds' on the surface are actually individual fruits called achenes, each containing a seed. So a strawberry is an aggregate accessory fruit. Ironically, bananas and tomatoes — which people don't think of as berries — ARE true berries botanically."
+  },
+  {
+    "q": [
+      "whats the fastest thing in the universe",
+      "fastest thing in the universe",
+      "what is the speed of light"
+    ],
+    "a": "The fastest thing in the universe is light — specifically, electromagnetic radiation — which travels at 299,792,458 meters per second (about 300,000 km/s or 186,000 miles per second) in a vacuum. According to special relativity, nothing can travel faster than the speed of light; as an object approaches it, its mass effectively increases, requiring infinite energy to reach it. Light from the Sun takes about 8 minutes 20 seconds to reach Earth, and light from the nearest star, Proxima Centauri, takes about 4.2 years. Gravitational waves also travel at the speed of light."
+  },
+  {
+    "q": [
+      "how long does it take light to reach the earth",
+      "light travel time from sun to earth",
+      "how long does sunlight take to reach earth"
+    ],
+    "a": "Light from the Sun takes about 8 minutes and 20 seconds to reach Earth. The Sun is about 150 million kilometers (93 million miles) away, and light travels at about 300,000 kilometers per second, so the journey is 150,000,000 / 300,000 = 500 seconds. The Moon's light reaches Earth in about 1.3 seconds, light from Mars takes 3 to 22 minutes depending on its orbital position, and light from the nearest star system, Alpha Centauri, takes about 4.2 years. This means we always see the Sun as it was 8 minutes in the past."
+  },
+  {
+    "q": [
+      "what do bees do",
+      "what do bees do for the ecosystem",
+      "why are bees important"
+    ],
+    "a": "Bees are essential pollinators: as they visit flowers for nectar and pollen, they transfer pollen between flowers, fertilizing plants so they can produce fruits and seeds. It's estimated that bees pollinate about a third of the food crops humans eat, worth billions of dollars annually. Honeybees also produce honey and beeswax, and their hive structure — queen, workers, drones, and the waggle dance for communicating food locations — is one of nature's most sophisticated social systems. Wild and managed bees alike are threatened by pesticides, habitat loss, disease, and climate change, which is why their conservation matters."
+  },
+  {
+    "q": [
+      "what is the capital of norway",
+      "capital of norway",
+      "norway capital"
+    ],
+    "a": "The capital of Norway is Oslo, the country's largest city with about 700,000 people in the city proper and over 1.5 million in the metro area. Oslo sits at the head of the Oslofjord in southeastern Norway, surrounded by forested hills. Founded around 1040 by King Harald Hardrada, Oslo is the seat of the Norwegian government and parliament, and it hosts the Nobel Peace Prize ceremony at City Hall each December. It is known for its museums (the Viking Ship Museum, Munch Museum), its green spaces, and being one of Europe's fastest-growing capitals."
+  }
+]

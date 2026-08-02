@@ -1,0 +1,175 @@
+[
+  {
+    "q": [
+      "how to check python version",
+      "check python version",
+      "what version of python do i have",
+      "python --version"
+    ],
+    "a": "Check the Python version from the terminal with `python --version` (or `python3 --version` on many Linux/macOS systems). Inside Python code, use `sys.version` (full string), `sys.version_info` (tuple of major/minor/micro), or `platform.python_version()`.",
+    "code": "import sys\nprint(sys.version)            # 3.12.1 (main, ...)\nprint(sys.version_info)       # sys.version_info(major=3, minor=12, micro=1, ...)\nprint(sys.version_info.major) # 3\n\nimport platform\nprint(platform.python_version())  # '3.12.1'",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "javascript random number between 1 and 10",
+      "javascript random number",
+      "math.random javascript"
+    ],
+    "a": "Math.random() returns a random float in [0, 1). To get a random integer in a range, scale and floor it: Math.floor(Math.random() * (max - min + 1)) + min gives an integer between min and max inclusive. Use Math.round carefully — it makes endpoints half as likely — so prefer floor.",
+    "code": "// Random integer between min and max (inclusive)\nfunction randomInt(min, max) {\n  return Math.floor(Math.random() * (max - min + 1)) + min;\n}\n\nconsole.log(randomInt(1, 10));  // e.g. 7\n\n// Random float between 1 and 10\nconsole.log(1 + Math.random() * 9);",
+    "lang": "javascript"
+  },
+  {
+    "q": [
+      "python while loop vs for loop",
+      "while loop vs for loop",
+      "difference between while and for loop"
+    ],
+    "a": "A for loop iterates over a known sequence or range — you know in advance how many times it runs (e.g., over a list or range(n)). A while loop repeats as long as a condition is true — the number of iterations may be unknown, and you must ensure the condition eventually becomes false or you get an infinite loop. Use for when iterating collections or fixed counts; use while when the stopping point depends on runtime state (e.g., reading until EOF, waiting for input).",
+    "code": "# for: fixed count / sequence\nfor i in range(5):\n    print(i)\n\nfor item in ['a', 'b', 'c']:\n    print(item)\n\n# while: condition-based\nn = 0\nwhile n < 5:\n    print(n)\n    n += 1          # must progress toward False\n\n# while True with break for 'until X happens'\nwhile True:\n    line = input()\n    if not line:\n        break",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "what does git pull do",
+      "git pull explained",
+      "git pull vs fetch"
+    ],
+    "a": "`git pull` fetches changes from a remote repository and merges them into your current branch — it's a shortcut for `git fetch` followed by `git merge`. `git fetch` only downloads the changes without touching your working tree, letting you inspect them first; `git pull` updates your branch immediately. If your local branch has diverged, pull creates a merge commit (or you can `git pull --rebase` to replay your commits on top).",
+    "code": "# fetch + merge in one step\ngit pull origin main\n\n# fetch only, then decide\ngit fetch origin\n# ... inspect origin/main ...\ngit merge origin/main\n\n# rebase your local commits onto the remote tip\ngit pull --rebase origin main",
+    "lang": "bash"
+  },
+  {
+    "q": [
+      "how to rename a git branch",
+      "rename git branch",
+      "git branch rename"
+    ],
+    "a": "Rename the current branch with `git branch -m new-name`. To rename a branch you're not on, give both names: `git branch -m old-name new-name`. After renaming a local branch that has a remote, delete the old remote branch and push the new one: `git push origin :old-name new-name` and set the upstream with `git push -u origin new-name`.",
+    "code": "# rename current branch\ngit branch -m feature-xyz\n\n# rename a specific branch\ngit branch -m old-name new-name\n\n# update the remote after renaming\ngit push origin :old-name new-name\ngit push -u origin new-name",
+    "lang": "bash"
+  },
+  {
+    "q": [
+      "what is a git stash",
+      "git stash explained",
+      "how to use git stash"
+    ],
+    "a": "`git stash` temporarily saves your uncommitted changes (tracked modifications and staged files) so you can switch branches or do other work, then restore them later with `git stash pop`. Use `git stash list` to see stashes, `git stash show` to inspect one, and `git stash drop` to discard one. `git stash -u` also stashes untracked files; `git stash --keep-index` leaves staged changes in place.",
+    "code": "git stash                 # save work-in-progress\n# ... do other work ...\ngit stash pop             # restore the most recent stash\n\ngit stash list            # list saved stashes\ngit stash show stash@{0}  # inspect\n\ngit stash -u              # also stash untracked files\ngit stash drop stash@{0}  # discard a stash",
+    "lang": "bash"
+  },
+  {
+    "q": [
+      "how to find the largest number in a list python",
+      "find max in list python",
+      "largest element in list python",
+      "python max function"
+    ],
+    "a": "Use the built-in max() function for the largest value and min() for the smallest. For the index of the largest value, use max(range(len(lst)), key=lst.__getitem__) or enumerate. For the n largest values, use heapq.nlargest or sorted() with a slice.",
+    "code": "nums = [4, 9, 2, 7, 5]\nprint(max(nums))   # 9\nprint(min(nums))   # 2\n\n# index of the largest value\nidx = max(range(len(nums)), key=nums.__getitem__)\nprint(idx, nums[idx])   # 1 9\n\n# top 3 largest\nimport heapq\nprint(heapq.nlargest(3, nums))   # [9, 7, 5]",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "python round to 2 decimal places",
+      "round to 2 decimal places python",
+      "python format float"
+    ],
+    "a": "Use round(x, 2) for numeric rounding, or format the value as a string with f'{x:.2f}' when displaying. Note that round() uses banker's rounding (round-half-to-even), so round(2.675, 2) gives 2.67, not 2.68. For strict decimal math use the Decimal module.",
+    "code": "x = 3.14159\nprint(round(x, 2))      # 3.14\n\nprint(f'{x:.2f}')       # '3.14' — string formatting\nprint('%.2f' % x)       # '3.14'\n\n# Banker's rounding quirk\nprint(round(2.675, 2))  # 2.67\n\nfrom decimal import Decimal, ROUND_HALF_UP\nprint(Decimal('2.675').quantize(Decimal('0.01'), rounding=ROUND_HALF_UP))  # 2.68",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "what is a callback function",
+      "callbacks explained",
+      "callback function javascript"
+    ],
+    "a": "A callback is a function passed as an argument to another function, to be invoked later — when an operation completes (success/error), on an event, or after a delay. In JavaScript, callbacks are the classic way to handle async work ('callback hell' from nesting), later improved by Promises and async/await. In Python, callbacks appear in libraries like requests, event loops, and sorting keys.",
+    "code": "// JavaScript: callback after an async operation\nfunction processData(data, onDone) {\n  // ... do work ...\n  onDone(data);\n}\nprocessData([1, 2, 3], (result) => console.log(result));\n\nsetTimeout(() => console.log('after 1s'), 1000);\n\n// Python: sorting with a key callback\nitems = ['bb', 'a', 'ccc']\nprint(sorted(items, key=len))   # ['a', 'bb', 'ccc']",
+    "lang": "javascript"
+  },
+  {
+    "q": [
+      "how to write json to a file in python",
+      "write json file python",
+      "python json dump"
+    ],
+    "a": "Use json.dump() to serialize a Python object into a file, and json.dumps() to get a JSON string. Open the file in write mode (or 'w', encoding='utf-8') and use a with block. Set indent for readable formatting and ensure_ascii=False to keep non-ASCII characters literal.",
+    "code": "import json\n\ndata = {'name': 'cos', 'tags': ['ai', 'code'], 'version': 3}\n\n# Write to file\nwith open('data.json', 'w', encoding='utf-8') as f:\n    json.dump(data, f, indent=2)\n\n# JSON string\ns = json.dumps(data, indent=2)\nprint(s)\n\n# Read it back\nwith open('data.json', 'r', encoding='utf-8') as f:\n    loaded = json.load(f)\nprint(loaded == data)   # True",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "what is the difference between null and undefined",
+      "null vs undefined",
+      "javascript null undefined difference"
+    ],
+    "a": "Both represent 'no value' but differ in intent and origin. `undefined` is the default value for declared-but-not-assigned variables, missing object properties, and missing function arguments — it means 'not defined yet'. `null` is an explicit assignment meaning 'intentionally empty'. `typeof undefined` is 'undefined'; `typeof null` is 'object' (a historical quirk). Loose equality `null == undefined` is true; strict `null === undefined` is false. Use null when you want to represent 'no value' deliberately.",
+    "code": "let a;                  // undefined (declared, not assigned)\nlet b = null;           // null (explicitly empty)\n\nconsole.log(a);          // undefined\nconsole.log(b);          // null\n\nconsole.log(typeof a);   // 'undefined'\nconsole.log(typeof b);   // 'object'\n\nconsole.log(null == undefined);   // true  (loose)\nconsole.log(null === undefined);  // false (strict)",
+    "lang": "javascript"
+  },
+  {
+    "q": [
+      "how do cookies work in web development",
+      "cookies web development explained",
+      "how do browser cookies work"
+    ],
+    "a": "A cookie is a small piece of data a server sends to the browser via the Set-Cookie header; the browser stores it and sends it back with every request to that domain via the Cookie header, letting the server recognize returning users. Cookies can be scoped by domain and path, limited by an expiry (Max-Age/Expires), restricted to secure connections (Secure), hidden from JavaScript (HttpOnly), and limited to same-site requests (SameSite). Cookies are commonly used for session IDs, preferences, and tracking. Alternatives like localStorage persist data but aren't sent to the server automatically.",
+    "code": "# Flask-style: set and read a cookie\nfrom flask import Flask, make_response, request\napp = Flask(__name__)\n\n@app.route('/login')\ndef login():\n    resp = make_response('set')\n    resp.set_cookie('user', 'cos', max_age=3600, httponly=True, samesite='Lax')\n    return resp\n\n@app.route('/whoami')\ndef whoami():\n    return request.cookies.get('user', 'anon')",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "what is a foreign key",
+      "foreign key explained",
+      "primary key vs foreign key"
+    ],
+    "a": "A foreign key is a column (or set of columns) in one table that references the primary key of another table, enforcing referential integrity — it guarantees a row can only reference an existing row. The primary key uniquely identifies each row in its own table; the foreign key creates the relationship between tables (one-to-many, many-to-many via a join table). By default a foreign key prevents deleting a parent row that children reference; ON DELETE CASCADE propagates deletes.",
+    "code": "CREATE TABLE customers (\n    id INTEGER PRIMARY KEY,\n    name TEXT NOT NULL\n);\n\nCREATE TABLE orders (\n    id INTEGER PRIMARY KEY,\n    customer_id INTEGER NOT NULL,\n    amount NUMERIC,\n    FOREIGN KEY (customer_id) REFERENCES customers(id)\n        ON DELETE CASCADE\n);",
+    "lang": "sql"
+  },
+  {
+    "q": [
+      "javascript template literals",
+      "template literals javascript",
+      "template strings js",
+      "what are template literals"
+    ],
+    "a": "Template literals are JavaScript strings delimited by backticks that support embedded expressions with ${...}, multi-line strings, and interpolation of variables. They're more readable than string concatenation and avoid awkward escaping. Tagged templates let a function process the literal and interpolated parts.",
+    "code": "const name = 'cos';\nconst age = 3;\n\n// Interpolation\nconst msg = `Hello ${name}, you are ${age} years old`;\nconsole.log(msg);  // Hello cos, you are 3 years old\n\n// Multi-line without \\n\nconst poem = `line one\nline two`;\n\n// Expressions inside\nconsole.log(`Sum: ${1 + 2}`);  // Sum: 3",
+    "lang": "javascript"
+  },
+  {
+    "q": [
+      "python check if string contains substring",
+      "check if string contains python",
+      "string contains substring python"
+    ],
+    "a": "Use the `in` operator to test whether a string contains a substring — it's the simplest and fastest way: `'ell' in 'hello'`. For case-insensitive checks, lowercase both sides. Use str.find() or str.index() when you need the position, and re.search() for pattern matching.",
+    "code": "s = 'Hello, world!'\n\nprint('world' in s)      # True\nprint('xyz' in s)        # False\n\n# Case-insensitive\nprint('HELLO' in s.lower())   # True\n\n# Position (returns -1 if not found)\nprint(s.find('world'))        # 7\n\n# startswith / endswith\nprint(s.startswith('Hello'))  # True\nprint(s.endswith('!'))        # True",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "how to split a string in python",
+      "split string python",
+      "python string split"
+    ],
+    "a": "Use str.split() to split a string into a list: split() with no argument splits on any whitespace and collapses runs; split(sep) splits on a specific separator; split(sep, maxsplit) limits the number of splits. For splitting on a regular expression use re.split(). To split into individual characters, use list(s).",
+    "code": "s = 'a b   c'\nprint(s.split())            # ['a', 'b', 'c']  (whitespace, runs collapsed)\n\ncsv = '1,2,3'\nprint(csv.split(','))       # ['1', '2', '3']\nprint(csv.split(',', 1))    # ['1', '2,3']  (maxsplit=1)\n\nimport re\nprint(re.split(r'[,;]', 'a,b;c'))   # ['a', 'b', 'c']\n\nprint(list('abc'))          # ['a', 'b', 'c']  (characters)\n\n# Join back\nprint(' '.join(['a', 'b']))  # 'a b'",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "javascript how to sort an array of objects",
+      "sort array of objects javascript",
+      "javascript sort objects by property"
+    ],
+    "a": "Array.prototype.sort() with a comparator: sort((a, b) => a.key - b.key) for numbers, and localeCompare for strings. Note that sort() mutates the array in place and converts elements to strings by default (wrong for numbers without a comparator). For nested properties use a helper key function; for case-insensitive string sorting use toLowerCase().",
+    "code": "const users = [\n  { name: 'bob', age: 30 },\n  { name: 'alice', age: 25 },\n  { name: 'carol', age: 35 },\n];\n\n// By number property\nusers.sort((a, b) => a.age - b.age);\n\n// By string property (locale-aware)\nusers.sort((a, b) => a.name.localeCompare(b.name));\n\n// Ascending / descending\nusers.sort((a, b) => b.age - a.age);  // descending\n\n// Copy before sorting to avoid mutation\nconst sorted = [...users].sort((a, b) => a.age - b.age);",
+    "lang": "javascript"
+  }
+]

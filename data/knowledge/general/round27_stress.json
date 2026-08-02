@@ -1,0 +1,226 @@
+[
+  {
+    "q": [
+      "eiffel tower",
+      "how tall is the eiffel tower",
+      "the eiffel tower",
+      "what is the eiffel tower",
+      "how tall the eiffel tower is"
+    ],
+    "a": "The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France, named after engineer Gustave Eiffel. It was built for the 1889 World's Fair and stands 330 meters (1,083 feet) tall including its antennas, making it the tallest structure in Paris. It was the world's tallest structure until 1930, when the Chrysler Building surpassed it. The tower has three levels open to visitors, with restaurants on the first and second levels, and it is one of the most recognizable landmarks on Earth, attracting about 7 million visitors per year.",
+    "categories": [
+      "landmark",
+      "geography"
+    ]
+  },
+  {
+    "q": [
+      "shark",
+      "sharks",
+      "what is a shark",
+      "tell me about sharks"
+    ],
+    "a": "Sharks are a group of cartilaginous fish of the subclass Elasmobranchii, with skeletons made of cartilage rather than bone. They have existed for over 400 million years, predating the dinosaurs. There are about 500 living species, from the tiny dwarf lanternshark (about 20 cm) to the whale shark, the largest fish in the world at over 12 meters. Sharks are apex predators with multiple rows of replaceable teeth, highly sensitive electroreceptors (ampullae of Lorenzini), and an extraordinary sense of smell. Despite their fearsome reputation, shark attacks on humans are extremely rare, and many shark species are threatened by overfishing and finning.",
+    "categories": [
+      "shark",
+      "fish",
+      "animal"
+    ]
+  },
+  {
+    "q": [
+      "what is the capital of australia",
+      "capital of australia",
+      "australia capital"
+    ],
+    "a": "The capital of Australia is Canberra, a purpose-built city in the Australian Capital Territory, chosen in 1908 as a compromise between the rival cities Sydney and Melbourne. The Australian Capital Territory lies about 290 kilometers southwest of Sydney and 660 kilometers northeast of Melbourne. Canberra was designed by American architects Walter Burley Griffin and Marion Mahony Griffin, who won an international design competition in 1912. It is home to Parliament House, the High Court, and national institutions like the Australian War Memorial and the National Gallery. Sydney is Australia's largest city, and Melbourne the second largest, but neither is the capital.",
+    "categories": [
+      "capital",
+      "geography"
+    ]
+  },
+  {
+    "q": [
+      "wolf",
+      "wolves",
+      "what is a wolf",
+      "how big is a wolf"
+    ],
+    "a": "The gray wolf (Canis lupus) is the largest wild member of the dog family, with adults weighing 30-80 kg and standing 60-90 cm at the shoulder. Wolves are highly social pack animals that hunt cooperatively, mainly taking deer, elk, moose, and bison. They once ranged across most of the Northern Hemisphere but were heavily persecuted; they now thrive in parts of North America, Europe, and Asia, and the Eurasian wolf is the ancestor of the domestic dog. A wolf is typically larger than a fox, with longer legs, a broader chest, and a heavier build.",
+    "categories": [
+      "mammal",
+      "animal",
+      "canid"
+    ]
+  },
+  {
+    "q": [
+      "fox",
+      "foxes",
+      "what is a fox",
+      "red fox"
+    ],
+    "a": "Foxes are small-to-medium omnivorous mammals of the Canidae family, with about 12 species including the red fox, the most widespread. The red fox weighs 4-9 kg, about a third to a quarter the size of a wolf, and is known for its bushy tail, pointed ears, and adaptable diet of small mammals, birds, fruit, and insects. Foxes are solitary hunters (unlike pack-hunting wolves) and are famous for their cleverness in folklore. They live on every continent except Antarctica.",
+    "categories": [
+      "mammal",
+      "animal",
+      "canid"
+    ]
+  },
+  {
+    "q": [
+      "who is the father of computers",
+      "father of computing",
+      "father of the computer"
+    ],
+    "a": "Charles Babbage (1791-1871), an English mathematician and inventor, is widely called the father of the computer for his design of the Analytical Engine in the 1830s — the first general-purpose mechanical computer, with a CPU (the mill), memory (the store), and program control via punched cards. His earlier Difference Engine was a mechanical calculator. Babbage never completed a working machine; his collaborator Ada Lovelace wrote what is considered the first computer program (an algorithm for the Analytical Engine), making her the first programmer. The modern electronic computer era began later with machines like ENIAC (1945) and von Neumann's architecture.",
+    "categories": [
+      "history",
+      "technology"
+    ]
+  },
+  {
+    "q": [
+      "who wrote the odyssey",
+      "odyssey author",
+      "the odyssey"
+    ],
+    "a": "The Odyssey, the ancient Greek epic poem about Odysseus's ten-year journey home from the Trojan War, is attributed to Homer, the legendary poet of ancient Greece, who is also credited with the Iliad. Scholars debate whether Homer was a single real person or a tradition of poets; the epics are believed to have been composed around the 8th century BCE and written down later. The Odyssey is one of the foundational works of Western literature, introducing themes of heroism, cunning (Odysseus is 'polytropos', many-turned), loyalty, and homecoming.",
+    "categories": [
+      "literature",
+      "book"
+    ]
+  },
+  {
+    "q": [
+      "what is the biggest ocean in the world",
+      "biggest ocean",
+      "largest ocean on earth"
+    ],
+    "a": "The Pacific Ocean is the largest and deepest ocean, covering about 165 million square kilometers — roughly a third of Earth's surface and more than all the other oceans combined. It spans from the Arctic in the north to Antarctica in the south, bordered by Asia and Australia on the west and the Americas on the east. Its deepest point, the Mariana Trench's Challenger Deep, is nearly 11,000 meters below the surface. The Atlantic is the second-largest ocean, followed by the Indian, Southern, and Arctic oceans.",
+    "categories": [
+      "geography",
+      "ocean"
+    ]
+  },
+  {
+    "q": [
+      "how many bones does the human body have",
+      "number of bones in the human body",
+      "how many bones in a human"
+    ],
+    "a": "An adult human has 206 bones. Babies are born with about 270, but many fuse together as they grow — for example, the skull's plates and the sacrum. The largest bone is the femur (thigh bone), and the smallest is the stapes in the middle ear, about 3 millimeters long. The skeleton provides structure, protects organs, and works with muscles for movement; bone marrow produces blood cells.",
+    "categories": [
+      "biology",
+      "health"
+    ]
+  },
+  {
+    "q": [
+      "whats the highest mountain in africa",
+      "highest mountain in africa",
+      "tallest peak in africa"
+    ],
+    "a": "Mount Kilimanjaro in Tanzania is the highest mountain in Africa, standing 5,895 meters (19,341 feet) above sea level. It is a dormant stratovolcano with three volcanic cones: Kibo (the highest), Mawenzi, and Shira. Kilimanjaro is famous for its snow-capped peak near the equator, and it is the world's tallest free-standing mountain, rising from the plains below rather than from a mountain range. It attracts about 50,000 climbers per year, and the summit is reachable by non-technical hiking.",
+    "categories": [
+      "geography",
+      "mountain"
+    ]
+  },
+  {
+    "q": [
+      "why does the sun set in the west",
+      "why does the sun rise in the east",
+      "sun rises east sets west"
+    ],
+    "a": "The Sun rises in the east and sets in the west because Earth rotates on its axis from west to east (counterclockwise when viewed from above the North Pole). Since the Sun is essentially fixed in the sky relative to us, Earth's rotation makes the Sun appear to move across the sky from east to west once per day. This is an illusion of our rotation — the Sun isn't moving; we are. The same rotation causes day and night, with one full rotation taking about 24 hours.",
+    "categories": [
+      "astronomy",
+      "science"
+    ]
+  },
+  {
+    "q": [
+      "how do planes stay in the air",
+      "how do planes stay up",
+      "what keeps an airplane in the air"
+    ],
+    "a": "Airplanes stay in the air by generating lift from their wings. As the wing moves through the air, it deflects air downward, and by Newton's third law the air pushes the wing upward. The curved top surface makes air travel faster over the top (Bernoulli's principle), which also contributes lower pressure above the wing. The four forces are lift (up), weight (down), thrust (forward from engines), and drag (backward). At cruising speed, lift equals weight and thrust equals drag, so the plane maintains steady level flight.",
+    "categories": [
+      "physics",
+      "engineering"
+    ]
+  },
+  {
+    "q": [
+      "why is grass green",
+      "why is grass green?",
+      "what makes grass green"
+    ],
+    "a": "Grass is green because of chlorophyll, the pigment in plant cells that absorbs sunlight for photosynthesis. Chlorophyll absorbs red and blue light strongly but reflects green light, which is why we see green. Plants appear green precisely because they don't use the green wavelengths — they reflect them. In autumn, chlorophyll breaks down, revealing other pigments (carotenoids and anthocyanins) that produce yellow, orange, and red leaves.",
+    "categories": [
+      "biology",
+      "science"
+    ]
+  },
+  {
+    "q": [
+      "how is glass transparent",
+      "why is glass transparent",
+      "what makes glass see through"
+    ],
+    "a": "Glass is transparent because its electrons are arranged so that visible light photons don't have the right energy to be absorbed — the electrons' energy gaps are larger than visible-light photon energies. So light passes straight through without being absorbed or scattered. Glass is an amorphous solid: its molecules are randomly arranged rather than in a crystal lattice, which also prevents the scattering that would make it cloudy. Glass does absorb ultraviolet light (which is why you can't get sunburned through ordinary window glass) and is opaque to many infrared wavelengths.",
+    "categories": [
+      "science",
+      "physics"
+    ]
+  },
+  {
+    "q": [
+      "what is love",
+      "what is love meaning",
+      "define love"
+    ],
+    "a": "Love is a complex set of emotions, behaviors, and beliefs associated with strong feelings of affection, protectiveness, warmth, and respect for another person. Psychologists often describe love in terms of components: intimacy (closeness), passion, and commitment (Robert Sternberg's triangular theory of love). Neurologically, love involves the brain's reward system and hormones like oxytocin and dopamine. Love takes many forms — romantic love, familial love (storge), friendship (philia), selfless love (agape) — and has been a central theme of art, literature, and philosophy across all cultures for millennia.",
+    "categories": [
+      "psychology",
+      "concept"
+    ]
+  },
+  {
+    "q": [
+      "do you dream",
+      "do you have dreams",
+      "can you dream"
+    ],
+    "a": "I don't dream in the human sense — I'm a symbolic conversational engine that processes language through rules and knowledge retrieval, not a neural network, so I have no subconscious or sleep. But I can tell you about dreams: humans typically dream 4-6 times per night during REM sleep, and dreams are believed to help with memory consolidation and emotional processing.",
+    "categories": [
+      "chatbot",
+      "self"
+    ]
+  },
+  {
+    "q": [
+      "what makes thunder",
+      "what causes thunder",
+      "why does thunder happen"
+    ],
+    "a": "Thunder is the sound produced by lightning. When lightning strikes, it rapidly heats the surrounding air to about 30,000 degrees Celsius — five times hotter than the Sun's surface — causing the air to expand explosively. This sudden expansion creates a shock wave that we hear as thunder. Because light travels much faster than sound, you see the flash before you hear the thunder; counting the seconds between them (about 3 seconds per kilometer) estimates the distance to the strike.",
+    "categories": [
+      "weather",
+      "science"
+    ]
+  },
+  {
+    "q": [
+      "how does a microwave work",
+      "how do microwaves heat food",
+      "microwave oven explained"
+    ],
+    "a": "A microwave oven heats food using microwave radiation at about 2.45 GHz. A magnetron generates the microwaves, which are directed into the cooking chamber. Water molecules in food are polar — they have positive and negative ends — and the rapidly oscillating electric field makes them flip back and forth billions of times per second. This molecular friction generates heat throughout the food. Microwaves penetrate about 1-2 cm, so thicker foods cook from the outside in; the rotating turntable helps distribute the energy evenly. The metal mesh on the door reflects microwaves, keeping them inside.",
+    "categories": [
+      "technology",
+      "physics"
+    ]
+  }
+]

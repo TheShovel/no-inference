@@ -1,0 +1,87 @@
+[
+  {
+    "q": ["spain", "what is spain", "tell me about spain", "facts about spain", "about spain"],
+    "a": "Spain is a country in southwestern Europe on the Iberian Peninsula, bordering France, Portugal, and the Mediterranean Sea. Its capital and largest city is Madrid, and its official language is Spanish (Castilian). Spain's currency is the euro, and it is a constitutional monarchy with King Felipe VI as head of state. Spain is the fourth-largest country in Europe by area and has about 48 million people. It is famous for flamenco music and dance, bullfighting, paella, and landmarks like the Sagrada Familia in Barcelona and the Alhambra in Granada. It was a major global empire in the 16th-17th centuries, and Spanish is now spoken by over 500 million people worldwide.",
+    "categories": ["geography", "country"]
+  },
+  {
+    "q": ["italy", "what is italy", "tell me about italy", "facts about italy", "about italy"],
+    "a": "Italy is a country in southern Europe shaped like a boot, extending into the Mediterranean Sea. Its capital is Rome, which is also the seat of the Catholic Church's Vatican City. Italy's official language is Italian and its currency is the euro. With about 59 million people, Italy is famous for its food (pizza, pasta, gelato), art and architecture (the Colosseum, the Leaning Tower of Pisa, the canals of Venice), and fashion houses like Gucci and Prada. Italy was the heart of the Roman Empire and later the Renaissance, producing figures like Leonardo da Vinci and Michelangelo. It has more UNESCO World Heritage Sites than any other country.",
+    "categories": ["geography", "country"]
+  },
+  {
+    "q": ["germany", "what is germany", "tell me about germany", "facts about germany", "about germany"],
+    "a": "Germany is a country in central Europe, the most populous in the European Union with about 84 million people. Its capital and largest city is Berlin, and its official language is German. Germany uses the euro and is a federal parliamentary republic. It is Europe's largest economy and a global leader in engineering and manufacturing, famous for brands like Volkswagen, BMW, Mercedes-Benz, and Siemens. Germany is known for its castles (Neuschwanstein), the Autobahn, Oktoberfest, and its contributions to music, philosophy, and science — Bach, Beethoven, Kant, and Einstein were all German. After World War II it was divided into East and West, reunifying in 1990.",
+    "categories": ["geography", "country"]
+  },
+  {
+    "q": ["mexico", "what is mexico", "tell me about mexico", "facts about mexico", "about mexico"],
+    "a": "Mexico is a country in southern North America, bordering the United States to the north and Guatemala and Belize to the south. Its capital and largest city is Mexico City, one of the largest cities in the world. The official language is Spanish, though dozens of indigenous languages are also spoken, and the currency is the Mexican peso. Mexico has about 128 million people and is the most populous Spanish-speaking country. It is famous for its food (tacos, mole, tequila), ancient civilizations (the Aztecs and Maya, with sites like Chichén Itzá and Teotihuacán), vibrant Day of the Dead celebrations, and colorful arts including mariachi music and the murals of Diego Rivera.",
+    "categories": ["geography", "country"]
+  },
+  {
+    "q": ["china", "what is china", "tell me about china", "facts about china", "about china"],
+    "a": "China, officially the People's Republic of China, is a vast country in East Asia and the world's second-most populous nation with over 1.4 billion people. Its capital is Beijing, and its largest city is Shanghai. The official language is Mandarin Chinese, and the currency is the renminbi (yuan). China has the world's second-largest economy and is a global manufacturing powerhouse, home to the Great Wall, the Forbidden City, and the Terracotta Army. Chinese civilization is over 4,000 years old, with inventions including paper, printing, gunpowder, and the compass. China is a single-party state led by the Communist Party, with Xi Jinping as its current leader.",
+    "categories": ["geography", "country"]
+  },
+  {
+    "q": ["canada", "what is canada", "tell me about canada", "facts about canada", "about canada"],
+    "a": "Canada is the second-largest country in the world by area, occupying most of northern North America. Its capital is Ottawa, and its largest city is Toronto. Canada has two official languages, English and French, and about 40 million people. The currency is the Canadian dollar. Canada is known for its vast wilderness, lakes, and maple syrup, as well as its multicultural cities, universal healthcare, and politeness. It has ten provinces and three territories, with Quebec being the French-speaking heartland. The national animal is the beaver, and national sports are lacrosse and ice hockey — Canada won gold at the 2010 Olympics on home ice.",
+    "categories": ["geography", "country"]
+  },
+  {
+    "q": ["usa", "united states", "united states of america", "america", "what is the usa", "what is america", "tell me about the usa", "tell me about america", "facts about the united states", "about america"],
+    "a": "The United States of America is a country in North America composed of 50 states, with its federal capital in Washington, D.C. It is the world's third-most populous country with about 335 million people, and the largest economy. English is the most common language, and the currency is the U.S. dollar. The U.S. is a federal republic with a president as head of state and government. It was founded in 1776 after declaring independence from Britain, and expanded across the continent over the next century. The U.S. is known for its cultural influence — Hollywood, jazz, rock and roll, and tech giants like Apple and Google — and for landmarks such as the Statue of Liberty, the Grand Canyon, and the White House.",
+    "categories": ["geography", "country"]
+  },
+  {
+    "q": ["russia", "what is russia", "tell me about russia", "facts about russia", "about russia"],
+    "a": "Russia is the largest country in the world by area, spanning 11 time zones across Europe and Asia, with about 146 million people. Its capital and largest city is Moscow, and its official language is Russian. The currency is the ruble. Russia is a federal semi-presidential republic, currently led by President Vladimir Putin. It shares a land border with 14 countries, more than any other nation, and is rich in natural resources like oil, natural gas, and minerals. Russia is famous for its literature (Tolstoy, Dostoevsky), classical music (Tchaikovsky, Rachmaninoff), ballet, space exploration (Sputnik and Yuri Gagarin were first), and landmarks like the Kremlin, St. Basil's Cathedral, and Lake Baikal, the world's deepest lake.",
+    "categories": ["geography", "country"]
+  },
+  {
+    "q": ["egypt", "what is egypt", "tell me about egypt", "facts about egypt", "about egypt"],
+    "a": "Egypt is a country in northeastern Africa and the Middle East, bridging Africa and Asia via the Sinai Peninsula. Its capital and largest city is Cairo, and its official language is Arabic. The currency is the Egyptian pound. Egypt has about 110 million people, making it the most populous Arab country. Ancient Egypt was one of the world's great civilizations, famous for the pyramids of Giza, the Sphinx, and the pharaohs, with hieroglyphic writing developed over 5,000 years ago. The Nile River runs through the country and supports nearly all of its agriculture. Modern Egypt is known for the Suez Canal, a vital shipping route connecting the Mediterranean and Red Seas.",
+    "categories": ["geography", "country"]
+  },
+  {
+    "q": ["south korea", "korea", "what is south korea", "tell me about south korea", "facts about south korea", "about south korea"],
+    "a": "South Korea, officially the Republic of Korea, is a country in East Asia on the southern half of the Korean Peninsula. Its capital and largest city is Seoul, one of the world's most advanced megacities. The official language is Korean, and the currency is the won. South Korea has about 52 million people and is a high-tech democracy with the 13th-largest economy. It is the birthplace of K-pop (with groups like BTS), Korean dramas, and the global food craze for kimchi and Korean barbecue. Companies like Samsung and Hyundai are Korean. The country was divided from North Korea after the Korean War (1950-53), and the border at the Demilitarized Zone remains the world's most fortified.",
+    "categories": ["geography", "country"]
+  },
+  {
+    "q": ["united kingdom", "uk", "great britain", "britain", "what is the united kingdom", "tell me about the united kingdom", "facts about the uk", "about the uk"],
+    "a": "The United Kingdom is an island nation in northwestern Europe, made up of four countries: England, Scotland, Wales, and Northern Ireland. Its capital is London, one of the world's great financial and cultural centers. The currency is the pound sterling, and the UK is a constitutional monarchy with King Charles III as head of state. With about 68 million people, the UK is famous for the Industrial Revolution, the English language's global spread, Shakespeare, The Beatles, and institutions like the BBC and the Royal Family. The UK was the center of the largest empire in history, and its former colonies now form the Commonwealth of Nations. Scotland and Wales have their own devolved parliaments.",
+    "categories": ["geography", "country"]
+  },
+  {
+    "q": ["turkey", "what is turkey", "tell me about turkey", "facts about turkey", "about turkey"],
+    "a": "Turkey is a transcontinental country straddling Europe and Asia, with its largest city, Istanbul, spanning both continents across the Bosphorus Strait. Its capital is Ankara, and the official language is Turkish. The currency is the Turkish lira, and Turkey has about 85 million people. Modern Turkey was founded in 1923 by Mustafa Kemal Atatürk from the ruins of the Ottoman Empire, which had ruled a vast region for over 600 years. Turkey is famous for its cuisine (kebabs, baklava, Turkish delight), the hot-air balloon flights over Cappadocia, ancient sites like Ephesus and Troy, and the Blue Mosque and Hagia Sophia in Istanbul. It is a NATO member and a candidate for EU membership.",
+    "categories": ["geography", "country"]
+  },
+  {
+    "q": ["greece", "what is greece", "tell me about greece", "facts about greece", "about greece"],
+    "a": "Greece is a country in southeastern Europe at the crossroads of Europe, Asia, and Africa, with a long coastline along the Mediterranean, Aegean, and Ionian Seas. Its capital and largest city is Athens, and the official language is Greek. The currency is the euro, and Greece has about 10 million people. Ancient Greece is called the cradle of Western civilization — it gave the world democracy, philosophy (Socrates, Plato, Aristotle), the Olympic Games, and foundational works of literature and science. Greece has thousands of islands, the most famous being Santorini, Crete, and Mykonos. The country's debt crisis in the 2010s reshaped its economy, but tourism and shipping remain pillars, and it has one of the world's largest merchant fleets.",
+    "categories": ["geography", "country"]
+  },
+  {
+    "q": ["switzerland", "what is switzerland", "tell me about switzerland", "facts about switzerland", "about switzerland"],
+    "a": "Switzerland is a landlocked country in central Europe, famous for its Alps, neutrality, and high quality of life. Its capital is Bern, and its largest city is Zurich. Switzerland has four national languages — German, French, Italian, and Romansh — and about 8.7 million people. The currency is the Swiss franc. Switzerland is known for banking and watches (Rolex, Omega), chocolate and cheese (fondue, raclette), and its red-crossed flag. It has maintained armed neutrality since 1815, hosts many international organizations including the Red Cross and the UN's European headquarters in Geneva, and consistently ranks among the most innovative and richest countries per capita in the world.",
+    "categories": ["geography", "country"]
+  },
+  {
+    "q": ["sweden", "what is sweden", "tell me about sweden", "facts about sweden", "about sweden"],
+    "a": "Sweden is a Nordic country in Northern Europe on the Scandinavian Peninsula. Its capital and largest city is Stockholm, built across 14 islands. The official language is Swedish, and the currency is the Swedish krona. Sweden has about 10.5 million people and is a constitutional monarchy with a strong social welfare system. It is famous for its flat-pack furniture giant IKEA, the music streaming service Spotify, the Nobel Prizes (awarded in Stockholm), and cultural exports like ABBA and Stieg Larsson's crime novels. Sweden is known for its forests, lakes, the northern lights, and the concept of fika (a coffee break with pastries). It has remained outside NATO for most of its modern history but applied to join in 2022.",
+    "categories": ["geography", "country"]
+  },
+  {
+    "q": ["argentina", "what is argentina", "tell me about argentina", "facts about argentina", "about argentina"],
+    "a": "Argentina is the second-largest country in South America, stretching from the subtropics in the north to Patagonia in the south. Its capital and largest city is Buenos Aires, and the official language is Spanish. The currency is the Argentine peso, and Argentina has about 46 million people. It is famous for tango music and dance, beef and asado barbecue, and the wines of Mendoza. Football is a national passion — Diego Maradona and Lionel Messi both hail from Argentina, and the national team won the 2022 World Cup. The country is also home to the dramatic Iguazú Falls, the Perito Moreno glacier, and the peaks of the Andes along its western border with Chile.",
+    "categories": ["geography", "country"]
+  },
+  {
+    "q": ["portugal", "what is portugal", "tell me about portugal", "facts about portugal", "about portugal"],
+    "a": "Portugal is the westernmost country of mainland Europe, on the Iberian Peninsula, with a long Atlantic coastline. Its capital and largest city is Lisbon, and the official language is Portuguese — now spoken by over 250 million people worldwide, mainly in Brazil and Africa. The currency is the euro, and Portugal has about 10 million people. In the 15th-16th centuries, Portugal led the Age of Discovery, with explorers like Vasco da Gama reaching India and Magellan's fleet circumnavigating the globe. Today Portugal is known for port wine, pastel de nata custard tarts, fado music, the Algarve beaches, and the historic universities of Coimbra. It was one of the first countries to legalize same-sex marriage and decriminalize drugs.",
+    "categories": ["geography", "country"]
+  }
+]

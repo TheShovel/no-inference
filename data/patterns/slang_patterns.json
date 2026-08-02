@@ -418,6 +418,17 @@
       "Appreciate the kind words! Ask me anything else anytime."
     ]
   },
+  "please_ack": {
+    "patterns": [
+      "^please\\s*$", "^please\\?\\s*$", "^pls\\s*$", "^plz\\s*$", "^please do\\s*$", "^yes please\\s*$"
+    ],
+    "response": [
+      "Of course! What would you like me to do?",
+      "Sure thing — just tell me what you need!",
+      "Absolutely! What can I help you with?",
+      "You got it! What's the request?"
+    ]
+  },
   "help_exclamation": {
     "patterns": [
       "^help\\s*$", "^help!\\s*$", "^help please\\s*$", "^pls help\\s*$", "^plz help\\s*$",
@@ -799,7 +810,8 @@
     "patterns": [
       "^lorem ipsum\\s*$", "^lorem ipsum dolor\\s*$", "^lorem ipsum dolor sit amet\\s*$", "^test test\\s*$", "^test test test\\s*$",
       "^testing testing\\s*$", "^test123\\s*$", "^hello world test\\s*$", "^asdfghjkl qwerty\\s*$",
-      "^placeholder\\s*$", "^sample text\\s*$", "^random text\\s*$", "^blah blah\\s*$", "^blah blah blah\\s*$",
+      "^asdfghjkl\\s*$", "^qwerty\\s*$", "^qwertyuiop\\s*$", "^abc123\\s*$", "^abc123xyz\\s*$",
+      "^abcdefghijklmnop\\s*$", "^placeholder\\s*$", "^sample text\\s*$", "^random text\\s*$", "^blah blah\\s*$", "^blah blah blah\\s*$",
       "^la la la\\s*$", "^doot doot\\s*$", "^beep boop\\s*$", "^beep boop beep\\s*$", "^01010101\\s*$", "^10101010\\s*$"
     ],
     "response": [

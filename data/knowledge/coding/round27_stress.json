@@ -1,0 +1,102 @@
+[
+  {
+    "q": [
+      "how do i reverse an array in javascript",
+      "reverse array javascript",
+      "reverse an array in js"
+    ],
+    "a": "Array.prototype.reverse() reverses an array in place (it mutates the original) and returns the same array. To avoid mutating, copy first with slice() or the spread operator, then reverse. For strings, convert to an array with split(''), reverse, then join('').",
+    "code": "const arr = [1, 2, 3, 4];\n\n// In place (mutates arr)\narr.reverse();\nconsole.log(arr);          // [4, 3, 2, 1]\n\n// Without mutating the original\nconst copy = [1, 2, 3, 4].slice().reverse();\n// or: const copy = [...arr].reverse();\n\n// Reverse a string\nconst s = 'hello';\nconst reversed = s.split('').reverse().join('');\nconsole.log(reversed);     // 'olleh'",
+    "lang": "javascript"
+  },
+  {
+    "q": [
+      "how to read user input in python",
+      "python user input",
+      "python input function"
+    ],
+    "a": "Use the built-in input() function to read a line of text from the user. It returns a string, so convert with int() or float() for numbers. For secure password entry or yes/no prompts, use getpass and libraries like questionary; for complex command-line interfaces use argparse or click.",
+    "code": "name = input('What is your name? ')\nprint('Hello', name)\n\nage = int(input('How old are you? '))  # convert to int\n\n# Loop until valid input\nwhile True:\n    try:\n        n = int(input('Enter a number: '))\n        break\n    except ValueError:\n        print('Not a valid number')\nprint('You entered', n)",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "make a function that returns the length of a string",
+      "python function length of string",
+      "how to get the length of a string in python"
+    ],
+    "a": "Use the built-in len() function to get the number of characters in a string. If you need a function wrapper, define one that calls len().",
+    "code": "s = 'hello'\nprint(len(s))   # 5\n\n# As a function\ndef string_length(text):\n    return len(text)\n\nprint(string_length('hello'))  # 5\n\n# Without len() (loop version)\ndef my_len(text):\n    count = 0\n    for _ in text:\n        count += 1\n    return count",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "what does this do in python: [x*2 for x in range(5)]",
+      "explain list comprehension [x*2 for x in range(5)]",
+      "what does list comprehension do"
+    ],
+    "a": "The expression [x*2 for x in range(5)] is a list comprehension that builds a list by applying x*2 to each x in range(5) (0, 1, 2, 3, 4). The result is [0, 2, 4, 6, 8]. A list comprehension is a concise way to transform and filter sequences: [expression for item in iterable if condition].",
+    "code": "result = [x * 2 for x in range(5)]\nprint(result)   # [0, 2, 4, 6, 8]\n\n# Equivalent loop:\nresult = []\nfor x in range(5):\n    result.append(x * 2)\n\n# With a condition: squares of even numbers 0-9\nprint([x * x for x in range(10) if x % 2 == 0])  # [0, 4, 16, 36, 64]",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "how to catch errors in javascript",
+      "javascript catch errors",
+      "javascript try catch example"
+    ],
+    "a": "Use try/catch/finally to handle runtime errors in JavaScript. Wrap risky code in try, handle the error in catch (the error object is passed in), and use finally for cleanup that always runs. You can also catch only specific conditions by rethrowing others, and use throw to raise your own errors.",
+    "code": "try {\n  const data = JSON.parse(maybeInvalidJson);\n  console.log(data.name);\n} catch (err) {\n  console.error('Failed to parse:', err.message);\n} finally {\n  console.log('always runs');\n}\n\n// Throwing your own error\nfunction divide(a, b) {\n  if (b === 0) throw new Error('division by zero');\n  return a / b;\n}",
+    "lang": "javascript"
+  },
+  {
+    "q": [
+      "sql how to count rows in a table",
+      "count rows in sql",
+      "sql count function"
+    ],
+    "a": "Use COUNT(*) to count all rows in a table or COUNT(column) to count non-NULL values in a column. COUNT(DISTINCT column) counts unique values. Combine with WHERE to count matching rows and GROUP BY to count per group.",
+    "code": "SELECT COUNT(*) FROM users;                -- total rows\nSELECT COUNT(*) FROM users WHERE active = 1;  -- matching rows\nSELECT COUNT(email) FROM users;            -- non-null emails\nSELECT COUNT(DISTINCT country) FROM users; -- unique countries\n\n-- Per group\nSELECT country, COUNT(*) AS n\nFROM users\nGROUP BY country\nORDER BY n DESC;",
+    "lang": "sql"
+  },
+  {
+    "q": [
+      "what is the difference between a list and an array in python",
+      "list vs array python",
+      "python array module"
+    ],
+    "a": "In Python, a list is the built-in, flexible sequence that can hold mixed types and grows dynamically — it's what most people mean by 'array'. The array module provides typed arrays (array('i', [1,2,3])) that store homogeneous numeric values compactly, and NumPy's ndarray offers fast, vectorized numeric operations. For everyday use, use lists; for heavy numerical work, use NumPy arrays.",
+    "code": "from array import array\nimport numpy as np\n\nlst = [1, 2, 'three', 4.0]        # list: mixed types OK\n\narr = array('i', [1, 2, 3, 4])    # typed array: ints only\n\nnarr = np.array([1, 2, 3, 4])     # NumPy array\nprint(narr * 2)                    # [2 4 6 8] — vectorized",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "how to sleep in python",
+      "python sleep",
+      "time.sleep example"
+    ],
+    "a": "Use time.sleep(seconds) to pause execution. It accepts fractions (0.5 for half a second). For async code, use asyncio.sleep().",
+    "code": "import time\n\nprint('start')\ntime.sleep(1.5)     # pause 1.5 seconds\nprint('after')\n\n# In a loop\nfor i in range(3):\n    print(i)\n    time.sleep(0.2)",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "what is a promise in js vs a callback",
+      "promise vs callback",
+      "callbacks vs promises"
+    ],
+    "a": "Both handle asynchronous operations, but they differ in structure. A callback is a function passed into an async operation to run when it finishes — nesting many callbacks creates 'callback hell'. A Promise is an object representing a future value with .then()/.catch() chains that compose cleanly, avoid deep nesting, and handle errors centrally. async/await is modern syntactic sugar over promises that reads like synchronous code. Callbacks predate promises; promises (and async/await) are the modern standard.",
+    "code": "// Callback style (nesting grows)\ngetUser(id, (user) => {\n  getPosts(user.id, (posts) => {\n    console.log(posts);\n  });\n});\n\n// Promise style (flat chain)\ngetUser(id)\n  .then((user) => getPosts(user.id))\n  .then((posts) => console.log(posts))\n  .catch((err) => console.error(err));\n\n// async/await\nasync function load() {\n  try {\n    const user = await getUser(id);\n    const posts = await getPosts(user.id);\n    console.log(posts);\n  } catch (err) {\n    console.error(err);\n  }\n}",
+    "lang": "javascript"
+  },
+  {
+    "q": [
+      "write a loop that prints numbers 1 to 10",
+      "python loop print 1 to 10",
+      "for loop numbers 1 to 10"
+    ],
+    "a": "Use range(1, 11) — range's stop value is exclusive, so range(1, 11) yields 1 through 10. A while loop also works.",
+    "code": "for i in range(1, 11):\n    print(i)\n\n# While loop equivalent\nn = 1\nwhile n <= 10:\n    print(n)\n    n += 1",
+    "lang": "python"
+  }
+]

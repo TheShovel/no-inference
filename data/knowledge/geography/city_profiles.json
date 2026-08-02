@@ -1,0 +1,137 @@
+[
+  {
+    "q": ["paris", "what is paris", "tell me about paris", "facts about paris", "about paris"],
+    "a": "Paris is the capital and largest city of France, situated on the Seine River in north-central France. The city proper has about 2.1 million people, while the greater metropolitan area has about 11 million. Paris is known as the 'City of Light' and is one of the world's major cultural, fashion, and culinary centers. Its most famous landmarks include the Eiffel Tower, the Louvre Museum (home of the Mona Lisa), Notre-Dame Cathedral, the Champs-Élysées, and the Arc de Triomphe. The city is divided into 20 arrondissements spiraling out from the center. Paris hosts major fashion houses (Chanel, Dior, Louis Vuitton) and was the birthplace of the 1889 World's Fair.",
+    "categories": ["geography", "city", "france"]
+  },
+  {
+    "q": ["london", "what is london", "tell me about london", "facts about london", "about london"],
+    "a": "London is the capital and largest city of the United Kingdom and England, lying on the River Thames in southeastern England. It has about 9 million people in the city and about 14 million in the greater metropolitan area, making it one of Europe's largest cities. London is a global financial center — the City of London and Canary Wharf house major banks — and a cultural hub with landmarks including Big Ben (the Elizabeth Tower), Buckingham Palace, the Tower of London, the London Eye, and the British Museum. It has been a major settlement for nearly 2,000 years, founded by the Romans as Londinium. London hosted the Olympics in 1908, 1948, and 2012.",
+    "categories": ["geography", "city", "united kingdom"]
+  },
+  {
+    "q": ["new york", "new york city", "nyc", "what is new york city", "tell me about new york", "facts about new york city", "about new york"],
+    "a": "New York City is the most populous city in the United States, with about 8.5 million people in the five boroughs — Manhattan, Brooklyn, Queens, the Bronx, and Staten Island — and over 20 million in the metropolitan area. Located at the mouth of the Hudson River, NYC is a global center for finance (Wall Street), media, arts, and fashion. Landmarks include the Statue of Liberty, Times Square, Central Park, the Empire State Building, and the 9/11 Memorial. The city's nickname is the Big Apple, and it is famously diverse, with over 800 languages spoken. New York was the U.S. capital from 1789 to 1790, and the UN headquarters is located there.",
+    "categories": ["geography", "city", "usa"]
+  },
+  {
+    "q": ["tokyo", "what is tokyo", "tell me about tokyo", "facts about tokyo", "about tokyo"],
+    "a": "Tokyo is the capital of Japan and the world's most populous metropolitan area, with about 37 million people in the greater Tokyo area (Tokyo prefecture proper has about 14 million). It is a global center for technology, finance, and pop culture, known for districts like Shibuya (with its famous crossing), Akihabara (electronics), Ginza (shopping), and the historic Asakusa with Sensō-ji temple. Tokyo was formerly called Edo until 1868, when it became the imperial capital. The city has more Michelin-starred restaurants than any other city and hosted the 1964 and 2020 (held in 2021) Summer Olympics.",
+    "categories": ["geography", "city", "japan"]
+  },
+  {
+    "q": ["rome", "what is rome", "tell me about rome", "facts about rome", "about rome"],
+    "a": "Rome is the capital of Italy and the seat of the Roman Catholic Church, which governs the independent Vatican City within its borders. The city has about 2.8 million people and is called the 'Eternal City' for its nearly 3,000 years of continuous history. Rome was the center of the Roman Empire, and its ancient ruins — the Colosseum, the Roman Forum, and the Pantheon — draw millions of visitors. Other landmarks include the Trevi Fountain, the Spanish Steps, and the Vatican's St. Peter's Basilica. Rome is one of the most visited cities in the world, and its historic center is a UNESCO World Heritage Site.",
+    "categories": ["geography", "city", "italy"]
+  },
+  {
+    "q": ["sydney", "what is sydney", "tell me about sydney", "facts about sydney", "about sydney"],
+    "a": "Sydney is the largest city in Australia, capital of the state of New South Wales, with about 5.3 million people in its metropolitan area. It is Australia's oldest city, founded in 1788 as a British penal colony, and is built around one of the world's finest natural harbors, Sydney Harbour. Iconic landmarks include the Sydney Opera House, with its distinctive sail-like design, and the Sydney Harbour Bridge, nicknamed the 'Coathanger'. Sydney is famous for its beaches — Bondi and Manly — and hosted the 2000 Summer Olympics. The city's economy is strong in finance, technology, and tourism, and its climate is subtropical.",
+    "categories": ["geography", "city", "australia"]
+  },
+  {
+    "q": ["berlin", "what is berlin", "tell me about berlin", "facts about berlin", "about berlin"],
+    "a": "Berlin is the capital and largest city of Germany, with about 3.7 million people. It is known for its turbulent 20th-century history: it was divided by the Berlin Wall from 1961 to 1989, splitting East and West, and the city reunified in 1990. Landmarks include the Brandenburg Gate, the Reichstag building (home of the German parliament), the Berlin Wall Memorial and East Side Gallery, and Museum Island. Berlin has a famously vibrant arts scene, techno culture, and nightlife, and it is more affordable than many other Western European capitals. The city also hosts one of the world's largest open-air events, the Love Parade predecessor, and its annual Berlin Marathon.",
+    "categories": ["geography", "city", "germany"]
+  },
+  {
+    "q": ["moscow", "what is moscow", "tell me about moscow", "facts about moscow", "about moscow"],
+    "a": "Moscow is the capital and largest city of Russia, with about 13 million people, making it one of the largest cities in Europe. It lies on the Moskva River and is the political, economic, and cultural heart of Russia. Landmarks include the Kremlin (the seat of government), Red Square, St. Basil's Cathedral with its onion domes, the Bolshoi Theatre, and the Moscow Metro, famous for its ornate stations. Moscow was founded in 1147 and became the capital of the Russian state in the 14th century. The city is home to the Tretyakov Gallery, the world's deepest metro system stations, and a growing tech sector.",
+    "categories": ["geography", "city", "russia"]
+  },
+  {
+    "q": ["cairo", "what is cairo", "tell me about cairo", "facts about cairo", "about cairo"],
+    "a": "Cairo is the capital and largest city of Egypt, with about 10 million people in the city and over 21 million in the greater metropolitan area, making it the largest city in Africa and the Arab world. It lies on the Nile River, near the ancient site of Memphis and the Giza pyramid complex — the Pyramids of Giza and the Great Sphinx are on Cairo's outskirts. Cairo is known as 'the City of a Thousand Minarets' for its many mosques, including the Al-Azhar Mosque and the Citadel of Saladin. The Egyptian Museum holds the treasures of Tutankhamun, and the city's medieval Islamic district is a UNESCO World Heritage Site.",
+    "categories": ["geography", "city", "egypt"]
+  },
+  {
+    "q": ["rio de janeiro", "rio", "what is rio de janeiro", "tell me about rio", "facts about rio de janeiro", "about rio"],
+    "a": "Rio de Janeiro is the second-largest city in Brazil, with about 6.7 million people in the city and 13 million in the metropolitan area. It was Brazil's capital until 1960, when Brasília took over. Rio is famous for its stunning natural setting between mountains and ocean — Christ the Redeemer statue atop Corcovado mountain, Sugarloaf Mountain, and the beaches of Copacabana and Ipanema. The city hosts the world-famous Carnival with samba parades, and the Maracanã stadium is one of football's most storied venues — Rio hosted the 2016 Summer Olympics and the 2014 World Cup final. The city's nickname is 'Cidade Maravilhosa' (Marvelous City).",
+    "categories": ["geography", "city", "brazil"]
+  },
+  {
+    "q": ["delhi", "new delhi", "what is delhi", "tell me about delhi", "facts about delhi", "about delhi"],
+    "a": "Delhi is the capital of India, officially the National Capital Territory of Delhi, with about 20 million people in the city and over 30 million in the metro region, making it one of the world's largest urban areas. New Delhi, the purpose-built central district designed by Edwin Lutyens in the 1930s, houses the Indian government including the Rashtrapati Bhavan and Parliament House. Delhi has been a political center for over a thousand years, home to the Red Fort, Qutub Minar, and Humayun's Tomb — all UNESCO sites. Old Delhi's Chandni Chowk market is famous, and the city's food culture, including parathas and chaat, is legendary. Delhi hosted the 2010 Commonwealth Games.",
+    "categories": ["geography", "city", "india"]
+  },
+  {
+    "q": ["istanbul", "what is istanbul", "tell me about istanbul", "facts about istanbul", "about istanbul"],
+    "a": "Istanbul is the largest city in Turkey, with about 16 million people, and the only major city in the world that lies on two continents — Europe and Asia — separated by the Bosphorus Strait. It was known as Byzantium, then Constantinople, and served as the capital of the Byzantine and Ottoman empires for 1,600 years before Ankara became the capital of modern Turkey in 1923. Landmarks include the Hagia Sophia (a former church and mosque, now a mosque), the Blue Mosque, Topkapi Palace, and the Grand Bazaar, one of the world's oldest and largest covered markets. Istanbul's skyline is dotted with minarets, and the city is a major cultural and economic hub.",
+    "categories": ["geography", "city", "turkey"]
+  },
+  {
+    "q": ["barcelona", "what is barcelona", "tell me about barcelona", "facts about barcelona", "about barcelona"],
+    "a": "Barcelona is the second-largest city in Spain and the capital of the Catalonia region, with about 1.6 million people in the city and 5.5 million in the metropolitan area. It lies on the Mediterranean coast in northeastern Spain. Barcelona is world-famous for the architecture of Antoni Gaudí, including the still-unfinished Sagrada Família basilica, Park Güell, and Casa Batlló. The city is known for its beaches, tapas culture, FC Barcelona football club, and the lively Las Ramblas boulevard. Its Gothic Quarter dates back to Roman times, and the city hosted the 1992 Summer Olympics, which transformed its waterfront.",
+    "categories": ["geography", "city", "spain"]
+  },
+  {
+    "q": ["vienna", "what is vienna", "tell me about vienna", "facts about vienna", "about vienna"],
+    "a": "Vienna is the capital and largest city of Austria, with about 2 million people, located on the Danube River. It is consistently ranked among the most livable cities in the world. Vienna was the capital of the Habsburg Empire and the Austro-Hungarian Empire, leaving a legacy of grand palaces — Schönbrunn Palace and the Hofburg — and coffeehouse culture, which is a UNESCO intangible heritage. The city was the musical center of Europe, home to Mozart, Beethoven, Brahms, and Strauss, and it hosts the Vienna Philharmonic's famous New Year's Concert. Vienna has a strong cafe culture, and the 19th-century Ringstrasse boulevard circles the historic center.",
+    "categories": ["geography", "city", "austria"]
+  },
+  {
+    "q": ["amsterdam", "what is amsterdam", "tell me about amsterdam", "facts about amsterdam", "about amsterdam"],
+    "a": "Amsterdam is the capital of the Netherlands and its largest city, with about 900,000 people in the city and 2.5 million in the metropolitan area. It is famous for its canal ring (a UNESCO World Heritage Site), gabled canal houses, and thousands of bicycles — there are more bikes than people. The city is the home of the Rijksmuseum, the Van Gogh Museum, and the Anne Frank House. Amsterdam's official name is Amsterdam, but the government and parliament actually sit in The Hague. The city was a major trading hub in the Dutch Golden Age of the 17th century and is known for its tolerant, liberal culture, canals, and the red-light district.",
+    "categories": ["geography", "city", "netherlands"]
+  },
+  {
+    "q": ["prague", "what is prague", "tell me about prague", "facts about prague", "about prague"],
+    "a": "Prague is the capital and largest city of the Czech Republic, with about 1.3 million people. It lies on the Vltava River and is nicknamed 'the City of a Hundred Spires' for its many church towers. Prague's historic center is a UNESCO World Heritage Site, with the Old Town Square, the Astronomical Clock (the oldest working one of its kind), Charles Bridge with its statues, and Prague Castle, the largest ancient castle complex in the world. The city was the capital of the Kingdom of Bohemia and later a major center of the Holy Roman Empire. Prague is famous for its Gothic, Renaissance, and Baroque architecture, beer culture, and literary history — Kafka lived there.",
+    "categories": ["geography", "city", "czech republic"]
+  },
+  {
+    "q": ["seoul", "what is seoul", "tell me about seoul", "facts about seoul", "about seoul"],
+    "a": "Seoul is the capital and largest city of South Korea, with about 9.5 million people in the city and 26 million in the greater metropolitan area, making it one of the world's largest urban agglomerations. Seoul is a hyper-modern city that blends skyscrapers with ancient palaces — Gyeongbokgung, Changdeokgung — and temples like Jogyesa. It is a global tech hub, home to Samsung and LG headquarters, and the birthplace of K-pop and Korean entertainment. The city sits on the Han River, has one of the world's best metro systems, and its Dongdaemun and Myeongdong districts are famous for shopping and street food. Seoul hosted the 1988 Summer Olympics and the 2018 Winter Olympics (with Pyeongchang).",
+    "categories": ["geography", "city", "south korea"]
+  },
+  {
+    "q": ["dubai", "what is dubai", "tell me about dubai", "facts about dubai", "about dubai"],
+    "a": "Dubai is the largest city in the United Arab Emirates and one of the fastest-growing cities in the world, with about 3.6 million people — over 85% of them expatriates. It is famous for record-breaking architecture, including the Burj Khalifa (the world's tallest building), the Palm Jumeirah artificial islands, and the Dubai Mall. Dubai sits on the Persian Gulf and transformed from a small pearling and trading port into a global business and tourism hub, with its economy diversifying beyond oil into aviation, real estate, and finance. The city is known for luxury shopping, desert safaris, the Dubai Fountain, and its year-round sunshine, with summer temperatures exceeding 40°C. It hosted Expo 2020.",
+    "categories": ["geography", "city", "united arab emirates"]
+  },
+  {
+    "q": ["bangkok", "what is bangkok", "tell me about bangkok", "facts about bangkok", "about bangkok"],
+    "a": "Bangkok is the capital and largest city of Thailand, with about 11 million people in the city and over 15 million in the metropolitan area. It is one of the world's most visited cities, known for its ornate temples — the Grand Palace, Wat Pho (home of the Reclining Buddha), and Wat Arun — and its vibrant street food culture. Bangkok sits on the Chao Phraya River and has long been a center of trade in Southeast Asia. The city's official Thai name is the longest place name in the world. Bangkok's traffic is legendary, but its Skytrain (BTS) and metro provide alternatives. It blends traditional markets with modern malls and a famous nightlife scene.",
+    "categories": ["geography", "city", "thailand"]
+  },
+  {
+    "q": ["singapore", "what is singapore", "tell me about singapore", "facts about singapore", "about singapore"],
+    "a": "Singapore is a city-state and island nation in Southeast Asia at the southern tip of the Malay Peninsula, with about 5.9 million people. It became independent in 1965 and transformed from a trading port into one of the world's wealthiest nations per capita, with a major financial center and one of the busiest ports on Earth. Singapore is known for its cleanliness, strict laws (chewing gum is banned), multicultural population (Chinese, Malay, Indian, and Eurasian), and landmarks like Marina Bay Sands, the Gardens by the Bay supertrees, and the Merlion statue. It is one of the world's greenest cities, with vertical gardens integrated into architecture, and consistently ranks high in quality-of-life surveys.",
+    "categories": ["geography", "city", "singapore"]
+  },
+  {
+    "q": ["madrid", "what is madrid", "tell me about madrid", "facts about madrid", "about madrid"],
+    "a": "Madrid is the capital and largest city of Spain, with about 3.3 million people in the city and 6.8 million in the metropolitan area. It lies on the Manzanares River in the center of the Iberian Peninsula, making it one of Europe's highest capitals at about 650 meters above sea level. Madrid is famous for its art museums — the Prado (home to works by Velázquez and Goya), the Reina Sofía (Picasso's Guernica), and the Thyssen-Bornemisza — which together form the 'Golden Triangle of Art'. The Royal Palace, the Retiro Park, and the Plaza Mayor are major landmarks. Madrid is known for its nightlife, tapas, and the Real Madrid football club, whose Santiago Bernabéu stadium is in the city.",
+    "categories": ["geography", "city", "spain"]
+  },
+  {
+    "q": ["hong kong", "what is hong kong", "tell me about hong kong", "facts about hong kong", "about hong kong"],
+    "a": "Hong Kong is a Special Administrative Region of China on the south coast of the country, with about 7.5 million people in one of the world's densest urban areas. It was a British colony for 156 years until it was handed back to China in 1997 under the 'one country, two systems' principle, which promised it a separate legal system and way of life for 50 years. Hong Kong is a global financial center — its stock exchange is among the world's largest — with a famously free economy and one of the world's lowest tax rates. The city is known for its skyline, Victoria Harbour, the Peak, dim sum, and the Star Ferry. It has its own currency (the Hong Kong dollar) and its own customs and immigration controls.",
+    "categories": ["geography", "city", "hong kong"]
+  },
+  {
+    "q": ["toronto", "what is toronto", "tell me about toronto", "facts about toronto", "about toronto"],
+    "a": "Toronto is the largest city in Canada and the capital of the province of Ontario, with about 2.9 million people in the city and 6.2 million in the greater metropolitan area. It is Canada's financial and cultural hub, and one of the most multicultural cities in the world — more than half its residents were born outside Canada, and over 200 languages are spoken. Landmarks include the CN Tower (553 meters, the tallest free-standing structure in the Western Hemisphere), the Royal Ontario Museum, and the Distillery District. Toronto is home to the Toronto International Film Festival (TIFF), the Raptors (who won the NBA title in 2019), and the Maple Leafs. Lake Ontario borders the city, and the nearby Niagara Falls is a short drive away.",
+    "categories": ["geography", "city", "canada"]
+  },
+  {
+    "q": ["los angeles", "la", "what is los angeles", "tell me about los angeles", "facts about los angeles", "about la"],
+    "a": "Los Angeles is the second-largest city in the United States, with about 3.9 million people in the city and over 13 million in the metropolitan area, making it one of the largest urban regions in the world. It is the entertainment capital of the world — Hollywood, the film and television industry, the Oscars, and the Walk of Fame are all in LA. The city is known for its beaches (Santa Monica, Venice), the Griffith Observatory, the Getty Center, and its sprawling, car-centric layout with freeways. LA has a Mediterranean climate with year-round sunshine. It is a major center for technology, aerospace, and international trade, with the ports of LA and Long Beach being the busiest in the United States. It hosted the Olympics in 1932, 1984, and will again in 2028.",
+    "categories": ["geography", "city", "usa"]
+  },
+  {
+    "q": ["sao paulo", "são paulo", "what is sao paulo", "tell me about sao paulo", "facts about sao paulo", "about sao paulo"],
+    "a": "São Paulo is the largest city in Brazil and the largest in the Southern Hemisphere, with about 12.3 million people in the city and over 21 million in the metropolitan area. It is Brazil's financial and economic engine, producing about a third of the country's GDP, and a major global center for finance, technology, and culture. The city is known for its huge Italian, Japanese, and Lebanese immigrant communities — it has the largest Japanese population outside Japan — and for its skyline of skyscrapers, the São Paulo Museum of Art (MASP), and the world's largest street party, Carnival. Paulistas (residents) are famous for their love of coffee, since the state of São Paulo was Brazil's coffee heartland. The city has no beaches — they are 70 km away at Santos.",
+    "categories": ["geography", "city", "brazil"]
+  },
+  {
+    "q": ["mumbai", "bombay", "what is mumbai", "tell me about mumbai", "facts about mumbai", "about mumbai"],
+    "a": "Mumbai is the capital of the Indian state of Maharashtra and India's largest city and financial center, with about 20 million people in the city and over 23 million in the metro region. It is India's wealthiest city, home to the Bombay Stock Exchange (Asia's oldest), the Reserve Bank of India, and the headquarters of major companies and Bollywood — the world's largest film industry by number of films produced. Mumbai is built on a series of islands, and landmarks include the Gateway of India, the Chhatrapati Shivaji Maharaj Terminus (a UNESCO World Heritage railway station), Marine Drive, and the Bandra-Worli Sea Link. The city's local train network carries over 7 million passengers daily, among the busiest in the world.",
+    "categories": ["geography", "city", "india"]
+  },
+  {
+    "q": ["mexico city", "what is mexico city", "tell me about mexico city", "facts about mexico city", "about mexico city"],
+    "a": "Mexico City is the capital and largest city of Mexico, with about 9.2 million people in the city and over 21 million in the metropolitan area, making it one of the largest cities in the world. It was built on the ruins of Tenochtitlan, the Aztec capital, and is the oldest continuously inhabited capital city in the Americas. Mexico City sits at 2,240 meters (7,350 feet) above sea level, making it one of the highest major cities on Earth. Landmarks include the Zócalo (main square), the Metropolitan Cathedral, the Palacio de Bellas Artes, and the nearby ruins of Teotihuacan. The city has more museums than any other city in the world and a famous food scene centered on tacos and street food. It hosted the Olympics in 1968.",
+    "categories": ["geography", "city", "mexico"]
+  }
+]

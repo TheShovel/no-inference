@@ -1,0 +1,194 @@
+[
+  {
+    "q": [
+      "what is a database index",
+      "database index",
+      "what is an index in a database",
+      "what are database indexes",
+      "how do database indexes work"
+    ],
+    "a": "A database index is a data structure that speeds up data retrieval — like the index at the back of a book. Without an index, the database must scan every row of a table to find matching data (a full table scan). An index stores a sorted copy of the indexed column's values with pointers to the actual rows, so the database can look up values in O(log n) time using a balanced tree (typically a B-tree) instead of scanning everything. Indexes dramatically speed up SELECT queries and JOINs, but they cost extra storage and slow down INSERT, UPDATE, and DELETE operations because the index must be maintained. The trade-off is why only frequently-queried columns get indexes. Primary keys are indexed automatically. Two common types are B-tree indexes (general purpose) and hash indexes (exact-match lookups).",
+    "categories": ["coding", "databases"]
+  },
+  {
+    "q": [
+      "what is a database",
+      "what is a relational database",
+      "what is a database management system"
+    ],
+    "a": "A database is an organized collection of data stored and accessed electronically, and a database management system (DBMS) is the software that manages it — examples include MySQL, PostgreSQL, SQLite, Oracle, and MongoDB. Databases store data so it can be queried, updated, and managed efficiently, using structures like tables (relational databases), documents (MongoDB), key-value pairs (Redis), or graphs (Neo4j). Relational databases organize data into tables with rows and columns and use SQL to query them, enforcing relationships between tables via keys. Modern applications almost always use a database as the source of truth for their data, and database indexes help queries run fast.",
+    "categories": ["coding", "databases"]
+  },
+  {
+    "q": [
+      "what is caching",
+      "what is a cache",
+      "how does caching work",
+      "what is an lru cache"
+    ],
+    "a": "Caching is the technique of storing copies of frequently-used data in a fast storage layer so future requests can be served without recomputing or re-fetching the data. A cache sits between the application and the slower source (database, disk, or network). For example, a web browser caches images and pages so repeat visits load instantly, a CDN caches website content at edge servers worldwide, and Redis is a popular in-memory cache for application data. The key challenge is cache invalidation — knowing when to update or evict stale entries. Common eviction policies include LRU (Least Recently Used), which discards the entry not accessed for the longest time, and TTL (Time To Live), which expires entries after a fixed duration.",
+    "categories": ["coding", "concepts"]
+  },
+  {
+    "q": [
+      "what is a framework in programming",
+      "what is a web framework",
+      "what does framework mean in programming",
+      "what is a software framework"
+    ],
+    "a": "A framework in programming is a pre-built foundation of code that provides the structure and standard tools for building applications, so developers don't have to reinvent common functionality. Frameworks typically include libraries for common tasks, conventions for organizing code, and built-in features like routing, database access, and security. Examples include React and Vue for frontend, Django and Flask for Python backend, Spring for Java, and Ruby on Rails for Ruby. The key idea is 'inversion of control': with a framework, the framework calls your code (you fill in the blanks), whereas with a library, your code calls the library. Frameworks speed up development and enforce best practices but impose their own structure and learning curve.",
+    "categories": ["coding", "concepts"]
+  },
+  {
+    "q": [
+      "what is a closure",
+      "what is a closure in programming",
+      "what is a closure in javascript",
+      "how do closures work"
+    ],
+    "a": "A closure is a function that remembers and can access the variables from the scope where it was created, even after that outer scope has finished executing. In JavaScript, when you define a function inside another function, the inner function 'closes over' the outer function's variables. For example: function counter() { let n = 0; return function() { n += 1; return n; }; } — each call to counter() returns a new function that keeps its own private n. Closures enable data privacy (encapsulation), function factories, and callback patterns, and they are the mechanism behind JavaScript's module pattern. The same concept exists in Python, Go, and many other languages. Memory usage is a consideration: closures keep their captured variables alive as long as the closure exists.",
+    "categories": ["coding", "concepts"]
+  },
+  {
+    "q": [
+      "what is a unit test",
+      "what is unit testing",
+      "what does a unit test do",
+      "what is the purpose of unit tests"
+    ],
+    "a": "A unit test is an automated test that verifies one small, isolated piece of code — typically a single function or method — behaves correctly. Unit tests call the function with known inputs and assert that the output matches the expected result, running fast and in isolation from the rest of the system (dependencies are usually mocked or stubbed). Popular frameworks include pytest and unittest for Python, Jest for JavaScript, JUnit for Java, and Go's built-in testing package. Unit tests catch bugs early, act as documentation, and make refactoring safe by catching regressions. They are part of the testing pyramid — many fast unit tests at the base, fewer integration tests, and even fewer end-to-end tests at the top.",
+    "categories": ["coding", "testing"]
+  },
+  {
+    "q": [
+      "what is recursion",
+      "what is recursion in programming",
+      "how does recursion work",
+      "recursion explained"
+    ],
+    "a": "Recursion is a programming technique where a function calls itself to solve a problem by breaking it into smaller versions of the same problem. Every recursive function needs two parts: a base case that stops the recursion (the simplest instance, solved directly) and a recursive case that calls the function again with a smaller input. For example, factorial(5) = 5 * factorial(4), which unwinds until factorial(0) = 1. Recursion is elegant for problems with naturally recursive structure — tree traversal, file systems, the Tower of Hanoi, and divide-and-conquer algorithms like mergesort. The main risk is infinite recursion (missing base case), which causes stack overflow. Many recursive solutions can also be written iteratively with loops, and each approach has its own readability and performance trade-offs.",
+    "categories": ["coding", "concepts"]
+  },
+  {
+    "q": [
+      "what is an api",
+      "what is an api in programming",
+      "what does api stand for",
+      "how do apis work"
+    ],
+    "a": "An API (Application Programming Interface) is a set of rules and protocols that lets different software applications communicate with each other. It defines the methods and data formats you can use to request information or actions from a service — for example, a weather API might let you request current conditions for a city and return JSON data. Web APIs are typically accessed over HTTP using endpoints like https://api.example.com/users, and REST is the most common style, with GET/POST/PUT/DELETE methods. APIs power the modern internet: your phone's weather app calls a weather API, payment apps call bank APIs, and websites load maps from Google Maps APIs. They also let developers build on other companies' services without knowing their internal implementation. API keys and authentication control access.",
+    "categories": ["coding", "concepts"]
+  },
+  {
+    "q": [
+      "what is an orm",
+      "what is orm",
+      "object relational mapping",
+      "what is object relational mapping",
+      "what does orm stand for"
+    ],
+    "a": "ORM stands for Object-Relational Mapping — a technique (and the libraries that implement it) that lets you interact with a relational database using your programming language's objects instead of writing raw SQL. An ORM library (like Django's ORM, SQLAlchemy, Hibernate for Java, or ActiveRecord for Ruby) maps database tables to classes and rows to objects, so you can write things like User.objects.filter(age=30) instead of SELECT * FROM users WHERE age = 30. ORMs handle the conversion between types, manage relationships, and often include migration tools for schema changes. Benefits: faster development, less boilerplate, and reduced SQL injection risk through parameterization. Trade-offs: they can generate inefficient queries, hide the underlying SQL, and have a learning curve for complex queries.",
+    "categories": ["coding", "concepts"]
+  },
+  {
+    "q": [
+      "what is middleware",
+      "middleware in programming",
+      "what does middleware do",
+      "what is middleware in web development"
+    ],
+    "a": "Middleware is software that sits between two other layers of an application to process requests as they flow through. In web frameworks, middleware runs before the request reaches your route handler (and after the response is generated) to perform cross-cutting tasks: authentication, logging, CORS headers, request parsing, rate limiting, error handling, and compression. For example, Express.js uses app.use() to add middleware, and Django uses middleware classes in its settings. In a broader sense, middleware also refers to the software layer that connects applications to databases or other services (like message queues). The key idea: instead of repeating auth/logging code in every handler, middleware applies it uniformly to all requests in a chain.",
+    "categories": ["coding", "concepts"]
+  },
+  {
+    "q": [
+      "what is memoization",
+      "memoization in programming",
+      "how does memoization work",
+      "what is memoization used for"
+    ],
+    "a": "Memoization is an optimization technique that speeds up programs by caching the results of expensive function calls and returning the cached result when the same inputs occur again. It works by storing each computed result in a lookup table (usually a dictionary) keyed by the function's arguments. A classic example is the Fibonacci sequence: naive recursion recomputes fib(3) many times, but memoized recursion computes each value once, turning exponential time into linear time. Memoization is a form of dynamic programming and is especially useful for pure functions (functions that always return the same output for the same input). React's useMemo and Python's functools.lru_cache are built-in memoization tools. The trade-off is memory usage — the cache grows with the number of distinct inputs.",
+    "categories": ["coding", "concepts"]
+  },
+  {
+    "q": [
+      "what is an ip address",
+      "ip address explained",
+      "what does ip address mean",
+      "what is a ip address"
+    ],
+    "a": "An IP address (Internet Protocol address) is a unique numeric identifier assigned to every device connected to a network, like a mailing address for your computer. It lets data packets find their way from source to destination across the internet. There are two versions: IPv4, which looks like 192.168.1.1 and has about 4.3 billion possible addresses (now exhausted), and IPv6, which looks like 2001:0db8:85a3:0000:0000:8a2e:0370:7334 and provides a virtually unlimited address space. IP addresses are assigned by your ISP for public addresses and by your router for local devices (using private ranges like 192.168.x.x). There are also static IPs (fixed) and dynamic IPs (change over time), and DNS translates human-readable domain names into IP addresses.",
+    "categories": ["coding", "networking"]
+  },
+  {
+    "q": [
+      "what is a vpn",
+      "vpn explained",
+      "what does vpn stand for",
+      "how does a vpn work"
+    ],
+    "a": "A VPN (Virtual Private Network) creates a secure, encrypted tunnel between your device and a VPN server, so your internet traffic passes through that server before reaching websites. This hides your real IP address (websites see the VPN server's location), encrypts your data so your ISP or anyone on your network cannot read it, and lets you appear to be in another country — useful for bypassing geo-restrictions or censorship. VPNs are commonly used for privacy on public Wi-Fi, remote work access to company networks, and streaming content from other regions. Limitations: the VPN provider can see your traffic, VPNs can slow your connection, and they do not make you fully anonymous. The technology has its roots in the 1990s as a way to connect remote offices securely.",
+    "categories": ["coding", "networking"]
+  },
+  {
+    "q": [
+      "what is a programming language",
+      "what are programming languages",
+      "programming language explained"
+    ],
+    "a": "A programming language is a formal language with a set of instructions (syntax and semantics) that humans use to tell a computer what to do. It sits between human thinking and machine code — the compiler or interpreter translates the language into instructions the CPU can execute. Programming languages fall into families: low-level languages (like assembly) that are close to hardware, and high-level languages (Python, JavaScript, Java, C++, Go, Rust) that are closer to human language and easier to write. There are also different paradigms: imperative, functional, and object-oriented. Each language has strengths — Python for data science and scripting, JavaScript for the web, C++ and Rust for performance. There are hundreds of languages, and most developers are fluent in several.",
+    "categories": ["coding", "concepts"]
+  },
+  {
+    "q": [
+      "what is hashing",
+      "what is a hash",
+      "hash function explained",
+      "what does hashing mean",
+      "what is a hash function"
+    ],
+    "a": "Hashing is the process of taking any input data (a string, a file, a password) and running it through a hash function that produces a fixed-size output, called a hash or digest — a short string of characters like a fingerprint of the data. A good hash function is deterministic (same input always gives the same hash), fast to compute, and practically irreversible: you cannot recover the original input from the hash. Hashing is used everywhere: dictionaries and hash maps store keys via their hash for instant lookups; password systems store only the hash of a password, not the password itself; and checksums verify file integrity. Cryptographic hashes like SHA-256 are designed so that different inputs produce different hashes (collision resistance), which powers digital signatures and blockchain.",
+    "categories": ["coding", "concepts"]
+  },
+  {
+    "q": [
+      "what is a hashmap",
+      "what is a hash map",
+      "what is a hash table",
+      "hash table explained",
+      "what is a dictionary in programming"
+    ],
+    "a": "A hash map (also called a hash table or dictionary) is a data structure that stores key-value pairs and gives near-instant lookups, insertions, and deletions — O(1) average time. It works by running the key through a hash function to get an index into an array, then storing the value at that position. When two keys hash to the same index (a collision), the map resolves it with techniques like chaining (a list at each slot) or open addressing (probing for the next free slot). Hash maps back Python dictionaries, Java's HashMap, JavaScript's Map and objects, and Go's maps. They are the workhorse data structure for counting frequencies, caching, and building indexes. The trade-off: hash maps do not preserve order (unless using an ordered variant) and can be slower than arrays for tiny datasets.",
+    "categories": ["coding", "data structures"]
+  },
+  {
+    "q": [
+      "what is a bug in programming",
+      "what is a software bug",
+      "what does bug mean in coding",
+      "types of programming bugs"
+    ],
+    "a": "A bug is an error, flaw, or mistake in a program's code that causes it to produce wrong results, crash, or behave unexpectedly. Bugs come from many sources: logic errors (the code does the wrong thing), syntax errors (the code can't be parsed), runtime errors (crashes like division by zero), off-by-one errors, null pointer dereferences, and race conditions. The term 'bug' was popularized in 1947 when engineers at Harvard found an actual moth stuck in a relay of the Mark II computer, and Grace Hopper taped it into the logbook. Bugs are found through testing, debugging tools, and user reports, and prevented with code review, automated tests, and careful design. A 'bug fix' is a patch that corrects the error.",
+    "categories": ["coding", "concepts"]
+  },
+  {
+    "q": [
+      "what is object oriented programming",
+      "what is oop",
+      "object oriented programming explained",
+      "what are the principles of oop"
+    ],
+    "a": "Object-oriented programming (OOP) is a programming paradigm that organizes code around 'objects' — bundles of data (attributes) and behaviors (methods) — rather than around functions and logic. The four pillars are: encapsulation (hiding an object's internal state and exposing it through methods), abstraction (exposing only what's needed), inheritance (creating new classes from existing ones, reusing code), and polymorphism (using a common interface for different types). Languages like Java, C++, Python, and C# support OOP. OOP models real-world relationships and makes large codebases more maintainable, but it can add complexity. Alternative paradigms include procedural programming and functional programming. Classes are the blueprints; objects are the instances.",
+    "categories": ["coding", "concepts"]
+  },
+  {
+    "q": [
+      "what is a data structure",
+      "data structures explained",
+      "what are data structures",
+      "types of data structures"
+    ],
+    "a": "A data structure is a way of organizing and storing data in a computer so it can be accessed and modified efficiently. Different structures are optimized for different operations: arrays and lists for ordered sequences with index access, stacks for last-in-first-out (undo operations), queues for first-in-first-out (task scheduling), hash maps for instant key lookups, trees (like binary search trees) for sorted data and fast search, and graphs for networks and relationships. Choosing the right data structure is one of the most important decisions in programming — it determines the time and memory complexity of your algorithms. Data structures combined with algorithms form the core of computer science, often tested in interviews as 'DS&A'. Many languages provide built-in versions of the common ones.",
+    "categories": ["coding", "concepts"]
+  }
+]

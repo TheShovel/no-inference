@@ -1,0 +1,122 @@
+[
+  {
+    "q": [
+      "how many legs does a cat have",
+      "how many legs do cats have",
+      "cat legs",
+      "how many legs does a dog have",
+      "how many legs do dogs have",
+      "dog legs",
+      "how many legs does cat have",
+      "how many legs does dog have"
+    ],
+    "a": "Cats and dogs both have four legs. Like all mammals, they walk on four limbs, a posture called quadrupedalism. Their front and back legs are adapted for running, jumping, and stalking — cats in particular are digitigrade, meaning they walk on their toes, which gives them a silent, springy stride. The phrase 'as agile as a cat' comes from this four-legged design that lets them balance on narrow surfaces and land on their feet.",
+    "categories": ["biology", "animal"]
+  },
+  {
+    "q": [
+      "how many legs does a horse have",
+      "how many legs do horses have",
+      "horse legs"
+    ],
+    "a": "A horse has four legs. Horses are ungulates and walk on the tips of their toes, which are enlarged into a single hoof per leg — an adaptation for speed on open ground. This means a horse essentially runs on its fingernails. Like other quadrupedal mammals, horses gallop with a four-beat gait, and a galloping horse at full speed has all four legs off the ground at once.",
+    "categories": ["biology", "animal"]
+  },
+  {
+    "q": [
+      "how many legs does a bird have",
+      "how many legs do birds have",
+      "bird legs"
+    ],
+    "a": "Birds have two legs, which they use for walking, perching, swimming, and catching prey. The two legs are covered in scales like reptile skin, a remnant of birds' dinosaur ancestry. Birds stand and walk on their toes — often three forward and one backward, which lets them grip branches. Flightless birds like ostriches have especially strong legs for running, while birds of prey have powerful legs with sharp talons.",
+    "categories": ["biology", "animal", "bird"]
+  },
+  {
+    "q": [
+      "how many legs does a human have",
+      "how many legs do humans have",
+      "how many legs do people have"
+    ],
+    "a": "Humans have two legs. Humans are the only primates that are obligate bipeds, meaning we habitually walk upright on two legs. Our legs are longer and more muscular than our arms, with large gluteal muscles that stabilize the pelvis during walking and running. The ability to walk on two legs is thought to have freed the hands for tool use, a key step in human evolution. The record for the fastest human running speed is about 44.7 km/h (27.8 mph), set by Usain Bolt.",
+    "categories": ["biology", "human body"]
+  },
+  {
+    "q": [
+      "how many legs does a fish have",
+      "how many legs do fish have",
+      "fish legs"
+    ],
+    "a": "Fish have no legs — they swim using fins instead. Fish typically have a dorsal fin, a tail (caudal) fin, a pair of pectoral fins, and a pair of pelvic fins. However, some fish have fin structures that evolved into leg-like appendages: mudskippers use their pectoral fins to 'walk' on land, and the lungfish has paired lobe fins with muscular bases. The coelacanth's lobed fins are so limb-like that they are often cited as evidence of how fish evolved into land vertebrates.",
+    "categories": ["biology", "animal", "fish"]
+  },
+  {
+    "q": [
+      "how many legs does a snake have",
+      "how many legs do snakes have",
+      "snake legs"
+    ],
+    "a": "Snakes have no legs — they evolved from four-legged lizards and lost their limbs over millions of years. Some snakes, like boas and pythons, still have tiny vestigial 'spurs' near their tails, which are the remnants of hind legs. Snakes move by undulating their bodies, using their scales to grip the ground. The loss of legs allowed snakes to burrow and move through tight spaces, and they can move surprisingly fast — a black mamba can slither at about 19 km/h (12 mph).",
+    "categories": ["biology", "animal", "reptile"]
+  },
+  {
+    "q": [
+      "how many legs does a crab have",
+      "how many legs do crabs have",
+      "crab legs"
+    ],
+    "a": "Crabs have ten legs in total: eight walking legs and two claws (chelipeds) at the front, which are modified legs used for feeding and defense. This makes crabs decapods — the name means 'ten-footed'. The two front claws are often different sizes; the larger one is for crushing and the smaller for cutting. Crabs walk sideways because of the way their legs are jointed, though some crabs, like spider crabs, can walk forward.",
+    "categories": ["biology", "animal", "crustacean"]
+  },
+  {
+    "q": [
+      "how many legs does a lobster have",
+      "how many legs do lobsters have",
+      "lobster legs"
+    ],
+    "a": "Lobsters have ten legs, making them decapods like crabs. They have four pairs of walking legs plus a pair of large front claws (chelipeds) — one claw is a heavy crusher and the other is a finer pincher. Lobsters also have several other pairs of smaller appendages, including swimmerets under the tail that help them swim. A lobster can regrow a lost claw or leg over several molts. The largest recorded lobster weighed over 20 kilograms (44 pounds).",
+    "categories": ["biology", "animal", "crustacean"]
+  },
+  {
+    "q": [
+      "how many legs does an ant have",
+      "how many legs do ants have",
+      "ant legs",
+      "how many legs does a bee have",
+      "how many legs does a fly have",
+      "how many legs does a butterfly have"
+    ],
+    "a": "Ants, bees, flies, and butterflies are all insects, so they have six legs — three pairs attached to the thorax. The ant's six legs give it incredible strength and stability; a leafcutter ant can carry up to 50 times its own body weight. Bees use their legs for more than walking — they have pollen baskets on their hind legs to carry pollen back to the hive. Butterflies have six legs, but the front pair is often reduced and held against the body, making them look four-legged.",
+    "categories": ["biology", "animal", "insect"]
+  },
+  {
+    "q": [
+      "how many legs does a scorpion have",
+      "how many legs does a tick have",
+      "scorpion legs",
+      "tick legs"
+    ],
+    "a": "Scorpions and ticks are arachnids, so they have eight legs — four pairs. Scorpions use their eight legs for walking and also have two large pincers (pedipalps) in front and a segmented tail with a stinger. Ticks use their eight legs to crawl onto hosts, holding on with hooked claws. Spiders are also arachnids with eight legs. Arachnids are distinguished from insects, which have six legs.",
+    "categories": ["biology", "animal", "arachnid"]
+  },
+  {
+    "q": [
+      "how many legs does a starfish have",
+      "how many legs do starfish have",
+      "starfish arms",
+      "how many arms does a starfish have"
+    ],
+    "a": "Starfish (sea stars) typically have five arms, but some species have more — the sunflower sea star can have up to 24 arms. The arms are not really legs; starfish move using hundreds of tiny tube feet on the underside of each arm, which work hydraulically. Each arm contains a portion of the starfish's vital organs, including parts of its stomach and reproductive system. Starfish can regrow lost arms, and some species can regenerate an entire body from a single arm.",
+    "categories": ["biology", "animal", "echinoderm"]
+  },
+  {
+    "q": [
+      "how many legs does a centipede have",
+      "how many legs do centipedes have",
+      "centipede legs",
+      "how many legs does a millipede have",
+      "millipede legs"
+    ],
+    "a": "Centipedes have one pair of legs per body segment, so their leg count varies by species — from as few as 30 to as many as 354 legs. Despite the name meaning 'hundred-legger', no centipede has exactly 100 legs. Millipedes have two pairs of legs per segment, with species ranging from about 30 to over 750 legs — the name means 'thousand-legger', and the record holder has 1,306 legs. Centipedes are fast predators that use venomous front legs (forcipules) to subdue prey.",
+    "categories": ["biology", "animal", "arthropod"]
+  }
+]
