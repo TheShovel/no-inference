@@ -1,4 +1,4 @@
-// Chat page logic. API_URL and the fetch helpers live in site.js (loaded
+ // Chat page logic. API_URL and the fetch helpers live in site.js (loaded
 // before this file).
 const chatMessages = document.getElementById('chatMessages');
 const chatInput = document.getElementById('chatInput');
