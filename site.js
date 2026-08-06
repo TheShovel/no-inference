@@ -1,11 +1,11 @@
 // Shared config + helpers for the no-inference website.
 //
 // The website (this branch) is a static frontend. All real answers come
-// from the API server. Point API_URL at your server:
-//   - Railway deploy (default), or
-//   - http://localhost:8000  when running `python3 -m api.server` locally
-//     from the src/ directory of the main branch.
-const API_URL = 'https://no-inference-production.up.railway.app';
+// from the API server. The default points at the deployed API; override
+// it per-page with a ?api= query param (e.g. chat.html?api=http://localhost:8000)
+// or by editing DEFAULT_API_URL below.
+const DEFAULT_API_URL = 'https://no-inference-production.up.railway.app';
+const API_URL = new URLSearchParams(location.search).get('api') || DEFAULT_API_URL;
 
 // Collapse/expand a Win95 window body.
 function toggleMinimize(btn) {
