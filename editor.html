@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>no-inference — Code Editor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="desktop-bg">
+  <div class="cube cube-1">
+    <div class="cube-face front"></div>
+    <div class="cube-face back"></div>
+    <div class="cube-face right"></div>
+    <div class="cube-face left"></div>
+    <div class="cube-face top"></div>
+    <div class="cube-face bottom"></div>
+  </div>
+  <div class="cube cube-2">
+    <div class="cube-face front"></div>
+    <div class="cube-face back"></div>
+    <div class="cube-face right"></div>
+    <div class="cube-face left"></div>
+    <div class="cube-face top"></div>
+    <div class="cube-face bottom"></div>
+  </div>
+  <div class="cube cube-3">
+    <div class="cube-face front"></div>
+    <div class="cube-face back"></div>
+    <div class="cube-face right"></div>
+    <div class="cube-face left"></div>
+    <div class="cube-face top"></div>
+    <div class="cube-face bottom"></div>
+  </div>
+</div>
+
+<div class="container editor-container">
+
+  <div class="window">
+    <div class="window-titlebar">
+      <span class="window-titlebar-text">&#9654; Code editor demo</span>
+      <div class="window-controls">
+        <button onclick="toggleMinimize(this)">_</button>
+        <button>&#9633;</button>
+        <button>&#10005;</button>
+      </div>
+    </div>
+    <div class="window-body">
+      <section>
+        <p class="nav-back"><a href="index.html">&larr; Back to home</a>
+        &nbsp;&middot;&nbsp; fill in bodies, generate code, transform your buffer</p>
+        <div class="status-bar editor-status" id="editorStatus">
+          <span class="status-dot off" id="statusDot"></span>
+          <span id="statusText">Checking for local server...</span>
+        </div>
+
+        <div class="editor-grid">
+          <div class="card">
+            <h3>Buffer</h3>
+            <div class="file-row">
+              <input type="text" id="filename" value="tool.py" placeholder="filename.py" spellcheck="false">
+              <span class="badge" id="langBadge">python</span>
+            </div>
+            <textarea id="code" rows="12" spellcheck="false"
+              placeholder="# paste or write code here...
+def is_prime(n: int) -> bool:
+    ..."></textarea>
+          </div>
+
+          <div class="card">
+            <h3>What should I do?</h3>
+            <textarea id="instruction" rows="3" spellcheck="false"
+              placeholder="e.g. 'fill in the function', 'convert this to javascript', 'add error handling', 'write a function that flattens a nested list'"></textarea>
+            <div class="btn-row">
+              <button id="fillBtn" onclick="run('fill')">Fill in</button>
+              <button id="transformBtn" onclick="run('transform')">Transform</button>
+              <button id="generateBtn" onclick="run('generate')">Generate</button>
+              <button id="analyzeBtn" onclick="run('analyze')">Analyze</button>
+            </div>
+            <p class="hint">Fill in = complete the body at the <code>...</code> / <code>pass</code> /
+            <code>{ }</code> marker. Transform = edit the buffer (&quot;convert this to
+            javascript&quot;, &quot;add error handling&quot;, &quot;rename x to y&quot;, &quot;make it
+            faster&quot;, &quot;explain this code&quot;). Generate = new code from the instruction.
+            Analyze = what the engine understands about the buffer.</p>
+            <h3>Try an example</h3>
+            <div class="chip-row">
+              <button class="chip" onclick="example('fill')">Fill a function</button>
+              <button class="chip" onclick="example('convert')">Convert to JS</button>
+              <button class="chip" onclick="example('errors')">Add error handling</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Result</h3>
+          <div id="result"><span class="hint">The edited buffer, notes, and generated code show up
+          here. Nothing is written to disk &mdash; preview it, then copy or load it back into
+          the buffer.</span></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+</div>
+
+<script src="site.js"></script>
+<script src="editor.js"></script>
+</body>
+</html>

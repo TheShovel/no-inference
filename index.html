@@ -39,6 +39,29 @@
 
   <div class="window">
     <div class="window-titlebar">
+      <span class="window-titlebar-text">&#9654; Demos</span>
+      <div class="window-controls">
+        <button onclick="toggleMinimize(this)">_</button>
+        <button>&#9633;</button>
+        <button>&#10005;</button>
+      </div>
+    </div>
+    <div class="window-body">
+      <section>
+        <p style="margin-bottom: 6px;">Try the engine right now, no installation needed:</p>
+        <div class="demo-buttons">
+          <a class="demo-btn" href="chat.html">&#128172; Chat demo</a>
+          <a class="demo-btn" href="editor.html">&#9999;&#65039; Code editor demo</a>
+        </div>
+        <p class="hint">Both talk to the same engine through its HTTP API. If the demo server is
+        offline you&apos;ll see it in the status dot &mdash; the chat falls back to a tiny local
+        scripted mode, the editor shows an error.</p>
+      </section>
+    </div>
+  </div>
+
+  <div class="window">
+    <div class="window-titlebar">
       <span class="window-titlebar-text">&#9654; readme.txt</span>
       <div class="window-controls">
         <button onclick="toggleMinimize(this)">_</button>
@@ -345,6 +368,7 @@
 
 </div>
 
+<script src="site.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

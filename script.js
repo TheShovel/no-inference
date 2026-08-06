@@ -1,5 +1,5 @@
-// Change API_URL to your Railway URL when deployed, e.g.:
-const API_URL = 'https://no-inference-production.up.railway.app';
+// Chat page logic. API_URL and the fetch helpers live in site.js (loaded
+// before this file).
 const chatMessages = document.getElementById('chatMessages');
 const chatInput = document.getElementById('chatInput');
 const statusDot = document.getElementById('statusDot');
@@ -9,17 +9,11 @@ let isLive = false;
 let lastBotResponse = '';
 let lastBotTopic = '';
 
-function toggleMinimize(btn) {
-  const body = btn.closest('.window').querySelector('.window-body');
-  body.style.display = body.style.display === 'none' ? '' : 'none';
-}
-
 async function checkServer() {
   statusDot.className = 'status-dot off';
   statusText.textContent = 'Checking for local server...';
   try {
-    const resp = await fetch(API_URL + '/health', { signal: AbortSignal.timeout(2000) });
-    if (resp.ok) {
+    if (await apiHealth()) {
       isLive = true;
       statusDot.className = 'status-dot on';
       statusText.textContent = 'Connected to server';
@@ -211,14 +205,7 @@ function simulateResponse(query) {
 }
 
 async function callAPI(query) {
-  const resp = await fetch(API_URL + '/query', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ query }),
-    signal: AbortSignal.timeout(10000)
-  });
-  if (!resp.ok) throw new Error('API error');
-  const data = await resp.json();
+  const data = await apiPost('/query', { query });
   return data.response;
 }
 

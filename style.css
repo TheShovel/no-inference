@@ -764,3 +764,135 @@ footer {
   .container { margin: 4px 2px; }
   .window-controls button { display: none; }
 }
+
+/* ===== Demo Pages (chat.html, editor.html) ===== */
+.nav-back { font-size: 12px; margin-bottom: 8px; }
+.nav-back a { color: var(--win-title); }
+
+.hint {
+  font-size: 11px;
+  color: var(--win-shadow);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* ===== Demos window buttons (index.html) ===== */
+.demo-buttons { display: flex; gap: 8px; flex-wrap: wrap; margin: 4px 0; }
+.demo-btn {
+  flex: 1;
+  min-width: 180px;
+  text-align: center;
+  background: var(--win-silver);
+  border: 2px solid;
+  border-color: var(--win-highlight) var(--win-darkshadow) var(--win-darkshadow) var(--win-highlight);
+  color: var(--win-text);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.demo-btn:hover { background: #d8d8d8; }
+.demo-btn:active {
+  border-color: var(--win-darkshadow) var(--win-highlight) var(--win-highlight) var(--win-darkshadow);
+}
+
+/* ===== Editor page layout ===== */
+.editor-container { max-width: 1000px; }
+.editor-status { margin-bottom: 8px; }
+.editor-grid { display: flex; gap: 8px; align-items: flex-start; }
+.editor-grid .card { flex: 1; min-width: 0; margin-bottom: 0; }
+.editor-grid .card:first-child { flex: 1.1; }
+
+.file-row { display: flex; gap: 6px; align-items: center; margin-bottom: 6px; }
+.file-row input { flex: 1; max-width: 240px; }
+
+/* Sunken multi-line input (Win95 notepad style) */
+textarea {
+  width: 100%;
+  background: #ffffff;
+  border: 2px solid;
+  border-color: var(--win-darkshadow) var(--win-highlight) var(--win-highlight) var(--win-darkshadow);
+  color: var(--win-text);
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 4px 6px;
+  resize: vertical;
+  outline: none;
+}
+textarea:focus { outline: 1px dotted var(--win-text); outline-offset: -2px; }
+#instruction { font-family: inherit; font-size: 12px; }
+
+.btn-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+.btn-row button { min-height: 26px; padding: 3px 14px; }
+.btn-row button:disabled { color: var(--win-shadow); cursor: wait; }
+
+.chip-row { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip { padding: 2px 10px; font-size: 12px; }
+
+/* ===== Editor result pane ===== */
+.out-block {
+  background: #ffffff;
+  border: 2px solid;
+  border-color: var(--win-darkshadow) var(--win-highlight) var(--win-highlight) var(--win-darkshadow);
+  margin-bottom: 8px;
+}
+.out-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--win-silver);
+  border-bottom: 1px solid var(--win-shadow);
+  padding: 2px 4px;
+  font-size: 11px;
+  font-weight: bold;
+  color: var(--win-title);
+}
+.out-actions { display: flex; gap: 4px; }
+.out-actions button { min-height: 20px; padding: 0 8px; font-size: 11px; }
+.out-code {
+  margin: 0;
+  padding: 6px 8px;
+  font-family: "Courier New", monospace;
+  font-size: 12.5px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.notes { list-style: none; margin-bottom: 8px; }
+.notes li {
+  background: #ffffcc;
+  border: 1px solid var(--win-shadow);
+  padding: 4px 8px;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+.error {
+  background: #ffdddd;
+  border: 2px solid var(--win-red);
+  color: var(--win-red);
+  padding: 6px 8px;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3px 12px;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.meta-k { color: var(--win-shadow); }
+.meta-v { word-break: break-word; }
+
+@media (max-width: 700px) {
+  .editor-grid { flex-direction: column; }
+  .demo-btn { min-width: 100%; }
+}

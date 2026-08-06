@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>no-inference — Chat</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="desktop-bg">
+  <div class="cube cube-1">
+    <div class="cube-face front"></div>
+    <div class="cube-face back"></div>
+    <div class="cube-face right"></div>
+    <div class="cube-face left"></div>
+    <div class="cube-face top"></div>
+    <div class="cube-face bottom"></div>
+  </div>
+  <div class="cube cube-2">
+    <div class="cube-face front"></div>
+    <div class="cube-face back"></div>
+    <div class="cube-face right"></div>
+    <div class="cube-face left"></div>
+    <div class="cube-face top"></div>
+    <div class="cube-face bottom"></div>
+  </div>
+  <div class="cube cube-3">
+    <div class="cube-face front"></div>
+    <div class="cube-face back"></div>
+    <div class="cube-face right"></div>
+    <div class="cube-face left"></div>
+    <div class="cube-face top"></div>
+    <div class="cube-face bottom"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="window">
+    <div class="window-titlebar">
+      <span class="window-titlebar-text">&#9654; Chat demo</span>
+      <div class="window-controls">
+        <button onclick="toggleMinimize(this)">_</button>
+        <button>&#9633;</button>
+        <button>&#10005;</button>
+      </div>
+    </div>
+    <div class="window-body">
+      <section>
+        <p class="nav-back"><a href="index.html">&larr; Back to home</a>
+        &nbsp;&middot;&nbsp; deterministic answers, no LLM</p>
+        <div class="chat-box" id="chat">
+          <div class="status-bar" id="statusBar">
+            <span class="status-dot off" id="statusDot"></span>
+            <span id="statusText">Checking for local server...</span>
+          </div>
+          <div class="chat-messages" id="chatMessages"></div>
+          <div class="chat-suggestions" id="chatSuggestions">
+            <button onclick="sendSuggestion('hello')">hello</button>
+            <button onclick="sendSuggestion('what is the capital of France')">what is the capital of France</button>
+            <button onclick="sendSuggestion('write a python function that flattens a nested list')">write a python function that flattens a nested list</button>
+            <button onclick="sendSuggestion('pretend to be a pirate')">pretend to be a pirate</button>
+            <button onclick="sendSuggestion('what is 2 + 2')">what is 2 + 2</button>
+          </div>
+          <div class="chat-input-row">
+            <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off"
+                   onkeydown="if(event.key==='Enter') sendMessage()">
+            <button onclick="sendMessage()">Send</button>
+          </div>
+        </div>
+        <p class="hint">Responses come from the engine&apos;s knowledge base, Wikipedia, and
+        symbolic handlers &mdash; every answer is constructed, never sampled.</p>
+      </section>
+    </div>
+  </div>
+
+</div>
+
+<script src="site.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
