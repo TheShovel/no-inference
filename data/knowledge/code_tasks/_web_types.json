@@ -1,0 +1,124 @@
+{
+  "web_types": [
+    {
+      "keywords": "taco",
+      "tagline": "Fresh tacos, made to order.",
+      "accent": "#e67e22",
+      "menu_heading": "Menu",
+      "menu_items": [
+        "Carnitas — slow-braised pork",
+        "Al Pastor — marinated pork, grilled pineapple",
+        "Barbacoa — tender beef cheek",
+        "Chorizo — house-made, crispy",
+        "Fish — crispy, with lime crema",
+        "Veggie — charred vegetables, queso fresco"
+      ]
+    },
+    {
+      "keywords": "pizza",
+      "tagline": "Wood-fired pizza, hand-stretched daily.",
+      "accent": "#c0392b",
+      "menu_heading": "Pizzas",
+      "menu_items": [
+        "Margherita — san marzano tomato, mozzarella, basil",
+        "Pepperoni — double pepperoni, hot honey",
+        "Quattro Formaggi — four cheeses, thyme",
+        "Diavola — spicy salami, chili oil",
+        "Veggie — roasted peppers, mushrooms, olives"
+      ]
+    },
+    {
+      "keywords": "burger",
+      "tagline": "House-ground patties on brioche.",
+      "accent": "#8e44ad",
+      "menu_heading": "Burgers",
+      "menu_items": [
+        "Classic Cheeseburger — cheddar, pickles, house sauce",
+        "Smash Burger — caramelized edges, american cheese",
+        "Bacon BBQ — smoked bacon, barbecue sauce",
+        "Mushroom Swiss — sautéed mushrooms, swiss",
+        "Veggie Burger — black bean patty, avocado"
+      ]
+    },
+    {
+      "keywords": "sushi",
+      "tagline": "Fresh fish, hand-rolled daily.",
+      "accent": "#16a085",
+      "menu_heading": "Rolls",
+      "menu_items": [
+        "California Roll — crab, avocado, cucumber",
+        "Spicy Tuna Roll — tuna, chili mayo, scallion",
+        "Salmon Avocado Roll — norwegian salmon, avocado",
+        "Rainbow Roll — assorted fish over california",
+        "Dragon Roll — eel, cucumber, avocado"
+      ]
+    },
+    {
+      "keywords": "coffee",
+      "tagline": "Small-batch roasted, brewed to order.",
+      "accent": "#6d4c41",
+      "menu_heading": "Drinks",
+      "menu_items": [
+        "Espresso",
+        "Cappuccino",
+        "Flat White",
+        "Cold Brew",
+        "Pour-Over",
+        "Chai Latte"
+      ]
+    },
+    {
+      "keywords": "bakery",
+      "tagline": "Baked from scratch every morning.",
+      "accent": "#d35400",
+      "menu_heading": "Bakes",
+      "menu_items": [
+        "Sourdough Loaf",
+        "Croissants",
+        "Cinnamon Rolls",
+        "Bagels",
+        "Seasonal Fruit Tart",
+        "Cookies"
+      ]
+    },
+    {
+      "keywords": "ice cream",
+      "tagline": "Small-batch churned daily.",
+      "accent": "#2980b9",
+      "menu_heading": "Flavors",
+      "menu_items": [
+        "Vanilla Bean",
+        "Chocolate Fudge",
+        "Strawberry",
+        "Mint Chip",
+        "Salted Caramel",
+        "Seasonal Sorbet"
+      ]
+    },
+    {
+      "keywords": "bar",
+      "tagline": "Craft drinks, poured with care.",
+      "accent": "#34495e",
+      "menu_heading": "Drinks",
+      "menu_items": [
+        "House Cocktails",
+        "Local Draft Beer",
+        "Wine by the Glass",
+        "Zero-Proof Cocktails",
+        "Bar Snacks"
+      ]
+    },
+    {
+      "keywords": "restaurant",
+      "tagline": "Seasonal plates, locally sourced.",
+      "accent": "#7d3c98",
+      "menu_heading": "Menu",
+      "menu_items": [
+        "Appetizers — daily small plates",
+        "Mains — market fish, steaks, house pastas",
+        "Desserts — made in-house",
+        "Weekend Brunch"
+      ]
+    }
+  ]
+}

@@ -192,7 +192,40 @@ entry is the same question-answer shape as the general base:
 The `q` array should include as many natural variations as possible. New
 files are picked up at startup (`/reload` in the chat TUI, or restart).
 
-For *synthesized* code (tasks too numerous to hand-write), add a template
-instead: give the task a key in `_TASK_PATTERNS` (detection regexes) and
-an entry in `_CODE` (per-language templates) in `cos/code_gen.py`; see
-the `backup_dir` or `web_page` entries for examples.
+For *synthesized* code (tasks too numerous to hand-write), add a task to the
+knowledge files instead — no Python changes needed. Task definitions live in
+`data/knowledge/code_tasks/*.json`; each file holds a `tasks` array and files
+load in sorted filename order (that order is the detection priority):
+
+```json
+{
+  "tasks": [
+    {
+      "task": "reverse_string",
+      "patterns": [
+        "reverse a string",
+        "how to reverse a string in python"
+      ],
+      "intro": "Here's a {lang} function that reverses a string.",
+      "notes": "Strings are immutable ...",
+      "languages": {
+        "python": "def reverse_string(s):\n    return s[::-1]",
+        "javascript": "function reverseString(s) { return [...s].reverse().join(''); }"
+      }
+    }
+  ]
+}
+```
+
+- `patterns` — regexes; the first task whose pattern matches the query wins.
+- `intro` / `notes` — shown with the code; `{lang}` in `intro` is replaced
+  with the language name.
+- `languages` — raw code per language (never `.format()`-ed, so braces are
+  fine). `typescript` falls back to the `javascript` template unless the task
+  defines its own.
+- `reload()` (or restarting the process) picks up edits; the TUI `/reload`
+  and the API server reload on each request cycle.
+
+The `temp_convert` task in `12_more.json` is a complete example added through
+this mechanism. See `data/knowledge/code_tasks/_web_types.json` for the
+website generator's business types (add a type to extend the site generator).

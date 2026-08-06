@@ -1,0 +1,135 @@
+{
+  "tasks": [
+    {
+      "task": "http_get",
+      "patterns": [
+        "\\b(?:make|send|do)\\s+(?:an?\\s+)?http\\s+(?:get|request)\\b",
+        "\\bfetch\\s+(?:data\\s+from\\s+)?(?:an?\\s+)?(?:api|url|endpoint)\\b",
+        "\\bget\\s+request\\b",
+        "\\bhttp\\s+request\\b",
+        "\\brequests?\\s+library\\b",
+        "\\baxios\\b",
+        "\\bdownload\\s+(?:a\\s+)?(?:file|page|data)\\b",
+        "\\bapi\\s+call\\b",
+        "\\bcall\\s+an\\s+api\\b"
+      ],
+      "intro": "Here's how to make an HTTP GET request in {lang}.",
+      "notes": "Always check the response status code and handle network errors. Set a timeout so a slow endpoint can't hang your program. For JSON APIs, decode the body before parsing.",
+      "languages": {
+        "python": "import urllib.request\nimport json\n\ndef http_get(url: str, timeout: int = 10) -> dict:\n    req = urllib.request.Request(url, headers={'User-Agent': 'cos/1.0'})\n    with urllib.request.urlopen(req, timeout=timeout) as resp:\n        return json.loads(resp.read().decode())\n\n# Example (JSONPlaceholder):\ndata = http_get('https://jsonplaceholder.typicode.com/users/1')\nprint(data['name'])\n\n# With the `requests` library (nicer API):\n# import requests\n# resp = requests.get(url, timeout=10)\n# resp.raise_for_status()\n# data = resp.json()",
+        "javascript": "// Browser (and Node.js 18+): fetch API\nasync function httpGet(url) {\n    const resp = await fetch(url);\n    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);\n    return resp.json();\n}\n\n// Node.js with axios:\n// const axios = require('axios');\n// const { data } = await axios.get(url);\n// console.log(data);\n\n// Node.js with the built-in https module (no dependencies):\n// const https = require('https');\n// https.get(url, (res) => {\n//   let body = '';\n//   res.on('data', (c) => (body += c));\n//   res.on('end', () => console.log(JSON.parse(body)));\n// });",
+        "go": "import (\n    \"encoding/json\"\n    \"io\"\n    \"net/http\"\n)\n\nfunc HttpGet(url string, target any) error {\n    resp, err := http.Get(url)\n    if err != nil {\n        return err\n    }\n    defer resp.Body.Close()\n    body, err := io.ReadAll(resp.Body)\n    if err != nil {\n        return err\n    }\n    return json.Unmarshal(body, target)\n}\n\n// Example:\n// var user struct{ Name string `json:\"name\"` }\n// if err := HttpGet(\"https://jsonplaceholder.typicode.com/users/1\", &user); err != nil {\n//     log.Fatal(err)\n// }\n// fmt.Println(user.Name)",
+        "rust": "// Using reqwest (add to Cargo.toml: reqwest = { version = \"0.12\", features = [\"json\"] })\n#[tokio::main]\nasync fn main() -> Result<(), Box<dyn std::error::Error>> {\n    let resp = reqwest::get(\"https://jsonplaceholder.typicode.com/users/1\")\n        .await?\n        .json::<serde_json::Value>()\n        .await?;\n    println!(\"{}\", resp[\"name\"]);\n    Ok(())\n}",
+        "bash": "# curl\ncurl -s https://jsonplaceholder.typicode.com/users/1\n\n# curl + jq to extract a field:\ncurl -s https://jsonplaceholder.typicode.com/users/1 | jq \".name\"",
+        "typescript": "// Browser (and Node.js 18+): fetch API\nasync function httpGet(url) {\n    const resp = await fetch(url);\n    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);\n    return resp.json();\n}\n\n// Node.js with axios:\n// const axios = require('axios');\n// const { data } = await axios.get(url);\n// console.log(data);\n\n// Node.js with the built-in https module (no dependencies):\n// const https = require('https');\n// https.get(url, (res) => {\n//   let body = '';\n//   res.on('data', (c) => (body += c));\n//   res.on('end', () => console.log(JSON.parse(body)));\n// });",
+        "java": "import java.net.URI;\nimport java.net.http.HttpClient;\nimport java.net.http.HttpRequest;\nimport java.net.http.HttpResponse;\n\n// Java 11+ HttpClient:\nHttpClient client = HttpClient.newHttpClient();\nHttpRequest request = HttpRequest.newBuilder()\n        .uri(URI.create(\"https://api.example.com/users/1\"))\n        .GET()\n        .build();\nHttpResponse<String> response = client.send(request,\n        HttpResponse.BodyHandlers.ofString());\nSystem.out.println(response.statusCode());\nSystem.out.println(response.body());"
+      }
+    },
+    {
+      "task": "http_post",
+      "patterns": [
+        "\\bpost\\s+(?:data|json|a\\s+request)\\b",
+        "\\bhttp\\s+post\\b",
+        "\\bsend\\s+(?:a\\s+)?post\\b",
+        "\\bsubmit\\s+(?:a\\s+)?form\\b"
+      ],
+      "intro": "Here's how to make an HTTP POST request with a JSON body in {lang}.",
+      "notes": "Set the `Content-Type: application/json` header when sending a JSON body, and make sure to encode the payload as JSON (not a Python dict or JS object) — forgetting the encoding is the most common 400-error cause.",
+      "languages": {
+        "python": "import urllib.request\nimport json\n\ndef http_post(url: str, payload: dict, timeout: int = 10) -> dict:\n    body = json.dumps(payload).encode()\n    req = urllib.request.Request(\n        url, data=body,\n        headers={'Content-Type': 'application/json', 'User-Agent': 'cos/1.0'},\n        method='POST',\n    )\n    with urllib.request.urlopen(req, timeout=timeout) as resp:\n        return json.loads(resp.read().decode())\n\n# Example:\nprint(http_post('https://jsonplaceholder.typicode.com/posts',\n                {'title': 'hi', 'body': 'there', 'userId': 1}))\n\n# With `requests`:\n# import requests\n# resp = requests.post(url, json=payload, timeout=10)\n# resp.raise_for_status()\n# print(resp.json())",
+        "javascript": "// Browser and Node.js 18+: fetch API\nasync function httpPost(url, payload) {\n    const resp = await fetch(url, {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify(payload),\n    });\n    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);\n    return resp.json();\n}\n\n// axios:\n// const { data } = await axios.post(url, payload);",
+        "go": "import (\n    \"bytes\"\n    \"encoding/json\"\n    \"io\"\n    \"net/http\"\n)\n\nfunc HttpPost(url string, payload any, target any) error {\n    body, err := json.Marshal(payload)\n    if err != nil {\n        return err\n    }\n    resp, err := http.Post(url, \"application/json\", bytes.NewReader(body))\n    if err != nil {\n        return err\n    }\n    defer resp.Body.Close()\n    data, err := io.ReadAll(resp.Body)\n    if err != nil {\n        return err\n    }\n    return json.Unmarshal(data, target)\n}",
+        "bash": "# curl POST with a JSON body:\ncurl -s -X POST https://jsonplaceholder.typicode.com/posts \\\n  -H 'Content-Type: application/json' \\\n  -d \"{\\\"title\\\": \\\"hi\\\", \\\"body\\\": \\\"there\\\", \\\"userId\\\": 1}\"",
+        "typescript": "// Browser and Node.js 18+: fetch API\nasync function httpPost(url, payload) {\n    const resp = await fetch(url, {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify(payload),\n    });\n    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);\n    return resp.json();\n}\n\n// axios:\n// const { data } = await axios.post(url, payload);"
+      }
+    },
+    {
+      "task": "check_url",
+      "patterns": [
+        "\\b(?:check|test|verify)\\b.*\\b(?:website|web\\s*site|web\\s*page|site|url|link|server|endpoint|host)\\b.*\\b(?:up|down|online|offline|alive|reachable|responding|available|status)\\b",
+        "\\b(?:is|are)\\s+(?:a\\s+|the\\s+|an\\s+)?(?:website|web\\s*site|site|url|server|host)\\s+(?:up|down|online|offline|reachable)\\b",
+        "\\b(?:status|availability)\\s+(?:check|test)\\b.*(?:website|url|server)"
+      ],
+      "intro": "Here's a {lang} script that checks whether a website or URL is up.",
+      "notes": "Treat any 2xx–3xx status as 'up' — 4xx/5xx or a network error means 'down'. Always set a timeout so a hung endpoint can't block your script. A HEAD request is cheaper than GET for this job when the server supports it.",
+      "languages": {
+        "python": "import urllib.request\nimport urllib.error\n\n\ndef is_up(url: str, timeout: int = 10) -> bool:\n    \"\"\"Return True when the URL responds with an HTTP 2xx/3xx status.\"\"\"\n    try:\n        req = urllib.request.Request(\n            url, method='HEAD', headers={'User-Agent': 'cos/1.0'})\n        with urllib.request.urlopen(req, timeout=timeout) as resp:\n            return 200 <= resp.status < 400\n    except (urllib.error.URLError, urllib.error.HTTPError, OSError):\n        return False\n\n\n# Example:\nurl = 'https://example.com'\nprint(f'{url} is {\"UP\" if is_up(url) else \"DOWN\"}')\n\n# With the `requests` library (nicer API):\n# import requests\n#\n# def is_up_requests(url: str, timeout: int = 10) -> bool:\n#     try:\n#         resp = requests.head(url, timeout=timeout, allow_redirects=True)\n#         return 200 <= resp.status_code < 400\n#     except requests.RequestException:\n#         return False",
+        "javascript": "// Browser and Node.js 18+: fetch API\nasync function isUp(url, timeoutMs = 10000) {\n    try {\n        const controller = new AbortController();\n        const timer = setTimeout(() => controller.abort(), timeoutMs);\n        const resp = await fetch(url, {\n            method: 'HEAD',\n            signal: controller.signal,\n        });\n        clearTimeout(timer);\n        return resp.ok;\n    } catch {\n        return false;\n    }\n}\n\n// Example:\n// console.log(await isUp('https://example.com'));",
+        "bash": "# Print the HTTP status code (200 = up, 404/5xx = down):\ncurl -s -o /dev/null -w \"%{http_code}\\n\" https://example.com\n\n# Exit 0 when up, 1 when down (useful in scripts):\nif curl -sf --max-time 10 https://example.com > /dev/null; then\n    echo \"up\"\nelse\n    echo \"down\"\nfi\n\n# Check many URLs at once:\n# for url in https://example.com https://api.example.com; do\n#   code=$(curl -s -o /dev/null -w \"%{http_code}\" --max-time 10 \"$url\")\n#   echo \"$url -> $code\"\n# done",
+        "go": "import (\n    \"net/http\"\n    \"time\"\n)\n\nfunc IsUp(url string) bool {\n    client := &http.Client{Timeout: 10 * time.Second}\n    resp, err := client.Head(url)\n    if err != nil {\n        return false\n    }\n    defer resp.Body.Close()\n    return resp.StatusCode >= 200 && resp.StatusCode < 400\n}\n\n// Example:\n// fmt.Println(IsUp(\"https://example.com\"))",
+        "typescript": "// Browser and Node.js 18+: fetch API\nasync function isUp(url, timeoutMs = 10000) {\n    try {\n        const controller = new AbortController();\n        const timer = setTimeout(() => controller.abort(), timeoutMs);\n        const resp = await fetch(url, {\n            method: 'HEAD',\n            signal: controller.signal,\n        });\n        clearTimeout(timer);\n        return resp.ok;\n    } catch {\n        return false;\n    }\n}\n\n// Example:\n// console.log(await isUp('https://example.com'));"
+      }
+    },
+    {
+      "task": "send_email",
+      "patterns": [
+        "\\b(?:send|email|mail)\\b.*\\b(?:email|mail|message|newsletter)\\b",
+        "\\bsend\\s+an?\\s+email\\b",
+        "\\bemail\\s+script\\b",
+        "\\b(?:smtp|smtplib)\\b"
+      ],
+      "intro": "Here's how to send an email in {lang}.",
+      "notes": "Never hardcode credentials — read them from environment variables. SMTP over TLS (port 587) is the standard for Gmail/Outlook; port 465 is implicit TLS. Check your provider's 'app password' requirements; plain passwords are often blocked. Always wrap the send in try/except so a bad recipient doesn't crash the script.",
+      "languages": {
+        "python": "import os\nimport smtplib\nfrom email.message import EmailMessage\n\n\ndef send_email(subject: str, body: str, to_addr: str) -> None:\n    \"\"\"Send plain-text email via SMTP (credentials from environment).\"\"\"\n    msg = EmailMessage()\n    msg['Subject'] = subject\n    msg['From'] = os.environ['SMTP_USER']\n    msg['To'] = to_addr\n    msg.set_content(body)\n\n    with smtplib.SMTP(os.environ['SMTP_HOST'],\n                      int(os.environ.get('SMTP_PORT', '587'))) as server:\n        server.starttls()\n        server.login(os.environ['SMTP_USER'], os.environ['SMTP_PASS'])\n        server.send_message(msg)\n\n\n# Example:\n# export SMTP_HOST=smtp.gmail.com SMTP_USER=you@gmail.com SMTP_PASS=app_password\n# send_email('Hello', 'This is a test.', 'friend@example.com')\n\n# With attachments (MIME):\n# from email.mime.text import MIMEText\n# from email.mime.multipart import MIMEMultipart\n# from email.mime.application import MIMEApplication\n#\n# def send_with_attachment(subject, body, to_addr, filename, data):\n#     msg = MIMEMultipart()\n#     msg['Subject'], msg['From'], msg['To'] = subject, os.environ['SMTP_USER'], to_addr\n#     msg.attach(MIMEText(body))\n#     msg.attach(MIMEApplication(data, _subtype='octet-stream', _filename=filename))\n#     with smtplib.SMTP(os.environ['SMTP_HOST'], 587) as server:\n#         server.starttls()\n#         server.login(os.environ['SMTP_USER'], os.environ['SMTP_PASS'])\n#         server.send_message(msg)",
+        "javascript": "// Node.js with nodemailer (npm install nodemailer):\n// const nodemailer = require('nodemailer');\n//\n// async function sendEmail(to, subject, text) {\n//     const transporter = nodemailer.createTransport({\n//         host: process.env.SMTP_HOST,\n//         port: Number(process.env.SMTP_PORT || 587),\n//         secure: false,          // true for port 465\n//         auth: {\n//             user: process.env.SMTP_USER,\n//             pass: process.env.SMTP_PASS,\n//         },\n//     });\n//     await transporter.sendMail({ from: process.env.SMTP_USER, to, subject, text });\n// }\n//\n// await sendEmail('friend@example.com', 'Hello', 'This is a test.');\n\n// Browser: open the user's mail client with a prefilled draft:\n// window.location.href = 'mailto:friend@example.com?subject=Hello&body=Hi%20there';",
+        "bash": "# Send mail with the mailx / mailutils CLI:\n# echo \"Email body text here\" | mail -s \"Subject line\" friend@example.com\n\n# With a file as the body:\n# mail -s \"Daily report\" friend@example.com < report.txt\n\n# With attachments (mutt):\n# mutt -s \"Subject\" -a report.pdf -- friend@example.com < body.txt",
+        "typescript": "// Node.js with nodemailer (npm install nodemailer):\n// const nodemailer = require('nodemailer');\n//\n// async function sendEmail(to, subject, text) {\n//     const transporter = nodemailer.createTransport({\n//         host: process.env.SMTP_HOST,\n//         port: Number(process.env.SMTP_PORT || 587),\n//         secure: false,          // true for port 465\n//         auth: {\n//             user: process.env.SMTP_USER,\n//             pass: process.env.SMTP_PASS,\n//         },\n//     });\n//     await transporter.sendMail({ from: process.env.SMTP_USER, to, subject, text });\n// }\n//\n// await sendEmail('friend@example.com', 'Hello', 'This is a test.');\n\n// Browser: open the user's mail client with a prefilled draft:\n// window.location.href = 'mailto:friend@example.com?subject=Hello&body=Hi%20there';"
+      }
+    },
+    {
+      "task": "web_scrape",
+      "patterns": [
+        "\\b(?:web\\s+)?scrap(?:e|ing)\\b",
+        "\\bscrape\\b",
+        "\\bextract\\s+(?:all\\s+)?links?\\b",
+        "\\bextract\\s+(?:the\\s+)?(?:title|headings?|text)\\s+from\\b",
+        "\\bparse\\s+(?:an?\\s+)?html\\b"
+      ],
+      "intro": "Here's a {lang} web scraper that downloads a page and extracts structured data from it.",
+      "notes": "Respect the site's robots.txt and terms of service, and rate-limit your requests. Many sites offer an official API that is more reliable than scraping. The scraper below uses only the standard library plus requests/BeautifulSoup-style helpers — install them with pip.",
+      "languages": {
+        "python": "import re\nimport urllib.request\n\ndef fetch_page(url: str) -> str:\n    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})\n    with urllib.request.urlopen(req, timeout=15) as resp:\n        return resp.read().decode('utf-8', errors='replace')\n\ndef extract_links(html: str) -> list[str]:\n    return re.findall(r'href=[\"\\']([^\"\\']+)[\"\\']', html)\n\ndef extract_titles(html: str) -> list[str]:\n    # <h1>..</h1> .. <h3>..</h3>\n    return re.findall(r'<h[1-3][^>]*>(.*?)</h[1-3]>', html, re.S)\n\n# Example:\nhtml = fetch_page('https://example.com')\nprint(extract_titles(html)[:5])\nprint(extract_links(html)[:5])\n\n# For serious scraping use requests + BeautifulSoup:\n# from bs4 import BeautifulSoup\n# soup = BeautifulSoup(html, 'html.parser')\n# print(soup.title.text)"
+      }
+    },
+    {
+      "task": "fetch_table",
+      "patterns": [
+        "\\bfetch\\s+.*\\btable\\b",
+        "\\bdisplay\\s+.*\\btable\\b",
+        "\\btable\\s+from\\s+(?:an?\\s+)?api\\b"
+      ],
+      "intro": "Here's a {lang} function that fetches data from an API and renders it in an HTML table.",
+      "notes": "The `fetch` API returns a promise, so the function is async and awaits the response. Build table rows with `textContent` (not `innerHTML`) to avoid XSS when the data is user-controlled.",
+      "languages": {
+        "python": "import urllib.request\nimport json\nimport html\n\ndef fetch_data(url: str) -> list[dict]:\n    req = urllib.request.Request(url, headers={'User-Agent': 'cos/1.0'})\n    with urllib.request.urlopen(req, timeout=10) as resp:\n        return json.loads(resp.read().decode())\n\ndef render_table(rows: list[dict]) -> str:\n    if not rows:\n        return \"<p>No data.</p>\"\n    headers = list(rows[0].keys())\n    out = [\"<table border='1'>\", \"<thead><tr>\"]\n    out += [f\"<th>{html.escape(str(h))}</th>\" for h in headers]\n    out.append(\"</tr></thead><tbody>\")\n    for row in rows:\n        out.append(\"<tr>\")\n        out += [f\"<td>{html.escape(str(row.get(h, '')))}</td>\" for h in headers]\n        out.append(\"</tr>\")\n    out.append(\"</tbody></table>\")\n    return \"\".join(out)\n\n# Example: fetch users and render an HTML table\nusers = fetch_data('https://jsonplaceholder.typicode.com/users')\nprint(render_table(users[:5]))",
+        "javascript": "async function fetchAndRenderTable(url, containerId) {\n    const resp = await fetch(url);\n    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);\n    const rows = await resp.json();\n\n    const container = document.getElementById(containerId);\n    const table = document.createElement('table');\n    const thead = document.createElement('thead');\n\n    const headers = Object.keys(rows[0] || {});\n    const tr = document.createElement('tr');\n    headers.forEach(h => {\n        const th = document.createElement('th');\n        th.textContent = h;   // textContent, not innerHTML — avoids XSS\n        tr.appendChild(th);\n    });\n    thead.appendChild(tr);\n    table.appendChild(thead);\n\n    const tbody = document.createElement('tbody');\n    rows.forEach(row => {\n        const tr = document.createElement('tr');\n        headers.forEach(h => {\n            const td = document.createElement('td');\n            td.textContent = row[h] ?? '';\n            tr.appendChild(td);\n        });\n        tbody.appendChild(tr);\n    });\n    table.appendChild(tbody);\n    container.appendChild(table);\n}\n\n// Example:\n// await fetchAndRenderTable('https://jsonplaceholder.typicode.com/users', 'app');",
+        "typescript": "async function fetchAndRenderTable(url, containerId) {\n    const resp = await fetch(url);\n    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);\n    const rows = await resp.json();\n\n    const container = document.getElementById(containerId);\n    const table = document.createElement('table');\n    const thead = document.createElement('thead');\n\n    const headers = Object.keys(rows[0] || {});\n    const tr = document.createElement('tr');\n    headers.forEach(h => {\n        const th = document.createElement('th');\n        th.textContent = h;   // textContent, not innerHTML — avoids XSS\n        tr.appendChild(th);\n    });\n    thead.appendChild(tr);\n    table.appendChild(thead);\n\n    const tbody = document.createElement('tbody');\n    rows.forEach(row => {\n        const tr = document.createElement('tr');\n        headers.forEach(h => {\n            const td = document.createElement('td');\n            td.textContent = row[h] ?? '';\n            tr.appendChild(td);\n        });\n        tbody.appendChild(tr);\n    });\n    table.appendChild(tbody);\n    container.appendChild(table);\n}\n\n// Example:\n// await fetchAndRenderTable('https://jsonplaceholder.typicode.com/users', 'app');"
+      }
+    },
+    {
+      "task": "express_api",
+      "patterns": [
+        "\\bexpress\\s+(?:api|server|app|route|endpoint)\\b",
+        "\\bnode\\.?js\\s+(?:api|server|endpoint)\\b"
+      ],
+      "intro": "Here's a minimal Express API server in {lang}.",
+      "notes": "Express is the most widely used Node.js web framework. `app.listen` starts the server; `express.json()` middleware is required to parse JSON request bodies.",
+      "languages": {
+        "javascript": "const express = require('express');\n\nconst app = express();\napp.use(express.json());   // parse JSON request bodies\n\nconst items = [\n    { id: 1, name: 'first' },\n    { id: 2, name: 'second' },\n];\n\n// GET /api/items — list\napp.get('/api/items', (req, res) => {\n    res.json(items);\n});\n\n// GET /api/items/:id — one item\napp.get('/api/items/:id', (req, res) => {\n    const item = items.find(i => i.id === Number(req.params.id));\n    if (!item) return res.status(404).json({ error: 'Not found' });\n    res.json(item);\n});\n\n// POST /api/items — create\napp.post('/api/items', (req, res) => {\n    const item = { id: items.length + 1, name: req.body.name };\n    items.push(item);\n    res.status(201).json(item);\n});\n\n// DELETE /api/items/:id\napp.delete('/api/items/:id', (req, res) => {\n    const idx = items.findIndex(i => i.id === Number(req.params.id));\n    if (idx === -1) return res.status(404).json({ error: 'Not found' });\n    items.splice(idx, 1);\n    res.status(204).end();\n});\n\napp.listen(3000, () => console.log('API listening on http://localhost:3000'));",
+        "typescript": "const express = require('express');\n\nconst app = express();\napp.use(express.json());   // parse JSON request bodies\n\nconst items = [\n    { id: 1, name: 'first' },\n    { id: 2, name: 'second' },\n];\n\n// GET /api/items — list\napp.get('/api/items', (req, res) => {\n    res.json(items);\n});\n\n// GET /api/items/:id — one item\napp.get('/api/items/:id', (req, res) => {\n    const item = items.find(i => i.id === Number(req.params.id));\n    if (!item) return res.status(404).json({ error: 'Not found' });\n    res.json(item);\n});\n\n// POST /api/items — create\napp.post('/api/items', (req, res) => {\n    const item = { id: items.length + 1, name: req.body.name };\n    items.push(item);\n    res.status(201).json(item);\n});\n\n// DELETE /api/items/:id\napp.delete('/api/items/:id', (req, res) => {\n    const idx = items.findIndex(i => i.id === Number(req.params.id));\n    if (idx === -1) return res.status(404).json({ error: 'Not found' });\n    items.splice(idx, 1);\n    res.status(204).end();\n});\n\napp.listen(3000, () => console.log('API listening on http://localhost:3000'));"
+      }
+    },
+    {
+      "task": "flask_api",
+      "patterns": [
+        "\\bflask\\s+(?:api|app|server|endpoint|route)\\b"
+      ],
+      "intro": "Here's a minimal Flask API server in {lang}.",
+      "notes": "Flask's `@app.route` decorator binds a URL to a handler. Return a dict or use `jsonify` to send JSON. For production, use a WSGI server like gunicorn — `app.run()` is only for development.",
+      "languages": {
+        "python": "from flask import Flask, jsonify, request\n\napp = Flask(__name__)\n\nitems = [\n    {'id': 1, 'name': 'first'},\n    {'id': 2, 'name': 'second'},\n]\n\n\n@app.get('/api/items')\ndef list_items():\n    return jsonify(items)\n\n\n@app.get('/api/items/<int:item_id>')\ndef get_item(item_id):\n    item = next((i for i in items if i['id'] == item_id), None)\n    if item is None:\n        return jsonify({'error': 'Not found'}), 404\n    return jsonify(item)\n\n\n@app.post('/api/items')\ndef create_item():\n    data = request.get_json()\n    if not data or 'name' not in data:\n        return jsonify({'error': 'name is required'}), 400\n    item = {'id': len(items) + 1, 'name': data['name']}\n    items.append(item)\n    return jsonify(item), 201\n\n\nif __name__ == '__main__':\n    app.run(debug=True)  # dev only — use gunicorn in production"
+      }
+    }
+  ]
+}

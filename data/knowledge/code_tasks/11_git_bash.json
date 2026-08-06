@@ -1,0 +1,111 @@
+{
+  "tasks": [
+    {
+      "task": "git_undo",
+      "patterns": [
+        "\\bundo\\s+(?:a\\s+)?commit\\b",
+        "\\brevert\\s+(?:a\\s+)?commit\\b",
+        "\\breset\\s+(?:a\\s+)?commit\\b",
+        "\\buncommit\\b",
+        "\\bundo\\s+last\\s+commit\\b"
+      ],
+      "intro": "Here's how to undo a commit in Git, depending on whether it has been pushed.",
+      "notes": "The safe rule: never rewrite history that has been pushed. `git reset` rewrites history (use it only locally); `git revert` adds a new commit that undoes the changes (safe to push).",
+      "languages": {
+        "bash": "# ── Not pushed yet — safe to rewrite history ──────────────────\n# Undo the last commit but KEEP the changes staged:\ngit reset --soft HEAD~1\n\n# Undo the last commit and keep changes in the working tree (unstaged):\ngit reset --mixed HEAD~1      # this is the default for `git reset HEAD~1`\n\n# Undo the last commit and DISCARD the changes entirely:\ngit reset --hard HEAD~1       # ⚠️ destructive — unrecoverable without reflog\n\n# ── Already pushed — never rewrite shared history ──────────────────\n# Add a new commit that reverses the last commit (safe to push):\ngit revert HEAD\n\n# Revert a specific commit by hash:\ngit revert <commit-hash>\n\n# ── Fix just the message of the last commit ─────────────────────────\ngit commit --amend -m \"new message\"\n\n# ── Oops, forgot a file in the last commit ─────────────────────────\ngit add forgotten-file.txt\ngit commit --amend --no-edit\n\n# Anything lost? Check the reflog — it records every HEAD move for ~90 days:\ngit reflog"
+      }
+    },
+    {
+      "task": "git_commit",
+      "patterns": [
+        "\\bcommit\\s+(?:changes?|code|files?)\\b",
+        "\\bmake\\s+(?:a\\s+)?commit\\b",
+        "\\bcommit\\s+message\\b"
+      ],
+      "intro": "Here's the standard Git workflow for committing changes.",
+      "notes": "Commit small, focused changes with a clear message, and commit early and often. `git status` and `git diff` before staging prevent accidentally committing debugging leftovers.",
+      "languages": {
+        "bash": "# See what changed before committing:\ngit status\ngit diff\n\n# Stage specific files (or `git add .` for everything):\ngit add src/main.py tests/test_main.py\n\n# Commit with a message (imperative mood, under 50 chars is a good habit):\ngit commit -m \"Fix null pointer in user lookup\"\n\n# Verify:\ngit log --oneline -5"
+      }
+    },
+    {
+      "task": "git_branch",
+      "patterns": [
+        "\\b(?:create|switch|rename|delete)\\s+(?:a\\s+)?branch\\b",
+        "\\bgit\\s+branch\\b",
+        "\\bmerge\\s+(?:a\\s+)?branch\\b",
+        "\\bnew\\s+branch\\b"
+      ],
+      "intro": "Here's how to work with branches in Git.",
+      "notes": "Branches are cheap pointers to commits — create one per feature or fix. Merge with `git merge` for a merge commit or `git rebase` for a linear history (never rebase shared branches).",
+      "languages": {
+        "bash": "# Create a new branch and switch to it:\ngit checkout -b feature/login\n# or: git switch -c feature/login\n\n# List branches (* marks the current one):\ngit branch\n\n# Switch branches:\ngit checkout main\n# or: git switch main\n\n# Merge a branch into the current branch:\ngit checkout main\ngit merge feature/login\n\n# Delete a merged branch:\ngit branch -d feature/login\n\n# Push the new branch to the remote:\ngit push -u origin feature/login"
+      }
+    },
+    {
+      "task": "git_stash",
+      "patterns": [
+        "\\bstash\\b"
+      ],
+      "intro": "Here's how to stash and restore uncommitted work in Git.",
+      "notes": "`git stash` is for when you must switch branches mid-work. `git stash pop` restores and removes the stash; use `git stash apply` if you want to keep it. Stashes are local — they never push.",
+      "languages": {
+        "bash": "# Save uncommitted changes and clean the working tree:\ngit stash            # `git stash push -m \"wip\"` to label it\n\n# See stashes:\ngit stash list\n\n# Restore the latest stash and remove it:\ngit stash pop\n\n# Restore without removing (keeps it for later):\ngit stash apply\n\n# Drop a specific stash:\ngit stash drop stash@{0}\n\n# Stash including untracked files:\ngit stash -u"
+      }
+    },
+    {
+      "task": "git_log",
+      "patterns": [
+        "\\bgit\\s+log\\b",
+        "\\bcommit\\s+history\\b",
+        "\\bshow\\s+(?:the\\s+)?(?:last|recent|all)\\s+commits\\b"
+      ],
+      "intro": "Here's how to inspect commit history with Git.",
+      "notes": "`git log --oneline` gives a compact history; `--graph` shows branch topology. Add `--author`, `--since`, or `-S` to filter. `git log -p` shows the actual diffs.",
+      "languages": {
+        "bash": "# Compact history (one line per commit):\ngit log --oneline\n\n# With branch topology:\ngit log --oneline --graph --all\n\n# Last 10 commits with diffs:\ngit log -p -10\n\n# Commits by a specific author:\ngit log --author=\"alice\"\n\n# Commits touching a file:\ngit log --oneline -- src/main.py\n\n# Search commit messages for a phrase:\ngit log --grep=\"fix\" --oneline"
+      }
+    },
+    {
+      "task": "bash_file_ops",
+      "patterns": [
+        "\\b(?:list|find|count)\\s+(?:all\\s+|the\\s+)?(?:[a-z0-9_.-]+\\s+)*(?:files?|directories?)\\b",
+        "\\b(?:copy|move|rename|delete)\\s+(?:a\\s+)?file\\b",
+        "\\bpermissions?\\s+(?:on\\s+)?(?:a\\s+)?file\\b",
+        "\\bchmod\\b",
+        "\\bchown\\b",
+        "\\bgrep\\b",
+        "\\bshow\\s+.*\\bcontents?\\s+of\\b"
+      ],
+      "intro": "Here's how to work with files and directories from the {lang} command line.",
+      "notes": "`find` is more powerful than `ls` for searching; `grep -r` searches inside files. `chmod` uses octal modes (755 = rwxr-xr-x) or symbolic ones (u+x). Always quote filenames with spaces.",
+      "languages": {
+        "bash": "# List files (ls) / search (find):\nls -la\nfind . -name \"*.py\" -type f\n\n# Search inside file contents:\ngrep -r \"TODO\" src/\ngrep -n \"def main\" main.py\n\n# Copy / move / delete:\ncp file.txt backup.txt\nmv old.txt new.txt\nrm file.txt            # ⚠️ no trash can — deletes permanently\nrm -r directory/\n\n# Permissions (octal: r=4, w=2, x=1):\nchmod 755 script.sh     # rwxr-xr-x\nchmod +x script.sh      # make executable\nchown user:group file.txt\n\n# Show file contents:\ncat file.txt\nless file.txt           # scrollable"
+      }
+    },
+    {
+      "task": "bash_curl",
+      "patterns": [
+        "\\bcurl\\b"
+      ],
+      "intro": "Here's how to make HTTP requests from the {lang} command line with curl.",
+      "notes": "`curl -s` silences the progress meter, `-o` writes to a file, and `-X POST -d '...'` sends a request body. Add `-H 'Content-Type: application/json'` when posting JSON, and `-i` to see response headers.",
+      "languages": {
+        "bash": "# GET (silent, show response body):\ncurl -s https://api.example.com/users\n\n# GET with a query parameter:\ncurl -s \"https://api.example.com/users?page=2\"\n\n# Show response headers too:\ncurl -si https://api.example.com/users\n\n# POST JSON:\ncurl -s -X POST https://api.example.com/users \\\n  -H 'Content-Type: application/json' \\\n  -d \"{\\\"name\\\": \\\"Alice\\\"}\"\n\n# Download to a file:\ncurl -s -o page.html https://example.com/\n\n# Follow redirects:\ncurl -sL https://example.com\n\n# Pretty-print JSON with jq:\ncurl -s https://api.example.com/users | jq ."
+      }
+    },
+    {
+      "task": "bash_args",
+      "patterns": [
+        "\\b(?:pass|passing|use|using)\\b.*\\barguments?\\b.*\\bbash\\b",
+        "\\bbash\\b.*\\barguments?\\b",
+        "\\b\\$1\\b|\\bpositional\\s+parameters?\\b"
+      ],
+      "intro": "Here's how to pass arguments to a bash script.",
+      "notes": "`$0` is the script name, `$1`…`$9` are positional args (use `${10}` for the tenth), `$@` is all args, `$#` is the count. Quote `\"$@\"` to preserve args with spaces. `shift` removes the first arg.",
+      "languages": {
+        "bash": "#!/bin/bash\n# Run as: ./script.sh alice 42\n\necho \"script: $0\"\necho \"first arg: $1\"\necho \"second arg: $2\"\necho \"all args: $@\"\necho \"arg count: $#\"\n\n# Defaults for missing args:\nNAME=\"${1:-world}\"\nAGE=\"${2:-unknown}\"\necho \"Hello $NAME ($AGE)\"\n\n# Loop over every arg:\nfor arg in \"$@\"; do\n    echo \"got: $arg\"\ndone\n\n# Use shift to process args one by one:\nwhile [ \"$#\" -gt 0 ]; do\n    echo \"processing: $1\"\n    shift\ndone"
+      }
+    }
+  ]
+}

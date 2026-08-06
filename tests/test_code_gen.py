@@ -68,6 +68,17 @@ LANG_TASK_CASES = [
     ("pretty print json in javascript", 'javascript', 'json_pretty'),
     ("write a python decorator", 'python', None),  # concept, not a generation task
     ("what is the capital of france", None, None),  # not a code query at all
+    # knowledge-file task added through the data mechanism
+    ("write a python function to convert celsius to fahrenheit", 'python', 'temp_convert'),
+    ("how to convert fahrenheit to celsius in javascript", 'javascript', 'temp_convert'),
+    # tasks added via data/knowledge/code_tasks/ (sum_range, balanced_parens)
+    ("write a python function that sums all numbers from 1 to n", 'python', 'sum_range'),
+    ("sum of numbers from 1 to n in javascript", 'javascript', 'sum_range'),
+    ("write a python function to check if a string has balanced parentheses",
+     'python', 'balanced_parens'),
+    ("balanced brackets in javascript", 'javascript', 'balanced_parens'),
+    # pattern fixes in the knowledge files
+    ("write a python function to check if two strings are anagrams", 'python', 'anagram'),
 ]
 
 # Queries that must generate (task + language both resolvable).
@@ -256,6 +267,59 @@ def main():
           '```html' in process_query('create a simple website for a taco shop'),
           'engine should synthesize the page, not answer with a definition')
 
+    # 4c. temperature conversion (task added via the knowledge files)
+    for query, snippets in [
+        ("write a python function to convert celsius to fahrenheit",
+         ["celsius_to_fahrenheit", "9 / 5"]),
+        ("convert 100 celsius to fahrenheit", ["celsius_to_fahrenheit"]),
+        ("celsius to fahrenheit in go", ["func CelsiusToFahrenheit"]),
+    ]:
+        out = generate_code(query)
+        low = (out or '').lower()
+        check(f"temp convert {query!r}",
+              bool(out) and all(s.lower() in low for s in snippets),
+              f"got: {(out or 'None')[:160]!r}")
+
+    # 4e. sum_range / balanced_parens tasks (also added via knowledge files)
+    for query, snippets in [
+        ("write a python function that sums all numbers from 1 to n",
+         ["sum_1_to_n", "range(1, n + 1)"]),
+        ("sum of numbers from 1 to n in javascript", ["sum1ToN"]),
+        ("write a python function to check if a string has balanced parentheses",
+         ["is_balanced", "stack"]),
+    ]:
+        out = generate_code(query)
+        low = (out or '').lower()
+        check(f"new-task {query!r}",
+              bool(out) and all(s.lower() in low for s in snippets),
+              f"got: {(out or 'None')[:160]!r}")
+
+    # 4d. task knowledge is data-driven: adding a JSON file under
+    #     data/knowledge/code_tasks/ must add a task without touching Python
+    import json as _json
+    import tempfile as _tempfile
+    import cos.code_gen as _cg
+    _tasks_dir = _cg._TASKS_DIR
+    _probe = _tasks_dir / 'probe_task.json'
+    _probe.write_text(_json.dumps({"tasks": [{
+        "task": "probe_task",
+        "patterns": [r"\bprobe[\s-]*task\b"],
+        "intro": "Here's the probe task in {lang}.",
+        "languages": {"python": "def probe():\n    return 42"},
+    }]}), encoding='utf-8')
+    try:
+        _cg.reload()
+        check('data-driven task detected after reload',
+              detect_task('write a probe task for me') == 'probe_task'
+              and 'probe' in (generate_code('write a probe task for me') or ''),
+              'knowledge-file task not picked up by reload()')
+    finally:
+        _probe.unlink(missing_ok=True)
+        _cg.reload()
+    check('data-driven task removed after cleanup',
+          detect_task('write a probe task for me') != 'probe_task',
+          'removed knowledge-file task still detected')
+
     # 5. multi-turn language-switch follow-ups
     reset_conversation()
     for first, follow, snippets in FOLLOWUP_PAIRS:
@@ -269,7 +333,8 @@ def main():
               f"missing={missing} forbidden={bad} | {response[:240]}")
 
     total = (len(LANG_TASK_CASES) + len(MUST_GENERATE) * 2 + len(LANG_CHECK)
-             + len(E2E_CASES) + len(WEB_CASES) + 4 + len(FOLLOWUP_PAIRS))
+             + len(E2E_CASES) + len(WEB_CASES) + 4 + len(FOLLOWUP_PAIRS)
+             + 3 + 3 + 2)
     print(f"Results: {total - failed}/{total} passed")
     if failures:
         print("\nFAILURES:")

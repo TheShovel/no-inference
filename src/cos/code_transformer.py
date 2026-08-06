@@ -17,6 +17,21 @@ Public API:
 import re
 from typing import List, Optional, Tuple
 
+# Common English words that ``change X to Y`` must never treat as code
+# identifiers ("change the color to green", "change this to that" are not
+# renames). ``rename X to Y`` is unambiguous and bypasses this check.
+_IDENTIFIER_STOPWORDS = frozenset(
+    """this that these those it them they he she we you i me us him her its my
+    your our their his yours ours themselves myself yourself itself himself
+    herself the a an and or but for of to from in on at by with without as if
+    then than so when where while into onto upon under over be is are was were
+    been being am do does did done can could should would will shall may might
+    must not no yes more less same new old big small large fast slow up down
+    red blue green yellow orange purple pink black white gray grey brown teal
+    navy indigo crimson gold cyan lime maroon make turn set switch convert
+    update modify alter replace swap move change rename copy delete remove add
+    insert put take give get use""".split())
+
 # ── Language detection from code content ────────────────────────────────────
 _LANG_BY_SYNTAX = [
     (r'^\s*(?:from\s+\w+\s+)?import\s+\w+|^\s*def\s+\w+|^\s*class\s+\w+\s*:|'
@@ -131,19 +146,61 @@ def detect_code_transform(query: str) -> Optional[Tuple[str, dict, str, str]]:
                  r'\s+handling\b', head_l) \
             or re.search(r'\b(?:make|wrap)\s+(?:it|this|that|the\s+code|'
                          r'this\s+code)\s*(?:code|script|function)?\s+'
-                         r'(?:more\s+)?(?:error\s+)?(?:safe|robust)\b', head_l):
+                         r'(?:more\s+)?(?:error\s+)?(?:safe|robust)\b', head_l) \
+            or re.search(r'\b(?:add|use|include|write)\s+'
+                         r'try\s*(?:/|\s+and\s+|\s*&\s*)?'
+                         r'(?:except|catch)\b', head_l) \
+            or re.search(r'\bwrap\s+(?:it|this|that|the\s+code|'
+                         r'this\s+code)\s+in\s+(?:a\s+)?'
+                         r'try\s*(?:/|\s+and\s+|\s*&\s*)?'
+                         r'(?:except|catch)\b', head_l) \
+            or re.search(r'\b(?:make\s+(?:it|this|the\s+code|this\s+code)\s+'
+                         r'|add\s+)(?:more\s+)?(?:error\s+)?'
+                         r'handling\b', head_l) \
+            or re.search(r'\bhandle\s+(?:errors?|exceptions?)\b', head_l):
         return ('add_errors', {}, code, detect_code_lang(code))
 
+    # ── add a docstring ─────────────────────────────────────────────────
+    if re.search(r'\b(?:add|write|insert|include)\s+(?:a\s+)?docstrings?\b',
+                 head_l):
+        # only take the topic when it is quoted or follows an explicit verb
+        m = re.search(r'docstring\s+(?:that\s+)?(?:says?|reads?|describ\w*)\s*'
+                      r'["\']?([^"\']{4,80})["\']?', head_l)
+        topic = m.group(1).strip() if m else ''
+        topic = re.sub(r'\s+(?:to|for|of)\s+.*$', '', topic).strip()
+        return ('add_docstring', {'topic': topic}, code,
+                detect_code_lang(code))
+
     # ── rename an identifier ────────────────────────────────────────────
+    # (optional quotes: rename "foo" to "bar")
     m = re.search(r'\b(?:rename|change)\s+(?:the\s+)?(?:variable|function|'
-                  r'class|method|parameter|argument|name)\s+'
-                  r'([A-Za-z_]\w*)\s+(?:to|into)\s+([A-Za-z_]\w*)\b', head_l)
+                  r'class|method|parameter|argument|name)\s+["\']?'
+                  r'([A-Za-z_]\w*)["\']?\s+(?:to|into)\s+["\']?'
+                  r'([A-Za-z_]\w*)["\']?(?=\s|[.,!?;]|$)', head_l)
     if m:
         return ('rename', {'old': m.group(1), 'new': m.group(2)}, code,
                 detect_code_lang(code))
-    m = re.search(r'\brename\s+([A-Za-z_]\w*)\s+(?:to|into)\s+'
-                  r'([A-Za-z_]\w*)\b', head_l)
+    m = re.search(r'\brename\s+["\']?([A-Za-z_]\w*)["\']?\s+(?:to|into)\s+'
+                  r'["\']?([A-Za-z_]\w*)["\']?(?=\s|[.,!?;]|$)', head_l)
     if m:
+        return ('rename', {'old': m.group(1), 'new': m.group(2)}, code,
+                detect_code_lang(code))
+    # Bare "change foo to bar in this code: ..." is a rename too, but
+    # "change" is ambiguous in English ("change the color to green"), so
+    # require the old name to actually appear in the pasted code and both
+    # names to be identifier-like rather than pronouns/colors/function words.
+    m = re.search(r'\bchange\s+["\']?([A-Za-z_]\w*)["\']?\s+(?:to|into)\s+'
+                  r'["\']?([A-Za-z_]\w*)["\']?(?=\s|[.,!?;]|$)', head_l)
+    if m and _IDENTIFIER_STOPWORDS.isdisjoint({m.group(1), m.group(2)}):
+        old = m.group(1)
+        if re.search(r'(?<![A-Za-z0-9_])' + re.escape(old) +
+                     r'(?![A-Za-z0-9_])', code):
+            return ('rename', {'old': old, 'new': m.group(2)}, code,
+                    detect_code_lang(code))
+    # Passive voice: "total should be renamed to sum"
+    m = re.search(r'\b([A-Za-z_]\w*)\s+should\s+be\s+renamed\s+(?:to|into)\s+'
+                  r'([A-Za-z_]\w*)\b', head_l)
+    if m and _IDENTIFIER_STOPWORDS.isdisjoint({m.group(1), m.group(2)}):
         return ('rename', {'old': m.group(1), 'new': m.group(2)}, code,
                 detect_code_lang(code))
 
@@ -159,8 +216,9 @@ def detect_code_transform(query: str) -> Optional[Tuple[str, dict, str, str]]:
                  r'this\s+code|the\s+script|this\s+script)\s*(?:code|script|'
                  r'function|program)?\s+(?:faster|quicker|more\s+efficient|'
                  r'efficient)\b', head_l) \
-            or re.search(r'\boptimize\s+(?:this|the)\s+(?:code|script|'
-                         r'function|program)\b', head_l):
+            or re.search(r'\boptimize\s+(?:this|the|it|that)\s*(?:code|'
+                         r'script|function|program)?\b', head_l) \
+            or re.search(r'\boptimize\b', head_l):
         return ('make_faster', {}, code, detect_code_lang(code))
 
     # ── loop conversion ─────────────────────────────────────────────────
@@ -191,6 +249,7 @@ def transform_code(op: str, params: dict, code: str,
         'add_errors': _add_errors,
         'rename': _rename,
         'add_comments': _add_comments,
+        'add_docstring': _add_docstring,
         'make_faster': _make_faster,
         'convert_lang': _convert_lang,
         'explain': _explain,
@@ -353,6 +412,29 @@ def _rename(code: str, lang: str, params: dict) -> Tuple[str, List[str]]:
     fixed = pattern.sub(new, code)
     return fixed, [f'renamed "{old}" -> "{new}" ({count} occurrence'
                    + ('s' if count != 1 else '') + ')']
+
+
+# ── add a docstring (Python) ───────────────────────────────────────────────
+
+def _add_docstring(code: str, lang: str, params: dict) -> Tuple[str, List[str]]:
+    """Insert a docstring into the first function definition."""
+    if lang != 'python':
+        return code, ["docstrings are a Python convention — use a comment "
+                      "style for this language"]
+    m = re.search(
+        r'^(\s*)(?:async\s+)?def\s+\w+\s*\([^)]*\)[^:]*:\s*$',
+        code, re.MULTILINE)
+    if not m:
+        return code, ["I couldn't find a function definition to attach a "
+                      "docstring to."]
+    if '"""' in code[m.start():m.start() + 200]:
+        return code, ["the first function already has a docstring"]
+    indent = m.group(1) + '    '
+    topic = (params.get('topic') or '').strip()
+    text = topic or 'Describe what this function does.'
+    doc = f'{indent}"""{text}"""\n'
+    new = code[:m.end()] + '\n' + doc + code[m.end():]
+    return new, ['added a docstring to the first function']
 
 
 # ── add comments ────────────────────────────────────────────────────────────
@@ -523,12 +605,15 @@ def _py_to_js(code: str) -> str:
     out = []
     declared = set()
     stack = []  # indents of open blocks
+    class_indent = [None]  # indent of the open class block, if any
 
     def close_to(level: int):
         # a line at the same indent as a block opener closes that block
         while stack and stack[-1] >= level:
             indent = stack.pop()
             out.append(' ' * indent + '}')
+            if class_indent[0] is not None and indent <= class_indent[0]:
+                class_indent[0] = None
 
     for raw in lines:
         if not raw.strip():
@@ -550,7 +635,14 @@ def _py_to_js(code: str) -> str:
         if m:
             args = re.sub(r'\s+', ' ', m.group(2)).strip()
             args = re.sub(r':\s*\w+', '', args)
-            out.append(' ' * indent + f'function {m.group(1)}({args}) {{')
+            # __init__ -> constructor; the leading self arg maps to this
+            fname = 'constructor' if m.group(1) == '__init__' else m.group(1)
+            args = re.sub(r'^self\s*,\s*', '', args)
+            args = re.sub(r'^self\s*$', '', args)
+            # class methods are written without the 'function' keyword
+            in_class = class_indent[0] is not None and indent > class_indent[0]
+            kw = '' if in_class else 'function '
+            out.append(' ' * indent + f'{kw}{fname}({args}) {{')
             stack.append(indent)
             if m.group(3).strip():
                 out.append(' ' * (indent + 2) + m.group(3).strip() + ';')
@@ -562,6 +654,7 @@ def _py_to_js(code: str) -> str:
             parent = m.group(2) or ''
             out.append(' ' * indent + f'class {m.group(1)} {{')
             stack.append(indent)
+            class_indent[0] = indent
             continue
         # loops / conditions / try
         m = re.match(r'^for\s+(\w+)\s+in\s+range\s*\(\s*(\w+|\d+)\s*\)\s*:\s*(.*)$', s)
@@ -650,7 +743,41 @@ def _py_to_js(code: str) -> str:
     return '\n'.join(out)
 
 
+def _py_expr_to_js(e: str) -> str:
+    """Convert a Python *expression* to JavaScript (no statements)."""
+    e = re.sub(r'\b(True|False|None)\b', lambda m:
+               {'True': 'true', 'False': 'false', 'None': 'null'}[m.group(1)], e)
+    e = re.sub(r'\blen\((\w+)\)', r'\1.length', e)
+    e = re.sub(r'\bnot\s+', '! ', e)
+    e = re.sub(r'\band\b', '&&', e)
+    e = re.sub(r'\bor\b', '||', e)
+    e = re.sub(r'==', '===', e)
+    e = re.sub(r'!=', '!==', e)
+    return e
+
+
 def _py_stmt_to_js(s: str) -> str:
+    # list comprehension (bare, assigned, or returned):
+    #   [expr for x in items] / name = [...] / return [...]
+    #   -> items.map(x => expr) (with .filter().map for the if-form)
+    m = re.match(
+        r'^(?:(\w+)\s*=\s*|(return\s+))?(\[(.+?)\s+for\s+(\w+)\s+in\s+'
+        r'(.+?)(?:\s+if\s+(.+))?\])$', s)
+    if m:
+        assign, ret, expr, var, it, cond = (m.group(1), m.group(2), m.group(4),
+                                            m.group(5), m.group(6), m.group(7))
+        expr_js = _py_expr_to_js(expr)
+        it_js = _py_expr_to_js(it)
+        if cond:
+            cond_js = _py_expr_to_js(cond)
+            conv = f'{it_js}.filter({var} => {cond_js}).map({var} => {expr_js})'
+        else:
+            conv = f'{it_js}.map({var} => {expr_js})'
+        if assign:
+            return f'{assign} = {conv}'
+        if ret:
+            return f'{ret}{conv}'
+        return conv
     s = re.sub(r'\bprint\s*\((.*)\)', r'console.log(\1)', s)
     s = re.sub(r'\b(True|False|None)\b', lambda m:
                {'True': 'true', 'False': 'false', 'None': 'null'}[m.group(1)], s)
@@ -665,6 +792,7 @@ def _py_stmt_to_js(s: str) -> str:
     s = re.sub(r'==\s*None', '=== null', s)
     s = re.sub(r'==', '===', s)
     s = re.sub(r'!=', '!==', s)
+    s = re.sub(r'\bself\.', 'this.', s)
     # tuple assignment / swap: a, b = b, a + b  ->  [a, b] = [b, a + b];
     s = re.sub(r'^(\w+(?:\s*,\s*\w+)+)\s*=\s*(.+)$',
                r'[\1] = [\2]', s)
@@ -699,6 +827,13 @@ def _js_to_py(code: str) -> str:
         if m:
             args = ', '.join(a.strip() for a in m.group(2).split(',') if a.strip())
             out.append(' ' * indent + f'def {m.group(1)}({args}):')
+            stack.append(indent)
+            continue
+        m = re.match(r'^constructor\s*\(([^)]*)\)\s*\{?$', s)
+        if m:
+            args = ', '.join(a.strip() for a in m.group(1).split(',') if a.strip())
+            args = f'self, {args}' if args else 'self'
+            out.append(' ' * indent + f'def __init__({args}):')
             stack.append(indent)
             continue
         m = re.match(r'^class\s+(\w+)\s*\{?$', s)
@@ -771,7 +906,31 @@ def _js_cond_to_py(cond: str) -> str:
     return cond.strip()
 
 
+def _js_expr_to_py(e: str) -> str:
+    """Convert a JavaScript *expression* to Python (no statements)."""
+    e = re.sub(r'\b(true|false|null)\b', lambda m:
+               {'true': 'True', 'false': 'False', 'null': 'None'}[m.group(1)], e)
+    e = re.sub(r'\bString\s*\(', 'str(', e)
+    e = re.sub(r'\bparseInt\s*\(', 'int(', e)
+    e = re.sub(r'\bparseFloat\s*\(', 'float(', e)
+    e = re.sub(r'===', '==', e)
+    e = re.sub(r'!==', '!=', e)
+    return e
+
+
 def _js_stmt_to_py(s: str) -> str:
+    # items.filter(x => cond).map(x => expr) -> [expr for x in items if cond]
+    m = re.match(r'^(.+?)\.filter\s*\(\s*(\w+)\s*=>\s*(.+?)\s*\)\s*'
+                 r'\.map\s*\(\s*\2\s*=>\s*(.+?)\s*\)$', s)
+    if m:
+        it, var, cond, expr = m.group(1), m.group(2), m.group(3), m.group(4)
+        return (f'[{_js_expr_to_py(expr)} for {var} in {_js_expr_to_py(it)} '
+                f'if {_js_expr_to_py(cond)}]')
+    # items.map(x => expr) -> [expr for x in items]
+    m = re.match(r'^(.+?)\.map\s*\(\s*(\w+)\s*=>\s*(.+?)\s*\)$', s)
+    if m:
+        it, var, expr = m.group(1), m.group(2), m.group(3)
+        return f'[{_js_expr_to_py(expr)} for {var} in {_js_expr_to_py(it)}]'
     s = re.sub(r'\bconsole\.log\s*\((.*)\)\s*$', r'print(\1)', s)
     s = re.sub(r'\.push\(', '.append(', s)
     s = re.sub(r'(\w+)\.length\b', r'len(\1)', s)
@@ -782,6 +941,7 @@ def _js_stmt_to_py(s: str) -> str:
     s = re.sub(r'\bparseFloat\s*\(', 'float(', s)
     s = re.sub(r'===', '==', s)
     s = re.sub(r'!==', '!=', s)
+    s = re.sub(r'\bthis\.', 'self.', s)
     return s
 
 

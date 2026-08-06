@@ -60,11 +60,13 @@ def _load_knowledge(base_dir=None):
     # Exclude the 'templates/' subdirectory which contains context-aware
     # conversational templates (not KB entries). These use 'triggers' and 'template'
     # fields instead of 'q'/'a' format, and their generic triggers like "what is"
-    # can pollute KB lookups.
-    if base_dir != _KNOWLEDGE_DIR:
-        json_files = sorted(p for p in base_dir.rglob('*.json') if not p.name.startswith('.'))
-    else:
-        json_files = sorted(p for p in base_dir.rglob('*.json') if not p.name.startswith('.') and '/templates/' not in str(p) and '\\templates\\' not in str(p))
+    # can pollute KB lookups. The 'code_tasks/' subdirectory holds code-gen
+    # task templates (data/knowledge/code_tasks/*.json, dict-shaped), which the
+    # code generator loads itself.
+    _EXCLUDED = ('/templates/', '\\templates\\', '/code_tasks/', '\\code_tasks\\')
+    json_files = sorted(
+        p for p in base_dir.rglob('*.json')
+        if not p.name.startswith('.') and not any(x in str(p) for x in _EXCLUDED))
 
     if not json_files:
         print(f"  No JSON knowledge files found in {base_dir}")

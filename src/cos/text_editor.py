@@ -1446,6 +1446,27 @@ def edit_code(content: str, query: str = '') -> Tuple[str, List[str]]:
     # ("if x:\nelse:" would be a different error) or is a comment.
     if lang == 'python':
         before = fixed
+        # 5a. "for i range(10):" -> "for i in range(10):" (missing 'in')
+        def _fix_for_in(m):
+            lead, vars_, ws, tok, rest = (m.group(1), m.group(2), m.group(3),
+                                          m.group(4), m.group(5))
+            if tok == 'in':
+                return m.group(0)
+            return f'{lead}{vars_} in {tok}' + (f' {rest}' if rest else '') + ':'
+        fixed = re.sub(
+            r'^(\s*for\s+)(\w+(?:\s*,\s*\w+)*)(\s+)'
+            r'([a-z_]\w*(?:\([^)]*\))?)(?:\s+([^:]+))?:\s*$',
+            _fix_for_in, fixed, flags=re.MULTILINE)
+        # 5b. "if x = 5:" -> "if x == 5:" (assignment in a condition);
+        # also covers elif/while. Never touches ==, <=, >=, !=.
+        def _fix_cond_eq(m):
+            return f'{m.group(1)}{m.group(2)} == {m.group(3)}:'
+        fixed = re.sub(
+            r'^(\s*(?:if|elif|while)\s+)([a-zA-Z_]\w*)\s*=(?!=)\s*([^:]+):\s*$',
+            _fix_cond_eq, fixed, flags=re.MULTILINE)
+        if fixed != before:
+            changes.append("fixed for-loop 'in' / condition '==' syntax")
+
         lines = fixed.split('\n')
         out = []
         i = 0
@@ -3367,6 +3388,17 @@ def detect_metrics_request(query):
             content, re.IGNORECASE):
         return None
     if ':' not in q and len(content.split()) < 2:
+        return None
+    # A noun phrase naming a code construct ("count the number of characters
+    # in a string") is a coding how-to, not a request to measure the literal
+    # words "a string". Without real text to measure, this isn't a metrics
+    # request — the engine should route it to the code handler.
+    if ':' not in q and re.match(
+            r'^(?:a|an|the|any|every|this|that|some|each)\s+(?:string|list|'
+            r'array|dict|dictionary|tuple|set|file|word|words|sentence|'
+            r'sentences|character|characters|letter|letters|line|lines|'
+            r'paragraph|paragraphs|number|numbers|text|string|phrase|passage)'
+            r'\b', content, re.IGNORECASE):
         return None
     return (unit, content)
 

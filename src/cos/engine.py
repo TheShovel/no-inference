@@ -3583,13 +3583,13 @@ def _handle_instruction(query):
             # Strip leading articles/determiners/adjectives
             core_topic = re.sub(r'^(a|an|the|some|my|your|our|their)\s+', '', raw_topic)
             core_topic = re.sub(r'^(good|great|easy|simple|best|perfect|basic|delicious|healthy|quick|fresh|homemade|better)\s+', '', core_topic)
-            # First: direct KB lookup — curated content with light conversational polish
-            kb_answer = knowledge_lookup(q)
-            if kb_answer and len(kb_answer) > 15:
-                return _make_conversational(kb_answer)
             # Coding topics must never fall back to Wikipedia (which returns
             # unrelated articles for code topics: "read a csv with pandas"
-            # -> giant panda). Route to the code KB + synthesizer instead.
+            # -> giant panda) and must beat the general KB, whose fuzzy
+            # matcher returns unrelated entries on shared keywords ("how to
+            # extract phone numbers with regex" -> the chemical "extract"
+            # entry, "how to kill a process on a port" -> the generic
+            # "kill" entry). Route to the code KB + synthesizer first.
             try:
                 from cos.code_knowledge import (is_coding_query,
                                                 looks_like_coding_topic,
@@ -3600,6 +3600,10 @@ def _handle_instruction(query):
                         return _code_ans
             except Exception:
                 pass
+            # Direct KB lookup — curated content with light conversational polish
+            kb_answer = knowledge_lookup(q)
+            if kb_answer and len(kb_answer) > 15:
+                return _make_conversational(kb_answer)
             # Fallback: multi-source retrieval with NLG for Wikipedia content
             content = _retrieve_multi_content(core_topic, max_sources=3)
             if content and len(content) > 60:

@@ -871,6 +871,11 @@ CODE = [
     ("def calc(x y): prnit(x+y)", ["def calc(x, y): print(x+y)"], ["def calc(x y)"]),
     ("print \"hello\"", ["print(\"hello\")"], ["print \""]),
     ("for i in xrange(10):\n    print i", ["for i in range(10):", "print(i)"], ["xrange", "print i"]),
+    ("for i range(10):\n    print(i)", ["for i in range(10):"], ["for i range"]),
+    ("for key, value in d.items():\n    print(key)", ["for key, value in d.items():"], ["in in"]),
+    ("if x = 5:\n    print('five')", ["if x == 5:"], ["if x = 5:"]),
+    ("while i = 3:\n    print(i)", ["while i == 3:"], ["while i = 3:"]),
+    ("if x == 5:\n    print(x)", ["if x == 5:"], []),  # clean == stays
     ("name = raw_input(\"name: \")", ["name = input(\"name: \")"], ["raw_input"]),
     ("for k, v in d.iteritems():\n    print k", ["for k, v in d.items():"], ["iteritems"]),
     ("try:\n    risky()\nexcept ValueError, e:\n    print e", ["except ValueError as e:"], ["ValueError, e"]),

@@ -153,6 +153,20 @@ def test_editor_transform(base):
     check('rename detected', d.get('ok') is True and d.get('op') == 'rename')
     check('rename applied', 'sum = 1 + 2' in d.get('edited', ''))
 
+    # "change" is a rename synonym on the buffer too
+    s, d = _post(base, '/api/editor/transform',
+                 {'query': 'change total to sum', 'code': 'total = 1 + 2\n',
+                  'filename': 't.py'})
+    check('change detected as rename', d.get('ok') is True
+          and d.get('op') == 'rename')
+    check('change applied', 'sum = 1 + 2' in d.get('edited', ''))
+
+    # ...but "change the color to green" is not
+    s, d = _post(base, '/api/editor/transform',
+                 {'query': 'change the color to green', 'code': 'x = 5\n',
+                  'filename': 't.py'})
+    check('color change not a rename', d.get('ok') is False)
+
     # code pasted into the query still edits the buffer
     s, d = _post(base, '/api/editor/transform',
                  {'query': 'add error handling: ' + code2, 'code': code2,

@@ -113,6 +113,31 @@ def test_complete():
     r = complete_buffer('function average(nums) {\n  // ...\n}\n')
     check("avg js recipe", r['changed'] and 'reduce' in r['text'])
 
+    # JS '// TODO' stubs are fill markers too
+    r = complete_buffer('function factorial(n) {\n  // TODO\n}\n')
+    check("js todo marker", r['changed'] and 'result' in r['text']
+          and 'factorial' in r['text'])
+    r = complete_buffer('function greet(name) {\n  // TODO: return a greeting\n}\n')
+    check("js todo instruction", r['changed'] and 'Hello' in r['text'])
+    r = complete_buffer('def factorial(n):\n    # TODO\n    pass\n')
+    check("py todo marker", r['changed'] and 'factorial' in r['text'])
+
+    # data-driven name -> task: underscore/camelCase names reach the
+    # knowledge-file tasks (temp_convert, sum_range) without a restart
+    r = complete_buffer('def celsius_to_fahrenheit(c):\n    pass\n')
+    check("name -> temp_convert", r['changed'] and '9 / 5' in r['text'])
+    r = complete_buffer('function sum1ToN(n) {\n  // TODO\n}\n')
+    check("name -> sum_range", r['changed'] and 'total' in r['text']
+          and 'TODO' not in r['text'])
+    r = complete_buffer('def is_leap_year(year):\n    pass\n')
+    check("name -> leap_year", r['changed'] and '% 4' in r['text'])
+    r = complete_buffer('def find_max(nums):\n    pass\n')
+    check("find_max recipe", r['changed'] and 'max(nums)' in r['text'])
+    r = complete_buffer('def area_of_circle(radius):\n    pass\n')
+    check("area recipe", r['changed'] and 'math.pi' in r['text'])
+    r = complete_buffer('function findMax(nums) {\n  // TODO\n}\n')
+    check("findMax camelCase recipe", r['changed'] and 'Math.max' in r['text'])
+
 
 # ── 3. fill_in ──────────────────────────────────────────────────────────────
 def test_fill_in():

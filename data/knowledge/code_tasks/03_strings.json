@@ -1,0 +1,218 @@
+{
+  "tasks": [
+    {
+      "task": "reverse_string",
+      "patterns": [
+        "\\brevers(?:e|es|ing)\\s+(?:a\\s+|the\\s+)?string\\b",
+        "\\brevers(?:e|es|ing)\\s+(?:the\\s+)?(?:characters\\s+of\\s+)?(?:a\\s+)?string\\b",
+        "\\brevers(?:e|es|ing)\\s+word(?:s)?\\b"
+      ],
+      "intro": "Here's a {lang} function that reverses a string.",
+      "notes": "Strings are immutable in most languages, so reversing produces a new string. In Python, `s[::-1]` is the idiomatic one-liner; in JS, `[...s].reverse().join('')` handles surrogate pairs correctly where `s.split('')` does not.",
+      "languages": {
+        "python": "def reverse_string(s: str) -> str:\n    return s[::-1]\n\n# Example:\nprint(reverse_string('hello'))  # 'olleh'\n\n# Alternative (handles surrogate pairs correctly):\ndef reverse_string_alt(s: str) -> str:\n    return ''.join(reversed(s))",
+        "javascript": "function reverseString(s) {\n    return [...s].reverse().join('');\n}\n\n// Example:\nconsole.log(reverseString('hello'));  // 'olleh'\n// Note: [...s] iterates by code point, so emoji/surrogate pairs survive.\n// s.split('').reverse().join('') would corrupt them.",
+        "java": "public static String reverseString(String s) {\n    return new StringBuilder(s).reverse().toString();\n}",
+        "c++": "std::string reverseString(std::string s) {\n    std::reverse(s.begin(), s.end());\n    return s;\n}",
+        "go": "import \"strings\"\n\nfunc ReverseString(s string) string {\n    // Rune-aware: handles multi-byte UTF-8 characters.\n    runes := []rune(s)\n    for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {\n        runes[i], runes[j] = runes[j], runes[i]\n    }\n    return string(runes)\n}",
+        "rust": "fn reverse_string(s: &str) -> String {\n    // .chars() iterates by Unicode scalar value (not bytes).\n    s.chars().rev().collect()\n}",
+        "c#": "static string ReverseString(string s)\n{\n    char[] chars = s.ToCharArray();\n    Array.Reverse(chars);\n    return new string(chars);\n}",
+        "typescript": "function reverseString(s) {\n    return [...s].reverse().join('');\n}\n\n// Example:\nconsole.log(reverseString('hello'));  // 'olleh'\n// Note: [...s] iterates by code point, so emoji/surrogate pairs survive.\n// s.split('').reverse().join('') would corrupt them.",
+        "bash": "# Reverse with rev (fastest):\necho \"hello\" | rev        # olleh\n\n# Without rev (portable loop):\ns=\"hello\"\nreversed=\"\"\nfor (( i=${#s}-1; i>=0; i-- )); do\n    reversed+=\"${s:$i:1}\"\ndone\necho \"$reversed\"          # olleh\n\n# Reverse a file's lines:\ntac data.txt"
+      }
+    },
+    {
+      "task": "reverse_array",
+      "patterns": [
+        "\\brevers(?:e|es|ing)\\s+(?:an?\\s+)?(?:array|list|slice|vector)\\b",
+        "\\brevers(?:e|es|ing)\\s+(?:the\\s+)?(?:array|list|slice)\\b"
+      ],
+      "intro": "Here's a {lang} function that reverses an array in place.",
+      "notes": "The two-pointer swap approach runs in O(n) time and O(1) extra space.",
+      "languages": {
+        "python": "def reverse_array(arr: list) -> list:\n    left, right = 0, len(arr) - 1\n    while left < right:\n        arr[left], arr[right] = arr[right], arr[left]\n        left += 1\n        right -= 1\n    return arr\n\n# Example:\nnums = [1, 2, 3, 4, 5]\nprint(reverse_array(nums))  # [5, 4, 3, 2, 1]\n# In-place one-liner: nums.reverse()   New list: nums[::-1]",
+        "javascript": "function reverseArray(arr) {\n    let left = 0, right = arr.length - 1;\n    while (left < right) {\n        [arr[left], arr[right]] = [arr[right], arr[left]];\n        left++;\n        right--;\n    }\n    return arr;\n}\n\n// In-place method: arr.reverse()",
+        "java": "public static void reverseArray(int[] arr) {\n    int left = 0, right = arr.length - 1;\n    while (left < right) {\n        int tmp = arr[left];\n        arr[left] = arr[right];\n        arr[right] = tmp;\n        left++;\n        right--;\n    }\n}",
+        "c++": "template <typename T>\nvoid reverseArray(std::vector<T>& arr) {\n    size_t left = 0, right = arr.size();\n    while (left < right) {\n        std::swap(arr[left], arr[right - 1]);\n        left++;\n        right--;\n    }\n}\n// Or simply: std::reverse(arr.begin(), arr.end());",
+        "go": "func ReverseArray(arr []int) {\n    for i, j := 0, len(arr)-1; i < j; i, j = i+1, j-1 {\n        arr[i], arr[j] = arr[j], arr[i]\n    }\n}",
+        "rust": "fn reverse_array(arr: &mut [i32]) {\n    let mut left = 0;\n    let mut right = arr.len();\n    while left < right {\n        arr.swap(left, right - 1);\n        left += 1;\n        right -= 1;\n    }\n}\n// Or simply: arr.reverse();",
+        "typescript": "function reverseArray(arr) {\n    let left = 0, right = arr.length - 1;\n    while (left < right) {\n        [arr[left], arr[right]] = [arr[right], arr[left]];\n        left++;\n        right--;\n    }\n    return arr;\n}\n\n// In-place method: arr.reverse()"
+      }
+    },
+    {
+      "task": "palindrome_string",
+      "patterns": [
+        "\\bpalindrome\\b"
+      ],
+      "intro": "Here's a {lang} function that checks whether a string is a palindrome.",
+      "notes": "A palindrome reads the same forward and backward. The two-pointer version compares characters from both ends and stops early, running in O(n) time and O(1) space.",
+      "languages": {
+        "python": "def is_palindrome(s: str) -> bool:\n    # Normalize: lowercase and drop non-alphanumeric characters.\n    cleaned = ''.join(c.lower() for c in s if c.isalnum())\n    return cleaned == cleaned[::-1]\n\n# Examples:\nprint(is_palindrome('racecar'))        # True\nprint(is_palindrome('A man, a plan, a canal: Panama'))  # True\nprint(is_palindrome('hello'))          # False",
+        "javascript": "function isPalindrome(s) {\n    const cleaned = s.toLowerCase().replace(/[^a-z0-9]/g, '');\n    return cleaned === [...cleaned].reverse().join('');\n}\n\n// Examples:\nconsole.log(isPalindrome('racecar'));   // true\nconsole.log(isPalindrome('A man, a plan, a canal: Panama'));  // true",
+        "java": "public static boolean isPalindrome(String s) {\n    String cleaned = s.toLowerCase().replaceAll(\"[^a-z0-9]\", \"\");\n    return new StringBuilder(cleaned).reverse().toString().equals(cleaned);\n}",
+        "c++": "bool isPalindrome(const std::string& s) {\n    int left = 0, right = (int) s.size() - 1;\n    while (left < right) {\n        while (left < right && !std::isalnum(s[left])) left++;\n        while (left < right && !std::isalnum(s[right])) right--;\n        if (std::tolower(s[left]) != std::tolower(s[right])) return false;\n        left++;\n        right--;\n    }\n    return true;\n}",
+        "go": "func IsPalindrome(s string) bool {\n    var cleaned []rune\n    for _, r := range s {\n        if unicode.IsLetter(r) || unicode.IsDigit(r) {\n            cleaned = append(cleaned, unicode.ToLower(r))\n        }\n    }\n    for i, j := 0, len(cleaned)-1; i < j; i, j = i+1, j-1 {\n        if cleaned[i] != cleaned[j] {\n            return false\n        }\n    }\n    return true\n}",
+        "rust": "fn is_palindrome(s: &str) -> bool {\n    let cleaned: String = s\n        .chars()\n        .filter(|c| c.is_alphanumeric())\n        .flat_map(|c| c.to_lowercase())\n        .collect();\n    cleaned.chars().eq(cleaned.chars().rev())\n}",
+        "typescript": "function isPalindrome(s) {\n    const cleaned = s.toLowerCase().replace(/[^a-z0-9]/g, '');\n    return cleaned === [...cleaned].reverse().join('');\n}\n\n// Examples:\nconsole.log(isPalindrome('racecar'));   // true\nconsole.log(isPalindrome('A man, a plan, a canal: Panama'));  // true"
+      }
+    },
+    {
+      "task": "anagram",
+      "patterns": [
+        "\\banagram\\w*\\b",
+        "\\bcheck\\s+(?:if\\s+)?(?:two\\s+)?(?:strings?|words?)\\s+are\\s+anagrams?\\b"
+      ],
+      "intro": "Here's a {lang} function that checks whether two strings are anagrams of each other.",
+      "notes": "Two strings are anagrams if they contain the same characters with the same counts. Comparing sorted versions is O(n log n); counting characters with a hash map is O(n).",
+      "languages": {
+        "python": "from collections import Counter\n\ndef are_anagrams(a: str, b: str) -> bool:\n    norm = lambda s: Counter(c.lower() for c in s if c.isalnum())\n    return norm(a) == norm(b)\n\n# Examples:\nprint(are_anagrams('listen', 'silent'))   # True\nprint(are_anagrams('rail safety', 'fairy tales'))  # True\nprint(are_anagrams('hello', 'world'))     # False",
+        "javascript": "function areAnagrams(a, b) {\n    const norm = s => s.toLowerCase().replace(/[^a-z0-9]/g, '').split('').sort().join('');\n    return norm(a) === norm(b);\n}\n\n// Examples:\nconsole.log(areAnagrams('listen', 'silent'));       // true\nconsole.log(areAnagrams('rail safety', 'fairy tales'));  // true",
+        "java": "public static boolean areAnagrams(String a, String b) {\n    char[] x = a.toLowerCase().replaceAll(\"[^a-z0-9]\", \"\").toCharArray();\n    char[] y = b.toLowerCase().replaceAll(\"[^a-z0-9]\", \"\").toCharArray();\n    Arrays.sort(x);\n    Arrays.sort(y);\n    return Arrays.equals(x, y);\n}",
+        "c++": "bool areAnagrams(const std::string& a, const std::string& b) {\n    auto norm = [](std::string s) {\n        s.erase(std::remove_if(s.begin(), s.end(),\n            [](unsigned char c) { return !std::isalnum(c); }), s.end());\n        std::transform(s.begin(), s.end(), s.begin(),\n            [](unsigned char c) { return std::tolower(c); });\n        std::sort(s.begin(), s.end());\n        return s;\n    };\n    return norm(a) == norm(b);\n}",
+        "go": "func AreAnagrams(a, b string) bool {\n    norm := func(s string) string {\n        runes := []rune{}\n        for _, r := range s {\n            if unicode.IsLetter(r) || unicode.IsDigit(r) {\n                runes = append(runes, unicode.ToLower(r))\n            }\n        }\n        sort.Slice(runes, func(i, j int) bool { return runes[i] < runes[j] })\n        return string(runes)\n    }\n    return norm(a) == norm(b)\n}",
+        "rust": "fn are_anagrams(a: &str, b: &str) -> bool {\n    let norm = |s: &str| -> Vec<char> {\n        let mut v: Vec<char> = s\n            .chars()\n            .filter(|c| c.is_alphanumeric())\n            .flat_map(|c| c.to_lowercase())\n            .collect();\n        v.sort_unstable();\n        v\n    };\n    norm(a) == norm(b)\n}",
+        "typescript": "function areAnagrams(a, b) {\n    const norm = s => s.toLowerCase().replace(/[^a-z0-9]/g, '').split('').sort().join('');\n    return norm(a) === norm(b);\n}\n\n// Examples:\nconsole.log(areAnagrams('listen', 'silent'));       // true\nconsole.log(areAnagrams('rail safety', 'fairy tales'));  // true"
+      }
+    },
+    {
+      "task": "most_frequent",
+      "patterns": [
+        "\\bmost\\s+(?:frequently\\s+)?occurring\\s+(?:character|element|word)\\b",
+        "\\bfind\\s+the\\s+most\\s+common\\b",
+        "\\bmost\\s+common\\s+(?:character|element|word)\\b",
+        "\\bmode\\s+of\\s+(?:a\\s+)?(?:list|array)\\b"
+      ],
+      "intro": "Here's a {lang} function that finds the most frequently occurring element in a collection.",
+      "notes": "This uses a hash map to tally frequencies in O(n) time, then a single pass to find the max. For ties, it returns the first-seen element.",
+      "languages": {
+        "python": "from collections import Counter\n\ndef most_frequent(items: list) -> object:\n    if not items:\n        return None\n    counts = Counter(items)\n    return counts.most_common(1)[0][0]\n\n# Example:\nprint(most_frequent([1, 3, 2, 3, 4, 3, 1]))  # 3\n\n# Full ranking:\ndef frequency_ranking(items: list):\n    return Counter(items).most_common()",
+        "javascript": "function mostFrequent(items) {\n    if (items.length === 0) return undefined;\n    const counts = new Map();\n    for (const item of items) {\n        counts.set(item, (counts.get(item) || 0) + 1);\n    }\n    let best, bestCount = 0;\n    for (const [item, count] of counts) {\n        if (count > bestCount) {\n            best = item;\n            bestCount = count;\n        }\n    }\n    return best;\n}",
+        "java": "public static <T> T mostFrequent(List<T> items) {\n    Map<T, Long> counts = items.stream()\n        .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));\n    return counts.entrySet().stream()\n        .max(Map.Entry.comparingByValue())\n        .map(Map.Entry::getKey)\n        .orElse(null);\n}",
+        "c++": "#include <unordered_map>\n\nint mostFrequent(const std::vector<int>& items) {\n    std::unordered_map<int, int> counts;\n    for (int x : items) counts[x]++;\n    int best = 0, bestCount = 0;\n    for (auto& [x, c] : counts) {\n        if (c > bestCount) {\n            best = x;\n            bestCount = c;\n        }\n    }\n    return best;\n}",
+        "go": "func MostFrequent(items []int) (int, bool) {\n    counts := map[int]int{}\n    for _, x := range items {\n        counts[x]++\n    }\n    best, bestCount := 0, 0\n    for x, c := range counts {\n        if c > bestCount {\n            best, bestCount = x, c\n        }\n    }\n    return best, bestCount > 0\n}",
+        "rust": "use std::collections::HashMap;\n\nfn most_frequent(items: &[i32]) -> Option<i32> {\n    let mut counts: HashMap<i32, usize> = HashMap::new();\n    for &x in items {\n        *counts.entry(x).or_insert(0) += 1;\n    }\n    counts.into_iter().max_by_key(|(_, c)| *c).map(|(x, _)| x)\n}",
+        "typescript": "function mostFrequent(items) {\n    if (items.length === 0) return undefined;\n    const counts = new Map();\n    for (const item of items) {\n        counts.set(item, (counts.get(item) || 0) + 1);\n    }\n    let best, bestCount = 0;\n    for (const [item, count] of counts) {\n        if (count > bestCount) {\n            best = item;\n            bestCount = count;\n        }\n    }\n    return best;\n}"
+      }
+    },
+    {
+      "task": "count_occurrences",
+      "patterns": [
+        "\\bcount\\s+(?:the\\s+)?(?:number\\s+of\\s+)?(?:occurrences|frequency)\\s+of\\b",
+        "\\bfrequency\\s+of\\s+(?:each|every|characters?|elements?|words?)\\b",
+        "\\bcharacter\\s+counter\\b",
+        "\\bword\\s+count(?:er)?\\b"
+      ],
+      "intro": "Here's a {lang} snippet that counts how many times each element appears.",
+      "notes": "A hash map (or Counter in Python) counts each element in O(n) time. In SQL the same job is a GROUP BY with COUNT(*).",
+      "languages": {
+        "python": "from collections import Counter\n\ndef count_occurrences(items: list) -> dict:\n    return dict(Counter(items))\n\n# Example:\nprint(count_occurrences(['a', 'b', 'a', 'c', 'a', 'b']))\n# {'a': 3, 'b': 2, 'c': 1}\n\n# Word frequency in a text:\ntext = \"the cat and the dog and the bird\"\nword_counts = Counter(text.lower().split())\nprint(word_counts.most_common(3))",
+        "javascript": "function countOccurrences(items) {\n    const counts = {};\n    for (const item of items) {\n        counts[item] = (counts[item] || 0) + 1;\n    }\n    return counts;\n}\n\n// Example:\nconsole.log(countOccurrences(['a', 'b', 'a', 'c', 'a', 'b']));\n// { a: 3, b: 2, c: 1 }",
+        "java": "public static Map<String, Long> countOccurrences(List<String> items) {\n    return items.stream()\n        .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));\n}",
+        "c++": "std::unordered_map<std::string, int> countOccurrences(\n    const std::vector<std::string>& items) {\n    std::unordered_map<std::string, int> counts;\n    for (const auto& s : items) counts[s]++;\n    return counts;\n}",
+        "go": "func CountOccurrences(items []string) map[string]int {\n    counts := map[string]int{}\n    for _, s := range items {\n        counts[s]++\n    }\n    return counts\n}",
+        "rust": "use std::collections::HashMap;\n\nfn count_occurrences(items: &[&str]) -> HashMap<&str, usize> {\n    let mut counts = HashMap::new();\n    for &s in items {\n        *counts.entry(s).or_insert(0) += 1;\n    }\n    counts\n}",
+        "typescript": "function countOccurrences(items) {\n    const counts = {};\n    for (const item of items) {\n        counts[item] = (counts[item] || 0) + 1;\n    }\n    return counts;\n}\n\n// Example:\nconsole.log(countOccurrences(['a', 'b', 'a', 'c', 'a', 'b']));\n// { a: 3, b: 2, c: 1 }"
+      }
+    },
+    {
+      "task": "string_length",
+      "patterns": [
+        "\\b(?:count|get|find|calculate|compute|return)\\b.*\\b(?:number\\s+of\\s+)?(?:characters?|letters?)\\b.*\\b(?:in\\s+a\\s+|of\\s+a\\s+|in\\s+the\\s+|of\\s+the\\s+)?(?:string|text|word|sentence|phrase)\\b",
+        "\\blength\\s+of\\s+(?:a\\s+|the\\s+)?(?:string|text|word|sentence)\\b",
+        "\\b(?:string|text)\\s+length\\b",
+        "\\bhow\\s+long\\s+is\\s+(?:a\\s+|the\\s+)?(?:string|word|text)\\b",
+        "\\blen\\s+of\\s+(?:a\\s+|the\\s+)?(?:string|text|word)\\b"
+      ],
+      "intro": "Here's how to get the length of a string in {lang}.",
+      "notes": "In Python `len(s)` counts Unicode code points; JavaScript's `s.length` counts UTF-16 code units (emoji count as 2) — use `[...s].length` there for user-perceived characters. In C/Go/Rust, string length is the byte count unless you decode first.",
+      "languages": {
+        "python": "# len() counts the characters (code points) in a string:\ns = \"hello world\"\nprint(len(s))          # 11\n\n# Every character counts, including spaces and punctuation:\nprint(len(\"a b c\"))   # 5\n\n# Emoji count as a single character:\nprint(len(\"🚀\"))       # 1\n\n# Bytes (UTF-8) — differs from characters for non-ASCII text:\nprint(len(\"café\".encode('utf-8')))   # 5\n\n# Without a variable:\nprint(len(\"hello\"))   # 5",
+        "javascript": "// .length counts UTF-16 code units:\nconst s = 'hello world';\nconsole.log(s.length);          // 11\n\n// For user-perceived characters (emoji, combining marks):\nconsole.log([...'🚀'].length);   // 1\nconsole.log(s.split('').length); // 11\n\n// In TypeScript the same APIs apply.",
+        "go": "s := \"hello world\"\nfmt.Println(len(s))     // 11 bytes\n\n// Characters (runes) — use utf8.RuneCountInString:\nimport \"unicode/utf8\"\nfmt.Println(utf8.RuneCountInString(\"café\"))   // 4 (bytes would be 5)",
+        "rust": "let s = \"hello world\";\nprintln!(\"{}\", s.len());            // 11 bytes\n\n// Characters:\nprintln!(\"{}\", s.chars().count());  // 11\n// \"café\".chars().count() is 4, while .len() is 5 (UTF-8)",
+        "java": "String s = \"hello world\";\nint n = s.length();   // 11",
+        "c++": "#include <string>\nstd::string s = \"hello world\";\nstd::size_t n = s.length();   // 11 (same as s.size())",
+        "c#": "string s = \"hello world\";\nint n = s.Length;   // 11",
+        "bash": "# ${#var} gives the character count:\ns=\"hello world\"\necho ${#s}     # 11\n\n# Bytes (for UTF-8 strings, counts bytes):\necho ${#s} | wc -c",
+        "typescript": "// .length counts UTF-16 code units:\nconst s = 'hello world';\nconsole.log(s.length);          // 11\n\n// For user-perceived characters (emoji, combining marks):\nconsole.log([...'🚀'].length);   // 1\nconsole.log(s.split('').length); // 11\n\n// In TypeScript the same APIs apply."
+      }
+    },
+    {
+      "task": "balanced_parens",
+      "patterns": [
+        "\\b(?:check|test|validate)\\b.*\\bbalanced\\b.*\\b(?:parentheses?|brackets?|braces?|parens?)\\b",
+        "\\bbalanced\\s+(?:parentheses?|brackets?|braces?|parens?)\\b",
+        "\\bvalid\\s+parentheses?\\b",
+        "\\b(?:parentheses?|brackets?)\\s+match(?:ing|ed)?\\b"
+      ],
+      "intro": "Here's a {lang} function that checks whether parentheses/brackets are balanced.",
+      "notes": "A stack is the classic solution: push openers, pop on a matching closer, and fail on any mismatch or leftover opener. Runs in O(n) time and O(n) space.",
+      "languages": {
+        "python": "def is_balanced(s: str) -> bool:\n    \"\"\"True when (), [], {} pairs are properly nested and matched.\"\"\"\n    stack = []\n    pairs = {')': '(', ']': '[', '}': '{'}\n    for ch in s:\n        if ch in '([{':\n            stack.append(ch)\n        elif ch in pairs:\n            if not stack or stack.pop() != pairs[ch]:\n                return False\n    return not stack\n\n# Example:\nprint(is_balanced('(a[b]{c})'))   # True\nprint(is_balanced('([)]'))        # False",
+        "javascript": "function isBalanced(s) {\n    const stack = [];\n    const pairs = { ')': '(', ']': '[', '}': '{' };\n    for (const ch of s) {\n        if ('([{'.includes(ch)) stack.push(ch);\n        else if (pairs[ch]) {\n            if (stack.pop() !== pairs[ch]) return false;\n        }\n    }\n    return stack.length === 0;\n}\n\nconsole.log(isBalanced('(a[b]{c})'));  // true\nconsole.log(isBalanced('([)]'));       // false",
+        "go": "func IsBalanced(s string) bool {\n    stack := []rune{}\n    pairs := map[rune]rune{')': '(', ']': '[', '}': '{'}\n    for _, ch := range s {\n        switch ch {\n        case '(', '[', '{':\n            stack = append(stack, ch)\n        case ')', ']', '}':\n            if len(stack) == 0 || stack[len(stack)-1] != pairs[ch] {\n                return false\n            }\n            stack = stack[:len(stack)-1]\n        }\n    }\n    return len(stack) == 0\n}",
+        "rust": "fn is_balanced(s: &str) -> bool {\n    let mut stack: Vec<char> = Vec::new();\n    let pairs = [(')', '('), (']', '['), ('}', '{')];\n    for ch in s.chars() {\n        match ch {\n            '(' | '[' | '{' => stack.push(ch),\n            _ => {\n                if let Some(&(open, close)) = pairs.iter().find(|&&(c, _)| c == ch) {\n                    if stack.pop() != Some(close) {\n                        return false;\n                    }\n                }\n            }\n        }\n    }\n    stack.is_empty()\n}"
+      }
+    },
+    {
+      "task": "list_to_string",
+      "patterns": [
+        "\\b(?:convert|turn|transform)\\s+(?:a\\s+|the\\s+)?list\\s+(?:to|into)\\s+(?:a\\s+|the\\s+)?string\\b",
+        "\\bjoin\\s+(?:a\\s+|the\\s+)?list\\s+(?:into|to)\\s+(?:a\\s+)?string\\b",
+        "\\bjoin\\s+(?:a\\s+)?list\\s+of\\s+strings\\b"
+      ],
+      "intro": "Here's how to convert a list to a string in {lang}.",
+      "notes": "`''.join(items)` concatenates with no separator; `', '.join(items)` inserts a separator. The separator must be a string and every element must be a string (convert non-strings first).",
+      "languages": {
+        "python": "words = ['hello', 'world', '!']\n\n# Join with a separator:\nprint(', '.join(words))      # hello, world, !\n\n# No separator:\nprint(''.join(words))        # helloworld!\n\n# Mixed types need conversion first:\nprint(' '.join(str(x) for x in [1, 2, 3]))  # 1 2 3",
+        "javascript": "const words = ['hello', 'world', '!'];\n\n// Join with a separator:\nconsole.log(words.join(', '));   // hello, world, !\n\n// No separator:\nconsole.log(words.join(''));     // helloworld!\n\n// Numbers convert automatically:\nconsole.log([1, 2, 3].join(' ')); // 1 2 3"
+      }
+    },
+    {
+      "task": "string_to_list",
+      "patterns": [
+        "\\b(?:convert|turn|transform)\\s+(?:a\\s+|the\\s+)?string\\s+(?:to|into)\\s+(?:a\\s+|the\\s+)?list\\b",
+        "\\bsplit\\s+(?:a\\s+|the\\s+)?string\\s+(?:into|by)\\b",
+        "\\bbreak\\s+(?:a\\s+|the\\s+)?string\\s+into\\s+(?:a\\s+)?list\\b"
+      ],
+      "intro": "Here's how to convert a string to a list in {lang}.",
+      "notes": "`str.split()` with no argument splits on any whitespace and collapses runs; `split(',')` splits on a specific separator; `list(s)` splits into individual characters.",
+      "languages": {
+        "python": "text = 'the quick brown fox'\n\n# Split on whitespace:\nprint(text.split())        # ['the', 'quick', 'brown', 'fox']\n\n# Split on a separator:\nprint('a,b,c'.split(','))  # ['a', 'b', 'c']\n\n# Individual characters:\nprint(list('abc'))         # ['a', 'b', 'c']\n\n# Limit splits:\nprint('a,b,c'.split(',', 1))  # ['a', 'b,c']",
+        "javascript": "const text = 'the quick brown fox';\n\n// Split on whitespace:\nconsole.log(text.split(' '));    // ['the', 'quick', 'brown', 'fox']\n\n// Split on a separator:\nconsole.log('a,b,c'.split(',')); // ['a', 'b', 'c']\n\n// Individual characters (handles emoji correctly):\nconsole.log([...'abc']);         // ['a', 'b', 'c']"
+      }
+    },
+    {
+      "task": "string_case",
+      "patterns": [
+        "\\b(?:convert|change|transform)\\s+(?:a\\s+|the\\s+)?string\\s+(?:to|into)\\s+(?:lowercase|uppercase|title\\s*case|camel\\s*case)\\b",
+        "\\b(?:lowercase|uppercase|capitalize|capitalise|title\\s*case)\\s+(?:a\\s+|the\\s+)?(?:string|word|letter|text)\\b",
+        "\\b(?:make|turn)\\s+(?:a\\s+|the\\s+)?(?:string|word|letter|text)\\s+(?:lowercase|uppercase)\\b",
+        "\\bcaptial\\s+first\\s+letter\\b",
+        "\\bcapitaliz\\w*\\s+(?:the\\s+)?first\\s+letter\\b",
+        "\\b(?:uppercase|capitalize)\\s+(?:the\\s+)?first\\s+(?:character|char|letter)\\b",
+        "\\b(?:make|turn)\\s+(?:the\\s+)?first\\s+letter\\s+(?:uppercase|capital)\\b"
+      ],
+      "intro": "Here's how to change the case of a string in {lang}.",
+      "notes": "`.lower()` / `.toLowerCase()` for lowercase, `.upper()` / `.toUpperCase()` for uppercase, `.capitalize()` / `.title()` for first-letter and title case. Case conversion changes length for some Unicode (e.g. ß → SS), so re-measure after.",
+      "languages": {
+        "python": "text = 'hello WORLD'\n\nprint(text.lower())          # hello world\nprint(text.upper())          # HELLO WORLD\nprint(text.capitalize())     # Hello world\nprint(text.title())          # Hello World\nprint(text.swapcase())       # HELLO world\n\n# First letter of each word lowercased (sentence case):\ntext2 = 'HELLO THERE'\nprint(text2.capitalize())   # Hello there",
+        "javascript": "const text = 'hello WORLD';\n\nconsole.log(text.toLowerCase());   // hello world\nconsole.log(text.toUpperCase());   // HELLO WORLD\nconsole.log(text.charAt(0).toUpperCase() + text.slice(1));  // Hello WORLD\n\n// Title case:\nconsole.log(text.replace(/\\w\\S*/g, w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()));\n// Hello World"
+      }
+    },
+    {
+      "task": "strip_whitespace",
+      "patterns": [
+        "\\b(?:remove|strip|trim|delete|clear)\\b.*\\bwhitespace\\b.*\\b(?:string|text)\\b",
+        "\\b(?:remove|strip|trim)\\s+(?:all\\s+)?spaces?\\s+(?:from|in)\\s+(?:a\\s+|the\\s+)?string\\b",
+        "\\b(?:strip|trim)\\s+(?:a\\s+|the\\s+)?string\\b"
+      ],
+      "intro": "Here's how to remove whitespace from a string in {lang}.",
+      "notes": "`strip()` removes leading/trailing whitespace; `replace(' ', '')` removes spaces only; `''.join(s.split())` removes ALL whitespace (tabs, newlines) between words too. For collapsing runs to one space use `re.sub(r'\\s+', ' ', s)`.",
+      "languages": {
+        "python": "import re\n\ntext = '  hello   world  '\n\n# Leading and trailing whitespace:\nprint(text.strip())          # 'hello   world'\n\n# All spaces:\nprint(text.replace(' ', '')) # 'helloworld'\n\n# All whitespace (tabs/newlines too):\nprint(''.join(text.split())) # 'helloworld'\n\n# Collapse runs to a single space:\nprint(re.sub(r'\\s+', ' ', text).strip())  # 'hello world'",
+        "javascript": "const text = '  hello   world  ';\n\n// Leading and trailing whitespace:\nconsole.log(text.trim());           // 'hello   world'\n\n// All spaces:\nconsole.log(text.replace(/ /g, '')); // 'helloworld'\n\n// All whitespace:\nconsole.log(text.replace(/\\s/g, '')); // 'helloworld'\n\n// Collapse runs to a single space:\nconsole.log(text.replace(/\\s+/g, ' ').trim());  // 'hello world'"
+      }
+    }
+  ]
+}

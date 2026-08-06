@@ -1,0 +1,111 @@
+{
+  "tasks": [
+    {
+      "task": "regex_email",
+      "patterns": [
+        "\\b(?:validat|check|verif|test)\\w*\\s+(?:if\\s+)?(?:a\\s+|an?\\s+|the\\s+)?(?:string\\s+is\\s+)?(?:valid\\s+)?email(?:\\.?\\s+address)?\\b",
+        "\\bemail\\s+(?:validation|validator|regex|regexp)\\b",
+        "\\bregex\\s+(?:to|for)\\s+.*\\bemail\\b"
+      ],
+      "intro": "Here's a {lang} function that validates an email address with a regular expression.",
+      "notes": "RFC 5322 email addresses are notoriously complex; the common `[^@\\s]+@[^@\\s]+\\.[^@\\s]+` pattern covers the vast majority of real-world inputs. For production, pair the regex with a length check and avoid rejecting valid-but-unusual addresses.",
+      "languages": {
+        "python": "import re\n\nEMAIL_RE = re.compile(r'^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$')\n\ndef is_valid_email(email: str) -> bool:\n    return bool(EMAIL_RE.match(email))\n\n# Examples:\nprint(is_valid_email('user@example.com'))   # True\nprint(is_valid_email('user.name+tag@gmail.com'))  # True\nprint(is_valid_email('not-an-email'))       # False\nprint(is_valid_email('a@b'))                # False (no TLD)",
+        "javascript": "function isValidEmail(email) {\n    return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/.test(email);\n}\n\n// Examples:\nconsole.log(isValidEmail('user@example.com'));        // true\nconsole.log(isValidEmail('user.name+tag@gmail.com')); // true\nconsole.log(isValidEmail('not-an-email'));            // false",
+        "java": "private static final Pattern EMAIL_RE =\n    Pattern.compile(\"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\\\.[A-Za-z]{2,}$\");\n\npublic static boolean isValidEmail(String email) {\n    return EMAIL_RE.matcher(email).matches();\n}",
+        "c++": "#include <regex>\n\nbool isValidEmail(const std::string& email) {\n    static const std::regex re(\n        R\"(^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$)\");\n    return std::regex_match(email, re);\n}",
+        "go": "import \"regexp\"\n\nvar emailRe = regexp.MustCompile(`^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$`)\n\nfunc IsValidEmail(email string) bool {\n    return emailRe.MatchString(email)\n}",
+        "rust": "use regex::Regex;\n\nfn is_valid_email(email: &str) -> bool {\n    let re = Regex::new(r\"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$\").unwrap();\n    re.is_match(email)\n}",
+        "typescript": "function isValidEmail(email) {\n    return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/.test(email);\n}\n\n// Examples:\nconsole.log(isValidEmail('user@example.com'));        // true\nconsole.log(isValidEmail('user.name+tag@gmail.com')); // true\nconsole.log(isValidEmail('not-an-email'));            // false",
+        "bash": "# Validate an email address:\nemail=\"user@example.com\"\nif echo \"$email\" | grep -qE '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$'; then\n    echo \"valid\"\nelse\n    echo \"invalid\"\nfi\n\n# Extract all emails from a file:\ngrep -oE '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}' contacts.txt\n\n# Extract from a pipe:\ncat emails.log | grep -oE '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}' | sort -u"
+      }
+    },
+    {
+      "task": "regex_phone",
+      "patterns": [
+        "\\b(?:validate|check|verify)\\s+(?:a\\s+)?phone\\s+number\\b",
+        "\\bphone\\s+(?:validation|validator|regex|regexp)\\b",
+        "\\b(?:extract|find|match|pull|grab)\\s+(?:all\\s+|the\\s+)?(?:phone|telephone)\\s+numbers?\\s+(?:from|in)\\b",
+        "\\bphone\\s+numbers?\\s+from\\s+text\\b"
+      ],
+      "intro": "Here's a {lang} snippet for working with phone numbers using a regular expression.",
+      "notes": "Phone formats vary wildly by country. The pattern here accepts common US formats; for international numbers use a library like libphonenumber rather than a hand-written regex.",
+      "languages": {
+        "python": "import re\n\n# US-style phone numbers: (555) 123-4567, 555-123-4567, +1 555 123 4567\nPHONE_RE = re.compile(\n    r'\\+?1?\\s*(?:\\(\\d{3}\\)|\\d{3})[\\s.-]?\\d{3}[\\s.-]?\\d{4}'\n)\n\ndef is_valid_phone(phone: str) -> bool:\n    return bool(PHONE_RE.match(phone.strip()))\n\ndef extract_phones(text: str) -> list[str]:\n    \"\"\"Pull every phone number out of a block of text.\"\"\"\n    return PHONE_RE.findall(text)\n\n# Examples:\nfor p in ('(555) 123-4567', '555-123-4567', '+1 555 123 4567', '12345'):\n    print(p, '->', is_valid_phone(p))\n\nprint(extract_phones('Call (555) 123-4567 or 555-987-6543 today!'))\n# ['(555) 123-4567', '555-987-6543']",
+        "javascript": "function isValidPhone(phone) {\n    // US-style: (555) 123-4567, 555-123-4567, +1 555 123 4567\n    return /^\\+?1?\\s*(?:\\(\\d{3}\\)|\\d{3})[\\s.-]?\\d{3}[\\s.-]?\\d{4}$/.test(phone.trim());\n}\n\n// Extract phone numbers from text (no anchors):\nfunction extractPhones(text) {\n    return text.match(/\\+?1?\\s*(?:\\(\\d{3}\\)|\\d{3})[\\s.-]?\\d{3}[\\s.-]?\\d{4}/g) || [];\n}\n\n// Examples:\n['(555) 123-4567', '555-123-4567', '+1 555 123 4567', '12345']\n    .forEach(p => console.log(p, '->', isValidPhone(p)));\nconsole.log(extractPhones('Call (555) 123-4567 or 555-987-6543 today!'));",
+        "java": "private static final Pattern PHONE_RE = Pattern.compile(\n    \"^\\\\+?1?\\\\s*(?:\\\\(\\\\d{3}\\\\)|\\\\d{3})[\\\\s.-]?\\\\d{3}[\\\\s.-]?\\\\d{4}$\");\n\npublic static boolean isValidPhone(String phone) {\n    return PHONE_RE.matcher(phone.trim()).matches();\n}",
+        "c++": "#include <regex>\n\nbool isValidPhone(const std::string& phone) {\n    static const std::regex re(\n        R\"(^\\+?1?\\s*(?:\\(\\d{3}\\)|\\d{3})[\\s.-]?\\d{3}[\\s.-]?\\d{4}$)\");\n    return std::regex_match(phone, re);\n}",
+        "go": "import \"regexp\"\n\nvar phoneRe = regexp.MustCompile(`^\\+?1?\\s*(?:\\(\\d{3}\\)|\\d{3})[\\s.-]?\\d{3}[\\s.-]?\\d{4}$`)\n\nfunc IsValidPhone(phone string) bool {\n    return phoneRe.MatchString(phone)\n}",
+        "typescript": "function isValidPhone(phone) {\n    // US-style: (555) 123-4567, 555-123-4567, +1 555 123 4567\n    return /^\\+?1?\\s*(?:\\(\\d{3}\\)|\\d{3})[\\s.-]?\\d{3}[\\s.-]?\\d{4}$/.test(phone.trim());\n}\n\n// Extract phone numbers from text (no anchors):\nfunction extractPhones(text) {\n    return text.match(/\\+?1?\\s*(?:\\(\\d{3}\\)|\\d{3})[\\s.-]?\\d{3}[\\s.-]?\\d{4}/g) || [];\n}\n\n// Examples:\n['(555) 123-4567', '555-123-4567', '+1 555 123 4567', '12345']\n    .forEach(p => console.log(p, '->', isValidPhone(p)));\nconsole.log(extractPhones('Call (555) 123-4567 or 555-987-6543 today!'));"
+      }
+    },
+    {
+      "task": "regex_password",
+      "patterns": [
+        "\\b(?:password|passwd)\\s+(?:validation|validator|strength|regex|check)\\b",
+        "\\bvalidate\\s+(?:a\\s+)?password\\b",
+        "\\bstrong\\s+password\\b"
+      ],
+      "intro": "Here's a {lang} function that checks password strength with a regular expression.",
+      "notes": "Requiring uppercase, lowercase, digit, and special character plus a minimum length is the standard policy. Note that over-strict password rules often push users toward weaker, reused passwords — length is the strongest single factor.",
+      "languages": {
+        "python": "import re\n\ndef password_strength(pw: str) -> dict:\n    checks = {\n        'length >= 8': len(pw) >= 8,\n        'uppercase': bool(re.search(r'[A-Z]', pw)),\n        'lowercase': bool(re.search(r'[a-z]', pw)),\n        'digit': bool(re.search(r'\\d', pw)),\n        'special': bool(re.search(r'[^A-Za-z0-9]', pw)),\n    }\n    return checks\n\ndef is_strong_password(pw: str) -> bool:\n    return all(password_strength(pw).values())\n\n# Example:\npw = 'Tr0ub4dor&3'\nprint(is_strong_password(pw))   # True\nprint(password_strength(pw))",
+        "javascript": "function passwordStrength(pw) {\n    return {\n        'length >= 8': pw.length >= 8,\n        uppercase: /[A-Z]/.test(pw),\n        lowercase: /[a-z]/.test(pw),\n        digit: /\\d/.test(pw),\n        special: /[^A-Za-z0-9]/.test(pw),\n    };\n}\n\nfunction isStrongPassword(pw) {\n    return Object.values(passwordStrength(pw)).every(Boolean);\n}\n\n// Example:\nconsole.log(isStrongPassword('Tr0ub4dor&3'));  // true",
+        "java": "public static boolean isStrongPassword(String pw) {\n    return pw.length() >= 8\n        && pw.matches(\".*[A-Z].*\")\n        && pw.matches(\".*[a-z].*\")\n        && pw.matches(\".*\\\\d.*\")\n        && pw.matches(\".*[^A-Za-z0-9].*\");\n}",
+        "c++": "#include <regex>\n\nbool isStrongPassword(const std::string& pw) {\n    return pw.size() >= 8\n        && std::regex_search(pw, std::regex(R\"([A-Z])\"))\n        && std::regex_search(pw, std::regex(R\"([a-z])\"))\n        && std::regex_search(pw, std::regex(R\"(\\d)\"))\n        && std::regex_search(pw, std::regex(R\"([^A-Za-z0-9])\"));\n}",
+        "go": "import \"regexp\"\n\nfunc IsStrongPassword(pw string) bool {\n    upper := regexp.MustCompile(`[A-Z]`).MatchString(pw)\n    lower := regexp.MustCompile(`[a-z]`).MatchString(pw)\n    digit := regexp.MustCompile(`\\d`).MatchString(pw)\n    special := regexp.MustCompile(`[^A-Za-z0-9]`).MatchString(pw)\n    return len(pw) >= 8 && upper && lower && digit && special\n}",
+        "typescript": "function passwordStrength(pw) {\n    return {\n        'length >= 8': pw.length >= 8,\n        uppercase: /[A-Z]/.test(pw),\n        lowercase: /[a-z]/.test(pw),\n        digit: /\\d/.test(pw),\n        special: /[^A-Za-z0-9]/.test(pw),\n    };\n}\n\nfunction isStrongPassword(pw) {\n    return Object.values(passwordStrength(pw)).every(Boolean);\n}\n\n// Example:\nconsole.log(isStrongPassword('Tr0ub4dor&3'));  // true"
+      }
+    },
+    {
+      "task": "regex_url",
+      "patterns": [
+        "\\b(?:validate|check)\\s+(?:an?\\s+)?url\\b",
+        "\\burl\\s+(?:validation|validator|regex|regexp)\\b",
+        "\\b(?:extract|find|match|pull|grab)\\s+(?:all\\s+|the\\s+)?(?:urls?|links?|web\\s+addresses?)\\s+(?:from|in)\\b",
+        "\\burls?\\s+from\\s+text\\b"
+      ],
+      "intro": "Here's a {lang} function that validates a URL with a regular expression.",
+      "notes": "A pragmatic URL pattern accepts scheme://host/path with optional query string and fragment. For parsing (not just validation), use your language's URL/URI class instead of regex.",
+      "languages": {
+        "python": "import re\n\nURL_RE = re.compile(\n    r'^(?:https?|ftp)://'\n    r'[A-Za-z0-9.-]+'                 # host\n    r'(?::\\d+)?'                      # optional port\n    r'(?:/[^\\s]*)?$'                  # optional path\n)\n\ndef is_valid_url(url: str) -> bool:\n    return bool(URL_RE.match(url))\n\n# Examples:\nprint(is_valid_url('https://example.com/path?q=1'))  # True\nprint(is_valid_url('example.com'))                    # False (no scheme)",
+        "javascript": "function isValidUrl(url) {\n    try {\n        const u = new URL(url);\n        return u.protocol === 'http:' || u.protocol === 'https:';\n    } catch {\n        return false;\n    }\n}\n\n// Examples:\nconsole.log(isValidUrl('https://example.com/path?q=1'));  // true\nconsole.log(isValidUrl('example.com'));                   // false",
+        "java": "public static boolean isValidUrl(String url) {\n    try {\n        java.net.URI uri = new java.net.URI(url);\n        String scheme = uri.getScheme();\n        return \"http\".equals(scheme) || \"https\".equals(scheme);\n    } catch (Exception e) {\n        return false;\n    }\n}",
+        "go": "import \"net/url\"\n\nfunc IsValidUrl(raw string) bool {\n    u, err := url.Parse(raw)\n    return err == nil && (u.Scheme == \"http\" || u.Scheme == \"https\")\n}",
+        "rust": "fn is_valid_url(raw: &str) -> bool {\n    match url::Url::parse(raw) {\n        Ok(u) => matches!(u.scheme(), \"http\" | \"https\"),\n        Err(_) => false,\n    }\n}",
+        "typescript": "function isValidUrl(url) {\n    try {\n        const u = new URL(url);\n        return u.protocol === 'http:' || u.protocol === 'https:';\n    } catch {\n        return false;\n    }\n}\n\n// Examples:\nconsole.log(isValidUrl('https://example.com/path?q=1'));  // true\nconsole.log(isValidUrl('example.com'));                   // false"
+      }
+    },
+    {
+      "task": "extract_emails",
+      "patterns": [
+        "\\bextract\\s+(?:all\\s+)?emails?\\b",
+        "\\bfind\\s+(?:all\\s+)?email\\s+addresses\\b",
+        "\\bscrape\\s+emails\\b"
+      ],
+      "intro": "Here's a {lang} function that extracts all email addresses from a block of text.",
+      "notes": "The regex finds `user@domain.tld` patterns inside arbitrary text. In production, prefer a well-tested email-extraction library — spammers deliberately craft strings that fool naive regexes.",
+      "languages": {
+        "python": "import re\n\nEMAIL_RE = re.compile(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}')\n\ndef extract_emails(text: str) -> list[str]:\n    return EMAIL_RE.findall(text)\n\n# Example:\ntext = \"Contact alice@example.com or bob.smith+news@company.co.uk for help.\"\nprint(extract_emails(text))\n# ['alice@example.com', 'bob.smith+news@company.co.uk']",
+        "javascript": "function extractEmails(text) {\n    const re = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}/g;\n    return text.match(re) || [];\n}\n\n// Example:\nconst text = \"Contact alice@example.com or bob.smith+news@company.co.uk for help.\";\nconsole.log(extractEmails(text));",
+        "java": "private static final Pattern EMAIL_RE =\n    Pattern.compile(\"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\\\.[A-Za-z]{2,}\");\n\npublic static List<String> extractEmails(String text) {\n    List<String> out = new ArrayList<>();\n    Matcher m = EMAIL_RE.matcher(text);\n    while (m.find()) out.add(m.group());\n    return out;\n}",
+        "go": "import \"regexp\"\n\nvar emailRe = regexp.MustCompile(`[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}`)\n\nfunc ExtractEmails(text string) []string {\n    return emailRe.FindAllString(text, -1)\n}",
+        "typescript": "function extractEmails(text) {\n    const re = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}/g;\n    return text.match(re) || [];\n}\n\n// Example:\nconst text = \"Contact alice@example.com or bob.smith+news@company.co.uk for help.\";\nconsole.log(extractEmails(text));"
+      }
+    },
+    {
+      "task": "regex_ip",
+      "patterns": [
+        "\\b(?:regex|regexp|regular\\s+expression)\\b.*\\b(?:ip|ipv4|ip\\s+address)\\b",
+        "\\b(?:validate|check|match|extract)\\b.*\\b(?:ipv4\\s+)?ip\\s+address\\b",
+        "\\bip\\s+(?:address\\s+)?(?:regex|validation|validator)\\b"
+      ],
+      "intro": "Here's a {lang} snippet for matching IPv4 addresses with a regular expression.",
+      "notes": "The classic pattern validates four 0-255 octets. It's stricter to check the octet range with alternation than to allow `999.999.999.999`. For IPv6, use your language's address-parsing library instead of regex.",
+      "languages": {
+        "python": "import re\n\n# IPv4: four octets, each 0-255:\nIPV4_RE = re.compile(\n    r'^((25[0-5]|2[0-4]\\\\d|1\\\\d\\\\d|[1-9]?\\\\d)\\\\.)'\n    r'{3}(25[0-5]|2[0-4]\\\\d|1\\\\d\\\\d|[1-9]?\\\\d)$'\n)\n\ndef is_valid_ipv4(addr: str) -> bool:\n    return bool(IPV4_RE.match(addr.strip()))\n\n# Extract IPv4 addresses from text:\ndef extract_ipv4(text: str) -> list[str]:\n    no_anchors = re.compile(\n        r'(?<!\\\\d)((25[0-5]|2[0-4]\\\\d|1\\\\d\\\\d|[1-9]?\\\\d)\\\\.)'\n        r'{3}(25[0-5]|2[0-4]\\\\d|1\\\\d\\\\d|[1-9]?\\\\d)(?!\\\\d)'\n    )\n    return no_anchors.findall(text)\n\n# Examples:\nprint(is_valid_ipv4('192.168.1.1'))   # True\nprint(is_valid_ipv4('999.1.1.1'))     # False",
+        "javascript": "function isValidIPv4(addr) {\n    return /^((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)\\.){3}(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)$/.test(addr.trim());\n}\n\n// Extract IPv4 addresses from text:\nfunction extractIPv4(text) {\n    return text.match(/(?<!\\d)((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)\\.){3}(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(?!\\d)/g) || [];\n}\n\nconsole.log(isValidIPv4('192.168.1.1'));  // true"
+      }
+    }
+  ]
+}

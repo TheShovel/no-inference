@@ -1,0 +1,144 @@
+{
+  "tasks": [
+    {
+      "task": "backup_dir",
+      "patterns": [
+        "\\b(?:back\\s+up|backs?\\s+up|backing\\s+up|backups?)\\b.*\\b(?:directory|folder|files|data|dir|project)\\b",
+        "\\b(?:create|make|write)\\b.*\\bbackup\\s+script\\b",
+        "\\bbackup\\s+(?:the\\s+)?(?:directory|folder|dir)\\b"
+      ],
+      "intro": "Here's a {lang} script that backs up a directory with a timestamped copy.",
+      "notes": "The timestamped copy keeps every backup (never overwrites). Add retention later: keep only the newest N backups by sorting the directory and deleting the rest. rsync (bash version) only copies changed files, so repeated runs are cheap.",
+      "languages": {
+        "python": "#!/usr/bin/env python3\n\"\"\"Back up a directory: timestamped copy, skipping junk.\"\"\"\nimport os\nimport shutil\nimport sys\nfrom datetime import datetime\n\n\ndef backup(source: str, dest_root: str = \"backups\") -> str:\n    if not os.path.isdir(source):\n        raise ValueError(f\"not a directory: {source}\")\n    stamp = datetime.now().strftime(\"%Y%m%d-%H%M%S\")\n    name = os.path.basename(os.path.normpath(source)) or \"backup\"\n    dest = os.path.join(dest_root, f\"{name}-{stamp}\")\n    os.makedirs(dest_root, exist_ok=True)\n    shutil.copytree(\n        source, dest,\n        ignore=shutil.ignore_patterns(\"__pycache__\", \".git\", \"node_modules\",\n                                      \"*.pyc\", \".DS_Store\"),\n    )\n    return dest\n\n\nif __name__ == \"__main__\":\n    if len(sys.argv) < 2:\n        print(\"usage: python3 backup.py <directory> [dest-root]\")\n        sys.exit(1)\n    print(\"backed up to\", backup(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else \"backups\"))\n\n# Example:\n# backup(\"my_project\", \"backups\")  ->  backups/my_project-20260403-153000",
+        "bash": "#!/usr/bin/env bash\n# Back up a directory with a timestamp, skipping common junk.\nset -euo pipefail\n\nSOURCE=\"${1:?usage: $0 <directory> [dest-root]}\"\nDEST_ROOT=\"${2:-backups}\"\nSTAMP=\"$(date +%Y%m%d-%H%M%S)\"\nNAME=\"$(basename \"$SOURCE\")\"\nDEST=\"$DEST_ROOT/$NAME-$STAMP\"\n\nmkdir -p \"$DEST_ROOT\"\nrsync -a --exclude node_modules --exclude .git --exclude __pycache__ \\\\\n    --exclude '*.pyc' --exclude .DS_Store \"$SOURCE/\" \"$DEST/\"\necho \"backed up to $DEST\""
+      }
+    },
+    {
+      "task": "for_loop",
+      "patterns": [
+        "\\bfor\\s+loop\\b",
+        "\\bwrite\\s+(?:a\\s+)?loop\\b",
+        "\\bprint\\s+numbers?\\s+1\\s+to\\b",
+        "\\bloop\\s+that\\s+prints\\b",
+        "\\biterate\\s+(?:from|over)\\s+.*\\b(?:range|numbers?)\\b"
+      ],
+      "intro": "Here's how to write a for loop in {lang}.",
+      "notes": "The classic index loop (`for i in range(...)` / `for (let i = 0; ...)`) is for when you need the index or a fixed number of iterations; the for-each forms are cleaner when you only need the values. In Python, `range` is lazy, so even huge ranges use constant memory.",
+      "languages": {
+        "python": "# Loop over a range:\nfor i in range(5):\n    print(i)        # 0 1 2 3 4\n\n# Loop over a collection:\nfor item in ['a', 'b', 'c']:\n    print(item)\n\n# With index (enumerate):\nfor idx, item in enumerate(['a', 'b', 'c']):\n    print(idx, item)\n\n# Range with start and step:\nfor i in range(1, 10, 2):\n    print(i)        # 1 3 5 7 9",
+        "javascript": "// Classic for loop (with index):\nfor (let i = 0; i < 5; i++) {\n    console.log(i);\n}\n\n// for...of over an array:\nfor (const item of ['a', 'b', 'c']) {\n    console.log(item);\n}\n\n// forEach (no break/continue):\n['a', 'b', 'c'].forEach(item => console.log(item));\n\n// With index:\n['a', 'b', 'c'].forEach((item, idx) => console.log(idx, item));",
+        "java": "// Classic loop:\nfor (int i = 0; i < 5; i++) {\n    System.out.println(i);\n}\n\n// Enhanced for (for-each) over an array:\nString[] names = {\"a\", \"b\", \"c\"};\nfor (String name : names) {\n    System.out.println(name);\n}\n\n// Over a List:\nList<String> list = List.of(\"a\", \"b\", \"c\");\nfor (String s : list) {\n    System.out.println(s);\n}",
+        "c++": "// Classic loop:\nfor (int i = 0; i < 5; i++) {\n    std::cout << i << \"\\n\";\n}\n\n// Range-based for (C++11+):\nstd::vector<std::string> names = {\"a\", \"b\", \"c\"};\nfor (const auto& name : names) {\n    std::cout << name << \"\\n\";\n}\n\n// With index:\nfor (size_t i = 0; i < names.size(); i++) {\n    std::cout << i << \" \" << names[i] << \"\\n\";\n}",
+        "go": "// Classic loop:\nfor i := 0; i < 5; i++ {\n    fmt.Println(i)\n}\n\n// Over a slice (index + value):\nnames := []string{\"a\", \"b\", \"c\"}\nfor i, name := range names {\n    fmt.Println(i, name)\n}\n\n// While-style (Go has no while keyword):\nn := 0\nfor n < 5 {\n    n++\n}",
+        "rust": "// Classic loop:\nfor i in 0..5 {\n    println!(\"{i}\");\n}\n\n// Over a vector:\nlet names = vec![\"a\", \"b\", \"c\"];\nfor name in &names {\n    println!(\"{name}\");\n}\n\n// With index (enumerate):\nfor (i, name) in names.iter().enumerate() {\n    println!(\"{i} {name}\");\n}",
+        "typescript": "// Classic for loop (with index):\nfor (let i = 0; i < 5; i++) {\n    console.log(i);\n}\n\n// for...of over an array:\nfor (const item of ['a', 'b', 'c']) {\n    console.log(item);\n}\n\n// forEach (no break/continue):\n['a', 'b', 'c'].forEach(item => console.log(item));\n\n// With index:\n['a', 'b', 'c'].forEach((item, idx) => console.log(idx, item));",
+        "c#": "// Classic index loop:\nfor (int i = 0; i < 5; i++) {\n    Console.WriteLine(i);\n}\n\n// Foreach over a collection:\nforeach (var item in new[] { \"a\", \"b\", \"c\" }) {\n    Console.WriteLine(item);\n}\n\n// Foreach over a dictionary:\nforeach (var kvp in new Dictionary<string, int> { [\"a\"] = 1, [\"b\"] = 2 }) {\n    Console.WriteLine($\"{kvp.Key}: {kvp.Value}\");\n}",
+        "bash": "# C-style loop:\nfor (( i=1; i<=5; i++ )); do\n    echo \"$i\"\ndone\n\n# Over a literal list:\nfor name in alice bob carol; do\n    echo \"$name\"\ndone\n\n# Over a range (brace expansion):\nfor i in {1..5}; do\n    echo \"$i\"\ndone\n\n# While loop equivalent:\ni=1\nwhile [ \"$i\" -le 5 ]; do\n    echo \"$i\"\n    (( i++ ))\ndone"
+      }
+    },
+    {
+      "task": "comment_syntax",
+      "patterns": [
+        "\\bcomment\\b"
+      ],
+      "intro": "Here's how to write comments in {lang}.",
+      "notes": "Comments are for explaining *why*, not what — the code itself shows what it does. Keep them short and up to date, because stale comments mislead more than no comments. Languages also have doc-comment conventions (`'''` docstrings in Python, JSDoc in JS, `///` in Rust, Javadoc) for documenting functions and types.",
+      "languages": {
+        "python": "# Single-line comment\n\n\"\"\"\nMulti-line string used as a docstring.\nPEP 8: use # for real comments; \"\"\" for documentation.\n\"\"\"\n\ndef add(a, b):\n    \"\"\"Return the sum of a and b.\"\"\"\n    return a + b",
+        "javascript": "// Single-line comment\n\n/*\n * Multi-line comment\n */\n\n// JSDoc for functions:\n/**\n * Adds two numbers.\n * @param {number} a\n * @param {number} b\n * @returns {number}\n */\nfunction add(a, b) {\n    return a + b;\n}",
+        "java": "// Single-line comment\n\n/* Multi-line comment */\n\n/** Javadoc comment (used to generate API docs) */\npublic static int add(int a, int b) {\n    return a + b;\n}",
+        "c++": "// Single-line comment\n\n/* Multi-line comment */\n\n/// Doxygen comment for documentation\nint add(int a, int b) {\n    return a + b;\n}",
+        "c#": "// Single-line comment\n\n/* Multi-line comment */\n\n/// XML doc comment\nstatic int Add(int a, int b) {\n    return a + b;\n}",
+        "go": "// Single-line comment\n\n/* Multi-line comment */\n\n// Doc comment directly above an exported name:\n// Add returns the sum of a and b.\nfunc Add(a, b int) int {\n    return a + b\n}",
+        "rust": "// Single-line comment\n\n/* Multi-line comment */\n\n/// Doc comment (rendered by rustdoc)\nfn add(a: i32, b: i32) -> i32 {\n    a + b\n}",
+        "typescript": "// Single-line comment\n\n/*\n * Multi-line comment\n */\n\n// JSDoc for functions:\n/**\n * Adds two numbers.\n * @param {number} a\n * @param {number} b\n * @returns {number}\n */\nfunction add(a, b) {\n    return a + b;\n}"
+      }
+    },
+    {
+      "task": "array_contains",
+      "patterns": [
+        "\\b(?:check\\s+if\\s+)?(?:an?\\s+)?array\\s+(?:contains|includes|has)\\b",
+        "\\bcontains\\s+.*\\b(?:value|item|element)\\b",
+        "\\bincludes\\s+.*\\b(?:value|item|element)\\b"
+      ],
+      "intro": "Here's how to check whether an array contains a value in {lang}.",
+      "notes": "`includes()` (JavaScript) and `in` (Python) both run in O(n) average time for lists. For repeated lookups, use a Set — membership checks become O(1). Remember JavaScript's `includes` uses SameValueZero, so it works with NaN where `indexOf` does not.",
+      "languages": {
+        "javascript": "const arr = ['apple', 'banana', 'cherry'];\n\n// includes() — strict equality, works with NaN:\narr.includes('banana');   // true\narr.includes('pear');     // false\n\n// indexOf() — returns the index or -1:\narr.indexOf('banana');    // 1\narr.indexOf('pear');      // -1\n\n// some() — custom predicate:\narr.some(s => s.length > 6);   // true\n\n// Fast repeated checks — use a Set:\nconst set = new Set(arr);\nset.has('banana');        // true, O(1)",
+        "python": "items = ['apple', 'banana', 'cherry']\n\n# 'in' operator (works on any iterable):\n'banana' in items   # True\n'pear' in items     # False\n\n# index() raises ValueError when missing:\nitems.index('banana')   # 1\n\n# Fast repeated checks — use a set:\nseen = set(items)\n'banana' in seen   # True, O(1)",
+        "typescript": "const arr = ['apple', 'banana', 'cherry'];\n\n// includes() — strict equality, works with NaN:\narr.includes('banana');   // true\narr.includes('pear');     // false\n\n// indexOf() — returns the index or -1:\narr.indexOf('banana');    // 1\narr.indexOf('pear');      // -1\n\n// some() — custom predicate:\narr.some(s => s.length > 6);   // true\n\n// Fast repeated checks — use a Set:\nconst set = new Set(arr);\nset.has('banana');        // true, O(1)"
+      }
+    },
+    {
+      "task": "string_to_number",
+      "patterns": [
+        "\\bconvert\\s+(?:a\\s+)?string\\s+to\\s+(?:a\\s+)?(?:number|int)\\b",
+        "\\bparse\\s+int\\b",
+        "\\bparseint\\b",
+        "\\bstring\\s+to\\s+(?:number|int)\\b",
+        "\\bconvert\\s+.*\\bstring\\b.*\\b(?:number|integer)\\b"
+      ],
+      "intro": "Here's how to convert a string to a number in {lang}.",
+      "notes": "Watch out for partial conversion: `parseInt('42px')` returns 42 in JavaScript while `Number('42px')` returns NaN, and Python's `int('42px')` raises. Always handle the failure case, and prefer explicit conversions over implicit ones.",
+      "languages": {
+        "javascript": "// Number() — strict; returns NaN for non-numeric strings:\nNumber('42');      // 42\nNumber('42px');    // NaN\n\n// parseInt() — reads a prefix and ignores the rest:\nparseInt('42px');  // 42\nparseInt('0x10');  // 16  (hex)\n\n// Unary + (same as Number):\n+'42';             // 42\n\n// parseFloat() for decimals:\nparseFloat('3.14');  // 3.14\n\n// Robust pattern:\nconst num = Number(str);\nif (Number.isNaN(num)) {\n    // handle invalid input\n}",
+        "python": "# int() / float() — strict; raise ValueError on bad input:\nint('42')      # 42\nfloat('3.14')  # 3.14\n\n# int() accepts base 0/2/8/16 prefixes:\nint('0x10', 0)  # 16\nint('101', 2)   # 5\n\n# Handle failures explicitly:\ntry:\n    num = int(user_input)\nexcept ValueError:\n    print('not a number')",
+        "typescript": "// Number() — strict; returns NaN for non-numeric strings:\nNumber('42');      // 42\nNumber('42px');    // NaN\n\n// parseInt() — reads a prefix and ignores the rest:\nparseInt('42px');  // 42\nparseInt('0x10');  // 16  (hex)\n\n// Unary + (same as Number):\n+'42';             // 42\n\n// parseFloat() for decimals:\nparseFloat('3.14');  // 3.14\n\n// Robust pattern:\nconst num = Number(str);\nif (Number.isNaN(num)) {\n    // handle invalid input\n}",
+        "c++": "#include <string>\n#include <iostream>\n\n// C++11+: std::stoi / stol / stod\nstd::string s = \"42\";\nint n = std::stoi(s);            // 42\nlong l = std::stol(\"123456789\");\ndouble d = std::stod(\"3.14\");\n\n// With error checking:\ntry {\n    int x = std::stoi(\"abc\");    // throws std::invalid_argument\n} catch (const std::invalid_argument&) {\n    std::cerr << \"not a number\\n\";\n}",
+        "go": "import (\n    \"fmt\"\n    \"strconv\"\n)\n\n// Atoi for ints:\nn, err := strconv.Atoi(\"42\")\nif err != nil {\n    fmt.Println(\"not a number\")\n}\nfmt.Println(n)   // 42\n\n// ParseInt / ParseFloat:\ni64, _ := strconv.ParseInt(\"42\", 10, 64)\nf, _ := strconv.ParseFloat(\"3.14\", 64)\nfmt.Println(i64, f)",
+        "rust": "// .parse() with a type annotation:\nlet n: i32 = \"42\".parse().expect(\"not a number\");\n\n// Without panicking:\nmatch \"42\".parse::<i32>() {\n    Ok(n) => println!(\"{n}\"),\n    Err(_) => println!(\"not a number\"),\n}\n\n// Floats:\nlet f: f64 = \"3.14\".parse().unwrap();\nprintln!(\"{f}\");",
+        "c#": "// int.Parse (throws on invalid input):\nint n = int.Parse(\"42\");\n\n// TryParse (safe):\nif (int.TryParse(\"42\", out int x)) {\n    Console.WriteLine(x);\n}\n\n// long / double:\nlong l = long.Parse(\"123456789\");\ndouble d = double.Parse(\"3.14\");",
+        "bash": "# Bash arithmetic auto-converts digit strings:\nn=42\necho $((n + 1))     # 43\n\n# Validate before using:\ns=\"42\"\nif [[ \"$s\" =~ ^-?[0-9]+$ ]]; then\n    echo \"integer: $((s * 2))\"\nfi\n\n# Floats need awk or bc:\necho \"3.14 * 2\" | bc -l"
+      }
+    },
+    {
+      "task": "rename_file",
+      "patterns": [
+        "\\brename\\s+(?:a\\s+)?file\\b",
+        "\\bmove\\s+(?:a\\s+)?file\\b",
+        "\\brename\\s+(?:a\\s+)?directory\\b",
+        "\\brename\\s+(?:all\\s+|multiple\\s+)?files?\\b",
+        "\\brename\\s+(?:all\\s+|multiple\\s+)?files?\\s+(?:in|inside|within)\\s+(?:a\\s+|the\\s+)?(?:directory|folder)\\b",
+        "\\brename\\s+(?:every|each)\\s+file\\b"
+      ],
+      "intro": "Here's how to rename (or move) a file in {lang}.",
+      "notes": "Renaming within the same filesystem is a metadata operation (O(1), no data copy) — moving across filesystems is a copy+delete. In Python, `os.rename` works on both files and directories; `Path.rename` does the same with a nicer API. In bash, `mv` covers rename and move.",
+      "languages": {
+        "python": "import os\nfrom pathlib import Path\n\n# os.rename (files and directories):\nos.rename('old.txt', 'new.txt')\n\n# Path.rename (nicer API):\nPath('old.txt').rename('new.txt')\n\n# Move across directories:\nos.rename('data/tmp.txt', 'archive/2026/tmp.txt')\n\n# Handle errors:\nif os.path.exists('old.txt'):\n    os.rename('old.txt', 'new.txt')\nelse:\n    print('source not found')",
+        "javascript": "const fs = require('fs');\n\n// Rename (sync):\nfs.renameSync('old.txt', 'new.txt');\n\n// Rename (async):\nawait fs.promises.rename('old.txt', 'new.txt');\n\n// With error handling:\ntry {\n    await fs.promises.rename('old.txt', 'new.txt');\n} catch (err) {\n    console.error('rename failed:', err.message);\n}",
+        "go": "import \"os\"\n\n// os.Rename works for files and directories.\n// It only fails across filesystems — use a copy+delete for that.\nerr := os.Rename(\"old.txt\", \"new.txt\")\nif err != nil {\n    log.Fatal(err)\n}",
+        "bash": "# Rename (or move) a file:\nmv old.txt new.txt\n\n# Move to another directory:\nmv file.txt archive/file.txt\n\n# Rename a directory:\nmv old-dir new-dir\n\n# Overwrite without prompting:\nmv -f old.txt new.txt\n\n# Move multiple files into a directory:\nmv *.log logs/",
+        "typescript": "const fs = require('fs');\n\n// Rename (sync):\nfs.renameSync('old.txt', 'new.txt');\n\n// Rename (async):\nawait fs.promises.rename('old.txt', 'new.txt');\n\n// With error handling:\ntry {\n    await fs.promises.rename('old.txt', 'new.txt');\n} catch (err) {\n    console.error('rename failed:', err.message);\n}"
+      }
+    },
+    {
+      "task": "cli_args",
+      "patterns": [
+        "\\b(?:read|parse|get|handle|access)\\b.*\\b(?:command\\s*[- ]?line\\s+)?arguments?\\b",
+        "\\b(?:command\\s*[- ]?line\\s+|argv|cli)\\s+arguments?\\b",
+        "\\bargs\\s*(?:vector)?\\s+in\\s+python\\b"
+      ],
+      "intro": "Here's how to read command-line arguments in {lang}.",
+      "notes": "`sys.argv` is the raw list (argv[0] is the script name). For real programs use `argparse` — it gives flags, defaults, and help for free. In bash, `$1`, `$2`, ... are positional args, `$@` is all of them, `$#` is the count.",
+      "languages": {
+        "python": "import sys\n\n# Raw arguments (argv[0] is the script name):\nargs = sys.argv[1:]\nprint(args)\n\n# With argparse (recommended):\nimport argparse\n\nparser = argparse.ArgumentParser(description='My script')\nparser.add_argument('name', help='your name')\nparser.add_argument('--count', type=int, default=1)\nargs = parser.parse_args()\n\nprint(f'Hello {args.name} x{args.count}')",
+        "bash": "#!/bin/bash\n# $0 script name, $1 first arg, $2 second ...\necho \"script: $0\"\necho \"first arg: $1\"\necho \"all args: $@\"\necho \"arg count: $#\"\n\n# Defaults:\nNAME=\"${1:-world}\"\necho \"Hello, $NAME\"\n\n# Shift through args:\nwhile [ \"$#\" -gt 0 ]; do\n    echo \"arg: $1\"\n    shift\ndone"
+      }
+    },
+    {
+      "task": "env_vars",
+      "patterns": [
+        "\\b(?:use|read|get|access|set)\\b.*\\benvironment\\s+variables?\\b",
+        "\\benv\\s+(?:var|variables?)\\b",
+        "\\bos\\.environ\\b"
+      ],
+      "intro": "Here's how to use environment variables in {lang}.",
+      "notes": "Never hardcode secrets — read them from env vars. In Python, `os.environ['KEY']` raises KeyError when missing; `os.getenv('KEY', default)` doesn't. In bash, `$VAR` reads and `export VAR=value` sets for child processes.",
+      "languages": {
+        "python": "import os\n\n# Read (raises KeyError if missing):\napi_key = os.environ['API_KEY']\n\n# Read with a default (safe):\napi_key = os.getenv('API_KEY', 'dev-key')\n\n# Check if set:\nif 'API_KEY' in os.environ:\n    print('set')\n\n# Set for this process only:\nos.environ['DEBUG'] = '1'\n\n# Iterate:\nfor name, value in os.environ.items():\n    print(f'{name}={value}')",
+        "bash": "# Read:\necho \"$HOME\"\n\n# With a default:\necho \"${PORT:-8080}\"\n\n# Set for child processes:\nexport DB_HOST=localhost\n\n# Set for this command only:\nDEBUG=1 ./my_app\n\n# Check if set:\nif [ -n \"$PORT\" ]; then\n    echo \"PORT=$PORT\"\nfi"
+      }
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "tasks": [
+    {
+      "task": "read_csv",
+      "patterns": [
+        "\\bread\\s+(?:a\\s+)?csv\\b",
+        "\\bread\\s+csv\\s+file\\b",
+        "\\bparse\\s+(?:a\\s+)?csv\\b",
+        "\\bcsv\\s+file\\b",
+        "\\bcsv\\s+reader\\b",
+        "\\bcsv\\s+parser\\b"
+      ],
+      "intro": "Here's how to read a CSV file in {lang}.",
+      "notes": "Use the csv module for anything with quoted fields, embedded commas, or newlines — naive `split(',')` breaks on those. pandas is the heavyweight option when you also need filtering, grouping, or plotting.",
+      "languages": {
+        "python": "import csv\n\ndef read_csv(filename: str) -> list[dict]:\n    \"\"\"Read a CSV file into a list of row dictionaries.\"\"\"\n    with open(filename, newline='', encoding='utf-8') as f:\n        return list(csv.DictReader(f))\n\n# Example:\nrows = read_csv('data.csv')\nfor row in rows[:3]:\n    print(row)\n\n# Using pandas (for analysis/filtering/grouping):\n# import pandas as pd\n# df = pd.read_csv('data.csv')\n# print(df.head())\n# print(df.groupby('category')['amount'].sum())",
+        "javascript": "const fs = require('fs');\n\nfunction readCsv(filename) {\n    const text = fs.readFileSync(filename, 'utf8');\n    const lines = text.trim().split('\\\\n');\n    const headers = lines[0].split(',');\n    return lines.slice(1).map(line => {\n        const values = line.split(',');\n        return Object.fromEntries(headers.map((h, i) => [h, values[i]]));\n    });\n}\n\n// Note: this simple splitter breaks on quoted fields with embedded commas.\n// For robust parsing use a library like csv-parse. Browser version with\n// <input type=\"file\">: use PapaParse.",
+        "go": "import (\n    \"encoding/csv\"\n    \"os\"\n)\n\nfunc ReadCsv(filename string) ([][]string, error) {\n    f, err := os.Open(filename)\n    if err != nil {\n        return nil, err\n    }\n    defer f.Close()\n    r := csv.NewReader(f)\n    r.FieldsPerRecord = -1 // allow ragged rows\n    return r.ReadAll()\n}",
+        "typescript": "const fs = require('fs');\n\nfunction readCsv(filename) {\n    const text = fs.readFileSync(filename, 'utf8');\n    const lines = text.trim().split('\\\\n');\n    const headers = lines[0].split(',');\n    return lines.slice(1).map(line => {\n        const values = line.split(',');\n        return Object.fromEntries(headers.map((h, i) => [h, values[i]]));\n    });\n}\n\n// Note: this simple splitter breaks on quoted fields with embedded commas.\n// For robust parsing use a library like csv-parse. Browser version with\n// <input type=\"file\">: use PapaParse."
+      }
+    },
+    {
+      "task": "write_csv",
+      "patterns": [
+        "\\bwrite\\s+(?:a\\s+)?csv\\b",
+        "\\bexport\\s+.*csv\\b",
+        "\\bsave\\s+.*\\bcsv\\b"
+      ],
+      "intro": "Here's how to write data to a CSV file in {lang}.",
+      "notes": "Always open CSV files with `newline=''` in Python — otherwise the csv module can write stray blank lines on Windows. `csv.writer` handles quoting and escaping for you.",
+      "languages": {
+        "python": "import csv\n\ndef write_csv(filename: str, headers: list[str], rows: list[list]) -> None:\n    with open(filename, 'w', newline='', encoding='utf-8') as f:\n        writer = csv.writer(f)\n        writer.writerow(headers)\n        writer.writerows(rows)\n\n# Example:\nwrite_csv('out.csv', ['name', 'age'], [['Alice', 30], ['Bob', 25]])",
+        "javascript": "const fs = require('fs');\n\nfunction writeCsv(filename, headers, rows) {\n    const lines = [headers.join(','), ...rows.map(r => r.join(','))];\n    fs.writeFileSync(filename, lines.join('\\\\n') + '\\\\n');\n}\n\n// Note: join(',') breaks on fields containing commas/quotes/newlines.\n// Use a library like csv-stringify for robust escaping.",
+        "go": "import (\n    \"encoding/csv\"\n    \"os\"\n)\n\nfunc WriteCsv(filename string, headers []string, rows [][]string) error {\n    f, err := os.Create(filename)\n    if err != nil {\n        return err\n    }\n    defer f.Close()\n    w := csv.NewWriter(f)\n    if err := w.Write(headers); err != nil {\n        return err\n    }\n    if err := w.WriteAll(rows); err != nil {\n        return err\n    }\n    w.Flush()\n    return w.Error()\n}",
+        "typescript": "const fs = require('fs');\n\nfunction writeCsv(filename, headers, rows) {\n    const lines = [headers.join(','), ...rows.map(r => r.join(','))];\n    fs.writeFileSync(filename, lines.join('\\\\n') + '\\\\n');\n}\n\n// Note: join(',') breaks on fields containing commas/quotes/newlines.\n// Use a library like csv-stringify for robust escaping."
+      }
+    },
+    {
+      "task": "read_file",
+      "patterns": [
+        "\\bread\\s+(?:a\\s+)?file\\b",
+        "\\bread\\s+file\\s+line\\s+by\\s+line\\b",
+        "\\bopen\\s+(?:and\\s+)?read\\s+(?:a\\s+)?file\\b",
+        "\\bread\\s+text\\s+file\\b"
+      ],
+      "intro": "Here's how to read a text file in {lang}.",
+      "notes": "Use a context manager (with) so the file is closed even when an exception occurs. For large files, iterate line by line instead of calling read() to avoid loading the whole file into memory.",
+      "languages": {
+        "python": "# Read the whole file:\nwith open('file.txt', encoding='utf-8') as f:\n    content = f.read()\n\n# Read line by line (memory-friendly for large files):\nwith open('file.txt', encoding='utf-8') as f:\n    for line in f:\n        print(line.rstrip())  # rstrip removes the trailing newline\n\n# Read into a list of lines:\nwith open('file.txt', encoding='utf-8') as f:\n    lines = f.readlines()",
+        "javascript": "const fs = require('fs');\n\n// Synchronous (fine for scripts):\nconst content = fs.readFileSync('file.txt', 'utf8');\nconst lines = content.split('\\\\n');\n\n// Asynchronous (preferred in servers):\nfs.readFile('file.txt', 'utf8', (err, data) => {\n    if (err) throw err;\n    console.log(data);\n});\n\n// Promise-based:\nconst data = await fs.promises.readFile('file.txt', 'utf8');",
+        "go": "import (\n    \"bufio\"\n    \"os\"\n)\n\n// Whole file:\ndata, err := os.ReadFile(\"file.txt\")\nif err != nil {\n    log.Fatal(err)\n}\n\n// Line by line:\nf, err := os.Open(\"file.txt\")\nif err != nil {\n    log.Fatal(err)\n}\ndefer f.Close()\nscanner := bufio.NewScanner(f)\nfor scanner.Scan() {\n    fmt.Println(scanner.Text())\n}\nif err := scanner.Err(); err != nil {\n    log.Fatal(err)\n}",
+        "rust": "use std::fs;\n\nfn main() -> std::io::Result<()> {\n    // Whole file:\n    let content = fs::read_to_string(\"file.txt\")?;\n    println!(\"{content}\");\n\n    // Line by line:\n    for line in content.lines() {\n        println!(\"{line}\");\n    }\n    Ok(())\n}",
+        "typescript": "const fs = require('fs');\n\n// Synchronous (fine for scripts):\nconst content = fs.readFileSync('file.txt', 'utf8');\nconst lines = content.split('\\\\n');\n\n// Asynchronous (preferred in servers):\nfs.readFile('file.txt', 'utf8', (err, data) => {\n    if (err) throw err;\n    console.log(data);\n});\n\n// Promise-based:\nconst data = await fs.promises.readFile('file.txt', 'utf8');",
+        "java": "import java.io.IOException;\nimport java.nio.file.Files;\nimport java.nio.file.Path;\nimport java.util.List;\n\n// Java 11+: read the whole file into a String\nString content = Files.readString(Path.of(\"data.txt\"));\nSystem.out.println(content);\n\n// Read all lines into a list\nList<String> lines = Files.readAllLines(Path.of(\"data.txt\"));\nfor (String line : lines) {\n    System.out.println(line);\n}\n\n// Stream a large file line by line (no full-file load)\ntry (var reader = Files.newBufferedReader(Path.of(\"data.txt\"))) {\n    String line;\n    while ((line = reader.readLine()) != null) {\n        System.out.println(line);\n    }\n}",
+        "bash": "# Print the whole file:\ncat data.txt\n\n# Read line by line (handles the last line without a newline):\nwhile IFS= read -r line || [ -n \"$line\" ]; do\n    echo \"$line\"\ndone < data.txt\n\n# First/last N lines:\nhead -10 data.txt\ntail -5 data.txt"
+      }
+    },
+    {
+      "task": "write_file",
+      "patterns": [
+        "\\bwrite\\s+(?:to\\s+)?(?:a\\s+)?file\\b",
+        "\\bappend\\s+to\\s+(?:a\\s+)?file\\b",
+        "\\bcreate\\s+(?:a\\s+)?file\\b"
+      ],
+      "intro": "Here's how to write to a text file in {lang}.",
+      "notes": "The `'w'` mode truncates the file; use `'a'` to append. Text encodings matter — specify `encoding='utf-8'` explicitly when the content is not plain ASCII.",
+      "languages": {
+        "python": "# Overwrite (creates the file if it doesn't exist):\nwith open('out.txt', 'w', encoding='utf-8') as f:\n    f.write('Hello, world!\\\\n')\n\n# Append:\nwith open('out.txt', 'a', encoding='utf-8') as f:\n    f.write('More lines\\\\n')\n\n# Write multiple lines:\nwith open('out.txt', 'w', encoding='utf-8') as f:\n    f.writelines(['line 1\\\\n', 'line 2\\\\n'])",
+        "javascript": "const fs = require('fs');\n\n// Overwrite:\nfs.writeFileSync('out.txt', 'Hello, world!\\\\n');\n\n// Append:\nfs.appendFileSync('out.txt', 'More lines\\\\n');\n\n// Asynchronous:\nawait fs.promises.writeFile('out.txt', 'Hello, world!\\\\n');",
+        "go": "import \"os\"\n\n// Overwrite:\nerr := os.WriteFile(\"out.txt\", []byte(\"Hello, world!\\\\n\"), 0644)\nif err != nil {\n    log.Fatal(err)\n}\n\n// Append:\nf, err := os.OpenFile(\"out.txt\", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)\nif err != nil {\n    log.Fatal(err)\n}\ndefer f.Close()\nif _, err := f.WriteString(\"More lines\\\\n\"); err != nil {\n    log.Fatal(err)\n}",
+        "rust": "use std::fs::OpenOptions;\nuse std::io::Write;\n\nfn main() -> std::io::Result<()> {\n    // Overwrite:\n    fs::write(\"out.txt\", \"Hello, world!\\\\n\")?;\n\n    // Append:\n    let mut f = OpenOptions::new().append(true).open(\"out.txt\")?;\n    writeln!(f, \"More lines\")?;\n    Ok(())\n}",
+        "typescript": "const fs = require('fs');\n\n// Overwrite:\nfs.writeFileSync('out.txt', 'Hello, world!\\\\n');\n\n// Append:\nfs.appendFileSync('out.txt', 'More lines\\\\n');\n\n// Asynchronous:\nawait fs.promises.writeFile('out.txt', 'Hello, world!\\\\n');"
+      }
+    },
+    {
+      "task": "read_json",
+      "patterns": [
+        "\\b(?:read|parse|load)\\s+(?:a\\s+)?json\\s+file\\b",
+        "\\bparse\\s+json\\b",
+        "\\bjson\\s+parser\\b",
+        "\\bconvert\\s+json\\s+to\\b"
+      ],
+      "intro": "Here's how to parse a JSON file in {lang}.",
+      "notes": "JSON keys are case-sensitive and the format has no comments or trailing commas. Validate the file with a linter before parsing to get better error messages.",
+      "languages": {
+        "python": "import json\n\ndef read_json(filename: str):\n    with open(filename, encoding='utf-8') as f:\n        return json.load(f)\n\n# Example:\ndata = read_json('config.json')\nprint(data.get('name'))\n\n# Parse a JSON string:\nobj = json.loads('{\"key\": \"value\"}')\nprint(obj['key'])  # value",
+        "javascript": "const fs = require('fs');\n\n// Node.js — read a JSON file:\nconst data = JSON.parse(fs.readFileSync('config.json', 'utf8'));\nconsole.log(data.name);\n\n// Browser — fetch + parse:\nconst obj = await fetch('/config.json').then(r => r.json());\n\n// Parse a JSON string:\nconst parsed = JSON.parse('{\"key\": \"value\"}');",
+        "go": "import (\n    \"encoding/json\"\n    \"os\"\n)\n\ntype Config struct {\n    Name string `json:\"name\"`\n}\n\nfunc ReadJson(filename string) (*Config, error) {\n    data, err := os.ReadFile(filename)\n    if err != nil {\n        return nil, err\n    }\n    var cfg Config\n    if err := json.Unmarshal(data, &cfg); err != nil {\n        return nil, err\n    }\n    return &cfg, nil\n}",
+        "rust": "use serde::{Deserialize, Serialize};\n\n#[derive(Deserialize)]\nstruct Config {\n    name: String,\n}\n\nfn main() -> std::io::Result<()> {\n    let data = std::fs::read_to_string(\"config.json\")?;\n    let cfg: Config = serde_json::from_str(&data)?;\n    println!(\"{}\", cfg.name);\n    Ok(())\n}\n// Add to Cargo.toml: serde = { version = \"1\", features = [\"derive\"] }, serde_json = \"1\"",
+        "typescript": "const fs = require('fs');\n\n// Node.js — read a JSON file:\nconst data = JSON.parse(fs.readFileSync('config.json', 'utf8'));\nconsole.log(data.name);\n\n// Browser — fetch + parse:\nconst obj = await fetch('/config.json').then(r => r.json());\n\n// Parse a JSON string:\nconst parsed = JSON.parse('{\"key\": \"value\"}');"
+      }
+    },
+    {
+      "task": "write_json",
+      "patterns": [
+        "\\b(?:write|save|dump)\\s+.*\\bjson\\b",
+        "\\bconvert\\s+.*to\\s+json\\b",
+        "\\bserialize\\s+.*(?:to\\s+)?json\\b"
+      ],
+      "intro": "Here's how to serialize data to JSON in {lang}.",
+      "notes": "`json.dumps` with `indent=2` produces human-readable output. For non-ASCII text, `ensure_ascii=False` keeps the characters readable. A trailing newline at the end of the file is good practice.",
+      "languages": {
+        "python": "import json\n\ndata = {'name': 'Alice', 'age': 30, 'tags': ['admin', 'user']}\n\n# Pretty-printed to a file (human-readable):\nwith open('out.json', 'w', encoding='utf-8') as f:\n    json.dump(data, f, indent=2, ensure_ascii=False)\n\n# To a string:\ntext = json.dumps(data, indent=2)",
+        "javascript": "const fs = require('fs');\n\nconst data = { name: 'Alice', age: 30, tags: ['admin', 'user'] };\n\n// Node.js:\nfs.writeFileSync('out.json', JSON.stringify(data, null, 2) + '\\\\n');\n\n// Browser — send JSON to a server:\nawait fetch('/api/users', {\n    method: 'POST',\n    headers: { 'Content-Type': 'application/json' },\n    body: JSON.stringify(data),\n});",
+        "go": "import (\n    \"encoding/json\"\n    \"os\"\n)\n\ntype User struct {\n    Name string   `json:\"name\"`\n    Age  int      `json:\"age\"`\n    Tags []string `json:\"tags\"`\n}\n\nfunc WriteJson(filename string, u User) error {\n    data, err := json.MarshalIndent(u, \"\", \"  \")\n    if err != nil {\n        return err\n    }\n    return os.WriteFile(filename, data, 0644)\n}",
+        "typescript": "const fs = require('fs');\n\nconst data = { name: 'Alice', age: 30, tags: ['admin', 'user'] };\n\n// Node.js:\nfs.writeFileSync('out.json', JSON.stringify(data, null, 2) + '\\\\n');\n\n// Browser — send JSON to a server:\nawait fetch('/api/users', {\n    method: 'POST',\n    headers: { 'Content-Type': 'application/json' },\n    body: JSON.stringify(data),\n});"
+      }
+    },
+    {
+      "task": "list_files",
+      "patterns": [
+        "^(?!.*\\b(?:bash|shell|zsh)\\b).*\\b(?:list|get|show)\\b.*\\b(?:files?|directories?|folders?)\\b",
+        "^(?!.*\\b(?:bash|shell|zsh)\\b).*\\b(?:find|search)\\s+(?:all\\s+|for\\s+)?.*\\bfiles?\\s+(?:in|with|matching|named)\\b",
+        "^(?!.*\\b(?:bash|shell|zsh)\\b).*\\bfiles?\\s+in\\s+(?:a\\s+|the\\s+)?(?:directory|folder)\\b"
+      ],
+      "intro": "Here's how to list files in a directory in {lang}.",
+      "notes": "In Python, `os.listdir` lists everything; `glob` filters by pattern (e.g. `glob.glob('*.txt')`). `os.walk` recurses. In bash, `ls` lists and `find . -name '*.txt'` searches recursively — always quote glob patterns.",
+      "languages": {
+        "python": "import os\nimport glob\n\n# All entries in the current directory:\nentries = os.listdir('.')\nprint(entries)\n\n# Only .txt files (top level):\nfor path in glob.glob('*.txt'):\n    print(path)\n\n# Recursive search for .txt files:\nfor root, _dirs, files in os.walk('.'):\n    for name in files:\n        if name.endswith('.txt'):\n            print(os.path.join(root, name))",
+        "bash": "# List files:\nls\n\n# List with details:\nls -lh\n\n# Only .txt files:\nls *.txt\n\n# Recursive search (find all .py files):\nfind . -name '*.py'\n\n# Count files:\nls | wc -l",
+        "javascript": "// Node.js:\nconst fs = require('fs');\n\nconst entries = fs.readdirSync('.');\nconsole.log(entries);\n\n// Only .txt files:\nconst txt = entries.filter(e => e.endsWith('.txt'));\nconsole.log(txt);"
+      }
+    },
+    {
+      "task": "delete_file",
+      "patterns": [
+        "\\b(?:delete|remove|unlink)\\s+(?:a\\s+|the\\s+|this\\s+)?files?\\b",
+        "\\b(?:delete|remove)\\s+(?:a\\s+|the\\s+)?(?:file|directory)\\s+(?:in|with|using)\\s+python\\b",
+        "\\brm\\s+file\\b"
+      ],
+      "intro": "Here's how to delete a file in {lang}.",
+      "notes": "In Python, `os.remove` deletes a file and `Path.unlink` is the pathlib equivalent; deleting a directory needs `shutil.rmtree` (or `os.rmdir` for empty dirs). In bash, `rm` deletes files, `rm -r` directories — use `rm -i` interactively so you confirm before deletion.",
+      "languages": {
+        "python": "import os\nfrom pathlib import Path\n\n# os.remove (file only):\nos.remove('old.txt')\n\n# pathlib equivalent:\nPath('old.txt').unlink()\n\n# Ignore a missing file:\nimport contextlib\nwith contextlib.suppress(FileNotFoundError):\n    os.remove('maybe_gone.txt')\n\n# Delete an empty directory:\nos.rmdir('empty_dir')\n\n# Delete a directory tree:\n# import shutil\n# shutil.rmtree('old_folder')",
+        "bash": "# Delete a file:\nrm old.txt\n\n# Confirm before deleting:\nrm -i old.txt\n\n# Delete a directory and everything in it:\nrm -r old_folder\n\n# Force (no confirmation), be careful:\nrm -rf old_folder"
+      }
+    },
+    {
+      "task": "copy_file",
+      "patterns": [
+        "\\b(?:copy|duplicate)\\s+(?:a\\s+|the\\s+|this\\s+)?files?\\b",
+        "\\bcopy\\s+(?:a\\s+|the\\s+)?file\\s+(?:in|with|using)\\s+python\\b",
+        "\\bcp\\s+file\\b"
+      ],
+      "intro": "Here's how to copy a file in {lang}.",
+      "notes": "`shutil.copy` copies a file (permissions not preserved); `shutil.copy2` preserves metadata; `shutil.copytree` copies a directory. In bash, `cp file1 file2` copies, `cp -r` copies directories, `cp -p` preserves timestamps.",
+      "languages": {
+        "python": "import shutil\n\n# Copy a file:\nshutil.copy('source.txt', 'dest.txt')\n\n# Preserve metadata (timestamps, permissions):\nshutil.copy2('source.txt', 'dest.txt')\n\n# Copy into a directory, keeping the name:\nshutil.copy('source.txt', 'backups/')\n\n# Copy a whole directory tree:\nshutil.copytree('src_folder', 'dst_folder')",
+        "bash": "# Copy a file:\ncp source.txt dest.txt\n\n# Preserve permissions and timestamps:\ncp -p source.txt dest.txt\n\n# Copy a directory recursively:\ncp -r src_folder dst_folder\n\n# Copy and show progress:\ncp -v source.txt dest.txt"
+      }
+    },
+    {
+      "task": "file_exists",
+      "patterns": [
+        "\\b(?:check|test|see|verify)\\s+(?:if|whether)\\s+(?:a\\s+|the\\s+)?file\\s+exists\\b",
+        "\\b(?:check|test|see)\\s+(?:if|whether)\\s+(?:a\\s+|the\\s+)?(?:file|directory)\\s+exists\\b"
+      ],
+      "intro": "Here's how to check whether a file exists in {lang}.",
+      "notes": "In Python, `os.path.exists` covers files and directories; `os.path.isfile` is true only for regular files. Prefer `Path.exists()` in modern code. In bash, `[ -f file ]` tests a file, `[ -d dir ]` a directory.",
+      "languages": {
+        "python": "import os\nfrom pathlib import Path\n\n# File or directory:\nos.path.exists('data.txt')\n\n# Regular file only:\nos.path.isfile('data.txt')\n\n# pathlib:\nPath('data.txt').exists()\nPath('data.txt').is_file()\n\n# Example:\nif Path('config.yaml').exists():\n    print('config found')\nelse:\n    print('config missing')",
+        "bash": "# File exists:\n[ -f data.txt ] && echo 'exists' || echo 'missing'\n\n# Directory exists:\n[ -d backups ] && echo 'dir exists'\n\n# File is readable:\n[ -r data.txt ] && echo 'readable'\n\n# In a script:\nif [ -f data.txt ]; then\n    echo 'found'\nfi"
+      }
+    },
+    {
+      "task": "cwd",
+      "patterns": [
+        "\\b(?:get|print|show)\\s+(?:the\\s+)?current\\s+working\\s+directory\\b",
+        "\\bcwd\\b",
+        "\\bwhere\\s+am\\s+i\\b"
+      ],
+      "intro": "Here's how to get the current working directory in {lang}.",
+      "notes": "`os.getcwd()` (or `Path.cwd()`) returns the directory the process started in — not necessarily where the script file lives (`__file__` is the script location). In bash, `pwd` prints it.",
+      "languages": {
+        "python": "import os\nfrom pathlib import Path\n\nprint(os.getcwd())\nprint(Path.cwd())\n\n# The directory the script lives in:\nscript_dir = Path(__file__).resolve().parent\nprint(script_dir)",
+        "bash": "# Print the current directory:\npwd\n\n# As a variable:\nDIR=\"$(pwd)\"\necho \"$DIR\""
+      }
+    },
+    {
+      "task": "zip_folder",
+      "patterns": [
+        "\\b(?:zip|compress|archive)\\b.*\\b(?:folder|directory|files?)\\b",
+        "\\b(?:create|make)\\s+(?:a\\s+)?zip\\b"
+      ],
+      "intro": "Here's how to zip a folder in {lang}.",
+      "notes": "`shutil.make_archive` is the one-liner for a folder → .zip (or .tar.gz). `zipfile` gives fine-grained control (add files individually, compression level). In bash, `zip -r` and `tar -czf` are the standards.",
+      "languages": {
+        "python": "import shutil\n\n# One-liner: folder -> .zip\nshutil.make_archive('backup', 'zip', 'my_folder')\n# creates backup.zip\n\n# With zipfile for more control:\nimport zipfile\nimport os\n\nwith zipfile.ZipFile('backup.zip', 'w', zipfile.ZIP_DEFLATED) as zf:\n    for root, _dirs, files in os.walk('my_folder'):\n        for name in files:\n            full = os.path.join(root, name)\n            zf.write(full, os.path.relpath(full, 'my_folder'))",
+        "bash": "# Zip a folder:\nzip -r backup.zip my_folder\n\n# Exclude a subfolder:\nzip -r backup.zip my_folder -x 'my_folder/cache/*'\n\n# tar.gz alternative:\ntar -czf backup.tar.gz my_folder"
+      }
+    },
+    {
+      "task": "unzip",
+      "patterns": [
+        "\\b(?:unzip|extract|decompress)\\b.*\\b(?:zip|archive|file)\\b",
+        "\\b(?:unzip|extract)\\s+(?:a\\s+)?zip\\b"
+      ],
+      "intro": "Here's how to unzip an archive in {lang}.",
+      "notes": "`zipfile.extractall` unpacks everything; to avoid zip-slip path traversal, validate entry names (the version below does). In bash, `unzip` handles .zip and `tar -xzf` handles .tar.gz.",
+      "languages": {
+        "python": "import zipfile\nimport os\n\n# Simple extraction:\nwith zipfile.ZipFile('backup.zip') as zf:\n    zf.extractall('extracted')\n\n# Safe extraction (no path traversal):\ndest = os.path.abspath('extracted')\nwith zipfile.ZipFile('backup.zip') as zf:\n    for member in zf.namelist():\n        target = os.path.abspath(os.path.join(dest, member))\n        if not target.startswith(dest + os.sep):\n            raise ValueError('unsafe zip entry: ' + member)\n    zf.extractall(dest)",
+        "bash": "# Unzip a .zip file:\nunzip backup.zip -d extracted\n\n# tar.gz:\ntar -xzf backup.tar.gz -C extracted\n\n# List contents without extracting:\nunzip -l backup.zip"
+      }
+    }
+  ]
+}

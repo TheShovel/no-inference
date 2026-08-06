@@ -89,6 +89,18 @@ _TASK_VERBS = (
     'debug', 'delete', 'add', 'count', 'merge', 'flatten', 'split', 'parse',
     'validate', 'extract', 'rename', 'install', 'kill', 'print',
 )
+_TASK_VERB_SET = frozenset(_TASK_VERBS)
+
+# Language/framework names: they tell us the target language, but a shared
+# language word must never substantiate a topic match on its own ("write a
+# python script to check if a website is up" must not match the entry
+# "how to check if a key exists in a python dictionary" just because both
+# mention python).
+_LANG_WORD_SET = frozenset(
+    """python javascript typescript java c++ cpp c# csharp go golang rust
+    ruby php swift kotlin scala sql bash shell html css js ts py django flask
+    fastapi express react vue node pandas numpy git docker curl regex regexp
+    json csv xml""".split())
 
 # ── Stack dataset API ──────────────────────────────────────────────────────
 
@@ -643,6 +655,10 @@ def code_lookup(query: str) -> "str | None":
                        'item', 'element', 'key', 'set', 'call', 'return',
                        'work', 'want', 'using', 'used', 'based', 'show',
                        'give', 'take', 'know',
+                       # Generic code nouns that appear in nearly every entry:
+                       # without these, "check if a number is even" matches the
+                       # prime entry on "function" + "number" alone.
+                       'function', 'method', 'class',
                        # Common function words: without these, "what is the
                        # difference between X and Y" queries all share
                        # "difference between and" and match EACH OTHER
@@ -663,6 +679,13 @@ def code_lookup(query: str) -> "str | None":
         # Use 3+ char words to catch important short coding terms like 'div', 'css', 'js', 'api'
         q_words = {w for w in re.findall(r'\b\w{3,}\b', q.lower())
                    if w not in _STOP_WORDS}
+        # Two-letter terms that are decisive topic words: "regex to match an
+        # IP address" must not match the "regex to match an email address"
+        # entry just because both say "address".
+        if re.search(r'\bip\s+address\b', q.lower()):
+            q_words.add('ip')
+        if re.search(r'\bhtml\s+(?:page|file)\b', q.lower()):
+            q_words.add('html')
         if q_words:
             # Detect the language being asked about in the query
             query_lang = detect_query_lang(query)
@@ -684,7 +707,29 @@ def code_lookup(query: str) -> "str | None":
             for _ci in sorted(_fuzzy_candidates):
                 pattern, answer = entries[_ci]
                 pattern_str = pattern.pattern.lower() if hasattr(pattern, 'pattern') else ''
-                
+                if not pattern_str:
+                    continue
+
+                # Topic-substantiation gate: a "write a python script to check
+                # if a website is up" request must not match the "check if a
+                # key exists in a dictionary" entry just because both share
+                # "check" + "python". Require at least TWO THIRDS of the
+                # query's topic words (non-stop, non-verb, non-language words)
+                # to appear in the pattern OR the answer — terser patterns
+                # like "how to sort a dictionary" still pass when their answer
+                # covers "by value", while an unrelated entry that only shares
+                # a generic word ("sum of numbers 1 to n" vs a "for loop"
+                # entry that mentions "numbers") is rejected. When the query
+                # has no topic words ("sort a list in python"), fall back to
+                # the plain overlap rules below.
+                _topic_words = (q_words - _TASK_VERB_SET - _LANG_WORD_SET)
+                if _topic_words:
+                    answer_lower = answer.lower()[:600]
+                    _topic_hits = sum(1 for w in _topic_words
+                                      if w in pattern_str or w in answer_lower)
+                    if _topic_hits * 3 < len(_topic_words) * 2:
+                        continue
+
                 # Count how many query words appear in the PATTERN
                 pattern_overlap = sum(1 for w in q_words if w in pattern_str)
                 
@@ -710,8 +755,19 @@ def code_lookup(query: str) -> "str | None":
                     penalty += 100  # -100 for missing the task verb
                 
                 # Count answer overlap (weighted lower)
-                answer_lower = answer.lower()[:300]
+                if not _topic_words:
+                    answer_lower = answer.lower()[:300]
                 answer_overlap = sum(1 for w in q_words if w in answer_lower)
+
+                # MISSING-TOPIC PENALTY: a decisive topic word the entry
+                # doesn't cover at all ("regex to match an IP address" vs the
+                # email-address entry) is -40 each — bigger than any overlap
+                # the shared words can earn, so the wrong entry loses and the
+                # query falls through to the synthesizer.
+                if _topic_words:
+                    _missing = [w for w in _topic_words
+                                if w not in pattern_str and w not in answer_lower]
+                    penalty += len(_missing) * 40
                 
                 # Combined: pattern match is paramount, answer match is tiebreaker
                 # Penalty: subtract for extraneous pattern words not in query
@@ -803,24 +859,37 @@ _CODING_TOPIC_RE = re.compile(
     r'php|swift|kotlin|sql|bash|shell|html|css|js|ts|py)\b|'
     r'\b(?:git|docker|npm|pip|pandas|numpy|flask|django|fastapi|express|'
     r'react|vue|node|curl|api|http|url|csv|json|xml|regex|regexp|database|'
-    r'function|method|class|variable|array|object|string|list|dict|'
+    r'function|method|class|variable|array|object|string|list|dict|dictionary|'
     r'algorithm|data\s+structure|web\s+scrap|endpoint|query|snippet|'
     r'code|program|script|syntax|bug|debug|deploy|commit|branch|repo|'
     r'framework|library|backend|frontend|server|client|async|thread|'
     r'cache|serialize|parse|encrypt|hash|website|web\s*site|web\s*page|'
-    r'landing\s*page|homepage|portfolio|static\s+site)\b',
+    r'landing\s*page|homepage|portfolio|static\s+site|process|port|'
+    r'kill|count|length|character|characters|letters?|filename|directory|'
+    r'celsius|centigrade|fahrenheit|kelvin|in\s+go|'
+    r'(?:sort|reverse|split|join|parse|count|check|find|remove|convert)\s+'
+    r'(?:a|an|the|by|from)\b)',
     re.IGNORECASE)
 
 # Phrases that make a query a "do it for me" code task rather than a concept
 # question: "write a function to ...", "how do I ... in python", "sql to ...".
 _CODE_TASK_RE = re.compile(
     r'\b(?:write|implement|create|make|build|fix|debug|generate|produce|'
-    r'give|show|need|find)\b.*\b(?:code|function|program|script|snippet|'
-    r'class|query|sql|regex|algorithm|loop|parser|api|website|web\s*site|'
-    r'web\s*page|landing\s*page|homepage|html|css|portfolio)\b|'
+    r'give|show|need|find|count|check|extract|sort|reverse|remove|delete|'
+    r'rename|convert|read|print|parse|list|search|validate|split|join)\b.*'
+    r'\b(?:code|function|program|script|snippet|class|query|sql|regex|'
+    r'algorithm|loop|parser|api|website|web\s*site|web\s*page|landing\s*'
+    r'page|homepage|html|css|portfolio|string|array|list|dict|dictionary|'
+    r'file|json|csv|character|characters|number|numbers|data|process|port|'
+    r'url|email|line|lines|word|words|sentence|sentences)\b|'
     r'\bhow\s+(?:do|to|can|would|should|could)\b.*\b(?:python|javascript|'
     r'java|c\+\+|sql|git|node|flask|react|api|file|array|list|json|csv|'
-    r'website|web\s*site|web\s*page|html|css)\b',
+    r'regex|website|web\s*site|web\s*page|html|css|process|port|string|'
+    r'url|email|data|count|kill|extract)\b|'
+    r'\b(?:celsius|centigrade|fahrenheit|miles?|kilometers?|km|pounds?|lbs?|'
+    r'kg|kilograms?|inches?|feet|yards?|meters?|gallons?|liters?)\s+'
+    r'(?:to|into)\s+(?:fahrenheit|celsius|miles?|kilometers?|km|pounds?|'
+    r'lbs?|kg|kilograms?|inches?|feet|yards?|meters?|gallons?|liters?)\b',
     re.IGNORECASE)
 
 

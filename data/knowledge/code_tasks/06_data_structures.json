@@ -1,0 +1,238 @@
+{
+  "tasks": [
+    {
+      "task": "dedup",
+      "patterns": [
+        "\\bremove\\s+duplicates?\\b",
+        "\\bdedup(?:licate)?\\b",
+        "\\bunique\\s+(?:values?|elements?)\\b",
+        "\\bduplicates?\\s+from\\s+(?:a\\s+)?(?:list|array)\\b"
+      ],
+      "intro": "Here's a {lang} function that removes duplicate elements from a list while preserving order.",
+      "notes": "Using a set for seen items preserves the first occurrence of each element and runs in O(n) time. If order doesn't matter, `sorted(set(items))` is shorter.",
+      "languages": {
+        "python": "def dedup(items: list) -> list:\n    \"\"\"Remove duplicates while preserving first-occurrence order.\"\"\"\n    seen = set()\n    result = []\n    for item in items:\n        if item not in seen:\n            seen.add(item)\n            result.append(item)\n    return result\n\n# Example:\nprint(dedup([3, 1, 3, 2, 1, 4, 3]))  # [3, 1, 2, 4]\n# Order doesn't matter?  list(set(items))",
+        "javascript": "function dedup(items) {\n    return [...new Set(items)];\n}\n\n// Example:\nconsole.log(dedup([3, 1, 3, 2, 1, 4, 3]));  // [3, 1, 2, 4]",
+        "java": "public static List<Integer> dedup(List<Integer> items) {\n    return new ArrayList<>(new LinkedHashSet<>(items));  // preserves order\n}",
+        "c++": "#include <unordered_set>\n\nstd::vector<int> dedup(const std::vector<int>& items) {\n    std::unordered_set<int> seen;\n    std::vector<int> result;\n    for (int x : items) {\n        if (seen.insert(x).second) result.push_back(x);\n    }\n    return result;\n}",
+        "go": "func Dedup(items []int) []int {\n    seen := map[int]bool{}\n    result := []int{}\n    for _, x := range items {\n        if !seen[x] {\n            seen[x] = true\n            result = append(result, x)\n        }\n    }\n    return result\n}",
+        "rust": "use std::collections::HashSet;\n\nfn dedup(items: &[i32]) -> Vec<i32> {\n    let mut seen = HashSet::new();\n    items.iter().copied().filter(|x| seen.insert(*x)).collect()\n}",
+        "typescript": "function dedup(items) {\n    return [...new Set(items)];\n}\n\n// Example:\nconsole.log(dedup([3, 1, 3, 2, 1, 4, 3]));  // [3, 1, 2, 4]"
+      }
+    },
+    {
+      "task": "flatten",
+      "patterns": [
+        "\\bflatten(?:s|ed|ing)?\\s+(?:a\\s+)?(?:nested\\s+)?(?:list|array|tuple)\\b",
+        "\\bflatten(?:s|ed|ing)?\\s+nested\\b",
+        "\\bflatten(?:s|ed|ing)?\\b"
+      ],
+      "intro": "Here's a {lang} function that flattens a nested list structure into a single flat list.",
+      "notes": "The iterative stack-based version handles arbitrarily deep nesting without recursion limits. For shallow, fixed-depth nesting a list comprehension with two loops is cleaner.",
+      "languages": {
+        "python": "def flatten(nested: list) -> list:\n    \"\"\"Flatten arbitrarily nested lists into a single flat list.\"\"\"\n    result = []\n    stack = list(reversed(nested))\n    while stack:\n        item = stack.pop()\n        if isinstance(item, list):\n            stack.extend(reversed(item))\n        else:\n            result.append(item)\n    return result\n\n# Example:\nprint(flatten([1, [2, [3, [4]], 5]]))  # [1, 2, 3, 4, 5]\n# Shallow (one level only): [x for sub in nested for x in sub]",
+        "javascript": "function flatten(nested) {\n    const result = [];\n    const stack = [...nested].reverse();\n    while (stack.length) {\n        const item = stack.pop();\n        if (Array.isArray(item)) stack.push(...[...item].reverse());\n        else result.push(item);\n    }\n    return result;\n}\n\n// Example:\nconsole.log(flatten([1, [2, [3, [4]], 5]]));  // [1, 2, 3, 4, 5]\n// One level: [].concat(...nested)   Arbitrary depth: nested.flat(Infinity)",
+        "java": "public static List<Object> flatten(List<?> nested) {\n    List<Object> result = new ArrayList<>();\n    for (Object item : nested) {\n        if (item instanceof List<?> list) result.addAll(flatten(list));\n        else result.add(item);\n    }\n    return result;\n}",
+        "c++": "// C++ has no built-in nested-list type; use a variant or recursion over\n// std::vector<std::variant<int, std::vector<...>>>. For the common case of\n// flattening a vector of vectors:\nstd::vector<int> flatten(const std::vector<std::vector<int>>& nested) {\n    std::vector<int> result;\n    for (const auto& v : nested) {\n        result.insert(result.end(), v.begin(), v.end());\n    }\n    return result;\n}",
+        "go": "// Flatten a [][]int (one level). For arbitrary nesting use a recursive\n// function over []interface{}.\nfunc Flatten(nested [][]int) []int {\n    result := []int{}\n    for _, v := range nested {\n        result = append(result, v...)\n    }\n    return result\n}",
+        "rust": "// Flatten a Vec<Vec<T>> (one level). For arbitrary nesting use an enum.\nfn flatten(nested: Vec<Vec<i32>>) -> Vec<i32> {\n    nested.into_iter().flatten().collect()\n}",
+        "typescript": "function flatten(nested) {\n    const result = [];\n    const stack = [...nested].reverse();\n    while (stack.length) {\n        const item = stack.pop();\n        if (Array.isArray(item)) stack.push(...[...item].reverse());\n        else result.push(item);\n    }\n    return result;\n}\n\n// Example:\nconsole.log(flatten([1, [2, [3, [4]], 5]]));  // [1, 2, 3, 4, 5]\n// One level: [].concat(...nested)   Arbitrary depth: nested.flat(Infinity)",
+        "bash": "# Bash arrays are one-dimensional, so a nested list is usually\n# flattened when it is built (append each element to one array):\ndeclare -a flat=()\nfor group in \"a b\" \"c d\"; do\n    for item in $group; do\n        flat+=(\"$item\")\n    done\ndone\nprintf '%s\\n' \"${flat[@]}\"\n\n# Flatten whitespace-separated input:\necho \"1 2 3 4\" | tr ' ' '\\n'\n\n# For real nested data, use python or jq instead — bash has no\n# native nested structures."
+      }
+    },
+    {
+      "task": "sum_range",
+      "patterns": [
+        "\\b(?:sum|sums|summation|summing)\\s+(?:of\\s+)?(?:all\\s+)?(?:the\\s+)?numbers?\\s+from\\s+1\\s+to\\s+n\\b",
+        "\\b(?:sum|sums|summation|summing)\\s+(?:all\\s+)?(?:the\\s+)?numbers?\\s+from\\s+1\\s+to\\s+(\\d+|n)\\b",
+        "\\bsum\\s+of\\s+(?:a\\s+)?range\\b",
+        "\\b(?:add\\s+up|adds\\s+up)\\s+(?:all\\s+)?(?:the\\s+)?numbers?\\s+from\\s+1\\s+to\\s+(\\d+|n)\\b",
+        "\\bsummation\\s+of\\s+1\\s+to\\s+n\\b",
+        "\\bsum\\s+1\\s+to\\s+(\\d+|n)\\b"
+      ],
+      "intro": "Here's a {lang} function that sums every number from 1 to n.",
+      "notes": "The closed form n(n+1)/2 is O(1) and never overflows in a loop, but the loop version is clearer for small n. For a range a..b use sum(range(a, b + 1)).",
+      "languages": {
+        "python": "def sum_1_to_n(n: int) -> int:\n    \"\"\"Sum every integer from 1 to n (inclusive).\"\"\"\n    return sum(range(1, n + 1))\n\n# O(1) closed form:\ndef sum_1_to_n_fast(n: int) -> int:\n    return n * (n + 1) // 2\n\n# Example:\nprint(sum_1_to_n(100))       # 5050\nprint(sum_1_to_n_fast(100))  # 5050",
+        "javascript": "function sum1ToN(n) {\n    let total = 0;\n    for (let i = 1; i <= n; i++) total += i;\n    return total;\n}\n\n// O(1) closed form:\nfunction sum1ToNFast(n) {\n    return n * (n + 1) / 2;\n}\n\nconsole.log(sum1ToN(100), sum1ToNFast(100));  // 5050 5050",
+        "go": "func Sum1ToN(n int) int {\n    total := 0\n    for i := 1; i <= n; i++ {\n        total += i\n    }\n    return total\n}\n\n// O(1) closed form:\n// func Sum1ToNFast(n int) int { return n * (n + 1) / 2 }",
+        "rust": "fn sum_1_to_n(n: u64) -> u64 {\n    (1..=n).sum()\n}\n\n// O(1) closed form:\n// fn sum_1_to_n_fast(n: u64) -> u64 { n * (n + 1) / 2 }"
+      }
+    },
+    {
+      "task": "sum_list",
+      "patterns": [
+        "\\bsum\\s+(?:of\\s+)?(?:a\\s+)?(?:list|array|numbers?)\\b",
+        "\\btotal\\s+of\\s+(?:a\\s+)?(?:list|array)\\b",
+        "\\baverage\\s+of\\s+(?:a\\s+)?(?:list|array|numbers?)\\b",
+        "\\bmean\\s+of\\s+(?:a\\s+)?(?:list|array)\\b"
+      ],
+      "intro": "Here's a {lang} snippet that computes the sum (and average) of a list of numbers.",
+      "notes": "This runs in O(n) time. Watch out for floating-point precision when averaging; for exact decimals use an integer sum and divide at the end.",
+      "languages": {
+        "python": "def sum_and_average(numbers: list[float]) -> tuple[float, float]:\n    if not numbers:\n        return 0.0, 0.0\n    total = sum(numbers)\n    return total, total / len(numbers)\n\n# Example:\nnums = [10, 20, 30, 40]\ntotal, avg = sum_and_average(nums)\nprint(f\"sum={total}, average={avg}\")  # sum=100, average=25.0\n# Built-ins: sum(nums), and statistics.mean(nums)",
+        "javascript": "function sumAndAverage(numbers) {\n    if (numbers.length === 0) return { sum: 0, average: 0 };\n    const sum = numbers.reduce((acc, n) => acc + n, 0);\n    return { sum, average: sum / numbers.length };\n}\n\n// Example:\nconsole.log(sumAndAverage([10, 20, 30, 40]));\n// { sum: 100, average: 25 }",
+        "java": "public static double[] sumAndAverage(int[] numbers) {\n    if (numbers.length == 0) return new double[]{0, 0};\n    long sum = 0;\n    for (int n : numbers) sum += n;\n    return new double[]{sum, (double) sum / numbers.length};\n}",
+        "c++": "std::pair<long long, double> sumAndAverage(\n    const std::vector<int>& numbers) {\n    if (numbers.empty()) return {0, 0};\n    long long sum = std::accumulate(numbers.begin(), numbers.end(), 0LL);\n    return {sum, (double) sum / numbers.size()};\n}",
+        "go": "func SumAndAverage(numbers []int) (int, float64) {\n    if len(numbers) == 0 {\n        return 0, 0\n    }\n    sum := 0\n    for _, n := range numbers {\n        sum += n\n    }\n    return sum, float64(sum) / float64(len(numbers))\n}",
+        "rust": "fn sum_and_average(numbers: &[i32]) -> (i32, f64) {\n    if numbers.is_empty() {\n        return (0, 0.0);\n    }\n    let sum: i32 = numbers.iter().sum();\n    (sum, sum as f64 / numbers.len() as f64)\n}",
+        "typescript": "function sumAndAverage(numbers) {\n    if (numbers.length === 0) return { sum: 0, average: 0 };\n    const sum = numbers.reduce((acc, n) => acc + n, 0);\n    return { sum, average: sum / numbers.length };\n}\n\n// Example:\nconsole.log(sumAndAverage([10, 20, 30, 40]));\n// { sum: 100, average: 25 }",
+        "bash": "# Sum numbers on one line:\necho \"1 2 3 4\" | awk '{s=0; for(i=1;i<=NF;i++) s+=$i; print s}'    # 10\n\n# Sum one number per line:\nprintf \"1\\n2\\n3\\n\" | awk '{s+=$1} END {print s}'                    # 6\n\n# Pure bash loop:\nnums=(1 2 3 4)\ntotal=0\nfor n in \"${nums[@]}\"; do\n    (( total += n ))\ndone\necho \"$total\"             # 10\n\n# Average:\necho \"1 2 3 4\" | awk '{s=0; for(i=1;i<=NF;i++) s+=$i; print s/NF}'  # 2.5"
+      }
+    },
+    {
+      "task": "two_sum",
+      "patterns": [
+        "\\btwo\\s*sum\\b",
+        "\\bfind\\s+pair\\s+that\\s+sums?\\s+to\\b"
+      ],
+      "intro": "Here's a {lang} function that finds the indices of two numbers that add up to a target.",
+      "notes": "The hash-map approach runs in O(n) time by storing each value's index and checking for the complement as you go — one pass, no nested loop.",
+      "languages": {
+        "python": "def two_sum(nums: list[int], target: int) -> list[int]:\n    \"\"\"Return the indices of the two numbers that add up to target.\"\"\"\n    seen = {}  # value -> index\n    for i, num in enumerate(nums):\n        complement = target - num\n        if complement in seen:\n            return [seen[complement], i]\n        seen[num] = i\n    return []  # no solution\n\n# Example:\nprint(two_sum([2, 7, 11, 15], 9))  # [0, 1]",
+        "javascript": "function twoSum(nums, target) {\n    const seen = new Map();  // value -> index\n    for (let i = 0; i < nums.length; i++) {\n        const complement = target - nums[i];\n        if (seen.has(complement)) return [seen.get(complement), i];\n        seen.set(nums[i], i);\n    }\n    return [];\n}",
+        "java": "public static int[] twoSum(int[] nums, int target) {\n    Map<Integer, Integer> seen = new HashMap<>();\n    for (int i = 0; i < nums.length; i++) {\n        int complement = target - nums[i];\n        if (seen.containsKey(complement)) {\n            return new int[]{seen.get(complement), i};\n        }\n        seen.put(nums[i], i);\n    }\n    return new int[]{};\n}",
+        "c++": "#include <unordered_map>\n\nstd::vector<int> twoSum(const std::vector<int>& nums, int target) {\n    std::unordered_map<int, int> seen;  // value -> index\n    for (int i = 0; i < (int) nums.size(); i++) {\n        int complement = target - nums[i];\n        if (seen.count(complement)) return {seen[complement], i};\n        seen[nums[i]] = i;\n    }\n    return {};\n}",
+        "go": "func TwoSum(nums []int, target int) []int {\n    seen := map[int]int{}  // value -> index\n    for i, num := range nums {\n        if j, ok := seen[target-num]; ok {\n            return []int{j, i}\n        }\n        seen[num] = i\n    }\n    return nil\n}",
+        "rust": "use std::collections::HashMap;\n\nfn two_sum(nums: &[i32], target: i32) -> Option<(usize, usize)> {\n    let mut seen = HashMap::new();\n    for (i, &num) in nums.iter().enumerate() {\n        if let Some(&j) = seen.get(&(target - num)) {\n            return Some((j, i));\n        }\n        seen.insert(num, i);\n    }\n    None\n}",
+        "typescript": "function twoSum(nums, target) {\n    const seen = new Map();  // value -> index\n    for (let i = 0; i < nums.length; i++) {\n        const complement = target - nums[i];\n        if (seen.has(complement)) return [seen.get(complement), i];\n        seen.set(nums[i], i);\n    }\n    return [];\n}"
+      }
+    },
+    {
+      "task": "bst",
+      "patterns": [
+        "\\bbinary\\s+search\\s+tree\\b",
+        "\\bbst\\b"
+      ],
+      "intro": "Here's a {lang} implementation of a binary search tree with insert, search, and traversal methods.",
+      "notes": "The BST invariant: for every node, all keys in the left subtree are smaller and all in the right subtree are larger. Search/insert/delete are O(log n) on a balanced tree but degrade to O(n) on a degenerate (insertion-sorted) tree — use a self-balancing variant (AVL, red-black) when inputs can be adversarial.",
+      "languages": {
+        "python": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\n\nclass BinarySearchTree:\n    def __init__(self):\n        self.root = None\n\n    def insert(self, val: int) -> None:\n        if not self.root:\n            self.root = TreeNode(val)\n            return\n        node = self.root\n        while True:\n            if val < node.val:\n                if node.left is None:\n                    node.left = TreeNode(val)\n                    return\n                node = node.left\n            else:\n                if node.right is None:\n                    node.right = TreeNode(val)\n                    return\n                node = node.right\n\n    def search(self, val: int) -> bool:\n        node = self.root\n        while node:\n            if node.val == val:\n                return True\n            node = node.left if val < node.val else node.right\n        return False\n\n    def inorder(self) -> list[int]:\n        \"\"\"Sorted order traversal.\"\"\"\n        result = []\n\n        def visit(node):\n            if not node:\n                return\n            visit(node.left)\n            result.append(node.val)\n            visit(node.right)\n\n        visit(self.root)\n        return result\n\n# Example:\nbst = BinarySearchTree()\nfor v in (5, 3, 7, 1, 4, 6, 8):\n    bst.insert(v)\nprint(bst.search(4))     # True\nprint(bst.search(9))     # False\nprint(bst.inorder())     # [1, 3, 4, 5, 6, 7, 8]",
+        "javascript": "class TreeNode {\n    constructor(val) {\n        this.val = val;\n        this.left = null;\n        this.right = null;\n    }\n}\n\nclass BinarySearchTree {\n    constructor() {\n        this.root = null;\n    }\n\n    insert(val) {\n        if (!this.root) {\n            this.root = new TreeNode(val);\n            return;\n        }\n        let node = this.root;\n        while (true) {\n            if (val < node.val) {\n                if (!node.left) { node.left = new TreeNode(val); return; }\n                node = node.left;\n            } else {\n                if (!node.right) { node.right = new TreeNode(val); return; }\n                node = node.right;\n            }\n        }\n    }\n\n    search(val) {\n        let node = this.root;\n        while (node) {\n            if (node.val === val) return true;\n            node = val < node.val ? node.left : node.right;\n        }\n        return false;\n    }\n\n    inorder() {\n        const result = [];\n        const visit = (node) => {\n            if (!node) return;\n            visit(node.left);\n            result.push(node.val);\n            visit(node.right);\n        };\n        visit(this.root);\n        return result;\n    }\n}",
+        "java": "class TreeNode {\n    int val;\n    TreeNode left, right;\n    TreeNode(int val) { this.val = val; }\n}\n\nclass BinarySearchTree {\n    TreeNode root;\n\n    void insert(int val) {\n        root = insertRec(root, val);\n    }\n\n    private TreeNode insertRec(TreeNode node, int val) {\n        if (node == null) return new TreeNode(val);\n        if (val < node.val) node.left = insertRec(node.left, val);\n        else node.right = insertRec(node.right, val);\n        return node;\n    }\n\n    boolean search(int val) {\n        TreeNode node = root;\n        while (node != null) {\n            if (node.val == val) return true;\n            node = val < node.val ? node.left : node.right;\n        }\n        return false;\n    }\n\n    List<Integer> inorder() {\n        List<Integer> result = new ArrayList<>();\n        inorderRec(root, result);\n        return result;\n    }\n\n    private void inorderRec(TreeNode node, List<Integer> result) {\n        if (node == null) return;\n        inorderRec(node.left, result);\n        result.add(node.val);\n        inorderRec(node.right, result);\n    }\n}",
+        "c++": "struct TreeNode {\n    int val;\n    TreeNode* left;\n    TreeNode* right;\n    TreeNode(int v) : val(v), left(nullptr), right(nullptr) {}\n};\n\nclass BinarySearchTree {\npublic:\n    TreeNode* root = nullptr;\n\n    void insert(int val) { root = insertRec(root, val); }\n\n    bool search(int val) const {\n        TreeNode* node = root;\n        while (node) {\n            if (node->val == val) return true;\n            node = val < node->val ? node->left : node->right;\n        }\n        return false;\n    }\n\n    std::vector<int> inorder() const {\n        std::vector<int> result;\n        inorderRec(root, result);\n        return result;\n    }\n\nprivate:\n    TreeNode* insertRec(TreeNode* node, int val) {\n        if (!node) return new TreeNode(val);\n        if (val < node->val) node->left = insertRec(node->left, val);\n        else node->right = insertRec(node->right, val);\n        return node;\n    }\n\n    void inorderRec(TreeNode* node, std::vector<int>& out) const {\n        if (!node) return;\n        inorderRec(node->left, out);\n        out.push_back(node->val);\n        inorderRec(node->right, out);\n    }\n};",
+        "go": "type TreeNode struct {\n    Val   int\n    Left  *TreeNode\n    Right *TreeNode\n}\n\ntype BST struct{ Root *TreeNode }\n\nfunc (t *BST) Insert(val int) {\n    t.Root = insertRec(t.Root, val)\n}\n\nfunc insertRec(node *TreeNode, val int) *TreeNode {\n    if node == nil {\n        return &TreeNode{Val: val}\n    }\n    if val < node.Val {\n        node.Left = insertRec(node.Left, val)\n    } else {\n        node.Right = insertRec(node.Right, val)\n    }\n    return node\n}\n\nfunc (t *BST) Search(val int) bool {\n    node := t.Root\n    for node != nil {\n        if node.Val == val {\n            return true\n        }\n        if val < node.Val {\n            node = node.Left\n        } else {\n            node = node.Right\n        }\n    }\n    return false\n}\n\nfunc (t *BST) Inorder() []int {\n    out := []int{}\n    var visit func(*TreeNode)\n    visit = func(n *TreeNode) {\n        if n == nil {\n            return\n        }\n        visit(n.Left)\n        out = append(out, n.Val)\n        visit(n.Right)\n    }\n    visit(t.Root)\n    return out\n}",
+        "rust": "#[derive(Debug)]\nstruct TreeNode {\n    val: i32,\n    left: Option<Box<TreeNode>>,\n    right: Option<Box<TreeNode>>,\n}\n\nimpl TreeNode {\n    fn new(val: i32) -> Self {\n        TreeNode { val, left: None, right: None }\n    }\n}\n\nstruct BST {\n    root: Option<Box<TreeNode>>,\n}\n\nimpl BST {\n    fn new() -> Self {\n        BST { root: None }\n    }\n\n    fn insert(&mut self, val: i32) {\n        self.root = Self::insert_rec(self.root.take(), val);\n    }\n\n    fn insert_rec(node: Option<Box<TreeNode>>, val: i32) -> Option<Box<TreeNode>> {\n        match node {\n            None => Some(Box::new(TreeNode::new(val))),\n            Some(mut n) => {\n                if val < n.val {\n                    n.left = Self::insert_rec(n.left.take(), val);\n                } else {\n                    n.right = Self::insert_rec(n.right.take(), val);\n                }\n                Some(n)\n            }\n        }\n    }\n\n    fn search(&self, val: i32) -> bool {\n        let mut node = self.root.as_ref();\n        while let Some(n) = node {\n            if n.val == val {\n                return true;\n            }\n            node = if val < n.val { n.left.as_ref() } else { n.right.as_ref() };\n        }\n        false\n    }\n}",
+        "typescript": "class TreeNode {\n    constructor(val) {\n        this.val = val;\n        this.left = null;\n        this.right = null;\n    }\n}\n\nclass BinarySearchTree {\n    constructor() {\n        this.root = null;\n    }\n\n    insert(val) {\n        if (!this.root) {\n            this.root = new TreeNode(val);\n            return;\n        }\n        let node = this.root;\n        while (true) {\n            if (val < node.val) {\n                if (!node.left) { node.left = new TreeNode(val); return; }\n                node = node.left;\n            } else {\n                if (!node.right) { node.right = new TreeNode(val); return; }\n                node = node.right;\n            }\n        }\n    }\n\n    search(val) {\n        let node = this.root;\n        while (node) {\n            if (node.val === val) return true;\n            node = val < node.val ? node.left : node.right;\n        }\n        return false;\n    }\n\n    inorder() {\n        const result = [];\n        const visit = (node) => {\n            if (!node) return;\n            visit(node.left);\n            result.push(node.val);\n            visit(node.right);\n        };\n        visit(this.root);\n        return result;\n    }\n}"
+      }
+    },
+    {
+      "task": "linked_list",
+      "patterns": [
+        "\\breverse\\s+(?:a\\s+)?linked\\s+list\\b",
+        "\\blinked\\s+list\\b"
+      ],
+      "intro": "Here's a {lang} implementation of a singly linked list with a reverse method.",
+      "notes": "Reversing a linked list rewires each node's `next` pointer to point at the previous node while saving the old next pointer first — O(n) time, O(1) space. A common interview question, so it's worth knowing the iterative version by heart.",
+      "languages": {
+        "python": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\n\ndef reverse_list(head: ListNode) -> ListNode:\n    \"\"\"Reverse a singly linked list in place (iterative).\"\"\"\n    prev, curr = None, head\n    while curr:\n        nxt = curr.next      # save next before rewiring\n        curr.next = prev\n        prev, curr = curr, nxt\n    return prev              # new head\n\n# Example: 1 -> 2 -> 3 -> None  becomes  3 -> 2 -> 1 -> None\ndef build_list(values):\n    head = None\n    for v in reversed(values):\n        head = ListNode(v, head)\n    return head\n\nhead = build_list([1, 2, 3])\nreversed_head = reverse_list(head)\n# walk it:\nwhile reversed_head:\n    print(reversed_head.val, end=\" \")\n    reversed_head = reversed_head.next\n# prints: 3 2 1",
+        "javascript": "class ListNode {\n    constructor(val, next = null) {\n        this.val = val;\n        this.next = next;\n    }\n}\n\nfunction reverseList(head) {\n    let prev = null, curr = head;\n    while (curr) {\n        const next = curr.next;   // save next before rewiring\n        curr.next = prev;\n        prev = curr;\n        curr = next;\n    }\n    return prev;   // new head\n}",
+        "java": "public class ListNode {\n    int val;\n    ListNode next;\n    ListNode(int val) { this.val = val; }\n}\n\npublic static ListNode reverseList(ListNode head) {\n    ListNode prev = null, curr = head;\n    while (curr != null) {\n        ListNode next = curr.next;  // save next before rewiring\n        curr.next = prev;\n        prev = curr;\n        curr = next;\n    }\n    return prev;  // new head\n}",
+        "c++": "struct ListNode {\n    int val;\n    ListNode* next;\n    ListNode(int v) : val(v), next(nullptr) {}\n};\n\nListNode* reverseList(ListNode* head) {\n    ListNode* prev = nullptr;\n    ListNode* curr = head;\n    while (curr) {\n        ListNode* next = curr->next;  // save next before rewiring\n        curr->next = prev;\n        prev = curr;\n        curr = next;\n    }\n    return prev;  // new head\n}",
+        "go": "type ListNode struct {\n    Val  int\n    Next *ListNode\n}\n\nfunc ReverseList(head *ListNode) *ListNode {\n    var prev *ListNode\n    curr := head\n    for curr != nil {\n        next := curr.Next // save next before rewiring\n        curr.Next = prev\n        prev = curr\n        curr = next\n    }\n    return prev // new head\n}",
+        "rust": "#[derive(Debug)]\nstruct ListNode {\n    val: i32,\n    next: Option<Box<ListNode>>,\n}\n\nfn reverse_list(mut head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {\n    let mut prev = None;\n    while let Some(mut node) = head.take() {\n        let next = node.next.take(); // save next before rewiring\n        node.next = prev;\n        prev = Some(node);\n        head = next;\n    }\n    prev\n}",
+        "typescript": "class ListNode {\n    constructor(val, next = null) {\n        this.val = val;\n        this.next = next;\n    }\n}\n\nfunction reverseList(head) {\n    let prev = null, curr = head;\n    while (curr) {\n        const next = curr.next;   // save next before rewiring\n        curr.next = prev;\n        prev = curr;\n        curr = next;\n    }\n    return prev;   // new head\n}"
+      }
+    },
+    {
+      "task": "graph_traversal",
+      "patterns": [
+        "\\b(?:breadth|depth)[\\s-]*(?:first|fs|first\\s+search)\\b",
+        "\\bbfs\\b",
+        "\\bdfs\\b",
+        "\\btraverse\\s+(?:a\\s+)?graph\\b"
+      ],
+      "intro": "Here's a {lang} implementation of breadth-first and depth-first graph traversal.",
+      "notes": "BFS uses a queue and finds shortest paths in unweighted graphs; DFS uses a stack (or recursion) and is better for exploring connectivity and cycles. Both run in O(V + E). Always track visited nodes to avoid infinite loops on cyclic graphs.",
+      "languages": {
+        "python": "from collections import deque\n\n# Adjacency list: {node: [neighbors]}\ngraph = {\n    'A': ['B', 'C'],\n    'B': ['A', 'D', 'E'],\n    'C': ['A', 'F'],\n    'D': ['B'],\n    'E': ['B', 'F'],\n    'F': ['C', 'E'],\n}\n\n\ndef bfs(start: str) -> list[str]:\n    \"\"\"Breadth-first search — shortest path in unweighted graphs.\"\"\"\n    visited, queue = {start}, deque([start])\n    order = []\n    while queue:\n        node = queue.popleft()\n        order.append(node)\n        for nbr in graph.get(node, []):\n            if nbr not in visited:\n                visited.add(nbr)\n                queue.append(nbr)\n    return order\n\n\ndef dfs(start: str) -> list[str]:\n    \"\"\"Depth-first search — connectivity and cycle detection.\"\"\"\n    visited, stack = set(), [start]\n    order = []\n    while stack:\n        node = stack.pop()\n        if node in visited:\n            continue\n        visited.add(node)\n        order.append(node)\n        for nbr in reversed(graph.get(node, [])):\n            if nbr not in visited:\n                stack.append(nbr)\n    return order\n\nprint(bfs('A'))  # ['A', 'B', 'C', 'D', 'E', 'F']\nprint(dfs('A'))  # ['A', 'B', 'D', 'E', 'F', 'C']",
+        "javascript": "// Adjacency list: { node: [neighbors] }\nconst graph = {\n    A: ['B', 'C'],\n    B: ['A', 'D', 'E'],\n    C: ['A', 'F'],\n    D: ['B'],\n    E: ['B', 'F'],\n    F: ['C', 'E'],\n};\n\nfunction bfs(start) {\n    const visited = new Set([start]);\n    const queue = [start];\n    const order = [];\n    while (queue.length) {\n        const node = queue.shift();\n        order.push(node);\n        for (const nbr of graph[node] || []) {\n            if (!visited.has(nbr)) {\n                visited.add(nbr);\n                queue.push(nbr);\n            }\n        }\n    }\n    return order;\n}\n\nfunction dfs(start) {\n    const visited = new Set();\n    const stack = [start];\n    const order = [];\n    while (stack.length) {\n        const node = stack.pop();\n        if (visited.has(node)) continue;\n        visited.add(node);\n        order.push(node);\n        for (const nbr of [...(graph[node] || [])].reverse()) {\n            if (!visited.has(nbr)) stack.push(nbr);\n        }\n    }\n    return order;\n}\n\nconsole.log(bfs('A'));  // ['A', 'B', 'C', 'D', 'E', 'F']\nconsole.log(dfs('A'));  // ['A', 'B', 'D', 'E', 'F', 'C']",
+        "typescript": "// Adjacency list: { node: [neighbors] }\nconst graph = {\n    A: ['B', 'C'],\n    B: ['A', 'D', 'E'],\n    C: ['A', 'F'],\n    D: ['B'],\n    E: ['B', 'F'],\n    F: ['C', 'E'],\n};\n\nfunction bfs(start) {\n    const visited = new Set([start]);\n    const queue = [start];\n    const order = [];\n    while (queue.length) {\n        const node = queue.shift();\n        order.push(node);\n        for (const nbr of graph[node] || []) {\n            if (!visited.has(nbr)) {\n                visited.add(nbr);\n                queue.push(nbr);\n            }\n        }\n    }\n    return order;\n}\n\nfunction dfs(start) {\n    const visited = new Set();\n    const stack = [start];\n    const order = [];\n    while (stack.length) {\n        const node = stack.pop();\n        if (visited.has(node)) continue;\n        visited.add(node);\n        order.push(node);\n        for (const nbr of [...(graph[node] || [])].reverse()) {\n            if (!visited.has(nbr)) stack.push(nbr);\n        }\n    }\n    return order;\n}\n\nconsole.log(bfs('A'));  // ['A', 'B', 'C', 'D', 'E', 'F']\nconsole.log(dfs('A'));  // ['A', 'B', 'D', 'E', 'F', 'C']"
+      }
+    },
+    {
+      "task": "list_intersection",
+      "patterns": [
+        "\\b(?:find|get|compute|return)\\b.*\\bintersection\\b.*\\b(?:lists?|arrays?)\\b",
+        "\\bintersection\\s+of\\s+(?:two\\s+)?(?:lists?|arrays?|sets?)\\b",
+        "\\bcommon\\s+elements?\\s+(?:between|in|of)\\s+(?:two\\s+)?(?:lists?|arrays?)\\b"
+      ],
+      "intro": "Here's a {lang} function that finds the intersection of two lists.",
+      "notes": "Convert one list to a set for O(n) membership checks — the naive double loop is O(n×m). Set intersection loses duplicates and order; filter to preserve them.",
+      "languages": {
+        "python": "def intersection(a: list, b: list) -> list:\n    \"\"\"Elements present in both lists (order-preserving, keeps dups).\"\"\"\n    seen = set(b)\n    return [x for x in a if x in seen]\n\n# Pure set version (unique values only):\n# result = list(set(a) & set(b))\n\n# Example:\nprint(intersection([1, 2, 2, 3], [2, 3, 4]))  # [2, 2, 3]",
+        "javascript": "function intersection(a, b) {\n    const seen = new Set(b);\n    return a.filter(x => seen.has(x));\n}\n\n// Unique values only:\n// const result = [...new Set(a)].filter(x => new Set(b).has(x));\n\nconsole.log(intersection([1, 2, 2, 3], [2, 3, 4]));  // [2, 2, 3]"
+      }
+    },
+    {
+      "task": "list_union",
+      "patterns": [
+        "\\b(?:find|get|compute)\\b.*\\bunion\\b.*\\b(?:lists?|arrays?)\\b",
+        "\\bunion\\s+of\\s+(?:two\\s+)?(?:lists?|arrays?|sets?)\\b",
+        "\\bmerge\\s+(?:two\\s+)?(?:lists?|arrays?)\\s+without\\s+duplicates\\b"
+      ],
+      "intro": "Here's a {lang} function that computes the union of two lists.",
+      "notes": "A set gives unique values but loses order; `dict.fromkeys` preserves first-seen order in Python, `new Set` + spread preserves order in JS.",
+      "languages": {
+        "python": "def union(a: list, b: list) -> list:\n    \"\"\"All elements from both lists, deduplicated, order-preserving.\"\"\"\n    return list(dict.fromkeys(a + b))\n\n# Unique, unordered:\n# result = list(set(a) | set(b))\n\n# Example:\nprint(union([1, 2, 3], [3, 4, 5]))  # [1, 2, 3, 4, 5]",
+        "javascript": "function union(a, b) {\n    return [...new Set([...a, ...b])];\n}\n\nconsole.log(union([1, 2, 3], [3, 4, 5]));  // [1, 2, 3, 4, 5]"
+      }
+    },
+    {
+      "task": "list_empty",
+      "patterns": [
+        "\\b(?:check|test|see|determine)\\s+(?:if|whether)\\s+(?:a\\s+|an\\s+|the\\s+)?(?:list|array|string|dict|dictionary)\\s+is\\s+empty\\b",
+        "\\bempty\\s+(?:list|array)\\s+check\\b"
+      ],
+      "intro": "Here's how to check whether a list is empty in {lang}.",
+      "notes": "In Python, `if not lst:` is the idiomatic truthiness check; `len(lst) == 0` is explicit. In JS, `arr.length === 0`. Never compare a list to a specific value.",
+      "languages": {
+        "python": "def is_empty(lst: list) -> bool:\n    return not lst\n\n# Idiomatic usage:\nif not my_list:\n    print('empty')\n\n# Explicit length check:\nif len(my_list) == 0:\n    print('empty')\n\n# Works for strings, dicts, sets too:\nif not my_dict:\n    print('dict empty')",
+        "javascript": "function isEmpty(arr) {\n    return arr.length === 0;\n}\n\n// Idiomatic usage:\nif (arr.length === 0) {\n    console.log('empty');\n}\n\n// Strings:\nif (str === '') {\n    console.log('empty string');\n}"
+      }
+    },
+    {
+      "task": "reverse_dict",
+      "patterns": [
+        "\\b(?:reverse|invert|swap)\\s+(?:a\\s+|the\\s+)?dictionary\\b",
+        "\\b(?:reverse|invert)\\s+(?:a\\s+|the\\s+)?(?:dict|mapping|hash\\s*map)\\b",
+        "\\bswap\\s+keys\\s+and\\s+values\\b"
+      ],
+      "intro": "Here's a {lang} snippet that reverses a dictionary (keys become values).",
+      "notes": "Reverse mapping only works when values are unique — duplicate values overwrite earlier entries. In Python, `{v: k for k, v in d.items()}`; if values may repeat, group into lists with `setdefault`.",
+      "languages": {
+        "python": "def reverse_dict(d: dict) -> dict:\n    return {v: k for k, v in d.items()}\n\n# Example:\nages = {'alice': 30, 'bob': 25}\nprint(reverse_dict(ages))  # {30: 'alice', 25: 'bob'}\n\n# Keep all keys when values repeat:\nfrom collections import defaultdict\n\ndef reverse_dict_all(d: dict) -> dict:\n    out = defaultdict(list)\n    for k, v in d.items():\n        out[v].append(k)\n    return dict(out)",
+        "javascript": "function reverseDict(d) {\n    return Object.fromEntries(\n        Object.entries(d).map(([k, v]) => [v, k])\n    );\n}\n\nconsole.log(reverseDict({ alice: 30, bob: 25 }));  // { 30: 'alice', 25: 'bob' }"
+      }
+    },
+    {
+      "task": "rotate_list",
+      "patterns": [
+        "\\b(?:rotate|shift|cycle)\\s+(?:a\\s+|an\\s+|the\\s+)?(?:list|array)\\b",
+        "\\brotate\\s+(?:a\\s+|the\\s+)?(?:list|array)\\s+(?:by|to\\s+the)\\b"
+      ],
+      "intro": "Here's a {lang} function that rotates a list by k positions.",
+      "notes": "Slicing rotation is O(n) and clean: `lst[k:] + lst[:k]` shifts left by k. Handle k > len via modulo. In-place rotation can use three reversals (O(1) space).",
+      "languages": {
+        "python": "def rotate_left(lst: list, k: int) -> list:\n    \"\"\"Shift all elements left by k positions (wrapping around).\"\"\"\n    if not lst:\n        return lst\n    k %= len(lst)\n    return lst[k:] + lst[:k]\n\ndef rotate_right(lst: list, k: int) -> list:\n    if not lst:\n        return lst\n    k %= len(lst)\n    return lst[-k:] + lst[:-k]\n\n# Example:\nprint(rotate_left([1, 2, 3, 4, 5], 2))   # [3, 4, 5, 1, 2]\nprint(rotate_right([1, 2, 3, 4, 5], 2))  # [4, 5, 1, 2, 3]",
+        "javascript": "function rotateLeft(arr, k) {\n    if (!arr.length) return arr;\n    k %= arr.length;\n    return arr.slice(k).concat(arr.slice(0, k));\n}\n\nfunction rotateRight(arr, k) {\n    if (!arr.length) return arr;\n    k %= arr.length;\n    return arr.slice(-k).concat(arr.slice(0, arr.length - k));\n}\n\nconsole.log(rotateLeft([1, 2, 3, 4, 5], 2));   // [3, 4, 5, 1, 2]"
+      }
+    },
+    {
+      "task": "median",
+      "patterns": [
+        "\\b(?:find|get|calculate|compute|return)\\b.*\\bmedian\\b.*\\b(?:list|array|numbers?|data)\\b",
+        "\\bmedian\\s+of\\s+(?:a\\s+|the\\s+)?(?:list|array|numbers?|dataset)\\b",
+        "\\bmedian\\b"
+      ],
+      "intro": "Here's a {lang} function that computes the median of a list of numbers.",
+      "notes": "Sort and take the middle: for odd length it's the center element, for even length the average of the two middle ones. Sorting is O(n log n); a quickselect-based approach is O(n) for large data.",
+      "languages": {
+        "python": "def median(nums: list[float]) -> float:\n    \"\"\"Median of a list of numbers (unsorted input ok).\"\"\"\n    if not nums:\n        raise ValueError('empty list')\n    s = sorted(nums)\n    mid = len(s) // 2\n    if len(s) % 2 == 1:\n        return s[mid]\n    return (s[mid - 1] + s[mid]) / 2\n\n# Example:\nprint(median([5, 3, 1, 2, 4]))    # 3\nprint(median([5, 3, 1, 2, 4, 6]))  # 3.5",
+        "javascript": "function median(nums) {\n    if (!nums.length) throw new Error('empty list');\n    const s = [...nums].sort((a, b) => a - b);\n    const mid = Math.floor(s.length / 2);\n    if (s.length % 2 === 1) return s[mid];\n    return (s[mid - 1] + s[mid]) / 2;\n}\n\nconsole.log(median([5, 3, 1, 2, 4]));    // 3\nconsole.log(median([5, 3, 1, 2, 4, 6]));  // 3.5",
+        "go": "import \"sort\"\n\nfunc Median(nums []float64) float64 {\n    if len(nums) == 0 {\n        panic(\"empty list\")\n    }\n    s := append([]float64(nil), nums...)\n    sort.Float64s(s)\n    mid := len(s) / 2\n    if len(s)%2 == 1 {\n        return s[mid]\n    }\n    return (s[mid-1] + s[mid]) / 2\n}",
+        "rust": "fn median(mut nums: Vec<f64>) -> f64 {\n    nums.sort_by(|a, b| a.partial_cmp(b).unwrap());\n    let mid = nums.len() / 2;\n    if nums.len() % 2 == 1 {\n        nums[mid]\n    } else {\n        (nums[mid - 1] + nums[mid]) / 2.0\n    }\n}"
+      }
+    }
+  ]
+}

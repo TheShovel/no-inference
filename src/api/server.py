@@ -82,6 +82,15 @@ def _detect_buffer_transform(query: str):
     if not m:
         m = re.search(r'\brename\s+([A-Za-z_]\w*)\s+(?:to|into)\s+'
                       r'([A-Za-z_]\w*)\b', q)
+    if not m:
+        # "change foo to bar" without a noun — only when both sides look
+        # like identifiers (not pronouns/colors/function words)
+        m = re.search(r'\bchange\s+([A-Za-z_]\w*)\s+(?:to|into)\s+'
+                      r'([A-Za-z_]\w*)\b', q)
+        if m:
+            from cos.code_transformer import _IDENTIFIER_STOPWORDS
+            if not _IDENTIFIER_STOPWORDS.isdisjoint({m.group(1), m.group(2)}):
+                m = None
     if m:
         return 'rename', {'old': m.group(1), 'new': m.group(2)}
     # add comments / document

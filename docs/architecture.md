@@ -178,11 +178,15 @@ fallback.
 
 ### `cos/code_gen.py`
 
-Deterministic code synthesizer (~90 tasks across Python, JS/TS, Java,
+Deterministic code synthesizer (~80 tasks across Python, JS/TS, Java,
 C++, C#, Go, Rust, SQL, and bash): detects the language and task from the
 query, then assembles runnable code from a template library with a
 task-specific explanation. Also builds full websites (HTML/CSS) from a
-business type in the topic.
+business type in the topic. All task knowledge is data-driven: patterns,
+intros, notes, and per-language templates live in
+`data/knowledge/code_tasks/*.json` (see `docs/knowledge.md` for the format
+and how to add tasks); `code_gen.py` only contains the loader, language
+detection, and composition logic.
 
 ### `cos/code_transformer.py`
 

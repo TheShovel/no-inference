@@ -33,9 +33,9 @@ import os
 import re
 
 try:
-    from cos.code_gen import _CODE, detect_task, generate_code
+    from cos.code_gen import task_languages, detect_task, generate_code
 except Exception:  # pragma: no cover - only when cos is partially importable
-    _CODE = {}
+    task_languages = lambda task: {}
     detect_task = None
     generate_code = None
 
@@ -310,12 +310,40 @@ _NAME_TASK_RULES = [
     (r'\bsort', 'sort_list'),
     (r'\bfrequent', 'most_frequent'),
     (r'\boccurrence', 'count_occurrences'),
+    # name fallbacks for tasks defined in data/knowledge/code_tasks/
+    (r'\bcelsius|\bcentigrade|\bfahrenheit', 'temp_convert'),
+    (r'\bleap', 'leap_year'),
+    (r'\bsqrt|square.*root', 'sqrt'),
+    (r'\b(?:balanced|balance).*(?:paren|bracket|brace)', 'balanced_parens'),
+    (r'\bintersect', 'list_intersection'),
+    (r'\bunion\b', 'list_union'),
+    (r'\brotate', 'rotate_list'),
+    (r'\bclipboard', 'clipboard'),
+    (r'\bunzip|extract.*zip', 'unzip'),
+    (r'\bzip\b|\barchive', 'zip_folder'),
+    (r'\bgetcwd|\bcwd', 'cwd'),
+    (r'\bfile.*exist|exists.*file', 'file_exists'),
+    (r'\b(?:remove|delete|unlink).*file', 'delete_file'),
+    (r'\bcopy.*file|file.*copy', 'copy_file'),
+    (r'\bargv|parse.*args|cli.*args', 'cli_args'),
+    (r'\bgetenv|\benviron', 'env_vars'),
+    (r'\byesterday', 'yesterday_date'),
 ]
 
 
 def _task_by_name(name: str) -> "str | None":
     low = re.sub(r'([a-z0-9])([A-Z])', r'\1 \2', name).lower()
+    low = re.sub(r'([a-z])(\d)', r'\1 \2', low)
     low = low.replace('_', ' ').replace('-', ' ')
+    # Knowledge files first: the task patterns understand phrasings like
+    # "celsius to fahrenheit" that a name-rule table can't enumerate.
+    try:
+        from cos.code_gen import detect_task as _dt
+        task = _dt(low)
+        if task:
+            return task
+    except Exception:
+        pass
     for rule, task in _NAME_TASK_RULES:
         if re.search(rule, low):
             return task
@@ -856,7 +884,7 @@ def _name_recipe_body(sig: dict, lang: str) -> "list[str] | None":
     is a parameter to operate on. The note the caller adds says what was
     assumed (e.g. the parameter is a list of numbers).
     """
-    name = sig['name'].lower()
+    name = re.sub(r'([a-z0-9])([A-Z])', r'\1_\2', sig['name']).lower()
     params = [p[0] for p in sig['params']]
     if not params:
         return None
@@ -869,10 +897,16 @@ def _name_recipe_body(sig: dict, lang: str) -> "list[str] | None":
         if re.match(r'^(avg|average|mean)(?:_|$)', name):
             return [f'return sum({p}) / len({p})',
                     f'# Assumes {p} is a list of numbers']
-        if re.match(r'^max(?:_|$)', name):
+        if re.match(r'^(?:max|find_max|largest|biggest)(?:_|$)', name):
             return [f'return max({p})']
-        if re.match(r'^min(?:_|$)', name):
+        if re.match(r'^(?:min|find_min|smallest)(?:_|$)', name):
             return [f'return min({p})']
+        if re.match(r'^area(?:_|$)', name):
+            return [f'import math',
+                    f'return math.pi * {p} ** 2',
+                    f'# Assumes {p} is a radius']
+        if re.match(r'^circumference(?:_|$)', name):
+            return [f'import math', f'return 2 * math.pi * {p}']
         if re.match(r'^(?:top|best|largest|highest)(?:_|$)', name) \
                 and len(sig['params']) >= 2:
             coll = sig['params'][0][0]
@@ -886,10 +920,12 @@ def _name_recipe_body(sig: dict, lang: str) -> "list[str] | None":
         return [f'return {p}.length;']
     if re.match(r'^(avg|average|mean)(?:_|$)', name):
         return [f'return {p}.reduce((acc, x) => acc + x, 0) / {p}.length;']
-    if re.match(r'^max(?:_|$)', name):
+    if re.match(r'^(?:max|find_max|largest|biggest)(?:_|$)', name):
         return [f'return Math.max(...{p});']
-    if re.match(r'^min(?:_|$)', name):
+    if re.match(r'^(?:min|find_min|smallest)(?:_|$)', name):
         return [f'return Math.min(...{p});']
+    if re.match(r'^area(?:_|$)', name):
+        return [f'return Math.PI * {p} ** 2;']
     if re.match(r'^(?:top|best|largest|highest)(?:_|$)', name) \
             and len(sig['params']) >= 2:
         coll = sig['params'][0][0]
@@ -918,9 +954,10 @@ def _body_from_signature(sig: dict, lang: str,
     sig_arity = len(sig['params'])
 
     def _from_template(task: str, why: str) -> "tuple[list[str], list[str]] | None":
-        if not (_CODE.get(task) and lang in _CODE[task]):
+        langs = task_languages(task)
+        if not (langs and lang in langs):
             return None
-        extracted = first_function_def(_CODE[task][lang], lang)
+        extracted = first_function_def(langs[lang], lang)
         if not extracted:
             return None
         _def_line, body = extracted
@@ -1014,7 +1051,8 @@ def _marker_lines(code: str) -> list[int]:
 
     A marker is a line whose content is exactly '...', a bare 'pass'
     inside a function, an empty '{ }' block line, a '// ...'/'# ...'
-    ellipsis comment, or a `throw new Error(...)` stub (JS/TS).
+    ellipsis comment, a `throw new Error(...)` stub (JS/TS), or a
+    '// TODO'/'# TODO' comment (when it is the fill point itself).
     """
     lines = code.split('\n')
     out = []
@@ -1022,9 +1060,31 @@ def _marker_lines(code: str) -> list[int]:
         s = ln.strip()
         if (s == '...' or s == 'pass' or s in ('{}', '{ }', '{};')
                 or re.match(r'^(?:#|//)\s*\.\.\.$', s)
-                or re.match(r'^throw\s+new\s+Error\([^)]*\)\s*;?$', s)):
+                or re.match(r'^throw\s+new\s+Error\([^)]*\)\s*;?$', s)
+                or re.match(r'^(?:#|//)\s*(?:TODO|FIXME)\b', s,
+                            re.IGNORECASE)):
             out.append(i)
-    return out
+    # A TODO/FIXME comment that directly documents the marker below it is an
+    # instruction, not a fill point — otherwise '# TODO: do X' + '...' (or
+    # '// TODO' + 'throw new Error("TODO")') would be filled twice.
+    filtered = []
+    for i in out:
+        if not re.match(r'^(?:#|//)\s*(?:TODO|FIXME)\b', lines[i].strip(),
+                        re.IGNORECASE):
+            filtered.append(i)
+            continue
+        nxt = i + 1
+        while nxt < len(lines) and not lines[nxt].strip():
+            nxt += 1
+        is_marker_below = False
+        if nxt < len(lines):
+            s2 = lines[nxt].strip()
+            is_marker_below = (s2 in ('...', 'pass', '{}', '{ }', '{};')
+                               or re.match(r'^(?:#|//)\s*\.\.\.$', s2)
+                               or re.match(r'^throw\s+new\s+Error', s2))
+        if not is_marker_below:
+            filtered.append(i)
+    return filtered
 
 
 def _instruction_at(code: str, line_idx: int) -> str:
@@ -1239,8 +1299,8 @@ def _apply_insertion(code: str, text: str, line_idx: int) -> str:
 # ── Query-level integration (chat / CLI) ────────────────────────────────────
 
 _FILL_VERBS_RE = re.compile(
-    r'complete|fill\s*(?:in|out)?|finish|implement\s+(?:the\s+)?'
-    r'(?:body|function|method|logic)|what\s+should\s+(?:the\s+)?'
+    r'complete|fill\s*(?:in|out)?|finish|implement\s+(?:the\s+|this\s+|'
+    r'that\s+)?(?:body|function|method|logic)|what\s+should\s+(?:the\s+)?'
     r'(?:body|function)|write\s+the\s+body|todo',
     re.IGNORECASE,
 )

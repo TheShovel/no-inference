@@ -1,0 +1,200 @@
+{
+  "tasks": [
+    {
+      "task": "prime",
+      "patterns": [
+        "\\b(?:check\\s+(?:if\\s+)?|test\\s+(?:if\\s+)?|find\\s+|determine\\s+)?(?:whether\\s+)?(?:a\\s+)?(?:number|integer|num|n)\\s+(?:is|be)\\s+(?:a\\s+)?prime\\b",
+        "\\bprimality\\b",
+        "\\bprime\\s+check\\w*\\b",
+        "\\bisprime\\b",
+        "\\bprime\\s+numbers?\\s+(?:up\\s+to|between|less\\s+than|under|below|in\\s+range)\\b",
+        "\\bprime\\s+numbers?\\b",
+        "\\bprime\\b"
+      ],
+      "intro": "Here's a {lang} function that checks whether a number is prime.",
+      "notes": "It rejects numbers below 2, then tests divisors only up to the square root of n, so it runs in O(√n) time. The 6k±1 step skips multiples of 2 and 3 for a constant-factor speedup.",
+      "languages": {
+        "python": "def is_prime(n: int) -> bool:\n    if n < 2:\n        return False\n    if n in (2, 3):\n        return True\n    if n % 2 == 0 or n % 3 == 0:\n        return False\n    i = 5\n    while i * i <= n:\n        if n % i == 0 or n % (i + 2) == 0:\n            return False\n        i += 6\n    return True\n\n# Example:\nfor x in (2, 17, 15, 97, 100):\n    print(x, is_prime(x))",
+        "javascript": "function isPrime(n) {\n    if (n < 2) return false;\n    if (n === 2 || n === 3) return true;\n    if (n % 2 === 0 || n % 3 === 0) return false;\n    for (let i = 5; i * i <= n; i += 6) {\n        if (n % i === 0 || n % (i + 2) === 0) return false;\n    }\n    return true;\n}\n\n// Example:\n[2, 17, 15, 97, 100].forEach(x => console.log(x, isPrime(x)));",
+        "java": "public static boolean isPrime(int n) {\n    if (n < 2) return false;\n    if (n == 2 || n == 3) return true;\n    if (n % 2 == 0 || n % 3 == 0) return false;\n    for (int i = 5; (long) i * i <= n; i += 6) {\n        if (n % i == 0 || n % (i + 2) == 0) return false;\n    }\n    return true;\n}",
+        "c++": "bool isPrime(int n) {\n    if (n < 2) return false;\n    if (n == 2 || n == 3) return true;\n    if (n % 2 == 0 || n % 3 == 0) return false;\n    for (int i = 5; (long long) i * i <= n; i += 6) {\n        if (n % i == 0 || n % (i + 2) == 0) return false;\n    }\n    return true;\n}",
+        "c#": "static bool IsPrime(int n)\n{\n    if (n < 2) return false;\n    if (n == 2 || n == 3) return true;\n    if (n % 2 == 0 || n % 3 == 0) return false;\n    for (int i = 5; (long) i * i <= n; i += 6)\n        if (n % i == 0 || n % (i + 2) == 0) return false;\n    return true;\n}",
+        "go": "func IsPrime(n int) bool {\n    if n < 2 {\n        return false\n    }\n    if n == 2 || n == 3 {\n        return true\n    }\n    if n%2 == 0 || n%3 == 0 {\n        return false\n    }\n    for i := 5; i*i <= n; i += 6 {\n        if n%i == 0 || n%(i+2) == 0 {\n            return false\n        }\n    }\n    return true\n}",
+        "rust": "fn is_prime(n: u64) -> bool {\n    if n < 2 {\n        return false;\n    }\n    if n == 2 || n == 3 {\n        return true;\n    }\n    if n % 2 == 0 || n % 3 == 0 {\n        return false;\n    }\n    let mut i = 5u64;\n    while i * i <= n {\n        if n % i == 0 || n % (i + 2) == 0 {\n            return false;\n        }\n        i += 6;\n    }\n    true\n}",
+        "typescript": "function isPrime(n: number): boolean {\n    if (n < 2) return false;\n    if (n === 2 || n === 3) return true;\n    if (n % 2 === 0 || n % 3 === 0) return false;\n    for (let i = 5; i * i <= n; i += 6) {\n        if (n % i === 0 || n % (i + 2) === 0) return false;\n    }\n    return true;\n}"
+      }
+    },
+    {
+      "task": "factorial",
+      "patterns": [
+        "\\bfactorial\\b",
+        "\\bfact(?:orial)?\\s+of\\s+(\\d+|\\w+)"
+      ],
+      "intro": "Here's a {lang} function that computes the factorial of a non-negative integer.",
+      "notes": "Factorial grows extremely fast: 20! already overflows a 64-bit integer. For large n, prefer an iterative loop or a library function; for non-integer input, use the gamma function.",
+      "languages": {
+        "python": "def factorial(n: int) -> int:\n    if n < 0:\n        raise ValueError(\"factorial is not defined for negative numbers\")\n    result = 1\n    for i in range(2, n + 1):\n        result *= i\n    return result\n\n# Example:\nprint(factorial(5))  # 120",
+        "javascript": "function factorial(n) {\n    if (n < 0) throw new Error('factorial is not defined for negative numbers');\n    let result = 1;\n    for (let i = 2; i <= n; i++) result *= i;\n    return result;\n}\n\n// Example:\nconsole.log(factorial(5));  // 120",
+        "java": "public static long factorial(int n) {\n    if (n < 0) throw new IllegalArgumentException(\"negative input\");\n    long result = 1;\n    for (int i = 2; i <= n; i++) result *= i;\n    return result;\n}",
+        "c++": "long long factorial(int n) {\n    if (n < 0) throw std::invalid_argument(\"negative input\");\n    long long result = 1;\n    for (int i = 2; i <= n; i++) result *= i;\n    return result;\n}",
+        "go": "func Factorial(n int) (int64, error) {\n    if n < 0 {\n        return 0, fmt.Errorf(\"factorial not defined for negative numbers\")\n    }\n    result := int64(1)\n    for i := 2; i <= n; i++ {\n        result *= int64(i)\n    }\n    return result, nil\n}",
+        "rust": "fn factorial(n: u64) -> u64 {\n    (1..=n).product()\n}",
+        "typescript": "function factorial(n) {\n    if (n < 0) throw new Error('factorial is not defined for negative numbers');\n    let result = 1;\n    for (let i = 2; i <= n; i++) result *= i;\n    return result;\n}\n\n// Example:\nconsole.log(factorial(5));  // 120"
+      }
+    },
+    {
+      "task": "fibonacci",
+      "patterns": [
+        "\\bfib(?:onacci)?\\s*(?:series|sequence|numbers?)?\\b",
+        "\\bnth\\s+fib\\b"
+      ],
+      "intro": "Here's a {lang} function that generates the Fibonacci sequence up to n terms.",
+      "notes": "The iterative version runs in O(n) time and O(1) space. The naive recursive version is O(2^n) — avoid it for anything past n ≈ 35. For large n, matrix exponentiation or fast doubling gives O(log n).",
+      "languages": {
+        "python": "def fibonacci(n: int) -> list[int]:\n    \"\"\"Return the first n Fibonacci numbers.\"\"\"\n    if n <= 0:\n        return []\n    seq = [0, 1]\n    while len(seq) < n:\n        seq.append(seq[-1] + seq[-2])\n    return seq[:n]\n\n# Example:\nprint(fibonacci(10))  # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]",
+        "javascript": "function fibonacci(n) {\n    if (n <= 0) return [];\n    const seq = [0, 1];\n    while (seq.length < n) {\n        seq.push(seq[seq.length - 1] + seq[seq.length - 2]);\n    }\n    return seq.slice(0, n);\n}\n\n// Example:\nconsole.log(fibonacci(10));  // [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]",
+        "java": "public static List<Long> fibonacci(int n) {\n    List<Long> seq = new ArrayList<>();\n    if (n <= 0) return seq;\n    seq.add(0L);\n    if (n == 1) return seq;\n    seq.add(1L);\n    while (seq.size() < n) {\n        seq.add(seq.get(seq.size() - 1) + seq.get(seq.size() - 2));\n    }\n    return seq;\n}",
+        "c++": "std::vector<long long> fibonacci(int n) {\n    std::vector<long long> seq;\n    if (n <= 0) return seq;\n    seq.push_back(0);\n    if (n == 1) return seq;\n    seq.push_back(1);\n    while ((int) seq.size() < n) {\n        seq.push_back(seq[seq.size() - 1] + seq[seq.size() - 2]);\n    }\n    return seq;\n}",
+        "go": "func Fibonacci(n int) []int64 {\n    seq := []int64{}\n    if n <= 0 {\n        return seq\n    }\n    seq = append(seq, 0)\n    if n == 1 {\n        return seq\n    }\n    seq = append(seq, 1)\n    for len(seq) < n {\n        seq = append(seq, seq[len(seq)-1]+seq[len(seq)-2])\n    }\n    return seq\n}",
+        "rust": "fn fibonacci(n: usize) -> Vec<u64> {\n    if n == 0 {\n        return vec![];\n    }\n    let mut seq = vec![0u64, 1u64];\n    while seq.len() < n {\n        let next = seq[seq.len() - 1] + seq[seq.len() - 2];\n        seq.push(next);\n    }\n    seq.truncate(n);\n    seq\n}",
+        "typescript": "function fibonacci(n) {\n    if (n <= 0) return [];\n    const seq = [0, 1];\n    while (seq.length < n) {\n        seq.push(seq[seq.length - 1] + seq[seq.length - 2]);\n    }\n    return seq.slice(0, n);\n}\n\n// Example:\nconsole.log(fibonacci(10));  // [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]"
+      }
+    },
+    {
+      "task": "fizzbuzz",
+      "patterns": [
+        "\\bfizz\\s*buzz\\b",
+        "\\bfizzbuzz\\b"
+      ],
+      "intro": "Here's a {lang} program that prints FizzBuzz for numbers 1 through n.",
+      "notes": "The trick is to check divisibility by 15 (3 and 5) first, otherwise numbers divisible by both get printed as 'Fizz' instead of 'FizzBuzz'.",
+      "languages": {
+        "python": "def fizzbuzz(n: int) -> None:\n    for i in range(1, n + 1):\n        if i % 15 == 0:\n            print(\"FizzBuzz\")\n        elif i % 3 == 0:\n            print(\"Fizz\")\n        elif i % 5 == 0:\n            print(\"Buzz\")\n        else:\n            print(i)\n\nfizzbuzz(15)",
+        "javascript": "function fizzbuzz(n) {\n    for (let i = 1; i <= n; i++) {\n        if (i % 15 === 0) console.log('FizzBuzz');\n        else if (i % 3 === 0) console.log('Fizz');\n        else if (i % 5 === 0) console.log('Buzz');\n        else console.log(i);\n    }\n}\n\nfizzbuzz(15);",
+        "java": "for (int i = 1; i <= 100; i++) {\n    if (i % 15 == 0) System.out.println(\"FizzBuzz\");\n    else if (i % 3 == 0) System.out.println(\"Fizz\");\n    else if (i % 5 == 0) System.out.println(\"Buzz\");\n    else System.out.println(i);\n}",
+        "c++": "for (int i = 1; i <= 100; i++) {\n    if (i % 15 == 0) std::cout << \"FizzBuzz\\\\n\";\n    else if (i % 3 == 0) std::cout << \"Fizz\\\\n\";\n    else if (i % 5 == 0) std::cout << \"Buzz\\\\n\";\n    else std::cout << i << \"\\\\n\";\n}",
+        "go": "func FizzBuzz(n int) {\n    for i := 1; i <= n; i++ {\n        switch {\n        case i%15 == 0:\n            fmt.Println(\"FizzBuzz\")\n        case i%3 == 0:\n            fmt.Println(\"Fizz\")\n        case i%5 == 0:\n            fmt.Println(\"Buzz\")\n        default:\n            fmt.Println(i)\n        }\n    }\n}",
+        "rust": "fn fizzbuzz(n: u32) {\n    for i in 1..=n {\n        match (i % 3, i % 5) {\n            (0, 0) => println!(\"FizzBuzz\"),\n            (0, _) => println!(\"Fizz\"),\n            (_, 0) => println!(\"Buzz\"),\n            _ => println!(\"{i}\"),\n        }\n    }\n}",
+        "typescript": "function fizzbuzz(n) {\n    for (let i = 1; i <= n; i++) {\n        if (i % 15 === 0) console.log('FizzBuzz');\n        else if (i % 3 === 0) console.log('Fizz');\n        else if (i % 5 === 0) console.log('Buzz');\n        else console.log(i);\n    }\n}\n\nfizzbuzz(15);"
+      }
+    },
+    {
+      "task": "gcd",
+      "patterns": [
+        "\\bgcd\\b",
+        "\\bgcf\\b",
+        "greatest\\s+common\\s+(?:divisor|factor)\\b",
+        "\\blcm\\b",
+        "least\\s+common\\s+multiple\\b"
+      ],
+      "intro": "Here's a {lang} function that computes the greatest common divisor using the Euclidean algorithm.",
+      "notes": "The Euclidean algorithm is the classic O(log min(a,b)) solution. For more than two numbers, reduce pairwise: gcd(a, b, c) = gcd(gcd(a, b), c).",
+      "languages": {
+        "python": "def gcd(a: int, b: int) -> int:\n    while b:\n        a, b = b, a % b\n    return abs(a)\n\ndef lcm(a: int, b: int) -> int:\n    return abs(a * b) // gcd(a, b)\n\n# Example:\nprint(gcd(48, 18))  # 6\nprint(lcm(4, 6))    # 12",
+        "javascript": "function gcd(a, b) {\n    while (b) [a, b] = [b, a % b];\n    return Math.abs(a);\n}\n\nfunction lcm(a, b) {\n    return Math.abs(a * b) / gcd(a, b);\n}",
+        "java": "public static int gcd(int a, int b) {\n    while (b != 0) {\n        int t = b;\n        b = a % b;\n        a = t;\n    }\n    return Math.abs(a);\n}",
+        "c++": "int gcd(int a, int b) {\n    while (b != 0) {\n        int t = b;\n        b = a % b;\n        a = t;\n    }\n    return std::abs(a);\n}",
+        "go": "func GCD(a, b int) int {\n    for b != 0 {\n        a, b = b, a%b\n    }\n    return a\n}",
+        "rust": "fn gcd(a: u64, b: u64) -> u64 {\n    let (mut a, mut b) = (a, b);\n    while b != 0 {\n        let t = b;\n        b = a % b;\n        a = t;\n    }\n    a\n}",
+        "typescript": "function gcd(a, b) {\n    while (b) [a, b] = [b, a % b];\n    return Math.abs(a);\n}\n\nfunction lcm(a, b) {\n    return Math.abs(a * b) / gcd(a, b);\n}"
+      }
+    },
+    {
+      "task": "binary_search",
+      "patterns": [
+        "\\bbinary\\s+search\\b(?!\\s+tree)"
+      ],
+      "intro": "Here's a {lang} implementation of binary search on a sorted array.",
+      "notes": "Requires a sorted array. Each step halves the search space, giving O(log n) time and O(1) space. The classic bug is an off-by-one in the midpoint — the loop condition `left <= right` with `mid = left + (right - left) // 2` avoids overflow and infinite loops.",
+      "languages": {
+        "python": "def binary_search(arr: list[int], target: int) -> int:\n    \"\"\"Return the index of target in sorted arr, or -1.\"\"\"\n    left, right = 0, len(arr) - 1\n    while left <= right:\n        mid = left + (right - left) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1\n\n# Example:\nprint(binary_search([1, 3, 5, 7, 9, 11], 7))  # 3",
+        "javascript": "function binarySearch(arr, target) {\n    let left = 0, right = arr.length - 1;\n    while (left <= right) {\n        const mid = left + Math.floor((right - left) / 2);\n        if (arr[mid] === target) return mid;\n        if (arr[mid] < target) left = mid + 1;\n        else right = mid - 1;\n    }\n    return -1;\n}",
+        "java": "public static int binarySearch(int[] arr, int target) {\n    int left = 0, right = arr.length - 1;\n    while (left <= right) {\n        int mid = left + (right - left) / 2;\n        if (arr[mid] == target) return mid;\n        if (arr[mid] < target) left = mid + 1;\n        else right = mid - 1;\n    }\n    return -1;\n}",
+        "c++": "int binarySearch(const std::vector<int>& arr, int target) {\n    int left = 0, right = (int) arr.size() - 1;\n    while (left <= right) {\n        int mid = left + (right - left) / 2;\n        if (arr[mid] == target) return mid;\n        if (arr[mid] < target) left = mid + 1;\n        else right = mid - 1;\n    }\n    return -1;\n}",
+        "go": "func BinarySearch(arr []int, target int) int {\n    left, right := 0, len(arr)-1\n    for left <= right {\n        mid := left + (right-left)/2\n        if arr[mid] == target {\n            return mid\n        }\n        if arr[mid] < target {\n            left = mid + 1\n        } else {\n            right = mid - 1\n        }\n    }\n    return -1\n}",
+        "rust": "fn binary_search(arr: &[i32], target: i32) -> Option<usize> {\n    let mut left = 0usize;\n    let mut right = arr.len();\n    while left < right {\n        let mid = left + (right - left) / 2;\n        match arr[mid].cmp(&target) {\n            std::cmp::Ordering::Equal => return Some(mid),\n            std::cmp::Ordering::Less => left = mid + 1,\n            std::cmp::Ordering::Greater => right = mid,\n        }\n    }\n    None\n}",
+        "typescript": "function binarySearch(arr, target) {\n    let left = 0, right = arr.length - 1;\n    while (left <= right) {\n        const mid = left + Math.floor((right - left) / 2);\n        if (arr[mid] === target) return mid;\n        if (arr[mid] < target) left = mid + 1;\n        else right = mid - 1;\n    }\n    return -1;\n}"
+      }
+    },
+    {
+      "task": "merge_sorted",
+      "patterns": [
+        "\\bmerge\\s+(?:two\\s+)?sorted\\s+(?:lists?|arrays?)\\b",
+        "\\bmerge\\s+sorted\\b"
+      ],
+      "intro": "Here's a {lang} function that merges two sorted arrays into one sorted array.",
+      "notes": "This is the merge step of merge sort: O(n + m) time using O(n + m) extra space. Both inputs must already be sorted.",
+      "languages": {
+        "python": "def merge_sorted(a: list[int], b: list[int]) -> list[int]:\n    merged = []\n    i = j = 0\n    while i < len(a) and j < len(b):\n        if a[i] <= b[j]:\n            merged.append(a[i])\n            i += 1\n        else:\n            merged.append(b[j])\n            j += 1\n    merged.extend(a[i:])\n    merged.extend(b[j:])\n    return merged\n\n# Example:\nprint(merge_sorted([1, 3, 5], [2, 4, 6]))  # [1, 2, 3, 4, 5, 6]",
+        "javascript": "function mergeSorted(a, b) {\n    const merged = [];\n    let i = 0, j = 0;\n    while (i < a.length && j < b.length) {\n        if (a[i] <= b[j]) merged.push(a[i++]);\n        else merged.push(b[j++]);\n    }\n    return merged.concat(a.slice(i), b.slice(j));\n}",
+        "java": "public static int[] mergeSorted(int[] a, int[] b) {\n    int[] merged = new int[a.length + b.length];\n    int i = 0, j = 0, k = 0;\n    while (i < a.length && j < b.length) {\n        if (a[i] <= b[j]) merged[k++] = a[i++];\n        else merged[k++] = b[j++];\n    }\n    while (i < a.length) merged[k++] = a[i++];\n    while (j < b.length) merged[k++] = b[j++];\n    return merged;\n}",
+        "c++": "std::vector<int> mergeSorted(const std::vector<int>& a,\n                              const std::vector<int>& b) {\n    std::vector<int> merged;\n    merged.reserve(a.size() + b.size());\n    size_t i = 0, j = 0;\n    while (i < a.size() && j < b.size()) {\n        if (a[i] <= b[j]) merged.push_back(a[i++]);\n        else merged.push_back(b[j++]);\n    }\n    merged.insert(merged.end(), a.begin() + i, a.end());\n    merged.insert(merged.end(), b.begin() + j, b.end());\n    return merged;\n}",
+        "go": "func MergeSorted(a, b []int) []int {\n    merged := make([]int, 0, len(a)+len(b))\n    i, j := 0, 0\n    for i < len(a) && j < len(b) {\n        if a[i] <= b[j] {\n            merged = append(merged, a[i])\n            i++\n        } else {\n            merged = append(merged, b[j])\n            j++\n        }\n    }\n    merged = append(merged, a[i:]...)\n    merged = append(merged, b[j:]...)\n    return merged\n}",
+        "rust": "fn merge_sorted(a: &[i32], b: &[i32]) -> Vec<i32> {\n    let mut merged = Vec::with_capacity(a.len() + b.len());\n    let (mut i, mut j) = (0, 0);\n    while i < a.len() && j < b.len() {\n        if a[i] <= b[j] {\n            merged.push(a[i]);\n            i += 1;\n        } else {\n            merged.push(b[j]);\n            j += 1;\n        }\n    }\n    merged.extend_from_slice(&a[i..]);\n    merged.extend_from_slice(&b[j..]);\n    merged\n}",
+        "typescript": "function mergeSorted(a, b) {\n    const merged = [];\n    let i = 0, j = 0;\n    while (i < a.length && j < b.length) {\n        if (a[i] <= b[j]) merged.push(a[i++]);\n        else merged.push(b[j++]);\n    }\n    return merged.concat(a.slice(i), b.slice(j));\n}"
+      }
+    },
+    {
+      "task": "sort_list",
+      "patterns": [
+        "\\bsort\\s+(?:a\\s+)?(?:list|array|slice|vector)\\b",
+        "\\bsort\\s+(?:the\\s+)?(?:list|array|slice)\\s+(?:in|by)\\b",
+        "\\bsorting\\s+(?:a\\s+)?(?:list|array|slice)\\b",
+        "\\bquicksort\\b",
+        "\\bmerge\\s+sort\\b",
+        "\\bbubble\\s+sort\\b",
+        "\\bselection\\s+sort\\b",
+        "\\binsertion\\s+sort\\b"
+      ],
+      "intro": "Here's a {lang} function that sorts a list of numbers in ascending order.",
+      "notes": "The built-in sort (Timsort in Python/JS, introsort in C++, dual-pivot quicksort in Java) is almost always the right choice — O(n log n) average, stable, and heavily optimized. Only hand-roll a sort when you need a custom stable comparator or want to learn the algorithms.",
+      "languages": {
+        "python": "# In-place sort (modifies the list):\nnumbers = [3, 1, 4, 1, 5, 9, 2]\nnumbers.sort()\nprint(numbers)  # [1, 1, 2, 3, 4, 5, 9]\n\n# Return a new sorted list (any iterable):\nwords = ['banana', 'apple', 'cherry']\nsorted_words = sorted(words)          # ['apple', 'banana', 'cherry']\n\n# Custom key (sort dicts by a field, strings by length, ...):\npeople = [{'name': 'Alice', 'age': 30}, {'name': 'Bob', 'age': 25}]\nby_age = sorted(people, key=lambda p: p['age'])\n\n# Descending:\nnumbers.sort(reverse=True)",
+        "javascript": "// sort() sorts in place; with no comparator it sorts by UTF-16 code units,\n// so numbers need an explicit comparator:\nconst numbers = [3, 1, 4, 1, 5, 9, 2];\nnumbers.sort((a, b) => a - b);\nconsole.log(numbers);  // [1, 1, 2, 3, 4, 5, 9]\n\n// Descending:\nnumbers.sort((a, b) => b - a);\n\n// Sort objects by a property:\nconst people = [{name: 'Alice', age: 30}, {name: 'Bob', age: 25}];\npeople.sort((a, b) => a.age - b.age);",
+        "java": "import java.util.*;\n\n// Arrays:\nint[] nums = {3, 1, 4, 1, 5};\nArrays.sort(nums);                    // ascending, in place\n// Boxed arrays / lists for reverse order:\nInteger[] boxed = {3, 1, 4, 1, 5};\nArrays.sort(boxed, Collections.reverseOrder());\n\n// Lists:\nList<Integer> list = new ArrayList<>(List.of(3, 1, 4, 1, 5));\nCollections.sort(list);\nlist.sort(Comparator.reverseOrder());\n\n// Sort objects by a field:\npeople.sort(Comparator.comparingInt(p -> p.age));",
+        "c++": "#include <algorithm>\n#include <vector>\n\nstd::vector<int> nums = {3, 1, 4, 1, 5};\nstd::sort(nums.begin(), nums.end());          // ascending\nstd::sort(nums.begin(), nums.end(), std::greater<int>());  // descending\n// Custom comparator:\nstd::sort(v.begin(), v.end(), [](const Person& a, const Person& b) {\n    return a.age < b.age;\n});",
+        "go": "import \"sort\"\n\nnums := []int{3, 1, 4, 1, 5}\nsort.Ints(nums)                       // ascending, in place\nsort.Sort(sort.Reverse(sort.IntSlice(nums)))  // descending\n\n// Sort a slice of structs by a field:\nsort.Slice(people, func(i, j int) bool {\n    return people[i].Age < people[j].Age\n})",
+        "rust": "let mut nums = vec![3, 1, 4, 1, 5];\nnums.sort();                          // ascending, in place\nnums.sort_by(|a, b| b.cmp(a));        // descending\n\n// Sort structs by a field:\npeople.sort_by_key(|p| p.age);",
+        "typescript": "// sort() sorts in place; with no comparator it sorts by UTF-16 code units,\n// so numbers need an explicit comparator:\nconst numbers = [3, 1, 4, 1, 5, 9, 2];\nnumbers.sort((a, b) => a - b);\nconsole.log(numbers);  // [1, 1, 2, 3, 4, 5, 9]\n\n// Descending:\nnumbers.sort((a, b) => b - a);\n\n// Sort objects by a property:\nconst people = [{name: 'Alice', age: 30}, {name: 'Bob', age: 25}];\npeople.sort((a, b) => a.age - b.age);"
+      }
+    },
+    {
+      "task": "is_even",
+      "patterns": [
+        "\\b(?:check|test|see|determine)\\s+(?:if|whether)\\s+(?:a\\s+)?number\\s+is\\s+(?:an?\\s+)?(?:even|odd)\\b",
+        "\\b(?:even|odd)\\s+(?:number\\s+)?check\\b",
+        "\\bis\\s+(?:n\\s+)?(?:even|odd)\\b",
+        "\\b(?:even|odd)\\s+function\\b"
+      ],
+      "intro": "Here's a {lang} function that checks whether a number is even.",
+      "notes": "`n % 2 == 0` is the universal check — the modulo operator works in every language. Watch out for negatives: in Python `-2 % 2 == 0` is True, which is what you want here.",
+      "languages": {
+        "python": "def is_even(n: int) -> bool:\n    return n % 2 == 0\n\ndef is_odd(n: int) -> bool:\n    return n % 2 != 0\n\n# Examples:\nfor n in (0, 1, 2, 3, -2):\n    print(n, is_even(n))",
+        "javascript": "function isEven(n) {\n    return n % 2 === 0;\n}\n\nfunction isOdd(n) {\n    return n % 2 !== 0;\n}\n\nconsole.log(isEven(4));  // true\nconsole.log(isEven(3));  // false",
+        "go": "func IsEven(n int) bool {\n    return n%2 == 0\n}",
+        "rust": "fn is_even(n: i64) -> bool {\n    n % 2 == 0\n}",
+        "java": "public static boolean isEven(int n) {\n    return n % 2 == 0;\n}",
+        "c++": "bool isEven(int n) {\n    return n % 2 == 0;\n}"
+      }
+    },
+    {
+      "task": "power",
+      "patterns": [
+        "\\b(?:calculate|compute|find|get)\\b.*\\bpower\\b.*\\b(?:number|base)\\b",
+        "\\b(?:raise|calculate)\\s+(?:a\\s+)?(?:number|base)\\s+to\\s+(?:the\\s+)?(?:power|exponent)\\b",
+        "\\bexponentiation\\b",
+        "\\bpower\\s+of\\s+(?:a\\s+)?(?:number|base)\\b"
+      ],
+      "intro": "Here's a {lang} function that raises a number to a power.",
+      "notes": "`**` / `Math.pow` handle fractional and negative exponents. For integer powers with a modulo (large numbers), use fast exponentiation (exponentiation by squaring).",
+      "languages": {
+        "python": "def power(base: float, exp: float) -> float:\n    return base ** exp\n\n# Integer-only fast exponentiation (O(log exp)):\ndef power_int(base: int, exp: int) -> int:\n    result = 1\n    while exp:\n        if exp & 1:\n            result *= base\n        base *= base\n        exp >>= 1\n    return result\n\n# Examples:\nprint(power(2, 10))       # 1024\nprint(power(9, 0.5))      # 3.0\nprint(power_int(2, 10))   # 1024",
+        "javascript": "function power(base, exp) {\n    return base ** exp;\n}\n\n// Math.pow works too:\n// function power(base, exp) { return Math.pow(base, exp); }\n\nconsole.log(power(2, 10));    // 1024\nconsole.log(power(9, 0.5));   // 3",
+        "go": "import \"math\"\n\nfunc Power(base, exp float64) float64 {\n    return math.Pow(base, exp)\n}",
+        "rust": "fn main() {\n    println!(\"{}\", 2u64.pow(10));       // 1024\n    println!(\"{}\", 9f64.powf(0.5));     // 3\n}",
+        "java": "public static double power(double base, double exp) {\n    return Math.pow(base, exp);\n}",
+        "bash": "# Integer power with $(( )):\necho $((2 ** 10))    # 1024\n\n# Fractional exponents need bc or python:\necho \"9 ^ 0.5\" | bc -l   # 3.0"
+      }
+    }
+  ]
+}

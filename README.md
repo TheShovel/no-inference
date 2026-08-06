@@ -192,7 +192,7 @@ no-inference/
       context_extraction.py Multi-strategy keyword and topic extraction
       poem.py               Template-based poem generator
       code_knowledge.py     Programming knowledge base + code-topic routing
-      code_gen.py           Deterministic code synthesizer (~90 tasks, 9 languages)
+      code_gen.py           Deterministic code synthesizer (tasks in data/knowledge/code_tasks/)
       code_transformer.py   Code/text transformations (convert, rename, errors, …)
       code_editor.py        Buffer-aware fill-in / completion API (the harness)
       refine.py             Iterative refinement: edit the last generated artifact
@@ -217,6 +217,8 @@ no-inference/
       generated/            Wikipedia-generated entries
       templates/            Context-aware response templates
       coding/               Coding concepts, git, SQL, deployment, …
+      code_tasks/           Code-generation tasks (patterns + templates per language);
+                            add a JSON task here to extend the synthesizer
       ...                   Subject-specific directories
     patterns/               Social and emotional response patterns
     prompt_templates/       Instruction templates for essays, code, etc.

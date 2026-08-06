@@ -1,0 +1,274 @@
+{
+  "tasks": [
+    {
+      "task": "chunk_list",
+      "patterns": [
+        "\\bchunk\\w*\\b.*\\b(?:list|array)\\b",
+        "\\bsplit\\s+(?:a\\s+|the\\s+)?(?:list|array)\\s+into\\b",
+        "\\b(?:list|array)\\s+into\\s+(?:chunks|groups|batches)\\b",
+        "\\bpartition\\s+.*\\b(?:list|array)\\b"
+      ],
+      "intro": "Here's a {lang} function that splits a list into fixed-size chunks.",
+      "notes": "The slicing idiom `lst[i:i+size]` is O(size) per slice, so chunking the whole list is O(n). The final chunk is shorter when the length isn't a multiple of the chunk size — that's expected.",
+      "languages": {
+        "python": "def chunk(lst: list, size: int) -> list[list]:\n    \"\"\"Split a list into consecutive chunks of the given size.\"\"\"\n    if size <= 0:\n        raise ValueError('chunk size must be positive')\n    return [lst[i:i + size] for i in range(0, len(lst), size)]\n\n# Example:\nprint(chunk([1, 2, 3, 4, 5, 6, 7], 3))  # [[1, 2, 3], [4, 5, 6], [7]]",
+        "javascript": "function chunk(arr, size) {\n  if (size <= 0) throw new Error('chunk size must be positive');\n  const out = [];\n  for (let i = 0; i < arr.length; i += size) {\n    out.push(arr.slice(i, i + size));\n  }\n  return out;\n}\n\n// Example:\nconsole.log(chunk([1, 2, 3, 4, 5, 6, 7], 3));  // [[1, 2, 3], [4, 5, 6], [7]]",
+        "go": "// Chunk splits a slice into consecutive slices of the given size.\nfunc Chunk[T any](items []T, size int) [][]T {\n\tif size <= 0 {\n\t\tpanic(\"chunk size must be positive\")\n\t}\n\tvar out [][]T\n\tfor i := 0; i < len(items); i += size {\n\t\tend := i + size\n\t\tif end > len(items) {\n\t\t\tend = len(items)\n\t\t}\n\t\tout = append(out, items[i:end])\n\t}\n\treturn out\n}\n\n// Example:\n// fmt.Println(Chunk([]int{1, 2, 3, 4, 5, 6, 7}, 3)) // [[1 2 3] [4 5 6] [7]]",
+        "rust": "// Chunk splits a slice into consecutive slices of the given size.\nfn chunk<T: Clone>(items: Vec<T>, size: usize) -> Vec<Vec<T>> {\n    items.chunks(size).map(|c| c.to_vec()).collect()\n}\n\n// Example:\n// println!(\"{:?}\", chunk(vec![1, 2, 3, 4, 5, 6, 7], 3)); // [[1, 2, 3], [4, 5, 6], [7]]",
+        "typescript": "function chunk(arr, size) {\n  if (size <= 0) throw new Error('chunk size must be positive');\n  const out = [];\n  for (let i = 0; i < arr.length; i += size) {\n    out.push(arr.slice(i, i + size));\n  }\n  return out;\n}\n\n// Example:\nconsole.log(chunk([1, 2, 3, 4, 5, 6, 7], 3));  // [[1, 2, 3], [4, 5, 6], [7]]"
+      }
+    },
+    {
+      "task": "transpose_matrix",
+      "patterns": [
+        "\\btranspose\\b",
+        "\\bmatrix\\s+transpose\\b",
+        "\\brotate\\s+(?:a\\s+)?matrix\\b"
+      ],
+      "intro": "Here's a {lang} function that transposes a matrix (rows become columns).",
+      "notes": "Transposing an m×n matrix gives an n×m one. `zip(*matrix)` is the Python one-liner but returns tuples — wrap each row in list() if you need mutable rows. The nested-list version is the explicit equivalent.",
+      "languages": {
+        "python": "def transpose(matrix: list[list]) -> list[list]:\n    \"\"\"Transpose an m x n matrix (rows become columns).\"\"\"\n    if not matrix:\n        return []\n    return [list(col) for col in zip(*matrix)]\n\n# Example:\nprint(transpose([[1, 2, 3], [4, 5, 6]]))\n# [[1, 4], [2, 5], [3, 6]]",
+        "javascript": "function transpose(matrix) {\n  if (matrix.length === 0) return [];\n  return matrix[0].map((_, col) => matrix.map(row => row[col]));\n}\n\n// Example:\nconsole.log(transpose([[1, 2, 3], [4, 5, 6]]));\n// [[1, 4], [2, 5], [3, 6]]",
+        "go": "// Transpose turns an m x n matrix into n x m (rows become columns).\nfunc Transpose[T any](m [][]T) [][]T {\n\tif len(m) == 0 {\n\t\treturn nil\n\t}\n\trows, cols := len(m), len(m[0])\n\tout := make([][]T, cols)\n\tfor c := 0; c < cols; c++ {\n\t\tout[c] = make([]T, rows)\n\t\tfor r := 0; r < rows; r++ {\n\t\t\tout[c][r] = m[r][c]\n\t\t}\n\t}\n\treturn out\n}\n\n// Example:\n// fmt.Println(Transpose([][]int{{1, 2, 3}, {4, 5, 6}})) // [[1 4] [2 5] [3 6]]",
+        "rust": "// Transpose turns an m x n matrix into n x m (rows become columns).\nfn transpose<T: Clone>(m: Vec<Vec<T>>) -> Vec<Vec<T>> {\n\tif m.is_empty() {\n\t\treturn vec![]\n\t}\n\t(0..m[0].len()).map(|c| m.iter().map(|row| row[c].clone()).collect()).collect()\n}\n\n// Example:\n// println!(\"{:?}\", transpose(vec![vec![1, 2, 3], vec![4, 5, 6]])); // [[1, 4], [2, 5], [3, 6]]",
+        "typescript": "function transpose(matrix) {\n  if (matrix.length === 0) return [];\n  return matrix[0].map((_, col) => matrix.map(row => row[col]));\n}\n\n// Example:\nconsole.log(transpose([[1, 2, 3], [4, 5, 6]]));\n// [[1, 4], [2, 5], [3, 6]]"
+      }
+    },
+    {
+      "task": "count_words",
+      "patterns": [
+        "\\bcount\\s+words?\\b",
+        "\\bword\\s+frequenc\\w+\\b",
+        "\\bword\\s+count\\b",
+        "\\bhow\\s+many\\s+times\\s+each\\s+word\\b"
+      ],
+      "intro": "Here's a {lang} function that counts how many times each word appears in a text.",
+      "notes": "Lowercasing and splitting on whitespace handles most real text. For production-grade counting, strip punctuation too (the regex version) so 'Hello,' and 'hello' count as the same word.",
+      "languages": {
+        "python": "def count_words(text: str) -> dict[str, int]:\n    \"\"\"Return {word: count} for every word in the text.\"\"\"\n    counts: dict[str, int] = {}\n    for word in text.lower().split():\n        counts[word] = counts.get(word, 0) + 1\n    return counts\n\n# Punctuation-aware version:\ndef count_words_clean(text: str) -> dict[str, int]:\n    import re\n    words = re.findall(r'\\b[\\w\\']+\\b', text.lower())\n    return {w: words.count(w) for w in set(words)}\n\n# Example:\nprint(count_words(\"the cat and the dog and the bird\"))\n# {'the': 3, 'cat': 1, 'and': 2, 'dog': 1, 'bird': 1}",
+        "javascript": "function countWords(text) {\n  const counts = {};\n  for (const word of text.toLowerCase().split(/\\s+/)) {\n    if (word) counts[word] = (counts[word] || 0) + 1;\n  }\n  return counts;\n}\n\n# Example:\nconsole.log(countWords('the cat and the dog and the bird'));\n// { the: 3, cat: 1, and: 2, dog: 1, bird: 1 }",
+        "go": "// CountWords returns {word: count} for a text (whitespace-split, lowercase).\nfunc CountWords(text string) map[string]int {\n\tcounts := make(map[string]int)\n\tfor _, w := range strings.Fields(strings.ToLower(text)) {\n\t\tcounts[w]++\n\t}\n\treturn counts\n}\n\n// Example:\n// fmt.Println(CountWords(\"the cat and the dog and the bird\")) // map[and:2 bird:1 cat:1 dog:1 the:3]",
+        "rust": "// CountWords returns {word: count} for a text (whitespace-split, lowercase).\nuse std::collections::HashMap;\n\nfn count_words(text: &str) -> HashMap<String, usize> {\n\tlet mut counts = HashMap::new();\n\tfor w in text.to_lowercase().split_whitespace() {\n\t\t*counts.entry(w.to_string()).or_insert(0) += 1;\n\t}\n\tcounts\n}\n\n// Example:\n// println!(\"{:?}\", count_words(\"the cat and the dog and the bird\"));",
+        "typescript": "function countWords(text) {\n  const counts = {};\n  for (const word of text.toLowerCase().split(/\\s+/)) {\n    if (word) counts[word] = (counts[word] || 0) + 1;\n  }\n  return counts;\n}\n\n# Example:\nconsole.log(countWords('the cat and the dog and the bird'));\n// { the: 3, cat: 1, and: 2, dog: 1, bird: 1 }"
+      }
+    },
+    {
+      "task": "slugify",
+      "patterns": [
+        "\\bslugify\\b",
+        "\\b(?:url|seo)[-\\s]friendly\\s+string\\b",
+        "\\bconvert\\s+.*\\bto\\s+a\\s+slug\\b"
+      ],
+      "intro": "Here's a {lang} function that turns any text into a URL-friendly slug.",
+      "notes": "The recipe: lowercase, replace non-alphanumerics with dashes, collapse runs of dashes, strip edges. Transliteration of accented characters (é → e) needs an extra library step in most languages.",
+      "languages": {
+        "python": "import re\n\ndef slugify(text: str) -> str:\n    \"\"\"Turn any text into a URL-friendly slug.\"\"\"\n    s = text.lower()\n    s = re.sub(r'[^a-z0-9]+', '-', s)   # non-alphanumerics -> dashes\n    s = re.sub(r'-+', '-', s)           # collapse runs of dashes\n    return s.strip('-')\n\n# Examples:\nprint(slugify('Hello, World!'))       # hello-world\nprint(slugify('  Top 10  Recipes  ')) # top-10-recipes",
+        "javascript": "function slugify(text) {\n  return text\n    .toLowerCase()\n    .replace(/[^a-z0-9]+/g, '-')   // non-alphanumerics -> dashes\n    .replace(/-+/g, '-')           // collapse runs of dashes\n    .replace(/^-+|-+$/g, '');      // strip edge dashes\n}\n\n// Examples:\nconsole.log(slugify('Hello, World!'));        // hello-world\nconsole.log(slugify('  Top 10  Recipes  '));  // top-10-recipes",
+        "go": "// Slugify turns any text into a URL-friendly slug.\nfunc Slugify(text string) string {\n\tvar re = regexp.MustCompile(`[^a-z0-9]+`)\n\ts := strings.ToLower(text)\n\ts = re.ReplaceAllString(s, \"-\")\n\ts = strings.Trim(s, \"-\")\n\treturn s\n}\n\n// Example:\n// fmt.Println(Slugify(\"Hello, World!\"))       // hello-world\n// fmt.Println(Slugify(\"  Top 10  Recipes  \")) // top-10-recipes",
+        "rust": "// Slugify turns any text into a URL-friendly slug.\nfn slugify(text: &str) -> String {\n\tlet s: String = text\n\t\t.to_lowercase()\n\t\t.chars()\n\t\t.map(|c| if c.is_alphanumeric() { c } else { '-' })\n\t\t.collect();\n\tlet s = s.split('-').filter(|p| !p.is_empty()).collect::<Vec<_>>().join(\"-\");\n\ts\n}\n\n// Example:\n// println!(\"{}\", slugify(\"Hello, World!\"));  // hello-world",
+        "typescript": "function slugify(text) {\n  return text\n    .toLowerCase()\n    .replace(/[^a-z0-9]+/g, '-')   // non-alphanumerics -> dashes\n    .replace(/-+/g, '-')           // collapse runs of dashes\n    .replace(/^-+|-+$/g, '');      // strip edge dashes\n}\n\n// Examples:\nconsole.log(slugify('Hello, World!'));        // hello-world\nconsole.log(slugify('  Top 10  Recipes  '));  // top-10-recipes"
+      }
+    },
+    {
+      "task": "caesar_cipher",
+      "patterns": [
+        "\\bcaesar\\b",
+        "\\brot(?:13|47)?\\b",
+        "\\bshift\\s+cipher\\b",
+        "\\bencrypt\\s+.*\\b(?:shift|letter)\\b"
+      ],
+      "intro": "Here's a {lang} implementation of the Caesar cipher (shift encryption).",
+      "notes": "A Caesar cipher shifts every letter by a fixed amount (rot13 is the classic). It's trivially breakable — use it for puzzles, not security. The `% 26` wrap-around is the part people get wrong.",
+      "languages": {
+        "python": "def caesar_shift(text: str, shift: int) -> str:\n    \"\"\"Shift each letter by `shift` places (wraps around the alphabet).\"\"\"\n    out = []\n    for ch in text:\n        if 'a' <= ch <= 'z':\n            out.append(chr((ord(ch) - ord('a') + shift) % 26 + ord('a')))\n        elif 'A' <= ch <= 'Z':\n            out.append(chr((ord(ch) - ord('A') + shift) % 26 + ord('A')))\n        else:\n            out.append(ch)\n    return ''.join(out)\n\n# Examples:\nprint(caesar_shift('Hello, World!', 3))   # Khoor, Zruog!\nprint(caesar_shift('Khoor!', -3))         # Hello!",
+        "javascript": "function caesarShift(text, shift) {\n  return text.replace(/[a-zA-Z]/g, (ch) => {\n    const base = ch === ch.toLowerCase() ? 97 : 65; // 'a' or 'A'\n    return String.fromCharCode(((ch.charCodeAt(0) - base + shift) % 26 + 26) % 26 + base);\n  });\n}\n\n// Examples:\nconsole.log(caesarShift('Hello, World!', 3));  // Khoor, Zruog!\nconsole.log(caesarShift('Khoor!', -3));        // Hello!",
+        "go": "// CaesarShift shifts each letter by n places, wrapping around the alphabet.\nfunc CaesarShift(text string, n int) string {\n\tout := []byte(text)\n\tfor i, ch := range out {\n\t\tswitch {\n\t\tcase ch >= 'a' && ch <= 'z':\n\t\t\tout[i] = byte('a' + (ch-'a'+byte(n)%26+26)%26)\n\t\tcase ch >= 'A' && ch <= 'Z':\n\t\t\tout[i] = byte('A' + (ch-'A'+byte(n)%26+26)%26)\n\t\t}\n\t}\n\treturn string(out)\n}\n\n// Example:\n// fmt.Println(CaesarShift(\"Hello, World!\", 3)) // Khoor, Zruog!",
+        "rust": "// CaesarShift shifts each letter by n places, wrapping around the alphabet.\nfn caesar_shift(text: &str, n: i32) -> String {\n\ttext.chars()\n\t\t.map(|c| match c {\n\t\t\t'a'..='z' => ((c as i32 - 'a' as i32 + n).rem_euclid(26) + 'a' as i32) as u8 as char,\n\t\t\t'A'..='Z' => ((c as i32 - 'A' as i32 + n).rem_euclid(26) + 'A' as i32) as u8 as char,\n\t\t\t_ => c,\n\t\t})\n\t\t.collect()\n}\n\n// Example:\n// println!(\"{}\", caesar_shift(\"Hello, World!\", 3)); // Khoor, Zruog!",
+        "typescript": "function caesarShift(text, shift) {\n  return text.replace(/[a-zA-Z]/g, (ch) => {\n    const base = ch === ch.toLowerCase() ? 97 : 65; // 'a' or 'A'\n    return String.fromCharCode(((ch.charCodeAt(0) - base + shift) % 26 + 26) % 26 + base);\n  });\n}\n\n// Examples:\nconsole.log(caesarShift('Hello, World!', 3));  // Khoor, Zruog!\nconsole.log(caesarShift('Khoor!', -3));        // Hello!"
+      }
+    },
+    {
+      "task": "password_gen",
+      "patterns": [
+        "\\bgenerate\\s+(?:a\\s+|an\\s+)?(?:random\\s+)?password\\b",
+        "\\bpassword\\s+generator\\b",
+        "\\brandom\\s+password\\b",
+        "\\bstrong\\s+password\\s+generator\\b"
+      ],
+      "intro": "Here's a {lang} function that generates a cryptographically strong random password.",
+      "notes": "`secrets` (Python) and `crypto.getRandomValues` (JS) are cryptographically secure; `random`/`Math.random` are NOT safe for passwords. Include upper, lower, digits, and specials for strength.",
+      "languages": {
+        "python": "import secrets\nimport string\n\ndef generate_password(length: int = 16) -> str:\n    \"\"\"Cryptographically strong random password.\"\"\"\n    alphabet = string.ascii_letters + string.digits + string.punctuation\n    if length < 8:\n        raise ValueError('use at least 8 characters for a secure password')\n    return ''.join(secrets.choice(alphabet) for _ in range(length))\n\n# Example:\nprint(generate_password())  # e.g. 'k#9Fz!q2Lp@v7Xw$' — random every run",
+        "javascript": "function generatePassword(length = 16) {\n  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +\n                   'abcdefghijklmnopqrstuvwxyz' +\n                   '0123456789!@#$%^&*()_-+=<>?';\n  if (length < 8) throw new Error('use at least 8 characters for a secure password');\n  const bytes = new Uint32Array(length);\n  crypto.getRandomValues(bytes);  // cryptographically secure\n  return Array.from(bytes, (n) => alphabet[n % alphabet.length]).join('');\n}\n\n// Example:\nconsole.log(generatePassword());  // random every run",
+        "typescript": "function generatePassword(length = 16) {\n  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +\n                   'abcdefghijklmnopqrstuvwxyz' +\n                   '0123456789!@#$%^&*()_-+=<>?';\n  if (length < 8) throw new Error('use at least 8 characters for a secure password');\n  const bytes = new Uint32Array(length);\n  crypto.getRandomValues(bytes);  // cryptographically secure\n  return Array.from(bytes, (n) => alphabet[n % alphabet.length]).join('');\n}\n\n// Example:\nconsole.log(generatePassword());  // random every run"
+      }
+    },
+    {
+      "task": "shuffle_list",
+      "patterns": [
+        "\\bshuffle\\b",
+        "\\bfisher[-\\s]yates\\b",
+        "\\brandomi[sz]e\\s+(?:a\\s+|the\\s+)?(?:list|array|deck)\\b"
+      ],
+      "intro": "Here's a {lang} implementation of Fisher–Yates shuffle (fair, in-place).",
+      "notes": "Fisher–Yates (the 'inside-out' loop) gives every permutation equal probability — the naive 'sort by random' approach is biased. Iterate from the end backward so each slot is swapped exactly once.",
+      "languages": {
+        "python": "import random\n\ndef shuffle(items: list) -> list:\n    \"\"\"Fisher–Yates shuffle — every permutation equally likely.\"\"\"\n    arr = items[:]  # copy; shuffle in place if you want to mutate\n    for i in range(len(arr) - 1, 0, -1):\n        j = random.randrange(i + 1)\n        arr[i], arr[j] = arr[j], arr[i]\n    return arr\n\n# Example:\nprint(shuffle([1, 2, 3, 4, 5]))  # e.g. [3, 1, 5, 2, 4] — random every run",
+        "javascript": "function shuffle(arr) {\n  const a = arr.slice();  // copy; shuffle in place if you want to mutate\n  for (let i = a.length - 1; i > 0; i--) {\n    const j = Math.floor(Math.random() * (i + 1));\n    [a[i], a[j]] = [a[j], a[i]];\n  }\n  return a;\n}\n\n// Example:\nconsole.log(shuffle([1, 2, 3, 4, 5]));  // random every run",
+        "go": "// Shuffle returns a random permutation of items (Fisher–Yates).\nfunc Shuffle[T any](items []T, rnd *rand.Rand) []T {\n\tout := append([]T(nil), items...) // copy\n\tfor i := len(out) - 1; i > 0; i-- {\n\t\tj := rnd.Intn(i + 1)\n\t\tout[i], out[j] = out[j], out[i]\n\t}\n\treturn out\n}\n\n// Example:\n// rnd := rand.New(rand.NewSource(time.Now().UnixNano()))\n// fmt.Println(Shuffle([]int{1, 2, 3, 4, 5}, rnd))",
+        "rust": "// Shuffle returns a random permutation of items (Fisher–Yates).\nfn shuffle<T: Clone>(mut items: Vec<T>, rng: &mut impl rand::Rng) -> Vec<T> {\n\tfor i in (1..items.len()).rev() {\n\t\tlet j = rng.gen_range(0..=i);\n\t\titems.swap(i, j);\n\t}\n\titems\n}\n\n// Requires the `rand` crate. Example:\n// let mut rng = rand::thread_rng();\n// println!(\"{:?}\", shuffle(vec![1, 2, 3, 4, 5], &mut rng));",
+        "typescript": "function shuffle(arr) {\n  const a = arr.slice();  // copy; shuffle in place if you want to mutate\n  for (let i = a.length - 1; i > 0; i--) {\n    const j = Math.floor(Math.random() * (i + 1));\n    [a[i], a[j]] = [a[j], a[i]];\n  }\n  return a;\n}\n\n// Example:\nconsole.log(shuffle([1, 2, 3, 4, 5]));  // random every run"
+      }
+    },
+    {
+      "task": "memoize",
+      "patterns": [
+        "\\bmemoiz\\w+\\b",
+        "\\bcaching\\s+decorator\\b",
+        "\\bcache\\s+(?:a\\s+)?function\\s+(?:call\\s+)?results\\b",
+        "\\bmemoization\\b"
+      ],
+      "intro": "Here's a {lang} memoization wrapper that caches function results by argument.",
+      "notes": "Memoization turns exponential recursion (naive Fibonacci) into O(n) by caching per-argument results. It only helps when the same arguments repeat — it's useless for one-shot calls and unbounded caches can leak memory (clear them or cap size).",
+      "languages": {
+        "python": "from functools import lru_cache\n\ndef memoize(func):\n    \"\"\"Cache results by positional arguments (unbounded).\"\"\"\n    cache = {}\n    def wrapper(*args):\n        if args not in cache:\n            cache[args] = func(*args)\n        return cache[args]\n    wrapper.cache = cache\n    return wrapper\n\n# Built-in alternative (preferred for production):\n# from functools import lru_cache\n# @lru_cache(maxsize=None)\n# def fib(n): ...\n\n# Example:\n@memoize\ndef fib(n):\n    return n if n < 2 else fib(n - 1) + fib(n - 2)\n\nprint(fib(40))  # 102334155 — instant thanks to the cache",
+        "javascript": "function memoize(fn) {\n  const cache = new Map();\n  return function (...args) {\n    const key = JSON.stringify(args);\n    if (!cache.has(key)) cache.set(key, fn(...args));\n    return cache.get(key);\n  };\n}\n\n// Example:\nconst fib = memoize(function fib(n) {\n  return n < 2 ? n : fib(n - 1) + fib(n - 2);\n});\nconsole.log(fib(40));  // 102334155 — instant thanks to the cache",
+        "typescript": "function memoize(fn) {\n  const cache = new Map();\n  return function (...args) {\n    const key = JSON.stringify(args);\n    if (!cache.has(key)) cache.set(key, fn(...args));\n    return cache.get(key);\n  };\n}\n\n// Example:\nconst fib = memoize(function fib(n) {\n  return n < 2 ? n : fib(n - 1) + fib(n - 2);\n});\nconsole.log(fib(40));  // 102334155 — instant thanks to the cache"
+      }
+    },
+    {
+      "task": "retry_backoff",
+      "patterns": [
+        "\\bretry\\b.*\\bbackoff\\b",
+        "\\bexponential\\s+backoff\\b",
+        "\\bretry\\s+(?:a\\s+)?function\\b",
+        "\\bretry\\s+logic\\b"
+      ],
+      "intro": "Here's a {lang} retry wrapper with exponential backoff and jitter.",
+      "notes": "Backoff (0.5s, 1s, 2s, …) prevents hammering a failing service; jitter (±random) prevents synchronized retry storms. Only retry idempotent operations — retrying a non-idempotent POST can double-create resources.",
+      "languages": {
+        "python": "import time\nimport random\n\ndef retry(func, attempts: int = 4, base_delay: float = 0.5, max_delay: float = 8.0):\n    \"\"\"Call func; retry with exponential backoff + jitter on any exception.\"\"\"\n    for attempt in range(attempts):\n        try:\n            return func()\n        except Exception:\n            if attempt == attempts - 1:\n                raise\n            delay = min(base_delay * (2 ** attempt), max_delay)\n            time.sleep(delay / 2 + random.uniform(0, delay / 2))  # jitter\n    raise RuntimeError('unreachable')\n\n# Example (flaky network call):\ndef fetch():\n    if random.random() < 0.5:\n        raise ConnectionError('boom')\n    return 'ok'\n\nprint(retry(fetch))  # eventually 'ok' unless it fails 4 times in a row",
+        "javascript": "async function retry(fn, { attempts = 4, baseDelay = 500, maxDelay = 8000 } = {}) {\n  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));\n  for (let attempt = 0; attempt < attempts; attempt++) {\n    try {\n      return await fn();\n    } catch (err) {\n      if (attempt === attempts - 1) throw err;\n      const delay = Math.min(baseDelay * 2 ** attempt, maxDelay);\n      await sleep(delay / 2 + Math.random() * delay / 2);  // jitter\n    }\n  }\n}\n\n// Example:\n// await retry(fetchData, { attempts: 5 });",
+        "typescript": "async function retry(fn, { attempts = 4, baseDelay = 500, maxDelay = 8000 } = {}) {\n  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));\n  for (let attempt = 0; attempt < attempts; attempt++) {\n    try {\n      return await fn();\n    } catch (err) {\n      if (attempt === attempts - 1) throw err;\n      const delay = Math.min(baseDelay * 2 ** attempt, maxDelay);\n      await sleep(delay / 2 + Math.random() * delay / 2);  // jitter\n    }\n  }\n}\n\n// Example:\n// await retry(fetchData, { attempts: 5 });"
+      }
+    },
+    {
+      "task": "json_pretty",
+      "patterns": [
+        "\\bpretty[\\s-]?print\\b.*\\bjson\\b",
+        "\\bformat\\s+json\\b",
+        "\\bjson\\s+with\\s+indent(?:ation)?\\b",
+        "\\bpretty\\s+json\\b"
+      ],
+      "intro": "Here's how to pretty-print JSON in {lang}.",
+      "notes": "`json.dumps(obj, indent=2)` (Python) and `JSON.stringify(obj, null, 2)` (JS) are the one-liners. Add `sort_keys=True` / sorted keys for deterministic, diff-friendly output.",
+      "languages": {
+        "python": "import json\n\ndef pretty_json(obj) -> str:\n    \"\"\"Serialize with 2-space indent, sorted keys for stable output.\"\"\"\n    return json.dumps(obj, indent=2, sort_keys=True)\n\n# Example:\ndata = {'name': 'Ada', 'tags': ['math', 'computing'], 'active': True}\nprint(pretty_json(data))\n# {\n#   \"active\": true,\n#   \"name\": \"Ada\",\n#   \"tags\": [\n#     \"math\",\n#     \"computing\"\n#   ]\n# }",
+        "javascript": "function prettyJson(obj) {\n  return JSON.stringify(obj, null, 2);\n}\n\n// Example:\nconst data = { name: 'Ada', tags: ['math', 'computing'], active: true };\nconsole.log(prettyJson(data));\n// {\n//   \"name\": \"Ada\",\n//   \"tags\": [\n//     \"math\",\n//     \"computing\"\n//   ],\n//   \"active\": true\n// }",
+        "typescript": "function prettyJson(obj) {\n  return JSON.stringify(obj, null, 2);\n}\n\n// Example:\nconst data = { name: 'Ada', tags: ['math', 'computing'], active: true };\nconsole.log(prettyJson(data));\n// {\n//   \"name\": \"Ada\",\n//   \"tags\": [\n//     \"math\",\n//     \"computing\"\n//   ],\n//   \"active\": true\n// }"
+      }
+    },
+    {
+      "task": "temp_convert",
+      "patterns": [
+        "\\b(?:convert|change|turn)\\b.*\\b(?:celsius|centigrade)\\b.*\\b(?:to|into)\\b.*\\bfahrenheit\\b",
+        "\\b(?:convert|change|turn)\\b.*\\bfahrenheit\\b.*\\b(?:to|into)\\b.*\\b(?:celsius|centigrade)\\b",
+        "\\bcelsius\\s+(?:to|into)\\s+fahrenheit\\b",
+        "\\bfahrenheit\\s+(?:to|into)\\s+(?:celsius|centigrade)\\b"
+      ],
+      "intro": "Here's a {lang} temperature converter (Celsius ↔ Fahrenheit).",
+      "notes": "Formula: F = C × 9/5 + 32; the reverse is C = (F − 32) × 5/9. Float division keeps fractional results for negative and non-integer inputs.",
+      "languages": {
+        "python": "def celsius_to_fahrenheit(c: float) -> float:\n    return c * 9 / 5 + 32\n\ndef fahrenheit_to_celsius(f: float) -> float:\n    return (f - 32) * 5 / 9\n\n# Examples:\nprint(celsius_to_fahrenheit(100))    # 212.0\nprint(fahrenheit_to_celsius(212))    # 100.0",
+        "javascript": "function celsiusToFahrenheit(c) {\n    return c * 9 / 5 + 32;\n}\n\nfunction fahrenheitToCelsius(f) {\n    return (f - 32) * 5 / 9;\n}\n\n// Examples:\nconsole.log(celsiusToFahrenheit(100));  // 212\nconsole.log(fahrenheitToCelsius(212));  // 100",
+        "go": "func CelsiusToFahrenheit(c float64) float64 {\n    return c*9/5 + 32\n}\n\nfunc FahrenheitToCelsius(f float64) float64 {\n    return (f - 32) * 5 / 9\n}",
+        "rust": "fn celsius_to_fahrenheit(c: f64) -> f64 {\n    c * 9.0 / 5.0 + 32.0\n}\n\nfn fahrenheit_to_celsius(f: f64) -> f64 {\n    (f - 32.0) * 5.0 / 9.0\n}",
+        "bash": "# Celsius to Fahrenheit:\necho $(( (100 * 9 / 5) + 32 ))   # 212\n\n# With bc for fractional results:\necho \"scale=1; 37 * 9 / 5 + 32\" | bc   # 98.6"
+      }
+    },
+    {
+      "task": "sqrt",
+      "patterns": [
+        "\\b(?:find|calculate|compute|get)\\b.*\\bsquare\\s+root\\b.*\\b(?:number|n|value)\\b",
+        "\\bsquare\\s+root\\s+of\\s+(?:a\\s+)?(?:number|n|value)\\b",
+        "\\bsqrt\\b"
+      ],
+      "intro": "Here's how to compute the square root of a number in {lang}.",
+      "notes": "`math.sqrt(x)` requires x ≥ 0 and returns a float. `x ** 0.5` works the same for non-negative x. For complex or negative inputs use `cmath.sqrt`. For integers, `math.isqrt` gives the exact integer floor.",
+      "languages": {
+        "python": "import math\n\nprint(math.sqrt(16))    # 4.0\nprint(16 ** 0.5)        # 4.0 (no import needed)\n\n# Integer square root (floor):\nprint(math.isqrt(20))   # 4\n\n# Handle negatives:\ntry:\n    math.sqrt(-1)\nexcept ValueError as e:\n    print('negative input', e)\n\n# Complex numbers:\n# import cmath\n# print(cmath.sqrt(-1))  # 1j",
+        "javascript": "console.log(Math.sqrt(16));   // 4\n\n// Power form:\nconsole.log(16 ** 0.5);       // 4\n\n// Integer square root (floor):\nconsole.log(Math.floor(Math.sqrt(20)));  // 4\n\n// Negative input gives NaN:\nconsole.log(Math.sqrt(-1));   // NaN",
+        "go": "import \"math\"\n\nfunc main() {\n    fmt.Println(math.Sqrt(16))   // 4\n}",
+        "rust": "fn main() {\n    println!(\"{}\", 16f64.sqrt());   // 4\n}"
+      }
+    },
+    {
+      "task": "leap_year",
+      "patterns": [
+        "\\b(?:check|test|determine|find)\\s+(?:if|whether)\\s+(?:a\\s+)?year\\s+is\\s+(?:a\\s+)?leap\\s+year\\b",
+        "\\bleap\\s+year\\b"
+      ],
+      "intro": "Here's a {lang} function that checks whether a year is a leap year.",
+      "notes": "The rule: divisible by 4, except centuries (divisible by 100) unless also divisible by 400. 2000 was a leap year; 1900 and 2100 are not.",
+      "languages": {
+        "python": "def is_leap_year(year: int) -> bool:\n    return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)\n\n# Or use the calendar module:\nimport calendar\nprint(calendar.isleap(2024))  # True\nprint(calendar.isleap(1900))  # False\n\n# Example:\nfor y in (2024, 1900, 2000, 2023):\n    print(y, is_leap_year(y))",
+        "javascript": "function isLeapYear(year) {\n    return year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0);\n}\n\nconsole.log(isLeapYear(2024));  // true\nconsole.log(isLeapYear(1900));  // false\nconsole.log(isLeapYear(2000));  // true"
+      }
+    },
+    {
+      "task": "yesterday_date",
+      "patterns": [
+        "\\b(?:get|find|calculate|compute)\\b.*\\byesterday(?:'s)?\\s+date\\b",
+        "\\byesterday(?:'s)?\\s+date\\b"
+      ],
+      "intro": "Here's how to get yesterday's date in {lang}.",
+      "notes": "Subtract a `timedelta(days=1)` from today — timedelta handles month/year boundaries automatically. In JS, `new Date(Date.now() - 86400000)` works but is naive across DST; use `setDate` for robustness.",
+      "languages": {
+        "python": "from datetime import date, datetime, timedelta\n\n# Date only:\nyesterday = date.today() - timedelta(days=1)\nprint(yesterday)  # 2026-08-05\n\n# With time:\nyesterday_full = datetime.now() - timedelta(days=1)\nprint(yesterday_full)\n\n# Any number of days:\nthree_days_ago = date.today() - timedelta(days=3)\n\n# Formatted:\nprint(yesterday.strftime('%Y-%m-%d'))",
+        "javascript": "// Robust across DST and month boundaries:\nconst yesterday = new Date();\nyesterday.setDate(yesterday.getDate() - 1);\nconsole.log(yesterday.toISOString().slice(0, 10));\n\n// Naive (ok when DST doesn't matter):\nconst naive = new Date(Date.now() - 86400000);\n\n// Formatted:\nconsole.log(yesterday.toISOString().split('T')[0]);"
+      }
+    },
+    {
+      "task": "clipboard",
+      "patterns": [
+        "\\b(?:copy|write)\\s+(?:text|something)\\s+to\\s+(?:the\\s+)?clipboard\\b",
+        "\\b(?:clipboard|copy)\\s+button\\b"
+      ],
+      "intro": "Here's how to copy text to the clipboard in JavaScript.",
+      "notes": "`navigator.clipboard.writeText` requires HTTPS (or localhost) and returns a promise — handle rejection (permission denied). The fallback uses `document.execCommand('copy')` for older browsers.",
+      "languages": {
+        "javascript": "async function copyToClipboard(text) {\n    try {\n        await navigator.clipboard.writeText(text);\n        console.log('copied!');\n    } catch (err) {\n        console.error('copy failed:', err);\n    }\n}\n\n// Button example:\n// <button onclick=\"copyToClipboard('hello')\">Copy</button>\n\n// Fallback for older browsers / non-secure contexts:\nfunction copyFallback(text) {\n    const ta = document.createElement('textarea');\n    ta.value = text;\n    document.body.appendChild(ta);\n    ta.select();\n    document.execCommand('copy');\n    document.body.removeChild(ta);\n}"
+      }
+    },
+    {
+      "task": "click_outside",
+      "patterns": [
+        "\\b(?:detect|handle|listen\\s+for)\\b.*\\bclick\\s+outside\\b.*\\b(?:element|div|modal|dropdown)\\b",
+        "\\bclose\\s+(?:a\\s+)?(?:modal|dropdown)\\s+when\\s+clicking\\s+outside\\b"
+      ],
+      "intro": "Here's how to detect a click outside an element in JavaScript.",
+      "notes": "Listen on `document` and check `event.target` is not inside the element (`contains`). Because the document listener fires after the element's own listener in the bubble phase, no extra bookkeeping is needed.",
+      "languages": {
+        "javascript": "const el = document.getElementById('my-element');\n\nfunction onClickOutside(event) {\n    if (el && !el.contains(event.target)) {\n        console.log('clicked outside');\n        // close the modal / dropdown:\n        // el.classList.remove('open');\n    }\n}\n\ndocument.addEventListener('click', onClickOutside);\n\n// Cleanup (e.g. in React useEffect return / on unmount):\n// document.removeEventListener('click', onClickOutside);"
+      }
+    },
+    {
+      "task": "random_number",
+      "patterns": [
+        "\\b(?:generate|get|create|produce)\\b.*\\brandom\\s+number\\b",
+        "\\brandom\\s+(?:number|integer|int)\\b",
+        "\\b(?:random|rand)\\s+(?:between|from|in)\\s+(?:a\\s+)?range\\b"
+      ],
+      "intro": "Here's how to generate a random number in {lang}.",
+      "notes": "In Python `random.randint(a, b)` includes both ends, `random.random()` is [0, 1). In JS `Math.random()` is [0, 1) — scale and floor for integers. For security-sensitive values (tokens, passwords) use `secrets` (Python) / `crypto.getRandomValues` (JS), never `Math.random`.",
+      "languages": {
+        "python": "import random\n\n# Integer between 1 and 10 (inclusive):\nprint(random.randint(1, 10))\n\n# Float in [0, 1):\nprint(random.random())\n\n# Float in a range:\nprint(random.uniform(1.5, 9.5))\n\n# Pick from a list:\nprint(random.choice(['a', 'b', 'c']))\n\n# Cryptographically secure (tokens, passwords):\nimport secrets\nprint(secrets.randbelow(100))\nprint(secrets.token_hex(16))",
+        "javascript": "// Float in [0, 1):\nconsole.log(Math.random());\n\n// Integer between 1 and 10 (inclusive):\nconsole.log(Math.floor(Math.random() * 10) + 1);\n\n// Integer between min and max (inclusive):\nfunction randInt(min, max) {\n    return Math.floor(Math.random() * (max - min + 1)) + min;\n}\n\n// Cryptographically secure:\nconst arr = new Uint32Array(1);\ncrypto.getRandomValues(arr);\nconsole.log(arr[0]);",
+        "bash": "# Integer in [0, 32767]:\necho $RANDOM\n\n# Between 1 and 10:\necho $((RANDOM % 10 + 1))\n\n# Float [0,1) needs awk or python:\nawk 'BEGIN { srand(); print rand() }'",
+        "go": "import (\n    \"fmt\"\n    \"math/rand\"\n)\n\nfunc main() {\n    fmt.Println(rand.Intn(10) + 1)   // 1..10\n    fmt.Println(rand.Float64())       // [0, 1)\n}",
+        "rust": "use rand::Rng;   // add rand to Cargo.toml\n\nfn main() {\n    let mut rng = rand::thread_rng();\n    println!(\"{}\", rng.gen_range(1..=10));\n}"
+      }
+    }
+  ]
+}

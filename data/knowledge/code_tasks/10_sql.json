@@ -1,0 +1,114 @@
+{
+  "tasks": [
+    {
+      "task": "sql_select",
+      "patterns": [
+        "\\bselect\\b.*\\b(?:from|where|order\\s+by|limit)\\b",
+        "\\bselect\\b"
+      ],
+      "intro": "Here's an SQL query that selects data from a table.",
+      "notes": "Use explicit column lists instead of `SELECT *` in production code so schema changes don't silently break your queries. Add LIMIT while exploring large tables.",
+      "languages": {
+        "sql": "-- All columns (quick exploration only):\nSELECT * FROM customers;\n\n-- Specific columns, filtered and ordered:\nSELECT id, name, email\nFROM customers\nWHERE country = 'US'\nORDER BY name ASC\nLIMIT 100;"
+      }
+    },
+    {
+      "task": "sql_insert",
+      "patterns": [
+        "\\binsert\\s+(?:into|new\\s+rows?)\\b"
+      ],
+      "intro": "Here's an SQL statement that inserts a row into a table.",
+      "notes": "Column lists make the statement resilient to schema changes (adding a column won't break the insert). Use parameterized queries to avoid SQL injection — never concatenate user input into SQL strings.",
+      "languages": {
+        "sql": "-- Insert one row (parameterized — never concatenate user input):\nINSERT INTO customers (name, email, country)\nVALUES (?, ?, ?);\n\n-- Insert multiple rows:\nINSERT INTO customers (name, email, country)\nVALUES\n    ('Alice', 'alice@example.com', 'US'),\n    ('Bob',   'bob@example.com',   'UK');\n\n-- MySQL / SQLite placeholder style is ?; PostgreSQL uses $1, $2, $3."
+      }
+    },
+    {
+      "task": "sql_update",
+      "patterns": [
+        "\\bupdate\\s+(?:a\\s+)?(?:table|row|record)\\b"
+      ],
+      "intro": "Here's an SQL statement that updates existing rows.",
+      "notes": "An UPDATE without a WHERE clause updates every row in the table. Run a SELECT with the same WHERE first to confirm which rows you're about to change.",
+      "languages": {
+        "sql": "-- Always scope with WHERE!\nUPDATE customers\nSET email = 'new@example.com'\nWHERE id = 42;\n\n-- Update multiple columns:\nUPDATE products\nSET price = price * 1.1, updated_at = CURRENT_TIMESTAMP\nWHERE category = 'books';"
+      }
+    },
+    {
+      "task": "sql_delete",
+      "patterns": [
+        "\\bdelete\\s+(?:from\\s+)?(?:a\\s+)?(?:table|row|record)\\b"
+      ],
+      "intro": "Here's an SQL statement that deletes rows from a table.",
+      "notes": "A DELETE without a WHERE clause empties the table — always scope it with a WHERE and consider a transaction so you can roll back. Most production systems use soft deletes (a deleted_at flag) instead.",
+      "languages": {
+        "sql": "-- Always scope with WHERE — a bare DELETE empties the table!\nDELETE FROM customers\nWHERE id = 42\n  AND email = 'old@example.com';   -- double-check with SELECT first\n\n-- Delete all rows but keep the table:\nDELETE FROM customers;"
+      }
+    },
+    {
+      "task": "sql_join",
+      "patterns": [
+        "\\bjoin\\s+(?:two\\s+)?tables\\b",
+        "\\b(?:inner|left|right|outer)\\s+join\\b",
+        "\\bsql\\s+join\\b"
+      ],
+      "intro": "Here's an SQL query that joins two tables.",
+      "notes": "INNER JOIN returns only matching rows; LEFT JOIN keeps all rows from the left table, filling NULLs for non-matching right rows. Pick the join type by what you want to happen to unmatched rows.",
+      "languages": {
+        "sql": "-- Orders with their customer names:\nSELECT o.id AS order_id, c.name AS customer, o.total\nFROM orders o\nINNER JOIN customers c ON o.customer_id = c.id\nORDER BY o.id;\n\n-- LEFT JOIN keeps orders even when the customer was deleted:\nSELECT o.id, c.name\nFROM orders o\nLEFT JOIN customers c ON o.customer_id = c.id;"
+      }
+    },
+    {
+      "task": "sql_group_by",
+      "patterns": [
+        "\\bgroup\\s+by\\b",
+        "\\bgrouped\\s+by\\b",
+        "\\b(?:sum|average|count)\\s+.*\\bper\\b",
+        "\\bcount\\s+rows\\b",
+        "\\bcount\\s+records\\b"
+      ],
+      "intro": "Here's an SQL query that groups rows and computes an aggregate.",
+      "notes": "Every column in the SELECT list that isn't wrapped in an aggregate function must appear in the GROUP BY clause — most SQL engines enforce this and error out if you forget.",
+      "languages": {
+        "sql": "-- Count per group:\nSELECT country, COUNT(*) AS customer_count\nFROM customers\nGROUP BY country\nORDER BY customer_count DESC;\n\n-- Sum / average per group:\nSELECT category, SUM(amount) AS total, AVG(amount) AS avg_amount\nFROM sales\nGROUP BY category;\n\n-- Groups with a minimum size (HAVING filters after grouping):\nSELECT category, COUNT(*) AS n\nFROM sales\nGROUP BY category\nHAVING n >= 10;"
+      }
+    },
+    {
+      "task": "sql_duplicates",
+      "patterns": [
+        "\\bduplicate\\s+rows\\b",
+        "\\bduplicates?\\s+in\\s+(?:a\\s+)?table\\b",
+        "\\bfind\\s+duplicates?\\b"
+      ],
+      "intro": "Here's an SQL query that finds duplicate rows in a table.",
+      "notes": "The HAVING clause filters groups after aggregation (WHERE filters before). Group by the columns that define what 'duplicate' means — grouping by every column finds exact-row duplicates; grouping by a key column finds records sharing that key.",
+      "languages": {
+        "sql": "-- Rows sharing the same key column(s) — the usual definition:\nSELECT email, COUNT(*) AS n\nFROM customers\nGROUP BY email\nHAVING COUNT(*) > 1;\n\n-- Full-row duplicates (every column identical):\nSELECT *\nFROM customers\nGROUP BY id, name, email, country   -- all columns\nHAVING COUNT(*) > 1;\n\n-- See the actual duplicate rows:\nSELECT c.*\nFROM customers c\nJOIN (\n    SELECT email\n    FROM customers\n    GROUP BY email\n    HAVING COUNT(*) > 1\n) d ON c.email = d.email\nORDER BY c.email;"
+      }
+    },
+    {
+      "task": "sql_create_table",
+      "patterns": [
+        "\\bcreate\\s+(?:a\\s+)?table\\b",
+        "\\bmake\\s+(?:a\\s+)?table\\b",
+        "\\bschema\\s+for\\b"
+      ],
+      "intro": "Here's an SQL statement that creates a table.",
+      "notes": "Choose types carefully — changing them later requires an ALTER TABLE migration. PRIMARY KEY enforces uniqueness, NOT NULL rejects missing values, and a foreign key keeps related tables consistent.",
+      "languages": {
+        "sql": "CREATE TABLE customers (\n    id         INTEGER PRIMARY KEY AUTOINCREMENT,  -- MySQL: INT AUTO_INCREMENT\n    name       TEXT    NOT NULL,                   -- MySQL: VARCHAR(255)\n    email      TEXT    UNIQUE NOT NULL,\n    country    TEXT    DEFAULT 'US',\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);"
+      }
+    },
+    {
+      "task": "sql_aggregate",
+      "patterns": [
+        "\\b(?:sum|average|avg|min|max|count)\\s+of\\b"
+      ],
+      "intro": "Here's an SQL query using an aggregate function.",
+      "notes": "Aggregates (COUNT, SUM, AVG, MIN, MAX) collapse many rows into one. COUNT(*) counts rows including NULLs; COUNT(col) counts only non-NULL values — a classic gotcha.",
+      "languages": {
+        "sql": "SELECT\n    COUNT(*)                 AS total_rows,\n    COUNT(email)             AS emails_not_null,   -- ignores NULLs\n    COUNT(DISTINCT country)  AS distinct_countries,\n    SUM(amount)              AS total,\n    AVG(amount)              AS average,\n    MIN(amount)              AS min_amount,\n    MAX(amount)              AS max_amount\nFROM sales;"
+      }
+    }
+  ]
+}
