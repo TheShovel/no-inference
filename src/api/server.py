@@ -1,15 +1,23 @@
 """
 COS Web API — Zero-dependency HTTP server using only Python stdlib.
 
+JSON API only: the demo pages (landing, chat, code editor) live on the
+gh-pages branch of the website and talk to this server over HTTP.
+
 Endpoints:
-  POST /api/query          Single-shot query (no conversation history)
-  POST /api/conversations  Create a new conversation
-  GET  /api/conversations  List all conversations
+  GET  /                       API index (JSON endpoint list)
+  POST /api/query              Single-shot query (no conversation history)
+  POST /api/conversations      Create a new conversation
+  GET  /api/conversations      List all conversations
   POST /api/conversations/{id}/query  Query within a conversation
   GET  /api/conversations/{id}        Get conversation history
   DELETE /api/conversations/{id}      Delete a conversation
-  GET  /api/status         System status
-  GET  /health             Health check
+  POST /api/editor/analyze     Analyze a buffer (language/imports/definitions)
+  POST /api/editor/fill        Fill in a marker in a buffer (complete_buffer)
+  POST /api/editor/generate    Generate code from a query (generate_code)
+  POST /api/editor/transform   Apply a code transformation to a buffer
+  GET  /api/status             System status
+  GET  /health                 Health check
 """
 
 import json
@@ -32,132 +40,76 @@ if str(_SRC_DIR) not in sys.path:
 from cos.engine import process_query, reset_conversation, get_conversation_history
 
 
-# ── Inline HTML Chat Interface ────────────────────────────────────────────────
+# ── API Only ────────────────────────────────────────────────────────────────
+# The demo pages (landing, chat, code editor) live on the gh-pages branch of
+# the website. This server is the API backend those pages talk to; it serves
+# JSON only.
 
-_CHAT_HTML = '''<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>COS Chat</title>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0d1117; color: #e6edf3; height: 100vh; display: flex; flex-direction: column; }
-  #chat { flex: 1; overflow-y: auto; padding: 20px 24px; display: flex; flex-direction: column; gap: 16px; scroll-behavior: smooth; }
-  .msg { max-width: 80%; padding: 12px 16px; border-radius: 12px; line-height: 1.6; font-size: 14px; white-space: pre-wrap; word-wrap: break-word; }
-  .msg.user { align-self: flex-end; background: #1f6feb; color: #fff; border-bottom-right-radius: 4px; }
-  .msg.bot { align-self: flex-start; background: #161b22; color: #e6edf3; border: 1px solid #21262d; border-bottom-left-radius: 4px; }
-  .msg.bot.loading { opacity: 0.6; }
-  .msg.bot.loading::after { content: "..."; animation: dots 1.5s steps(4) infinite; }
-  @keyframes dots { 0% { content: ""; } 25% { content: "."; } 50% { content: ".."; } 75% { content: "..."; } }
-  .input-area { padding: 16px 24px; border-top: 1px solid #21262d; background: #0d1117; }
-  .input-row { display: flex; gap: 8px; max-width: 900px; margin: 0 auto; }
-  .input-row input { flex: 1; padding: 10px 14px; border: 1px solid #30363d; border-radius: 8px; background: #161b22; color: #e6edf3; font-size: 14px; outline: none; }
-  .input-row input:focus { border-color: #58a6ff; }
-  .input-row input::placeholder { color: #484f58; }
-  .input-row button { padding: 10px 20px; border: none; border-radius: 8px; background: #238636; color: #fff; font-size: 14px; font-weight: 500; cursor: pointer; transition: background .15s; }
-  .input-row button:hover { background: #2ea043; }
-  .input-row button:disabled { opacity: 0.5; cursor: not-allowed; }
-  .welcome { text-align: center; padding: 40px 20px; color: #8b949e; }
-  .welcome h2 { font-size: 22px; color: #e6edf3; margin-bottom: 8px; }
-  .welcome p { font-size: 14px; }
-  .welcome .examples { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
-  .welcome .examples button { padding: 6px 14px; border: 1px solid #30363d; border-radius: 20px; background: #161b22; color: #8b949e; font-size: 12px; cursor: pointer; transition: all .15s; }
-  .welcome .examples button:hover { border-color: #58a6ff; color: #58a6ff; }
-  @media (max-width: 600px) { .msg { max-width: 90%; } #chat { padding: 12px; } .input-area { padding: 12px; } }
-</style>
-</head>
-<body>
-<div id="chat">
-  <div class="welcome" id="welcome">
-    <h2>How can I help you?</h2>
-    <p>Ask me anything — I use knowledge lookup, Wikipedia, and symbolic reasoning.</p>
-    <div class="examples">
-      <button onclick="ask('What is the capital of France?')">Capital of France</button>
-      <button onclick="ask('How do fungi communicate underground?')">Fungi communication</button>
-      <button onclick="ask('What would happen if all plants disappeared?')">Plants disappear</button>
-      <button onclick="ask('Write a Python function to sort a list')">Python sort</button>
-      <button onclick="ask('Tell me about the Roman Empire')">Roman Empire</button>
-    </div>
-  </div>
-</div>
-<div class="input-area">
-  <div class="input-row">
-    <input id="input" type="text" placeholder="Type your message..." autofocus>
-    <button id="sendBtn" onclick="send()">Send</button>
-  </div>
-</div>
-<script>
-  let convId = null;
-  const chat = document.getElementById("chat");
-  const input = document.getElementById("input");
-  const sendBtn = document.getElementById("sendBtn");
+def _detect_buffer_transform(query: str):
+    """Detect a transform op from the instruction alone (code not pasted).
 
-  function scrollBottom() { requestAnimationFrame(() => { chat.scrollTop = chat.scrollHeight; }); }
+    The mini-IDE applies transforms to the buffer, so the code lives in the
+    textarea rather than inside the query. Returns (op, params) or (None, {}).
+    Mirrors the phrasing rules of cos.code_transformer.detect_code_transform
+    minus the requirement that code be embedded in the query.
+    """
+    q = re.sub(r'\s+', ' ', query.strip().lower())
+    if len(q) < 4:
+        return None, {}
+    _LANGS = {'python', 'javascript', 'js', 'typescript', 'ts', 'java', 'c++',
+              'cpp', 'c#', 'csharp', 'go', 'golang', 'rust', 'ruby', 'php',
+              'swift', 'kotlin', 'scala', 'sql', 'bash', 'html', 'css', 'c'}
+    # convert / translate / port / rewrite ... to <language>
+    m = re.search(r'\b(?:convert|translate|port|rewrite|migrate|change)\s+'
+                  r'(?:this|the|that|it)?\s*(?:code|script|program|function)?'
+                  r'\s*(?:from\s+\S+)?\s*(?:to|into|in)\s+'
+                  r'([a-z#+.\s]+?)\s*$', q)
+    if m:
+        dst = m.group(1).strip().rstrip('?!.')
+        if re.sub(r'\s+', '', dst.lower()) in _LANGS:
+            return 'convert_lang', {'dst': dst}
+    # add / implement error handling
+    if (re.search(r'\b(?:add|include|implement|insert)\s+(?:error|exception)'
+                  r'\s+handling\b', q)
+            or re.search(r'\b(?:make|wrap)\s+(?:it|this|that|the\s+code|'
+                         r'this\s+code)\s*(?:more\s+)?(?:error\s+)?'
+                         r'(?:safe|robust)\b', q)):
+        return 'add_errors', {}
+    # rename an identifier
+    m = re.search(r'\b(?:rename|change)\s+(?:the\s+)?(?:variable|function|'
+                  r'class|method|parameter|argument|name)\s+'
+                  r'([A-Za-z_]\w*)\s+(?:to|into)\s+([A-Za-z_]\w*)\b', q)
+    if not m:
+        m = re.search(r'\brename\s+([A-Za-z_]\w*)\s+(?:to|into)\s+'
+                      r'([A-Za-z_]\w*)\b', q)
+    if m:
+        return 'rename', {'old': m.group(1), 'new': m.group(2)}
+    # add comments / document
+    if (re.search(r'\b(?:add|write|insert)\s+(?:some\s+|more\s+)?comments?\b', q)
+            or re.search(r'\b(?:document|comment)\s+(?:this|the)\s+'
+                         r'(?:code|script)\b', q)):
+        return 'add_comments', {}
+    # make faster / optimize
+    if (re.search(r'\b(?:make|speed\s+up)\s+(?:this|the|it|that)\s*'
+                  r'(?:code|script|function|program)?\s*(?:faster|quicker|'
+                  r'more\s+efficient|efficient)\b', q)
+            or re.search(r'\boptimize\s+(?:this|the)\s+(?:code|script|'
+                         r'function|program)\b', q)):
+        return 'make_faster', {}
+    # loop conversion
+    m = re.search(r'\b(?:convert|change|rewrite|turn)\s+(?:the\s+|this\s+)?'
+                  r'(for\s+loop|while\s+loop)\s+(?:to|into)\s+(?:a\s+)?'
+                  r'(for\s+loop|while\s+loop)\b', q)
+    if m:
+        return 'loop_convert', {'from': m.group(1), 'to': m.group(2)}
+    # explain
+    if (re.search(r'\bexplain\s+(?:this|the|that)\s+(?:code|script|'
+                  r'function|program)\b', q)
+            or re.search(r'\bwhat\s+does\s+(?:this|the|that)\s+'
+                         r'(?:code|script)\s+do\b', q)):
+        return 'explain', {}
+    return None, {}
 
-  function addMessage(text, role) {
-    const el = document.createElement("div");
-    el.className = "msg " + role;
-    el.textContent = text;
-    chat.appendChild(el);
-    scrollBottom();
-    return el;
-  }
-
-  function addLoading() {
-    const el = document.createElement("div");
-    el.className = "msg bot loading";
-    el.textContent = "Thinking";
-    chat.appendChild(el);
-    scrollBottom();
-    return el;
-  }
-
-  function hideWelcome() {
-    const w = document.getElementById("welcome");
-    if (w) w.style.display = "none";
-  }
-
-  async function ask(q) {
-    input.value = q;
-    await send();
-  }
-
-  async function send() {
-    const q = input.value.trim();
-    if (!q) return;
-    input.value = "";
-    hideWelcome();
-    addMessage(q, "user");
-    const loader = addLoading();
-    sendBtn.disabled = true;
-    try {
-      if (!convId) {
-        const r = await fetch("/api/conversations", { method: "POST" });
-        const c = await r.json();
-        convId = c.id;
-      }
-      const r = await fetch("/api/conversations/" + convId + "/query", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query: q })
-      });
-      const d = await r.json();
-      loader.className = "msg bot";
-      loader.textContent = d.response || "[no response]";
-    } catch (e) {
-      loader.className = "msg bot";
-      loader.textContent = "[Error: " + e.message + "]";
-    }
-    sendBtn.disabled = false;
-    input.focus();
-    scrollBottom();
-  }
-
-  input.addEventListener("keydown", e => { if (e.key === "Enter") send(); });
-</script>
-</body>
-</html>'''
 
 # ── In-Memory Conversation Store ─────────────────────────────────────────────
 
@@ -231,9 +183,28 @@ class COSAPIHandler(BaseHTTPRequestHandler):
     """HTTP request handler for the COS API."""
 
     def log_message(self, format, *args):
-        """Quiet logging — only log errors."""
-        if args and args[0].startswith('40'):
-            super().log_message(format, *args)
+        """Quiet logging — only log client/server errors.
+
+        Defensive about arg types: some error paths pass an HTTPStatus enum
+        (Python 3.11+) or an int, neither of which has .startswith.
+        """
+        try:
+            code = getattr(args[0], 'value', args[0]) if args else None
+            if code is not None and str(code).startswith(('4', '5')):
+                super().log_message(format, *args)
+        except (TypeError, AttributeError):
+            pass
+
+    def do_HEAD(self):
+        """HEAD: same status as GET, headers only (uptime monitors)."""
+        parsed = urlparse(self.path)
+        path = parsed.path.rstrip('/')
+        ok = (path in ('', '/', '/health', '/api/status')
+              or path.startswith('/api/conversations'))
+        self.send_response(200 if ok else 404)
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Content-Length', '0')
+        self.end_headers()
 
     def _route(self):
         """Parse the path and route to the appropriate handler."""
@@ -256,15 +227,9 @@ class COSAPIHandler(BaseHTTPRequestHandler):
         if path == '/api/status' and method == 'GET':
             return self._handle_status()
 
-        # Serve chat interface at root
+        # API index (the demo frontend lives on the gh-pages site)
         if path in ('', '/') and method == 'GET':
-            self.send_response(200)
-            self.send_header('Content-Type', 'text/html; charset=utf-8')
-            self.send_header('Content-Length', str(len(_CHAT_HTML)))
-            self.send_header('Access-Control-Allow-Origin', '*')
-            self.end_headers()
-            self.wfile.write(_CHAT_HTML.encode('utf-8'))
-            return
+            return self._handle_index()
 
         # API endpoints
         if path in ('/api/query', '/query') and method == 'POST':
@@ -273,6 +238,16 @@ class COSAPIHandler(BaseHTTPRequestHandler):
             return self._handle_create_conversation()
         if path == '/api/conversations' and method == 'GET':
             return self._handle_list_conversations()
+
+        # Editor endpoints (buffer-aware coding demo)
+        if path == '/api/editor/analyze' and method == 'POST':
+            return self._handle_editor_analyze()
+        if path == '/api/editor/fill' and method == 'POST':
+            return self._handle_editor_fill()
+        if path == '/api/editor/generate' and method == 'POST':
+            return self._handle_editor_generate()
+        if path == '/api/editor/transform' and method == 'POST':
+            return self._handle_editor_transform()
 
         # /api/conversations/{id} routes
         conv_match = re.match(r'^/api/conversations/([a-zA-Z0-9\-]+)$', path)
@@ -301,6 +276,27 @@ class COSAPIHandler(BaseHTTPRequestHandler):
         self._route()
 
     # ── Handlers ────────────────────────────────────────────────────────────
+
+    def _handle_index(self):
+        """JSON index so the server root is discoverable (frontend on gh-pages)."""
+        _json_response(self, {
+            "service": "cos-api",
+            "frontend": "https://theshovel.github.io/no-inference/",
+            "endpoints": [
+                "GET /health",
+                "GET /api/status",
+                "POST /api/query",
+                "POST /api/conversations",
+                "GET /api/conversations",
+                "POST /api/conversations/{id}/query",
+                "GET /api/conversations/{id}",
+                "DELETE /api/conversations/{id}",
+                "POST /api/editor/analyze",
+                "POST /api/editor/fill",
+                "POST /api/editor/generate",
+                "POST /api/editor/transform",
+            ],
+        })
 
     def _handle_health(self):
         _json_response(self, {"status": "ok"})
@@ -467,6 +463,135 @@ class COSAPIHandler(BaseHTTPRequestHandler):
             "timing": elapsed,
         })
 
+    # ── Editor endpoints (buffer-aware coding demo) ─────────────────────
+
+    def _handle_editor_analyze(self):
+        """Describe a buffer: language, imports, definitions, style."""
+        data = _parse_json_body(self)
+        code = (data or {}).get('code', '') if isinstance(data, dict) else ''
+        filename = (data or {}).get('filename', '') if isinstance(data, dict) else ''
+        if not code.strip():
+            return _error_response(self, 400, "Buffer cannot be empty")
+        from cos.code_editor import analyze_buffer
+        result = analyze_buffer(code, filename)
+        result["ok"] = True
+        _json_response(self, result)
+
+    def _handle_editor_fill(self):
+        """Fill in a marker in the buffer (complete_buffer)."""
+        data = _parse_json_body(self)
+        if not isinstance(data, dict):
+            return _error_response(self, 400, "Invalid JSON body")
+        code = data.get('code', '')
+        if not code.strip():
+            return _error_response(self, 400, "Buffer cannot be empty")
+        instruction = data.get('instruction', '') or ''
+        filename = data.get('filename', '') or ''
+        cursor = data.get('cursor_pos')
+        if not isinstance(cursor, int):
+            cursor = None
+        from cos.code_editor import complete_buffer
+        res = complete_buffer(code, instruction, cursor, filename)
+
+        # Preview: apply the insertion to the marker line in the buffer.
+        edited = None
+        if res['changed'] and res['replace_line'] is not None and res['text']:
+            lines = code.split('\n')
+            rl = res['replace_line']
+            if 0 <= rl < len(lines):
+                lines[rl] = res['text']
+                edited = '\n'.join(lines)
+
+        message = 'Filled in the marker.' if res['changed'] else (
+            res['notes'][0] if res.get('notes') else 'No fill-in marker found.')
+        _json_response(self, {
+            'ok': bool(res['changed']),
+            'language': res['lang'],
+            'text': res['text'],
+            'notes': res.get('notes', []),
+            'changed': bool(res['changed']),
+            'replace_line': res['replace_line'],
+            'edited': edited,
+            'context': res.get('context'),
+            'message': message,
+        })
+
+    def _handle_editor_generate(self):
+        """Generate code from a query (generate_code)."""
+        data = _parse_json_body(self)
+        query = (data or {}).get('query', '') if isinstance(data, dict) else ''
+        query = (query or '').strip()
+        if not query:
+            return _error_response(self, 400, "Query cannot be empty")
+        from cos.code_gen import generate_code
+        markdown = generate_code(query)
+        if not markdown:
+            return _json_response(self, {
+                'ok': False,
+                'error': ("I couldn't map that request to a code task. Try a "
+                          "concrete task like 'write a python function that "
+                          "flattens a nested list'."),
+            })
+        m = re.search(r'```(\w+)\n(.*?)```', markdown, re.DOTALL)
+        _json_response(self, {
+            'ok': True,
+            'markdown': markdown,
+            'code': m.group(2) if m else '',
+            'lang': m.group(1) if m else '',
+        })
+
+    def _handle_editor_transform(self):
+        """Apply a code transformation to the buffer.
+
+        The instruction may embed the code (classic transform query) or
+        reference the buffer alone ("convert this to javascript") — either
+        way the buffer wins as the code being edited.
+        """
+        data = _parse_json_body(self)
+        if not isinstance(data, dict):
+            return _error_response(self, 400, "Invalid JSON body")
+        query = (data.get('query', '') or '').strip()
+        code = data.get('code', '')
+        filename = data.get('filename', '') or ''
+        if not query:
+            return _error_response(self, 400, "Instruction cannot be empty")
+        if not code.strip():
+            return _error_response(self, 400, "Buffer cannot be empty")
+
+        from cos.code_editor import detect_lang as _buffer_lang
+        from cos.code_transformer import detect_code_transform, transform_code
+
+        op, params = None, {}
+        try:
+            ct = detect_code_transform(query)
+            if ct:
+                op, params, _qcode, _qlang = ct
+            else:
+                op, params = _detect_buffer_transform(query)
+        except Exception:
+            op, params = None, {}
+
+        if op is None:
+            return _json_response(self, {
+                'ok': False,
+                'error': ("That instruction isn't a transform I recognize. Try "
+                          "'convert this to javascript', 'add error handling', "
+                          "'add comments', 'rename x to y', 'make it faster', "
+                          "'convert the for loop to a while loop', or 'explain "
+                          "this code'."),
+            })
+
+        lang = _buffer_lang(code, filename)
+        edited, notes = transform_code(op, params, code, lang)
+        _json_response(self, {
+            'ok': True,
+            'op': op,
+            'edited': edited,
+            'notes': notes,
+            'language': lang,
+            'changed': edited != code,
+        })
+
 
 # ── Entry Point ──────────────────────────────────────────────────────────────
 
@@ -479,9 +604,11 @@ def main():
     print(f"  Loaded {_KB_SIZE} knowledge entries from data/knowledge/")
 
     server = HTTPServer((host, port), COSAPIHandler)
-    print(f"  Chat UI:    http://{host}:{port}")
-    print(f"  API:        http://{host}:{port}/api/query")
-    print(f"  Status:     http://{host}:{port}/api/status")
+    print(f"  API server:  http://{host}:{port}")
+    print(f"  Health:      http://{host}:{port}/health")
+    print(f"  Status:      http://{host}:{port}/api/status")
+    print(f"  Chat query:  http://{host}:{port}/api/query")
+    print("  Frontend:    https://theshovel.github.io/no-inference/ (gh-pages)")
 
     try:
         server.serve_forever()

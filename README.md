@@ -84,22 +84,35 @@ Type questions, get answers. Commands inside the chat TUI:
 - `/reload`. Reload patterns, aliases, templates from disk
 - `/quit`. Exit
 
-### API server
+### Website (gh-pages) + API server
+
+The demo website is a **static site on the `gh-pages` branch** (landing
+page, `chat.html` chat demo, `editor.html` mini-IDE) that talks to the
+engine over HTTP. The API server on `main` serves the JSON backend:
 
 ```bash
 cd src
-python3 -m api.server
+python3 -m api.server     # JSON API only, port via COS_API_PORT / PORT
 ```
 
-Listens on `http://localhost:8080`. Endpoints:
+- `GET /`. JSON index of endpoints
+- `GET /health`. Health check (the site's status dots ping this)
+- `GET /api/status`. System status
+- `POST /api/query` (alias `/query`). Single query `{"query": "..."}`
+- `POST /api/conversations`. Create a conversation
+- `GET /api/conversations`. List conversations
+- `GET /api/conversations/<id>`. Get conversation history
+- `POST /api/conversations/<id>/query`. Continue a conversation `{"query": "..."}`
+- `DELETE /api/conversations/<id>`. Delete a conversation
+- `POST /api/editor/analyze`. Buffer analysis `{"code", "filename"}`
+- `POST /api/editor/fill`. Fill in a marker `{"code", "instruction", "filename"}`
+- `POST /api/editor/generate`. Generate code `{"query"}`
+- `POST /api/editor/transform`. Transform the buffer `{"query", "code", "filename"}`
 
-- `GET /health`. Health check
-- `GET /status`. System status
-- `POST /query`. Single query `{"query": "..."}`
-- `POST /conversation`. Create a conversation `{"query": "..."}`
-- `GET /conversation/<id>`. Get conversation history
-- `POST /conversation/<id>/query`. Continue a conversation `{"query": "..."}`
-- `DELETE /conversation/<id>`. Delete a conversation
+The site pages live on the `gh-pages` branch (GitHub Pages); see
+[docs/web-demo.md](docs/web-demo.md) for how the two halves talk to each
+other and how to point the site at a local server (`API_URL` in
+`site.js`).
 
 ### Benchmarking
 
@@ -209,25 +222,26 @@ no-inference/
     prompt_templates/       Instruction templates for essays, code, etc.
     cache/                  Wikipedia response cache
   docs/                     Documentation
-  tests/                    Test suite (17 suites, run `python3 tests/run_all.py`)
+  tests/                    Test suite (19 suites, run `python3 tests/run_all.py`)
 ```
 
 ## Testing
 
 ```bash
-python3 tests/run_all.py          # all 17 suites (~15 min)
+python3 tests/run_all.py          # all 19 suites (~15 min)
 python3 tests/test_refine.py      # make→edit→refine loops
 python3 tests/test_workbench_recipes.py  # buffer-aware fill-in on real scripts
 python3 tests/test_tui.py          # agent TUI + launcher
 python3 tests/test_code_editor.py  # harness API + agent CLI
+python3 tests/test_api_server.py    # JSON API the website talks to
 ```
 
 The suites cover the regression set (465), coding answers (136), code
 synthesis and routing (145), code/text transforms (29), practical knowledge
 (192), the editor e2e suites (1044), stress (86), NLG, context extraction
 (960), the harness (60), workbench recipes (39), the TUI/launcher (47),
-iterative refinement (41), and freeform discovery (31); 3,383 checks in
-total, all deterministic and offline.
+iterative refinement (41), freeform discovery (31), and the API server
+suite (48); 3,445 checks in total, all deterministic and offline.
 
 ## Documentation
 
@@ -238,6 +252,7 @@ total, all deterministic and offline.
 - [Benchmarks](docs/benchmarks.md). Evaluation methodology and results
 - [Data Formats](docs/data.md). How to add patterns, templates, knowledge entries, and personas
 - [Editor Harness](docs/editor-harness.md). Fill-in / completion API, the JSON backend CLI, and the opencode-style agent CLI
+- [Website + API](docs/web-demo.md). The gh-pages demo site (chat + mini-IDE) and the JSON API server it talks to
 
 ## Try the agent CLI
 
