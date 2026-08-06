@@ -6,14 +6,15 @@ These tests prevent specific mistakes from recurring.
 Run: PYTHONPATH=src python tests/test_freeform_discovered.py
 """
 
-import os, sys, re
+import os
+import sys
 
 _SRC_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src")
 if _SRC_DIR not in sys.path:
     sys.path.insert(0, _SRC_DIR)
 
-from cos.nlg.pipeline import naturalize
 from cos.nlg.config import NLGConfig
+from cos.nlg.pipeline import naturalize
 
 _t = 0; _p = 0; _f = 0
 def suite(name):
@@ -68,10 +69,8 @@ def test_discovered_create_a_single_page_html_portfolio_for():
     cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
     response = naturalize("Create a single-page HTML portfolio for a fictional digital artist with a dark-mode neon aesthetic, a responsive gallery grid, and a functioning contact form.", "", "", "factual", cfg)
     check(
-        "response should not contain \"background: #1a1a4e;
-   \"\"",
-        "background: #1a1a4e;
-   \"" not in response,
+        "response should not contain \"background: #1a1a4e;\"",
+        "background: #1a1a4e;" not in response,
         f"Found problematic text in response: {response[:150]}"
     )
 
@@ -124,6 +123,11 @@ def test_discovered_how_does_a_heat_pump_actually_move_energ():
         "A heat pump is a device that uses mechanical or thermal energy to transfer heat " not in response,
         f"Found problematic text in response: {response[:150]}"
     )
+    check(
+        "response should explain the mechanism (refrigerant cycle)",
+        "refrigerant" in response.lower(),
+        f"Response lacks the mechanism: {response[:200]}"
+    )
 
 def test_discovered_write_a_comparative_essay_on_the_impact():
     """Auto-discovered: The sentence ends abruptly without completing the thought or the grammatical str"""
@@ -150,9 +154,14 @@ def test_discovered_how_to_implement_a_debouncing_function_i():
     cfg = NLGConfig(style="friendly", verbosity=0.5, temperature=0.0)
     response = naturalize("How to implement a debouncing function in JavaScript to optimize window resize events?", "", "", "factual", cfg)
     check(
-        "response should not contain \"// Usage example: debounce a search inpu\"",
-        "// Usage example: debounce a search input" not in response,
-        f"Found problematic text in response: {response[:150]}"
+        "response should not leak doubled braces from format() escaping",
+        "{{" not in response and "}}" not in response,
+        f"Found brace leak in response: {response[:150]}"
+    )
+    check(
+        "response should keep the working debounce function intact",
+        "function debounce" in response and "setTimeout" in response,
+        f"Response lost the code: {response[:200]}"
     )
 
 def test_discovered_write_a_detailed_guide_on_how_to_start_a():
@@ -317,7 +326,8 @@ def test_discovered_how_to_implement_a_custom_hook_in_react_28():
 
 
 # Run
-print(f"\n{"#"*60}\n  Discovered Regression Tests\n{"#"*60}")
+_sep = "#" * 60
+print(f"\n{_sep}\n  Discovered Regression Tests\n{_sep}")
 suite("Freeform discovered bugs")
 
 # Execute all test functions

@@ -11,26 +11,25 @@ Pure functions — no I/O, no side effects.
 """
 
 import re
-from typing import List, Optional
 
-from .config import NLGConfig, DEFAULT_CONFIG, get_profile
-from .models import Fact, DiscourseState, DiscourseTree, DiscourseUnit
-from .parser import parse_facts, extract_entities, merge_subject_entities
-from .realize import realize_fact, get_opening, get_closing
-from .discourse import build_discourse_tree, flatten_tree
-from .fluency import enhance_fluency
-from .combine import combine_all
 from .cleaner import clean_information
+from .combine import combine_all
+from .config import DEFAULT_CONFIG, NLGConfig
+from .discourse import build_discourse_tree, flatten_tree
 from .fallback import fallback_response
-from .util import pick, maybe, split_sentences, lower_first, upper_first, require_style
+from .fluency import enhance_fluency
+from .models import DiscourseState
+from .parser import extract_entities, merge_subject_entities, parse_facts
+from .realize import get_closing, get_opening, realize_fact
+from .util import lower_first, maybe, pick, split_sentences, upper_first
 
 
 def naturalize(
     query: str,
-    topic: Optional[str],
+    topic: "str | None",
     information: str,
     intent: str = "factual",
-    config: Optional[NLGConfig] = None,
+    config: "NLGConfig | None" = None,
 ) -> str:
     """Generate a natural conversational response from retrieved information.
 
@@ -71,6 +70,13 @@ def naturalize(
     if not information or not information.strip():
         return fallback_response(query, config)
 
+    # If the info is a code answer (fenced code block), don't run it through
+    # the prose pipeline — clean/parse/realize/combine would strip parens,
+    # collapse newlines, and mangle braces inside the code. The KB code
+    # answers are already well-formed prose + code, so return them as-is.
+    if '```' in information:
+        return information.strip()
+
     info = clean_information(information)
     if not info:
         return fallback_response(query, config)
@@ -100,7 +106,7 @@ def naturalize(
 
     # ── Pass 4: Sentence realization ──
     opening = get_opening(query, config)
-    realized_sentences: List[str] = []
+    realized_sentences: list[str] = []
 
     for i, unit in enumerate(units):
         for j, fact in enumerate(unit.facts):
@@ -133,6 +139,32 @@ def naturalize(
         # 1. Fix "[Name] is She/He/It" -> "[Name] is she/he/it"
         # 2. Remove "and is" artifacts from combine
         # 3. Fix discourse markers with wrong capitalization after them
+        _DISCOURSE_MARKER_WORDS = {
+            'unlike', 'however', 'moreover', 'furthermore', 'additionally',
+            'consequently', 'therefore', 'thus', 'hence', 'meanwhile',
+            'interestingly', 'notably', 'basically', 'essentially', 'honestly',
+            'actually', 'apparently', 'admittedly', 'fortunately',
+            'unfortunately', 'importantly', 'specifically', 'well', 'so',
+            'okay', 'alright', 'look', 'hey', 'now', 'also',
+            'beyond', 'worth', 'what', 'on',
+        }
+        _PROPER_NOUNS = {
+            'i', 'paris', 'london', 'france', 'marie', 'curie', 'new', 'york',
+            'united', 'states', 'river', 'seine', 'einstein', 'eiffel',
+            'olympus', 'phobos', 'deimos', 'mars', 'earth', 'jupiter',
+            'saturn', 'venus', 'uranus', 'neptune', 'mercury', 'sun',
+            'moon', 'brain', 'neural', 'chemistry', 'physics', 'biology',
+            'mathematics', 'calculus', 'algebra', 'quantum', 'relativity',
+            'albert', 'german', 'germany', 'vienna', 'bonn', 'austria',
+            'beethoven', 'symphony', 'olympiad', 'principia', 'nobel',
+            'prix', 'shakespeare', 'homer', 'plato',
+            'aristotle', 'confucius', 'buddha', 'tesla', 'newton',
+            'galileo', 'copernicus', 'kepler', 'hawking', 'feynman',
+            'darwin', 'atlas', 'pacific', 'atlantic', 'indian', 'arctic',
+            'amazon', 'africa', 'asia', 'europe', 'australia', 'antarctica',
+            'canada', 'mexico', 'brazil', 'argentina', 'chile', 'peru',
+            'andes', 'himalaya', 'alps', 'pyrenees', 'ural', 'appalachian',
+        }
         for i, sent in enumerate(realized_sentences):
             # Fix pronoun capitalization after verbs
             sent = re.sub(
@@ -176,32 +208,6 @@ def naturalize(
             # "Well, Plants" -> "Well, plants" (but keep "Well, Albert")
             # Only lowercase after known discourse markers, not all commas,
             # to avoid lowercasing proper nouns like "Albert" after "Well, "
-            _DISCOURSE_MARKER_WORDS = {
-                'unlike', 'however', 'moreover', 'furthermore', 'additionally',
-                'consequently', 'therefore', 'thus', 'hence', 'meanwhile',
-                'interestingly', 'notably', 'basically', 'essentially', 'honestly',
-                'actually', 'apparently', 'admittedly', 'fortunately',
-                'unfortunately', 'importantly', 'specifically', 'well', 'so',
-                'okay', 'alright', 'look', 'hey', 'now', 'also',
-                'beyond', 'worth', 'what', 'on',
-            }
-            _PROPER_NOUNS = {
-                'i', 'paris', 'london', 'france', 'marie', 'curie', 'new', 'york',
-                'united', 'states', 'river', 'seine', 'einstein', 'eiffel',
-                'olympus', 'phobos', 'deimos', 'mars', 'earth', 'jupiter',
-                'saturn', 'venus', 'uranus', 'neptune', 'mercury', 'sun',
-                'moon', 'brain', 'neural', 'chemistry', 'physics', 'biology',
-                'mathematics', 'calculus', 'algebra', 'quantum', 'relativity',
-                'albert', 'german', 'germany', 'vienna', 'bonn', 'austria',
-                'beethoven', 'symphony', 'olympiad', 'principia', 'nobel',
-                'prix', 'curie', 'darwin', 'shakespeare', 'homer', 'plato',
-                'aristotle', 'confucius', 'buddha', 'tesla', 'newton',
-                'galileo', 'copernicus', 'kepler', 'hawking', 'feynman',
-                'darwin', 'atlas', 'pacific', 'atlantic', 'indian', 'arctic',
-                'amazon', 'africa', 'asia', 'europe', 'australia', 'antarctica',
-                'canada', 'mexico', 'brazil', 'argentina', 'chile', 'peru',
-                'andes', 'himalaya', 'alps', 'pyrenees', 'ural', 'appalachian',
-            }
             def _lower_after_marker(m):
                 marker = m.group(1)
                 word = m.group(2)
@@ -286,7 +292,7 @@ def naturalize(
     return result
 
 
-def make_conversational(text: str, config: Optional[NLGConfig] = None) -> str:
+def make_conversational(text: str, config: "NLGConfig | None" = None) -> str:
     """Convert raw information into conversational text quickly."""
     if config is None:
         config = DEFAULT_CONFIG
@@ -309,7 +315,7 @@ def _extract_topic_from_info(info: str, query: str) -> str:
     return query
 
 
-def _insert_transitions(sentences: List[str], config: NLGConfig) -> List[str]:
+def _insert_transitions(sentences: list[str], config: NLGConfig) -> list[str]:
     """Insert light discourse transitions between different-subject sentences."""
     if len(sentences) < 2:
         return sentences

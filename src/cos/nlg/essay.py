@@ -12,13 +12,13 @@ Usage:
 """
 
 import re
-from typing import List, Optional, Tuple
-from .models import Fact, DiscourseState
-from .config import NLGConfig, DEFAULT_CONFIG
-from .parser import parse_facts, extract_entities
-from .realize import realize_fact, classify_query
+
+from .config import DEFAULT_CONFIG, NLGConfig
 from .fluency import enhance_fluency
-from .util import pick, maybe, split_sentences, lower_first, upper_first, require_style
+from .models import Fact
+from .parser import parse_facts
+from .realize import realize_fact
+from .util import lower_first, maybe, pick, require_style, split_sentences, upper_first
 
 
 # ═════════════════════════════════════════════════════════════════════════════
@@ -156,10 +156,8 @@ def _is_plural_topic(topic: str) -> bool:
         'politics', 'ethics', 'aesthetics', 'logics', 'informatics',
         'news', 'mumps', 'measles', 'diabetes', 'rabies', 'tetanus',
     }
-    if (last_word.endswith('s') and not last_word.endswith('ss')
-            and last_word not in _SINGULAR_NOUNS):
-        return True
-    return False
+    return (last_word.endswith('s') and not last_word.endswith('ss')
+            and last_word not in _SINGULAR_NOUNS)
 
 
 def _get_topic_sentence(fact: Fact, config: NLGConfig) -> str:
@@ -395,7 +393,7 @@ def _get_article(noun: str) -> str:
 
 def _lower_article(text: str) -> str:
     """If text starts with an article, lowercase it for mid-sentence flow."""
-    if text.startswith('A ') or text.startswith('An '):
+    if text.startswith(('A ', 'An ')):
         return text[0].lower() + text[1:]
     return text
 
@@ -419,13 +417,13 @@ _PARAGRAPH_TYPE_ORDER = [
 ]
 
 
-def _group_facts_by_type(facts: List[Fact]) -> List[Tuple[str, List[Fact]]]:
+def _group_facts_by_type(facts: list[Fact]) -> list[tuple[str, list[Fact]]]:
     """Group facts by their type into paragraph groups.
 
     Preserves a natural flow: definition first, then specifics, then comparison.
     Within each group, facts are kept in their original order.
     """
-    groups: dict = {}
+    groups: dict[str, list] = {}
     for fact in facts:
         groups.setdefault(fact.fact_type, []).append(fact)
 
@@ -449,7 +447,7 @@ def _group_facts_by_type(facts: List[Fact]) -> List[Tuple[str, List[Fact]]]:
 def generate_essay(
     topic: str,
     information: str,
-    config: Optional[NLGConfig] = None,
+    config: "NLGConfig | None" = None,
 ) -> str:
     """Generate a unique, content-rich essay from retrieved information.
 
@@ -491,7 +489,7 @@ def generate_essay(
     if not grouped:
         return _fallback_essay(topic, config)
 
-    paragraphs: List[str] = []
+    paragraphs: list[str] = []
 
     # ── Introduction paragraph ──
     first_fact = facts[0]
@@ -511,7 +509,7 @@ def generate_essay(
     paragraphs.append(upper_first(intro.strip()))
 
     # Track which facts have been used
-    used_objects: set = {first_fact.obj}
+    used_objects: set[str] = {first_fact.obj}
 
     # ── Body paragraphs ──
     # Split facts into small paragraphs of 3-5 sentences each
@@ -543,7 +541,7 @@ def generate_essay(
             fact_chunks.append(current_chunk)
 
         for i, chunk in enumerate(fact_chunks):
-            para_sentences: List[str] = []
+            para_sentences: list[str] = []
             lead_fact = chunk[0]
             used_objects.add(lead_fact.obj)
 
@@ -600,7 +598,7 @@ def _shorten(text: str, max_len: int = 60) -> str:
     return truncated + "..."
 
 
-def _clean_fragments(facts: List[Fact]) -> List[Fact]:
+def _clean_fragments(facts: list[Fact]) -> list[Fact]:
     """Remove incomplete sentence fragments from Wikipedia parsing.
 
     Filters out sentences that end mid-word, have unmatched parentheses,
@@ -680,7 +678,7 @@ def _clean_fragments(facts: List[Fact]) -> List[Fact]:
     return cleaned if cleaned else facts
 
 
-def _deduplicate_facts(facts: List[Fact]) -> List[Fact]:
+def _deduplicate_facts(facts: list[Fact]) -> list[Fact]:
     """Remove duplicate or near-duplicate facts.
 
     Uses a combination of exact object matching, word overlap,
@@ -714,10 +712,10 @@ def _deduplicate_facts(facts: List[Fact]) -> List[Fact]:
             continue
 
         # Remove articles and common words for fuzzy matching
-        obj_words = set(w for w in re.findall(r'\w{3,}', obj_key)
-                       if w not in {'the', 'and', 'are', 'for', 'with', 'from',
-                                    'this', 'that', 'which', 'into', 'over', 'also',
-                                    'has', 'have', 'been', 'can', 'may', 'will'})
+        obj_words = {w for w in re.findall(r'\w{3,}', obj_key)
+                     if w not in {'the', 'and', 'are', 'for', 'with', 'from',
+                                  'this', 'that', 'which', 'into', 'over', 'also',
+                                  'has', 'have', 'been', 'can', 'may', 'will'}}
 
         # Check for high word overlap (>70% shared words = likely duplicate)
         if obj_words and seen_words:

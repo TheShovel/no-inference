@@ -8,7 +8,7 @@
       "phantom limb explained",
       "why do people experience phantom limb sensations after amputation"
     ],
-    "a": "Information about phantom limb."
+    "a": "Phantom limb pain is the sensation of pain in a limb that has been amputated — up to 80% of amputees experience it. It happens because the brain's body map (in the somatosensory cortex) still contains a representation of the missing limb; nerves that used to carry signals from the limb now fire spontaneously, and the brain interprets these signals as coming from the absent limb. It can be a burning, shooting, or cramping pain and is different from residual limb pain (pain in the stump itself). Treatments include mirror therapy (watching the reflection of the intact limb move tricks the brain into perceiving the missing limb), TENS, graded motor imagery, medications like gabapentin, and in severe cases, nerve blocks or spinal cord stimulation. Pain is often worse in the first months after amputation and may decrease over time, though it can persist for years."
   },
   {
     "q": [
@@ -19,7 +19,7 @@
       "how does the lymphatic system drain fluid",
       "lymphatic system without a pump"
     ],
-    "a": "Information about lymphatic system."
+    "a": "The lymphatic system is a network of vessels, nodes, and organs that returns fluid from tissues to the bloodstream and defends the body against infection. Capillaries leak plasma into tissues; the lymphatics collect this interstitial fluid (now called lymph) and carry it one-way toward the heart, passing through lymph nodes where immune cells (lymphocytes and macrophages) filter out pathogens and cellular debris. Key organs include the spleen (filters blood), thymus (matures T-cells), tonsils and adenoids, and Peyer's patches in the gut. Unlike the cardiovascular system, lymph has no central pump — it moves via muscle contraction, breathing, and one-way valves. If lymphatic drainage fails, fluid accumulates as lymphedema, commonly seen after lymph node removal in cancer surgery."
   },
   {
     "q": [
@@ -29,7 +29,7 @@
       "blind spot explained",
       "optic disc blind spot"
     ],
-    "a": "Information about blind spot."
+    "a": "Everyone has a blind spot in each eye because the optic nerve exits the retina through the optic disc, and that area has no photoreceptors. It sits about 15 degrees off center, slightly toward the nose, and is roughly the size of a thumb at arm's length. You normally don't notice it for three reasons: the two eyes' blind spots don't overlap (each eye covers the other's), the brain fills in the gap using surrounding colors, patterns, and expectations from the other eye, and the blind spot doesn't contain a sharp edge for the brain to detect. You can find yours by drawing a small dot and a small X a few inches apart on paper, closing one eye, and moving the paper until the dot disappears."
   },
   {
     "q": [
@@ -39,7 +39,7 @@
       "car smell volatile organic compounds",
       "new car interior smell"
     ],
-    "a": "Information about new car smell."
+    "a": "New car smell is a cocktail of volatile organic compounds (VOCs) off-gassing from interior materials — plastics, adhesives, synthetic leathers, flame retardants, and carpet backing. Common compounds include benzene, toluene, formaldehyde, styrene, and various phthalates, which are released most heavily in the first weeks after manufacture and when the car heats up in the sun. Most people find the smell pleasant at low levels, but high exposure can cause headaches and irritation, so the compounds are regulated or restricted in many jurisdictions. To reduce it, park in the shade, crack windows slightly, run the AC on fresh-air mode, and use an activated charcoal air purifier. The smell fades naturally over 6 months to a year as the materials off-gas."
   },
   {
     "q": [
@@ -51,7 +51,7 @@
       "heat pump reverse cycle",
       "how does a heat pump cool a house"
     ],
-    "a": "Information about heat pump."
+    "a": "A heat pump is a device that moves heat from a cold place to a warm one using refrigeration cycles, working in reverse of a refrigerator. Even cold air contains thermal energy — a heat pump extracts it via refrigerant that evaporates at very low temperatures, absorbing heat from outside air, ground loops, or water; a compressor raises the refrigerant's pressure and temperature; and the hot refrigerant releases heat into your home through a coil. In cooling mode, the cycle simply reverses. Because it moves heat rather than burning fuel to create it, a heat pump can deliver 3 to 4 units of heat for every unit of electricity (a COP of 3-4), making it dramatically more efficient than electric resistance heaters. Air-source models lose efficiency below about -15°C, which is why cold climates often pair them with backup heating or use ground-source (geothermal) systems, which draw from stable underground temperatures."
   },
   {
     "q": [
@@ -61,7 +61,7 @@
       "placebo explained",
       "placebo effect psychology"
     ],
-    "a": "Information about placebo."
+    "a": "The placebo effect is a genuine physiological and psychological improvement that occurs after a treatment with no active ingredient, because the patient believes it will work. It involves real neurochemistry: expectation triggers the brain to release endorphins and dopamine, and can even reduce cortisol. It is strongest for pain, anxiety, depression, and nausea, and weaker or nonexistent for objective outcomes like infection clearance or tumor shrinkage. The effect also works in the opposite direction — the nocebo effect, where negative expectations produce worse outcomes. Factors that strengthen it include belief in the provider, visible or invasive treatments (injections beat pills), branding, and verbal suggestion. Placebos don't 'cure' diseases, but they measurably change perception and symptoms, which is why randomized controlled trials compare new drugs against placebo rather than against nothing."
   },
   {
     "q": [
@@ -71,6 +71,6 @@
       "gut microbiome brain",
       "gut brain axis mood"
     ],
-    "a": "Information about gut brain."
+    "a": "The gut-brain axis is the two-way communication system between the gastrointestinal tract and the central nervous system, connecting the enteric nervous system (the 'second brain' of ~500 million neurons lining the gut) to the brain via the vagus nerve, the bloodstream, and immune signals. About 90% of the vagus nerve fibers carry information FROM the gut TO the brain, not the reverse. The gut microbiome — the trillion-plus bacteria in your intestines — produces neurotransmitters including serotonin (over 90% of the body's supply is made in the gut), dopamine precursors, and short-chain fatty acids like butyrate that influence mood, appetite, and inflammation. Stress can alter gut motility and permeability, while gut inflammation can worsen depression and anxiety. Research is exploring probiotics, diet, and fecal transplants as levers on this axis, though clinical evidence is still early."
   }
 ]

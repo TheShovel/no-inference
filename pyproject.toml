@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cos"
+version = "0.1.0"
+description = "Deterministic, offline conversational + coding engine with an opencode-style agent CLI"
+requires-python = ">=3.10"
+
+[project.scripts]
+cos = "cos.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pyright]
+# The cos package lives under src/ (src-layout), but the code base has no
+# setup/pyproject packaging metadata and loads via a runtime sys.path hack
+# in scripts/tests. Tell the language server where the package root is so
+# `import cos.*` resolves statically instead of erroring.
+extraPaths = ["src"]
+typeCheckingMode = "basic"
+
+# The engine is deliberately dynamic (JSON-driven knowledge, lazy module
+# caches, `Any`-typed API responses). Keep the checks that catch real bugs
+# (import resolution, undefined names, unused imports) and silence the
+# convention-noise that would otherwise flood the file.
+reportConstantRedefinition = "none"
+reportMissingTypeArgument = "none"
+reportUnknownMemberType = "none"
+reportUnknownVariableType = "none"
+reportUnknownParameterType = "none"
+reportUnknownArgumentType = "none"
+reportUnknownLambdaType = "none"
+reportDeprecated = "none"
+reportImplicitStringConcatenation = "none"
+reportUnnecessaryGenerator = "none"
+reportUnnecessaryComparison = "none"
+reportPrivateUsage = "none"
+reportMissingTypeStubs = "none"
+# Defensive wrappers around optional imports / network calls / JSON parsing
+# are deliberate in this codebase (degrade silently, stay deterministic).
+reportBroadExceptClause = "none"

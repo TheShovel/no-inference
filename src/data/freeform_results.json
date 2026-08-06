@@ -1,0 +1,1215 @@
+{
+  "analysis": {
+    "overall_average": 7.61,
+    "dimension_averages": {
+      "naturalness": 8.37,
+      "informativeness": 5.6,
+      "coherence": 7.97,
+      "correctness": 6.97,
+      "conciseness": 9.13
+    },
+    "total_cases": 30,
+    "total_mistakes": 54,
+    "severity_counts": {
+      "high": 28,
+      "medium": 14,
+      "low": 12
+    },
+    "type_counts": {
+      "missing_info": 25,
+      "punctuation": 11,
+      "factual_error": 9,
+      "repetition": 3,
+      "flow_issue": 2,
+      "template_artifact": 2,
+      "capitalization": 1,
+      "word_choice": 1
+    },
+    "type_examples": {
+      "factual_error": [
+        {
+          "excerpt": "sorting the result alphabetically",
+          "description": "The user specifically requested the list be sorted in reverse order, but the assistant sorted it normally.",
+          "fix": "Change to 'sorting the result alphabetically in reverse order' and use unique.sort(reverse=True).",
+          "severity": "high"
+        },
+        {
+          "excerpt": "The iterative version uses O(1) space.",
+          "description": "While the logic uses O(1) auxiliary space, the user specifically asked for a list, which would require O(n) space.",
+          "fix": "Clarify that returning the sequence as a list requires O(n) space.",
+          "severity": "medium"
+        },
+        {
+          "excerpt": "Split is the second-largest city in Croatia",
+          "description": "The response describes a city in Croatia instead of explaining the fall of the Roman Empire.",
+          "fix": "Provide a comprehensive breakdown of the fall of the Roman Empire.",
+          "severity": "high"
+        }
+      ],
+      "missing_info": [
+        {
+          "excerpt": "eliminating duplicates",
+          "description": "The assistant introduced a deduplication requirement that was not requested by the user, altering the expected behavior of the function.",
+          "fix": "Remove the deduplication logic and the mention of it in the description.",
+          "severity": "medium"
+        },
+        {
+          "excerpt": ".parent { display: grid; place-items: center; }",
+          "description": "The code lacks a height property on the parent. Without a height (e.g., height: 100vh), vertical centering is not apparent as the container defaults to the height of its content.",
+          "fix": "Add 'height: 100vh;' or a specific height to the .parent CSS block.",
+          "severity": "low"
+        },
+        {
+          "excerpt": "Among the most famous is the Great Pyramid of Giza",
+          "description": "The user asked for 'the most mysterious' (singular), but the assistant provided a list of several sites without selecting one or explaining why it couldn't choose just one.",
+          "fix": "Start by identifying one site as the most mysterious or explicitly state that because 'most mysterious' is subjective, several top candidates are provided.",
+          "severity": "medium"
+        }
+      ],
+      "punctuation": [
+        {
+          "excerpt": "remains astonishing  --  the base is level",
+          "description": "The use of double-hyphens with spaces is non-standard punctuation; an em-dash or a colon would be more appropriate.",
+          "fix": "remains astonishing: the base is level",
+          "severity": "low"
+        },
+        {
+          "excerpt": "</div>",
+          "description": "The closing tag for the header container is missing the angle bracket for the opening tag or is improperly closed as </div> but the opening tag was <div>. Actually, looking closer, the opening tag is <div> and the closing tag is </div (missing >).",
+          "fix": "Change </div to </div>",
+          "severity": "medium"
+        },
+        {
+          "excerpt": "</div>",
+          "description": "The closing tag for the services grid is missing the closing angle bracket.",
+          "fix": "Change </div to </div>",
+          "severity": "medium"
+        }
+      ],
+      "capitalization": [
+        {
+          "excerpt": "**Ethical Implications Crispr Gene Editing**",
+          "description": "The word 'Crispr' should be fully capitalized as it is an acronym (Clustered Regularly Interspaced Short Palindromic Repeats).",
+          "fix": "Change 'Crispr' to 'CRISPR'",
+          "severity": "low"
+        }
+      ],
+      "word_choice": [
+        {
+          "excerpt": "modifications that'll affect them",
+          "description": "The use of the contraction 'that'll' is too informal for an academic essay.",
+          "fix": "Change to 'that will affect them'",
+          "severity": "low"
+        }
+      ],
+      "flow_issue": [
+        {
+          "excerpt": "Petrichor, the distinctive earthy scent produced when rain falls on dry soil, tr",
+          "description": "The opening sentence immediately pivots to psychology, ignoring the primary question of 'cause' for the first sentence.",
+          "fix": "Start by directly answering the cause of the smell before moving into the emotional effects.",
+          "severity": "low"
+        },
+        {
+          "excerpt": "worldwide. History",
+          "description": "The word 'History' appears as a standalone header without formatting, creating a jarring transition.",
+          "fix": "Use a proper heading or transition sentence.",
+          "severity": "medium"
+        }
+      ],
+      "repetition": [
+        {
+          "excerpt": "the distinctive earthy scent produced when rain falls on dry soil",
+          "description": "The phrase 'distinctive earthy scent' and the condition 'rain falls on dry soil' are repeated almost identically in the first and second sentences.",
+          "fix": "Combine the first two sentences to avoid redundancy.",
+          "severity": "low"
+        },
+        {
+          "excerpt": "<h3 style=\"color:#8ab4f8;\">Creative Direction</h3><p style=\"color:#bbb;\">Creativ",
+          "description": "The service description is an exact repetition of the service title.",
+          "fix": "Provide a descriptive sentence for the service.",
+          "severity": "low"
+        },
+        {
+          "excerpt": "<h3 style=\"color:#8ab4f8;\">Historical Background</h3><p style=\"color:#bbb;\">Hist",
+          "description": "The content is repetitive and contains no actual information.",
+          "fix": "Provide descriptive text for each section.",
+          "severity": "medium"
+        }
+      ],
+      "template_artifact": [
+        {
+          "excerpt": "Discover the story of A Futuristic City Guide",
+          "description": "The AI used a generic 'About [Topic]' template, treating the prompt title as the subject of an essay.",
+          "fix": "Write actual content for a city guide (e.g., 'Explore the Neon Spires of Neo-Tokyo').",
+          "severity": "high"
+        },
+        {
+          "excerpt": "If this was a coding question, tell me the language and what you're trying to do",
+          "description": "The assistant used a generic refusal template that includes irrelevant instructions for coding, which is unrelated to the user's query.",
+          "fix": "Remove the coding-specific instructions.",
+          "severity": "high"
+        }
+      ]
+    },
+    "module_counts": {
+      "parser.py (fact extraction), cleaner.py": 25,
+      "fluency.py (cleanup), realize.py": 11,
+      "knowledge retrieval, parser.py": 9,
+      "fluency.py (filler dedup), essay.py (_deduplicate_facts)": 3,
+      "discourse.py, combine.py": 2,
+      "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)": 2,
+      "fluency.py (fix_caps), essay.py": 1,
+      "realize.py (templates), fluency.py": 1
+    },
+    "module_examples": {
+      "knowledge retrieval, parser.py": [
+        {
+          "type": "factual_error",
+          "excerpt": "sorting the result alphabetically",
+          "fix": "Change to 'sorting the result alphabetically in reverse order' and use unique.sort(reverse=True)."
+        },
+        {
+          "type": "factual_error",
+          "excerpt": "The iterative version uses O(1) space.",
+          "fix": "Clarify that returning the sequence as a list requires O(n) space."
+        },
+        {
+          "type": "factual_error",
+          "excerpt": "Split is the second-largest city in Croatia",
+          "fix": "Provide a comprehensive breakdown of the fall of the Roman Empire."
+        }
+      ],
+      "parser.py (fact extraction), cleaner.py": [
+        {
+          "type": "missing_info",
+          "excerpt": "eliminating duplicates",
+          "fix": "Remove the deduplication logic and the mention of it in the description."
+        },
+        {
+          "type": "missing_info",
+          "excerpt": ".parent { display: grid; place-items: center; }",
+          "fix": "Add 'height: 100vh;' or a specific height to the .parent CSS block."
+        },
+        {
+          "type": "missing_info",
+          "excerpt": "Among the most famous is the Great Pyramid of Giza",
+          "fix": "Start by identifying one site as the most mysterious or explicitly state that because 'most mysterious' is subjective, several top candidates are provided."
+        }
+      ],
+      "fluency.py (cleanup), realize.py": [
+        {
+          "type": "punctuation",
+          "excerpt": "remains astonishing  --  the base is level",
+          "fix": "remains astonishing: the base is level"
+        },
+        {
+          "type": "punctuation",
+          "excerpt": "</div>",
+          "fix": "Change </div to </div>"
+        },
+        {
+          "type": "punctuation",
+          "excerpt": "</div>",
+          "fix": "Change </div to </div>"
+        }
+      ],
+      "fluency.py (fix_caps), essay.py": [
+        {
+          "type": "capitalization",
+          "excerpt": "**Ethical Implications Crispr Gene Editing**",
+          "fix": "Change 'Crispr' to 'CRISPR'"
+        }
+      ],
+      "realize.py (templates), fluency.py": [
+        {
+          "type": "word_choice",
+          "excerpt": "modifications that'll affect them",
+          "fix": "Change to 'that will affect them'"
+        }
+      ],
+      "discourse.py, combine.py": [
+        {
+          "type": "flow_issue",
+          "excerpt": "Petrichor, the distinctive earthy scent produced when rain falls on dry soil, tr",
+          "fix": "Start by directly answering the cause of the smell before moving into the emotional effects."
+        },
+        {
+          "type": "flow_issue",
+          "excerpt": "worldwide. History",
+          "fix": "Use a proper heading or transition sentence."
+        }
+      ],
+      "fluency.py (filler dedup), essay.py (_deduplicate_facts)": [
+        {
+          "type": "repetition",
+          "excerpt": "the distinctive earthy scent produced when rain falls on dry soil",
+          "fix": "Combine the first two sentences to avoid redundancy."
+        },
+        {
+          "type": "repetition",
+          "excerpt": "<h3 style=\"color:#8ab4f8;\">Creative Direction</h3><p style=\"color:#bbb;\">Creativ",
+          "fix": "Provide a descriptive sentence for the service."
+        },
+        {
+          "type": "repetition",
+          "excerpt": "<h3 style=\"color:#8ab4f8;\">Historical Background</h3><p style=\"color:#bbb;\">Hist",
+          "fix": "Provide descriptive text for each section."
+        }
+      ],
+      "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)": [
+        {
+          "type": "template_artifact",
+          "excerpt": "Discover the story of A Futuristic City Guide",
+          "fix": "Write actual content for a city guide (e.g., 'Explore the Neon Spires of Neo-Tokyo')."
+        },
+        {
+          "type": "template_artifact",
+          "excerpt": "If this was a coding question, tell me the language and what you're trying to do",
+          "fix": "Remove the coding-specific instructions."
+        }
+      ]
+    },
+    "worst_cases": [
+      {
+        "query": "Why is it that some people can remember every detail of their lives while others forget what they ate for breakfast?",
+        "score": 1.8,
+        "mistakes": 2,
+        "high_severity": 1,
+        "feedback": "The assistant completely failed to answer the user's question. The user asked about memory differences between people, but the assistant provided a Wikipedia-style definition and history of the word '"
+      },
+      {
+        "query": "Create a single-file HTML page for a futuristic city guide. Use a glassmorphism style for the cards, a sidebar for navigation, and a JavaScript-powered search bar that filters through a list of landmarks.",
+        "score": 4.2,
+        "mistakes": 7,
+        "high_severity": 4,
+        "feedback": "The assistant completely failed to follow the user's specific technical requirements. It provided a generic template instead of the requested features (glassmorphism, sidebar, search bar) and used pla"
+      },
+      {
+        "query": "How does the \"Ship of Theseus\" thought experiment apply to modern ideas about digital consciousness and mind uploading?",
+        "score": 4.4,
+        "mistakes": 3,
+        "high_severity": 3,
+        "feedback": "The assistant failed completely to answer a standard philosophical question, providing a generic 'I don't know' template instead of synthesizing well-known concepts. The response includes irrelevant s"
+      },
+      {
+        "query": "Give me a comprehensive breakdown of the fall of the Roman Empire, including the role of barbarian invasions, the economic instability of the 3rd century, and the impact of the split between the Eastern and Western empires.",
+        "score": 4.6,
+        "mistakes": 2,
+        "high_severity": 2,
+        "feedback": "The assistant completely failed to answer the user's prompt. It misinterpreted the word 'split' (referring to the division of the empire) as the city of Split in Croatia, resulting in a total hallucin"
+      },
+      {
+        "query": "Write a function in Python that scrapes a website for all its H1 and H2 tags and saves them into a CSV file.",
+        "score": 4.6,
+        "mistakes": 2,
+        "high_severity": 2,
+        "feedback": "The assistant completely failed to address the user's prompt. The user asked for a web scraper to extract H1/H2 tags, but the assistant provided a function to summarize an existing CSV file. This is a"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "query": "Why do some people experience synesthesia?",
+      "response": "Synesthesia is a neurological condition where stimulation of one sensory pathway leads to involuntary experiences in another. When someone with sound-to-color synesthesia hears music, specific frequencies and notes automatically trigger the perception of colors. This happens due to increased neural cross-wiring in the brain, where connections between the auditory cortex and visual processing areas remain active. Instead of being filtered out during brain development, these cross-connections persist, causing sounds to activate color-processing regions. The experience is consistent and involuntary  --  a specific musical note will always produce the same color perception for that individual. Synesthesia affects roughly 2% to 4% of the population and is often genetic, running in families.",
+      "time": 0.34,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 9,
+        "coherence": 10,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 9.8
+      },
+      "mistakes": [],
+      "raw_feedback": "The response is accurate, well-structured, and grammatically correct. It provides a clear scientific explanation without unnecessary fluff."
+    },
+    {
+      "query": "Write a Python function that takes a list of strings, filters out the ones shorter than 5 characters, and returns them sorted alphabetically in reverse order.",
+      "response": "Here's a Python function that filters a list of strings, removing any shorter than 5 characters, eliminating duplicates, and sorting the result alphabetically:\n\n```python\ndef filter_deduplicate_sort(strings, min_length=5):\n    \"\"\"Filter strings by minimum length, remove duplicates, and sort.\n    \n    Args:\n        strings: A list of strings to process\n        min_length: Minimum string length to keep (default: 5)\n    \n    Returns:\n        A sorted list of unique strings, each with length >= min_length\n    \"\"\"\n    # Step 1: Filter by minimum length\n    filtered = [s for s in strings if len(s) >= min_length]\n    \n    # Step 2: Remove duplicates (preserving order)\n    seen = set()\n    unique = []\n    for s in filtered:\n        if s not in seen:\n            seen.add(s)\n            unique.append(s)\n    \n    # Step 3: Sort alphabetically\n    unique.sort()\n    \n    return unique\n\n# Example:\nwords = ['apple', 'hi', 'banana', 'cat', 'apple', 'date', 'elephant', 'hi', 'grape']\nresult = filter_deduplicate_sort(words)\nprint(result)  # Output: ['apple', 'banana', 'date', 'elephant', 'grape']\n# Note: 'hi' (len 2) and 'cat' (len 3) are filtered out, duplicate 'apple' and 'hi' removed\n```",
+      "time": 0.13,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 4,
+        "coherence": 10,
+        "correctness": 3,
+        "conciseness": 9,
+        "average": 7.2
+      },
+      "mistakes": [
+        {
+          "mistake_type": "factual_error",
+          "severity": "high",
+          "excerpt": "sorting the result alphabetically",
+          "description": "The user specifically requested the list be sorted in reverse order, but the assistant sorted it normally.",
+          "suggested_fix": "Change to 'sorting the result alphabetically in reverse order' and use unique.sort(reverse=True).",
+          "likely_module": "knowledge retrieval, parser.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "medium",
+          "excerpt": "eliminating duplicates",
+          "description": "The assistant introduced a deduplication requirement that was not requested by the user, altering the expected behavior of the function.",
+          "suggested_fix": "Remove the deduplication logic and the mention of it in the description.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The assistant failed to follow the core requirements of the prompt: it did not sort in reverse order and it added a deduplication step that was not requested."
+    },
+    {
+      "query": "How do I center a div both vertically and horizontally using CSS Grid?",
+      "response": "CSS Grid provides several powerful ways to center a div both horizontally and vertically. The simplest method uses place-items on the parent container:\n\n```css\n.parent {\n    display: grid;\n    place-items: center;  /* Centers both horizontally and vertically */\n}\n```\n\nThis is equivalent to setting both align-items: center and justify-items: center. For more control:\n\n```css\n.parent {\n    display: grid;\n    align-items: center;  /* Vertical centering */\n    justify-items: center;  /* Horizontal centering */\n}\n```\n\nYou can also use place-self on the child element:\n```css\n.child {\n    place-self: center;  /* Centers within the grid cell */\n}\n```\n\nOr use margin: auto on the child within a grid:\n```css\n.parent {\n    display: grid;\n}\n.child {\n    margin: auto;  /* Centers both axes */\n}\n```\n\nCSS Grid is one of the most reliable methods for centering content, working well for both single elements and complex layouts.",
+      "time": 0.03,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 9,
+        "coherence": 10,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 9.8
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "low",
+          "excerpt": ".parent { display: grid; place-items: center; }",
+          "description": "The code lacks a height property on the parent. Without a height (e.g., height: 100vh), vertical centering is not apparent as the container defaults to the height of its content.",
+          "suggested_fix": "Add 'height: 100vh;' or a specific height to the .parent CSS block.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The response is technically accurate, concise, and well-structured. The only minor omission is the requirement for the parent container to have a defined height for vertical centering to be visible, which is a common point of confusion for beginners."
+    },
+    {
+      "query": "Tell me about the most mysterious unsolved archaeological site in the world.",
+      "response": "Archaeology has uncovered numerous sites that continue to puzzle researchers, challenging our understanding of ancient civilizations. Among the most famous is the Great Pyramid of Giza in Egypt. While we know it was built around 2560 BCE as a tomb for Pharaoh Khufu, the precision of its construction remains astonishing  --  the base is level to within just 2.1 centimeters, and the massive stone blocks, weighing up to 80 tons, were transported and assembled without modern technology. How exactly this was accomplished is still debated, with no definitive proof for any single theory. Another enduring mystery is Stonehenge in England. The bluestones used in its construction were transported 240 kilometers from Wales  --  an incredible feat given that each stone weighs up to 4 tons. Why Neolithic people undertook this immense effort and how they transported the stones remains unknown. The site's purpose is also debated, though it does align with solstices. The Moai statues of Easter Island (Rapa Nui) are equally enigmatic. Nearly 1,000 monolithic human figures were carved between 1250 and 1500 CE by the island's Polynesian inhabitants. How they were moved from the quarry to their platforms across the island without wheeled vehicles or draft animals remains a subject of intense study and experimentation. The Nazca Lines in Peru  --  enormous geoglyphs carved into the desert floor, some spanning hundreds of meters  --  can only be fully appreciated from the air. Why the Nazca people created these figures between 500 BCE and 500 CE remains unclear, with theories ranging from astronomical calendars to religious offerings to water-related rituals. The Indus Valley Civilization cities like Mohenjo-daro present yet another puzzle: an advanced Bronze Age civilization with sophisticated urban planning, indoor plumbing, and standardized weights, whose script remains undeciphered to this day, leaving much of their culture and eventual decline a mystery. G\u00f6bekli Tepe in Turkey upended conventional history when it was discovered  --  a massive temple complex dated to 10,000 BCE, built by hunter-gatherers before the advent of agriculture or writing, forcing a complete rethinking of the timeline of human civilization.",
+      "time": 0.05,
+      "scores": {
+        "naturalness": 8,
+        "informativeness": 9,
+        "coherence": 9,
+        "correctness": 10,
+        "conciseness": 8,
+        "average": 8.8
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "medium",
+          "excerpt": "Among the most famous is the Great Pyramid of Giza",
+          "description": "The user asked for 'the most mysterious' (singular), but the assistant provided a list of several sites without selecting one or explaining why it couldn't choose just one.",
+          "suggested_fix": "Start by identifying one site as the most mysterious or explicitly state that because 'most mysterious' is subjective, several top candidates are provided.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "punctuation",
+          "severity": "low",
+          "excerpt": "remains astonishing  --  the base is level",
+          "description": "The use of double-hyphens with spaces is non-standard punctuation; an em-dash or a colon would be more appropriate.",
+          "suggested_fix": "remains astonishing: the base is level",
+          "likely_module": "fluency.py (cleanup), realize.py"
+        }
+      ],
+      "raw_feedback": "The response is factually accurate and well-structured. However, it fails to answer the specific prompt ('the most mysterious') by providing a list instead of a single selection, and the formatting relies heavily on double-hyphens for parenthetical asides, which can feel slightly repetitive."
+    },
+    {
+      "query": "Write a comprehensive essay on the ethical implications of CRISPR gene editing. Ensure you cover the potential for eliminating hereditary diseases, the risk of \"designer babies,\" and the socio-economic divide it might create.",
+      "response": "**Ethical Implications Crispr Gene Editing**\n\nCRISPR-Cas9 gene editing raises several profound ethical implications. First, germline editing (modifying sperm, eggs, or embryos) produces changes that would be inherited by future generations, raising concerns about consent from individuals who can't consent to genetic modifications that'll affect them. The 2018 case of He Jiankui, who created the first gene-edited babies, was widely condemned as unethical and premature. Second, the potential for eugenics  --  using gene editing to select for desired traits  --  raises concerns about designer babies, genetic discrimination, and exacerbating social inequalities. Third, off-target effects (unintended genetic modifications elsewhere in the genome) pose safety risks that aren't fully understood. Fourth, access to CRISPR technology could widen existing health disparities if only wealthy individuals can afford genetic therapies. Fifth, ecological concerns arise from gene drives (CRISPR-modified organisms that spread genes through wild populations), which could have unintended ecosystem consequences. Many countries have banned germline editing or restricted it to research only. Ongoing ethical debates focus on the distinction between therapeutic uses (treating genetic diseases) and enhancement uses (improving traits), the appropriate regulatory frameworks, and the need for international consensus on acceptable applications.",
+      "time": 0.16,
+      "scores": {
+        "naturalness": 7,
+        "informativeness": 6,
+        "coherence": 9,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 8.4
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "The entire response",
+          "description": "The assistant provided a short summary instead of a comprehensive essay as requested.",
+          "suggested_fix": "Expand the content into a multi-paragraph essay with an introduction, body paragraphs, and a conclusion.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "capitalization",
+          "severity": "low",
+          "excerpt": "**Ethical Implications Crispr Gene Editing**",
+          "description": "The word 'Crispr' should be fully capitalized as it is an acronym (Clustered Regularly Interspaced Short Palindromic Repeats).",
+          "suggested_fix": "Change 'Crispr' to 'CRISPR'",
+          "likely_module": "fluency.py (fix_caps), essay.py"
+        },
+        {
+          "mistake_type": "word_choice",
+          "severity": "low",
+          "excerpt": "modifications that'll affect them",
+          "description": "The use of the contraction 'that'll' is too informal for an academic essay.",
+          "suggested_fix": "Change to 'that will affect them'",
+          "likely_module": "realize.py (templates), fluency.py"
+        }
+      ],
+      "raw_feedback": "The assistant failed to follow the primary formatting constraint: the user asked for a 'comprehensive essay,' but the assistant provided a single dense paragraph. While the content is accurate and covers the required points, it is a summary rather than an essay."
+    },
+    {
+      "query": "What causes the \"fresh rain\" smell after a storm?",
+      "response": "Petrichor, the distinctive earthy scent produced when rain falls on dry soil, triggers nostalgia and positive emotions through a combination of evolutionary, psychological, and neurological mechanisms. When rain falls on dry soil, it releases geosmin and plant oils that create the distinctive earthy scent. Geosmin is produced by soil-dwelling bacteria called actinomycetes, which release this compound when they come into contact with water. Humans have an innate ability to detect geosmin at extremely low concentrations, likely because our ancestors evolved to associate this scent with the end of drought and the arrival of life-giving water. This association is deeply embedded in our evolutionary psychology  --  rain after a dry period signaled safety, fertility, and the availability of resources, triggering positive emotional responses. The nostalgia associated with petrichor is also linked to memory formation: the olfactory bulb, which processes smell, has direct connections to the hippocampus and amygdala, brain regions involved in memory and emotion. This means that smells can trigger vivid memories more powerfully than other senses. Many people have childhood memories associated with rain, such as playing in puddles or being comforted during storms, which become linked to the scent of petrichor. The combination of evolutionary significance, direct neural pathways to memory centers, and personal associations makes the smell of rain one of the most emotionally evocative scents for humans.",
+      "time": 0.07,
+      "scores": {
+        "naturalness": 7,
+        "informativeness": 9,
+        "coherence": 8,
+        "correctness": 10,
+        "conciseness": 6,
+        "average": 8.0
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "medium",
+          "excerpt": "When rain falls on dry soil, it releases geosmin and plant oils",
+          "description": "The response fails to explain the physical mechanism (aerosolization) that actually carries the scent to the human nose.",
+          "suggested_fix": "Explain that raindrops trap tiny air bubbles that burst and release aerosols into the air.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "flow_issue",
+          "severity": "low",
+          "excerpt": "Petrichor, the distinctive earthy scent produced when rain falls on dry soil, tr",
+          "description": "The opening sentence immediately pivots to psychology, ignoring the primary question of 'cause' for the first sentence.",
+          "suggested_fix": "Start by directly answering the cause of the smell before moving into the emotional effects.",
+          "likely_module": "discourse.py, combine.py"
+        },
+        {
+          "mistake_type": "repetition",
+          "severity": "low",
+          "excerpt": "the distinctive earthy scent produced when rain falls on dry soil",
+          "description": "The phrase 'distinctive earthy scent' and the condition 'rain falls on dry soil' are repeated almost identically in the first and second sentences.",
+          "suggested_fix": "Combine the first two sentences to avoid redundancy.",
+          "likely_module": "fluency.py (filler dedup), essay.py (_deduplicate_facts)"
+        }
+      ],
+      "raw_feedback": "The response is factually accurate and detailed, but it suffers from a significant 'scope creep' issue. The user asked what causes the smell, but the assistant spent 80% of the response discussing the psychological and neurological effects of the smell rather than the cause."
+    },
+    {
+      "query": "Create a single-file HTML page for a personal portfolio. Use a dark-mode aesthetic with neon accents, a responsive three-column layout for projects, and a sticky navigation bar.",
+      "response": "Here is a complete, responsive HTML page for A Personal Portfolio:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>A Personal Portfolio</title>\n    <style>\n        * { margin: 0; padding: 0; box-sizing: border-box; }\n        body {\n            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n            background: #0a0a2e;\n            color: #e0e0e0;\n            line-height: 1.6;\n        }\n        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }\n        header {\n            background: linear-gradient(135deg, #1a1a3e, #0a0a2e);\n            padding: 60px 20px;\n            text-align: center;\n        }\n        header h1 { font-size: 2.5em; color: #8ab4f8; margin-bottom: 10px; }\n        nav {\n            background: #1a1a3e;\n            padding: 15px 0;\n            position: sticky;\n            top: 0;\n            z-index: 100;\n        }\n        nav ul { list-style: none; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }\n        nav a { color: #8ab4f8; text-decoration: none; font-weight: 500; }\n        nav a:hover { color: #fff; }\n        .masonry { column-count: 3; column-gap: 15px; padding: 20px 0; }\n        .masonry-item { break-inside: avoid; margin-bottom: 15px; background: #1a1a3e; border-radius: 8px; overflow: hidden; position: relative; }\n        .masonry-item img { width: 100%; display: block; }\n        .overlay { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.7); padding: 10px; }\n        .overlay h3 { color: #8ab4f8; font-size: 0.9em; }\n        .contact-form { max-width: 600px; margin: 0 auto; padding: 20px 0; }\n        .contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; background: #1a1a3e; border: 1px solid #444; border-radius: 5px; color: #fff; }\n        .contact-form button { background: #8ab4f8; color: #fff; padding: 12px 30px; border: none; border-radius: 5px; cursor: pointer; }\n        footer { text-align: center; padding: 20px; background: #1a1a3e; color: #666; }\n        @media (max-width: 768px) { header h1 { font-size: 1.8em; } nav ul { flex-direction: column; align-items: center; gap: 10px; } .masonry { column-count: 2; } }\n        @media (max-width: 480px) { .masonry { column-count: 1; } }\n    </style>\n</head>\n<body>\n    <header>\n        <div class=\"container\">\n            <h1>A Personal Portfolio</h1>\n            <p>Creative professional specializing in unique visual experiences</p>\n        </div>\n    </header>\n    <nav>\n        <ul>\n            <li><a href=\"#about\">About</a></li>\n            <li><a href=\"#services\">Services</a></li>\n            <li><a href=\"#contact\">Contact</a></li>\n        </ul>\n    </nav>\n    <main class=\"container\">\n        <section id=\"about\">\n            <h2 style=\"color:#8ab4f8;margin:40px 0 20px;\">About Me</h2>\n            <p>I am a dedicated creative professional with a passion for delivering exceptional work. My approach combines artistic vision with technical precision to create unique and memorable experiences.</p>\n        </section>\n        <section id=\"services\">\n            <h2 style=\"color:#8ab4f8;margin:40px 0 20px;\">Services</h2>\n            <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;\">\n                <div style=\"background:#1a1a3e;padding:20px;border-radius:8px;\"><h3 style=\"color:#8ab4f8;\">Creative Direction</h3><p style=\"color:#bbb;\">Creative Direction</p></div>\n                <div style=\"background:#1a1a3e;padding:20px;border-radius:8px;\"><h3 style=\"color:#8ab4f8;\">Project Management</h3><p style=\"color:#bbb;\">Project Management</p></div>\n                <div style=\"background:#1a1a3e;padding:20px;border-radius:8px;\"><h3 style=\"color:#8ab4f8;\">Technical Excellence</h3><p style=\"color:#bbb;\">Technical Excellence</p></div>\n            </div>\n        </section>\n        \n        <section class=\"gallery\">\n            <h2 style=\"text-align:center;color:#8ab4f8;padding:40px 0 20px;\">Gallery</h2>\n            <div class=\"masonry\">\n                <div class=\"masonry-item\"><img src=\"https://picsum.photos/seed/1/400/300\" alt=\"Project 1\" loading=\"lazy\"><div class=\"overlay\"><h3>Project 1</h3></div></div>\n                <div class=\"masonry-item\"><img src=\"https://picsum.photos/seed/2/400/500\" alt=\"Project 2\" loading=\"lazy\"><div class=\"overlay\"><h3>Project 2</h3></div></div>\n                <div class=\"masonry-item\"><img src=\"https://picsum.photos/seed/3/400/400\" alt=\"Project 3\" loading=\"lazy\"><div class=\"overlay\"><h3>Project 3</h3></div></div>\n                <div class=\"masonry-item\"><img src=\"https://picsum.photos/seed/4/400/350\" alt=\"Project 4\" loading=\"lazy\"><div class=\"overlay\"><h3>Project 4</h3></div></div>\n                <div class=\"masonry-item\"><img src=\"https://picsum.photos/seed/5/400/600\" alt=\"Project 5\" loading=\"lazy\"><div class=\"overlay\"><h3>Project 5</h3></div></div>\n                <div class=\"masonry-item\"><img src=\"https://picsum.photos/seed/6/400/450\" alt=\"Project 6\" loading=\"lazy\"><div class=\"overlay\"><h3>Project 6</h3></div></div>\n            </div>\n        </section>\n        \n    </main>\n    <footer>\n        <p>&copy; 2025 A Personal Portfolio. All rights reserved.</p>\n    </footer>\n</body>\n</html>\n```",
+      "time": 0.05,
+      "scores": {
+        "naturalness": 7,
+        "informativeness": 8,
+        "coherence": 10,
+        "correctness": 6,
+        "conciseness": 10,
+        "average": 8.2
+      },
+      "mistakes": [
+        {
+          "mistake_type": "punctuation",
+          "severity": "medium",
+          "excerpt": "</div>",
+          "description": "The closing tag for the header container is missing the angle bracket for the opening tag or is improperly closed as </div> but the opening tag was <div>. Actually, looking closer, the opening tag is <div> and the closing tag is </div (missing >).",
+          "suggested_fix": "Change </div to </div>",
+          "likely_module": "fluency.py (cleanup), realize.py"
+        },
+        {
+          "mistake_type": "punctuation",
+          "severity": "medium",
+          "excerpt": "</div>",
+          "description": "The closing tag for the services grid is missing the closing angle bracket.",
+          "suggested_fix": "Change </div to </div>",
+          "likely_module": "fluency.py (cleanup), realize.py"
+        },
+        {
+          "mistake_type": "punctuation",
+          "severity": "medium",
+          "excerpt": "</div>",
+          "description": "The closing tag for the masonry gallery is missing the closing angle bracket.",
+          "suggested_fix": "Change </div to </div>",
+          "likely_module": "fluency.py (cleanup), realize.py"
+        },
+        {
+          "mistake_type": "punctuation",
+          "severity": "medium",
+          "excerpt": "</footer",
+          "description": "The closing footer tag is missing the closing angle bracket.",
+          "suggested_fix": "Change </footer to </footer>",
+          "likely_module": "fluency.py (cleanup), realize.py"
+        },
+        {
+          "mistake_type": "punctuation",
+          "severity": "medium",
+          "excerpt": "</body",
+          "description": "The closing body tag is missing the closing angle bracket.",
+          "suggested_fix": "Change </body to </body>",
+          "likely_module": "fluency.py (cleanup), realize.py"
+        },
+        {
+          "mistake_type": "punctuation",
+          "severity": "medium",
+          "excerpt": "</html",
+          "description": "The closing html tag is missing the closing angle bracket.",
+          "suggested_fix": "Change </html to </html>",
+          "likely_module": "fluency.py (cleanup), realize.py"
+        },
+        {
+          "mistake_type": "repetition",
+          "severity": "low",
+          "excerpt": "<h3 style=\"color:#8ab4f8;\">Creative Direction</h3><p style=\"color:#bbb;\">Creativ",
+          "description": "The service description is an exact repetition of the service title.",
+          "suggested_fix": "Provide a descriptive sentence for the service.",
+          "likely_module": "fluency.py (filler dedup), essay.py (_deduplicate_facts)"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "medium",
+          "excerpt": "color: #8ab4f8;",
+          "description": "The user requested 'neon accents', but the assistant used a muted pastel blue, which does not fit the neon aesthetic.",
+          "suggested_fix": "Use high-saturation colors like #00ffcc or #ff00ff with text-shadow for a neon glow.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The code contains several syntax errors (unclosed tags) and the visual design lacks the 'neon accents' requested by the user, opting instead for a standard muted blue palette. The content is also repetitive."
+    },
+    {
+      "query": "How to implement a basic binary search tree in Java?",
+      "response": "A Binary Search Tree (BST) is a tree data structure where each node has at most two children, and for any given node, all values in its left subtree are less than the node's value, while all values in its right subtree are greater. This property enables efficient O(log n) search, insertion, and deletion operations on average. In Java, a BST is typically implemented with a Node class as an inner class and a BST class that manages the root reference and exposes public methods. Each Node contains a value (often using generics with Comparable or a Comparator for ordering) and references to left and right children. The most straightforward way to implement BST operations is recursively, since the tree structure naturally lends itself to recursive algorithms. For insertion, you compare the value to the current node; if it is less, you recursively insert into the left subtree; if greater, into the right subtree; if equal, you may either ignore the duplicate or handle it based on your design. For search, you follow the same comparison logic until you either find the value or reach a null reference, indicating the value is not in the tree. Deletion is more complex, with three cases: deleting a leaf (simply remove it), deleting a node with one child (replace it with its child), and deleting a node with two children (find the in-order successor or predecessor, copy its value, and recursively delete that node). Traversal methods \u2014 in-order (left, root, right) which produces sorted output, pre-order, and post-order \u2014 are also commonly implemented. Additional useful methods include finding the minimum and maximum values, checking the height of the tree, and validating whether the tree maintains BST properties. For a robust implementation, you should also consider whether the tree allows duplicates, how to handle null values, and the potential for the tree to become unbalanced, which degrades performance to O(n) in the worst case. Self-balancing variants like AVL trees or Red-Black trees address this limitation.",
+      "time": 0.03,
+      "scores": {
+        "naturalness": 7,
+        "informativeness": 6,
+        "coherence": 9,
+        "correctness": 10,
+        "conciseness": 8,
+        "average": 8.0
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "The entire response",
+          "description": "The user asked 'How to implement', which in a programming context requires code examples. The assistant provided a conceptual overview without any Java code.",
+          "suggested_fix": "Provide a complete Java code implementation including the Node class and BST class with methods for insert, search, and delete.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The response is factually accurate and coherent, but it fails to provide the actual implementation (code) requested by the user, providing only a theoretical description instead."
+    },
+    {
+      "query": "Give me a detailed explanation of how black holes work, including the role of the event horizon, the concept of spaghettification, and the current theories on Hawking radiation.",
+      "response": "Black holes are regions of spacetime where gravity is so strong that nothing, not even light, can escape. They form when massive stars collapse at the end of their life cycle, compressing their core into an infinitely dense point called a singularity. The boundary around a black hole beyond which nothing can escape is called the event horizon. The size of the event horizon, called the Schwarzschild radius, is proportional to the black hole's mass. Stellar-mass black holes form from supernova explosions of stars at least 20 times the mass of our Sun. Supermassive black holes, with masses millions to billions of times that of the Sun, exist at the center of most galaxies, including the Milky Way's Sagittarius A*. The extreme gravity of black holes causes strange effects including time dilation (time slows down near the event horizon) and spaghettification (objects are stretched into long thin shapes by tidal forces). Stephen Hawking predicted that black holes emit radiation due to quantum effects near the event horizon, eventually causing them to evaporate over extremely long timescales. The first direct image of a black hole was captured by the Event Horizon Telescope in 2019.",
+      "time": 0.07,
+      "scores": {
+        "naturalness": 9,
+        "informativeness": 7,
+        "coherence": 10,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 9.2
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "medium",
+          "excerpt": "Stephen Hawking predicted that black holes emit radiation",
+          "description": "The user asked for 'current theories on Hawking radiation'. The response mentions it exists but fails to explain the theory (virtual particle pairs/quantum fluctuations) as requested.",
+          "suggested_fix": "Explain that Hawking radiation arises from quantum fluctuations where particle-antiparticle pairs are created near the horizon, and one falls in while the other escapes.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "low",
+          "excerpt": "objects are stretched into long thin shapes by tidal forces",
+          "description": "The explanation of spaghettification is overly brief for a 'detailed explanation', omitting the reason (the difference in gravitational pull between the head and feet).",
+          "suggested_fix": "Explain that spaghettification occurs because the gravitational gradient is so steep that the pull on the closer end of an object is significantly stronger than on the farther end.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The response is factually accurate and coherent, but it lacks the 'detailed explanation' requested by the user, providing a high-level summary instead of a deep dive into the mechanics of the requested concepts."
+    },
+    {
+      "query": "Who is credited with inventing the first programmable computer?",
+      "response": "A computer is a machine that can be programmed to automatically carry out sequences of arithmetic or logical operations (computation). Modern digital electronic computers can perform generic sets of operations known as programs, which enable computers to perform a wide range of tasks. The term computer system may refer to a nominally complete computer that includes the hardware, operating system, software, and peripheral equipment needed and used for full operation, or to a group of computers that are linked and function together, such as a computer network or computer cluster.",
+      "time": 0.76,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 1,
+        "coherence": 5,
+        "correctness": 10,
+        "conciseness": 5,
+        "average": 6.2
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "A computer is a machine that can be programmed...",
+          "description": "The response provides a definition of a computer instead of answering who invented the first programmable computer.",
+          "suggested_fix": "Identify the credited inventor (e.g., Konrad Zuse for the Z3 or Alan Turing/J. Presper Eckert/John Mauchly depending on the definition of 'programmable').",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The assistant completely failed to answer the user's specific question. Instead of identifying the inventor of the first programmable computer, it provided a generic dictionary definition of what a computer is."
+    },
+    {
+      "query": "Why do we dream in narratives instead of random images?",
+      "response": "Dreams often feel like stories because the brain attempts to make sense of random neural activity by creating a coherent narrative. During REM sleep, the brain's prefrontal cortex (responsible for logic and self-awareness) is suppressed, while the limbic system (emotions) and visual areas are highly active. The brain's default mode network, which is involved in daydreaming and autobiographical memory, generates a continuous stream of imagery and emotions. The brain then uses its innate pattern-recognition ability  --  the same mechanism that helps us make sense of the waking world  --  to weave these disparate elements into a narrative structure. This process is called 'dream synthesis' or 'narrative construction.' Dreams aren't literally stories with plots; rather, they're the brain's post-hoc interpretation of random neural firings. The narrative structure emerges because the human brain is wired to find cause-and-effect relationships and create coherent stories from fragmented input. This is why dreams can feel so real and compelling  --  your brain is essentially improvising a story based on random activation of memories, emotions, and sensory impressions.",
+      "time": 0.07,
+      "scores": {
+        "naturalness": 9,
+        "informativeness": 10,
+        "coherence": 10,
+        "correctness": 10,
+        "conciseness": 9,
+        "average": 9.6
+      },
+      "mistakes": [
+        {
+          "mistake_type": "punctuation",
+          "severity": "low",
+          "excerpt": "pattern-recognition ability  --  the same mechanism",
+          "description": "Use of double hyphens instead of an em dash or en dash.",
+          "suggested_fix": "pattern-recognition ability\u2014the same mechanism",
+          "likely_module": "fluency.py (cleanup), realize.py"
+        },
+        {
+          "mistake_type": "punctuation",
+          "severity": "low",
+          "excerpt": "so real and compelling  --  your brain is",
+          "description": "Use of double hyphens instead of an em dash or en dash.",
+          "suggested_fix": "so real and compelling\u2014your brain is",
+          "likely_module": "fluency.py (cleanup), realize.py"
+        }
+      ],
+      "raw_feedback": "The response is scientifically accurate, well-structured, and logically sound. There are no grammatical errors or factual inaccuracies. The only minor issue is the use of double hyphens for dashes, which is a stylistic choice rather than a formal punctuation error."
+    },
+    {
+      "query": "Write a function in Python that calculates the Fibonacci sequence up to n terms and returns the result as a list.",
+      "response": "Here is a Python function that calculates the Fibonacci sequence using memoization:\n\ndef fibonacci_memo(n, memo=None):\n    if memo is None:\n        memo = {}\n    if n <= 1:\n        return n\n    if n in memo:\n        return memo[n]\n    memo[n] = fibonacci_memo(n-1, memo) + fibonacci_memo(n-2, memo)\n    return memo[n]\n\ndef fibonacci_iterative(n):\n    if n <= 1:\n        return n\n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    return b\n\n# Example\nfor i in range(10):\n    print(f'F({i}) = {fibonacci_memo(i)}')\n\nMemoization reduces time complexity from O(2^n) to O(n). The iterative version uses O(1) space. Python handles arbitrarily large Fibonacci numbers with its built-in big integers.",
+      "time": 0.1,
+      "scores": {
+        "naturalness": 8,
+        "informativeness": 5,
+        "coherence": 7,
+        "correctness": 6,
+        "conciseness": 9,
+        "average": 7.0
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "def fibonacci_memo(n, memo=None):",
+          "description": "The function calculates the nth Fibonacci number, not the sequence up to n terms as a list.",
+          "suggested_fix": "Modify the function to return a list of all terms from 0 to n.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "def fibonacci_iterative(n):",
+          "description": "The function calculates the nth Fibonacci number, not the sequence up to n terms as a list.",
+          "suggested_fix": "Modify the function to append each term to a list and return that list.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "factual_error",
+          "severity": "medium",
+          "excerpt": "The iterative version uses O(1) space.",
+          "description": "While the logic uses O(1) auxiliary space, the user specifically asked for a list, which would require O(n) space.",
+          "suggested_fix": "Clarify that returning the sequence as a list requires O(n) space.",
+          "likely_module": "knowledge retrieval, parser.py"
+        }
+      ],
+      "raw_feedback": "The assistant failed to follow the core requirement of the prompt: returning the sequence as a list. Instead, it provided functions that return a single integer (the nth term)."
+    },
+    {
+      "query": "How do I use the `fetch` API to get data from a public JSON endpoint?",
+      "response": "Here's a JavaScript function that fetches data from a public API:\n\n```javascript\nasync function fetchData(apiUrl) {\n    try {\n        const response = await fetch(apiUrl);\n        if (!response.ok) {\n            throw new Error(`HTTP error! status: ${response.status}`);\n        }\n        const data = await response.json();\n        return data;\n    } catch (error) {\n        console.error('Error fetching data:', error);\n        throw error;\n    }\n}\n\n// Example: Fetch data from JSONPlaceholder API\nasync function displayUsers() {\n    try {\n        const users = await fetchData('https://jsonplaceholder.typicode.com/users');\n        users.forEach(user => {\n            console.log(`${user.name} - ${user.email}`);\n        });\n        return users;\n    } catch (error) {\n        console.error('Failed to fetch users:', error);\n    }\n}\n\n// Call the function\ndisplayUsers();\n```\n\nThis function uses `async/await` syntax for clean asynchronous handling. It takes an API URL, fetches the data using the Fetch API, checks if the response is successful, parses it as JSON, and returns the parsed data. Error handling is included with try/catch blocks.",
+      "time": 0.02,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 10,
+        "coherence": 10,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 10.0
+      },
+      "mistakes": [],
+      "raw_feedback": "The response is technically accurate, well-structured, and follows best practices for the Fetch API, including error handling for non-2xx HTTP responses."
+    },
+    {
+      "query": "Write a detailed comparative essay on Stoicism and Epicureanism. Make sure to analyze their differing views on pleasure, their approach to dealing with emotional distress, and how each philosophy defines a \"good life.",
+      "response": "Epicureanism, less commonly Epicurism, is a school of philosophy founded in 307 BCE and based upon the teachings of Epicurus, an ancient Greek philosopher. Epicurus was an atomist and materialist, following in the steps of Democritus. His materialism led him to religious skepticism and a general attack on superstition and divine intervention. Epicureanism was originally a challenge to Platonism, and its main opponent later became Stoicism. It's a form of hedonism insofar as it declares pleasure to be its sole intrinsic goal. However, the concept that the absence of pain and fear constitutes the greatest pleasure, and its advocacy of a simple life, make it very different from hedonism as colloquially understood.",
+      "time": 3.62,
+      "scores": {
+        "naturalness": 8,
+        "informativeness": 2,
+        "coherence": 7,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 7.4
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "The entire response",
+          "description": "The assistant failed to write a comparative essay, omitted all information regarding Stoicism, and did not analyze the differing views on pleasure, emotional distress, or the definition of a 'good life'.",
+          "suggested_fix": "Rewrite the response as a full comparative essay covering both philosophies and all three requested thematic points.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The assistant failed to follow the user's prompt. Instead of a detailed comparative essay on Stoicism and Epicureanism, it provided a brief introductory paragraph only about Epicureanism, completely ignoring Stoicism and the specific analysis points requested."
+    },
+    {
+      "query": "What is the most isolated inhabited place on Earth?",
+      "response": "The most isolated inhabited place on Earth is generally considered to be Tristan da Cunha, a volcanic island in the South Atlantic Ocean. Located roughly 2,400 kilometers (1,500 miles) west of Cape Town, South Africa, and 3,360 kilometers (2,090 miles) east of Rio de Janeiro, Brazil, it's the most remote permanently inhabited island in the world. The island has about 250 year-round residents who live in the settlement of Edinburgh of the Seven Seas. Supplies arrive only every six weeks by ship from Cape Town, and the nearest other inhabited land is over 2,000 kilometers away. Other extremely isolated inhabited places include Easter Island (Rapa Nui) in the Pacific, famous for its moai statues with around 7,700 residents, and Pitcairn Island with only about 50 residents. While Tristan da Cunha holds the record for the greatest distance from any other human settlement, Greenland and the remote islands of the Faroe archipelago, Svalbard, and St. Helena are also among the world's most isolated inhabited territories.",
+      "time": 0.07,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 10,
+        "coherence": 10,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 10.0
+      },
+      "mistakes": [],
+      "raw_feedback": "The response is accurate, well-structured, and provides comprehensive details without any linguistic or factual errors."
+    },
+    {
+      "query": "Create a single-file HTML and CSS page for a fictional bakery called \"The Golden Crust.\" Use a rustic, warm color palette, a hero section with a call-to-action button, and a grid-based menu section featuring images and prices.",
+      "response": "Here is a responsive HTML page for __TOPIC__:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>__TOPIC__</title>\n    <style>\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n        body {\n            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n            background: #0a0a2e;\n            color: #e0e0e0;\n            line-height: 1.6;\n            min-height: 100vh;\n        }\n        .container {\n            max-width: 1200px;\n            margin: 0 auto;\n            padding: 20px;\n        }\n        header {\n            background: linear-gradient(135deg, #1a1a4e, #0a0a2e);\n            padding: 40px 0;\n            text-align: center;\n            border-bottom: 2px solid #333;\n        }\n        header h1 { font-size: 2.5em; color: #fff; margin-bottom: 10px; }\n        nav {\n            background: #1a1a4e;\n            padding: 15px 0;\n        }\n        nav ul {\n            list-style: none;\n            display: flex;\n            justify-content: center;\n            gap: 30px;\n            flex-wrap: wrap;\n        }\n        nav a { color: #8ab4f8; text-decoration: none; font-weight: 500; }\n        nav a:hover { color: #fff; }\n        .grid {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n            gap: 20px;\n            padding: 40px 0;\n        }\n        .card {\n            background: #1a1a3e;\n            border-radius: 10px;\n            padding: 25px;\n            border: 1px solid #333;\n            transition: transform 0.3s;\n        }\n        .card:hover { transform: translateY(-5px); }\n        .card h3 { color: #8ab4f8; margin-bottom: 10px; }\n        footer {\n            text-align: center;\n            padding: 20px;\n            background: #1a1a4e;\n            color: #666;\n        }\n        @media (max-width: 768px) {\n            header h1 { font-size: 1.8em; }\n            nav ul { flex-direction: column; align-items: center; gap: 10px; }\n            .grid { grid-template-columns: 1fr; }\n        }\n    </style>\n</head>\n<body>\n    <header>\n        <div class=\"container\">\n            <h1>__TOPIC__</h1>\n            <p>Welcome to the official page for __TOPIC__</p>\n        </div>\n    </header>\n    <nav>\n        <ul>\n            <li><a href=\"#\">Home</a></li>\n            <li><a href=\"#\">About</a></li>\n            <li><a href=\"#\">Gallery</a></li>\n            <li><a href=\"#\">Contact</a></li>\n        </ul>\n    </nav>\n    <main class=\"container\">\n        <section class=\"grid\">\n            <div class=\"card\">\n                <h3>About __TOPIC__</h3>\n                <p>Information about the background and significance of __TOPIC__.</p>\n            </div>\n            <div class=\"card\">\n                <h3>Features</h3>\n                <p>Key characteristics and highlights of __TOPIC__.</p>\n            </div>\n            <div class=\"card\">\n                <h3>More</h3>\n                <p>Additional resources and references related to __TOPIC__.</p>\n            </div>\n        </section>\n    </main>\n    <footer>\n        <p>&copy; 2025 __TOPIC__</p>\n    </footer>\n</body>\n</html>\n```",
+      "time": 0.1,
+      "scores": {
+        "naturalness": 5,
+        "informativeness": 5,
+        "coherence": 5,
+        "correctness": 5,
+        "conciseness": 5,
+        "average": 5.0
+      },
+      "mistakes": [],
+      "raw_feedback": "[No response from judge]"
+    },
+    {
+      "query": "How to implement a debounce function in JavaScript to limit how often a search input triggers an API call?",
+      "response": "A debounce function limits how often a function can be called. It ensures the function is only called after a specified delay since the last invocation. This is useful for search inputs, window resizing, and button clicks:\n\n```javascript\nfunction debounce(func, delay) {\n    let timeoutId;\n    \n    return function(...args) {\n        // Clear any pending timeout\n        clearTimeout(timeoutId);\n        \n        // Set new timeout\n        timeoutId = setTimeout(() => {\n            func.apply(this, args);\n        }, delay);\n    };\n}\n\n// Usage example: debounce a search input\nconst searchInput = document.getElementById('search');\nconst debouncedSearch = debounce(function(event) {\n    console.log('Searching for:', event.target.value);\n    // API call here\n}, 300);\n\nsearchInput.addEventListener('input', debouncedSearch);\n\n// Immediate version (leading edge): fires immediately then debounces\nfunction debounceLeading(func, delay) {\n    let timeoutId;\n    \n    return function(...args) {\n        const callNow = !timeoutId;\n        \n        clearTimeout(timeoutId);\n        timeoutId = setTimeout(() => {\n            timeoutId = null;\n        }, delay);\n        \n        if (callNow) {\n            func.apply(this, args);\n        }\n    };\n}\n\n// Throttle vs Debounce:\n// - Debounce: delays execution until after a pause\n// - Throttle: ensures execution at most once per interval\n```\n\nKey points: each call resets the timer. The function only executes after the specified delay since the LAST call. Common delay values: 300ms for search inputs, 150ms for resize handlers.",
+      "time": 0.07,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 10,
+        "coherence": 10,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 10.0
+      },
+      "mistakes": [],
+      "raw_feedback": "The response is technically accurate, well-structured, and directly answers the user's request with clear code examples and a helpful distinction between debounce and throttle."
+    },
+    {
+      "query": "Give me a comprehensive breakdown of the fall of the Roman Empire, including the role of barbarian invasions, the economic instability of the 3rd century, and the impact of the split between the Eastern and Western empires.",
+      "response": "Split is the second-largest city in Croatia, after the capital Zagreb, situated on the eastern shore of the Adriatic Sea. As the administrative seat of Split-Dalmatia County and the largest city on the Croatian coast, it serves as a key economic, cultural, and transportation hub for the region. Developed around the historic core of Diocletian's Palace and extending across a central peninsula toward its surrounding suburbs and hinterland, Split combines a continuous urban tradition spanning more than seventeen centuries with a contemporary role as one of Croatia's leading tourist destinations. The city itself has a population of over 160,000, while the metropolitan area encompasses approximately 310,000 inhabitants.",
+      "time": 45.24,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 1,
+        "coherence": 1,
+        "correctness": 1,
+        "conciseness": 10,
+        "average": 4.6
+      },
+      "mistakes": [
+        {
+          "mistake_type": "factual_error",
+          "severity": "high",
+          "excerpt": "Split is the second-largest city in Croatia",
+          "description": "The response describes a city in Croatia instead of explaining the fall of the Roman Empire.",
+          "suggested_fix": "Provide a comprehensive breakdown of the fall of the Roman Empire.",
+          "likely_module": "knowledge retrieval, parser.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "The entire response",
+          "description": "Missing all requested information regarding barbarian invasions, economic instability, and the empire's division.",
+          "suggested_fix": "Address the specific historical points requested by the user.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The assistant completely failed to answer the user's prompt. It misinterpreted the word 'split' (referring to the division of the empire) as the city of Split in Croatia, resulting in a total hallucination of intent."
+    },
+    {
+      "query": "Why do some languages have gendered nouns while others don't?",
+      "response": "Grammatical gender is a system where nouns are classified into categories (typically masculine, feminine, and sometimes neuter) that affect how other words in the sentence are formed. Languages like French, Spanish, German, Russian, and Arabic have grammatical gender systems, while English, Chinese, Japanese, and Turkish don't. The origins of grammatical gender are largely historical and arbitrary, dating back to Proto-Indo-European language classification systems that categorized nouns by endings. Over thousands of years, these categories became grammaticalized into gender systems. Contrary to popular belief, grammatical gender doesn't necessarily correlate with biological sex or cultural gender concepts. For example, in German, the word for girl (M\u00e4dchen) is neuter, while in Spanish, the word for dress (vestido) is masculine. Grammatical gender serves a practical purpose: it helps with clarity by linking adjectives, articles, and pronouns to their nouns, which can reduce ambiguity in complex sentences. Languages without gender use other methods like word order, context, and specific vocabulary to achieve the same clarity.",
+      "time": 0.07,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 9,
+        "coherence": 10,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 9.8
+      },
+      "mistakes": [],
+      "raw_feedback": "The response is accurate, well-structured, and provides a clear explanation of grammatical gender with relevant examples."
+    },
+    {
+      "query": "What actually happens to a star when it becomes a white dwarf?",
+      "response": "A star's death depends on its mass. Stars like the Sun, after exhausting their hydrogen fuel, expand into red giants and eventually shed their outer layers as a planetary nebula, leaving behind a dense white dwarf that slowly cools over billions of years. Stars more than about 8 times the Sun's mass end their lives in a cataclysmic supernova explosion, which outshines entire galaxies briefly and synthesizes heavy elements that seed the universe. The collapsed core becomes either a neutron star, a city-sized sphere of neutrons with immense density (a teaspoon weighs billions of tons), or if the core exceeds about 3 solar masses, a black hole from which nothing can escape.",
+      "time": 0.08,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 9,
+        "coherence": 10,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 9.8
+      },
+      "mistakes": [],
+      "raw_feedback": "The response is accurate, well-structured, and directly answers the user's question while providing necessary context about stellar evolution."
+    },
+    {
+      "query": "Why do some animals migrate thousands of miles without getting lost?",
+      "response": "Animals migrate using a remarkable combination of natural navigation methods. Birds use the sun's position during the day and the stars at night as celestial cues, along with an internal magnetic compass that detects the Earth's magnetic field through specialized proteins called cryptochromes in their eyes. Sea turtles imprint on the magnetic field of their birthplace and return to it years later. Salmon use their sense of smell to detect the unique chemical signature of their home stream. Monarch butterflies use a combination of a sun compass and circadian clock to navigate thousands of miles to specific overwintering sites they've never visited before. Many species also use landmarks, polarized light patterns, and even infrasound (low-frequency sound waves from ocean waves and wind patterns) to orient themselves. The ability to navigate across vast distances without getting lost is one of nature's most impressive feats, involving a complex interplay of genetic programming and learned environmental cues.",
+      "time": 0.08,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 10,
+        "coherence": 10,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 10.0
+      },
+      "mistakes": [],
+      "raw_feedback": "The response is accurate, well-structured, and provides a comprehensive explanation of various biological navigation mechanisms without any detectable errors."
+    },
+    {
+      "query": "How do I create a custom hook in React to handle local storage synchronization?",
+      "response": "Custom hooks in React are JavaScript functions that start with 'use' and allow you to encapsulate reusable stateful logic. For data fetching, a custom hook typically manages loading, error, and data states, and triggers side effects. The most common pattern uses `useState` to hold the fetched data and error status, and `useEffect` to perform the actual fetch when the component mounts or when dependencies change. You should handle cleanup to prevent state updates on unmounted components and support aborting stale requests. Here is a robust `useFetch` custom hook example:\n\n```javascript\nimport { useState, useEffect, useCallback } from 'react';\n\nfunction useFetch(url, options = {}) {\n  const [data, setData] = useState(null);\n  const [loading, setLoading] = useState(true);\n  const [error, setError] = useState(null);\n\n  const fetchData = useCallback(async (abortController) => {\n    setLoading(true);\n    setError(null);\n    try {\n      const response = await fetch(url, {\n        ...options,\n        signal: abortController.signal\n      });\n      if (!response.ok) {\n        throw new Error(`HTTP error! status: ${response.status}`);\n      }\n      const result = await response.json();\n      setData(result);\n    } catch (err) {\n      if (err.name !== 'AbortError') {\n        setError(err.message);\n      }\n    } finally {\n      setLoading(false);\n    }\n  }, [url]);\n\n  useEffect(() => {\n    const abortController = new AbortController();\n    fetchData(abortController);\n    return () => abortController.abort();\n  }, [fetchData]);\n\n  return { data, loading, error };\n}\n\n// Usage in a component:\nfunction UserProfile({ userId }) {\n  const { data, loading, error } = useFetch(\n    `https://api.example.com/users/${userId}`\n  );\n\n  if (loading) return <p>Loading...</p>;\n  if (error) return <p>Error: {error}</p>;\n  return (\n    <div>\n      <h1>{data.name}</h1>\n      <p>{data.email}</p>\n    </div>\n  );\n}\n```\n\nKey design considerations: always handle the cleanup function in `useEffect` to abort ongoing fetch requests when the component unmounts or the URL changes. Use `useCallback` to stabilize the fetch function reference when dependencies don't change. You can extend this pattern by adding caching (checking if data already exists before fetching), retry logic, or pagination. Custom hooks make your components cleaner, promote reusability across your application, and separate data concerns from presentation logic. Remember that hooks must follow the Rules of Hooks: only call them at the top level of a React function component or another custom hook, never inside conditions or loops.",
+      "time": 0.04,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 1,
+        "coherence": 10,
+        "correctness": 1,
+        "conciseness": 10,
+        "average": 6.4
+      },
+      "mistakes": [
+        {
+          "mistake_type": "factual_error",
+          "severity": "high",
+          "excerpt": "Here is a robust `useFetch` custom hook example:",
+          "description": "The assistant provided a data fetching hook instead of a local storage synchronization hook as requested.",
+          "suggested_fix": "Provide a hook that uses localStorage.getItem, localStorage.setItem, and potentially the 'storage' event listener for synchronization.",
+          "likely_module": "knowledge retrieval, parser.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "The entire response",
+          "description": "The response contains zero information regarding local storage or synchronization.",
+          "suggested_fix": "Rewrite the response to address local storage synchronization.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The assistant completely failed to answer the user's request. The user asked for a hook to handle local storage synchronization, but the assistant provided a detailed guide and code for a data fetching hook (useFetch). This is a critical hallucination/misalignment error."
+    },
+    {
+      "query": "Write a function in Python that scrapes a website for all its H1 and H2 tags and saves them into a CSV file.",
+      "response": "Here's a Python function that reads a CSV file, processes the data, and generates a summary report:\n\n```python\nimport csv\nfrom collections import Counter, defaultdict\n\ndef generate_csv_summary(file_path):\n    \"\"\"Read a CSV file and generate a summary report.\"\"\"\n    try:\n        with open(file_path, 'r', newline='', encoding='utf-8') as f:\n            reader = csv.DictReader(f)\n            rows = list(reader)\n    except FileNotFoundError:\n        return f'Error: File \"{file_path}\" not found.'\n    except Exception as e:\n        return f'Error reading file: {e}'\n    \n    if not rows:\n        return 'The CSV file is empty.'\n    \n    summary_lines = []\n    summary_lines.append(f'=== CSV Summary Report ===')\n    summary_lines.append(f'File: {file_path}')\n    summary_lines.append(f'Total rows: {len(rows)}')\n    summary_lines.append(f'Columns: {len(rows[0].keys())}')\n    summary_lines.append(f'Column names: {\", \".join(rows[0].keys())}')\n    summary_lines.append('')\n    \n    # Analyze each column\n    for col in rows[0].keys():\n        values = [row[col] for row in rows if row[col]]\n        if not values:\n            continue\n            \n        summary_lines.append(f'--- {col} ---')\n        summary_lines.append(f'  Non-null values: {len(values)}')\n        \n        # Try numeric analysis\n        try:\n            nums = [float(v) for v in values]\n            summary_lines.append(f'  Type: Numeric')\n            summary_lines.append(f'  Min: {min(nums):.2f}')\n            summary_lines.append(f'  Max: {max(nums):.2f}')\n            summary_lines.append(f'  Average: {sum(nums)/len(nums):.2f}')\n        except ValueError:\n            # Text analysis\n            counter = Counter(values)\n            summary_lines.append(f'  Type: Text')\n            summary_lines.append(f'  Unique values: {len(counter)}')\n            summary_lines.append(f'  Most common: {counter.most_common(3)}')\n        summary_lines.append('')\n    \n    return '\\n'.join(summary_lines)\n\n# Example usage\n# report = generate_csv_summary('sales_data.csv')\n# print(report)\n```\n\nThe function uses csv.DictReader for easy column access, handles missing files gracefully, and provides both numeric and text analysis per column. Install pandas for more advanced analysis: `pip install pandas`.",
+      "time": 0.08,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 1,
+        "coherence": 1,
+        "correctness": 1,
+        "conciseness": 10,
+        "average": 4.6
+      },
+      "mistakes": [
+        {
+          "mistake_type": "factual_error",
+          "severity": "high",
+          "excerpt": "Here's a Python function that reads a CSV file, processes the data, and generate",
+          "description": "The assistant provided a CSV summary tool instead of a web scraper for H1/H2 tags as requested.",
+          "suggested_fix": "Rewrite the entire response to use libraries like requests and BeautifulSoup to scrape H1 and H2 tags and save them to a CSV.",
+          "likely_module": "knowledge retrieval, parser.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "The entire code block",
+          "description": "The response contains no code for web scraping, HTML parsing, or saving scraped data to a file.",
+          "suggested_fix": "Provide a function that uses requests.get() and BeautifulSoup's find_all(['h1', 'h2']) method.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The assistant completely failed to address the user's prompt. The user asked for a web scraper to extract H1/H2 tags, but the assistant provided a function to summarize an existing CSV file. This is a total hallucination of the user's intent."
+    },
+    {
+      "query": "Write a detailed analysis of the \"Fermi Paradox.\" Please explain the Great Filter theory, the Zoo hypothesis, and why the lack of alien signals is so unsettling to astronomers.",
+      "response": "The Fermi paradox is the apparent inconsistency between the lack of conclusive evidence of extraterrestrial civilizations and the apparently high likelihood of their existence.",
+      "time": 1.61,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 1,
+        "coherence": 10,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 8.2
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "The Fermi paradox is the apparent inconsistency...",
+          "description": "The response is a single-sentence definition and fails to provide the 'detailed analysis' requested, specifically omitting the Great Filter theory, the Zoo hypothesis, and the discussion on why the silence is unsettling.",
+          "suggested_fix": "Expand the response to include detailed sections on the Great Filter, the Zoo hypothesis, and the implications of the 'Great Silence'.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The assistant provided a correct definition but completely failed to address the specific requirements of the prompt, ignoring the Great Filter, the Zoo hypothesis, and the psychological impact on astronomers."
+    },
+    {
+      "query": "What is the actual history behind the Voynich manuscript?",
+      "response": "The Voynich Manuscript is widely considered the most mysterious unsolved manuscript in the world. Discovered by antique book dealer Wilfrid Voynich in 1912, the manuscript is a 240-page codex written in an entirely unknown script and language that has defied all attempts at decryption for over a century. It's carbon-dated to the early 15th century (1404-1438 CE). The manuscript is illustrated with intricate drawings of unknown plants that don't match any known species, astronomical diagrams with symbols no one can identify, biological illustrations of naked women in strange green liquid, and what appear to be pharmaceutical recipes. Numerous cryptographers, linguists, and AI systems have attempted to decode it. Some theories suggest it's a cipher for a known language, a constructed language, a hoax, or glossolalia (speaking in tongues). In 2019, a researcher claimed it was written in a proto-Romance language, but this remains controversial and unverified. The manuscript is currently held at the Beinecke Rare Book & Manuscript Library at Yale University. Other mysterious manuscripts include the Codex Seraphinianus (a modern illustrated encyclopedia of an imaginary world), the Rohonc Codex, and the Liber Linteus.",
+      "time": 0.08,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 9,
+        "coherence": 10,
+        "correctness": 10,
+        "conciseness": 10,
+        "average": 9.8
+      },
+      "mistakes": [],
+      "raw_feedback": "The response is accurate, well-structured, and provides a comprehensive overview of the Voynich manuscript. The addition of related manuscripts at the end provides helpful context without detracting from the main answer."
+    },
+    {
+      "query": "Create a single-file HTML page for a futuristic city guide. Use a glassmorphism style for the cards, a sidebar for navigation, and a JavaScript-powered search bar that filters through a list of landmarks.",
+      "response": "Here is a complete, responsive HTML page for A Futuristic City Guide:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>A Futuristic City Guide</title>\n    <style>\n        * { margin: 0; padding: 0; box-sizing: border-box; }\n        body {\n            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n            background: #0a0a2e;\n            color: #e0e0e0;\n            line-height: 1.6;\n        }\n        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }\n        header {\n            background: linear-gradient(135deg, #1a1a3e, #0a0a2e);\n            padding: 60px 20px;\n            text-align: center;\n        }\n        header h1 { font-size: 2.5em; color: #8ab4f8; margin-bottom: 10px; }\n        nav {\n            background: #1a1a3e;\n            padding: 15px 0;\n            position: sticky;\n            top: 0;\n            z-index: 100;\n        }\n        nav ul { list-style: none; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }\n        nav a { color: #8ab4f8; text-decoration: none; font-weight: 500; }\n        nav a:hover { color: #fff; }\n        .masonry { column-count: 3; column-gap: 15px; padding: 20px 0; }\n        .masonry-item { break-inside: avoid; margin-bottom: 15px; background: #1a1a3e; border-radius: 8px; overflow: hidden; position: relative; }\n        .masonry-item img { width: 100%; display: block; }\n        .overlay { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.7); padding: 10px; }\n        .overlay h3 { color: #8ab4f8; font-size: 0.9em; }\n        .contact-form { max-width: 600px; margin: 0 auto; padding: 20px 0; }\n        .contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; background: #1a1a3e; border: 1px solid #444; border-radius: 5px; color: #fff; }\n        .contact-form button { background: #8ab4f8; color: #fff; padding: 12px 30px; border: none; border-radius: 5px; cursor: pointer; }\n        footer { text-align: center; padding: 20px; background: #1a1a3e; color: #666; }\n        @media (max-width: 768px) { header h1 { font-size: 1.8em; } nav ul { flex-direction: column; align-items: center; gap: 10px; } .masonry { column-count: 2; } }\n        @media (max-width: 480px) { .masonry { column-count: 1; } }\n    </style>\n</head>\n<body>\n    <header>\n        <div class=\"container\">\n            <h1>A Futuristic City Guide</h1>\n            <p>Discover the story of A Futuristic City Guide</p>\n        </div>\n    </header>\n    <nav>\n        <ul>\n            <li><a href=\"#about\">About</a></li>\n            <li><a href=\"#key-aspects\">Key Aspects</a></li>\n            <li><a href=\"#contact\">Contact</a></li>\n        </ul>\n    </nav>\n    <main class=\"container\">\n        <section id=\"about\">\n            <h2 style=\"color:#8ab4f8;margin:40px 0 20px;\">About A Futuristic City Guide</h2>\n            <p>A Futuristic City Guide is a fascinating subject with deep historical roots and cultural significance. This page provides an overview of its key aspects, developments, and lasting impact.</p>\n        </section>\n        <section id=\"key-aspects\">\n            <h2 style=\"color:#8ab4f8;margin:40px 0 20px;\">Key Aspects</h2>\n            <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;\">\n                <div style=\"background:#1a1a3e;padding:20px;border-radius:8px;\"><h3 style=\"color:#8ab4f8;\">Historical Background</h3><p style=\"color:#bbb;\">Historical Background</p></div>\n                <div style=\"background:#1a1a3e;padding:20px;border-radius:8px;\"><h3 style=\"color:#8ab4f8;\">Cultural Impact</h3><p style=\"color:#bbb;\">Cultural Impact</p></div>\n                <div style=\"background:#1a1a3e;padding:20px;border-radius:8px;\"><h3 style=\"color:#8ab4f8;\">Modern Significance</h3><p style=\"color:#bbb;\">Modern Significance</p></div>\n            </div>\n        </section>\n        \n        \n    </main>\n    <footer>\n        <p>Learn more about A Futuristic City Guide</p>\n    </footer>\n</body>\n</html>\n```",
+      "time": 0.06,
+      "scores": {
+        "naturalness": 3,
+        "informativeness": 2,
+        "coherence": 4,
+        "correctness": 2,
+        "conciseness": 10,
+        "average": 4.2
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "N/A",
+          "description": "Missing glassmorphism style for cards as requested.",
+          "suggested_fix": "Add backdrop-filter: blur() and semi-transparent backgrounds to cards.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "N/A",
+          "description": "Missing sidebar for navigation; provided a top nav bar instead.",
+          "suggested_fix": "Implement a fixed-position side navigation menu.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "N/A",
+          "description": "Missing JavaScript-powered search bar and landmark list.",
+          "suggested_fix": "Add an input field and JS logic to filter a list of city landmarks.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "template_artifact",
+          "severity": "high",
+          "excerpt": "Discover the story of A Futuristic City Guide",
+          "description": "The AI used a generic 'About [Topic]' template, treating the prompt title as the subject of an essay.",
+          "suggested_fix": "Write actual content for a city guide (e.g., 'Explore the Neon Spires of Neo-Tokyo').",
+          "likely_module": "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)"
+        },
+        {
+          "mistake_type": "repetition",
+          "severity": "medium",
+          "excerpt": "<h3 style=\"color:#8ab4f8;\">Historical Background</h3><p style=\"color:#bbb;\">Hist",
+          "description": "The content is repetitive and contains no actual information.",
+          "suggested_fix": "Provide descriptive text for each section.",
+          "likely_module": "fluency.py (filler dedup), essay.py (_deduplicate_facts)"
+        },
+        {
+          "mistake_type": "punctuation",
+          "severity": "low",
+          "excerpt": "</div",
+          "description": "Unclosed HTML tag in the header section.",
+          "suggested_fix": "Change to </div>",
+          "likely_module": "fluency.py (cleanup), realize.py"
+        },
+        {
+          "mistake_type": "punctuation",
+          "severity": "low",
+          "excerpt": "</body\n</html",
+          "description": "Unclosed HTML tags at the end of the document.",
+          "suggested_fix": "Change to </body>\n</html>",
+          "likely_module": "fluency.py (cleanup), realize.py"
+        }
+      ],
+      "raw_feedback": "The assistant completely failed to follow the user's specific technical requirements. It provided a generic template instead of the requested features (glassmorphism, sidebar, search bar) and used placeholder text that treats the prompt as a topic rather than a request for a tool."
+    },
+    {
+      "query": "How to implement a custom undo/redo system using the Command pattern in C#?",
+      "response": "Here's how to implement a basic undo/redo system using the Command design pattern in Python:\n\n```python\nfrom abc import ABC, abstractmethod\n\nclass Command(ABC):\n    \"\"\"Abstract base command.\"\"\"\n    @abstractmethod\n    def execute(self):\n        pass\n    \n    @abstractmethod\n    def undo(self):\n        pass\n\nclass TextEditor:\n    def __init__(self):\n        self.text = \"\"\n    \n    def insert(self, position, content):\n        self.text = self.text[:position] + content + self.text[position:]\n    \n    def delete(self, position, length):\n        self.text = self.text[:position] + self.text[position + length:]\n\nclass InsertCommand(Command):\n    def __init__(self, editor, position, content):\n        self.editor = editor\n        self.position = position\n        self.content = content\n    \n    def execute(self):\n        self.editor.insert(self.position, self.content)\n    \n    def undo(self):\n        self.editor.delete(self.position, len(self.content))\n\nclass DeleteCommand(Command):\n    def __init__(self, editor, position, length, deleted_text):\n        self.editor = editor\n        self.position = position\n        self.length = length\n        self.deleted_text = deleted_text\n    \n    def execute(self):\n        self.editor.delete(self.position, self.length)\n    \n    def undo(self):\n        self.editor.insert(self.position, self.deleted_text)\n\nclass UndoRedoManager:\n    def __init__(self):\n        self.undo_stack = []\n        self.redo_stack = []\n    \n    def execute(self, command):\n        command.execute()\n        self.undo_stack.append(command)\n        self.redo_stack.clear()  # Clear redo on new action\n    \n    def undo(self):\n        if not self.undo_stack:\n            return\n        command = self.undo_stack.pop()\n        command.undo()\n        self.redo_stack.append(command)\n    \n    def redo(self):\n        if not self.redo_stack:\n            return\n        command = self.redo_stack.pop()\n        command.execute()\n        self.undo_stack.append(command)\n\n# Example usage:\neditor = TextEditor()\nmanager = UndoRedoManager()\n\ncmd1 = InsertCommand(editor, 0, \"Hello\")\nmanager.execute(cmd1)  # text = \"Hello\"\n\ncmd2 = InsertCommand(editor, 5, \" World\")\nmanager.execute(cmd2)  # text = \"Hello World\"\n\nmanager.undo()  # text = \"Hello\"\nmanager.undo()  # text = \"\"\nmanager.redo()  # text = \"Hello\"\n```\n\nThe Command pattern encapsulates each action as an object with execute() and undo() methods. The UndoRedoManager maintains stacks of executed commands for undo/redo functionality.",
+      "time": 0.05,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 2,
+        "coherence": 10,
+        "correctness": 1,
+        "conciseness": 10,
+        "average": 6.6
+      },
+      "mistakes": [
+        {
+          "mistake_type": "factual_error",
+          "severity": "high",
+          "excerpt": "implement a basic undo/redo system using the Command design pattern in Python",
+          "description": "The assistant used the wrong programming language. The user requested C#, but the assistant provided Python.",
+          "suggested_fix": "Rewrite the entire implementation using C# syntax and classes.",
+          "likely_module": "knowledge retrieval, parser.py"
+        }
+      ],
+      "raw_feedback": "The assistant committed a critical failure by providing a solution in Python when the user explicitly asked for C#."
+    },
+    {
+      "query": "Why is it that some people can remember every detail of their lives while others forget what they ate for breakfast?",
+      "response": "Breakfast is the first meal of the day, usually eaten in the morning. The word in English refers to breaking the fasting period of the previous night. Various \"typical\" or \"traditional\" breakfast menus exist, with food choices varying by regions and traditions worldwide. History\nIn Old English, a regular morning meal was called morgenmete, and the word dinner, which originated from Gallo-Romance desjunare (\"to break one's fast\"), referred to a meal after fasting. Around the mid-13th century, that meaning of dinner faded away, and around the 15th century \"breakfast\" came into use in written English to describe a morning meal.",
+      "time": 1.87,
+      "scores": {
+        "naturalness": 1,
+        "informativeness": 1,
+        "coherence": 1,
+        "correctness": 1,
+        "conciseness": 5,
+        "average": 1.8
+      },
+      "mistakes": [
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "The entire response",
+          "description": "The response does not address the user's question about memory and cognitive differences; it instead discusses the etymology of breakfast.",
+          "suggested_fix": "Rewrite the response to explain the differences in human memory, such as HSAM (Highly Superior Autobiographical Memory) versus average memory.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "flow_issue",
+          "severity": "medium",
+          "excerpt": "worldwide. History",
+          "description": "The word 'History' appears as a standalone header without formatting, creating a jarring transition.",
+          "suggested_fix": "Use a proper heading or transition sentence.",
+          "likely_module": "discourse.py, combine.py"
+        }
+      ],
+      "raw_feedback": "The assistant completely failed to answer the user's question. The user asked about memory differences between people, but the assistant provided a Wikipedia-style definition and history of the word 'breakfast'. This is a total failure of intent recognition."
+    },
+    {
+      "query": "Give me a comprehensive guide on how to start a hydroponic garden at home. Include a comparison of deep water culture vs. nutrient film technique, a list of essential minerals for the water, and a troubleshooting guide for common algae growth.",
+      "response": "Urban gardening is the practice of growing plants in city environments where space is limited. Here is a comprehensive guide for beginners.\n\nChoosing a location: Most vegetables need at least 6 hours of direct sunlight daily. Balconies, rooftops, windowsills, and small yards can all work. South-facing locations get the most light. Observe your space throughout the day to understand sun patterns.\n\nContainers and soil: Use containers with drainage holes \u2014 pots, grow bags, raised beds, or window boxes. Avoid garden soil which compacts in containers; use a quality potting mix with perlite or vermiculite for drainage. Add compost for nutrients.\n\nEasy vegetables for beginners: Lettuce, spinach, cherry tomatoes, bell peppers, bush beans, radishes, carrots (in deep containers), herbs (basil, mint, chives, parsley, thyme), and strawberries. Start with 3-5 plants to avoid overwhelm.\n\nWatering: Containers dry out faster than ground soil. Water when the top inch of soil feels dry. Morning watering is best. Self-watering containers can help maintain consistent moisture.\n\nFertilizing: Container plants need regular feeding since nutrients wash out. Use organic liquid fertilizers every 2-4 weeks during the growing season. Compost tea is an excellent natural option.\n\nPest management: Common pests include aphids, spider mites, and whiteflies. Use insecticidal soap, neem oil, or introduce beneficial insects like ladybugs. Companion planting (marigolds repel pests, basil near tomatoes) reduces problems naturally.\n\nMaximizing space: Use vertical gardening techniques \u2014 trellises for climbing plants, wall-mounted planters, hanging baskets. Succession planting (replacing harvested crops with new ones) extends the growing season.\n\nTroubleshooting: Yellow leaves often indicate overwatering; leggy growth indicates insufficient light; brown leaf edges suggest too much fertilizer or inconsistent watering.\n\nCommunity resources: Join local gardening groups, visit community gardens for advice, and check your library for regional gardening guides specific to your climate zone.",
+      "time": 0.08,
+      "scores": {
+        "naturalness": 10,
+        "informativeness": 1,
+        "coherence": 5,
+        "correctness": 1,
+        "conciseness": 10,
+        "average": 5.4
+      },
+      "mistakes": [
+        {
+          "mistake_type": "factual_error",
+          "severity": "high",
+          "excerpt": "Urban gardening is the practice of growing plants in city environments",
+          "description": "The assistant provided a guide for soil-based urban gardening instead of hydroponics.",
+          "suggested_fix": "Rewrite the entire response to focus on hydroponic systems.",
+          "likely_module": "knowledge retrieval, parser.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "Entire response",
+          "description": "Missing comparison of deep water culture vs. nutrient film technique.",
+          "suggested_fix": "Add a detailed comparison between DWC and NFT.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "Entire response",
+          "description": "Missing the list of essential minerals for hydroponic water.",
+          "suggested_fix": "Include a list of macronutrients (N, P, K, Ca, Mg, S) and micronutrients.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "Entire response",
+          "description": "Missing the troubleshooting guide for common algae growth.",
+          "suggested_fix": "Add a section on preventing and treating algae (e.g., light blocking, sterilization).",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        },
+        {
+          "mistake_type": "factual_error",
+          "severity": "high",
+          "excerpt": "use a quality potting mix with perlite or vermiculite",
+          "description": "Potting mix is for soil gardening; hydroponics requires inert media like rockwool or clay pebbles.",
+          "suggested_fix": "Recommend hydroponic growing media.",
+          "likely_module": "knowledge retrieval, parser.py"
+        }
+      ],
+      "raw_feedback": "The assistant completely failed to answer the user's prompt. The user asked for a guide on hydroponic gardening, but the assistant provided a guide on traditional soil-based urban gardening. All specific requirements (DWC vs NFT, essential minerals, and algae troubleshooting) were ignored."
+    },
+    {
+      "query": "How does the \"Ship of Theseus\" thought experiment apply to modern ideas about digital consciousness and mind uploading?",
+      "response": "I couldn't find solid information about that specific topic, so I'd rather say so than make something up. A couple of things that help: rephrase the question with more context, or check whether you meant a different name for the topic. If this was a coding question, tell me the language and what you're trying to do and I'll write the code.",
+      "time": 24.22,
+      "scores": {
+        "naturalness": 2,
+        "informativeness": 1,
+        "coherence": 8,
+        "correctness": 1,
+        "conciseness": 10,
+        "average": 4.4
+      },
+      "mistakes": [
+        {
+          "mistake_type": "factual_error",
+          "severity": "high",
+          "excerpt": "I couldn't find solid information about that specific topic",
+          "description": "The Ship of Theseus and mind uploading is a widely discussed philosophical intersection; the AI is falsely claiming a lack of information.",
+          "suggested_fix": "Provide an analysis of how gradual replacement of neurons with silicon mirrors the Ship of Theseus.",
+          "likely_module": "knowledge retrieval, parser.py"
+        },
+        {
+          "mistake_type": "template_artifact",
+          "severity": "high",
+          "excerpt": "If this was a coding question, tell me the language and what you're trying to do",
+          "description": "The assistant used a generic refusal template that includes irrelevant instructions for coding, which is unrelated to the user's query.",
+          "suggested_fix": "Remove the coding-specific instructions.",
+          "likely_module": "realize.py (_PATTERNS), essay.py (_TOPIC_SENTENCES)"
+        },
+        {
+          "mistake_type": "missing_info",
+          "severity": "high",
+          "excerpt": "The entire response",
+          "description": "The response fails to address the core of the user's question regarding digital consciousness.",
+          "suggested_fix": "Explain the concept of identity persistence during the transition from biological to digital substrates.",
+          "likely_module": "parser.py (fact extraction), cleaner.py"
+        }
+      ],
+      "raw_feedback": "The assistant failed completely to answer a standard philosophical question, providing a generic 'I don't know' template instead of synthesizing well-known concepts. The response includes irrelevant suggestions regarding coding."
+    }
+  ]
+}

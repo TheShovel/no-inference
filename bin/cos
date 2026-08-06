@@ -1,0 +1,28 @@
+#!/bin/sh
+# cos — the COS deterministic coding agent (opencode-style terminal UI).
+#
+# Launch from any project directory:
+#
+#     cos                          # full-screen TUI (default)
+#     cos "complete the function" --file tool.py --yes   # one-shot
+#     cos "what is a binary search"                      # chat
+#
+# The engine lives in this repo; this script resolves it from its own
+# location (following symlinks), or from $COS_HOME if the repo moved.
+# Your working directory is never changed — the agent always operates on
+# the project you launched it in.
+set -e
+
+if [ -n "$COS_HOME" ]; then
+    ROOT=$COS_HOME
+else
+    SCRIPT=$(readlink -f "$0" 2>/dev/null || echo "$0")
+    ROOT=$(CDPATH= cd -- "$(dirname -- "$SCRIPT")/.." 2>/dev/null && pwd || echo '')
+fi
+
+if [ -z "$ROOT" ] || [ ! -f "$ROOT/src/cos/cli.py" ]; then
+    echo "cos: engine not found — set COS_HOME to the repo root" >&2
+    exit 1
+fi
+
+exec python3 "$ROOT/src/cos/cli.py" "$@"

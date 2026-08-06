@@ -1,0 +1,47 @@
+[
+  {
+    "q": [
+      "how to spot a phishing email",
+      "how to recognize a phishing email",
+      "what are signs of a phishing email",
+      "how to tell if an email is a scam"
+    ],
+    "a": "The giveaway signs of phishing: (1) Urgency and fear — 'your account will be closed in 24 hours', 'suspicious login detected, verify now'. Scammers create panic so you act without thinking. (2) The sender address — check the actual domain, not the display name: 'support@amazon-security.com' or 'amazon-support@yahoo.com' is not Amazon. (3) Generic greetings — 'Dear valued customer' instead of your name. (4) Suspicious links — hover over (don't click) any link and read the real URL; look for misspelled domains (arnazon.com, paypa1.com) or URLs that don't match the sender's company. (5) Requests for credentials, payment, or gift cards — legitimate companies never ask for your password or for payment in gift cards. (6) Attachments you didn't expect — especially .zip, .exe, or 'invoice' files. (7) Poor grammar and odd formatting. What to do: don't click links or download attachments; don't reply; report it (the 'Report phishing' button in Gmail/Outlook, or forward to the company's real support); if you clicked a link and entered credentials, change that password immediately and enable 2FA. When in doubt, go to the site directly by typing the address yourself instead of using the link."
+  },
+  {
+    "q": [
+      "how to protect yourself from identity theft",
+      "how to prevent identity theft",
+      "how to avoid getting your identity stolen",
+      "identity theft protection tips"
+    ],
+    "a": "Identity theft prevention is about making yourself a harder target: (1) Use a unique password for every account, and enable two-factor authentication (2FA) on anything important — email and banking first (see your password manager and 2FA app). (2) Freeze your credit at the three bureaus (Equifax, Experian, TransUnion) — it's free in the US and blocks new accounts from being opened in your name; you unfreeze when you apply for credit. (3) Check your credit reports annually (AnnualCreditReport.com) and your bank statements monthly for transactions you don't recognize. (4) Shred documents with account numbers or SSN before tossing, and be careful who you give your SSN to — ask why they need it and how they'll protect it. (5) Don't overshare online: birthdate, address, and mother's maiden name are the classic verification questions — keep them private or use false answers stored in your password manager. (6) Beware of phishing, smishing (text), and vishing (phone) — the top entry point for identity theft (see phishing tips). (7) Keep software updated and use a password manager; don't use public Wi-Fi for banking without a VPN. If it does happen: report to the FTC (identitytheft.gov), place a fraud alert or freeze, file a police report, and contact affected institutions — identitytheft.gov walks you through a personalized recovery plan."
+  },
+  {
+    "q": [
+      "how to check if a website is safe",
+      "how to know if a website is legit",
+      "how to tell if a website is a scam",
+      "is this website safe"
+    ],
+    "a": "Quick checks before you enter any personal info: (1) The URL — look for 'https://' (the padlock) and verify the domain name itself: scammers register lookalike domains (amaz0n.com, netflix-login.com), so check for typos and odd subdomains. (2) Who's behind it — the 'Contact' or 'About' page: a real business has a physical address and phone number; a scam site often has none, or only a contact form. (3) Search the site name plus 'scam' or 'review' — complaints about fake stores and phishing sites surface fast. (4) Check the WHOIS or use a site checker: Google Safe Browsing (transparency report), VirusTotal (URL tab), or a browser extension that flags malicious sites. (5) Trust signals that can be faked: a padlock only proves encryption, not legitimacy — every scam site uses https now; 'verified' badges and trust seals can be copied images. (6) Behavior red flags: prices that are impossibly low, payment only via wire transfer/crypto/gift cards, pressure to act now, or requesting your SSN/password. (7) For stores: look for a real return policy and a way to actually reach a human. The strongest habit: when an email or ad links to a site, type the known address yourself instead of clicking — that single habit defeats most phishing and fake-store attacks."
+  },
+  {
+    "q": [
+      "how to report identity theft",
+      "what to do if your identity is stolen",
+      "i think my identity was stolen what do i do",
+      "identity theft recovery steps"
+    ],
+    "a": "Act in this order: (1) Freeze or fraud-alert your credit — call one of the three bureaus (Equifax, Experian, or TransUnion) to place a fraud alert (free, 1 year, they notify the others), and ideally freeze all three so no new accounts can be opened. (2) Report to the FTC at identitytheft.gov — it generates your official Identity Theft Report and a step-by-step personal recovery plan; this report is what you show creditors to get fraudulent accounts removed. (3) File a police report if you know the thief or your wallet/SSN card was stolen — creditors may require it. (4) Contact the affected institutions: banks, credit card issuers, and the companies where accounts were opened in your name — close or freeze the fraudulent accounts, change passwords and PINs on anything exposed. (5) Check your credit reports for accounts you don't recognize and dispute them in writing. (6) Watch for follow-ups: check statements monthly and consider an extended fraud alert (7 years) if the theft was serious. Keep a log of every call, date, and representative name — you'll need it. Don't panic: with a credit freeze plus the FTC plan, most victims clear fraudulent accounts within a few months. IdentityTheft.gov is the single best resource — start there."
+  },
+  {
+    "q": [
+      "what is a vpn and should i use one",
+      "should i use a vpn",
+      "how does a vpn work",
+      "is a vpn worth it"
+    ],
+    "a": "A VPN (Virtual Private Network) encrypts your internet traffic and routes it through a server in a location you choose, so your ISP and anyone on your network can't see what you're doing, and sites see the VPN server's IP instead of yours. When a VPN genuinely helps: (1) Public Wi-Fi — on an open coffee-shop network, a VPN protects your traffic from snooping (though https already encrypts most of it, a VPN adds a layer). (2) Privacy from your ISP — your ISP can still see you're using a VPN but not what you're doing. (3) Geo-restricted content — streaming libraries and regional sites see you as being in the VPN's country. (4) Travel to countries with restrictive internet. When it doesn't matter much: at home on your own trusted Wi-Fi with https sites, a VPN mostly just slows you down. The important caveats: (1) A VPN does NOT make you anonymous — the VPN provider sees everything; use a reputable paid provider (a free VPN is the product — they often sell your data). (2) It does NOT protect against phishing, malware, or giving away your own password. (3) Speed loss is normal (often 10-30%). Verdict: worth having for public Wi-Fi and travel, but it's not a security blanket — the essential protections remain 2FA, a password manager, and https."
+  }
+]

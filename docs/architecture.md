@@ -170,7 +170,47 @@ Replaces the previous LFM2-350M-Extract and Tiny-LLM models.
 
 ### `cos/code_knowledge.py`
 
-Programming knowledge base with curated entries for HTML, CSS, JavaScript, React, and Python. Provides lookup for common coding questions and generates code examples with explanations.
+Programming knowledge base loaded from `data/knowledge/coding/*.json` with
+curated entries for HTML, CSS, JavaScript, React, Python, SQL, and coding
+concepts (hash maps, big-O, linked lists). It also classifies queries as
+code tasks so they are routed to the synthesizer instead of the Wikipedia
+fallback.
+
+### `cos/code_gen.py`
+
+Deterministic code synthesizer (~90 tasks across Python, JS/TS, Java,
+C++, C#, Go, Rust, SQL, and bash): detects the language and task from the
+query, then assembles runnable code from a template library with a
+task-specific explanation. Also builds full websites (HTML/CSS) from a
+business type in the topic.
+
+### `cos/code_transformer.py`
+
+Edits pasted code and text: language conversion (best-effort mechanical
+transpile), error-handling wraps, renames, comments, optimization,
+line-by-line explanation, loop conversion, text politeness rewrites,
+summaries, and phrasebook translation.
+
+### `cos/code_editor.py`
+
+The fill-in harness: reads a buffer (language, imports, definitions,
+indentation, quote style) and fills empty function bodies from the
+signature, the function name, module-level state, a `# TODO:` comment, or
+a docstring. This is the API editor plugins integrate against (see
+[`docs/editor-harness.md`](editor-harness.md)).
+
+### `cos/refine.py`
+
+Iterative refinement: detects follow-up edits ("add a contact form",
+"change the accent color to green", "add error handling", "now do the
+same in rust") and applies them to the last generated artifact in place.
+
+### `cos/cli.py` + `cos/tui.py`
+
+The opencode-style agent: a console script (`cos`) and dependency-free
+full-screen terminal UI that opens a file, routes tasks (fill-in,
+transform, generate, refine), shows diffs, and applies edits after
+approval, including staging generated artifacts as new files.
 
 ### `cos/external_apis.py`
 

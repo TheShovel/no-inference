@@ -1,0 +1,319 @@
+[
+  {
+    "q": [
+      "what is a lambda function",
+      "what is a lambda in python",
+      "what is an anonymous function",
+      "lambda function explained",
+      "what does lambda mean in python"
+    ],
+    "a": "A lambda function is an anonymous, single-expression function defined inline — it has no name and no def statement. In Python the syntax is `lambda arguments: expression`: `square = lambda x: x * 2`. Lambdas are best for short, one-off callbacks passed to functions like `map()`, `filter()`, `sorted()` (as a key), or `max()`. They cannot contain statements (no assignments, no loops), only an expression, which keeps them readable only when the logic is simple. For anything longer, use a normal `def` function — it is clearer, can be documented with a docstring, and supports statements. JavaScript has an equivalent in arrow functions (`x => x * 2`); Java has lambdas used with the Streams API.",
+    "lang": "python",
+    "code": "# Python: lambda for a one-off sorting key\npeople = [{'name': 'Alice', 'age': 30}, {'name': 'Bob', 'age': 25}]\npeople.sort(key=lambda p: p['age'])\n\n# Same thing as a named function (prefer when logic grows):\ndef by_age(p):\n    return p['age']\n\npeople.sort(key=by_age)\n\n# Lambda with map/filter\nnums = [1, 2, 3, 4]\nsquares = list(map(lambda x: x * x, nums))   # [1, 4, 9, 16]\nevens = list(filter(lambda x: x % 2 == 0, nums))  # [2, 4]"
+  },
+  {
+    "q": [
+      "what is a callback in programming",
+      "what is a callback function",
+      "callbacks explained"
+    ],
+    "a": "A callback is a function you pass into another function so it can be invoked later — usually when an operation completes. Callbacks are the backbone of event-driven programming: event handlers (onclick), timers (setTimeout), array methods (map, forEach), and I/O completion all use them. In JavaScript, callbacks led to 'callback hell' (deeply nested anonymous functions), which is why promises and async/await were introduced. In Python, callbacks appear in GUI toolkits, threading, and frameworks like Flask/requests. The key idea: pass behavior as a value instead of hard-coding it.",
+    "lang": "javascript",
+    "code": "// JavaScript: setTimeout takes a callback\nsetTimeout(() => {\n  console.log('2 seconds later');\n}, 2000);\n\n// Array methods take callbacks\nconst doubled = [1, 2, 3].map(x => x * 2);\n\n// Callback hell (why promises exist):\n// fs.readFile('a.txt', (err, data) => {\n//   fs.readFile('b.txt', (err2, data2) => {\n//     // deeply nested...\n//   });\n// });"
+  },
+  {
+    "q": [
+      "what is synchronous vs asynchronous programming",
+      "synchronous and asynchronous difference",
+      "what does asynchronous mean",
+      "what is async programming"
+    ],
+    "a": "Synchronous code runs one statement at a time and blocks until each finishes — the result of a call is available immediately on the next line. Asynchronous code starts an operation and continues running other work, receiving the result later through a callback, promise, or await; this is essential for I/O (network requests, disk reads, database queries) where waiting would waste CPU. JavaScript is single-threaded but event-driven: async operations are handled by the event loop, so a slow fetch doesn't freeze the page. Python is synchronous by default; asyncio adds cooperative concurrency, and threads/processes add parallelism. Async makes code more complex to reason about (ordering is no longer guaranteed by line order), so use it where I/O latency matters, not for pure CPU work.",
+    "code": "# Python: asyncio example\nimport asyncio\n\nasync def fetch(url):\n    await asyncio.sleep(0.1)  # simulate network I/O\n    return f'data from {url}'\n\nasync def main():\n    results = await asyncio.gather(\n        fetch('a.com'), fetch('b.com'), fetch('c.com')\n    )\n    print(results)  # all three complete concurrently\n\nasyncio.run(main())",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "what is a compiler vs interpreter",
+      "compiler and interpreter difference",
+      "compiled vs interpreted language",
+      "what is a compiler",
+      "what is an interpreter"
+    ],
+    "a": "A compiler translates the whole source program into machine code (or bytecode) in one pass, producing an executable that runs later — C, C++, Rust, and Go are compiled. An interpreter executes the source directly, statement by statement, without a separate build step — Python, JavaScript, and Ruby are interpreted (Python actually compiles to bytecode, then interprets it, which is why .pyc caches exist). Compiled programs generally start faster and can be optimized more aggressively, but the build step makes iteration slower; interpreted languages offer rapid development and easier portability. JIT (Just-In-Time) compilers like V8 for JavaScript and PyPy blend both: they interpret first, then compile hot code paths at runtime.",
+    "code": "# Rough mental model:\n# Compiled:  source.c  --compile-->  a.out  --run-->  output\n# Interpreted:  source.py  --run (interpreter reads + executes)-->  output"
+  },
+  {
+    "q": [
+      "what is the difference between a compiler and a runtime",
+      "what is a runtime environment",
+      "what does runtime mean"
+    ],
+    "a": "A runtime is the environment that executes your code and provides its services — memory management, garbage collection, the standard library, and I/O primitives. For example, the Python interpreter plus its standard library is Python's runtime; Node.js is JavaScript's runtime outside the browser; the JVM is Java's runtime. A compiler is a separate tool that translates source into a form the runtime (or the CPU) can execute. Some languages (C, Go, Rust) compile directly to machine code so the 'runtime' is mostly the OS itself plus a small standard library. You'll also hear 'runtime error' — an error that happens while the program runs (like a null dereference), as opposed to a compile-time error caught before execution."
+  },
+  {
+    "q": [
+      "what is a package manager",
+      "what is npm",
+      "what is pip",
+      "npm vs yarn difference",
+      "what is a dependency manager"
+    ],
+    "a": "A package manager installs, updates, and removes third-party libraries (packages) for a project, resolving their dependencies and recording versions so builds are reproducible. Common ones: npm and Yarn (JavaScript), pip and Poetry (Python), Cargo (Rust), Go modules (Go), Maven/Gradle (Java), Composer (PHP), Bundler (Ruby), apt/brew (system level). Core ideas: a manifest file lists direct dependencies (package.json, requirements.txt, Cargo.toml), a lockfile pins the exact versions of every transitive dependency (package-lock.json, Pipfile.lock), and the install command fetches everything needed. Use a lockfile in version control so every machine gets identical dependencies.",
+    "code": "# JavaScript (npm):\n# npm init -y          create package.json\n# npm install express  add a dependency\n# npm install -D jest   dev-only dependency\n# npm ci               clean install from lockfile\n\n# Python (pip):\n# pip install requests\n# pip freeze > requirements.txt        export versions\n# pip install -r requirements.txt      install from file\n# python -m venv .venv                isolate per project"
+  },
+  {
+    "q": [
+      "what is a database index",
+      "how do database indexes work",
+      "what does indexing do in sql"
+    ],
+    "a": "A database index is a data structure (usually a B-tree, or a hash table) that lets the database find rows quickly without scanning the whole table — it exists purely for speed. It works like a book's index: instead of reading every page, you look up the key and jump to the right place. A query on an indexed column can run in O(log n) instead of O(n). The trade-off: indexes take disk space and slow down writes (every INSERT/UPDATE/DELETE must update the index), so index the columns you actually filter/join/sort on — primary keys are indexed automatically. A composite index on (a, b) helps queries filtering on a or on a and b, but not queries filtering only on b.",
+    "code": "-- SQL: create an index on the email column\nCREATE INDEX idx_customers_email ON customers(email);\n\n-- The query planner can now use the index instead of a full scan:\nSELECT * FROM customers WHERE email = 'alice@example.com';\n\n-- Check whether an index is used (PostgreSQL):\n-- EXPLAIN ANALYZE SELECT * FROM customers WHERE email = '...';"
+  },
+  {
+    "q": [
+      "what is a primary key",
+      "what is a foreign key",
+      "primary key vs foreign key",
+      "what is a foreign key in sql"
+    ],
+    "a": "A primary key is the column (or column set) that uniquely identifies each row in a table — values must be unique and not null, and the database enforces this. A foreign key is a column in one table that references the primary key of another table, linking rows across tables and letting the database enforce referential integrity (you can't insert an order with a customer_id that doesn't exist). Example: orders.customer_id is a foreign key pointing at customers.id (primary key). Foreign keys can specify behavior on delete — RESTRICT (block), CASCADE (delete the related rows too), or SET NULL. Every table should have a primary key; composite primary keys (two columns together) are valid when no single column is unique.",
+    "code": "-- SQL\nCREATE TABLE customers (\n    id   INTEGER PRIMARY KEY,\n    name TEXT NOT NULL\n);\n\nCREATE TABLE orders (\n    id          INTEGER PRIMARY KEY,\n    customer_id INTEGER NOT NULL,\n    total       DECIMAL(10,2),\n    FOREIGN KEY (customer_id) REFERENCES customers(id)\n);"
+  },
+  {
+    "q": [
+      "what is an orm",
+      "what is object relational mapping",
+      "sqlalchemy vs raw sql",
+      "what is a database orm"
+    ],
+    "a": "An ORM (Object-Relational Mapping) maps database tables to classes and rows to objects, so you write Python/JS/Java code instead of raw SQL strings. Examples: SQLAlchemy and Django ORM (Python), Sequelize and Prisma (Node), Hibernate (Java), ActiveRecord (Ruby), GORM (Go). Benefits: less boilerplate, automatic escaping (reduces SQL injection risk), schema migrations, and switching databases without rewriting queries. Costs: performance overhead and the infamous 'N+1 query' problem (loading a list then one query per item — use eager loading/joins), plus a layer of abstraction that can obscure what SQL actually runs. A pragmatic rule: use the ORM for CRUD, and drop to raw SQL (or a query builder) for complex reporting queries.",
+    "code": "# Python + SQLAlchemy\nfrom sqlalchemy import create_engine, Column, Integer, String\nfrom sqlalchemy.orm import declarative_base, Session\n\nBase = declarative_base()\n\nclass User(Base):\n    __tablename__ = 'users'\n    id = Column(Integer, primary_key=True)\n    name = Column(String)\n\nengine = create_engine('sqlite:///app.db')\nBase.metadata.create_all(engine)\n\nwith Session(engine) as session:\n    alice = User(name='Alice')\n    session.add(alice)\n    session.commit()\n    users = session.query(User).all()\n    print([u.name for u in users])"
+  },
+  {
+    "q": [
+      "what is a rest api",
+      "what is rest",
+      "what makes an api restful",
+      "rest vs graphql",
+      "what is restful api"
+    ],
+    "a": "REST (Representational State Transfer) is an architectural style for APIs built on HTTP. Resources (users, orders, articles) are identified by URLs, and the HTTP methods define the operations: GET reads, POST creates, PUT/PATCH updates, DELETE removes. REST APIs are stateless (each request carries all needed context, usually via tokens/headers), and typically return JSON. Good REST design: plural resource names (/users), nested for relationships (/users/1/orders), meaningful status codes (200, 201, 400, 401, 404, 500), and idempotent PUT/DELETE. GraphQL is an alternative where the client declares exactly which fields it wants in one query to a single endpoint; it avoids over-fetching but adds complexity and caching challenges. REST remains the most common API style because it is simple, cacheable, and language-agnostic.",
+    "code": "# A RESTful endpoint table (example):\n# GET    /users        -> list users\n# POST   /users        -> create user (body: JSON)\n# GET    /users/1      -> get one user\n# PUT    /users/1      -> replace user 1\n# PATCH  /users/1      -> partial update\n# DELETE /users/1      -> remove user 1\n#\n# Status codes:\n# 200 OK, 201 Created, 204 No Content,\n# 400 Bad Request, 401 Unauthorized, 403 Forbidden,\n# 404 Not Found, 500 Internal Server Error"
+  },
+  {
+    "q": [
+      "what is a webhook",
+      "how do webhooks work",
+      "what is the difference between webhook and api"
+    ],
+    "a": "A webhook is an HTTP callback: your service registers a URL, and when an event happens (payment received, commit pushed, user signed up), the provider POSTs event data to that URL automatically. It is the reverse of polling — instead of you asking 'did anything happen?' every few seconds, the system tells you the moment it happens, which is faster, uses fewer resources, and is how Stripe, GitHub, and Slack notify integrations. A regular API is pull (you request data); a webhook is push (data comes to you). Practical considerations: webhooks need a public HTTPS endpoint, you should verify signatures to prove the request is genuine, respond quickly (most providers retry on non-2xx), and make your handler idempotent because providers often redeliver events.",
+    "code": "# Flask webhook receiver\nfrom flask import Flask, request\n\napp = Flask(__name__)\n\n@app.post('/webhooks/payment')\ndef payment_webhook():\n    event = request.get_json()\n    # 1. Verify signature (Stripe uses Stripe-Signature header)\n    # 2. Process the event (store payment, update order)\n    print('received', event.get('type'))\n    return 'ok', 200   # acknowledge quickly\n\n# Stripe: stripe listen --forward-to localhost:5000/webhooks/payment"
+  },
+  {
+    "q": [
+      "what is a unit test",
+      "what is unit testing",
+      "unit test vs integration test",
+      "what is test driven development",
+      "what is tdd"
+    ],
+    "a": "A unit test exercises one small piece of code — a single function or method — in isolation, with its dependencies replaced by fakes or mocks, and asserts on the result. Unit tests run in milliseconds, so they can run on every change (that's the 'test pyramid' base). Integration tests then verify that pieces work together (function → database), and end-to-end tests exercise the whole system through its real interface. TDD (Test-Driven Development) is the practice of writing a failing test first, then the minimal code to pass it, then refactoring — it forces you to think about behavior before implementation and keeps coverage high. Good unit tests are fast, deterministic, isolated (no shared state), and test behavior rather than implementation details.",
+    "code": "# Python pytest\n# pip install pytest\n\ndef add(a, b):\n    return a + b\n\n# test_app.py\ndef test_add():\n    assert add(2, 3) == 5\n    assert add(-1, 1) == 0\n\n# Run: python -m pytest\n\n# JavaScript Jest\n# test('adds numbers', () => {\n#   expect(add(2, 3)).toBe(5);\n# });"
+  },
+  {
+    "q": [
+      "what is docker",
+      "how does docker work",
+      "what is a container",
+      "docker vs virtual machine",
+      "what is a docker container"
+    ],
+    "a": "Docker packages an application with all its dependencies into a lightweight, isolated container that runs identically anywhere Docker runs. A container is like a mini OS environment for your process — it shares the host kernel but gets its own filesystem, network, and process namespace, so 'it works on my machine' disappears. Containers are much lighter than virtual machines (no guest OS, start in seconds, MBs vs GBs). You describe the image in a Dockerfile, build it once, and run it anywhere (dev, CI, production). Docker Compose orchestrates multi-container apps (web server + database + cache) with a single docker-compose.yml. The mental model: Dockerfile = recipe, image = baked cake, container = a slice being served.",
+    "code": "# Dockerfile\nFROM python:3.12-slim\nWORKDIR /app\nCOPY requirements.txt .\nRUN pip install -r requirements.txt\nCOPY . .\nCMD [\"python\", \"app.py\"]\n\n# Build and run:\n# docker build -t myapp .\n# docker run -p 8000:8000 myapp\n\n# docker-compose.yml (web + database)\n# services:\n#   web:\n#     build: .\n#     ports: [\"8000:8000\"]\n#   db:\n#     image: postgres:16"
+  },
+  {
+    "q": [
+      "what is kubernetes",
+      "what is k8s",
+      "what does kubernetes do"
+    ],
+    "a": "Kubernetes (k8s) is a platform for running and orchestrating containers at scale across many machines (a cluster). It handles scheduling (where each container runs), scaling (adding replicas when load rises), self-healing (restarting crashed containers), service discovery and load balancing (routing traffic to healthy pods), rolling deployments (updating without downtime), and storage. A pod is the smallest unit (one or more containers); deployments describe the desired state ('run 3 replicas of app:v2'), and the control plane works to match reality to that state. Kubernetes is powerful but operationally heavy — for a single app or small team, Docker Compose or a managed platform (Fly, Render, Vercel, AWS App Runner) is usually the pragmatic choice. Managed offerings (EKS, GKE, AKS) handle the control plane for you.",
+    "code": "# deployment.yaml (minimal)\napiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: web\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: web\n  template:\n    metadata:\n      labels:\n        app: web\n    spec:\n      containers:\n        - name: web\n          image: myapp:v2\n          ports:\n            - containerPort: 8000\n\n# kubectl apply -f deployment.yaml\n# kubectl get pods\n# kubectl scale deployment web --replicas=5"
+  },
+  {
+    "q": [
+      "what is ci cd",
+      "what is continuous integration",
+      "what is continuous deployment",
+      "ci cd pipeline explained"
+    ],
+    "a": "CI/CD automates the journey from code commit to production. Continuous Integration (CI) means every push automatically triggers a build and test run, so broken code is caught within minutes instead of days — this requires small, frequent commits and a fast test suite. Continuous Delivery extends it by making every passing commit deployable to production at the push of a button; Continuous Deployment removes the button and ships automatically. Pipelines are defined in config files (GitHub Actions, GitLab CI, Jenkins, CircleCI): typical stages are checkout → install deps → lint → test → build → (on main) deploy. Good practices: keep the pipeline fast, fail fast on the cheapest check, cache dependencies, and make deployments idempotent and reversible (rollbacks).",
+    "code": "# .github/workflows/ci.yml (GitHub Actions)\nname: CI\non: [push, pull_request]\n\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-python@v5\n        with:\n          python-version: '3.12'\n      - run: pip install -r requirements.txt\n      - run: python -m pytest\n      - run: ruff check .   # lint"
+  },
+  {
+    "q": [
+      "what is the difference between http and https",
+      "http vs https",
+      "is https secure"
+    ],
+    "a": "HTTP is the plaintext protocol for the web; HTTPS is HTTP wrapped in TLS (Transport Layer Security), which encrypts the connection. HTTPS gives you three things: confidentiality (the data is encrypted, so nobody on the wire can read requests/responses), integrity (data can't be modified in transit undetected), and authentication (the server proves its identity via a certificate signed by a certificate authority, which defeats man-in-the-middle impersonation). Modern browsers mark plain HTTP sites 'Not Secure', and Google ranks HTTPS higher. TLS handshakes add latency, but HTTP/2 and HTTP/3 (QUIC) largely compensate. For APIs and websites alike, HTTPS is the baseline — you can get free certificates from Let's Encrypt, and services like Cloudflare terminate TLS for you. Certificate errors (expired, self-signed, wrong hostname) should never be ignored.",
+    "code": "# Python: the url scheme decides the encryption layer\nimport urllib.request\n\n# HTTPS: encrypted + verified\nresp = urllib.request.urlopen('https://api.example.com/data')\n\n# curl: -v shows the TLS handshake (TLSv1.3, cipher suite, certificate)\n# curl -v https://example.com\n#\n# Ports: HTTP = 80, HTTPS = 443"
+  },
+  {
+    "q": [
+      "what is a json web token",
+      "what is jwt",
+      "how does jwt authentication work"
+    ],
+    "a": "A JWT (JSON Web Token) is a compact, signed token used to transmit identity claims between parties. It has three dot-separated parts: a header (algorithm + type), a payload (claims like user id, expiry, roles), and a signature (HMAC-SHA256 with a secret, or RSA/ECDSA with a private key). The signature lets the server verify the token hasn't been tampered with — but the payload is only base64-encoded, not encrypted, so never put secrets in it. Typical flow: client logs in → server verifies credentials and issues a signed JWT → client sends it in the Authorization: Bearer header → server verifies signature + expiry on each request. Because verification is stateless (no session lookup), JWTs scale well across servers, which made them popular for APIs. Their weaknesses: revocation is hard (a stolen token is valid until expiry — keep expiry short), and the algorithm confusion attack (server must pin the expected algorithm).",
+    "code": "# Python (PyJWT): pip install pyjwt\nimport jwt\nimport datetime\n\nSECRET = 'keep-me-secret'\n\n# Issue a token\npayload = {'sub': 'user-42', 'role': 'admin',\n           'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=1)}\ntoken = jwt.encode(payload, SECRET, algorithm='HS256')\n\n# Verify on the next request\ntry:\n    claims = jwt.decode(token, SECRET, algorithms=['HS256'])\n    print(claims['sub'])        # user-42\n    print(claims['role'])       # admin\nexcept jwt.ExpiredSignatureError:\n    print('token expired')\nexcept jwt.InvalidTokenError:\n    print('token invalid')"
+  },
+  {
+    "q": [
+      "what is the difference between authentication and authorization",
+      "authentication vs authorization"
+    ],
+    "a": "Authentication is proving who you are ('are you who you claim to be?') — typically via password, OTP, or OAuth/SSO. Authorization is deciding what you are allowed to do ('may this user delete this order?') — enforced with roles, permissions, or policies. The order always matters: authenticate first, then authorize on every request; a common security hole is checking auth but forgetting authorization (any logged-in user can edit anyone's profile). Practically: authentication yields an identity (who), authorization checks claims (what roles/permissions that identity holds) against the resource. In HTTP terms, 401 Unauthorized actually means 'not authenticated' and 403 Forbidden means 'authenticated but not allowed' — a confusing but important distinction.",
+    "code": "# Flask example: authentication vs authorization\nfrom flask import Flask, request, abort\n\napp = Flask(__name__)\n\n@app.post('/orders/<int:order_id>')\ndef update_order(order_id):\n    user = authenticate(request.headers.get('Authorization'))  # who are you?\n    if user is None:\n        abort(401)  # not authenticated\n    order = get_order(order_id)\n    if order.owner_id != user.id and user.role != 'admin':\n        abort(403)  # authenticated, but not allowed\n    # ... update\n"
+  },
+  {
+    "q": [
+      "what is the difference between a stack and a heap",
+      "stack vs heap memory",
+      "what is heap memory",
+      "what is stack memory"
+    ],
+    "a": "The stack and the heap are the two main memory regions a program uses. The stack holds function call frames — local variables, parameters, return addresses — in strict LIFO order; it is fast (just move a pointer), automatically cleaned up when a function returns, and small (typically a few MB, so deep recursion overflows it). The heap holds data that must outlive the function that created it — dynamic objects, large structures — allocated on demand and freed manually (C), by a garbage collector (Java, Go, JS, Python), or by ownership rules (Rust). Heap allocation is slower (bookkeeping, potential fragmentation) and errors are common: stack overflow (unbounded recursion), heap leaks (forgetting to free), use-after-free, and double free. The mental model: stack = scratchpad for function calls, heap = long-term storage with manual/automatic lifecycle.",
+    "code": "# Python hides the distinction, but it's still there:\n#   local ints/floats often live on the stack;\n#   lists, dicts, objects, and closures live on the heap.\n\ndef f():\n    x = 10          # small, cheap\n    big = [0] * 10_000_000   # heap: outlives the frame if returned\n    return big      # reference survives f()'s return\n\n# C: explicit heap\n# int* p = malloc(100 * sizeof(int));\n# ...\n# free(p);            // forget this -> memory leak"
+  },
+  {
+    "q": [
+      "what is a race condition",
+      "how do race conditions happen",
+      "what is thread safety",
+      "what is a deadlock",
+      "deadlock vs race condition"
+    ],
+    "a": "A race condition is when the result of a program depends on the interleaving of concurrent operations — two threads read-modify-write the same variable and the final value depends on which one finishes last. Example: two threads each do counter += 1, but the increment is read/add/write, so if they interleave you lose an update. Fixes: locks/mutexes around critical sections, atomic operations, or immutable data. A deadlock is different: two threads each hold a lock the other needs and both wait forever (thread A holds lock1 wants lock2; thread B holds lock2 wants lock1). Avoid deadlocks by always acquiring locks in the same order, using timeouts, or lock-free designs. Thread safety means a class/function behaves correctly under concurrent use — via locking, atomics, or confinement. The GIL makes CPython threads safe for bytecode but not for compound operations like counter += 1.",
+    "code": "# Python: race condition -> fixed with a lock\nimport threading\n\ncounter = 0\nlock = threading.Lock()\n\ndef increment():\n    global counter\n    for _ in range(100_000):\n        with lock:           # critical section\n            counter += 1\n\nthreads = [threading.Thread(target=increment) for _ in range(4)]\nfor t in threads: t.start()\nfor t in threads: t.join()\nprint(counter)   # 400000 with lock; often less without it"
+  },
+  {
+    "q": [
+      "what is big o notation in programming",
+      "explain time complexity",
+      "what is space complexity",
+      "time complexity vs space complexity"
+    ],
+    "a": "Big O notation describes how an algorithm's runtime (or memory) grows as the input size n grows, ignoring constants and lower-order terms. Common classes: O(1) constant (array lookup by index), O(log n) logarithmic (binary search), O(n) linear (single pass), O(n log n) linearithmic (sorting), O(n²) quadratic (nested loops), O(2^n) exponential (naive recursion). It answers 'will this scale?' — O(n²) on 10k items is 100M operations, fine; on 1M items it's 10¹², not fine. Space complexity is the same idea for extra memory (excluding the input). Practical rules: profile before optimizing; the constant factor and cache behavior matter in practice, but the asymptotic class decides whether an approach survives at scale. When asked 'what's the complexity of X?', name the dominant operation per input and the worst case.",
+    "code": "# Examples of each class:\n# O(1)   x = arr[i]\n# O(log n)  binary search halves the range each step\n# O(n)   for x in arr: ...\n# O(n log n)  sorted(arr)\n# O(n^2)  for i in arr: for j in arr: ...\n#\n# 'Dropping constants': 3n + 5  == O(n);  2n^2 + 100n == O(n^2)"
+  },
+  {
+    "q": [
+      "what is the difference between a framework and a library",
+      "framework vs library",
+      "what is a library in programming"
+    ],
+    "a": "A library is a collection of functions you call from your own code — you are in control of the flow ('I call the library'). A framework inverts that: it provides the structure and calls your code when events happen ('the framework calls me') — the inversion of control is the defining difference. jQuery, lodash, and React (a library, technically) are libraries; Django, Rails, Angular, and Spring are frameworks. With a framework you get a complete skeleton (routing, ORM, templates, middleware) and your code plugs into its lifecycle; with a library you pick and choose pieces. Frameworks speed you up when your app matches their conventions and fight you when it doesn't; libraries compose more freely but you assemble everything yourself. Many modern stacks blend both — e.g., Flask (micro-framework) + SQLAlchemy (library).",
+    "code": "# Library: you call it\nimport json\ndata = json.loads(text)   # your code is in charge\n\n# Framework: it calls you (Flask example)\nfrom flask import Flask\napp = Flask(__name__)\n\n@app.get('/')\ndef home():              # the framework calls home() on GET /\n    return 'Hello'\n\n# Inversion of control: you provide pieces, the framework runs them."
+  },
+  {
+    "q": [
+      "what is a memory leak",
+      "how do memory leaks happen",
+      "what is garbage collection",
+      "how does garbage collection work"
+    ],
+    "a": "A memory leak is when a program keeps holding memory it will never use again, so the footprint grows until the machine runs out. In manual-memory languages (C, C++) leaks come from forgetting to free allocated memory. In garbage-collected languages (Java, Go, JS, Python) the collector can't reclaim objects that are still reachable — the classic leak is a long-lived collection (a global cache, an event listener list, a closure) that keeps references to objects that should be dead. Garbage collection works by tracing reachability from roots (globals, stack, registers): reachable objects survive, unreachable ones are reclaimed (mark-and-sweep); some collectors also use reference counting (Python) with a cycle collector on top. Practical prevention: remove event listeners, clear caches/queues, avoid retaining large objects in closures, use weak references for caches, and watch memory growth in production (it should plateau, not climb).",
+    "code": "# A classic JS leak: listeners that are never removed\nfunction addHandlers() {\n    const bigData = new Array(1000000);\n    window.addEventListener('resize', () => {\n        console.log(bigData.length);  // closure keeps bigData alive\n    });\n    // Remove on cleanup:\n    // window.removeEventListener('resize', handler);\n}\n\n# Python: a cache that grows forever\n# cache = {}\n# def get(key):\n#     if key not in cache:\n#         cache[key] = expensive()\n#     return cache[key]\n# Use weakref.WeakValueDictionary or bound the cache size instead."
+  },
+  {
+    "q": [
+      "what is the difference between get and post",
+      "get vs post request",
+      "when to use get vs post"
+    ],
+    "a": "GET and POST are the two most common HTTP methods. GET retrieves a resource and must be safe and idempotent — no side effects, repeated calls return the same result, parameters go in the URL query string (visible in history/logs, length-limited). POST sends data to create or process something — the body carries the payload, it is not cached by default, and it is neither safe nor idempotent (resubmitting can create duplicates; use a client-generated idempotency key if that matters). Rules of thumb: use GET for reading and searching, POST for creating and for anything with side effects; never put secrets in GET query strings (they end up in server logs). PUT replaces a resource (idempotent), PATCH partially updates, DELETE removes. In practice browsers/forms use GET and POST only, while APIs use all five.",
+    "code": "# GET: safe read, params in the URL\n# GET /api/users?role=admin\n#\n# POST: side effect, payload in the body\n# POST /api/users\n# Content-Type: application/json\n#\n# {\"name\": \"Alice\", \"role\": \"admin\"}\n#\n# curl equivalents:\n# curl 'https://api.example.com/users?role=admin'\n# curl -X POST -H 'Content-Type: application/json' \\\n#      -d '{\"name\": \"Alice\"}' https://api.example.com/users"
+  },
+  {
+    "q": [
+      "what is an idempotent operation",
+      "what does idempotent mean"
+    ],
+    "a": "An operation is idempotent if doing it once and doing it many times produces the same result — the second call has no additional effect. HTTP GET, PUT, and DELETE are idempotent (DELETEing an already-deleted resource still ends with it gone); POST is not (each POST creates a new resource). Idempotency matters for retries: if a request times out, the client can safely retry only if the operation is idempotent — otherwise you get duplicate orders or double-charges. Practical patterns: use idempotency keys (the client sends a unique key, the server dedupes), make your handlers naturally idempotent (UPDATE ... SET x = y instead of x = x + 1), and design DELETE to succeed when the resource is already absent. Setting a value is idempotent; incrementing a counter is not.",
+    "code": "# Idempotent: setting the same value twice = same result\nUPDATE users SET email = 'a@b.com' WHERE id = 1;\n# RUNNING IT TWICE: same end state\n\n# Not idempotent:\nUPDATE accounts SET balance = balance + 100 WHERE id = 1;\n# RUNNING IT TWICE: balance increases twice\n\n# Idempotent retry header (Stripe-style):\n# POST /charges\n# Idempotency-Key: 8c9e...   (same key -> same result, no duplicate)"
+  },
+  {
+    "q": [
+      "what is a palindrome",
+      "what is a palindrome number",
+      "how to check if a string is a palindrome",
+      "palindrome examples"
+    ],
+    "a": "A palindrome is a word, phrase, number, or sequence that reads the same forward and backward. Classic word examples: 'racecar', 'tacocat', 'level', 'radar', and 'madam'. Phrase palindromes ignore spaces, punctuation, and case — 'A man, a plan, a canal: Panama' and 'Never odd or even' are famous ones. Number palindromes: 121, 1331, 12321 (the first digit equals the last, second equals the second-to-last, and so on). Palindrome checking is a classic programming exercise because it has many approaches: (1) compare the string to its reverse — the simplest and clearest; (2) two-pointer technique — walk from both ends toward the middle comparing characters, which is O(n) time and O(1) extra space (no copy); (3) recursive — strip the first and last character and recurse on the middle. The common twist: decide whether to normalize first (strip spaces/punctuation and lowercase) and whether single characters and empty strings count (they're trivially palindromes). In interviews the two-pointer version is usually preferred — it shows you can avoid the extra allocation.",
+    "code": "# Two-pointer check (O(n) time, O(1) space)\ndef is_palindrome(s):\n    left, right = 0, len(s) - 1\n    while left < right:\n        if s[left] != s[right]:\n            return False\n        left += 1\n        right -= 1\n    return True\n\nprint(is_palindrome('racecar'))  # True\nprint(is_palindrome('hello'))    # False"
+  },
+  {
+    "q": [
+      "what is a heuristic",
+      "what is a heuristic algorithm",
+      "what is a heuristic in programming",
+      "heuristic vs algorithm",
+      "what is a rule of thumb in computing"
+    ],
+    "a": "A heuristic is a practical rule of thumb that trades guaranteed correctness for speed and simplicity — it usually finds a good answer quickly but without a proof that it's the best (or even a valid) answer. The distinction from an algorithm: an algorithm guarantees a correct result given correct inputs; a heuristic is an approximation, used when the exact solution is too slow or impossible. Classic examples: (1) pathfinding — A* and greedy best-first search use heuristics (like straight-line distance to the goal) to steer exploration; (2) the traveling salesman problem — the nearest-neighbor and 2-opt heuristics find good tours in polynomial time where exact solutions are exponential; (3) search engines and autocomplete — ranking and 'did you mean' corrections are heuristic; (4) caching — LRU (least recently used) is a heuristic for what to evict that works great in practice without knowing the future; (5) code review — rules like 'functions under 50 lines' and 'no globals' are heuristics, guidelines that point at likely problems but aren't laws. Heuristics also describe human decision-making shortcuts ('if the doctor is popular, they must be good') — useful and fast, but they carry systematic biases. In computing the practical question is usually: does an approximate answer in milliseconds beat an exact answer in days? Often yes — that trade is exactly what heuristics are for."
+  },
+  {
+    "q": [
+      "what is a 404",
+      "what is a 404 error",
+      "what does 404 mean",
+      "what is a 404 not found",
+      "what do http status codes mean",
+      "what is the difference between 404 and 500"
+    ],
+    "a": "HTTP status codes are three-digit numbers the server returns with every response, telling the client what happened. They're grouped by the first digit: 1xx informational, 2xx success, 3xx redirection, 4xx client error (the request is bad), 5xx server error (the server is broken). The ones you'll actually see: 200 OK — success; 201 Created — a resource was made (typical POST response); 301/302 — permanent/temporary redirect; 400 Bad Request — malformed request; 401 Unauthorized — not logged in; 403 Forbidden — logged in but not allowed; 404 Not Found — the URL doesn't exist on the server (or the server is hiding that a resource exists); 409 Conflict — duplicates a current state (e.g. trying to create something that already exists); 422 Unprocessable Entity — the request is well-formed but fails validation; 429 Too Many Requests — rate-limited; 500 Internal Server Error — generic server crash; 502/503/504 — gateway/availability/timeout problems upstream. The 404 vs 500 split is the key debugging distinction: a 404 means the client asked for something wrong (typo in the path, wrong method, deleted resource); a 500 means the server threw an exception while trying to handle a valid request — that's a bug in your code, not the caller's. Best practice: return specific, semantically correct codes (use 404 for missing, 422 for validation, 401/403 appropriately) and put a human-readable explanation in the response body — and for 5xx, log the stack trace server-side but don't leak internal details to the client."
+  },
+  {
+    "q": [
+      "what is a hashmap",
+      "what is a hash map",
+      "what is a dictionary in python",
+      "what is an associative array",
+      "how do hash maps work",
+      "explain what a hashmap is",
+      "hashmap explained",
+      "what is a hash table",
+      "how does a hash table work"
+    ],
+    "a": "A hash map (hash table; dict in Python, Map in Java/JS, HashMap in Go, HashMap in Rust) stores key-value pairs and looks them up in ~O(1) average time. It works by hashing the key: a hash function turns the key into an integer index into an array of buckets, and the value is stored in that bucket. Lookup does the same hash and jumps straight to the bucket — no scanning. Collisions (two keys hashing to the same bucket) are handled by chaining (a linked list or tree per bucket) or open addressing. Average O(1) get/set/delete beats a list's O(n) search, which is why hash maps are the default choice for 'find by name/id'. Caveats: worst case degrades to O(n) with bad hashing, iteration order is not guaranteed (Python dicts preserve insertion order, others usually don't), and keys must be hashable/immutable.",
+    "lang": "python",
+    "code": "d = {}\nd['name'] = 'Ada'          # insert / update\nprint(d.get('name'))        # Ada (None if missing)\nprint(d.get('missing', 0))  # 0 (default)\nd.setdefault('count', 0)    # insert only if absent\nfor k, v in d.items():      # iterate\n    print(k, v)\nprint('name' in d)          # membership: O(1)\n\n# Counting with a hash map:\nfrom collections import Counter\ncounts = Counter('hello')\nprint(counts)  # Counter({'l': 2, 'h': 1, 'e': 1, 'o': 1})"
+  },
+  {
+    "q": [
+      "what is a linked list",
+      "linked list explained",
+      "how does a linked list work",
+      "what is the difference between an array and a linked list"
+    ],
+    "a": "A linked list is a sequence of nodes, each holding a value and a pointer to the next node. Unlike an array, elements are not stored contiguously in memory, so there is no index-based access: reaching the nth element requires walking n pointers (O(n)). Inserting or deleting at a known position is O(1) (just rewire pointers), whereas an array insert/delete shifts all following elements (O(n)). Arrays win at random access and cache locality; linked lists win at frequent insertions/removals in the middle and at unknown sizes. Variants: doubly linked lists (prev + next pointers), circular lists, and sentinel/dummy head nodes that simplify edge cases. In practice arrays/vectors are the default; linked lists show up in hash-map collision chains, LRU caches, undo histories, and queue implementations.",
+    "lang": "python",
+    "code": "class Node:\n    def __init__(self, val, nxt=None):\n        self.val = val\n        self.nxt = nxt\n\n# Build 1 -> 2 -> 3\nhead = Node(1, Node(2, Node(3)))\n\n# Walk the list\ncur = head\nwhile cur:\n    print(cur.val)\n    cur = cur.nxt\n\n# Insert 9 after the first node (O(1) at a known position)\nhead.nxt = Node(9, head.nxt)"
+  },
+  {
+    "q": [
+      "what is time complexity",
+      "what is big o notation",
+      "big o explained",
+      "what does o(n) mean",
+      "how to analyze algorithm complexity",
+      "what is o(1) vs o(n) vs o(log n)"
+    ],
+    "a": "Big O notation (also written \"big O\") describes how an algorithm's runtime grows with the input size n: O(1) constant (hash lookup), O(log n) logarithmic (binary search — halves the problem each step), O(n) linear (one pass over the input), O(n log n) linearithmic (efficient sorting), O(n^2) quadratic (nested loops), O(2^n) exponential (naive recursion over subsets — unusable past n ~ 25). You analyze it by counting operations as a function of n and keeping only the fastest-growing term, dropping constants: 3n^2 + 50n + 7 is O(n^2). Space complexity is the same idea for memory. Rules of thumb: nested loops multiply (outer × inner), sequential blocks add (keep the largest), and each 'halving' step (binary search, divide and conquer) adds a log factor. Measure first when in doubt — complexity analysis is a model, not the actual runtime.",
+    "lang": "python",
+    "code": "def find_max(items):        # O(n) — one pass\n    best = items[0]\n    for x in items[1:]:\n        if x > best:\n            best = x\n    return best\n\ndef has_duplicates(items):   # O(n^2) naive, O(n) with a set\n    return len(items) != len(set(items))\n\ndef binary_search(a, target):  # O(log n)\n    lo, hi = 0, len(a) - 1\n    while lo <= hi:\n        mid = (lo + hi) // 2\n        if a[mid] == target:\n            return mid\n        if a[mid] < target:\n            lo = mid + 1\n        else:\n            hi = mid - 1\n    return -1"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "q": [
+      "how to deploy a flask app to production",
+      "deploy flask app to production",
+      "flask production deployment",
+      "deploy flask with gunicorn",
+      "how to deploy a flask app to a server",
+      "flask app deployment guide",
+      "deploy flask app on linux"
+    ],
+    "a": "Deploying Flask to production means serving it with a production WSGI server behind a reverse proxy. Flask's built-in `app.run()` is for development only — it is single-process and not hardened. The standard stack is: gunicorn (or waitress on Windows) runs your app, a reverse proxy like nginx (or Caddy) terminates TLS and forwards requests, and a process manager like systemd keeps gunicorn alive and restarts it on failure.",
+    "code": "# 1. Install a production WSGI server\npip install gunicorn\n\n# 2. Run gunicorn (app.py contains app = Flask(__name__))\ngunicorn -w 4 -b 127.0.0.1:8000 app:app\n#   -w 4     four worker processes (rule of thumb: 2-4 x cores)\n#   -b       bind to localhost; the reverse proxy talks to this port\n\n# 3. Test locally: curl http://127.0.0.1:8000\n\n# 4. Reverse proxy with nginx (nginx.conf snippet):\n# server {\n#     listen 80;\n#     server_name example.com;\n#     location / {\n#         proxy_pass http://127.0.0.1:8000;\n#         proxy_set_header Host $host;\n#         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n#     }\n# }\n\n# 5. Run as a service with systemd (/etc/systemd/system/flaskapp.service):\n# [Unit]\n# Description=Flask app\n# After=network.target\n#\n# [Service]\n# User=www-data\n# WorkingDirectory=/srv/flaskapp\n# ExecStart=/srv/flaskapp/venv/bin/gunicorn -w 4 -b 127.0.0.1:8000 app:app\n# Restart=always\n#\n# [Install]\n# WantedBy=multi-user.target\n#\n# sudo systemctl enable --now flaskapp\n\n# 6. In your app, disable debug and use env config:\n# app.run(debug=True)  -> remove; run via gunicorn instead\n# FLASK_ENV=production python app.py   (or config from env vars)\n\n# Windows alternative: pip install waitress; waitress-serve --port=8000 app:app\n\n# Docker alternative: ship the image and run gunicorn as CMD.",
+    "lang": "python"
+  },
+  {
+    "q": [
+      "how to deploy a node app to production",
+      "deploy node.js app to production",
+      "node express production deployment",
+      "how to deploy an express app"
+    ],
+    "a": "Deploying a Node.js app to production means running it under a production process manager, behind a reverse proxy, with environment variables for configuration. The standard stack: Node runs your app (keep it stateless), PM2 (or systemd) keeps it alive and restarts on crash, nginx (or Caddy) proxies traffic and serves static files, and env vars hold secrets and config.",
+    "code": "# 1. Install PM2 (process manager)\nnpm install -g pm2\n\n# 2. Start your app\npm2 start app.js --name myapp\npm2 save               # save the process list\npm2 startup            # restart on reboot (prints a command to run)\n\n# Useful commands:\n# pm2 logs myapp        tail logs\n# pm2 restart myapp     restart after deploy\n# pm2 monit            resource monitor\n\n# 3. Reverse proxy with nginx (snippet):\n# server {\n#     listen 80;\n#     server_name example.com;\n#     location / {\n#         proxy_pass http://127.0.0.1:3000;\n#         proxy_set_header Host $host;\n#         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n#         proxy_set_header X-Forwarded-Proto $scheme;\n#     }\n# }\n\n# 4. Good practices:\n# - read config from env vars: process.env.PORT, DATABASE_URL, SECRET\n# - never hardcode secrets or commit .env\n# - npm ci --omit=dev on the server (clean, prod-only install)\n# - set NODE_ENV=production (express enables caching + hides errors)\n# - use a CDN/reverse proxy for static assets; gzip compression\n# - health check endpoint + PM2 to restart on failure",
+    "lang": "javascript"
+  }
+]

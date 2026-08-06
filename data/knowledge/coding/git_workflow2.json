@@ -1,0 +1,12 @@
+[
+  {
+    "q": [
+      "what is a pull request",
+      "what is a pr in git",
+      "how does a pull request work",
+      "how to create a pull request",
+      "what is the difference between a pull request and a merge"
+    ],
+    "a": "A pull request (PR) is a proposal to merge changes from one branch into another — the core of code review on GitHub, GitLab, and Bitbucket. The workflow: you create a feature branch, commit your changes, push the branch, and open a PR describing what changed and why. Teammates review the diff, leave comments, request changes, and approve; CI runs automated checks (tests, lint, builds); then the PR is merged into the target branch (usually main). A PR is more than a merge — it's the review and discussion layer around a merge. Good PR practice: keep it small and focused (one logical change — hundreds of files are unreviewable), write a clear title and description (what, why, how to test), reference the issue it fixes ('Closes #42'), keep the branch rebased on main, and respond to review comments. The reviewer's job is to catch bugs, not style nits — automated linters handle style. Merge strategies: squash merge (one clean commit), merge commit (preserves history), or rebase (linear history). On GitLab the same thing is called a merge request (MR)."
+  }
+]

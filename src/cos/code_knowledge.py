@@ -7,10 +7,88 @@ COS Code Knowledge — Answers coding questions using:
 import json
 import os
 import re
-import urllib.request
 import urllib.parse
+import urllib.request
 from pathlib import Path
-from typing import List, Optional, Tuple
+
+# Language detection for coding queries (delegates to the code generator's
+# alias table so "c++", "c#", "js", "golang" etc. are all recognized).
+try:
+    from cos.code_gen import _LANG_ALIASES as _CG_LANG_ALIASES
+    from cos.code_gen import detect_language as _detect_query_lang
+except ImportError:
+    _detect_query_lang = None
+    _CG_LANG_ALIASES = {}
+
+
+def detect_query_lang(query: str) -> "str | None":
+    """Canonical language mentioned in a query, or None."""
+    if _detect_query_lang is None:
+        return None
+    try:
+        return _detect_query_lang(query)
+    except (TypeError, ValueError, re.error):
+        return None
+
+
+_LANG_PATTERNS = None  # list of (lang, compiled regex) built lazily
+
+
+def _pattern_langs(text: str):
+    """Return the set of canonical languages mentioned in a KB pattern string."""
+    global _LANG_PATTERNS
+    if _LANG_PATTERNS is None:
+        _LANG_PATTERNS = []
+        for _lang, _aliases in _CG_LANG_ALIASES.items():
+            for _al in _aliases:
+                _an = re.sub(r'\bc\s*\+\+\s*\d*\b', 'cplusplus', _al.lower())
+                _an = re.sub(r'\bc\s*#\s*(?:\.net)?\b', 'csharp', _an)
+                if _an in ('go',) or not _an:
+                    continue
+                try:
+                    _re = re.compile(r'(?<![a-z0-9])' + re.escape(_an) + r'(?![a-z0-9])')
+                    _LANG_PATTERNS.append((_lang, _re))
+                except re.error:
+                    continue
+    out = set()
+    t = text.lower()
+    t = re.sub(r'\bc\s*\+\+\s*\d*\b', 'cplusplus', t)
+    t = re.sub(r'\bc\s*#\s*(?:\.net)?\b', 'csharp', t)
+    for _lang, _re in _LANG_PATTERNS:
+        if _re.search(t):
+            out.add(_lang)
+    return out
+
+
+def _lang_adjust(query_lang: "str | None", pattern_str: str) -> int:
+    """Scoring bonus/penalty so same-language KB entries beat mismatches."""
+    if not query_lang:
+        return 0
+    plangs = _pattern_langs(pattern_str)
+    if not plangs:
+        return 0
+    if query_lang in plangs:
+        return 80
+    return -80
+
+
+def answer_language(answer: str) -> "str | None":
+    """Language of the first code fence in an answer, or None."""
+    m = re.search(r'```(\w+)', answer or '')
+    if not m:
+        return None
+    lang = m.group(1).lower()
+    return {'js': 'javascript', 'py': 'python', 'cpp': 'c++', 'cs': 'c#'}.get(lang, lang)
+
+
+# Action verbs that mark a "do it for me" code request. A fuzzy KB match
+# whose pattern lacks the query's task verb is usually the wrong entry.
+_TASK_VERBS = (
+    'write', 'create', 'implement', 'build', 'make', 'generate', 'remove',
+    'find', 'check', 'sort', 'reverse', 'convert', 'read', 'fetch', 'fix',
+    'debug', 'delete', 'add', 'count', 'merge', 'flatten', 'split', 'parse',
+    'validate', 'extract', 'rename', 'install', 'kill', 'print',
+)
 
 # ── Stack dataset API ──────────────────────────────────────────────────────
 
@@ -19,8 +97,16 @@ _DATASETS_SERVER = "https://datasets-server.huggingface.co"
 _STACK_CACHE = {}
 
 
-def _search_stack(query: str, max_files: int = 2) -> List[dict]:
-    """Search Stack dataset for code relevant to the query."""
+def _search_stack(query: str, max_files: int = 2) -> list[dict]:
+    """Search Stack dataset for code relevant to the query.
+
+    Network fallback — only runs when COS_ALLOW_NETWORK=1. Without it the
+    system stays fully offline and deterministic (returns no results, so
+    callers fall through to their local KB / synthesizer paths).
+    """
+    if os.environ.get("COS_ALLOW_NETWORK") != "1":
+        return []
+
     cache_key = query.lower().strip()
     if cache_key in _STACK_CACHE:
         return _STACK_CACHE[cache_key]
@@ -43,7 +129,7 @@ def _search_stack(query: str, max_files: int = 2) -> List[dict]:
             req = urllib.request.Request(search_url, headers={
                 'User-Agent': 'COS/1.0'
             })
-            with urllib.request.urlopen(req, timeout=60) as resp:
+            with urllib.request.urlopen(req, timeout=12) as resp:
                 data = json.loads(resp.read().decode())
 
             for row_wrapper in data.get('rows', []):
@@ -68,14 +154,14 @@ def _search_stack(query: str, max_files: int = 2) -> List[dict]:
                             'language': lang or _detect_lang(path),
                             'repo': repo_path,
                         })
-        except Exception:
+        except (OSError, ValueError):
             continue
 
     _STACK_CACHE[cache_key] = results
     return results
 
 
-def _extract_code_terms(query: str) -> List[str]:
+def _extract_code_terms(query: str) -> list[str]:
     """Extract programming-specific terms from a coding question."""
     q = query.lower()
     terms = []
@@ -175,7 +261,7 @@ def _load_coding_knowledge():
         try:
             with open(path, 'r', encoding='utf-8') as f:
                 data = json.load(f)
-        except Exception:
+        except (OSError, ValueError):
             continue
 
         if not isinstance(data, list):
@@ -232,6 +318,7 @@ _CODING_KEYWORDS_STRICT = {
     'async function', 'arrow function', 'lambda function',
     'list comprehension', 'dict comprehension',
     'for loop', 'while loop', 'if statement', 'switch case',
+    'break and continue', 'break statement', 'continue statement',
     'try except', 'try catch', 'error handling', 'exception handling',
     'html', 'css', 'flexbox', 'css grid', 'react component',
     'usestate', 'useeffect', 'useref', 'custom hook',
@@ -249,8 +336,7 @@ _CODING_KEYWORDS_STRICT = {
     'operator', 'modulo', 'modulus', 'mod operator',
     'goroutine', 'goroutines', 'channel', 'keyerror', 'segfault',
     'segmentation fault', 'null pointer', 'nullpointerexception',
-    'race condition', 'deadlock',
-    'multithreading', 'race condition', 'deadlock',
+    'race condition', 'deadlock', 'multithreading',
     'memory leak', 'memory management', 'garbage collection',
     'pointer', 'reference', 'inheritance', 'polymorphism',
     'encapsulation', 'abstraction', 'interface',
@@ -274,12 +360,11 @@ _CODING_KEYWORDS_STRICT = {
     'json parse', 'json stringify', 'serialize',
     'http request', 'http response', 'fetch api',
     'http', 'https', 'status code', 'status codes',
-    'api endpoint', 'rest api', 'graphql',
     'write a function', 'write a program', 'write code',
     'how to code', 'how to program',
     'center a div', 'responsive layout',
     'handle exception', 'handle error',
-    'merge array', 'merge list', 'merge dict',
+    'merge array', 'merge list',
 }
 
 
@@ -290,6 +375,21 @@ def is_coding_query(query: str) -> bool:
     to avoid flagging general questions as coding questions.
     """
     q = query.lower().strip()
+
+    # Unambiguous domain words: these only make sense as coding/tech topics
+    # in a Q&A bot, so a single hit is enough.
+    if re.search(r'\b(?:sql|mysql|postgres|postgresql|sqlite|csv|pandas|'
+                 r'dataframe|json|git|golang|typescript|docker|kubernetes|'
+                 r'regex|regexp|api\s+endpoint|rest\s+api|graphql|npm|pip|'
+                 r'bash|shell|command\s+line|curl|flask|django|fastapi|'
+                 r'express|react|linux|ubuntu|unix|debian)\b', q):
+        return True
+
+    # Building a website/page is a code task even when no language is named.
+    if re.search(r'\b(?:create|make|build|design|generate|develop)\b.*\b'
+                 r'(?:website|web\s*site|web\s*page|landing\s*page|'
+                 r'homepage|home\s*page)\b', q):
+        return True
 
     # Code syntax patterns (most reliable indicator)
     # "from" alone is too broad (matches English preposition).
@@ -337,15 +437,12 @@ def is_coding_query(query: str) -> bool:
     # OR two ambiguous keywords, treat as coding.
     if unambiguous_match or has_code_punct:
         return True
-    if ambiguous_count >= 2:
-        return True
-
-    return False
+    return ambiguous_count >= 2
 
 
 # ── Main Lookup ────────────────────────────────────────────────────────────
 
-def code_lookup(query: str) -> Optional[str]:
+def code_lookup(query: str) -> "str | None":
     """Look up a coding query in local knowledge base, fallback to Stack API.
 
     Args:
@@ -361,6 +458,7 @@ def code_lookup(query: str) -> Optional[str]:
     entries = _load_coding_knowledge()
     best = None
     best_len = 0
+    _query_lang = detect_query_lang(query)
 
     _FILLER = {'actually', 'basically', 'essentially', 'really',
                'literally', 'honestly', 'just', 'simply', 'please',
@@ -372,9 +470,8 @@ def code_lookup(query: str) -> Optional[str]:
                'all', 'both', 'most', 'more', 'other', 'such',
                'what', 'how', 'why', 'when', 'where', 'which', 'who',
                'tell', 'explain', 'describe', 'show', 'give', 'need', 'want',
-               'help', 'please', 'thanks', 'thank', 'way', 'ways',
-               'actually', 'basically', 'essentially', 'literally', 'really',
-               'just', 'simply', 'quite', 'rather', 'somewhat',
+               'help', 'thanks', 'thank', 'way', 'ways',
+               'quite', 'rather', 'somewhat',
                'or', 'and', 'but', 'not', 'so', 'then', 'now',
                'have', 'has', 'had', 'been', 'being', 'be', 'get', 'got',
                'use', 'used', 'using', 'make', 'made', 'making',
@@ -468,9 +565,16 @@ def code_lookup(query: str) -> Optional[str]:
             if not variant or len(variant) < 3:
                 continue
             m = pattern.search(variant)
-            if m and len(m.group(0)) > best_len:
-                best_len = len(m.group(0))
-                best = answer
+            if m:
+                # Language-aware scoring: a same-language entry with a shorter
+                # span beats a different-language entry with a longer span
+                # ("reverse a linked list in c++" must not match the Python
+                # entry first).
+                _adjusted = len(m.group(0)) + _lang_adjust(
+                    _query_lang, getattr(pattern, 'pattern', ''))
+                if _adjusted > best_len:
+                    best_len = _adjusted
+                    best = answer
 
     if best:
         # Post-process the answer: substitute topic from the query
@@ -483,10 +587,10 @@ def code_lookup(query: str) -> Optional[str]:
                 # Try multiple patterns to find the topic
                 topic = None
                 topic_patterns = [
-                    r'(?:about|covering|for|on|regarding)\s+'
-                    r'(.+?)(?:\.\s*|\?\s*|\,\s*(?:including|covering|with|that|which|featuring)|$)',
-                    r'(?:page|site|portfolio)\s+(?:about|for|covering|on)\s+'
-                    r'(.+?)(?:\.\s*|\?\s*|$)',
+                    (r'(?:about|covering|for|on|regarding)\s+'
+                     r'(.+?)(?:\.\s*|\?\s*|\,\s*(?:including|covering|with|that|which|featuring)|$)'),
+                    (r'(?:page|site|portfolio)\s+(?:about|for|covering|on)\s+'
+                     r'(.+?)(?:\.\s*|\?\s*|$)'),
                     r'"([^"]+)"',
                     r"['\"]([^'\"]+?)['\"]\s*(?:theme|style|layout)",
                 ]
@@ -515,7 +619,7 @@ def code_lookup(query: str) -> Optional[str]:
                         clean = re.sub(r'\s+with\s+.*$', '', clean).strip()
                         if clean:
                             best = best.replace('__TOPIC__', clean.title())
-            except Exception:
+            except (IndexError, ValueError):
                 pass
         return best
 
@@ -545,26 +649,23 @@ def code_lookup(query: str) -> Optional[str]:
                        # ("react vs vue" matched "stack vs queue").
                        'the', 'a', 'an', 'and', 'or', 'but', 'not', 'so',
                        'of', 'to', 'in', 'on', 'at', 'by', 'for', 'is', 'are',
-                       'was', 'were', 'be', 'been', 'being', 'do', 'does', 'did',
+                       'was', 'were', 'be', 'being', 'do', 'did',
                        'between', 'vs', 'versus', 'difference', 'differences',
                        'similarities', 'similar', 'different', 'same', 'should',
                        'would', 'could', 'might', 'may', 'its', 'it', 'his', 'her',
                        'their', 'our', 'your', 'my', 'me', 'we', 'you', 'he', 'she',
-                       'them', 'they', 'as', 'if', 'while', 'when', 'after', 'before',
-                       'what', 'why', 'how', 'there', 'here', 'all', 'each', 'both',
+                       'them', 'as', 'if', 'while', 'after', 'before',
+                       'there', 'here', 'all', 'each', 'both',
                        'more', 'most', 'other', 'another', 'such', 'no', 'yes',
-                       'want', 'need', 'like', 'good', 'great', 'best', 'help',
-                       'explain', 'describe', 'tell', 'show', 'give', 'please',
+                       'good', 'great', 'best', 'help',
+                       'explain', 'describe', 'please',
                        }
         # Use 3+ char words to catch important short coding terms like 'div', 'css', 'js', 'api'
-        q_words = set(w for w in re.findall(r'\b\w{3,}\b', q.lower())
-                      if w not in _STOP_WORDS)
+        q_words = {w for w in re.findall(r'\b\w{3,}\b', q.lower())
+                   if w not in _STOP_WORDS}
         if q_words:
             # Detect the language being asked about in the query
-            # Used to prefer entries that match the requested language
-            _LANG_WORDS = {'python', 'javascript', 'java', 'c++', 'c#', 'typescript',
-                           'rust', 'go', 'golang', 'ruby', 'swift', 'kotlin', 'php'}
-            query_lang = next((w for w in q_words if w in _LANG_WORDS), None)
+            query_lang = detect_query_lang(query)
 
             # Candidate pre-filter (fuzzy phase): the scorer rewards patterns
             # sharing query words, so restrict to entries whose pattern shares
@@ -591,10 +692,22 @@ def code_lookup(query: str) -> Optional[str]:
                 # appear in the pattern. This prevents entries about unrelated topics
                 # (e.g., 'palindromes') from matching queries that don't mention them
                 # just because they share common words like 'list', 'string', etc.
-                pattern_words = set(w for w in re.findall(r'\b[a-zA-Z]{3,}\b', pattern_str)
-                                   if w not in _STOP_WORDS)
+                pattern_words = {w for w in re.findall(r'\b[a-zA-Z]{3,}\b', pattern_str)
+                                 if w not in _STOP_WORDS}
                 extraneous_words = pattern_words - q_words
                 penalty = len(extraneous_words) * 5  # -5 per extraneous word
+                
+                # TASK-VERB PENALTY: for "do it for me" queries ("write a for
+                # loop", "convert a string"), a pattern that doesn't contain the
+                # query's action verb is a concept entry, not an answer to the
+                # task ("what is the event loop" must not answer "write a for
+                # loop in javascript"). 100 points — decisive enough that the
+                # language bonus can't rescue it; the query then falls through
+                # to the code synthesizer.
+                _task_verbs = [v for v in _TASK_VERBS
+                               if re.search(r'\b' + v + r'\w*\b', q)]
+                if _task_verbs and not any(v in pattern_str for v in _task_verbs):
+                    penalty += 100  # -100 for missing the task verb
                 
                 # Count answer overlap (weighted lower)
                 answer_lower = answer.lower()[:300]
@@ -617,17 +730,16 @@ def code_lookup(query: str) -> Optional[str]:
                 # entries whose pattern mentions that language. This prevents
                 # returning Python code when Java was requested (e.g., "binary search
                 # in Java" matching a generic "implement binary search" Python entry).
-                if query_lang and query_lang in pattern_str:
+                if query_lang and query_lang in _pattern_langs(pattern_str):
                     combined += 50  # Big bonus for matching the requested language
 
                 # Language penalty for MISMATCH: If query asks for Java but
                 # pattern mentions a different language, apply a penalty so
                 # Python entries don't dominate over the requested language.
                 if query_lang:
-                    for other_lang in _LANG_WORDS:
-                        if other_lang != query_lang and other_lang in pattern_str:
-                            combined -= 30  # Penalty for wrong language
-                            break
+                    _plangs = _pattern_langs(pattern_str)
+                    if _plangs and query_lang not in _plangs:
+                        combined -= 30  # Penalty for wrong language
 
                 if combined > best_len:
                     best_len = combined
@@ -636,28 +748,212 @@ def code_lookup(query: str) -> Optional[str]:
     if best:
         return best
 
-    # 3. Stack dataset API (last resort) — searches HuggingFace stack-v3 dataset
-    try:
-        results = _search_stack(query, max_files=1)
-        if results:
-            parts = []
-            for r in results:
-                lang = r.get('language', '')
-                path = r.get('path', '')
-                content = r.get('content', '')
-                snippet = '\n'.join(content.split('\n')[:25])
-                if len(snippet) > 1800:
-                    snippet = snippet[:1800]
-                if snippet:
-                    header = f"Here's an example from `{path}`:" if path else "Here's a code example:"
-                    parts.append(f"{header}\n\n```{lang}\n{snippet}\n```")
-            if parts:
-                return "\n\n".join(parts)
-    except Exception:
-        pass
+    # 3. Stack dataset API (last resort) — searches HuggingFace stack-v3 dataset.
+    # Heavily gated: the dataset search is slow (up to a minute per call) and
+    # frequently returns unrelated files for natural-language questions. Only
+    # run when the query looks like an actual "give me code / example / snippet"
+    # request, and only keep results whose content actually overlaps the
+    # query's significant terms — otherwise an irrelevant notebook or
+    # unrelated source file would be presented as the answer.
+    if re.search(r'\b(?:show|give|provide|write|need|find)\s+(?:me\s+)?(?:an?\s+)?(?:code|example|example\s+code|snippet|implementation|function)\b', q, re.IGNORECASE):
+        try:
+            results = _search_stack(query, max_files=1)
+            if results:
+                q_terms = [w for w in re.findall(r'\b[a-z]{4,}\b', q.lower())
+                           if w not in {'what', 'how', 'why', 'when', 'where',
+                                        'which', 'would', 'should', 'could',
+                                        'with', 'from', 'have', 'been', 'about',
+                                        'this', 'that', 'their', 'them', 'there',
+                                        'your', 'code', 'example', 'python',
+                                        'javascript', 'java', 'want', 'need',
+                                        'show', 'give', 'write', 'find',
+                                        'implement', 'function', 'snippet',
+                                        'using', 'use', 'used'}]
+                for r in results:
+                    lang = r.get('language', '')
+                    path = r.get('path', '')
+                    content = r.get('content', '')
+                    content_lower = content.lower()
+                    overlap = sum(1 for w in q_terms if w in content_lower)
+                    # Require real topic overlap (or a perfect title match) or
+                    # skip — a code dump about an unrelated subject is worse
+                    # than no answer at all.
+                    if q_terms and overlap < 2:
+                        continue
+                    snippet = '\n'.join(content.split('\n')[:25])
+                    if len(snippet) > 1800:
+                        snippet = snippet[:1800]
+                    if snippet:
+                        header = f"Here's an example from `{path}`:" if path else "Here's a code example:"
+                        return f"{header}\n\n```{lang}\n{snippet}\n```"
+        except (OSError, ValueError):
+            pass
 
     return None
 
 
+# ── High-level helpers used by the engine ──────────────────────────────────
+
+# Terms that mark a topic as programming-related even when is_coding_query()
+# misses (e.g. "how to read a csv file with pandas" mentions neither a
+# function nor code syntax). Used to keep code questions out of the Wikipedia
+# fallback, which returns unrelated articles for code topics.
+_CODING_TOPIC_RE = re.compile(
+    r'\b(?:python|javascript|typescript|java|c\+\+|c#|golang|rust|ruby|'
+    r'php|swift|kotlin|sql|bash|shell|html|css|js|ts|py)\b|'
+    r'\b(?:git|docker|npm|pip|pandas|numpy|flask|django|fastapi|express|'
+    r'react|vue|node|curl|api|http|url|csv|json|xml|regex|regexp|database|'
+    r'function|method|class|variable|array|object|string|list|dict|'
+    r'algorithm|data\s+structure|web\s+scrap|endpoint|query|snippet|'
+    r'code|program|script|syntax|bug|debug|deploy|commit|branch|repo|'
+    r'framework|library|backend|frontend|server|client|async|thread|'
+    r'cache|serialize|parse|encrypt|hash|website|web\s*site|web\s*page|'
+    r'landing\s*page|homepage|portfolio|static\s+site)\b',
+    re.IGNORECASE)
+
+# Phrases that make a query a "do it for me" code task rather than a concept
+# question: "write a function to ...", "how do I ... in python", "sql to ...".
+_CODE_TASK_RE = re.compile(
+    r'\b(?:write|implement|create|make|build|fix|debug|generate|produce|'
+    r'give|show|need|find)\b.*\b(?:code|function|program|script|snippet|'
+    r'class|query|sql|regex|algorithm|loop|parser|api|website|web\s*site|'
+    r'web\s*page|landing\s*page|homepage|html|css|portfolio)\b|'
+    r'\bhow\s+(?:do|to|can|would|should|could)\b.*\b(?:python|javascript|'
+    r'java|c\+\+|sql|git|node|flask|react|api|file|array|list|json|csv|'
+    r'website|web\s*site|web\s*page|html|css)\b',
+    re.IGNORECASE)
+
+
+def looks_like_coding_topic(text: str) -> bool:
+    """True when the text mentions a language, library, tool, or code term.
+
+    Broader than is_coding_query: used to keep code questions away from the
+    Wikipedia fallback, where "read a csv with pandas" would fetch the giant
+    panda bear article.
+    """
+    if not text or not text.strip():
+        return False
+    return bool(_CODING_TOPIC_RE.search(text))
+
+
+def looks_like_code_task(query: str) -> bool:
+    """True when the query asks for code to be written (not a concept)."""
+    return bool(_CODE_TASK_RE.search(query))
+
+
+# Concept questions: "explain what a decorator does", "what is a closure",
+# "how do generators work" — the concept noun follows a fixed set of wrappers.
+_CONCEPT_EXTRACT_RE = re.compile(
+    r'\b(?:what\s+(?:is|are|was|were|does|do|is\s+a|are\s+a|exactly\s+is)'
+    r'\s+(?:a\s+|an\s+|the\s+)?'
+    r'|explain\s+(?:what\s+)?(?:a\s+|an\s+|the\s+|how\s+)?'
+    r'|define\s+(?:a\s+|an\s+|the\s+)?'
+    r'|describe\s+(?:a\s+|an\s+|the\s+)?'
+    r'|how\s+(?:do|does|to)\s+(?:a\s+|an\s+|the\s+)?'
+    r'|what\s+does\s+(?:a\s+|an\s+|the\s+)?'
+    r')([a-z][a-z0-9_-]*(?:\s+[a-z][a-z0-9_-]*){0,3})'
+    r'(?:\s+(?:do|does|work|works|mean|means|in|with|and|or|is|are))?$',
+    re.IGNORECASE,
+)
+
+# Concept words that must never be treated as the concept itself.
+_CONCEPT_STOP = {
+    'the', 'a', 'an', 'this', 'that', 'it', 'what', 'how', 'why', 'when',
+    'where', 'which', 'who', 'code', 'program', 'function', 'do', 'does',
+    'work', 'works', 'mean', 'means', 'language', 'python', 'javascript',
+    'java', 'c++', 'c#', 'go', 'rust', 'in', 'with', 'and', 'or', 'is',
+    'are', 'explain', 'define', 'describe', 'please', 'me', 'my',
+}
+
+
+def extract_concept(query: str) -> "str | None":
+    """Pull the concept noun phrase out of a concept question.
+
+    'explain what a decorator does' -> 'decorator'
+    'what is the difference between a list and a tuple' -> None (not single)
+    """
+    if not re.search(r'\b(?:what|explain|define|describe|how)\b', query,
+                     re.IGNORECASE):
+        return None
+    if re.search(r'\bdifference\s+between\b', query, re.IGNORECASE):
+        return None
+    m = _CONCEPT_EXTRACT_RE.search(query.strip())
+    if not m:
+        return None
+    concept = m.group(1).strip().lower()
+    # strip trailing prepositions like "in" ("what is a generator in python")
+    concept = re.sub(r'\s+(?:in|with|using)\s+.*$', '', concept).strip()
+    # strip trailing helper verbs ("explain what a decorator does")
+    concept = re.sub(r'\s+(?:work|works|mean|means|do|does)$', '', concept).strip()
+    words = concept.split()
+    if not words or len(concept) > 40:
+        return None
+    if any(w in _CONCEPT_STOP for w in words):
+        return None
+    return concept
+
+
+def concept_lookup(query: str) -> "str | None":
+    """Answer a concept question directly from the code KB patterns.
+
+    Searches entries whose PATTERN contains the concept noun, preferring
+    definition-style patterns ('what is X', 'explain X'). This fixes queries
+    like 'explain what a decorator does' that carry too few shared words for
+    the fuzzy scorer but are clearly about one concept.
+    """
+    concept = extract_concept(query)
+    if not concept:
+        return None
+    entries = _load_coding_knowledge()
+    if not entries:
+        return None
+    concept_words = set(concept.split())
+    best = None
+    best_score = 0
+    for pattern, answer in entries:
+        try:
+            ps = pattern.pattern.lower()
+        except AttributeError:
+            continue
+        # every concept word must appear in the pattern
+        if not all(w in ps for w in concept_words):
+            continue
+        # the pattern must be a definition-style entry, not an incidental
+        # mention ("map with a lambda" is not a definition of lambda)
+        if not re.match(r'^(?:what|explain|define|describe|how)\b', ps):
+            continue
+        score = len(ps)
+        if concept in ps[:50]:
+            score += 100
+        if len(concept_words) >= 2:
+            score += 50
+        if score > best_score:
+            best_score = score
+            best = answer
+    return best
+
+
+def smart_code_answer(query: str) -> "str | None":
+    """Answer a coding question from the curated KB first, then by synthesis.
+
+    Never touches Wikipedia: for code topics Wikipedia returns unrelated
+    articles ("pandas" → giant panda). The code generator synthesizes code
+    for the common tasks that the KB doesn't cover.
+    """
+    ans = code_lookup(query)
+    if ans:
+        return ans
+    try:
+        from cos.code_gen import generate_code
+        gen = generate_code(query)
+        if gen:
+            return gen
+    except Exception:
+        pass
+    # Last KB attempt: definition-style concept lookup for "explain what a
+    # decorator does" style questions the fuzzy scorer can't reach.
+    return concept_lookup(query)
+
+
 # Pre-load coding knowledge at import time
-_load_coding_knowledge()
+_ = _load_coding_knowledge()

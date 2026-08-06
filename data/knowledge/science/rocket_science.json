@@ -1,0 +1,11 @@
+[
+  {
+    "q": [
+      "how does a rocket work",
+      "how do rockets work",
+      "how does a rocket engine work",
+      "why do rockets need to go fast to leave earth"
+    ],
+    "a": "A rocket works on Newton's third law — for every action there's an equal and opposite reaction. A rocket engine burns fuel and oxidizer, creating hot gas that's forced out of a nozzle at enormous speed; the gas pushing backward (action) pushes the rocket forward (reaction). The key point that separates rockets from planes: they carry their own oxidizer (liquid oxygen, typically), so they work in the vacuum of space where there's no air to push against. The rocket equation (Tsiolkovsky) explains why they're so big: the change in velocity depends on exhaust velocity times the natural log of the mass ratio — and since the rocket must carry its own fuel, most of the mass at launch is propellant (a typical launch vehicle is ~90% fuel). That's also why staging exists: as each stage's fuel empties, the rocket drops the empty tanks and engines to shed mass, so the next stage needs less fuel to accelerate. The engine cycle basics: liquid engines mix fuel (kerosene, methane, or hydrogen) with liquid oxygen in a combustion chamber and expel it through a bell-shaped nozzle that accelerates the exhaust; solid rockets (like the shuttle's boosters) burn a solid fuel grain — simpler, more thrust, but can't be throttled or stopped. Getting to orbit isn't about going 'straight up' — it's about going sideways fast enough (about 28,000 km/h / 17,500 mph) that the Earth's curvature falls away beneath you at the same rate you fall — that's orbital velocity, why rockets pitch over after launch. Big milestones: the V-2 (1944), Sputnik (1957), Apollo/Saturn V (1969), and reusable rockets (SpaceX Falcon 9, 2015) that land the booster and fly again — the single biggest cost breakthrough in launch history."
+  }
+]

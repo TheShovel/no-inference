@@ -120,6 +120,13 @@ def _solve_simple_arithmetic(q):
     "What is 25 times 4 plus 10?"
     "Calculate 15 + 27"
     """
+    # Equations ("solve x/2 + 1 = 6") and root/power questions are handled by
+    # their own strategies — extracting a bare fragment like "2 + 1" from
+    # "x/2 + 1 = 6" would produce a wrong, context-free answer.
+    if '=' in q:
+        return None
+    if re.search(r'\b(square|sqrt|cube|cubed|squared|power|root)\b', q):
+        return None
     # Normalize words to operators
     expr = q.lower()
     expr = re.sub(r'\btimes\b', '*', expr)
@@ -186,6 +193,182 @@ def _solve_survey_probability(q):
     return None
 
 
+def _solve_square_root(q):
+    """Solve square/cube root problems.
+    
+    "What is the square root of 144?"
+    "sqrt of 81"
+    "cube root of 27"
+    """
+    m = re.search(r'(?:square\s+root|sqrt)\s+(?:of\s+)?(\d+(?:\.\d+)?)', q, re.IGNORECASE)
+    if m:
+        n = float(m.group(1))
+        r = n ** 0.5
+        if abs(r - round(r)) < 1e-9:
+            r = round(r)
+            return f"The square root of {int(n)} is {int(r)}. ({int(r)} × {int(r)} = {int(n)})"
+        return f"The square root of {n:g} is approximately {r:.4f}."
+    m = re.search(r'cube\s+root\s+(?:of\s+)?(\d+(?:\.\d+)?)', q, re.IGNORECASE)
+    if m:
+        n = float(m.group(1))
+        r = n ** (1.0 / 3.0)
+        if abs(r - round(r)) < 1e-9:
+            r = round(r)
+            return f"The cube root of {int(n)} is {int(r)}. ({int(r)} × {int(r)} × {int(r)} = {int(n)})"
+        return f"The cube root of {n:g} is approximately {r:.4f}."
+    return None
+
+
+def _solve_power(q):
+    """Solve power/exponent problems.
+    
+    "What is 2 to the power of 10?"
+    "3^4"
+    "What is 5 cubed?"
+    """
+    m = re.search(r'(\d+(?:\.\d+)?)\s*(?:\^|to\s+the\s+(?:power|exponent)\s+of)\s*(\d+(?:\.\d+)?)', q, re.IGNORECASE)
+    if m:
+        base, exp = float(m.group(1)), float(m.group(2))
+        if exp == int(exp) and int(exp) <= 100:
+            result = base ** int(exp)
+            return f"{base:g} to the power of {int(exp)} is {result:g}."
+        result = base ** exp
+        return f"{base:g} to the power of {exp:g} is approximately {result:.6g}."
+    m = re.search(r'(\d+(?:\.\d+)?)\s*(?:squared|cubed|squared\b)', q, re.IGNORECASE)
+    if m:
+        n = float(m.group(1))
+        if 'cubed' in q:
+            return f"{n:g} cubed is {n**3:g}. ({n:g} × {n:g} × {n:g} = {n**3:g})"
+        return f"{n:g} squared is {n**2:g}. ({n:g} × {n:g} = {n**2:g})"
+    return None
+
+
+def _solve_linear_equation(q):
+    """Solve linear equations in one variable.
+    
+    "solve x + 3 = 10"
+    "solve 2x - 4 = 8"
+    "what is x if 3x + 5 = 20"
+    "solve for x: x/2 + 1 = 6"
+    """
+    if not re.search(r'\b(solve|find|x\s*=|for\s+x)\b', q, re.IGNORECASE) and '=' not in q:
+        return None
+    # Only handle equations with a single variable and one "=" sign
+    if q.count('=') != 1:
+        return None
+    # Strip instruction prefixes so the variable in "solve for x: x/2 + 1 = 6"
+    # isn't counted twice ("for x" is an instruction, not part of the equation)
+    eq = q
+    for pat in (
+        r'^\s*solve\s+for\s+[xyz]\s*[:\-,]?\s*',
+        r'^\s*solve\s+for\s+[xyz]\s*',
+        r'^\s*solve\s+',
+        r'^\s*find\s+[xyz]\s+(?:if|where|when|given|such\s+that)\s+',
+        r'^\s*find\s+',
+        r'^\s*what\s+is\s+[xyz]\s+(?:if|where|when|given)\s+',
+        r'^\s*what\s+is\s+[xyz]\s*[:\-,]?\s*',
+        r'^\s*determine\s+[xyz]\s+(?:if|where|when|given)\s+',
+        r'^\s*calculate\s+[xyz]\s*[:\-,]?\s*',
+    ):
+        eq = re.sub(pat, '', eq, flags=re.IGNORECASE)
+        if '=' in eq:
+            break
+    m = re.search(r'([^=]+)=([^=]+)', eq)
+    if not m:
+        return None
+    left, right = m.group(1), m.group(2)
+    var_match = re.search(r'[xyz](?![a-z])', left + right)
+    if not var_match:
+        return None
+    var = var_match.group(0)
+
+    def _parse_side(side, var):
+        """Parse a linear expression ax+b into (coeff, const)."""
+        # normalize: remove spaces, handle 'x' -> '1x'
+        s = side.lower().replace(' ', '')
+        # remove trailing punctuation
+        s = re.sub(r'[\?:]+$', '', s)
+        coeff, const = 0.0, 0.0
+        # "x/2" style terms: the variable divided by a constant contributes
+        # 1/2 to the coefficient (and the denominator is not a bare constant)
+        div_terms = re.findall(r'([+-]?)(\d*\.?\d*)[a-z]\s*/\s*(\d+\.?\d*)', s)
+        for sign, num, den in div_terms:
+            num = num or '1'
+            coeff += float(sign + num) / float(den)
+        s = re.sub(r'[a-z]\s*/\s*\d+\.?\d*', '', s)
+        # variable terms: optional sign, optional coefficient, then the variable
+        var_terms = re.findall(r'([+-]?)(\d*\.?\d*)[a-z]\b', s)
+        for sign, num in var_terms:
+            num = num or '1'
+            coeff += float(sign + num)
+        # bare constants: numbers NOT followed by a letter (so '2' in '2x' is skipped)
+        consts = re.findall(r'([+-]?\d+\.?\d*)(?![a-z])', s)
+        for c in consts:
+            const += float(c)
+        return coeff, const
+
+    try:
+        lc, lk = _parse_side(left, var)
+        rc, rk = _parse_side(right, var)
+    except Exception:
+        return None
+    # (lc * x + lk) = (rc * x + rk)  ->  x = (rk - lk) / (lc - rc)
+    denom = lc - rc
+    if abs(denom) < 1e-12:
+        return None
+    sol = (rk - lk) / denom
+    if sol == int(sol):
+        sol_str = str(int(sol))
+    else:
+        sol_str = f"{sol:.4f}"
+    return (f"Solving for {var}: {var} = {sol_str}. "
+            f"({left.strip()} = {right.strip()} → move like terms: "
+            f"({lc:g}{var} + {lk:g}) = ({rc:g}{var} + {rk:g}), so "
+            f"{var} = ({rk:g} - {lk:g}) / ({lc:g} - {rc:g}) = {sol_str})")
+
+
+def _solve_geometry(q):
+    """Solve basic geometry problems.
+    
+    "area of a circle with radius 5"
+    "circumference of a circle with diameter 10"
+    "area of a rectangle with length 4 and width 3"
+    "area of a triangle with base 6 and height 4"
+    """
+    import math as _m
+    # Circle area from radius or diameter
+    m = re.search(r'area\s+of\s+(?:a\s+)?circle.*?(?:radius|diameter)\s*(?:of|=|:)?\s*(\d+(?:\.\d+)?)', q, re.IGNORECASE)
+    if m:
+        val = float(m.group(1))
+        if 'diameter' in q:
+            r = val / 2.0
+            a = _m.pi * r ** 2
+            return f"The area of a circle with diameter {val:g} is {a:.2f} square units. (Area = π × r² = π × {r:g}² = {a:.2f})"
+        a = _m.pi * val ** 2
+        return f"The area of a circle with radius {val:g} is {a:.2f} square units. (Area = π × r² = π × {val:g}² = {a:.2f})"
+    # Circle circumference
+    m = re.search(r'circumference\s+of\s+(?:a\s+)?circle.*?(?:radius|diameter)\s*(?:of|=|:)?\s*(\d+(?:\.\d+)?)', q, re.IGNORECASE)
+    if m:
+        val = float(m.group(1))
+        if 'diameter' in q:
+            c = _m.pi * val
+            return f"The circumference of a circle with diameter {val:g} is {c:.2f} units. (C = π × d = π × {val:g} = {c:.2f})"
+        c = 2 * _m.pi * val
+        return f"The circumference of a circle with radius {val:g} is {c:.2f} units. (C = 2πr = 2 × π × {val:g} = {c:.2f})"
+    # Rectangle area
+    m = re.search(r'area\s+of\s+(?:a\s+)?rectangle.*?(?:length|side)\s*(?:of|=|:)?\s*(\d+(?:\.\d+)?).*?(?:width|side)\s*(?:of|=|:)?\s*(\d+(?:\.\d+)?)', q, re.IGNORECASE)
+    if m:
+        l, w = float(m.group(1)), float(m.group(2))
+        return f"The area of a {l:g} × {w:g} rectangle is {l*w:g} square units. (Area = length × width = {l:g} × {w:g} = {l*w:g})"
+    # Triangle area
+    m = re.search(r'area\s+of\s+(?:a\s+)?triangle.*?(?:base)\s*(?:of|=|:)?\s*(\d+(?:\.\d+)?).*?(?:height)\s*(?:of|=|:)?\s*(\d+(?:\.\d+)?)', q, re.IGNORECASE)
+    if m:
+        b, h = float(m.group(1)), float(m.group(2))
+        a = 0.5 * b * h
+        return f"The area of a triangle with base {b:g} and height {h:g} is {a:g} square units. (Area = ½ × base × height = ½ × {b:g} × {h:g} = {a:g})"
+    return None
+
+
 def solve_word_problem(question):
     """Solve a word problem using multiple strategies."""
     q = question.strip()
@@ -198,6 +381,10 @@ def solve_word_problem(question):
         _solve_distance_time,        # "train travels at 60 mph for 2.5 hours"
         _solve_percentage,           # "5 percent of 200"
         _solve_survey_probability,   # "survey of 100 people"
+        _solve_square_root,          # "what is the square root of 144"
+        _solve_power,                # "2 to the power of 10"
+        _solve_linear_equation,      # "solve x + 3 = 10"
+        _solve_geometry,             # "area of a circle with radius 5"
     ]
     
     for strategy in strategies:

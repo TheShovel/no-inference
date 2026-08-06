@@ -1,0 +1,113 @@
+[
+  {
+    "q": [
+      "what should i make for dinner",
+      "dinner ideas",
+      "what to cook for dinner",
+      "easy dinner recipes",
+      "what should i eat for dinner",
+      "quick dinner ideas"
+    ],
+    "a": "Good dinner options depend on how much time and effort you want to spend. For a quick 15-minute meal: stir-fry (any protein plus frozen vegetables over rice), pasta with garlic, olive oil, and parmesan, or a loaded omelette or frittata with salad. For a 30-minute meal: sheet-pan chicken or fish with roasted vegetables, tacos or burrito bowls (canned beans, rice, salsa, avocado), or a one-pot pasta or curry. For a low-effort meal: grain bowls (cooked grains + roasted or raw veg + a protein + a sauce like tahini or vinaigrette), or a hearty soup with crusty bread. A reliable formula for improvising: pick a protein, a starch, and two vegetables, and cook them with a flavor base (onion/garlic) plus one sauce — you can make an almost unlimited variety of meals that way. Batch cooking once or twice a week (grains, a protein, a sauce) makes weeknight dinners a matter of assembly."
+  },
+  {
+    "q": [
+      "how do i get better at sleeping",
+      "how to sleep better",
+      "sleep hygiene tips",
+      "why can't i sleep",
+      "how to fall asleep faster",
+      "better sleep tips",
+      "insomnia tips"
+    ],
+    "a": "Better sleep comes mostly from consistent habits, not supplements. Keep a regular sleep schedule — the same wake time every day (even weekends) anchors your circadian rhythm more than bedtime does. Get bright light exposure in the morning and dim lights in the evening; light tells your brain whether to produce melatonin. Cut caffeine after early afternoon (its half-life is about 5-6 hours) and avoid alcohol before bed — it fragments sleep even if it makes you drowsy. Keep the bedroom cool (about 18-19°C / 65°F), dark, and quiet. Wind down for 30-60 minutes: low light, no screens (blue light suppresses melatonin; if you must use a screen, enable night mode), reading, or stretching. If you can't fall asleep after ~20 minutes, get up and do something boring in dim light until you feel sleepy — lying there awake teaches your brain to associate bed with wakefulness. Daily exercise helps, but avoid vigorous workouts within 2-3 hours of bedtime."
+  },
+  {
+    "q": [
+      "what is the best way to study for an exam",
+      "how to study for an exam",
+      "study tips for exams",
+      "how to study effectively",
+      "best study techniques",
+      "how to memorize for a test"
+    ],
+    "a": "Evidence-based studying beats re-reading and highlighting. The two most effective techniques are active recall — testing yourself with flashcards or blank-page recall instead of rereading notes — and spaced repetition, reviewing material at increasing intervals (e.g. after 1 day, 3 days, 1 week) so the brain has to re-consolidate it. Use the Pomodoro technique (25 minutes focused work, 5 minute break) or similar structured sessions, and interleave subjects rather than blocking one topic for hours. Teach the material out loud to someone (or an imaginary student) — explaining forces you to organize it. Before the exam, do practice tests under realistic conditions; they're the strongest predictor of exam performance. Sleep matters more than last-minute cramming — memory consolidation happens during sleep, so a full night beats an all-nighter."
+  },
+  {
+    "q": [
+      "how do i save money",
+      "how to save money",
+      "budgeting tips",
+      "how to start budgeting",
+      "how to manage my money",
+      "save money each month",
+      "personal finance tips"
+    ],
+    "a": "Saving money works best when you make it automatic rather than relying on willpower. Start by tracking your spending for a month — most people don't know where the money actually goes. Then use the 50/30/20 rule as a starting framework: 50% of income for needs (rent, food, transport), 30% for wants, 20% for savings and debt. Automate a transfer to a separate savings account on payday — you save what you never see. Cut the biggest levers first: housing, car payments, and food (eating out) dwarf small luxuries like coffee subscriptions. Negotiate bills (internet, insurance, phone) once a year — a 10-minute call often saves 10-20%. Keep an emergency fund of 3-6 months of expenses before investing, and pay off high-interest debt (credit cards) before anything else, since a 20%+ APR destroys any investment return."
+  },
+  {
+    "q": [
+      "what is the best way to learn programming",
+      "how to learn programming",
+      "how to learn to code",
+      "best way to learn coding",
+      "where to start programming",
+      "learning to code tips"
+    ],
+    "a": "The best way to learn programming is to build real things, starting small, while getting feedback. Pick one language — Python is the most common recommendation because it's readable and versatile — and learn the fundamentals (variables, conditionals, loops, functions, data structures) through a structured course like Harvard's free CS50, freeCodeCamp, or Automate the Boring Stuff. Then immediately build projects that solve problems you actually have: a personal budget calculator, a script that renames files, a simple website. Programming is a skill, not a subject — you learn it by typing code and debugging errors, so expect most of your time to be spent reading error messages. Read other people's code (GitHub, open source) and use a debugger or print statements to trace your programs. Avoid tutorial hell: alternate watching/reading with coding 2-3 times as long. Learn git early, since version control is standard practice. A year of consistent, project-driven practice (even 30-60 minutes most days) is more effective than occasional weekend marathons."
+  },
+  {
+    "q": [
+      "why is my code slow",
+      "how to make my code faster",
+      "how to optimize code",
+      "code performance tips",
+      "my program is slow",
+      "how to debug slow code",
+      "how to profile code"
+    ],
+    "a": "Slow code is almost always solved by measuring first — never guess, profile. For a typical program, the steps are: (1) Reproduce the slowness on a small input, (2) profile it — use a profiler (cProfile for Python, Chrome DevTools Performance tab for JavaScript, perf for compiled code) or add timing around suspect functions to find the bottleneck, (3) fix the bottleneck specifically. The most common culprits, in order: accidental quadratic behavior (e.g. string concatenation in a loop, or a list scan inside another loop), too many I/O operations (network calls or file reads inside loops — batch them), missing indexes or full-table scans in databases, unnecessary work repeated per frame/per item (hoist invariant computations out of loops), and blocked event loops (synchronous operations in async code). Often the algorithmic fix — using a hash map instead of a nested loop, or caching results with memoization — gives a 10-100x improvement, which beats micro-optimizing the inner loop. After fixing, re-profile to confirm, and always keep the slow version's tests so you don't break behavior."
+  },
+  {
+    "q": [
+      "what should i watch tonight",
+      "what movie should i watch",
+      "good movies to watch",
+      "movie recommendations",
+      "what to watch suggestions",
+      "recommend me a movie"
+    ],
+    "a": "Without knowing your taste I can suggest some widely loved options across genres. For a crowd-pleasing drama-comedy: The Grand Budapest Hotel or Little Miss Sunshine. For sci-fi with ideas: Arrival, Inception, or Interstellar. For thrillers: Parasite, Gone Girl, or The Silence of the Lambs. For comedy: Airplane!, The Nice Guys, or Palm Springs. For animated: Spider-Man: Into the Spider-Verse, or the Studio Ghibli catalog (Spirited Away, Princess Mononoke). For a classic: The Godfather, Casablanca, or 12 Angry Men. Tell me your favorite genre or a movie you loved and I can narrow it down — or try a recommendation engine like Letterboxd's or Netflix's 'Because you watched' row."
+  },
+  {
+    "q": [
+      "how do i make coffee at home",
+      "how to make good coffee",
+      "best way to brew coffee",
+      "coffee brewing guide",
+      "make coffee like a barista"
+    ],
+    "a": "Coffee brewing extracts solubles from ground beans with hot water, and four variables control the result: ratio, grind, temperature, and time. Start with a 1:16 ratio (about 60g of coffee per liter of water, or 15g for a 250ml cup). Grind fresh just before brewing — whole beans go stale quickly once ground. Use water at 90-96°C (just off the boil). For a French press: coarse grind, steep 4 minutes, then press. For pour-over (V60/Chemex): medium-fine grind, ~3 minutes, pouring in slow circles. For a drip machine: medium grind. If the coffee tastes bitter, it's over-extracted — grind coarser, cooler, or shorter. If it's sour, it's under-extracted — grind finer or longer. Filtered water matters more than people expect, and buying whole beans from a local roaster (ideally roasted within the last month) is the single biggest upgrade."
+  },
+  {
+    "q": [
+      "how do i debug my code",
+      "how to debug a program",
+      "debugging techniques",
+      "how to find a bug",
+      "how to fix errors in my code"
+    ],
+    "a": "Debugging is a systematic process, not a gift. First, reproduce the bug reliably — identify the smallest input that triggers it; 'it doesn't work' isn't a bug report, 'it returns 42 when input is 7' is. Second, read the error message fully: the stack trace tells you which line and what kind of failure (syntax, type, null pointer, index out of range). Third, isolate: use print statements or a debugger (pdb in Python, built-in debuggers in VS Code/Chrome DevTools) to check values at each step, and use binary search — comment out or stub half the code to find which half contains the bug. Fourth, verify assumptions: the bug is often not where you think it is — check that inputs are what you expect (print the input), check off-by-one errors, and check mutability issues (a list being modified in place). Finally, write a regression test that reproduces the bug before you fix it, fix the root cause (not the symptom), and run the full test suite to make sure nothing else broke. Explain the problem out loud or to a rubber duck — the act of articulating it often reveals the flaw."
+  },
+  {
+    "q": [
+      "python == vs is",
+      "is vs == python",
+      "python is vs ==",
+      "== and is in python",
+      "identity vs equality in python",
+      "difference between == and is in python code"
+    ],
+    "a": "In Python, == compares values (equality) while is compares identity — whether two names refer to the exact same object in memory. For example, a = [1, 2]; b = [1, 2]: a == b is True (same contents) but a is b is False (two different list objects). Use == for comparing values of numbers, strings, lists, dicts, etc. Use is only when you truly mean object identity: the canonical cases are None (if x is None:, never x == None), True/False, and checking singletons or cached objects. There's a classic gotcha with small integers: Python caches integers from -5 to 256, so x = 256; y = 256; x is y is True — but x = 257; y = 257; x is y is False, because 257 isn't cached and creates two objects. Never rely on is for numbers or strings; and note that some types override == to do something semantic (e.g. numpy arrays return elementwise arrays, which is why 'if a == b' raises an error with arrays — you must use .all() or .equals())."
+  }
+]

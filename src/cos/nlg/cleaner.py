@@ -1,11 +1,11 @@
 """NLG Information Cleaning — remove noise, normalize text."""
 
 import re
-from typing import List, Optional
+
 from .util import split_sentences
 
 
-def clean_information(text: str, max_sentences: Optional[int] = None) -> str:
+def clean_information(text: str, max_sentences: "int | None" = None) -> str:
     """Clean raw information: remove pronunciation guides, normalize, truncate if requested."""
     if not text:
         return ""

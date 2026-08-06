@@ -1,0 +1,20 @@
+[
+  {
+    "q": [
+      "how do antibiotics work",
+      "what do antibiotics do",
+      "how does amoxicillin work",
+      "why dont antibiotics work on viruses"
+    ],
+    "a": "Antibiotics kill or stop bacteria — they are completely useless against viruses (colds, flu, most sore throats), which is why doctors don't prescribe them for those. How they work, in two broad mechanisms: (1) Bactericidal antibiotics kill bacteria directly — penicillins and cephalosporins weaken the bacterial cell wall so the bacterium bursts; others (fluoroquinolones) block DNA replication. (2) Bacteriostatic antibiotics stop bacteria from multiplying (tetracyclines, macrolides block protein synthesis), letting your immune system finish them off. The problem that dominates modern medicine: antibiotic resistance. Bacteria evolve fast, and every antibiotic course selects for survivors that can resist it — which is why: (1) you must take the FULL course as prescribed, even if you feel better (stopping early lets resistant survivors multiply), (2) antibiotics are only for bacterial infections — taking them for a virus does nothing but drive resistance, and (3) 'broad-spectrum' antibiotics (amoxicillin) kill good gut bacteria too, which is why diarrhea and yeast infections are common side effects. Doctors culture infections to pick a 'narrow-spectrum' antibiotic that targets the specific bacterium. The key distinctions: antibiotics ≠ antivirals (which treat HIV, flu, herpes) and ≠ antifungals (which treat candida). If a doctor says an infection is viral, the best 'treatment' is rest, fluids, and symptom relief — not antibiotics."
+  },
+  {
+    "q": [
+      "how does anesthesia work",
+      "how does general anesthesia work",
+      "what are the types of anesthesia",
+      "is anesthesia safe"
+    ],
+    "a": "Anesthesia is a controlled, reversible loss of sensation — and there are four main types, not one. (1) Local anesthesia numbs a small area (a dentist numbing a tooth) — you're fully awake; the drug blocks nerve signals in that spot. (2) Regional anesthesia numbs a larger region: an epidural (childbirth) or a spinal block (hip/knee surgery) — you're awake but feel nothing below the waist. (3) Sedation (twilight) relaxes you; you breathe on your own and can respond, but don't remember much — used for colonoscopies, dental work. (4) General anesthesia puts you fully unconscious for major surgery — you don't move, feel, or remember, and you're not breathing on your own (a breathing tube and ventilator take over). How general anesthesia actually works is still not fully understood, but the modern picture is that anesthetic drugs act on the brain's communication system — enhancing inhibitory signals (GABA receptors) and dampening excitatory ones (glutamate, NMDA receptors) — which suppresses the networks that produce consciousness, pain perception, and memory. An anesthesiologist continuously monitors your vitals and adjusts depth; waking up is the drug wearing off plus reversal agents. Is it safe? For healthy people, general anesthesia is remarkably safe — serious complications are rare (roughly on the order of 1 in 100,000-200,000 for healthy patients), far riskier are the surgery and the underlying condition. Risk increases with age, heart/lung disease, and obesity — which is why the pre-op evaluation exists. The classic myths to ignore: you don't 'wake up during surgery' (awareness is extremely rare, <0.1%, and monitored), and anesthesia does not 'erase memories' long-term."
+  }
+]

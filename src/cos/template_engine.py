@@ -261,17 +261,39 @@ def match_template(query, context=None):
             response = response.replace('{topic}', topic)
         else:
             response = template_text
-        # Replace literal '[Insert ...]' placeholders with the last response content
-        # Covers: [Insert Text], [Insert Rewrite], [Insert Email], [Insert Edit], etc.
-        if conversation_history:
-            for q_hist, r_hist in reversed(conversation_history):
-                if r_hist and len(r_hist) > 20:
-                    last_content = r_hist
-                    # Replace any '[Insert ...]' placeholder with the last response
-                    response = re.sub(r'\[Insert\s+\w+\]', last_content, response)
-                    break
+        # Any template that still contains a literal '[Insert ...]' placeholder
+        # or an unresolved '{context}' slot has no real content. Returning it
+        # would produce garbage (or stale content from a previous turn if we
+        # substituted history). Such templates are rejected here so callers
+        # fall through to a handler that can produce real information.
+        if re.search(r'\[Insert\s+\w+\]', response) or '{context}' in response or '{topic}' in response:
+            return None
+
+        # Reject pure filler templates: auto-generated "explain X" / "what is X"
+        # meta-templates and vague motivational filler with no information content.
+        # These produce generic garbage ("X is a fascinating subject...") that
+        # scores worse than an honest "I don't know" and blocks real retrieval.
+        _filler_phrases = (
+            'is a fascinating subject that encompasses several key ideas',
+            'let me break it down in a way that\'s easy to understand, starting with the fundamentals',
+            'key differences and similarities',
+            'the fundamental difference lies in how they approach the same underlying principles',
+            'smart move for your future',
+            'getting your finances in order for',
+            'is a smart move. here is a step-by-step approach',
+            'it\'s basically [insert',
+            'works the way it does is largely due to cultural evolution',
+            'helps us understand and address important questions in its domain',
+            'deeply connected to many other domains',
+            'operates on a set of well-defined principles that govern its behavior',
+            'i\'d suggest starting by identifying what aspect interests you most',
+            'if we\'re boiling',
+        )
+        _r_lower = response.lower()
+        if any(p in _r_lower for p in _filler_phrases):
+            return None
     except Exception:
-        response = template_text
+        return None
     
     return {
         'response': response,

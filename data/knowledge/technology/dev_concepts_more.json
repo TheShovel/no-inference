@@ -1,0 +1,47 @@
+[
+  {
+    "q": [
+      "what is terraform",
+      "what is infrastructure as code",
+      "terraform explained",
+      "what is iac"
+    ],
+    "a": "Terraform is an infrastructure-as-code (IaC) tool by HashiCorp: instead of clicking around a cloud console to create servers, databases, and networks, you describe your entire infrastructure in declarative configuration files (HCL, HashiCorp Configuration Language), and Terraform creates, updates, and destroys it to match. The core ideas: (1) Declarative — you write the desired end state ('I want one EC2 instance, this security group, this RDS database'), and Terraform figures out the steps to get there. (2) Plan/apply workflow — `terraform plan` shows exactly what will change (the diff), `terraform apply` executes it, and `terraform destroy` tears it down — so infrastructure changes become reviewable like code changes. (3) State — Terraform keeps a state file tracking what it created, so it knows what to update or remove; that state is a critical artifact (stored remotely in S3/GCS with locking for teams). (4) Providers — one tool for many clouds (AWS, Azure, GCP, and thousands of others) with the same syntax. Why teams love it: reproducibility (the same config builds the same environment every time), reviewability (infra changes go through pull requests), and disaster recovery (rebuild production from code). The related concept: 'IaC' is the umbrella term; Terraform is the most popular tool (OpenTofu is its open-source fork after licensing changes). The learning curve note: HCL is easy to read; the hard parts are state management, dependencies, and module design. Alternatives: AWS CloudFormation (AWS-only), Pulumi (infra in real programming languages), and Ansible (config management rather than provisioning)."
+  },
+  {
+    "q": [
+      "what is a microfrontend",
+      "micro frontend architecture",
+      "what are microfrontends",
+      "microfrontend vs monolith frontend"
+    ],
+    "a": "Micro-frontends apply the microservices idea to the frontend: instead of one large, unified web application, the UI is split into smaller applications (one per feature or team — e.g., a checkout app, a search app, a profile app), each owned by a separate team and potentially built with different frameworks, and composed into a single user experience. The architecture has a 'container' app (the shell) that decides which micro-frontend to load for each route, and each micro-frontend is developed, deployed, and versioned independently. The benefits: (1) Team autonomy — a team can ship its part without coordinating a big-bang release with everyone else; (2) independent scaling and technology choice — the checkout team can use Vue while search uses React; (3) fault isolation — one team's broken deploy doesn't take down the whole app (usually). The real costs: (1) complexity — the integration points (routing, shared state, shared styles) are genuinely hard; (2) duplication — teams often duplicate shared libraries (a 400 KB app becomes 4 × 300 KB of framework duplicates); (3) consistency — stitching different teams' UIs into one seamless experience is harder than it sounds; (4) performance — multiple bundles, multiple requests. Integration approaches: iframes (simple, clunky), Web Components (framework-agnostic, recommended), module federation (Webpack 5 — shared runtime, the modern favorite), or build-time composition. The honest verdict: micro-frontends are justified for large orgs (>5 teams on one app, or teams that must deploy independently); for most teams, a well-structured monolith frontend with good module boundaries is the pragmatic choice — the same lesson microservices taught the backend."
+  },
+  {
+    "q": [
+      "what is mvc",
+      "what is the mvc pattern",
+      "mvc architecture explained",
+      "what is model view controller"
+    ],
+    "a": "MVC (Model-View-Controller) is a design pattern that separates an application into three parts: the Model (your data and business logic — the 'what it is' and 'what it does'), the View (the user interface — what the user sees), and the Controller (the glue — it receives user input, asks the Model for data, and tells the View what to display). The flow for a typical request: the user clicks something → the Controller handles the event → the Controller calls the Model (which queries the database or runs logic) → the Model returns data → the Controller passes the data to the View → the View renders HTML/UI. The pattern's core value is separation of concerns: business logic (Model), presentation (View), and request handling (Controller) are decoupled, so you can change the UI without touching the data layer, and test each part independently. Where you'll meet it: the classic web frameworks — Ruby on Rails, Django (though Django is 'MTV' — Template instead of View — with the same idea), Laravel, ASP.NET MVC, and Spring MVC; and it's the mental model behind most web architectures even when not labeled. The variations to know: 'MVC in the browser' (React/Vue components act like views with state management like Redux standing in for the model), and its relatives — MVVM (adds a ViewModel, common in mobile: Android, WPF) and MVP (Presenter instead of Controller). The common criticism: 'fat controllers' (logic creeping out of the Model) — the pattern works best when the Model is the heavyweight and the Controller stays thin."
+  },
+  {
+    "q": [
+      "what is a sdk",
+      "what is a software development kit",
+      "sdk vs api",
+      "what does sdk stand for"
+    ],
+    "a": "An SDK (Software Development Kit) is a package of tools that lets developers build for a specific platform, service, or product — the 'starter kit' for developing against it. A typical SDK includes: libraries/APIs for the platform's features, documentation and code examples, and often tools like compilers, debuggers, and test runners. Examples: the Android SDK (build Android apps), the iOS SDK, the AWS SDK for Python (write code that uses AWS services), Stripe SDKs (take payments in your app), and the Facebook/Meta SDKs (integrate login and sharing). The distinction people always ask about: SDK vs API — an API is the interface (the set of endpoints/functions you call); an SDK is the toolkit that makes calling that API easy — it typically wraps the API in convenient, language-native functions and handles the plumbing (auth, retries, serialization) for you. The analogy: the API is the restaurant menu; the SDK is the courier that fetches the food — or the API is the electrical socket, the SDK is the appliance with the right plug. Practical points: SDKs are language-specific (the Python SDK and the Java SDK for the same service are different packages), they usually handle authentication and error handling, and they're generally the recommended way to integrate with a platform — you'd hand-write raw HTTP calls against an API only when no SDK exists or it's outdated. The not-so-secret fact: many SDKs are thin wrappers that make the REST API easier to call from your language of choice."
+  },
+  {
+    "q": [
+      "what is an ide",
+      "what is a development environment",
+      "ide vs text editor",
+      "what does ide stand for"
+    ],
+    "a": "An IDE (Integrated Development Environment) is a full-featured application for writing and running code — 'integrated' because it bundles the tools a developer needs into one window: a code editor, a compiler/interpreter runner, a debugger, and (in modern IDEs) code completion, refactoring, version control integration, and terminal. The workflow advantage: everything works together — an error in the editor highlights the line, the debugger sets breakpoints with a click, and Git commands are buttons. Popular IDEs: VS Code (the most popular — technically a 'code editor with IDE extensions', but it has become the default for most developers), IntelliJ IDEA and PyCharm (JetBrains — the gold standard for Java and Python), Eclipse, Android Studio (built on IntelliJ), Xcode (Apple), and Visual Studio (Microsoft, C#/.NET). The IDE vs editor distinction matters for understanding the ecosystem: a text editor (Vim, Sublime, Notepad++) is just a place to type text — fast, lightweight, and extensible, but you assemble the toolchain yourself (terminal, debugger, compiler as separate programs); an IDE gives you the whole assembly built in, at the cost of heavier resource use and a steeper first-run learning curve. Which to use: beginners and most professional work benefit from an IDE (or VS Code) because of the built-in help and debugging; some developers prefer a terminal + editor + CLI tools workflow for speed and control. Modern IDEs run language servers (like LSP) that power autocomplete, go-to-definition, and inline errors — the features that make 'just an editor' feel like an IDE."
+  }
+]

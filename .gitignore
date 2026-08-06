@@ -39,3 +39,7 @@ data/eval_results.json
 
 # GitHub Pages site (on gh-pages branch only)
 /index.html
+
+# Python packaging artifacts (pip install -e .)
+*.egg-info/
+__pycache__/

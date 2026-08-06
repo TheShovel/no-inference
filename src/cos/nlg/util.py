@@ -1,8 +1,7 @@
 """NLG Utilities — shared helper functions used across all pipeline stages."""
 
-import re
 import random
-from typing import List
+import re
 
 
 def pick(items: list, temp: float = 0.5) -> str:
@@ -19,7 +18,7 @@ def maybe(prob: float) -> bool:
     return random.random() < prob
 
 
-def split_sentences(text: str) -> List[str]:
+def split_sentences(text: str) -> list[str]:
     """Split text into sentences, preserving punctuation."""
     parts = re.split(r'(?<=[.!?])\s+', text)
     return [p.strip() for p in parts if p.strip()]

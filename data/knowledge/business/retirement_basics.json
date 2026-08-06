@@ -1,0 +1,29 @@
+[
+  {
+    "q": [
+      "how much do i need for retirement",
+      "how much should i have saved for retirement",
+      "retirement savings calculator",
+      "how much money do i need to retire"
+    ],
+    "a": "The most useful rule of thumb is the '25x rule': you need roughly 25 times your annual expenses saved (not your income) to retire safely, because the 4% rule says you can withdraw 4% of your portfolio per year without running out over 30 years. Example: if your annual expenses are $50,000, target $1.25M saved ($50,000 × 25). Three important adjustments: (1) Count the income you'll already have — Social Security (US) or a pension reduces what you must draw from savings; subtract it from your expenses first. (2) Use today's dollars and let inflation compound — $1.25M in 20 years buys less; most calculators compound a 3% inflation assumption. (3) The number is a starting target, not a destiny: healthcare costs in retirement are a wildcard (US retirees often spend more on healthcare than expected), and a paid-off house changes the math dramatically. Age-based checkpoints for a rough sense: by 30, aim to have saved 1x your salary; by 40, 3x; by 50, 6x; by 60, 8x; at 67, 10x — the 'Fidelity guidelines' — and remember you can't catch up on compounding, so early saving is worth more than later saving (every $1 invested at 25 is worth ~$7 at 65 at 7% returns, tax-advantaged). Free calculators: the AARP retirement calculator and Vanguard's retirement nest egg calculator are solid starting points."
+  },
+  {
+    "q": [
+      "what is the 4 percent rule",
+      "the 4 percent rule explained",
+      "how much can i withdraw in retirement",
+      "safe withdrawal rate"
+    ],
+    "a": "The 4% rule is the retirement guideline: withdraw 4% of your portfolio in your first year of retirement, then increase that dollar amount each year for inflation — and historically, your money lasts at least 30 years. It comes from the 'Trinity Study' (1994): researchers tested portfolios with 30-year withdrawal periods across US market history and found a 4% initial withdrawal rate (with annual inflation adjustments) survived virtually every historical period — including bad timing like retiring into a crash. How to use it: if your portfolio is $1M, withdraw $40,000 the first year, then $40,000 × inflation each year after. The important caveats: (1) It's a planning tool, not a guarantee — it was built on US stocks/bonds history, and the math is sensitive to the sequence of returns (a crash in your first years hurts most — the 'sequence-of-returns risk'). (2) Many experts now suggest 3-3.5% as safer for longer retirements (40+ years), lower-cost assumptions, or heavier stock allocations. (3) It doesn't mean you MUST withdraw 4% — the rule is a ceiling, and spending less in down years (dynamic withdrawal) dramatically improves survival odds. (4) It assumes a diversified portfolio (roughly 50-75% stocks historically), not cash or all-bonds. The practical translation: 'the 25x rule' (savings = 25 × annual spending) is the same formula flipped — and it's why retirement planning starts with your expenses, not a magic number."
+  },
+  {
+    "q": [
+      "what is social security",
+      "how does social security work",
+      "how much will i get from social security",
+      "when should i claim social security"
+    ],
+    "a": "Social Security is the US government's retirement, disability, and survivor insurance program, funded by payroll taxes (6.2% from you, 6.2% from your employer). How it works: your benefit is calculated from your 35 highest-earning years (indexed for wage growth), turned into a 'primary insurance amount' via a progressive formula (lower earners get a higher percentage back). You can claim as early as 62, but benefits are reduced for claiming before your Full Retirement Age (FRA — 67 for anyone born 1960 or later); you get delayed retirement credits of 8% per year for waiting past FRA up to 70 — so claiming at 70 pays about 76% more per month than claiming at 62. The break-even math: claiming later gives a higher monthly check but fewer years of checks; for most single people the breakeven is around age 80 — if you expect to live past that, delay. Other things to know: (1) You need 40 work credits (about 10 years of work) to qualify. (2) If you claim before FRA and keep working, benefits can be temporarily withheld if you earn above a limit (the earnings test — the clawed-back amounts are added back later). (3) Spousal, survivor, and disability benefits exist with their own rules. (4) Benefits are adjusted annually for inflation (COLA). (5) Social Security's trust fund is projected to pay reduced benefits (~80% of scheduled) around the mid-2030s unless Congress changes funding — planning as if you'll get ~75-80% of the estimate is prudent. Check your actual benefit at ssa.gov (your 'My Social Security' statement shows a personalized estimate)."
+  }
+]

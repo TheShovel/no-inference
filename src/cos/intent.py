@@ -73,6 +73,19 @@ def detect_intent(query):
         if re.search(r'\d\s*[+\-*/^]\s*\d', q) and not any(w in q for w in word_problem_keywords):
             return 'math'
 
+    # ── Explicit math operations (before factual, which would otherwise
+    #    hijack them): roots, powers, equations, geometry with numbers ────
+    if re.search(r'(?:square|squared|cube|cubed)\s+root|sqrt\b', q) and re.search(r'\d', q):
+        return 'math'
+    if re.search(r'to\s+the\s+(?:power|exponent)\s+of\b', q) and re.search(r'\d+.*\d', q):
+        return 'math'
+    if re.search(r'\bsolve\b', q) and re.search(r'[xyz]\s*(?:[+\-*/]\s*\d*\.?\d*\s*)*=\s*\d+|=\s*\d+\s*[+\-*/]', q.replace(' ', '')):
+        return 'math'
+    if re.search(r'\b(solve|find)\b', q) and re.search(r'=', q) and re.search(r'[xyz](?!\w)', q):
+        return 'math'
+    if re.search(r'\b(?:area|circumference|perimeter|volume)\b', q) and re.search(r'\d', q):
+        return 'word_problem'
+
     # ── Factual knowledge detection (before word problems) ───────────────
     factual_knowledge_patterns = [
         r'what\s+is\s+the\s+(?:smallest|largest|biggest|tallest|longest|deepest|oldest|newest|fastest|slowest|highest|lowest)',

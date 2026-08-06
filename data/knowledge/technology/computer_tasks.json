@@ -1,0 +1,143 @@
+[
+  {
+    "q": [
+      "how to recover an unsaved word document",
+      "how to recover an unsaved word file",
+      "where do unsaved word documents go",
+      "how to find autosaved word documents"
+    ],
+    "a": "Word autosaves while you work, so an unsaved document is usually recoverable. In Word: File → Info → Manage Document → Recover Unsaved Documents (Windows) or File → Revert To → Browse All Versions (Mac). Word also stores unsaved files in its AutoRecover folder: in Windows it's typically `%AppData%\\Microsoft\\Word\\` (open it in Explorer by pasting that path into the address bar); on Mac, `~/Library/Containers/com.microsoft.Word/Data/Library/Preferences/AutoRecovery/`. Files are named like 'Unsaved document' with a .asd extension — copy one out, rename it to .docx, and open it. Enable the feature going forward: File → Options → Save → make sure 'Save AutoRecover information every 10 minutes' is on. Note: if you never typed anything, there's nothing to recover."
+  },
+  {
+    "q": [
+      "how to find my ip address",
+      "what is my ip address",
+      "how to find my local ip address",
+      "how to check my ip address"
+    ],
+    "a": "There are two different addresses: your public IP (seen by the internet) and your local IP (seen on your network). To find your public IP, search 'what is my ip' or visit a site like ifconfig.me — it changes depending on your network. To find your local IP: Windows — open Command Prompt and run `ipconfig`, look for 'IPv4 Address' on your active adapter; Mac — System Settings → Network → your connection, or run `ipconfig getifaddr en0` in Terminal; Linux — run `ip addr` or `hostname -I`. Your local IP typically looks like 192.168.x.x or 10.x.x.x. Your router's IP is usually 192.168.1.1 or 192.168.0.1."
+  },
+  {
+    "q": [
+      "how to transfer files from pc to phone",
+      "how to send files from computer to phone",
+      "how to move photos from pc to android",
+      "how to share files between pc and phone"
+    ],
+    "a": "The easiest wireless methods: (1) A transfer app like LocalSend (open-source, works across Windows/Mac/Linux/Android/iOS with no account), or Snapdrop.net in both browsers on the same Wi-Fi — pick the file and it transfers peer-to-peer. (2) A messenger or cloud: email it to yourself, or drop it in Google Drive/Dropbox/OneDrive and open the app on the phone. (3) For Android specifically, Nearby Share (now 'Quick Share') built into the OS — right-click the file on Windows with Quick Share installed, or share from the phone. Wired: plug the phone in with a USB cable, and on Android choose 'File transfer' mode on the phone's notification — the phone appears as a drive in File Explorer. On iPhone, use AirDrop (nearest and fastest) or iCloud Drive."
+  },
+  {
+    "q": [
+      "how to speed up a slow computer",
+      "why is my computer so slow",
+      "how to make my pc faster",
+      "how to fix a slow laptop"
+    ],
+    "a": "Work through the cheap fixes first. (1) Restart — Windows/Mac machines that run for weeks accumulate background processes; a reboot clears most slowness. (2) Close what you're not using: check Task Manager (Ctrl+Shift+Esc, Windows) or Activity Monitor (Mac) for high CPU/memory apps and end them. (3) Free up disk space — if the drive is 90%+ full, the system thrashes; delete large downloads, empty the recycle bin, and run Disk Cleanup (Windows) or remove old files. (4) Limit startup programs: Task Manager → Startup tab (Windows) or System Settings → Users & Groups → Login Items (Mac). (5) Check for malware with Windows Defender or Malwarebytes. (6) If it's still slow with an old HDD, replacing it with an SSD is the single biggest upgrade for an old machine; adding RAM helps if you run many apps at once."
+  },
+  {
+    "q": [
+      "how to create a bootable usb drive",
+      "how to make a bootable usb stick",
+      "how to put windows on a usb drive",
+      "how to create a windows installation usb",
+      "how to make a bootable linux usb"
+    ],
+    "a": "The modern way is Microsoft's Media Creation Tool for Windows: download it from Microsoft's site, run it, choose 'Create installation media', select your USB drive, and it builds a bootable installer automatically. For Linux (or any ISO), use a tool like Rufus (Windows) or balenaEtcher (Mac/Linux): insert the USB, open the tool, select the ISO file and the USB drive, and click start — the tool writes the image and makes the drive bootable. The USB drive is erased in the process, so back up anything on it first. To boot from it, restart the computer and press the boot-menu key (usually F12, Esc, or F2 depending on the brand) and select the USB drive. Note: simply copying an ISO file to a USB does NOT make it bootable — you must use a tool."
+  },
+  {
+    "q": [
+      "how to check if my pc can run a game",
+      "can my computer run this game",
+      "how to check pc requirements for a game",
+      "will my pc run this game"
+    ],
+    "a": "The easiest way: visit Can You Run It (systemrequirementslab.com/cyri), run their browser-based scanner, and it compares your hardware against the game's requirements automatically. Alternatively, compare manually: find the game's system requirements (Steam page → System Requirements), then check your specs — Windows: Task Manager → Performance tab shows CPU, RAM, and GPU; or run `dxdiag` and read the System and Display tabs. Mac: About This Mac → Overview, and About This Mac → System Report → Graphics/Displays. The four things that matter most are the GPU, CPU, RAM, and available storage. If you're at or above the 'Recommended' spec, you're fine; 'Minimum' means it will run, possibly at low settings. For benchmarks, search 'GPU name game benchmark' on YouTube to see real frame rates."
+  },
+  {
+    "q": [
+      "how to record the screen on mac",
+      "how to screen record on a mac",
+      "mac screen recording shortcut"
+    ],
+    "a": "macOS has a built-in screen recorder. Press Shift-Command-5 — a toolbar appears with options to record the whole screen, a selected region, or just capture a still. Choose your option and click Record (the dot button); a stop button appears in the menu bar (or press Control-Command-Esc) to end. To record with system audio on newer macOS versions, click Options in the toolbar and choose a microphone. Recordings save to the Desktop by default (change location under Options). For more control (webcam overlay, editing, region + audio), QuickTime Player also records: File → New Screen Recording. For third-party tools, OBS Studio (free) and Screenflow are popular."
+  },
+  {
+    "q": [
+      "how to split screen on windows",
+      "how to split my screen on windows 11",
+      "how to use snap layouts on windows",
+      "how to have two windows side by side"
+    ],
+    "a": "Windows has built-in snap features. The fastest way: drag a window to the left or right edge of the screen until a translucent outline appears, release, then pick the other window for the other half. Keyboard shortcuts: Win + Left/Right arrow snaps the window to that half; Win + Up/Down arrows snap to quadrants or maximize. On Windows 11, hover over the maximize button (or press Win + Z) to open Snap Layouts — a menu of pre-set arrangements (two side by side, three columns, quadrants). To resize the split, drag the divider between the windows. If snapping is disabled, check Settings → System → Multitasking and turn on 'Snap windows'."
+  },
+  {
+    "q": [
+      "how to password protect a folder",
+      "how to password protect a folder on windows",
+      "how to lock a folder with a password"
+    ],
+    "a": "Windows does not have a built-in way to password-protect a folder directly, so the standard approaches are: (1) Encrypt it with a tool — 7-Zip (free): right-click the folder → 7-Zip → Add to archive, set a password, and check 'Encrypt file names'; the result is a password-protected .7z archive (delete the original folder after verifying the archive opens). (2) Use a password manager's secure notes, or a dedicated folder-lock tool like VeraCrypt (free, creates an encrypted container/drive). (3) On Mac, right-click the folder → Compress, or use Disk Utility to create an encrypted DMG, or FileVault to encrypt the whole disk. Note: 'hiding' a folder or renaming it is not security. Windows Pro also has EFS (right-click → Properties → Advanced → Encrypt contents), but it's tied to your user account."
+  },
+  {
+    "q": [
+      "how to format a usb drive",
+      "how to format a flash drive",
+      "how to erase a usb drive",
+      "how to format a usb to fat32"
+    ],
+    "a": "Formatting erases the drive, so back up anything you need first. Windows: open File Explorer, right-click the USB drive, choose Format. Pick a file system: FAT32 for maximum compatibility (works with TVs, cameras, older devices, but files over 4 GB won't fit), exFAT for large files with broad compatibility (the best default for USB drives), or NTFS for Windows-only use with big files and permissions. Leave 'Quick Format' checked for speed unless you're securely erasing. Mac: open Disk Utility, select the drive, click Erase, choose exFAT (or APFS/Mac OS Extended for Mac-only), and confirm. Linux: use the Disks utility or `sudo mkfs.exfat /dev/sdX1`. After formatting, the drive is empty and ready to reuse."
+  },
+  {
+    "q": [
+      "how to uninstall a program on windows",
+      "how to remove a program on windows 11",
+      "how to delete software from my computer"
+    ],
+    "a": "The proper way is Windows' uninstaller, not deleting the folder. Windows 11: Settings → Apps → Installed apps, find the program, click the ⋮ menu → Uninstall, and follow the wizard. Windows 10: Settings → Apps → Apps & features, select the app → Uninstall. For older or stubborn programs, open Control Panel → Programs and Features. If a program won't uninstall normally (leftover files, broken entries), run the official uninstaller from the vendor's site, or use a dedicated tool like Revo Uninstaller or BCUninstaller (free) that removes leftover registry entries and folders. After uninstalling, check `%ProgramFiles%` and `%AppData%` for leftover folders and delete them if you're sure you don't need the settings. Restart after large uninstalls."
+  },
+  {
+    "q": [
+      "how to take a screenshot on windows",
+      "how to screenshot on windows 11",
+      "windows screenshot shortcut",
+      "how to screenshot on windows 10"
+    ],
+    "a": "Windows has several screenshot methods. The easiest: Win + Shift + S opens the Snipping Tool's snip bar — drag a region, and it's copied to your clipboard (and usually shows a notification to save/annotate). Win + PrtScn saves a full-screen screenshot directly to Pictures → Screenshots. PrtScn alone copies the whole screen to the clipboard. Alt + PrtScn copies just the active window. On Windows 11, Win + Shift + S can also capture a window or a timed screen region. The full Snipping Tool app (search 'Snipping Tool') lets you annotate, delay, and save in different formats. Game Bar (Win + G) captures gameplay and windows."
+  },
+  {
+    "q": [
+      "how to clear the cache in chrome",
+      "how to clear browser cache",
+      "how to clear cookies in chrome",
+      "how to fix chrome cache issues"
+    ],
+    "a": "In Chrome: click the three-dot menu → More tools → Clear browsing data (or press Ctrl+Shift+Delete on Windows / Cmd+Shift+Delete on Mac). In the dialog, choose a time range — 'All time' for a full reset — and tick 'Cached images and files'. Tick 'Cookies and other site data' too if you want to sign out of sites and fix login or loading problems (you'll be logged out). Leave 'Browsing history' if you want to keep it. Click Clear data. Clearing the cache is the standard fix for pages that load stale or broken content, and it's safe — you won't lose passwords stored in Chrome, only cached page data. If a single site is misbehaving, refresh with Ctrl+Shift+R to bypass the cache for that page."
+  },
+  {
+    "q": [
+      "how to check my pc specs",
+      "how to see my computer specs",
+      "what are my pc specs",
+      "how to check ram and graphics card"
+    ],
+    "a": "Windows: open Task Manager (Ctrl+Shift+Esc) → Performance tab — it shows CPU, memory (RAM), disk, and GPU (your graphics card) with live usage and model names. For the full picture, run `dxdiag` (Win+R, type dxdiag) — the System tab lists the CPU, RAM, and Windows version, and the Display tabs list the GPU(s). Mac: click the Apple menu → About This Mac — it shows the chip, memory, and serial; then System Report (or System Settings → General → About) for graphics and storage details. For detailed CPU/GPU info on any system, tools like CPU-Z, Speccy, or `systeminfo` (Windows) give everything at a glance."
+  },
+  {
+    "q": [
+      "how to connect to wifi on windows",
+      "how to find wifi password on windows",
+      "how to see saved wifi passwords"
+    ],
+    "a": "To connect: click the Wi-Fi icon in the system tray, pick your network, and enter the password. To see the password of a network you're already connected to: Settings → Network & Internet → Wi-Fi → (your network's) Properties → scroll to 'View Wi-Fi security key' and click Show. To find saved passwords for other networks, open Command Prompt as administrator and run `netsh wlan show profiles` to list them, then `netsh wlan show profile name=\"NetworkName\" key=clear` — the password appears next to 'Key Content'. On Mac, the Keychain Access app stores them (search the network name). If you can't remember a password, check the sticker on your router — most have the default SSID and password printed on the bottom."
+  },
+  {
+    "q": [
+      "how to check if my pc has a virus",
+      "how to scan my computer for malware",
+      "how to remove a virus from windows",
+      "is my computer infected"
+    ],
+    "a": "Windows Defender (now 'Windows Security') is built in and good. Run a full scan: Windows Security → Virus & threat protection → Scan options → Full scan (or Microsoft Defender Offline for a deep boot-time scan, which catches rootkits). Signs of infection: sudden pop-ups, a hijacked browser homepage, programs you didn't install, high CPU/network usage at idle, or ransomware-style locked files. If Defender finds nothing but you're suspicious, run a second opinion with Malwarebytes Free (on-demand scan, well regarded). For severe cases: disconnect from the internet, boot into Safe Mode (hold Shift while clicking Restart → Troubleshoot → Startup Settings → Safe Mode) and scan there, then check Startup items (Task Manager → Startup) and remove unknown entries. In the worst case, back up your documents and do a clean Windows reinstall — it removes everything, including malware."
+  }
+]

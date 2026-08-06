@@ -50,9 +50,33 @@ A specialized knowledge base in `cos/code_knowledge.py` for programming question
 - JavaScript: fetch API, promises, debounce, arrow functions, map/filter/reduce
 - React: useState, useEffect, custom hooks, localStorage, window resize
 - Python: list comprehensions, decorators, lambda, generators, exception handling
+- SQL: joins, group by, duplicates, create table, aggregates
 - HTML: forms, tables, semantic elements, accessibility
 
-The code knowledge base also generates code examples with explanations for each topic.
+Entries live in `data/knowledge/coding/*.json`. Matching is language-aware: a query that names a language ("reverse a linked list in c++") is scored so same-language entries win over different-language ones, and a mismatch detected after matching is corrected by synthesis.
+
+### 3b. Code synthesizer
+
+When no curated entry matches, `cos/code_gen.py` **synthesizes** complete, runnable code for common developer tasks. It detects the language (Python, JavaScript, TypeScript, Java, C++, C#, Go, Rust, SQL, bash) and the task (algorithms, regex, file/CSV/JSON I/O, HTTP, web scraping, SQL, git, system administration), then assembles the code from a template library with a task-specific explanation. Pure lookup, no inference. The synthesizer is what makes answers like "write sql to find duplicate rows in a table" or "how to kill a process in linux" deterministic and correct.
+
+Code questions are **never** sent to the Wikipedia fallback (which returns unrelated articles for code topics; "read a csv with pandas" used to fetch the giant panda).
+
+### 3c. Code & text transformer
+
+`cos/code_transformer.py` edits content the user pasted into the query. It detects the requested modification and applies it deterministically:
+
+- **Code**: add error handling (try/except or try/catch around function bodies), convert between Python and JavaScript (a best-effort mechanical transpiler), rename identifiers, add explanatory comments, optimize (loop → list comprehension / `map`), explain line by line, convert `for`/`while` loops.
+- **Text**: politeness rewrites ("give me X or else" → "Could you please send me X. Thank you."), extractive summarization (keeps the most informative sentences, never invents content), and phrasebook translation (a curated set of phrases/templates in Spanish/French/German/Italian/Portuguese/Dutch; arbitrary text is refused honestly rather than machine-mangled).
+
+Follow-ups like "add comments to the last code" or "convert it to javascript" operate on the previous edit.
+
+### 3d. Iterative refinement (`cos/refine.py`)
+
+Code the engine *generates* (not pasted code) is refined in place across turns: "add a contact form to the website", "change the accent color to green", "make it dark", "add error handling", "add compression to the backup script", "now do the same in rust". The layer finds the last generated artifact, detects the requested edit (HTML color/theme/sections/menu/title/hours, code error handling/docstrings/comments/optimization/new functions, language conversion), applies it deterministically, and never fabricates a change it can't apply.
+
+### 3e. Website generator
+
+"Create a website for a taco shop" is a code task, not a knowledge lookup. `code_gen` builds a single self-contained HTML file (responsive CSS, nav, hero, and sections) with content chosen by business type: nine curated types (taco, pizza, burger, sushi, coffee, bakery, ice cream, bar, restaurant) with real menu items, plus a clean generic layout. The agent stages it as a new file you approve before writing.
 
 ### 4. Wikipedia knowledge base generator
 
@@ -119,15 +143,24 @@ This fetches the Wikipedia summary and creates a properly formatted entry.
 
 ### Add coding knowledge
 
-Edit `cos/code_knowledge.py` and add entries to the `_CODING_KB` dictionary. The format is:
+Coding knowledge lives in JSON files under `data/knowledge/coding/` (e.g.
+`code_concepts.json` for explanations like hash maps and big-O, plus
+language-specific files for CSS, JS, React, Python, SQL, HTML). Each
+entry is the same question-answer shape as the general base:
 
-```python
-'topic_key': {
-    'lang': 'python',
-    'patterns': ['pattern1', 'pattern2'],
-    'response': 'Answer text',
-    'example': '```python\ncode example\n```'
+```json
+{
+  "q": ["what is a hashmap", "explain what a hashmap is", "how does a hash table work"],
+  "a": "Answer text that will be returned.",
+  "lang": "python",
+  "code": "Optional code block shown with the answer."
 }
 ```
 
-Patterns are regex strings that will be matched against the query to find the right entry.
+The `q` array should include as many natural variations as possible. New
+files are picked up at startup (`/reload` in the chat TUI, or restart).
+
+For *synthesized* code (tasks too numerous to hand-write), add a template
+instead: give the task a key in `_TASK_PATTERNS` (detection regexes) and
+an entry in `_CODE` (per-language templates) in `cos/code_gen.py`; see
+the `backup_dir` or `web_page` entries for examples.

@@ -1,0 +1,67 @@
+[
+  {
+    "q": [
+      "how to use a debugger",
+      "how to debug with gdb",
+      "how to set breakpoints",
+      "debugging tools and techniques"
+    ],
+    "a": "A debugger lets you pause a running program and inspect its state — the professional replacement for print-statement debugging. Core workflow: (1) Set a breakpoint at the line you suspect, then run the program — it pauses there. (2) Inspect variables (print variable values, watch expressions) and the call stack (how you got here). (3) Step through: step over (run the current line, don't enter function calls), step into (enter the function call), step out (finish the current function), and continue (run to the next breakpoint). (4) When you find the wrong value, work backward: where was it last correct? That's your bug. Tooling by language: Python — `pdb` (built in: `python -m pdb script.py`, or `breakpoint()` at the spot), or the excellent `ipdb`; also IDE debuggers (VS Code, PyCharm) with graphical breakpoints and variable inspectors. JavaScript — Chrome/Edge DevTools Sources tab (breakpoints, watch, call stack), or `debugger;` statement. C/C++ — gdb (command line) or lldb. Java — JDB or IDE debuggers. The habits that matter: reproduce the bug deterministically first, get a minimal repro, and think about what state should be true at each point. Debuggers also handle the hardest cases — crashes (run under the debugger and it points at the crashing line), hangs (pause and inspect what everyone is waiting on), and logic bugs where prints lie because the value changes later. Learn breakpoints, step-into, and call-stack inspection — the other 90% of features are conveniences."
+  },
+  {
+    "q": [
+      "how to estimate software projects",
+      "how to estimate development time",
+      "software estimation techniques",
+      "how to give accurate time estimates"
+    ],
+    "a": "Estimation is hard because software is uncertain — the honest methods accept that: (1) Break the work down: an estimate is only as good as the task breakdown. Decompose the feature into small tasks (hours-to-days each); estimates of small, well-understood tasks are far more accurate than one big number for 'the whole thing'. (2) Use relative sizing: instead of absolute hours, compare tasks to each other — story points or T-shirt sizes (S/M/L). Teams that size relatively and track 'velocity' (points completed per sprint) get better at forecasting than individuals guessing hours. (3) Use the Three-Point (PERT) method: estimate optimistic, pessimistic, and most-likely, then use (optimistic + 4×likely + pessimistic) / 6 — it builds in the uncertainty you know exists. (4) Apply a multiplier for reality: known unknowns (integration, edge cases, reviews) typically add 30-50%; a common rule is to take your gut estimate and multiply by 1.5-2 — engineers are chronically optimistic because they estimate the happy path. (5) Estimate in ranges, not points: '3-5 days' beats '4 days' — a point promise is a lie you've committed to. (6) Track your accuracy: review estimates vs actuals and calibrate — a team that measures improves fast. (7) Include the invisible work: meetings, code review, testing, docs, and context-switching typically eat 20-40% of a sprint. The communication half matters as much as the math: present estimates with confidence intervals and assumptions ('assuming the API stays stable'), and push back on 'give me one number' by giving the range and the biggest risk."
+  },
+  {
+    "q": [
+      "what is technical debt",
+      "what does technical debt mean",
+      "how to manage technical debt",
+      "is technical debt bad"
+    ],
+    "a": "Technical debt is the cost of taking a shortcut now that you'll pay later — code written quickly ('it works, ship it') that is harder to change, understand, or extend than it should be. The name is deliberate: like financial debt, it lets you move faster today by borrowing against the future, and it accrues interest — every feature built on a shaky foundation is slower and riskier than it would be on a solid one. Sources: rushed releases, outdated dependencies, duplicated code, missing tests, dead code, and 'temporary' hacks that became permanent. The important nuance: technical debt is not automatically bad. Deliberate, tracked debt (a known shortcut with a plan to repay) is a legitimate engineering decision — ship now, refactor later. The problem is unconscious debt: shortcuts taken without anyone noticing or deciding, which compounds invisibly until the codebase becomes a swamp where every change breaks something. Managing it: (1) Make it visible — track known debt (a backlog section or 'debt register') so it's a conscious decision, not an accident. (2) Pay it down continuously — the boy-scout rule ('leave the code better than you found it') and scheduled refactoring keep interest from compounding. (3) Quantify the cost when you can: 'this legacy module adds 2 days to every feature' makes the repayment case concrete. (4) Timebox big cleanups and pair them with feature work. The goal isn't zero debt — it's debt you chose, at an interest rate you can afford."
+  },
+  {
+    "q": [
+      "what is the difference between refactoring and rewriting",
+      "refactoring vs rewriting",
+      "when to refactor vs rewrite"
+    ],
+    "a": "Refactoring changes the structure of code without changing its behavior — you keep the same functionality and tests, and make the code cleaner, clearer, and easier to change. It's done in small, safe steps (rename, extract, simplify) with tests running after each one, so the risk stays low. Rewriting replaces the code entirely — you throw it away and build it again, usually in a new language, architecture, or with different requirements. When to refactor: the code works and tests exist, but it's messy; you're adding features there regularly and the mess slows you down. Refactoring is the default choice — it preserves the hard-won knowledge embedded in the working code (all the edge cases, bug fixes, and business rules). When a rewrite is justified: the code is fundamentally unmaintainable (no tests, no structure, tangled dependencies), the platform/language is obsolete, or the requirements have changed so much that the old design no longer fits. The classic warning: rewrites usually take 2-3x longer than expected, and the 'big rewrite' often fails or loses functionality — the old system encodes years of decisions nobody wrote down (the 'second-system effect'). The pragmatic middle path: rewrite incrementally — carve out modules and replace them one at a time (the strangler pattern), which gets the benefits of a rewrite without the all-or-nothing risk. Rule of thumb: refactor when the code works but hurts; rewrite only when the architecture itself is the problem — and then do it in pieces."
+  },
+  {
+    "q": [
+      "what is a sprint in scrum",
+      "what is a sprint",
+      "how long is a sprint",
+      "what is sprint planning",
+      "what happens in a sprint"
+    ],
+    "a": "A sprint is a fixed-length timebox — typically 1-4 weeks, most commonly 2 — during which a Scrum team commits to delivering a usable increment of the product. The length is fixed and never extended (that's the point: a deadline that can't move forces scope decisions). Each sprint follows the same rhythm: (1) Sprint Planning — the team picks items from the product backlog that fit their capacity and defines a sprint goal; (2) the Sprint itself — daily 15-minute standups to sync, and the team works toward the goal; (3) Sprint Review — at the end, the team demos what actually shipped to stakeholders and gets feedback; (4) Sprint Retrospective — the team reflects on the process and picks one or two concrete improvements for the next sprint. The principles: scope is negotiable mid-sprint but the goal and time aren't (if something is impossible, drop or swap scope — don't extend); work is 'done' only when it meets the team's Definition of Done (usually: coded, reviewed, tested, merged, deployable); unfinished work rolls back into the product backlog, not automatically into the next sprint. Why timeboxing works: it creates a regular cadence of feedback, forces prioritization, makes progress visible, and gives failures a small, recoverable size. A common beginner mistake: 'sprinting' — cramming in unplanned work mid-sprint — which destroys the predictability the timebox exists to create."
+  },
+  {
+    "q": [
+      "what is agile development",
+      "what is agile",
+      "what is the agile methodology",
+      "what is scrum vs agile",
+      "what is the difference between agile and waterfall"
+    ],
+    "a": "Agile is a philosophy of software development built on the 2001 Agile Manifesto: individuals and interactions over processes and tools, working software over comprehensive documentation, customer collaboration over contract negotiation, and responding to change over following a plan. The core idea: deliver small working increments frequently, get feedback, and adapt — instead of the waterfall approach of big up-front specification, months of building, then one delivery (which is why waterfall projects usually discover their requirements were wrong only at the end). Agile is not a specific process — it's a set of principles; Scrum (timeboxed sprints with roles like Scrum Master and Product Owner) and Kanban (a continuous flow board with work-in-progress limits) are the two most common frameworks that implement it. The practices that actually matter in most teams: short feedback loops (demo working software often), breaking work into small vertical slices that deliver user value, regular retrospectives to improve the process, and a prioritized backlog the team pulls from. Common misconceptions: agile doesn't mean 'no planning' (it means planning in smaller, more frequent chunks), it doesn't mean 'no documentation' (just not documentation as a substitute for working software), and standups alone don't make a team agile. The Manifesto authors themselves stressed that agile is about values; the ceremonies and tools should serve them, not replace them."
+  },
+  {
+    "q": [
+      "what is a kpi",
+      "what are key performance indicators",
+      "how to choose kpis",
+      "what makes a good kpi",
+      "what is the difference between a kpi and a metric"
+    ],
+    "a": "A KPI (key performance indicator) is a metric that measures progress toward a specific strategic goal — a small set of numbers that tell you whether the business is actually moving in the right direction. The difference from a plain metric: a metric is any measurement (page views, uptime); a KPI is a metric tied to a goal with a target (increase activation from 40% to 60% this quarter). The classic framework is SMART: Specific, Measurable, Achievable, Relevant, Time-bound. Choosing them: start from the goal, not the data you already collect — 'what decision will this number drive?' If the number can't change what someone does, it's not a KPI, it's just a stat. Good KPI practice: (1) keep the set small (5-10 max — a dashboard of 40 numbers is a museum, not a management tool); (2) distinguish leading indicators (predict future outcomes, e.g. weekly active users) from lagging ones (record past results, e.g. quarterly revenue); (3) beware Goodhart's law — when a measure becomes a target, it ceases to be a good measure (people game it: customer service reps hitting 'call time' targets start hanging up on customers); (4) pair each KPI with its guardrail metric to catch gaming (conversion rate KPI + customer satisfaction guardrail). Common categories: financial (revenue, margin, burn), customer (retention, churn, NPS), operational (cycle time, defect rate), and people (turnover)."
+  }
+]

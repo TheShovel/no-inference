@@ -11,6 +11,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SUITES = [
     ('regression',        'test_regression.py'),
     ('coding',            'test_coding.py'),
+    ('code gen + routing', 'test_code_gen.py'),
+    ('code/text transform', 'test_code_transformer.py'),
+    ('practical knowledge', 'test_practical_knowledge.py'),
     ('editor (e2e)',      'test_editor.py'),
     ('editor changes',    'test_editor_changes.py'),
     ('editor benchmark',  'test_editor_bench.py'),
@@ -18,6 +21,11 @@ SUITES = [
     ('essay',             'test_essay.py'),
     ('nlg package',       'test_nlg_package.py'),
     ('context extraction', 'test_context_extraction.py'),
+    ('code editor harness', 'test_code_editor.py'),
+    ('workbench recipes', 'test_workbench_recipes.py'),
+    ('tui + launcher', 'test_tui.py'),
+    ('iterative refine', 'test_refine.py'),
+    ('freeform discovered', 'test_freeform_discovered.py'),
 ]
 
 
@@ -28,7 +36,7 @@ def main():
         try:
             proc = subprocess.run(
                 [sys.executable, os.path.join(HERE, file)],
-                capture_output=True, text=True, timeout=900,
+                capture_output=True, text=True, timeout=900, check=False,
             )
             out = (proc.stdout or '') + (proc.stderr or '')
             # find the results line

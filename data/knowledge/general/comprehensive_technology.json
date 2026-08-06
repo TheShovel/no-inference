@@ -7,7 +7,7 @@
       "machine learning types",
       "supervised unsupervised reinforcement"
     ],
-    "a": "Information about machine learning."
+    "a": "Machine learning is a branch of AI where systems learn patterns from data instead of being explicitly programmed. The three main types: supervised learning trains on labeled examples (e.g. predicting house prices from features, classifying emails as spam), unsupervised learning finds structure in unlabeled data (clustering customers, dimensionality reduction), and reinforcement learning learns by trial-and-error against a reward signal (game playing, robotics). Common algorithms include linear/logistic regression, decision trees and random forests, support vector machines, k-means, and neural networks. The core workflow is: collect and clean data, split into train/validation/test sets, choose and train a model, tune hyperparameters, and evaluate on held-out data to detect overfitting. Python is the dominant ecosystem (scikit-learn, TensorFlow, PyTorch, pandas, numpy). Machine learning differs from statistics mostly in emphasis — large-scale prediction and optimization over inference and interpretation."
   },
   {
     "q": [
@@ -17,7 +17,7 @@
       "deep learning neural network",
       "artificial neural network"
     ],
-    "a": "Information about neural networks."
+    "a": "A neural network is a machine learning model composed of layers of interconnected 'neurons' (weighted sums with nonlinear activations). Each neuron computes `output = activation(Σ wᵢxᵢ + b)`, where the weights w and biases b are learned. Networks stack layers: input layer, one or more hidden layers, and an output layer. During training, the network computes a loss (how wrong its predictions are), then backpropagation uses the chain rule to calculate the gradient of the loss with respect to every weight, and gradient descent (or variants like Adam) updates the weights to reduce the loss. Universal approximation says a sufficiently wide network can fit almost any continuous function, but generalization depends on architecture, data, and regularization (dropout, weight decay). Deep learning refers to networks with many hidden layers, which learn hierarchical features — edges then shapes then objects for images — and powers modern computer vision, speech, and language models."
   },
   {
     "q": [
@@ -27,7 +27,7 @@
       "blockchain technology",
       "blockchain for beginners"
     ],
-    "a": "Information about blockchain."
+    "a": "A blockchain is a distributed, append-only ledger where records are grouped into blocks, each block containing a cryptographic hash of the previous block — chaining them so any alteration is immediately detectable. Consensus mechanisms let independent nodes agree on the ledger's state without a central authority: proof of work (miners compete to solve computational puzzles; used by Bitcoin) and proof of stake (validators stake cryptocurrency as collateral; used by Ethereum since 2022, far more energy-efficient). Blocks are propagated through a peer-to-peer network, and conflicts are resolved by the longest/heaviest chain rule. Smart contracts are programs stored on-chain that execute deterministically on every node. Real strengths: tamper-evidence, censorship resistance, and transparency; real limitations: throughput (transactions per second), storage growth, and the energy cost of proof of work. The term 'blockchain' is often overhyped — most use cases don't need a distributed ledger, and a traditional database is faster and cheaper."
   },
   {
     "q": [
@@ -37,7 +37,7 @@
       "public key encryption",
       "symmetric vs asymmetric encryption"
     ],
-    "a": "Information about encryption."
+    "a": "Encryption converts readable data into ciphertext using an algorithm and a key, so only holders of the key can recover the plaintext. Two families: symmetric encryption uses one key for both encryption and decryption — fast, used for bulk data (AES is the standard; a modern mode like AES-GCM provides both confidentiality and integrity). Asymmetric (public-key) encryption uses a public/private key pair — the public key encrypts, the private key decrypts; it's slow, so it's used for key exchange and signatures (RSA, ECC). Real systems combine both: TLS (the S in HTTPS) uses asymmetric cryptography to agree on a session key, then symmetric encryption for the actual traffic. Hashing is related but different: one-way, no key, used for passwords (use slow, salted hashes like bcrypt or Argon2, never plain SHA-256 or MD5). Encryption protects data at rest and in transit but not against everything — compromise of the key or the endpoint defeats it."
   },
   {
     "q": [
@@ -47,6 +47,6 @@
       "iaas paas saas",
       "cloud computing services"
     ],
-    "a": "Information about cloud computing."
+    "a": "Cloud computing is delivering computing resources — servers, storage, databases, networking, software — over the internet, on demand and billed by usage, instead of owning physical hardware. The three service models: IaaS (Infrastructure as a Service) gives raw virtual machines and storage (AWS EC2, Google Compute Engine, Azure VMs); PaaS (Platform as a Service) provides managed runtimes so you just deploy code (Heroku, Google App Engine, AWS Elastic Beanstalk); SaaS (Software as a Service) delivers complete applications (Gmail, Office 365, Slack). Deployment models include public, private, and hybrid cloud. The key benefits: elasticity (scale up/down automatically), pay-as-you-go pricing, managed services (databases, queues, serverless functions like AWS Lambda that run code without any server management), and global reach. The main risks are vendor lock-in, unexpected bills (especially with misconfigured resources), and shared-responsibility security — the provider secures the cloud, but you secure what you put in it."
   }
 ]

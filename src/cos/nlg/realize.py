@@ -5,10 +5,10 @@ has multiple surface realizations depending on style and context.
 """
 
 import re
-from typing import List, Optional
-from .models import Fact, DiscourseState
+
 from .config import NLGConfig
-from .util import pick, maybe, lower_first, upper_first, require_style
+from .models import DiscourseState, Fact
+from .util import lower_first, pick, require_style, upper_first
 
 
 # ── Sentence patterns per fact type per style ──────────────────────────────
@@ -123,7 +123,7 @@ _PATTERNS = {
 def realize_fact(
     fact: Fact,
     config: NLGConfig,
-    state: Optional[DiscourseState] = None,
+    state: "DiscourseState | None" = None,
     use_pronoun: bool = True,
 ) -> str:
     """Generate a natural sentence from a Fact.
@@ -138,13 +138,13 @@ def realize_fact(
         # Fix verb agreement in raw text where subject is clearly plural but verb is singular
         # This handles cases like "Cities generally includes" -> "Cities generally include"
         # Also handles any irregular verb form for plural subjects
-        _PLURAL_SUBJECTS = '|'.join([
-            'Cities', 'Countries', 'Buildings', 'Mountains', 'Rivers', 'Lakes',
-            'Oceans', 'Seas', 'Islands', 'Plants', 'Animals', 'Humans',
-            'People', 'Children', 'Women', 'Men', 'Cultures', 'Languages',
-            'Nations', 'States', 'Cities', 'Villages', 'Towns', 'Regions',
-            'Zones', 'Areas', 'Districts', 'Provinces', 'Territories',
-        ])
+        _PLURAL_SUBJECTS = (
+            r'Cities|Countries|Buildings|Mountains|Rivers|Lakes|'
+            r'Oceans|Seas|Islands|Plants|Animals|Humans|'
+            r'People|Children|Women|Men|Cultures|Languages|'
+            r'Nations|States|Villages|Towns|Regions|'
+            r'Zones|Areas|Districts|Provinces|Territories'
+        )
         _plural_subj_verbs = [
             (rf'\b({_PLURAL_SUBJECTS})\s+\w+\s+includes\b',
              lambda m: m.group(0).replace(' includes', ' include')),
@@ -204,7 +204,7 @@ def realize_fact(
     _ADJECTIVES_ONLY = {
         'high-quality', 'low-quality', 'good-quality', 'bad-quality',
         'large-scale', 'small-scale', 'long-term', 'short-term',
-        'well-known', 'little-known', 'well-known', 'far-reaching',
+        'well-known', 'little-known', 'far-reaching',
     }
     if subject.lower().rstrip('.,;:!?') in _ADJECTIVES_ONLY:
         # Try to extract a better subject from the original sentence
@@ -217,20 +217,18 @@ def realize_fact(
         if subject.lower().rstrip('.,;:!?') in _ADJECTIVES_ONLY:
             subject = "This"  # Fallback to generic subject
 
-    # Escape any literal braces in obj to prevent format() crashes
-    obj_safe = obj.replace("{", "{{").replace("}", "}}")
-    obj_lower_safe = obj_lower.replace("{", "{{").replace("}", "}}")
+    # Obj values are inserted verbatim by str.format (only the template's own
+    # braces are special), so no brace-escaping here — doubling them would
+    # leak literal "{{" into answers that contain code (e.g. JS objects).
+    obj_safe = obj
+    obj_lower_safe = obj_lower
     
     # ── Determine correct pronoun for subject from discourse state ──
     subject_pronoun = "it"
-    subject_objective = "it"
-    subject_possessive = "its"
     if state and use_pronoun:
         entity = state.get_entity(subject)
         if entity:
             subject_pronoun = entity.pronoun
-            subject_objective = entity.objective_pronoun
-            subject_possessive = entity.possessive_pronoun
 
     # ── Determine if subject is plural for verb agreement ──
     subj_lower = subject.strip().lower()
@@ -418,7 +416,7 @@ def realize_fact(
                 loc_match = re.match(r'(in|on|at|near)\s+(.+)', obj, re.IGNORECASE)
             if loc_match:
                 prep = loc_match.group(1)
-                place = loc_match.group(2).replace("{", "{{").replace("}", "}}")
+                place = loc_match.group(2)
             else:
                 prep = "in"
                 place = obj_safe
@@ -428,7 +426,7 @@ def realize_fact(
         elif fact.fact_type == "composition":
             comp_match = re.match(r'(?:made|composed|consisting)\s+(?:of|from|with|using)\s+(.+)', obj, re.IGNORECASE)
             clean_obj = comp_match.group(1) if comp_match else obj
-            clean_obj_safe = clean_obj.replace("{", "{{").replace("}", "}}")
+            clean_obj_safe = clean_obj
             sentence = template.format(subject=subject, verb=verb, subject_lower=lower_first(subject),
                                        obj=lower_first(clean_obj_safe), obj_pro=lower_first(clean_obj_safe))
         else:

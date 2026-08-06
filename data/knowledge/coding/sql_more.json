@@ -1,0 +1,79 @@
+[
+  {
+    "q": [
+      "write sql to find duplicate rows in a table",
+      "sql find duplicate rows",
+      "find duplicates in a table sql",
+      "sql query to find duplicate records",
+      "how to find duplicate rows in sql",
+      "sql detect duplicate rows",
+      "how to remove duplicate rows in sql",
+      "sql delete duplicate rows keeping one"
+    ],
+    "a": "To find duplicate rows in SQL, GROUP BY the columns that define what 'duplicate' means and use HAVING COUNT(*) > 1. Grouping by every column finds exact-row duplicates; grouping by a key column (like email) finds records that share that key — which is usually what you actually want.",
+    "code": "-- 1. Rows sharing the same key column(s) -- the usual definition:\nSELECT email, COUNT(*) AS n\nFROM customers\nGROUP BY email\nHAVING COUNT(*) > 1;\n\n-- 2. Full-row duplicates (every column identical):\nSELECT *\nFROM customers\nGROUP BY id, name, email, country      -- list ALL columns\nHAVING COUNT(*) > 1;\n\n-- 3. See the actual duplicate rows (not just the counts):\nSELECT c.*\nFROM customers c\nJOIN (\n    SELECT email\n    FROM customers\n    GROUP BY email\n    HAVING COUNT(*) > 1\n) d ON c.email = d.email\nORDER BY c.email;\n\n-- 4. Delete duplicates, keeping one row per key (PostgreSQL):\nDELETE FROM customers c\nUSING customers keep\nWHERE c.email = keep.email\n  AND c.id > keep.id;      -- keep the smallest id\n\n-- MySQL equivalent (same idea, join instead of USING):\n-- DELETE c FROM customers c\n-- JOIN customers keep ON c.email = keep.email AND c.id > keep.id;",
+    "lang": "sql"
+  },
+  {
+    "q": [
+      "sql how to count rows in a table",
+      "sql count rows",
+      "sql count number of records",
+      "sql count all rows in a table",
+      "how to count rows in sql"
+    ],
+    "a": "COUNT(*) counts every row in the result set, including rows where all columns are NULL. COUNT(column) counts only non-NULL values in that column — a classic gotcha. COUNT(DISTINCT column) counts unique non-NULL values.",
+    "code": "-- Total rows in a table:\nSELECT COUNT(*) FROM customers;\n\n-- Rows matching a condition:\nSELECT COUNT(*) FROM orders WHERE status = 'shipped';\n\n-- Non-NULL values in a column:\nSELECT COUNT(email) FROM customers;   -- excludes NULL emails\n\n-- Unique values:\nSELECT COUNT(DISTINCT country) FROM customers;\n\n-- Count per group:\nSELECT status, COUNT(*) AS n\nFROM orders\nGROUP BY status;",
+    "lang": "sql"
+  },
+  {
+    "q": [
+      "what is a join",
+      "what is a join in sql",
+      "what is a sql join",
+      "how do sql joins work",
+      "what is an inner join",
+      "what is a left join"
+    ],
+    "a": "A JOIN combines rows from two or more tables based on a related column (usually a foreign key). The join condition — ON a.customer_id = b.id — says how rows match. The main types: INNER JOIN keeps only rows that match in both tables (the intersection); LEFT JOIN keeps every row from the left table and fills in matching columns from the right (NULLs where there's no match — the most common type); RIGHT JOIN is the mirror image (rarely used; most people flip the tables); FULL OUTER JOIN keeps all rows from both sides with NULLs where unmatched; CROSS JOIN produces every pair of rows (cartesian product — usually a bug unless you deliberately want it); SELF JOIN joins a table to itself (e.g. employees and their managers in one table). The mental model: JOIN is about how rows relate, WHERE filters the result. The classic mistake is joining without a condition (accidental cross join) or joining on the wrong key and multiplying rows — when a join returns more rows than expected, you usually have a one-to-many match you didn't account for. With more than two tables, join them pairwise and read the chain: orders -> customers (who ordered) -> products (what they ordered). In practice most real queries are INNER and LEFT joins.",
+    "code": "-- Inner join: only matching rows\nSELECT o.id, c.name\nFROM orders o\nJOIN customers c ON o.customer_id = c.id;\n\n-- Left join: all orders, customers where available\nSELECT o.id, c.name\nFROM orders o\nLEFT JOIN customers c ON o.customer_id = c.id;\n\n-- Self join: employees and their managers\nSELECT e.name AS employee, m.name AS manager\nFROM employees e\nLEFT JOIN employees m ON e.manager_id = m.id;",
+    "lang": "sql"
+  },
+  {
+    "q": [
+      "what is a group by",
+      "what is group by in sql",
+      "how does group by work",
+      "what is a group by clause",
+      "what is the difference between where and having",
+      "what is having in sql"
+    ],
+    "a": "GROUP BY collapses rows into groups, usually combined with an aggregate function (COUNT, SUM, AVG, MIN, MAX) that computes one value per group. Example: GROUP BY country turns a table of customers into one row per country, and COUNT(*) tells you how many customers are in each. The rules that trip people up: (1) every column in the SELECT that isn't an aggregate must appear in the GROUP BY — most databases error otherwise; (2) WHERE filters rows BEFORE grouping, HAVING filters groups AFTER — that's the key difference (you can't use HAVING with an aggregate condition that needs grouping, e.g. HAVING COUNT(*) > 5); (3) GROUP BY comes after WHERE and before ORDER BY in the query order: FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY -> LIMIT; (4) NULL groups together into one group; (5) GROUP BY 1 groups by the first column in the SELECT — handy shorthand but fragile when the SELECT changes. Common patterns: GROUP BY with COUNT for distributions (status counts), with SUM for totals per key (revenue per customer), and HAVING to find groups that pass a threshold (customers with 5+ orders).",
+    "code": "-- Count per group\nSELECT country, COUNT(*) AS customers\nFROM customers\nGROUP BY country;\n\n-- Filter groups after aggregation (HAVING)\nSELECT customer_id, SUM(amount) AS total\nFROM orders\nGROUP BY customer_id\nHAVING SUM(amount) > 1000;\n\n-- WHERE filters rows first, HAVING filters groups\nSELECT status, COUNT(*) AS n\nFROM orders\nWHERE created_at > '2024-01-01'\nGROUP BY status\nHAVING COUNT(*) > 10;",
+    "lang": "sql"
+  },
+  {
+    "q": [
+      "what is a stored procedure",
+      "what are stored procedures in sql",
+      "stored procedure vs function",
+      "why use a stored procedure"
+    ],
+    "a": "A stored procedure is a named block of SQL — and sometimes procedural logic (loops, IF/ELSE, variables, transactions) — saved in the database and callable by name. Instead of sending five SQL statements from the app, you send one CALL and the database does the rest. Why they exist: (1) reuse — the same complex multi-step operation lives in one place instead of being duplicated in every app; (2) performance — the query plan can be cached, and no round-trip per statement (matters over slow networks); (3) security — you can grant users permission to CALL the procedure without touching the underlying tables; (4) consistency — every caller gets the exact same logic, including error handling and transaction boundaries. The costs: procedures are written in vendor-specific dialects (MySQL, Postgres, SQL Server all differ), hard to version-control and test compared to app code, and easy to overuse — keeping business logic in the app keeps it testable and portable. Stored procedures vs functions: procedures can modify data and use transactions but don't return values (though they can have OUT parameters); functions return a value, can be used inside queries (SELECT fn(x)), and must be pure-ish (no side effects in most databases). Modern guidance: use procedures sparingly — they shine for batch operations, scheduled jobs, and tight security boundaries; for everything else, plain queries with an ORM are easier to maintain.",
+    "code": "-- MySQL: create and call\nDELIMITER //\nCREATE PROCEDURE GetOrdersForCustomer(IN cust_id INT)\nBEGIN\n    SELECT * FROM orders WHERE customer_id = cust_id;\nEND //\nDELIMITER ;\n\nCALL GetOrdersForCustomer(42);\n\n-- PostgreSQL function (returns a value, usable in queries)\nCREATE FUNCTION total_for_customer(cust_id INT) RETURNS NUMERIC AS $$\n    SELECT SUM(amount) FROM orders WHERE customer_id = cust_id;\n$$ LANGUAGE SQL;\n\nSELECT total_for_customer(42);",
+    "lang": "sql"
+  },
+  {
+    "q": [
+      "what is normalization",
+      "what is normalization in databases",
+      "what is database normalization",
+      "what is the first normal form",
+      "what is 3nf",
+      "what does denormalization mean"
+    ],
+    "a": "Normalization is the process of organizing a database to eliminate redundant data and ensure each fact is stored once, in exactly one place. It works by splitting tables and linking them with foreign keys, guided by the normal forms: 1NF — no duplicate columns per row and every column holds one value (no lists or comma-separated strings; a person doesn't have a 'phone_numbers' column with three numbers); 2NF — 1NF plus every non-key column depends on the whole key, not part of it (relevant for composite keys — a table keyed by (order_id, product_id) shouldn't store the customer name, which only depends on order_id); 3NF — 2NF plus no column depends on another non-key column (no 'city' stored in a table where you already have a zip code, since zip determines city). Beyond that: BCNF, 4NF, 5NF exist but are rarely needed in practice. The payoff: no update anomalies (change the customer's name in one row and it must be changed everywhere), no wasted space, no inconsistent data. The trade-off: highly normalized schemas need JOINs everywhere, which can be slow. That's where denormalization comes in — deliberately storing redundant data (a cached total, a copied name) for read performance, accepting the risk of inconsistency. Real-world rule: normalize to 3NF for transactional (OLTP) systems, then selectively denormalize for reporting/analytics (OLAP) where reads dominate.",
+    "code": "-- NOT normalized (phone numbers as a list)\nCREATE TABLE customers (id INT, name TEXT, phones VARCHAR(100)); -- '555-0101,555-0102'\n\n-- 1NF: one value per cell -> split into a child table\nCREATE TABLE customers (id INT PRIMARY KEY, name TEXT);\nCREATE TABLE phones (customer_id INT, number TEXT);\n\n-- 3NF: don't store city when zip determines it\n-- (customers table keeps zip; a zipcodes table owns city)",
+    "lang": "sql"
+  }
+]

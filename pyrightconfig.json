@@ -1,0 +1,18 @@
+{
+  "extraPaths": ["src"],
+  "typeCheckingMode": "basic",
+  "reportConstantRedefinition": "none",
+  "reportMissingTypeArgument": "none",
+  "reportUnknownMemberType": "none",
+  "reportUnknownVariableType": "none",
+  "reportUnknownParameterType": "none",
+  "reportUnknownArgumentType": "none",
+  "reportUnknownLambdaType": "none",
+  "reportDeprecated": "none",
+  "reportImplicitStringConcatenation": "none",
+  "reportUnnecessaryGenerator": "none",
+  "reportUnnecessaryComparison": "none",
+  "reportPrivateUsage": "none",
+  "reportMissingTypeStubs": "none",
+  "reportBroadExceptClause": "none"
+}

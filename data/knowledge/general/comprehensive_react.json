@@ -7,7 +7,7 @@
       "how to use usestate",
       "usestate hook explained"
     ],
-    "a": "Information about usestate."
+    "a": "useState is a React hook that adds local state to a function component: `const [count, setCount] = useState(0)` — `count` is the value, `setCount` updates it and triggers a re-render. Updates are asynchronous and batched: calling `setCount(count + 1)` twice in the same handler still increments by 1 because both closures see the same `count`. To update from the latest value, use the updater form: `setCount(c => c + 1)`. The initial value can be a function computed lazily: `useState(() => expensiveInit())` runs it only on first render. State persists across re-renders but resets when the component unmounts; for data shared between components, lift the state up to a common parent or use a context/state library. Never mutate state in place (`count.push(x)` is a bug) — always pass a new value or array."
   },
   {
     "q": [
@@ -18,7 +18,7 @@
       "useeffect hook fetch data",
       "useeffect cleanup"
     ],
-    "a": "Information about useeffect."
+    "a": "useEffect runs side effects after rendering — data fetching, subscriptions, timers, DOM updates. `useEffect(() => { ... }, [deps])`: with an empty dependency array it runs once after mount; with deps it re-runs when any dependency changes; with no array it runs after every render. The cleanup function returned from the effect runs before the next effect and on unmount — essential for clearing timers and unsubscribing: `useEffect(() => { const t = setInterval(tick, 1000); return () => clearInterval(t); }, [])`. For data fetching: `useEffect(() => { let cancelled = false; fetch(url).then(r => r.json()).then(data => if (!cancelled) setData(data)); return () => { cancelled = true; }; }, [url])` — the flag prevents setting state on an unmounted component and avoids stale results when the URL changes. Effects run after paint, so don't read layout synchronously there; use useLayoutEffect for that."
   },
   {
     "q": [
@@ -28,7 +28,7 @@
       "how to create a custom hook in react",
       "react custom hook"
     ],
-    "a": "Information about custom hook."
+    "a": "A custom hook is a function that uses other hooks and starts with 'use' — it lets you extract reusable stateful logic. Example: `function useLocalStorage(key, initial) { const [value, setValue] = useState(() => JSON.parse(localStorage.getItem(key)) ?? initial); useEffect(() => localStorage.setItem(key, JSON.stringify(value)), [key, value]); return [value, setValue]; }` — then `const [name, setName] = useLocalStorage('name', '')` works in any component. Rules of hooks still apply: call hooks unconditionally at the top level of the custom hook, and only from components or other custom hooks (no loops/conditions). Custom hooks can share logic but not state — each component that calls the hook gets its own copy. They compose: a `useUser()` hook might combine `useState`, `useEffect`, and a `useFetch` hook."
   },
   {
     "q": [
@@ -37,7 +37,7 @@
       "uselocalstorage react",
       "persist state react localstorage"
     ],
-    "a": "Information about localstorage hook."
+    "a": "localStorage persists string key-value pairs in the browser across sessions. In React you wrap it in state so changes re-render: read on init with a lazy initializer (`useState(() => localStorage.getItem('theme') ?? 'light')`) and write in an effect (`useEffect(() => localStorage.setItem('theme', theme), [theme])`). Values must be strings — use JSON.stringify/JSON.parse for objects and arrays, and wrap parsing in try/catch since the stored data can be corrupt or from an older version of your app. localStorage is synchronous and blocks the main thread, so don't store large data there; it's also per-origin and unencrypted, so never store tokens or sensitive data — use httpOnly cookies for auth. Unlike sessionStorage, localStorage survives browser restarts, but there's no expiry — version your keys (`app:v1:theme`) so you can migrate."
   },
   {
     "q": [
@@ -46,6 +46,6 @@
       "usewindowsize react",
       "window resize event react"
     ],
-    "a": "Information about window resize hook."
+    "a": "To react to window resizes in React, subscribe to the resize event in a useEffect and track the size in state: `function useWindowSize() { const [size, setSize] = useState({ w: window.innerWidth, h: window.innerHeight }); useEffect(() => { const onResize = () => setSize({ w: window.innerWidth, h: window.innerHeight }); window.addEventListener('resize', onResize); return () => window.removeEventListener('resize', onResize); }, []); return size; }`. The resize event fires rapidly, so debounce or throttle it (e.g. with requestAnimationFrame) if the handler is expensive. Note that window resize isn't the only thing that changes layout — keyboard, scrollbars, and zoom also do; for element-level (not viewport-level) measurement, use ResizeObserver instead: `new ResizeObserver(entries => ...).observe(element)`. Server-side rendering must guard `window` access with `typeof window !== 'undefined'`."
   }
 ]

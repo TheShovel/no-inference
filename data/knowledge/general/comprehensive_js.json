@@ -10,7 +10,7 @@
       "fetch get request",
       "fetch post request"
     ],
-    "a": "Information about fetch api."
+    "a": "The Fetch API is the modern way to make HTTP requests in JavaScript, replacing XMLHttpRequest. `fetch(url)` returns a Promise that resolves to a Response object: `fetch('https://api.example.com/users').then(r => r.json()).then(data => console.log(data))`. For POST with JSON, pass an options object: `fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: 'Alice' }) })`. Important details: fetch does NOT reject on HTTP errors (404/500) — you must check `response.ok`; `response.json()` also throws if the body isn't valid JSON, so wrap it in try/catch. To cancel requests or set timeouts, use `AbortController`: `const ctrl = new AbortController(); fetch(url, { signal: ctrl.signal })`, then `ctrl.abort()`. In modern code, `await` makes it read like synchronous code: `const r = await fetch(url); if (!r.ok) throw new Error(r.status); const data = await r.json();`."
   },
   {
     "q": [
@@ -21,7 +21,7 @@
       "async await javascript",
       "javascript async await"
     ],
-    "a": "Information about promises."
+    "a": "A Promise represents a value that will be available in the future: pending, fulfilled, or rejected. `const p = new Promise((resolve, reject) => { ... })` — call `resolve(value)` for success, `reject(error)` for failure. Consume with `.then(onFulfilled, onRejected)` and `.catch(onRejected)`; `.then` returns a new promise so chains stay flat: `fetch(url).then(r => r.json()).then(data => use(data)).catch(err => handle(err))`. `async` functions return promises implicitly, and `await` suspends execution until a promise settles, so `async`/`await` is equivalent to `.then` chains but reads linearly. Promise.all runs promises in parallel and rejects on the first failure; Promise.allSettled waits for all and never rejects; Promise.race resolves with the first settled promise. Unhandled rejections crash in some environments, so always attach a catch."
   },
   {
     "q": [
@@ -31,7 +31,7 @@
       "how to debounce a function",
       "debounce search input"
     ],
-    "a": "Information about debounce."
+    "a": "Debouncing limits how often a function runs by waiting until activity stops: each call resets a timer, and the function fires only after the timer completes without a new call. It's essential for search inputs (avoid an API call per keystroke), window resize handlers, and autosave. A minimal implementation: `function debounce(fn, delay) { let t; return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), delay); }; }` and use it like `input.addEventListener('input', debounce(runSearch, 300))`. The cousin technique is throttling, which instead ensures a function runs at most once per interval (e.g. for scroll events, where you want periodic updates, not one update after scrolling stops). Note that debounced functions lose `this` context and return undefined immediately — use it on a stable wrapper, and pass `this` explicitly via `fn.apply(this, args)` if the original relies on it."
   },
   {
     "q": [
@@ -40,7 +40,7 @@
       "javascript arrow function syntax",
       "when to use arrow functions"
     ],
-    "a": "Information about arrow function."
+    "a": "Arrow functions are a shorter function syntax introduced in ES6: `const add = (a, b) => a + b;` (implicit return when the body is a single expression). They differ from `function` in two important ways: they do NOT have their own `this` — they lexically inherit `this` from the enclosing scope, which makes them ideal for callbacks where you want to keep the outer context (`arr.map(x => x * 2)` inside a method keeps the method's `this`); and they cannot be used as constructors (no `new`), have no `arguments` object, and cannot be generators. They also can't be used for methods that need dynamic `this` — e.g. `obj.method() { return () => this.x }` works, but a shorthand arrow property `{ method: () => this.x }` does not (it captures the module scope). Use arrows for short callbacks and lexical `this`; use `function` for constructors and methods needing their own `this`."
   },
   {
     "q": [
@@ -51,6 +51,6 @@
       "array map javascript",
       "array filter javascript"
     ],
-    "a": "Information about map filter reduce."
+    "a": "map, filter, and reduce are array methods that make data transformation declarative. `map` transforms every element and returns a new array of the same length: `[1,2,3].map(x => x * 2)` → `[2,4,6]`. `filter` keeps elements that pass a predicate, returning a subset: `[1,2,3,4].filter(x => x % 2 === 0)` → `[2,4]`. `reduce` folds the array into a single value: `[1,2,3].reduce((acc, x) => acc + x, 0)` → 6; it's also used for grouping or building objects: `items.reduce((acc, it) => { acc[it.cat] = (acc[it.cat] || 0) + 1; return acc; }, {})`. All three leave the original array untouched, which encourages immutable, chainable code: `users.filter(u => u.active).map(u => u.name)`. `reduce` has an optional initial value — omitting it uses the first element, which breaks on empty arrays."
   }
 ]

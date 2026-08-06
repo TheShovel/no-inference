@@ -7,7 +7,7 @@
       "python list comprehension examples",
       "list comprehension vs for loop"
     ],
-    "a": "Information about list comprehension."
+    "a": "A list comprehension builds a new list by transforming each item, with optional filtering: `squares = [x**2 for x in range(10)]` and `evens = [x for x in range(20) if x % 2 == 0]`. The general form is `[expression for item in iterable if condition]` — the expression runs per item, the condition filters. Comprehensions are faster than `for`-loop `append()` patterns and read more clearly. You can nest them, but beyond two levels they become unreadable — use a normal loop. Other variants: dict comprehension `{k: v for k, v in items}`, set comprehension `{x % 3 for x in range(10)}`, and generator expression `(x**2 for x in range(100))` which is lazy (creates one value at a time instead of materializing the whole list). A common gotcha: if the iterable is large and you only need to consume it once, prefer a generator expression."
   },
   {
     "q": [
@@ -17,17 +17,20 @@
       "python decorator tutorial",
       "decorator example python"
     ],
-    "a": "Information about decorator."
+    "a": "A decorator is a function that takes another function and returns a modified version of it, applied with `@syntax` above the definition: `@timer` means `func = timer(func)`. A basic decorator: `def timer(fn):\n    def wrapper(*args, **kwargs):\n        start = time.perf_counter()\n        result = fn(*args, **kwargs)\n        print(f'{fn.__name__} took {time.perf_counter() - start:.4f}s')\n        return result\n    return wrapper` Then `@timer` on any function logs its runtime. Always use `functools.wraps` on the wrapper so the decorated function keeps its `__name__`, `__doc__`, and signature. Decorators with arguments need an extra layer: `def repeat(n):\n    def deco(fn):\n        def wrapper(*a, **kw):\n            [fn(*a, **kw) for _ in range(n)]\n        return wrapper\n    return deco` — applied as `@repeat(3)`. Common uses: logging, caching (lru_cache), timing, access control, and retry logic."
   },
   {
     "q": [
+      "lambda",
+      "lambda expression python",
+      "lambda filter map python",
+      "lambda function",
       "lambda python",
       "python lambda function",
-      "lambda expression python",
       "python lambda tutorial",
-      "lambda filter map python"
+      "what is a lambda"
     ],
-    "a": "Information about lambda."
+    "a": "A lambda is a small anonymous function with a single expression: `lambda x: x * 2` is equivalent to `def f(x): return x * 2` but defined inline. Lambdas are most useful where a function is expected as an argument: `sorted(items, key=lambda item: item['price'])`, `list(map(lambda x: x.strip(), words))`, or `filter(lambda x: x > 0, nums)`. They can take multiple arguments (`lambda a, b: a + b`) but cannot contain statements — no `if/else` blocks (though ternary expressions `lambda x: 'yes' if x else 'no'` work), no assignments, no loops. For anything beyond a single expression, define a named function: it's clearer and testable. In modern Python, `operator.attrgetter` and `functools.partial` often replace lambdas for common cases, and `functools.reduce` with a lambda is the classic example — though a loop is usually more readable."
   },
   {
     "q": [
@@ -37,7 +40,7 @@
       "generator vs iterator python",
       "python generator explained"
     ],
-    "a": "Information about generator."
+    "a": "A generator produces values one at a time instead of materializing them all in memory. The simplest form is a generator expression: `(x * x for x in range(10**9))` takes constant memory. A generator function uses `yield`: each call to `next()` runs up to the next `yield` and pauses there. Example: `def countdown(n):\n    while n > 0:\n        yield n\n        n -= 1`. Generators are single-pass iterators — you can't index them or reuse them once exhausted. `yield from` delegates to another iterable, and `send()`/`throw()` allow two-way communication (used by coroutine frameworks). Use generators for large data streams, infinite sequences, or when you only need a few values (e.g. `itertools` products). The classic pattern: `for line in read_large_file('log.txt'): process(line)` reads one line at a time instead of loading the whole file."
   },
   {
     "q": [
@@ -47,6 +50,27 @@
       "try except python",
       "python raise exception"
     ],
-    "a": "Information about exception handling."
+    "a": "Python handles runtime errors with `try/except`. Basic form: `try:\n    risky_operation()\nexcept ValueError:\n    handle_bad_value()\nexcept (TypeError, KeyError) as e:\n    log(e)\nelse:\n    no_error_path()\nfinally:\n    cleanup()`. Catch specific exceptions rather than bare `except:` — bare except hides bugs like KeyboardInterrupt and SystemExit (both of which inherit from BaseException, not Exception). Use `except Exception as e:` when you need broad catching with the error object. Raise your own errors with `raise ValueError('message')` or custom exception classes (`class MyError(Exception): pass`). The `with` statement (`with open(...) as f:`) handles context-manager cleanup — closing files, releasing locks — and is the recommended way to manage resources, often removing the need for try/finally. Don't use exceptions for control flow in tight loops — check conditions first (`if key in d` vs catching KeyError) for performance."
+  },
+  {
+    "q": [
+      "how do classes work in python",
+      "how do python classes work",
+      "python classes explained",
+      "what is a class in python",
+      "classes and objects python",
+      "how does a class work"
+    ],
+    "a": "A class in Python is a blueprint for creating objects. It bundles data (attributes) and behavior (methods) together: class Dog: def __init__(self, name): self.name = name  # instance attribute def bark(self): return f'{self.name} says woof!'  The __init__ method is the constructor — Python calls it automatically when you create an instance (dog = Dog('Rex')). Every method takes self as its first parameter, which refers to the current instance, so you can access instance attributes through it. A class can inherit from another (class Puppy(Dog)) to reuse and extend behavior, and you can override methods in the subclass. Class attributes (defined at class level, outside methods) are shared by all instances, while instance attributes (set via self) are per-object. Use dataclasses (@dataclass) when you mainly need a container for data — they auto-generate __init__, __repr__, and __eq__ from annotated fields. Type hints and method docstrings make classes self-documenting. In short: __init__ + self + methods = a class; instantiate it to get an object."
+  },
+  {
+    "q": [
+      "how do i connect to a database in python",
+      "connect to a database python",
+      "database connection python",
+      "how to connect to sqlite in python",
+      "connect to mysql python"
+    ],
+    "a": "Python connects to databases through DB-API 2.0 drivers — the pattern is identical across engines: import the driver, connect with credentials (or a path), create a cursor, execute SQL, fetch results, and close/commit. SQLite (built in, zero setup): import sqlite3; conn = sqlite3.connect('app.db'); cur = conn.cursor(); cur.execute(\"CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT)\"); cur.execute(\"INSERT INTO users (name) VALUES (?)\", ('alice',)); conn.commit(); for row in cur.execute('SELECT * FROM users'): print(row); conn.close()  The ? placeholders (never f-strings) prevent SQL injection. For PostgreSQL use psycopg2: conn = psycopg2.connect(host='localhost', dbname='mydb', user='postgres', password='secret') — same cursor/execute/commit flow. For MySQL, PyMySQL or mysql-connector-python. Two modern conveniences: SQLAlchemy's engine/ORM for object-mapped access, and pandas.read_sql for analysis. Always use a context manager (with sqlite3.connect(...) as conn:) or try/finally so the connection is closed even when an exception occurs, and commit explicitly — by default the driver doesn't auto-commit."
   }
 ]

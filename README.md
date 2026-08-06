@@ -4,29 +4,38 @@
 
 > **Warning** This is not the best this system could be. We know where the gaps are. The pattern matcher could cover more ground, the knowledge base could be thousands of entries deep, the NLG pipeline could produce more natural prose, and the math solver could handle calculus. But building that takes data, testing, and server time we do not have. If this project had the resources to run continuous evaluation and iterate on the knowledge base at scale, it would compete with chatbot services that cost millions to run. As it stands, it is a demonstration that the approach works. We think that is worth something.
 
-A purely symbolic conversational engine that answers questions, writes essays, solves math problems, roleplays characters, and holds conversations.
+A purely symbolic conversational engine that answers questions, writes essays, solves math problems, roleplays characters, and holds conversations, plus an **opencode-style coding agent** (`cos`) that fills in, edits, generates, and iteratively refines code. No neural network, no sampling, no network required.
 
 ## How it works in one sentence
 
-no-inference detects what kind of question you asked, then routes it to a specialized handler that retrieves or generates an answer from curated knowledge bases, Wikipedia, templates, or symbolic logic.
+no-inference detects what kind of question you asked, then routes it to a specialized handler that retrieves or generates an answer from curated knowledge bases, Wikipedia, templates, or symbolic logic. Coding requests get a second routing layer: fill-in, transformation, generation, and iterative refinement, all deterministic.
 
 ## Quick start
 
-```bash
-# Just run it. Works with the Python standard library.
+Two interfaces ship with the repo:
 
+**The coding agent (recommended):** a full-screen terminal UI for working on files, like a small `opencode`:
+
+```bash
+python3 src/cos/cli.py          # interactive TUI
+# or install it once and use it from any project directory:
+pip install -e .                # provides the `cos` command
+ln -s "$PWD/bin/cos" ~/.local/bin/cos   # or symlink the launcher
+```
+
+**The chat interface:** the classic question-answer TUI:
+
+```bash
 cd src
 python3 cos_tui.py
 ```
 
-Type questions, get answers. Type `/help` for commands. The cat is not included but we think it adds character.
-
-> "The best way to have a good conversation is to not use a neural network." -- Ancient proverb, probably
+Both work with only the Python standard library and need no internet by default.
 
 ## Requirements
 
-- Python 3.8 or later
-- Internet connection (optional, used for live Wikipedia lookups, weather, time, dictionary)
+- Python 3.10 or later
+- Internet connection (optional, used for live Wikipedia lookups, weather, time, dictionary; everything else is fully offline)
 
 Optional for LLM judge evaluations:
 - Ollama running locally (for `src/benchmark/llm_eval.py` only)
@@ -51,14 +60,20 @@ python3 -m api.server
 
 ## Usage
 
-### Text interface (TUI)
+### The coding agent (`cos`)
+
+An opencode-style deterministic agent with a full-screen terminal UI. It
+reads the file it is pointed at, understands the task, shows a diff, and
+applies the edit. See [Try the agent CLI](#try-the-agent-cli) below.
+
+### Chat interface (`src/cos_tui.py`)
 
 ```bash
 cd src
 python3 cos_tui.py
 ```
 
-Commands inside the TUI:
+Type questions, get answers. Commands inside the chat TUI:
 
 - `/help`. Show help
 - `/debug`. Toggle routing decisions display
@@ -111,6 +126,10 @@ The system maintains:
 
 - **Intent detection.** Regex-based routing that classifies queries into math, word problems, roleplay, instruction, follow-up, memory recall, and factual categories
 - **Knowledge base.** Curated JSON files with question-answer pairs across science, history, technology, coding, and everyday life
+- **Code synthesizer.** A deterministic template engine (`cos/code_gen.py`) that detects the language and task of a coding question and assembles complete, runnable code: algorithms, regex, file/CSV/JSON I/O, HTTP, SQL, git, sysadmin commands, scripts, and full websites, across Python, JS/TS, Java, C++, C#, Go, Rust, SQL, and bash. Code questions never fall back to Wikipedia
+- **Code transformer.** (`cos/code_transformer.py`) edits pasted code on request: convert language, add error handling, rename, comment, optimize, explain, loop conversion
+- **Fill-in harness.** (`cos/code_editor.py`) reads a buffer (language, imports, definitions, indentation) and fills empty function bodies: from the signature, the function name, module-level state, or a TODO comment/docstring
+- **Iterative refinement.** (`cos/refine.py`) follows up on generated artifacts: `add a contact form`, `change the accent color to green`, `add error handling`, `now do the same in rust` edit the last thing the engine produced, in place
 - **Wikipedia integration.** On-the-fly retrieval with an NLG pipeline that strips formatting artifacts and produces clean, conversational text
 - **Template engine.** Context-aware template matching with topic extraction from conversation history
 - **Pattern matcher.** Social and emotional response patterns for greetings, farewells, feelings, and chit-chat
@@ -141,6 +160,8 @@ The system maintains:
 
 ```
 no-inference/
+  bin/
+    cos                     Launcher: run the agent from any project directory
   src/
     cos/                    Core engine
       __init__.py           Package entry point
@@ -157,27 +178,56 @@ no-inference/
       math_solver.py        Word problem and arithmetic solver
       context_extraction.py Multi-strategy keyword and topic extraction
       poem.py               Template-based poem generator
-      code_knowledge.py     Programming knowledge base
+      code_knowledge.py     Programming knowledge base + code-topic routing
+      code_gen.py           Deterministic code synthesizer (~90 tasks, 9 languages)
+      code_transformer.py   Code/text transformations (convert, rename, errors, …)
+      code_editor.py        Buffer-aware fill-in / completion API (the harness)
+      refine.py             Iterative refinement: edit the last generated artifact
+      text_editor.py        Text editing, change requests, summaries, translations
+      cli.py                The opencode-style agent CLI (console script `cos`)
+      tui.py                Dependency-free full-screen terminal UI for the agent
       external_apis.py      Free public API integrations
       prompt_templates.py   Prompt template matching system
-      nlg/                 Natural language generation pipeline
+      nlg/                  Natural language generation pipeline
     api/                    HTTP API server
     benchmark/              Benchmarking and evaluation
-    cos_tui.py              Text user interface
+    cos_tui.py              Classic chat text interface
     generate_kb.py          Knowledge base generator from Wikipedia
+  examples/
+    harness_cli.py          Scriptable JSON fill-in backend (for editor plugins)
+    workbench/              Fixture scripts used by tests and demos (todo app,
+                            shopping cart, TS utilities, data processor)
   data/
     aliases.json            Topic name aliases
     knowledge/              Curated knowledge by subject
       general/              General knowledge entries
       generated/            Wikipedia-generated entries
       templates/            Context-aware response templates
+      coding/               Coding concepts, git, SQL, deployment, …
       ...                   Subject-specific directories
     patterns/               Social and emotional response patterns
     prompt_templates/       Instruction templates for essays, code, etc.
     cache/                  Wikipedia response cache
   docs/                     Documentation
-  tests/                    Test suite
+  tests/                    Test suite (17 suites, run `python3 tests/run_all.py`)
 ```
+
+## Testing
+
+```bash
+python3 tests/run_all.py          # all 17 suites (~15 min)
+python3 tests/test_refine.py      # make→edit→refine loops
+python3 tests/test_workbench_recipes.py  # buffer-aware fill-in on real scripts
+python3 tests/test_tui.py          # agent TUI + launcher
+python3 tests/test_code_editor.py  # harness API + agent CLI
+```
+
+The suites cover the regression set (465), coding answers (136), code
+synthesis and routing (145), code/text transforms (29), practical knowledge
+(192), the editor e2e suites (1044), stress (86), NLG, context extraction
+(960), the harness (60), workbench recipes (39), the TUI/launcher (47),
+iterative refinement (41), and freeform discovery (31); 3,383 checks in
+total, all deterministic and offline.
 
 ## Documentation
 
@@ -187,6 +237,54 @@ no-inference/
 - [Knowledge Base](docs/knowledge.md). Curated knowledge, Wikipedia integration, and code lookup
 - [Benchmarks](docs/benchmarks.md). Evaluation methodology and results
 - [Data Formats](docs/data.md). How to add patterns, templates, knowledge entries, and personas
+- [Editor Harness](docs/editor-harness.md). Fill-in / completion API, the JSON backend CLI, and the opencode-style agent CLI
+
+## Try the agent CLI
+
+`cos` is a real tool in this repo: an opencode-style deterministic coding
+agent with a full-screen terminal UI. It opens a file, understands the
+task, shows a diff, and applies the edit. Launch it from **any project
+directory**:
+
+```sh
+# install once (adds the `cos` command to your PATH):
+mkdir -p ~/.local/bin
+ln -s "$PWD/bin/cos" ~/.local/bin/cos
+# (or: pip install -e ., which provides the same `cos` command)
+
+cos                                     # full-screen TUI
+cos "complete the function" --file tool.py --yes
+cos "convert this code to javascript" --file tool.py
+cos "what is a binary search"          # chat answers for questions
+
+# from a source checkout without installing:
+python3 src/cos/cli.py                  # also launches the TUI
+```
+
+In the TUI: `Tab` picks a file, `PageUp/PageDown` scroll the log,
+`Ctrl-W/Ctrl-U` edit the input, `Up/Down` recall past tasks, and edits are
+confirmed inline before applying. If the terminal isn't interactive, `cos`
+falls back to the plain prompt loop automatically.
+
+### Make → edit → refine
+
+The agent keeps editing whatever it just produced. Follow-ups like `add a
+contact form to the website`, `change the accent color to green`, `make it
+dark`, `add error handling to the function`, `add a docstring`, `add
+compression to the backup script`, or `now do the same in rust` edit the
+last generated artifact in place (never a fresh regeneration, and never a
+knowledge-article non-answer). It works for HTML pages, functions, and
+scripts, in chat and in the TUI.
+
+### Files are real
+
+When a task generates a whole artifact (`create a website for a taco
+shop`, `write a function that flattens a nested list`) with no file open,
+`cos` stages it as a **new file**: you get a diff and `create
+taco-shop.html? [y/N]`. Say `y` and the file is written to the working
+directory; `/undo` deletes it again. Existing files are never overwritten
+without opening them first, and knowledge answers with example code
+blocks are never turned into files.
 
 ## Benchmark results
 
@@ -200,15 +298,19 @@ no-inference/
 | Temperature Variety   | 70.0% |
 | Overall               | 97.4% |
 
-**LLM Judge (gemma4:31b, 22 cases)**
+**LLM Judge (gemma4:31b-cloud, 10 cases, 2 rounds per case)**
 
 | Metric            | Score (out of 10) |
 |-------------------|-------------------|
-| Naturalness       | 4.2               |
-| Informativeness   | 6.1               |
-| Coherence         | 6.1               |
-| Correctness       | 9.3               |
-| Overall           | 6.8               |
+| Naturalness       | 8.0               |
+| Informativeness   | 8.4               |
+| Coherence         | 9.1               |
+| Correctness       | 9.9               |
+| Conciseness       | 9.7               |
+| Overall           | 9.0               |
+
+Run it yourself: `python3 -m src.benchmark.llm_eval` (requires Ollama with
+`gemma4:31b-cloud`; results land in `data/eval_results.json`).
 
 ## License
 

@@ -1,0 +1,48 @@
+[
+  {
+    "q": [
+      "how to check if an array contains a value in javascript",
+      "javascript check if array contains value",
+      "javascript array includes example",
+      "check if array contains element javascript",
+      "javascript if array has value"
+    ],
+    "a": "Use `includes()` to check whether an array contains a value: it uses strict equality (SameValueZero) and returns a boolean. `indexOf()` returns the index or -1, which is useful when you need the position. For repeated membership checks, build a Set first so lookups become O(1).",
+    "code": "const arr = ['apple', 'banana', 'cherry'];\n\n// Boolean check:\narr.includes('banana');   // true\narr.includes('pear');     // false\n\n// Get the index (-1 when missing):\narr.indexOf('banana');    // 1\n\n// Custom predicate (e.g. objects):\narr.some(item => item.startsWith('b'));  // true\n\n// Fast repeated lookups — Set:\nconst seen = new Set(arr);\nseen.has('banana');       // true, O(1)\n\n// in an if statement:\nif (arr.includes('banana')) {\n  console.log('found');\n}",
+    "lang": "javascript"
+  },
+  {
+    "q": [
+      "how to convert a string to a number in javascript",
+      "javascript convert string to number",
+      "javascript parseint example",
+      "string to int javascript",
+      "how to parse a string to a number in javascript"
+    ],
+    "a": "JavaScript has three common ways to convert a string to a number, with different strictness. `Number(str)` is strict: it returns NaN if the whole string isn't numeric. `parseInt(str)` reads a numeric prefix and ignores trailing characters ('42px' -> 42). The unary plus `+str` behaves like Number(). Choose Number() for validation (reject malformed input) and parseInt() for strings with units or prefixes.",
+    "code": "// Strict conversion:\nNumber('42');      // 42\nNumber('42px');    // NaN  — whole string must be numeric\n\n// Prefix parsing (ignores trailing junk):\nparseInt('42px');  // 42\nparseInt('0x10');  // 16  (hex prefix)\n\n// Unary plus (same as Number):\n+'42';             // 42\n\n// Decimals:\nparseFloat('3.14');  // 3.14\n\n// Robust pattern with validation:\nconst num = Number(userInput);\nif (Number.isNaN(num)) {\n  // handle invalid input instead of silently proceeding\n}",
+    "lang": "javascript"
+  },
+  {
+    "q": [
+      "how to write a for loop in javascript",
+      "javascript for loop example",
+      "write a loop that prints numbers 1 to 10 in javascript",
+      "javascript loop through an array"
+    ],
+    "a": "JavaScript offers several loop styles. The classic `for (let i = 0; i < n; i++)` loop gives you an index and precise control. `for...of` iterates over values directly and is the cleanest for arrays. `forEach` is a method with a callback (no break/continue). `for...in` iterates over object keys — avoid it for arrays.",
+    "code": "// Classic index loop:\nfor (let i = 0; i < 5; i++) {\n  console.log(i);\n}\n\n// Print 1 to 10:\nfor (let i = 1; i <= 10; i++) {\n  console.log(i);\n}\n\n// for...of over an array:\nfor (const item of ['a', 'b', 'c']) {\n  console.log(item);\n}\n\n// forEach with index:\n['a', 'b', 'c'].forEach((item, idx) => {\n  console.log(idx, item);\n});\n\n// Break out of a loop:\nfor (let i = 0; i < 100; i++) {\n  if (i === 5) break;\n  console.log(i);\n}",
+    "lang": "javascript"
+  },
+  {
+    "q": [
+      "how to check if a string contains a substring in javascript",
+      "javascript string contains",
+      "javascript includes string method",
+      "check if string contains text javascript"
+    ],
+    "a": "Use `String.prototype.includes()` to check whether a string contains a substring — it returns a boolean and is case-sensitive. `indexOf()` returns the position or -1, and `search()` accepts a regex. For case-insensitive checks, lowercase both sides first.",
+    "code": "const text = 'The quick brown fox';\n\ntext.includes('quick');            // true\ntext.includes('cat');              // false\n\n// Case-insensitive check:\ntext.toLowerCase().includes('QUICK'.toLowerCase());  // true\n\n// Position (indexOf):\ntext.indexOf('brown');             // 10\ntext.indexOf('missing');           // -1\n\n// Regex (search):\ntext.search(/br[o]+wn/);           // 10\n\n// Starts / ends with:\ntext.startsWith('The');            // true\ntext.endsWith('fox');              // true",
+    "lang": "javascript"
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "q": [
+      "what is a message queue",
+      "what is message queuing",
+      "what is a message broker",
+      "what is kafka used for"
+    ],
+    "a": "A message queue is a system that lets services communicate asynchronously by passing messages through a buffer instead of calling each other directly. A producer sends a message ('order placed', 'file uploaded'), the queue holds it, and one or more consumers pick it up when ready. This decouples services: the producer doesn't wait for the consumer, and the consumer can be down without losing work — messages persist until processed. Real-world uses: decoupling (web server drops jobs into a queue, workers process them), smoothing traffic spikes (a burst of requests drains gradually), and fan-out (one event feeds many consumers). Popular implementations: RabbitMQ, Apache Kafka (a distributed log that also supports queues), Amazon SQS, Redis Streams. Trade-offs: added operational complexity, and you must design for at-least-once delivery — consumers need idempotency because a message may be redelivered. Pattern name to know: the 'outbox pattern' publishes events to a queue as part of a database transaction."
+  },
+  {
+    "q": [
+      "what is sharding",
+      "what is database sharding",
+      "how does sharding work",
+      "what is a shard"
+    ],
+    "a": "Sharding is splitting one database across multiple machines — each shard holds a subset of the rows, and together they serve the whole dataset. The goal is horizontal scaling: when one database can't handle the load or data size, you add more servers instead of buying a bigger one. How it works: a shard key (like user_id) determines which shard each row goes to — often by hash or range. The key trade-off: sharding distributes writes and reads, but it complicates everything else — queries that span shards are slow or impossible, joins and transactions across shards are hard, and rebalancing (moving data when you add a shard) is an operation. That's why sharding is a last resort: the standard progression is optimize queries → add indexes → read replicas → cache → and only then shard (or move to a sharded database like CockroachDB that does it for you). Pick a shard key with even distribution and that matches your query patterns — a bad key (like a single hot user) creates 'hot shards' and defeats the purpose."
+  },
+  {
+    "q": [
+      "what is a cdn",
+      "what is a content delivery network",
+      "how do cdns work",
+      "what is cloudflare used for"
+    ],
+    "a": "A CDN (Content Delivery Network) is a network of servers distributed around the world that caches and serves your content from the location nearest to each user. Instead of every visitor in the world hitting your single server, they hit a nearby edge server — drastically reducing latency and offloading your origin server. CDNs serve static assets (images, JS, CSS, video) extremely well, and modern ones (Cloudflare, Fastly, CloudFront, Akamai) also do dynamic content, TLS termination, DDoS protection, and web application firewall duties. How caching works: the first request for a file pulls it from your origin and caches it at the edge with a TTL (time-to-live); subsequent requests from that region are served from cache. Key concepts: cache invalidation (purging stale content after deploys — a classic gotcha is users seeing old JS/CSS because the cache TTL hasn't expired, fixed with cache-busting hashes in filenames or purge APIs), and origin shielding. For most web apps, putting a CDN in front is cheap, easy, and one of the highest-ROI performance moves you can make."
+  },
+  {
+    "q": [
+      "what is load balancing",
+      "what is a load balancer",
+      "how does load balancing work",
+      "what is round robin load balancing"
+    ],
+    "a": "Load balancing distributes incoming traffic across multiple servers so no single server gets overwhelmed. A load balancer sits in front of a pool of servers and routes each request to one of them, usually invisibly — clients talk to a single virtual IP. Benefits: availability (if a server dies, traffic goes to the survivors — the LB health-checks and removes dead instances), scalability (add servers behind the LB), and smoother upgrades (drain a server, update it, bring it back). Routing algorithms: round robin (each server in turn), least connections (to the least busy), IP hash (same client → same server, useful for sticky sessions), and weighted variants. Levels: L4 (network, fast, routes by IP/port) vs L7 (application, can route by URL/host/headers — what nginx does). Managed options: AWS ELB/ALB, GCP/Azure equivalents, or software like HAProxy and nginx. In Kubernetes, a Service + Ingress does this role. Load balancing is the standard answer to 'one server is not enough' — but remember it doesn't help if the bottleneck is a shared database; you often need caching and read replicas too."
+  },
+  {
+    "q": [
+      "what is a web socket",
+      "what is websocket",
+      "websocket vs http",
+      "what is socket.io"
+    ],
+    "a": "WebSocket is a protocol that opens a persistent, two-way connection between a browser (or client) and a server, so either side can push messages at any time without re-requesting. Regular HTTP is request-response: the client asks, the server answers, the connection closes. With WebSockets, one handshake over HTTP ('Upgrade: websocket') switches to a long-lived full-duplex connection — that's what enables chat apps, live sports scores, collaborative editing, multiplayer games, and real-time dashboards where the server must push data the moment it changes. Implementation notes: the browser API is `new WebSocket('ws://...')`; on the server, Socket.IO (Node), Django Channels, or Spring WebSocket handle it. Trade-offs: connections are stateful and consume resources, they don't work through every proxy (though wss:// over TLS solves most cases), and for simple one-way updates, alternatives like Server-Sent Events (SSE) or plain polling are often simpler and sufficient. Rule of thumb: WebSockets when the server must push frequently or bidirectionally; HTTP/SSE when occasional one-way updates are enough."
+  },
+  {
+    "q": [
+      "what is a distributed system",
+      "what is distributed computing",
+      "distributed systems explained",
+      "what are the challenges of distributed systems"
+    ],
+    "a": "A distributed system is a group of independent computers that work together to appear as a single system — think a cluster of web servers behind a load balancer, a sharded database, or a service mesh. The benefits: scaling (add machines to handle more load), availability (other machines survive failures), and geographic distribution (servers near users). The costs are the famous 'fallacies of distributed computing': the network is not reliable, not secure, not homogeneous, has latency, and — the core one — the network is not instantaneous and bandwidth isn't free. Because of this, distributed systems face three hard problems: (1) Partial failure — some machines may be down while others work; you can't tell a slow machine from a dead one (that's why timeouts and retries exist). (2) Consistency — when data is replicated across machines, keeping copies in sync requires consensus (Paxos, Raft); the CAP theorem says you must choose between consistency, availability, and partition tolerance. (3) Ordering — there is no global clock, so 'which event happened first' needs coordination. Modern practice mitigates this with idempotency, retries with backoff, message queues, and 'eventual consistency' designs — accepting that copies converge shortly after an update rather than instantly."
+  },
+  {
+    "q": [
+      "what is a state machine",
+      "what is a finite state machine",
+      "state machines explained",
+      "what are states and transitions"
+    ],
+    "a": "A state machine is a model of a system that has a finite set of states, one state at a time, and transitions between states triggered by events. The classic example is a door: states are OPEN and CLOSED; the event 'push' moves CLOSED → OPEN, and 'close' moves OPEN → CLOSED. A vending machine, a traffic light, a login flow ('logged out' → 'authenticating' → 'logged in' → 'logged out' on expiry), an order lifecycle ('pending' → 'paid' → 'shipped' → 'delivered', with 'canceled' from several states) — all are state machines. Formal elements: states, events/triggers, transitions (guarded by conditions), and sometimes actions on entering/leaving states. Why programmers love them: they make illegal states unrepresentable — if the only allowed transitions are defined, you can't accidentally 'ship' an unpaid order. Libraries like XState (JS) let you model UI flows as machines; in backend code, an enum + a transition table (a dict of state → event → next state) is the lightweight version. The key discipline: define all states up front and never allow undefined transitions — that's what prevents the 'impossible' bugs."
+  }
+]

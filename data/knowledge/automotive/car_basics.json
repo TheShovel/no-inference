@@ -1,0 +1,38 @@
+[
+  {
+    "q": [
+      "how to jump start a car",
+      "how to jump a car battery",
+      "how to jump start a dead battery",
+      "jump start cables order"
+    ],
+    "a": "Jump-starting connects a dead battery to a live one (another car or a portable jump pack). Position the cars close but not touching, both off. Connect the cables in this exact order: (1) red clamp to the dead battery's positive (+) terminal, (2) red clamp to the good battery's positive (+), (3) black clamp to the good battery's negative (−), (4) black clamp to an unpainted metal bolt or bracket on the dead car's engine block — NOT to the dead battery's negative terminal (sparking near the battery can ignite hydrogen gas). Start the good car, wait 2-3 minutes, then start the dead car. Remove the cables in reverse order. Let the jumped car run (or drive) for at least 15 minutes to recharge. If it won't start after two tries, the battery may be too far gone or the alternator may be dead — a portable jump pack works the same way without a second car."
+  },
+  {
+    "q": [
+      "how to check your oil level",
+      "how to check engine oil",
+      "how to check car oil dipstick",
+      "how often should i check my oil"
+    ],
+    "a": "Check the oil when the engine is cold or has been off for at least 10 minutes so the oil has settled in the pan. Park on level ground, open the hood, and find the dipstick (usually a bright yellow or orange ring handle labeled 'ENGINE OIL'). Pull it out, wipe it clean with a rag, push it fully back in, wait a second, and pull it out again — the oil level should be between the two marks (min and max, or crosshatched area). If it's below the min mark, add oil through the filler cap a little at a time (the correct grade is printed on the cap or in the manual), rechecking between pours — overfilling is harmful. The oil should look amber/translucent; if it's black and gritty or smells burnt, it's due for a change. Check monthly, or before long trips."
+  },
+  {
+    "q": [
+      "how to change a flat tire",
+      "how to change a tire step by step",
+      "how to put on a spare tire",
+      "how to fix a flat tire"
+    ],
+    "a": "Safety first: pull off the road onto flat, solid ground, put the car in park with the handbrake on, and turn on hazard lights. Place wheel chocks or rocks behind the wheels opposite the flat. Loosen the lug nuts a half turn while the car is still on the ground (they're very tight — use your weight on the wrench). Jack the car up at the designated jack point (check the owner's manual; usually behind the front wheels or in front of the rears) until the flat tire clears the ground. Remove the lug nuts and the tire, mount the spare, and hand-tighten the lug nuts in a star/crisscross pattern. Lower the car, then tighten the nuts fully in the same star pattern. Note the spare's speed limit (usually 80 km/h / 50 mph) and get the flat repaired or replaced promptly — don't drive long-term on a spare."
+  },
+  {
+    "q": [
+      "how to check tire pressure",
+      "how to check my tire pressure",
+      "what should my tire pressure be",
+      "how to use a tire pressure gauge"
+    ],
+    "a": "The correct pressure is printed on a sticker inside the driver's door frame (or in the owner's manual) — not on the tire itself; that number is the tire's maximum, not the recommended pressure. Check tires when they're cold (before driving, or 3+ hours after). Remove the valve cap, press a tire gauge firmly onto the valve stem, and read the pressure (usually 30-35 psi / 2.0-2.4 bar for passenger cars). If it's low, add air at a gas station air pump in short bursts, rechecking between; if it's high, release air by pressing the gauge's bleed button or the valve pin. Check all four tires monthly, plus the spare. A tire losing pressure repeatedly likely has a slow leak — get it inspected."
+  }
+]

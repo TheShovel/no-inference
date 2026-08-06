@@ -1,0 +1,38 @@
+[
+  {
+    "q": [
+      "what is acid in databases",
+      "what are the acid properties",
+      "acid vs base database",
+      "what does acid stand for in databases"
+    ],
+    "a": "ACID is the acronym for the four guarantees a database transaction should provide: Atomicity, Consistency, Isolation, Durability. (1) Atomicity — a transaction is all-or-nothing: if any part fails, the whole thing rolls back, so a transfer that debits one account can never complete without crediting the other. (2) Consistency — a transaction moves the database from one valid state to another: constraints, foreign keys, and business rules always hold afterward (money is never created or destroyed). (3) Isolation — concurrent transactions don't interfere: if two people update the same row, the result is as if they ran one after the other, not interleaved mid-operation (this is where transaction isolation levels like 'read committed' and 'serializable' come in — higher isolation = more safety, lower performance). (4) Durability — once a transaction commits, it stays committed even if the power dies; the write is on disk (or a write-ahead log) before the commit is acknowledged. Why it matters: ACID is what makes databases safe for money, orders, and any state that must never corrupt. The trade-off to know: ACID guarantees are expensive under high concurrency and distributed systems — which is why NoSQL systems often use BASE (Basically Available, Soft state, Eventually consistent), relaxing consistency for speed and availability. In practice: relational databases (PostgreSQL, MySQL) give ACID out of the box; choose ACID when correctness is non-negotiable, BASE when you need scale and can tolerate temporary inconsistency."
+  },
+  {
+    "q": [
+      "what is xss",
+      "what is cross site scripting",
+      "how to prevent xss attacks",
+      "xss attack explained"
+    ],
+    "a": "XSS (cross-site scripting) is a web vulnerability where an attacker injects malicious JavaScript into a page that other users then run in their browsers. It happens when a site echoes user input into HTML without escaping it — e.g., a comment field that displays '<script>stealCookies()</script>' as a live script instead of plain text. The impact: the attacker's code runs with the victim's session and privileges — it can steal cookies/session tokens (account takeover), read or modify the page (defacing, phishing overlays), keylog passwords, or make requests as the victim (CSRF). The three types: stored (the payload is saved on the server — the worst, hits every visitor), reflected (the payload is in a URL that tricks a user into clicking), and DOM-based (the flaw is in client-side JavaScript). Prevention, in order: (1) Escape all output — encode user data for the context it appears in (HTML-escape for HTML, attribute-escape for attributes, etc.); this alone blocks most XSS. (2) Use frameworks' built-in protections — React and Vue auto-escape by default (never use dangerouslySetInnerHTML/v-html with user data); templating engines escape with the right syntax. (3) Set a strict Content-Security-Policy (CSP) header — it tells the browser to block inline scripts and only run code from approved sources; CSP is the safety net that limits damage even if a bug slips through. (4) Validate input on the server (allowlists, not blocklists). (5) Use HttpOnly cookies so JavaScript can't read session tokens. The test: try typing <script>alert(1)</script> into every input — if it executes, you're vulnerable. Tools: OWASP ZAP and Burp Suite scan for XSS automatically."
+  },
+  {
+    "q": [
+      "what is a denial of service attack",
+      "what is a dos attack",
+      "what is a ddos attack",
+      "how to defend against ddos"
+    ],
+    "a": "A denial-of-service (DoS) attack aims to make a service unavailable by overwhelming it — the distributed version (DDoS) launches the flood from thousands of compromised machines (a botnet) at once, which is much harder to stop. The methods: volumetric floods (gigabits of junk traffic saturating the network pipe), protocol attacks (exploiting handshake mechanics — SYN floods exhaust connection tables), and application-layer attacks (slow, legitimate-looking requests that exhaust server CPU/database — often the hardest to detect because traffic looks normal). Impact: websites and APIs go down, which for businesses means lost revenue and trust — and DDoS is sometimes used as a distraction while other attacks proceed. Defense, in layers: (1) Buy DDoS protection from your hosting provider or a specialist (Cloudflare, AWS Shield, Akamai) — they absorb and scrub volumetric attacks at the network edge, before traffic reaches you; this is the standard answer and usually the only one that works against big floods. (2) Rate limiting and connection limits on your servers and load balancers stop application-layer exhaustion. (3) Keep infrastructure behind a CDN/WAF so your origin IP isn't exposed (leaked origin IPs defeat cloud scrubbing). (4) Auto-scaling absorbs small-to-medium attacks by adding capacity faster than the attacker adds traffic. (5) Have a runbook and a relationship with your provider before an attack — during is too late. The good news: modern CDN-based protection stops the overwhelming majority of DDoS attempts before they reach you; the risk is when traffic is encrypted (HTTPS floods) or application-layer — those need WAF rules and monitoring."
+  },
+  {
+    "q": [
+      "what is oauth",
+      "how does oauth work",
+      "what is oauth2",
+      "oauth vs api key"
+    ],
+    "a": "OAuth (specifically OAuth 2.0) is the industry-standard protocol for delegated authorization — letting a third-party app access a user's data on another service WITHOUT seeing the user's password. The classic example: 'Sign in with Google' or a fitness app reading your Google Fit data. How it flows: (1) The user clicks 'sign in with Google' on your app. (2) The app redirects them to Google's authorization server (with client ID, requested scopes like 'read email', and a redirect URI). (3) The user logs into Google and consents to the specific permissions. (4) Google redirects back to the app with an authorization code. (5) The app exchanges that code (plus its client secret) for an access token — a short-lived credential scoped to only the permissions the user approved. (6) The app uses the token to call Google's APIs; when it expires, a refresh token gets a new one without re-asking the user. The key ideas: the app never sees the password, access is scoped (read-only vs read-write), revocable (the user can revoke at any time), and time-limited (tokens expire). The critical difference from an API key: an API key identifies the app (it's a shared credential embedded in the client — anyone who extracts it can impersonate the app), while OAuth grants scoped, user-consented access with short-lived tokens. When building: use OAuth for user-data access, keep tokens server-side, validate the redirect URI strictly (open redirects are a classic OAuth vulnerability), and never put client secrets in browser code — for pure front-end apps use the PKCE flow."
+  }
+]

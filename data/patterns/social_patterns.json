@@ -1696,11 +1696,8 @@
       "i'?m watching",
       "i'?m binging",
       "i'?m binge watching",
-      "what should i watch",
-      "recommend a movie",
-      "recommend a show",
-      "good movie",
-      "good show",
+      "i (?:just |recently )?watched",
+      "i'?ve (?:just )?watched",
       "i'?m looking for (?:a |something )?(?:movie|show|series|documentary) to watch"
     ],
     "response": [

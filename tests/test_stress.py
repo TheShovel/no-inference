@@ -1,5 +1,6 @@
+import os
 import sys, signal, time
-sys.path.insert(0, 'src')
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 import cos.engine as engine
 engine._search_wikipedia = lambda query: (None, None)
 engine._search_wikipedia_full = lambda query: (None, None)

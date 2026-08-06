@@ -298,7 +298,7 @@ def get_all_knowledge():
     global _KNOWLEDGE_CACHE
     if _KNOWLEDGE_CACHE is None:
         _KNOWLEDGE_CACHE = _load_knowledge()
-        if _KNOWLEDGE_CACHE:
+        if _KNOWLEDGE_CACHE and os.environ.get('COS_VERBOSE'):
             print(f"  Loaded {len(_KNOWLEDGE_CACHE)} knowledge entries from data/knowledge/")
     return _KNOWLEDGE_CACHE
 
@@ -1077,6 +1077,12 @@ def lookup(query):
                 'best', 'good', 'great', 'top', 'high', 'low', 'big', 'small',
                 'long', 'short', 'full', 'free', 'open', 'close', 'left', 'right',
                 'name', 'type', 'form', 'line', 'set', 'run', 'end',
+                # Comparison-frame words: "difference between break and continue"
+                # shares only the frame with "difference between == and ===" —
+                # the frame must not count as a topic-word overlap.
+                'difference', 'differences', 'between', 'compare', 'compares',
+                'comparison', 'compared', 'differ', 'differs', 'different',
+                'similar', 'similarity', 'similarities', 'versus', 'vs',
             }
             q_words = set(w.lower() for w in re.findall(r'\b[a-zA-Z]{3,}\b', _fuzzy_source)
                          if w.lower() not in _STOP_WORDS_FUZZY)

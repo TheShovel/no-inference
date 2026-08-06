@@ -11,7 +11,7 @@
       "center div in the middle of page",
       "how to center a div"
     ],
-    "a": "Information about center div."
+    "a": "There are several reliable ways to center a div, depending on the axis. The most modern is CSS Grid: set the parent to `display: grid; place-items: center;` which centers children both horizontally and vertically. Flexbox works similarly: `display: flex; justify-content: center; align-items: center;` on the parent. For horizontal centering only, `margin: 0 auto` on the element works if it has a set width. To center text inside a block, use `text-align: center`. For absolute positioning, `position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)` centers an element of unknown size. Grid `place-items: center` is now the recommended approach because it is the most concise and handles unknown sizes."
   },
   {
     "q": [
@@ -22,7 +22,7 @@
       "grid layout css",
       "css grid tutorial"
     ],
-    "a": "Information about css grid."
+    "a": "CSS Grid is a two-dimensional layout system — it controls both rows and columns at once, unlike flexbox which is one-dimensional. You enable it with `display: grid` on the container, then define tracks with `grid-template-columns: repeat(3, 1fr)` or `grid-template-rows: 200px auto`. The `fr` unit distributes free space proportionally: `1fr 2fr` makes the second column twice as wide as the first. Items can be placed explicitly with `grid-column: 1 / 3` (spanning two columns) or `grid-area`, or auto-placed by the browser. The `gap` property sets spacing between tracks (`gap: 1rem`), and `grid-template-areas` lets you name regions: `\"header header\" \"sidebar main\" \"footer footer\"`. Grid is ideal for page layouts, while flexbox is better for distributing items along a single axis."
   },
   {
     "q": [
@@ -32,7 +32,7 @@
       "flexbox tutorial",
       "css flexbox explained"
     ],
-    "a": "Information about flexbox."
+    "a": "Flexbox (Flexible Box Layout) arranges items along a single axis — either a row (default) or a column via `flex-direction: column`. Enable it with `display: flex` on the container. The main axis is controlled with `justify-content` (flex-start, center, space-between, space-around) and the cross axis with `align-items` (stretch by default, or flex-start/center/flex-end). Items grow or shrink with `flex-grow`, `flex-shrink`, and `flex-basis`, usually combined in the shorthand `flex: 1` or `flex: 0 0 auto`. `gap` adds spacing between items. A classic use is a navigation bar: `display: flex; justify-content: space-between` pushes brand and links to opposite ends. Flexbox handles unknown sizes well, which makes it great for centering (`justify-content: center; align-items: center`) and for distributing uneven content."
   },
   {
     "q": [
@@ -42,7 +42,7 @@
       "media query responsive",
       "mobile first responsive"
     ],
-    "a": "Information about responsive design."
+    "a": "Responsive design makes a website adapt to any screen size using fluid layouts, flexible media, and media queries. The core technique is the viewport meta tag (`<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">`) which tells mobile browsers to use the real device width instead of a desktop-width simulation. Layouts should use relative units (`%`, `rem`, `em`, `vw/vh`) and fluid grids (CSS Grid with `fr` units, flexbox) instead of fixed pixel widths, and images should use `max-width: 100%` so they shrink with their container. Media queries apply CSS conditionally: `@media (max-width: 768px) { ... }` targets phones, often with a 'mobile-first' approach where base styles are for phones and `@media (min-width: ...)` queries progressively enhance larger screens."
   },
   {
     "q": [
@@ -52,6 +52,6 @@
       "sticky navbar",
       "nav bar html css"
     ],
-    "a": "Information about navbar."
+    "a": "A responsive navigation bar is typically a flex container with the brand on one side and links on the other: `nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem; }`. A sticky navbar stays visible while scrolling with `position: sticky; top: 0` (or `position: fixed`). For mobile, common patterns are a hamburger button that toggles the links, or a collapsible menu. With plain HTML/CSS you can use the checkbox hack (a hidden `input[type=checkbox]` drives a `<label>` that toggles the menu) or add a small amount of JavaScript. A solid pattern: links hidden below a breakpoint via `@media (max-width: 768px) { nav ul { display: none; } }` and shown when the checkbox is checked: `#menu-toggle:checked ~ ul { display: flex; }`."
   }
 ]

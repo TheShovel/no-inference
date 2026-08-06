@@ -1,0 +1,29 @@
+[
+  {
+    "q": [
+      "what is a trust",
+      "what is a living trust",
+      "trust vs will",
+      "how does a trust work"
+    ],
+    "a": "A trust is a legal arrangement where one person (the grantor) transfers assets to a trustee to manage for the benefit of others (the beneficiaries). The two big types: (1) Revocable living trust — the most common: you create it during your life, keep full control (you can change it or dissolve it), and the main benefit is avoiding probate — assets in the trust pass to beneficiaries without the court process, privately and often faster. (2) Irrevocable trust — you give up control and generally can't change it, but the assets are protected from your creditors, lawsuits, and (in some cases) estate taxes — used for wealth transfer, asset protection, and Medicaid planning. How a revocable trust works in practice: you sign the trust document, then 'fund' it by retitling assets into the trust's name (house deed, bank accounts, investments); you remain trustee, so nothing changes day-to-day; when you die (or become incapacitated), your named successor trustee takes over and distributes per your instructions — no probate, no public record. The key points: (1) A will and a trust aren't either/or — most people use both (a 'pour-over will' catches anything you forgot to put in the trust). (2) An unfunded trust is a worthless document — the retitling step is the whole ballgame. (3) Trusts cost more to set up ($1,500-3,000 for a lawyer-drafted revocable trust vs a few hundred for a will) and require ongoing maintenance. (4) You don't need a trust for modest estates in states with simple probate — but for privacy, out-of-state property, blended families, or minor children, they earn their cost. This is legal planning — a qualified estate attorney in your state is the right first call."
+  },
+  {
+    "q": [
+      "what is power of attorney",
+      "what does power of attorney mean",
+      "how to get power of attorney",
+      "power of attorney explained"
+    ],
+    "a": "A power of attorney (POA) is a legal document that gives someone you choose (your 'agent') authority to act on your behalf. There are two main types, and they do different jobs: (1) Financial POA — lets your agent manage money matters: pay bills, sign documents, access accounts, sell property. (2) Healthcare POA (healthcare proxy / medical power of attorney) — lets your agent make medical decisions if you can't. Both can be 'durable' (stays in effect if you become incapacitated — this is the one you want for planning; a non-durable POA automatically ends on incapacity, which defeats the purpose) and 'springing' (only takes effect if you're incapacitated, vs immediate). Why it matters: if you become incapacitated without one, your family must go to court for a guardianship/conservatorship — expensive, slow, and public. How to set one up: a one-page-to-several-pages document, signed and (in most states) notarized; banks and brokerages often have their own forms you must use in addition to the general one. Key points: (1) You can revoke it anytime while competent. (2) The agent has a legal duty to act in your interest — but a POA is a powerful document, so choose someone trustworthy, and consider adding limitations (specific accounts, a co-signer) if you're cautious. (3) It ends at death — a POA does not distribute your estate (that's the will/trust's job). (4) It's part of a complete estate plan: will/trust + financial POA + healthcare POA + healthcare directive (living will — your end-of-life wishes). Estate attorneys include these in standard planning packages."
+  },
+  {
+    "q": [
+      "what is probate",
+      "how does probate work",
+      "what is probate court",
+      "how long does probate take"
+    ],
+    "a": "Probate is the court-supervised process of settling a deceased person's estate: validating the will (if any), inventorying assets, paying debts and taxes, and distributing what's left to heirs. How it works: the executor (named in the will — or the court appoints an administrator if there's no will) files the will and a petition with the probate court; creditors get a legal notice period to make claims (typically 4-6 months); the executor pays valid debts and taxes from the estate, then distributes the remainder per the will (or per state intestacy law if there's no will). The key facts people care about: (1) Cost and time — probate typically takes 6 months to 2 years and costs roughly 3-7% of the estate (court fees, executor fees, attorney fees — the executor's own time is usually the biggest hidden cost). (2) It's public — wills and inventories become court records anyone can see. (3) What avoids probate: assets with named beneficiaries (life insurance, retirement accounts, payable-on-death bank accounts), jointly-owned property with right of survivorship, and assets in a living trust — this is the main reason people create trusts. (4) Small estates may qualify for simplified probate ('small estate affidavit') — thresholds vary by state, often $50,000-100,000. (5) If there's no will, 'intestate succession' laws decide who inherits (spouse and children first), which may not match what the person would have wanted — another reason to write a will. Probate isn't inherently bad (it provides creditor protection and an orderly process), but most people prefer to minimize it for the cost, delay, and privacy."
+  }
+]

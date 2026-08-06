@@ -5,26 +5,49 @@ the final fallback. It tries to extract a topic from the query and
 return whatever Wikipedia content it can find.
 """
 
-from .config import NLGConfig
-from .util import pick
+import os
 import re
+
+from .config import NLGConfig
+
+
+def _network_allowed() -> bool:
+    """Network fallbacks are opt-in — the system is offline + deterministic by default.
+
+    Set COS_ALLOW_NETWORK=1 to re-enable the Wikipedia snippet fallback.
+    """
+    return os.environ.get("COS_ALLOW_NETWORK") == "1"
+
+
+_HONEST_FALLBACK = (
+    "I couldn't find solid information about that specific topic, so I'd "
+    "rather say so than make something up. A couple of things that help: "
+    "rephrase the question with more context, or check whether you meant "
+    "a different name for the topic. If this was a coding question, tell "
+    "me the language and what you're trying to do and I'll write the code.")
 
 
 def fallback_response(query: str, config: NLGConfig) -> str:
     """Generate a response when no specific information was found.
-    
-    Tries to find ANY Wikipedia content for the query topic.
+
+    Tries to find ANY Wikipedia content for the query topic (only when
+    COS_ALLOW_NETWORK=1; otherwise the honest fallback is returned directly).
     Falls back to generic messages if that fails too.
     """
     q = query.strip()
+
+    # Network fallbacks are opt-in; without them the system stays offline,
+    # deterministic, and free of shallow Wikipedia snippets.
+    if not _network_allowed():
+        return _HONEST_FALLBACK
     
     # Try to find Wikipedia content using aliases and search
     # Use two separate try blocks so if one method times out, the other still runs
     try:
-        from urllib.request import Request, urlopen
-        import urllib.parse
         import json as _json
+        import urllib.parse
         from pathlib import Path
+        from urllib.request import Request, urlopen
         
         # Load aliases
         alias_file = Path(__file__).parent.parent.parent.parent / 'data' / 'aliases.json'
@@ -38,7 +61,7 @@ def fallback_response(query: str, config: NLGConfig) -> str:
                     if alias_key in q_lower:
                         search_term = alias_val
                         break
-            except Exception:
+            except (OSError, ValueError):
                 pass
         
         if not search_term:
@@ -71,14 +94,14 @@ def fallback_response(query: str, config: NLGConfig) -> str:
                     if not snippet.endswith(('.', '!', '?')):
                         snippet += '.'
                     return snippet[:800]
-    except Exception:
+    except (OSError, ValueError):
         pass
     
     # Last resort — try the fast snippet approach
     try:
-        from urllib.request import Request, urlopen
-        import urllib.parse
         import json as _json
+        import urllib.parse
+        from urllib.request import Request, urlopen
         
         clean = q.lower()
         clean = re.sub(r'^(?:what|why|how|when|where|who)\s+(?:is|are|was|were|do|does|did|a|an|the|i|we|you|they|he|she|it)\s+', '', clean)
@@ -103,14 +126,14 @@ def fallback_response(query: str, config: NLGConfig) -> str:
                     if not snippet.endswith(('.', '!', '?')):
                         snippet += '.'
                     return snippet[:800]
-    except Exception:
+    except (OSError, ValueError):
         pass
     
     # Ultra-last-resort: try harder to find Wikipedia content
     try:
-        from urllib.request import Request, urlopen
-        import urllib.parse
         import json as _json
+        import urllib.parse
+        from urllib.request import Request, urlopen
         
         # Try different parts of the query
         words = [w for w in q.lower().split() if len(w) > 4 and w not in {
@@ -138,8 +161,8 @@ def fallback_response(query: str, config: NLGConfig) -> str:
                     if not snippet.endswith(('.', '!', '?')):
                         snippet += '.'
                     return snippet[:600]
-    except Exception:
+    except (OSError, ValueError):
         pass
-    
+
     # Final message - direct and honest
-    return "I do not have enough specific information about that topic to give you a thorough answer. Could you ask a more specific question or try a different topic?"
+    return _HONEST_FALLBACK

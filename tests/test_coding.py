@@ -168,6 +168,16 @@ CASES = [
     ("what is the difference between tcp and udp", ["tcp", "udp"]),
     ("what is the difference between an api and a sdk", ["api", "sdk"]),
     ("what is the difference between an array and a linked list", ["array", "linked list"]),
+
+    # ── Wave 5: deterministic synthesis + no-Wikipedia routing ────────────
+    ("how to read a csv file with pandas", ["read_csv", "pandas"], ["panda bear", "ailuropoda"]),
+    ("how do i use git to undo a commit", ["git", "reset", "revert"], []),
+    ("write sql to find duplicate rows in a table", ["having", "count"], []),
+    ("how to make a http request in node.js", ["fetch", "async"], []),
+    ("how to reverse a linked list in c++", ["ListNode", "->"], ["def "]),
+    ("how to reverse a string in rust", ["fn", "chars"], ["def "]),
+    ("how to deploy a flask app to production", ["gunicorn", "proxy"], []),
+    ("what is a lambda function in python", ["anonymous"], ["applies a given function to every item"]),
 ]
 
 

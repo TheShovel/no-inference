@@ -1662,6 +1662,7 @@ _TEXT_ONLY_CHANGES = {
     'double_space', 'single_space', 'make_question', 'remove_empty_lines',
     'make_past', 'make_present', 'make_negative', 'add_exclamations',
     'upper', 'lower', 'title_case',
+    'polite',
 }
 
 
@@ -1829,7 +1830,9 @@ def detect_change_request(query):
     m = re.match(r'^make\s+' + _obj + r'(?:\s+(?:sound|look|read|come\s+across))?\s+(?:a\s+bit\s+|a\s+little\s+|much\s+|way\s+)?(?:more\s+)?(formal|professional|polite|casual|friendly|friendlier|informal|relaxed)\s*$', q_l)
     if m:
         t = m.group(1)
-        return ('formal' if t in ('formal', 'professional', 'polite') else 'casual', None, inline)
+        if t == 'polite':
+            return ('polite', None, inline)
+        return ('formal' if t in ('formal', 'professional') else 'casual', None, inline)
     m = re.match(r'^make\s+' + _obj + r'(?:\s+(?:sound|look|read))?\s+(shorter|longer|more\s+concise|more\s+detailed|uppercase|lowercase|title\s+case|all\s+caps|bullet\s+points|a\s+list|more\s+polite)\s*$', q_l)
     if m:
         t = m.group(1).replace(' ', '_')
@@ -1846,14 +1849,14 @@ def detect_change_request(query):
         if t in ('bullet_points', 'a_list'):
             return ('bullets', None, inline)
         if t == 'more_polite':
-            return ('formal', None, inline)
+            return ('polite', None, inline)
         return (t, None, inline)
 
     # rewrite/reword/rephrase X (to be) more formal/casual/concise...
     m = re.match(r'^(?:rewrite|reword|rephrase)\s+(?:it|this|that|(?:this|the)\s+[\w-]+)?\s+(?:to\s+be\s+)?more\s+(formal|professional|polite|casual|friendly|concise|detailed)\b', q_l)
     if m:
         t = m.group(1)
-        return ({'formal': 'formal', 'professional': 'formal', 'polite': 'formal',
+        return ({'formal': 'formal', 'professional': 'formal', 'polite': 'polite',
                  'casual': 'casual', 'friendly': 'casual',
                  'concise': 'shorter', 'detailed': 'longer'}[t], None, inline)
 
@@ -2088,7 +2091,12 @@ def apply_change(instruction, content, params=None, kind=None):
             notes.extend(sub_notes)
         return content, notes
     if instruction == 'formal':
-        return formalize(content), ["made the text more formal"]
+        result = formalize(content)
+        if result == content:
+            return content, ["the text is already formal — nothing to change"]
+        return result, ["made the text more formal"]
+    if instruction == 'polite':
+        return polite(content)
     if instruction == 'casual':
         return casualize(content), ["made the text more casual"]
     if instruction == 'shorter':
@@ -2472,10 +2480,299 @@ def shorten(text):
                 'rather', 'somewhat', 'fairly'}
     words = [w for w in text.split() if w.lower().rstrip('.,!?') not in _FILLERS]
     reduced = ' '.join(words)
+    # Trim trailing "and then <result>" / "and after that ..." clauses that
+    # add length without adding information ("jumps ... and then it goes to
+    # sleep" -> "jumps over the lazy dog").
+    reduced = re.sub(r'\s+(?:and\s+then|and\s+after\s+that|and\s+afterwards|'
+                     r'and\s+finally)\s+.*$', '', reduced, flags=re.IGNORECASE)
+    # Trim trailing "in order to" purpose clauses when the text is short.
+    reduced = re.sub(r'\s+(?:so\s+that|in\s+order\s+to|for\s+the\s+purpose\s+of)'
+                     r'\s+.*$', '', reduced, flags=re.IGNORECASE)
     sentences = re.split(r'(?<=[.!?])\s+', reduced)
     if len(sentences) > 3:
         return ' '.join(sentences[:3]).rstrip() + ' …'
     return reduced
+
+
+def polite(text):
+    """Make a text more polite: soften demands, add please and a thank-you."""
+    fixed = text.strip()
+    original = fixed
+    changes = []
+
+    # soften request imperatives. "give me X" is rewritten to
+    # "Could you please send me X", which must not be re-softened by the
+    # send-me rule, so the give rule runs alone first.
+    if 'could you please' not in fixed.lower():
+        _softened = False
+        fixed2 = re.sub(r'\b(?:gimme|give\s+me)\b', 'Could you please send me',
+                        fixed, flags=re.IGNORECASE)
+        if fixed2 != fixed:
+            fixed = fixed2
+            _softened = True
+        if not _softened:
+            fixed = re.sub(r'\bsend\s+me\b', 'Could you please send me',
+                           fixed, flags=re.IGNORECASE)
+            fixed = re.sub(r'\bget\s+me\b', 'Could you please get me',
+                           fixed, flags=re.IGNORECASE)
+    fixed = re.sub(r'\bi\s+want\b', 'I would like', fixed, flags=re.IGNORECASE)
+    fixed = re.sub(r'\bneed\s+(?:the\s+|a\s+|an\s+)?',
+                   'I would appreciate ', fixed, flags=re.IGNORECASE, count=1)
+    fixed = re.sub(r'\b(?:tell\s+me|show\s+me)\b', 'Could you please tell me',
+                   fixed, flags=re.IGNORECASE, count=1)
+    # drop threats / ultimatums
+    fixed = re.sub(r'\s+or\s+(?:else|i\'?ll\s+\w+|you\'?ll\s+\w+)[^.]*\.?',
+                   '.', fixed)
+    fixed = re.sub(r'\s+or\s+else\s*[.!]?', '.', fixed)
+    # soften "by friday" -> "by Friday" and add please to remaining bare asks
+    fixed = re.sub(
+        r'\bby\s+(monday|tuesday|wednesday|thursday|friday|saturday|sunday)\b',
+        lambda m: 'by ' + m.group(1).capitalize(), fixed,
+        flags=re.IGNORECASE)
+    if fixed != original:
+        changes.append("softened the demands into polite requests")
+
+    # add a please if the result is still a bare imperative with no courtesy
+    _first = fixed.lstrip()[:80].lower()
+    if re.match(r'^(?:give|send|return|complete|finish|submit|do|make|call|'
+                r'send|email|reply|answer|fix|check|review|update|provide)\b',
+                _first) and 'please' not in fixed.lower():
+        # insert "please" after the first word
+        _m = re.match(r'^(\s*\w+)(\s+)(.*)$', fixed, re.DOTALL)
+        if _m:
+            fixed = _m.group(1) + ' please' + _m.group(2) + _m.group(3)
+            changes.append("added 'please'")
+
+    # close a request with a thank-you
+    if (re.search(r'\b(?:could you|would you|please|i would appreciate|'
+                  r'i would like)\b', fixed, re.IGNORECASE)
+            and 'thank' not in fixed.lower()
+            and len(fixed) < 400):
+        fixed = fixed.rstrip().rstrip('.!?') + '. Thank you.'
+        changes.append("added a closing 'thank you'")
+
+    if not changes:
+        return fixed, ["the text is already polite — nothing to change"]
+    return fixed, changes
+
+
+# ── Extractive summarization ────────────────────────────────────────────────
+_SUM_STOP = {'the', 'a', 'an', 'and', 'or', 'but', 'of', 'to', 'in', 'on',
+             'at', 'by', 'for', 'with', 'from', 'is', 'are', 'was', 'were',
+             'be', 'been', 'being', 'it', 'its', 'this', 'that', 'these',
+             'those', 'i', 'you', 'we', 'they', 'he', 'she', 'them', 'his',
+             'her', 'their', 'our', 'your', 'my', 'as', 'if', 'then', 'than',
+             'so', 'such', 'there', 'here', 'which', 'who', 'whom', 'what',
+             'when', 'where', 'why', 'how', 'have', 'has', 'had', 'do', 'does',
+             'did', 'will', 'would', 'can', 'could', 'should', 'may', 'might',
+             'not', 'no', 'yes', 'also', 'too', 'very', 'just', 'about', 'into',
+             'over', 'under', 'between', 'through', 'during', 'before', 'after',
+             'up', 'down', 'out', 'off', 'again', 'once', 'because', 'while'}
+
+
+def summarize_text(text, max_sentences=None):
+    """Extractive summary: keep the sentences with the most content words.
+
+    Sentences are scored by how many of the text's significant words they
+    contain (a TF-style heuristic), then the top ones are returned in their
+    original order. Deterministic and safe — it never invents content.
+    """
+    sentences = [s.strip() for s in re.split(r'(?<=[.!?])\s+', text.strip())
+                 if s.strip()]
+    if len(sentences) <= 2:
+        return text.strip(), ["the text is only a sentence or two — a summary "
+                              "would just repeat it"]
+
+    words = re.findall(r'[a-zA-Z]{3,}', text.lower())
+    significant = [w for w in words if w not in _SUM_STOP]
+    freq = {}
+    for w in significant:
+        freq[w] = freq.get(w, 0) + 1
+
+    scored = []
+    for i, s in enumerate(sentences):
+        sw = re.findall(r'[a-zA-Z]{3,}', s.lower())
+        score = sum(freq.get(w, 0) for w in sw if w not in _SUM_STOP)
+        # slight boost for the first sentence (usually the topic sentence)
+        if i == 0:
+            score += max(freq.values()) if freq else 0
+        scored.append((score, i, s))
+
+    n = max_sentences or max(1, round(len(sentences) * 0.4))
+    n = min(n, len(sentences) - 1)
+    keep = sorted([idx for _, idx, _ in scored],
+                  key=lambda i: scored[i][0], reverse=True)[:n]
+    ordered = [sentences[i] for i in sorted(keep)]
+    summary = ' '.join(ordered)
+    return summary, [f"kept the {len(ordered)} most informative sentence"
+                     + ('s' if len(ordered) != 1 else '')
+                     + f" out of {len(sentences)}"]
+
+
+# ── Phrasebook translation ──────────────────────────────────────────────────
+# Honest, bounded translation: a curated phrasebook + a few statement
+# templates for the common languages. Anything outside it is refused rather
+# than machine-mangled.
+_TRANSLATION_PHRASES = {
+    'hello': {'es': 'Hola', 'fr': 'Bonjour', 'de': 'Hallo', 'it': 'Ciao',
+              'pt': 'Olá', 'nl': 'Hallo'},
+    'hi': {'es': 'Hola', 'fr': 'Salut', 'de': 'Hallo', 'it': 'Ciao',
+           'pt': 'Oi', 'nl': 'Hoi'},
+    'good morning': {'es': 'Buenos días', 'fr': 'Bonjour', 'de': 'Guten Morgen',
+                     'it': 'Buongiorno', 'pt': 'Bom dia', 'nl': 'Goedemorgen'},
+    'good afternoon': {'es': 'Buenas tardes', 'fr': 'Bon après-midi',
+                       'de': 'Guten Nachmittag', 'it': 'Buon pomeriggio',
+                       'pt': 'Boa tarde', 'nl': 'Goedemiddag'},
+    'good evening': {'es': 'Buenas noches', 'fr': 'Bonsoir', 'de': 'Guten Abend',
+                     'it': 'Buonasera', 'pt': 'Boa noite', 'nl': 'Goedenavond'},
+    'good night': {'es': 'Buenas noches', 'fr': 'Bonne nuit',
+                   'de': 'Gute Nacht', 'it': 'Buonanotte', 'pt': 'Boa noite',
+                   'nl': 'Goedenacht'},
+    'goodbye': {'es': 'Adiós', 'fr': 'Au revoir', 'de': 'Auf Wiedersehen',
+                'it': 'Arrivederci', 'pt': 'Tchau', 'nl': 'Tot ziens'},
+    'bye': {'es': 'Adiós', 'fr': 'Salut', 'de': 'Tschüss', 'it': 'Ciao',
+            'pt': 'Tchau', 'nl': 'Doei'},
+    'please': {'es': 'Por favor', 'fr': "S'il vous plaît", 'de': 'Bitte',
+               'it': 'Per favore', 'pt': 'Por favor', 'nl': 'Alstublieft'},
+    'thank you': {'es': 'Gracias', 'fr': 'Merci', 'de': 'Danke',
+                  'it': 'Grazie', 'pt': 'Obrigado', 'nl': 'Dank je'},
+    'thanks': {'es': 'Gracias', 'fr': 'Merci', 'de': 'Danke', 'it': 'Grazie',
+               'pt': 'Valeu', 'nl': 'Bedankt'},
+    'you are welcome': {'es': 'De nada', 'fr': 'De rien', 'de': 'Gern geschehen',
+                        'it': 'Prego', 'pt': 'De nada', 'nl': 'Graag gedaan'},
+    'yes': {'es': 'Sí', 'fr': 'Oui', 'de': 'Ja', 'it': 'Sì', 'pt': 'Sim',
+            'nl': 'Ja'},
+    'no': {'es': 'No', 'fr': 'Non', 'de': 'Nein', 'it': 'No', 'pt': 'Não',
+           'nl': 'Nee'},
+    'how are you': {'es': '¿Cómo estás?', 'fr': 'Comment ça va ?',
+                    'de': 'Wie geht es dir?', 'it': 'Come stai?',
+                    'pt': 'Como você está?', 'nl': 'Hoe gaat het?'},
+    'how are you doing': {'es': '¿Cómo estás?', 'fr': 'Comment ça va ?',
+                          'de': 'Wie geht es dir?', 'it': 'Come stai?',
+                          'pt': 'Como você está?', 'nl': 'Hoe gaat het met je?'},
+    "what is your name": {'es': '¿Cómo te llamas?', 'fr': "Comment tu t'appelles ?",
+                          'de': 'Wie heißt du?', 'it': 'Come ti chiami?',
+                          'pt': 'Como você se chama?', 'nl': 'Hoe heet je?'},
+    "my name is": {'es': 'Me llamo', 'fr': "Je m'appelle", 'de': 'Ich heiße',
+                    'it': 'Mi chiamo', 'pt': 'Meu nome é', 'nl': 'Ik heet'},
+    'i love you': {'es': 'Te quiero', 'fr': 'Je t\'aime', 'de': 'Ich liebe dich',
+                   'it': 'Ti amo', 'pt': 'Eu te amo', 'nl': 'Ik hou van je'},
+    'see you later': {'es': 'Hasta luego', 'fr': 'À plus tard',
+                      'de': 'Bis später', 'it': 'A dopo', 'pt': 'Até logo',
+                      'nl': 'Tot later'},
+    'good luck': {'es': 'Buena suerte', 'fr': 'Bonne chance', 'de': 'Viel Glück',
+                  'it': 'Buona fortuna', 'pt': 'Boa sorte', 'nl': 'Veel succes'},
+    'congratulations': {'es': 'Felicitaciones', 'fr': 'Félicitations',
+                        'de': 'Herzlichen Glückwunsch', 'it': 'Congratulazioni',
+                        'pt': 'Parabéns', 'nl': 'Gefeliciteerd'},
+    "i don't understand": {'es': 'No entiendo', 'fr': "Je ne comprends pas",
+                           'de': 'Ich verstehe nicht', 'it': 'Non capisco',
+                           'pt': 'Não entendo', 'nl': 'Ik begrijp het niet'},
+    'where is the bathroom': {'es': '¿Dónde está el baño?',
+                              'fr': 'Où sont les toilettes ?',
+                              'de': 'Wo ist die Toilette?',
+                              'it': 'Dov\'è il bagno?',
+                              'pt': 'Onde fica o banheiro?',
+                              'nl': 'Waar is het toilet?'},
+    "i'm sorry": {'es': 'Lo siento', 'fr': 'Je suis désolé',
+                  'de': 'Es tut mir leid', 'it': 'Mi dispiace',
+                  'pt': 'Me desculpe', 'nl': 'Het spijt me'},
+    'excuse me': {'es': 'Disculpe', 'fr': 'Excusez-moi', 'de': 'Entschuldigung',
+                  'it': 'Mi scusi', 'pt': 'Com licença', 'nl': 'Excuseer mij'},
+}
+
+# statement templates: "i like X" etc.
+_TRANSLATION_TEMPLATES = {
+    'i like': {'es': 'Me gusta {x}', 'fr': "J'aime {x}", 'de': 'Ich mag {x}',
+               'it': 'Mi piace {x}', 'pt': 'Eu gosto de {x}', 'nl': 'Ik vind {x} leuk'},
+    'i love': {'es': 'Me encanta {x}', 'fr': "J'adore {x}", 'de': 'Ich liebe {x}',
+               'it': 'Adoro {x}', 'pt': 'Eu amo {x}', 'nl': 'Ik hou van {x}'},
+    'i want': {'es': 'Quiero {x}', 'fr': 'Je veux {x}', 'de': 'Ich möchte {x}',
+               'it': 'Voglio {x}', 'pt': 'Eu quero {x}', 'nl': 'Ik wil {x}'},
+    'i have': {'es': 'Tengo {x}', 'fr': "J'ai {x}", 'de': 'Ich habe {x}',
+               'it': 'Ho {x}', 'pt': 'Eu tenho {x}', 'nl': 'Ik heb {x}'},
+    'i need': {'es': 'Necesito {x}', 'fr': "J'ai besoin de {x}",
+               'de': 'Ich brauche {x}', 'it': 'Ho bisogno di {x}',
+               'pt': 'Eu preciso de {x}', 'nl': 'Ik heb {x} nodig'},
+}
+
+_LANG_NAMES = {'spanish': 'es', 'espanol': 'es', 'español': 'es',
+               'french': 'fr', 'francais': 'fr', 'français': 'fr',
+               'german': 'de', 'deutsch': 'de', 'italian': 'it',
+               'italiano': 'it', 'portuguese': 'pt', 'portugues': 'pt',
+               'dutch': 'nl', 'nederlands': 'nl'}
+
+
+def detect_translate_request(query):
+    """Detect 'translate this to <lang>: <text>' — returns (lang, text)."""
+    m = re.match(
+        r'^(?:can\s+you\s+|please\s+)?translate\s+(?:this|the|that|it|'
+        r'this\s+text|the\s+text|following|this\s+sentence)\s+'
+        r'(?:text\s+)?(?:to|into|in)\s+([a-zà-ÿ]+)\s*[:\-]?\s*(.*)$',
+        query, re.IGNORECASE)
+    if not m:
+        return None
+    lang = _LANG_NAMES.get(m.group(1).lower())
+    if not lang:
+        return None
+    return lang, m.group(2).strip()
+
+
+def translate_text(text, lang):
+    """Best-effort phrasebook translation. Returns (translated, notes)."""
+    t = text.strip()
+    if not t:
+        return '', ["nothing to translate"]
+    low = t.lower().strip('!.? ')
+
+    # 1. exact phrasebook hit
+    phrase = _TRANSLATION_PHRASES.get(low)
+    if phrase and lang in phrase:
+        return phrase[lang], ["translated from the phrasebook"]
+
+    # 2. statement templates: "i like pizza." -> "Me gusta la pizza."
+    for key, langs in _TRANSLATION_TEMPLATES.items():
+        m = re.match(r'^' + re.escape(key) + r'\s+(.+?)\.?$', low)
+        if m and lang in langs:
+            obj = m.group(1).strip()
+            # drop a leading article for languages that don't need it
+            if lang == 'es' and re.match(r'^(?:el|la|los|las)\s+', obj):
+                obj = re.sub(r'^(?:el|la|los|las)\s+', '', obj)
+            return langs[lang].replace('{x}', obj) + '.', \
+                ["translated using a statement template"]
+
+    # 3. sentence-by-sentence: translate every sentence that the phrasebook
+    #    covers, keep the rest untouched, and say which parts were skipped.
+    #    Commas between short phrases count as separators too ("hello, how
+    #    are you?"), but statement templates are tried before this so
+    #    "i like pizza, please" doesn't split mid-template.
+    sentences = [s.strip() for s in re.split(r'(?<=[.!?])\s+|,\s+', t)
+                 if s.strip()]
+    if len(sentences) > 1:
+        out_parts = []
+        covered = 0
+        for s in sentences:
+            s_low = s.lower().strip('!.? ')
+            if _TRANSLATION_PHRASES.get(s_low, {}).get(lang):
+                out_parts.append(_TRANSLATION_PHRASES[s_low][lang])
+                covered += 1
+            else:
+                out_parts.append(s)
+        if covered == len(sentences):
+            return ' '.join(out_parts), ["translated sentence by sentence from "
+                                         "the phrasebook"]
+        if covered > 0:
+            return (' '.join(out_parts),
+                    [f"translated the {covered} sentence"
+                     + ('s' if covered != 1 else '')
+                     + " I knew, and left the rest as-is"])
+
+    # 4. nothing covered: refuse rather than mangle
+    return None, ["I only translate from a curated phrasebook (greetings, "
+                  "thanks, simple 'I like X' statements). For free translation "
+                  "of arbitrary text I'd need a real translator. I can instead "
+                  "edit the text: make it more formal, shorter, more polite, "
+                  "or fix its grammar."]
 
 
 def to_bullets(text):

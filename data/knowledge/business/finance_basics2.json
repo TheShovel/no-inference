@@ -1,0 +1,38 @@
+[
+  {
+    "q": [
+      "how does a 401k match work",
+      "what is a 401k employer match",
+      "how does employer matching work",
+      "what is a company match"
+    ],
+    "a": "A 401(k) match is free money your employer adds to your retirement account when you contribute. The most common formula is a partial match on a percentage of your salary — for example '50% of your contributions up to 6% of salary' means if you earn $50,000 and contribute 6% ($3,000), your employer adds $1,500 (50% of $3,000). Some employers match dollar-for-dollar up to a lower cap. The key points: (1) Always contribute at least enough to get the full match — it's a guaranteed 50-100% return on that portion, which beats any investment. (2) Matches are usually paid per paycheck, so if you front-load contributions and max out early, you can leave match money on the table — contribute evenly across the year unless your employer does a 'true-up'. (3) Matching contributions are typically subject to a vesting schedule (you own them fully after 2-6 years), so leaving early can forfeit unvested match. Check your plan's summary plan description for the exact formula."
+  },
+  {
+    "q": [
+      "what is a high yield savings account",
+      "what is a hysa",
+      "how much interest does a savings account pay",
+      "best place to keep an emergency fund"
+    ],
+    "a": "A high-yield savings account (HYSA) is a savings account that pays a much higher interest rate than a traditional bank's savings account (which often pays around 0.01% APY). Online banks like Ally, Marcus, Discover, and Capital One offer HYSAs that have tracked well above that — often 4-5% when the Fed's rates are high, and they move with the benchmark rate. The trade-offs: (1) They're online-only (no branches), though transfers to your checking account take 1-3 business days. (2) Rates are variable — they drop when the Fed cuts rates. (3) Your money is FDIC-insured (up to $250,000 per bank) just like a normal account, so there's no extra risk. A HYSA is the standard place for an emergency fund (3-6 months of expenses) — the money is liquid, safe, and still earns something. Compare current rates at sites like Bankrate, and avoid accounts that charge monthly fees or require a huge minimum balance — those are easy to find fee-free."
+  },
+  {
+    "q": [
+      "what is a fico score",
+      "what is a good credit score",
+      "how is my credit score calculated",
+      "what affects my credit score"
+    ],
+    "a": "A FICO score is the credit score lenders actually use — a 3-digit number (300-850) predicting how likely you are to repay debt. It's calculated from five weighted factors: payment history (35% — the biggest), amounts owed / credit utilization (30% — keep balances below 30% of limits, ideally under 10%), length of credit history (15%), new credit (10% — hard inquiries), and credit mix (10% — having both installment loans and revolving credit helps). Score bands: 800+ excellent, 740-799 very good, 670-739 good, 580-669 fair, below 580 poor. You have multiple FICO scores (different bureaus and versions), and they differ slightly. To check yours for free: your credit card issuer often provides it, or use AnnualCreditReport.com for your free annual credit reports (the reports don't include scores but show what feeds them). To improve: always pay on time, pay down balances, keep old accounts open, and avoid opening several new accounts at once. The two things that most move a score are payment history and utilization."
+  },
+  {
+    "q": [
+      "how to read a paystub",
+      "how to read a paycheck",
+      "what does ytd mean on a paystub",
+      "how to understand my pay stub"
+    ],
+    "a": "A paystub has three main sections. (1) Earnings: your gross pay (total before deductions) — usually hourly rate × hours, or salary ÷ pay periods — plus any overtime, bonuses, or reimbursements. (2) Deductions, which split into: pre-tax (health insurance premiums, 401(k)/HSA contributions, and sometimes transit — these reduce your taxable income) and taxes (federal income tax, Social Security at 6.2%, Medicare at 1.45%, and state/local tax if applicable; check your W-4 to adjust federal withholding). (3) Net pay — the actual amount deposited. Also on the stub: YTD (year-to-date) totals for each line, which help you verify you're on track (e.g., YTD 401(k) contributions vs. your goal, YTD Social Security approaching the wage cap). Common flags: if federal tax is 0, your W-4 may be set wrong; if net pay suddenly changes, check for new deductions (garnishments, insurance changes, or 401(k) increases). Keep recent stubs — you may need them for a mortgage application, rental, or tax filing."
+  }
+]

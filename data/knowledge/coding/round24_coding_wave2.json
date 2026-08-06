@@ -1,128 +1,241 @@
 [
   {
-    "q": ["what are the http status codes and what do they mean", "http status codes explained", "list of http status codes"],
+    "q": [
+      "what are the http status codes and what do they mean",
+      "http status codes explained",
+      "list of http status codes"
+    ],
     "a": "HTTP status codes are three-digit responses from a server. The main families: 1xx informational (100 Continue), 2xx success (200 OK, 201 Created, 204 No Content), 3xx redirection (301 Moved Permanently, 302 Found, 304 Not Modified), 4xx client errors (400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 429 Too Many Requests), and 5xx server errors (500 Internal Server Error, 502 Bad Gateway, 503 Service Unavailable). A 200 means the request succeeded; 404 means the resource doesn't exist; 500 means the server crashed.",
     "code": "# Handling status codes in Python\nimport requests\nresp = requests.get('https://api.example.com/x', timeout=10)\nif resp.status_code == 200:\n    print('ok', resp.json())\nelif resp.status_code == 404:\n    print('not found')\nelif resp.status_code >= 500:\n    print('server error, retry later')",
     "lang": "python"
   },
   {
-    "q": ["what is the difference between get and post requests", "get vs post", "get and post methods"],
+    "q": [
+      "what is the difference between get and post requests",
+      "get vs post",
+      "get and post methods"
+    ],
     "a": "GET retrieves data and POST submits data. GET sends parameters in the URL query string — visible, bookmarked, cached, and limited in length — and is idempotent (safe to repeat). POST sends data in the request body — not in the URL, no practical size limit, not cached — and can create/change resources (non-idempotent). Use GET for reads and POST for creating resources; PUT for full updates, PATCH for partial, DELETE for removal.",
     "code": "# GET — data in URL, for reading\n# GET /api/users?page=2\n\n# POST — data in body, for creating\nimport requests\nresp = requests.post(\n    'https://api.example.com/users',\n    json={'name': 'cos', 'role': 'admin'},\n    timeout=10,\n)",
     "lang": "python"
   },
   {
-    "q": ["python dataclass example", "what is a dataclass in python", "dataclasses python"],
+    "q": [
+      "python dataclass example",
+      "what is a dataclass in python",
+      "dataclasses python"
+    ],
     "a": "A dataclass is a class decorator that auto-generates boilerplate like __init__, __repr__, and __eq__ from type-annotated fields. It makes simple data containers concise. Use frozen=True for immutability and field(default_factory=...) for mutable defaults like lists.",
     "code": "from dataclasses import dataclass, field\n\n@dataclass\nclass Point:\n    x: float\n    y: float\n    label: str = ''\n    tags: list = field(default_factory=list)\n\np = Point(1.0, 2.5, label='origin')\nprint(p)           # Point(x=1.0, y=2.5, label='origin', tags=[])\nprint(p == Point(1.0, 2.5, label='origin'))  # True",
     "lang": "python"
   },
   {
-    "q": ["what are type hints in python", "python type hints explained", "typing python"],
+    "q": [
+      "what are type hints in python",
+      "python type hints explained",
+      "typing python"
+    ],
     "a": "Type hints annotate the expected types of arguments and return values: `def add(a: int, b: int) -> int`. They are optional and ignored at runtime — Python remains dynamically typed — but they enable static checking (mypy, pyright), better IDE autocomplete, and self-documenting code. Use `Optional[T]`, `list[T]`, `dict[K, V]`, `Union`, and `TypeAlias` for richer annotations.",
     "code": "from typing import Optional, list as List\n\ndef greet(name: str, age: Optional[int] = None) -> str:\n    base = f'Hello {name}'\n    return f'{base}, age {age}' if age is not None else base\n\n# Static check: mypy app.py\nprint(greet('cos', 30))\nprint(greet('cos'))",
     "lang": "python"
   },
   {
-    "q": ["python how to use try except finally", "try except finally python", "python exception handling finally"],
+    "q": [
+      "python how to use try except finally",
+      "try except finally python",
+      "python exception handling finally"
+    ],
     "a": "The try/except/finally structure handles runtime errors: try runs the risky code, except catches and handles a specific exception, else runs when no exception occurred, and finally always runs (for cleanup like closing files or releasing locks). Catch specific exception types rather than bare except.",
     "code": "try:\n    value = int(input('number: '))\n    result = 10 / value\nexcept ValueError:\n    print('not a number')\nexcept ZeroDivisionError:\n    print('cannot divide by zero')\nelse:\n    print('result:', result)\nfinally:\n    print('cleanup always runs')",
     "lang": "python"
   },
   {
-    "q": ["what is object oriented programming", "oop explained", "object oriented programming basics"],
+    "q": [
+      "what is object oriented programming",
+      "oop explained",
+      "object oriented programming basics"
+    ],
     "a": "Object-oriented programming (OOP) organizes code around objects — bundles of data (attributes) and behavior (methods) — rather than functions operating on data. A class is a blueprint; an object is an instance. OOP's four pillars are encapsulation (hiding internal state behind methods), inheritance (reusing and extending classes), polymorphism (one interface, many implementations), and abstraction (exposing only essential details). OOP shines for modeling real-world entities and large systems, and is supported in Python, Java, C++, C#, and JavaScript (prototype-based).",
     "code": "class Dog:\n    def __init__(self, name):\n        self.name = name          # attribute\n    def speak(self):              # method\n        return f'{self.name} says woof'\n\nrex = Dog('Rex')\nprint(rex.speak())",
     "lang": "python"
   },
   {
-    "q": ["what are the four pillars of oop", "four pillars of object oriented programming"],
+    "q": [
+      "what are the four pillars of oop",
+      "four pillars of object oriented programming"
+    ],
     "a": "The four pillars of OOP are: 1) Encapsulation — bundle data and methods, and restrict direct access to internal state (private attributes with getters/setters). 2) Inheritance — a class derives from a parent, reusing and extending its behavior. 3) Polymorphism — the same interface works across types (e.g., every animal has speak(), but each class implements it differently). 4) Abstraction — hide implementation complexity behind a simple interface (abstract classes/base classes).",
     "code": "from abc import ABC, abstractmethod\n\nclass Animal(ABC):            # abstraction\n    def __init__(self, name):\n        self._name = name     # encapsulation\n    @abstractmethod\n    def speak(self):\n        pass\n\nclass Dog(Animal):            # inheritance\n    def speak(self):          # polymorphism\n        return 'woof'\n\nclass Cat(Animal):\n    def speak(self):\n        return 'meow'\n\nfor a in [Dog('R'), Cat('M')]:\n    print(a.speak())",
     "lang": "python"
   },
   {
-    "q": ["what is the difference between an interface and an abstract class", "interface vs abstract class"],
+    "q": [
+      "what is the difference between an interface and an abstract class",
+      "interface vs abstract class"
+    ],
     "a": "An abstract class can have both implemented methods and abstract (unimplemented) ones, plus instance fields — subclasses must implement the abstract methods. An interface declares ONLY method signatures (no implementation, no state) — a class 'implements' it. A class can implement many interfaces but inherit from only one (abstract) class. Java/C# have explicit interfaces; Python uses abstract base classes (ABC) for both, and the distinction is more convention than language rule. Use abstract classes to share code among related classes; use interfaces to define contracts across unrelated classes.",
     "code": "# Python: abstract base class (both roles)\nfrom abc import ABC, abstractmethod\n\nclass Payment(ABC):\n    def log(self):                    # implemented — shared code\n        print('processing')\n    @abstractmethod\n    def pay(self, amount):            # contract — subclasses implement\n        pass\n\nclass Card(Payment):\n    def pay(self, amount):\n        self.log()\n        print(f'card: {amount}')",
     "lang": "python"
   },
   {
-    "q": ["what is a deadlock in concurrency", "deadlock explained", "how to avoid deadlocks"],
+    "q": [
+      "what is a deadlock in concurrency",
+      "deadlock explained",
+      "how to avoid deadlocks",
+      "what is a deadlock"
+    ],
     "a": "A deadlock is a situation where two or more threads/processes each hold a resource the other needs and wait forever, freezing progress. It requires four conditions (Coffman conditions): mutual exclusion, hold-and-wait, no preemption, and circular wait. Prevent it by acquiring locks in a consistent global order, using timeouts on lock acquisition, avoiding nested locks, or using a single lock where possible.",
     "code": "# Classic deadlock pattern to avoid:\n# Thread A locks r1 then waits for r2\n# Thread B locks r2 then waits for r1\n\nimport threading\n\nr1 = threading.Lock()\nr2 = threading.Lock()\n\ndef worker_a():\n    with r1:\n        with r2:      # if B holds r2 and wants r1 -> deadlock\n            pass\n\n# Fix: always acquire locks in the same order (r1 then r2)",
     "lang": "python"
   },
   {
-    "q": ["sql what is a subquery", "subquery sql explained", "nested query sql"],
+    "q": [
+      "sql what is a subquery",
+      "subquery sql explained",
+      "nested query sql"
+    ],
     "a": "A subquery is a SELECT nested inside another query, used in WHERE, FROM, or SELECT clauses. It can return a single value (scalar), a column, or a table. Subqueries in WHERE often pair with IN, EXISTS, ANY, or ALL. A correlated subquery references columns of the outer query and runs per row; an uncorrelated one runs once. Joins often express the same logic more efficiently.",
     "code": "SELECT name, salary\nFROM employees\nWHERE salary > (\n    SELECT AVG(salary) FROM employees\n);\n\n-- EXISTS: customers with at least one order\nSELECT c.name\nFROM customers c\nWHERE EXISTS (\n    SELECT 1 FROM orders o WHERE o.customer_id = c.id\n);",
     "lang": "sql"
   },
   {
-    "q": ["what is the difference between an array and a linked list", "array vs linked list", "arrays and linked lists compared"],
+    "q": [
+      "what is the difference between an array and a linked list",
+      "array vs linked list",
+      "arrays and linked lists compared"
+    ],
     "a": "An array stores elements contiguously in memory with O(1) random access by index, but inserting/removing in the middle costs O(n) (elements shift). A linked list stores nodes that each point to the next, giving O(1) insertion/removal at a known position, but O(n) access by index and extra memory per node for pointers. Arrays win for fast indexing and cache-friendliness; linked lists win for frequent inserts/deletes without random access. In practice, dynamic arrays like Python's list or JS's Array cover most needs.",
     "code": "# Array-like (Python list): O(1) index access\narr = [10, 20, 30]\nprint(arr[1])            # 20\n\n# Linked list: O(1) insert at head, O(n) lookup\nclass Node:\n    def __init__(self, val):\n        self.val = val\n        self.next = None\n\nhead = Node(10)\nhead.next = Node(20)\nhead.next.next = Node(30)",
     "lang": "python"
   },
   {
-    "q": ["what is the two sum problem", "two sum solution", "leetcode two sum"],
+    "q": [
+      "what is the two sum problem",
+      "two sum solution",
+      "leetcode two sum"
+    ],
     "a": "Two Sum: given an array of integers and a target, return the indices of the two numbers that add up to the target. The naive solution is O(n^2) with nested loops; the efficient solution uses a hash map to remember seen values, giving O(n) time and O(n) space. Assume exactly one solution and that you can't use the same element twice.",
     "code": "def two_sum(nums, target):\n    seen = {}          # value -> index\n    for i, n in enumerate(nums):\n        need = target - n\n        if need in seen:\n            return [seen[need], i]\n        seen[n] = i\n    return []\n\nprint(two_sum([2, 7, 11, 15], 9))  # [0, 1]",
     "lang": "python"
   },
   {
-    "q": ["how do you reverse a linked list", "reverse a linked list", "linked list reverse algorithm"],
+    "q": [
+      "how do you reverse a linked list",
+      "reverse a linked list",
+      "linked list reverse algorithm"
+    ],
     "a": "To reverse a singly linked list, walk the list while rewiring each node's next pointer to point at the previous node. Keep a prev pointer (starts None), a curr pointer, and save curr.next before changing it. This is an in-place, O(n) time, O(1) space operation. A recursive version reverses the rest first, then points the tail back at the head.",
     "code": "def reverse_list(head):\n    prev, curr = None, head\n    while curr:\n        nxt = curr.next      # save next before rewiring\n        curr.next = prev\n        prev = curr\n        curr = nxt\n    return prev              # new head\n\n# Example: 1 -> 2 -> 3 becomes 3 -> 2 -> 1",
     "lang": "python"
   },
   {
-    "q": ["what is dynamic programming", "dynamic programming explained", "dp algorithm"],
+    "q": [
+      "what is dynamic programming",
+      "dynamic programming explained",
+      "dp algorithm"
+    ],
     "a": "Dynamic programming (DP) solves problems by breaking them into overlapping subproblems and storing their solutions to avoid recomputation. Two approaches: top-down memoization (recursion + cache) and bottom-up tabulation (fill a table iteratively). DP applies when a problem has optimal substructure (best solution built from best sub-solutions) and overlapping subproblems — classic examples: Fibonacci, knapsack, longest common subsequence, edit distance, coin change. Tradeoff: extra space for the table in exchange for much better time.",
     "code": "# Fibonacci with bottom-up DP: O(n) instead of O(2^n)\ndef fib(n):\n    if n <= 1:\n        return n\n    dp = [0] * (n + 1)\n    dp[1] = 1\n    for i in range(2, n + 1):\n        dp[i] = dp[i - 1] + dp[i - 2]\n    return dp[n]\n\nprint(fib(10))  # 55",
     "lang": "python"
   },
   {
-    "q": ["what is a cookie vs a session", "cookies vs sessions", "difference between cookie and session"],
+    "q": [
+      "what is a cookie vs a session",
+      "cookies vs sessions",
+      "difference between cookie and session"
+    ],
     "a": "Cookies are small pieces of data stored on the client (browser) and sent with every request to the server; they persist across visits (with an expiry) and can be read by JS (unless HttpOnly). Sessions store state on the server, keyed by an ID that the client holds (typically in a cookie or URL); they are more secure (data not exposed to the client) but consume server memory. Common pattern: cookie holds a session ID; server keeps user data in the session store. JWTs invert this by putting signed data in the token itself.",
     "code": "# Flask-style pattern\nfrom flask import Flask, session\napp = Flask(__name__)\napp.secret_key = 'dev'\n\n@app.route('/login')\ndef login():\n    session['user'] = 'cos'   # stored server-side, cookie holds session id\n    return 'logged in'",
     "lang": "python"
   },
   {
-    "q": ["what is jwt authentication", "jwt explained", "how does jwt work"],
+    "q": [
+      "what is jwt authentication",
+      "jwt explained",
+      "how does jwt work"
+    ],
     "a": "JWT (JSON Web Token) is a compact, URL-safe token for authentication/authorization: a header (algorithm), a payload (claims like user id, expiry), and a signature — each base64url-encoded and joined with dots. The server signs the token with a secret (HMAC) or private key; the client sends it in the Authorization header, and the server verifies the signature without storing session state. JWTs are stateless but can't be revoked easily (until expiry), and the payload is base64-encoded, not encrypted — never put secrets in it.",
     "code": "# Verify a JWT server-side (Python)\nimport jwt\n\ntoken = 'eyJhbGciOiJIUzI1NiIs...'\ntry:\n    payload = jwt.decode(token, 'secret-key', algorithms=['HS256'])\n    print(payload['sub'])\nexcept jwt.ExpiredSignatureError:\n    print('token expired')\nexcept jwt.InvalidTokenError:\n    print('invalid token')",
     "lang": "python"
   },
   {
-    "q": ["what is a unit test and why write them", "unit testing explained", "why unit tests"],
+    "q": [
+      "what is a unit test and why write them",
+      "unit testing explained",
+      "why unit tests"
+    ],
     "a": "A unit test verifies one small unit of code (a function or method) in isolation, with fixed inputs and expected outputs. Unit tests catch regressions early, document intended behavior, make refactoring safe, and force better design (testable code is decoupled code). Good tests are fast, isolated (no network/database), and deterministic. Combined with a test runner (pytest, Jest, JUnit) they run in seconds on every change.",
     "code": "def add(a, b):\n    return a + b\n\n# Test with pytest\ndef test_add():\n    assert add(2, 3) == 5\n    assert add(-1, 1) == 0",
     "lang": "python"
   },
   {
-    "q": ["python how to write a unit test with pytest", "pytest example", "write tests with pytest"],
+    "q": [
+      "python how to write a unit test with pytest",
+      "pytest example",
+      "write tests with pytest"
+    ],
     "a": "pytest is Python's most popular test framework: write plain functions named test_* containing assert statements — no class boilerplate needed. Use fixtures for shared setup, parametrize to run a test with multiple inputs, and assert raises for expected exceptions. Run with `pytest` (discovers test_*.py files) and use `-v` for verbose output.",
     "code": "import pytest\nfrom math import isclose\n\ndef area(w, h):\n    return w * h\n\ndef test_area():\n    assert area(3, 4) == 12\n\n@pytest.mark.parametrize('w,h,expected', [\n    (2, 5, 10), (0, 5, 0),\n])\ndef test_area_param(w, h, expected):\n    assert area(w, h) == expected\n\ndef test_error():\n    with pytest.raises(TypeError):\n        area('a', 2)\n\n# Run: pytest test_app.py -v",
     "lang": "python"
   },
   {
-    "q": ["what is the difference between http and https", "http vs https", "why use https"],
+    "q": [
+      "what is the difference between http and https",
+      "http vs https",
+      "why use https"
+    ],
     "a": "HTTPS is HTTP encrypted with TLS (Transport Layer Security). HTTP sends everything in plaintext — anyone on the network can read or modify it. HTTPS encrypts the data in transit so eavesdroppers see only ciphertext, and it authenticates the server via certificates, preventing man-in-the-middle attacks. Modern sites use HTTPS by default (it's also a ranking factor and required for HTTP/2 and many browser features). The certificate lets the client verify the server's identity.",
     "code": "# Requests: https is the default scheme in most clients\nimport requests\nresp = requests.get('https://example.com', timeout=10)\nprint(resp.status_code)\n\n# Browsers warn on http:// pages that ask for passwords",
     "lang": "python"
   },
   {
-    "q": ["what is the difference between a process and a thread", "process vs thread", "processes and threads compared"],
+    "q": [
+      "what is the difference between a process and a thread",
+      "process vs thread",
+      "processes and threads compared"
+    ],
     "a": "A process is an isolated program instance with its own memory space; a thread is a lightweight execution unit inside a process, sharing the process's memory. Threads are cheaper to create and communicate easily (shared memory) but need locks to avoid races; processes are isolated (crash-safe) and can run on separate machines, but inter-process communication is slower. CPU-bound Python work benefits from processes (multiprocessing) due to the GIL; I/O-bound work benefits from threads or async.",
     "code": "from multiprocessing import Process\nfrom threading import Thread\n\n# Thread: shares memory, good for I/O\nt = Thread(target=lambda: print('thread'))\nt.start(); t.join()\n\n# Process: isolated memory, good for CPU work\np = Process(target=lambda: print('process'))\np.start(); p.join()",
     "lang": "python"
   },
   {
-    "q": ["python how to use pathlib to read files", "pathlib python example", "pathlib read write files"],
+    "q": [
+      "python how to use pathlib to read files",
+      "pathlib python example",
+      "pathlib read write files"
+    ],
     "a": "pathlib provides an object-oriented way to handle filesystem paths instead of string manipulation. Path objects support / joining, .exists(), .read_text(), .write_text(), .glob() for patterns, and .mkdir(). It's the modern recommended approach in Python.",
     "code": "from pathlib import Path\n\np = Path('data') / 'notes.txt'    # join paths cleanly\np.write_text('hello')             # write\nprint(p.read_text())              # read\n\nif p.exists():\n    print(p.suffix)               # .txt\n    print(p.name)                 # notes.txt\n\nfor f in Path('.').glob('*.py'):\n    print(f.name)",
     "lang": "python"
+  },
+  {
+    "q": [
+      "what is the difference between break and continue",
+      "break vs continue",
+      "break and continue in loops",
+      "break continue difference python"
+    ],
+    "a": "In loops, break exits the loop entirely, while continue skips only the current iteration and moves to the next one. Example in Python: for i in range(5): if i == 2: continue    # skips 2, loop keeps going if i == 4: break      # stops the loop completely  print(i)  → prints 0, 1, 3. So the rule of thumb: use break when you want to stop the whole loop (e.g., found what you were looking for), and continue when you want to skip a specific value or condition and keep looping. Both only affect the innermost loop they appear in."
+  },
+  {
+    "q": [
+      "what is polymorphism in oop",
+      "polymorphism in oop",
+      "polymorphism explained",
+      "polymorphism in python",
+      "polymorphism oop example"
+    ],
+    "a": "Polymorphism ('many forms') is the OOP principle that lets objects of different classes be treated through a common interface, so the same call behaves differently per object. The two kinds: (1) method overriding — a subclass redefines a parent method with the same name, and the right version runs based on the object's actual type: class Dog: def speak(self): return 'Woof'; class Cat: def speak(self): return 'Meow'; for pet in [Dog(), Cat()]: print(pet.speak())  # prints Woof then Meow  (2) method overloading / operator overloading — one name with different argument signatures or behavior (e.g. len(), str(), + work across types). In statically-typed languages like Java, polymorphism requires inheritance or interfaces; in dynamically-typed languages like Python, duck typing ('if it quacks like a duck...') gives polymorphism for free. It's what lets frameworks call .render() on any component, or sort() on any comparable object, without knowing the concrete type."
+  },
+  {
+    "q": [
+      "explain sql joins",
+      "what is a sql join",
+      "sql joins explained",
+      "sql join types",
+      "how do sql joins work",
+      "inner join vs left join"
+    ],
+    "a": "A SQL JOIN combines rows from two tables based on a matching condition, usually a shared key. The main types: INNER JOIN — keeps only rows that match in BOTH tables (the overlap). LEFT (OUTER) JOIN — keeps every row from the left table and matches what it can from the right, filling unmatched columns with NULL. RIGHT (OUTER) JOIN — the mirror image. FULL (OUTER) JOIN — keeps everything from both sides, NULL where there's no match. CROSS JOIN — every row of table A paired with every row of table B (cartesian product). Example: SELECT employees.name, departments.name FROM employees INNER JOIN departments ON employees.dept_id = departments.id — the ON clause is the matching condition; give every join a join key, and note that joins without ON (or with a condition that matches many rows) can blow up row counts. When in doubt: INNER for 'only matching', LEFT when you want all rows from the first table (the most common real-world join)."
   }
 ]

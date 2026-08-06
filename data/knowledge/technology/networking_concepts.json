@@ -1,0 +1,11 @@
+[
+  {
+    "q": [
+      "what is a subnet",
+      "what is subnetting",
+      "what is a subnet mask",
+      "how does subnetting work"
+    ],
+    "a": "A subnet (subnetwork) is a logical division of an IP network — splitting a big network into smaller pieces, like dividing a building into rooms. The purpose: organization (different departments on different subnets), security (firewall rules between subnets), and efficiency (less broadcast traffic — broadcasts only cross their own subnet). How it works: an IP address has two parts — the network portion (which subnet you're on) and the host portion (which device you are within it). The subnet mask (255.255.255.0, or /24 in CIDR notation) marks the boundary: the 1s in the mask are the network part, the 0s are the host part. A /24 (255.255.255.0) means the first three octets are the network (192.168.1.x) and the last octet is the host — 256 addresses, of which 254 are usable (the first is the network address, the last is the broadcast address). Common subnets: /24 = 254 usable hosts, /25 = 126, /26 = 62, /27 = 30, /28 = 14, /29 = 6, /30 = 2 (classic point-to-point link). CIDR notation just counts the 1-bits: 192.168.1.0/24 means 'the 192.168.1 network with a 24-bit mask'. In the real world: your home router creates a /24 (192.168.1.0/24 or 10.0.0.0/24) and hands out addresses via DHCP; cloud VPCs are divided into subnets (public subnets with internet gateways, private subnets without) — that's the subnet concept you'll meet most in practice. The mental model: subnet = neighborhood, IP = house number, subnet mask = how big the neighborhood is."
+  }
+]

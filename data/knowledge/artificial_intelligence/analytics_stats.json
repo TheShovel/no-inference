@@ -1,0 +1,56 @@
+[
+  {
+    "q": [
+      "what is a funnel",
+      "what is a marketing funnel",
+      "what is a conversion funnel",
+      "funnel stages explained"
+    ],
+    "a": "A funnel is the journey users take from first hearing about your product to taking the action you want (buying, signing up). It's called a funnel because each stage drops people off — wide at the top, narrow at the bottom. The classic model: Awareness (they see your ad/post — thousands), Interest (they click through — hundreds), Consideration (they read, compare — dozens), Conversion (they buy/sign up — a few), and Retention (they come back). In analytics, a funnel analysis measures the conversion rate between each step — e.g., 'of the 10,000 people who saw the landing page, 2,000 clicked sign-up, and 300 completed registration.' The insight comes from the drop-offs: if 30% of people who add to cart never check out, that's a checkout problem, not an ads problem; if the top of the funnel is huge but nothing converts, the offer or landing page is the issue. The two rules: (1) fix the biggest drop-off first — improving a 40% step by 10 points beats improving a 4% step by 10 points; (2) track the funnel before optimizing anything — you can't fix what you haven't measured. 'Full-funnel' marketing means optimizing all stages (awareness through retention), not just the bottom. Related terms: AARRR (acquisition, activation, retention, revenue, referral — the 'pirate metrics' funnel for products) and funnel leakage (where you're losing people)."
+  },
+  {
+    "q": [
+      "what is a cohort",
+      "what is cohort analysis",
+      "cohort vs segment",
+      "what are cohorts in analytics"
+    ],
+    "a": "A cohort is a group of users who share a defining characteristic within a specific time period — most commonly, users who signed up or made their first purchase in the same month (e.g., 'everyone who joined in January'). Cohort analysis tracks how each cohort behaves over time, so you can compare groups that started at different times on an apples-to-apples basis. The classic use: retention. A retention cohort table shows rows = signup month, columns = months since signup, cells = % still active. The insight: if the January cohort retains 30% at month 3 but March's retains only 15%, something changed in March (a bug, a pricing change, a different ad channel) — and it's a cohort problem, invisible in aggregate numbers. The key difference from a segment: a segment is a static slice defined by attributes (all iOS users, all premium users); a cohort is defined by when a behavior happened, so you can track the same people over time. Why it matters: aggregate metrics lie — if you gained 1,000 users in January and lost 500, your 'average' looks stable, but it could be 800 retained + 700 churned. Cohort analysis reveals whether you're actually getting better at retaining the users you acquire. Tools: most analytics platforms (Mixpanel, Amplitude, PostHog, or a spreadsheet pivot table) support cohort tables."
+  },
+  {
+    "q": [
+      "what is the difference between correlation and causation",
+      "correlation vs causation",
+      "why correlation does not imply causation",
+      "correlation causation examples"
+    ],
+    "a": "Correlation means two variables move together — when one changes, the other tends to change in a predictable way. Causation means one variable actually causes the change in the other. The famous rule: correlation does not imply causation — the fact that ice cream sales and drowning deaths both rise in summer does not mean ice cream causes drowning; both are caused by a third factor (hot weather). The reasons correlations appear without causation: (1) A common cause — a third variable drives both (summer → ice cream + swimming). (2) Reverse causation — the direction is the opposite of what you assumed (maybe drowning prevention spending correlates with fewer drownings because fewer drownings... or because spending rises after incidents). (3) Coincidence — with enough data, meaningless correlations are guaranteed (it's a statistical certainty that some random pair of time series correlates). (4) Selection bias — the sample isn't representative. How to actually establish causation: randomized controlled experiments (the gold standard — random assignment breaks common causes), natural experiments, or careful longitudinal studies with controls. In business: A/B testing is how you earn the word 'causes'. Practical rule: correlation is a clue — it tells you where to look and what to test; causation is a claim that requires evidence beyond the numbers. The classic examples: the 'more firefighters, more fire damage' correlation (bigger fires attract more firefighters), and the ice cream-drowning one."
+  },
+  {
+    "q": [
+      "what is a p value",
+      "what does p value mean",
+      "how to interpret a p value",
+      "p value explained simply"
+    ],
+    "a": "A p-value is the probability of getting results at least as extreme as yours IF the null hypothesis (no effect) were true. In plain terms: it's a measure of surprise — how surprising would your data be if there were actually no effect? A p-value of 0.03 means: if there were really no effect, you'd see data this extreme only 3% of the time by chance. The threshold convention: p < 0.05 (5%) is called 'statistically significant' — the result is surprising enough, under the no-effect assumption, that researchers conclude there probably IS an effect. The most common misunderstanding: the p-value is NOT the probability that the null hypothesis is true, and it's not the probability you're wrong. It's also not the probability the result will replicate — p = 0.01 does not mean '99% chance this is real'. What p-values can't tell you: the size of the effect (a p of 0.0001 can come with a tiny, practically meaningless effect — with a big enough sample, anything becomes 'significant') and whether the result matters. The other side of the coin: 'not significant' (p > 0.05) does not prove no effect — it means the data don't rule out chance; a small study can miss a real effect. The practical rules: report the actual p-value, not just significant/not; look at effect sizes and confidence intervals too; and beware p-hacking (running many analyses until one dips below 0.05 — with 20 tests, one will 'pass' by chance alone, which is why multiple-comparison corrections exist)."
+  },
+  {
+    "q": [
+      "what is a null hypothesis",
+      "null hypothesis explained",
+      "what is the null hypothesis in statistics",
+      "null vs alternative hypothesis"
+    ],
+    "a": "The null hypothesis (H₀) is the default assumption that there is no effect, no difference, or no relationship — the skeptical position you try to disprove. 'The new landing page converts at the same rate as the old one', 'the drug works no better than placebo', 'there's no difference between the two groups.' The alternative hypothesis (H₁ or Ha) is the claim you're testing for — 'the new page converts better.' Statistical testing works by assuming the null is true and then asking: how surprised would we be by the data we actually got? If the data would be very surprising under the null (that's the p-value being small), you 'reject the null' and accept that the alternative is supported. If the data isn't surprising, you 'fail to reject the null' — note the careful language: you never 'prove' the null true; you just lack evidence against it. The two possible errors: Type I (false positive) — rejecting a true null (declaring the new page better when it isn't); Type II (false negative) — failing to reject a false null (missing a real effect). The null hypothesis is the backbone of the scientific method's skepticism: it forces you to test 'no effect' first and demand evidence to abandon it. Why it matters practically: any A/B test, clinical trial, or scientific study is structured around it — 'what would this data look like if nothing real were happening?' — and the p-value is just the answer to that question."
+  },
+  {
+    "q": [
+      "what is statistical significance",
+      "statistical significance explained",
+      "what makes a result statistically significant",
+      "significance level explained"
+    ],
+    "a": "A result is statistically significant when it's unlikely to be due to random chance alone — conventionally, when the p-value is below 0.05 (the 'significance level', often written α = 0.05). That threshold means: if there were truly no effect, we'd see a result this extreme less than 5% of the time by chance — surprising enough that researchers conclude the effect is probably real. Important limits to internalize: (1) Significance ≠ importance. A statistically significant effect can be tiny and meaningless ('the button change increased signups by 0.02%') — with a large sample, even negligible effects become 'significant'. (2) It doesn't tell you the probability the result is true — it's a statement about the data under the no-effect assumption, not about the world. (3) It says nothing about replicability — many 'significant' findings don't hold up in a second study (the replication crisis). (4) The threshold is a convention, not a magic line — a p of 0.051 is essentially the same evidence as 0.049, but the binary 'significant/not' treats them as opposites. (5) Multiple testing: run 20 analyses and one will pass 0.05 by chance — correction methods exist. The practical takeaway: treat significance as one input, alongside effect size (how big is the difference), confidence intervals (how precise), practical importance (does it matter), and whether the result makes sense. In business A/B tests: 'statistically significant' is the green light that the effect is probably real — but you still need to ask whether the effect is worth acting on."
+  }
+]

@@ -1,0 +1,329 @@
+{
+  "overall_score": 2.55,
+  "total": 40,
+  "passed": 2,
+  "weak": 11,
+  "failed": 27,
+  "results": [
+    {
+      "category": "cooking and recipes",
+      "query": "Can I substitute Greek yogurt for sour cream in a cake recipe, or will it change the texture too much?",
+      "response": "Yes, you can substitute Greek yogurt for sour cream in most recipes! Use a 1:1 ratio  --  if a recipe calls for 1 cup of sour cream, use 1 cup of plain Greek yogurt. The texture will be very similar, though Greek yogurt is slightly tangier and has more protein. For baking, it works especially well in cakes, muffins, and quick breads. For best results, use full-fat Greek yogurt rather than nonfat, as the fat content helps maintain moisture and texture. If you're concerned about the flavor difference, you can also use half yogurt and half sour cream.",
+      "score": 10,
+      "issue": "",
+      "time": 2.61
+    },
+    {
+      "category": "cooking and recipes",
+      "query": "Why is my roast chicken always dry on the breast but undercooked near the bone?",
+      "response": "A Sunday roast or roast dinner is a British dish traditionally eaten on Sunday. It consists of roast meat, roast or mashed potatoes, and accompaniments such as Yorkshire pudding, gravy and stuffing, and may include condiments such as apple sauce, mint sauce, redcurrant sauce, mustard, cranberry sauce or horseradish sauce. A range of vegetables can be served, such as broccoli, Brussels sprouts, cabbage, carrots, cauliflower, parsnips or peas, which can be boiled, steamed or roasted alongside the meat and potatoes. Other names for this meal include Sunday lunch, Sunday dinner, roast dinner and full roast. The meal is often described as a less grand version of a traditional Christmas dinner.",
+      "score": 1,
+      "issue": "The response is completely irrelevant; it provides a definition of a Sunday roast instead of answering the user's technical question about cooking chicken.",
+      "time": 10.52
+    },
+    {
+      "category": "cooking and recipes",
+      "query": "How do I stop my onions from sticking to the pan when I'm saut\u00e9ing them?",
+      "response": "A Sunday roast or roast dinner is a British dish traditionally eaten on Sunday. It consists of roast meat, roast or mashed potatoes, and accompaniments such as Yorkshire pudding, gravy and stuffing, and may include condiments such as apple sauce, mint sauce, redcurrant sauce, mustard, cranberry sauce or horseradish sauce. A range of vegetables can be served, such as broccoli, Brussels sprouts, cabbage, carrots, cauliflower, parsnips or peas, which can be boiled, steamed or roasted alongside the meat and potatoes. Other names for this meal include Sunday lunch, Sunday dinner, roast dinner and full roast. The meal is often described as a less grand version of a traditional Christmas dinner.",
+      "score": 1,
+      "issue": "The response is completely irrelevant to the query; it describes a British Sunday roast instead of providing cooking tips for saut\u00e9ing onions.",
+      "time": 13.92
+    },
+    {
+      "category": "cooking and recipes",
+      "query": "How long do I need to marinate steak before grilling it?",
+      "response": "I couldn't find solid information about that specific topic, so I'd rather say so than make something up. A couple of things that help: rephrase the question with more context, or check whether you meant a different name for the topic. If this was a coding question, tell me the language and what you're trying to do and I'll write the code.",
+      "score": 1,
+      "issue": "The model failed to answer a basic common-knowledge question and gave a generic refusal response instead of providing the information.",
+      "time": 11.65
+    },
+    {
+      "category": "home improvement and DIY",
+      "query": "What's the best way to patch a small hole in the drywall before painting?",
+      "response": "Here's how to patch a small hole in drywall: For small holes (up to 6 inches), use a drywall patch kit. Cut a piece of drywall mesh or use a self-adhesive patch slightly larger than the hole. Apply spackle or joint compound over the patch, spreading it evenly with a putty knife. Let it dry completely (2-4 hours), then sand smooth with fine-grit sandpaper. Apply a second thin coat if needed, let dry, and sand again. Wipe away dust with a damp cloth, prime the area, and paint. For larger holes, cut out the damaged section in a neat rectangle, install a piece of drywall, tape the seams, and apply joint compound. The key to a professional-looking repair is thin coats, thorough drying between coats, and fine sanding.",
+      "score": 5,
+      "issue": "The response is truncated and ends mid-word, providing an incomplete set of instructions.",
+      "time": 0.08
+    },
+    {
+      "category": "home improvement and DIY",
+      "query": "What's the best way to remove old wallpaper without damaging the drywall?",
+      "response": "Here's how to remove old wallpaper without damaging the drywall: First, try the peel method  --  gently lift a corner and pull. If it comes off easily, continue. If not, score the wallpaper with a scoring tool (available at hardware stores) to allow water to penetrate. Mix warm water with a few drops of dish soap and a splash of white vinegar. Apply with a sponge or spray bottle, let it sit for 10-15 minutes, then scrape with a wide putty knife. For stubborn wallpaper, use a commercial wallpaper stripper or a steamer (available to rent at most hardware stores). Work in small sections and keep the wallpaper wet  --  dry adhesive is much harder to remove. After all wallpaper is off, rinse the walls with clean water and let dry before painting.",
+      "score": 4,
+      "issue": "The response is incomplete and cuts off mid-sentence.",
+      "time": 0.08
+    },
+    {
+      "category": "home improvement and DIY",
+      "query": "What's the best way to get rid of a stubborn water stain on a ceiling?",
+      "response": "I couldn't find solid information about that specific topic, so I'd rather say so than make something up. A couple of things that help: rephrase the question with more context, or check whether you meant a different name for the topic. If this was a coding question, tell me the language and what you're trying to do and I'll write the code.",
+      "score": 1,
+      "issue": "The response is a canned refusal/failure message for a simple, common home improvement query that the model should be able to answer without external tools.",
+      "time": 3.63
+    },
+    {
+      "category": "home improvement and DIY",
+      "query": "What's the best way to seal a gap between a kitchen countertop and the wall?",
+      "response": "A countertop, also counter top, counter, benchtop, worktop or kitchen bench, bunker is a raised, firm, flat, and horizontal surface. They're built for work in kitchens or other food preparation areas, bathrooms or lavatories, and workrooms in general. The surface is frequently installed upon and supported by cabinets, positioned at an ergonomic height for the user and the particular task for which it's designed. A countertop may be constructed of various materials with different attributes of functionality, durability and aesthetics, and may have built-in appliances, or accessory items relative to the intended application.",
+      "score": 1,
+      "issue": "The response provides a dictionary definition of a countertop instead of answering the user's question about how to seal a gap.",
+      "time": 2.11
+    },
+    {
+      "category": "health and wellness",
+      "query": "What are some good ways to improve my sleep quality without taking medication?",
+      "response": "Sleep deprivation, also known as sleep insufficiency or sleeplessness, is the health condition of not having adequate duration or quality of sleep to support proper alertness, performance, and health. It can be either chronic or acute and may vary widely in severity. This means it can occur over both short and long periods. Sleep is important because adequate sleep, or restful sleep, is essential for maintaining overall health, brain performance, emotional regulation, and metabolic balance. Persistent sleep insufficiency can contribute to cognitive decline, emotional instability, and biological wear that has effects similar to accelerated aging. Scientific research demonstrates that inadequate sleep produces chronic consequences for overall health, ranging from attentional lapses to long-term neurodegenerative changes.",
+      "score": 1,
+      "issue": "The response fails to answer the user's question entirely. Instead of providing ways to improve sleep quality, it provides a definition of sleep deprivation.",
+      "time": 0.82
+    },
+    {
+      "category": "health and wellness",
+      "query": "What are some easy ways to improve my sleep hygiene since I've been struggling with insomnia lately?",
+      "response": "Sleep deprivation, also known as sleep insufficiency or sleeplessness, is the health condition of not having adequate duration or quality of sleep to support proper alertness, performance, and health. It can be either chronic or acute and may vary widely in severity. This means it can occur over both short and long periods. Sleep is important because adequate sleep, or restful sleep, is essential for maintaining overall health, brain performance, emotional regulation, and metabolic balance. Persistent sleep insufficiency can contribute to cognitive decline, emotional instability, and biological wear that has effects similar to accelerated aging. Scientific research demonstrates that inadequate sleep produces chronic consequences for overall health, ranging from attentional lapses to long-term neurodegenerative changes.",
+      "score": 1,
+      "issue": "The response defines sleep deprivation instead of answering the user's request for easy ways to improve sleep hygiene.",
+      "time": 0.72
+    },
+    {
+      "category": "health and wellness",
+      "query": "What are some good stretches to do if I sit at a desk all day and have lower back pain?",
+      "response": "Here are stretches specifically for lower back pain from sitting: Seated spinal twist  --  sit up straight, twist your torso to the right, holding the back of your chair with both hands. Hold for 20 seconds, repeat on the left. Knee-to-chest stretch  --  while seated, lift one knee toward your chest, hold for 15 seconds, switch legs. Forward fold  --  stand up, slowly bend forward at the hips, letting your arms hang. Hold for 20 seconds. Cat-cow stretch  --  on hands and knees, alternate between arching your back (cow) and rounding it (cat). Do 10 slow repetitions. Child's pose  --  kneel, sit back on your heels, and extend your arms forward on the ground. Hold for 30 seconds. Hip flexor stretch  --  step one foot back into a lunge position, gently push hips forward. Hold 20 seconds per leg. The most important thing is to stand up and move every 30 minutes  --  sitting for hours is the root cause of most lower back pain.",
+      "score": 4,
+      "issue": "The response is cut off mid-sentence and fails to complete the final instruction.",
+      "time": 0.08
+    },
+    {
+      "category": "health and wellness",
+      "query": "How can I tell if I'm actually dehydrated or just thirsty?",
+      "response": "Here's how to tell if you're dehydrated or just thirsty: Thirst is a mild sensation that goes away after drinking a small amount of water. Dehydration symptoms include dry mouth, dark yellow urine, infrequent urination, headache, dizziness, fatigue, and dry skin. A simple test: pinch the skin on the back of your hand  --  if it doesn't snap back quickly, you may be dehydrated. Check your urine color  --  pale yellow means hydrated, dark yellow or amber means dehydrated. If you feel thirsty, you're already mildly dehydrated. Drink water consistently throughout the day rather than waiting until you feel thirsty.",
+      "score": 6,
+      "issue": "The response is cut off mid-sentence at the end.",
+      "time": 0.08
+    },
+    {
+      "category": "technology and computers",
+      "query": "My laptop is running really slow lately, do you think I should try a factory reset or is there something else I can do first?",
+      "response": "I don't experience preferences myself, but I can definitely help you weigh the options. What matters most to you in this decision?",
+      "score": 2,
+      "issue": "The response is irrelevant and fails to address the technical query, providing a generic chatbot disclaimer instead of troubleshooting steps or advice.",
+      "time": 0.01
+    },
+    {
+      "category": "technology and computers",
+      "query": "Which one should I get, a MacBook Air or a Pro, for basic photo editing?",
+      "response": "Great question! I don't have personal feelings, but I can give you a balanced look at the different perspectives and let you decide what fits best.",
+      "score": 1,
+      "issue": "The response is a filler phrase that fails to answer the user's question or provide any actual information.",
+      "time": 0.0
+    },
+    {
+      "category": "technology and computers",
+      "query": "How do I back up my photos from my phone to a hard drive?",
+      "response": "My Back Was a Bridge for You to Cross is the fifth studio album by Anohni and the Johnsons, formerly known as Antony and the Johnsons. It was released on July 7, 2023, by Secretly Canadian. The album was co-produced by Jimmy Hogarth, and features contributions from Leo Abrahams, Chris Vatalaro, Samuel Dixon, and Rob Moose.",
+      "score": 1,
+      "issue": "The response is completely irrelevant to the query; it provides information about a music album instead of instructions for backing up photos.",
+      "time": 1.69
+    },
+    {
+      "category": "technology and computers",
+      "query": "What's the difference between an SSD and an HDD, and is it worth upgrading?",
+      "response": "I couldn't find solid information about that specific topic, so I'd rather say so than make something up. A couple of things that help: rephrase the question with more context, or check whether you meant a different name for the topic. If this was a coding question, tell me the language and what you're trying to do and I'll write the code.",
+      "score": 1,
+      "issue": "The model failed to answer a basic, well-documented technical question, claiming it couldn't find information that is common knowledge.",
+      "time": 14.86
+    },
+    {
+      "category": "science and nature",
+      "query": "Why do some leaves change color in the fall while others stay green?",
+      "response": "Leaves change color in the fall because of changes in sunlight and temperature. As days get shorter and temperatures drop, chlorophyll (the green pigment that plants use for photosynthesis) breaks down and isn't replaced. This reveals other pigments that were present in the leaves all along but were masked by the green chlorophyll. Carotenoids produce yellow and orange colors (the same pigment in carrots), and anthocyanins produce red and purple colors. The specific colors depend on the tree species and weather conditions. Bright, sunny days and cool (but not freezing) nights produce the most vibrant fall colors. The process is part of the tree's preparation for winter  --  it's withdrawing nutrients from the leaves before they fall off.",
+      "score": 4,
+      "issue": "The response is incomplete and cuts off mid-sentence.",
+      "time": 0.07
+    },
+    {
+      "category": "science and nature",
+      "query": "Why do some dogs have curly hair while others have straight hair?",
+      "response": "Dogs have different hair types because of genetics  --  specifically, variations in the keratin genes that control hair structure. The three main coat types are smooth (short, close-lying hair like Labradors), double-coated (thick undercoat with longer guard hairs like Huskies), and curly/wire-haired (like Poodles and Terriers). Curly hair in dogs is caused by a dominant gene mutation that affects how hair follicles are shaped  --  curved follicles produce curly hair. Different breeds were selectively bred for specific coat types based on their original purpose: water retrievers (like Poodles) were bred with curly coats for insulation in cold water, while terriers were bred with wiry coats for protection when hunting. Mixed-breed dogs can have any combination of these coat types.",
+      "score": 4,
+      "issue": "The response is incomplete and cuts off mid-sentence.",
+      "time": 0.08
+    },
+    {
+      "category": "science and nature",
+      "query": "Why do some plants grow toward the light and others don't seem to care?",
+      "response": "I couldn't find solid information about that specific topic, so I'd rather say so than make something up. A couple of things that help: rephrase the question with more context, or check whether you meant a different name for the topic. If this was a coding question, tell me the language and what you're trying to do and I'll write the code.",
+      "score": 1,
+      "issue": "The model failed to answer a basic biological question (phototropism) despite the information being common knowledge, resulting in a complete refusal to provide an answer.",
+      "time": 16.26
+    },
+    {
+      "category": "science and nature",
+      "query": "Why is the sky blue during the day but orange and red at sunset?",
+      "response": "The orange is a citrus fruit of the tree Citrus \u00d7 sinensis, a hybrid of the pomelo and mandarin that originated in southern China thousands of years ago. It's the most widely grown citrus fruit, and Brazil, China, and India are the top producers. Oranges are round, orange-colored, with a pithy rind and juicy segments rich in vitamin C  --  a single orange provides over 70% of the daily recommended intake. The sweet orange was brought to Europe by Portuguese traders around the 15th century; bitter oranges were known earlier. Navel, Valencia, and blood oranges (which have red flesh due to anthocyanins) are the main types, and oranges also give their name to the color.",
+      "score": 1,
+      "issue": "The response completely ignores the user's question about atmospheric physics and instead provides a definition of the orange fruit.",
+      "time": 0.06
+    },
+    {
+      "category": "history and geography",
+      "query": "Why is the border between the US and Canada so straight in some parts but jagged in others?",
+      "response": "The US-Canada border is straight in some places and jagged in others because of how it was established. The straight sections follow lines of latitude (like the 49th parallel across the western plains)  --  these were defined by treaties, not geography. The jagged sections follow natural features like rivers, mountains, and lakes (the Great Lakes, Niagara River, St. Lawrence River). The border was established through several treaties: the Treaty of Paris (1783), the Jay Treaty (1794), and the Oregon Treaty (1846) which set the 49th parallel. The border through the Great Lakes was drawn down the middle of the lakes. The eastern border through Maine and New Brunswick was disputed until the Webster-Ashburton Treaty of 1842.",
+      "score": 4,
+      "issue": "The response is truncated and ends mid-sentence, failing to provide a complete answer.",
+      "time": 0.07
+    },
+    {
+      "category": "history and geography",
+      "query": "Who were the main players in the Seven Years' War and why did it start?",
+      "response": "I couldn't find solid information about that specific topic, so I'd rather say so than make something up. A couple of things that help: rephrase the question with more context, or check whether you meant a different name for the topic. If this was a coding question, tell me the language and what you're trying to do and I'll write the code.\n\nI couldn't find solid information about that specific topic, so I'd rather say so than make something up. A couple of things that help: rephrase the question with more context, or check whether you meant a different name for the topic. If this was a coding question, tell me the language and what you're trying to do and I'll write the code.",
+      "score": 1,
+      "issue": "The model failed to answer a basic factual question about a well-known historical event and provided a generic refusal response.",
+      "time": 20.02
+    },
+    {
+      "category": "history and geography",
+      "query": "Which countries actually border Bolivia?",
+      "response": "I couldn't find solid information about that specific topic, so I'd rather say so than make something up. A couple of things that help: rephrase the question with more context, or check whether you meant a different name for the topic. If this was a coding question, tell me the language and what you're trying to do and I'll write the code.",
+      "score": 1,
+      "issue": "The model failed to provide a basic geographical fact that is widely available, claiming it couldn't find information for a simple query.",
+      "time": 8.65
+    },
+    {
+      "category": "history and geography",
+      "query": "Why did the Roman Empire eventually collapse?",
+      "response": "The fall of the Roman Empire was a complex process that unfolded over many centuries, caused by a combination of internal decay and external pressures. The Western Roman Empire formally ended in 476 CE when the Germanic chieftain Odoacer deposed the last Roman emperor, Romulus Augustulus. Key causes include: (1) Political instability and corruption. The Roman Empire experienced a crisis in the 3rd century CE with over 20 emperors in 50 years, many of whom were assassinated. The Praetorian Guard frequently murdered emperors and auctioned the throne. The division of the empire into Eastern and Western halves under Diocletian weakened central authority. (2) Economic decline. Heavy taxation to support the military and bureaucracy crippled the economy. Inflation was rampant as emperors debased the currency. Trade routes became disrupted, and the empire faced a chronic trade deficit. (3) Military problems. The empire became over-reliant on barbarian mercenaries who had little loyalty to Rome. The army faced constant pressure from Germanic tribes (Visigoths, Vandals, Ostrogoths) along the Rhine and Danube frontiers. The Battle of Adrianople in 378 CE was a devastating defeat. (4) Barbarian invasions. The Huns pushed Germanic tribes into Roman territory. The Visigoths sacked Rome in 410 CE, and the Vandals did so again in 455 CE. Rome was eventually besieged multiple times. (5) Social decay. Traditional Roman values declined, and there was a widening gap between the wealthy elite and the poor masses. The institution of slavery stifled technological innovation. (6) The split between the Eastern and Western Empires created divergent paths, with the Eastern (Byzantine) Empire centered on Constantinople surviving for another thousand years. The Eastern Empire had greater wealth, more defensible borders, and better strategic leadership.",
+      "score": 3,
+      "issue": "The response is incomplete and cuts off mid-sentence.",
+      "time": 0.07
+    },
+    {
+      "category": "practical life skills",
+      "query": "How do I properly jump start a car without damaging the battery?",
+      "response": "Here's how to jump-start a car safely:\n\n1. Park both cars close enough for the jumper cables to reach, but don't let them touch. Turn both cars off. Remove the keys. 2. Identify the positive (+) and negative (-) terminals on both batteries. They're usually red (positive) and black (negative). 3. Connect the red clamp to the positive terminal of the dead battery. 4. Connect the other red clamp to the positive terminal of the good battery. 5. Connect the black clamp to the negative terminal of the good battery. 6. Connect the last black clamp to an unpainted metal surface on the dead car  --  not to the battery. A bolt or bracket on the engine block works well. This prevents sparks near the battery. 7. Start the working car and let it run for 2-3 minutes. Rev it gently. 8. Try starting the dead car. If it doesn't start, wait another 2-3 minutes and try again. 9. Once the dead car starts, remove the cables in REVERSE order: black from the metal surface, black from the good battery, red from the good battery, red from the dead battery. 10. Let the jump-started car run for at least 15-20 minutes to recharge the battery. If the car doesn't start after a few attempts, the battery may be completely dead or there may be another issue.",
+      "score": 3,
+      "issue": "The response is cut off mid-sentence and fails to provide the complete set of instructions, leaving the user with an incomplete and potentially dangerous procedure.",
+      "time": 0.08
+    },
+    {
+      "category": "practical life skills",
+      "query": "How do I actually start a budget that I can actually stick to?",
+      "response": "I couldn't find solid information about that specific topic, so I'd rather say so than make something up. A couple of things that help: rephrase the question with more context, or check whether you meant a different name for the topic. If this was a coding question, tell me the language and what you're trying to do and I'll write the code.",
+      "score": 1,
+      "issue": "The model failed to answer a basic, general-knowledge question, claiming it couldn't find information on a common topic (budgeting) and providing a generic refusal response.",
+      "time": 9.98
+    },
+    {
+      "category": "practical life skills",
+      "query": "How do I get a red wine stain out of a white carpet?",
+      "response": "To remove a red wine stain from a white wool rug: 1. Act quickly - blot (don't rub) the stain with a clean white cloth to absorb as much wine as possible. 2. Apply salt or baking soda to the stain to absorb remaining wine. Let it sit for 5-10 minutes, then vacuum. 3. Mix a solution of 1 part white vinegar to 2 parts water. Apply to the stain with a spray bottle or cloth. Blot gently. 4. Apply a small amount of mild wool-safe detergent mixed with cold water. Blot. 5. Rinse with cold water by blotting with a damp cloth. 6. For stubborn stains, try a specialized wool stain remover like Folex or Woolite. IMPORTANT: don't use boiling water on wool - it will shrink and damage the fibers. Don't rub vigorously as this can felt the wool. Don't use bleach or hydrogen peroxide on wool. Wool is naturally stain-resistant due to its lanolin coating, so gentle blotting and mild cleaners usually work. For set-in stains, professional dry cleaning may be necessary.",
+      "score": 4,
+      "issue": "The response is cut off mid-sentence and does not provide a complete set of instructions.",
+      "time": 0.07
+    },
+    {
+      "category": "practical life skills",
+      "query": "How do I properly iron a dress shirt so it doesn't get wrinkles in the back?",
+      "response": "The academic dress of the United Kingdom and Ireland has a long history and has influenced the academic dress of Canada and the United States and beyond. The academic square cap was invented in the UK as well as the hood which developed from the lay dress of the medieval period. Irish academic dress is virtually the same as that in the United Kingdom given the common history and proximity of each other. Many other Commonwealth countries also follow British cuts and design of academic dress, most notably Australia and New Zealand though some are beginning to evolve away from British cuts such as Canada, where the University of Toronto has slowly introduced American gowns that close at the front. There's a distinction between different types of academic dress. Most recently, gowns, hoods and caps are categorised into their shape and patterns by what may be known as the Groves classification system, which is based on Nicholas Groves's document, Hood and Gown Patterns. This lists the various styles or patterns of academic dress and assigns them a code or a Groves Classification Number. For example, the Cambridge BA style gown is designated [b2] and a hood in the Cambridge full-shape is designated [f1], etc. Because the universities are free to design their own academicals using a wide range of available gown, hood and cap patterns, colours and materials at their and the robemaker's disposal, the academicals of two given universities rarely clash with each other. The Burgon Society was founded in 2000 to promote the study of academic dress. It has publications and activities to do with academic dress and published an updated version of Shaw's book on British and Irish academical dress in 2012, with a second volume covering non-degree awarding bodies published in 2014. Gown\nThe modern gown is derived from the roba worn under the cappa clausa, a garment resembling a long black cape. In early medieval times, all students at the universities were in at least minor orders, and were required to wear the cappa or other clerical dress, and restricted to clothes of black or other dark colour. The gowns most commonly worn, that of the clerical type gowns of Bachelor of Arts (BA) and Master of Arts (MA), are substantially the same throughout the English-speaking world. Both are traditionally made of black cloth, (although occasionally the gown is dyed in one of the university's colours) and have the material at the back of the gown gathered into a yoke. The BA gown has bell-shaped sleeves, while the MA gown has long sleeves closed at the end, with the arm passing through a slit above the elbow. There are two types of yokes that are used for gowns. The more traditional is the curved yoke, whilst the square or straight yoke is used more in modern times. Another type of gown is called the lay type gown, which is similar to the MA gown in that it has long closed sleeves, but doesn't have a yoke. Instead, there's a flap collar with the gathers underneath it. Thus it's less voluminous than the clerical type gown. This gown is often used for the dress of officers and graduates of some degrees (especially at Oxford and Durham). In the Commonwealth, gowns are worn open, while in the United States it has become common for gowns to close at the front, as did the original roba. Some gowns may have 'strings' (i.e. Grosgrain ribbons) attached to them behind the lapels. These in the past were tied together to hold the gown together but are now merely indicators of rank, such as in Cambridge where strings indicate one is a graduate of the university (rather than a graduate student whose undergraduate degree was awarded at a different institution), or just for decoration.",
+      "score": 1,
+      "issue": "The response is completely irrelevant to the user's query; it discusses academic dress history instead of providing instructions on how to iron a dress shirt.",
+      "time": 2.28
+    },
+    {
+      "category": "definitions and explanations",
+      "query": "What exactly is a credit score and how is it calculated?",
+      "response": "A credit score is a three-digit number that represents your creditworthiness and is used by lenders to evaluate the risk of lending you money. The most common model is the FICO score, ranging from 300 to 850, with scores above 740 considered excellent and below 580 considered poor. The five factors that determine your credit score are: payment history (35%)  --  whether you pay bills on time; amounts owed or credit utilization (30%)  --  the percentage of available credit you're using; length of credit history (15%)  --  how long your accounts have been active; credit mix (10%)  --  the variety of credit types (credit cards, auto loans, mortgages); and new credit (10%)  --  how recently you've opened new accounts. To improve your credit score, pay all bills on time, keep credit utilization below 30%, avoid opening too many new accounts rapidly, and maintain older accounts to build a longer credit history.\n\nCalculated  is the only studio album by the American punk rock band Heavens to Betsy, released on March 21, 1994, by Kill Rock Stars. The album received positive reviews from critics. Recording and release\nCalculated was recorded in Seattle, Washington, between November 30 and December 3, 1993. It was released on March 21, 1994, by the independent record label Kill Rock Stars.",
+      "score": 4,
+      "issue": "The response is truncated and ends mid-word, failing to complete the explanation of how the score is calculated.",
+      "time": 1.51
+    },
+    {
+      "category": "definitions and explanations",
+      "query": "What exactly is the difference between a 401k and an IRA?",
+      "response": "I couldn't find solid information about that specific topic, so I'd rather say so than make something up. A couple of things that help: rephrase the question with more context, or check whether you meant a different name for the topic. If this was a coding question, tell me the language and what you're trying to do and I'll write the code.",
+      "score": 1,
+      "issue": "The model failed to answer a basic factual question about common financial instruments, claiming it couldn't find information when the topic is widely documented and within its training data.",
+      "time": 10.57
+    },
+    {
+      "category": "definitions and explanations",
+      "query": "What is the difference between a Roth IRA and a traditional IRA?",
+      "response": "A common retirement savings guideline is to have saved 1x your annual salary by age 30, 3x by 40, 6x by 50, and 8x by 67. In practice, aim to save at least 15% of your pre-tax income annually, including any employer match. A 401(k) is an employer-sponsored retirement account where contributions are pre-tax (or Roth post-tax), often with employer matching  --  always contribute enough to get the full match, as it's free money. IRAs (Individual Retirement Accounts) offer more investment choices: Traditional IRAs provide tax-deductible contributions with taxable withdrawals, while Roth IRAs use after-tax contributions with tax-free withdrawals in retirement. Starting early gives your investments decades of compound growth.",
+      "score": 1,
+      "issue": "The response is completely irrelevant to the query; it provides general retirement saving guidelines and information about 401(k)s instead of explaining the difference between a Roth and Traditional IRA. Additionally, the text is cut off at the end.",
+      "time": 0.07
+    },
+    {
+      "category": "definitions and explanations",
+      "query": "What exactly is the difference between a Roth IRA and a 401k?",
+      "response": "A 401(k) is an employer-sponsored retirement savings account that allows employees to contribute pre-tax (traditional) or after-tax (Roth) dollars, with many employers offering matching contributions  --  effectively free money. The 2024 contribution limit for 401(k)s is $23,000 ($30,500 for those 50 or older), and earnings grow tax-deferred (traditional) or tax-free (Roth) until withdrawal starting at age 59\u00bd. An IRA (Individual Retirement Account) is a retirement account you open independently, with a 2024 contribution limit of $7,000 ($8,000 if 50+). Traditional IRAs offer tax-deductible contributions and tax-deferred growth, while Roth IRAs use after-tax contributions with tax-free withdrawals in retirement. The key difference is that 401(k)s have higher contribution limits and may include employer matching, but offer fewer investment choices, while IRAs provide broader investment flexibility but lower contribution limits. Both accounts offer significant tax advantages for retirement savers.",
+      "score": 4,
+      "issue": "The response is incomplete (cuts off mid-word), fails to explain what a Roth IRA is, and does not actually compare the two as requested by the query.",
+      "time": 0.08
+    },
+    {
+      "category": "math and numbers",
+      "query": "If I want to save $500 a month for a house down payment, how many years will it take me to reach $30,000?",
+      "response": "A down payment is the portion of the home purchase price paid upfront by the buyer, typically expressed as a percentage of the purchase price; while 20% is traditional to avoid private mortgage insurance (PMI), many loan programs allow as little as 3-5% down. Closing costs are fees associated with finalizing the mortgage and transferring ownership, typically ranging from 2-5% of the purchase price, including loan origination fees, title insurance, appraisal fees, escrow fees, attorney fees, and prepaid property taxes and insurance. Buyers should budget for both the down payment and closing costs, as these represent significant upfront cash requirements.",
+      "score": 1,
+      "issue": "The response completely fails to answer the mathematical question asked by the user and instead provides irrelevant definitions of down payments and closing costs.",
+      "time": 0.62
+    },
+    {
+      "category": "math and numbers",
+      "query": "If I want to increase my monthly payment by 15%, how much more will that actually save me in interest over a 30-year mortgage?",
+      "response": "To estimate your monthly mortgage payment, use the formula: M = P \u00d7 [r(1+r)^n] / [(1+r)^n - 1], where P is the loan amount, r is the monthly interest rate (annual rate divided by 12), and n is the number of monthly payments (loan term in years \u00d7 12). For a $300,000 loan at 6.5% for 30 years: monthly rate = 0.065/12 = 0.00542, number of payments = 360, monthly payment = about $1,896. But your actual monthly payment will be higher because it also includes property taxes (typically 0.5-2% of home value annually) and homeowners insurance (typically $500-$2,000 per year). If your down payment is less than 20%, you'll also pay private mortgage insurance (PMI). Use an online mortgage calculator for the most accurate numbers  --  they include taxes, insurance, and PMI automatically.",
+      "score": 2,
+      "issue": "The response provides a generic formula for calculating a monthly payment rather than answering the specific question about interest savings from a 15% increase. Additionally, the response is cut off mid-sentence.",
+      "time": 0.57
+    },
+    {
+      "category": "math and numbers",
+      "query": "If I'm trying to calculate a 15% tip on a $64.50 bill, what's the fastest way to do that in my head?",
+      "response": "I couldn't find solid information about that specific topic, so I'd rather say so than make something up. A couple of things that help: rephrase the question with more context, or check whether you meant a different name for the topic. If this was a coding question, tell me the language and what you're trying to do and I'll write the code.",
+      "score": 1,
+      "issue": "The model failed to answer a basic arithmetic question and gave a canned 'I don't know' response for a task it is fully capable of performing.",
+      "time": 2.64
+    },
+    {
+      "category": "math and numbers",
+      "query": "If I'm trying to figure out my monthly payment on a 15-year mortgage at 6.5%, how do I calculate that?",
+      "response": "To estimate your monthly mortgage payment, use the formula: M = P \u00d7 [r(1+r)^n] / [(1+r)^n - 1], where P is the loan amount, r is the monthly interest rate (annual rate divided by 12), and n is the number of monthly payments (loan term in years \u00d7 12). For a $300,000 loan at 6.5% for 30 years: monthly rate = 0.065/12 = 0.00542, number of payments = 360, monthly payment = about $1,896. But your actual monthly payment will be higher because it also includes property taxes (typically 0.5-2% of home value annually) and homeowners insurance (typically $500-$2,000 per year). If your down payment is less than 20%, you'll also pay private mortgage insurance (PMI). Use an online mortgage calculator for the most accurate numbers  --  they include taxes, insurance, and PMI automatically.",
+      "score": 3,
+      "issue": "The response provides a calculation for a 30-year loan instead of the 15-year loan requested in the query and cuts off mid-sentence.",
+      "time": 0.56
+    },
+    {
+      "category": "general knowledge",
+      "query": "Who won the World Series in 2016?",
+      "response": "I couldn't find solid information about that specific topic, so I'd rather say so than make something up. A couple of things that help: rephrase the question with more context, or check whether you meant a different name for the topic. If this was a coding question, tell me the language and what you're trying to do and I'll write the code.",
+      "score": 1,
+      "issue": "The response is a refusal/hallucination of ignorance for a factual, well-documented event. The Chicago Cubs won the 2016 World Series.",
+      "time": 8.49
+    },
+    {
+      "category": "general knowledge",
+      "query": "Who was the first person to walk on the moon?",
+      "response": "Neil Armstrong was the first person to walk on the Moon on July 20, 1969, during NASA's Apollo 11 mission. His famous words were 'That's one small step for man, one giant leap for mankind.",
+      "score": 10,
+      "issue": "",
+      "time": 0.06
+    },
+    {
+      "category": "general knowledge",
+      "query": "Who is the current prime minister of Canada?",
+      "response": "Canada is the second-largest country in the world by area, occupying most of northern North America. Its capital is Ottawa, and its largest city is Toronto. Canada has two official languages, English and French, and about 40 million people. The currency is the Canadian dollar. Canada is known for its vast wilderness, lakes, and maple syrup, as well as its multicultural cities, universal healthcare, and politeness. It has ten provinces and three territories, with Quebec being the French-speaking heartland. The national animal is the beaver, and national sports are lacrosse and ice hockey  --  Canada won gold at the 2010 Olympics on home ice.",
+      "score": 1,
+      "issue": "The response completely fails to answer the specific question asked and instead provides general facts about Canada.",
+      "time": 0.83
+    },
+    {
+      "category": "general knowledge",
+      "query": "Why do we have leap years every four years?",
+      "response": "A leap year is a calendar year that contains an additional day compared to a common year. The 366th day is added to keep the calendar year synchronised with the astronomical year or seasonal year. Since astronomical events and seasons don't repeat in a whole number of days, calendars that have a constant number of days each year will unavoidably drift over time with respect to the seasons. By inserting an additional day -- a leap day -- or an additional month -- a leap month -- into some years but not others, the drift between a civilisation's dating system and the physical properties of the Solar System can be avoided.",
+      "score": 4,
+      "issue": "The response is cut off mid-sentence and does not explain the specific 'every four years' logic requested in the query.",
+      "time": 0.8
+    }
+  ]
+}

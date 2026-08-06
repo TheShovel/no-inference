@@ -287,8 +287,23 @@ def _load_wiki_cache():
         if _WIKI_CACHE_FILE.exists():
             import json as _json
             data = _json.loads(_WIKI_CACHE_FILE.read_text())
-            _WIKI_CACHE.update(data.get('summary', {}))
-            _WIKI_FULL_CACHE.update(data.get('full', {}))
+
+            def _clean(entries):
+                # Drop stale/malformed entries: the cached text must be a
+                # non-trivial string (a few bogus entries were written by
+                # older buggy versions and poisoned fresh processes).
+                out = {}
+                for k, v in entries.items():
+                    try:
+                        text, url = v if isinstance(v, (list, tuple)) and len(v) == 2 else (None, None)
+                        if isinstance(text, str) and len(text) > 40 and isinstance(url, str):
+                            out[k] = (text, url)
+                    except Exception:
+                        continue
+                return out
+
+            _WIKI_CACHE.update(_clean(data.get('summary', {})))
+            _WIKI_FULL_CACHE.update(_clean(data.get('full', {})))
     except Exception:
         pass
 
@@ -1375,6 +1390,29 @@ def _extract_search_topic(query):
     if diff_match:
         q = diff_match.group(1).strip()
 
+    # "what year was X released/founded/invented" — the subject (not the
+    # year) is the search topic: "what year was the first iphone released?"
+    # -> "first iphone". The prior patterns never matched "year" questions
+    # and the fallback extractor returned the trailing verb ("released").
+    year_match = re.search(r'^(?:in\s+)?what\s+year\s+(?:was|were|did|is|are|has|have)\s+(.+?)(?:\?|$)', q)
+    if year_match:
+        year_topic = year_match.group(1).strip().rstrip('.!?,;: ')
+        # strip trailing tense/verb: "was the first iphone released" ->
+        # "the first iphone"; "did world war 2 end" -> "world war 2"
+        year_topic = re.sub(r'\s+(?:released|released\?|founded|invented|created|built|established|started|ended|began|born|died|happened|published|launched|introduced|written|made|discovered)\??$', '', year_topic)
+        year_topic = re.sub(r'^(?:the|a|an)\s+', '', year_topic).strip()
+        if len(year_topic) > 2:
+            return _clean_topic(year_topic)
+
+    # "what is the chemical formula of/for X" / "chemical formula for X" —
+    # the substance is the topic (searching "chemical formula" alone hits
+    # the generic "Formula" article).
+    formula_match = re.search(r'chemical\s+formula\s+(?:of|for|is)?\s*(?:the\s+)?([a-z][a-z\s-]+?)\??$', q)
+    if formula_match:
+        substance = formula_match.group(1).strip().rstrip('.!?,;: ')
+        if len(substance) > 2:
+            return _clean_topic(substance)
+
     patterns = [
         r'^(?:what|who|which)\'?s\s+(?:a\s|an\s|the\s|this\s|that\s)?(.+?)\??$',
         r'^(?:what|who|which)\s+(?:is|are|was|were|does|do|did|would|could|should|might|may|will|shall|causes?|makes?|creates?|produces?)\s+(?:a\s|an\s|the\s|this\s|that\s)?(.+?)\??$',
@@ -1394,7 +1432,7 @@ def _extract_search_topic(query):
     for pat in patterns:
         m = re.search(pat, q)
         if m:
-            topic = m.group(m.lastindex).strip().rstrip('.!?,;: ')
+            topic = m.group(m.lastindex or 1).strip().rstrip('.!?,;: ')
             if len(topic) > 2:
                 topic = _clean_topic(topic)
                 return topic
@@ -1621,6 +1659,12 @@ def _retrieve_multi_content(query: str, max_sources: int = 3) -> str:
 def _resolve_topic(query, conversation_history):
     """Resolve a query's topic, using conversation history for context-dependent queries."""
     topic = _extract_search_topic(query)
+    if topic:
+        # "explain docker to me" must yield "docker", not "docker to me"
+        topic = re.sub(r'\s+(?:to|for)\s+me(?:,\s*please|\.)?\??$', '', topic).strip()
+        topic = re.sub(r'\s+please\??$', '', topic).strip()
+        if len(topic) < 2:
+            topic = None
 
     is_vague = (not topic or topic.lower() in (
         'that', 'it', 'this', 'them', 'those', 'these', 'they', 'he', 'she',
@@ -1665,6 +1709,31 @@ def _pronoun_has_antecedent_in_sentence(query: str) -> bool:
     # Check for "it" with a preceding noun phrase (e.g., "a human body if it fell")
     if re.search(r'\b(a|an|the)\s+\w+(?:\s+\w+)*\s+(?:if|when|where|that|which)\s+it\b', q):
         return True
+    # Check for "it" with a following noun phrase in a conditional/time clause
+    # (e.g., "if a train travels 60 mph, how far does it go" — "it" refers to
+    # the train introduced by the clause; "when a file is open, why is it locked")
+    if re.search(r'\b(?:if|when|while|after|before|since|because|unless|once)\s+(?:a|an|the|some|any|each|every|this|that|my|your|his|her|its|our|their)\s+\w+(?:\s+\w+){0,5}\s+(?:is|are|was|were|do|does|did|can|could|would|should|has|have|had|travels?|moves?|runs?|goes?|starts?|opens?|closes?|takes?|makes?|gets?|has)\b[\w\s,;:\-\d.%]*\s+it\b', q):
+        return True
+    # Generic in-sentence antecedent: if a concrete noun phrase (determiner +
+    # noun, or a plural noun) appears anywhere BEFORE "it/them/they/these/those"
+    # in the same sentence, the pronoun is resolved in-query. This catches
+    # "the code is slow, how do i fix it" and "a train travels..., how far does
+    # it go" while leaving "how does it work" (no noun before "it") untouched.
+    _PRO_NORM = re.sub(r'\b(?:why|what|when|where|how)\s+(?:is|are|was|were)\s+it\s+(?:that\b)', 'it ', q)
+    _it_idx = None
+    for _w in (' it ', ' them ', ' they ', ' these ', ' those '):
+        _idx = _PRO_NORM.find(_w)
+        if _idx != -1 and (_it_idx is None or _idx < _it_idx):
+            _it_idx = _idx
+    if _it_idx is not None and _it_idx > 0:
+        _before = _PRO_NORM[:_it_idx].strip()
+        # noun phrase via determiner: "a train", "the code", "my list"
+        if re.search(r'\b(?:a|an|the|this|that|these|those|my|your|his|her|its|our|their|some|any|each|every|both|several|many|most|all|no)\s+[a-z][a-z-]{2,}\b', _before):
+            return True
+        # plural noun before the pronoun ("people... they", "status codes... they")
+        if re.search(r'\b[a-z]{3,}s\s+(?:are|were|do|did|have|had|can|could|will|would)\b[\w\s]*\b(?:them|they)\b', q) \
+           and re.search(r'\b(?:people|scientists|developers|users|students|codes?|files?|threads?|processes?|functions?|methods?|classes?|objects?|values?|items?|results?|errors?|warnings?|messages?|events?|things?)\b', _before):
+            return True
     # Check for "they/them" with a preceding plural noun (e.g., "people... they see")
     if re.search(r'\b(?:people|scientists|researchers|humans|humans?|animals|creatures)\s+.*?\s+they\b', q):
         return True
@@ -1730,6 +1799,17 @@ def _query_is_context_dependent(query):
     """Check if a query primarily refers to prior conversation context."""
     q = query.lower().strip()
     if not q:
+        return False
+
+    # Queries that embed code are self-contained — the code is the subject
+    # ("what does this do in python: [x*2 for x in range(5)]"). Brackets,
+    # backticks, operators, or a language name followed by an expression make
+    # the query concrete; a referential pronoun like "this" then points at
+    # the snippet, not at prior context.
+    if re.search(r'[\[\]{}]|`[^`]+`|=>|::|\b(?:def|function|class|import|'
+                 r'return|const|let|var)\s+\w+|\b(?:python|javascript|js|'
+                 r'java|c\+\+|go|rust|sql|bash)\b[^?]{0,20}[=()[\]\s]',
+                 query):
         return False
 
     # "why is it called X" / "why is X called Y" — etymology/name questions
@@ -1915,7 +1995,59 @@ def _query_is_context_dependent(query):
             content_words = [w for w in words[1:] if w not in stop]
             # If the query has very few content words (< 4), it's likely context-dependent
             # E.g., "Who were the key pioneers?" -> content words: [key, pioneers] = 2
-            if len(content_words) <= 3:
+            #
+            # BUT: if the remaining words include a concrete noun candidate
+            # (a word that can name a topic of its own), the question is
+            # self-contained even when short: "why is my code slow?" names
+            # "code", "how do trains work?" names "trains", "what is a
+            # deadlock?" names "deadlock". Only treat as context-dependent
+            # when every content word is a vague modifier or verb ("why is it
+            # bad", "what about that").
+            _GENERIC_WORDS = {
+                'good', 'bad', 'better', 'worse', 'best', 'worst', 'slow',
+                'fast', 'quick', 'easy', 'hard', 'difficult', 'simple',
+                'important', 'popular', 'useful', 'fun', 'cool', 'nice',
+                'weird', 'strange', 'interesting', 'boring', 'wrong', 'right',
+                'true', 'false', 'big', 'small', 'large', 'tiny', 'new',
+                'old', 'bigger', 'smaller', 'larger', 'faster', 'slower',
+                'harder', 'easier', 'common', 'rare', 'normal', 'special',
+                'different', 'same', 'similar', 'much', 'many', 'enough',
+                'something', 'anything', 'nothing', 'everything', 'thing',
+                'stuff', 'way', 'ways', 'work', 'works', 'working', 'happen',
+                'happens', 'mean', 'means', 'exist', 'exists', 'made',
+                'doing', 'get', 'got', 'gets', 'make', 'makes', 'use', 'uses',
+                'need', 'needs', 'want', 'wants', 'see', 'look', 'feel',
+                'feels', 'say', 'says', 'do', 'does', 'did', 'have', 'has',
+                # modifiers
+                'key', 'main', 'major', 'various', 'different', 'other',
+                'such', 'certain', 'particular', 'specific', 'most', 'some',
+                'few', 'several', 'all', 'any', 'every', 'biggest', 'smallest',
+                'best', 'worst', 'first', 'last', 'next', 'previous',
+                # category words (a category needs a subject to belong to:
+                # "key pioneers" after discussing jazz means jazz pioneers)
+                'pioneers', 'pioneer', 'leaders', 'leader', 'members',
+                'member', 'characters', 'character', 'figures', 'figure',
+                'instruments', 'instrument', 'features', 'feature', 'reasons',
+                'reason', 'causes', 'cause', 'examples', 'example', 'founders',
+                'founder', 'inventors', 'inventor', 'artists', 'artist',
+                'scientists', 'scientist', 'players', 'player', 'teams',
+                'team', 'cities', 'city', 'countries', 'country', 'wars',
+                'war', 'battles', 'battle', 'events', 'event', 'effects',
+                'effect', 'benefits', 'benefit', 'risks', 'risk', 'types',
+                'type', 'kinds', 'kind', 'rules', 'rule', 'strategies',
+                'strategy', 'techniques', 'technique', 'methods', 'method',
+                'styles', 'style', 'forms', 'form', 'genres', 'genre',
+                'eras', 'era', 'periods', 'period', 'phases', 'phase',
+                'stages', 'stage', 'uses', 'usage', 'applications',
+                'application', 'aspects', 'aspect', 'parts', 'part',
+                'groups', 'group', 'schools', 'school', 'writers', 'writer',
+                'composers', 'composer', 'directors', 'director', 'actors',
+                'actor', 'books', 'book', 'novels', 'novel', 'films', 'film',
+                'songs', 'song', 'albums', 'album', 'works', 'work',
+            }
+            if len(content_words) <= 3 and not any(
+                    w.rstrip('.,;:!?').lower() not in _GENERIC_WORDS and len(w) > 3
+                    for w in content_words):
                 return True
 
     # Long queries (>30 chars) with enough content words are self-contained
@@ -1994,6 +2126,74 @@ def _query_is_context_dependent(query):
     return has_pronoun or has_signal or is_expansion
 
 
+def _sig_stem(w):
+    """Reduce a word to a comparable form ('tigers' -> 'tiger', 'lions' -> 'lion')."""
+    w = w.rstrip('s')
+    if w.endswith('ie') and len(w) > 4:
+        return w[:-2] + 'y'
+    if w.endswith('ies') and len(w) > 5:
+        return w[:-3] + 'y'
+    if w.endswith('es') and len(w) > 4 and w not in ('does', 'goes', 'was', 'has'):
+        return w[:-2]
+    return w
+
+
+def _select_wiki_title(search_results, topic):
+    """Pick the Wikipedia search result whose title relates to the topic.
+
+    Text search can return a generic page ("Formula" for "chemical formula
+    for water", "Year" for "what year was the first iphone released") as the
+    top hit. This scores the top results and skips titles with no real
+    connection to the asked-about subject. Returns a title or None.
+    """
+    topic_clean = topic.strip().rstrip('?!.')
+    sig_words = {_sig_stem(w) for w in re.findall(r'\b[a-z]{4,}\b', topic_clean.lower())}
+    sig_words -= {'what', 'why', 'how', 'when', 'where', 'which', 'does',
+                  'about', 'that', 'this', 'with', 'from', 'have', 'been',
+                  'were', 'their', 'them', 'there', 'your', 'tell', 'the',
+                  'best', 'way', 'ways', 'first', 'last', 'make', 'made',
+                  'used', 'using', 'use', 'released', 'release', 'called',
+                  'released?', 'want', 'need', 'get', 'know', 'like', 'look',
+                  'compare', 'comparing', 'comparison', 'differ', 'difference',
+                  'different', 'similar', 'between', 'versus', 'both'}
+    for _res in search_results:
+        _title = _res.get('title', '')
+        _title_lower = _title.lower()
+        # exact (case-insensitive) title match is always accepted
+        if _title_lower == topic_clean.lower() or _title_lower == topic_clean.lower().rstrip('s'):
+            return _title
+        if not sig_words:
+            return _title
+        _title_words = {_sig_stem(w) for w in re.findall(r'\b[a-z]{4,}\b', _title_lower)}
+        _title_words -= {'and', 'the', 'of', 'in', 'on', 'for', 'with',
+                         'disambiguation', 'list', 'from', 'about'}
+        if _title_words & sig_words:
+            return _title
+    return None
+
+
+def _looks_like_bare_topic(query: str) -> bool:
+    """True when the string is a bare noun phrase / page title (e.g. a topic
+    passed from another function), not a full sentence.
+
+    Bare topics must be searched verbatim — running them through
+    _resolve_topic can mangle exact titles like 'IPhone (1st generation)'
+    into unrelated words ('generation').
+    """
+    q = query.strip()
+    if not q or '(' in q or ')' in q:
+        return True
+    words = q.split()
+    first = words[0].rstrip('.,;:!?').lower()
+    if first in ('who', 'what', 'when', 'where', 'how', 'why', 'which', 'whose',
+                 'is', 'are', 'was', 'were', 'do', 'does', 'did', 'can', 'could',
+                 'would', 'should', 'will', 'shall', 'may', 'might', 'tell',
+                 'show', 'explain', 'describe', 'define', 'compare', 'why', 'i',
+                 'you', 'we', 'they', 'he', 'she', 'it'):
+        return False
+    return len(words) <= 6
+
+
 def _search_wikipedia(query):
     """Search Wikipedia for a query and return a summary.
 
@@ -2002,7 +2202,7 @@ def _search_wikipedia(query):
     Uses conversation history to resolve pronouns in context-dependent queries.
     """
     # Try to extract a clean topic, resolving pronouns from context
-    topic = _resolve_topic(query, conversation_history)
+    topic = _resolve_topic(query, conversation_history) if not _looks_like_bare_topic(query) else query
     if not topic or len(topic) < 3:
         topic = query.strip()[:100]
 
@@ -2019,7 +2219,7 @@ def _search_wikipedia(query):
             'https://en.wikipedia.org/w/api.php?'
             'action=query&list=search&srwhat=text'
             '&srsearch=' + urllib.parse.quote(topic) +
-            '&srlimit=1&format=json'
+            '&srlimit=8&format=json'
         )
         req = urllib.request.Request(search_url, headers={
             'User-Agent': 'COS/1.0 (conversational AI; no-inference)'
@@ -2031,8 +2231,11 @@ def _search_wikipedia(query):
         if not search_results:
             return None, None
 
-        # Pick the best result: prefer exact title match, otherwise use first
-        page_title = search_results[0]['title']
+        page_title = _select_wiki_title(search_results, topic)
+        if not page_title:
+            # No result is related to the asked-about subject — do not return
+            # an unrelated article as if it were an answer.
+            return None, None
         page_url = f'https://en.wikipedia.org/wiki/{urllib.parse.quote(page_title.replace(" ", "_"))}'
 
         # Step 2: Get the page summary
@@ -2063,7 +2266,12 @@ def _search_wikipedia(query):
         # For essays and rich content, use the full extract (up to 6000 chars)
         if len(extract) > 6000:
             # Find the last sentence boundary before 6000 chars
-            trunc = extract[:extract.rfind('. ', 0, 6000) + 1] if '. ' in extract[:6000] else extract[:6000]
+            if '. ' in extract[:6000]:
+                trunc = extract[:extract.rfind('. ', 0, 6000) + 1]
+            else:
+                # No sentence boundary — cut at a word boundary instead of
+                # mid-word ("History S..." type garbage)
+                trunc = extract[:extract.rfind(' ', 0, 6000)]
             trunc = re.sub(r'\b\w+$', '', trunc).rstrip(',;: ') + '.'
             extract = trunc
 
@@ -2098,7 +2306,7 @@ def _search_wikipedia_full(query):
     the MediaWiki API extracts prop to fetch the full article body as plain text.
     Returns (full_text, source_url) or (None, None) on failure.
     """
-    topic = _resolve_topic(query, conversation_history)
+    topic = _resolve_topic(query, conversation_history) if not _looks_like_bare_topic(query) else query
     if not topic or len(topic) < 3:
         topic = query.strip()[:100]
 
@@ -2114,7 +2322,7 @@ def _search_wikipedia_full(query):
             'https://en.wikipedia.org/w/api.php?'
             'action=query&list=search&srwhat=text'
             '&srsearch=' + urllib.parse.quote(topic) +
-            '&srlimit=1&format=json'
+            '&srlimit=8&format=json'
         )
         req = urllib.request.Request(search_url, headers={
             'User-Agent': 'COS/1.0 (conversational AI; no-inference)'
@@ -2126,7 +2334,9 @@ def _search_wikipedia_full(query):
         if not search_results:
             return None, None
 
-        page_title = search_results[0]['title']
+        page_title = _select_wiki_title(search_results, topic)
+        if not page_title:
+            return None, None
         page_url = f'https://en.wikipedia.org/wiki/{urllib.parse.quote(page_title.replace(" ", "_"))}'
 
         # Step 2: Fetch the full article extract via the MediaWiki API
@@ -2232,7 +2442,12 @@ def _extract_math_expression(text):
     for pat in patterns:
         m = re.search(pat, t)
         if m:
-            return m.group(1).strip()
+            expr = m.group(1).strip()
+            # A bare number ("solve 2x - 4 = 8" extracts "2" before hitting the
+            # 'x') is not an expression — require at least one operator so we
+            # don't answer "2" for an equation about x.
+            if re.search(r'[\+\-\*/^]', expr):
+                return expr
     return None
 
 
@@ -2604,6 +2819,129 @@ def process_query(query, use_cos=True):
             response = text_metrics(_unit, _m_content)
             conversation_history.append((q_clean, response))
             return response
+        # Fill-in / completion requests: the user pastes a function with an
+        # empty body (a `...` marker, a bare `pass`, or empty `{ }`) and asks
+        # to complete it. This is the chat-facing side of the editor harness
+        # (cos.code_editor.complete_buffer). Runs before code transformations
+        # so "complete this function: def add(a, b):\n    ..." isn't treated
+        # as a transform request.
+        try:
+            from cos.code_editor import detect_fill_request, fill_in
+            if detect_fill_request(q_clean):
+                response = fill_in(q_clean)
+                conversation_history.append((q_clean, response))
+                return response
+            # "complete the last code" with nothing to complete: say so
+            # instead of letting the words fall into a generic lookup.
+            if re.search(r'^\s*(?:please\s+)?(?:complete|fill\s*in|finish)'
+                         r'\s+(?:the\s+)?(?:last|previous)\s+(?:code|function'
+                         r'|script)\b', q_clean, re.IGNORECASE):
+                try:
+                    from cos.code_editor import _last_edit_with_marker
+                    if _last_edit_with_marker() is None:
+                        response = ("I don't have any previous code with an empty "
+                                    "body to complete. Paste a function with a "
+                                    "`...` marker (or a bare `pass`) and I'll fill "
+                                    "in its body.")
+                        conversation_history.append((q_clean, response))
+                        return response
+                except Exception:
+                    pass
+        except Exception:
+            pass
+        # Code transformations on pasted code: "add error handling to this
+        # code: ...", "convert this code from python to javascript: ...",
+        # "rename x to y in this code: ...", "add comments to this code: ...",
+        # "explain this code: ...", "make this code faster: ...".
+        try:
+            from cos.code_transformer import (detect_code_transform,
+                                               transform_code)
+            _ct = detect_code_transform(q_clean)
+            # Follow-ups that reference the last code edit without pasting it
+            # again: "add comments to the last code", "convert it to
+            # javascript", "make the last code faster".
+            if not _ct and get_last_edit_kind() == 'code' and get_last_edit_content():
+                _ct = detect_code_transform(q_clean + ':\n' + get_last_edit_content())
+            if _ct:
+                _op, _params, _code, _lang = _ct
+                _edited, _notes = transform_code(_op, _params, _code, _lang)
+                set_last_edit('code', _edited)
+                if _op == 'explain':
+                    # explanations are prose, not code — don't wrap in a fence
+                    response = (_edited + "\n\n_" +
+                                " ".join(_notes) + "_") if _notes else _edited
+                else:
+                    response = ("Here's your code with these changes:\n\n"
+                                f"```{_lang}\n{_edited}\n```\n\n"
+                                "Changes made:\n- " + "\n- ".join(_notes))
+                conversation_history.append((q_clean, response))
+                return response
+        except Exception:
+            pass
+        # "summarize this text: ..." / "summarize the last text" —
+        # extractive summary of inline or previously edited content. Only
+        # inline content counts when it follows a colon or an explicit
+        # "this text" marker, so "summarize the odyssey" still goes to the
+        # knowledge base.
+        _sum = None
+        _m1 = re.match(
+            r'^(?:please\s+)?(?:summarize|summarise)\s*(?:this\s+text|'
+            r'the\s+text|the\s+following|it|that)?\s*:\s*(.+)$',
+            q_clean, re.IGNORECASE | re.DOTALL)
+        _m2 = re.match(
+            r'^(?:give\s+me\s+(?:a\s+)?summary\s+of|summarize)\s+'
+            r'(?:this\s+text|the\s+text|the\s+following)\s*:\s*(.+)$',
+            q_clean, re.IGNORECASE | re.DOTALL)
+        _m3 = re.match(
+            r'^(?:please\s+)?(?:summarize|summarise|give\s+me\s+(?:a\s+)?'
+            r'summary\s+of)\s+(?:this|the|that|it|last\s+text)\s*$',
+            q_clean, re.IGNORECASE)
+        if _m1:
+            _sum = _m1.group(1).strip()
+        elif _m2:
+            _sum = _m2.group(1).strip()
+        elif _m3:
+            _sum = get_last_edit_content()
+        if _sum and len(_sum) >= 12:
+            from cos.text_editor import summarize_text
+            _summary, _snotes = summarize_text(_sum)
+            set_last_edit('text', _summary)
+            response = (f"**Summary**\n\n{_summary}\n\n"
+                        "Changes made:\n- " + "\n- ".join(_snotes))
+            conversation_history.append((q_clean, response))
+            return response
+        # "translate this to spanish: ..." — phrasebook translation with an
+        # honest refusal when the text is outside the phrasebook.
+        from cos.text_editor import (detect_translate_request,
+                                     translate_text)
+        _tr = detect_translate_request(q_clean)
+        if _tr:
+            _tr_lang, _tr_text = _tr
+            if not _tr_text:
+                _tr_text = get_last_edit_content()
+            if _tr_text:
+                _translated, _tnotes = translate_text(_tr_text, _tr_lang)
+                if _translated:
+                    response = (f"> {_translated}\n\n"
+                                "Changes made:\n- " + "\n- ".join(_tnotes))
+                    conversation_history.append((q_clean, response))
+                    return response
+                response = "\n".join(_tnotes)
+                conversation_history.append((q_clean, response))
+                return response
+        # Iterative refinement of a previously generated artifact runs BEFORE
+        # the change-request handler: "change the accent color to green" and
+        # "add a contact form" edit the last generated website/function/script,
+        # while the change handler is for text the user pasted in the query.
+        try:
+            from cos.refine import refine_query as _refine_q
+            _refined = _refine_q(q_clean)
+            if _refined:
+                conversation_history.append((q_clean, _refined))
+                return _refined
+        except Exception as _ref_exc:
+            print('REFINE-EXC:', repr(_ref_exc))
+
         # Change/refinement requests come first: "make it shorter", "make this
         # more formal", "change hello to hi", "add a greeting" — applied to
         # inline content or the last edited content.
@@ -2657,6 +2995,37 @@ def process_query(query, use_cos=True):
     except Exception as _edit_exc:
         print('EDIT-HANDLER-EXC:', repr(_edit_exc))
 
+    # 0d. "now do the same in rust" / "do that in go" / "rewrite it in java" —
+    # repeat the previous coding task in a different language. Without this
+    # the follow-up falls into the factual handler and returns Wikipedia junk.
+    _same_lang = re.search(
+        r'\b(?:now\s+|then\s+|can\s+you\s+|please\s+)?'
+        r'(?:do|write|make|create|implement|rewrite|give)\s+'
+        r'(?:the\s+same|that|it|this|the\s+same\s+thing|that\s+again)'
+        r'(?:\s+(?:again|too))?\s+(?:in|using|with)\s+'
+        r'([a-z][a-z0-9+#.\s-]{0,20}?)[?.!]*$',
+        q_clean, re.IGNORECASE)
+    if _same_lang:
+        try:
+            from cos.code_gen import generate_code as _gc_same, \
+                detect_task as _dt_same
+            from cos.code_knowledge import detect_query_lang as _dql_same
+            _new_lang = _dql_same('in ' + _same_lang.group(1))
+            if _new_lang:
+                # find the most recent query that produced a code answer
+                for _pq, _pa in reversed(conversation_history):
+                    if not _pq or not _pa or '```' not in _pa:
+                        continue
+                    _task = _dt_same(_pq)
+                    if _task:
+                        _out = _gc_same(_pq, lang=_new_lang)
+                        if _out:
+                            conversation_history.append((q_clean, _out))
+                            return _out
+                        break
+        except Exception:
+            pass
+
     # 0c. Check for social/emotional patterns (before any KB/Wikipedia lookup)
     # Loaded from data/patterns/*.json — add new patterns there, no code changes needed
     try:
@@ -2674,6 +3043,12 @@ def process_query(query, use_cos=True):
     if _like_match:
         thing = _like_match.group(1).strip().rstrip('.!?,')
         if thing and len(thing) > 1 and len(thing) < 60:
+            # Store the fact so "what do i like?" works later in the
+            # conversation (the early return must not skip extraction).
+            try:
+                extract_and_store(q_clean)
+            except Exception:
+                pass
             response_text = f"That's nice! {thing.title()} sounds interesting. Would you like to know more about it or discuss something related?"
             conversation_history.append((q_clean, response_text))
             return response_text
@@ -2759,11 +3134,77 @@ def process_query(query, use_cos=True):
             if re.search(r'\b(?:html|web)\s+(?:page|site|portfolio|webpage|website|landing\s*page)\b', q_clean, re.IGNORECASE):
                 pass  # Let intent detection → instruction handler → template system handle it
             else:
+                # Concept questions ("what is css flexbox?", "what is a python
+                # lambda?") are better answered by the curated general KB than
+                # by the code KB's example-driven matching — the general KB has
+                # full explanations, while code_lookup can match a wrong entry
+                # on shared keywords or fall into the slow dataset search.
+                concept_answer = None
+                _kb_strong = False
+                _is_concept_q = re.search(r'\b(?:what|whats|what\'s|explain|define|describe)\b', q_clean, re.IGNORECASE) \
+                    and not re.search(r'\b(?:how|write|implement|create|make|build|fix|debug)\b', q_clean, re.IGNORECASE)
+                # "how do classes work in python?" — a conceptual "how X works"
+                # question, not a request for code. Let the curated KB try first
+                # so "classes" doesn't fuzzy-match the "dataclass" code entry.
+                _is_how_concept_q = re.search(r'\bhow\s+(?:do|does|did|would|can|is|are)\s+.*?\b(?:work|function|behave|operate)\b', q_clean, re.IGNORECASE) \
+                    and not re.search(r'\b(?:write|implement|create|make|build|fix|debug|show|give|example|snippet)\b', q_clean, re.IGNORECASE)
+                if _is_concept_q or _is_how_concept_q:
+                    # Regex (span) matching only — the fuzzy word-overlap
+                    # fallback is too loose here and lets e.g. the JS "== vs
+                    # ===" entry hijack "difference between break and continue".
+                    from cos.knowledge import find_best_match as _find_best_match
+                    _best_len, _best_answer = _find_best_match(q_clean)
+                    if _best_answer and _best_len >= 4:
+                        concept_answer = _make_conversational(_best_answer)
+                    # A strong span ("css flexbox" in "what is css flexbox?")
+                    # beats code_lookup's fuzzy matches; a weak span (bare
+                    # "javascript" in "what is the this keyword in javascript")
+                    # must not beat code_lookup's specific answer.
+                    _kb_strong = _best_len >= 4 and _best_len / max(len(q_clean), 1) >= 0.5
                 code_answer = code_lookup(q_clean)
+                if concept_answer and code_answer and not _kb_strong:
+                    concept_answer = None  # weak KB hit loses to code KB
+                if concept_answer:
+                    conversation_history.append((q_clean, concept_answer))
+                    return concept_answer
                 if code_answer:
+                    # Language-consistency safety net: if the query names a
+                    # language and the KB answer's code fence shows a different
+                    # one (e.g. "reverse a linked list in c++" matching the
+                    # Python entry), synthesize the task in the asked language.
+                    try:
+                        from cos.code_knowledge import (answer_language,
+                                                        detect_query_lang)
+                        _q_lang = detect_query_lang(q_clean)
+                        _a_lang = answer_language(code_answer)
+                        if _q_lang and _a_lang and _q_lang != _a_lang:
+                            from cos.code_gen import generate_code as _gen_code
+                            _synth = _gen_code(q_clean)
+                            if _synth:
+                                conversation_history.append((q_clean, _synth))
+                                return _synth
+                    except Exception:
+                        pass
                     conversation_history.append((q_clean, code_answer))
                     return code_answer
-                # If no KB match for coding question, try factual handler
+                # No KB match: synthesize code for the task. Code requests must
+                # never fall back to Wikipedia — for code topics it returns
+                # unrelated articles ("read a csv with pandas" -> giant panda).
+                from cos.code_knowledge import (smart_code_answer,
+                                                looks_like_code_task)
+                _synth = smart_code_answer(q_clean)
+                if _synth:
+                    conversation_history.append((q_clean, _synth))
+                    return _synth
+                if looks_like_code_task(q_clean):
+                    response = ("I don't have that exact recipe yet, but I can help you "
+                                "build it. Tell me the language and what the code should "
+                                "do — inputs, expected output, and edge cases — and I'll "
+                                "put together a complete, runnable implementation.")
+                    conversation_history.append((q_clean, response))
+                    return response
+                # Pure concept question that no KB matched (e.g. "what is X in
+                # python"): the factual handler may still find a good article.
                 try:
                     from cos.engine import _handle_factual as _hf
                     factual_response = _hf(q_clean, True)
@@ -2883,6 +3324,13 @@ def _handle_math(query):
     mtbench = _solve_mtbench_math(q)
     if mtbench:
         return mtbench
+
+    # Symbolic word-problem strategies FIRST (roots, powers, equations,
+    # geometry) — they are more specific than raw expression extraction and
+    # prevent "solve 2x - 4 = 8" from being reduced to a bare number.
+    word_answer = _solve_word_problem(q)
+    if word_answer is not None:
+        return word_answer
 
     # Fall back to expression evaluation
     expr = _extract_math_expression(q)
@@ -3029,7 +3477,7 @@ def _handle_instruction(query):
             from cos.prompt_templates import find_best_template
             template, slots = find_best_template(q)
             if template and template.response_type == 'html_page':
-                return _handle_html_page(q, slots)
+                return _handle_html_page(q, slots or {})
             # Even without matching template, generate HTML with topic from query
             topic = re.sub(r'^(?:create|make|build|design|develop)\s+(?:a|an|the)?\s*(?:complete|responsive|single-page|single file|single-file|full)?\s*(?:HTML|html)?\s*(?:and\s*CSS\s*)?(?:page|site|webpage|website|landing\s*page|portfolio)\s+(?:about|for|covering|on|for\s+a)\s+', '', q, flags=re.IGNORECASE).strip()
             topic = re.sub(r'\s+(?:with|using|that|featuring).*$', '', topic).strip()
@@ -3131,6 +3579,19 @@ def _handle_instruction(query):
             kb_answer = knowledge_lookup(q)
             if kb_answer and len(kb_answer) > 15:
                 return _make_conversational(kb_answer)
+            # Coding topics must never fall back to Wikipedia (which returns
+            # unrelated articles for code topics: "read a csv with pandas"
+            # -> giant panda). Route to the code KB + synthesizer instead.
+            try:
+                from cos.code_knowledge import (is_coding_query,
+                                                looks_like_coding_topic,
+                                                smart_code_answer)
+                if is_coding_query(q) or looks_like_coding_topic(core_topic):
+                    _code_ans = smart_code_answer(q)
+                    if _code_ans:
+                        return _code_ans
+            except Exception:
+                pass
             # Fallback: multi-source retrieval with NLG for Wikipedia content
             content = _retrieve_multi_content(core_topic, max_sources=3)
             if content and len(content) > 60:
@@ -3183,7 +3644,9 @@ def _handle_follow_up(query):
                 content = _retrieve_multi_content(prev_topic, max_sources=5)
                 if content and len(content) > 100:
                     # Only return if content is actually NEW and LONGER
-                    if content != last_content_response and len(content) > len(last_content_response) * 1.05:
+                    _prev_len = len(last_content_response or '')
+                    if (content != last_content_response
+                            and len(content) > _prev_len * 1.05):
                         clean = _make_conversational(content)
                         return f"Here is a more detailed version:\n\n{clean}"
 
@@ -3655,6 +4118,10 @@ _MULTI_POINT_PATTERNS = [
     re.compile(
         r'^how\s+(?:does|do|would|can)\s+(?P<topic1>.+?)\s+compare\s+(?:to|with|against)\s+(?P<topic2>[a-z\s-]+?)$',
         re.IGNORECASE),
+    # "explain X vs Y" / "describe X vs Y" — the verb is not part of topic1
+    re.compile(
+        r'^(?:explain|describe|define)\s+(?P<topic1>.+?)\s+(?:vs|versus)\s+(?P<topic2>[a-z\s-]+?)$',
+        re.IGNORECASE),
     # "X compared to Y" / "X vs Y" / "X versus Y"
     re.compile(
         r'^(?P<topic1>[a-z][a-z\s-]+?)\s+(?:compared\s+to|compared\s+with|vs|versus)\s+(?P<topic2>[a-z\s-]+?)$',
@@ -3702,6 +4169,10 @@ _MULTI_POINT_PATTERNS = [
     re.compile(
         r'^(?:how\s+(?:do|does|are|is)\s+|are\s+|what\s+(?:do|does)\s+)(?P<topic1>.+?)\s+and\s+(?P<topic2>[a-z\s-]+?)\s+(?:differ|different|similar|the\s+same|have\s+in\s+common)$',
         re.IGNORECASE),
+    # "how do X and Y compare" / "how does X compare with Y"
+    re.compile(
+        r'^how\s+(?:do|does|are|is)\s+(?P<topic1>.+?)\s+and\s+(?P<topic2>[a-z\s-]+?)\s+compare(?:\s+with\s+(?:each\s+other|one\s+another))?$',
+        re.IGNORECASE),
     # "whats the same about X and Y" / "what's similar about X and Y"
     re.compile(
         r'^what\'?s\s+(?:the\s+same|similar)\s+about\s+(?P<topic1>.+?)\s+and\s+(?P<topic2>[a-z\s-]+?)$',
@@ -3739,6 +4210,9 @@ def _detect_multi_point_query(query):
             continue
         t1 = m.group('topic1').strip().rstrip('?!.,;:').strip()
         t2 = m.group('topic2').strip().rstrip('?!.,;:').strip()
+        # Leading instructions ("explain X vs Y" handled above, but guard any
+        # remaining pattern) must not leak into the topic itself
+        t1 = re.sub(r'^(?:explain|describe|define|tell\s+me\s+about|what\s+is|what\'s)\s+', '', t1, flags=re.IGNORECASE)
         # Topics must be substantive (not "it and that") and not the same
         if not t1 or not t2 or len(t1) < 3 or len(t2) < 3:
             continue
@@ -3809,6 +4283,20 @@ def _handle_factual(query, use_cos):
     q = query.strip()
     # Strip quotation marks that can prevent KB matching
     q = re.sub(r'[\"\'\'\"\u201c\u201d\u2018\u2019]', '', q).strip()
+
+    # Coding task requests never go to Wikipedia: "read a csv with pandas"
+    # must not fetch the giant panda article. Route to code KB/synthesizer;
+    # concept questions ("what is a closure") fall through to normal lookup.
+    try:
+        from cos.code_knowledge import (looks_like_code_task,
+                                        looks_like_coding_topic,
+                                        smart_code_answer)
+        if looks_like_code_task(q) and looks_like_coding_topic(q):
+            _code_ans = smart_code_answer(q)
+            if _code_ans:
+                return _code_ans
+    except Exception:
+        pass
 
     # For context-dependent queries, resolve topic from conversation history
     search_query = q
@@ -4246,6 +4734,16 @@ def _handle_fallback(query, use_cos, intent, skip_retrieval=False):
     """
     q = query.strip()
 
+    # Coding topics never go to Wikipedia from the fallback either.
+    try:
+        from cos.code_knowledge import looks_like_coding_topic, smart_code_answer
+        if looks_like_coding_topic(q):
+            _code_ans = smart_code_answer(q)
+            if _code_ans:
+                return _code_ans
+    except Exception:
+        pass
+
     if not skip_retrieval:
         # Try Wikipedia search with NLG pipeline (skip instruction templates
         # which produce template artifacts that score poorly)
@@ -4265,6 +4763,18 @@ def _handle_fallback(query, use_cos, intent, skip_retrieval=False):
             pass
 
     # Final natural fallback (no templates at all)
+    try:
+        from cos.code_knowledge import looks_like_coding_topic
+        if looks_like_coding_topic(q):
+            return ("I don't have a ready-made answer for that yet. For coding "
+                    "questions, the most useful thing you can give me is the "
+                    "language plus what the code should do — inputs, expected "
+                    "output, and edge cases. I cover the common patterns with "
+                    "full code: algorithms (sorting, search, recursion), regex, "
+                    "file/CSV/JSON handling, HTTP requests, SQL, git, and the "
+                    "basics of Python, JavaScript, Java, C++, Go, and Rust.")
+    except Exception:
+        pass
     try:
         from cos.nlg.config import NLGConfig
         from cos.nlg.fallback import fallback_response
