@@ -2741,6 +2741,14 @@ def process_query(query, use_cos=True):
     """
     global current_roleplay
 
+    # Bound memory in long-running processes: keep only the most recent
+    # turns so multi-turn follow-ups work but history never grows unbounded.
+    try:
+        from cos.state import trim_conversation
+        trim_conversation()
+    except Exception:
+        pass
+
     q_clean = query.strip()
     if not q_clean:
         return ""

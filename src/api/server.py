@@ -178,11 +178,15 @@ def _cleanup_expired():
 
 
 def _load_kb_size():
-    """Count KB entries for status."""
+    """Count KB entries for status without loading the full compiled KB.
+
+    Loading the 45k compiled patterns costs ~120 MB; a cheap JSON parse
+    gives the same count for the status line.
+    """
     global _KB_SIZE
     try:
-        from cos.knowledge import get_all_knowledge
-        _KB_SIZE = len(get_all_knowledge())
+        from cos.knowledge import count_knowledge_entries
+        _KB_SIZE = count_knowledge_entries()
     except Exception:
         _KB_SIZE = 0
 

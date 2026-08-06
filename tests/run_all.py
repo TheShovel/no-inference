@@ -25,6 +25,7 @@ SUITES = [
     ('workbench recipes', 'test_workbench_recipes.py'),
     ('tui + launcher', 'test_tui.py'),
     ('iterative refine', 'test_refine.py'),
+    ('load-on-demand memory', 'test_memory.py'),
     ('freeform discovered', 'test_freeform_discovered.py'),
 ]
 

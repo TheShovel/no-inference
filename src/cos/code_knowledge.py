@@ -955,5 +955,6 @@ def smart_code_answer(query: str) -> "str | None":
     return concept_lookup(query)
 
 
-# Pre-load coding knowledge at import time
-_ = _load_coding_knowledge()
+# The coding KB is loaded lazily on the first code query (via
+# _load_coding_knowledge inside code_lookup) rather than at import time,
+# so plain chat processes never pay for it.

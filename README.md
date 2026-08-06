@@ -302,12 +302,12 @@ blocks are never turned into files.
 
 | Metric            | Score (out of 10) |
 |-------------------|-------------------|
-| Naturalness       | 8.0               |
-| Informativeness   | 8.4               |
-| Coherence         | 9.1               |
-| Correctness       | 9.9               |
-| Conciseness       | 9.7               |
-| Overall           | 9.0               |
+| Naturalness       | 8.6               |
+| Informativeness   | 8.3               |
+| Coherence         | 9.5               |
+| Correctness       | 10.0              |
+| Conciseness       | 9.9               |
+| Overall           | 9.2               |
 
 Run it yourself: `python3 -m src.benchmark.llm_eval` (requires Ollama with
 `gemma4:31b-cloud`; results land in `data/eval_results.json`).

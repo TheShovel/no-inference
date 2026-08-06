@@ -21,6 +21,8 @@ import json
 import os
 import re
 import glob
+import time
+from array import array
 from pathlib import Path
 
 # ── Knowledge directory ──────────────────────────────────────────────────────
@@ -40,10 +42,12 @@ def _load_knowledge(base_dir=None):
     Returns:
         List of (pattern_regex, answer_text) tuples
     """
-    global _WORD_INDEX, _RAW_ENTRY_INDICES, _ENTRY_WORDS
+    global _WORD_INDEX, _RAW_ENTRY_INDICES, _ENTRY_WORDS, _CATEGORY_INDEX
     _WORD_INDEX = {}
     _RAW_ENTRY_INDICES = set()
     _ENTRY_WORDS = []
+    _CATEGORY_INDEX = {}
+    _REGEX_CACHE.clear()
 
     if base_dir is None:
         base_dir = _KNOWLEDGE_DIR
@@ -102,7 +106,11 @@ def _load_knowledge(base_dir=None):
             if isinstance(questions, str):
                 questions = [questions]
 
-            # Compile patterns into regexes (case-insensitive)
+            # Build the final pattern string (escaped or raw) but do NOT keep
+            # the compiled regex: patterns compile lazily on first lookup, so
+            # the ~27 MB of compiled regex objects is only paid for the handful
+            # of patterns a process actually queries. The one-time validation
+            # compile below skips broken patterns exactly as before.
             for q_text in questions:
                 q_clean = q_text.strip()
                 if not q_clean:
@@ -115,30 +123,35 @@ def _load_knowledge(base_dir=None):
                     # becoming a quantifier, or '?' in questions becoming optional).
                     has_regex_backslash = '\\' in q_clean
                     if has_regex_backslash:
-                        # Contains intentional regex escapes — use as-is
-                        regex = re.compile(q_clean, re.IGNORECASE)
+                        pattern_str = q_clean
                     else:
-                        # Escape the pattern so 'c++' matches literally 'c++',
-                        # and 'What is X?' matches 'What is X?' literally.
-                        # Use word boundary for single short words.
                         words = q_clean.split()
                         if len(words) == 1 and len(q_clean) <= 5:
-                            regex = re.compile(r'\b' + re.escape(q_clean) + r'\b', re.IGNORECASE)
+                            pattern_str = r'\b' + re.escape(q_clean) + r'\b'
                         else:
-                            regex = re.compile(re.escape(q_clean), re.IGNORECASE)
-                    entries.append((regex, answer))
+                            pattern_str = re.escape(q_clean)
+                    re.compile(pattern_str, re.IGNORECASE)  # validate, then discard
+                    entries.append((pattern_str, answer))
                     loaded += 1
-                    # Index the entry by its significant words so lookup() can
-                    # skip patterns whose words cannot appear in the query.
                     idx = len(entries) - 1
                     if has_regex_backslash:
                         _RAW_ENTRY_INDICES.add(idx)
                         _ENTRY_WORDS.append(None)
                     else:
-                        _entry_words = _word_tokens(q_clean)
+                        # Cheap per-entry words: a tuple of interned word
+                        # strings (a frozenset per entry cost ~25 MB). The
+                        # words are shared with the _WORD_INDEX keys.
+                        _entry_words = tuple(sorted(_word_tokens(q_clean)))
                         _ENTRY_WORDS.append(_entry_words)
+                        # Word index as array('I') of entry indices (sorted,
+                        # deduped by construction) instead of set[int]: ~6x
+                        # smaller.
                         for _w in _entry_words:
-                            _WORD_INDEX.setdefault(_w, set()).add(idx)
+                            _arr = _WORD_INDEX.get(_w)
+                            if _arr is None:
+                                _WORD_INDEX[_w] = array('I', [idx])
+                            elif _arr[-1] != idx:
+                                _arr.append(idx)
                 except re.error as e:
                     print(f'  Warning: Bad pattern "{q_clean}": {e}')
                     continue
@@ -161,21 +174,42 @@ def _load_knowledge(base_dir=None):
 # ── Load knowledge at module import time ─────────────────────────────────────
 _KNOWLEDGE_CACHE = None
 
-# Word index for fast lookup: significant word (lowercase) -> set of entry
+# Word index for fast lookup: significant word (lowercase) -> array of entry
 # indices into _KNOWLEDGE_CACHE. Built during _load_knowledge so lookup()
 # only scans candidate entries instead of all 40k+ patterns on every query.
 # The index is SOUND: an escaped-literal pattern can only match text that
 # contains every one of its words, so patterns whose words are missing from
-# the query can never match it and are safely skipped.
+# the query can never match it and are safely skipped. Values are sorted,
+# deduped array('I') instead of set[int] to keep the index ~6x smaller.
 _WORD_INDEX = {}
 # Entry indices whose pattern is a raw regex (contains backslash escapes);
 # these cannot be word-indexed and are always considered candidates.
 _RAW_ENTRY_INDICES = set()
-# Parallel to _KNOWLEDGE_CACHE: frozenset of word tokens for each entry, or
+# Parallel to _KNOWLEDGE_CACHE: tuple of word tokens for each entry, or
 # None for raw-regex entries (never filtered).
 _ENTRY_WORDS = []
 
 _WORD_TOKEN_RE = re.compile(r'[a-z0-9]+')
+
+# Patterns compile lazily on first lookup (never all 45k at load time) and
+# the cache is bounded, so a process only holds compiled regexes for the
+# patterns it actually queries.
+_REGEX_CACHE = {}
+_REGEX_CACHE_MAX = 2000
+
+
+def _get_regex(pattern_str):
+    """Compile a pattern on demand (cached, bounded); None on bad patterns."""
+    rx = _REGEX_CACHE.get(pattern_str)
+    if rx is None:
+        if len(_REGEX_CACHE) >= _REGEX_CACHE_MAX:
+            _REGEX_CACHE.clear()
+        try:
+            rx = re.compile(pattern_str, re.IGNORECASE)
+        except re.error:
+            return None
+        _REGEX_CACHE[pattern_str] = rx
+    return rx
 
 
 def _word_tokens(text):
@@ -294,13 +328,110 @@ def get_category_members(category):
 
 
 def get_all_knowledge():
-    """Get all loaded knowledge entries, caching after first load."""
-    global _KNOWLEDGE_CACHE
+    """Get all loaded knowledge entries, caching after first load.
+
+    Loads on demand (the 45k compiled patterns cost ~120 MB, so they are
+    never loaded just for counting) and auto-unloads after an idle period
+    (default 5 minutes, tune with ``COS_KB_TTL`` seconds) so long-running
+    processes like the API server don't hold the memory forever.
+    """
+    global _KNOWLEDGE_CACHE, _KNOWLEDGE_LOADED_AT
+    _maybe_unload_knowledge()
     if _KNOWLEDGE_CACHE is None:
         _KNOWLEDGE_CACHE = _load_knowledge()
+        _KNOWLEDGE_LOADED_AT = time.monotonic()
         if _KNOWLEDGE_CACHE and os.environ.get('COS_VERBOSE'):
             print(f"  Loaded {len(_KNOWLEDGE_CACHE)} knowledge entries from data/knowledge/")
     return _KNOWLEDGE_CACHE
+
+
+# Knowledge cache unload policy: long-running processes (the API server)
+# load the full compiled KB on first query and drop it again after an idle
+# period, so steady-state memory stays low between conversations.
+_KNOWLEDGE_LOADED_AT = 0.0
+_KB_TTL = float(os.environ.get('COS_KB_TTL', '300'))  # idle seconds before unload
+
+
+def _maybe_unload_knowledge():
+    """Drop the cached KB (and its indexes) when it has been idle too long.
+
+    The next lookup reloads it on demand, so behavior is unchanged; only
+    the memory held between bursts of queries is reclaimed.
+    """
+    global _KNOWLEDGE_CACHE, _WORD_INDEX, _RAW_ENTRY_INDICES, _ENTRY_WORDS, _CATEGORY_INDEX
+    if _KNOWLEDGE_CACHE is None or _KB_TTL <= 0:
+        return
+    if time.monotonic() - _KNOWLEDGE_LOADED_AT > _KB_TTL:
+        _KNOWLEDGE_CACHE = None
+        _WORD_INDEX = {}
+        _RAW_ENTRY_INDICES = set()
+        _ENTRY_WORDS = []
+        _CATEGORY_INDEX = {}
+        _REGEX_CACHE.clear()
+        _trim_os_heap()
+        if os.environ.get('COS_VERBOSE'):
+            print('  Knowledge cache unloaded (idle)')
+
+
+def _trim_os_heap():
+    """Best-effort: ask glibc to return freed arenas to the OS.
+
+    CPython keeps its own small-object arenas (reusable, not leaked), but
+    large allocations like the KB's arrays and strings go through glibc
+    malloc; malloc_trim hands those back. Guarded and POSIX-only.
+    """
+    if os.name != 'posix':
+        return
+    try:
+        import ctypes
+        libc = ctypes.CDLL('libc.so.6')
+        libc.malloc_trim(0)
+    except Exception:
+        pass
+
+
+def release_knowledge():
+    """Explicitly drop the loaded KB from memory (reloads on next lookup)."""
+    global _KNOWLEDGE_CACHE, _WORD_INDEX, _RAW_ENTRY_INDICES, _ENTRY_WORDS, _CATEGORY_INDEX
+    _KNOWLEDGE_CACHE = None
+    _WORD_INDEX = {}
+    _RAW_ENTRY_INDICES = set()
+    _ENTRY_WORDS = []
+    _CATEGORY_INDEX = {}
+    _REGEX_CACHE.clear()
+    _trim_os_heap()
+
+
+def count_knowledge_entries(base_dir=None):
+    """Cheap entry count: parses the JSON but compiles no regexes and
+    populates no caches, so a status endpoint can report the KB size
+    without paying the ~120 MB load cost."""
+    if base_dir is None:
+        base_dir = _KNOWLEDGE_DIR
+    if not base_dir.exists():
+        return 0
+    json_files = sorted(
+        p for p in base_dir.rglob('*.json')
+        if not p.name.startswith('.')
+        and '/templates/' not in str(p) and '\\templates\\' not in str(p))
+    total = 0
+    for path in json_files:
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+        except (json.JSONDecodeError, IOError):
+            continue
+        if not isinstance(data, list):
+            continue
+        for entry in data:
+            if not isinstance(entry, dict):
+                continue
+            questions = entry.get('q', entry.get('patterns', []))
+            answer = entry.get('a', entry.get('answer', ''))
+            if not questions or not answer:
+                continue
+            total += len(questions) if isinstance(questions, list) else 1
+    return total
 
 
 def find_best_match(query):
@@ -334,11 +465,14 @@ def find_best_match(query):
     best_len = 0
     best_answer = None
     for ci in sorted(candidates):
-        pattern, answer = entries[ci]
-        _entry_word_set = _ENTRY_WORDS[ci]
-        if _entry_word_set is not None and not (_entry_word_set <= q_words):
+        pattern_str, answer = entries[ci]
+        entry_words = _ENTRY_WORDS[ci]
+        if entry_words is not None and not all(w in q_words for w in entry_words):
             continue
         try:
+            pattern = _get_regex(pattern_str)
+            if pattern is None:
+                continue
             m = pattern.search(q)
         except Exception:
             continue
@@ -1018,12 +1152,15 @@ def lookup(query):
         _candidate_indices |= set(_WORD_INDEX.get(_vrarest, ()))
 
     for _ci in sorted(_candidate_indices):
-        pattern, answer = entries[_ci]
-        _entry_word_set = _ENTRY_WORDS[_ci]
-        if _entry_word_set is not None and not (_entry_word_set <= _variant_words):
+        pattern_str, answer = entries[_ci]
+        entry_words = _ENTRY_WORDS[_ci]
+        if entry_words is not None and not all(w in _variant_words for w in entry_words):
             continue
         for variant in variants:
             if not variant or len(variant) < 3:
+                continue
+            pattern = _get_regex(pattern_str)
+            if pattern is None:
                 continue
             m = pattern.search(variant)
             if m:
@@ -1106,10 +1243,14 @@ def lookup(query):
                 # entries sharing zero words can never win and are skipped.
                 _fuzzy_candidates = set(_RAW_ENTRY_INDICES)
                 for _w in q_words:
-                    _fuzzy_candidates |= _WORD_INDEX.get(_w, ())
-                for _ci in _fuzzy_candidates:
-                    pattern, answer = entries[_ci]
-                    pattern_str = pattern.pattern.lower()
+                    _fuzzy_candidates |= set(_WORD_INDEX.get(_w, ()))
+                # Iterate in entry-index order so ties (equal scores) resolve
+                # deterministically to the first matching entry, independent
+                # of set hashing/iteration order (which used to make the
+                # winner depend on PYTHONHASHSEED).
+                for _ci in sorted(_fuzzy_candidates):
+                    pattern_str, answer = entries[_ci]
+                    pattern_str = pattern_str.lower()
                     p_words = set(w for w in re.findall(r'\b[a-zA-Z]{3,}\b', pattern_str)
                                   if w not in _STOP_WORDS_FUZZY)
                     # Count how many query words appear in the pattern

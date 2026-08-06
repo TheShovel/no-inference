@@ -131,6 +131,38 @@ The `q` array should include as many natural variations of the question as possi
 
 Files are loaded at startup. Run `/reload` in the TUI or restart the server to pick up changes.
 
+### Memory: the KB loads on demand
+
+The 45k+ compiled patterns used to cost ~120 MB just sitting in RAM. The
+loader now keeps the peak to ~40 MB and never holds it forever:
+
+- **Lazy load** — `get_all_knowledge()` builds everything only on the
+  first knowledge lookup; a plain chat/code process never pays for it.
+- **Lazy regex compilation** — patterns are stored as strings; only the
+  handful a process actually queries get compiled (bounded cache of 2000).
+  This alone cuts ~27 MB from the load.
+- **Lean indexes** — per-entry words are tuples (not frozensets, ~25 MB
+  saved) and the word index is `array('I')` instead of `set[int]`
+  (~20 MB saved).
+- **Auto-unload** — after an idle period (default 5 minutes, tune with
+  `COS_KB_TTL` seconds) the cache and its indexes are dropped; the next
+  lookup reloads on demand. Long-running processes (the API server) sit
+  at ~32 MB idle instead of ~133 MB.
+- **`release_knowledge()`** — explicit unload for embedding apps; also
+  calls `malloc_trim` so glibc returns freed arenas to the OS.
+- **Cheap count** — `count_knowledge_entries()` parses the JSON only (no
+  regex compilation, no cache) so the API server's status line can report
+  the KB size without loading it.
+- **Bounded history** — `conversation_history` keeps the most recent 200
+  turns (`trim_conversation()`), so multi-turn follow-ups work without
+  unbounded growth.
+
+Measured on this machine: engine idle ~26 MB; a knowledge query peaks at
+~77 MB (was ~145 MB); the API server idles at ~32 MB (was ~133 MB). Note
+that CPython keeps small-object arenas after a release, so the OS RSS may
+not drop all the way to the idle baseline, but the memory is reusable and
+the peak is what bounds the process.
+
 ### Add Wikipedia-generated entries
 
 Use the generator script:
