@@ -778,6 +778,12 @@ footer {
 
 /* ===== Demos window buttons (index.html) ===== */
 .demo-buttons { display: flex; gap: 8px; flex-wrap: wrap; margin: 4px 0; }
+.pixel-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+  image-rendering: pixelated;
+}
 .demo-btn {
   flex: 1;
   min-width: 180px;

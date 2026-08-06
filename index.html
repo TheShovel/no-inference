@@ -39,29 +39,6 @@
 
   <div class="window">
     <div class="window-titlebar">
-      <span class="window-titlebar-text">&#9654; Demos</span>
-      <div class="window-controls">
-        <button onclick="toggleMinimize(this)">_</button>
-        <button>&#9633;</button>
-        <button>&#10005;</button>
-      </div>
-    </div>
-    <div class="window-body">
-      <section>
-        <p style="margin-bottom: 6px;">Try the engine right now, no installation needed:</p>
-        <div class="demo-buttons">
-          <a class="demo-btn" href="chat.html">&#128172; Chat demo</a>
-          <a class="demo-btn" href="editor.html">&#9999;&#65039; Code editor demo</a>
-        </div>
-        <p class="hint">Both talk to the same engine through its HTTP API. If the demo server is
-        offline you&apos;ll see it in the status dot &mdash; the chat falls back to a tiny local
-        scripted mode, the editor shows an error.</p>
-      </section>
-    </div>
-  </div>
-
-  <div class="window">
-    <div class="window-titlebar">
       <span class="window-titlebar-text">&#9654; readme.txt</span>
       <div class="window-controls">
         <button onclick="toggleMinimize(this)">_</button>
@@ -77,8 +54,6 @@
           <p style="margin-top: 8px;">
             <span class="badge warn">Proof of concept</span>
             <span class="badge">Research project</span>
-            <span class="badge">Python</span>
-            <span class="badge">Safe</span>
           </p>
         </div>
 
@@ -104,7 +79,7 @@
 
   <div class="window">
     <div class="window-titlebar">
-      <span class="window-titlebar-text">&#9654; Try the demo</span>
+      <span class="window-titlebar-text">&#9654; Demos</span>
       <div class="window-controls">
         <button onclick="toggleMinimize(this)">_</button>
         <button>&#9633;</button>
@@ -115,24 +90,9 @@
       <section>
         <h2>Try the demo</h2>
         <p style="margin-bottom: 6px;">This is running on a server with 100mb of RAM.</p>
-        <div class="chat-box" id="chat">
-          <div class="status-bar" id="statusBar">
-            <span class="status-dot off" id="statusDot"></span>
-            <span id="statusText">Checking for local server...</span>
-          </div>
-          <div class="chat-messages" id="chatMessages"></div>
-          <div class="chat-suggestions" id="chatSuggestions">
-            <button onclick="sendSuggestion('hello')">hello</button>
-            <button onclick="sendSuggestion('what is the capital of France')">what is the capital of France</button>
-            <button onclick="sendSuggestion('write a poem about cats')">write a poem about cats</button>
-            <button onclick="sendSuggestion('pretend to be a pirate')">pretend to be a pirate</button>
-            <button onclick="sendSuggestion('what is 2 + 2')">what is 2 + 2</button>
-          </div>
-          <div class="chat-input-row">
-            <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off"
-                   onkeydown="if(event.key==='Enter') sendMessage()">
-            <button onclick="sendMessage()">Send</button>
-          </div>
+        <div class="demo-buttons">
+          <a class="demo-btn" href="chat.html"><svg class="pixel-icon" viewBox="0 0 9 8" width="45" height="40" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="0" width="1" height="1" fill="#000080"/><rect x="2" y="0" width="1" height="1" fill="#000080"/><rect x="3" y="0" width="1" height="1" fill="#000080"/><rect x="4" y="0" width="1" height="1" fill="#000080"/><rect x="5" y="0" width="1" height="1" fill="#000080"/><rect x="6" y="0" width="1" height="1" fill="#000080"/><rect x="7" y="0" width="1" height="1" fill="#000080"/><rect x="0" y="1" width="1" height="1" fill="#000080"/><rect x="1" y="1" width="1" height="1" fill="#ffffff"/><rect x="2" y="1" width="1" height="1" fill="#ffffff"/><rect x="3" y="1" width="1" height="1" fill="#ffffff"/><rect x="4" y="1" width="1" height="1" fill="#ffffff"/><rect x="5" y="1" width="1" height="1" fill="#ffffff"/><rect x="6" y="1" width="1" height="1" fill="#ffffff"/><rect x="7" y="1" width="1" height="1" fill="#ffffff"/><rect x="8" y="1" width="1" height="1" fill="#000080"/><rect x="0" y="2" width="1" height="1" fill="#000080"/><rect x="1" y="2" width="1" height="1" fill="#ffffff"/><rect x="2" y="2" width="1" height="1" fill="#ffffff"/><rect x="3" y="2" width="1" height="1" fill="#ffffff"/><rect x="4" y="2" width="1" height="1" fill="#ffffff"/><rect x="5" y="2" width="1" height="1" fill="#ffffff"/><rect x="6" y="2" width="1" height="1" fill="#ffffff"/><rect x="7" y="2" width="1" height="1" fill="#ffffff"/><rect x="8" y="2" width="1" height="1" fill="#000080"/><rect x="0" y="3" width="1" height="1" fill="#000080"/><rect x="2" y="3" width="1" height="1" fill="#000080"/><rect x="4" y="3" width="1" height="1" fill="#000080"/><rect x="6" y="3" width="1" height="1" fill="#000080"/><rect x="8" y="3" width="1" height="1" fill="#000080"/><rect x="0" y="4" width="1" height="1" fill="#000080"/><rect x="1" y="4" width="1" height="1" fill="#ffffff"/><rect x="2" y="4" width="1" height="1" fill="#ffffff"/><rect x="3" y="4" width="1" height="1" fill="#ffffff"/><rect x="4" y="4" width="1" height="1" fill="#ffffff"/><rect x="5" y="4" width="1" height="1" fill="#ffffff"/><rect x="6" y="4" width="1" height="1" fill="#ffffff"/><rect x="7" y="4" width="1" height="1" fill="#ffffff"/><rect x="8" y="4" width="1" height="1" fill="#000080"/><rect x="0" y="5" width="1" height="1" fill="#000080"/><rect x="1" y="5" width="1" height="1" fill="#ffffff"/><rect x="2" y="5" width="1" height="1" fill="#ffffff"/><rect x="3" y="5" width="1" height="1" fill="#ffffff"/><rect x="4" y="5" width="1" height="1" fill="#ffffff"/><rect x="5" y="5" width="1" height="1" fill="#ffffff"/><rect x="6" y="5" width="1" height="1" fill="#ffffff"/><rect x="7" y="5" width="1" height="1" fill="#ffffff"/><rect x="8" y="5" width="1" height="1" fill="#000080"/><rect x="1" y="6" width="1" height="1" fill="#000080"/><rect x="2" y="6" width="1" height="1" fill="#000080"/><rect x="3" y="6" width="1" height="1" fill="#000080"/><rect x="4" y="6" width="1" height="1" fill="#000080"/><rect x="5" y="6" width="1" height="1" fill="#000080"/><rect x="6" y="6" width="1" height="1" fill="#000080"/><rect x="7" y="6" width="1" height="1" fill="#000080"/><rect x="4" y="7" width="1" height="1" fill="#000080"/></svg> Chat demo</a>
+          <a class="demo-btn" href="editor.html"><svg class="pixel-icon" viewBox="0 0 8 7" width="40" height="35" shape-rendering="crispEdges" aria-hidden="true"><rect x="3" y="0" width="1" height="1" fill="#800080"/><rect x="4" y="0" width="1" height="1" fill="#800080"/><rect x="2" y="1" width="1" height="1" fill="#800080"/><rect x="3" y="1" width="1" height="1" fill="#800080"/><rect x="5" y="1" width="1" height="1" fill="#808080"/><rect x="6" y="1" width="1" height="1" fill="#808080"/><rect x="1" y="2" width="1" height="1" fill="#000080"/><rect x="2" y="2" width="1" height="1" fill="#000080"/><rect x="5" y="2" width="1" height="1" fill="#808080"/><rect x="6" y="2" width="1" height="1" fill="#808080"/><rect x="0" y="3" width="1" height="1" fill="#000080"/><rect x="1" y="3" width="1" height="1" fill="#000080"/><rect x="5" y="3" width="1" height="1" fill="#808080"/><rect x="6" y="3" width="1" height="1" fill="#808080"/><rect x="0" y="4" width="1" height="1" fill="#000080"/><rect x="1" y="4" width="1" height="1" fill="#000080"/><rect x="4" y="4" width="1" height="1" fill="#404040"/><rect x="5" y="4" width="1" height="1" fill="#404040"/><rect x="0" y="5" width="1" height="1" fill="#000080"/><rect x="1" y="5" width="1" height="1" fill="#000080"/><rect x="3" y="5" width="1" height="1" fill="#404040"/><rect x="4" y="5" width="1" height="1" fill="#404040"/><rect x="0" y="6" width="1" height="1" fill="#000080"/><rect x="1" y="6" width="1" height="1" fill="#404040"/><rect x="2" y="6" width="1" height="1" fill="#404040"/><rect x="3" y="6" width="1" height="1" fill="#404040"/></svg> Code editor demo</a>
         </div>
       </section>
     </div>
@@ -251,14 +211,15 @@
           <tr><td>Temperature Variety</td><td class="score mid">70.0%</td><td><span class="bar mid" style="width: 70%;"></span></td></tr>
           <tr><td><strong>Overall</strong></td><td class="score"><strong>97.4%</strong></td><td><span class="bar" style="width: 97%;"></span></td></tr>
         </table>
-        <h3>LLM Judge (gemma4:31b, 22 cases)</h3>
+        <h3>LLM Judge (gemma4:31b-cloud, 10 cases, 2 rounds per case)</h3>
         <table>
           <tr><th>Metric</th><th>Score</th><th></th></tr>
-          <tr><td>Naturalness</td><td class="score mid">4.2 / 10</td><td><span class="bar mid" style="width: 42%;"></span></td></tr>
-          <tr><td>Informativeness</td><td class="score">6.1 / 10</td><td><span class="bar" style="width: 61%;"></span></td></tr>
-          <tr><td>Coherence</td><td class="score">6.1 / 10</td><td><span class="bar" style="width: 61%;"></span></td></tr>
-          <tr><td>Correctness</td><td class="score">9.3 / 10</td><td><span class="bar" style="width: 93%;"></span></td></tr>
-          <tr><td><strong>Overall</strong></td><td class="score"><strong>6.8 / 10</strong></td><td><span class="bar" style="width: 68%;"></span></td></tr>
+          <tr><td>Naturalness</td><td class="score">8.6 / 10</td><td><span class="bar" style="width: 86%;"></span></td></tr>
+          <tr><td>Informativeness</td><td class="score">8.3 / 10</td><td><span class="bar" style="width: 83%;"></span></td></tr>
+          <tr><td>Coherence</td><td class="score">9.5 / 10</td><td><span class="bar" style="width: 95%;"></span></td></tr>
+          <tr><td>Correctness</td><td class="score">10.0 / 10</td><td><span class="bar" style="width: 100%;"></span></td></tr>
+          <tr><td>Conciseness</td><td class="score">9.9 / 10</td><td><span class="bar" style="width: 99%;"></span></td></tr>
+          <tr><td><strong>Overall</strong></td><td class="score"><strong>9.2 / 10</strong></td><td><span class="bar" style="width: 92%;"></span></td></tr>
         </table>
         <p style="font-size: 11px; color: var(--win-shadow); margin-top: 4px;">We prefer a robot that tells the truth awkwardly over one that lies fluently.</p>
       </section>
@@ -363,12 +324,11 @@
   <footer>
 
     <p>Made by <a href="https://github.com/TheShovel">TheShovel</a> (Niconov Catalin)</p>
-    <p style="margin-top: 2px;">AGPL-3.0 &mdash; Proof of concept</p>
+    <p style="margin-top: 2px;">AGPL-3.0</p>
   </footer>
 
 </div>
 
 <script src="site.js"></script>
-<script src="script.js"></script>
 </body>
 </html>
