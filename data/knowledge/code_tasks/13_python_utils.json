@@ -1,0 +1,1719 @@
+[
+  {
+    "task": "uuid_gen",
+    "patterns": [
+      "\\buuid\\b",
+      "\\bguid\\b"
+    ],
+    "intro": "Here's how to generate a UUID in {lang}.",
+    "notes": "uuid4() is the right choice for almost everything: it's random and unique. uuid1() encodes the MAC address and time — don't use it when privacy matters.",
+    "languages": {
+      "python": "import uuid\n\n# Random UUID (v4) — the default choice:\nuid = uuid.uuid4()\nprint(uid)                 # 8f8e... (hex string)\nprint(str(uid))\n\n# UUID from a string:\nparsed = uuid.UUID('12345678-1234-5678-1234-567812345678')\n\n# Short unique id (not a UUID, but handy for filenames):\nimport secrets\nprint(secrets.token_hex(8))",
+      "javascript": "// Browser: crypto.randomUUID()\nconst uid = crypto.randomUUID();\nconsole.log(uid);\n\n// Node.js:\nconst { randomUUID } = require('crypto');\nconsole.log(randomUUID());\n\n// Short random id:\nconsole.log(Math.random().toString(36).slice(2));"
+    }
+  },
+  {
+    "task": "hash_string",
+    "patterns": [
+      "\\b(?:md5|sha-?1|sha-?256|sha-?512)\\b",
+      "\\bhash\\b.*\\b(?:string|password|text|file|password)\\b(?!\\s+(?:map|set|table))"
+    ],
+    "intro": "Here's how to hash a string in {lang}.",
+    "notes": "Use SHA-256 or stronger for checksums. MD5 and SHA-1 are cryptographically broken — never use them for passwords; use a key-derivation function like bcrypt, argon2, or PBKDF2 instead.",
+    "languages": {
+      "python": "import hashlib\n\n# SHA-256 (recommended for checksums):\ntext = 'hello world'\ndigest = hashlib.sha256(text.encode('utf-8')).hexdigest()\nprint(digest)\n\n# MD5 (broken — checksums only):\nprint(hashlib.md5(text.encode()).hexdigest())\n\n# SHA-1 (broken — checksums only):\nprint(hashlib.sha1(text.encode()).hexdigest())\n\n# With a salt, for password storage:\nimport hashlib, os\nsalt = os.urandom(16)\nhashed = hashlib.pbkdf2_hmac('sha256', b'password', salt, 100_000)",
+      "javascript": "const crypto = require('crypto');\n\n// SHA-256 (recommended for checksums):\nconst digest = crypto.createHash('sha256')\n    .update('hello world')\n    .digest('hex');\nconsole.log(digest);\n\n// MD5 (broken — checksums only):\nconsole.log(crypto.createHash('md5').update('hello world').digest('hex'));\n\n// Browser:\n// const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode('hello world'));"
+    }
+  },
+  {
+    "task": "base64_codec",
+    "patterns": [
+      "\\bbase64\\b",
+      "\\b(?:encode|decode)\\b.*\\b(?:base64|to\\s+base64|from\\s+base64)\\b"
+    ],
+    "intro": "Here's how to encode and decode base64 in {lang}.",
+    "notes": "Base64 is an encoding, not encryption — anyone can decode it. It's for putting binary data in text (JSON, emails, URLs). For secrets, use real encryption.",
+    "languages": {
+      "python": "import base64\n\n# Encode:\ntext = 'hello world'\nencoded = base64.b64encode(text.encode('utf-8')).decode('utf-8')\nprint(encoded)   # aGVsbG8gd29ybGQ=\n\n# Decode:\ndecoded = base64.b64decode(encoded).decode('utf-8')\nprint(decoded)   # hello world\n\n# URL-safe variant (no + or /):\nurlsafe = base64.urlsafe_b64encode(text.encode()).decode()\n\n# Binary data:\nimg_b64 = base64.b64encode(open('img.png', 'rb').read())",
+      "javascript": "// Encode:\nconst text = 'hello world';\nconst encoded = Buffer.from(text, 'utf8').toString('base64');\nconsole.log(encoded);  // aGVsbG8gd29ybGQ=\n\n// Decode:\nconsole.log(Buffer.from(encoded, 'base64').toString('utf8'));  // hello world\n\n// Browser:\n// const encoded = btoa(text);\n// const decoded = atob(encoded);"
+    }
+  },
+  {
+    "task": "timestamp_to_date",
+    "patterns": [
+      "\\b(?:unix\\s+)?timestamp\\b.*\\b(?:to|convert|readable|date|human)\\b",
+      "\\b(?:convert|format)\\b.*\\b(?:unix\\s+)?timestamp\\b"
+    ],
+    "intro": "Here's how to convert a Unix timestamp to a readable date in {lang}.",
+    "notes": "A Unix timestamp is seconds since 1970-01-01 UTC. Python's datetime.fromtimestamp() converts to local time; use utcfromtimestamp()/datetime.fromtimestamp(ts, tz=timezone.utc) for UTC.",
+    "languages": {
+      "python": "from datetime import datetime, timezone\n\n# Timestamp (seconds since epoch):\nts = 1710000000\n\n# To local time:\ndt = datetime.fromtimestamp(ts)\nprint(dt)                    # 2024-03-09 16:00:00\n\n# To UTC explicitly:\ndt_utc = datetime.fromtimestamp(ts, tz=timezone.utc)\nprint(dt_utc.isoformat())    # 2024-03-09T16:00:00+00:00\n\n# Format it:\nprint(dt.strftime('%Y-%m-%d %H:%M:%S'))\n\n# Milliseconds (JS-style) -> divide by 1000 first:\ndt_ms = datetime.fromtimestamp(1710000000000 / 1000)",
+      "javascript": "// Timestamp (milliseconds in JS!):\nconst ts = 1710000000000;\n\nconst date = new Date(ts);\nconsole.log(date.toISOString());          // 2024-03-09T16:00:00.000Z\nconsole.log(date.toLocaleString());       // local time\nconsole.log(date.toLocaleDateString());   // 3/9/2024\n\n// Seconds (Python-style) -> multiply by 1000:\nconst fromSeconds = new Date(1710000000 * 1000);"
+    }
+  },
+  {
+    "task": "format_date",
+    "patterns": [
+      "\\b(?:format|convert)\\b.*\\bdate\\b.*\\b(?:yyyy[-/]?mm[-/]?dd|iso|format|string)\\b",
+      "\\bdate\\b.*\\b(?:formatted|formatting)\\b"
+    ],
+    "intro": "Here's how to format a date as YYYY-MM-DD in {lang}.",
+    "notes": "ISO 8601 (YYYY-MM-DD) sorts correctly as a string and is unambiguous across locales — prefer it for storage and APIs.",
+    "languages": {
+      "python": "from datetime import datetime, date\n\n# From a datetime:\nnow = datetime.now()\nprint(now.strftime('%Y-%m-%d'))            # 2026-04-03\n\n# From a date:\ntoday = date.today()\nprint(today.isoformat())                   # 2026-04-03\n\n# With time:\nprint(now.strftime('%Y-%m-%d %H:%M:%S'))   # 2026-04-03 15:30:00\n\n# Parse an ISO string back:\nparsed = datetime.strptime('2026-04-03', '%Y-%m-%d')",
+      "javascript": "// Manual zero-padding (most reliable):\nconst d = new Date();\nconst iso = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;\nconsole.log(iso);\n\n// One-liner via toISOString (UTC, not local):\nconsole.log(new Date().toISOString().slice(0, 10));\n\n// Intl with explicit parts:\nconst parts = new Intl.DateTimeFormat('en-CA', {\n    year: 'numeric', month: '2-digit', day: '2-digit'\n}).formatToParts(d).reduce((acc, p) => (acc[p.type] = p.value, acc), {});\nconsole.log(`${parts.year}-${parts.month}-${parts.day}`);"
+    }
+  },
+  {
+    "task": "timezone_now",
+    "patterns": [
+      "\\btimezone\\b",
+      "\\btime\\s+zone\\b"
+    ],
+    "intro": "Here's how to work with timezones in {lang}.",
+    "notes": "Store times in UTC and convert to local timezones only when displaying. Python needs zoneinfo (stdlib, 3.9+) — avoid pytz for new code. JS uses IANA names via Intl.",
+    "languages": {
+      "python": "from datetime import datetime, timezone, timedelta\nfrom zoneinfo import ZoneInfo\n\n# Current time in a specific timezone:\nnow_tokyo = datetime.now(ZoneInfo('Asia/Tokyo'))\nprint(now_tokyo)\n\n# Fixed offset:\nutc_plus_5 = datetime.now(timezone(timedelta(hours=5)))\n\n# Convert between zones:\nnow_utc = datetime.now(timezone.utc)\nprint(now_utc.astimezone(ZoneInfo('America/New_York')))\n\n# List all zones:\nimport zoneinfo\nprint(zoneinfo.available_timezones())",
+      "javascript": "// Local timezone name and offset:\nconst tz = Intl.DateTimeFormat().resolvedOptions().timeZone;\nconsole.log(tz);                    // e.g. 'America/New_York'\n\n// Time in a specific timezone:\nconsole.log(new Intl.DateTimeFormat('en-US', {\n    timeZone: 'Asia/Tokyo',\n    dateStyle: 'full', timeStyle: 'long'\n}).format(new Date()));\n\n// Offset (minutes) of a zone at a given instant:\nfunction tzOffsetMs(zone, date = new Date()) {\n    const dtf = new Intl.DateTimeFormat('en-US', {\n        timeZone: zone, hour12: false,\n        year: 'numeric', month: '2-digit', day: '2-digit',\n        hour: '2-digit', minute: '2-digit', second: '2-digit',\n    });\n    const parts = Object.fromEntries(dtf.formatToParts(date)\n        .filter(p => p.type !== 'literal').map(p => [p.type, p.value]));\n    const asUTC = Date.UTC(parts.year, parts.month - 1, parts.day,\n                           parts.hour, parts.minute, parts.second);\n    return asUTC - date.getTime();\n}\nconsole.log(tzOffsetMs('Asia/Tokyo'));"
+    }
+  },
+  {
+    "task": "human_file_size",
+    "patterns": [
+      "\\b(?:human\\s+readable|humanize|human)\\b.*\\b(?:file\\s+)?size\\b",
+      "\\b(?:file\\s+)?size\\b.*\\b(?:human|readable)\\b"
+    ],
+    "intro": "Here's a {lang} function that formats a byte count as a human-readable size.",
+    "notes": "Use powers of 1024 (KiB/MiB/GiB) for file sizes on disk; powers of 1000 (KB/MB/GB) for marketing-style numbers. The function below rounds to two decimals and keeps units sensible.",
+    "languages": {
+      "python": "def human_file_size(num_bytes: int) -> str:\n    size = float(num_bytes)\n    for unit in ('B', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB'):\n        if abs(size) < 1024.0 or unit == 'PiB':\n            if unit == 'B':\n                return f'{int(size)} {unit}'\n            return f'{size:.2f} {unit}'\n        size /= 1024.0\n\n# Example:\nprint(human_file_size(0))        # 0 B\nprint(human_file_size(1536))     # 1.50 KiB\nprint(human_file_size(536870912))  # 512.00 MiB",
+      "javascript": "function humanFileSize(numBytes) {\n    const units = ['B', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB'];\n    let size = Math.abs(numBytes);\n    let i = 0;\n    while (size >= 1024 && i < units.length - 1) {\n        size /= 1024;\n        i++;\n    }\n    return `${numBytes < 0 ? '-' : ''}${i === 0 ? size : size.toFixed(2)} ${units[i]}`;\n}\n\nconsole.log(humanFileSize(1536));        // 1.50 KiB\nconsole.log(humanFileSize(536870912));   // 512.00 MiB"
+    }
+  },
+  {
+    "task": "deep_copy",
+    "patterns": [
+      "\\bdeep\\s*copy\\b"
+    ],
+    "intro": "Here's how to deep-copy an object in {lang}.",
+    "notes": "A shallow copy shares nested objects; a deep copy duplicates everything. Python's copy.deepcopy handles arbitrary object graphs; JSON round-tripping works only for JSON-safe data.",
+    "languages": {
+      "python": "import copy\n\n# Deep copy (handles nested lists/dicts/objects):\noriginal = {'items': [1, 2, {'x': 3}]}\ndeep = copy.deepcopy(original)\ndeep['items'][2]['x'] = 99\nprint(original['items'][2]['x'])   # 3 (unchanged)\n\n# Shallow copy (nested objects are SHARED):\nshallow = original.copy()\nshallow['items'][2]['x'] = 99\nprint(original['items'][2]['x'])   # 99 (shared!)\n\n# JSON round-trip (only for JSON-safe data):\nimport json\nclone = json.loads(json.dumps(original))",
+      "javascript": "// Deep clone (modern, handles most types):\nconst original = { items: [1, 2, { x: 3 }] };\nconst deep = structuredClone(original);\ndeep.items[2].x = 99;\nconsole.log(original.items[2].x);   // 3 (unchanged)\n\n// JSON round-trip (JSON-safe data only):\nconst clone = JSON.parse(JSON.stringify(original));\n\n// Shallow copy (nested objects are SHARED):\nconst shallow = { ...original };\nshallow.items[2].x = 99;\nconsole.log(original.items[2].x);   // 99 (shared!)"
+    }
+  },
+  {
+    "task": "dict_merge",
+    "patterns": [
+      "\\bmerge\\b.*\\b(?:dict|dictionary|dicts|dictionaries|maps?)\\b(?!\\s+sort)",
+      "\\bcombine\\b.*\\b(?:dict|dictionary|dictionaries)\\b"
+    ],
+    "intro": "Here's how to merge two dictionaries in {lang}.",
+    "notes": "Later values win on key conflicts. Python 3.9+ has the | operator; the |=.update() version also works on older versions and mutates the first dict.",
+    "languages": {
+      "python": "# Python 3.9+:\na = {'x': 1, 'y': 2}\nb = {'y': 3, 'z': 4}\nmerged = a | b\nprint(merged)   # {'x': 1, 'y': 3, 'z': 4}\n\n# a is unchanged; to merge into a, use a |= b (or a.update(b)).\n\n# Older versions:\nmerged2 = {**a, **b}\n\n# Or in place:\na.update(b)\nprint(a)        # {'x': 1, 'y': 3, 'z': 4}",
+      "javascript": "const a = { x: 1, y: 2 };\nconst b = { y: 3, z: 4 };\n\n// Spread (later values win):\nconst merged = { ...a, ...b };\nconsole.log(merged);   // { x: 1, y: 3, z: 4 }\n\n// Object.assign (mutates the first argument):\nconst merged2 = Object.assign({}, a, b);\n\n// Same keys, last one wins:\nconsole.log({ ...a, ...b }.y);  // 3"
+    }
+  },
+  {
+    "task": "dict_keys",
+    "patterns": [
+      "\\b(?:all\\s+)?keys?\\s+of\\s+(?:a\\s+|the\\s+)?(?:dict|dictionary)\\b",
+      "\\b(?:get|return|list)\\b.*\\bkeys?\\b.*\\b(?:dict|dictionary)\\b"
+    ],
+    "intro": "Here's how to get the keys of a dictionary in {lang}.",
+    "notes": "Python's .keys() is a live view — it reflects later mutations of the dict. Convert to list() if you need a snapshot or an indexable object.",
+    "languages": {
+      "python": "d = {'a': 1, 'b': 2, 'c': 3}\n\n# View object (live, cheap):\nkeys = d.keys()\nprint(keys)              # dict_keys(['a', 'b', 'c'])\n\n# As a list:\nprint(list(d.keys()))    # ['a', 'b', 'c']\n\n# Iterate keys directly:\nfor k in d:\n    print(k)\n\n# Check membership:\nprint('a' in d)          # True",
+      "javascript": "const d = { a: 1, b: 2, c: 3 };\n\nconst keys = Object.keys(d);\nconsole.log(keys);          // ['a', 'b', 'c']\n\n// Iterate:\nfor (const k of Object.keys(d)) {\n    console.log(k);\n}\n\n// Check membership:\nconsole.log('a' in d);      // true (includes inherited keys)\nconsole.log(Object.hasOwn(d, 'a'));  // true (own keys only)"
+    }
+  },
+  {
+    "task": "sort_dict_by_value",
+    "patterns": [
+      "\\bsort\\b.*\\b(?:dict|dictionary)\\b.*\\b(?:by\\s+)?value\\b"
+    ],
+    "intro": "Here's how to sort a dictionary by its values in {lang}.",
+    "notes": "Python dicts keep insertion order (3.7+), so sorting the items and rebuilding the dict gives a sorted dict. Use reverse=True for descending.",
+    "languages": {
+      "python": "d = {'alice': 30, 'bob': 25, 'carol': 35}\n\n# Ascending by value:\nsorted_d = dict(sorted(d.items(), key=lambda item: item[1]))\nprint(sorted_d)   # {'bob': 25, 'alice': 30, 'carol': 35}\n\n# Descending:\nsorted_d_desc = dict(sorted(d.items(), key=lambda item: item[1], reverse=True))\n\n# operator.itemgetter is faster for big dicts:\nfrom operator import itemgetter\nsorted_d2 = dict(sorted(d.items(), key=itemgetter(1)))\n\n# Just the sorted values:\nprint(sorted(d.values()))",
+      "javascript": "const d = { alice: 30, bob: 25, carol: 35 };\n\n// Sort entries by value, rebuild the object:\nconst sorted = Object.fromEntries(\n    Object.entries(d).sort((a, b) => a[1] - b[1])\n);\nconsole.log(sorted);   // { bob: 25, alice: 30, carol: 35 }\n\n// Descending:\nconst desc = Object.fromEntries(\n    Object.entries(d).sort((a, b) => b[1] - a[1])\n);"
+    }
+  },
+  {
+    "task": "dict_intersection",
+    "patterns": [
+      "\\bintersection\\b.*\\b(?:dict|dictionary|dictionaries)\\b",
+      "\\b(?:common|shared)\\s+keys?\\b.*\\b(?:dict|dictionary)\\b"
+    ],
+    "intro": "Here's how to find the intersection of two dictionaries in {lang}.",
+    "notes": "Set operations on .keys()/.items() are the idiomatic way: & for intersection, | for union, - for difference.",
+    "languages": {
+      "python": "a = {'x': 1, 'y': 2, 'z': 3}\nb = {'y': 20, 'z': 30, 'w': 40}\n\n# Keys in both:\ncommon_keys = a.keys() & b.keys()\nprint(common_keys)            # {'y', 'z'}\n\n# Key-value pairs in both:\ncommon_items = a.items() & b.items()\nprint(common_items)           # set() — values differ\n\n# Keys in a but not b:\nprint(a.keys() - b.keys())    # {'x'}\n\n# New dict with only the common keys (from a):\nintersection = {k: a[k] for k in (a.keys() & b.keys())}\nprint(intersection)           # {'y': 2, 'z': 3}",
+      "javascript": "const a = { x: 1, y: 2, z: 3 };\nconst b = { y: 20, z: 30, w: 40 };\n\n// Keys in both:\nconst commonKeys = Object.keys(a).filter(k => k in b);\nconsole.log(commonKeys);        // ['y', 'z']\n\n// New object with common keys (from a):\nconst intersection = Object.fromEntries(\n    Object.entries(a).filter(([k]) => k in b)\n);\nconsole.log(intersection);      // { y: 2, z: 3 }"
+    }
+  },
+  {
+    "task": "read_config",
+    "patterns": [
+      "\\bini\\s+file\\b",
+      "\\bconfigparser\\b",
+      "\\bconfig(?:uration)?\\s+file\\b"
+    ],
+    "intro": "Here's how to read a config file in {lang}.",
+    "notes": "INI files: Python's configparser is in the stdlib. For JSON configs, just json.load. Environment variables are often the simplest config mechanism for deployment.",
+    "languages": {
+      "python": "import configparser\n\nconfig = configparser.ConfigParser()\nconfig.read('settings.ini')   # silently skips a missing file\n\n# Guard against missing files/sections:\nif config.has_section('database'):\n    print(config['database']['host'])          # 'localhost'\n    print(config.getint('database', 'port'))   # 5432\n\n# settings.ini looks like:\n# [database]\n# host = localhost\n# port = 5432\n",
+      "javascript": "// INI parsing needs a library; JSON and env vars are the common paths.\n\n// JSON config:\nconst fs = require('fs');\nconst config = JSON.parse(fs.readFileSync('config.json', 'utf8'));\nconsole.log(config.database.host);\n\n// Environment-based config (recommended for deployment):\nconst host = process.env.DB_HOST || 'localhost';\nconst port = Number(process.env.DB_PORT || 5432);"
+    }
+  },
+  {
+    "task": "current_timestamp",
+    "patterns": [
+      "\\bcurrent\\s+timestamp\\b",
+      "\\btime\\s+since\\s+epoch\\b",
+      "\\bunix\\s+time\\s+(?:now|current)\\b",
+      "\\bepoch\\s+seconds?\\s+now\\b"
+    ],
+    "intro": "Here's how to get the current Unix timestamp in {lang}.",
+    "notes": "Python time.time() returns seconds as a float; JS Date.now() returns MILLISECONDS — the classic bug when porting between the two. JS: Math.floor(Date.now() / 1000) for seconds.",
+    "languages": {
+      "python": "import time\nimport datetime\n\n# Seconds since epoch (float):\nnow = time.time()\nprint(now)                    # 1775250000.123456\n\n# As an integer:\nprint(int(time.time()))\n\n# Milliseconds (JS-compatible):\nprint(int(time.time() * 1000))\n\n# Via datetime:\nprint(datetime.datetime.now().timestamp())",
+      "javascript": "// Milliseconds since epoch:\nconsole.log(Date.now());\n\n// Seconds since epoch (Python-style):\nconsole.log(Math.floor(Date.now() / 1000));\n\n// ISO string:\nconsole.log(new Date().toISOString());"
+    }
+  },
+  {
+    "task": "file_extension",
+    "patterns": [
+      "\\b(?:file\\s+)?extension\\b.*\\b(?:file|filename|path)\\b"
+    ],
+    "intro": "Here's how to get a file's extension in {lang}.",
+    "notes": "os.path.splitext returns (name, extension) — the extension includes the dot. Path('x').suffix is the pathlib equivalent.",
+    "languages": {
+      "python": "import os\nfrom pathlib import Path\n\nfilename = 'report.tar.gz'\n\n# os.path.splitext — splits on the LAST dot:\nname, ext = os.path.splitext(filename)\nprint(name, ext)     # report.tar .gz\n\n# pathlib:\nprint(Path(filename).suffix)      # .gz\nprint(Path(filename).suffixes)    # ['.tar', '.gz']\nprint(Path(filename).stem)        # report.tar\n\n# No extension:\nprint(os.path.splitext('README')[1])   # ''",
+      "javascript": "const filename = 'report.tar.gz';\n\n// Last dot:\nconst ext = filename.slice(filename.lastIndexOf('.'));\nconsole.log(ext);                    // .gz\n\n// Regex alternative:\nconst m = filename.match(/\\.([^.]+)$/);\nconsole.log(m ? m[1] : '');          // gz\n\n// Node.js path module:\nconst path = require('path');\nconsole.log(path.extname(filename)); // .gz\nconsole.log(path.basename(filename, path.extname(filename)));  // report.tar"
+    }
+  },
+  {
+    "task": "startswith",
+    "patterns": [
+      "\\b(?:starts?\\s+with|prefix)\\b.*\\b(?:string|text|word)\\b",
+      "\\bcheck\\s+if\\s+(?:a\\s+)?(?:string|text)\\s+(?:starts|ends|begins)\\b"
+    ],
+    "intro": "Here's how to check whether a string starts with a prefix in {lang}.",
+    "notes": "str.startswith also accepts a tuple of prefixes. Use .endswith() for suffixes and .casefold() when you need case-insensitive comparison.",
+    "languages": {
+      "python": "text = 'hello world'\n\nprint(text.startswith('hello'))    # True\nprint(text.startswith('world'))    # False\nprint(text.endswith('world'))      # True\n\n# Multiple prefixes:\nprint(text.startswith(('hello', 'hi')))   # True\n\n# Slice within the string:\nprint(text.startswith('lo', 3))    # True (starts at index 3)\n\n# Case-insensitive:\nprint(text.lower().startswith('HELLO'.lower()))",
+      "javascript": "const text = 'hello world';\n\nconsole.log(text.startsWith('hello'));    // true\nconsole.log(text.startsWith('world'));    // false\nconsole.log(text.endsWith('world'));      // true\n\n// Multiple prefixes:\nconsole.log(['hello', 'hi'].some(p => text.startsWith(p)));  // true\n\n// From an index:\nconsole.log(text.startsWith('lo', 3));    // true\n\n// Case-insensitive:\nconsole.log(text.toLowerCase().startsWith('HELLO'.toLowerCase()));"
+    }
+  },
+  {
+    "task": "replace_all",
+    "patterns": [
+      "\\breplace\\b.*\\b(?:all\\s+)?occurrences\\b",
+      "\\breplace\\b.*\\bword\\b.*\\b(?:string|text)\\b",
+      "\\b(?:replace|substitute)\\b.*\\b(?:every|all)\\b.*\\b(?:instance|occurrence)\\b"
+    ],
+    "intro": "Here's how to replace all occurrences of a string in {lang}.",
+    "notes": "Python str.replace replaces all occurrences by default (str.replace(s, old, 1) for one). JS: String.replace with a string only replaces the FIRST — use a global regex or replaceAll.",
+    "languages": {
+      "python": "text = 'the cat sat on the mat'\n\n# Replace all:\nprint(text.replace('the', 'a'))     # a cat sat on a mat\n\n# Replace only the first:\nprint(text.replace('the', 'a', 1))  # a cat sat on the mat\n\n# Case-insensitive:\nimport re\nprint(re.sub(r'the', 'a', text, flags=re.IGNORECASE))\n\n# Word-boundary aware:\nprint(re.sub(r'\\bthe\\b', 'a', text))",
+      "javascript": "const text = 'the cat sat on the mat';\n\n// replaceAll (modern):\nconsole.log(text.replaceAll('the', 'a'));  // a cat sat on a mat\n\n// String.replace with a string replaces only the FIRST:\nconsole.log(text.replace('the', 'a'));     // a cat sat on the mat\n\n// Global regex replaces all:\nconsole.log(text.replace(/the/g, 'a'));\n\n// Case-insensitive:\nconsole.log(text.replace(/the/gi, 'a'));\n\n// Word-boundary aware:\nconsole.log(text.replace(/\\bthe\\b/g, 'a'));"
+    }
+  },
+  {
+    "task": "count_lines",
+    "patterns": [
+      "\\bcount\\b.*\\b(?:the\\s+)?(?:number\\s+of\\s+)?lines?\\s+in\\s+(?:a\\s+|the\\s+)?file\\b",
+      "\\b(?:how\\s+many|number\\s+of)\\s+lines?\\s+(?:are\\s+there\\s+)?in\\s+(?:a\\s+|the\\s+)?file\\b"
+    ],
+    "intro": "Here's how to count the lines in a file in {lang}.",
+    "notes": "Iterating the file object is memory-friendly — it never loads the whole file. Note that a final line without a trailing newline is still counted.",
+    "languages": {
+      "python": "def count_lines(filename: str) -> int:\n    with open(filename, encoding='utf-8') as f:\n        return sum(1 for _ in f)\n\n# Example:\nprint(count_lines('data.txt'))\n\n# Without a helper:\nwith open('data.txt', encoding='utf-8') as f:\n    line_count = sum(1 for _ in f)\n\n# Excluding blank lines:\nwith open('data.txt', encoding='utf-8') as f:\n    non_blank = sum(1 for line in f if line.strip())",
+      "javascript": "const fs = require('fs');\n\nfunction countLines(filename) {\n    const content = fs.readFileSync(filename, 'utf8');\n    if (content === '') return 0;\n    return content.split('\\n').length - (content.endsWith('\\n') ? 1 : 0);\n}\n\nconsole.log(countLines('data.txt'));\n\n// Memory-friendly for large files:\nconst readline = require('readline');\nconst rl = readline.createInterface({\n    input: fs.createReadStream('data.txt'),\n});\nlet n = 0;\nrl.on('line', () => n++);\nrl.on('close', () => console.log(n));"
+    }
+  },
+  {
+    "task": "remove_empty_strings",
+    "patterns": [
+      "\\bremove\\b.*\\bempty\\s+strings?\\b",
+      "\\bfilter\\b.*\\bempty\\s+strings?\\b"
+    ],
+    "intro": "Here's how to remove empty strings from a list in {lang}.",
+    "notes": "In Python, filter(None, items) removes empty strings, None, and 0 — use a lambda when you only want to drop ''.",
+    "languages": {
+      "python": "items = ['a', '', 'b', '  ', 'c', '']\n\n# Remove '' only:\nclean = [x for x in items if x != '']\nprint(clean)     # ['a', 'b', '  ', 'c']\n\n# Remove empty AND whitespace-only:\nclean2 = [x for x in items if x.strip()]\nprint(clean2)    # ['a', 'b', 'c']\n\n# filter(None, ...) also drops None and 0:\nprint(list(filter(None, items)))",
+      "javascript": "const items = ['a', '', 'b', '  ', 'c', ''];\n\n// Remove '' only:\nconst clean = items.filter(x => x !== '');\nconsole.log(clean);     // ['a', 'b', '  ', 'c']\n\n// Remove empty AND whitespace-only:\nconst clean2 = items.filter(x => x.trim() !== '');\nconsole.log(clean2);    // ['a', 'b', 'c']\n\n// Truthiness also drops null/undefined/0:\nconst clean3 = items.filter(Boolean);"
+    }
+  },
+  {
+    "task": "second_largest",
+    "patterns": [
+      "^(?!.*\\bsalary\\b).*\\bsecond\\s+(?:largest|biggest|highest|maximum)\\b"
+    ],
+    "intro": "Here's a {lang} function that finds the second largest number in a list.",
+    "notes": "Sorting and indexing is clearest; the two-pass max() version avoids a full sort. For huge lists, heapq.nlargest(2, items)[-1] is O(n log 2).",
+    "languages": {
+      "python": "def second_largest(numbers: list) -> float:\n    if len(numbers) < 2:\n        raise ValueError('need at least two numbers')\n    return sorted(numbers)[-2]\n\n# Without sorting (two passes):\ndef second_largest_linear(numbers: list) -> float:\n    if len(numbers) < 2:\n        raise ValueError('need at least two numbers')\n    largest = max(numbers)\n    return max(n for n in numbers if n != largest)\n\n# Examples:\nprint(second_largest([3, 7, 2, 9, 5]))        # 7\nprint(second_largest_linear([3, 7, 2, 9, 5]))  # 7",
+      "javascript": "function secondLargest(numbers) {\n    if (numbers.length < 2) throw new Error('need at least two numbers');\n    const sorted = [...numbers].sort((a, b) => a - b);\n    return sorted[sorted.length - 2];\n}\n\nconsole.log(secondLargest([3, 7, 2, 9, 5]));  // 7"
+    }
+  },
+  {
+    "task": "count_vowels",
+    "patterns": [
+      "\\bcount\\b.*\\bvowels?\\b",
+      "\\bvowels?\\s+in\\s+(?:a\\s+|the\\s+)?string\\b"
+    ],
+    "intro": "Here's a {lang} function that counts vowels in a string.",
+    "notes": "The straightforward loop with a membership check is O(n). For performance-critical code, a translation table or regex does the same job in C speed.",
+    "languages": {
+      "python": "def count_vowels(s: str) -> int:\n    return sum(1 for ch in s.lower() if ch in 'aeiou')\n\n# Examples:\nprint(count_vowels('hello'))      # 2\nprint(count_vowels('AEIOU'))      # 5\nprint(count_vowels('rhythm'))     # 0\n\n# Per-vowel breakdown:\nfrom collections import Counter\ndef vowel_counts(s: str):\n    return Counter(ch for ch in s.lower() if ch in 'aeiou')\nprint(vowel_counts('banana'))   # Counter({'a': 3})",
+      "javascript": "function countVowels(s) {\n    const m = s.toLowerCase().match(/[aeiou]/g);\n    return m ? m.length : 0;\n}\n\nconsole.log(countVowels('hello'));   // 2\nconsole.log(countVowels('rhythm'));  // 0",
+      "go": "package main\n\nimport \"strings\"\n\nfunc CountVowels(s string) int {\n    count := 0\n    for _, ch := range strings.ToLower(s) {\n        if strings.ContainsRune(\"aeiou\", ch) {\n            count++\n        }\n    }\n    return count\n}",
+      "rust": "pub fn count_vowels(s: &str) -> usize {\n    s.chars().filter(|c| \"aeiouAEIOU\".contains(*c)).count()\n}",
+      "java": "public static int countVowels(String s) {\n    int count = 0;\n    for (char ch : s.toLowerCase().toCharArray()) {\n        if (\"aeiou\".indexOf(ch) >= 0) count++;\n    }\n    return count;\n}",
+      "c++": "#include <string>\n#include <cctype>\n\nint countVowels(const std::string& s) {\n    int count = 0;\n    for (char ch : s) {\n        ch = std::tolower(ch);\n        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') count++;\n    }\n    return count;\n}",
+      "c#": "public static int CountVowels(string s)\n{\n    return s.ToLower().Count(c => \"aeiou\".Contains(c));\n}"
+    }
+  },
+  {
+    "task": "find_duplicates",
+    "patterns": [
+      "\\bfind\\b.*\\b(?:duplicate\\w*|repeated\\w*)\\b.*\\b(?:elements?|items?|values?|numbers?)\\b.*\\b(?:list|array)\\b"
+    ],
+    "intro": "Here's a {lang} function that finds the duplicate elements in a list.",
+    "notes": "Counter tells you which items repeat and how often. The set-based version keeps first-seen order and stops storing counts.",
+    "languages": {
+      "python": "from collections import Counter\n\ndef find_duplicates(items: list) -> list:\n    \"\"\"Items that appear more than once, in first-seen order.\"\"\"\n    counts = Counter(items)\n    return [item for item, n in counts.items() if n > 1]\n\n# Without Counter:\ndef find_duplicates_fast(items: list) -> list:\n    seen, dupes = set(), []\n    for item in items:\n        if item in seen and item not in dupes:\n            dupes.append(item)\n        seen.add(item)\n    return dupes\n\n# Examples:\nprint(find_duplicates([1, 2, 3, 2, 4, 1, 5]))  # [1, 2]",
+      "javascript": "function findDuplicates(items) {\n    const seen = new Set();\n    const dupes = new Set();\n    for (const item of items) {\n        if (seen.has(item)) dupes.add(item);\n        seen.add(item);\n    }\n    return [...dupes];\n}\n\nconsole.log(findDuplicates([1, 2, 3, 2, 4, 1, 5]));  // [1, 2]",
+      "go": "package main\n\nfunc FindDuplicates(items []int) []int {\n    seen := map[int]bool{}\n    dupes := map[int]bool{}\n    out := []int{}\n    for _, v := range items {\n        if seen[v] && !dupes[v] {\n            dupes[v] = true\n            out = append(out, v)\n        }\n        seen[v] = true\n    }\n    return out\n}",
+      "rust": "use std::collections::HashSet;\n\npub fn find_duplicates(items: &[i32]) -> Vec<i32> {\n    let mut seen = HashSet::new();\n    let mut dupes = HashSet::new();\n    let mut out = Vec::new();\n    for &v in items {\n        if seen.contains(&v) && dupes.insert(v) {\n            out.push(v);\n        }\n        seen.insert(v);\n    }\n    out\n}",
+      "java": "import java.util.*;\n\npublic static List<Integer> findDuplicates(List<Integer> items) {\n    Set<Integer> seen = new HashSet<>();\n    Set<Integer> dupes = new HashSet<>();\n    List<Integer> out = new ArrayList<>();\n    for (int v : items) {\n        if (seen.contains(v) && dupes.add(v)) out.add(v);\n        seen.add(v);\n    }\n    return out;\n}",
+      "c++": "#include <vector>\n#include <unordered_set>\n\nstd::vector<int> findDuplicates(const std::vector<int>& items) {\n    std::unordered_set<int> seen, dupes;\n    std::vector<int> out;\n    for (int v : items) {\n        if (seen.count(v) && dupes.insert(v).second) out.push_back(v);\n        seen.insert(v);\n    }\n    return out;\n}",
+      "c#": "public static List<int> FindDuplicates(List<int> items)\n{\n    var seen = new HashSet<int>();\n    var dupes = new HashSet<int>();\n    var out = new List<int>();\n    foreach (int v in items)\n    {\n        if (seen.Contains(v) && dupes.Add(v)) out.Add(v);\n        seen.Add(v);\n    }\n    return out;\n}"
+    }
+  },
+  {
+    "task": "list_to_numbers",
+    "patterns": [
+      "\\bconvert\\b.*\\blist\\s+of\\s+strings?\\b.*\\b(?:to\\s+)?(?:integers?|numbers?|ints?)\\b",
+      "\\b(?:list|array)\\s+of\\s+strings?\\b.*\\b(?:to\\s+)?(?:int|number)s?\\b"
+    ],
+    "intro": "Here's how to convert a list of strings to numbers in {lang}.",
+    "notes": "Python's map(int, items) applies the conversion lazily; a comprehension is clearer when you need to handle bad input. In JS, Number() is strict and parseInt() reads a prefix.",
+    "languages": {
+      "python": "items = ['1', '2', '3', '4']\n\n# Map (lazy):\nnums = list(map(int, items))\nprint(nums)   # [1, 2, 3, 4]\n\n# Comprehension (recommended):\nnums = [int(x) for x in items]\n\n# Floats:\nfloats = [float(x) for x in ['1.5', '2.5']]\n\n# Ignore non-numeric entries:\nmessy = ['1', 'x', '3']\nclean = [int(x) for x in messy if x.isdigit()]\nprint(clean)   # [1, 3]",
+      "javascript": "const items = ['1', '2', '3', '4'];\n\n// Number() — strict, NaN for bad input:\nconst nums = items.map(Number);\nconsole.log(nums);   // [1, 2, 3, 4]\n\n// parseInt — reads a prefix, needs a radix:\nconst nums2 = items.map(s => parseInt(s, 10));\n\n// Filter out NaN results:\nconst clean = items.map(Number).filter(n => !Number.isNaN(n));"
+    }
+  },
+  {
+    "task": "dict_has_key",
+    "patterns": [
+      "\\b(?:check|test|see|determine)\\b.*\\b(?:if\\s+)?(?:a\\s+)?key\\s+exists\\b.*\\b(?:dict|dictionary)\\b",
+      "\\bkey\\s+exists\\b.*\\b(?:dict|dictionary)\\b"
+    ],
+    "intro": "Here's how to check whether a key exists in a dictionary in {lang}.",
+    "notes": "Python's 'in' checks the keys directly. .get() with a default handles the missing case in one call. In JS, 'in' includes inherited keys — use Object.hasOwn for own keys only.",
+    "languages": {
+      "python": "d = {'a': 1, 'b': 2}\n\n# Membership:\nprint('a' in d)          # True\nprint('z' in d)          # False\n\n# Get with a default (no KeyError):\nvalue = d.get('z', 'default')\nprint(value)             # 'default'\n\n# Try/except when you must distinguish:\ntry:\n    v = d['z']\nexcept KeyError:\n    v = 'default'",
+      "javascript": "const d = { a: 1, b: 2 };\n\n// 'in' includes inherited keys:\nconsole.log('a' in d);             // true\n\n// Own keys only (recommended):\nconsole.log(Object.hasOwn(d, 'a')); // true\nconsole.log(d.hasOwnProperty('a')); // true (older)\n\n// Get with a default:\nconst value = d['z'] ?? 'default';\nconsole.log(value);   // 'default'"
+    }
+  },
+  {
+    "task": "number_commas",
+    "patterns": [
+      "\\b(?:format|add|insert)\\b.*\\bcommas?\\b.*\\bnumber\\b",
+      "\\bnumber\\b.*\\bcommas?\\b",
+      "\\bthousands?\\s+separator\\b"
+    ],
+    "intro": "Here's how to format a number with thousands separators in {lang}.",
+    "notes": "The locale-based formatters handle grouping, decimals, and negative numbers correctly — don't hand-roll comma insertion. Python: f'{n:,}' or locale. JS: toLocaleString.",
+    "languages": {
+      "python": "n = 1234567.891\n\n# f-string grouping:\nprint(f'{n:,}')        # 1,234,567.891\n\n# Integer:\nprint(f'{1234567:,}')  # 1,234,567\n\n# locale-aware (grouping matches the user's locale):\nimport locale\nlocale.setlocale(locale.LC_ALL, '')\nprint(locale.format_string('%d', 1234567, grouping=True))\n\n# Formatting inside an f-string with decimals:\nprint(f'{n:,.2f}')     # 1,234,567.89",
+      "javascript": "const n = 1234567.891;\n\nconsole.log(n.toLocaleString('en-US'));   // 1,234,567.891\n\n// Force grouping with a fixed style:\nconsole.log(new Intl.NumberFormat('en-US', {\n    maximumFractionDigits: 2\n}).format(n));   // 1,234,567.89\n\n// Currency:\nconsole.log(new Intl.NumberFormat('en-US', {\n    style: 'currency', currency: 'USD'\n}).format(n));   // $1,234,567.89"
+    }
+  },
+  {
+    "task": "check_type",
+    "patterns": [
+      "\\bcheck\\b.*\\btype\\b.*\\b(?:of\\s+)?(?:variable|value|object)\\b",
+      "\\b(?:what\\s+type|type\\s+of)\\b.*\\b(?:variable|value|object)\\b"
+    ],
+    "intro": "Here's how to check the type of a variable in {lang}.",
+    "notes": "Python's type() gives the exact class; isinstance() checks inheritance and is the right tool for branching. In JS, typeof is for primitives and Array.isArray for arrays.",
+    "languages": {
+      "python": "x = 42\n\n# Exact type:\nprint(type(x))            # <class 'int'>\n\n# For branching, use isinstance (handles subclasses):\nif isinstance(x, int):\n    print('integer')\nelif isinstance(x, str):\n    print('string')\n\n# Strings, lists, dicts:\nprint(isinstance('hi', str))     # True\nprint(isinstance([1], list))     # True\nprint(isinstance({'a': 1}, dict))  # True\n\n# Duck-typing alternative:\nprint(hasattr(x, '__iter__'))    # True for iterables",
+      "javascript": "let x = 42;\n\n// typeof — primitives and functions:\nconsole.log(typeof x);              // 'number'\nconsole.log(typeof 'hi');           // 'string'\nconsole.log(typeof true);           // 'boolean'\nconsole.log(typeof undefined);      // 'undefined'\n\n// typeof [] is 'object' — use Array.isArray:\nconsole.log(Array.isArray([1, 2]));  // true\nconsole.log(Array.isArray({}));      // false\n\n// null check:\nconsole.log(x === null);\n\n// Instance checks:\nconsole.log(new Date() instanceof Date);  // true"
+    }
+  },
+  {
+    "task": "remove_vowels",
+    "patterns": [
+      "\\bremove\\b.*\\bvowels?\\b.*\\b(?:string|text|word)\\b"
+    ],
+    "intro": "Here's a {lang} function that removes vowels from a string.",
+    "notes": "A translation table (Python) or regex (both languages) removes vowels in one pass. Remember that y is sometimes a vowel — this version keeps it.",
+    "languages": {
+      "python": "def remove_vowels(s: str) -> str:\n    return ''.join(ch for ch in s if ch.lower() not in 'aeiou')\n\n# Fast version with a translation table:\ndef remove_vowels_fast(s: str) -> str:\n    table = str.maketrans('', '', 'aeiouAEIOU')\n    return s.translate(table)\n\n# Regex version:\nimport re\ndef remove_vowels_re(s: str) -> str:\n    return re.sub(r'[aeiouAEIOU]', '', s)\n\nprint(remove_vowels('hello world'))   # hll wrld",
+      "javascript": "function removeVowels(s) {\n    return s.replace(/[aeiouAEIOU]/g, '');\n}\n\n// Case-insensitive:\nfunction removeVowels2(s) {\n    return s.replace(/[aeiou]/gi, '');\n}\n\nconsole.log(removeVowels('hello world'));   // 'hll wrld'"
+    }
+  },
+  {
+    "task": "sum_even",
+    "patterns": [
+      "\\bsum\\b.*\\beven\\b.*\\b(?:numbers?|list|array)\\b",
+      "\\beven\\s+numbers?\\b.*\\bsum\\b"
+    ],
+    "intro": "Here's a {lang} function that sums the even numbers in a list.",
+    "notes": "Filter then sum — a comprehension with an if clause is the Pythonic one-liner; reduce or filter+sum work in JS.",
+    "languages": {
+      "python": "def sum_even(numbers: list) -> int:\n    return sum(n for n in numbers if n % 2 == 0)\n\n# Examples:\nprint(sum_even([1, 2, 3, 4, 5, 6]))   # 12 (2+4+6)\nprint(sum_even([1, 3, 5]))           # 0",
+      "javascript": "function sumEven(numbers) {\n    return numbers\n        .filter(n => n % 2 === 0)\n        .reduce((acc, n) => acc + n, 0);\n}\n\nconsole.log(sumEven([1, 2, 3, 4, 5, 6]));   // 12"
+    }
+  },
+  {
+    "task": "dir_watcher",
+    "patterns": [
+      "\\bwatch\\w*\\b.*\\b(?:directory|folder)\\b.*\\b(?:new\\s+files?|changes?)\\b",
+      "\\bmonitor\\b.*\\b(?:directory|folder)\\b.*\\b(?:new\\s+files?)\\b"
+    ],
+    "intro": "Here's a {lang} script that watches a directory for new files.",
+    "notes": "Polling the directory listing is portable; watchdog (Python) uses OS events and scales better. The set-difference approach below reports only brand-new files.",
+    "languages": {
+      "python": "import os\nimport time\n\ndef watch_directory(path: str, interval: float = 1.0):\n    \"\"\"Print new files as they appear in a directory.\"\"\"\n    seen = set(os.listdir(path))\n    while True:\n        time.sleep(interval)\n        current = set(os.listdir(path))\n        for name in current - seen:\n            print('new file:', name)\n        seen = current\n\n# Usage: watch_directory('./uploads')\n\n# Event-based alternative (pip install watchdog):\n# from watchdog.observers import Observer\n# from watchdog.events import FileSystemEventHandler\n# class Handler(FileSystemEventHandler):\n#     def on_created(self, event):\n#         print('created', event.src_path)\n# observer = Observer()\n# observer.schedule(Handler(), path='.')\n# observer.start()",
+      "javascript": "const fs = require('fs');\n\nfunction watchDirectory(path, interval = 1000) {\n    let seen = new Set(fs.readdirSync(path));\n    setInterval(() => {\n        const current = new Set(fs.readdirSync(path));\n        for (const name of current) {\n            if (!seen.has(name)) console.log('new file:', name);\n        }\n        seen = current;\n    }, interval);\n}\n\n// watchDirectory('./uploads');"
+    }
+  },
+  {
+    "task": "luhn_check",
+    "patterns": [
+      "\\bluhn\\b",
+      "\\b(?:validate|check)\\b.*\\bcredit\\s+card\\b"
+    ],
+    "intro": "Here's a {lang} function that validates a credit card number using the Luhn algorithm.",
+    "notes": "The Luhn checksum doubles every second digit from the right and subtracts 9 from results over 9; the total must be divisible by 10. Strip spaces/dashes before validating.",
+    "languages": {
+      "python": "def luhn_check(card_number: str) -> bool:\n    \"\"\"True for a valid Luhn checksum (digits only).\"\"\"\n    digits = [int(ch) for ch in card_number if ch.isdigit()]\n    if len(digits) < 2:\n        return False\n    total = 0\n    for i, d in enumerate(reversed(digits)):\n        if i % 2 == 1:      # double every second digit from the right\n            d *= 2\n            if d > 9:\n                d -= 9\n        total += d\n    return total % 10 == 0\n\n# Examples (test numbers):\nprint(luhn_check('4539 1488 0343 6467'))   # True\nprint(luhn_check('4539 1488 0343 6468'))   # False",
+      "javascript": "function luhnCheck(cardNumber) {\n    const digits = cardNumber.replace(/\\D/g, '').split('').map(Number);\n    if (digits.length < 2) return false;\n    let total = 0;\n    for (let i = digits.length - 1, dbl = false; i >= 0; i--, dbl = !dbl) {\n        let d = digits[i];\n        if (dbl) {\n            d *= 2;\n            if (d > 9) d -= 9;\n        }\n        total += d;\n    }\n    return total % 10 === 0;\n}\n\nconsole.log(luhnCheck('4539 1488 0343 6467'));  // true"
+    }
+  },
+  {
+    "task": "permutations",
+    "patterns": [
+      "\\bpermutations?\\b"
+    ],
+    "intro": "Here's how to generate all permutations of a string in {lang}.",
+    "notes": "itertools.permutations is the stdlib answer for strings and lists. The recursive version is the classic interview implementation.",
+    "languages": {
+      "python": "from itertools import permutations\n\n# Stdlib (string):\ns = 'abc'\nperms = [''.join(p) for p in permutations(s)]\nprint(perms)   # ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']\n\n# Recursive implementation:\ndef permute(s: str) -> list:\n    if len(s) <= 1:\n        return [s]\n    out = []\n    for i, ch in enumerate(s):\n        for rest in permute(s[:i] + s[i+1:]):\n            out.append(ch + rest)\n    return out\n\nprint(permute('abc'))",
+      "javascript": "function permutations(s) {\n    if (s.length <= 1) return [s];\n    const out = [];\n    for (let i = 0; i < s.length; i++) {\n        const rest = s.slice(0, i) + s.slice(i + 1);\n        for (const p of permutations(rest)) {\n            out.push(s[i] + p);\n        }\n    }\n    return out;\n}\n\nconsole.log(permutations('abc'));\n// ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']"
+    }
+  },
+  {
+    "task": "perfect_square",
+    "patterns": [
+      "\\bperfect\\s+square\\b"
+    ],
+    "intro": "Here's a {lang} function that checks whether a number is a perfect square.",
+    "notes": "math.isqrt (Python 3.8+) computes the integer square root exactly; check whether its square equals the input. In JS use Math.sqrt and compare to Math.floor.",
+    "languages": {
+      "python": "import math\n\ndef is_perfect_square(n: int) -> bool:\n    if n < 0:\n        return False\n    root = math.isqrt(n)\n    return root * root == n\n\n# Examples:\nprint(is_perfect_square(16))     # True\nprint(is_perfect_square(15))     # False\nprint(is_perfect_square(0))      # True\nprint(is_perfect_square(-4))     # False",
+      "javascript": "function isPerfectSquare(n) {\n    if (n < 0) return false;\n    const root = Math.floor(Math.sqrt(n));\n    return root * root === n;\n}\n\nconsole.log(isPerfectSquare(16));   // true\nconsole.log(isPerfectSquare(15));   // false"
+    }
+  },
+  {
+    "task": "number_to_words",
+    "patterns": [
+      "\\b(?:convert|write)\\b.*\\bnumber\\b.*\\b(?:to\\s+)?(?:word|english|text)\\s+form\\b",
+      "\\bnumbers?\\s+to\\s+words?\\b"
+    ],
+    "intro": "Here's a {lang} function that converts a number to its English word form.",
+    "notes": "The classic implementation chunks the number into thousands groups and handles the teens separately. This version covers 0 to 999,999,999,999.",
+    "languages": {
+      "python": "ONES = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven',\n        'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen',\n        'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']\nTENS = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy',\n        'eighty', 'ninety']\nSCALES = ['', 'thousand', 'million', 'billion']\n\ndef _under_1000(n: int) -> str:\n    out = []\n    if n >= 100:\n        out.append(f'{ONES[n // 100]} hundred')\n        n %= 100\n    if n >= 20:\n        out.append(TENS[n // 10])\n        n %= 10\n        if n:\n            out[-1] += '-' + ONES[n]\n    elif n:\n        out.append(ONES[n])\n    return ' '.join(out)\n\ndef number_to_words(n: int) -> str:\n    if n == 0:\n        return 'zero'\n    if n < 0:\n        return 'minus ' + number_to_words(-n)\n    parts = []\n    scale = 0\n    while n:\n        chunk = n % 1000\n        if chunk:\n            head = _under_1000(chunk)\n            parts.append(f'{head} {SCALES[scale]}'.strip())\n        n //= 1000\n        scale += 1\n    return ' '.join(reversed(parts)).strip()\n\n# Examples:\nprint(number_to_words(1234))        # one thousand two hundred thirty-four\nprint(number_to_words(1_000_001))   # one million one"
+    }
+  },
+  {
+    "task": "calculator_app",
+    "patterns": [
+      "\\b(?:simple\\s+)?calculator\\b"
+    ],
+    "intro": "Here's a simple calculator in {lang}.",
+    "notes": "A read-eval-print loop with arithmetic operations is the classic starting point. The dict-of-operations pattern avoids a long if/elif chain.",
+    "languages": {
+      "python": "def calculator():\n    \"\"\"Simple REPL calculator: 3 + 4, 10 / 2, quit to exit.\"\"\"\n    ops = {\n        '+': lambda a, b: a + b,\n        '-': lambda a, b: a - b,\n        '*': lambda a, b: a * b,\n        '/': lambda a, b: a / b if b else float('inf'),\n    }\n    print('Simple calculator — type \"3 + 4\", \"quit\" to exit')\n    while True:\n        line = input('> ').strip()\n        if line.lower() in ('quit', 'exit', 'q'):\n            break\n        parts = line.split()\n        if len(parts) != 3 or parts[1] not in ops:\n            print('usage: <num> <op> <num>')\n            continue\n        try:\n            a, b = float(parts[0]), float(parts[2])\n        except ValueError:\n            print('numbers only')\n            continue\n        print(ops[parts[1]](a, b))\n\nif __name__ == '__main__':\n    calculator()"
+    }
+  },
+  {
+    "task": "mask_credit_card",
+    "patterns": [
+      "\\bmask\\b.*\\bcredit\\s+card\\b",
+      "\\bmask\\b.*\\b(?:card\\s+)?numbers?\\b.*\\bstring\\b"
+    ],
+    "intro": "Here's a {lang} function that masks credit card numbers in a string.",
+    "notes": "A regex keeps the last four digits and replaces the rest. The callback form lets you preserve the digits-only check instead of matching raw text.",
+    "languages": {
+      "python": "import re\n\ndef mask_credit_cards(text: str) -> str:\n    \"\"\"Replace 12-19 digit card numbers with '************' + last 4.\"\"\"\n    return re.sub(r'\\b(\\d{4}[ -]?\\d{4}[ -]?\\d{4}[ -]?(?:\\d{4})?)\\b',\n                  lambda m: '*' * 12 + re.sub(r'\\D', '', m.group(1))[-4:],\n                  text)\n\n# Simpler: mask a single card string:\ndef mask_card(card: str) -> str:\n    digits = re.sub(r'\\D', '', card)\n    return '**** **** **** ' + digits[-4:]\n\nprint(mask_card('4539 1488 0343 6467'))  # **** **** **** 6467\nprint(mask_credit_cards('my card is 4539-1488-0343-6467 ok'))",
+      "javascript": "function maskCreditCards(text) {\n    return text.replace(/\\b\\d{4}[ -]?\\d{4}[ -]?\\d{4}[ -]?(?:\\d{4})?\\b/g,\n        m => '*'.repeat(12) + m.replace(/\\D/g, '').slice(-4));\n}\n\nfunction maskCard(card) {\n    return '**** **** **** ' + card.replace(/\\D/g, '').slice(-4);\n}\n\nconsole.log(maskCard('4539 1488 0343 6467'));  // **** **** **** 6467"
+    }
+  },
+  {
+    "task": "extract_hashtags",
+    "patterns": [
+      "\\bhashtags?\\b",
+      "\\bextract\\b.*\\b(?:tags?|hashtags?)\\b.*\\b(?:tweet|text|string)\\b"
+    ],
+    "intro": "Here's a {lang} function that extracts hashtags from a tweet.",
+    "notes": "A regex matching # followed by word characters is the standard approach; the word-boundary lookahead avoids matching # inside URLs or trailing punctuation.",
+    "languages": {
+      "python": "import re\n\ndef extract_hashtags(text: str) -> list:\n    \"\"\"All #hashtags in a tweet, without the #.\"\"\"\n    return re.findall(r'#(\\w+)', text)\n\n# Example:\ntweet = 'Loving #python and #programming today! #100DaysOfCode'\nprint(extract_hashtags(tweet))\n# ['python', 'programming', '100DaysOfCode']\n\n# With the # included:\nprint(re.findall(r'#\\w+', tweet))\n\n# Count hashtags:\nprint(len(extract_hashtags(tweet)))   # 3",
+      "javascript": "function extractHashtags(text) {\n    return (text.match(/#\\w+/g) || []).map(h => h.slice(1));\n}\n\nconst tweet = 'Loving #python and #programming today! #100DaysOfCode';\nconsole.log(extractHashtags(tweet));\n// ['python', 'programming', '100DaysOfCode']"
+    }
+  },
+  {
+    "task": "tic_tac_toe",
+    "patterns": [
+      "\\btic\\s*tac\\s*toe\\b"
+    ],
+    "intro": "Here's a text-based tic-tac-toe game in {lang}.",
+    "notes": "A board of 9 cells, a turn loop, and a win check across rows/columns/diagonals. The winning lines are precomputed so the check stays short.",
+    "languages": {
+      "python": "def tic_tac_toe():\n    board = [' '] * 9\n    wins = [(0, 1, 2), (3, 4, 5), (6, 7, 8),\n            (0, 3, 6), (1, 4, 7), (2, 5, 8),\n            (0, 4, 8), (2, 4, 6)]\n\n    def show():\n        for row in range(3):\n            print(' | '.join(board[row*3:row*3+3]))\n            if row < 2:\n                print('-' * 9)\n\n    def winner():\n        for a, b, c in wins:\n            if board[a] != ' ' and board[a] == board[b] == board[c]:\n                return board[a]\n        return None\n\n    player = 'X'\n    for turn in range(9):\n        show()\n        move = input(f'Player {player} (1-9): ')\n        try:\n            i = int(move) - 1\n        except ValueError:\n            print('enter 1-9')\n            continue\n        if i < 0 or i > 8 or board[i] != ' ':\n            print('invalid move')\n            continue\n        board[i] = player\n        if winner():\n            show()\n            print(f'Player {player} wins!')\n            return\n        player = 'O' if player == 'X' else 'X'\n    show()\n    print('Draw!')\n\nif __name__ == '__main__':\n    tic_tac_toe()"
+    }
+  },
+  {
+    "task": "level_order",
+    "patterns": [
+      "\\blevel\\s+order\\b",
+      "\\b(?:breadth[- ]first|bfs)\\b.*\\b(?:tree|binary\\s+tree)\\b"
+    ],
+    "intro": "Here's a {lang} implementation of level-order (breadth-first) traversal of a binary tree.",
+    "notes": "Use a queue: pop a node, visit it, push its children. Returning a list of levels (lists) is the common LeetCode format.",
+    "languages": {
+      "python": "from collections import deque\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef level_order(root: TreeNode) -> list:\n    \"\"\"Return node values grouped by level.\"\"\"\n    if not root:\n        return []\n    result = []\n    queue = deque([root])\n    while queue:\n        level = []\n        for _ in range(len(queue)):\n            node = queue.popleft()\n            level.append(node.val)\n            if node.left:\n                queue.append(node.left)\n            if node.right:\n                queue.append(node.right)\n        result.append(level)\n    return result\n\n# Example:     1\n#            / \\\n#           2   3\nroot = TreeNode(1, TreeNode(2), TreeNode(3))\nprint(level_order(root))   # [[1], [2, 3]]",
+      "javascript": "function levelOrder(root) {\n    if (!root) return [];\n    const result = [];\n    const queue = [root];\n    while (queue.length > 0) {\n        const level = [];\n        const n = queue.length;\n        for (let i = 0; i < n; i++) {\n            const node = queue.shift();\n            level.push(node.val);\n            if (node.left) queue.push(node.left);\n            if (node.right) queue.push(node.right);\n        }\n        result.push(level);\n    }\n    return result;\n}",
+      "go": "package main\n\ntype TreeNode struct {\n    Val   int\n    Left  *TreeNode\n    Right *TreeNode\n}\n\nfunc LevelOrder(root *TreeNode) [][]int {\n    if root == nil {\n        return nil\n    }\n    result := [][]int{}\n    queue := []*TreeNode{root}\n    for len(queue) > 0 {\n        level := []int{}\n        n := len(queue)\n        for i := 0; i < n; i++ {\n            node := queue[0]\n            queue = queue[1:]\n            level = append(level, node.Val)\n            if node.Left != nil {\n                queue = append(queue, node.Left)\n            }\n            if node.Right != nil {\n                queue = append(queue, node.Right)\n            }\n        }\n        result = append(result, level)\n    }\n    return result\n}",
+      "rust": "use std::collections::VecDeque;\n\n#[derive(Debug)]\npub struct TreeNode {\n    pub val: i32,\n    pub left: Option<Box<TreeNode>>,\n    pub right: Option<Box<TreeNode>>,\n}\n\npub fn level_order(root: Option<Box<TreeNode>>) -> Vec<Vec<i32>> {\n    let mut result = Vec::new();\n    let mut queue = VecDeque::new();\n    if let Some(r) = root { queue.push_back(r); }\n    while !queue.is_empty() {\n        let mut level = Vec::new();\n        for _ in 0..queue.len() {\n            if let Some(node) = queue.pop_front() {\n                level.push(node.val);\n                if let Some(l) = node.left { queue.push_back(l); }\n                if let Some(r) = node.right { queue.push_back(r); }\n            }\n        }\n        result.push(level);\n    }\n    result\n}",
+      "java": "import java.util.*;\n\npublic static List<List<Integer>> levelOrder(TreeNode root) {\n    List<List<Integer>> result = new ArrayList<>();\n    if (root == null) return result;\n    Queue<TreeNode> queue = new ArrayDeque<>();\n    queue.offer(root);\n    while (!queue.isEmpty()) {\n        List<Integer> level = new ArrayList<>();\n        for (int i = queue.size(); i > 0; i--) {\n            TreeNode node = queue.poll();\n            level.add(node.val);\n            if (node.left != null) queue.offer(node.left);\n            if (node.right != null) queue.offer(node.right);\n        }\n        result.add(level);\n    }\n    return result;\n}",
+      "c++": "#include <vector>\n#include <queue>\n\nstruct TreeNode {\n    int val;\n    TreeNode *left, *right;\n    TreeNode(int v) : val(v), left(nullptr), right(nullptr) {}\n};\n\nstd::vector<std::vector<int>> levelOrder(TreeNode* root) {\n    std::vector<std::vector<int>> result;\n    if (!root) return result;\n    std::queue<TreeNode*> q;\n    q.push(root);\n    while (!q.empty()) {\n        std::vector<int> level;\n        for (int i = q.size(); i > 0; i--) {\n            TreeNode* node = q.front();\n            q.pop();\n            level.push_back(node->val);\n            if (node->left) q.push(node->left);\n            if (node->right) q.push(node->right);\n        }\n        result.push_back(level);\n    }\n    return result;\n}",
+      "c#": "public static List<List<int>> LevelOrder(TreeNode root)\n{\n    var result = new List<List<int>>();\n    if (root == null) return result;\n    var queue = new Queue<TreeNode>();\n    queue.Enqueue(root);\n    while (queue.Count > 0)\n    {\n        var level = new List<int>();\n        for (int i = queue.Count; i > 0; i--)\n        {\n            var node = queue.Dequeue();\n            level.Add(node.Val);\n            if (node.Left != null) queue.Enqueue(node.Left);\n            if (node.Right != null) queue.Enqueue(node.Right);\n        }\n        result.Add(level);\n    }\n    return result;\n}"
+    }
+  },
+  {
+    "task": "pandas_groupby",
+    "patterns": [
+      "\\b(?:pandas|dataframe|df)\\b.*\\bgroup\\s+by\\b",
+      "\\bgroup\\s+by\\b.*\\b(?:pandas|dataframe|column)\\b.*\\b(?:mean|aggregate|sum)\\b"
+    ],
+    "intro": "Here's how to group by a column and aggregate with pandas.",
+    "notes": "groupby splits the frame, applies the aggregation per group, and combines. Pass as_index=False to keep the group column, or use .agg() for several functions at once.",
+    "languages": {
+      "python": "import pandas as pd\n\ndf = pd.read_csv('sales.csv')\n\n# Mean per group:\nresult = df.groupby('region')['revenue'].mean()\nprint(result)\n\n# Keep the group column (as_index=False):\nresult = df.groupby('region', as_index=False)['revenue'].mean()\n\n# Several aggregations:\nresult = df.groupby('region')['revenue'].agg(['mean', 'sum', 'count'])\n\n# Aggregate multiple columns differently:\nresult = df.groupby('region').agg(\n    total_revenue=('revenue', 'sum'),\n    avg_orders=('orders', 'mean'),\n)\n\n# Group by multiple keys:\ndf.groupby(['region', 'year'])['revenue'].sum()"
+    }
+  },
+  {
+    "task": "numpy_basics",
+    "patterns": [
+      "\\bnumpy\\b",
+      "\\bnp\\.array\\b",
+      "\\bndarray\\b"
+    ],
+    "intro": "Here's how to create and use NumPy arrays.",
+    "notes": "np.array builds an array; np.arange/np.zeros/np.linspace create them directly. Vectorized operations run at C speed — avoid Python loops over arrays.",
+    "languages": {
+      "python": "import numpy as np\n\n# Create arrays:\na = np.array([1, 2, 3, 4])\nzeros = np.zeros(5)\nones = np.ones((2, 3))\nseq = np.arange(0, 10, 2)        # [0 2 4 6 8]\nlin = np.linspace(0, 1, 5)       # 5 points 0..1\n\n# Vectorized math (no loops!):\nprint(a * 2)          # [2 4 6 8]\nprint(a + a)          # [2 4 6 8]\nprint(a.mean())       # 2.5\nprint(a.sum(), a.max(), a.min())\n\n# 2D arrays:\nm = np.array([[1, 2], [3, 4]])\nprint(m.T)            # transpose\nprint(m @ m)          # matrix multiply\n\n# Boolean masks:\nprint(a[a > 2])       # [3 4]\n\n# Random:\nrng = np.random.default_rng(42)\nprint(rng.normal(size=5))"
+    }
+  },
+  {
+    "task": "matplotlib_plot",
+    "patterns": [
+      "\\bmatplotlib\\b",
+      "\\bplot\\b.*\\b(?:chart|graph|line\\s+chart)\\b",
+      "\\b(?:line\\s+chart|plot)\\b.*\\bmatplotlib\\b"
+    ],
+    "intro": "Here's how to plot a line chart with Matplotlib.",
+    "notes": "plt.plot + plt.show is the minimal workflow. Use fig, ax = plt.subplots() and ax.plot for full control, and savefig to export.",
+    "languages": {
+      "python": "import matplotlib.pyplot as plt\n\nx = [1, 2, 3, 4, 5]\ny = [2, 4, 1, 8, 6]\n\n# Minimal line chart:\nplt.plot(x, y)\nplt.xlabel('Time')\nplt.ylabel('Value')\nplt.title('My chart')\nplt.show()\n\n# With an explicit figure/axes (recommended):\nfig, ax = plt.subplots(figsize=(8, 4))\nax.plot(x, y, marker='o', label='series A')\nax.plot(x, [v * 1.5 for v in y], label='series B')\nax.legend()\nax.grid(True)\nfig.savefig('chart.png', dpi=150)   # no need to show\n\n# Bar chart:\nplt.bar(['a', 'b', 'c'], [3, 7, 2])\n\n# Subplots:\nfig, axes = plt.subplots(1, 2)\naxes[0].plot(x, y)\naxes[1].bar(['a', 'b'], [3, 7])"
+    }
+  },
+  {
+    "task": "pandas_merge",
+    "patterns": [
+      "\\bmerge\\b.*\\bdataframes?\\b",
+      "\\bpd\\.merge\\b",
+      "\\bjoin\\b.*\\bdataframes?\\b"
+    ],
+    "intro": "Here's how to merge two DataFrames in pandas.",
+    "notes": "pd.merge joins on columns (like SQL); how='left'/'inner'/'outer' controls which rows survive. DataFrame.join is a shortcut when merging on the index.",
+    "languages": {
+      "python": "import pandas as pd\n\nusers = pd.DataFrame({'id': [1, 2, 3], 'name': ['a', 'b', 'c']})\norders = pd.DataFrame({'user_id': [1, 2, 4], 'total': [10, 20, 30]})\n\n# Inner join on a key column:\nmerged = pd.merge(users, orders, left_on='id', right_on='user_id')\n\n# Left join (keep every user):\nmerged = pd.merge(users, orders, left_on='id', right_on='user_id', how='left')\n\n# Outer join:\nmerged = pd.merge(users, orders, left_on='id', right_on='user_id', how='outer')\n\n# Same column name on both sides:\nmerged = pd.merge(users, orders, on='id')\n\n# Join on the index:\nusers.set_index('id').join(orders.set_index('user_id'))\n\n# Suffixes for overlapping columns:\npd.merge(users, orders, on='id', suffixes=('_u', '_o'))"
+    }
+  },
+  {
+    "task": "express_middleware",
+    "patterns": [
+      "^(?!.*\\bjwt\\b).*\\bexpress\\b.*\\bmiddleware\\b",
+      "^(?!.*\\bjwt\\b).*\\bmiddleware\\b.*\\bexpress\\b"
+    ],
+    "intro": "Here's how to add middleware to an Express app.",
+    "notes": "app.use() registers middleware that runs for every request; a custom middleware is just a function(req, res, next). Order matters — middleware runs in registration order.",
+    "languages": {
+      "javascript": "const express = require('express');\nconst app = express();\n\n// Built-in middleware:\napp.use(express.json());          // parse JSON bodies\napp.use(express.static('public')); // serve static files\n\n// Custom logging middleware:\napp.use((req, res, next) => {\n    console.log(`${req.method} ${req.url}`);\n    next();   // pass control to the next handler\n});\n\n// Path-scoped middleware:\napp.use('/api', (req, res, next) => {\n    // runs only for /api routes\n    next();\n});\n\n// Auth middleware:\nfunction requireAuth(req, res, next) {\n    if (!req.headers.authorization) {\n        return res.status(401).json({ error: 'unauthorized' });\n    }\n    next();\n}\napp.use(requireAuth);\n\n// Error-handling middleware (4 args = error handler):\napp.use((err, req, res, next) => {\n    console.error(err);\n    res.status(500).json({ error: 'server error' });\n});"
+    }
+  },
+  {
+    "task": "express_body",
+    "patterns": [
+      "\\bexpress\\b.*\\b(?:request\\s+body|body)\\b",
+      "\\b(?:read|parse|access)\\b.*\\b(?:request\\s+)?body\\b.*\\bexpress\\b"
+    ],
+    "intro": "Here's how to read the request body in Express.",
+    "notes": "express.json() parses JSON bodies into req.body; express.urlencoded() handles form data. Without it req.body is undefined in Express 4.15+.",
+    "languages": {
+      "javascript": "const express = require('express');\nconst app = express();\n\napp.use(express.json());            // JSON bodies -> req.body\napp.use(express.urlencoded({ extended: true }));  // form bodies\n\napp.post('/api/users', (req, res) => {\n    console.log(req.body);          // parsed object\n    res.json({ received: req.body });\n});\n\n// Query string is separate:\napp.get('/api/search', (req, res) => {\n    console.log(req.query.q);       // /api/search?q=hi -> 'hi'\n    res.json({ q: req.query.q });\n});\n\n// Route params:\napp.get('/api/users/:id', (req, res) => {\n    console.log(req.params.id);     // /api/users/42 -> '42'\n    res.json({ id: req.params.id });\n});"
+    }
+  },
+  {
+    "task": "django_model",
+    "patterns": [
+      "^(?!.*\\bquery\\b).*\\bdjango\\b.*\\bmodel\\b",
+      "\\bmodel\\b.*\\bdjango\\b"
+    ],
+    "intro": "Here's how to define a model in Django.",
+    "notes": "Models are Python classes that map to database tables; fields become columns. After defining them run makemigrations + migrate. The Meta class controls ordering, table names, and constraints.",
+    "languages": {
+      "python": "# models.py\nfrom django.db import models\n\nclass Author(models.Model):\n    name = models.CharField(max_length=100)\n    email = models.EmailField(unique=True)\n\n    def __str__(self):\n        return self.name\n\n\nclass Book(models.Model):\n    title = models.CharField(max_length=200)\n    author = models.ForeignKey(Author, on_delete=models.CASCADE,\n                                related_name='books')\n    pages = models.PositiveIntegerField(default=0)\n    published = models.DateField(null=True, blank=True)\n    created_at = models.DateTimeField(auto_now_add=True)\n\n    class Meta:\n        ordering = ['title']\n\n    def __str__(self):\n        return self.title\n\n# After editing: python manage.py makemigrations && migrate"
+    }
+  },
+  {
+    "task": "fastapi_endpoint",
+    "patterns": [
+      "\\bfastapi\\b",
+      "\\b(?:get|post|put|delete)\\s+endpoint\\b.*\\b(?:python|fastapi)\\b"
+    ],
+    "intro": "Here's how to make a FastAPI endpoint.",
+    "notes": "Decorators map functions to routes; type hints drive request parsing and validation via Pydantic. Run with uvicorn app:app --reload, and the interactive docs appear at /docs.",
+    "languages": {
+      "python": "from fastapi import FastAPI, HTTPException\nfrom pydantic import BaseModel\n\napp = FastAPI()\n\n\nclass Item(BaseModel):\n    name: str\n    price: float\n\n\n@app.get('/')\ndef root():\n    return {'message': 'hello'}\n\n\n@app.get('/items/{item_id}')\ndef get_item(item_id: int):\n    if item_id != 1:\n        raise HTTPException(status_code=404, detail='not found')\n    return {'id': item_id, 'name': 'widget'}\n\n\n@app.post('/items')\ndef create_item(item: Item):\n    return {'ok': True, 'item': item}\n\n# Run: uvicorn main:app --reload   (docs at http://localhost:8000/docs)"
+    }
+  },
+  {
+    "task": "sql_injection_prevent",
+    "patterns": [
+      "\\bsql\\s+injection\\b"
+    ],
+    "intro": "Here's how to prevent SQL injection in {lang}.",
+    "notes": "Never interpolate values into SQL strings. Parameterized queries (placeholders) keep data separate from code — the database driver handles escaping. This is the single most important web-security habit.",
+    "languages": {
+      "python": "import sqlite3\n\n# WRONG — vulnerable to injection:\n# cur.execute(f\"SELECT * FROM users WHERE name = '{name}'\")\n\n# RIGHT — parameterized query:\nconn = sqlite3.connect('app.db')\ncur = conn.cursor()\ncur.execute('SELECT * FROM users WHERE name = ?', (name,))\ncur.execute('INSERT INTO users (name) VALUES (?)', (name,))\n\n# psycopg2 (PostgreSQL) uses %s:\n# cur.execute('SELECT * FROM users WHERE name = %s', (name,))\n\n# SQLAlchemy / ORMs parameterize automatically — use them.\n\n# For dynamic table/column names (can't parameterize),\n# validate against an allowlist:\nallowed = {'name', 'email'}\nif column not in allowed:\n    raise ValueError('bad column')",
+      "javascript": "// WRONG — vulnerable:\n// db.query(`SELECT * FROM users WHERE name = '${name}'`)\n\n// RIGHT — parameterized:\nconst { Pool } = require('pg');\nconst pool = new Pool();\nawait pool.query('SELECT * FROM users WHERE name = $1', [name]);\n\n// mysql2 uses ? placeholders:\n// await db.query('SELECT * FROM users WHERE name = ?', [name]);\n\n// An ORM (Prisma, Sequelize, Knex) parameterizes for you."
+    }
+  },
+  {
+    "task": "password_hash",
+    "patterns": [
+      "\\bhash\\b.*\\bpassword\\b",
+      "\\bpassword\\b.*\\b(?:hashing|hash|bcrypt)\\b"
+    ],
+    "intro": "Here's how to hash passwords safely in {lang}.",
+    "notes": "Never use md5/sha1/sha256 for passwords — they're too fast. Use a key-derivation function with a per-password salt: bcrypt, argon2, or PBKDF2. Verify with the library's check function, never by re-hashing.",
+    "languages": {
+      "python": "# pip install bcrypt\nimport bcrypt\n\npassword = b'supersecret'\n\n# Hash (generates and stores a random salt):\nhashed = bcrypt.hashpw(password, bcrypt.gensalt())\nprint(hashed.decode())\n\n# Verify later:\nif bcrypt.checkpw(password, hashed):\n    print('ok')\n\n# Stdlib alternative — PBKDF2 with a salt:\nimport hashlib, os\nsalt = os.urandom(16)\ndk = hashlib.pbkdf2_hmac('sha256', password, salt, 600_000)\nstored = salt + dk   # keep both; verify by recomputing",
+      "javascript": "// npm install bcryptjs\nconst bcrypt = require('bcryptjs');\n\nconst password = 'supersecret';\n\n// Hash (includes a random salt):\nconst hashed = await bcrypt.hash(password, 12);\n\n// Verify:\nconst ok = await bcrypt.compare(password, hashed);\nconsole.log(ok);   // true"
+    }
+  },
+  {
+    "task": "encrypt_string",
+    "patterns": [
+      "\\bencrypt\\b.*\\b(?:string|text|data|message)\\b",
+      "\\b(?:symmetric\\s+)?encryption\\b.*\\b(?:python|string|data)\\b"
+    ],
+    "intro": "Here's how to encrypt a string in {lang}.",
+    "notes": "For application data use authenticated symmetric encryption — Fernet (AES-128-CBC + HMAC) is the easy, safe choice. Store the key somewhere protected, never in the repo.",
+    "languages": {
+      "python": "# pip install cryptography\nfrom cryptography.fernet import Fernet\n\n# Generate and save a key ONCE:\nkey = Fernet.generate_key()\nprint(key.decode())   # store this securely\n\nf = Fernet(key)\n\n# Encrypt:\ntoken = f.encrypt(b'hello secret')\nprint(token)\n\n# Decrypt:\nplaintext = f.decrypt(token)\nprint(plaintext.decode())   # hello secret\n\n# Wrong key / tampered token raises InvalidToken.",
+      "javascript": "// Node.js built-in crypto (AES-256-GCM):\nconst crypto = require('crypto');\n\nconst key = crypto.randomBytes(32);   // keep this secret\nconst iv = crypto.randomBytes(12);    // unique per message\n\nconst cipher = crypto.createCipheriv('aes-256-gcm', key, iv);\nconst encrypted = Buffer.concat([\n    cipher.update('hello secret', 'utf8'),\n    cipher.final(),\n]);\nconst tag = cipher.getAuthTag();\nconsole.log(encrypted.toString('base64'), tag.toString('base64'));"
+    }
+  },
+  {
+    "task": "jwt_generate",
+    "patterns": [
+      "^(?!.*\\bmiddleware\\b).*\\bjwt\\b",
+      "\\bjson\\s+web\\s+token\\b"
+    ],
+    "intro": "Here's how to generate and verify a JWT in {lang}.",
+    "notes": "A JWT is a signed token: header.payload.signature. Sign with a strong secret (HS256) or a private key (RS256). Set an expiry (exp) and always verify on the receiving side.",
+    "languages": {
+      "python": "# pip install pyjwt\nimport jwt\nimport datetime\n\nSECRET = 'change-me-to-a-long-random-secret'\n\npayload = {\n    'sub': 'user-42',\n    'role': 'admin',\n    'exp': datetime.datetime.now(datetime.timezone.utc)\n           + datetime.timedelta(hours=1),\n}\n\n# Generate:\ntoken = jwt.encode(payload, SECRET, algorithm='HS256')\nprint(token)\n\n# Verify (raises on bad signature / expired):\ntry:\n    decoded = jwt.decode(token, SECRET, algorithms=['HS256'])\n    print(decoded['sub'])\nexcept jwt.ExpiredSignatureError:\n    print('token expired')\nexcept jwt.InvalidTokenError:\n    print('invalid token')",
+      "javascript": "// npm install jsonwebtoken\nconst jwt = require('jsonwebtoken');\n\nconst SECRET = 'change-me-to-a-long-random-secret';\n\n// Generate:\nconst token = jwt.sign(\n    { sub: 'user-42', role: 'admin' },\n    SECRET,\n    { expiresIn: '1h' }\n);\n\n// Verify:\ntry {\n    const decoded = jwt.verify(token, SECRET);\n    console.log(decoded.sub);\n} catch (err) {\n    console.error('invalid or expired:', err.message);\n}"
+    }
+  },
+  {
+    "task": "best_time_stock",
+    "patterns": [
+      "\\bbest\\s+time\\b.*\\b(?:buy|sell)\\b",
+      "\\bmax\\s+profit\\b.*\\b(?:stock|prices?)\\b"
+    ],
+    "intro": "Here's a {lang} function that finds the best day to buy and sell stock.",
+    "notes": "Track the lowest price seen so far and the best profit at each step — one pass, O(n). The naive double loop is O(n²) and times out on large inputs.",
+    "languages": {
+      "python": "def max_profit(prices: list) -> int:\n    \"\"\"Max profit from one buy then one sell.\"\"\"\n    min_price = float('inf')\n    best = 0\n    for price in prices:\n        if price < min_price:\n            min_price = price\n        elif price - min_price > best:\n            best = price - min_price\n    return best\n\n# Examples:\nprint(max_profit([7, 1, 5, 3, 6, 4]))   # 5 (buy 1, sell 6)\nprint(max_profit([7, 6, 4, 3, 1]))      # 0 (never profitable)",
+      "javascript": "function maxProfit(prices) {\n    let minPrice = Infinity;\n    let best = 0;\n    for (const price of prices) {\n        if (price < minPrice) minPrice = price;\n        else best = Math.max(best, price - minPrice);\n    }\n    return best;\n}\n\nconsole.log(maxProfit([7, 1, 5, 3, 6, 4]));  // 5"
+    }
+  },
+  {
+    "task": "product_except_self",
+    "patterns": [
+      "\\bproduct\\s+of\\s+array\\s+except\\s+self\\b",
+      "\\bproduct\\s+except\\s+self\\b"
+    ],
+    "intro": "Here's a {lang} function that computes the product of an array except itself.",
+    "notes": "Two passes build prefix and suffix products; the answer at each index is prefix[i] * suffix[i]. This avoids division (so zeros are safe) and runs in O(n) time, O(n) space (O(1) with an output array).",
+    "languages": {
+      "python": "def product_except_self(nums: list) -> list:\n    n = len(nums)\n    out = [1] * n\n    prefix = 1\n    for i in range(n):\n        out[i] = prefix\n        prefix *= nums[i]\n    suffix = 1\n    for i in range(n - 1, -1, -1):\n        out[i] *= suffix\n        suffix *= nums[i]\n    return out\n\nprint(product_except_self([1, 2, 3, 4]))   # [24, 12, 8, 6]",
+      "javascript": "function productExceptSelf(nums) {\n    const n = nums.length;\n    const out = new Array(n).fill(1);\n    let prefix = 1;\n    for (let i = 0; i < n; i++) {\n        out[i] = prefix;\n        prefix *= nums[i];\n    }\n    let suffix = 1;\n    for (let i = n - 1; i >= 0; i--) {\n        out[i] *= suffix;\n        suffix *= nums[i];\n    }\n    return out;\n}\nconsole.log(productExceptSelf([1, 2, 3, 4]));  // [24, 12, 8, 6]"
+    }
+  },
+  {
+    "task": "group_anagrams",
+    "patterns": [
+      "\\bgroup\\s+anagrams\\b",
+      "\\banagrams?\\b.*\\bgroup\\b"
+    ],
+    "intro": "Here's a {lang} function that groups anagrams together.",
+    "notes": "Sort each word (or use a character-count tuple) as the group key — anagrams produce identical keys. A dict/Map collects the groups in one pass.",
+    "languages": {
+      "python": "from collections import defaultdict\n\ndef group_anagrams(words: list) -> list:\n    groups = defaultdict(list)\n    for word in words:\n        key = ''.join(sorted(word))\n        groups[key].append(word)\n    return list(groups.values())\n\n# Example:\nprint(group_anagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']))\n# [['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']]",
+      "javascript": "function groupAnagrams(words) {\n    const groups = new Map();\n    for (const word of words) {\n        const key = [...word].sort().join('');\n        (groups.get(key) || groups.set(key, []).get(key)).push(word);\n    }\n    return [...groups.values()];\n}\n\nconsole.log(groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']));"
+    }
+  },
+  {
+    "task": "kth_largest",
+    "patterns": [
+      "\\bkth\\s+largest\\b",
+      "\\b(?:kth|k-th)\\s+biggest\\b"
+    ],
+    "intro": "Here's a {lang} function that finds the kth largest element in a list.",
+    "notes": "sort + index is clearest; heapq.nlargest is O(n log k). For a full solution to the classic problem, a min-heap of size k or quickselect gives O(n) average.",
+    "languages": {
+      "python": "import heapq\n\ndef kth_largest(nums: list, k: int) -> int:\n    \"\"\"kth largest (1-based: k=1 is the largest).\"\"\"\n    return heapq.nlargest(k, nums)[-1]\n\n# Sort + index (simplest):\ndef kth_largest_sorted(nums: list, k: int) -> int:\n    return sorted(nums, reverse=True)[k - 1]\n\n# Min-heap of size k:\ndef kth_largest_heap(nums: list, k: int) -> int:\n    heap = nums[:k]\n    heapq.heapify(heap)\n    for x in nums[k:]:\n        if x > heap[0]:\n            heapq.heapreplace(heap, x)\n    return heap[0]\n\nprint(kth_largest([3, 2, 1, 5, 6, 4], 2))   # 5",
+      "javascript": "function kthLargest(nums, k) {\n    return [...nums].sort((a, b) => b - a)[k - 1];\n}\n\nconsole.log(kthLargest([3, 2, 1, 5, 6, 4], 2));  // 5"
+    }
+  },
+  {
+    "task": "plus_one",
+    "patterns": [
+      "\\bplus\\s+one\\b"
+    ],
+    "intro": "Here's a {lang} function for the 'plus one' problem.",
+    "notes": "Add 1 to a number stored as an array of digits. Walk from the last digit, carrying a 1 forward; if the carry survives the front, prepend a 1.",
+    "languages": {
+      "python": "def plus_one(digits: list) -> list:\n    \"\"\"Increment a number given as a list of digits.\"\"\"\n    for i in range(len(digits) - 1, -1, -1):\n        if digits[i] < 9:\n            digits[i] += 1\n            return digits\n        digits[i] = 0\n    return [1] + digits\n\nprint(plus_one([1, 2, 3]))   # [1, 2, 4]\nprint(plus_one([9, 9, 9]))   # [1, 0, 0, 0]",
+      "javascript": "function plusOne(digits) {\n    for (let i = digits.length - 1; i >= 0; i--) {\n        if (digits[i] < 9) {\n            digits[i]++;\n            return digits;\n        }\n        digits[i] = 0;\n    }\n    return [1, ...digits];\n}\nconsole.log(plusOne([1, 2, 3]));   // [1, 2, 4]"
+    }
+  },
+  {
+    "task": "move_zeroes",
+    "patterns": [
+      "\\bmove\\s+zeroes?\\b",
+      "\\bmove\\s+zeros?\\s+to\\s+(?:the\\s+)?end\\b"
+    ],
+    "intro": "Here's a {lang} function that moves zeroes to the end of an array.",
+    "notes": "Use a write pointer: copy every non-zero forward, then fill the tail with zeros. One pass, in place, preserves relative order.",
+    "languages": {
+      "python": "def move_zeroes(nums: list) -> None:\n    \"\"\"Move all 0s to the end, keeping other elements' order.\"\"\"\n    write = 0\n    for read, x in enumerate(nums):\n        if x != 0:\n            nums[write] = x\n            write += 1\n    for i in range(write, len(nums)):\n        nums[i] = 0\n\nnums = [0, 1, 0, 3, 12]\nmove_zeroes(nums)\nprint(nums)   # [1, 3, 12, 0, 0]",
+      "javascript": "function moveZeroes(nums) {\n    let write = 0;\n    for (let read = 0; read < nums.length; read++) {\n        if (nums[read] !== 0) nums[write++] = nums[read];\n    }\n    for (let i = write; i < nums.length; i++) nums[i] = 0;\n}\nconst nums = [0, 1, 0, 3, 12];\nmoveZeroes(nums);\nconsole.log(nums);   // [1, 3, 12, 0, 0]"
+    }
+  },
+  {
+    "task": "valid_sudoku",
+    "patterns": [
+      "\\bvalid\\s+sudoku\\b"
+    ],
+    "intro": "Here's a {lang} function that checks whether a Sudoku board is valid.",
+    "notes": "Validate rows, columns, and 3x3 boxes with sets, tracking each digit once. Only filled cells matter — '.' cells are skipped. Empty cells never invalidate a board.",
+    "languages": {
+      "python": "def is_valid_sudoku(board: list) -> bool:\n    \"\"\"board: 9x9 of '1'-'9' or '.'.\"\"\"\n    rows = [set() for _ in range(9)]\n    cols = [set() for _ in range(9)]\n    boxes = [set() for _ in range(9)]\n    for r in range(9):\n        for c in range(9):\n            v = board[r][c]\n            if v == '.':\n                continue\n            b = (r // 3) * 3 + c // 3\n            if v in rows[r] or v in cols[c] or v in boxes[b]:\n                return False\n            rows[r].add(v)\n            cols[c].add(v)\n            boxes[b].add(v)\n    return True",
+      "javascript": "function isValidSudoku(board) {\n    const rows = Array.from({ length: 9 }, () => new Set());\n    const cols = Array.from({ length: 9 }, () => new Set());\n    const boxes = Array.from({ length: 9 }, () => new Set());\n    for (let r = 0; r < 9; r++) {\n        for (let c = 0; c < 9; c++) {\n            const v = board[r][c];\n            if (v === '.') continue;\n            const b = Math.floor(r / 3) * 3 + Math.floor(c / 3);\n            if (rows[r].has(v) || cols[c].has(v) || boxes[b].has(v)) return false;\n            rows[r].add(v); cols[c].add(v); boxes[b].add(v);\n        }\n    }\n    return true;\n}"
+    }
+  },
+  {
+    "task": "python_generator",
+    "patterns": [
+      "\\b(?:write|create|use)\\b.*\\bgenerator\\b",
+      "\\byield\\b.*\\b(?:generator|function)\\b"
+    ],
+    "intro": "Here's how to write a generator in {lang}.",
+    "notes": "A function with yield is a generator: it produces values lazily, one at a time, keeping its state between calls. Use them for streams, infinite sequences, and memory-friendly iteration.",
+    "languages": {
+      "python": "def countdown(n: int):\n    while n > 0:\n        yield n\n        n -= 1\n\nfor x in countdown(3):\n    print(x)      # 3, 2, 1\n\n# Infinite sequence (lazy):\ndef fib():\n    a, b = 0, 1\n    while True:\n        yield a\n        a, b = b, a + b\n\nf = fib()\nprint([next(f) for _ in range(8)])   # [0, 1, 1, 2, 3, 5, 8, 13]\n\n# Generator expressions:\ntotal = sum(x * x for x in range(1000))\n\n# Memory-friendly file lines:\ndef lines(filename):\n    with open(filename, encoding='utf-8') as fh:\n        for line in fh:\n            yield line.rstrip()",
+      "javascript": "// Generators use function* and yield:\nfunction* countdown(n) {\n    while (n > 0) yield n--;\n}\n\nfor (const x of countdown(3)) console.log(x);   // 3, 2, 1\n\n// Infinite sequence:\nfunction* fib() {\n    let [a, b] = [0, 1];\n    while (true) {\n        yield a;\n        [a, b] = [b, a + b];\n    }\n}\nconst f = fib();\nconsole.log([...Array(8)].map(() => f.next().value));\n// [0, 1, 1, 2, 3, 5, 8, 13]"
+    }
+  },
+  {
+    "task": "dataclass",
+    "patterns": [
+      "\\bdataclass\\b"
+    ],
+    "intro": "Here's how to define a dataclass in {lang}.",
+    "notes": "@dataclass auto-generates __init__, __repr__, and __eq__ from type-annotated fields. frozen=True makes instances immutable; field(default_factory=...) handles mutable defaults safely.",
+    "languages": {
+      "python": "from dataclasses import dataclass, field\n\n@dataclass\nclass Point:\n    x: float\n    y: float\n\n@dataclass\nclass User:\n    name: str\n    email: str\n    active: bool = True\n    tags: list = field(default_factory=list)   # never []!\n\nu = User('alice', 'a@example.com')\nprint(u)                  # User(name='alice', email='a@example.com', active=True, tags=[])\nprint(u == User('alice', 'a@example.com'))   # True (auto __eq__)\n\n# Immutable:\n@dataclass(frozen=True)\nclass Config:\n    host: str\n    port: int\n\n# Ordered + comparable:\n@dataclass(order=True)\nclass Score:\n    value: int"
+    }
+  },
+  {
+    "task": "context_manager",
+    "patterns": [
+      "\\bcontext\\s+manager\\b",
+      "\\b(?:write|create|use)\\b.*\\bwith\\s+statement\\b"
+    ],
+    "intro": "Here's how to write a context manager in {lang}.",
+    "notes": "A class with __enter__/__exit__ (or @contextmanager + yield) defines setup/teardown for `with` blocks — perfect for connections, locks, and temporary state. __exit__ always runs, even on exceptions.",
+    "languages": {
+      "python": "from contextlib import contextmanager\n\n# Class-based:\nclass Timer:\n    def __enter__(self):\n        import time\n        self.start = time.perf_counter()\n        return self\n    def __exit__(self, exc_type, exc, tb):\n        import time\n        print(f'took {time.perf_counter() - self.start:.3f}s')\n        return False   # propagate exceptions\n\nwith Timer():\n    sum(range(1_000_000))\n\n# @contextmanager (simpler):\n@contextmanager\ndef timer():\n    import time\n    start = time.perf_counter()\n    try:\n        yield\n    finally:\n        print(f'took {time.perf_counter() - start:.3f}s')\n\nwith timer():\n    sum(range(1_000_000))\n\n# Real-world use: connections, locks, temp dirs\nimport tempfile\nwith tempfile.TemporaryDirectory() as tmp:\n    print(tmp)   # cleaned up automatically"
+    }
+  },
+  {
+    "task": "fstring_padding",
+    "patterns": [
+      "\\bf[- ]strings?\\b.*\\b(?:pad|padding|width|align|format)\\b",
+      "\\b(?:pad|padding|align)\\b.*\\bf[- ]strings?\\b"
+    ],
+    "intro": "Here's how to pad and align text with f-strings in {lang}.",
+    "notes": "Format spec mini-language: {value:width} right-aligns, {value:<width} left-aligns, {value:^width} centers, and {value:0width} zero-pads numbers. Add precision with .2f.",
+    "languages": {
+      "python": "name = 'alice'\nscore = 42.567\n\nprint(f'{name:>10}')      # '     alice'  (right align)\nprint(f'{name:<10}')      # 'alice     '  (left align)\nprint(f'{name:^10}')      # '  alice   '  (center)\n\n# Zero-pad numbers:\nprint(f'{7:03d}')         # '007'\nprint(f'{42:05d}')        # '00042'\n\n# Fill character + alignment:\nprint(f'{name:*^10}')     # '**alice***'\nprint(f'{name:.>10}')     # '.....alice'\n\n# Precision:\nprint(f'{score:.2f}')     # '42.57'\nprint(f'{score:10.2f}')   # '     42.57'\n\n# Table columns:\nfor n, s in [('alice', 95), ('bob', 100), ('carol', 87)]:\n    print(f'{n:<8}{s:>3}')\n# alice      95\n# bob       100\n# carol      87",
+      "javascript": "// padStart / padEnd:\nconst name = 'alice';\nconsole.log(name.padStart(10));   // '     alice'\nconsole.log(name.padEnd(10));     // 'alice     '\nconsole.log(name.padStart(10, '*'));  // '*****alice'\n\n// Zero-pad numbers:\nconsole.log(String(7).padStart(3, '0'));    // '007'\nconsole.log((42).toString().padStart(5, '0')); // '00042'\n\n// Decimal places (toFixed returns a string):\nconsole.log((42.567).toFixed(2));   // '42.57'\nconsole.log((42.567).toFixed(2).padStart(10));  // '     42.57'\n\n// Table columns:\nfor (const [n, s] of [['alice', 95], ['bob', 100], ['carol', 87]]) {\n    console.log(n.padEnd(8) + String(s).padStart(3));\n}"
+    }
+  },
+  {
+    "task": "largest_number",
+    "patterns": [
+      "\\blargest\\b.*\\b(?:number|element|item|value)\\b.*\\b(?:list|array)\\b",
+      "\\b(?:find|get|return)\\b.*\\b(?:max|maximum)\\b.*\\b(?:list|array)\\b"
+    ],
+    "intro": "Here's how to find the largest number in a list in {lang}.",
+    "notes": "max() is O(n) and handles any iterable. Use max(items, key=...) for the largest object by an attribute, and heapq.nlargest for the top k.",
+    "languages": {
+      "python": "numbers = [3, 7, 2, 9, 5]\n\nlargest = max(numbers)\nprint(largest)     # 9\n\n# Smallest:\nprint(min(numbers))  # 2\n\n# Largest by a key (dicts/objects):\npeople = [{'name': 'a', 'age': 30}, {'name': 'b', 'age': 40}]\noldest = max(people, key=lambda p: p['age'])\nprint(oldest['name'])  # b\n\n# Empty-list safety:\nprint(max(numbers, default=None))",
+      "javascript": "const numbers = [3, 7, 2, 9, 5];\n\nconst largest = Math.max(...numbers);\nconsole.log(largest);   // 9\n\n// Smallest:\nconsole.log(Math.min(...numbers));  // 2\n\n// Large arrays: spread can overflow the stack — use reduce:\nconst max = numbers.reduce((a, b) => Math.max(a, b));\n\n// Largest by a key:\nconst people = [{ name: 'a', age: 30 }, { name: 'b', age: 40 }];\nconst oldest = people.reduce((a, b) => (a.age > b.age ? a : b));"
+    }
+  },
+  {
+    "task": "average_list",
+    "patterns": [
+      "\\baverage\\b.*\\b(?:list|array|numbers?|values?)\\b",
+      "\\b(?:mean|arithmetic\\s+mean)\\b.*\\b(?:list|array)\\b"
+    ],
+    "intro": "Here's how to compute the average of a list in {lang}.",
+    "notes": "Watch for integer division: Python 3's / always returns a float. Guard against empty input to avoid ZeroDivisionError / NaN.",
+    "languages": {
+      "python": "def average(numbers: list) -> float:\n    if not numbers:\n        return 0.0\n    return sum(numbers) / len(numbers)\n\n# Example:\nprint(average([1, 2, 3, 4]))   # 2.5\n\n# With statistics (more helpers: median, stdev):\nimport statistics\nprint(statistics.mean([1, 2, 3, 4]))    # 2.5\nprint(statistics.median([1, 2, 3, 4]))  # 2.5",
+      "javascript": "function average(numbers) {\n    if (numbers.length === 0) return 0;\n    return numbers.reduce((a, b) => a + b, 0) / numbers.length;\n}\n\nconsole.log(average([1, 2, 3, 4]));   // 2.5\n\n// Integer arrays with a large sum: watch floating point —\n// sort and add pairwise, or use a library for exact rationals."
+    }
+  },
+  {
+    "task": "unique_chars",
+    "patterns": [
+      "\\bunique\\s+characters?\\b",
+      "\\bdistinct\\s+characters?\\b",
+      "\\b(?:all\\s+)?different\\s+characters?\\b"
+    ],
+    "intro": "Here's how to get the unique characters in a string in {lang}.",
+    "notes": "set() removes duplicates but loses order; dict.fromkeys preserves first-seen order (Python 3.7+). For JS, use Set.",
+    "languages": {
+      "python": "text = 'banana'\n\n# Unique characters (order NOT preserved):\nuniq = set(text)\nprint(uniq)               # {'a', 'b', 'n'}\n\n# Unique characters in first-seen order:\nordered = ''.join(dict.fromkeys(text))\nprint(ordered)            # 'ban'\n\n# Check whether all characters are unique:\ndef all_unique(s: str) -> bool:\n    return len(s) == len(set(s))\n\nprint(all_unique('abc'))  # True\nprint(all_unique('aba'))  # False",
+      "javascript": "const text = 'banana';\n\n// Unique characters (insertion order preserved by Set):\nconst uniq = [...new Set(text)];\nconsole.log(uniq);            // ['b', 'a', 'n']\n\n// As a string:\nconsole.log([...new Set(text)].join(''));  // 'ban'\n\n// Check whether all characters are unique:\nfunction allUnique(s) {\n    return new Set(s).size === s.length;\n}\nconsole.log(allUnique('abc'));  // true\nconsole.log(allUnique('aba'));  // false"
+    }
+  },
+  {
+    "task": "valid_email_check",
+    "patterns": [
+      "\\b(?:check|validate|verify)\\b.*\\b(?:string\\s+is\\s+(?:a\\s+|an?\\s+)?)?valid\\s+email\\s+address\\b",
+      "\\b(?:is\\s+valid|validate)\\s+email\\b(?!\\s+regex)"
+    ],
+    "intro": "Here's a {lang} function that checks whether a string is a valid email address.",
+    "notes": "A pragmatic validator checks for a single @, a non-empty local part, a dot in the domain, and reasonable lengths — full RFC 5322 regexes are huge and still reject many real addresses.",
+    "languages": {
+      "python": "import re\n\n_EMAIL_RE = re.compile(\n    r'^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$'\n)\n\n\ndef is_valid_email(email: str) -> bool:\n    return bool(_EMAIL_RE.fullmatch(email.strip()))\n\n# Examples:\nprint(is_valid_email('alice@example.com'))     # True\nprint(is_valid_email('alice@example'))         # False (no TLD)\nprint(is_valid_email('alice@example.c'))       # False (TLD too short)\nprint(is_valid_email('not an email'))          # False",
+      "javascript": "const EMAIL_RE = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$/;\n\nfunction isValidEmail(email) {\n    return EMAIL_RE.test(email.trim());\n}\n\nconsole.log(isValidEmail('alice@example.com'));  // true\nconsole.log(isValidEmail('alice@example'));      // false\nconsole.log(isValidEmail('not an email'));       // false"
+    }
+  },
+  {
+    "task": "timeit_decorator",
+    "patterns": [
+      "\\b(?:tim\\w*|timeit)\\b.*\\bdecorator\\b",
+      "\\bdecorator\\b.*\\b(?:tim\\w*|timeit)\\b"
+    ],
+    "intro": "Here's a {lang} decorator that times a function's execution.",
+    "notes": "time.perf_counter() is the right clock for measuring code — it's monotonic and high-resolution. functools.wraps preserves the wrapped function's name and docstring.",
+    "languages": {
+      "python": "import time\nimport functools\n\n\ndef timed(func):\n    \"\"\"Decorator: print how long the wrapped function takes.\"\"\"\n    @functools.wraps(func)\n    def wrapper(*args, **kwargs):\n        start = time.perf_counter()\n        result = func(*args, **kwargs)\n        elapsed = time.perf_counter() - start\n        print(f'{func.__name__} took {elapsed * 1000:.2f} ms')\n        return result\n    return wrapper\n\n\n@timed\ndef slow_add(a, b):\n    time.sleep(0.1)\n    return a + b\n\nprint(slow_add(1, 2))\n# slow_add took 100.12 ms\n# 3",
+      "javascript": "function timed(fn) {\n    return function (...args) {\n        const start = performance.now();\n        const result = fn.apply(this, args);\n        const elapsed = performance.now() - start;\n        console.log(`${fn.name} took ${elapsed.toFixed(2)} ms`);\n        return result;\n    };\n}\n\nconst slowAdd = timed((a, b) => {\n    const t = Date.now();\n    while (Date.now() - t < 100);  // busy-wait\n    return a + b;\n});\n\nconsole.log(slowAdd(1, 2));\n// slowAdd took ~100 ms\n// 3"
+    }
+  },
+  {
+    "task": "any_duplicates",
+    "patterns": [
+      "\\b(?:any|has|have|contains?|check\\s+for)\\b.*\\bduplicates?\\b.*\\b(?:list|array)\\b",
+      "\\b(?:list|array)\\b.*\\b(?:has|have|contain\\w*)\\b.*\\bduplicates?\\b",
+      "\\bduplicates?\\s+in\\s+(?:a\\s+|the\\s+)?(?:list|array)\\b(?!.*\\bsql)"
+    ],
+    "intro": "Here's a {lang} function that checks whether a list contains duplicates.",
+    "notes": "Comparing len(items) to len(set(items)) is O(n) and simple. For big data, stop early by tracking seen items in a set.",
+    "languages": {
+      "python": "def has_duplicates(items: list) -> bool:\n    return len(items) != len(set(items))\n\n# Examples:\nprint(has_duplicates([1, 2, 3]))        # False\nprint(has_duplicates([1, 2, 2]))        # True\n\n# Early-exit version (stops at the first duplicate):\ndef has_duplicates_fast(items):\n    seen = set()\n    for item in items:\n        if item in seen:\n            return True\n        seen.add(item)\n    return False\n\n# Which items are duplicated:\nfrom collections import Counter\ncounts = Counter([1, 2, 2, 3, 3, 3])\nprint([k for k, v in counts.items() if v > 1])   # [2, 3]",
+      "javascript": "function hasDuplicates(items) {\n    return new Set(items).size !== items.length;\n}\n\nconsole.log(hasDuplicates([1, 2, 3]));   // false\nconsole.log(hasDuplicates([1, 2, 2]));   // true\n\n// Early-exit version:\nfunction hasDuplicatesFast(items) {\n    const seen = new Set();\n    for (const item of items) {\n        if (seen.has(item)) return true;\n        seen.add(item);\n    }\n    return false;\n}"
+    }
+  },
+  {
+    "task": "zip_lists",
+    "patterns": [
+      "\\bzip\\b.*\\blists?\\b(?!\\s+(?:file|folder|directory|archive))",
+      "\\b(?:pair|combine)\\b.*\\btwo\\s+lists\\b",
+      "\\biterate\\b.*\\btwo\\s+lists\\b",
+      "\\blists\\b.*\\bat\\s+the\\s+same\\s+time\\b"
+    ],
+    "intro": "Here's how to zip two lists together in {lang}.",
+    "notes": "Python's zip() stops at the shortest input; zip_longest pads with a fill value. In JS, use a map over Math.min lengths, or Object.fromEntries for key-value pairs.",
+    "languages": {
+      "python": "names = ['alice', 'bob', 'carol']\nages = [30, 25, 35]\n\n# Pairs (stops at the shortest):\npairs = list(zip(names, ages))\nprint(pairs)   # [('alice', 30), ('bob', 25), ('carol', 35)]\n\n# Dict from two lists:\npeople = dict(zip(names, ages))\nprint(people)  # {'alice': 30, 'bob': 25, 'carol': 35}\n\n# Unpack back:\nnames2, ages2 = zip(*pairs)\n\n# Unequal lengths -> pad:\nfrom itertools import zip_longest\nprint(list(zip_longest([1, 2], ['a'], fillvalue=None)))  # [(1, 'a'), (2, None)]",
+      "javascript": "const names = ['alice', 'bob', 'carol'];\nconst ages = [30, 25, 35];\n\n// Pairs (stops at the shortest):\nconst pairs = names.map((name, i) => [name, ages[i]]);\nconsole.log(pairs);   // [['alice', 30], ['bob', 25], ['carol', 35]]\n\n// Object from two arrays:\nconst people = Object.fromEntries(pairs);\nconsole.log(people);  // { alice: 30, bob: 25, carol: 35 }"
+    }
+  },
+  {
+    "task": "log_monitor",
+    "patterns": [
+      "^(?!.*\\blast\\s+\\d+\\s+lines?).*\\b(?:monitor|tail|follow)\\b.*\\blog\\b",
+      "^.*\\bwatch\\b.*\\blog\\b"
+    ],
+    "intro": "Here's a {lang} script that monitors a log file as it grows.",
+    "notes": "Seeking to the end on startup avoids replaying the whole file. In bash, tail -F (capital F) retries when the file is rotated; tail -f does not.",
+    "languages": {
+      "python": "import time\n\n\ndef tail_log(filename: str, interval: float = 0.5):\n    \"\"\"Print new lines appended to a log file forever.\"\"\"\n    with open(filename, encoding='utf-8') as f:\n        f.seek(0, 2)          # start at the end\n        while True:\n            line = f.readline()\n            if line:\n                print(line.rstrip())\n            else:\n                time.sleep(interval)\n\n\nif __name__ == '__main__':\n    tail_log('app.log')",
+      "javascript": "// Node.js: follow a file like tail -f\nconst fs = require('fs');\n\nfunction tailLog(filename, interval = 500) {\n    // Poll the file size and read newly appended bytes:\n    let pos = fs.statSync(filename).size;\n    setInterval(() => {\n        const size = fs.statSync(filename).size;\n        if (size > pos) {\n            const fd = fs.openSync(filename, 'r');\n            const buf = Buffer.alloc(size - pos);\n            fs.readSync(fd, buf, 0, buf.length, pos);\n            fs.closeSync(fd);\n            process.stdout.write(buf.toString());\n            pos = size;\n        }\n    }, interval);\n}"
+    }
+  },
+  {
+    "task": "group_dicts",
+    "patterns": [
+      "\\bgroup\\b.*\\b(?:list|dict(?:s)?|dictionaries|records?|items?)\\b.*\\b(?:by|according\\s+to)\\b.*\\b(?:field|key|property|column)\\b",
+      "\\bgroup\\s+by\\s+(?:a\\s+)?(?:field|key|property)\\b"
+    ],
+    "intro": "Here's how to group a list of dictionaries by a field in {lang}.",
+    "notes": "itertools.groupby requires the input to be SORTED by the grouping key first. For unsorted input, a plain dict-of-lists loop is simpler and O(n).",
+    "languages": {
+      "python": "from itertools import groupby\n\npeople = [\n    {'name': 'alice', 'dept': 'eng'},\n    {'name': 'bob', 'dept': 'sales'},\n    {'name': 'carol', 'dept': 'eng'},\n    {'name': 'dave', 'dept': 'sales'},\n]\n\n# groupby needs sorted input:\npeople.sort(key=lambda p: p['dept'])\ngroups = {dept: list(members)\n          for dept, members in groupby(people, key=lambda p: p['dept'])}\nprint(groups)\n# {'eng': [...alice, carol...], 'sales': [...bob, dave...]}\n\n# Simpler O(n) approach that works on any input:\ndef group_by(items, key):\n    out = {}\n    for item in items:\n        out.setdefault(key(item), []).append(item)\n    return out\n\nprint(group_by(people, lambda p: p['dept']))",
+      "javascript": "const people = [\n    { name: 'alice', dept: 'eng' },\n    { name: 'bob', dept: 'sales' },\n    { name: 'carol', dept: 'eng' },\n    { name: 'dave', dept: 'sales' },\n];\n\nfunction groupBy(items, keyFn) {\n    const out = {};\n    for (const item of items) {\n        const g = keyFn(item);\n        (out[g] = out[g] || []).push(item);\n    }\n    return out;\n}\n\nconsole.log(groupBy(people, p => p.dept));"
+    }
+  },
+  {
+    "task": "download_unzip",
+    "patterns": [
+      "\\bdownload\\b.*\\bunzip\\b",
+      "\\b(?:download|fetch)\\b.*\\bzip\\s+file\\b.*\\b(?:extract|unzip)\\b"
+    ],
+    "intro": "Here's a {lang} script that downloads and unzips a file.",
+    "notes": "Use io.BytesIO to unzip from memory, or save to disk first when the archive is large. Always check the download status and close the zipfile.",
+    "languages": {
+      "python": "import io\nimport zipfile\nimport requests\n\n\ndef download_and_unzip(url: str, dest_dir: str = '.') -> None:\n    \"\"\"Download a zip and extract it into dest_dir.\"\"\"\n    resp = requests.get(url, timeout=60)\n    resp.raise_for_status()\n    with zipfile.ZipFile(io.BytesIO(resp.content)) as zf:\n        zf.extractall(dest_dir)\n        print('extracted:', zf.namelist())\n\n# Example:\n# download_and_unzip('https://example.com/data.zip', 'data')\n\n# Save-then-extract version (better for large archives):\nimport os\nfrom urllib.request import urlretrieve\n\ndef download_unzip_disk(url: str, dest_dir: str = '.') -> None:\n    tmp = 'downloaded.zip'\n    urlretrieve(url, tmp)\n    with zipfile.ZipFile(tmp) as zf:\n        zf.extractall(dest_dir)\n    os.remove(tmp)"
+    }
+  },
+  {
+    "task": "string_to_datetime",
+    "patterns": [
+      "\\bconvert\\b.*\\bstring\\b.*\\b(?:to\\s+)?datetime\\b",
+      "\\b(?:parse|convert)\\b.*\\bstring\\b.*\\bdate\\b.*\\b(?:time|datetime)\\b"
+    ],
+    "intro": "Here's how to convert a string to a datetime in {lang}.",
+    "notes": "strptime needs a format string that exactly matches the input. For ISO-8601 strings, datetime.fromisoformat (Python 3.11+) and new Date() (JS) parse them directly.",
+    "languages": {
+      "python": "from datetime import datetime\n\n# Exact format:\ndt = datetime.strptime('2026-04-03 15:30:00', '%Y-%m-%d %H:%M:%S')\nprint(dt)   # 2026-04-03 15:30:00\n\n# ISO-8601 (fromisoformat, Python 3.11+):\ndt2 = datetime.fromisoformat('2026-04-03T15:30:00')\n\n# Common formats:\ndatetime.strptime('04/03/2026', '%m/%d/%Y')\ndatetime.strptime('2026-04-03', '%Y-%m-%d')\n\n# Date only:\nfrom datetime import date\nd = date.fromisoformat('2026-04-03')\n\n# Back to a string:\nprint(dt.strftime('%Y-%m-%d'))",
+      "javascript": "// new Date() parses ISO-8601 directly:\nconst dt = new Date('2026-04-03T15:30:00Z');\n\n// Manual parse of non-ISO formats:\nfunction parseDate(s) {\n    const [y, m, d] = s.split('-').map(Number);\n    return new Date(y, m - 1, d);   // local time\n}\nconsole.log(parseDate('2026-04-03'));\n\n// Validate round-trip (rejects Feb 31):\nfunction isValidDateStr(s) {\n    const dt = new Date(s);\n    return !Number.isNaN(dt.getTime());\n}"
+    }
+  },
+  {
+    "task": "only_digits",
+    "patterns": [
+      "\\b(?:only\\s+)?digits?\\b.*\\b(?:string|text|value)\\b",
+      "\\bcheck\\b.*\\b(?:string|text)\\b.*\\b(?:only\\s+)?digits?\\b"
+    ],
+    "intro": "Here's a {lang} function that checks whether a string contains only digits.",
+    "notes": "isdigit() is the direct answer. Use a regex when you also want to allow spaces, plus signs, or decimal points.",
+    "languages": {
+      "python": "s = '12345'\n\nprint(s.isdigit())        # True\nprint('12a5'.isdigit())   # False\nprint('12.5'.isdigit())   # False\n\n# Allow decimals:\nimport re\ndef is_number(s: str) -> bool:\n    return bool(re.fullmatch(r'\\d+(\\.\\d+)?', s.strip()))\n\nprint(is_number('12.5'))      # True\nprint(is_number('-12'))       # False (add -? to allow)\n\n# Full numeric check (also negatives/exponents):\ndef is_numeric(s: str) -> bool:\n    try:\n        float(s)\n        return True\n    except ValueError:\n        return False",
+      "javascript": "const s = '12345';\n\n// Strictly digits:\nconsole.log(/^\\d+$/.test(s));        // true\nconsole.log(/^\\d+$/.test('12a5'));   // false\n\n// Allow decimals:\nconsole.log(/^\\d+(\\.\\d+)?$/.test('12.5'));   // true\n\n// Full numeric (negatives, exponents):\nconsole.log(!Number.isNaN(Number(s)) && s.trim() !== '');"
+    }
+  },
+  {
+    "task": "list_vs_set",
+    "patterns": [
+      "\\bchoose\\s+between\\b.*\\b(?:list|set)\\b",
+      "\\blist\\s+vs\\w*\\s+set\\b.*\\b(?:python|when)\\b"
+    ],
+    "intro": "Here's how to decide between a list and a set in {lang}.",
+    "notes": "Sets guarantee O(1) membership tests and deduplication but have no order and can't hold duplicates. Lists preserve order, allow duplicates, and support indexing. Use a set for lookups and dedup; a list for ordered/duplicate data.",
+    "languages": {
+      "python": "# USE A SET when you need:\n#  - fast membership checks:      'x' in my_set   (O(1))\n#  - deduplication:                unique = set(items)\n#  - set math:                     a & b, a | b, a - b\nseen = set()\nfor item in stream:\n    if item in seen:      # O(1) even for millions of items\n        continue\n    seen.add(item)\n\n# USE A LIST when you need:\nnumbers = [3, 1, 4, 1]     # duplicates allowed\nprint(numbers[0])          # indexing by position\nprint(numbers[-1])         # last element\nnumbers.append(5)          # append at the end\n\n# Convert between them:\nunique_ordered = list(dict.fromkeys([3, 1, 3, 2]))  # [3, 1, 2]\ns = set([1, 2, 2, 3])      # {1, 2, 3}",
+      "javascript": "// USE A SET for fast membership + dedup:\nconst seen = new Set();\nfor (const item of stream) {\n    if (seen.has(item)) continue;   // O(1)\n    seen.add(item);\n}\nconst unique = [...new Set([3, 1, 3, 2])];   // [3, 1, 2]\n\n// USE AN ARRAY for order, duplicates, indexing:\nconst nums = [3, 1, 4, 1];\nconsole.log(nums[0]);        // 3\nconsole.log(nums.at(-1));     // 1\nnums.push(5);\n\n// Note: array .includes() is O(n) — use a Set for lookups."
+    }
+  },
+  {
+    "task": "postgres_connect",
+    "patterns": [
+      "^(?!.*\\bcompose\\b).*\\bpostgres\\b.*\\b(?:connect|connection|database|python)\\b",
+      "^(?!.*\\bcompose\\b).*\\b(?:connect|connection)\\b.*\\bpostgres\\b"
+    ],
+    "intro": "Here's how to connect to a PostgreSQL database in {lang}.",
+    "notes": "psycopg2 (or psycopg 3) is the standard driver. Use a connection string or keyword args, always close the connection (context manager), and prefer parameterized queries.",
+    "languages": {
+      "python": "import psycopg2\n\n# Connect with keyword args:\nconn = psycopg2.connect(\n    host='localhost',\n    port=5432,\n    dbname='mydb',\n    user='app',\n    password='secret',\n)\n\n# Or with a connection string:\n# conn = psycopg2.connect('postgresql://app:secret@localhost:5432/mydb')\n\n# Query with a cursor:\nwith conn.cursor() as cur:\n    cur.execute('SELECT name FROM users WHERE id = %s', (1,))\n    row = cur.fetchone()\n    print(row)\n\n# Commit after writes:\nwith conn.cursor() as cur:\n    cur.execute(\"INSERT INTO users (name) VALUES (%s)\", ('alice',))\nconn.commit()\n\n# Close (or use 'with psycopg2.connect(...) as conn:')\nconn.close()",
+      "javascript": "// node-postgres:\nconst { Client } = require('pg');\n\nconst client = new Client({\n    host: 'localhost',\n    port: 5432,\n    database: 'mydb',\n    user: 'app',\n    password: 'secret',\n});\n\nasync function main() {\n    await client.connect();\n    const res = await client.query('SELECT name FROM users WHERE id = $1', [1]);\n    console.log(res.rows);\n    await client.end();\n}\n\nmain().catch(console.error);"
+    }
+  },
+  {
+    "task": "yaml_read",
+    "patterns": [
+      "\\b(?:read|parse|load)\\b.*\\byaml\\b",
+      "\\byaml\\b.*\\b(?:file|parse|load|read)\\b"
+    ],
+    "intro": "Here's how to read a YAML file in {lang}.",
+    "notes": "PyYAML's safe_load is the recommended entry point (yaml.load with a Loader is unsafe). For complex documents, yaml.safe_load_all handles multi-document files.",
+    "languages": {
+      "python": "# pip install pyyaml\nimport yaml\n\nwith open('config.yaml', encoding='utf-8') as f:\n    config = yaml.safe_load(f)\n\nprint(config.get('name'))\n\n# From a string:\nconfig2 = yaml.safe_load('name: demo\\nport: 8000')\n\n# Multi-document files:\nwith open('docs.yaml', encoding='utf-8') as f:\n    docs = list(yaml.safe_load_all(f))\n\n# Dump back to YAML:\nprint(yaml.safe_dump(config, sort_keys=False))",
+      "javascript": "// npm install yaml\nconst YAML = require('yaml');\nconst fs = require('fs');\n\nconst text = fs.readFileSync('config.yaml', 'utf8');\nconst config = YAML.parse(text);\nconsole.log(config.name);\n\n// From a string:\nconst cfg2 = YAML.parse('name: demo\\nport: 8000');\n\n// Stringify:\nconsole.log(YAML.stringify(config));"
+    }
+  },
+  {
+    "task": "excel_read",
+    "patterns": [
+      "\\bexcel\\b",
+      "\\bxlsx\\b"
+    ],
+    "intro": "Here's how to read an Excel file in {lang}.",
+    "notes": "openpyxl reads .xlsx (no Excel installed needed); pandas.read_excel is the quick path to a DataFrame. For legacy .xls files use xlrd.",
+    "languages": {
+      "python": "# pip install openpyxl\nfrom openpyxl import load_workbook\n\nwb = load_workbook('data.xlsx')\nws = wb.active            # or wb['Sheet1']\n\n# Iterate rows:\nfor row in ws.iter_rows(values_only=True):\n    print(row)\n\n# Cell access:\nprint(ws['A1'].value)\n\n# With pandas (pip install pandas openpyxl):\nimport pandas as pd\ndf = pd.read_excel('data.xlsx', sheet_name='Sheet1')\nprint(df.head())"
+    }
+  },
+  {
+    "task": "json_to_csv",
+    "patterns": [
+      "\\bjson\\b.*\\bcsv\\b",
+      "\\bconvert\\b.*\\b(?:json|data)\\b.*\\bto\\b.*\\bcsv\\b"
+    ],
+    "intro": "Here's how to convert JSON to CSV in {lang}.",
+    "notes": "DictWriter with fieldnames handles the header row; flatten nested objects first since CSV is flat. For arrays of objects this is a clean one-pass write.",
+    "languages": {
+      "python": "import csv\nimport json\n\n# data.json: [{\"name\": \"alice\", \"age\": 30}, ...]\nwith open('data.json', encoding='utf-8') as f:\n    records = json.load(f)\n\nif records:\n    fieldnames = list(records[0].keys())\n    with open('out.csv', 'w', newline='', encoding='utf-8') as f:\n        writer = csv.DictWriter(f, fieldnames=fieldnames)\n        writer.writeheader()\n        writer.writerows(records)\n\n# From a JSON string:\nrecords = json.loads(json_text)\n\n# Nested objects need flattening first:\ndef flatten(record):\n    out = {}\n    for k, v in record.items():\n        if isinstance(v, dict):\n            for k2, v2 in v.items():\n                out[f'{k}_{k2}'] = v2\n        else:\n            out[k] = v\n    return out",
+      "javascript": "const records = [\n    { name: 'alice', age: 30 },\n    { name: 'bob', age: 25 },\n];\n\nfunction toCsv(rows) {\n    if (rows.length === 0) return '';\n    const headers = Object.keys(rows[0]);\n    const escape = v => `\"${String(v).replace(/\"/g, '\"\"')}\"`;\n    return [\n        headers.join(','),\n        ...rows.map(r => headers.map(h => escape(r[h])).join(',')),\n    ].join('\\n');\n}\n\nconsole.log(toCsv(records));\n// name,age\n// \"alice\",30\n// \"bob\",25"
+    }
+  },
+  {
+    "task": "merge_csv",
+    "patterns": [
+      "\\bmerge\\b.*\\bcsv\\b"
+    ],
+    "intro": "Here's how to merge two CSV files in {lang}.",
+    "notes": "If both files have the same columns, concatenate the rows. If they share a key column, join them. pandas makes both cases one-liners.",
+    "languages": {
+      "python": "import csv\n\n# Same columns — concatenate:\nwith open('a.csv', newline='', encoding='utf-8') as fa, \\\n     open('b.csv', newline='', encoding='utf-8') as fb, \\\n     open('merged.csv', 'w', newline='', encoding='utf-8') as out:\n    reader_a, reader_b = csv.reader(fa), csv.reader(fb)\n    header = next(reader_a)\n    next(reader_b)  # skip b's header\n    writer = csv.writer(out)\n    writer.writerow(header)\n    writer.writerows(reader_a)\n    writer.writerows(reader_b)\n\n# With pandas (pip install pandas):\nimport pandas as pd\n\ndf_a = pd.read_csv('a.csv')\ndf_b = pd.read_csv('b.csv')\n\n# Concatenate:\nmerged = pd.concat([df_a, df_b], ignore_index=True)\n\n# Join on a key column:\njoined = df_a.merge(df_b, on='user_id', how='left')\n\nmerged.to_csv('merged.csv', index=False)"
+    }
+  },
+  {
+    "task": "gzip_compress",
+    "patterns": [
+      "\\bgzip\\b",
+      "\\bcompress\\b.*\\b(?:file|string|data)\\b.*\\b(?:gzip|gz)\\b"
+    ],
+    "intro": "Here's how to compress a file with gzip in {lang}.",
+    "notes": "gzip.open writes compressed data with the same file-like API as open. For a string, gzip.compress/decompress work on bytes.",
+    "languages": {
+      "python": "import gzip\nimport shutil\n\n# Compress a file:\nwith open('data.txt', 'rb') as f_in, gzip.open('data.txt.gz', 'wb') as f_out:\n    shutil.copyfileobj(f_in, f_out)\n\n# Decompress:\nwith gzip.open('data.txt.gz', 'rb') as f:\n    content = f.read()\n\n# Compress a string:\ntext = 'hello world' * 100\ntext_bytes = text.encode('utf-8')\ncompressed = gzip.compress(text_bytes)\nprint(len(compressed), 'vs', len(text_bytes))\nprint(gzip.decompress(compressed) == text_bytes)   # True",
+      "javascript": "// Node.js zlib:\nconst zlib = require('zlib');\nconst fs = require('fs');\n\n// Compress a string:\nconst text = 'hello world'.repeat(100);\nconst compressed = zlib.gzipSync(text);\nconsole.log(compressed.length, 'vs', text.length);\nconsole.log(zlib.gunzipSync(compressed).toString() === text);\n\n// Compress a file:\nconst data = fs.readFileSync('data.txt');\nfs.writeFileSync('data.txt.gz', zlib.gzipSync(data));"
+    }
+  },
+  {
+    "task": "copy_tree",
+    "patterns": [
+      "\\bcopy\\b.*\\b(?:directory|folder|tree)\\b",
+      "\\b(?:recursive\\w*)?\\s*copy\\b.*\\b(?:dir|folder|directory)\\b"
+    ],
+    "intro": "Here's how to copy a directory tree in {lang}.",
+    "notes": "shutil.copytree copies recursively and creates the destination. dirs_exist_ok=True (Python 3.8+) allows copying into an existing directory. Use ignore= to skip junk.",
+    "languages": {
+      "python": "import shutil\n\n# Copy a directory tree:\nshutil.copytree('src', 'dst')\n\n# Into an existing destination:\nshutil.copytree('src', 'dst', dirs_exist_ok=True)\n\n# Skip junk:\nshutil.copytree(\n    'src', 'dst',\n    ignore=shutil.ignore_patterns('__pycache__', '*.pyc', '.git'),\n)\n\n# Copy with symlinks preserved:\nshutil.copytree('src', 'dst', symlinks=True)"
+    }
+  },
+  {
+    "task": "file_size",
+    "patterns": [
+      "\\b(?:check|get|find|see)\\b.*\\b(?:size|how\\s+big)\\b.*\\b(?:of\\s+)?(?:a\\s+)?file\\b",
+      "\\bhow\\s+big\\s+is\\b.*\\bfile\\b"
+    ],
+    "intro": "Here's how to check the size of a file in {lang}.",
+    "notes": "os.path.getsize returns bytes; Path.stat().st_size is the pathlib equivalent. For human-readable output, divide by 1024 repeatedly or use a helper.",
+    "languages": {
+      "python": "import os\nfrom pathlib import Path\n\n# Bytes:\nsize = os.path.getsize('data.txt')\nprint(size)\n\n# pathlib:\nprint(Path('data.txt').stat().st_size)\n\n# Human readable:\ndef human_size(num_bytes: int) -> str:\n    for unit in ('B', 'KiB', 'MiB', 'GiB'):\n        if abs(num_bytes) < 1024 or unit == 'GiB':\n            return f'{num_bytes:.1f} {unit}'\n        num_bytes /= 1024\n\nprint(human_size(size))",
+      "javascript": "const fs = require('fs');\n\nconst size = fs.statSync('data.txt').size;\nconsole.log(size);   // bytes\n\n// Human readable:\nfunction humanSize(bytes) {\n    const units = ['B', 'KiB', 'MiB', 'GiB'];\n    let i = 0;\n    while (bytes >= 1024 && i < units.length - 1) {\n        bytes /= 1024;\n        i++;\n    }\n    return `${bytes.toFixed(1)} ${units[i]}`;\n}\n\nconsole.log(humanSize(size));"
+    }
+  },
+  {
+    "task": "prefix_rename",
+    "patterns": [
+      "\\brenames?\\b.*\\bfiles?\\b.*\\b(?:prefix|add\\s+prefix)\\b",
+      "\\b(?:add|prepend)\\b.*\\bprefix\\b.*\\bfiles?\\b"
+    ],
+    "intro": "Here's how to rename files by adding a prefix in {lang}.",
+    "notes": "A simple loop with os.rename (or Path.rename) prepends the prefix. Dry-run with print first to avoid surprises.",
+    "languages": {
+      "python": "from pathlib import Path\n\nprefix = 'backup-'\n\n# Add a prefix to every .jpg:\nfor path in Path('.').glob('*.jpg'):\n    new_name = path.with_name(prefix + path.name)\n    print(f'{path} -> {new_name}')\n    path.rename(new_name)\n\n# With os.rename:\nimport os\nfor name in os.listdir('.'):\n    if name.endswith('.jpg'):\n        os.rename(name, prefix + name)"
+    }
+  },
+  {
+    "task": "quicksort",
+    "patterns": [
+      "\\b(?:implement|write|code|build|create)\\b.*\\bquicksort\\b",
+      "^(?!.*\\bsort\\s+(?:a\\s+)?(?:list|array)).*\\bquicksort\\s+function\\b"
+    ],
+    "intro": "Here's a {lang} implementation of quicksort.",
+    "notes": "Pick a pivot, partition into smaller/equal/larger, recurse. The in-place Lomuto partition is the classic interview version; the list-comprehension version is easiest to read.",
+    "languages": {
+      "python": "def quicksort(items: list) -> list:\n    \"\"\"Return a new sorted list (readable, not in-place).\"\"\"\n    if len(items) <= 1:\n        return items\n    pivot = items[len(items) // 2]\n    left = [x for x in items if x < pivot]\n    mid = [x for x in items if x == pivot]\n    right = [x for x in items if x > pivot]\n    return quicksort(left) + mid + quicksort(right)\n\n# In-place Lomuto partition:\ndef quicksort_inplace(items, lo=0, hi=None):\n    if hi is None:\n        hi = len(items) - 1\n    if lo >= hi:\n        return\n    pivot = items[hi]\n    i = lo\n    for j in range(lo, hi):\n        if items[j] <= pivot:\n            items[i], items[j] = items[j], items[i]\n            i += 1\n    items[i], items[hi] = items[hi], items[i]\n    quicksort_inplace(items, lo, i - 1)\n    quicksort_inplace(items, i + 1, hi)\n\nprint(quicksort([3, 1, 4, 1, 5, 9, 2]))   # [1, 1, 2, 3, 4, 5, 9]",
+      "javascript": "function quicksort(items) {\n    if (items.length <= 1) return items;\n    const pivot = items[Math.floor(items.length / 2)];\n    const left = items.filter(x => x < pivot);\n    const mid = items.filter(x => x === pivot);\n    const right = items.filter(x => x > pivot);\n    return [...quicksort(left), ...mid, ...quicksort(right)];\n}\n\nconsole.log(quicksort([3, 1, 4, 1, 5, 9, 2]));  // [1, 1, 2, 3, 4, 5, 9]",
+      "go": "package main\n\nfunc Quicksort(items []int) []int {\n    if len(items) <= 1 {\n        return items\n    }\n    pivot := items[len(items)/2]\n    var left, mid, right []int\n    for _, v := range items {\n        switch {\n        case v < pivot:\n            left = append(left, v)\n        case v == pivot:\n            mid = append(mid, v)\n        default:\n            right = append(right, v)\n        }\n    }\n    return append(append(Quicksort(left), mid...), Quicksort(right)...)\n}",
+      "rust": "pub fn quicksort<T: Ord + Clone>(items: &[T]) -> Vec<T> {\n    if items.len() <= 1 {\n        return items.to_vec();\n    }\n    let pivot = &items[items.len() / 2];\n    let mut left = Vec::new();\n    let mut mid = Vec::new();\n    let mut right = Vec::new();\n    for v in items {\n        match v.cmp(pivot) {\n            std::cmp::Ordering::Less => left.push(v.clone()),\n            std::cmp::Ordering::Equal => mid.push(v.clone()),\n            std::cmp::Ordering::Greater => right.push(v.clone()),\n        }\n    }\n    let mut out = quicksort(&left);\n    out.append(&mut mid);\n    out.append(&mut quicksort(&right));\n    out\n}",
+      "java": "public static List<Integer> quicksort(List<Integer> items) {\n    if (items.size() <= 1) return items;\n    int pivot = items.get(items.size() / 2);\n    List<Integer> left = new ArrayList<>(), mid = new ArrayList<>(), right = new ArrayList<>();\n    for (int v : items) {\n        if (v < pivot) left.add(v);\n        else if (v == pivot) mid.add(v);\n        else right.add(v);\n    }\n    List<Integer> out = new ArrayList<>(quicksort(left));\n    out.addAll(mid);\n    out.addAll(quicksort(right));\n    return out;\n}",
+      "c++": "#include <vector>\n\ntemplate <typename T>\nstd::vector<T> quicksort(const std::vector<T>& items) {\n    if (items.size() <= 1) return items;\n    const T& pivot = items[items.size() / 2];\n    std::vector<T> left, mid, right;\n    for (const auto& v : items) {\n        if (v < pivot) left.push_back(v);\n        else if (v == pivot) mid.push_back(v);\n        else right.push_back(v);\n    }\n    auto out = quicksort(left);\n    out.insert(out.end(), mid.begin(), mid.end());\n    auto r = quicksort(right);\n    out.insert(out.end(), r.begin(), r.end());\n    return out;\n}",
+      "c#": "public static List<T> Quicksort<T>(List<T> items) where T : IComparable<T>\n{\n    if (items.Count <= 1) return items;\n    T pivot = items[items.Count / 2];\n    var left = new List<T>(); var mid = new List<T>(); var right = new List<T>();\n    foreach (T v in items)\n    {\n        if (v.CompareTo(pivot) < 0) left.Add(v);\n        else if (v.CompareTo(pivot) == 0) mid.Add(v);\n        else right.Add(v);\n    }\n    var out = Quicksort(left);\n    out.AddRange(mid);\n    out.AddRange(Quicksort(right));\n    return out;\n}"
+    }
+  },
+  {
+    "task": "merge_sort",
+    "patterns": [
+      "\\b(?:implement|write|code|build|create)\\b.*\\bmerge\\s+sort\\b",
+      "\\bmerge\\s+sort\\s+(?:function|algorithm|implementation)\\b"
+    ],
+    "intro": "Here's a {lang} implementation of merge sort.",
+    "notes": "Divide the array in half, sort each half recursively, then merge the two sorted halves in O(n). Guaranteed O(n log n) and stable.",
+    "languages": {
+      "python": "def merge_sort(items: list) -> list:\n    if len(items) <= 1:\n        return items\n    mid = len(items) // 2\n    left = merge_sort(items[:mid])\n    right = merge_sort(items[mid:])\n    # merge two sorted halves\n    out = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            out.append(left[i]); i += 1\n        else:\n            out.append(right[j]); j += 1\n    out.extend(left[i:])\n    out.extend(right[j:])\n    return out\n\nprint(merge_sort([3, 1, 4, 1, 5, 9, 2]))   # [1, 1, 2, 3, 4, 5, 9]",
+      "javascript": "function mergeSort(items) {\n    if (items.length <= 1) return items;\n    const mid = Math.floor(items.length / 2);\n    const left = mergeSort(items.slice(0, mid));\n    const right = mergeSort(items.slice(mid));\n    const out = [];\n    let i = 0, j = 0;\n    while (i < left.length && j < right.length) {\n        if (left[i] <= right[j]) out.push(left[i++]);\n        else out.push(right[j++]);\n    }\n    return [...out, ...left.slice(i), ...right.slice(j)];\n}\n\nconsole.log(mergeSort([3, 1, 4, 1, 5, 9, 2]));  // [1, 1, 2, 3, 4, 5, 9]",
+      "go": "package main\n\nfunc MergeSort(items []int) []int {\n    if len(items) <= 1 {\n        return items\n    }\n    mid := len(items) / 2\n    left := MergeSort(items[:mid])\n    right := MergeSort(items[mid:])\n    out := make([]int, 0, len(items))\n    i, j := 0, 0\n    for i < len(left) && j < len(right) {\n        if left[i] <= right[j] {\n            out = append(out, left[i]); i++\n        } else {\n            out = append(out, right[j]); j++\n        }\n    }\n    out = append(out, left[i:]...)\n    out = append(out, right[j:]...)\n    return out\n}",
+      "rust": "pub fn merge_sort<T: Ord + Clone>(items: &[T]) -> Vec<T> {\n    if items.len() <= 1 {\n        return items.to_vec();\n    }\n    let mid = items.len() / 2;\n    let left = merge_sort(&items[..mid]);\n    let right = merge_sort(&items[mid..]);\n    let mut out = Vec::with_capacity(items.len());\n    let (mut i, mut j) = (0, 0);\n    while i < left.len() && j < right.len() {\n        if left[i] <= right[j] { out.push(left[i].clone()); i += 1; }\n        else { out.push(right[j].clone()); j += 1; }\n    }\n    out.extend_from_slice(&left[i..]);\n    out.extend_from_slice(&right[j..]);\n    out\n}",
+      "java": "public static List<Integer> mergeSort(List<Integer> items) {\n    if (items.size() <= 1) return items;\n    int mid = items.size() / 2;\n    List<Integer> left = mergeSort(new ArrayList<>(items.subList(0, mid)));\n    List<Integer> right = mergeSort(new ArrayList<>(items.subList(mid, items.size())));\n    List<Integer> out = new ArrayList<>();\n    int i = 0, j = 0;\n    while (i < left.size() && j < right.size()) {\n        if (left.get(i) <= right.get(j)) out.add(left.get(i++));\n        else out.add(right.get(j++));\n    }\n    while (i < left.size()) out.add(left.get(i++));\n    while (j < right.size()) out.add(right.get(j++));\n    return out;\n}",
+      "c++": "#include <vector>\n\ntemplate <typename T>\nstd::vector<T> mergeSort(const std::vector<T>& items) {\n    if (items.size() <= 1) return items;\n    size_t mid = items.size() / 2;\n    auto left = mergeSort(std::vector<T>(items.begin(), items.begin() + mid));\n    auto right = mergeSort(std::vector<T>(items.begin() + mid, items.end()));\n    std::vector<T> out;\n    size_t i = 0, j = 0;\n    while (i < left.size() && j < right.size()) {\n        if (left[i] <= right[j]) out.push_back(left[i++]);\n        else out.push_back(right[j++]);\n    }\n    out.insert(out.end(), left.begin() + i, left.end());\n    out.insert(out.end(), right.begin() + j, right.end());\n    return out;\n}",
+      "c#": "public static List<T> MergeSort<T>(List<T> items) where T : IComparable<T>\n{\n    if (items.Count <= 1) return items;\n    int mid = items.Count / 2;\n    var left = MergeSort(items.GetRange(0, mid));\n    var right = MergeSort(items.GetRange(mid, items.Count - mid));\n    var out = new List<T>();\n    int i = 0, j = 0;\n    while (i < left.Count && j < right.Count)\n        out.Add(left[i].CompareTo(right[j]) <= 0 ? left[i++] : right[j++]);\n    while (i < left.Count) out.Add(left[i++]);\n    while (j < right.Count) out.Add(right[j++]);\n    return out;\n}"
+    }
+  },
+  {
+    "task": "pair_sum",
+    "patterns": [
+      "\\bfind\\b.*\\ball\\s+pairs?\\b.*\\b(?:sum|add)\\b.*\\btarget\\b",
+      "\\bpairs?\\b.*\\b(?:sum\\s+to|add\\s+up\\s+to)\\b.*\\btarget\\b"
+    ],
+    "intro": "Here's a {lang} function that finds all pairs that sum to a target.",
+    "notes": "The set-based approach tracks complements in one pass — O(n) time. The two-pointer version needs a sorted input and also runs in O(n).",
+    "languages": {
+      "python": "def pair_sum(numbers: list, target: int) -> list:\n    \"\"\"All unique pairs (a, b) with a + b == target.\"\"\"\n    seen = set()\n    pairs = set()\n    for n in numbers:\n        complement = target - n\n        if complement in seen:\n            pairs.add(tuple(sorted((n, complement))))\n        seen.add(n)\n    return [list(p) for p in pairs]\n\n# Two-pointer on a sorted list:\ndef pair_sum_sorted(numbers: list, target: int) -> list:\n    numbers = sorted(numbers)\n    out = []\n    lo, hi = 0, len(numbers) - 1\n    while lo < hi:\n        total = numbers[lo] + numbers[hi]\n        if total == target:\n            out.append([numbers[lo], numbers[hi]])\n            lo += 1\n            hi -= 1\n        elif total < target:\n            lo += 1\n        else:\n            hi -= 1\n    return out\n\nprint(pair_sum([1, 2, 3, 4, 5, 6], 7))   # [[2, 5], [3, 4], [1, 6]]",
+      "javascript": "function pairSum(numbers, target) {\n    const seen = new Set();\n    const pairs = new Set();\n    for (const n of numbers) {\n        const complement = target - n;\n        if (seen.has(complement)) {\n            pairs.add(JSON.stringify([Math.min(n, complement), Math.max(n, complement)]));\n        }\n        seen.add(n);\n    }\n    return [...pairs].map(JSON.parse);\n}\n\nconsole.log(pairSum([1, 2, 3, 4, 5, 6], 7));  // [[2,5],[3,4],[1,6]]"
+    }
+  },
+  {
+    "task": "sliding_window_max",
+    "patterns": [
+      "\\bsliding\\s+window\\s+maximum\\b",
+      "\\b(?:max|maximum)\\s+in\\s+(?:a\\s+)?sliding\\s+window\\b"
+    ],
+    "intro": "Here's a {lang} function that computes the sliding window maximum.",
+    "notes": "A monotonic deque keeps candidate maxima in decreasing order — each element is pushed and popped once, giving O(n) total. This is the classic hard-leetcode pattern.",
+    "languages": {
+      "python": "from collections import deque\n\n\ndef sliding_window_max(nums: list, k: int) -> list:\n    \"\"\"Max of every k-sized window, in O(n).\"\"\"\n    dq = deque()          # indices with decreasing values\n    out = []\n    for i, n in enumerate(nums):\n        while dq and nums[dq[-1]] <= n:\n            dq.pop()      # smaller values can never be the max again\n        dq.append(i)\n        if dq[0] <= i - k:\n            dq.popleft()  # index fell out of the window\n        if i >= k - 1:\n            out.append(nums[dq[0]])\n    return out\n\n# Example:\nprint(sliding_window_max([1, 3, -1, -3, 5, 3, 6, 7], 3))\n# [3, 3, 5, 5, 6, 7]",
+      "javascript": "function slidingWindowMax(nums, k) {\n    const dq = [];          // indices with decreasing values\n    const out = [];\n    for (let i = 0; i < nums.length; i++) {\n        while (dq.length && nums[dq[dq.length - 1]] <= nums[i]) {\n            dq.pop();\n        }\n        dq.push(i);\n        if (dq[0] <= i - k) dq.shift();\n        if (i >= k - 1) out.push(nums[dq[0]]);\n    }\n    return out;\n}\n\nconsole.log(slidingWindowMax([1, 3, -1, -3, 5, 3, 6, 7], 3));\n// [3, 3, 5, 5, 6, 7]",
+      "go": "package main\n\nfunc SlidingWindowMax(nums []int, k int) []int {\n    dq := []int{}   // indices with decreasing values\n    out := []int{}\n    for i, n := range nums {\n        for len(dq) > 0 && nums[dq[len(dq)-1]] <= n {\n            dq = dq[:len(dq)-1]\n        }\n        dq = append(dq, i)\n        if dq[0] <= i-k {\n            dq = dq[1:]\n        }\n        if i >= k-1 {\n            out = append(out, nums[dq[0]])\n        }\n    }\n    return out\n}",
+      "rust": "use std::collections::VecDeque;\n\npub fn sliding_window_max(nums: &[i32], k: usize) -> Vec<i32> {\n    let mut dq: VecDeque<usize> = VecDeque::new();\n    let mut out = Vec::new();\n    for i in 0..nums.len() {\n        while let Some(&last) = dq.back() {\n            if nums[last] <= nums[i] { dq.pop_back(); } else { break; }\n        }\n        dq.push_back(i);\n        if dq[0] <= i.saturating_sub(k) { dq.pop_front(); }\n        if i + 1 >= k { out.push(nums[dq[0]]); }\n    }\n    out\n}",
+      "java": "import java.util.*;\n\npublic static int[] slidingWindowMax(int[] nums, int k) {\n    Deque<Integer> dq = new ArrayDeque<>();   // indices, decreasing values\n    List<Integer> out = new ArrayList<>();\n    for (int i = 0; i < nums.length; i++) {\n        while (!dq.isEmpty() && nums[dq.peekLast()] <= nums[i]) dq.pollLast();\n        dq.offerLast(i);\n        if (dq.peekFirst() <= i - k) dq.pollFirst();\n        if (i >= k - 1) out.add(nums[dq.peekFirst()]);\n    }\n    return out.stream().mapToInt(Integer::intValue).toArray();\n}",
+      "c++": "#include <vector>\n#include <deque>\n\nstd::vector<int> slidingWindowMax(const std::vector<int>& nums, int k) {\n    std::deque<int> dq;   // indices with decreasing values\n    std::vector<int> out;\n    for (int i = 0; i < (int)nums.size(); i++) {\n        while (!dq.empty() && nums[dq.back()] <= nums[i]) dq.pop_back();\n        dq.push_back(i);\n        if (dq.front() <= i - k) dq.pop_front();\n        if (i >= k - 1) out.push_back(nums[dq.front()]);\n    }\n    return out;\n}",
+      "c#": "public static int[] SlidingWindowMax(int[] nums, int k)\n{\n    var dq = new LinkedList<int>();   // indices with decreasing values\n    var out = new List<int>();\n    for (int i = 0; i < nums.Length; i++)\n    {\n        while (dq.Count > 0 && nums[dq.Last()] <= nums[i]) dq.RemoveLast();\n        dq.AddLast(i);\n        if (dq.First() <= i - k) dq.RemoveFirst();\n        if (i >= k - 1) out.Add(nums[dq.First()]);\n    }\n    return out.ToArray();\n}"
+    }
+  },
+  {
+    "task": "edit_distance",
+    "patterns": [
+      "\\bedit\\s+distance\\b",
+      "\\blevenshtein\\b"
+    ],
+    "intro": "Here's a {lang} function that computes the edit (Levenshtein) distance between two strings.",
+    "notes": "Classic dynamic programming: dp[i][j] is the cost to transform s[:i] into t[:j]. O(m·n) time and space; the space can be reduced to one row.",
+    "languages": {
+      "python": "def edit_distance(a: str, b: str) -> int:\n    \"\"\"Minimum insertions/deletions/substitutions to turn a into b.\"\"\"\n    m, n = len(a), len(b)\n    dp = [[0] * (n + 1) for _ in range(m + 1)]\n    for i in range(m + 1):\n        dp[i][0] = i\n    for j in range(n + 1):\n        dp[0][j] = j\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            if a[i - 1] == b[j - 1]:\n                dp[i][j] = dp[i - 1][j - 1]\n            else:\n                dp[i][j] = 1 + min(dp[i - 1][j],      # delete\n                                   dp[i][j - 1],      # insert\n                                   dp[i - 1][j - 1])  # substitute\n    return dp[m][n]\n\nprint(edit_distance('kitten', 'sitting'))   # 3\nprint(edit_distance('flaw', 'lawn'))        # 2",
+      "javascript": "function editDistance(a, b) {\n    const m = a.length, n = b.length;\n    const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));\n    for (let i = 0; i <= m; i++) dp[i][0] = i;\n    for (let j = 0; j <= n; j++) dp[0][j] = j;\n    for (let i = 1; i <= m; i++) {\n        for (let j = 1; j <= n; j++) {\n            if (a[i - 1] === b[j - 1]) dp[i][j] = dp[i - 1][j - 1];\n            else dp[i][j] = 1 + Math.min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]);\n        }\n    }\n    return dp[m][n];\n}\n\nconsole.log(editDistance('kitten', 'sitting'));  // 3",
+      "go": "package main\n\nfunc EditDistance(a, b string) int {\n    m, n := len(a), len(b)\n    dp := make([][]int, m+1)\n    for i := range dp {\n        dp[i] = make([]int, n+1)\n        dp[i][0] = i\n    }\n    for j := 0; j <= n; j++ {\n        dp[0][j] = j\n    }\n    for i := 1; i <= m; i++ {\n        for j := 1; j <= n; j++ {\n            if a[i-1] == b[j-1] {\n                dp[i][j] = dp[i-1][j-1]\n            } else {\n                dp[i][j] = 1 + min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1])\n            }\n        }\n    }\n    return dp[m][n]\n}\n\nfunc min(xs ...int) int {\n    best := xs[0]\n    for _, x := range xs[1:] {\n        if x < best {\n            best = x\n        }\n    }\n    return best\n}",
+      "rust": "pub fn edit_distance(a: &str, b: &str) -> usize {\n    let (m, n) = (a.len(), b.len());\n    let mut dp = vec![vec![0usize; n + 1]; m + 1];\n    for i in 0..=m { dp[i][0] = i; }\n    for j in 0..=n { dp[0][j] = j; }\n    for i in 1..=m {\n        for j in 1..=n {\n            dp[i][j] = if a.as_bytes()[i - 1] == b.as_bytes()[j - 1] {\n                dp[i - 1][j - 1]\n            } else {\n                1 + dp[i - 1][j].min(dp[i][j - 1]).min(dp[i - 1][j - 1])\n            };\n        }\n    }\n    dp[m][n]\n}",
+      "java": "public static int editDistance(String a, String b) {\n    int m = a.length(), n = b.length();\n    int[][] dp = new int[m + 1][n + 1];\n    for (int i = 0; i <= m; i++) dp[i][0] = i;\n    for (int j = 0; j <= n; j++) dp[0][j] = j;\n    for (int i = 1; i <= m; i++) {\n        for (int j = 1; j <= n; j++) {\n            if (a.charAt(i - 1) == b.charAt(j - 1)) {\n                dp[i][j] = dp[i - 1][j - 1];\n            } else {\n                dp[i][j] = 1 + Math.min(dp[i - 1][j], Math.min(dp[i][j - 1], dp[i - 1][j - 1]));\n            }\n        }\n    }\n    return dp[m][n];\n}",
+      "c++": "#include <string>\n#include <vector>\n#include <algorithm>\n\nint editDistance(const std::string& a, const std::string& b) {\n    int m = a.size(), n = b.size();\n    std::vector<std::vector<int>> dp(m + 1, std::vector<int>(n + 1));\n    for (int i = 0; i <= m; i++) dp[i][0] = i;\n    for (int j = 0; j <= n; j++) dp[0][j] = j;\n    for (int i = 1; i <= m; i++) {\n        for (int j = 1; j <= n; j++) {\n            if (a[i - 1] == b[j - 1]) dp[i][j] = dp[i - 1][j - 1];\n            else dp[i][j] = 1 + std::min({dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]});\n        }\n    }\n    return dp[m][n];\n}",
+      "c#": "public static int EditDistance(string a, string b)\n{\n    int m = a.Length, n = b.Length;\n    var dp = new int[m + 1, n + 1];\n    for (int i = 0; i <= m; i++) dp[i, 0] = i;\n    for (int j = 0; j <= n; j++) dp[0, j] = j;\n    for (int i = 1; i <= m; i++)\n        for (int j = 1; j <= n; j++)\n            dp[i, j] = a[i - 1] == b[j - 1]\n                ? dp[i - 1, j - 1]\n                : 1 + Math.Min(dp[i - 1, j], Math.Min(dp[i, j - 1], dp[i - 1, j - 1]));\n    return dp[m, n];\n}"
+    }
+  },
+  {
+    "task": "bloom_filter",
+    "patterns": [
+      "\\bbloom\\s+filter\\b"
+    ],
+    "intro": "Here's a {lang} bloom filter.",
+    "notes": "A bloom filter answers 'definitely not present' vs 'maybe present' using k hash functions over a bit array. Python's built-in hash() is salted per process — use hashlib for stable hashes.",
+    "languages": {
+      "python": "import hashlib\n\n\nclass BloomFilter:\n    def __init__(self, size: int = 1024, num_hashes: int = 3):\n        self.size = size\n        self.num_hashes = num_hashes\n        self.bits = bytearray(size)\n\n    def _hashes(self, item: str):\n        out = []\n        for i in range(self.num_hashes):\n            digest = hashlib.sha256(f'{i}:{item}'.encode()).digest()\n            out.append(int.from_bytes(digest[:4], 'big') % self.size)\n        return out\n\n    def add(self, item: str) -> None:\n        for h in self._hashes(item):\n            self.bits[h] = 1\n\n    def __contains__(self, item: str) -> bool:\n        return all(self.bits[h] for h in self._hashes(item))\n\n# Example:\nbf = BloomFilter()\nbf.add('apple')\nprint('apple' in bf)      # True (maybe)\nprint('banana' in bf)     # False (definitely not)",
+      "javascript": "// Node.js crypto for stable hashes:\nconst crypto = require('crypto');\n\nclass BloomFilter {\n    constructor(size = 1024, numHashes = 3) {\n        this.size = size;\n        this.numHashes = numHashes;\n        this.bits = new Uint8Array(size);\n    }\n\n    _hashes(item) {\n        const out = [];\n        for (let i = 0; i < this.numHashes; i++) {\n            const digest = crypto.createHash('sha256')\n                .update(`${i}:${item}`).digest();\n            out.push(digest.readUInt32BE(0) % this.size);\n        }\n        return out;\n    }\n\n    add(item) {\n        for (const h of this._hashes(item)) this.bits[h] = 1;\n    }\n\n    has(item) {\n        return this._hashes(item).every(h => this.bits[h] === 1);\n    }\n}"
+    }
+  },
+  {
+    "task": "thread_pool",
+    "patterns": [
+      "\\bthread\\s*pool\\b",
+      "\\b(?:concurrent|parallel)\\b.*\\b(?:tasks?|workers?|calls?)\\b.*\\b(?:python|thread)\\b"
+    ],
+    "intro": "Here's how to use a thread pool in {lang}.",
+    "notes": "ThreadPoolExecutor maps work across a pool of threads — great for I/O-bound tasks (network, disk). For CPU-bound work use ProcessPoolExecutor instead (GIL).",
+    "languages": {
+      "python": "from concurrent.futures import ThreadPoolExecutor\n\n\ndef fetch(url: str) -> str:\n    # I/O-bound work (network, disk) benefits from threads\n    return f'data from {url}'\n\nurls = ['https://a.com', 'https://b.com', 'https://c.com']\n\n# Map: run fetch on every url, results in order:\nwith ThreadPoolExecutor(max_workers=4) as pool:\n    results = list(pool.map(fetch, urls))\nprint(results)\n\n# Submit individual tasks:\nwith ThreadPoolExecutor(max_workers=4) as pool:\n    futures = [pool.submit(fetch, u) for u in urls]\n    for fut in futures:\n        print(fut.result())\n\n# CPU-bound work:\nfrom concurrent.futures import ProcessPoolExecutor\nwith ProcessPoolExecutor() as pool:\n    results = list(pool.map(sum, [[i] * 10_000 for i in range(4)]))"
+    }
+  },
+  {
+    "task": "profile_code",
+    "patterns": [
+      "\\bprofile\\b.*\\bpython\\s+code\\b",
+      "\\bcProfile\\b",
+      "\\b(?:find|measure)\\b.*\\b(?:slow|bottleneck)\\b.*\\b(?:code|function)\\b"
+    ],
+    "intro": "Here's how to profile Python code.",
+    "notes": "cProfile is the stdlib profiler; pstats summarizes the output. For a single function, timeit is simpler. Line-by-line detail needs the external line_profiler.",
+    "languages": {
+      "python": "import cProfile\nimport pstats\n\n# Profile a script:\ncProfile.run('my_function()', 'profile.out')\n\n# Or from the command line:\n#   python -m cProfile my_script.py\n\n# Summarize:\np = pstats.Stats('profile.out')\np.sort_stats('cumulative').print_stats(20)   # top 20 by cumulative time\n\n# Time a single function:\nimport timeit\nt = timeit.timeit('my_function()', globals=globals(), number=1000)\nprint(f'1 call: {t / 1000 * 1e6:.2f} us')\n\n# Timing helper:\nimport time\ndef timed(fn):\n    start = time.perf_counter()\n    result = fn()\n    print(f'{fn.__name__}: {time.perf_counter() - start:.4f}s')\n    return result"
+    }
+  },
+  {
+    "task": "log_decorator",
+    "patterns": [
+      "\\bdecorator\\b.*\\blog\\b",
+      "\\b(?:log|logging)\\b.*\\bdecorator\\b"
+    ],
+    "intro": "Here's a {lang} decorator that logs function calls.",
+    "notes": "The decorator logs the function name, arguments, and return value (or exception). functools.wraps keeps the wrapped function's metadata for introspection.",
+    "languages": {
+      "python": "import functools\nimport logging\n\nlogging.basicConfig(level=logging.INFO)\nlog = logging.getLogger(__name__)\n\n\ndef logged(func):\n    @functools.wraps(func)\n    def wrapper(*args, **kwargs):\n        log.info('calling %s(%s, %s)', func.__name__, args, kwargs)\n        try:\n            result = func(*args, **kwargs)\n        except Exception as exc:\n            log.exception('%s raised %s', func.__name__, exc)\n            raise\n        log.info('%s returned %r', func.__name__, result)\n        return result\n    return wrapper\n\n\n@logged\ndef add(a, b):\n    return a + b\n\nadd(1, 2)\n# INFO:root:calling add((1, 2), {})\n# INFO:root:add returned 3"
+    }
+  },
+  {
+    "task": "logging_setup",
+    "patterns": [
+      "\\blogging\\b",
+      "\\bset\\s+up\\s+logging\\b"
+    ],
+    "intro": "Here's how to set up logging in {lang}.",
+    "notes": "logging.basicConfig is the quick start; the module-level logger pattern (logger = logging.getLogger(__name__)) is the standard for libraries. Levels: DEBUG < INFO < WARNING < ERROR.",
+    "languages": {
+      "python": "import logging\n\n# Quick start — console output:\nlogging.basicConfig(\n    level=logging.INFO,\n    format='%(asctime)s %(levelname)s %(name)s: %(message)s',\n)\n\nlogger = logging.getLogger(__name__)\n\nlogger.debug('detail')        # hidden at INFO level\nlogger.info('started')\nlogger.warning('look out')\nlogger.error('something broke')\n\n# Log to a file too:\nlogging.basicConfig(\n    level=logging.INFO,\n    format='%(asctime)s %(levelname)s %(message)s',\n    handlers=[\n        logging.FileHandler('app.log'),\n        logging.StreamHandler(),\n    ],\n)\n\n# Exception tracebacks:\ntry:\n    1 / 0\nexcept ZeroDivisionError:\n    logger.exception('division failed')",
+      "javascript": "// Node.js: console methods map to log levels; use a library (winston, pino)\n// for files/rotation.\nconsole.log('info');\nconsole.warn('warning');\nconsole.error('error');\n\n// Simple leveled logger:\nconst log = {\n    debug: (...a) => console.debug(new Date().toISOString(), ...a),\n    info: (...a) => console.log(new Date().toISOString(), ...a),\n    warn: (...a) => console.warn(new Date().toISOString(), ...a),\n    error: (...a) => console.error(new Date().toISOString(), ...a),\n};\n\nlog.info('started');\nlog.error('something broke');"
+    }
+  },
+  {
+    "task": "chunk_file",
+    "patterns": [
+      "\\bchunk\\b.*\\b(?:large\\s+)?file\\b",
+      "\\bsplit\\b.*\\bfile\\b.*\\b(?:parts|chunks)\\b"
+    ],
+    "intro": "Here's how to split a large file into smaller chunks in {lang}.",
+    "notes": "Read fixed-size byte chunks with a loop (memory-friendly), or split by lines. shutil.copyfileobj accepts a length argument for the same effect.",
+    "languages": {
+      "python": "def split_file(filename: str, chunk_size: int = 1024 * 1024):\n    \"\"\"Split a file into chunk_size-byte parts.\"\"\"\n    with open(filename, 'rb') as f:\n        i = 0\n        while True:\n            chunk = f.read(chunk_size)\n            if not chunk:\n                break\n            with open(f'{filename}.part{i}', 'wb') as out:\n                out.write(chunk)\n            i += 1\n\n# Split by lines (readable chunks):\ndef split_by_lines(filename: str, lines_per_part: int = 1000):\n    with open(filename, encoding='utf-8') as f:\n        part = 0\n        lines = []\n        for line in f:\n            lines.append(line)\n            if len(lines) >= lines_per_part:\n                with open(f'{filename}.part{part}', 'w', encoding='utf-8') as out:\n                    out.writelines(lines)\n                lines = []\n                part += 1\n        if lines:\n            with open(f'{filename}.part{part}', 'w', encoding='utf-8') as out:\n                out.writelines(lines)"
+    }
+  },
+  {
+    "task": "periodic_request",
+    "patterns": [
+      "\\b(?:every|each)\\s+\\d+\\s+seconds?\\b.*\\b(?:request|api|call|fetch)\\b",
+      "\\b(?:repeat|run)\\b.*\\b(?:every|each)\\s+\\d+\\s+seconds?\\b",
+      "\\b(?:request|api|call|fetch)\\b.*\\b(?:every|each)\\s+\\d+\\s+seconds?\\b"
+    ],
+    "intro": "Here's a {lang} script that calls an API every N seconds.",
+    "notes": "A loop with time.sleep is the simplest scheduler. Python's schedule library reads nicer; for production batch jobs use cron or a task queue. Always wrap the call in try/except so one failure doesn't kill the loop.",
+    "languages": {
+      "python": "import time\nimport requests\n\nURL = 'https://api.example.com/status'\n\n# Simple loop:\nwhile True:\n    try:\n        resp = requests.get(URL, timeout=10)\n        print(resp.status_code)\n    except requests.RequestException as exc:\n        print('request failed:', exc)\n    time.sleep(10)\n\n# With the schedule library (pip install schedule):\n# import schedule\n# def job():\n#     requests.get(URL, timeout=10)\n# schedule.every(10).seconds.do(job)\n# while True:\n#     schedule.run_pending()\n#     time.sleep(1)"
+    }
+  },
+  {
+    "task": "image_download",
+    "patterns": [
+      "\\bdownload\\b.*\\bimage\\b",
+      "\\bsave\\b.*\\bimage\\b.*\\b(?:url|from)\\b"
+    ],
+    "intro": "Here's how to download an image from a URL and save it in {lang}.",
+    "notes": "Download as bytes and write in binary mode. requests with stream=True avoids loading the whole image into memory; always check the status first.",
+    "languages": {
+      "python": "import requests\n\nurl = 'https://example.com/photo.jpg'\n\n# Simple version:\nresp = requests.get(url, timeout=30)\nresp.raise_for_status()\nwith open('photo.jpg', 'wb') as f:\n    f.write(resp.content)\n\n# Memory-friendly (streamed):\nwith requests.get(url, stream=True, timeout=30) as resp:\n    resp.raise_for_status()\n    with open('photo.jpg', 'wb') as f:\n        for chunk in resp.iter_content(chunk_size=8192):\n            f.write(chunk)\n\n# Verify it's actually an image:\nprint(resp.headers.get('Content-Type'))   # image/jpeg",
+      "javascript": "const https = require('https');\nconst fs = require('fs');\n\nconst url = 'https://example.com/photo.jpg';\n\nhttps.get(url, (res) => {\n    if (res.statusCode !== 200) {\n        console.error('HTTP', res.statusCode);\n        res.resume();\n        return;\n    }\n    const file = fs.createWriteStream('photo.jpg');\n    res.pipe(file);\n    file.on('finish', () => file.close());\n}).on('error', err => console.error(err.message));"
+    }
+  },
+  {
+    "task": "docker_env",
+    "patterns": [
+      "\\benvironment\\s+variables?\\b.*\\bdocker\\b",
+      "\\bdocker\\b.*\\benvironment\\s+variables?\\b"
+    ],
+    "intro": "Here's how to use environment variables in a Docker container.",
+    "notes": "ENV sets variables in the image; docker run -e overrides at runtime; --env-file reads many at once. Compose files use the environment: or env_file: keys. Never bake secrets into the image.",
+    "languages": {
+      "bash": "# Dockerfile:\nFROM python:3.12-slim\n# Default values baked into the image:\nENV APP_ENV=production \\\n    PORT=8000\n# Runtime values can override these with -e.\n\n# At runtime (docker run):\n#   docker run -e APP_ENV=development -e API_KEY=secret myapp\n#   docker run --env-file .env myapp\n\n# .env file format:\n#   APP_ENV=development\n#   API_KEY=secret\n\n# docker-compose.yml:\n# services:\n#   web:\n#     build: .\n#     environment:\n#       APP_ENV: development\n#     env_file:\n#       - .env\n\n# Secrets: use Docker secrets or your orchestration tool's secret store,\n# never ENV in a committed Dockerfile.\n\n# Read them from the app (Python):\n#   import os\n#   port = os.getenv('PORT', '8000')"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "center_div",
+    "patterns": [
+      "\\bcenter\\b.*\\bdiv\\b",
+      "\\bcenter\\s+(?:a\\s+|the\\s+)?(?:div|element|item)\\b"
+    ],
+    "intro": "Here's how to center a div with CSS.",
+    "notes": "Flexbox is the modern way: justify-content + align-items on the parent. For a single element, place-items: center on a grid container is even shorter.",
+    "languages": {
+      "css": "/* Center horizontally AND vertically with flexbox: */\n.parent {\n    display: flex;\n    justify-content: center;   /* horizontal */\n    align-items: center;       /* vertical */\n    min-height: 100vh;         /* give it height to center in */\n}\n\n/* Even shorter with grid: */\n.parent {\n    display: grid;\n    place-items: center;       /* both axes at once */\n    min-height: 100vh;\n}\n\n/* Center TEXT inside a block: */\n.child {\n    text-align: center;\n}\n\n/* Center a block element horizontally: */\n.block {\n    margin: 0 auto;\n    width: fit-content;\n}"
+    },
+    "default_lang": "css"
+  },
+  {
+    "task": "responsive_navbar",
+    "patterns": [
+      "\\bresponsive\\b.*\\bnavbar\\b",
+      "\\bnavbar\\b.*\\b(?:mobile|responsive)\\b"
+    ],
+    "intro": "Here's how to make a responsive navbar with CSS.",
+    "notes": "The pattern: a horizontal flex nav on desktop, a hamburger/stacked column on small screens via a media query. Use max-width: 768px as the breakpoint.",
+    "languages": {
+      "css": ".navbar {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 1rem;\n    background: #2c3e50;\n}\n\n.nav-links {\n    display: flex;\n    gap: 1.5rem;\n    list-style: none;\n}\n\n.nav-links a {\n    color: #fff;\n    text-decoration: none;\n}\n\n/* Mobile: stack the links vertically */\n@media (max-width: 768px) {\n    .navbar {\n        flex-direction: column;\n    }\n    .nav-links {\n        flex-direction: column;\n        align-items: center;\n        padding: 0;\n    }\n}",
+      "html": "<nav class=\"navbar\">\n  <div class=\"logo\">MySite</div>\n  <ul class=\"nav-links\">\n    <li><a href=\"#\">Home</a></li>\n    <li><a href=\"#\">About</a></li>\n    <li><a href=\"#\">Contact</a></li>\n  </ul>\n</nav>"
+    },
+    "default_lang": "css"
+  },
+  {
+    "task": "download_checksum",
+    "patterns": [
+      "\\b(?:downloads?|verify|check)\\b.*\\bchecksum\\b",
+      "\\bchecks\\b.*\\bchecksum\\b",
+      "\\bchecksum\\b.*\\b(?:download|file|verify)\\b"
+    ],
+    "intro": "Here's how to download a file and verify its checksum in {lang}.",
+    "notes": "Always compare against the official checksum published by the project. sha256sum is the current standard — md5 and sha1 are broken for security purposes.",
+    "languages": {
+      "bash": "# Download:\ncurl -fL -o file.tar.gz https://example.com/file.tar.gz\n\n# Verify SHA-256:\necho 'expected-sha256  file.tar.gz' | sha256sum -c -\n# file.tar.gz: OK\n\n# Or print and compare manually:\nsha256sum file.tar.gz\n\n# Compute without a file:\ncurl -fsL https://example.com/file.tar.gz | sha256sum\n\n# GPG-style alternatives: sha1sum, md5sum (both weaker)\n# If the project publishes a .sha256 file:\ncurl -fsL -O https://example.com/file.tar.gz.sha256\nsha256sum -c file.tar.gz.sha256",
+      "python": "import hashlib\nimport requests\n\nurl = 'https://example.com/file.tar.gz'\nexpected = 'expected-sha256-hex'\n\nresp = requests.get(url, timeout=60)\nresp.raise_for_status()\n\ndigest = hashlib.sha256(resp.content).hexdigest()\nprint(digest)\nif digest == expected:\n    print('checksum OK')\nelse:\n    print('checksum MISMATCH — do not use this file')\n\n# Streaming for large files:\ndef sha256_file(path: str, chunk: int = 8192) -> str:\n    h = hashlib.sha256()\n    with open(path, 'rb') as f:\n        while True:\n            block = f.read(chunk)\n            if not block:\n                break\n            h.update(block)\n    return h.hexdigest()"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "toml_read",
+    "patterns": [
+      "\\btoml\\b"
+    ],
+    "intro": "Here's how to read a TOML file in {lang}.",
+    "notes": "Python 3.11+ has tomllib in the stdlib (read-only). For writing TOML use tomli-w. TOML is the config format for pyproject.toml and Cargo.toml.",
+    "languages": {
+      "python": "# Python 3.11+:\nimport tomllib\n\nwith open('config.toml', 'rb') as f:\n    config = tomllib.load(f)\n\nprint(config.get('server'))\n\n# From a string:\ndata = tomllib.loads('port = 8000\\nhost = \"localhost\"')\n\n# config.toml example:\n# [server]\n# host = \"localhost\"\n# port = 8000\n#\n# [database]\n# url = \"postgresql://localhost/db\""
+    }
+  },
+  {
+    "task": "xml_parse",
+    "patterns": [
+      "\\b(?:parse|read|create)\\b.*\\bxml\\b",
+      "\\bxml\\b.*\\b(?:parse|read|elementtree)\\b"
+    ],
+    "intro": "Here's how to parse XML in {lang}.",
+    "notes": "xml.etree.ElementTree is the stdlib choice. findall/find/iter navigate the tree; .text and .attrib access content. For huge files use iterparse to stream.",
+    "languages": {
+      "python": "import xml.etree.ElementTree as ET\n\nxml_text = '''\n<catalog>\n  <book id=\"1\"><title>Python 101</title><price>29.99</price></book>\n  <book id=\"2\"><title>Rust</title><price>39.99</price></book>\n</catalog>\n'''\n\nroot = ET.fromstring(xml_text)\n\n# From a file:\ntree = ET.parse('data.xml')\nroot = tree.getroot()\n\n# Navigate:\nfor book in root.findall('book'):\n    print(book.get('id'), book.findtext('title'), book.findtext('price'))\n\n# Iterate all elements:\nfor el in root.iter():\n    print(el.tag, el.text)\n\n# Build XML:\nroot = ET.Element('catalog')\nbook = ET.SubElement(root, 'book', {'id': '3'})\nET.SubElement(book, 'title').text = 'Go'\nprint(ET.tostring(root, encoding='unicode'))"
+    }
+  },
+  {
+    "task": "sqlite_use",
+    "patterns": [
+      "\\bsqlite\\b"
+    ],
+    "intro": "Here's how to use SQLite from {lang}.",
+    "notes": "sqlite3 is in the Python stdlib. Use the connection as a context manager (auto-commit), parameterized queries for safety, and check sqlite_version for SQLite's feature level.",
+    "languages": {
+      "python": "import sqlite3\n\nconn = sqlite3.connect('app.db')   # ':memory:' for a temp db\n\nconn.execute('''\n    CREATE TABLE IF NOT EXISTS users (\n        id INTEGER PRIMARY KEY,\n        name TEXT NOT NULL\n    )\n''')\n\n# Insert (parameterized):\nconn.execute('INSERT INTO users (name) VALUES (?)', ('alice',))\nconn.commit()\n\n# Query:\nfor row in conn.execute('SELECT * FROM users'):\n    print(row)\n\n# With the connection as a context manager (auto-commit):\nwith sqlite3.connect('app.db') as conn:\n    conn.execute('INSERT INTO users (name) VALUES (?)', ('bob',))\n\n# Dict rows:\nconn.row_factory = sqlite3.Row\nrow = conn.execute('SELECT * FROM users WHERE id = ?', (1,)).fetchone()\nprint(row['name'])\n\nconn.close()"
+    }
+  },
+  {
+    "task": "redis_use",
+    "patterns": [
+      "\\bredis\\b"
+    ],
+    "intro": "Here's how to use Redis from {lang}.",
+    "notes": "redis-py is the standard client. Redis is an in-memory key-value store — great for caching, rate limiting, and queues. Set TTLs on caches with ex=.",
+    "languages": {
+      "python": "# pip install redis\nimport redis\n\nr = redis.Redis(host='localhost', port=6379, db=0, decode_responses=True)\n\n# Strings:\nr.set('user:42:name', 'alice')\nprint(r.get('user:42:name'))\n\n# Cache with TTL:\nr.setex('cache:page:1', 300, 'cached-content')   # 300s\n\n# Increment (rate limiting):\nr.incr('hits')\n\n# Lists (queues):\nr.lpush('jobs', 'task-1')\njob = r.rpop('jobs')\n\n# Hashes:\nr.hset('user:42', mapping={'name': 'alice', 'age': 30})\nprint(r.hgetall('user:42'))\n\n# Sets:\nr.sadd('online', 'alice')\nprint(r.smembers('online'))\n\n# Expiry check:\nprint(r.ttl('cache:page:1'))"
+    }
+  },
+  {
+    "task": "pandas_filter",
+    "patterns": [
+      "\\bfilter\\b.*\\b(?:pandas|dataframe|df)\\b",
+      "\\b(?:pandas|dataframe|df)\\b.*\\bfilter\\b.*\\b(?:column|row|value)\\b"
+    ],
+    "intro": "Here's how to filter a pandas DataFrame by a column value.",
+    "notes": "Boolean indexing df[df['col'] > 5] keeps rows where the condition is True. Chain conditions with & (and) and | (or) — wrap each in parentheses. .query() is a string-based alternative that reads more like SQL.",
+    "languages": {
+      "python": "import pandas as pd\n\ndf = pd.read_csv('sales.csv')\n\n# Keep rows where the 'amount' column is over 100:\nfiltered = df[df['amount'] > 100]\n\n# Multiple conditions — wrap each in parentheses:\nfiltered = df[(df['amount'] > 100) & (df['region'] == 'EU')]\n\n# String-based alternative (.query):\nfiltered = df.query('amount > 100 and region == \"EU\"')\n"
+    }
+  },
+  {
+    "task": "profile_python",
+    "patterns": [
+      "\\bprofile\\b.*\\b(?:python|script|code|function)\\b",
+      "\\b(?:cprofile|timeit)\\b"
+    ],
+    "intro": "Here's how to profile a Python script.",
+    "notes": "cProfile -s cumulative sorts by total time — look for functions with high cumtime. timeit is for micro-benchmarks of small snippets. line_profiler (pip install line_profiler) gives per-line times.",
+    "languages": {
+      "python": "import cProfile\nimport pstats\n\n# Profile a whole script:\n#   python -m cProfile -s cumulative my_script.py\n\n# Profile one function:\ncProfile.run('my_function()', 'profile.out')\n\n# Read the results:\np = pstats.Stats('profile.out')\np.sort_stats('cumulative').print_stats(20)\n\n# Micro-benchmark a snippet with timeit:\nimport timeit\ntimeit.timeit('sorted(lst)', setup='lst = list(range(1000))', number=10000)\n"
+    }
+  },
+  {
+    "task": "iterate_dict",
+    "patterns": [
+      "\\biterate\\b.*\\b(?:dict|dictionary)\\b",
+      "\\b(?:loop|iterate)\\s+over\\b.*\\b(?:dict|dictionary)\\b"
+    ],
+    "intro": "Here's how to iterate over a dictionary in Python.",
+    "notes": "Iterating a dict yields keys; .items() yields (key, value) pairs; .values() yields values. Use .items() when you need both — unpacking in the loop header is the idiomatic style.",
+    "languages": {
+      "python": "my_dict = {'a': 1, 'b': 2, 'c': 3}\n\n# Keys only:\nfor key in my_dict:\n    print(key)\n\n# Keys and values:\nfor key, value in my_dict.items():\n    print(key, value)\n\n# Values only:\nfor value in my_dict.values():\n    print(value)\n\n# Preserve insertion order (Python 3.7+):\nprint(list(my_dict.items()))\n"
+    }
+  },
+  {
+    "task": "go_map",
+    "patterns": [
+      "\\bmap\\b.*\\bgolang\\b",
+      "\\bgolang\\b.*\\bmap\\b",
+      "\\bmap\\b.*\\bgo\\b",
+      "\\bgo\\b.*\\bmap\\b"
+    ],
+    "intro": "Here's how to use a map in Go.",
+    "notes": "make(map[K]V) creates an empty map; the zero value of a map is nil and writing to it panics. The two-value lookup form v, ok := m[k] tells you whether the key exists — the comma-ok idiom is idiomatic Go.",
+    "languages": {
+      "go": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    // Create a map:\n    ages := make(map[string]int)\n    ages[\"alice\"] = 30\n    ages[\"bob\"] = 25\n\n    // Literal syntax:\n    // ages := map[string]int{\"alice\": 30}\n\n    // Look up with the comma-ok idiom:\n    if age, ok := ages[\"alice\"]; ok {\n        fmt.Println(\"alice is\", age)\n    }\n\n    // Delete a key:\n    delete(ages, \"bob\")\n\n    // Iterate (order is random):\n    for name, age := range ages {\n        fmt.Println(name, age)\n    }\n}\n"
+    }
+  },
+  {
+    "task": "defaultdict",
+    "patterns": [
+      "\\bdefaultdict\\b",
+      "\\bdefault\\s+dict\\b.*\\b(?:python|value|list)\\b"
+    ],
+    "intro": "Here's how to use defaultdict from collections.",
+    "notes": "defaultdict(factory) returns the factory's result for missing keys instead of raising KeyError. Use defaultdict(list) for grouping, defaultdict(int) for counting, and defaultdict(set) for unique membership.",
+    "languages": {
+      "python": "from collections import defaultdict\n\n# Group items by key:\ngroups = defaultdict(list)\nfor name, lang in [('alice', 'py'), ('bob', 'js'), ('carol', 'py')]:\n    groups[lang].append(name)\nprint(dict(groups))  # {'py': ['alice', 'carol'], 'js': ['bob']}\n\n# Count occurrences:\ncounts = defaultdict(int)\nfor ch in 'abracadabra':\n    counts[ch] += 1\nprint(dict(counts))\n\n# Missing keys never raise:\nprint(groups['rust'])  # []\n"
+    }
+  },
+  {
+    "task": "try_except",
+    "patterns": [
+      "\\bcatch\\s+(?:all\\s+)?exceptions?\\b",
+      "\\btry\\s+except\\b",
+      "\\bexcept\\s+all\\b",
+      "\\b(?:catch|handle)\\s+(?:any|all)\\s+(?:error|exception)\\b"
+    ],
+    "intro": "Here's how to catch exceptions in Python.",
+    "notes": "Catch specific exceptions first, Exception last — a bare except: catches everything including KeyboardInterrupt. The finally block always runs, even on return/raise, so it's the right place for cleanup.",
+    "languages": {
+      "python": "try:\n    result = risky_operation()\nexcept ValueError as e:\n    print('bad value:', e)      # most specific first\nexcept (TypeError, KeyError):\n    print('wrong type or missing key')\nexcept Exception as e:\n    print('something else:', e)  # catch-all for the rest\nelse:\n    print('no exception — result:', result)\nfinally:\n    print('always runs — cleanup here')\n"
+    }
+  },
+  {
+    "task": "singleton",
+    "patterns": [
+      "\\bsingleton\\b"
+    ],
+    "intro": "Here's how to implement a singleton in Python.",
+    "notes": "Override __new__ so every constructor call returns the same instance — the most common approach. For lazily-created singletons, guard with a lock in threaded code. Metaclasses do the same thing with more ceremony.",
+    "languages": {
+      "python": "class Singleton:\n    _instance = None\n\n    def __new__(cls):\n        if cls._instance is None:\n            cls._instance = super().__new__(cls)\n        return cls._instance\n\n    def __init__(self):\n        self.value = 0\n\na = Singleton()\nb = Singleton()\nprint(a is b)   # True — same object\n"
+    }
+  },
+  {
+    "task": "property_decorator",
+    "patterns": [
+      "\\bproperty\\s+decorators?\\b",
+      "@\\s*property\\b",
+      "\\bgetters?\\s+(?:and\\s+setters?|setters?)\\b.*\\bpython\\b"
+    ],
+    "intro": "Here's how to use the @property decorator in Python.",
+    "notes": "@property turns a method into a read-only attribute; a @name.setter validates or transforms on assignment. Use it to expose computed state without breaking the attribute interface.",
+    "languages": {
+      "python": "class Circle:\n    def __init__(self, radius):\n        self._radius = radius\n\n    @property\n    def radius(self):\n        return self._radius\n\n    @radius.setter\n    def radius(self, value):\n        if value < 0:\n            raise ValueError('radius must be non-negative')\n        self._radius = value\n\n    @property\n    def area(self):\n        return 3.14159 * self._radius ** 2\n\nc = Circle(5)\nprint(c.area)      # 78.5...\nc.radius = 10     # goes through the setter\nprint(c.radius)   # 10\n"
+    }
+  },
+  {
+    "task": "go_interface",
+    "patterns": [
+      "\\binterface\\b.*\\bgo\\b",
+      "\\bgo\\b.*\\binterface\\b"
+    ],
+    "intro": "Here's how to define and use an interface in Go.",
+    "notes": "Interfaces are satisfied implicitly — a type just needs the methods. The empty interface (any) accepts everything; prefer small, single-method interfaces. Use the ok-idiom to type-assert: v, ok := x.(Concrete).",
+    "languages": {
+      "go": "package main\n\nimport \"fmt\"\n\ntype Speaker interface {\n    Speak() string\n}\n\ntype Dog struct{}\nfunc (Dog) Speak() string { return \"woof\" }\n\ntype Robot struct{}\nfunc (Robot) Speak() string { return \"beep boop\" }\n\nfunc announce(s Speaker) {\n    fmt.Println(s.Speak())\n}\n\nfunc main() {\n    announce(Dog{})    // woof\n    announce(Robot{})  // beep boop\n}\n"
+    }
+  },
+  {
+    "task": "go_channel",
+    "patterns": [
+      "\\bchannel\\b.*\\bgo\\b",
+      "\\bgo\\b.*\\bchannel\\b",
+      "\\bgoroutine\\b.*\\bchannel\\b"
+    ],
+    "intro": "Here's how to use channels in Go.",
+    "notes": "ch := make(chan int) creates an unbuffered channel; send ch <- v, receive v := <-ch. Sends block until someone receives, so goroutines sync automatically. close(ch) signals no more values; ranging over a channel drains it until closed.",
+    "languages": {
+      "go": "package main\n\nimport \"fmt\"\n\nfunc sum(nums []int, out chan<- int) {\n    total := 0\n    for _, n := range nums {\n        total += n\n    }\n    out <- total\n}\n\nfunc main() {\n    ch := make(chan int)\n    go sum([]int{1, 2, 3}, ch)\n    go sum([]int{4, 5}, ch)\n\n    a, b := <-ch, <-ch\n    fmt.Println(a, b, a+b)  // e.g. 9 6 15\n}\n"
+    }
+  },
+  {
+    "task": "rust_traits",
+    "patterns": [
+      "\\btraits?\\b.*\\brust\\b",
+      "\\brust\\b.*\\btraits?\\b"
+    ],
+    "intro": "Here's how to define and use traits in Rust.",
+    "notes": "Traits define shared behavior; impl Trait for Type provides it. Derive macros like #[derive(Debug, Clone)] generate common impls. Trait objects (&dyn Trait) enable runtime polymorphism, generics (T: Trait) compile-time.",
+    "languages": {
+      "rust": "trait Speaker {\n    fn speak(&self) -> String;\n}\n\nstruct Dog;\nimpl Speaker for Dog {\n    fn speak(&self) -> String { \"woof\".to_string() }\n}\n\n#[derive(Debug)]\nstruct Robot;\nimpl Speaker for Robot {\n    fn speak(&self) -> String { \"beep boop\".to_string() }\n}\n\nfn announce(s: &dyn Speaker) {\n    println!(\"{}\", s.speak());\n}\n\nfn main() {\n    announce(&Dog);\n    announce(&Robot);\n}\n"
+    }
+  },
+  {
+    "task": "sqlalchemy_basics",
+    "patterns": [
+      "\\bsqlalchemy\\b",
+      "\\borm\\b.*\\b(?:python|sqlalchemy)\\b"
+    ],
+    "intro": "Here's how to use SQLAlchemy with a database.",
+    "notes": "create_engine connects; the ORM maps classes to tables via DeclarativeBase. Sessions wrap transactions — commit explicitly, and use context managers (session as s) so rollback/close happen automatically.",
+    "languages": {
+      "python": "from sqlalchemy import create_engine, select, String\nfrom sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, Session\n\nengine = create_engine('sqlite:///app.db')\n\nclass Base(DeclarativeBase):\n    pass\n\nclass User(Base):\n    __tablename__ = 'users'\n    id: Mapped[int] = mapped_column(primary_key=True)\n    name: Mapped[str] = mapped_column(String(100))\n\nBase.metadata.create_all(engine)\n\nwith Session(engine) as session:\n    session.add(User(name='alice'))\n    session.commit()\n\n    users = session.scalars(select(User).where(User.name == 'alice')).all()\n    print(users[0].name)\n"
+    }
+  },
+  {
+    "task": "argparse_cli",
+    "patterns": [
+      "\\bargparse\\b",
+      "\\bcommand\\s+line\\s+(?:args|arguments|parser)\\b.*\\bpython\\b"
+    ],
+    "intro": "Here's how to build a CLI with argparse.",
+    "notes": "add_argument declares options; parse_args turns argv into a namespace. Use type=int for numbers, nargs='+' for lists, and required=True for mandatory args. --help comes free.",
+    "languages": {
+      "python": "import argparse\n\nparser = argparse.ArgumentParser(description='Process some files.')\nparser.add_argument('input', help='input file')            # positional\nparser.add_argument('-o', '--output', default='out.txt', help='output file')\nparser.add_argument('-v', '--verbose', action='store_true')\nparser.add_argument('-n', '--count', type=int, default=1)\n\nargs = parser.parse_args()\nprint(args.input, args.output, args.verbose, args.count)\n\n# Run: python script.py data.txt -o result.txt --count 3 -v\n"
+    }
+  },
+  {
+    "task": "go_pointers",
+    "patterns": [
+      "\\bpointers?\\b.*\\bgo\\b",
+      "\\bgo\\b.*\\bpointers?\\b"
+    ],
+    "intro": "Here's how pointers work in Go.",
+    "notes": "&x takes the address of x; *p dereferences it. Pointers let functions modify their caller's variable and avoid copying large structs. nil pointer dereference panics — check p != nil before using.",
+    "languages": {
+      "go": "package main\n\nimport \"fmt\"\n\nfunc increment(n *int) {\n    *n++   // dereference and modify the caller's variable\n}\n\nfunc main() {\n    x := 10\n    increment(&x)   // pass the address\n    fmt.Println(x)  // 11\n\n    var p *int = &x\n    fmt.Println(*p)  // 11\n\n    if p != nil {     // guard before dereferencing\n        fmt.Println(\"value:\", *p)\n    }\n}\n"
+    }
+  },
+  {
+    "task": "go_errors",
+    "patterns": [
+      "\\berrors?\\b.*\\bgo\\b",
+      "\\bgo\\b.*\\berrors?\\b.*\\b(?:handle|return|check)\\b",
+      "\\bif\\s+err\\s*!=\\s*nil\\b"
+    ],
+    "intro": "Here's the idiomatic way to handle errors in Go.",
+    "notes": "Errors are values: functions return (result, error); check err != nil and return early. fmt.Errorf with %w wraps errors so errors.Is/errors.As can unwrap them. There are no exceptions — handle or propagate explicitly.",
+    "languages": {
+      "go": "package main\n\nimport (\n    \"errors\"\n    \"fmt\"\n)\n\nvar ErrNotFound = errors.New(\"not found\")\n\nfunc findUser(id int) (string, error) {\n    if id != 1 {\n        return \"\", fmt.Errorf(\"find user %d: %w\", id, ErrNotFound)\n    }\n    return \"alice\", nil\n}\n\nfunc main() {\n    name, err := findUser(2)\n    if err != nil {\n        if errors.Is(err, ErrNotFound) {\n            fmt.Println(\"user missing\")\n        } else {\n            fmt.Println(\"other error:\", err)\n        }\n        return\n    }\n    fmt.Println(name)\n}\n"
+    }
+  },
+  {
+    "task": "go_structs",
+    "patterns": [
+      "\\bstructs?\\b.*\\bgo\\b",
+      "\\bgo\\b.*\\bstructs?\\b"
+    ],
+    "intro": "Here's how to define and use structs in Go.",
+    "notes": "type X struct { ... } declares a struct; field access via dot. JSON tags (`json:\"name\"`) control marshaling. Values are copied on assignment — use pointers when you want shared mutation.",
+    "languages": {
+      "go": "package main\n\nimport (\n    \"encoding/json\"\n    \"fmt\"\n)\n\ntype User struct {\n    ID    int    `json:\"id\"`\n    Name  string `json:\"name\"`\n    Email string `json:\"email,omitempty\"`\n}\n\nfunc main() {\n    u := User{ID: 1, Name: \"alice\"}\n    fmt.Println(u.Name)  // alice\n\n    data, _ := json.Marshal(u)\n    fmt.Println(string(data))  // {\"id\":1,\"name\":\"alice\"}\n\n    var u2 User\n    json.Unmarshal(data, &u2)\n    fmt.Println(u2.ID)  // 1\n}\n"
+    }
+  },
+  {
+    "task": "django_queryset",
+    "patterns": [
+      "\\bquery\\b.*\\bdjango\\b",
+      "\\bdjango\\b.*\\bquery\\b",
+      "\\bobjects\\s*\\.\\s*(?:filter|get|all|exclude)\\b"
+    ],
+    "intro": "Here's how to query models in Django.",
+    "notes": "Model.objects exposes the manager: .filter(**kwargs) narrows, .get() returns one (raises DoesNotExist), .exclude() inverts, .order_by() sorts, .values() returns dicts. Querysets are lazy — the SQL runs when evaluated.",
+    "languages": {
+      "python": "from myapp.models import Book, Author\n\n# Filter, order, slice:\nbooks = Book.objects.filter(published=True).order_by('-year')[:10]\n\n# Get a single object (raises DoesNotExist if missing):\ntry:\n    book = Book.objects.get(isbn='1234567890')\nexcept Book.DoesNotExist:\n    book = None\n\n# Related lookup and excludes:\nrecent = Book.objects.filter(author__name='alice').exclude(year=2020)\n\n# Aggregation:\nfrom django.db.models import Count, Avg\nauthors = Author.objects.annotate(book_count=Count('book'))\n"
+    }
+  },
+  {
+    "task": "spring_controller",
+    "patterns": [
+      "\\bspring\\s+boot\\b",
+      "\\bspring\\b.*\\bcontroller\\b"
+    ],
+    "intro": "Here's a REST controller in Spring Boot.",
+    "notes": "@RestController + @GetMapping/@PostMapping expose endpoints; @RequestBody binds JSON, @PathVariable reads URL segments. Spring Boot auto-configures Jackson for JSON. Run with mvn spring-boot:run.",
+    "languages": {
+      "java": "import org.springframework.web.bind.annotation.*;\nimport java.util.*;\n\n@RestController\n@RequestMapping(\"/users\")\npublic class UserController {\n\n    private final Map<Long, String> users = new HashMap<>();\n\n    @GetMapping\n    public Map<Long, String> list() {\n        return users;\n    }\n\n    @GetMapping(\"/{id}\")\n    public String get(@PathVariable Long id) {\n        return users.get(id);\n    }\n\n    @PostMapping\n    public Long create(@RequestBody String name) {\n        Long id = (long) users.size() + 1;\n        users.put(id, name);\n        return id;\n    }\n}\n"
+    }
+  },
+  {
+    "task": "csharp_linq",
+    "patterns": [
+      "\\blinq\\b",
+      "\\bc#\\b.*\\bquery\\b.*\\b(?:list|collection|objects?)\\b"
+    ],
+    "intro": "Here's how to use LINQ in C#.",
+    "notes": "LINQ works on any IEnumerable<T>: Where filters, Select projects, OrderBy sorts, GroupBy groups, Aggregate reduces. Method syntax and query syntax are equivalent — method syntax is more common.",
+    "languages": {
+      "c#": "using System;\nusing System.Collections.Generic;\nusing System.Linq;\n\nvar numbers = new List<int> { 5, 2, 8, 1, 9, 3 };\n\nvar even = numbers.Where(n => n % 2 == 0);\nvar sorted = numbers.OrderBy(n => n);\nvar doubled = numbers.Select(n => n * 2);\nvar total = numbers.Sum();\n\nforeach (var n in even) Console.WriteLine(n);\n\n// Query syntax (equivalent):\nvar evens = from n in numbers where n % 2 == 0 select n;\n"
+    }
+  },
+  {
+    "task": "seaborn_plot",
+    "patterns": [
+      "\\bseaborn\\b",
+      "\\bsns\\s*\\.\\s*(?:lineplot|heatmap|histplot|scatterplot)\\b"
+    ],
+    "intro": "Here's how to plot with seaborn.",
+    "notes": "seaborn builds on matplotlib with higher-level plots and nice defaults. sns.lineplot, sns.scatterplot, sns.histplot, sns.heatmap cover most needs. Set the style with sns.set_theme() once.",
+    "languages": {
+      "python": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\nsns.set_theme()   # nicer defaults\ndf = sns.load_dataset('penguins')\n\n# Scatter with a hue:\nsns.scatterplot(data=df, x='bill_length_mm', y='bill_depth_mm', hue='species')\n\n# Distribution:\nsns.histplot(data=df, x='flipper_length_mm', bins=30)\n\n# Correlation heatmap (numeric columns only):\nsns.heatmap(df.select_dtypes('number').corr(), annot=True)\n\nplt.show()\n"
+    }
+  },
+  {
+    "task": "sklearn_train",
+    "patterns": [
+      "\\bscikit[- ]?learn\\b",
+      "\\bsklearn\\b",
+      "\\btrain\\s+(?:a\\s+)?model\\b.*\\b(?:python|ml|machine)\\b"
+    ],
+    "intro": "Here's how to train a model with scikit-learn.",
+    "notes": "Split data with train_test_split, fit on the training set, score on the test set. Use StandardScaler for features of different scales, and a Pipeline to chain preprocessing + model so the same steps apply at predict time.",
+    "languages": {
+      "python": "from sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import accuracy_score\n\nX = [[5.1, 3.5], [4.9, 3.0], [6.7, 3.1], [6.0, 3.0]]   # features\ny = [0, 0, 1, 1]                                        # labels\n\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.25, random_state=42)\n\nmodel = RandomForestClassifier(n_estimators=100)\nmodel.fit(X_train, y_train)\n\npreds = model.predict(X_test)\nprint(accuracy_score(y_test, preds))\n"
+    }
+  },
+  {
+    "task": "css_media_queries",
+    "patterns": [
+      "\\bmedia\\s+queries?\\b",
+      "\\b@media\\b"
+    ],
+    "intro": "Here's how to use media queries in CSS.",
+    "notes": "@media (max-width: 768px) applies rules when the viewport is at most 768px. Design mobile-first with min-width queries, and use a meta viewport tag so phones render at the right scale.",
+    "languages": {
+      "css": "/* Mobile-first: base styles, then widen */\nbody { font-size: 16px; }\n\n@media (min-width: 768px) {\n    body { font-size: 18px; }\n    .nav { display: flex; }\n}\n\n@media (max-width: 480px) {\n    .grid { grid-template-columns: 1fr; }\n}\n\n/* Print styles */\n@media print {\n    .no-print { display: none; }\n}\n"
+    }
+  },
+  {
+    "task": "css_sticky_footer",
+    "patterns": [
+      "\\bsticky\\s+footer\\b",
+      "\\bfooter\\b.*\\b(?:bottom|sticky|stay)\\b"
+    ],
+    "intro": "Here's how to make a sticky footer in CSS.",
+    "notes": "A flex column layout with min-height: 100vh and margin-top: auto on the footer keeps it pinned to the bottom when content is short, and pushes it down naturally when content grows. position: sticky alone doesn't achieve this.",
+    "languages": {
+      "css": "/* HTML: <body><main>...</main><footer>...</footer></body> */\n\nhtml, body {\n    min-height: 100vh;\n    margin: 0;\n}\n\nbody {\n    display: flex;\n    flex-direction: column;\n}\n\nmain {\n    flex: 1;          /* grows to fill space */\n}\n\nfooter {\n    margin-top: auto; /* pushed to the bottom */\n}\n"
+    }
+  },
+  {
+    "task": "css_gradient",
+    "patterns": [
+      "\\bgradient\\b",
+      "\\blinear[- ]?gradient\\b",
+      "\\bradial[- ]?gradient\\b"
+    ],
+    "intro": "Here's how to add a gradient background in CSS.",
+    "notes": "linear-gradient(direction, color, color) paints a smooth blend; add percentages for hard stops. radial-gradient spreads from a center point. Use background-image (not background-color) and add a fallback color for old browsers.",
+    "languages": {
+      "css": "/* Linear gradient, top to bottom:\n   background-image: linear-gradient(to bottom, #667eea, #764ba2);\n\n   Diagonal (default is top-left to bottom-right):\n   background-image: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);\n\n   Radial:\n   background-image: radial-gradient(circle, #ff9a9e, #fad0c4);\n\n   Hard stop (no blending):\n   background-image: linear-gradient(to right, #333 50%, #666 50%);\n"
+    }
+  },
+  {
+    "task": "css_hover_animation",
+    "patterns": [
+      "\\bhover\\b.*\\b(?:animation|transition|button|effect)\\b",
+      "\\b(?:animate|transition)\\b.*\\bbutton\\b.*\\bhover\\b"
+    ],
+    "intro": "Here's how to animate a button on hover in CSS.",
+    "notes": "Put the transition on the base state so it eases both in and out. transform: scale() for a zoom, box-shadow for a lift, and filter: brightness() for a dim/brighten. Respect prefers-reduced-motion for accessibility.",
+    "languages": {
+      "css": ".btn {\n    padding: 12px 24px;\n    background: #4f46e5;\n    color: #fff;\n    border: none;\n    border-radius: 8px;\n    cursor: pointer;\n    transition: transform 0.15s ease, box-shadow 0.15s ease;\n}\n\n.btn:hover {\n    transform: translateY(-2px) scale(1.03);\n    box-shadow: 0 8px 16px rgba(79, 70, 229, 0.35);\n}\n\n.btn:active {\n    transform: scale(0.98);\n}\n"
+    }
+  },
+  {
+    "task": "rust_lifetimes",
+    "patterns": [
+      "\\blifetimes?\\b.*\\brust\\b",
+      "\\brust\\b.*\\blifetimes?\\b"
+    ],
+    "intro": "Here's how lifetimes work in Rust.",
+    "notes": "Lifetimes tell the compiler how long references stay valid — every & has one, but you only name them when tying a return value to an input ('a in fn longest<'a>(x: &'a str, y: &'a str) -> &'a str). Elision rules hide them in simple cases. &'static str lives for the whole program.",
+    "languages": {
+      "rust": "// The return value borrows from x or y — its lifetime is 'a:\nfn longest<'a>(x: &'a str, y: &'a str) -> &'a str {\n    if x.len() > y.len() { x } else { y }\n}\n\nfn main() {\n    let a = String::from(\"short\");\n    let b = String::from(\"looooong\");\n    let result = longest(&a, &b);\n    println!(\"{}\", result);   // looooong\n}\n"
+    }
+  },
+  {
+    "task": "rust_iterators",
+    "patterns": [
+      "\\biterators?\\b.*\\brust\\b",
+      "\\brust\\b.*\\biterators?\\b",
+      "\\biter\\(\\)\\b.*\\brust\\b"
+    ],
+    "intro": "Here's how to use iterators in Rust.",
+    "notes": "iter() borrows, into_iter() consumes, iter_mut() mutates. Chain adapters like map/filter/collect — they're lazy, so the work happens on collect/sum. Iterator methods cover most loops.",
+    "languages": {
+      "rust": "fn main() {\n    let numbers = vec![1, 2, 3, 4, 5];\n\n    let doubled: Vec<i32> = numbers.iter().map(|n| n * 2).collect();\n\n    let evens: Vec<&i32> = numbers.iter().filter(|n| *n % 2 == 0).collect();\n\n    let sum: i32 = numbers.iter().sum();\n\n    let first_even = numbers.iter().find(|n| **n % 2 == 0);\n\n    println!(\"{:?} {:?} {} {:?}\", doubled, evens, sum, first_even);\n}\n"
+    }
+  },
+  {
+    "task": "java_try_resources",
+    "patterns": [
+      "\\btry\\s+(?:with\\s+)?resources\\b",
+      "\\btry\\s*\\(\\s*(?:var\\s+)?(?:BufferedReader|FileInputStream|Connection)"
+    ],
+    "intro": "Here's how try-with-resources works in Java.",
+    "notes": "try (Resource r = ...) auto-closes anything AutoCloseable when the block exits, even on exceptions — no finally block needed. Declare multiple resources separated by ; they close in reverse order. This is the idiomatic way to handle files, sockets, and JDBC connections.",
+    "languages": {
+      "java": "import java.io.BufferedReader;\nimport java.io.FileReader;\nimport java.io.IOException;\n\npublic class Main {\n    public static void main(String[] args) {\n        // Auto-closes the reader even on exception:\n        try (BufferedReader br = new BufferedReader(\n                new FileReader(\"data.txt\"))) {\n            System.out.println(br.readLine());\n        } catch (IOException e) {\n            e.printStackTrace();\n        }\n    }\n}\n"
+    }
+  },
+  {
+    "task": "go_panic_recover",
+    "patterns": [
+      "\\bpanic\\b.*\\b(?:recover|go)\\b",
+      "\\brecover\\b.*\\bgo\\b",
+      "\\bpanic\\s*\\(\\s*.*\\)\\b"
+    ],
+    "intro": "Here's how panic and recover work in Go.",
+    "notes": "panic stops the goroutine and unwinds; recover() inside a deferred function captures it. Use recover only at a few trusted boundaries (HTTP handlers, goroutine entry points) — prefer returning errors everywhere else.",
+    "languages": {
+      "go": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    defer func() {\n        if r := recover(); r != nil {\n            fmt.Println(\"recovered from:\", r)\n        }\n    }()\n\n    panic(\"something went wrong\")\n    // fmt.Println(\"never reached\")\n}\n"
+    }
+  }
+]

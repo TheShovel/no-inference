@@ -2868,7 +2868,24 @@ def process_query(query, use_cos=True):
             # Follow-ups that reference the last code edit without pasting it
             # again: "add comments to the last code", "convert it to
             # javascript", "make the last code faster".
-            if not _ct and get_last_edit_kind() == 'code' and get_last_edit_content():
+            # Self-contained questions that NAME a library/framework
+            # ("how do i handle errors in flask") must not get the last
+            # edit appended — that text can false-positive a transform
+            # (e.g. a past TypeError explanation mentioning "try/except").
+            from cos.code_knowledge import _mentions_library as _ml
+            # Only short or referential follow-ups ("convert it to
+            # javascript", "now do it in rust", "rename x to y in the last
+            # code") get the last edit appended. Long self-contained
+            # questions ("how do i handle errors in go") must not — the
+            # appended text can false-positive a transform.
+            _referential = re.search(
+                r'\b(?:last\s+code|\bthe\s+code\b|\bit\b|\bthis\b|\bthat\b|'
+                r'\bthem\b|\bthese\b|\bthose\b|\bnow\b|\bthen\b|\balso\b|'
+                r'\binstead\b|\bsame\b)\b', q_clean)
+            if (not _ct and get_last_edit_kind() == 'code'
+                    and get_last_edit_content()
+                    and (len(q_clean.split()) <= 6 or _referential)
+                    and not _ml(q_clean)):
                 _ct = detect_code_transform(q_clean + ':\n' + get_last_edit_content())
             if _ct:
                 _op, _params, _code, _lang = _ct
@@ -2879,6 +2896,13 @@ def process_query(query, use_cos=True):
                     response = (_edited + "\n\n_" +
                                 " ".join(_notes) + "_") if _notes else _edited
                 else:
+                    # after a language conversion the output is in the TARGET
+                    # language — don't label it with the source's fence
+                    if _op == 'convert_lang' and _params.get('dst'):
+                        _dst = str(_params['dst']).strip().lower()
+                        _lang = {'py': 'python', 'js': 'javascript',
+                                 'ts': 'typescript', 'cpp': 'c++',
+                                 'cs': 'c#'}.get(_dst, _dst)
                     response = ("Here's your code with these changes:\n\n"
                                 f"```{_lang}\n{_edited}\n```\n\n"
                                 "Changes made:\n- " + "\n- ".join(_notes))
@@ -3040,8 +3064,19 @@ def process_query(query, use_cos=True):
         from cos.pattern_matcher import match_pattern
         pattern_response = match_pattern(q_clean)
         if pattern_response:
-            conversation_history.append((q_clean, pattern_response))
-            return pattern_response
+            # A coding request wins over a coincidental social-phrase match
+            # ("write a function that returns the current timestamp" contains
+            # the substring "current time"). Only answer socially when the
+            # query is not clearly a code request.
+            from cos.code_knowledge import (is_coding_query,
+                                            looks_like_code_task,
+                                            looks_like_coding_topic)
+            _is_code_q = (is_coding_query(q_clean)
+                          or (looks_like_code_task(q_clean)
+                              and looks_like_coding_topic(q_clean)))
+            if not _is_code_q:
+                conversation_history.append((q_clean, pattern_response))
+                return pattern_response
     except Exception:
         pass
 
@@ -3176,21 +3211,18 @@ def process_query(query, use_cos=True):
                     conversation_history.append((q_clean, concept_answer))
                     return concept_answer
                 if code_answer:
-                    # Language-consistency safety net: if the query names a
-                    # language and the KB answer's code fence shows a different
-                    # one (e.g. "reverse a linked list in c++" matching the
-                    # Python entry), synthesize the task in the asked language.
+                    # Ask smart_code_answer for the final pick: it applies
+                    # the language-consistency rule (a query that names a
+                    # language must get code in that language) and prefers
+                    # the synthesizer's language-exact templates for plain
+                    # imperative requests, while keeping KB answers that
+                    # match the language and mention a specialized library.
                     try:
-                        from cos.code_knowledge import (answer_language,
-                                                        detect_query_lang)
-                        _q_lang = detect_query_lang(q_clean)
-                        _a_lang = answer_language(code_answer)
-                        if _q_lang and _a_lang and _q_lang != _a_lang:
-                            from cos.code_gen import generate_code as _gen_code
-                            _synth = _gen_code(q_clean)
-                            if _synth:
-                                conversation_history.append((q_clean, _synth))
-                                return _synth
+                        from cos.code_knowledge import smart_code_answer as _sca
+                        _better = _sca(q_clean)
+                        if _better:
+                            conversation_history.append((q_clean, _better))
+                            return _better
                     except Exception:
                         pass
                     conversation_history.append((q_clean, code_answer))

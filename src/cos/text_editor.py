@@ -18,15 +18,16 @@ from typing import List, Optional, Tuple
 
 _EDIT_VERBS = (
     'edit', 'fix', 'rewrite', 'improve', 'correct', 'clean', 'clean up',
-    'proofread', 'polish', 'tidy', 'revise', 'rephrase', 'reword',
-    'reformat', 'fix the problems', 'fix any problems', 'fix the issues',
-    'fix the errors', 'fix the typos', 'fix the bugs', 'fix the grammar',
-    'check the grammar', 'correct the typos', 'fix the spelling',
-    'fix the punctuation', 'fix the mistakes', 'check for errors',
-    'check for typos', 'check for mistakes', 'make this sound better',
-    'make this sound more professional', 'make this sound more natural',
-    'make this better', 'make this more professional', 'review this',
-    'review the', 'check this', 'check the', 'whats wrong with',
+    'debug', 'review', 'refactor', 'proofread', 'polish', 'tidy', 'revise',
+    'rephrase', 'reword', 'reformat', 'fix the problems', 'fix any problems',
+    'fix the issues', 'fix the errors', 'fix the typos', 'fix the bugs',
+    'fix the grammar', 'check the grammar', 'correct the typos',
+    'fix the spelling', 'fix the punctuation', 'fix the mistakes',
+    'check for errors', 'check for typos', 'check for mistakes',
+    'make this sound better', 'make this sound more professional',
+    'make this sound more natural', 'make this better',
+    'make this more professional', 'review this', 'review the',
+    'check this', 'check the', 'whats wrong with',
     "what's wrong with", 'check my', 'proofread the',
 )
 _TARGETS = (
@@ -50,10 +51,10 @@ _PREFIX_RE = re.compile(
     r'^(?:(?:can|could|will|would)\s+you\s+(?:please\s+)?|please\s+(?:you\s+)?)?'
     r'(?:' + '|'.join(_EDIT_VERBS) + r')\s+'
     r'(?:(?:in|on|for|of|within)\s+)?'   # "fix the typos IN this text"
-    r'(?:(?:this|the|my|our|that|a|an)|(?:the|this)\s+following|following|attached|enclosed)?\s*'
+    r'(?:(?:this|the|my|our|that|a|an|it)|(?:the|this)\s+following|following|attached|enclosed)?\s*'
     r'(?:(?:' + _LANG_ADJ + r')\s+)?'         # "fix this PYTHON script"
     r'(?:' + '|'.join(_TARGETS) + r')\b'
-    r'(?:\s+(?:to|and|so|for)\s+(?:fix|improve|correct|make|be|read|sound|look|flow|clean|polish|shorten|expand|reword|rephrase|me|us|you)\b[^:]*)?'
+    r'(?:\s+(?:to|and|so|for)\s+(?:fix|improve|correct|make|be|read|sound|look|flow|clean|polish|shorten|expand|reword|rephrase|bugs|issues|problems|errors|style|grammar|spelling|me|us|you)\b[^:]*)?'
     r'(?:\s+(?:below|above|attached|enclosed))?'
     r'[:]?\s*',
     re.IGNORECASE,
@@ -80,9 +81,10 @@ def detect_edit_request(query: str) -> Optional[Tuple[str, str]]:
         # Fallback 1: no target word at all — "fix this: <content>",
         # "fix the typos: <content>", "rewrite this to fix grammar: <content>"
         m2 = re.match(
-            r'^(?:(?:can|could|will|would)\s+you\s+(?:please\s+)?|please\s+(?:you\s+)?)?'
-            r'(?:' + '|'.join(_EDIT_VERBS) + r')\s*(?:this|that)?'
-            r'(?:\s+(?:to|and|so|for)\s+(?:fix|improve|correct|make|be|read|sound|look|flow|clean|polish|shorten|expand|reword|rephrase)\b[^:]*)?'
+            r'^(?:(?:this|the|my|that|our|your)\s+[^:]{0,60}?,\s+)?'
+            r'(?:(?:can|could|will|would)\s+you\s+(?:please\s+)?|please\s+(?:you\s+)?)?'
+            r'(?:' + '|'.join(_EDIT_VERBS) + r')\s*(?:this|that|it)?'
+            r'(?:\s+(?:to|and|so|for)\s+(?:fix|improve|correct|make|be|read|sound|look|flow|clean|polish|shorten|expand|reword|rephrase|bugs|issues|problems|errors|style|grammar|spelling|me|us|you)\b[^:]*)?'
             r'\s*[:]\s*',
             q, re.IGNORECASE)
         if m2:

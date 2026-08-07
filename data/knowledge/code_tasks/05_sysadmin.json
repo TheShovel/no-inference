@@ -11,7 +11,7 @@
       "intro": "Here's how to install Python packages with pip.",
       "notes": "Always install into a virtual environment rather than the system Python — it keeps projects isolated and avoids breaking OS packages. Pin versions (`requests==2.31.0`) in requirements.txt for reproducible builds, and use `pip freeze` to snapshot what you have.",
       "languages": {
-        "bash": "# Install a package:\npip install requests\n\n# Version-pinned (recommended for reproducibility):\npip install \"requests==2.31.0\"\n\n# Install everything from a requirements file:\npip install -r requirements.txt\n\n# Upgrade an installed package:\npip install --upgrade requests\n\n# Best practice — install into a virtual environment first:\npython -m venv .venv\nsource .venv/bin/activate      # Windows: .venv\\Scripts\\activate\npip install requests\n\n# Snapshot current packages:\npip freeze > requirements.txt"
+        "bash": "# Install a package:\npip install requests\n\n# Version-pinned (recommended for reproducibility):\npip install \"requests==2.31.0\"\n\n# Install everything from a requirements file:\npip install -r requirements.txt\n\n# Upgrade an installed package:\npip install --upgrade requests\n\n# Best practice — install into a virtual environment first:\npython -m venv .venv\nsource .venv/bin/activate      # Windows: .venv\\Scripts\\activate\npip install requests\n\n# Snapshot current packages:\npip freeze > requirements.txt\n\n# Install a specific version:\npip install requests==2.31.0\n\n# Version range:\npip install 'requests>=2.28,<3'\n\n# Upgrade an existing package:\npip install --upgrade requests"
       }
     },
     {
@@ -64,7 +64,13 @@
         "\\blistening\\s+on\\s+(?:a\\s+)?port\\b",
         "\\busing\\s+(?:a\\s+)?port\\b",
         "\\bkill\\b.*\\b(?:process|program|server)\\b.*\\bport\\b",
-        "\\b(?:free|kill|stop)\\s+(?:the\\s+|a\\s+)?(?:port|process\\s+on\\s+a\\s+port)\\b"
+        "\\b(?:free|kill|stop)\\s+(?:the\\s+|a\\s+)?(?:port|process\\s+on\\s+a\\s+port)\\b",
+        "\\b(?:see|list|show|find|check)\\b.*\\bopen\\s+ports?\\b",
+        "\\bss\\s+-tulpn\\b",
+        "\\b(?:see|list|show|find|check)\\b.*\\bopen\\s+ports?\\b",
+        "\\bss\\s+-tulpn\\b",
+        "\\b(?:see|list|show|find|check)\\b.*\\blistening\\s+ports?\\b",
+        "\\blistening\\s+ports?\\b"
       ],
       "intro": "Here's how to find which process is using a port from the {lang} command line.",
       "notes": "`lsof -i :8080` shows the PID listening on a port (run with sudo for full detail); `ss -tulpn` is the modern netstat replacement. Once you have the PID, `kill -9 <pid>` frees the port. Port 80/443 need root to bind on Linux.",
@@ -79,12 +85,18 @@
         "\\bstop\\s+(?:a\\s+)?process\\b",
         "\\bkill\\s+by\\s+pid\\b",
         "\\bforce\\s+kill\\b",
-        "\\bkilled\\s+process\\b"
+        "\\bkilled\\s+process\\b",
+        "\\bfind\\b.*\\bprocess\\b.*\\bby\\s+name\\b",
+        "\\bpgrep\\b",
+        "\\bfind\\b.*\\bprocess\\b.*\\bby\\s+name\\b",
+        "\\bpgrep\\b",
+        "\\bkill\\b.*\\bprocess(?:es)?\\b.*\\bport\\b",
+        "\\bkill\\b.*\\bport\\s+\\d+\\b"
       ],
       "intro": "Here's how to find and kill a process from the {lang} command line.",
       "notes": "Always try a graceful SIGTERM (`kill <pid>`) first so the process can clean up; use `kill -9` (SIGKILL) only when it won't die — it can't be caught and may leave temp files or locks behind. `pkill`/`pgrep` match by name and are handy for killing all instances.",
       "languages": {
-        "bash": "# 1. Find the process (PID):\nps aux | grep myapp\npgrep -f myapp\n\n# 2. Kill gracefully (SIGTERM — lets it clean up):\nkill 12345\n\n# 3. Force kill (SIGKILL — cannot be caught):\nkill -9 12345\n\n# Kill by name (all matching processes):\npkill -f myapp\n\n# Verify it's gone:\nps aux | grep myapp || echo 'process stopped'   # note: grep may match itself"
+        "bash": "# 1. Find the process (PID):\nps aux | grep myapp\npgrep -f myapp\n\n# 2. Kill gracefully (SIGTERM — lets it clean up):\nkill 12345\n\n# 3. Force kill (SIGKILL — cannot be caught):\nkill -9 12345\n\n# Kill by name (all matching processes):\npkill -f myapp\n\n# Kill everything on a specific port (8080):\nlsof -ti :8080 | xargs kill          # graceful\nfuser -k 8080/tcp                    # Linux alternative\n\n# Verify it's gone:\nps aux | grep myapp || echo 'process stopped'   # note: grep may match itself\n"
       }
     },
     {
@@ -100,6 +112,34 @@
       "languages": {
         "bash": "# Files larger than 100 MB in the current tree:\nfind . -type f -size +100M -exec ls -lh {} \\;\n\n# Top 10 largest files (GNU find):\nfind . -type f -printf '%s %p\\n' | sort -rn | head -10\n# macOS: find . -type f -exec ls -lh {} \\; | awk '{print $5, $9}' | sort -rn | head -10\n\n# Biggest directories:\ndu -sh */ | sort -rh | head -10"
       }
+    },
+    {
+      "task": "bash_command_exists",
+      "patterns": [
+        "\\b(?:check|test|see)\\b.*\\b(?:if\\s+)?(?:a\\s+)?command\\s+exists\\b",
+        "\\bcommand\\s+exists\\b"
+      ],
+      "intro": "Here's how to check whether a command exists in {lang}.",
+      "notes": "command -v is the POSIX way; type is bash-specific. Use the if/else form when you need to act on the result, and set a default when the tool is optional.",
+      "languages": {
+        "bash": "# command -v works in sh/bash/zsh:\nif command -v jq >/dev/null 2>&1; then\n    echo 'jq is installed'\nelse\n    echo 'jq is missing — install it with: sudo apt install jq'\nfi\n\n# One-liner with a default:\nJQ=\"$(command -v jq || echo /usr/local/bin/jq)\"\n\n# Bash-only: type\ntype -P git >/dev/null 2>&1 && echo 'git present'\n\n# Check a version (some tools exit nonzero without args):\npython3 --version >/dev/null 2>&1 && echo 'python3 available'",
+        "python": "import shutil\n\n# shutil.which returns the path or None:\nif shutil.which('ffmpeg'):\n    print('ffmpeg is available')\nelse:\n    print('ffmpeg is missing')\n\n# Version check:\nimport subprocess\nresult = subprocess.run(['python3', '--version'], capture_output=True, text=True)\nprint(result.stdout.strip())"
+      },
+      "default_lang": "bash"
+    },
+    {
+      "task": "bash_command_exists",
+      "patterns": [
+        "\\b(?:check|test|see)\\b.*\\b(?:if\\s+)?(?:a\\s+)?command\\s+exists\\b",
+        "\\bcommand\\s+exists\\b"
+      ],
+      "intro": "Here's how to check whether a command exists in {lang}.",
+      "notes": "command -v is the POSIX way; type is bash-specific. Use the if/else form when you need to act on the result, and set a default when the tool is optional.",
+      "languages": {
+        "bash": "# command -v works in sh/bash/zsh:\nif command -v jq >/dev/null 2>&1; then\n    echo 'jq is installed'\nelse\n    echo 'jq is missing — install it with: sudo apt install jq'\nfi\n\n# One-liner with a default:\nJQ=\"$(command -v jq || echo /usr/local/bin/jq)\"\n\n# Bash-only: type\ntype -P git >/dev/null 2>&1 && echo 'git present'\n\n# Check a version (some tools exit nonzero without args):\npython3 --version >/dev/null 2>&1 && echo 'python3 available'",
+        "python": "import shutil\n\n# shutil.which returns the path or None:\nif shutil.which('ffmpeg'):\n    print('ffmpeg is available')\nelse:\n    print('ffmpeg is missing')\n\n# Version check:\nimport subprocess\nresult = subprocess.run(['python3', '--version'], capture_output=True, text=True)\nprint(result.stdout.strip())"
+      },
+      "default_lang": "bash"
     }
   ]
 }

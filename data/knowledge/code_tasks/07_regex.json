@@ -3,7 +3,8 @@
     {
       "task": "regex_email",
       "patterns": [
-        "\\b(?:validat|check|verif|test)\\w*\\s+(?:if\\s+)?(?:a\\s+|an?\\s+|the\\s+)?(?:string\\s+is\\s+)?(?:valid\\s+)?email(?:\\.?\\s+address)?\\b",
+        "\\b(?:validat|check|verif|test)\\w*\\s+(?:if\\s+)?(?:a\\s+|an?\\s+|the\\s+)?(?:string\\s+is\\s+)?(?:a\\s+|an?\\s+)?(?:valid\\s+)?email(?:\\.?\\s+address)?\\b",
+        "\\b(?:check|validate|test)\\b.*\\bstring\\s+is\\s+(?:a\\s+|an?\\s+)?valid\\s+email\\b",
         "\\bemail\\s+(?:validation|validator|regex|regexp)\\b",
         "\\bregex\\s+(?:to|for)\\s+.*\\bemail\\b"
       ],
@@ -24,9 +25,12 @@
       "task": "regex_phone",
       "patterns": [
         "\\b(?:validate|check|verify)\\s+(?:a\\s+)?phone\\s+number\\b",
+        "\\bregex\\b.*\\bphone\\s+number\\b",
         "\\bphone\\s+(?:validation|validator|regex|regexp)\\b",
         "\\b(?:extract|find|match|pull|grab)\\s+(?:all\\s+|the\\s+)?(?:phone|telephone)\\s+numbers?\\s+(?:from|in)\\b",
-        "\\bphone\\s+numbers?\\s+from\\s+text\\b"
+        "\\bphone\\s+numbers?\\s+from\\s+text\\b",
+        "\\bcheck\\s+if\\s+(?:a\\s+)?string\\s+is\\s+(?:a\\s+)?valid\\s+phone\\s+number\\b",
+        "\\bcheck\\s+if\\s+(?:a\\s+)?string\\s+is\\s+(?:a\\s+)?valid\\s+phone\\s+number\\b"
       ],
       "intro": "Here's a {lang} snippet for working with phone numbers using a regular expression.",
       "notes": "Phone formats vary wildly by country. The pattern here accepts common US formats; for international numbers use a library like libphonenumber rather than a hand-written regex.",
@@ -63,7 +67,8 @@
         "\\b(?:validate|check)\\s+(?:an?\\s+)?url\\b",
         "\\burl\\s+(?:validation|validator|regex|regexp)\\b",
         "\\b(?:extract|find|match|pull|grab)\\s+(?:all\\s+|the\\s+)?(?:urls?|links?|web\\s+addresses?)\\s+(?:from|in)\\b",
-        "\\burls?\\s+from\\s+text\\b"
+        "\\burls?\\s+from\\s+text\\b",
+        "\\bregex\\s+(?:to|for)\\b.*\\burl\\b"
       ],
       "intro": "Here's a {lang} function that validates a URL with a regular expression.",
       "notes": "A pragmatic URL pattern accepts scheme://host/path with optional query string and fragment. For parsing (not just validation), use your language's URL/URI class instead of regex.",
@@ -97,7 +102,8 @@
       "task": "regex_ip",
       "patterns": [
         "\\b(?:regex|regexp|regular\\s+expression)\\b.*\\b(?:ip|ipv4|ip\\s+address)\\b",
-        "\\b(?:validate|check|match|extract)\\b.*\\b(?:ipv4\\s+)?ip\\s+address\\b",
+        "\\b(?:validate|check|match|extract)\\b.*\\b(?:ipv4|ip)\\s+address\\b",
+        "\\b(?:validate|check|match)\\b.*\\bvalid\\s+(?:ipv4|ip)\\s+address\\b",
         "\\bip\\s+(?:address\\s+)?(?:regex|validation|validator)\\b"
       ],
       "intro": "Here's a {lang} snippet for matching IPv4 addresses with a regular expression.",
@@ -105,6 +111,18 @@
       "languages": {
         "python": "import re\n\n# IPv4: four octets, each 0-255:\nIPV4_RE = re.compile(\n    r'^((25[0-5]|2[0-4]\\\\d|1\\\\d\\\\d|[1-9]?\\\\d)\\\\.)'\n    r'{3}(25[0-5]|2[0-4]\\\\d|1\\\\d\\\\d|[1-9]?\\\\d)$'\n)\n\ndef is_valid_ipv4(addr: str) -> bool:\n    return bool(IPV4_RE.match(addr.strip()))\n\n# Extract IPv4 addresses from text:\ndef extract_ipv4(text: str) -> list[str]:\n    no_anchors = re.compile(\n        r'(?<!\\\\d)((25[0-5]|2[0-4]\\\\d|1\\\\d\\\\d|[1-9]?\\\\d)\\\\.)'\n        r'{3}(25[0-5]|2[0-4]\\\\d|1\\\\d\\\\d|[1-9]?\\\\d)(?!\\\\d)'\n    )\n    return no_anchors.findall(text)\n\n# Examples:\nprint(is_valid_ipv4('192.168.1.1'))   # True\nprint(is_valid_ipv4('999.1.1.1'))     # False",
         "javascript": "function isValidIPv4(addr) {\n    return /^((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)\\.){3}(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)$/.test(addr.trim());\n}\n\n// Extract IPv4 addresses from text:\nfunction extractIPv4(text) {\n    return text.match(/(?<!\\d)((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)\\.){3}(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(?!\\d)/g) || [];\n}\n\nconsole.log(isValidIPv4('192.168.1.1'));  // true"
+      }
+    },
+    {
+      "task": "regex_date",
+      "patterns": [
+        "\\b(?:regex|regexp|regular\\s+expression)\\b.*\\bdate\\b",
+        "^(?!.*\\b(?:strptime|string)\\b).*\\bvalidate\\s+(?:an?\\s+)?date\\b"
+      ],
+      "intro": "Here's a regex for validating dates.",
+      "notes": "YYYY-MM-DD is the regex-friendly format: \\d{4}-\\d{2}-\\d{2}. True validation of calendar validity (Feb 30) needs a date library — regex handles the shape, the parser handles reality.",
+      "languages": {
+        "python": "import re\n\n# YYYY-MM-DD (shape check only — calendar validity needs a parser):\nDATE_RE = re.compile(r'^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$')\n\nfor s in ['2026-08-07', '2026-13-01', '2026-08-32', 'not-a-date']:\n    print(s, bool(DATE_RE.match(s)))\n# 2026-08-07 True\n# 2026-13-01 False (month 13)\n# 2026-08-32 False (day 32)\n# not-a-date False\n"
       }
     }
   ]

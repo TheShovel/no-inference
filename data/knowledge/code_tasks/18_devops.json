@@ -1,0 +1,506 @@
+[
+  {
+    "task": "dockerfile",
+    "patterns": [
+      "\\bdockerfile\\b"
+    ],
+    "intro": "Here's a Dockerfile for a Python application.",
+    "notes": "Use a slim base, install dependencies via requirements.txt (or pip install -e . for an editable package), and prefer COPY over ADD. Multi-stage builds shrink the final image.",
+    "languages": {
+      "bash": "FROM python:3.12-slim\n\n# Set the working directory\nWORKDIR /app\n\n# Install dependencies first (caches the layer when requirements.txt changes)\nCOPY requirements.txt .\nRUN pip install --no-cache-dir -r requirements.txt\n\n# Copy the application code\nCOPY . .\n\n# Non-root user (security)\nRUN useradd --create-home appuser\nUSER appuser\n\n# Expose the port your app listens on\nEXPOSE 8000\n\n# Run the app\nCMD [\"uvicorn\", \"app.main:app\", \"--host\", \"0.0.0.0\", \"--port\", \"8000\"]\n\n# Build:   docker build -t myapp .\n# Run:     docker run -p 8000:8000 myapp"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "docker_compose",
+    "patterns": [
+      "\\bdocker[- ]compose\\b"
+    ],
+    "intro": "Here's a docker-compose.yml for a web app with a database.",
+    "notes": "Compose orchestrates multi-container apps. Services get their own network; the app reaches the db at the service name (db:5432). Volumes persist data across restarts.",
+    "languages": {
+      "bash": "version: '3.9'\n\nservices:\n  db:\n    image: postgres:16\n    environment:\n      POSTGRES_USER: app\n      POSTGRES_PASSWORD: secret\n      POSTGRES_DB: myapp\n    volumes:\n      - db_data:/var/lib/postgresql/data\n    healthcheck:\n      test: ['CMD-SHELL', 'pg_isready -U app']\n      interval: 5s\n      timeout: 3s\n      retries: 5\n\n  web:\n    build: .\n    ports:\n      - '8000:8000'\n    environment:\n      DATABASE_URL: postgresql://app:secret@db:5432/myapp\n    depends_on:\n      db:\n        condition: service_healthy\n    volumes:\n      - .:/app          # live-reload during development\n\nvolumes:\n  db_data:\n\n# Up:      docker compose up\n# Build:   docker compose up --build\n# Logs:    docker compose logs -f web"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "github_actions",
+    "patterns": [
+      "\\bgithub\\s+actions\\b",
+      "\\b(?:ci\\s+)?(?:workflow|pipeline)\\b.*\\b(?:tests?|build|deploy)\\b"
+    ],
+    "intro": "Here's a GitHub Actions workflow that runs tests on push.",
+    "notes": "Workflows live in .github/workflows/*.yml. on: triggers (push, pull_request); jobs run in parallel by default — use needs: to chain them. setup-python caches dependencies for you.",
+    "languages": {
+      "bash": "name: CI\n\non:\n  push:\n    branches: [main]\n  pull_request:\n\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n\n      - uses: actions/setup-python@v5\n        with:\n          python-version: '3.12'\n          cache: 'pip'\n\n      - name: Install dependencies\n        run: |\n          pip install -r requirements-dev.txt\n\n      - name: Run tests\n        run: pytest\n\n      - name: Lint\n        run: ruff check .\n\n  deploy:\n    needs: test            # only after tests pass\n    runs-on: ubuntu-latest\n    if: github.ref == 'refs/heads/main'\n    steps:\n      - uses: actions/checkout@v4\n      - name: Deploy\n        run: ./deploy.sh\n        env:\n          API_TOKEN: ${{ secrets.API_TOKEN }}"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "gitignore",
+    "patterns": [
+      "\\bgitignore\\b",
+      "\\bgit\\s+ignore\\s+file\\b"
+    ],
+    "intro": "Here's a .gitignore for a Python project.",
+    "notes": "Ignore generated files, caches, virtualenvs, and secrets — never commit credentials. Patterns are relative to the .gitignore's directory; ! re-includes.",
+    "languages": {
+      "bash": "# Byte-compiled / cache\n__pycache__/\n*.py[cod]\n*.egg-info/\n.pytest_cache/\n.ruff_cache/\n.mypy_cache/\n\n# Virtual environments\nvenv/\n.venv/\nenv/\n\n# Build artifacts\ndist/\nbuild/\n*.egg\n\n# IDE / editor\n.vscode/\n.idea/\n*.swp\n.DS_Store\n\n# Logs / runtime\ndata/cache/\n*.log\n.env\n*.pid\n\n# Keep the .env.example template if you commit one:\n!.env.example"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "setup_py",
+    "patterns": [
+      "\\bsetup\\.py\\b",
+      "\\b(?:create|write|generate)\\b.*\\b(?:package|packaging)\\b.*\\b(?:setup|pyproject)\\b"
+    ],
+    "intro": "Here's a setup.py for a Python package.",
+    "notes": "Modern projects prefer pyproject.toml (PEP 621) — setup.py still works but is legacy. For a simple package, setuptools with find_packages() is the standard layout.",
+    "languages": {
+      "bash": "from setuptools import setup, find_packages\n\nsetup(\n    name='my-package',\n    version='0.1.0',\n    description='A short description',\n    packages=find_packages(exclude=['tests*']),\n    python_requires='>=3.10',\n    install_requires=[\n        'requests>=2.31',\n    ],\n    extras_require={\n        'dev': ['pytest', 'ruff'],\n    },\n    entry_points={\n        'console_scripts': [\n            'mycli=my_package.cli:main',\n        ],\n    },\n)\n\n# Modern equivalent: pyproject.toml\n# [build-system]\n# requires = ['setuptools>=61']\n# build-backend = 'setuptools.build_meta'\n#\n# [project]\n# name = 'my-package'\n# version = '0.1.0'\n# requires-python = '>=3.10'\n# dependencies = ['requests>=2.31']"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "cron_job",
+    "patterns": [
+      "\\bcron\\b",
+      "\\bcrontab\\b",
+      "\\bschedule\\b.*\\b(?:cron|job|task|script)\\b"
+    ],
+    "intro": "Here's how to schedule a cron job that runs a script daily.",
+    "notes": "crontab -e edits your user's schedule. The five fields are minute hour day-of-month month day-of-week. Redirect output (>> log 2>&1) so cron errors are visible, and use absolute paths.",
+    "languages": {
+      "bash": "# Edit your crontab:\n#   crontab -e\n\n# Run every day at 2:30am:\n30 2 * * * /usr/bin/python3 /home/me/scripts/backup.py >> /home/me/backup.log 2>&1\n\n# Every hour:\n0 * * * * /home/me/scripts/hourly.sh\n\n# Every Monday at 9am:\n0 9 * * 1 /home/me/scripts/weekly_report.sh\n\n# Every 15 minutes:\n*/15 * * * * /home/me/scripts/ping.sh\n\n# Field order: minute(0-59) hour(0-23) dom(1-31) month(1-12) dow(0-7, 0/7=Sun)\n\n# List your jobs:\n#   crontab -l\n\n# Remove all your jobs:\n#   crontab -r\n\n# Scripts should use absolute paths and set their own PATH:\n#!/bin/bash\ncd /home/me && ./scripts/backup.py >> /home/me/backup.log 2>&1"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "systemd_service",
+    "patterns": [
+      "\\bsystemd\\b",
+      "\\b(?:create|write|make)\\b.*\\bservice\\s+file\\b"
+    ],
+    "intro": "Here's a systemd service unit for a Python app.",
+    "notes": "Units live in /etc/systemd/system/ (root) or ~/.config/systemd/user/. After writing one: systemctl daemon-reload, then enable --now. Restart=on-failure brings the app back automatically.",
+    "languages": {
+      "bash": "# /etc/systemd/system/myapp.service\n[Unit]\nDescription=My Python application\nAfter=network.target\n\n[Service]\nType=simple\nUser=www-data\nWorkingDirectory=/opt/myapp\nEnvironmentFile=/etc/myapp.env\nExecStart=/opt/myapp/venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000\nRestart=on-failure\nRestartSec=5\n\n# Hardening (optional but recommended):\nNoNewPrivileges=true\nPrivateTmp=true\nProtectSystem=full\n\n[Install]\nWantedBy=multi-user.target\n\n# Commands:\n#   sudo systemctl daemon-reload\n#   sudo systemctl enable --now myapp\n#   sudo systemctl status myapp\n#   sudo journalctl -u myapp -f      # logs\n#   sudo systemctl restart myapp"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "inotify_watch",
+    "patterns": [
+      "\\bwatch\\b.*\\b(?:file|directory|folder)\\b.*\\b(?:changes?|inotify)\\b",
+      "\\binotify(?:wait)?\\b"
+    ],
+    "intro": "Here's how to watch a file for changes in {lang}.",
+    "notes": "inotifywait (inotify-tools) is the classic CLI watcher. For scripts, a polling loop with stat is portable; Python's watchdog library is the batteries-included option.",
+    "languages": {
+      "bash": "# inotify-tools (apt install inotify-tools):\n# Run a command every time a file in the directory changes:\ninotifywait -m -r -e modify,create,delete /path/to/dir |\nwhile read path event file; do\n    echo \"$event: $path$file\"\n    ./your-handler.sh \"$path$file\"\ndone\n\n# Watch a single file:\ninotifywait -m -e modify /var/log/app.log\n\n# One-shot (exit after the first event):\ninotifywait -e modify /var/log/app.log && echo changed\n\n# Portable fallback: poll mtime every second\n#!/bin/bash\nLAST=$(stat -c %Y /path/to/file)\nwhile true; do\n    NOW=$(stat -c %Y /path/to/file)\n    if [ \"$NOW\" != \"$LAST\" ]; then\n        echo \"file changed\"\n        LAST=$NOW\n    fi\n    sleep 1\ndone"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "tar_compress",
+    "patterns": [
+      "\\b(?:compress|archive)\\b.*\\btar\\b",
+      "\\btar\\b.*\\b(?:compress|archive|extract|backup)\\b"
+    ],
+    "intro": "Here's how to compress a directory with tar in {lang}.",
+    "notes": "tar -czf creates a gzipped archive; -xzf extracts. Always test with -tzf (list). Use -C to avoid storing absolute paths, and -z for gzip vs -j for bzip2.",
+    "languages": {
+      "bash": "# Create a gzipped archive of a directory:\ntar -czf myproject.tar.gz myproject/\n\n# Extract it:\ntar -xzf myproject.tar.gz\n\n# List contents (verify before extracting):\ntar -tzf myproject.tar.gz\n\n# Compress from the parent dir so paths stay relative:\ncd /home/me && tar -czf myproject.tar.gz myproject\n\n# Exclude files:\ntar -czf myproject.tar.gz --exclude='*.log' --exclude='node_modules' myproject\n\n# bzip2 (smaller, slower):\ntar -cjf myproject.tar.bz2 myproject\n\n# Extract to a specific directory:\ntar -xzf myproject.tar.gz -C /tmp"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "grep_recursive",
+    "patterns": [
+      "\\bgrep\\b.*\\brecursi\\w+\\b",
+      "\\bgrep\\s+-r\\b",
+      "\\bsearch\\b.*\\b(?:all\\s+)?files\\b.*\\b(?:recursive|for\\s+a\\s+pattern|grep)\\b"
+    ],
+    "intro": "Here's how to grep recursively for a pattern in {lang}.",
+    "notes": "grep -r searches recursively; -n shows line numbers, -i ignores case, -l lists only filenames. Use rg (ripgrep) for speed — it respects .gitignore.",
+    "languages": {
+      "bash": "# Recursive search in the current directory:\ngrep -rn \"TODO\" .\n\n# Case-insensitive, with line numbers:\ngrep -rni \"error\" src/\n\n# Only filenames containing the match:\ngrep -rl \"FIXME\" .\n\n# Whole-word matches only:\ngrep -rnw \"class\" src/\n\n# Extended regex (-E) or fixed strings (-F):\ngrep -rnE \"error|fail\" logs/\ngrep -rnF \"literal.dots\" .\n\n# Exclude directories:\ngrep -rn \"TODO\" . --exclude-dir=node_modules --exclude-dir=.git\n\n# Count matches per file:\ngrep -rc \"error\" logs/\n\n# Ripgrep (faster, respects .gitignore):\nrg -n \"TODO\" src/"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "tail_follow",
+    "patterns": [
+      "\\b(?:last\\s+\\d+\\s+lines?|tail)\\b.*\\b(?:log\\s+)?file\\b.*\\bfollow\\b",
+      "\\btail\\s+-f\\b"
+    ],
+    "intro": "Here's how to show the last N lines of a log and follow new ones in {lang}.",
+    "notes": "tail -n 50 shows the last 50 lines; tail -f (or -F — handles log rotation) follows new appends. Combine: tail -n 50 -f. head -n 50 shows the first lines.",
+    "languages": {
+      "bash": "# Last 50 lines, then follow new output:\ntail -n 50 -f app.log\n\n# Just the last 50 lines (no follow):\ntail -n 50 app.log\n\n# Follow only (defaults to last 10 lines):\ntail -f app.log\n\n# Follow with retries — survives log rotation (-F):\ntail -F app.log\n\n# First 50 lines:\nhead -n 50 app.log\n\n# Follow multiple files:\ntail -f app.log web.log\n\n# Filter what you follow:\ntail -f app.log | grep --line-buffered ERROR"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "ffmpeg_mp4_gif",
+    "patterns": [
+      "\\bffmpeg\\b",
+      "\\b(?:mp4|webm|video)\\b.*\\bgif\\b"
+    ],
+    "intro": "Here's how to convert an MP4 to a GIF with ffmpeg in {lang}.",
+    "notes": "GIFs are huge — keep the source short, scale it down, and drop the framerate. A palette-based conversion (two-pass) gives the best quality for the size.",
+    "languages": {
+      "bash": "# Simple conversion:\nffmpeg -i input.mp4 output.gif\n\n# Smaller, smoother (scale + framerate):\nffmpeg -i input.mp4 -vf \"fps=10,scale=480:-1:flags=lanczos\" output.gif\n\n# Best quality per byte (palette method):\nffmpeg -i input.mp4 -vf \"fps=10,scale=480:-1:flags=lanczos,palettegen\" palette.png\nffmpeg -i input.mp4 -i palette.png -lavfi \"fps=10,scale=480:-1:flags=lanczos[x];[x][1:v]paletteuse\" output.gif\n\n# Loop only once (default is infinite):\nffmpeg -i input.mp4 -loop 1 output.gif\n\n# First 5 seconds only:\nffmpeg -ss 0 -t 5 -i input.mp4 output.gif\n\n# Audio extraction:\nffmpeg -i input.mp4 -q:a 0 -map a audio.mp3"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "find_delete_old",
+    "patterns": [
+      "\\bfind\\b.*\\bdelete\\b.*\\b(?:older|days|mtime)\\b",
+      "\\bdelete\\b.*\\bfiles?\\b.*\\b(?:older|mtime|days)\\b"
+    ],
+    "intro": "Here's how to find and delete files older than N days in {lang}.",
+    "notes": "find -mtime +30 matches files modified more than 30 days ago. Test with -print first, then swap in -delete (or -exec rm {} +). -mtime counts 24h periods; -mmin works in minutes.",
+    "languages": {
+      "bash": "# List files modified more than 30 days ago (dry run):\nfind /var/log -type f -mtime +30 -print\n\n# Delete them:\nfind /var/log -type f -mtime +30 -delete\n\n# Delete via exec (more portable, verbose):\nfind /var/log -type f -mtime +30 -exec rm {} \\;\n\n# Also remove now-empty directories:\nfind /var/log -type d -empty -delete\n\n# Minutes instead of days:\nfind /tmp -type f -mmin +120 -delete\n\n# Exclude a path:\nfind /var/log -type f -mtime +30 -not -path '*/important/*' -delete\n\n# Combine with a file-size floor:\nfind . -type f -size +100M -mtime +30 -delete"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "rsync_sync",
+    "patterns": [
+      "\\brsync\\b(?!.*\\bbackup\\b)",
+      "\\bsync\\b.*\\b(?:remote\\s+)?(?:server|host)\\b.*\\brsync\\b"
+    ],
+    "intro": "Here's how to sync a directory to a remote server with rsync in {lang}.",
+    "notes": "rsync copies only changed files (delta transfer). Trailing slashes matter: src/ copies CONTENTS into dst; src copies the directory itself. -a preserves permissions and timestamps.",
+    "languages": {
+      "bash": "# Push to a remote server:\nrsync -avz ./project/ user@server:/srv/project/\n\n# Pull from remote:\nrsync -avz user@server:/srv/project/ ./project/\n\n# -a archive (recursive + permissions), -v verbose, -z compress\n\n# Dry run (see what WOULD transfer):\nrsync -avzn ./project/ user@server:/srv/project/\n\n# Delete files on the destination that no longer exist locally:\nrsync -avz --delete ./project/ user@server:/srv/project/\n\n# Exclude junk:\nrsync -avz --exclude node_modules --exclude .git ./project/ user@server:/srv/project/\n\n# Over SSH with a custom port:\nrsync -avz -e 'ssh -p 2222' ./project/ user@server:/srv/project/\n\n# Local mirror (e.g. backup to an external drive):\nrsync -av --delete ~/Documents/ /mnt/backup/Documents/"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "bash_loop_files",
+    "patterns": [
+      "\\b(?:loop\\w*|iterat\\w*|for\\s+loop)\\b.*\\bfiles?\\b.*\\b(?:directory|folder)\\b",
+      "\\b(?:loop\\w*|iterat\\w*)\\b.*\\b(?:directory|folder)\\b.*\\bfiles?\\b",
+      "\\brun\\s+(?:a\\s+)?command\\b.*\\bfiles?\\b",
+      "\\b(?:every|each|all)\\s+files?\\b.*\\b(?:directory|folder)\\b"
+    ],
+    "intro": "Here's how to loop over files in a directory in {lang}.",
+    "notes": "The glob pattern approach handles spaces in filenames safely (quote \"$f\"). For recursive iteration use find ... | while read or ** globbing.",
+    "languages": {
+      "bash": "#!/bin/bash\n# Loop over every .txt file in the current directory:\nfor f in *.txt; do\n    echo \"processing $f\"\n    # wc -l \"$f\"   # quote \"$f\" — filenames may contain spaces!\ndone\n\n# Loop over ALL files (not just a pattern):\nfor f in *; do\n    [ -f \"$f\" ] || continue    # skip directories\n    echo \"$f\"\ndone\n\n# Recursive (find + while read):\nfind . -name '*.py' -print0 | while IFS= read -r -d '' f; do\n    echo \"$f\"\ndone\n\n# With a counter:\ni=0\nfor f in *.log; do\n    (( i++ ))\n    echo \"[$i] $f\"\ndone\n\n# Python version:\n# import glob\n# for path in glob.glob('*.txt'):\n#     print(path)"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "bash_extract_quotes",
+    "patterns": [
+      "\\bextract\\b.*\\b(?:text|string|content)\\b.*\\b(?:between|inside|within)\\b.*\\bquotes?\\b",
+      "\\bquoted\\s+text\\b"
+    ],
+    "intro": "Here's how to extract text between quotes in {lang}.",
+    "notes": "sed's capture group is the classic one-liner. grep -o prints only the matched part. In Python, a regex findall with a capture group returns just the quoted text.",
+    "languages": {
+      "bash": "# Extract the FIRST quoted string (sed):\necho 'say \"hello world\" now' | sed -n 's/.*\"\\([^\"]*\\)\".*/\\1/p'\n# hello world\n\n# Extract ALL quoted strings (grep -o):\necho 'a \"one\" b \"two\"' | grep -o '\"[^\"]*\"'\n# \"one\"\n# \"two\"\n\n# Single quotes:\necho \"it's 'fine' really\" | grep -o \"'[^']*'\"\n\n# From a file:\ngrep -o '\"[^\"]*\"' file.txt",
+      "python": "import re\n\ntext = 'say \"hello world\" now and \"bye\"'\n\n# All quoted strings (without the quotes):\nprint(re.findall(r'\"([^\"]*)\"', text))\n# ['hello world', 'bye']\n\n# With the quotes:\nprint(re.findall(r'\"[^\"]*\"', text))\n\n# First match only:\nm = re.search(r'\"([^\"]*)\"', text)\nprint(m.group(1) if m else None)   # hello world"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "bash_rename_files",
+    "patterns": [
+      "\\brename\\b.*\\bfiles?\\b.*(?:extension|\\.\\w+)\\b",
+      "\\brename\\s+(?:all\\s+)?\\w+\\s+files?\\s+to\\b"
+    ],
+    "intro": "Here's how to rename files (e.g. .txt → .md) in {lang}.",
+    "notes": "The for-loop with parameter expansion ${f%.txt} strips the extension cleanly. Use rename(1) (the Perl tool) for complex renames, or mv for single files.",
+    "languages": {
+      "bash": "# Rename all .txt files to .md (bash loop):\nfor f in *.txt; do\n    mv -- \"$f\" \"${f%.txt}.md\"\ndone\n\n# Dry run first (echo instead of mv):\nfor f in *.txt; do echo \"$f -> ${f%.txt}.md\"; done\n\n# With the rename utility (Perl rename):\nrename 's/\\.txt$/.md/' *.txt\n\n# Prefix every file:\nfor f in *.jpg; do mv -- \"$f\" \"backup-$f\"; done\n\n# Recursive:\nfind . -name '*.txt' -exec bash -c 'mv \"$1\" \"${1%.txt}.md\"' _ {} \\;",
+      "python": "from pathlib import Path\n\n# Rename every .txt file to .md in the current directory:\nfor path in Path('.').glob('*.txt'):\n    path.rename(path.with_suffix('.md'))\n\n# With a log:\nfor path in Path('.').glob('*.txt'):\n    new = path.with_suffix('.md')\n    print(f'{path} -> {new}')\n    path.rename(new)"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "kubectl_pods",
+    "patterns": [
+      "\\bkubectl\\b",
+      "\\b(?:list|get|show)\\b.*\\bpods?\\b",
+      "\\bpods?\\b.*\\bnamespaces?\\b"
+    ],
+    "intro": "Here's how to check pods with kubectl.",
+    "notes": "kubectl get pods lists pods; add -n for a namespace, -o wide for node/IP, and -w to watch. Describe shows details and events; logs streams container output.",
+    "languages": {
+      "bash": "# List pods in the default namespace:\nkubectl get pods\n\n# In a specific namespace:\nkubectl get pods -n myapp\n\n# All namespaces:\nkubectl get pods -A\n\n# More detail:\nkubectl get pods -o wide\n\n# Watch for changes:\nkubectl get pods -w\n\n# Describe one pod (events, status):\nkubectl describe pod my-pod-abc123\n\n# Logs:\nkubectl logs my-pod-abc123\nkubectl logs deployment/my-app -f    # follow\n\n# Exec into a container:\nkubectl exec -it my-pod-abc123 -- /bin/sh"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "k8s_deployment",
+    "patterns": [
+      "\\bkubernetes\\b.*\\bdeployment\\b",
+      "\\bk8s\\b.*\\bdeployment\\b",
+      "\\bdeployment\\s+yaml\\b"
+    ],
+    "intro": "Here's a Kubernetes Deployment manifest.",
+    "notes": "A Deployment manages replica Pods with rolling updates and self-healing. Apply with kubectl apply -f, scale with kubectl scale, and check rollout status with kubectl rollout status.",
+    "languages": {
+      "bash": "# deployment.yaml\napiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: web\n  labels:\n    app: web\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: web\n  template:\n    metadata:\n      labels:\n        app: web\n    spec:\n      containers:\n        - name: web\n          image: myapp:1.0.0\n          ports:\n            - containerPort: 8000\n          env:\n            - name: APP_ENV\n              value: production\n          resources:\n            requests:\n              cpu: 100m\n              memory: 128Mi\n            limits:\n              cpu: 500m\n              memory: 512Mi\n          readinessProbe:\n            httpGet:\n              path: /health\n              port: 8000\n\n# Apply:  kubectl apply -f deployment.yaml\n# Scale:  kubectl scale deployment web --replicas=5\n# Status: kubectl rollout status deployment/web\n# Update: kubectl set image deployment/web web=myapp:1.1.0\n# Rollback: kubectl rollout undo deployment/web"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "nginx_static",
+    "patterns": [
+      "\\bnginx\\b"
+    ],
+    "intro": "Here's an nginx config that serves a static site.",
+    "notes": "The server block maps a domain to a root directory; try_files enables SPA-style clean URLs. Enable compression and cache headers for performance. Test with nginx -t before reloading.",
+    "languages": {
+      "bash": "# /etc/nginx/sites-available/mysite\nserver {\n    listen 80;\n    server_name example.com www.example.com;\n\n    root /var/www/mysite;\n    index index.html;\n\n    # Clean URLs for a single-page app:\n    location / {\n        try_files $uri $uri/ /index.html;\n    }\n\n    # Cache static assets:\n    location ~* \\.(css|js|png|jpg|svg|woff2)$ {\n        expires 30d;\n        add_header Cache-Control \"public\";\n    }\n\n    # Gzip:\n    gzip on;\n    gzip_types text/css application/javascript image/svg+xml;\n}\n\n# Enable it:\n#   sudo ln -s /etc/nginx/sites-available/mysite /etc/nginx/sites-enabled/\n#   sudo nginx -t          # test the config\n#   sudo systemctl reload nginx"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "docker_multi_stage",
+    "patterns": [
+      "\\bmulti[- ]stage\\b.*\\b(?:build|docker)\\b",
+      "\\bdocker\\b.*\\bmulti[- ]stage\\b"
+    ],
+    "intro": "Here's a Docker multi-stage build.",
+    "notes": "Multi-stage builds compile/build in one stage (with all the tooling) and copy only the artifacts into a slim final image — much smaller and safer. Each FROM starts a new stage; AS names it.",
+    "languages": {
+      "bash": "# Dockerfile — Go example:\nFROM golang:1.22 AS builder\nWORKDIR /src\nCOPY go.mod go.sum ./\nRUN go mod download\nCOPY . .\nRUN CGO_ENABLED=0 go build -o /app ./cmd/server\n\n# Final stage: just the binary\nFROM scratch\nCOPY --from=builder /app /app\nEXPOSE 8080\nENTRYPOINT [\"/app\"]\n\n# Python example:\n# FROM python:3.12-slim AS build\n#   ... pip install --prefix=/install -r requirements.txt\n# FROM python:3.12-slim\n# COPY --from=build /install /usr/local\n#   ... copy app code, CMD ...\n\n# Build: docker build -t myapp .\n# Inspect stages: docker build --target builder -t myapp-builder ."
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "awk_column",
+    "patterns": [
+      "\\bawk\\b"
+    ],
+    "intro": "Here's how to extract a column from a file with awk.",
+    "notes": "awk splits each line into fields: $1, $2, ... (FS default is whitespace). Set -F for a delimiter like a comma. Print with printf for aligned output.",
+    "languages": {
+      "bash": "# Print the second column (whitespace-separated):\nawk '{print $2}' data.txt\n\n# CSV with -F:\nawk -F, '{print $2}' data.csv\n\n# Header + first two columns:\nawk -F, 'NR==1 || NR>1 {print $1, $2}' data.csv\n\n# Skip the header entirely:\nawk -F, 'NR>1 {print $2}' data.csv\n\n# Filter + column:\nawk -F, '$3 > 100 {print $1}' data.csv\n\n# Sum a column:\nawk -F, '{sum += $2} END {print sum}' data.csv\n\n# Formatted output:\nawk '{printf \"%-10s %5d\\n\", $1, $2}' data.txt"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "jq_parse",
+    "patterns": [
+      "\\bjq\\b"
+    ],
+    "intro": "Here's how to parse JSON in bash with jq.",
+    "notes": "jq filters JSON: .field, .[index], .[] iterates, | pipes filters. Combine with curl for API output. Use -r for raw strings (no quotes).",
+    "languages": {
+      "bash": "# Pretty-print:\ncat data.json | jq .\ncurl -s https://api.example.com/data | jq .\n\n# Extract a field:\necho '{\"name\": \"alice\", \"age\": 30}' | jq '.name'\n# \"alice\"  (with -r: alice)\n\n# Array element / iteration:\njq '.[0]' data.json        # first element\njq '.[].name' data.json    # name of each element\n\n# Filtering:\njq '.[] | select(.age > 21)' data.json\n\n# Transform:\njq '{users: [.[] | {n: .name, a: .age}]}' data.json\n\n# Length / counts:\njq 'length' data.json\n\n# Key lookup with default:\njq '.missing // \"fallback\"' data.json"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "xargs_parallel",
+    "patterns": [
+      "\\bxargs\\b"
+    ],
+    "intro": "Here's how to run commands in parallel with xargs.",
+    "notes": "xargs builds commands from stdin. -P sets parallelism, -n batches arguments, -0 handles newlines in filenames safely (pair with find -print0).",
+    "languages": {
+      "bash": "# Run one command per line, 4 at a time:\ncat urls.txt | xargs -P 4 -I {} curl -s {} -o /dev/null\n\n# Process files, 4 in parallel:\nfind . -name '*.jpg' -print0 | xargs -0 -P 4 -n 1 sh -c 'convert \"$0\" \"${0%.jpg}.png\"'\n\n# Batch arguments (-n 10 = 10 args per command):\nls *.txt | xargs -n 10 wc -l\n\n# Replace token with -I:\nseq 1 10 | xargs -P 5 -I {} echo 'job {}'\n\n# Dry run (echo the commands):\nseq 1 3 | xargs -I {} echo curl -s https://api.example.com/{}"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "sed_replace",
+    "patterns": [
+      "\\bsed\\b.*\\b(?:replace|substitute|in[- ]place|-i)\\b",
+      "\\b(?:replace|substitute)\\b.*\\bsed\\b",
+      "\\bsed\\b",
+      "\\bsed\\b.*\\bdelete\\b.*\\blines?\\b",
+      "\\bdelete\\s+lines?\\b.*\\bsed\\b"
+    ],
+    "intro": "Here's how to replace text in a file with sed.",
+    "notes": "sed 's/old/new/' replaces the first match per line; add g for all, i for case-insensitive, and -i to edit in place (use -i.bak to keep a backup).",
+    "languages": {
+      "bash": "# Replace first occurrence per line (print to stdout):\nsed 's/foo/bar/' file.txt\n\n# Replace ALL occurrences:\nsed 's/foo/bar/g' file.txt\n\n# In place, with a backup:\nsed -i.bak 's/foo/bar/g' file.txt\n\n# In place, no backup (GNU sed):\nsed -i 's/foo/bar/g' file.txt\n\n# Case-insensitive:\nsed -i 's/foo/bar/gi' file.txt\n\n# Line-anchored:\nsed -i '/^#/d' file.txt            # delete comment lines\nsed -i '10,20s/foo/bar/g' file.txt # lines 10-20 only\n\n# Escaping special chars:\nsed -i 's|https://old|https://new|' file.txt   # | as delimiter\n\n# macOS: sed -i '' 's/foo/bar/g' file.txt"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "sort_by_column",
+    "patterns": [
+      "\\bsort\\b.*\\bcolumn\\b",
+      "\\bsort\\s+-k\\b",
+      "\\bsort\\b.*\\bby\\s+(?:a\\s+)?column\\b"
+    ],
+    "intro": "Here's how to sort a file by a column with sort.",
+    "notes": "sort -k N sorts by the Nth field. Add -n for numeric, -r for reverse, -t to set the delimiter, and -u to dedupe. -h understands human sizes (1K, 2M).",
+    "languages": {
+      "bash": "# Sort by the 2nd column (whitespace):\nsort -k2 data.txt\n\n# Numeric, descending:\nsort -k2 -n -r data.txt\n\n# CSV with a custom delimiter:\nsort -t, -k2 -n data.csv\n\n# Multiple keys (column 1, then 2):\nsort -k1,1 -k2,2n data.txt\n\n# Human-readable sizes (1K, 2M):\ndu -sh * | sort -k1 -h -r\n\n# Deduplicate adjacent identical lines:\nsort -u data.txt\n\n# Sort with case-insensitive and unique:\nsort -f -u data.txt"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "duplicate_lines",
+    "patterns": [
+      "\\bduplicate\\s+lines\\b",
+      "\\b(?:find|print)\\b.*\\b(?:duplicate|repeated)\\s+lines\\b.*\\bfile\\b",
+      "\\bremove\\s+duplicate\\s+lines?\\b"
+    ],
+    "intro": "Here's how to find duplicate lines in a file.",
+    "notes": "sort + uniq -d shows lines that repeat; uniq -c counts occurrences. awk keeps the first-seen order without sorting.",
+    "languages": {
+      "bash": "# Duplicate lines (requires sorted input):\nsort file.txt | uniq -d\n\n# Count occurrences:\nsort file.txt | uniq -c | sort -rn\n\n# Unique lines only:\nsort file.txt | uniq\n\n# Preserve first-seen order (awk):\nawk 'seen[$0]++ {print}' file.txt          # dupes in order\nawk '!seen[$0]++' file.txt                 # uniques in order\n\n# Case-insensitive duplicates:\nsort -f file.txt | uniq -di"
+    },
+    "default_lang": "bash"
+  },
+  {
+    "task": "terraform_ec2",
+    "patterns": [
+      "\\bterraform\\b",
+      "\\bhcl\\b"
+    ],
+    "intro": "Here's a Terraform config that provisions an AWS EC2 instance.",
+    "notes": "terraform init downloads providers; terraform plan previews changes; terraform apply creates resources. The ~/.aws/credentials file or AWS_ACCESS_KEY_ID/AWS_SECRET_ACCESS_KEY env vars supply credentials.",
+    "default_lang": "hcl",
+    "languages": {
+      "hcl": "provider \"aws\" {\n  region = \"us-east-1\"\n}\n\nresource \"aws_instance\" \"web\" {\n  ami           = \"ami-0c55b159cbfafe1f0\"   # Ubuntu 22.04 LTS\n  instance_type = \"t2.micro\"\n\n  tags = {\n    Name = \"web-server\"\n  }\n}\n\n# Run:\n#   terraform init\n#   terraform plan\n#   terraform apply\n"
+    }
+  },
+  {
+    "task": "tar_extract",
+    "patterns": [
+      "\\btar\\b",
+      "\\b\\.tar\\.gz\\b"
+    ],
+    "intro": "Here's how to create and extract tar archives.",
+    "notes": "tar -czf creates (c) a gzip (z) archive to a file (f); tar -xzf extracts it. Use tar -tf to list contents before extracting. Add v for verbose output.",
+    "default_lang": "bash",
+    "languages": {
+      "bash": "# Extract a tar.gz file:\ntar -xzf archive.tar.gz\n\n# List contents without extracting:\ntar -tf archive.tar.gz\n\n# Create a gzipped archive of a directory:\ntar -czf archive.tar.gz my_folder/\n\n# Plain .tar (no gzip): use -xf / -cf\ntar -xf archive.tar\n"
+    }
+  },
+  {
+    "task": "create_symlink",
+    "patterns": [
+      "\\b(?:create|make|set\\s+up)\\b.*\\bsymlinks?\\b",
+      "\\bsymlink\\b",
+      "\\bln\\s+-s\\b"
+    ],
+    "intro": "Here's how to create a symbolic link in Linux.",
+    "notes": "ln -s TARGET LINK makes LINK point at TARGET — order matters, target first. Use absolute paths to keep the link valid from other directories. rm LINK removes the link, never the target.",
+    "default_lang": "bash",
+    "languages": {
+      "bash": "# Create a symlink:  ln -s TARGET LINK\nln -s /data/shared /home/alice/shared\n\n# Verify:\nls -l /home/alice/shared   # shows shared -> /data/shared\n\n# Remove a symlink (the link, not the target):\nrm /home/alice/shared\n\n# Overwrite an existing link:\nln -sfn /data/new /home/alice/shared\n"
+    }
+  },
+  {
+    "task": "bash_read_lines",
+    "patterns": [
+      "\\b(?:loop|iterate|read)\\b.*\\blines?\\b.*\\b(?:file|bash)\\b",
+      "\\bwhile\\s+read\\b"
+    ],
+    "intro": "Here's how to loop over lines in a file in bash.",
+    "notes": "while IFS= read -r line handles any line (spaces, backslashes) and is the recommended form; a for loop over $(cat file) breaks on spaces. The -r flag keeps backslashes literal.",
+    "default_lang": "bash",
+    "languages": {
+      "bash": "# Read a file line by line (safe with spaces/backslashes):\nwhile IFS= read -r line; do\n    echo \"line: $line\"\ndone < input.txt\n\n# From a command's output:\nfind . -name '*.py' | while read -r f; do\n    echo \"processing $f\"\ndone\n"
+    }
+  },
+  {
+    "task": "bash_arrays",
+    "patterns": [
+      "\\barrays?\\b.*\\bbash\\b",
+      "\\bbash\\b.*\\barrays?\\b",
+      "\\bdeclare\\s+-a\\b"
+    ],
+    "intro": "Here's how to use arrays in bash.",
+    "notes": "arr=(a b c) creates an array; ${arr[0]} indexes, ${arr[@]} expands all elements, ${#arr[@]} is the length. Quote \"${arr[@]}\" to keep elements with spaces intact.",
+    "default_lang": "bash",
+    "languages": {
+      "bash": "# Create and use an array:\nfiles=(a.txt \"b c.txt\" d.log)\n\necho \"${files[0]}\"        # a.txt\necho \"${files[1]}\"        # b c.txt\necho \"${#files[@]}\"       # 3 (length)\necho \"${files[@]}\"        # all elements\n\n# Loop over elements (quotes preserve spaces):\nfor f in \"${files[@]}\"; do\n    echo \"-- $f\"\ndone\n"
+    }
+  },
+  {
+    "task": "bash_heredoc",
+    "patterns": [
+      "\\bhere\\s*documents?\\b",
+      "\\bheredoc\\b"
+    ],
+    "intro": "Here's how to use a here document in bash.",
+    "notes": "cat <<EOF ... EOF feeds literal text to a command's stdin. Quote the marker (<<'EOF') to prevent variable/command expansion. Use <<- to allow indented markers with tabs.",
+    "default_lang": "bash",
+    "languages": {
+      "bash": "# Feed multi-line input to a command:\ncat <<EOF\nHello, this is a here document.\nVariables expand: $HOME\nEOF\n\n# Quoted marker = no expansion:\ncat <<'EOF'\nLiteral text: $HOME stays as-is\nEOF\n\n# Write a file with heredoc:\ncat > config.txt <<EOF\nserver = localhost\nport = 8080\nEOF\n"
+    }
+  },
+  {
+    "task": "bash_split_string",
+    "patterns": [
+      "\\bsplit\\b.*\\b(?:string|text|line)\\b.*\\bbash\\b",
+      "\\bbash\\b.*\\bsplit\\b.*\\b(?:string|text)\\b"
+    ],
+    "intro": "Here's how to split a string in bash.",
+    "notes": "IFS + read -ra splits into an array: IFS=',' read -ra parts <<< \"$str\". Bash 4+ has readarray -t lines < file for splitting by newlines. cut and awk handle simple field splitting.",
+    "default_lang": "bash",
+    "languages": {
+      "bash": "# Split on a delimiter into an array:\nstr=\"alice,bob,carol\"\nIFS=',' read -ra names <<< \"$str\"\necho \"${names[0]}\"    # alice\necho \"${names[2]}\"    # carol\n\n# Split a file into lines (bash 4+):\nreadarray -t lines < input.txt\n\n# Field split with cut (no array):\necho \"a:b:c\" | cut -d: -f2    # b\n"
+    }
+  },
+  {
+    "task": "grep_find",
+    "patterns": [
+      "\\bgrep\\b.*\\b(?:find|search|files?)\\b",
+      "\\b(?:find|search)\\b.*\\bfiles?\\b.*\\b(?:containing|matching)\\b.*\\b(?:text|string|pattern|word)\\b"
+    ],
+    "intro": "Here's how to find files containing text with grep.",
+    "notes": "grep -r searches recursively; -l lists filenames only; -n shows line numbers. grep -i ignores case, -E enables extended regex. ripgrep (rg) is faster and respects .gitignore.",
+    "default_lang": "bash",
+    "languages": {
+      "bash": "# Find files containing text, recursively:\ngrep -rl 'TODO' .                    # filenames only\ngrep -rn 'FIXME' src/                # with line numbers\ngrep -ri 'error' --include='*.py' .  # case-insensitive, only .py\n\n# Invert match:\ngrep -L 'copyright' *.py             # files WITHOUT the text\n\n# Modern alternative: rg (ripgrep)\nrg -l 'TODO' .\n"
+    }
+  },
+  {
+    "task": "docker_logs",
+    "patterns": [
+      "\\bdocker\\b.*\\blogs?\\b",
+      "\\blogs?\\b.*\\bdocker\\b"
+    ],
+    "intro": "Here's how to view Docker container logs.",
+    "notes": "docker logs <container> prints stdout/stderr; -f follows live, --tail N shows the last N lines. Use the container name or ID; docker ps lists them.",
+    "default_lang": "bash",
+    "languages": {
+      "bash": "# List containers:\ndocker ps\n\n# View logs:\ndocker logs my-app\ndocker logs -f my-app          # follow live\ndocker logs --tail 100 my-app  # last 100 lines\ndocker logs --since 10m my-app # last 10 minutes\n"
+    }
+  },
+  {
+    "task": "docker_exec",
+    "patterns": [
+      "\\bdocker\\b.*\\bexec\\b",
+      "\\bexec\\b.*\\bcontainer\\b"
+    ],
+    "intro": "Here's how to exec into a running Docker container.",
+    "notes": "docker exec -it <container> <cmd> runs a command inside a running container; bash/sh gives you a shell. Add -u root for root, and -w to set the working directory. If the container has no bash, use sh.",
+    "default_lang": "bash",
+    "languages": {
+      "bash": "# Open a shell in a running container:\ndocker exec -it my-app bash\ndocker exec -it my-app sh     # if bash isn't installed\n\n# Run a single command:\ndocker exec my-app ls /app\n\n# As root, in a specific directory:\ndocker exec -it -u root -w /app my-app bash\n"
+    }
+  },
+  {
+    "task": "requirements_pin",
+    "patterns": [
+      "\\bpins?\\b.*\\b(?:dependencies?|requirements?)\\b",
+      "\\brequirements\\s*\\.\\s*txt\\b",
+      "\\bpip\\s+freeze\\b"
+    ],
+    "intro": "Here's how to pin dependencies in requirements.txt.",
+    "notes": "pip freeze lists installed versions; redirect to a file to lock them. Use == for exact pins, >= for minimums with compatible-release (~=) when you want updates. For applications, pin exactly; for libraries, allow ranges.",
+    "default_lang": "bash",
+    "languages": {
+      "bash": "# Lock every installed package to its exact version:\npip freeze > requirements.txt\n\n# requirements.txt uses == for exact pins:\n#   flask==3.0.3\n#   requests==2.32.3\n#   sqlalchemy>=2.0,<2.1\n#   black~=24.4.0        # >=24.4.0, <25.0.0\n\n# Install from the lockfile:\npip install -r requirements.txt\n"
+    }
+  }
+]

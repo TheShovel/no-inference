@@ -74,11 +74,12 @@ def _lang_adjust(query_lang: "str | None", pattern_str: str) -> int:
 
 def answer_language(answer: str) -> "str | None":
     """Language of the first code fence in an answer, or None."""
-    m = re.search(r'```(\w+)', answer or '')
+    m = re.search(r'```([^\s`]+)', answer or '')
     if not m:
         return None
     lang = m.group(1).lower()
-    return {'js': 'javascript', 'py': 'python', 'cpp': 'c++', 'cs': 'c#'}.get(lang, lang)
+    return {'js': 'javascript', 'py': 'python', 'cpp': 'c++', 'cs': 'c#',
+            'jsx': 'javascript', 'tsx': 'javascript', 'ts': 'typescript'}.get(lang, lang)
 
 
 # Action verbs that mark a "do it for me" code request. A fuzzy KB match
@@ -341,7 +342,7 @@ _CODING_KEYWORDS_STRICT = {
     'api endpoint', 'rest api', 'graphql',
     'docker container', 'docker compose', 'kubernetes',
     'unit test', 'integration test', 'test case', 'tdd',
-    'regex', 'regular expression', 'parsing',
+    'regex', 'regular expression', 'parsing', 'duplicate lines', 'unique lines',
     'crud operation', 'mvc pattern', 'design pattern',
     'recursion', 'recursive function', 'callback', 'promise',
     'async await', 'concurrency', 'parallelism',
@@ -389,12 +390,21 @@ def is_coding_query(query: str) -> bool:
     q = query.lower().strip()
 
     # Unambiguous domain words: these only make sense as coding/tech topics
-    # in a Q&A bot, so a single hit is enough.
-    if re.search(r'\b(?:sql|mysql|postgres|postgresql|sqlite|csv|pandas|'
-                 r'dataframe|json|git|golang|typescript|docker|kubernetes|'
-                 r'regex|regexp|api\s+endpoint|rest\s+api|graphql|npm|pip|'
-                 r'bash|shell|command\s+line|curl|flask|django|fastapi|'
-                 r'express|react|linux|ubuntu|unix|debian)\b', q):
+    # in a Q&A bot, so a single hit is enough. Punctuation-heavy names
+    # (c++, c#) use lookarounds — a trailing `\b` can't match after '+'/'.'
+    if re.search(r'(?<![a-z0-9])(?:sql|mysql|postgres|postgresql|sqlite|csv|'
+                 r'pandas|dataframe|json|git|golang|typescript|docker|'
+                 r'kubernetes|kubectl|regex|regexp|api\s+endpoint|rest\s+api|graphql|'
+                 r'npm|pip|bash|shell|command\s+line|curl|flask|django|'
+                 r'fastapi|express|react|linux|ubuntu|unix|debian|'
+                 r'dockerfile|gitignore|github\s+actions|docker[- ]compose|'
+                 r'setup\.py|pyproject\.toml|requirements\.txt|package\.json|'
+                 r'cron|systemd|ffmpeg|rsync|inotify|yaml|c\+\+|c#|'
+                 r'xargs|awk|sed|jq|matplotlib|seaborn|scipy|toml|ini|'
+                 r'cherry[- ]?pick|revert|disk\s+space|disk\s+usage|pods?|'
+                 r'terraform|ansible|kubernetes|axios|tar|'
+                 r'rate\s+limiter|url\s+shortener|task\s+queue|argparse|'
+                 r'sqlalchemy|jest|ownership|go|grep|scikit[- ]?learn|sklearn)(?![a-z0-9])', q):
         return True
 
     # Building a website/page is a code task even when no language is named.
@@ -432,14 +442,22 @@ def is_coding_query(query: str) -> bool:
     # Check longest phrases first using WORD BOUNDARIES to avoid
     # false positives like "class" matching inside "classical".
     # Also normalize hyphens: "try-except" -> "try except" to match
-    # the keyword set which uses spaces.
+    # the keyword set which uses spaces. c++/c# need lookarounds (a `\b`
+    # can't match after '+'/'#').
     q_norm = re.sub(r'[-–—]', ' ', q)
+    # Plural tolerance: "pointers", "structs", "interfaces" match the
+    # singular keywords. Simple trailing-s strip; false positives ("has"
+    # -> "ha") simply don't match any keyword, so they're harmless.
+    q_plural = re.sub(r'\b(\w+)s\b', r'\1', q_norm)
     sorted_kw = sorted(_CODING_KEYWORDS_STRICT, key=len, reverse=True)
 
     unambiguous_match = False
     ambiguous_count = 0
     for kw in sorted_kw:
-        if re.search(r'\b' + re.escape(kw) + r'\b', q_norm):
+        kw_re = (r'(?<![a-z0-9])' + re.escape(kw) + r'(?![a-z0-9])'
+                 if kw in ('c++', 'c#', 'node.js') else
+                 r'\b' + re.escape(kw) + r'\b')
+        if re.search(kw_re, q_norm) or re.search(kw_re, q_plural):
             if kw in _AMBIGUOUS:
                 ambiguous_count += 1
             else:
@@ -867,6 +885,17 @@ _CODING_TOPIC_RE = re.compile(
     r'landing\s*page|homepage|portfolio|static\s+site|process|port|'
     r'kill|count|length|character|characters|letters?|filename|directory|'
     r'celsius|centigrade|fahrenheit|kelvin|in\s+go|'
+    r'palindrome|anagram|vowel|hashtag|slug|'
+    r'log\s+file|tail|gitignore|'
+    r'dockerfile|docker[- ]compose|github\s+actions|'
+    r'setup\.py|pyproject\.toml|requirements\.txt|package\.json|'
+    r'cron|systemd|ffmpeg|rsync|inotify|yaml|yml|toml|ini|'
+    r'kubectl|xargs|awk|sed|jq|matplotlib|seaborn|scipy|'
+    r'cherry[- ]?pick|duplicate\s+lines|unique\s+lines|'
+    r'disk\s+space|disk\s+usage|pods?|terraform|ansible|axios|tar|'
+    r'rate\s+limiter|url\s+shortener|task\s+queue|argparse|sqlalchemy|'
+    r'jest|ownership|pointer|struct|trait|interface|grep|scikit[- ]?learn|'
+    r'sklearn|'
     r'(?:sort|reverse|split|join|parse|count|check|find|remove|convert)\s+'
     r'(?:a|an|the|by|from)\b)',
     re.IGNORECASE)
@@ -876,16 +905,28 @@ _CODING_TOPIC_RE = re.compile(
 _CODE_TASK_RE = re.compile(
     r'\b(?:write|implement|create|make|build|fix|debug|generate|produce|'
     r'give|show|need|find|count|check|extract|sort|reverse|remove|delete|'
-    r'rename|convert|read|print|parse|list|search|validate|split|join)\b.*'
+    r'rename|convert|read|print|parse|list|search|validate|split|join|get|'
+    r'replace|match|merge|concatenate|concat|flatten|dedupe|deduplicate|'
+    r'duplicate|append|insert|update|group|aggregate|rank|filter|map|reduce|'
+    r'watch|monitor|follow|schedule|backup|sync|archive|download|upload|hash|'
+    r'encode|decode|encrypt|decrypt|compress|zip|unzip|compile|test|'
+    r'deploy|containerize|dockerize|query|format|normalize|round|truncate|'
+    r'chain|iterate|loop|top|trim|return|calculate|compute|strip)\b.*'
     r'\b(?:code|function|program|script|snippet|class|query|sql|regex|'
-    r'algorithm|loop|parser|api|website|web\s*site|web\s*page|landing\s*'
-    r'page|homepage|html|css|portfolio|string|array|list|dict|dictionary|'
-    r'file|json|csv|character|characters|number|numbers|data|process|port|'
-    r'url|email|line|lines|word|words|sentence|sentences)\b|'
+    r'regexp|algorithm|loop|parser|api|website|web\s*site|web\s*page|'
+    r'landing\s*page|homepage|html|css|portfolio|string|array|list|dict|'
+    r'dictionary|object|file|json|csv|character|number|data|process|port|'
+    r'url|email|line|word|sentence|element|item|occurrence|tree|node|graph|'
+    r'stack|queue|heap|trie|set|tuple|map|interval|substring|prefix|matrix|'
+    r'vector|field|row|record|table|column|key|value|address|gitignore|'
+    r'dockerfile|docker|compose|service|job|task|config|directory|folder|'
+    r'log|database|index|file|div|button|footer|navbar|sidebar)(?:s|es)?\b|'
     r'\bhow\s+(?:do|to|can|would|should|could)\b.*\b(?:python|javascript|'
     r'java|c\+\+|sql|git|node|flask|react|api|file|array|list|json|csv|'
     r'regex|website|web\s*site|web\s*page|html|css|process|port|string|'
-    r'url|email|data|count|kill|extract)\b|'
+    r'url|email|data|count|kill|extract|merge|hash|encode|decode|sort|'
+    r'backup|compress|unzip|deploy|container|docker|grep|tar|rsync|'
+    r'rebase|cherry[- ]?pick|amend|revert|undo|div|flexbox|button|footer)\b|'
     r'\b(?:celsius|centigrade|fahrenheit|miles?|kilometers?|km|pounds?|lbs?|'
     r'kg|kilograms?|inches?|feet|yards?|meters?|gallons?|liters?)\s+'
     r'(?:to|into)\s+(?:fahrenheit|celsius|miles?|kilometers?|km|pounds?|'
@@ -1002,23 +1043,92 @@ def concept_lookup(query: str) -> "str | None":
     return best
 
 
+# Library/framework names that mean the KB's specialized entry is likely
+# better than the synthesizer's generic template ("read a csv with pandas"
+# should stay a pandas answer, not a csv-module one).
+_LIBRARY_TOKENS = frozenset("""pandas numpy matplotlib seaborn requests
+flask django fastapi sqlalchemy tornado bottle aiohttp httpx express react vue
+angular svelte next.js nuxt remix axios superagent jquery bootstrap tailwind d3
+tensorflow pytorch torch keras opencv scikit-learn sklearn selenium
+beautifulsoup bs4 scrapy pygame pillow boto3 psycopg2 celery redis gunicorn
+uvicorn node.js nodejs """.split())
+
+
+def _mentions_library(query: str) -> bool:
+    """True when the query names a specialized library/framework."""
+    q = query.lower()
+    for tok in _LIBRARY_TOKENS:
+        if re.search(r'(?<![a-z0-9])' + re.escape(tok) + r'(?![a-z0-9])', q):
+            return True
+    return False
+
+
 def smart_code_answer(query: str) -> "str | None":
     """Answer a coding question from the curated KB first, then by synthesis.
 
     Never touches Wikipedia: for code topics Wikipedia returns unrelated
     articles ("pandas" → giant panda). The code generator synthesizes code
     for the common tasks that the KB doesn't cover.
+
+    Priority rules:
+    - When the query names a language, the answer must present code in that
+      language; the synthesizer's language-exact templates win whenever the
+      KB answer is prose or in a different language.
+    - When the KB matches the requested language too, it normally wins (its
+      answers are more explanatory) EXCEPT for plain imperative "write X"
+      requests with no specialized library involved — there the synthesizer
+      wins because its templates are hand-verified and task-exact.
+    - Queries that name a library (pandas, flask, …) keep the KB answer.
     """
     ans = code_lookup(query)
-    if ans:
-        return ans
+    q_lang = detect_query_lang(query)
+    gen = None
     try:
         from cos.code_gen import generate_code
         gen = generate_code(query)
-        if gen:
-            return gen
     except Exception:
         pass
+    g_lang = answer_language(gen) if gen else None
+    a_lang = answer_language(ans) if ans else None
+    if q_lang and g_lang:
+        if a_lang == q_lang:
+            # KB already delivers the right language — keep it, unless this
+            # is a plain imperative request the synthesizer covers exactly.
+            if (gen and looks_like_code_task(query)
+                    and not _mentions_library(query)):
+                return gen
+            return ans
+        if g_lang == q_lang:
+            return gen
+        # g_lang != q_lang: the language mention is incidental to the task
+        # ("a .gitignore for a python project" -> python, but the artifact
+        # is a bash/text file). A task-matched synthesis still beats prose.
+        if gen and ans and not a_lang and looks_like_code_task(query):
+            return gen
+    elif gen and ans and not a_lang and looks_like_code_task(query):
+        # No language named but a clear "write code" request: real code
+        # beats prose.
+        return gen
+    elif (gen and ans and a_lang and g_lang and a_lang != g_lang
+          and not q_lang and looks_like_code_task(query)
+          and not _mentions_library(query)):
+        # No language named; the KB fuzzy-matched an entry in a DIFFERENT
+        # language than the synthesizer's task-exact template ("write a
+        # regex for a valid ip address" must not return the JS email
+        # regex). The task-exact template wins.
+        return gen
+    elif (gen and ans and a_lang and g_lang and a_lang == g_lang
+          and looks_like_code_task(query) and not _mentions_library(query)
+          and not q_lang):
+        # No language named and both sides agree on the language: the
+        # synthesizer's task-exact template wins over a loosely-matched KB
+        # entry ("how do i commit changes with git" must not return the
+        # git-undo recipe).
+        return gen
+    if ans:
+        return ans
+    if gen:
+        return gen
     # Last KB attempt: definition-style concept lookup for "explain what a
     # decorator does" style questions the fuzzy scorer can't reach.
     return concept_lookup(query)

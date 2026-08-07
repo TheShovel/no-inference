@@ -27,6 +27,7 @@ SUITES = [
     ('iterative refine', 'test_refine.py'),
     ('load-on-demand memory', 'test_memory.py'),
     ('freeform discovered', 'test_freeform_discovered.py'),
+    ('coding probe batteries', 'test_probe_coding.py'),
     ('api server', 'test_api_server.py'),
 ]
 

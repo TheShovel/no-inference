@@ -43,9 +43,12 @@ def _load_knowledge(base_dir=None):
         List of (pattern_regex, answer_text) tuples
     """
     global _WORD_INDEX, _RAW_ENTRY_INDICES, _ENTRY_WORDS, _CATEGORY_INDEX
+    global _ENTRY_SPECIFICITY, _ENTRY_LITERAL_LEN
     _WORD_INDEX = {}
     _RAW_ENTRY_INDICES = set()
     _ENTRY_WORDS = []
+    _ENTRY_SPECIFICITY = []
+    _ENTRY_LITERAL_LEN = []
     _CATEGORY_INDEX = {}
     _REGEX_CACHE.clear()
 
@@ -118,13 +121,17 @@ def _load_knowledge(base_dir=None):
                 if not q_clean:
                     continue
                 try:
-                    # Check if pattern contains explicit regex syntax (backslash escapes)
-                    # Only treat as raw regex if the author intentionally used regex
-                    # constructs like \b, \s, \d, etc. Otherwise escape the pattern
-                    # to prevent accidental regex metacharacters (e.g., '+' in 'c++'
-                    # becoming a quantifier, or '?' in questions becoming optional).
+                    # Check if pattern contains explicit regex syntax.
+                    # Two forms of intentional regex are honored:
+                    #   1. backslash escapes (\b, \s, \d, ...)
+                    #   2. bare regex operators that only make sense as regex
+                    #      (. * / +, alternation |, and bracket classes)
+                    # Everything else is escaped so accidental metacharacters
+                    # ('+' in 'c++', '?' in questions) stay literal.
                     has_regex_backslash = '\\' in q_clean
-                    if has_regex_backslash:
+                    has_regex_ops = bool(re.search(r'\.\*|\.\+|\||\[|\]|\^|\$', q_clean))
+                    is_raw_regex = has_regex_backslash or has_regex_ops
+                    if is_raw_regex:
                         pattern_str = q_clean
                     else:
                         words = q_clean.split()
@@ -132,19 +139,39 @@ def _load_knowledge(base_dir=None):
                             pattern_str = r'\b' + re.escape(q_clean) + r'\b'
                         else:
                             pattern_str = re.escape(q_clean)
-                    re.compile(pattern_str, re.IGNORECASE)  # validate, then discard
+                    try:
+                        re.compile(pattern_str, re.IGNORECASE)  # validate, then discard
+                    except re.error:
+                        # Unbalanced brackets or operators in a "regex-looking"
+                        # pattern (e.g. an unclosed '(' in a question): fall
+                        # back to a literal match rather than dropping it.
+                        pattern_str = re.escape(q_clean)
+                        is_raw_regex = False
                     entries.append((pattern_str, answer))
                     loaded += 1
                     idx = len(entries) - 1
-                    if has_regex_backslash:
+                    # Literal-length budget: the summed length of the plain
+                    # words in the pattern ("what.*python" = 11). A wildcard
+                    # match can never count more than this, so broad patterns
+                    # stop out-scoring specific literal ones on span.
+                    _lit_words = re.findall(r'[a-z0-9]+', pattern_str)
+                    _literal_len = sum(len(w) for w in _lit_words) + max(len(_lit_words) - 1, 0)
+                    _ENTRY_LITERAL_LEN.append(_literal_len)
+                    if is_raw_regex:
                         _RAW_ENTRY_INDICES.add(idx)
                         _ENTRY_WORDS.append(None)
+                        # Specificity proxy for raw regexes: number of plain
+                        # word tokens in the pattern ("what.*python" = 2 vs
+                        # an 8-word literal question). Used to break span ties
+                        # so broad wildcards lose to specific entries.
+                        _ENTRY_SPECIFICITY.append(len(_word_tokens(q_clean)))
                     else:
                         # Cheap per-entry words: a tuple of interned word
                         # strings (a frozenset per entry cost ~25 MB). The
                         # words are shared with the _WORD_INDEX keys.
                         _entry_words = tuple(sorted(_word_tokens(q_clean)))
                         _ENTRY_WORDS.append(_entry_words)
+                        _ENTRY_SPECIFICITY.append(len(_entry_words))
                         # Word index as array('I') of entry indices (sorted,
                         # deduped by construction) instead of set[int]: ~6x
                         # smaller.
@@ -190,6 +217,15 @@ _RAW_ENTRY_INDICES = set()
 # Parallel to _KNOWLEDGE_CACHE: tuple of word tokens for each entry, or
 # None for raw-regex entries (never filtered).
 _ENTRY_WORDS = []
+# Parallel to _KNOWLEDGE_CACHE: literal word count per pattern, used to
+# break span ties in favor of specific entries (an 8-word literal question
+# beats a broad "what.*python" wildcard when both match the same span).
+_ENTRY_SPECIFICITY = []
+# Parallel to _KNOWLEDGE_CACHE: the literal-length budget of each pattern
+# (sum of its plain word lengths). Wildcard matches are capped at this, so
+# "what.*python" (budget 11) can't out-span "what is a lambda function"
+# (budget 25) even when its .* swallows the whole query.
+_ENTRY_LITERAL_LEN = []
 
 _WORD_TOKEN_RE = re.compile(r'[a-z0-9]+')
 
@@ -394,11 +430,14 @@ def _trim_os_heap():
 
 def release_knowledge():
     """Explicitly drop the loaded KB from memory (reloads on next lookup)."""
-    global _KNOWLEDGE_CACHE, _WORD_INDEX, _RAW_ENTRY_INDICES, _ENTRY_WORDS, _CATEGORY_INDEX
+    global _KNOWLEDGE_CACHE, _WORD_INDEX, _RAW_ENTRY_INDICES, _ENTRY_WORDS
+    global _ENTRY_SPECIFICITY, _ENTRY_LITERAL_LEN, _CATEGORY_INDEX
     _KNOWLEDGE_CACHE = None
     _WORD_INDEX = {}
     _RAW_ENTRY_INDICES = set()
     _ENTRY_WORDS = []
+    _ENTRY_SPECIFICITY = []
+    _ENTRY_LITERAL_LEN = []
     _CATEGORY_INDEX = {}
     _REGEX_CACHE.clear()
     _trim_os_heap()
@@ -466,6 +505,7 @@ def find_best_match(query):
         candidates = set(range(len(entries)))
     best_len = 0
     best_answer = None
+    best_spec = 0
     for ci in sorted(candidates):
         pattern_str, answer = entries[ci]
         entry_words = _ENTRY_WORDS[ci]
@@ -478,10 +518,26 @@ def find_best_match(query):
             m = pattern.search(q)
         except Exception:
             continue
-        if m and len(m.group(0)) > best_len:
-            best_len = len(m.group(0))
+        if m:
+            # Wildcard matches are capped at the pattern's literal-length
+            # budget so broad patterns ("what.*python") can't out-span
+            # specific literal entries.
+            _eff = min(len(m.group(0)), _ENTRY_LITERAL_LEN[ci])
+        else:
+            _eff = 0
+        if _eff > best_len:
+            best_len = _eff
             best_answer = answer
+            best_spec = _ENTRY_SPECIFICITY[ci]
+        elif (_eff == best_len and _eff
+              and _ENTRY_SPECIFICITY[ci] > best_spec):
+            # Equal span: the more specific (wordier) pattern wins, so a
+            # broad wildcard like "what.*python" loses to the exact
+            # "what is a lambda function in python" entry.
+            best_answer = answer
+            best_spec = _ENTRY_SPECIFICITY[ci]
     return best_len, best_answer
+
 
 def reload():
     """Force reload of all knowledge from disk."""
@@ -1119,6 +1175,7 @@ def lookup(query):
 
     best_answer = None
     best_match_len = 0
+    best_spec = 0
 
     # Try matching against the original query and variants
     variants = [q, q_norm, q_simple]
@@ -1170,6 +1227,10 @@ def lookup(query):
                 # Require at least 3 characters to match — prevents accidental
                 # matches like 'c' (from regex 'c++') matching 'metallic'
                 if match_len >= 3:
+                    # Wildcard matches are capped at the pattern's
+                    # literal-length budget so broad patterns
+                    # ("what.*python") can't out-span specific entries.
+                    match_len = min(match_len, _ENTRY_LITERAL_LEN[_ci])
                     # Matches on the cleaned topic (q_unwrapped) are a much
                     # stronger signal than equal-length matches on the raw
                     # query — "is the moon a planet" should match "the moon"
@@ -1179,6 +1240,13 @@ def lookup(query):
                     if match_len > best_match_len:
                         best_match_len = match_len
                         best_answer = answer
+                    elif (match_len == best_match_len and best_answer
+                          and _ENTRY_SPECIFICITY[_ci] > best_spec):
+                        # Equal span: the more specific (wordier) pattern
+                        # wins, so a broad wildcard like "what.*python" loses
+                        # to the exact "what is a lambda function in python".
+                        best_answer = answer
+                        best_spec = _ENTRY_SPECIFICITY[_ci]
 
     # Word-overlap fallback: if no exact substring match found, try
     # matching by keyword overlap. This lets patterns match queries that

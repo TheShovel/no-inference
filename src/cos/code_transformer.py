@@ -97,8 +97,12 @@ def detect_code_transform(query: str) -> Optional[Tuple[str, dict, str, str]]:
 
     # ── explain this code ───────────────────────────────────────────────
     if re.search(r'\b(?:explain|what\s+does|whats?)\s+(?:this|the|that)\s+'
-                 r'(?:python|javascript|code|script|function|program)', head_l) \
-            or re.search(r'\bexplain\s+(?:the\s+)?code\b', head_l):
+                 r'(?:python|javascript|code|script|function|program|error|'
+                 r'line)', head_l) \
+            or re.search(r'\bexplain\s+(?:the\s+)?code\b', head_l) \
+            or re.search(r'\b(?:why\s+(?:is|does|would|did|do)|whats?\s+wrong|'
+                         r'is\s+this|what\s+does)\s+.*\b(?:error|fail(?:ing)?|'
+                         r'throw|broken|not\s+work(?:ing)?|wrong)\b', head_l):
         return ('explain', {}, code, detect_code_lang(code))
 
     # ── convert / translate between languages ───────────────────────────
@@ -119,9 +123,17 @@ def detect_code_transform(query: str) -> Optional[Tuple[str, dict, str, str]]:
     m2 = re.search(
         r'\bconvert\s+(?:this\s+|the\s+)?([a-z#+.]+)\s+code\s+(?:to|into)\s+'
         r'([a-z#+.]+)$', head_l)
+    # "convert this python to javascript" — the source language sits right
+    # after the demonstrative with no "code" noun; the captured word must be
+    # a real language so "convert this to javascript" can't grab "this".
+    m3 = re.search(
+        r'\bconvert\s+(?:this\s+|the\s+|that\s+)([a-z#+.]+)\s+(?:to|into)\s+'
+        r'([a-z#+.]+)$', head_l)
     src = dst = None
     if m2 is not None and re.sub(r'\s+', '', m2.group(1).lower()) in _PROG_LANGS:
         src, dst = m2.group(1), m2.group(2)
+    elif m3 is not None and re.sub(r'\s+', '', m3.group(1).lower()) in _PROG_LANGS:
+        src, dst = m3.group(1), m3.group(2)
     elif m is not None:
         src, dst = m.group(1), m.group(2)
     if dst is not None:
@@ -484,10 +496,15 @@ def _describe_line(line: str, lang: str) -> Optional[str]:
     if m:
         return "Log to the console: " + m.group(1).strip()[:60]
     m = re.match(r'^(\w+(?:\.\w+)*)\s*(?:\+=|-=|\*=|/=|=)\s*(.+)$', s)
-    if m:
+    if m and not m.group(2).lstrip().startswith(('[', '{')):
         op = 'adds' if '+=' in s else ('appends to' if '.append' in s else
                                        'assigns')
         return f"Assign {m.group(2).strip()[:50]} to {m.group(1)}"
+    # comprehension / literal lines that don't match anything above
+    for pat, describe in _LINE_DESCRIBERS:
+        mm = re.match(pat, s)
+        if mm:
+            return describe(mm)
     return None
 
 
@@ -548,6 +565,22 @@ def _make_faster(code: str, lang: str, params: dict) -> Tuple[str, List[str]]:
                 fixed)
             notes.append("replaced the accumulate-and-append loop with a list "
                          "comprehension (faster and more readable)")
+
+        # O(n²) count() inside a comprehension -> single-pass Counter:
+        #   [x for x in lst if lst.count(x) > 1]  ->  Counter-based
+        m = re.search(
+            r'\[(\w+)\s+for\s+(\w+)\s+in\s+(\w+)\s+if\s+\3\.count\(\2\)\s*>\s*1\]',
+            fixed)
+        if m:
+            coll = m.group(3)
+            old = m.group(0)
+            new = (f'[x for x, n in Counter({coll}).items() if n > 1]'
+                   f'  # O(n) instead of O(n²)')
+            if 'from collections import Counter' not in fixed:
+                fixed = 'from collections import Counter\n' + fixed
+            fixed = fixed.replace(old, new)
+            notes.append("replaced the O(n²) `list.count()` comprehension with "
+                         "a single-pass Counter (runs in linear time)")
 
         # string += in a loop -> list + join
         m = re.search(r'(\w+)\s*=\s*["\']\s*["\']', fixed)
@@ -980,7 +1013,143 @@ def _convert_lang(code: str, lang: str, params: dict) -> Tuple[str, List[str]]:
 
 # ── explain code ────────────────────────────────────────────────────────────
 
+# Common Python error messages -> short explanations (used when someone pastes
+# a traceback line like "IndexError: list index out of range").
+_ERROR_EXPLAIN = [
+    (r'indexerror',
+     "You tried to read a position that doesn't exist in the list/string — "
+     "the valid indices are 0..len-1 (or negative from the end). Fix it by "
+     "checking the bounds before indexing, or use a guard like `if i < len(xs)`."),
+    (r'keyerror',
+     "You looked up a dictionary key that isn't present. Use `d.get(key, default)` "
+     "for a default, or check `if key in d` first."),
+    (r'valueerror',
+     "A value has the right type but the wrong content — e.g. int('abc') or "
+     "unpacking the wrong number of items. Validate the value or catch the error."),
+    (r'typeerror',
+     "You applied an operation to a value of the wrong type — e.g. adding a string "
+     "to an int, or calling a non-callable. Check the types of your arguments."),
+    (r'nameerror|(?:undefined|not defined)',
+     "You referenced a name that was never defined (or was misspelled, or defined "
+     "in a different scope). Python raises NameError at the point of use."),
+    (r'zerodivisionerror|division by zero',
+     "You divided by zero. Guard the divisor before dividing (`if b == 0`) or "
+     "catch the error — and note that float('inf') is an alternative only when "
+     "infinity is a meaningful result."),
+    (r'attributeerror',
+     "You accessed an attribute or method the object doesn't have — often a "
+     "variable that's None or the wrong type. Print type(x) to check."),
+    (r'importerror|modulenotfounderror',
+     "Python can't find the module. Install it (pip install ...), check the name "
+     "for typos, and make sure it's on sys.path."),
+    (r'syntaxerror',
+     "The code doesn't parse — a missing colon, unmatched parenthesis, or a "
+     "quote that wasn't closed. The caret (^) points at where the parser got stuck."),
+    (r'filenotfounderror|no such file',
+     "The file doesn't exist at the path you gave. Check the working directory "
+     "and the spelling, or create the file first."),
+    (r'recursionerror',
+     "Your recursion never reached a base case (or the base case is too deep). "
+     "Check that each recursive call moves toward the terminating condition."),
+    (r'stopiteration',
+     "You consumed an iterator past its end — e.g. next() on an exhausted "
+     "iterator. Pass a default: next(it, None)."),
+    (r'out of range|index out of bounds',
+     "An index went past the end of the collection — the classic off-by-one. "
+     "Remember range(n) stops at n-1."),
+]
+
+
+# Description templates for comprehension/assignment lines that don't match a
+# def/class/print pattern.
+_LINE_DESCRIBERS = [
+    (r'^\w+\s*=\s*\[\s*([^\]]+?)\s+for\s+(.+?)\s+in\s+(.+?)(?:\s+if\s+(.+))?\]\s*$',
+     lambda m: (f"Build a list: for each {m.group(2)} in {m.group(3)}"
+                + (f" where {m.group(4)}" if m.group(4) else "")
+                + f", add {m.group(1)}")),
+    (r'^\w+\s*=\s*\{.+\}\s*$', lambda m: "Build a dictionary literal"),
+    (r'^\w+\s*=\s*["\'].*["\']\s*$', lambda m: "Assign a string to a variable"),
+    (r'^\w+\s*=\s*\d+\s*$', lambda m: "Assign a number to a variable"),
+    (r'^(?:import|from)\s+', lambda m: "Import a module"),
+    (r'^(?:if|elif|while)\s+', lambda m: "Branch or loop condition"),
+    (r'^return\s+', lambda m: "Return a value from the function"),
+    (r'^print\s*\(', lambda m: "Print a value to the console"),
+]
+
+
+def _detect_py_bug(code: str):
+    """Spot a *definite* runtime error in Python code, or None.
+
+    Returns (error_name, explanation). Only patterns that are provably wrong
+    (not style nits) are flagged, so we never cry wolf on fine code.
+    """
+    # str + int literal (either order): 'a' + 1 / 1 + 'a'
+    m = re.search(r"['\"][^'\"]*['\"]\s*\+\s*\d", code)
+    if m:
+        return ('TypeError',
+                "adding a string and a number — the + operator needs both "
+                "sides the same type. Convert one side: str(n) or int(s).")
+    m = re.search(r'\d\s*\+\s*["\'][^"\']*["\']', code)
+    if m:
+        return ('TypeError',
+                "adding a number and a string — the + operator needs both "
+                "sides the same type. Convert one side: str(n) or int(s).")
+    # literal division by zero
+    m = re.search(r'[/%]\s*0\b', code)
+    if m:
+        return ('ZeroDivisionError',
+                "dividing by zero — no number is defined for x/0. Guard the "
+                "denominator: if b != 0: ...")
+    # int('abc') — non-numeric string
+    m = re.search(r'\bint\(\s*["\'][A-Za-z][^"\']*["\']\s*\)', code)
+    if m:
+        return ('ValueError',
+                "int() can't convert a non-numeric string. Wrap the call in "
+                "try/except ValueError or validate the input first.")
+    # None.attribute
+    m = re.search(r'\bNone\s*\.\s*\w+', code)
+    if m:
+        return ('AttributeError',
+                "accessing an attribute on None — some earlier operation "
+                "returned None instead of an object. Check the call that "
+                "produces the value.")
+    # call passing a string literal and a number literal as arguments —
+    # e.g. add('1', 2) — the body will likely combine them with +
+    m = re.search(r'\w+\s*\(\s*["\'][^"\']*["\']\s*,\s*\d+', code)
+    if m:
+        return ('TypeError',
+                "this call passes a string and a number as arguments — if the "
+                "function combines them (e.g. with +), Python raises TypeError. "
+                "Convert one side first: int('1') or str(2).")
+    m = re.search(r'\w+\s*\(\s*\d+\s*,\s*["\'][^"\']*["\']', code)
+    if m:
+        return ('TypeError',
+                "this call passes a number and a string as arguments — if the "
+                "function combines them (e.g. with +), Python raises TypeError. "
+                "Convert one side first: int('1') or str(2).")
+    return None
+
+
 def _explain(code: str, lang: str, params: dict) -> Tuple[str, List[str]]:
+    # A pasted traceback line ("IndexError: ...") gets a targeted explanation.
+    for pat, explanation in _ERROR_EXPLAIN:
+        if re.search(pat, code, re.IGNORECASE):
+            return ("This is a **" + re.search(r'\w+Error', code, re.IGNORECASE
+                                                 ).group(0).capitalize() +
+                    "** — " + explanation + "\n\nTo debug: read the full "
+                    "traceback from bottom to top; the last line names the "
+                    "error, and the frame above it shows where it happened."), \
+                ["identified the exception type and the usual causes"]
+    # No pasted traceback — look for a definite runtime bug in the code
+    # itself ("why does this code fail: def add(a, b): return a + b ...").
+    if lang == 'python':
+        bug = _detect_py_bug(code)
+        if bug:
+            err, why = bug
+            return (f"This code raises a **{err}** when it runs — {why}\n\n"
+                    "The fix: correct the line flagged above (or wrap it in "
+                    "try/except if the bad input is expected)."), \
+                [f"identified a likely {err}"]
     lines = code.split('\n')
     parts = [f"Here's what this {lang} code does, line by line:"]
     funcs = []

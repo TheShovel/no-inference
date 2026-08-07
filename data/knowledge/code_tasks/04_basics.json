@@ -11,7 +11,7 @@
       "notes": "The timestamped copy keeps every backup (never overwrites). Add retention later: keep only the newest N backups by sorting the directory and deleting the rest. rsync (bash version) only copies changed files, so repeated runs are cheap.",
       "languages": {
         "python": "#!/usr/bin/env python3\n\"\"\"Back up a directory: timestamped copy, skipping junk.\"\"\"\nimport os\nimport shutil\nimport sys\nfrom datetime import datetime\n\n\ndef backup(source: str, dest_root: str = \"backups\") -> str:\n    if not os.path.isdir(source):\n        raise ValueError(f\"not a directory: {source}\")\n    stamp = datetime.now().strftime(\"%Y%m%d-%H%M%S\")\n    name = os.path.basename(os.path.normpath(source)) or \"backup\"\n    dest = os.path.join(dest_root, f\"{name}-{stamp}\")\n    os.makedirs(dest_root, exist_ok=True)\n    shutil.copytree(\n        source, dest,\n        ignore=shutil.ignore_patterns(\"__pycache__\", \".git\", \"node_modules\",\n                                      \"*.pyc\", \".DS_Store\"),\n    )\n    return dest\n\n\nif __name__ == \"__main__\":\n    if len(sys.argv) < 2:\n        print(\"usage: python3 backup.py <directory> [dest-root]\")\n        sys.exit(1)\n    print(\"backed up to\", backup(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else \"backups\"))\n\n# Example:\n# backup(\"my_project\", \"backups\")  ->  backups/my_project-20260403-153000",
-        "bash": "#!/usr/bin/env bash\n# Back up a directory with a timestamp, skipping common junk.\nset -euo pipefail\n\nSOURCE=\"${1:?usage: $0 <directory> [dest-root]}\"\nDEST_ROOT=\"${2:-backups}\"\nSTAMP=\"$(date +%Y%m%d-%H%M%S)\"\nNAME=\"$(basename \"$SOURCE\")\"\nDEST=\"$DEST_ROOT/$NAME-$STAMP\"\n\nmkdir -p \"$DEST_ROOT\"\nrsync -a --exclude node_modules --exclude .git --exclude __pycache__ \\\\\n    --exclude '*.pyc' --exclude .DS_Store \"$SOURCE/\" \"$DEST/\"\necho \"backed up to $DEST\""
+        "bash": "#!/usr/bin/env bash\n# Back up a directory with a timestamp, skipping common junk.\nset -euo pipefail\n\nSOURCE=\"${1:?usage: $0 <directory> [dest-root]}\"\nDEST_ROOT=\"${2:-backups}\"\nSTAMP=\"$(date +%Y%m%d-%H%M%S)\"\nNAME=\"$(basename \"$SOURCE\")\"\nDEST=\"$DEST_ROOT/$NAME-$STAMP\"\n\nmkdir -p \"$DEST_ROOT\"\nrsync -a --exclude node_modules --exclude .git --exclude __pycache__ \\\n    --exclude '*.pyc' --exclude .DS_Store \"$SOURCE/\" \"$DEST/\"\necho \"backed up to $DEST\"\n\n# Single-file alternative (one tarball per run):\n# tar -czf \"$DEST_ROOT/$NAME-$STAMP.tar.gz\" -C \"$(dirname \"$SOURCE\")\" \"$NAME\"\n"
       }
     },
     {
@@ -26,7 +26,7 @@
       "intro": "Here's how to write a for loop in {lang}.",
       "notes": "The classic index loop (`for i in range(...)` / `for (let i = 0; ...)`) is for when you need the index or a fixed number of iterations; the for-each forms are cleaner when you only need the values. In Python, `range` is lazy, so even huge ranges use constant memory.",
       "languages": {
-        "python": "# Loop over a range:\nfor i in range(5):\n    print(i)        # 0 1 2 3 4\n\n# Loop over a collection:\nfor item in ['a', 'b', 'c']:\n    print(item)\n\n# With index (enumerate):\nfor idx, item in enumerate(['a', 'b', 'c']):\n    print(idx, item)\n\n# Range with start and step:\nfor i in range(1, 10, 2):\n    print(i)        # 1 3 5 7 9",
+        "python": "# Loop over a range:\nfor i in range(5):\n    print(i)        # 0 1 2 3 4\n\n# Loop over a collection:\nfor item in ['a', 'b', 'c']:\n    print(item)\n\n# With index (enumerate):\nfor idx, item in enumerate(['a', 'b', 'c']):\n    print(idx, item)\n\n# Range with start and step:\nfor i in range(1, 10, 2):\n    print(i)        # 1 3 5 7 9\n\n# While loop (runs while a condition holds):\ni = 0\nwhile i < 5:\n    print(i)\n    i += 1          # don't forget to advance — or it never stops\n\n# while vs for: use for when iterating over a known collection/range;\n# use while when the end condition is computed (reading input, polling).",
         "javascript": "// Classic for loop (with index):\nfor (let i = 0; i < 5; i++) {\n    console.log(i);\n}\n\n// for...of over an array:\nfor (const item of ['a', 'b', 'c']) {\n    console.log(item);\n}\n\n// forEach (no break/continue):\n['a', 'b', 'c'].forEach(item => console.log(item));\n\n// With index:\n['a', 'b', 'c'].forEach((item, idx) => console.log(idx, item));",
         "java": "// Classic loop:\nfor (int i = 0; i < 5; i++) {\n    System.out.println(i);\n}\n\n// Enhanced for (for-each) over an array:\nString[] names = {\"a\", \"b\", \"c\"};\nfor (String name : names) {\n    System.out.println(name);\n}\n\n// Over a List:\nList<String> list = List.of(\"a\", \"b\", \"c\");\nfor (String s : list) {\n    System.out.println(s);\n}",
         "c++": "// Classic loop:\nfor (int i = 0; i < 5; i++) {\n    std::cout << i << \"\\n\";\n}\n\n// Range-based for (C++11+):\nstd::vector<std::string> names = {\"a\", \"b\", \"c\"};\nfor (const auto& name : names) {\n    std::cout << name << \"\\n\";\n}\n\n// With index:\nfor (size_t i = 0; i < names.size(); i++) {\n    std::cout << i << \" \" << names[i] << \"\\n\";\n}",
@@ -45,7 +45,7 @@
       "intro": "Here's how to write comments in {lang}.",
       "notes": "Comments are for explaining *why*, not what — the code itself shows what it does. Keep them short and up to date, because stale comments mislead more than no comments. Languages also have doc-comment conventions (`'''` docstrings in Python, JSDoc in JS, `///` in Rust, Javadoc) for documenting functions and types.",
       "languages": {
-        "python": "# Single-line comment\n\n\"\"\"\nMulti-line string used as a docstring.\nPEP 8: use # for real comments; \"\"\" for documentation.\n\"\"\"\n\ndef add(a, b):\n    \"\"\"Return the sum of a and b.\"\"\"\n    return a + b",
+        "python": "# Single-line comment\n\n\"\"\"\nMulti-line string used as a docstring.\nPEP 8: use # for real comments; triple quotes for documentation.\n\"\"\"\n\ndef add(a, b):\n    \"\"\"Return the sum of a and b.\"\"\"\n    return a + b",
         "javascript": "// Single-line comment\n\n/*\n * Multi-line comment\n */\n\n// JSDoc for functions:\n/**\n * Adds two numbers.\n * @param {number} a\n * @param {number} b\n * @returns {number}\n */\nfunction add(a, b) {\n    return a + b;\n}",
         "java": "// Single-line comment\n\n/* Multi-line comment */\n\n/** Javadoc comment (used to generate API docs) */\npublic static int add(int a, int b) {\n    return a + b;\n}",
         "c++": "// Single-line comment\n\n/* Multi-line comment */\n\n/// Doxygen comment for documentation\nint add(int a, int b) {\n    return a + b;\n}",
@@ -129,15 +129,29 @@
     {
       "task": "env_vars",
       "patterns": [
-        "\\b(?:use|read|get|access|set)\\b.*\\benvironment\\s+variables?\\b",
-        "\\benv\\s+(?:var|variables?)\\b",
-        "\\bos\\.environ\\b"
+        "^(?!.*\\bdocker\\b).*\\benvironment\\s+variables?\\b",
+        "^(?!.*\\bdocker\\b).*\\benv\\s+var(?:s)?\\b",
+        "^(?!.*\\bdocker\\b).*\\b(?:read|get|access|set)\\b.*\\b(?:env|environment)\\b.*\\b(?:var|variable)\\b"
       ],
       "intro": "Here's how to use environment variables in {lang}.",
       "notes": "Never hardcode secrets — read them from env vars. In Python, `os.environ['KEY']` raises KeyError when missing; `os.getenv('KEY', default)` doesn't. In bash, `$VAR` reads and `export VAR=value` sets for child processes.",
       "languages": {
         "python": "import os\n\n# Read (raises KeyError if missing):\napi_key = os.environ['API_KEY']\n\n# Read with a default (safe):\napi_key = os.getenv('API_KEY', 'dev-key')\n\n# Check if set:\nif 'API_KEY' in os.environ:\n    print('set')\n\n# Set for this process only:\nos.environ['DEBUG'] = '1'\n\n# Iterate:\nfor name, value in os.environ.items():\n    print(f'{name}={value}')",
-        "bash": "# Read:\necho \"$HOME\"\n\n# With a default:\necho \"${PORT:-8080}\"\n\n# Set for child processes:\nexport DB_HOST=localhost\n\n# Set for this command only:\nDEBUG=1 ./my_app\n\n# Check if set:\nif [ -n \"$PORT\" ]; then\n    echo \"PORT=$PORT\"\nfi"
+        "bash": "# Read:\necho \"$HOME\"\n\n# With a default:\necho \"${PORT:-8080}\"\n\n# Set for child processes:\nexport DB_HOST=localhost\n\n# Set for this command only:\nDEBUG=1 ./my_app\n\n# Check if set:\nif [ -n \"$PORT\" ]; then\n    echo \"PORT=$PORT\"\nfi",
+        "javascript": "// Read an environment variable:\nconsole.log(process.env.API_KEY);\n\n// Default when unset:\nconst apiKey = process.env.API_KEY || 'fallback';\n\n// Set from the shell when running:\n// API_KEY=secret node app.js\n\n// Load a .env file (Node >= 20.6 without a package):\n// node --env-file=.env app.js\n// Or with the dotenv package: require('dotenv').config();\n"
+      }
+    },
+    {
+      "task": "task_queue",
+      "patterns": [
+        "\\btask\\s+queue\\b",
+        "\\b(?:worker|job)\\s+queue\\b",
+        "\\bproducer\\s+consumer\\b"
+      ],
+      "intro": "Here's a simple task queue (producer/consumer) in Python.",
+      "notes": "queue.Queue is thread-safe; workers pull tasks with get() and mark them done with task_done(). Use join() to wait for all queued work. For distributed queues, swap the in-process queue for Redis/Celery.",
+      "languages": {
+        "python": "import queue\nimport threading\nimport time\n\nq = queue.Queue()\n\ndef worker(name):\n    while True:\n        task = q.get()\n        if task is None:   # sentinel: shut down\n            q.task_done()\n            break\n        print(f'{name} doing {task}')\n        time.sleep(0.1)\n        q.task_done()\n\nthreads = [threading.Thread(target=worker, args=(f'w{i}',)) for i in range(3)]\nfor t in threads:\n    t.start()\n\n# Producers add work:\nfor i in range(10):\n    q.put(f'job-{i}')\n\nq.join()                 # wait for everything\nfor _ in threads:\n    q.put(None)          # stop workers\n"
       }
     }
   ]

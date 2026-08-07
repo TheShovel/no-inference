@@ -1,0 +1,119 @@
+[
+  {
+    "task": "longest_common_prefix",
+    "patterns": [
+      "\\blongest\\s+common\\s+prefix\\b"
+    ],
+    "intro": "Here's a {lang} function that finds the longest common prefix of a list of strings.",
+    "notes": "Compare character by character across all strings, or sort and compare the first and last strings. Empty input returns an empty string.",
+    "languages": {
+      "python": "def longest_common_prefix(strings: list) -> str:\n    \"\"\"Longest common prefix of a list of strings.\"\"\"\n    if not strings:\n        return ''\n    prefix = strings[0]\n    for s in strings[1:]:\n        while not s.startswith(prefix):\n            prefix = prefix[:-1]\n            if not prefix:\n                return ''\n    return prefix\n\n# Examples:\nprint(longest_common_prefix(['flower', 'flow', 'flight']))  # 'fl'\nprint(longest_common_prefix(['dog', 'racecar', 'car']))     # ''",
+      "javascript": "function longestCommonPrefix(strings) {\n    if (strings.length === 0) return '';\n    let prefix = strings[0];\n    for (let i = 1; i < strings.length; i++) {\n        while (!strings[i].startsWith(prefix)) {\n            prefix = prefix.slice(0, -1);\n            if (prefix === '') return '';\n        }\n    }\n    return prefix;\n}\n\nconsole.log(longestCommonPrefix(['flower', 'flow', 'flight']));  // 'fl'\nconsole.log(longestCommonPrefix(['dog', 'racecar', 'car']));     // ''",
+      "go": "package main\n\nimport \"strings\"\n\nfunc LongestCommonPrefix(strs []string) string {\n    if len(strs) == 0 {\n        return \"\"\n    }\n    prefix := strs[0]\n    for _, s := range strs[1:] {\n        for !strings.HasPrefix(s, prefix) {\n            prefix = prefix[:len(prefix)-1]\n            if prefix == \"\" {\n                return \"\"\n            }\n        }\n    }\n    return prefix\n}",
+      "rust": "pub fn longest_common_prefix(strs: &[String]) -> String {\n    if strs.is_empty() {\n        return String::new();\n    }\n    let mut prefix = strs[0].clone();\n    for s in &strs[1..] {\n        while !s.starts_with(&prefix) {\n            prefix.pop();\n            if prefix.is_empty() {\n                return prefix;\n            }\n        }\n    }\n    prefix\n}",
+      "java": "public static String longestCommonPrefix(String[] strs) {\n    if (strs.length == 0) return \"\";\n    String prefix = strs[0];\n    for (int i = 1; i < strs.length; i++) {\n        while (!strs[i].startsWith(prefix)) {\n            prefix = prefix.substring(0, prefix.length() - 1);\n            if (prefix.isEmpty()) return \"\";\n        }\n    }\n    return prefix;\n}",
+      "c++": "#include <string>\n#include <vector>\n\nstd::string longestCommonPrefix(const std::vector<std::string>& strs) {\n    if (strs.empty()) return \"\";\n    std::string prefix = strs[0];\n    for (size_t i = 1; i < strs.size(); i++) {\n        while (strs[i].rfind(prefix, 0) != 0) {   // starts_with\n            prefix.pop_back();\n            if (prefix.empty()) return prefix;\n        }\n    }\n    return prefix;\n}",
+      "c#": "public static string LongestCommonPrefix(string[] strs)\n{\n    if (strs.Length == 0) return \"\";\n    string prefix = strs[0];\n    for (int i = 1; i < strs.Length; i++)\n    {\n        while (!strs[i].StartsWith(prefix))\n        {\n            prefix = prefix[..^1];\n            if (prefix.Length == 0) return prefix;\n        }\n    }\n    return prefix;\n}"
+    }
+  },
+  {
+    "task": "run_length_encode",
+    "patterns": [
+      "\\brun[- ]length\\b",
+      "\\brle\\b.*\\b(?:encode|decode)\\b"
+    ],
+    "intro": "Here's a {lang} run-length encoder.",
+    "notes": "Run-length encoding compresses runs of repeated characters ('aaabbc' -> 'a3b2c1'). It shines on data with long runs; random data gets bigger.",
+    "languages": {
+      "python": "def run_length_encode(s: str) -> str:\n    \"\"\"'aaabbc' -> 'a3b2c1'\"\"\"\n    if not s:\n        return ''\n    out = []\n    count = 1\n    for i in range(1, len(s)):\n        if s[i] == s[i - 1]:\n            count += 1\n        else:\n            out.append(f'{s[i - 1]}{count}')\n            count = 1\n    out.append(f'{s[-1]}{count}')\n    return ''.join(out)\n\n\ndef run_length_decode(s: str) -> str:\n    \"\"\"'a3b2c1' -> 'aaabbc'\"\"\"\n    import re\n    return ''.join(ch * int(n) for ch, n in re.findall(r'(\\w)(\\d+)', s))\n\n# Examples:\nprint(run_length_encode('aaabbc'))   # a3b2c1\nprint(run_length_decode('a3b2c1'))   # aaabbc\n\n# With itertools:\nfrom itertools import groupby\nprint(''.join(f'{ch}{len(list(g))}' for ch, g in groupby('aaabbc')))",
+      "javascript": "function runLengthEncode(s) {\n    let out = '';\n    let count = 1;\n    for (let i = 1; i <= s.length; i++) {\n        if (s[i] === s[i - 1]) {\n            count++;\n        } else {\n            out += s[i - 1] + count;\n            count = 1;\n        }\n    }\n    return out;\n}\n\nfunction runLengthDecode(s) {\n    return s.replace(/(\\w)(\\d+)/g, (_, ch, n) => ch.repeat(Number(n)));\n}\n\nconsole.log(runLengthEncode('aaabbc'));   // a3b2c1\nconsole.log(runLengthDecode('a3b2c1'));   // aaabbc"
+    }
+  },
+  {
+    "task": "reverse_words",
+    "patterns": [
+      "\\brevers\\w*\\b.*\\bwords?\\b.*\\b(?:sentence|order|phrase)\\b"
+    ],
+    "intro": "Here's a {lang} function that reverses the order of words in a sentence.",
+    "notes": "Split on whitespace, reverse the list, join back. 'the sky is blue' -> 'blue is sky the'. Handle multiple spaces with a regex split.",
+    "languages": {
+      "python": "def reverse_words(sentence: str) -> str:\n    \"\"\"Reverse the ORDER of words, keeping their internal letters.\"\"\"\n    return ' '.join(sentence.split()[::-1])\n\n# Examples:\nprint(reverse_words('the sky is blue'))    # blue is sky the\nprint(reverse_words('  hello   world  '))  # world hello\n\n# Reverse each word but keep the order:\ndef reverse_each_word(sentence: str) -> str:\n    return ' '.join(w[::-1] for w in sentence.split())\n\nprint(reverse_each_word('the sky is blue'))  # eht yks si eulb\n\n# Keep internal spacing (preserve multiple spaces):\nimport re\nprint(' '.join(re.split(r'\\s+', sentence.strip())[::-1]))",
+      "javascript": "function reverseWords(sentence) {\n    return sentence.trim().split(/\\s+/).reverse().join(' ');\n}\n\nconsole.log(reverseWords('the sky is blue'));    // 'blue is sky the'\nconsole.log(reverseWords('  hello   world  '));  // 'world hello'\n\n// Reverse each word but keep the order:\nfunction reverseEachWord(sentence) {\n    return sentence.split(/\\s+/).map(w => [...w].reverse().join('')).join(' ');\n}\nconsole.log(reverseEachWord('the sky is blue'));  // 'eht yks si eulb'",
+      "go": "package main\n\nimport \"strings\"\n\nfunc ReverseWords(sentence string) string {\n    words := strings.Fields(sentence)\n    for i, j := 0, len(words)-1; i < j; i, j = i+1, j-1 {\n        words[i], words[j] = words[j], words[i]\n    }\n    return strings.Join(words, \" \")\n}",
+      "rust": "pub fn reverse_words(sentence: &str) -> String {\n    sentence.split_whitespace().rev().collect::<Vec<_>>().join(\" \")\n}",
+      "java": "import java.util.*;\n\npublic static String reverseWords(String sentence) {\n    String[] words = sentence.trim().split(\"\\s+\");\n    Collections.reverse(Arrays.asList(words));\n    return String.join(\" \", words);\n}",
+      "c++": "#include <string>\n#include <sstream>\n#include <vector>\n#include <algorithm>\n\nstd::string reverseWords(const std::string& sentence) {\n    std::istringstream in(sentence);\n    std::vector<std::string> words;\n    std::string w;\n    while (in >> w) words.push_back(w);\n    std::reverse(words.begin(), words.end());\n    std::string out;\n    for (size_t i = 0; i < words.size(); i++) {\n        if (i) out += \" \";\n        out += words[i];\n    }\n    return out;\n}",
+      "c#": "public static string ReverseWords(string sentence)\n{\n    var words = sentence.Split(' ', StringSplitOptions.RemoveEmptyEntries);\n    Array.Reverse(words);\n    return string.Join(\" \", words);\n}"
+    }
+  },
+  {
+    "task": "title_case",
+    "patterns": [
+      "\\bconverts?\\b.*\\bstring\\b.*\\btitle\\s*case\\b",
+      "\\b(?:convert|change|transform)\\b.*\\b(?:string|text)\\b.*\\btitle\\s*case\\b(?!.*\\b(?:lowercase|uppercase)\\b)",
+      "\\btitle\\s*case\\b.*\\b(?:string|text|word)\\b",
+      "\\b(?:capitalize|capitalise)\\b.*\\b(?:each\\s+)?word\\b.*\\b(?:string|text)\\b"
+    ],
+    "intro": "Here's how to convert a string to title case in {lang}.",
+    "notes": "Python's str.title() uppercases after any non-letter (so 'don't' -> 'Don'T'); use a regex or a library for smarter casing. JS has no built-in — split and map.",
+    "languages": {
+      "python": "text = 'hello world, welcome to python'\n\n# Built-in (note the apostrophe quirk):\nprint(text.title())   # Hello World, Welcome To Python\nprint(\"don't stop\".title())   # Don'T Stop  (apostrophe quirk!)\n\n# Word-aware capitalization:\ndef title_case(s: str) -> str:\n    return ' '.join(w.capitalize() for w in s.split())\n\nprint(title_case(text))            # Hello World, Welcome To Python\nprint(title_case(\"don't stop\"))   # Don't Stop\n\n# str.capwords does the same:\nimport string\nprint(string.capwords(text))",
+      "javascript": "const text = 'hello world, welcome to python';\n\nfunction titleCase(s) {\n    return s.toLowerCase().split(/\\s+/)\n        .map(w => w.charAt(0).toUpperCase() + w.slice(1))\n        .join(' ');\n}\n\nconsole.log(titleCase(text));   // 'Hello World, Welcome To Python'\n\n// One-liner with a regex:\nconsole.log(text.replace(/\\w\\S*/g, w => w.charAt(0).toUpperCase() + w.slice(1)));"
+    }
+  },
+  {
+    "task": "extract_numbers",
+    "patterns": [
+      "\\bextract\\b.*\\bnumbers?\\b.*\\b(?:string|text|sentence)\\b",
+      "\\bfind\\b.*\\b(?:all\\s+)?numbers?\\s+in\\b.*\\b(?:string|text)\\b"
+    ],
+    "intro": "Here's how to extract all numbers from a string in {lang}.",
+    "notes": "re.findall(r'\\d+', s) grabs digit runs. Include decimals/negatives with a richer pattern like -?\\d+(\\.\\d+)?.",
+    "languages": {
+      "python": "import re\n\ntext = 'Order 42 costs 19.99 dollars, -3 in stock, id: 007'\n\n# Integer runs:\nprint(re.findall(r'\\d+', text))\n# ['42', '19', '99', '3', '007']\n\n# Decimals and negatives:\nprint(re.findall(r'-?\\d+\\.?\\d*', text))\n# ['42', '19.99', '-3', '007']\n\n# As floats:\nprint([float(x) for x in re.findall(r'-?\\d+\\.?\\d*', text)])\n\n# Whole numbers only (not part of a larger number):\nprint(re.findall(r'\\b\\d+\\b', text))\n\n# Numbers >= some threshold:\nprint([int(x) for x in re.findall(r'\\d+', text) if int(x) > 10])",
+      "javascript": "const text = 'Order 42 costs 19.99 dollars, -3 in stock, id: 007';\n\n// Integer runs:\nconsole.log(text.match(/\\d+/g));   // ['42', '19', '99', '3', '007']\n\n// Decimals and negatives:\nconsole.log(text.match(/-?\\d+\\.?\\d*/g));\n// ['42', '19.99', '-3', '007']\n\n// As numbers:\nconsole.log(text.match(/-?\\d+\\.?\\d*/g).map(Number));\n\n// Whole numbers only:\nconsole.log(text.match(/\\b\\d+\\b/g));\n\n// Unique sorted:\nconsole.log([...new Set(text.match(/\\d+/g))].sort((a, b) => a - b));"
+    }
+  },
+  {
+    "task": "hex_color_regex",
+    "patterns": [
+      "\\bhex\\s+color\\b.*\\bregex\\b",
+      "\\bregex\\b.*\\bhex\\s+color\\b",
+      "\\b(?:match|validate|extract)\\b.*\\b(?:hex\\s+)?colors?\\b.*\\b(?:regex|from)\\b"
+    ],
+    "intro": "Here's a regex for matching hex color codes in {lang}.",
+    "notes": "#RGB (3 digits) and #RRGGBB (6 digits) are both valid CSS hex colors — optionally with a trailing alpha (#RRGGBBAA). The boundary check avoids matching hex digits inside larger tokens.",
+    "languages": {
+      "python": "import re\n\n# 3 or 6 digits, case-insensitive:\nHEX_COLOR = re.compile(r'#[0-9a-fA-F]{6}\\b|#[0-9a-fA-F]{3}\\b')\n\n# Validate a single color:\ndef is_hex_color(s: str) -> bool:\n    return bool(HEX_COLOR.fullmatch(s.strip()))\n\n# Extract from text:\ntext = 'Use #ff0000 or #F00, and also #1a2b3c, but not #12345'\nprint(HEX_COLOR.findall(text))   # ['#ff0000', '#F00', '#1a2b3c']\n\nprint(is_hex_color('#fff'))      # True\nprint(is_hex_color('#ff0000'))   # True\nprint(is_hex_color('#ff00001'))  # False\n\n# With optional alpha (#RRGGBBAA):\nHEX_WITH_ALPHA = re.compile(r'#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{3})(?:[0-9a-fA-F]{2})?\\b')",
+      "javascript": "const hexColor = /#[0-9a-fA-F]{6}\\b|#[0-9a-fA-F]{3}\\b/;\n\n// Extract from text:\nconst text = 'Use #ff0000 or #F00, and also #1a2b3c, but not #12345';\nconsole.log(text.match(hexColor));        // first match\nconsole.log(text.match(new RegExp(hexColor.source, 'g')));  // all\n\n// Validate a single color:\nfunction isHexColor(s) {\n    return /^#[0-9a-fA-F]{6}$|^#[0-9a-fA-F]{3}$/.test(s.trim());\n}\nconsole.log(isHexColor('#fff'));     // true\nconsole.log(isHexColor('#ff0000'));  // true\n\n// With optional alpha:\nconst hexAlpha = /#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{3})(?:[0-9a-fA-F]{2})?\\b/;"
+    }
+  },
+  {
+    "task": "validate_date_iso",
+    "patterns": [
+      "\\bvalidate\\b.*\\bdate\\b.*\\b(?:yyyy[-/]?mm[-/]?dd|iso|format)\\b",
+      "\\b(?:check|validate)\\b.*\\bdate\\s+string\\b",
+      "\\bdate\\b.*\\b(?:yyyy-mm-dd|YYYY-MM-DD)\\b"
+    ],
+    "intro": "Here's how to validate a YYYY-MM-DD date string in {lang}.",
+    "notes": "Regex only checks the SHAPE — '2023-02-31' passes. Use a real date parser to validate calendar correctness (leap years, month lengths).",
+    "languages": {
+      "python": "from datetime import datetime\n\n\ndef is_valid_date(date_str: str) -> bool:\n    \"\"\"True for real calendar dates in YYYY-MM-DD form.\"\"\"\n    try:\n        datetime.strptime(date_str, '%Y-%m-%d')\n        return True\n    except ValueError:\n        return False\n\n# Shape check first (regex):\nimport re\nshape_ok = re.fullmatch(r'\\d{4}-\\d{2}-\\d{2}', date_str) is not None\n\n# Examples:\nprint(is_valid_date('2023-02-28'))   # True\nprint(is_valid_date('2023-02-31'))   # False (Feb has 28/29 days)\nprint(is_valid_date('2023-13-01'))   # False (month 13)\nprint(is_valid_date('23-02-28'))     # False (wrong shape)\n\n# Range-aware alternative:\ndef is_valid_iso(s: str) -> bool:\n    import re as _re\n    if not _re.fullmatch(r'\\d{4}-\\d{2}-\\d{2}', s):\n        return False\n    y, m, d = map(int, s.split('-'))\n    return 1 <= m <= 12 and 1 <= d <= 31\n\n# Note: is_valid_iso('2023-02-31') is True — use strptime for full checks.",
+      "javascript": "function isValidDate(dateStr) {\n    // Shape check first:\n    if (!/^\\d{4}-\\d{2}-\\d{2}$/.test(dateStr)) return false;\n\n    const [y, m, d] = dateStr.split('-').map(Number);\n    const date = new Date(Date.UTC(y, m - 1, d));\n    // Date.UTC rolls over invalid values — compare back:\n    return date.getUTCFullYear() === y &&\n           date.getUTCMonth() === m - 1 &&\n           date.getUTCDate() === d;\n}\n\nconsole.log(isValidDate('2023-02-28'));  // true\nconsole.log(isValidDate('2023-02-31'));  // false\nconsole.log(isValidDate('2023-13-01'));  // false\n\n// Note: new Date('2023-02-31') would roll over to Mar 3 —\n// that's why the round-trip comparison above is needed."
+    }
+  },
+  {
+    "task": "substring_search",
+    "patterns": [
+      "\\bfind\\b.*\\bsubstring\\b",
+      "\\bsubstring\\s+(?:search|find|index)\\b",
+      "\\b(?:index|position)\\s+of\\s+(?:a\\s+)?substring\\b"
+    ],
+    "intro": "Here's how to find a substring's position in {lang}.",
+    "notes": "Python str.find returns -1 when absent; str.index raises ValueError. JS indexOf returns -1; use .search() with regexes. For repeated matches, use finditer (Python) or matchAll (JS).",
+    "languages": {
+      "python": "text = 'the quick brown fox'\n\nprint(text.find('quick'))      # 4\nprint(text.find('zzz'))        # -1\n\n# index() raises when absent:\ntry:\n    print(text.index('quick'))\nexcept ValueError:\n    print('not found')\n\n# Last occurrence:\nprint(text.rfind('o'))         # 15\n\n# All occurrences:\ndef all_indexes(text: str, sub: str):\n    start = 0\n    while True:\n        i = text.find(sub, start)\n        if i == -1:\n            return\n        yield i\n        start = i + 1\n\nprint(list(all_indexes('banana', 'na')))   # [2, 4]\n\n# Case-insensitive:\nprint(text.lower().find('QUICK'.lower()))",
+      "javascript": "const text = 'the quick brown fox';\n\nconsole.log(text.indexOf('quick'));   // 4\nconsole.log(text.indexOf('zzz'));     // -1\n\n// Last occurrence:\nconsole.log(text.lastIndexOf('o'));   // 15\n\n// All occurrences:\nfunction allIndexes(text, sub) {\n    const indexes = [];\n    let i = text.indexOf(sub);\n    while (i !== -1) {\n        indexes.push(i);\n        i = text.indexOf(sub, i + 1);\n    }\n    return indexes;\n}\nconsole.log(allIndexes('banana', 'na'));   // [2, 4]\n\n// Case-insensitive:\nconsole.log(text.toLowerCase().indexOf('QUICK'.toLowerCase()));"
+    }
+  }
+]

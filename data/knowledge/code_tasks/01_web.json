@@ -3,7 +3,7 @@
     {
       "task": "web_page",
       "patterns": [
-        "\\b(?:create|make|build|design|generate|develop|craft|code)\\b.*\\b(?:website|web\\s*site|web\\s*page|landing\\s*page|homepage|home\\s*page|portfolio|web\\s*app)\\b(?!\\s+(?:scraper|scraping))",
+        "^(?!.*\\b(?:docker|react|vue|angular|svelte|flask|django|fastapi|node|express|javascript|typescript|python|php|go\\b|rust|scraper|scraping|api)\\b).*\\b(?:create|make|build|design|generate|develop|craft|code)\\b.*\\b(?:website|web\\s*site|web\\s*page|landing\\s*page|homepage|home\\s*page|portfolio|web\\s*app)\\b",
         "\\b(?:website|web\\s*site|web\\s*page|site|landing\\s*page)\\s+(?:for|about|of)\\b",
         "\\b(?:taco|pizza|burger|sushi|coffee|cafe|bakery|ice\\s*cream|bar|restaurant)\\b.*\\b(?:website|web\\s*site|web\\s*page|site)\\b\\s*$",
         "\\bportfolio\\s+(?:website|web\\s*site|web\\s*page|site)\\b\\s*$"

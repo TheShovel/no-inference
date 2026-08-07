@@ -1,0 +1,68 @@
+[
+  {
+    "task": "pytest_test",
+    "patterns": [
+      "^(?!.*\\b(?:fixtures?|mock|monkeypatch|async|asyncio|parametrize|mark)\\b).*\\bpytest\\b",
+      "\\b(?:write|create)\\b.*\\b(?:unit\\s+)?test\\b.*\\b(?:raises?|error|exception)\\b",
+      "\\btest\\b.*\\b(?:raises?|exceptions?)\\b"
+    ],
+    "intro": "Here's how to write a pytest test for a Python function.",
+    "notes": "Test functions start with test_; assert raises/fixtures are the pytest way. Run with `pytest` or `pytest -k name`. Parametrize covers multiple inputs in one test.",
+    "languages": {
+      "python": "# app.py (the code under test):\ndef add(a, b):\n    return a + b\n\n# test_app.py:\nimport pytest\nfrom app import add\n\n\ndef test_add_positive_numbers():\n    assert add(2, 3) == 5\n\n\ndef test_add_negative_numbers():\n    assert add(-1, 1) == 0\n\n\n# Parametrize — one test, many cases:\n@pytest.mark.parametrize('a,b,expected', [\n    (2, 3, 5),\n    (0, 0, 0),\n    (-1, -1, -2),\n])\ndef test_add_cases(a, b, expected):\n    assert add(a, b) == expected\n\n\n# Testing that an error is raised:\ndef divide(a, b):\n    if b == 0:\n        raise ZeroDivisionError('cannot divide by zero')\n    return a / b\n\n\ndef test_divide_by_zero_raises():\n    with pytest.raises(ZeroDivisionError):\n        divide(1, 0)\n\n# Run:  pytest test_app.py -v",
+      "javascript": "// Jest equivalent (see the jest task) — pytest is Python-only."
+    }
+  },
+  {
+    "task": "jest_test",
+    "patterns": [
+      "\\bjest\\b"
+    ],
+    "intro": "Here's how to write a unit test in JavaScript with Jest.",
+    "notes": "describe/test/it structure the suite; expect(...).toBe(...) asserts. jest.fn() creates mocks; jest.mock replaces modules. Run with `npm test` (configured to use jest).",
+    "languages": {
+      "javascript": "// utils.js (code under test):\nfunction add(a, b) {\n    return a + b;\n}\nmodule.exports = { add };\n\n// utils.test.js:\nconst { add } = require('./utils');\n\ndescribe('add', () => {\n    it('adds positive numbers', () => {\n        expect(add(2, 3)).toBe(5);\n    });\n\n    it('adds negatives', () => {\n        expect(add(-1, 1)).toBe(0);\n    });\n\n    it.each([\n        [2, 3, 5],\n        [0, 0, 0],\n        [-1, -1, -2],\n    ])('adds %i + %i = %i', (a, b, expected) => {\n        expect(add(a, b)).toBe(expected);\n    });\n});\n\n// package.json needs:\n// {\"scripts\": {\"test\": \"jest\"}, \"devDependencies\": {\"jest\": \"^29\"}}\n\n// Async tests:\nit('fetches data', async () => {\n    const data = await fetchData();\n    expect(data).toHaveProperty('ok', true);\n});\n\n// Mocks:\nconst fn = jest.fn();\nfn.mockReturnValue(42);\n// expect(fn).toHaveBeenCalledWith(...)",
+      "python": "# Pytest equivalent (see the pytest task) — Jest is JavaScript-only."
+    },
+    "default_lang": "javascript"
+  },
+  {
+    "task": "pytest_fixtures",
+    "patterns": [
+      "\\bfixtures?\\b.*\\bpytest\\b",
+      "\\bpytest\\b.*\\bfixtures?\\b",
+      "\\b@pytest\\s*\\.\\s*fixture\\b"
+    ],
+    "intro": "Here's how to use fixtures in pytest.",
+    "notes": "@pytest.fixture marks a setup function; tests take it as a parameter to use it. yield fixtures run teardown after the test. Scope (\"function\", \"module\", \"session\") controls how often the fixture runs; conftest.py shares fixtures across files.",
+    "languages": {
+      "python": "import pytest\n\n@pytest.fixture\ndef db_connection():\n    conn = create_connection()   # setup\n    yield conn                   # test runs here\n    conn.close()                 # teardown\n\n@pytest.fixture(scope=\"module\")\ndef config():\n    return load_config()\n\ndef test_insert(db_connection):\n    db_connection.insert(...)\n    assert db_connection.count() == 1\n"
+    }
+  },
+  {
+    "task": "pytest_mock",
+    "patterns": [
+      "\\bmock\\b.*\\b(?:requests|http|api)\\b.*\\b(?:pytest|test)\\b",
+      "\\b(?:pytest|test)\\b.*\\bmock\\b.*\\brequests\\b",
+      "\\bmonkeypatch\\b"
+    ],
+    "intro": "Here's how to mock requests in pytest.",
+    "notes": "monkeypatch.setattr replaces an attribute for the test and restores it afterwards. Patch where the name is LOOKED UP (the module that imports it), not where it's defined. responses or requests-mock are higher-level alternatives for complex APIs.",
+    "languages": {
+      "python": "import requests\nimport pytest\n\ndef fetch_user(api_url, user_id):\n    resp = requests.get(f'{api_url}/users/{user_id}')\n    resp.raise_for_status()\n    return resp.json()\n\ndef test_fetch_user(monkeypatch):\n    class FakeResp:\n        def raise_for_status(self):\n            pass\n        def json(self):\n            return {'id': 1, 'name': 'alice'}\n\n    def fake_get(url):\n        assert 'users/1' in url\n        return FakeResp()\n\n    monkeypatch.setattr(requests, 'get', fake_get)\n    assert fetch_user('https://api.example.com', 1)['name'] == 'alice'\n"
+    }
+  },
+  {
+    "task": "pytest_async",
+    "patterns": [
+      "\\basync\\b.*\\b(?:pytest|test)\\b",
+      "\\b(?:pytest|test)\\b.*\\basync\\b",
+      "\\basyncio\\b.*\\b(?:pytest|test)\\b"
+    ],
+    "intro": "Here's how to write async tests with pytest.",
+    "notes": "Install pytest-asyncio and use @pytest.mark.asyncio on async test functions, or set asyncio_mode = \"auto\" in pyproject/pytest.ini so async tests run without the marker. Pass an event_loop fixture to share one loop.",
+    "languages": {
+      "python": "# pip install pytest-asyncio\n\nimport asyncio\nimport pytest\n\nasync def fetch_data():\n    await asyncio.sleep(0.01)\n    return [1, 2, 3]\n\n@pytest.mark.asyncio\nasync def test_fetch_data():\n    data = await fetch_data()\n    assert data == [1, 2, 3]\n\n# Or set asyncio_mode = \"auto\" in pytest.ini and drop the marker.\n"
+    }
+  }
+]

@@ -41,12 +41,13 @@
         "\\bcount\\s+words?\\b",
         "\\bword\\s+frequenc\\w+\\b",
         "\\bword\\s+count\\b",
-        "\\bhow\\s+many\\s+times\\s+each\\s+word\\b"
+        "\\bhow\\s+many\\s+times\\s+each\\s+word\\b",
+        "\\bcount\\b.*\\b(?:the\\s+)?(?:number\\s+of\\s+)?words?\\b.*\\b(?:in\\s+(?:a\\s+|the\\s+)?(?:string|text|sentence|phrase))\\b"
       ],
       "intro": "Here's a {lang} function that counts how many times each word appears in a text.",
       "notes": "Lowercasing and splitting on whitespace handles most real text. For production-grade counting, strip punctuation too (the regex version) so 'Hello,' and 'hello' count as the same word.",
       "languages": {
-        "python": "def count_words(text: str) -> dict[str, int]:\n    \"\"\"Return {word: count} for every word in the text.\"\"\"\n    counts: dict[str, int] = {}\n    for word in text.lower().split():\n        counts[word] = counts.get(word, 0) + 1\n    return counts\n\n# Punctuation-aware version:\ndef count_words_clean(text: str) -> dict[str, int]:\n    import re\n    words = re.findall(r'\\b[\\w\\']+\\b', text.lower())\n    return {w: words.count(w) for w in set(words)}\n\n# Example:\nprint(count_words(\"the cat and the dog and the bird\"))\n# {'the': 3, 'cat': 1, 'and': 2, 'dog': 1, 'bird': 1}",
+        "python": "from collections import Counter\n\ndef count_words(text: str) -> dict:\n    \"\"\"Return {word: count} for a piece of text.\"\"\"\n    return dict(Counter(text.lower().split()))\n\n# Example:\ntext = 'the cat and the dog and the bird'\nprint(count_words(text))\n# {'the': 3, 'cat': 1, 'and': 2, 'dog': 1, 'bird': 1}\n\n# Word counts from a file:\nwith open('notes.txt', encoding='utf-8') as f:\n    counts = Counter(f.read().lower().split())\n\n# Most common words:\nprint(counts.most_common(5))",
         "javascript": "function countWords(text) {\n  const counts = {};\n  for (const word of text.toLowerCase().split(/\\s+/)) {\n    if (word) counts[word] = (counts[word] || 0) + 1;\n  }\n  return counts;\n}\n\n# Example:\nconsole.log(countWords('the cat and the dog and the bird'));\n// { the: 3, cat: 1, and: 2, dog: 1, bird: 1 }",
         "go": "// CountWords returns {word: count} for a text (whitespace-split, lowercase).\nfunc CountWords(text string) map[string]int {\n\tcounts := make(map[string]int)\n\tfor _, w := range strings.Fields(strings.ToLower(text)) {\n\t\tcounts[w]++\n\t}\n\treturn counts\n}\n\n// Example:\n// fmt.Println(CountWords(\"the cat and the dog and the bird\")) // map[and:2 bird:1 cat:1 dog:1 the:3]",
         "rust": "// CountWords returns {word: count} for a text (whitespace-split, lowercase).\nuse std::collections::HashMap;\n\nfn count_words(text: &str) -> HashMap<String, usize> {\n\tlet mut counts = HashMap::new();\n\tfor w in text.to_lowercase().split_whitespace() {\n\t\t*counts.entry(w.to_string()).or_insert(0) += 1;\n\t}\n\tcounts\n}\n\n// Example:\n// println!(\"{:?}\", count_words(\"the cat and the dog and the bird\"));",
@@ -58,7 +59,9 @@
       "patterns": [
         "\\bslugify\\b",
         "\\b(?:url|seo)[-\\s]friendly\\s+string\\b",
-        "\\bconvert\\s+.*\\bto\\s+a\\s+slug\\b"
+        "\\bconvert\\s+.*\\bto\\s+a\\s+slug\\b",
+        "\\breplace\\b.*\\bspaces?\\b.*\\b(?:with|by)\\b.*\\bdashes?\\b",
+        "\\b(?:spaces?|whitespace)\\b.*\\b(?:to|into)\\b.*\\bdashes?\\b"
       ],
       "intro": "Here's a {lang} function that turns any text into a URL-friendly slug.",
       "notes": "The recipe: lowercase, replace non-alphanumerics with dashes, collapse runs of dashes, strip edges. Transliteration of accented characters (é → e) needs an extra library step in most languages.",
@@ -143,7 +146,10 @@
         "\\bretry\\b.*\\bbackoff\\b",
         "\\bexponential\\s+backoff\\b",
         "\\bretry\\s+(?:a\\s+)?function\\b",
-        "\\bretry\\s+logic\\b"
+        "\\bretry\\s+logic\\b",
+        "\\bretr\\w+\\b.*\\b(?:function|request|call|operation)\\b.*\\b(?:fail\\w*|error|exception)\\b",
+        "\\bretr\\w+\\b.*\\bfail\\w*\\b.*\\b(?:request|call|operation|url)\\b",
+        "\\bretr\\w+\\b.*\\b(?:request|call|operation)\\b"
       ],
       "intro": "Here's a {lang} retry wrapper with exponential backoff and jitter.",
       "notes": "Backoff (0.5s, 1s, 2s, …) prevents hammering a failing service; jitter (±random) prevents synchronized retry storms. Only retry idempotent operations — retrying a non-idempotent POST can double-create resources.",
@@ -258,7 +264,8 @@
       "patterns": [
         "\\b(?:generate|get|create|produce)\\b.*\\brandom\\s+number\\b",
         "\\brandom\\s+(?:number|integer|int)\\b",
-        "\\b(?:random|rand)\\s+(?:between|from|in)\\s+(?:a\\s+)?range\\b"
+        "\\b(?:random|rand)\\s+(?:between|from|in)\\s+(?:a\\s+)?range\\b",
+        "\\brandom\\s+numbers?\\b"
       ],
       "intro": "Here's how to generate a random number in {lang}.",
       "notes": "In Python `random.randint(a, b)` includes both ends, `random.random()` is [0, 1). In JS `Math.random()` is [0, 1) — scale and floor for integers. For security-sensitive values (tokens, passwords) use `secrets` (Python) / `crypto.getRandomValues` (JS), never `Math.random`.",

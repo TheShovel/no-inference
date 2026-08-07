@@ -224,7 +224,7 @@ no-inference/
     prompt_templates/       Instruction templates for essays, code, etc.
     cache/                  Wikipedia response cache
   docs/                     Documentation
-  tests/                    Test suite (19 suites, run `python3 tests/run_all.py`)
+  tests/                    Test suite (20 suites, run `python3 tests/run_all.py`)
 ```
 
 ## Testing
@@ -304,6 +304,23 @@ without opening them first, and knowledge answers with example code
 blocks are never turned into files.
 
 ## Benchmark results
+
+**Coding capability (deterministic probe batteries)**
+
+Two batteries of real developer prompts (phrased the way someone asks an
+LLM) are run through the full engine every test run
+(`tests/test_probe_coding.py`):
+
+| Battery | Coverage | Pass rate |
+|---------|----------|-----------|
+| probe1 — 239 common developer requests (algorithms, strings, regex, file I/O, HTTP, SQL, sysadmin, devops, multi-language) | 239/239 | 100% |
+| probe2 — 94 harder/varied requests (alternate phrasings, compound tasks, less common recipes, follow-ups) | 94/94 | 100% |
+| probe3 — 52 hardest requests (debugging pasted code, error explanations, review/refactor, config & integration) | 52/52 | 100% |
+
+Each probe asserts the response contains real code in the requested
+language (plus task- and snippet-level checks). The synthesizer now covers
+**274 tasks** across 16 languages — everything from "reverse a string" to
+Dijkstra, Dockerfiles, SQL window functions, Luhn checks, and pytest suites.
 
 **NLG Quality (deterministic)**
 

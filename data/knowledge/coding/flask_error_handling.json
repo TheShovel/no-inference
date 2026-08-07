@@ -1,0 +1,14 @@
+[
+  {
+    "q": [
+      "how do i handle errors in flask",
+      "flask error handler",
+      "flask error handling",
+      "custom error pages in flask",
+      "flask 404 handler",
+      "flask errorhandler decorator",
+      "how to return a 404 in flask"
+    ],
+    "a": "Here's how to handle errors in Flask with the @app.errorhandler decorator:\n\n```python\nfrom flask import Flask, jsonify, render_template, request\n\napp = Flask(__name__)\n\n# JSON API errors:\n@app.errorhandler(404)\ndef not_found(e):\n    return jsonify(error='not found', path=request.path), 404\n\n@app.errorhandler(500)\ndef server_error(e):\n    return jsonify(error='internal server error'), 500\n\n# Per-status shorthand for simple messages:\n# app.register_error_handler(404, lambda e: ('missing', 404))\n\n# Custom exception classes:\nclass ValidationError(Exception):\n    pass\n\n@app.errorhandler(ValidationError)\ndef handle_validation(e):\n    return jsonify(error=str(e)), 400\n\n# Raise it anywhere in a route:\n@app.route('/items/<int:item_id>')\ndef get_item(item_id):\n    if item_id == 0:\n        raise ValidationError('invalid item id')\n    return jsonify(item_id=item_id)\n```\n\nRegister handlers for the status codes or exception types you care about; the most specific handler wins. In debug mode Flask shows the interactive traceback, but for production set debug=False and let your handlers render clean JSON or error pages."
+  }
+]

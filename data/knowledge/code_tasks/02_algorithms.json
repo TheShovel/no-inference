@@ -1,6 +1,50 @@
 {
   "tasks": [
     {
+      "task": "nth_prime",
+      "patterns": [
+        "\\bnth\\s+prime\\b"
+      ],
+      "intro": "Here's a {lang} function that computes the nth prime number.",
+      "notes": "A sieve of Eratosthenes with a growable bound is the practical approach; each n-th prime p(n) is below n(ln n + ln ln n) for n ≥ 6, so that's a safe upper bound to sieve to.",
+      "languages": {
+        "python": "def nth_prime(n: int) -> int:\n    \"\"\"Return the n-th prime (1-based: nth_prime(1) == 2).\"\"\"\n    if n < 1:\n        raise ValueError('n must be >= 1')\n    # Upper bound: p(n) < n(ln n + ln ln n) for n >= 6\n    import math\n    if n < 6:\n        limit = 15\n    else:\n        limit = int(n * (math.log(n) + math.log(math.log(n)))) + 10\n    sieve = bytearray(b'\\x01') * (limit + 1)\n    sieve[0] = sieve[1] = 0\n    for i in range(2, int(limit ** 0.5) + 1):\n        if sieve[i]:\n            sieve[i*i::i] = bytearray(len(range(i*i, limit + 1, i)))\n    count = 0\n    for i, is_prime in enumerate(sieve):\n        if is_prime:\n            count += 1\n            if count == n:\n                return i\n    raise ValueError('bound too small')\n\n# Example:\nprint(nth_prime(1))    # 2\nprint(nth_prime(10))   # 29\nprint(nth_prime(100))  # 541"
+      }
+    },
+    {
+      "task": "nth_prime",
+      "patterns": [
+        "\\bnth\\s+prime\\b"
+      ],
+      "intro": "Here's a {lang} function that computes the nth prime number.",
+      "notes": "A sieve of Eratosthenes with a growable bound is the practical approach; each n-th prime p(n) is below n(ln n + ln ln n) for n ≥ 6, so that's a safe upper bound to sieve to.",
+      "languages": {
+        "python": "def nth_prime(n: int) -> int:\n    \"\"\"Return the n-th prime (1-based: nth_prime(1) == 2).\"\"\"\n    if n < 1:\n        raise ValueError('n must be >= 1')\n    # Upper bound: p(n) < n(ln n + ln ln n) for n >= 6\n    import math\n    if n < 6:\n        limit = 15\n    else:\n        limit = int(n * (math.log(n) + math.log(math.log(n)))) + 10\n    sieve = bytearray(b'\\x01') * (limit + 1)\n    sieve[0] = sieve[1] = 0\n    for i in range(2, int(limit ** 0.5) + 1):\n        if sieve[i]:\n            sieve[i*i::i] = bytearray(len(range(i*i, limit + 1, i)))\n    count = 0\n    for i, is_prime in enumerate(sieve):\n        if is_prime:\n            count += 1\n            if count == n:\n                return i\n    raise ValueError('bound too small')\n\n# Example:\nprint(nth_prime(1))    # 2\nprint(nth_prime(10))   # 29\nprint(nth_prime(100))  # 541"
+      }
+    },
+    {
+      "task": "nth_prime",
+      "patterns": [
+        "\\bnth\\s+prime\\b"
+      ],
+      "intro": "Here's a {lang} function that computes the nth prime number.",
+      "notes": "A sieve of Eratosthenes with a growable bound is the practical approach; each n-th prime p(n) is below n(ln n + ln ln n) for n ≥ 6, so that's a safe upper bound to sieve to.",
+      "languages": {
+        "python": "def nth_prime(n: int) -> int:\n    \"\"\"Return the n-th prime (1-based: nth_prime(1) == 2).\"\"\"\n    if n < 1:\n        raise ValueError('n must be >= 1')\n    # Upper bound: p(n) < n(ln n + ln ln n) for n >= 6\n    import math\n    if n < 6:\n        limit = 15\n    else:\n        limit = int(n * (math.log(n) + math.log(math.log(n)))) + 10\n    sieve = bytearray(b'\\x01') * (limit + 1)\n    sieve[0] = sieve[1] = 0\n    for i in range(2, int(limit ** 0.5) + 1):\n        if sieve[i]:\n            sieve[i*i::i] = bytearray(len(range(i*i, limit + 1, i)))\n    count = 0\n    for i, is_prime in enumerate(sieve):\n        if is_prime:\n            count += 1\n            if count == n:\n                return i\n    raise ValueError('bound too small')\n\n# Example:\nprint(nth_prime(1))    # 2\nprint(nth_prime(10))   # 29\nprint(nth_prime(100))  # 541"
+      }
+    },
+    {
+      "task": "nth_prime",
+      "patterns": [
+        "\\bnth\\s+prime\\b"
+      ],
+      "intro": "Here's a {lang} function that computes the nth prime number.",
+      "notes": "A sieve of Eratosthenes with a growable bound is the practical approach; each n-th prime p(n) is below n(ln n + ln ln n) for n ≥ 6, so that's a safe upper bound to sieve to.",
+      "languages": {
+        "python": "def nth_prime(n: int) -> int:\n    \"\"\"Return the n-th prime (1-based: nth_prime(1) == 2).\"\"\"\n    if n < 1:\n        raise ValueError('n must be >= 1')\n    # Upper bound: p(n) < n(ln n + ln ln n) for n >= 6\n    import math\n    if n < 6:\n        limit = 15\n    else:\n        limit = int(n * (math.log(n) + math.log(math.log(n)))) + 10\n    sieve = bytearray(b'\\x01') * (limit + 1)\n    sieve[0] = sieve[1] = 0\n    for i in range(2, int(limit ** 0.5) + 1):\n        if sieve[i]:\n            sieve[i*i::i] = bytearray(len(range(i*i, limit + 1, i)))\n    count = 0\n    for i, is_prime in enumerate(sieve):\n        if is_prime:\n            count += 1\n            if count == n:\n                return i\n    raise ValueError('bound too small')\n\n# Example:\nprint(nth_prime(1))    # 2\nprint(nth_prime(10))   # 29\nprint(nth_prime(100))  # 541"
+      }
+    },
+    {
       "task": "prime",
       "patterns": [
         "\\b(?:check\\s+(?:if\\s+)?|test\\s+(?:if\\s+)?|find\\s+|determine\\s+)?(?:whether\\s+)?(?:a\\s+)?(?:number|integer|num|n)\\s+(?:is|be)\\s+(?:a\\s+)?prime\\b",
@@ -14,7 +58,7 @@
       "intro": "Here's a {lang} function that checks whether a number is prime.",
       "notes": "It rejects numbers below 2, then tests divisors only up to the square root of n, so it runs in O(√n) time. The 6k±1 step skips multiples of 2 and 3 for a constant-factor speedup.",
       "languages": {
-        "python": "def is_prime(n: int) -> bool:\n    if n < 2:\n        return False\n    if n in (2, 3):\n        return True\n    if n % 2 == 0 or n % 3 == 0:\n        return False\n    i = 5\n    while i * i <= n:\n        if n % i == 0 or n % (i + 2) == 0:\n            return False\n        i += 6\n    return True\n\n# Example:\nfor x in (2, 17, 15, 97, 100):\n    print(x, is_prime(x))",
+        "python": "def is_prime(n: int) -> bool:\n    if n < 2:\n        return False\n    if n in (2, 3):\n        return True\n    if n % 2 == 0 or n % 3 == 0:\n        return False\n    i = 5\n    while i * i <= n:\n        if n % i == 0 or n % (i + 2) == 0:\n            return False\n        i += 6\n    return True\n\n# Example:\nfor x in (2, 17, 15, 97, 100):\n    print(x, is_prime(x))\n\n# All primes up to n (sieve of Eratosthenes):\ndef primes_up_to(n: int) -> list:\n    if n < 2:\n        return []\n    sieve = bytearray(b'\\x01') * (n + 1)\n    sieve[0] = sieve[1] = 0\n    for i in range(2, int(n ** 0.5) + 1):\n        if sieve[i]:\n            sieve[i*i::i] = bytearray(len(range(i*i, n + 1, i)))\n    return [i for i, ok in enumerate(sieve) if ok]\n\n# Example:\nprint(primes_up_to(30))  # [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]",
         "javascript": "function isPrime(n) {\n    if (n < 2) return false;\n    if (n === 2 || n === 3) return true;\n    if (n % 2 === 0 || n % 3 === 0) return false;\n    for (let i = 5; i * i <= n; i += 6) {\n        if (n % i === 0 || n % (i + 2) === 0) return false;\n    }\n    return true;\n}\n\n// Example:\n[2, 17, 15, 97, 100].forEach(x => console.log(x, isPrime(x)));",
         "java": "public static boolean isPrime(int n) {\n    if (n < 2) return false;\n    if (n == 2 || n == 3) return true;\n    if (n % 2 == 0 || n % 3 == 0) return false;\n    for (int i = 5; (long) i * i <= n; i += 6) {\n        if (n % i == 0 || n % (i + 2) == 0) return false;\n    }\n    return true;\n}",
         "c++": "bool isPrime(int n) {\n    if (n < 2) return false;\n    if (n == 2 || n == 3) return true;\n    if (n % 2 == 0 || n % 3 == 0) return false;\n    for (int i = 5; (long long) i * i <= n; i += 6) {\n        if (n % i == 0 || n % (i + 2) == 0) return false;\n    }\n    return true;\n}",
@@ -52,7 +96,7 @@
       "notes": "The iterative version runs in O(n) time and O(1) space. The naive recursive version is O(2^n) — avoid it for anything past n ≈ 35. For large n, matrix exponentiation or fast doubling gives O(log n).",
       "languages": {
         "python": "def fibonacci(n: int) -> list[int]:\n    \"\"\"Return the first n Fibonacci numbers.\"\"\"\n    if n <= 0:\n        return []\n    seq = [0, 1]\n    while len(seq) < n:\n        seq.append(seq[-1] + seq[-2])\n    return seq[:n]\n\n# Example:\nprint(fibonacci(10))  # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]",
-        "javascript": "function fibonacci(n) {\n    if (n <= 0) return [];\n    const seq = [0, 1];\n    while (seq.length < n) {\n        seq.push(seq[seq.length - 1] + seq[seq.length - 2]);\n    }\n    return seq.slice(0, n);\n}\n\n// Example:\nconsole.log(fibonacci(10));  // [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]",
+        "javascript": "function fibonacci(n) {\n    if (n <= 0) return [];\n    const seq = [0, 1];\n    while (seq.length < n) {\n        seq.push(seq[seq.length - 1] + seq[seq.length - 2]);\n    }\n    return seq.slice(0, n);\n}\n\n// Example:\nconsole.log(fibonacci(10));  // [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]\n\n// Memoized (top-down) — cache results per n:\nconst memo = {};\nfunction fibMemo(n) {\n    if (n <= 1) return n;\n    if (n in memo) return memo[n];\n    memo[n] = fibMemo(n - 1) + fibMemo(n - 2);\n    return memo[n];\n}\n\nconsole.log(fibMemo(40));  // 102334155 — instant, vs exponential naive recursion\n",
         "java": "public static List<Long> fibonacci(int n) {\n    List<Long> seq = new ArrayList<>();\n    if (n <= 0) return seq;\n    seq.add(0L);\n    if (n == 1) return seq;\n    seq.add(1L);\n    while (seq.size() < n) {\n        seq.add(seq.get(seq.size() - 1) + seq.get(seq.size() - 2));\n    }\n    return seq;\n}",
         "c++": "std::vector<long long> fibonacci(int n) {\n    std::vector<long long> seq;\n    if (n <= 0) return seq;\n    seq.push_back(0);\n    if (n == 1) return seq;\n    seq.push_back(1);\n    while ((int) seq.size() < n) {\n        seq.push_back(seq[seq.size() - 1] + seq[seq.size() - 2]);\n    }\n    return seq;\n}",
         "go": "func Fibonacci(n int) []int64 {\n    seq := []int64{}\n    if n <= 0 {\n        return seq\n    }\n    seq = append(seq, 0)\n    if n == 1 {\n        return seq\n    }\n    seq = append(seq, 1)\n    for len(seq) < n {\n        seq = append(seq, seq[len(seq)-1]+seq[len(seq)-2])\n    }\n    return seq\n}",
@@ -140,11 +184,13 @@
         "\\bsort\\s+(?:a\\s+)?(?:list|array|slice|vector)\\b",
         "\\bsort\\s+(?:the\\s+)?(?:list|array|slice)\\s+(?:in|by)\\b",
         "\\bsorting\\s+(?:a\\s+)?(?:list|array|slice)\\b",
-        "\\bquicksort\\b",
-        "\\bmerge\\s+sort\\b",
+        "^(?!.*\\b(?:implement|write|code|build|create)\\b).*\\bquicksort\\b",
+        "^(?!.*\\b(?:implement|write|code|build|create)\\b).*\\bmerge\\s+sort\\b",
         "\\bbubble\\s+sort\\b",
         "\\bselection\\s+sort\\b",
-        "\\binsertion\\s+sort\\b"
+        "\\binsertion\\s+sort\\b",
+        "\\bsort\\s+(?:a\\s+|the\\s+|this\\s+)?(?:list|array|slice|vector)\\s+(?:in\\s+)?(?:descending|reverse)\\b",
+        "\\b(?:descending|reverse)\\s+order\\b.*\\bsort\\b"
       ],
       "intro": "Here's a {lang} function that sorts a list of numbers in ascending order.",
       "notes": "The built-in sort (Timsort in Python/JS, introsort in C++, dual-pivot quicksort in Java) is almost always the right choice — O(n log n) average, stable, and heavily optimized. Only hand-roll a sort when you need a custom stable comparator or want to learn the algorithms.",
@@ -164,7 +210,13 @@
         "\\b(?:check|test|see|determine)\\s+(?:if|whether)\\s+(?:a\\s+)?number\\s+is\\s+(?:an?\\s+)?(?:even|odd)\\b",
         "\\b(?:even|odd)\\s+(?:number\\s+)?check\\b",
         "\\bis\\s+(?:n\\s+)?(?:even|odd)\\b",
-        "\\b(?:even|odd)\\s+function\\b"
+        "\\b(?:even|odd)\\s+function\\b",
+        "\\b(?:even|odd)\\s+or\\s+(?:odd|even)\\b",
+        "\\bis\\s+this\\s+number\\s+(?:even|odd)\\b",
+        "\\b(?:even|odd)\\s+or\\s+(?:odd|even)\\b",
+        "\\bis\\s+this\\s+number\\s+(?:even|odd)\\b",
+        "\\b(?:even|odd)\\s+or\\s+(?:odd|even)\\b",
+        "\\bis\\s+this\\s+number\\s+(?:even|odd)\\b"
       ],
       "intro": "Here's a {lang} function that checks whether a number is even.",
       "notes": "`n % 2 == 0` is the universal check — the modulo operator works in every language. Watch out for negatives: in Python `-2 % 2 == 0` is True, which is what you want here.",
@@ -182,8 +234,11 @@
       "patterns": [
         "\\b(?:calculate|compute|find|get)\\b.*\\bpower\\b.*\\b(?:number|base)\\b",
         "\\b(?:raise|calculate)\\s+(?:a\\s+)?(?:number|base)\\s+to\\s+(?:the\\s+)?(?:power|exponent)\\b",
+        "\\b(?:x|n|number|base|a|value)\\s+raised\\s+to\\s+(?:the\\s+)?(?:power|exponent)(?:\\s+of\\s+(?:n|y|an?\\s+exponent))?\\b",
+        "\\b(?:compute|calculate|find|get)\\b.*\\brais(?:e|ed)\\s+(?:a\\s+|the\\s+)?(?:number|base|value|x|n)\\b",
         "\\bexponentiation\\b",
-        "\\bpower\\s+of\\s+(?:a\\s+)?(?:number|base)\\b"
+        "\\bpower\\s+of\\s+(?:a\\s+)?(?:number|base)\\b",
+        "\\bpower\\s+function\\b"
       ],
       "intro": "Here's a {lang} function that raises a number to a power.",
       "notes": "`**` / `Math.pow` handle fractional and negative exponents. For integer powers with a modulo (large numbers), use fast exponentiation (exponentiation by squaring).",

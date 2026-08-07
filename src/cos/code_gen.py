@@ -89,11 +89,11 @@ _CODING_CUE_RE = re.compile(
 def _norm_aliases(text: str) -> str:
     """Normalize punctuation-heavy language names so they match aliases."""
     t = text.lower()
-    # "c++" -> "cplusplus"  (also "c++11", "c++17")
-    t = re.sub(r'\bc\s*\+\+\s*(?:\d+)?\b', 'cplusplus', t)
-    # "c#" -> "csharp"
-    t = re.sub(r'\bc\s*#\b', 'csharp', t)
-    t = re.sub(r'\bc#\s*(?:\.net)?\b', 'csharp', t)
+    # "c++" -> "cplusplus"  (also "c++11", "c++17", "c++ function")
+    t = re.sub(r'\bc\s*\+\+(?:\s*\d+)?(?![a-z0-9])', 'cplusplus', t)
+    # "c#" -> "csharp" ("c# method" included — the old trailing \b missed
+    # '#' followed by a space since both are non-word characters)
+    t = re.sub(r'\bc\s*#(?![a-z0-9])', 'csharp', t)
     # "node.js" -> "node.js" is already a literal alias
     return t
 
@@ -109,9 +109,8 @@ def detect_language(query: str) -> Optional[str]:
     #    files" is a bash request even though 'python' appears).
     if re.search(r'\b(?:bash|shell|zsh|sh)\s+script\b', q, re.IGNORECASE):
         return 'bash'
-    if re.search(r'\b(?:command\s*line|terminal|cli)\b', q, re.IGNORECASE):
-        return 'bash'
     # 1. Exact alias hits (word-boundary), longest alias first.
+    _explicit = None
     for lang, aliases in _LANG_ALIASES.items():
         for alias in sorted(aliases, key=len, reverse=True):
             alias_n = _norm_aliases(alias)
@@ -125,8 +124,16 @@ def detect_language(query: str) -> Optional[str]:
                     return 'go'
                 continue
             if re.search(r'(?<![a-z0-9])' + re.escape(alias_n) + r'(?![a-z0-9])', q):
-                return lang
-    # 2. Tool-to-language fallbacks for framework names.
+                _explicit = lang
+                break
+        if _explicit:
+            return _explicit
+    # 2. Generic terminal words only count as bash when the query doesn't
+    #    already name another language: "parse command line arguments in
+    #    python" is a Python request, not a bash one.
+    if re.search(r'\b(?:command\s*line|terminal|cli)\b', q, re.IGNORECASE):
+        return 'bash'
+    # 3. Tool-to-language fallbacks for framework names.
     if re.search(r'\bflask\b|\bfastapi\b|\bdjango\b', q, re.IGNORECASE):
         return 'python'
     if re.search(r'\bexpress\b|\bnode\b|react|vue', q, re.IGNORECASE):
@@ -435,11 +442,14 @@ def generate_code(query: str, lang: Optional[str] = None) -> Optional[str]:
         return None
     code_templates = entry['languages']
 
-    # Task-specific default languages: git/bash tasks are shell commands;
-    # sql_* tasks are SQL; everything else defaults to Python when the query
-    # doesn't name a language.
+    # Task-specific default languages: a task can declare one with
+    # "default_lang" (git/bash/devops tasks default to bash, sql_* to SQL,
+    # everything else to Python when the query doesn't name a language).
     if lang is None:
-        if task.startswith('sql'):
+        default_lang = entry.get('default_lang')
+        if default_lang:
+            lang = default_lang
+        elif task.startswith('sql'):
             lang = 'sql'
         elif (task.startswith(('git', 'bash', 'sys'))
               or task in ('pip_install', 'npm_install')):
@@ -449,11 +459,16 @@ def generate_code(query: str, lang: Optional[str] = None) -> Optional[str]:
 
     code = code_templates.get(lang)
     if code is None:
-        # Task known but no template for the requested language: only
-        # typescript→javascript is close enough to fall back to; otherwise
-        # give up (never silently hand over the wrong language).
+        # Task known but no template for the requested language. Two safe
+        # fallbacks: typescript→javascript (shared syntax), and a task's
+        # declared default_lang (bash-centric devops tasks) when the named
+        # language is incidental ("a .gitignore for a python project").
+        # Otherwise give up — never silently hand over the wrong language.
         if lang == 'typescript' and 'javascript' in code_templates:
             code = code_templates['javascript']
+        elif code_templates.get(entry.get('default_lang')):
+            lang = entry['default_lang']
+            code = code_templates[lang]
         else:
             return None
 

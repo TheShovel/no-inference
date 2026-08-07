@@ -3,9 +3,9 @@
     {
       "task": "dedup",
       "patterns": [
-        "\\bremove\\s+duplicates?\\b",
+        "^(?!.*\\b(?:lines?|file)\\b).*\\bremove\\s+duplicates?\\b",
         "\\bdedup(?:licate)?\\b",
-        "\\bunique\\s+(?:values?|elements?)\\b",
+        "^(?!.*\\b(?:lines?|file)\\b).*\\bunique\\s+(?:values?|elements?)\\b",
         "\\bduplicates?\\s+from\\s+(?:a\\s+)?(?:list|array)\\b"
       ],
       "intro": "Here's a {lang} function that removes duplicate elements from a list while preserving order.",
@@ -120,7 +120,7 @@
       "task": "linked_list",
       "patterns": [
         "\\breverse\\s+(?:a\\s+)?linked\\s+list\\b",
-        "\\blinked\\s+list\\b"
+        "^(?!.*\\b(?:cycle|loop|circular)\\b).*\\blinked\\s+list\\b"
       ],
       "intro": "Here's a {lang} implementation of a singly linked list with a reverse method.",
       "notes": "Reversing a linked list rewires each node's `next` pointer to point at the previous node while saving the old next pointer first — O(n) time, O(1) space. A common interview question, so it's worth knowing the iterative version by heart.",

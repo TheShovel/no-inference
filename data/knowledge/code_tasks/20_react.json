@@ -1,0 +1,16 @@
+[
+  {
+    "task": "react_component",
+    "patterns": [
+      "\\breact\\b.*\\b(?:todo|component|app)\\b",
+      "\\b(?:create|build|write|make)\\b.*\\breact\\b"
+    ],
+    "intro": "Here's a React component with hooks.",
+    "notes": "useState holds local state; useEffect runs side effects (fetch, subscriptions) after render. Components re-render when state/props change — keep side effects out of the render body.",
+    "languages": {
+      "javascript": "import { useState } from 'react';\n\n// A todo list component with hooks:\nfunction TodoList() {\n    const [todos, setTodos] = useState([]);\n    const [text, setText] = useState('');\n\n    function addTodo(e) {\n        e.preventDefault();\n        if (!text.trim()) return;\n        setTodos([...todos, { id: Date.now(), text: text.trim() }]);\n        setText('');\n    }\n\n    function removeTodo(id) {\n        setTodos(todos.filter(t => t.id !== id));\n    }\n\n    return (\n        <div>\n            <h1>Todo</h1>\n            <form onSubmit={addTodo}>\n                <input\n                    value={text}\n                    onChange={e => setText(e.target.value)}\n                    placeholder=\"What needs doing?\"\n                />\n                <button type=\"submit\">Add</button>\n            </form>\n            <ul>\n                {todos.map(t => (\n                    <li key={t.id}>\n                        {t.text}\n                        <button onClick={() => removeTodo(t.id)}>x</button>\n                    </li>\n                ))}\n            </ul>\n        </div>\n    );\n}\n\nexport default TodoList;",
+      "typescript": "import { useState } from 'react';\n\ntype Todo = { id: number; text: string };\n\nfunction TodoList() {\n    const [todos, setTodos] = useState<Todo[]>([]);\n    const [text, setText] = useState('');\n\n    function addTodo(e: React.FormEvent) {\n        e.preventDefault();\n        if (!text.trim()) return;\n        setTodos([...todos, { id: Date.now(), text: text.trim() }]);\n        setText('');\n    }\n\n    function removeTodo(id: number) {\n        setTodos(todos.filter(t => t.id !== id));\n    }\n\n    return (\n        <div>\n            <h1>Todo</h1>\n            <form onSubmit={addTodo}>\n                <input value={text} onChange={e => setText(e.target.value)} />\n                <button type=\"submit\">Add</button>\n            </form>\n            <ul>\n                {todos.map(t => (\n                    <li key={t.id}>\n                        {t.text}\n                        <button onClick={() => removeTodo(t.id)}>x</button>\n                    </li>\n                ))}\n            </ul>\n        </div>\n    );\n}\n\nexport default TodoList;"
+    },
+    "default_lang": "javascript"
+  }
+]

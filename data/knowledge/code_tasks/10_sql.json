@@ -15,7 +15,8 @@
     {
       "task": "sql_insert",
       "patterns": [
-        "\\binsert\\s+(?:into|new\\s+rows?)\\b"
+        "\\binsert\\s+(?:into|new\\s+rows?)\\b",
+        "\\binsert\\s+(?:a\\s+|the\\s+)?(?:row|record)\\b"
       ],
       "intro": "Here's an SQL statement that inserts a row into a table.",
       "notes": "Column lists make the statement resilient to schema changes (adding a column won't break the insert). Use parameterized queries to avoid SQL injection — never concatenate user input into SQL strings.",
@@ -26,7 +27,8 @@
     {
       "task": "sql_update",
       "patterns": [
-        "\\bupdate\\s+(?:a\\s+)?(?:table|row|record)\\b"
+        "\\bupdate\\s+(?:a\\s+)?(?:table|row|record)\\b",
+        "^(?!.*\\b(?:join|files?|older\\s+than|linux|unix|server)\\b).*\\bupdate\\b"
       ],
       "intro": "Here's an SQL statement that updates existing rows.",
       "notes": "An UPDATE without a WHERE clause updates every row in the table. Run a SELECT with the same WHERE first to confirm which rows you're about to change.",
@@ -37,7 +39,8 @@
     {
       "task": "sql_delete",
       "patterns": [
-        "\\bdelete\\s+(?:from\\s+)?(?:a\\s+)?(?:table|row|record)\\b"
+        "\\bdelete\\s+(?:from\\s+)?(?:a\\s+)?(?:table|row|record)\\b",
+        "^(?!.*\\b(?:join|files?|older\\s+than|linux|unix|server|find\\s+and|lines?|pattern)\\b).*\\bdelete\\b"
       ],
       "intro": "Here's an SQL statement that deletes rows from a table.",
       "notes": "A DELETE without a WHERE clause empties the table — always scope it with a WHERE and consider a transaction so you can roll back. Most production systems use soft deletes (a deleted_at flag) instead.",
@@ -61,11 +64,13 @@
     {
       "task": "sql_group_by",
       "patterns": [
-        "\\bgroup\\s+by\\b",
+        "^(?!.*\\b(?:pandas|numpy|dataframe|df)\\b).*\\bgroup\\s+by\\b",
         "\\bgrouped\\s+by\\b",
         "\\b(?:sum|average|count)\\s+.*\\bper\\b",
         "\\bcount\\s+rows\\b",
-        "\\bcount\\s+records\\b"
+        "\\bcount\\s+records\\b",
+        "\\bgroup\\s+(?:rows|records)\\b.*\\bcount\\b",
+        "\\bcount\\s+(?:them|rows?|records?)\\s+per\\s+(?:group|category)\\b"
       ],
       "intro": "Here's an SQL query that groups rows and computes an aggregate.",
       "notes": "Every column in the SELECT list that isn't wrapped in an aggregate function must appear in the GROUP BY clause — most SQL engines enforce this and error out if you forget.",
@@ -78,12 +83,12 @@
       "patterns": [
         "\\bduplicate\\s+rows\\b",
         "\\bduplicates?\\s+in\\s+(?:a\\s+)?table\\b",
-        "\\bfind\\s+duplicates?\\b"
+        "^(?!.*\\b(?:list|array|elements?|lines?|items?|values?)\\b).*\\bfind\\s+duplicates?\\b"
       ],
       "intro": "Here's an SQL query that finds duplicate rows in a table.",
       "notes": "The HAVING clause filters groups after aggregation (WHERE filters before). Group by the columns that define what 'duplicate' means — grouping by every column finds exact-row duplicates; grouping by a key column finds records sharing that key.",
       "languages": {
-        "sql": "-- Rows sharing the same key column(s) — the usual definition:\nSELECT email, COUNT(*) AS n\nFROM customers\nGROUP BY email\nHAVING COUNT(*) > 1;\n\n-- Full-row duplicates (every column identical):\nSELECT *\nFROM customers\nGROUP BY id, name, email, country   -- all columns\nHAVING COUNT(*) > 1;\n\n-- See the actual duplicate rows:\nSELECT c.*\nFROM customers c\nJOIN (\n    SELECT email\n    FROM customers\n    GROUP BY email\n    HAVING COUNT(*) > 1\n) d ON c.email = d.email\nORDER BY c.email;"
+        "sql": "-- Find duplicate rows (same key, multiple entries):\nSELECT email, COUNT(*) AS n\nFROM customers\nGROUP BY email\nHAVING COUNT(*) > 1;\n\n-- Delete duplicates, keeping one row per key (MySQL/PostgreSQL):\nDELETE FROM customers\nWHERE id NOT IN (\n    SELECT MIN(id)\n    FROM customers\n    GROUP BY email\n);\n\n-- Same idea with a self-join (keeps the smallest id per key):\nDELETE a\nFROM customers a\nJOIN customers b ON a.email = b.email AND a.id > b.id;\n\n-- PostgreSQL row_number approach (keeps one per key):\nDELETE FROM customers\nWHERE id IN (\n    SELECT id FROM (\n        SELECT id, ROW_NUMBER() OVER (PARTITION BY email ORDER BY id) AS rn\n        FROM customers\n    ) ranked\n    WHERE rn > 1\n);"
       }
     },
     {
@@ -102,7 +107,9 @@
     {
       "task": "sql_aggregate",
       "patterns": [
-        "\\b(?:sum|average|avg|min|max|count)\\s+of\\b"
+        "\\b(?:sum|average|avg|min|max|count)\\s+of\\b.*\\b(?:column|field|value|table|rows?|records?|salary|price|amount|quantity|total)\\b",
+        "\\b(?:sum|average|avg|min|max|count)\\s+of\\b.*\\bsql\\b",
+        "\\bsql\\b.*\\b(?:sum|average|avg|min|max|count)\\s+of\\b"
       ],
       "intro": "Here's an SQL query using an aggregate function.",
       "notes": "Aggregates (COUNT, SUM, AVG, MIN, MAX) collapse many rows into one. COUNT(*) counts rows including NULLs; COUNT(col) counts only non-NULL values — a classic gotcha.",

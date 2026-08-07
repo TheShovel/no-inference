@@ -4,15 +4,18 @@
       "task": "git_undo",
       "patterns": [
         "\\bundo\\s+(?:a\\s+)?commit\\b",
+        "\\bundo\\s+(?:the\\s+)?last\\s+commit\\b",
         "\\brevert\\s+(?:a\\s+)?commit\\b",
         "\\breset\\s+(?:a\\s+)?commit\\b",
         "\\buncommit\\b",
-        "\\bundo\\s+last\\s+commit\\b"
+        "\\bdiscard\\b.*\\b(?:unstaged\\s+)?changes?\\b",
+        "\\bundo\\b.*\\bchanges?\\b",
+        "\\bundo\\b.*\\bcommit\\b"
       ],
       "intro": "Here's how to undo a commit in Git, depending on whether it has been pushed.",
       "notes": "The safe rule: never rewrite history that has been pushed. `git reset` rewrites history (use it only locally); `git revert` adds a new commit that undoes the changes (safe to push).",
       "languages": {
-        "bash": "# ── Not pushed yet — safe to rewrite history ──────────────────\n# Undo the last commit but KEEP the changes staged:\ngit reset --soft HEAD~1\n\n# Undo the last commit and keep changes in the working tree (unstaged):\ngit reset --mixed HEAD~1      # this is the default for `git reset HEAD~1`\n\n# Undo the last commit and DISCARD the changes entirely:\ngit reset --hard HEAD~1       # ⚠️ destructive — unrecoverable without reflog\n\n# ── Already pushed — never rewrite shared history ──────────────────\n# Add a new commit that reverses the last commit (safe to push):\ngit revert HEAD\n\n# Revert a specific commit by hash:\ngit revert <commit-hash>\n\n# ── Fix just the message of the last commit ─────────────────────────\ngit commit --amend -m \"new message\"\n\n# ── Oops, forgot a file in the last commit ─────────────────────────\ngit add forgotten-file.txt\ngit commit --amend --no-edit\n\n# Anything lost? Check the reflog — it records every HEAD move for ~90 days:\ngit reflog"
+        "bash": "# ── Not pushed yet — safe to rewrite history ──────────────────\n# Undo the last commit but KEEP the changes staged:\ngit reset --soft HEAD~1\n\n# Undo the last commit and keep changes in the working tree (unstaged):\ngit reset --mixed HEAD~1      # this is the default for `git reset HEAD~1`\n\n# Undo the last commit and DISCARD the changes entirely:\ngit reset --hard HEAD~1       # ⚠️ destructive — unrecoverable without reflog\n\n# ── Already pushed — never rewrite shared history ──────────────────\n# Add a new commit that reverses the last commit (safe to push):\ngit revert HEAD\n\n# Revert a specific commit by hash:\ngit revert <commit-hash>\n\n# ── Fix just the message of the last commit ─────────────────────────\ngit commit --amend -m \"new message\"\n\n# ── Oops, forgot a file in the last commit ─────────────────────────\ngit add forgotten-file.txt\ngit commit --amend --no-edit\n\n# Anything lost? Check the reflog — it records every HEAD move for ~90 days:\ngit reflog\n\n# Discard unstaged changes (working tree only):\ngit checkout -- file.txt      # one file\ngit checkout -- .             # everything unstaged\ngit restore file.txt          # modern equivalent\n\n# Unstage (keep changes): \ngit reset HEAD file.txt"
       }
     },
     {
@@ -20,7 +23,8 @@
       "patterns": [
         "\\bcommit\\s+(?:changes?|code|files?)\\b",
         "\\bmake\\s+(?:a\\s+)?commit\\b",
-        "\\bcommit\\s+message\\b"
+        "^(?!.*\\b(?:amend|cherry[- ]?pick|cherry\\s+pick|revert|undo|git\\s+log)\\b).*\\bcommit\\s+message\\b",
+        "^(?!.*\\b(?:amend|cherry[- ]?pick|cherry\\s+pick|revert|undo|git\\s+log)\\b).*\\bcommit\\b"
       ],
       "intro": "Here's the standard Git workflow for committing changes.",
       "notes": "Commit small, focused changes with a clear message, and commit early and often. `git status` and `git diff` before staging prevent accidentally committing debugging leftovers.",
@@ -39,7 +43,7 @@
       "intro": "Here's how to work with branches in Git.",
       "notes": "Branches are cheap pointers to commits — create one per feature or fix. Merge with `git merge` for a merge commit or `git rebase` for a linear history (never rebase shared branches).",
       "languages": {
-        "bash": "# Create a new branch and switch to it:\ngit checkout -b feature/login\n# or: git switch -c feature/login\n\n# List branches (* marks the current one):\ngit branch\n\n# Switch branches:\ngit checkout main\n# or: git switch main\n\n# Merge a branch into the current branch:\ngit checkout main\ngit merge feature/login\n\n# Delete a merged branch:\ngit branch -d feature/login\n\n# Push the new branch to the remote:\ngit push -u origin feature/login"
+        "bash": "# Create a new branch and switch to it:\ngit checkout -b feature/login\n# or: git switch -c feature/login\n\n# List branches (* marks the current one):\ngit branch\n\n# Switch branches:\ngit checkout main\n# or: git switch main\n\n# Merge a branch into the current branch:\ngit checkout main\ngit merge feature/login\n\n# Delete a merged branch:\ngit branch -d feature/login\n\n# Push the new branch to the remote:\ngit push -u origin feature/login\n\n# Rename the current branch:\ngit branch -m new-name\n# or: git branch -m old-name new-name   (renames any branch)\n\n# Rename a branch and update the remote:\ngit branch -m old-name new-name\ngit push origin -u new-name\ngit push origin --delete old-name"
       }
     },
     {
@@ -69,13 +73,9 @@
     {
       "task": "bash_file_ops",
       "patterns": [
-        "\\b(?:list|find|count)\\s+(?:all\\s+|the\\s+)?(?:[a-z0-9_.-]+\\s+)*(?:files?|directories?)\\b",
+        "^(?!.*\\b(?:lines?|grep)\\b).*\\b(?:list|find|count)\\s+(?:all\\s+|the\\s+)?(?:[a-z0-9_.-]+\\s+)*(?:files?|directories?)\\b",
         "\\b(?:copy|move|rename|delete)\\s+(?:a\\s+)?file\\b",
-        "\\bpermissions?\\s+(?:on\\s+)?(?:a\\s+)?file\\b",
-        "\\bchmod\\b",
-        "\\bchown\\b",
-        "\\bgrep\\b",
-        "\\bshow\\s+.*\\bcontents?\\s+of\\b"
+        "\\bpermissions?\\s+(?:on\\s+)?(?:a\\s+)?file\\b"
       ],
       "intro": "Here's how to work with files and directories from the {lang} command line.",
       "notes": "`find` is more powerful than `ls` for searching; `grep -r` searches inside files. `chmod` uses octal modes (755 = rwxr-xr-x) or symbolic ones (u+x). Always quote filenames with spaces.",
@@ -105,6 +105,89 @@
       "notes": "`$0` is the script name, `$1`…`$9` are positional args (use `${10}` for the tenth), `$@` is all args, `$#` is the count. Quote `\"$@\"` to preserve args with spaces. `shift` removes the first arg.",
       "languages": {
         "bash": "#!/bin/bash\n# Run as: ./script.sh alice 42\n\necho \"script: $0\"\necho \"first arg: $1\"\necho \"second arg: $2\"\necho \"all args: $@\"\necho \"arg count: $#\"\n\n# Defaults for missing args:\nNAME=\"${1:-world}\"\nAGE=\"${2:-unknown}\"\necho \"Hello $NAME ($AGE)\"\n\n# Loop over every arg:\nfor arg in \"$@\"; do\n    echo \"got: $arg\"\ndone\n\n# Use shift to process args one by one:\nwhile [ \"$#\" -gt 0 ]; do\n    echo \"processing: $1\"\n    shift\ndone"
+      }
+    },
+    {
+      "task": "git_rebase",
+      "patterns": [
+        "\\brebase\\b"
+      ],
+      "intro": "Here's how to rebase a branch onto main in git.",
+      "notes": "Rebasing replays your commits on top of another branch, giving a linear history. Only rebase commits you haven't pushed. Abort anytime with git rebase --abort.",
+      "languages": {
+        "bash": "# Switch to your feature branch:\ngit checkout feature-branch\n\n# Replay its commits onto main:\ngit rebase main\n\n# If conflicts occur, resolve them, then:\ngit add <resolved-files>\ngit rebase --continue\n\n# Or bail out entirely:\ngit rebase --abort\n\n# One-liner from main:\ngit checkout main && git pull && git checkout feature-branch && git rebase main\n\n# Interactive rebase (squash/reword/reorder):\ngit rebase -i HEAD~3\n\n# After rebasing a pushed branch, force-push:\ngit push --force-with-lease"
+      },
+      "default_lang": "bash"
+    },
+    {
+      "task": "git_cherry_pick",
+      "patterns": [
+        "\\bcherry[- ]?pick\\b"
+      ],
+      "intro": "Here's how to cherry-pick a commit in git.",
+      "notes": "cherry-pick applies one commit's changes onto your current branch — useful for moving a hotfix without merging the whole branch. Copy the commit hash from git log.",
+      "languages": {
+        "bash": "# Find the commit hash:\ngit log --oneline -10\n\n# Apply it to the current branch:\ngit cherry-pick a1b2c3d\n\n# Cherry-pick without committing yet:\ngit cherry-pick -n a1b2c3d\n\n# Multiple commits in order:\ngit cherry-pick a1b2c3d e4f5a6b\n\n# A range of commits:\ngit cherry-pick a1b2c3d..e4f5a6b\n\n# If it conflicts, resolve, git add, then:\ngit cherry-pick --continue\n\n# Or abandon the operation:\ngit cherry-pick --abort"
+      },
+      "default_lang": "bash"
+    },
+    {
+      "task": "git_merge_conflict",
+      "patterns": [
+        "\\bmerge\\s+conflict\\b",
+        "\\bresolve\\b.*\\b(?:merge\\s+)?conflict\\b"
+      ],
+      "intro": "Here's how to resolve a merge conflict in git.",
+      "notes": "Conflicted files get conflict markers: <<<<<<< (yours), ======= (divider), >>>>>>> (theirs). Edit to the final content, git add, and commit. Use git mergetool for a visual diff.",
+      "languages": {
+        "bash": "# When a merge/rebase/pull reports conflicts:\ngit status          # lists 'both modified' files\n\n# Open the file and resolve the markers:\n# <<<<<<< HEAD\n# your version\n# =======\n# their version\n# >>>>>>> feature-branch\n\n# Keep yours / theirs wholesale:\ngit checkout --ours file.txt\ngit checkout --theirs file.txt\n\n# After editing:\ngit add file.txt\ngit commit           # merge: creates the merge commit\ngit rebase --continue  # if you were rebasing\n\n# Visual tool:\ngit mergetool\n\n# Abort the whole merge:\ngit merge --abort"
+      },
+      "default_lang": "bash"
+    },
+    {
+      "task": "git_amend",
+      "patterns": [
+        "\\bamend\\b"
+      ],
+      "intro": "Here's how to amend the last commit in git.",
+      "notes": "git commit --amend replaces the last commit's message (and can add staged changes). Only amend commits you haven't pushed — otherwise force-push with --force-with-lease.",
+      "languages": {
+        "bash": "# Change only the message:\ngit commit --amend -m 'new message'\n\n# Add forgotten changes to the last commit:\ngit add forgotten.py\ngit commit --amend --no-edit    # keep the same message\n\n# Edit the message in your editor:\ngit commit --amend\n\n# Author too:\ngit commit --amend --author='alice <alice@example.com>'\n\n# If already pushed, force-push carefully:\ngit push --force-with-lease"
+      },
+      "default_lang": "bash"
+    },
+    {
+      "task": "git_squash",
+      "patterns": [
+        "\\bsquash\\b.*\\bcommits?\\b",
+        "\\bsquash\\b.*\\bgit\\b"
+      ],
+      "intro": "Here's how to squash commits in git.",
+      "notes": "git rebase -i HEAD~n opens an editor listing the last n commits; change 'pick' to 'squash' (or 's') on all but the first line to merge them into it. The first commit keeps its message unless you reword it. Only squash commits you haven't pushed.",
+      "languages": {
+        "bash": "# Squash the last 3 commits into one:\ngit rebase -i HEAD~3\n\n# In the editor that opens, keep 'pick' on the first line and\n# change the other lines from 'pick' to 'squash':\n#   pick  1a2b3c4 feat: add auth\n#   squash 5d6e7f8 wip\n#   squash 9a0b1c2 fix review comments\n\n# Then edit the combined commit message and save.\n# Verify the result:\ngit log --oneline\n"
+      }
+    },
+    {
+      "task": "git_bisect",
+      "patterns": [
+        "\\bbisect\\b"
+      ],
+      "intro": "Here's how to find the commit that broke something with git bisect.",
+      "notes": "git bisect start, mark the current commit bad and an old commit good, then bisect checks out the midpoint for you to test. Answer 'good'/'bad' each round; bisect narrows to the culprit in log2(n) steps. End with git bisect reset.",
+      "languages": {
+        "bash": "# Start:\ngit bisect start\ngit bisect bad              # current commit is broken\ngit bisect good <old-commit>  # a known-good commit\n\n# Bisect checks out a midpoint — test it, then:\ngit bisect good   # or: git bisect bad\n\n# When it names the culprit, clean up:\ngit bisect reset\n"
+      }
+    },
+    {
+      "task": "git_worktree",
+      "patterns": [
+        "\\bworktree\\b"
+      ],
+      "intro": "Here's how to use git worktree.",
+      "notes": "git worktree add <path> <branch> checks out another branch in a separate directory — no stashing or switching needed. Each worktree shares the same repo; list them with git worktree list and remove with git worktree remove.",
+      "languages": {
+        "bash": "# Check out a branch in a separate directory:\ngit worktree add ../hotfix hotfix-branch\n\n# List all worktrees:\ngit worktree list\n\n# Remove when done:\ngit worktree remove ../hotfix\n"
       }
     }
   ]

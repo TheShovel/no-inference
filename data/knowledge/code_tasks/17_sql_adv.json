@@ -1,0 +1,268 @@
+[
+  {
+    "task": "sql_window_rank",
+    "patterns": [
+      "\\bwindow\\s+function\\b",
+      "\\brank\\w*\\b.*\\brows?\\b",
+      "\\brow_number\\b"
+    ],
+    "intro": "Here's a SQL query using a window function to rank rows.",
+    "notes": "RANK() leaves gaps (1, 1, 3); DENSE_RANK() does not (1, 1, 2); ROW_NUMBER() is unique per row. The OVER clause defines the partition and ordering.",
+    "languages": {
+      "sql": "-- Rank employees by salary within each department:\nSELECT\n    name,\n    department,\n    salary,\n    RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS rank\nFROM employees;\n\n-- DENSE_RANK (no gaps):\nSELECT\n    name,\n    department,\n    salary,\n    DENSE_RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS dense_rank\nFROM employees;\n\n-- ROW_NUMBER (unique per row):\nSELECT\n    name,\n    department,\n    salary,\n    ROW_NUMBER() OVER (PARTITION BY department ORDER BY salary DESC) AS row_num\nFROM employees;\n\n-- Top 2 per department (filter on the window result):\nSELECT * FROM (\n    SELECT\n        name,\n        department,\n        salary,\n        RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS rnk\n    FROM employees\n) ranked\nWHERE rnk <= 2;\n\n-- Running total (another window function):\nSELECT\n    date,\n    amount,\n    SUM(amount) OVER (ORDER BY date) AS running_total\nFROM sales;"
+    }
+  },
+  {
+    "task": "sql_cte",
+    "patterns": [
+      "\\bcommon\\s+table\\s+expression\\b",
+      "\\b(?:cte|ctes)\\b",
+      "\\bwith\\s+(?:a\\s+)?cte\\b"
+    ],
+    "intro": "Here's a SQL query using a common table expression (CTE).",
+    "notes": "CTEs (WITH clauses) name a subquery you can reference multiple times — the cleanest way to write multi-step queries. Unlike subqueries they can be recursive.",
+    "languages": {
+      "sql": "-- Name a subquery and reuse it:\nWITH high_earners AS (\n    SELECT department, AVG(salary) AS avg_salary\n    FROM employees\n    GROUP BY department\n    HAVING AVG(salary) > 80000\n)\nSELECT e.name, e.salary, h.avg_salary\nFROM employees e\nJOIN high_earners h ON e.department = h.department;\n\n-- Multiple CTEs, comma-separated:\nWITH dept_counts AS (\n    SELECT department, COUNT(*) AS emp_count\n    FROM employees\n    GROUP BY department\n),\ntop_depts AS (\n    SELECT department\n    FROM dept_counts\n    ORDER BY emp_count DESC\n    LIMIT 3\n)\nSELECT * FROM top_depts;\n\n-- Recursive CTE (numbers 1..10):\nWITH RECURSIVE nums(n) AS (\n    SELECT 1\n    UNION ALL\n    SELECT n + 1 FROM nums WHERE n < 10\n)\nSELECT * FROM nums;"
+    }
+  },
+  {
+    "task": "sql_create_index",
+    "patterns": [
+      "\\bcreate\\s+(?:an?\\s+)?index\\b",
+      "\\badd\\s+(?:an?\\s+)?index\\b",
+      "\\bindex\\b.*\\b(?:column|table)\\b.*\\bsql\\b"
+    ],
+    "intro": "Here's how to create an index in SQL.",
+    "notes": "Indexes speed up lookups at the cost of write speed and disk. Index columns used in WHERE/JOIN/ORDER BY. Unique indexes also enforce uniqueness. Only create what queries actually need.",
+    "languages": {
+      "sql": "-- Basic index:\nCREATE INDEX idx_employees_last_name ON employees (last_name);\n\n-- Composite (multi-column) index — leftmost-prefix rules apply:\nCREATE INDEX idx_orders_customer_date\n    ON orders (customer_id, order_date);\n\n-- Unique index (also enforces uniqueness):\nCREATE UNIQUE INDEX idx_users_email ON users (email);\n\n-- Partial index (PostgreSQL — only matching rows):\nCREATE INDEX idx_orders_pending ON orders (created_at)\n    WHERE status = 'pending';\n\n-- Check which indexes exist (PostgreSQL):\nSELECT indexname, tablename FROM pg_indexes\nWHERE tablename = 'employees';\n\n-- Drop an index:\nDROP INDEX idx_employees_last_name;\n\n-- Note: PRIMARY KEY and UNIQUE constraints already create indexes."
+    }
+  },
+  {
+    "task": "sql_case",
+    "patterns": [
+      "\\bcase\\s+(?:statement|when|expression)\\b",
+      "\\bcase\\s+when\\b",
+      "\\bif[- ]then[- ]else\\b.*\\bsql\\b"
+    ],
+    "intro": "Here's how to write a CASE statement in SQL.",
+    "notes": "CASE is SQL's if/else: a searched form (CASE WHEN cond THEN ...) and a simple form (CASE expr WHEN value THEN ...). ELSE is optional and defaults to NULL.",
+    "languages": {
+      "sql": "-- Searched CASE (conditions):\nSELECT\n    name,\n    salary,\n    CASE\n        WHEN salary > 100000 THEN 'high'\n        WHEN salary > 60000  THEN 'mid'\n        ELSE 'low'\n    END AS salary_band\nFROM employees;\n\n-- Simple CASE (equality):\nSELECT\n    order_id,\n    CASE status\n        WHEN 'pending'  THEN 'awaiting payment'\n        WHEN 'shipped'  THEN 'on its way'\n        WHEN 'delivered' THEN 'complete'\n        ELSE 'unknown'\n    END AS status_label\nFROM orders;\n\n-- CASE in aggregation (conditional count):\nSELECT\n    department,\n    COUNT(CASE WHEN salary > 80000 THEN 1 END) AS high_earners\nFROM employees\nGROUP BY department;\n\n-- CASE in ORDER BY (custom sort order):\nSELECT * FROM tasks\nORDER BY CASE priority\n    WHEN 'urgent' THEN 1\n    WHEN 'high'   THEN 2\n    WHEN 'normal' THEN 3\n    ELSE 4\nEND;"
+    }
+  },
+  {
+    "task": "sql_subquery",
+    "patterns": [
+      "\\bsubquery\\b",
+      "\\bsub[- ]?query\\b",
+      "\\bnested\\s+query\\b"
+    ],
+    "intro": "Here's how to write a SQL query with a subquery.",
+    "notes": "A subquery is a SELECT inside another query — in WHERE (scalar or IN), FROM (derived table), or SELECT (scalar). Correlated subqueries reference the outer row.",
+    "languages": {
+      "sql": "-- Subquery in WHERE (IN):\nSELECT name, department\nFROM employees\nWHERE department_id IN (\n    SELECT id FROM departments WHERE location = 'Berlin'\n);\n\n-- Scalar subquery (returns one value):\nSELECT\n    name,\n    salary,\n    (SELECT AVG(salary) FROM employees) AS company_avg\nFROM employees;\n\n-- Subquery in FROM (derived table):\nSELECT dept, avg_salary\nFROM (\n    SELECT department AS dept, AVG(salary) AS avg_salary\n    FROM employees\n    GROUP BY department\n) dept_stats\nWHERE avg_salary > 75000;\n\n-- Correlated subquery (per outer row):\nSELECT e1.name, e1.salary\nFROM employees e1\nWHERE e1.salary = (\n    SELECT MAX(e2.salary)\n    FROM employees e2\n    WHERE e2.department = e1.department\n);"
+    }
+  },
+  {
+    "task": "sql_second_highest",
+    "patterns": [
+      "\\bsecond\\s+(?:highest|largest|maximum|biggest)\\b"
+    ],
+    "intro": "Here's how to find the second-highest value in SQL.",
+    "notes": "ORDER BY + LIMIT/OFFSET is the direct way. The correlated COUNT version is more portable (works where LIMIT isn't available) and handles ties explicitly.",
+    "languages": {
+      "sql": "-- Second highest salary (SQLite/PostgreSQL/MySQL):\nSELECT salary\nFROM employees\nORDER BY salary DESC\nLIMIT 1 OFFSET 1;\n\n-- Same with a subquery (avoids the highest row):\nSELECT MAX(salary)\nFROM employees\nWHERE salary < (SELECT MAX(salary) FROM employees);\n\n-- Nth highest generically (OFFSET n-1):\nSELECT salary\nFROM employees\nORDER BY salary DESC\nLIMIT 1 OFFSET 3;   -- 4th highest\n\n-- NULL-safe: if fewer than 2 employees, returns no row."
+    }
+  },
+  {
+    "task": "sql_join_three",
+    "patterns": [
+      "\\bjoin\\s+(?:three|3)\\s+tables\\b"
+    ],
+    "intro": "Here's how to join three tables in SQL.",
+    "notes": "Chain joins with ON conditions — each ON pairs the two tables being joined at that step. Use LEFT JOIN when a table may have no matching rows.",
+    "languages": {
+      "sql": "-- orders -> customers -> products:\nSELECT\n    o.id AS order_id,\n    c.name AS customer,\n    p.name AS product,\n    o.quantity\nFROM orders o\nJOIN customers c ON o.customer_id = c.id\nJOIN products  p ON o.product_id = p.id;\n\n-- With LEFT JOINs (keep orders even without a product):\nSELECT\n    o.id AS order_id,\n    c.name AS customer,\n    COALESCE(p.name, 'deleted product') AS product\nFROM orders o\nJOIN customers c ON o.customer_id = c.id\nLEFT JOIN products p ON o.product_id = p.id;\n\n-- Join order matters for performance, not the result (query planner):\nSELECT e.name, d.name AS dept, r.role\nFROM employees e\nJOIN departments d ON e.department_id = d.id\nJOIN roles r ON e.role_id = r.id;"
+    }
+  },
+  {
+    "task": "sql_left_join",
+    "patterns": [
+      "\\bleft\\s+(?:outer\\s+)?join\\b",
+      "\\b(?:customers?|users?)\\b.*\\b(?:who\\s+)?(?:made\\s+no|without|with\\s+no|never\\s+)\\s+orders?\\b"
+    ],
+    "intro": "Here's how to use a LEFT JOIN in SQL.",
+    "notes": "LEFT JOIN keeps every row from the left table; unmatched right-side rows get NULLs. Use it to find missing matches (WHERE right.id IS NULL).",
+    "languages": {
+      "sql": "-- All customers with their orders (NULL when none):\nSELECT c.name, o.id AS order_id, o.total\nFROM customers c\nLEFT JOIN orders o ON c.id = o.customer_id;\n\n-- Customers with NO orders:\nSELECT c.name\nFROM customers c\nLEFT JOIN orders o ON c.id = o.customer_id\nWHERE o.id IS NULL;\n\n-- Count orders per customer (0 for none — LEFT JOIN + GROUP BY):\nSELECT\n    c.name,\n    COUNT(o.id) AS order_count\nFROM customers c\nLEFT JOIN orders o ON c.id = o.customer_id\nGROUP BY c.id, c.name;\n\n-- RIGHT JOIN is the mirror image; many teams avoid it for readability.\n-- FULL OUTER JOIN keeps both sides (SQLite/PostgreSQL support it)."
+    }
+  },
+  {
+    "task": "sql_create_view",
+    "patterns": [
+      "\\bcreate\\s+(?:a\\s+)?view\\b"
+    ],
+    "intro": "Here's how to create a SQL view.",
+    "notes": "A view is a saved query you can SELECT from like a table. It stays in sync automatically and can hide columns or joins. Materialized views (PostgreSQL) cache the result for speed.",
+    "languages": {
+      "sql": "-- Create a view:\nCREATE VIEW active_customers AS\nSELECT id, name, email\nFROM customers\nWHERE active = 1;\n\n-- Use it like a table:\nSELECT * FROM active_customers;\n\n-- View over a join:\nCREATE VIEW order_totals AS\nSELECT c.name, SUM(o.total) AS total_spent\nFROM orders o\nJOIN customers c ON o.customer_id = c.id\nGROUP BY c.name;\n\n-- Replace or drop:\nCREATE OR REPLACE VIEW active_customers AS ...\nDROP VIEW IF EXISTS active_customers;"
+    },
+    "default_lang": "sql"
+  },
+  {
+    "task": "sql_update_join",
+    "patterns": [
+      "\\bupdate\\b.*\\bjoin\\b",
+      "\\bupdate\\b.*\\b(?:using|with)\\s+(?:a\\s+)?join\\b"
+    ],
+    "intro": "Here's how to UPDATE rows using a JOIN in SQL.",
+    "notes": "UPDATE ... FROM (PostgreSQL/SQLite) or UPDATE ... JOIN (MySQL) lets you set values from another table. SQL Server uses UPDATE ... FROM with an inner join in the same statement.",
+    "languages": {
+      "sql": "-- PostgreSQL / SQLite:\nUPDATE orders o\nSET o.status = 'shipped'\nFROM shipments s\nWHERE o.id = s.order_id\n  AND s.tracked_at IS NOT NULL;\n\n-- MySQL:\nUPDATE orders o\nJOIN shipments s ON o.id = s.order_id\nSET o.status = 'shipped'\nWHERE s.tracked_at IS NOT NULL;\n\n-- SQL Server:\nUPDATE o\nSET o.status = 'shipped'\nFROM orders o\nINNER JOIN shipments s ON o.id = s.order_id\nWHERE s.tracked_at IS NOT NULL;"
+    },
+    "default_lang": "sql"
+  },
+  {
+    "task": "sql_delete_join",
+    "patterns": [
+      "\\bdelete\\b.*\\bjoin\\b",
+      "\\bdelete\\b.*\\b(?:using|with)\\s+(?:a\\s+)?join\\b"
+    ],
+    "intro": "Here's how to DELETE rows using a JOIN in SQL.",
+    "notes": "MySQL has DELETE ... JOIN; PostgreSQL/SQLite use DELETE ... USING; SQL Server deletes via a FROM with an inner join. Always SELECT first to verify which rows match.",
+    "languages": {
+      "sql": "-- MySQL:\nDELETE o\nFROM orders o\nJOIN customers c ON o.customer_id = c.id\nWHERE c.active = 0;\n\n-- PostgreSQL / SQLite:\nDELETE FROM orders o\nUSING customers c\nWHERE o.customer_id = c.id\n  AND c.active = 0;\n\n-- SQL Server:\nDELETE o\nFROM orders o\nINNER JOIN customers c ON o.customer_id = c.id\nWHERE c.active = 0;\n\n-- Verify first:\nSELECT o.id FROM orders o JOIN customers c ON o.customer_id = c.id\nWHERE c.active = 0;"
+    },
+    "default_lang": "sql"
+  },
+  {
+    "task": "sql_lag_lead",
+    "patterns": [
+      "\\blag\\s+or\\s+lead\\b",
+      "\\b(?:lag|lead)\\b.*\\b(?:over|window|previous|next|row)\\b"
+    ],
+    "intro": "Here's how to use LAG and LEAD window functions in SQL.",
+    "notes": "LAG(x) reads a value from the previous row in the window; LEAD(x) from the next row. Perfect for deltas, running comparisons, and 'previous period' calculations.",
+    "languages": {
+      "sql": "-- LAG: previous row's value\nSELECT\n    date,\n    revenue,\n    LAG(revenue) OVER (ORDER BY date) AS prev_revenue,\n    revenue - LAG(revenue) OVER (ORDER BY date) AS daily_delta\nFROM daily_sales;\n\n-- LEAD: next row's value\nSELECT\n    date,\n    revenue,\n    LEAD(revenue) OVER (ORDER BY date) AS next_revenue\nFROM daily_sales;\n\n-- Partitioned: per-customer deltas\nSELECT\n    customer_id,\n    order_date,\n    amount,\n    amount - LAG(amount) OVER (\n        PARTITION BY customer_id ORDER BY order_date\n    ) AS vs_previous_order\nFROM orders;\n\n-- Default when there is no previous row:\nLAG(revenue, 1, 0) OVER (ORDER BY date)  -- 0 instead of NULL"
+    },
+    "default_lang": "sql"
+  },
+  {
+    "task": "sql_foreign_key",
+    "patterns": [
+      "\\bforeign\\s+key\\b"
+    ],
+    "intro": "Here's how to add a foreign key constraint in SQL.",
+    "notes": "A foreign key links a column to another table's primary key and enforces referential integrity. ON DELETE CASCADE removes child rows when the parent goes; RESTRICT/SET NULL are the alternatives.",
+    "languages": {
+      "sql": "-- At table creation:\nCREATE TABLE orders (\n    id INTEGER PRIMARY KEY,\n    customer_id INTEGER NOT NULL,\n    total NUMERIC(10,2),\n    FOREIGN KEY (customer_id) REFERENCES customers(id)\n        ON DELETE CASCADE\n);\n\n-- Add to an existing table:\nALTER TABLE orders\n    ADD CONSTRAINT fk_orders_customer\n    FOREIGN KEY (customer_id) REFERENCES customers(id);\n\n-- Allowed actions on delete:\nFOREIGN KEY (customer_id) REFERENCES customers(id) ON DELETE CASCADE   -- delete orders too\nFOREIGN KEY (customer_id) REFERENCES customers(id) ON DELETE SET NULL  -- set customer_id NULL\nFOREIGN KEY (customer_id) REFERENCES customers(id) ON DELETE RESTRICT  -- block the delete\n\n-- Remove a constraint:\nALTER TABLE orders DROP CONSTRAINT fk_orders_customer;"
+    },
+    "default_lang": "sql"
+  },
+  {
+    "task": "sql_top_n_per_group",
+    "patterns": [
+      "\\btop\\s+\\d+\\s+(?:salaries?|rows?|records?|employees?)\\s+per\\b",
+      "\\btop\\s+\\d+\\s+.*\\bper\\s+(?:department|group|category)\\b",
+      "\\b(?:highest|most\\s+paid|best[- ]?paid)\\b.*\\b(?:each|per)\\s+(?:department|group|category)\\b",
+      "\\b(?:highest|most\\s+paid|best[- ]?paid)\\b.*\\b(?:each|per)\\s+(?:department|group|category)\\b"
+    ],
+    "intro": "Here's how to get the top N rows per group in SQL.",
+    "notes": "Rank rows inside each partition with ROW_NUMBER or DENSE_RANK, then filter on the rank. ROW_NUMBER gives exactly N; DENSE_RANK keeps ties.",
+    "languages": {
+      "sql": "-- Top 3 salaries per department (no ties):\nSELECT name, department, salary\nFROM (\n    SELECT\n        name,\n        department,\n        salary,\n        ROW_NUMBER() OVER (\n            PARTITION BY department ORDER BY salary DESC\n        ) AS rn\n    FROM employees\n) ranked\nWHERE rn <= 3;\n\n-- With ties (two employees with the same 3rd salary both show):\nSELECT name, department, salary\nFROM (\n    SELECT\n        name,\n        department,\n        salary,\n        DENSE_RANK() OVER (\n            PARTITION BY department ORDER BY salary DESC\n        ) AS dr\n    FROM employees\n) ranked\nWHERE dr <= 3;"
+    },
+    "default_lang": "sql"
+  },
+  {
+    "task": "sql_date_diff",
+    "patterns": [
+      "\\b(?:difference|diff)\\s+between\\b.*\\bdates?\\b",
+      "\\bdatediff\\b",
+      "\\b(?:how\\s+many|number\\s+of)\\s+days\\s+between\\b"
+    ],
+    "intro": "Here's how to compute the difference between two dates in SQL.",
+    "notes": "DATEDIFF (MySQL/SQL Server), date subtraction (PostgreSQL), and julianday (SQLite) all give day differences. INTERVAL arithmetic handles months and years.",
+    "languages": {
+      "sql": "-- MySQL / SQL Server:\nSELECT DATEDIFF('2026-04-03', '2026-01-01') AS days;   -- 92\n\n-- PostgreSQL (date subtraction returns days):\nSELECT '2026-04-03'::date - '2026-01-01'::date AS days;   -- 92\n\n-- SQLite:\nSELECT julianday('2026-04-03') - julianday('2026-01-01');\n\n-- Months between (PostgreSQL):\nSELECT age('2026-04-03'::date, '2026-01-01'::date);   -- 3 mons 2 days\n\n-- Compare against today:\nSELECT * FROM orders\nWHERE order_date >= CURRENT_DATE - INTERVAL '30 days';   -- PG\nWHERE order_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY);  -- MySQL\n\n-- Age in years (PostgreSQL):\nSELECT EXTRACT(YEAR FROM age(birth_date)) AS age_years FROM people;"
+    },
+    "default_lang": "sql"
+  },
+  {
+    "task": "sql_top_n",
+    "patterns": [
+      "\\btop\\s+(?:\\d+|n)\\b.*\\b(?:rows?|records?|salaries?)\\b(?!.*\\bper\\b)",
+      "\\b(?:first|top)\\s+\\d+\\s+records?\\b"
+    ],
+    "intro": "Here's how to get the top N rows in SQL.",
+    "notes": "LIMIT n (SQLite/PostgreSQL/MySQL) truncates the result; FETCH FIRST n ROWS ONLY is the standard SQL way. Always pair with ORDER BY or the 'top N' is arbitrary.",
+    "languages": {
+      "sql": "-- Top 10 by salary (SQLite / PostgreSQL / MySQL):\nSELECT *\nFROM employees\nORDER BY salary DESC\nLIMIT 10;\n\n-- Standard SQL:\nSELECT *\nFROM employees\nORDER BY salary DESC\nFETCH FIRST 10 ROWS ONLY;\n\n-- With ties (keeps rows equal to the 10th value):\nSELECT *\nFROM employees\nORDER BY salary DESC\nFETCH FIRST 10 ROWS WITH TIES;\n\n-- Top N per group (window function):\nSELECT * FROM (\n    SELECT *,\n           ROW_NUMBER() OVER (PARTITION BY department ORDER BY salary DESC) AS rn\n    FROM employees\n) t\nWHERE rn <= 3;"
+    },
+    "default_lang": "sql"
+  },
+  {
+    "task": "sql_rank_vs_dense",
+    "patterns": [
+      "\\brank\\b.*\\bdense[_-]?rank\\b",
+      "\\b(?:rank|dense[-_ ]?rank)\\b.*\\b(?:difference|vs\\.?|versus)\\b"
+    ],
+    "intro": "Here's the difference between RANK and DENSE_RANK in SQL.",
+    "notes": "Both assign a position per partition, ordered by the ORDER BY. RANK skips numbers after ties (1,1,3), DENSE_RANK does not (1,1,2). ROW_NUMBER gives each row a unique position (1,2,3) — use it when ties don't matter.",
+    "languages": {
+      "sql": "-- Scores: 90, 90, 80, 70\nSELECT name, score,\n       ROW_NUMBER() OVER (ORDER BY score DESC) AS rn,\n       RANK()       OVER (ORDER BY score DESC) AS rk,\n       DENSE_RANK() OVER (ORDER BY score DESC) AS dr\nFROM exam_results;\n\n-- name   score  rn  rk  dr\n-- alice  90     1   1   1\n-- bob    90     2   1   1\n-- carol  80     3   3   2\n-- dave   70     4   4   3\n"
+    }
+  },
+  {
+    "task": "sql_pivot",
+    "patterns": [
+      "\\bpivot\\b",
+      "\\brows?\\s+to\\s+columns\\b",
+      "\\bcross[-\\s]?tab(?:ulation)?\\b"
+    ],
+    "intro": "Here's how to pivot rows to columns in SQL.",
+    "notes": "Conditional aggregation (MAX(CASE WHEN ...)) is the portable pivot: one CASE per target column. SQL Server has a native PIVOT operator; PostgreSQL 14+ has crosstab via the tablefunc extension. Unpivoting is the reverse (UNION ALL of columns or CROSS APPLY VALUES).",
+    "languages": {
+      "sql": "-- Portable pivot with conditional aggregation:\nSELECT\n    product,\n    MAX(CASE WHEN month = 'jan' THEN amount END) AS jan,\n    MAX(CASE WHEN month = 'feb' THEN amount END) AS feb,\n    MAX(CASE WHEN month = 'mar' THEN amount END) AS mar\nFROM sales\nGROUP BY product;\n\n-- SQL Server native PIVOT:\nSELECT *\nFROM (SELECT product, month, amount FROM sales) src\nPIVOT (SUM(amount) FOR month IN ([jan], [feb], [mar])) AS pvt;\n"
+    }
+  },
+  {
+    "task": "sql_self_join",
+    "patterns": [
+      "\\bself[- ]?join\\b"
+    ],
+    "intro": "Here's how to write a self join in SQL.",
+    "notes": "A self join joins a table to itself — alias both sides so the join condition is clear. Classic uses: employees and their managers, or pairs of rows that share a property (users who live in the same city).",
+    "languages": {
+      "sql": "-- Employees and their managers (same table):\nSELECT\n    e.name AS employee,\n    m.name AS manager\nFROM employees e\nLEFT JOIN employees m ON e.manager_id = m.id;\n\n-- Find pairs of users in the same city:\nSELECT a.name AS user_a, b.name AS user_b, a.city\nFROM users a\nJOIN users b ON a.city = b.city AND a.id < b.id;\n"
+    }
+  },
+  {
+    "task": "sql_coalesce",
+    "patterns": [
+      "\\bcoalesce\\b",
+      "\\bnull\\s+handling\\b.*\\bsql\\b",
+      "\\b(?:default|fallback)\\s+value\\b.*\\b(?:null|missing)\\b.*\\bsql\\b"
+    ],
+    "intro": "Here's how to use COALESCE for NULL handling in SQL.",
+    "notes": "COALESCE(a, b, c) returns the first non-NULL value from the list — the portable way to provide defaults. ISNULL (SQL Server) and NVL (Oracle) do the same with two arguments. Use it in SELECT, WHERE, and JOIN conditions.",
+    "languages": {
+      "sql": "-- First non-NULL value wins:\nSELECT\n    name,\n    COALESCE(phone, mobile, 'no number') AS contact\nFROM customers;\n\n-- Defaults for totals:\nSELECT COALESCE(SUM(amount), 0) AS total FROM orders WHERE customer_id = 42;\n\n-- Alternatives: ISNULL(x, d) on SQL Server, NVL(x, d) on Oracle\n"
+    }
+  },
+  {
+    "task": "sql_union",
+    "patterns": [
+      "\\bunion\\s+all\\b",
+      "\\bunion\\b.*\\b(?:difference|vs\\.?|versus)\\b",
+      "\\bcombine\\b.*\\b(?:queries|results|tables)\\b.*\\bsql\\b"
+    ],
+    "intro": "Here's the difference between UNION and UNION ALL in SQL.",
+    "notes": "UNION merges two result sets and removes duplicates; UNION ALL keeps every row. UNION ALL is faster when you know there are no overlaps or don't care. Both require the same number and compatible types of columns.",
+    "languages": {
+      "sql": "-- UNION removes duplicates:\nSELECT name FROM active_users\nUNION\nSELECT name FROM admin_users;\n\n-- UNION ALL keeps all rows (faster):\nSELECT name FROM active_users\nUNION ALL\nSELECT name FROM admin_users;\n\n-- 2025 and 2026 sales in one result:\nSELECT '2025' AS year, SUM(amount) FROM sales_2025\nUNION ALL\nSELECT '2026', SUM(amount) FROM sales_2026;\n"
+    }
+  }
+]

@@ -1,0 +1,452 @@
+[
+  {
+    "task": "fetch_with_errors",
+    "patterns": [
+      "\\bfetch\\b.*\\b(?:error|errors?|try|catch|handle|handling)\\b"
+    ],
+    "intro": "Here's how to make a fetch request with error handling in {lang}.",
+    "notes": "fetch only rejects on network failure — HTTP errors (404, 500) resolve normally, so check response.ok. A timeout also needs explicit handling: AbortSignal.timeout is the modern way.",
+    "languages": {
+      "python": "import requests\nfrom requests.exceptions import RequestException, Timeout\n\ntry:\n    resp = requests.get('https://api.example.com/data', timeout=10)\n    resp.raise_for_status()          # raises for 4xx/5xx\n    data = resp.json()\nexcept Timeout:\n    print('request timed out')\nexcept RequestException as exc:\n    print(f'request failed: {exc}')\nelse:\n    print(data)",
+      "javascript": "async function fetchWithErrors(url) {\n    try {\n        const resp = await fetch(url, {\n            signal: AbortSignal.timeout(10_000),  // abort after 10s\n        });\n        if (!resp.ok) {\n            throw new Error(`HTTP ${resp.status}: ${resp.statusText}`);\n        }\n        return await resp.json();\n    } catch (err) {\n        if (err.name === 'TimeoutError') {\n            console.error('request timed out');\n        } else {\n            console.error('request failed:', err.message);\n        }\n        throw err;\n    }\n}\n\nfetchWithErrors('https://api.example.com/data')\n    .then(data => console.log(data))\n    .catch(() => console.log('handled'));"
+    }
+  },
+  {
+    "task": "debounce",
+    "patterns": [
+      "\\bdebounce\\b"
+    ],
+    "intro": "Here's how to debounce a function in {lang}.",
+    "notes": "Debouncing delays the call until the input stops changing — right for search-as-you-type and resize handlers. The trailing call runs after the delay; leading:true runs immediately and cancels the rest.",
+    "languages": {
+      "python": "import time\nimport threading\n\n\ndef debounce(wait: float):\n    \"\"\"Decorator: call fn at most once per `wait` seconds of quiet.\"\"\"\n    def decorator(fn):\n        timer = None\n        def wrapped(*args, **kwargs):\n            nonlocal timer\n            def call():\n                fn(*args, **kwargs)\n            if timer is not None:\n                timer.cancel()\n            timer = threading.Timer(wait, call)\n            timer.start()\n        return wrapped\n    return decorator\n\n\n@debounce(0.3)\ndef on_type(text):\n    print('searched:', text)\n\n# Call rapidly; on_type runs once, 0.3s after the last call.",
+      "javascript": "function debounce(fn, wait = 300) {\n    let timer;\n    return function (...args) {\n        clearTimeout(timer);\n        timer = setTimeout(() => fn.apply(this, args), wait);\n    };\n}\n\n// Example: search box\nconst onType = debounce(text => console.log('searched:', text), 300);\ninput.addEventListener('input', e => onType(e.target.value));\n\n// Leading edge (run immediately, then wait):\nfunction debounceLeading(fn, wait = 300) {\n    let timer, lastRan;\n    return function (...args) {\n        const now = Date.now();\n        if (lastRan && now - lastRan < wait) {\n            clearTimeout(timer);\n            timer = setTimeout(() => {\n                lastRan = Date.now();\n                fn.apply(this, args);\n            }, wait - (now - lastRan));\n            return;\n        }\n        lastRan = now;\n        fn.apply(this, args);\n    };\n}"
+    }
+  },
+  {
+    "task": "throttle",
+    "patterns": [
+      "\\bthrottle\\b"
+    ],
+    "intro": "Here's how to throttle a function in {lang}.",
+    "notes": "Throttling limits calls to at most once per interval — right for scroll and mousemove handlers. Debounce waits for quiet; throttle guarantees a minimum spacing.",
+    "languages": {
+      "python": "import time\nimport threading\n\n\ndef throttle(interval: float):\n    \"\"\"Decorator: run fn at most once per `interval` seconds.\"\"\"\n    def decorator(fn):\n        last_run = 0.0\n        lock = threading.Lock()\n        def wrapped(*args, **kwargs):\n            nonlocal last_run\n            with lock:\n                now = time.monotonic()\n                if now - last_run < interval:\n                    return\n                last_run = now\n            return fn(*args, **kwargs)\n        return wrapped\n    return decorator\n\n\n@throttle(1.0)\ndef on_scroll():\n    print('scrolled')\n\n# Called 100 times in a second, on_scroll runs ~once.",
+      "javascript": "function throttle(fn, limit = 1000) {\n    let lastRun = 0;\n    return function (...args) {\n        const now = Date.now();\n        if (now - lastRun >= limit) {\n            lastRun = now;\n            fn.apply(this, args);\n        }\n    };\n}\n\n// Trailing edge (guarantee the final call runs):\nfunction throttleTrailing(fn, limit = 1000) {\n    let lastRun = 0, timer;\n    return function (...args) {\n        const now = Date.now();\n        const remaining = limit - (now - lastRun);\n        if (remaining <= 0) {\n            clearTimeout(timer);\n            lastRun = now;\n            fn.apply(this, args);\n        } else if (!timer) {\n            timer = setTimeout(() => {\n                lastRun = Date.now();\n                timer = null;\n                fn.apply(this, args);\n            }, remaining);\n        }\n    };\n}\n\n// Example: window.addEventListener('scroll', throttle(onScroll, 200));"
+    }
+  },
+  {
+    "task": "shallow_copy",
+    "patterns": [
+      "\\bshallow\\s*copy\\b"
+    ],
+    "intro": "Here's how to shallow-copy an object in {lang}.",
+    "notes": "A shallow copy duplicates the top level; nested objects are still shared. For a full clone use structuredClone (JS) or copy.deepcopy (Python).",
+    "languages": {
+      "python": "import copy\n\noriginal = {'items': [1, 2, 3]}\n\n# Shallow copies (dict copy, dict(), or copy.copy):\nshallow = original.copy()\nshallow['items'].append(4)\nprint(original['items'])   # [1, 2, 3, 4]  (SHARED!)\n\nshallow2 = copy.copy(original)\n\n# Lists:\nnums = [1, 2, [3]]\nnums_shallow = nums.copy()   # or list(nums), nums[:]",
+      "javascript": "const original = { items: [1, 2, 3], name: 'x' };\n\n// Shallow copies:\nconst shallow = { ...original };\nconst shallow2 = Object.assign({}, original);\n\n// Nested objects are shared:\nshallow.items.push(4);\nconsole.log(original.items);   // [1, 2, 3, 4]  (SHARED!)\n\n// Arrays:\nconst arr = [1, 2, [3]];\nconst arrCopy = [...arr];\nconst arrCopy2 = arr.slice();"
+    }
+  },
+  {
+    "task": "deep_clone",
+    "patterns": [
+      "\\bdeep\\s*(?:clone|copy)\\b"
+    ],
+    "intro": "Here's how to deep-clone an object in {lang}.",
+    "notes": "structuredClone (JS) handles dates, Maps, Sets, and circular references — JSON round-trips do not. Python's copy.deepcopy is the equivalent.",
+    "languages": {
+      "python": "import copy\n\nclass Point:\n    def __init__(self, x, y):\n        self.x, self.y = x, y\n\noriginal = {'point': Point(1, 2), 'tags': ['a', 'b']}\n\n# Deep copy:\ndeep = copy.deepcopy(original)\ndeep['point'].x = 99\nprint(original['point'].x)   # 1 (unchanged)\ndeep['tags'].append('c')\nprint(original['tags'])      # ['a', 'b'] (unchanged)\n\n# JSON round-trip (only JSON-safe data):\nimport json\nclone = json.loads(json.dumps({'tags': ['a', 'b']}))",
+      "javascript": "const original = { date: new Date(), tags: ['a', 'b'], nested: { x: 1 } };\n\n// structuredClone — deep, handles Date/Map/Set/circular refs:\nconst deep = structuredClone(original);\ndeep.tags.push('c');\ndeep.nested.x = 99;\nconsole.log(original.tags);       // ['a', 'b'] (unchanged)\nconsole.log(original.nested.x);   // 1 (unchanged)\n\n// JSON round-trip — loses Dates (becomes string) and functions:\nconst clone = JSON.parse(JSON.stringify(original));"
+    }
+  },
+  {
+    "task": "currency_format",
+    "patterns": [
+      "\\b(?:format|convert)\\b.*\\b(?:number|amount|value)\\b.*\\bcurrency\\b",
+      "\\bcurrency\\s+format\\w*\\b",
+      "\\b(?:money|price|dollars?)\\s+format\\w*\\b"
+    ],
+    "intro": "Here's how to format a number as currency in {lang}.",
+    "notes": "Intl.NumberFormat (JS) and the locale module (Python) handle grouping, decimal separators, and currency symbols per locale — don't hand-roll comma insertion.",
+    "languages": {
+      "python": "import locale\n\n# The locale module follows your system locale:\nlocale.setlocale(locale.LC_ALL, '')\nprint(locale.currency(1234.5, grouping=True))   # $1,234.50 (en_US)\n\n# Explicit formatting without locale:\nprint(f'${1234.5:,.2f}')   # $1,234.50\n\n# Euro / other symbols are just strings:\nprint(f'\\u20ac{1234.5:,.2f}')  # €1,234.50\n\n# babel (pip install babel) for full i18n:\n# from babel.numbers import format_currency\n# format_currency(1234.5, 'EUR', locale='de_DE')  # 1.234,50 €",
+      "javascript": "const amount = 1234.5;\n\n// Locale-aware (recommended):\nconsole.log(new Intl.NumberFormat('en-US', {\n    style: 'currency', currency: 'USD'\n}).format(amount));   // $1,234.50\n\nconsole.log(new Intl.NumberFormat('de-DE', {\n    style: 'currency', currency: 'EUR'\n}).format(amount));   // 1.234,50 €\n\n// Just the number with grouping:\nconsole.log(amount.toLocaleString('en-US'));   // 1,234.5\n\n// Hand-rolled (no decimals):\nfunction formatMoney(n) {\n    return '$' + n.toFixed(2).replace(/\\B(?=(\\d{3})+(?!\\d))/g, ',');\n}"
+    }
+  },
+  {
+    "task": "current_date",
+    "patterns": [
+      "\\b(?:current|today'?s?|now)\\b.*\\bdate\\b(?!\\s+timezone)",
+      "\\bget\\b.*\\b(?:today|current)\\s+date\\b",
+      "\\bcurrent\\s+year\\b"
+    ],
+    "intro": "Here's how to get the current date in {lang}.",
+    "notes": "JS Date is a timestamp + timezone display — getDate() is LOCAL; use getUTCDate()/toISOString() for UTC. Python's date.today() is local; date.today() from datetime is the stdlib way.",
+    "languages": {
+      "python": "from datetime import date, datetime\n\n# Today's date (local):\ntoday = date.today()\nprint(today)                  # 2026-04-03\n\n# Current date and time:\nnow = datetime.now()\nprint(now)\n\n# Current date in UTC:\nfrom datetime import timezone\nprint(datetime.now(timezone.utc).date())\n\n# Individual fields:\nprint(today.year, today.month, today.day)",
+      "javascript": "// Now:\nconst now = new Date();\n\n// Local date parts:\nconsole.log(now.getFullYear(), now.getMonth() + 1, now.getDate());\n\n// UTC date parts:\nconsole.log(now.getUTCFullYear(), now.getUTCMonth() + 1, now.getUTCDate());\n\n// ISO string (UTC):\nconsole.log(now.toISOString());            // 2026-04-03T15:30:00.000Z\nconsole.log(now.toISOString().slice(0, 10));  // 2026-04-03\n\n// Locale date:\nconsole.log(now.toLocaleDateString());     // 4/3/2026",
+      "bash": "# Current date/time in various formats:\ndate                     # Thu Aug  7 12:34:56 UTC 2026\ndate +%Y-%m-%d           # 2026-08-07\ndate +%Y%m%d             # 20260807\ndate +%H:%M:%S           # 12:34:56\ndate -u                  # UTC\n\n# Store in a variable:\nSTAMP=$(date +%Y-%m-%d)\necho \"backup-$STAMP.tar.gz\"   # backup-2026-08-07.tar.gz\n"
+    }
+  },
+  {
+    "task": "set_timeout",
+    "patterns": [
+      "\\bsetTimeout\\b",
+      "\\bset\\s+(?:a\\s+)?timeout\\b",
+      "\\b(?:delay|wait)\\b.*\\b(?:ms|milliseconds?|seconds?)\\b.*\\b(?:javascript|js|node)\\b"
+    ],
+    "intro": "Here's how to delay code with setTimeout in {lang}.",
+    "notes": "setTimeout runs once after the delay; setInterval repeats. The delay is a minimum, not exact — the event loop may be busy. Use AbortController or clearTimeout to cancel.",
+    "languages": {
+      "python": "import time\nimport threading\n\n# Blocking delay (simple scripts):\ntime.sleep(1.5)          # 1.5 seconds\nprint('after sleep')\n\n# Non-blocking delay (run a function later):\nthreading.Timer(1.5, lambda: print('after timer')).start()\nprint('immediately')\n\n# Asyncio:\nimport asyncio\n\nasync def main():\n    await asyncio.sleep(1.5)\n    print('after await')\n\nasyncio.run(main())",
+      "javascript": "// Run once after 1.5s:\nconst timer = setTimeout(() => {\n    console.log('after 1.5s');\n}, 1500);\n\n// Cancel it:\nclearTimeout(timer);\n\n// Repeat every 2s:\nconst interval = setInterval(() => {\n    console.log('tick');\n}, 2000);\nclearInterval(interval);\n\n// Inside async code:\nawait new Promise(resolve => setTimeout(resolve, 1500));\nconsole.log('after await');"
+    }
+  },
+  {
+    "task": "add_event_listener",
+    "patterns": [
+      "\\b(?:add\\s+(?:an?\\s+)?)?event\\s+listener\\b",
+      "\\b(?:attach|bind|register)\\b.*\\b(?:event|handler|listener)\\b"
+    ],
+    "intro": "Here's how to attach an event listener in {lang}.",
+    "notes": "addEventListener is the modern way — it supports multiple handlers and options like { once: true }. Inline onclick= attributes are discouraged (mixes markup and logic).",
+    "languages": {
+      "javascript": "// Basic click listener:\nconst button = document.querySelector('#my-button');\nbutton.addEventListener('click', () => {\n    console.log('clicked');\n});\n\n// With event object:\nbutton.addEventListener('click', (event) => {\n    console.log(event.target, event.clientX, event.clientY);\n});\n\n// Run once:\nbutton.addEventListener('click', handler, { once: true });\n\n// Remove a listener (needs the same function reference):\nfunction handler() {}\nbutton.addEventListener('click', handler);\nbutton.removeEventListener('click', handler);\n\n// Keyboard / document events:\ndocument.addEventListener('keydown', (e) => {\n    if (e.key === 'Escape') console.log('escaped');\n});",
+      "python": "import tkinter as tk\n\n# Tkinter: the stdlib GUI toolkit\nroot = tk.Tk()\n\n\ndef on_click(event):\n    print('clicked at', event.x, event.y)\n\n\nbutton = tk.Button(root, text='Click me')\nbutton.pack()\nbutton.bind('<Button-1>', on_click)   # left click\nroot.bind('<Escape>', lambda e: root.quit())\nroot.mainloop()"
+    }
+  },
+  {
+    "task": "remove_dom_element",
+    "patterns": [
+      "^(?!.*\\b(?:array|list)\\b).*\\bremove\\b.*\\b(?:element|dom\\s+element)\\b",
+      "\\bdelete\\b.*\\b(?:dom\\s+)?element\\b"
+    ],
+    "intro": "Here's how to remove an element from the DOM in {lang}.",
+    "notes": "element.remove() is the clean modern way. removeChild is the older API. To hide without removing (keep state), use style.display='none'.",
+    "languages": {
+      "javascript": "// Remove the element itself (modern):\nconst el = document.querySelector('#toast');\nel.remove();\n\n// Remove a child from its parent (older API):\nel.parentNode.removeChild(el);\n\n// Remove all children (clear a container):\nconst container = document.querySelector('#list');\ncontainer.replaceChildren();\n\n// Hide instead of remove:\nel.style.display = 'none';",
+      "python": "import tkinter as tk\n\nroot = tk.Tk()\nlabel = tk.Label(root, text='bye')\nlabel.pack()\n\n# Remove from the layout:\nlabel.pack_forget()\n\n# Or destroy it entirely:\nlabel.destroy()\n\nroot.mainloop()"
+    }
+  },
+  {
+    "task": "js_map",
+    "patterns": [
+      "\\bmap\\b.*\\b(?:an?\\s+|the\\s+)?array\\b",
+      "\\b(?:transform|convert)\\b.*\\b(?:each\\s+)?(?:element|item)\\b.*\\barray\\b"
+    ],
+    "intro": "Here's how to map an array to new values in {lang}.",
+    "notes": "Array.map returns a NEW array of the same length — use it for transforms, not side effects (that's forEach). The index is the second callback argument.",
+    "languages": {
+      "python": "numbers = [1, 2, 3, 4]\n\n# List comprehension (the Pythonic map):\nsquares = [x * x for x in numbers]\nprint(squares)   # [1, 4, 9, 16]\n\n# Functional map():\nprint(list(map(lambda x: x * x, numbers)))\n\n# With index (enumerate):\nwith_index = [f'{i}: {x}' for i, x in enumerate(numbers)]\n\n# Strings:\nnames = ['alice', 'bob']\nuppercased = [n.upper() for n in names]",
+      "javascript": "const numbers = [1, 2, 3, 4];\n\n// .map returns a new array:\nconst squares = numbers.map(x => x * x);\nconsole.log(squares);   // [1, 4, 9, 16]\n\n// With index:\nconst labeled = numbers.map((x, i) => `${i}: ${x}`);\n\n// Objects:\nconst people = [{ name: 'alice' }, { name: 'bob' }];\nconst names = people.map(p => p.name);   // ['alice', 'bob']"
+    }
+  },
+  {
+    "task": "js_filter",
+    "patterns": [
+      "\\bfilter\\b.*\\b(?:an?\\s+|the\\s+)?array\\b",
+      "\\b(?:keep|select)\\b.*\\b(?:items?|elements?)\\b.*\\b(?:matching|where|that)\\b"
+    ],
+    "intro": "Here's how to filter an array in {lang}.",
+    "notes": "Array.filter keeps elements where the callback returns true and returns a new array. Python's list comprehension with an if clause is the equivalent.",
+    "languages": {
+      "python": "numbers = [1, 2, 3, 4, 5]\n\n# Keep even numbers:\nevens = [x for x in numbers if x % 2 == 0]\nprint(evens)   # [2, 4]\n\n# Functional filter():\nprint(list(filter(lambda x: x % 2 == 0, numbers)))\n\n# Filter objects:\npeople = [{'name': 'a', 'age': 30}, {'name': 'b', 'age': 20}]\nadults = [p for p in people if p['age'] >= 21]\n\n# Filter + transform in one pass:\nsquares_of_evens = [x * x for x in numbers if x % 2 == 0]",
+      "javascript": "const numbers = [1, 2, 3, 4, 5];\n\n// Keep even numbers:\nconst evens = numbers.filter(x => x % 2 === 0);\nconsole.log(evens);   // [2, 4]\n\n// With index:\nconst firstTwo = numbers.filter((x, i) => i < 2);\n\n// Filter objects:\nconst people = [{ name: 'a', age: 30 }, { name: 'b', age: 20 }];\nconst adults = people.filter(p => p.age >= 21);\n\n// Chain with map:\nconst evensSquared = numbers.filter(x => x % 2 === 0).map(x => x * x);"
+    }
+  },
+  {
+    "task": "js_reduce",
+    "patterns": [
+      "\\breduce\\b.*\\b(?:an?\\s+|the\\s+)?array\\b",
+      "\\b(?:fold|aggregate)\\b.*\\b(?:array|list)\\b.*\\b(?:single|sum|total)\\b"
+    ],
+    "intro": "Here's how to reduce an array to a single value in {lang}.",
+    "notes": "Array.reduce folds the array with an accumulator. For sums use the built-in (Python sum, JS reduce). Always pass the initial value to avoid surprises on empty arrays.",
+    "languages": {
+      "python": "from functools import reduce\n\nnumbers = [1, 2, 3, 4]\n\n# Built-in for sums:\ntotal = sum(numbers)\nprint(total)   # 10\n\n# reduce for custom folds:\nproduct = reduce(lambda acc, x: acc * x, numbers, 1)\nprint(product)   # 24\n\n# Max via reduce:\nmaximum = reduce(max, numbers)\n\n# Custom:\njoined = reduce(lambda acc, x: f'{acc}-{x}', numbers)\nprint(joined)   # 1-2-3-4",
+      "javascript": "const numbers = [1, 2, 3, 4];\n\n// Sum with reduce (always pass the initial value):\nconst total = numbers.reduce((acc, x) => acc + x, 0);\nconsole.log(total);   // 10\n\n// Product:\nconst product = numbers.reduce((acc, x) => acc * x, 1);   // 24\n\n// Max:\nconst max = numbers.reduce((acc, x) => Math.max(acc, x), -Infinity);\n\n// Build an object:\nconst counts = ['a', 'b', 'a'].reduce((acc, x) => {\n    acc[x] = (acc[x] || 0) + 1;\n    return acc;\n}, {});\nconsole.log(counts);   // { a: 2, b: 1 }"
+    }
+  },
+  {
+    "task": "array_last",
+    "patterns": [
+      "\\blast\\s+(?:element|item|value)\\s+of\\s+(?:an?\\s+|the\\s+)?(?:array|list)\\b",
+      "\\b(?:get|access|return)\\b.*\\blast\\b.*\\b(?:element|item)\\b.*\\b(?:array|list)\\b"
+    ],
+    "intro": "Here's how to get the last element of an array in {lang}.",
+    "notes": "Python: arr[-1] is the idiomatic way. JS: arr[arr.length - 1], or arr.at(-1) (ES2022). Be careful with negative-index slicing — arr[-1] in JS is undefined.",
+    "languages": {
+      "python": "arr = [1, 2, 3, 4]\n\nlast = arr[-1]\nprint(last)   # 4\n\n# Second-to-last:\nprint(arr[-2])   # 3\n\n# Safe version:\ndef last_item(items):\n    return items[-1] if items else None\n\n# Pop removes AND returns the last element:\nprint(arr.pop())   # 4\nprint(arr)         # [1, 2, 3]",
+      "javascript": "const arr = [1, 2, 3, 4];\n\nconst last = arr[arr.length - 1];\nconsole.log(last);   // 4\n\n// ES2022 .at():\nconsole.log(arr.at(-1));   // 4\nconsole.log(arr.at(-2));   // 3\n\n// .pop() removes and returns:\nconsole.log(arr.pop());    // 4\nconsole.log(arr);          // [1, 2, 3]\n\n// Safe version:\nfunction lastItem(items) {\n    return items.length ? items[items.length - 1] : undefined;\n}"
+    }
+  },
+  {
+    "task": "merge_arrays",
+    "patterns": [
+      "\\bmerge\\b.*\\barrays?\\b(?!.*\\bsorted\\b)",
+      "\\bconcat(?:enate)?\\b.*\\barrays?\\b"
+    ],
+    "intro": "Here's how to merge two arrays in {lang}.",
+    "notes": "Python: list + list (or extend for in-place). JS: spread [...a, ...b] or .concat(). Neither deduplicates — use a Set for that.",
+    "languages": {
+      "python": "a = [1, 2, 3]\nb = [4, 5, 6]\n\n# New merged list:\nmerged = a + b\nprint(merged)   # [1, 2, 3, 4, 5, 6]\n\n# In place (a is extended):\na.extend(b)\nprint(a)\n\n# Without duplicates (order-preserving):\nmerged_uniq = list(dict.fromkeys(a + b))\n\n# Repeated / interleaved: itertools.chain\nfrom itertools import chain\nprint(list(chain([1, 2], [3, 4])))",
+      "javascript": "const a = [1, 2, 3];\nconst b = [4, 5, 6];\n\n// Spread:\nconst merged = [...a, ...b];\nconsole.log(merged);   // [1, 2, 3, 4, 5, 6]\n\n// concat:\nconst merged2 = a.concat(b);\n\n// In place (mutates a):\na.push(...b);\n\n// Without duplicates:\nconst unique = [...new Set([...a, ...b])];"
+    }
+  },
+  {
+    "task": "string_contains",
+    "patterns": [
+      "^(?!.*\\b(?:only\\s+)?digits?\\b).*\\b(?:check\\s+if\\s+)?(?:a\\s+|the\\s+)?string\\s+contains\\b",
+      "^(?!.*\\b(?:only\\s+)?digits?\\b).*\\bcontains?\\b.*\\bsubstring\\b"
+    ],
+    "intro": "Here's how to check whether a string contains a substring in {lang}.",
+    "notes": "Python: 'sub' in s. JS: s.includes('sub') (ES2016) — indexOf for older environments. Both are case-sensitive; lowercase both sides for case-insensitive matching.",
+    "languages": {
+      "python": "text = 'hello world'\n\nprint('world' in text)        # True\nprint('xyz' in text)          # False\n\n# Case-insensitive:\nprint('WORLD' in text.upper())  # True\n\n# Position (index of first occurrence, -1 if absent):\nprint(text.find('world'))     # 6\nprint(text.index('world'))    # 6 (raises ValueError if absent)\n\n# Count occurrences:\nprint(text.count('o'))        # 2",
+      "javascript": "const text = 'hello world';\n\nconsole.log(text.includes('world'));     // true\nconsole.log(text.includes('xyz'));       // false\n\n// Case-insensitive:\nconsole.log(text.toUpperCase().includes('WORLD'));  // true\n\n// Position (ES2015, -1 if absent):\nconsole.log(text.indexOf('world'));      // 6\nconsole.log(text.indexOf('xyz'));        // -1\n\n// Starts/ends:\nconsole.log(text.startsWith('hello'));   // true\nconsole.log(text.endsWith('world'));     // true"
+    }
+  },
+  {
+    "task": "array_find",
+    "patterns": [
+      "\\bfind\\b.*\\b(?:an?\\s+|the\\s+)?(?:element|item|value)\\s+in\\b.*\\barray\\b"
+    ],
+    "intro": "Here's how to find an element in an array in {lang}.",
+    "notes": "JS .find returns the first match or undefined; .findIndex returns its index. Python uses a loop, next() with a generator, or index() for exact values.",
+    "languages": {
+      "python": "numbers = [1, 2, 3, 4]\n\n# First element matching a condition:\ndef find_first(items, predicate):\n    return next((x for x in items if predicate(x)), None)\n\nprint(find_first(numbers, lambda x: x > 2))    # 3\n\n# Exact value -> index (raises ValueError if absent):\nprint(numbers.index(3))    # 2\n\n# Safe index:\ndef safe_index(items, value):\n    return items.index(value) if value in items else -1\n\n# Boolean check:\nprint(2 in numbers)        # True",
+      "javascript": "const numbers = [1, 2, 3, 4];\n\n// First element matching a condition (or undefined):\nconst found = numbers.find(x => x > 2);\nconsole.log(found);            // 3\n\n// Its index (or -1):\nconsole.log(numbers.findIndex(x => x > 2));   // 2\n\n// Exact value -> index:\nconsole.log(numbers.indexOf(3));   // 2\n\n// Boolean check:\nconsole.log(numbers.includes(2));  // true\n\n// Find in objects:\nconst people = [{ id: 1, name: 'a' }, { id: 2, name: 'b' }];\nconsole.log(people.find(p => p.id === 2));   // { id: 2, name: 'b' }"
+    }
+  },
+  {
+    "task": "round_decimal",
+    "patterns": [
+      "\\bround\\b.*\\b(?:decimal\\s+places?|to\\s+\\d+\\s+decimals?|2\\s+decimals?)\\b",
+      "\\b(?:to\\s+)?2\\s+decimal\\s+places?\\b"
+    ],
+    "intro": "Here's how to round a number to 2 decimal places in {lang}.",
+    "notes": "JS toFixed returns a STRING — wrap in Number() for arithmetic. Python's round() uses banker's rounding (round-half-to-even); use Decimal for strict financial rounding.",
+    "languages": {
+      "python": "x = 3.14159\n\nprint(round(x, 2))      # 3.14\nprint(round(2.675, 2))  # 2.67 (banker's rounding!)\n\n# Formatting (returns a string):\nprint(f'{x:.2f}')       # 3.14\nprint('%.2f' % x)       # 3.14\n\n# Strict decimal arithmetic (finance):\nfrom decimal import Decimal, ROUND_HALF_UP\nmoney = Decimal('2.675').quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)\nprint(money)            # 2.68",
+      "javascript": "const x = 3.14159;\n\n// toFixed returns a STRING:\nconsole.log(x.toFixed(2));            // '3.14'\nconsole.log(Number(x.toFixed(2)));    // 3.14\n\n// Round-then-keep-number (multiply trick):\nconsole.log(Math.round(x * 100) / 100);   // 3.14\n\n// toFixed quirks: (2.675).toFixed(2) === '2.67'\n// For strict finance use a decimal library (decimal.js).\n\n// Round to nearest integer:\nconsole.log(Math.round(3.5));   // 4\nconsole.log(Math.ceil(3.1));    // 4\nconsole.log(Math.floor(3.9));   // 3"
+    }
+  },
+  {
+    "task": "object_length",
+    "patterns": [
+      "\\b(?:length|size)\\b.*\\bobject\\b",
+      "\\b(?:number|count)\\s+of\\s+(?:keys|properties)\\b.*\\bobject\\b",
+      "\\bhow\\s+many\\s+(?:keys|properties)\\b"
+    ],
+    "intro": "Here's how to get the number of keys in an object in {lang}.",
+    "notes": "JS objects don't have a .length — use Object.keys(obj).length. Python's len(dict) counts keys directly.",
+    "languages": {
+      "python": "d = {'a': 1, 'b': 2, 'c': 3}\n\nprint(len(d))      # 3\n\n# Count of values matching a condition:\nprint(sum(1 for v in d.values() if v > 1))   # 2\n\n# Count nested dicts:\nnested = {'x': {'a': 1}, 'y': {'b': 2}}\nprint(len(nested))   # 2 (top level only)",
+      "javascript": "const obj = { a: 1, b: 2, c: 3 };\n\nconsole.log(Object.keys(obj).length);    // 3\n\n// Own enumerable string keys only — inherited ones excluded:\nconsole.log(Object.keys({}).length);     // 0\n\n// All keys including non-enumerable (rarely needed):\nconsole.log(Reflect.ownKeys(obj).length);\n\n// Array .length works normally:\nconsole.log([1, 2, 3].length);           // 3"
+    }
+  },
+  {
+    "task": "object_values_loop",
+    "patterns": [
+      "\\bloop\\b.*\\b(?:object|dictionary|dict)\\b.*\\bvalues?\\b",
+      "\\biterate\\b.*\\b(?:over\\s+)?(?:object|dict)\\b.*\\bvalues?\\b"
+    ],
+    "intro": "Here's how to loop over an object's values in {lang}.",
+    "notes": "JS: Object.values(obj) gives the values; for-in iterates keys (with inherited keys — guard with hasOwnProperty). Python iterates a dict's keys by default; .values() for values.",
+    "languages": {
+      "python": "d = {'a': 1, 'b': 2, 'c': 3}\n\n# Values:\nfor v in d.values():\n    print(v)\n\n# Keys (default iteration):\nfor k in d:\n    print(k)\n\n# Key + value pairs:\nfor k, v in d.items():\n    print(f'{k}: {v}')\n\n# Sum of values:\nprint(sum(d.values()))   # 6",
+      "javascript": "const obj = { a: 1, b: 2, c: 3 };\n\n// Values:\nfor (const value of Object.values(obj)) {\n    console.log(value);\n}\n\n// Keys:\nfor (const key of Object.keys(obj)) {\n    console.log(key);\n}\n\n// Entries (key + value):\nfor (const [key, value] of Object.entries(obj)) {\n    console.log(key, value);\n}\n\n// for...in includes inherited keys — usually avoid:\nfor (const key in obj) {\n    if (Object.hasOwn(obj, key)) console.log(key);\n}"
+    }
+  },
+  {
+    "task": "json_stringify",
+    "patterns": [
+      "\\bstringify\\b",
+      "\\bserialize\\b.*\\b(?:object|data)\\b.*\\bjson\\b"
+    ],
+    "intro": "Here's how to convert an object to a JSON string in {lang}.",
+    "notes": "JSON.stringify(obj, null, 2) pretty-prints. It skips functions and undefined, and turns Dates into ISO strings — pass a replacer to customize.",
+    "languages": {
+      "python": "import json\n\ndata = {'name': 'alice', 'age': 30, 'tags': ['a', 'b']}\n\n# Compact:\ns = json.dumps(data)\nprint(s)   # {\"name\": \"alice\", \"age\": 30, \"tags\": [\"a\", \"b\"]}\n\n# Pretty-printed:\nprint(json.dumps(data, indent=2))\n\n# Sort keys:\nprint(json.dumps(data, sort_keys=True))\n\n# Non-ASCII escaped by default; keep unicode with ensure_ascii=False:\nprint(json.dumps({'caf\\u00e9': 1}, ensure_ascii=False))",
+      "javascript": "const data = { name: 'alice', age: 30, tags: ['a', 'b'] };\n\n// Compact:\nconst s = JSON.stringify(data);\nconsole.log(s);\n\n// Pretty-printed:\nconsole.log(JSON.stringify(data, null, 2));\n\n// Replacer (pick keys):\nconsole.log(JSON.stringify(data, ['name', 'age']));\n\n// Dates become ISO strings:\nconsole.log(JSON.stringify({ when: new Date() }));\n// {\"when\":\"2026-04-03T15:30:00.000Z\"}"
+    }
+  },
+  {
+    "task": "async_await",
+    "patterns": [
+      "\\basync\\s*await\\b",
+      "\\b(?:async\\s+)?function\\b.*\\b(?:await|asynchronous)\\b"
+    ],
+    "intro": "Here's how to use async/await in {lang}.",
+    "notes": "async functions always return a Promise; await unwraps it. Errors inside async code reject the promise — always handle with try/catch or .catch().",
+    "languages": {
+      "python": "import asyncio\n\nasync def fetch_data(url: str) -> str:\n    # Simulate an async call (real code would use aiohttp/httpx):\n    await asyncio.sleep(0.1)\n    return f'data from {url}'\n\n\nasync def main():\n    try:\n        result = await fetch_data('https://example.com')\n        print(result)\n    except Exception as exc:\n        print(f'failed: {exc}')\n\n\nasyncio.run(main())",
+      "javascript": "async function fetchData(url) {\n    // await unwraps the promise:\n    const resp = await fetch(url);\n    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);\n    return resp.json();\n}\n\nasync function main() {\n    try {\n        const data = await fetchData('https://api.example.com');\n        console.log(data);\n    } catch (err) {\n        console.error('failed:', err.message);\n    }\n}\n\nmain();\n\n// async functions always return a Promise:\n// const p = main();  p.catch(...)\n\n// Run several in parallel:\nconst [a, b] = await Promise.all([\n    fetchData('/a'),\n    fetchData('/b'),\n]);"
+    }
+  },
+  {
+    "task": "promise_all",
+    "patterns": [
+      "\\bpromise\\.all\\b",
+      "\\b(?:run|execute|wait\\s+for)\\b.*\\b(?:multiple|several|all)\\b.*\\b(?:promises?|requests?|calls?)\\b"
+    ],
+    "intro": "Here's how to use Promise.all in {lang}.",
+    "notes": "Promise.all resolves when EVERY promise resolves and rejects fast on the first rejection — use Promise.allSettled when you want results regardless of failures.",
+    "languages": {
+      "python": "import asyncio\n\nasync def fetch(id: int) -> str:\n    await asyncio.sleep(0.1)\n    return f'item {id}'\n\n\nasync def main():\n    # Run concurrently and collect results in order:\n    results = await asyncio.gather(fetch(1), fetch(2), fetch(3))\n    print(results)   # ['item 1', 'item 2', 'item 3']\n\n    # With error handling (return_exceptions=True keeps partial results):\n    results = await asyncio.gather(fetch(1), fetch(2), return_exceptions=True)\n\n\nasyncio.run(main())",
+      "javascript": "// Promise.all — resolves when ALL resolve, rejects on the first rejection:\nconst results = await Promise.all([\n    fetch('/a').then(r => r.json()),\n    fetch('/b').then(r => r.json()),\n]);\nconsole.log(results);   // [dataA, dataB] — in order\n\n// With .then():\nPromise.all([p1, p2]).then(\n    ([r1, r2]) => console.log(r1, r2),\n    err => console.error('one failed:', err),\n);\n\n// Promise.allSettled — wait for all, keep failures:\nconst settled = await Promise.allSettled([p1, p2]);\n// [{status: 'fulfilled', value}, {status: 'rejected', reason}]\n\n// Promise.race — first to settle wins:\nconst first = await Promise.race([p1, p2]);"
+    }
+  },
+  {
+    "task": "array_unshift",
+    "patterns": [
+      "\\b(?:add|insert|prepend)\\b.*\\b(?:item|element|value)\\b.*\\b(?:to\\s+)?(?:the\\s+)?(?:start|beginning)\\b.*\\b(?:array|list)\\b",
+      "\\b(?:add|insert)\\b.*\\bto\\s+(?:the\\s+)?start\\b.*\\barray\\b"
+    ],
+    "intro": "Here's how to add an item to the start of an array in {lang}.",
+    "notes": "unshift is O(n) because every element shifts. Python's deque.appendleft is O(1) — use it for queues where you add to the front often.",
+    "languages": {
+      "javascript": "const arr = [2, 3, 4];\n\n// Add to the start:\narr.unshift(1);\nconsole.log(arr);   // [1, 2, 3, 4]\n\n// Spread (non-mutating):\nconst arr2 = [1, ...arr];\n\n// Multiple items:\narr.unshift(-1, 0);  // [-1, 0, 1, 2, 3, 4]",
+      "python": "from collections import deque\n\n# list.insert(0, x) is O(n):\nlst = [2, 3, 4]\nlst.insert(0, 1)\nprint(lst)   # [1, 2, 3, 4]\n\n# deque.appendleft is O(1):\nd = deque([2, 3, 4])\nd.appendleft(1)\nprint(list(d))   # [1, 2, 3, 4]\n\n# Non-mutating:\nlst2 = [1] + lst"
+    }
+  },
+  {
+    "task": "string_repeat",
+    "patterns": [
+      "\\bstring\\b.*\\brepeat\\b.*\\bn\\s+times\\b",
+      "\\brepeat\\b.*\\bstring\\b.*\\b(?:n\\s+)?times\\b"
+    ],
+    "intro": "Here's how to repeat a string n times in {lang}.",
+    "notes": "Python's 's' * n and JS's .repeat(n) both allocate the full result once. Beware: multiplication with a float or negative raises in Python.",
+    "languages": {
+      "javascript": "const s = 'ab';\n\nconsole.log(s.repeat(3));   // 'ababab'\nconsole.log('='.repeat(20));  // '===================='\nconsole.log('ha'.repeat(2));   // 'haha'\n\n// repeat(0) gives an empty string:\nconsole.log(s.repeat(0));   // ''",
+      "python": "s = 'ab'\n\nprint(s * 3)          # 'ababab'\nprint('=' * 20)       # '===================='\nprint('ha' * 2)       # 'haha'\n\n# Only integers are allowed:\ntry:\n    print(s * 2.5)\nexcept TypeError as exc:\n    print('need an integer:', exc)\n\n# Joining a list of the same string:\nprint('ab' * 3)"
+    }
+  },
+  {
+    "task": "object_to_array",
+    "patterns": [
+      "\\bobject\\b.*\\b(?:to\\s+)?array\\s+of\\s+values\\b",
+      "\\b(?:get|convert|turn)\\b.*\\bvalues?\\b.*\\bobject\\b.*\\b(?:array|list)\\b"
+    ],
+    "intro": "Here's how to get an object's values as an array in {lang}.",
+    "notes": "Object.values returns own enumerable values in insertion order. Object.entries gives [key, value] pairs; Object.keys the keys.",
+    "languages": {
+      "javascript": "const obj = { a: 1, b: 2, c: 3 };\n\n// Values:\nconsole.log(Object.values(obj));   // [1, 2, 3]\n\n// Keys:\nconsole.log(Object.keys(obj));     // ['a', 'b', 'c']\n\n// Entries (key-value pairs):\nconsole.log(Object.entries(obj));  // [['a', 1], ['b', 2], ['c', 3]]\n\n// Sum the values:\nconsole.log(Object.values(obj).reduce((a, b) => a + b, 0));  // 6",
+      "python": "d = {'a': 1, 'b': 2, 'c': 3}\n\nprint(list(d.values()))    # [1, 2, 3]\nprint(list(d.keys()))      # ['a', 'b', 'c']\nprint(list(d.items()))     # [('a', 1), ('b', 2), ('c', 3)]\n\n# Sum the values:\nprint(sum(d.values()))     # 6"
+    }
+  },
+  {
+    "task": "array_shift",
+    "patterns": [
+      "\\bremove\\b.*\\bfirst\\b.*\\b(?:element|item|value)\\b.*\\b(?:array|list)\\b",
+      "\\b(?:shift|pop\\s+front)\\b.*\\b(?:array|list)\\b"
+    ],
+    "intro": "Here's how to remove the first element of an array in {lang}.",
+    "notes": "JS shift() removes and returns the first element in O(n). Python list.pop(0) is also O(n); use collections.deque popleft for O(1).",
+    "languages": {
+      "javascript": "const arr = [1, 2, 3, 4];\n\n// shift() removes AND returns the first element:\nconst first = arr.shift();\nconsole.log(first);   // 1\nconsole.log(arr);     // [2, 3, 4]\n\n// Non-mutating (slice):\nconst rest = arr.slice(1);\n\n// Clear the whole array:\narr.length = 0;",
+      "python": "lst = [1, 2, 3, 4]\n\n# pop(0) removes AND returns the first element (O(n)):\nfirst = lst.pop(0)\nprint(first)   # 1\nprint(lst)     # [2, 3, 4]\n\n# O(1) alternative with deque:\nfrom collections import deque\nd = deque([1, 2, 3])\nprint(d.popleft())   # 1"
+    }
+  },
+  {
+    "task": "js_destructuring",
+    "patterns": [
+      "\\bdestructuring\\b",
+      "\\bdestructure\\b"
+    ],
+    "intro": "Here's how to use destructuring in {lang}.",
+    "notes": "Destructuring unpacks arrays and objects into variables in one statement. Use defaults, renaming, and rest (...) to handle partial data cleanly.",
+    "languages": {
+      "javascript": "// Array destructuring:\nconst [first, second, ...rest] = [1, 2, 3, 4, 5];\nconsole.log(first, second, rest);   // 1 2 [3, 4, 5]\n\n// Skip elements:\nconst [, , third] = ['a', 'b', 'c'];\n\n// Swap:\nlet a = 1, b = 2;\n[a, b] = [b, a];\n\n// Object destructuring:\nconst user = { name: 'alice', age: 30, city: 'Berlin' };\nconst { name, age } = user;\n\n// Rename + default:\nconst { name: userName, email = 'none' } = user;\n\n// Nested:\nconst { address: { street } } = { address: { street: 'Main 1' } };\n\n// Function params:\nfunction greet({ name, age = 0 }) {\n    console.log(`${name} is ${age}`);\n}\ngreet(user);",
+      "python": "# Tuple unpacking:\nfirst, second, *rest = [1, 2, 3, 4, 5]\nprint(first, second, rest)   # 1 2 [3, 4, 5]\n\n# Swap:\na, b = b, a\n\n# Dict unpacking (**):\nuser = {'name': 'alice', 'age': 30}\ncopy = {**user, 'city': 'Berlin'}\n\n# Function kwargs:\ndef greet(name, age=0):\n    print(f'{name} is {age}')\ngreet(**user)"
+    }
+  },
+  {
+    "task": "optional_chaining",
+    "patterns": [
+      "\\boptional\\s+chaining\\b"
+    ],
+    "intro": "Here's how to use optional chaining in {lang}.",
+    "notes": "?. short-circuits to undefined instead of throwing when the left side is null/undefined. Use it for nested access on data that may be missing; ?? provides a default for nullish values.",
+    "languages": {
+      "javascript": "const user = { profile: { name: 'alice' } };\n\n// Without optional chaining:\n// const name = user.profile.name;  // throws if profile is missing\n\n// With ?. — safe nested access:\nconst name = user?.profile?.name;\nconsole.log(name);   // 'alice'\n\nconst empty = {};\nconsole.log(empty?.profile?.name);   // undefined (no throw)\n\n// Optional call:\nuser.save?.();   // only called if save exists\n\n// ?? nullish coalescing — default only for null/undefined:\nconst port = process.env.PORT ?? 8000;\nconst count = user?.orders?.length ?? 0;\n\n// Note: || treats 0, '', false as falsy; ?? does not.\nconsole.log(0 ?? 'default');   // 0\nconsole.log(0 || 'default');   // 'default'",
+      "python": "# Python's equivalent: the walrus-free safe access pattern\nuser = {'profile': {'name': 'alice'}}\n\nname = user.get('profile', {}).get('name')\nprint(name)   # alice\n\n# Or use .get with a chain:\nname = (user.get('profile') or {}).get('name')\n\n# For attribute access:\nclass Box:\n    def __init__(self, val=None):\n        self.val = val\n\nb = Box()\nvalue = getattr(b, 'val', None)\n\n# Modern alternative: try/except or the 'dotted' library.\ntry:\n    name = user['profile']['name']\nexcept KeyError:\n    name = None"
+    }
+  },
+  {
+    "task": "template_literals",
+    "patterns": [
+      "\\btemplate\\s+literals?\\b",
+      "\\b(?:backtick|template)\\s+strings?\\b"
+    ],
+    "intro": "Here's how to use template literals in {lang}.",
+    "notes": "Backticks create strings that interpolate ${expr} and span multiple lines. Tagged templates (the function before the backtick) let you transform the parts programmatically.",
+    "languages": {
+      "javascript": "const name = 'alice';\nconst age = 30;\n\n// Interpolation:\nconst msg = `${name} is ${age} years old`;\nconsole.log(msg);\n\n// Multi-line (no \\n needed):\nconst html = `\n  <div>\n    <h1>${name}</h1>\n  </div>\n`;\n\n// Expressions inside ${}:\nconsole.log(`total: ${2 + 3}`);\nconsole.log(`status: ${age >= 18 ? 'adult' : 'minor'}`);\n\n// Nested template literals:\nconst items = ['a', 'b'];\nconst list = `<ul>${items.map(i => `<li>${i}</li>`).join('')}</ul>`;\n\n// Tagged template:\nfunction upper(strings, ...values) {\n    return strings.reduce((out, s, i) => out + s + (values[i] ?? '').toString().toUpperCase(), '');\n}\nconsole.log(upper`hello ${name}`);   // hello ALICE",
+      "python": "# f-strings are Python's template literals:\nname = 'alice'\nage = 30\n\nmsg = f'{name} is {age} years old'\nprint(msg)\n\n# Multi-line:\nhtml = f'''\n<div>\n  <h1>{name}</h1>\n</div>\n'''\n\n# Expressions:\nprint(f'total: {2 + 3}')\nprint(f'status: {\"adult\" if age >= 18 else \"minor\"}')\n\n# Format spec inside:\nprint(f'{age:03d}')    # 030"
+    }
+  },
+  {
+    "task": "js_class_getters",
+    "patterns": [
+      "\\bgetters?\\b.*\\b(?:class|object)\\b",
+      "\\bclass\\b.*\\bgetters?\\b"
+    ],
+    "intro": "Here's how to define getters in a JavaScript class.",
+    "notes": "The get keyword defines a computed property that runs code on access — no parentheses needed. setters run on assignment. This is how you expose derived state cleanly.",
+    "languages": {
+      "javascript": "class Circle {\n    constructor(radius) {\n        this.radius = radius;\n    }\n\n    get area() {\n        return Math.PI * this.radius ** 2;\n    }\n\n    get diameter() {\n        return this.radius * 2;\n    }\n\n    set diameter(d) {\n        this.radius = d / 2;\n    }\n}\n\nconst c = new Circle(5);\nconsole.log(c.area);        // 78.5...  (no ()!)\nc.diameter = 20;            // setter runs\nconsole.log(c.radius);      // 10\n\n// Object literal getters:\nconst user = {\n    first: 'alice',\n    last: 'smith',\n    get full() {\n        return `${this.first} ${this.last}`;\n    },\n};\nconsole.log(user.full);   // 'alice smith'",
+      "python": "# Python's @property is the equivalent:\nimport math\n\nclass Circle:\n    def __init__(self, radius):\n        self.radius = radius\n\n    @property\n    def area(self):\n        return math.pi * self.radius ** 2\n\n    @property\n    def diameter(self):\n        return self.radius * 2\n\n    @diameter.setter\n    def diameter(self, d):\n        self.radius = d / 2\n\nc = Circle(5)\nprint(c.area)     # 78.5...\nc.diameter = 20\nprint(c.radius)   # 10"
+    }
+  },
+  {
+    "task": "express_query",
+    "patterns": [
+      "\\bquery\\s+param(?:eter)?s?\\b",
+      "\\bexpress\\b.*\\bquery\\s+(?:string|param|parameter)\\b"
+    ],
+    "intro": "Here's how to read query parameters in Express.",
+    "notes": "req.query holds parsed ?key=value pairs from the URL. Values are strings; URL-encoded characters are decoded automatically. Arrays come through as repeated keys (?tag=a&tag=b -> ['a','b']).",
+    "languages": {
+      "javascript": "const express = require('express');\nconst app = express();\n\n// GET /search?q=pizza&page=2\napp.get('/search', (req, res) => {\n    const q = req.query.q;          // 'pizza'\n    const page = Number(req.query.page) || 1;  // 2\n    res.json({ q, page });\n});\n\napp.listen(3000);\n"
+    }
+  },
+  {
+    "task": "express_jwt_auth",
+    "patterns": [
+      "\\bjwt\\b.*\\b(?:auth|middleware|express)\\b",
+      "\\bauth\\s+middleware\\b",
+      "\\b(?:protect|secure)\\b.*\\bexpress\\s+(?:route|endpoint|app)\\b"
+    ],
+    "intro": "Here's a JWT auth middleware for Express.",
+    "notes": "Verify the Authorization: Bearer <token> header on every protected route. jwt.verify throws on an invalid/expired token — catch it and reply 401. Attach the decoded payload to req so route handlers can use it.",
+    "languages": {
+      "javascript": "const jwt = require('jsonwebtoken');\n\nconst SECRET = process.env.JWT_SECRET;  // set this in your env\n\nfunction auth(req, res, next) {\n    const header = req.headers['authorization'];\n    if (!header || !header.startsWith('Bearer ')) {\n        return res.status(401).json({ error: 'missing token' });\n    }\n    const token = header.split(' ')[1];\n    try {\n        req.user = jwt.verify(token, SECRET);  // decoded payload\n        next();\n    } catch {\n        res.status(401).json({ error: 'invalid or expired token' });\n    }\n}\n\n// Protect a route:\napp.get('/profile', auth, (req, res) => {\n    res.json({ user: req.user });\n});\n"
+    }
+  },
+  {
+    "task": "js_closures",
+    "patterns": [
+      "\\bclosures?\\b",
+      "\\b(?:nested\\s+functions?|function\\s+factory)\\b"
+    ],
+    "intro": "Here's how closures work in JavaScript.",
+    "notes": "A closure is a function that remembers the variables from the scope where it was created, even after that scope returns. Use them for private state, counters, and currying.",
+    "languages": {
+      "javascript": "// A closure captures its surrounding scope:\nfunction makeCounter() {\n    let count = 0;               // private — not visible outside\n    return function () {\n        count += 1;\n        return count;\n    };\n}\n\nconst counter = makeCounter();\nconsole.log(counter());  // 1\nconsole.log(counter());  // 2\n\n// Currying with closures:\nconst add = (a) => (b) => a + b;\nconst add5 = add(5);\nconsole.log(add5(3));    // 8\n"
+    }
+  },
+  {
+    "task": "express_error_handler",
+    "patterns": [
+      "\\berror\\s+(?:handler|handling|middleware)\\b.*\\bexpress\\b",
+      "\\bexpress\\b.*\\berror\\s+(?:handler|handling|middleware)\\b"
+    ],
+    "intro": "Here's how to add a custom error handler in Express.",
+    "notes": "Error middleware has FOUR arguments (err, req, res, next) — Express only treats a 4-arg function as an error handler. It runs after your routes; call next(err) in routes to jump straight to it.",
+    "languages": {
+      "javascript": "const express = require('express');\nconst app = express();\n\napp.get('/data', (req, res, next) => {\n    try {\n        const data = JSON.parse(req.query.json);\n        res.json(data);\n    } catch (err) {\n        next(err);   // jump to the error handler\n    }\n});\n\n// 404 for unknown routes:\napp.use((req, res) => res.status(404).json({ error: 'not found' }));\n\n// Error handler — note the 4 arguments:\napp.use((err, req, res, next) => {\n    console.error(err);\n    res.status(err.status || 500).json({ error: err.message });\n});\n\napp.listen(3000);\n"
+    }
+  }
+]
